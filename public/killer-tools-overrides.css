@@ -18,7 +18,7 @@ a[href*="twitter.com"],
 }
 
 .sider-content {
-  padding-bottom: 0 !important;
+  margin-top: -140px !important;
 }
 
 /* --- sidebar logo: hide SVG, replace header with our image --- */
@@ -33,12 +33,18 @@ a[href*="twitter.com"],
 }
 
 .hero-wrapper {
-  background-image: url('/sidebar-192.png') !important;
-  background-repeat: no-repeat !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  min-height: 64px !important;
-  display: block !important;
+  display: none !important;
+}
+
+.sider-content::before {
+  content: '';
+  display: block;
+  background-image: url('/sidebar-220x72.png') !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 16px center;
+  height: 72px;
+  margin-bottom: 0px;
 }
 
 .hero-wrapper .text-wrapper {
