@@ -1,12 +1,10 @@
-<picture>
-    <source srcset="./.github/logo-dark.png" media="(prefers-color-scheme: light)">
-    <source srcset="./.github/logo-white.png" media="(prefers-color-scheme: dark)">
-    <img src="./.github/logo-dark.png" alt="logo">
-</picture>
+# killer-tools
 
-<p align="center">
-Useful tools for developer and people working in IT. <a href="https://it-tools.tech">Try it!</a>
-</p>
+![killer-tools](./public/banner.png)
+
+A custom fork of [IT-Tools](https://github.com/CorentinTh/it-tools) with personalized branding, deployed at [tools.thekiller.net](https://tools.thekiller.net).
+
+Built and maintained by [SteveTheKiller](https://thekiller.net).
 
 ## Functionalities and roadmap
 
