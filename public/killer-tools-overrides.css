@@ -1,0 +1,52 @@
+/* ============================================================
+   killer-tools custom overrides
+   Hides IT-Tools branding, replaces sidebar logo
+   ============================================================ */
+
+/* --- footer, social links, buy me coffee, info button --- */
+.footer,
+.c-link,
+.support-button,
+a[href*="buymeacoffee"],
+a[href*="github.com/CorentinTh"],
+a[href*="twitter.com"],
+.c-button.round.support-button,
+.i-mdi-github,
+.i-mdi-twitter,
+.i-mdi-information-outline,
+.i-mdi-information {
+  display: none !important;
+}
+
+/* remove leftover padding from hidden footer items */
+.sider-content {
+  padding-bottom: 0 !important;
+}
+
+/* --- sidebar logo: hide IT-Tools SVG, replace with our image --- */
+.logo svg,
+.logo img,
+.app-logo svg,
+.app-logo img,
+.header-logo svg,
+.header-logo img {
+  display: none !important;
+}
+
+.logo,
+.app-logo,
+.header-logo {
+  background-image: url('/sidebar-192.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: left center !important;
+  min-height: 48px !important;
+  min-width: 120px !important;
+}
+
+/* also hide the "IT Tools" text label next to the logo if present */
+.logo-title,
+.app-name,
+.header-title {
+  display: none !important;
+}
