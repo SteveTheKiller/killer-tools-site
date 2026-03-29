@@ -21,9 +21,8 @@ a[href*="twitter.com"],
   padding-bottom: 0 !important;
 }
 
-/* --- sidebar logo: hide SVG and IT-TOOLS text, replace with our image --- */
-.hero-wrapper svg,
-.hero-wrapper .gradient {
+/* --- sidebar logo: hide SVG, replace header with our image --- */
+.hero-wrapper svg {
   display: none !important;
 }
 
@@ -33,21 +32,21 @@ a[href*="twitter.com"],
   display: none !important;
 }
 
-.hero-wrapper .text-wrapper {
+.hero-wrapper {
   background-image: url('/sidebar-192.png') !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
-  background-position: left center !important;
-  min-height: 48px !important;
-  min-width: 160px !important;
-  width: 100% !important;
+  background-position: center center !important;
+  min-height: 64px !important;
+  display: block !important;
 }
 
-/* hide toolbar circle buttons (X/Twitter, info) */
-a.c-button.circle {
+.hero-wrapper .text-wrapper {
   display: none !important;
 }
 
-.tabler-icon-info-circle {
+/* --- hide toolbar circle buttons --- */
+a.c-button.circle,
+.c-button.circle {
   display: none !important;
 }
