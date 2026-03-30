@@ -37,7 +37,7 @@ const tools = computed<ToolCategory[]>(() => [
     <template #sider>
   <div class="sider-content">
     <RouterLink to="/" class="sider-logo">
-      <img src="/sidebar-220x150.png" alt="killer-tools" />
+      <img src="/sidebar-220x100.png" alt="killer-tools" />
     </RouterLink>
 
     <div v-if="styleStore.isSmallScreen" flex flex-col items-center>

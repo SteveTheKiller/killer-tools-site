@@ -18,7 +18,7 @@ a[href*="twitter.com"],
 }
 
 .sider-content {
-  margin-top: -130px !important;
+  margin-top: -164px !important;
   position: relative;
 }
 
@@ -50,14 +50,15 @@ a[href*="twitter.com"],
 
 .sider-logo {
   display: block;
-  height: 72px;
-  padding-left: 56px;
+  height: 100px;
+  padding-left: 85px;
   cursor: pointer;
 }
 
 .sider-logo img {
-  height: 150px;
+  height: 100px;
   object-fit: contain;
+  object-position: top;
 }
 
 .hero-wrapper .text-wrapper {
@@ -74,10 +75,14 @@ a.c-button.circle,
   padding-top: 0 !important;
 }
 
-.menu-wrapper .n-menu-item-content {
-  padding-left: 40px !important;
+.menu-wrapper {
+  margin-bottom: 0 !important;
 }
 
 .menu-wrapper {
-  margin-bottom: 0 !important;
+  margin-top: 10px;
+}
+
+div:first-child > .menu-wrapper .n-menu-item-content {
+  padding-left: 32px !important;
 }
