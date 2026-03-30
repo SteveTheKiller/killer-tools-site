@@ -32,7 +32,7 @@ function toggleCategoryCollapse({ name }: { name: string }) {
 const menuOptions = computed(() =>
   toolsByCategory.value.map(({ name, components }) => ({
     name,
-    isCollapsed: collapsedCategories.value[name],
+    isCollapsed: collapsedCategories.value[name] === undefined ? name !== 'Killer Scripts' : collapsedCategories.value[name],
     tools: components.map(tool => ({
       label: makeLabel(tool),
       icon: makeIcon(tool),
