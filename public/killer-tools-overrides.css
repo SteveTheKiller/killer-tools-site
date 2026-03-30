@@ -56,7 +56,7 @@ a[href*="twitter.com"],
 }
 
 .sider-logo img {
-  height: 72px;
+  height: 150px;
   object-fit: contain;
 }
 
@@ -76,4 +76,8 @@ a.c-button.circle,
 
 .menu-wrapper .n-menu-item-content {
   padding-left: 40px !important;
+}
+
+.menu-wrapper {
+  margin-bottom: 0 !important;
 }
