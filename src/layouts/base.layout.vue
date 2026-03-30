@@ -36,7 +36,7 @@ const tools = computed<ToolCategory[]>(() => [
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
-        <HeroGradient class="gradient" />
+        <HeroGradient class="gradient" style="pointer-events: none;" />
         <div class="text-wrapper">
           <div class="title">
             IT - TOOLS
