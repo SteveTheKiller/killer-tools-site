@@ -46,20 +46,17 @@ const themeVars = useThemeVars();
 
 <template>
   <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name">
-    <div ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
+    <div v-if="tools.length > 1" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
       <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
         <icon-mdi-chevron-right />
       </span>
-
       <span ml-8px text-13px>
         {{ name }}
       </span>
     </div>
-
-    <n-collapse-transition :show="!isCollapsed">
+    <n-collapse-transition :show="tools.length === 1 || !isCollapsed">
       <div class="menu-wrapper">
-        <div class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
-
+        <div v-if="tools.length > 1" class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
         <n-menu
           class="menu"
           :value="route.path"
@@ -81,20 +78,17 @@ const themeVars = useThemeVars();
   .menu {
     flex: 1;
     margin-bottom: 5px;
-
     ::v-deep(.n-menu-item-content::before) {
       left: 0;
       right: 13px;
     }
   }
-
   .toggle-bar {
     width: 24px;
     opacity: 0.1;
     transition: opacity ease 0.2s;
     position: relative;
     cursor: pointer;
-
     &::before {
       width: 2px;
       height: 100%;
@@ -105,7 +99,6 @@ const themeVars = useThemeVars();
       top: 0;
       left: 14px;
     }
-
     &:hover {
       opacity: 0.5;
     }
