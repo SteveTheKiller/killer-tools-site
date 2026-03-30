@@ -19,11 +19,23 @@ a[href*="twitter.com"],
 
 .sider-content {
   margin-top: -130px !important;
+  position: relative;
 }
 
 /* --- sidebar logo: hide SVG, replace header with our image --- */
 .hero-wrapper svg {
   display: none !important;
+}
+
+.logo-click-target {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 72px;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .hero-wrapper .title,

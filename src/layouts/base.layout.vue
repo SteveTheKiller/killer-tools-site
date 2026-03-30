@@ -49,6 +49,7 @@ const tools = computed<ToolCategory[]>(() => [
       </RouterLink>
 
       <div class="sider-content">
+        <RouterLink to="/" class="logo-click-target" />
         <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
           <locale-selector w="90%" />
 
@@ -182,7 +183,7 @@ const tools = computed<ToolCategory[]>(() => [
   display: block;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 30;  /* was 10 */
   overflow: hidden;
 
   .gradient {
