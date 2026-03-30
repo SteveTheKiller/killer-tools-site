@@ -14,8 +14,8 @@ figlet.defaults({ fontPath: 'https://cdn.jsdelivr.net/npm/figlet@1.11.0/fonts' }
 watchEffect(async () => {
   processing.value = true;
   try {
-    const options: figlet.Options = {
-      font: font.value as figlet.Fonts,
+    const options = {
+      font: font.value as string,
       width: width.value,
       whitespaceBreak: true,
     };
@@ -34,7 +34,8 @@ watchEffect(async () => {
   catch (e: any) {
     if (font.value !== 'Standard') {
       font.value = 'Standard';
-    } else {
+    }
+    else {
       errored.value = true;
     }
   }

@@ -28,7 +28,7 @@ const { copy } = useCopy({ source: token, text: t('tools.token-generator.copied'
   <div>
     <c-card>
       <n-form label-placement="left" label-width="140">
-        <div flex justify-center flex-wrap>
+        <div flex flex-wrap justify-center>
           <div>
             <n-form-item :label="t('tools.token-generator.uppercase')">
               <n-switch v-model:value="withUppercase" />

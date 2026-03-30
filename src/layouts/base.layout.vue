@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 import { Heart, Home2, Menu2 } from '@vicons/tabler';
 
 import { storeToRefs } from 'pinia';
-import HeroGradient from '../assets/hero-gradient.svg?component';
+
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
 import { useStyleStore } from '@/stores/style.store';
@@ -35,42 +35,42 @@ const tools = computed<ToolCategory[]>(() => [
 <template>
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
-  <div class="sider-content">
-    <RouterLink to="/" class="sider-logo">
-      <img src="/sidebar-290x100.png" alt="killer-tools" />
-    </RouterLink>
+      <div class="sider-content">
+        <RouterLink to="/" class="sider-logo">
+          <img src="/sidebar-290x100.png" alt="killer-tools">
+        </RouterLink>
 
-    <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
-      <locale-selector w="90%" />
-      <div flex justify-center>
-        <NavbarButtons />
-      </div>
-    </div>
+        <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
+          <locale-selector w="90%" />
+          <div flex justify-center>
+            <NavbarButtons />
+          </div>
+        </div>
 
-    <CollapsibleToolMenu :tools-by-category="tools" />
+        <CollapsibleToolMenu :tools-by-category="tools" />
 
-    <div class="footer">
-      <div>
-        IT-Tools
-        <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
-          v{{ version }}
-        </c-link>
-        <template v-if="commitSha && commitSha.length > 0">
-          -
-          <c-link target="_blank" rel="noopener" type="primary" :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`">
-            {{ commitSha }}
-          </c-link>
-        </template>
+        <div class="footer">
+          <div>
+            IT-Tools
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
+              v{{ version }}
+            </c-link>
+            <template v-if="commitSha && commitSha.length > 0">
+              -
+              <c-link target="_blank" rel="noopener" type="primary" :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`">
+                {{ commitSha }}
+              </c-link>
+            </template>
+          </div>
+          <div>
+            © {{ new Date().getFullYear() }}
+            <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
+              Corentin Thomasset
+            </c-link>
+          </div>
+        </div>
       </div>
-      <div>
-        © {{ new Date().getFullYear() }}
-        <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
-          Corentin Thomasset
-        </c-link>
-      </div>
-    </div>
-  </div>
-</template>
+    </template>
 
     <template #content>
       <div flex items-center justify-center gap-2>

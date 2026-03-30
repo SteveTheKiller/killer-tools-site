@@ -16,9 +16,11 @@ onMounted(async () => {
     scripts.value = contents
       .filter((f: any) => f.name.endsWith('.ps1'))
       .sort((a: any, b: any) => a.name.localeCompare(b.name));
-  } catch {
+  }
+  catch {
     error.value = true;
-  } finally {
+  }
+  finally {
     loading.value = false;
   }
 });
@@ -34,7 +36,8 @@ async function downloadScript(script: { name: string; download_url: string }) {
     a.download = script.name;
     a.click();
     URL.revokeObjectURL(url);
-  } finally {
+  }
+  finally {
     downloading.value = null;
   }
 }
@@ -67,8 +70,8 @@ async function downloadScript(script: { name: string; download_url: string }) {
           style="border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;"
         >
           <div flex flex-col gap-1>
-            <span font-mono font-bold>{{ descriptions[script.name]?.name ?? script.name }}</span>
-            <span op-60 text-sm>{{ descriptions[script.name]?.description ?? '' }}</span>
+            <span font-bold font-mono>{{ descriptions[script.name]?.name ?? script.name }}</span>
+            <span text-sm op-60>{{ descriptions[script.name]?.description ?? '' }}</span>
           </div>
           <c-button
             size="small"
