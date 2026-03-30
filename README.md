@@ -6,12 +6,6 @@ A custom fork of [IT-Tools](https://github.com/CorentinTh/it-tools) with persona
 
 Built and maintained by [SteveTheKiller](https://thekiller.net).
 
-## Functionalities and roadmap
-
-Please check the [issues](https://github.com/CorentinTh/it-tools/issues) to see if some feature listed to be implemented.
-
-You have an idea of a tool? Submit a [feature request](https://github.com/CorentinTh/it-tools/issues/new/choose)!
-
 ## Contribute
 
 ### Recommended IDE Setup
