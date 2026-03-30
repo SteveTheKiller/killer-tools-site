@@ -66,8 +66,8 @@ a[href*="twitter.com"],
 }
 
 /* --- hide toolbar circle buttons --- */
-a.c-button.circle,
-.c-button.circle {
+a.c-button.circle:not([aria-label="Toggle menu"]),
+.c-button.circle:not([aria-label="Toggle menu"]) {
   display: none !important;
 }
 
