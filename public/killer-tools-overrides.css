@@ -50,13 +50,15 @@ a[href*="twitter.com"],
 
 .sider-logo {
   display: block;
-  height: 100px;
+  height: 38px;
   padding-left: 0px;
   cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .sider-logo img {
-  height: 100px;
+  height: 38px;
   object-fit: contain;
   object-position: top;
 }
@@ -80,7 +82,7 @@ a.c-button.circle:not([aria-label="Toggle menu"]),
 }
 
 #app .n-layout-sider .n-scrollbar-content > div:first-child {
-  margin-top: -55px;
+  margin-top: -100px;
 }
 
 div:first-child > .menu-wrapper .n-menu-item-content {
