@@ -127,7 +127,7 @@ async function downloadScript(script: { name: string; download_url: string }) {
               {{ descriptions[script.name]?.name ?? script.name }}
             </div>
 
-            <div class="line-clamp-3 text-xs text-neutral-500 dark:text-neutral-400">
+            <div class="text-xs text-neutral-500 dark:text-neutral-400" style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">
               {{ descriptions[script.name]?.description ?? '' }}
             </div>
           </div>
