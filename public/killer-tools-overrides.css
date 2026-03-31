@@ -119,3 +119,14 @@ body {
     overflow-wrap: break-word;
   }
 }
+
+.n-code pre,
+.n-code code {
+  white-space: pre-wrap !important;
+  word-break: break-all;
+}
+
+/* --- restore wysiwyg editor toolbar buttons --- */
+.editor-header .c-button.circle {
+  display: inline-flex !important;
+}
