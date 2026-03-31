@@ -93,21 +93,19 @@ function switchToBlock({ count = 1 }: { count?: number }) {
     />
 
     <div v-if="networkInfo">
-      <n-table>
-        <tbody>
-          <tr v-for="{ getValue, label, undefinedFallback } in sections" :key="label">
-            <td font-bold>
-              {{ label }}
-            </td>
-            <td>
-              <SpanCopyable v-if="getValue(networkInfo)" :value="getValue(networkInfo)" />
-              <span v-else op-70>
-                {{ undefinedFallback }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </n-table>
+      <div class="subnet-results">
+        <div
+          v-for="{ getValue, label, undefinedFallback } in sections"
+          :key="label"
+          class="subnet-row"
+        >
+          <span class="subnet-label">{{ label }}</span>
+          <span class="subnet-value">
+            <SpanCopyable v-if="getValue(networkInfo)" :value="getValue(networkInfo)" />
+            <span v-else op-70>{{ undefinedFallback }}</span>
+          </span>
+        </div>
+      </div>
 
       <div mt-3 flex items-center justify-between>
         <c-button @click="switchToBlock({ count: -1 })">
