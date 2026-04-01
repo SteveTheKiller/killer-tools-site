@@ -89,21 +89,26 @@ import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
 import { tool as windowsEventLookup } from './windows-event-lookup';
 import { tool as m365SkuDecoder } from './m365-sku-decoder';
-import { tool as passwordPolicyReference } from './password-policy-reference';
+import { tool as groupPolicyReference } from './group-policy-reference';
 import { tool as windowsErrorCodes } from './windows-error-codes';
+import { tool as emailDnsChecker } from './email-dns-checker';
+import { tool as exchangeNdrLookup } from './exchange-ndr-lookup';
+import { tool as cveLookup } from './cve-lookup';
+import { tool as portProtocolReference } from './port-protocol-reference';
 
 export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Windows',
-    components: [killerScripts, windowsEventLookup, m365SkuDecoder, passwordPolicyReference, windowsErrorCodes],
+    components: [killerScripts, groupPolicyReference, windowsEventLookup, m365SkuDecoder, windowsErrorCodes, exchangeNdrLookup],
   },
   {
     name: 'Network',
-    components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
+    components: [portProtocolReference, ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator, cveLookup],
   },
   {
     name: 'Web',
     components: [
+      emailDnsChecker,
       urlEncoder,
       htmlEntities,
       urlParser,
