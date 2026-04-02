@@ -177,7 +177,6 @@ const cheatsheet = [
 
 <template>
   <div class="regex-layout" style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px; display: flex; gap: 16px; align-items: start;">
-
     <!-- Left: Tester -->
     <div style="flex: 1; min-width: 0;">
       <c-card title="Regex" mb-1>
@@ -279,7 +278,7 @@ const cheatsheet = [
     <!-- Right: Cheatsheet -->
     <div class="cheatsheet-panel" style="width: 360px; flex-shrink: 0; position: sticky; top: 16px; max-height: calc(100vh - 80px); overflow-y: auto;">
       <c-card>
-        <div class="text-base font-bold mb-3">
+        <div class="mb-3 text-base font-bold">
           Quick Reference
         </div>
         <div
@@ -287,7 +286,7 @@ const cheatsheet = [
           :key="section.title"
           mb-4
         >
-          <div class="text-xs font-bold op-60 uppercase mb-1">
+          <div class="mb-1 text-xs font-bold uppercase op-60">
             {{ section.title }}
           </div>
           <table style="width: 100%; border-collapse: collapse;">
@@ -307,7 +306,6 @@ const cheatsheet = [
         </div>
       </c-card>
     </div>
-
   </div>
 </template>
 

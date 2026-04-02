@@ -62,16 +62,16 @@ function copyValue(value: string) {
         {{ category }}
       </div>
 
-      <div class="grid grid-cols-1 gap-12px sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
         <c-card
           v-for="{ hex, decimal, name, description, severity } of errors"
           :key="hex"
           class="flex flex-col justify-between"
         >
           <div>
-            <div flex items-start justify-between gap-2 mb-2>
+            <div mb-2 flex items-start justify-between gap-2>
               <span
-                class="font-mono font-bold text-primary"
+                class="text-primary font-bold font-mono"
                 style="font-size: 1.1rem; letter-spacing: 0.03em; line-height: 1;"
               >{{ hex }}</span>
               <div flex items-center gap-1>
@@ -91,11 +91,11 @@ function copyValue(value: string) {
               </div>
             </div>
 
-            <div class="text-xs text-neutral-400 mb-1" style="font-size: 0.7rem;">
+            <div class="mb-1 text-xs text-neutral-400" style="font-size: 0.7rem;">
               Decimal: {{ decimal }}
             </div>
 
-            <div class="text-sm font-semibold mb-1">
+            <div class="mb-1 text-sm font-semibold">
               {{ name }}
             </div>
 

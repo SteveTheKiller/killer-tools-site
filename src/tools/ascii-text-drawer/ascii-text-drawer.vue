@@ -34,7 +34,8 @@ watchEffect(async () => {
   catch (e: any) {
     if (font.value !== 'Standard') {
       font.value = 'Standard';
-    } else {
+    }
+    else {
       errored.value = true;
     }
   }

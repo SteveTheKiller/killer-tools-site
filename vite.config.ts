@@ -1,3 +1,4 @@
+import process from 'node:process';
 import { resolve } from 'node:path';
 import { URL, fileURLToPath } from 'node:url';
 
@@ -21,6 +22,7 @@ const baseUrl = process.env.BASE_URL ?? '/';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    // @ts-expect-error – CJS default interop
     VueI18n({
       runtimeOnly: true,
       jitCompilation: true,
@@ -51,6 +53,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     vueJsx(),
+    // @ts-expect-error – CJS default interop
     markdown(),
     svgLoader(),
     VitePWA({
@@ -90,6 +93,7 @@ export default defineConfig({
         ],
       },
     }),
+    // @ts-expect-error – CJS default interop
     Components({
       dirs: ['src/'],
       extensions: ['vue', 'md'],

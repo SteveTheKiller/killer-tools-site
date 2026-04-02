@@ -272,7 +272,7 @@ const remarks = computed(() => {
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
-    <div flex gap-3 mb-6>
+    <div mb-6 flex gap-3>
       <c-input-text
         v-model:value="domain"
         placeholder="Enter a domain (e.g. thekiller.net)"
@@ -296,7 +296,7 @@ const remarks = computed(() => {
           <c-card>
             <div class="skeleton-line" style="width: 40%; height: 22px; margin-bottom: 16px;" />
             <div class="grid grid-cols-1 gap-8px">
-              <div v-for="i in 5" :key="i" class="p-2 rounded" style="background: rgba(255,255,255,0.05)">
+              <div v-for="i in 5" :key="i" class="rounded p-2" style="background: rgba(255,255,255,0.05)">
                 <div class="skeleton-line" style="width: 30%; height: 10px; margin-bottom: 6px;" />
                 <div class="skeleton-line" :style="`width: ${55 + (i * 7) % 30}%; height: 12px;`" />
               </div>
@@ -305,7 +305,7 @@ const remarks = computed(() => {
           <c-card>
             <div class="skeleton-line" style="width: 30%; height: 18px; margin-bottom: 16px;" />
             <div class="grid grid-cols-1 gap-8px">
-              <div v-for="i in 4" :key="i" class="p-2 rounded" style="background: rgba(255,255,255,0.05)">
+              <div v-for="i in 4" :key="i" class="rounded p-2" style="background: rgba(255,255,255,0.05)">
                 <div class="skeleton-line" style="width: 20%; height: 10px; margin-bottom: 6px;" />
                 <div class="skeleton-line" :style="`width: ${60 + (i * 9) % 25}%; height: 12px;`" />
               </div>
@@ -315,14 +315,14 @@ const remarks = computed(() => {
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
           <c-card>
             <div class="skeleton-line" style="width: 35%; height: 18px; margin-bottom: 16px;" />
-            <div v-for="i in 3" :key="i" class="mb-1 p-2 rounded" style="background: rgba(255,255,255,0.05)">
+            <div v-for="i in 3" :key="i" class="mb-1 rounded p-2" style="background: rgba(255,255,255,0.05)">
               <div class="skeleton-line" :style="`width: ${50 + (i * 11) % 35}%; height: 12px;`" />
             </div>
           </c-card>
           <c-card>
             <div class="skeleton-line" style="width: 25%; height: 18px; margin-bottom: 16px;" />
             <div class="grid grid-cols-1 gap-8px">
-              <div v-for="i in 4" :key="i" class="p-2 rounded" style="background: rgba(255,255,255,0.05)">
+              <div v-for="i in 4" :key="i" class="rounded p-2" style="background: rgba(255,255,255,0.05)">
                 <div class="skeleton-line" style="width: 40%; height: 10px; margin-bottom: 6px;" />
                 <div class="skeleton-line" :style="`width: ${45 + (i * 13) % 40}%; height: 10px;`" />
               </div>
@@ -339,13 +339,11 @@ const remarks = computed(() => {
       </n-alert>
 
       <div class="grid grid-cols-1 gap-16px lg:grid-cols-2">
-
         <!-- Left: Registration + Contacts -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
-
           <!-- Registration Details -->
           <c-card>
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">{{ result.ldhName ?? domain }}</span>
               <n-tag v-if="expiryDays !== null" :type="expiryTagType" size="small">
                 {{ expiryLabel }}
@@ -356,11 +354,11 @@ const remarks = computed(() => {
                 v-for="row in registrationRows"
                 :key="row.label"
                 flex items-center justify-between gap-2
-                class="p-2 rounded"
+                class="rounded p-2"
                 style="background: rgba(255,255,255,0.05)"
               >
                 <div style="min-width: 0;">
-                  <div class="text-xs op-50 mb-0.5">
+                  <div class="mb-0.5 text-xs op-50">
                     {{ row.label }}
                   </div>
                   <div class="text-xs font-mono" style="overflow-wrap: break-word; word-break: normal;">
@@ -376,7 +374,7 @@ const remarks = computed(() => {
 
           <!-- Contacts -->
           <c-card v-if="contacts.length">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Contacts</span>
             </div>
             <div class="grid grid-cols-1 gap-12px">
@@ -384,7 +382,7 @@ const remarks = computed(() => {
                 v-for="contact in contacts"
                 :key="contact.role"
               >
-                <div class="text-xs font-bold font-mono op-60 mb-1 uppercase">
+                <div class="mb-1 text-xs font-bold font-mono uppercase op-60">
                   {{ contact.role }}
                 </div>
                 <div class="grid grid-cols-1 gap-8px">
@@ -397,23 +395,23 @@ const remarks = computed(() => {
                     ].filter(f => f.value && f.value !== 'REDACTED FOR PRIVACY' && !f.value.toLowerCase().includes('redacted'))"
                     :key="field.label"
                     flex items-center justify-between gap-2
-                    class="p-2 rounded"
+                    class="rounded p-2"
                     style="background: rgba(255,255,255,0.05)"
                   >
                     <div style="min-width: 0;">
-                      <div class="text-xs op-50 mb-0.5">
+                      <div class="mb-0.5 text-xs op-50">
                         {{ field.label }}
                       </div>
                       <a
                         v-if="field.label === 'Email'"
                         :href="`mailto:${field.value}`"
-                        class="text-xs font-mono text-primary"
+                        class="text-xs text-primary font-mono"
                         style="overflow-wrap: break-word; word-break: normal; text-decoration: none;"
                       >{{ field.value }}</a>
                       <a
                         v-else-if="field.label === 'Phone'"
                         :href="`tel:${field.value}`"
-                        class="text-xs font-mono text-primary"
+                        class="text-xs text-primary font-mono"
                         style="overflow-wrap: break-word; word-break: normal; text-decoration: none;"
                       >{{ field.value }}</a>
                       <div
@@ -436,17 +434,16 @@ const remarks = computed(() => {
 
         <!-- Right: Nameservers + DNSSEC + Status + Remarks -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
-
           <!-- Nameservers -->
           <c-card v-if="result.nameservers?.length">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Nameservers</span>
             </div>
             <div
               v-for="(ns, i) in result.nameservers"
               :key="i"
               flex items-center justify-between
-              class="font-mono text-xs mb-1 p-2 rounded"
+              class="mb-1 rounded p-2 text-xs font-mono"
               style="background: rgba(255,255,255,0.05)"
             >
               <span>{{ ns.ldhName }}</span>
@@ -458,7 +455,7 @@ const remarks = computed(() => {
 
           <!-- DNSSEC -->
           <c-card v-if="dnssec">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">DNSSEC</span>
               <n-tag :type="dnssec.signed ? 'success' : 'warning'" size="small">
                 {{ dnssec.signed ? 'Signed' : 'Unsigned' }}
@@ -478,17 +475,17 @@ const remarks = computed(() => {
 
           <!-- Status Flags -->
           <c-card v-if="result.status?.length">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Status</span>
             </div>
             <div class="grid grid-cols-1 gap-8px">
               <div
                 v-for="(s, i) in result.status"
                 :key="i"
-                class="p-2 rounded"
+                class="rounded p-2"
                 style="background: rgba(255,255,255,0.05)"
               >
-                <div flex items-center gap-2 mb-1>
+                <div mb-1 flex items-center gap-2>
                   <n-tag :type="statusType(s)" size="small">
                     {{ s }}
                   </n-tag>
@@ -502,17 +499,17 @@ const remarks = computed(() => {
 
           <!-- Remarks -->
           <c-card v-if="remarks.length">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Remarks</span>
             </div>
             <div class="grid grid-cols-1 gap-8px">
               <div
                 v-for="(remark, i) in remarks"
                 :key="i"
-                class="p-2 rounded"
+                class="rounded p-2"
                 style="background: rgba(255,255,255,0.05)"
               >
-                <div v-if="remark.title" class="text-xs font-semibold mb-1">
+                <div v-if="remark.title" class="mb-1 text-xs font-semibold">
                   {{ remark.title }}
                 </div>
                 <div
@@ -526,7 +523,6 @@ const remarks = computed(() => {
               </div>
             </div>
           </c-card>
-
         </div>
       </div>
     </template>

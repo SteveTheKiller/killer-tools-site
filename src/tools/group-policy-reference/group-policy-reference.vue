@@ -77,7 +77,7 @@ function copyValue(value: string) {
           class="flex flex-col justify-between"
         >
           <div>
-            <div flex items-start justify-between gap-2 mb-2>
+            <div mb-2 flex items-start justify-between gap-2>
               <div class="text-xs op-40">
                 {{ category }}
               </div>
@@ -99,12 +99,12 @@ function copyValue(value: string) {
               </div>
             </div>
 
-            <div class="text-sm font-semibold mb-2">
+            <div class="mb-2 text-sm font-semibold">
               {{ name }}
             </div>
 
             <div
-              class="text-xs op-50 mb-2"
+              class="mb-2 text-xs op-50"
               style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ path }}
@@ -112,17 +112,17 @@ function copyValue(value: string) {
 
             <div
               v-if="hasRegistry(registry)"
-              class="font-mono text-primary mb-2"
+              class="mb-2 text-primary font-mono"
               style="font-size: 0.7rem; color: cyan;"
             >
               {{ breakRegistry(registry) }}
             </div>
 
-            <div class="text-xs mb-1">
+            <div class="mb-1 text-xs">
               <span class="op-50">Default: </span>{{ defaultValue }}
             </div>
 
-            <div class="text-xs mb-2" style="color: #1ea54c;">
+            <div class="mb-2 text-xs" style="color: #1ea54c;">
               <span class="op-50" style="color: inherit;">Recommended: </span>{{ recommendedValue }}
             </div>
 

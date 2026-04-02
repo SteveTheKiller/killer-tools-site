@@ -142,7 +142,6 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
     <div class="grid grid-cols-1 gap-16px lg:grid-cols-2" style="align-items: start;">
-
       <!-- Left: Input + Results -->
       <div>
         <c-input-text
@@ -154,7 +153,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
         />
 
         <div v-if="networkInfo">
-          <div flex items-center gap-2 mb-3>
+          <div mb-3 flex items-center gap-2>
             <n-tag :type="isPrivate ? 'success' : 'warning'" size="medium">
               {{ isPrivate ? 'Private' : 'Public' }} IP Range
             </n-tag>
@@ -203,13 +202,12 @@ function switchToBlock({ count = 1 }: { count?: number }) {
             :class="currentBitmask !== null && String(currentBitmask) === row.cidr.replace('/', '') ? '!border-primary' : ''"
             style="padding: 10px 14px;"
           >
-            <span class="font-mono font-bold text-primary" style="font-size: 1.2rem;">{{ row.cidr }}</span>
-            <span class="text-xs op-60 mt-1">{{ row.mask }}</span>
-            <span class="text-sm font-semibold mt-1">{{ row.hosts }} hosts</span>
+            <span class="text-primary font-bold font-mono" style="font-size: 1.2rem;">{{ row.cidr }}</span>
+            <span class="mt-1 text-xs op-60">{{ row.mask }}</span>
+            <span class="mt-1 text-sm font-semibold">{{ row.hosts }} hosts</span>
           </c-card>
         </div>
       </div>
-
     </div>
   </div>
 </template>

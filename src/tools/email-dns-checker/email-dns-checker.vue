@@ -200,7 +200,7 @@ const overallMessage: Record<string, string> = {
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
-    <div flex gap-3 mb-6>
+    <div mb-6 flex gap-3>
       <c-input-text
         v-model:value="domain"
         placeholder="Enter a domain (e.g. thekiller.net)"
@@ -226,14 +226,14 @@ const overallMessage: Record<string, string> = {
     <div class="grid grid-cols-1 gap-16px md:grid-cols-2">
       <!-- MX -->
       <c-card>
-        <div flex items-center justify-between mb-3>
+        <div mb-3 flex items-center justify-between>
           <span class="text-lg font-bold">MX Records</span>
           <n-tag v-if="checked || loading" :type="statusColor[results.mx.status]" size="small">
             <n-icon :component="statusIcon[results.mx.status]" mr-1 />
             {{ statusLabel[results.mx.status] }}
           </n-tag>
         </div>
-        <div class="text-xs op-60 mb-3">
+        <div class="mb-3 text-xs op-60">
           Mail exchange servers for this domain
         </div>
         <div v-if="results.mx.value.length > 0">
@@ -241,7 +241,7 @@ const overallMessage: Record<string, string> = {
             v-for="(record, i) in results.mx.value"
             :key="i"
             flex items-center justify-between
-            class="font-mono text-xs mb-1 p-2 rounded"
+            class="mb-1 rounded p-2 text-xs font-mono"
             style="background: rgba(255,255,255,0.05)"
           >
             <span>{{ record }}</span>
@@ -257,20 +257,20 @@ const overallMessage: Record<string, string> = {
 
       <!-- SPF -->
       <c-card>
-        <div flex items-center justify-between mb-3>
+        <div mb-3 flex items-center justify-between>
           <span class="text-lg font-bold">SPF Record</span>
           <n-tag v-if="checked || loading" :type="statusColor[results.spf.status]" size="small">
             <n-icon :component="statusIcon[results.spf.status]" mr-1 />
             {{ statusLabel[results.spf.status] }}
           </n-tag>
         </div>
-        <div class="text-xs op-60 mb-3">
+        <div class="mb-3 text-xs op-60">
           Defines which servers are allowed to send email for this domain
         </div>
         <div
           v-if="results.spf.raw && results.spf.raw !== 'DNS lookup failed.' && results.spf.raw !== 'No SPF record found.'"
           flex items-start justify-between gap-2
-          class="font-mono text-xs mb-2 p-2 rounded"
+          class="mb-2 rounded p-2 text-xs font-mono"
           style="background: rgba(255,255,255,0.05); overflow-wrap: break-word; word-break: normal;"
         >
           <span>{{ results.spf.raw }}</span>
@@ -278,31 +278,31 @@ const overallMessage: Record<string, string> = {
             <n-icon size="12" :component="copiedValue === results.spf.raw ? Check : Copy" />
           </c-button>
         </div>
-        <div v-else-if="results.spf.raw" class="text-xs op-70 mb-2">
+        <div v-else-if="results.spf.raw" class="mb-2 text-xs op-70">
           {{ results.spf.raw }}
         </div>
-        <div v-for="(issue, i) in results.spf.value" :key="i" class="text-xs text-warning mb-1">
+        <div v-for="(issue, i) in results.spf.value" :key="i" class="text-warning mb-1 text-xs">
           {{ issue }}
         </div>
       </c-card>
 
       <!-- DKIM -->
       <c-card>
-        <div flex items-center justify-between mb-3>
+        <div mb-3 flex items-center justify-between>
           <span class="text-lg font-bold">DKIM Records</span>
           <n-tag v-if="checked || loading" :type="statusColor[results.dkim.status]" size="small">
             <n-icon :component="statusIcon[results.dkim.status]" mr-1 />
             {{ statusLabel[results.dkim.status] }}
           </n-tag>
         </div>
-        <div class="text-xs op-60 mb-3">
+        <div class="mb-3 text-xs op-60">
           Checks common selectors: selector1, selector2, google, default, and more
         </div>
         <div v-if="results.dkim.value.length > 0">
           <div
             v-for="(record, i) in results.dkim.value"
             :key="i"
-            class="font-mono text-xs mb-1 p-2 rounded"
+            class="mb-1 rounded p-2 text-xs font-mono"
             style="background: rgba(255,255,255,0.05); overflow-wrap: break-word; word-break: normal;"
           >
             {{ record }}
@@ -315,20 +315,20 @@ const overallMessage: Record<string, string> = {
 
       <!-- DMARC -->
       <c-card>
-        <div flex items-center justify-between mb-3>
+        <div mb-3 flex items-center justify-between>
           <span class="text-lg font-bold">DMARC Record</span>
           <n-tag v-if="checked || loading" :type="statusColor[results.dmarc.status]" size="small">
             <n-icon :component="statusIcon[results.dmarc.status]" mr-1 />
             {{ statusLabel[results.dmarc.status] }}
           </n-tag>
         </div>
-        <div class="text-xs op-60 mb-3">
+        <div class="mb-3 text-xs op-60">
           Domain-based Message Authentication, Reporting, and Conformance policy
         </div>
         <div
           v-if="results.dmarc.raw && results.dmarc.raw !== 'DNS lookup failed.' && results.dmarc.raw !== 'No DMARC record found. Domain is unprotected against spoofing.'"
           flex items-start justify-between gap-2
-          class="font-mono text-xs mb-2 p-2 rounded"
+          class="mb-2 rounded p-2 text-xs font-mono"
           style="background: rgba(255,255,255,0.05); overflow-wrap: break-word; word-break: normal;"
         >
           <span>{{ results.dmarc.raw }}</span>
@@ -336,10 +336,10 @@ const overallMessage: Record<string, string> = {
             <n-icon size="12" :component="copiedValue === results.dmarc.raw ? Check : Copy" />
           </c-button>
         </div>
-        <div v-else-if="results.dmarc.raw" class="text-xs op-70 mb-2">
+        <div v-else-if="results.dmarc.raw" class="mb-2 text-xs op-70">
           {{ results.dmarc.raw }}
         </div>
-        <div v-for="(issue, i) in results.dmarc.value" :key="i" class="text-xs mb-1" style="color: var(--warning-color, #f0a020)">
+        <div v-for="(issue, i) in results.dmarc.value" :key="i" class="mb-1 text-xs" style="color: var(--warning-color, #f0a020)">
           {{ issue }}
         </div>
       </c-card>

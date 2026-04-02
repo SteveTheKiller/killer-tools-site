@@ -1,3 +1,4 @@
+import process from 'node:process';
 import { $, argv } from 'zx';
 import { consola } from 'consola';
 import { rawCommitsToMarkdown } from './shared/commits.mjs';
@@ -20,7 +21,7 @@ const markdown = rawCommitsToMarkdown({ rawCommits });
 consola.info(`Changelog: \n\n${markdown}\n\n`);
 
 if (isDryRun) {
-  consola.info(`[dry-run] Not creating version nor tag`);
+  consola.info('[dry-run] Not creating version nor tag');
   consola.info('Aborting');
   process.exit(0);
 }
@@ -50,7 +51,8 @@ try {
   consola.info('Creating version and tag');
   await $`npm version ${version} -m "chore(version): release ${version}"`;
   consola.info('Npm version released with tag');
-} catch (error) {
+}
+catch (error) {
   consola.error(error);
   consola.info('Aborting');
   process.exit(1);

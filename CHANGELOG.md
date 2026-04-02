@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. See [standa
 ## Version 2024.10.22-7ca5933
 
 ### Features
+
 - **new tool**: Regex Tester (and Cheatsheet) (#1030) (f5c4ab1)
 - **new tool**: Markdown to HTML (#916) (87984e2)
 - **new-tool**: add email normalizer (#1243) (318fb6e)
@@ -13,24 +14,29 @@ All notable changes to this project will be documented in this file. See [standa
 - **base64**: Base64 enhancements (#905) (30144aa)
 
 ### Bug fixes
+
 - **favorites**: store favorites regardless of languages (#1202) (7ca5933)
 - **emoji-picker**: debounced search input (#1181) (76a19d2)
 - **format-transformer**: set overflow for output area width (#787) (b430bae)
 - **jwt-parser**: prevent UI overflow on small screen (#1095) (dd4b7e6)
 
 ### Refactoring
+
 - **regex-tester**: better description (7251700)
 
 ### Chores
+
 - **sponsors**: fern sponsor banners (#1314) (f962c41)
 - **readme**: updated logos (#1294) (6709498)
 
 ### Documentation
+
 - **author**: updated author links (#1316) (1c35ac3)
 
 ## Version 2024.05.13-a0bc346
 
 ### Features
+
 - **i18n**: added German translation (#1038) (2c2fb21)
 - **new tool**: Outlook Safelink Decoder (#911) (d3b32cc)
 - **new tool**: ascii art generator (#886) (fe349ad)
@@ -46,12 +52,14 @@ All notable changes to this project will be documented in this file. See [standa
 - **new-tool**: added unicode conversion utilities (#858) (c46207f)
 
 ### Bug fixes
+
 - **language**: English language cleanup (#1036) (221ddfa)
 - **url-encoder, validation**: typo in validation of url-encoder.vue #1024 (cb5b462)
 - **integer base converter**: support bigint (#872) (9eac9cb)
 - **bcrypt tool**: allow salt rounds up to 100 (#987) (23f82d9)
 
 ### Refactoring
+
 - **lint**: removed extra semi (33e5294)
 - **auto-imports**: regen auto imports (1242842)
 - **home**: lightened tool cards (#882) (a07806c)
@@ -59,6 +67,7 @@ All notable changes to this project will be documented in this file. See [standa
 - **i18n**: added locales per tool (#861) (95698cb)
 
 ### Chores
+
 - **issues**: prevent empty issues (#1078) (a0bc346)
 - **issues**: removed old issue templates (#1077) (5a7b0f9)
 - **node**: upgraded node version in CI workflows (b59942a)
@@ -67,6 +76,7 @@ All notable changes to this project will be documented in this file. See [standa
 - **issues**: improved bug issue template (#1046) (a799234)
 
 ### Documentation
+
 - **changelog**: update changelog for 2024.05.10-33e5294 (9dfd347)
 
 ## Version 2023.12.21-5ed3693
@@ -421,4 +431,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## Version v2023.4.13-dce9ff9
 
-_Diff not available_
+Diff not available

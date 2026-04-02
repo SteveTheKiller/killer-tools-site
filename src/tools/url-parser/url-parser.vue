@@ -73,4 +73,3 @@ const properties: { title: string; key: keyof URL }[] = [
   margin: 2px 0;
 }
 </style>
-

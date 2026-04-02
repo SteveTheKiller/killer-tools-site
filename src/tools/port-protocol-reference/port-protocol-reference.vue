@@ -48,7 +48,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
-    <div flex gap-3 mb-4 flex-wrap>
+    <div mb-4 flex flex-wrap gap-3>
       <c-input-text
         v-model:value="search"
         placeholder="Search by port, service, protocol, or description..."
@@ -73,11 +73,11 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
       </div>
     </div>
 
-    <div class="text-xs op-40 mb-6">
+    <div class="mb-6 text-xs op-40">
       Showing {{ totalVisible }} ports
     </div>
 
-    <div class="grid grid-cols-1 gap-12px sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
       <template v-for="{ ports, category } of filtered" :key="category">
         <c-card
           v-for="p of ports"
@@ -86,9 +86,9 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
           :class="p.dangerous ? '!border-warning' : ''"
         >
           <div>
-            <div flex items-start justify-between gap-2 mb-2>
+            <div mb-2 flex items-start justify-between gap-2>
               <span
-                class="font-mono font-bold text-primary"
+                class="text-primary font-bold font-mono"
                 style="font-size: 1.4rem; letter-spacing: 0.03em; line-height: 1;"
               >{{ p.port }}</span>
               <div flex items-center gap-1>
@@ -111,22 +111,22 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
               </div>
             </div>
 
-            <div class="text-xs op-40 mb-1">
+            <div class="mb-1 text-xs op-40">
               {{ category }}
             </div>
 
-            <div class="text-sm font-semibold mb-1">
+            <div class="mb-1 text-sm font-semibold">
               {{ p.service }}
             </div>
 
             <div
-              class="text-xs text-neutral-500 dark:text-neutral-400 mb-2"
+              class="mb-2 text-xs text-neutral-500 dark:text-neutral-400"
               style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ p.description }}
             </div>
 
-            <div v-if="p.notes" class="text-xs mt-1 p-2 rounded" style="background: rgba(240, 160, 32, 0.1); color: #f0a020;">
+            <div v-if="p.notes" class="mt-1 rounded p-2 text-xs" style="background: rgba(240, 160, 32, 0.1); color: #f0a020;">
               {{ p.notes }}
             </div>
           </div>

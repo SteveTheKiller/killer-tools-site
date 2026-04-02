@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { type Ref } from 'vue';
 import { useAppTheme } from '../theme/themes';
 import { useTheme } from './c-input-text.theme';
 import { generateRandomId } from '@/utils/random';

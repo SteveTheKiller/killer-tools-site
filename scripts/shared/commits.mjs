@@ -17,8 +17,9 @@ const commitScopesToHumanReadable = {
 
 const commitTypesOrder = ['feat', 'fix', 'perf', 'refactor', 'test', 'build', 'ci', 'chore', 'other'];
 
-const getCommitTypeSortIndex = (type) =>
-  commitTypesOrder.includes(type) ? commitTypesOrder.indexOf(type) : commitTypesOrder.length;
+function getCommitTypeSortIndex(type) {
+  return commitTypesOrder.includes(type) ? commitTypesOrder.indexOf(type) : commitTypesOrder.length;
+}
 
 function parseCommitLine(commit) {
   const [sha, ...splittedRawMessage] = commit.trim().split(' ');

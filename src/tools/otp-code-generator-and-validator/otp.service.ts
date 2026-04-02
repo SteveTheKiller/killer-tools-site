@@ -138,4 +138,3 @@ function buildKeyUri({
 function generateSecret() {
   return createToken({ length: 16, alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567' });
 }
-

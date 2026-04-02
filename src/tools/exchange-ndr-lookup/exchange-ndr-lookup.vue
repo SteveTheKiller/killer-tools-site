@@ -70,9 +70,9 @@ function copyValue(value: string) {
           class="flex flex-col justify-between"
         >
           <div>
-            <div flex items-start justify-between gap-2 mb-2>
+            <div mb-2 flex items-start justify-between gap-2>
               <span
-                class="font-mono font-bold text-primary"
+                class="text-primary font-bold font-mono"
                 style="font-size: 1.3rem; letter-spacing: 0.03em; line-height: 1;"
               >{{ code }}</span>
               <div flex items-center gap-1>
@@ -92,15 +92,15 @@ function copyValue(value: string) {
               </div>
             </div>
 
-            <div class="text-sm font-semibold mb-1">
+            <div class="mb-1 text-sm font-semibold">
               {{ name }}
             </div>
 
-            <div class="text-xs op-70 mb-2">
+            <div class="mb-2 text-xs op-70">
               {{ description }}
             </div>
 
-            <div class="text-xs mb-1">
+            <div class="mb-1 text-xs">
               <span class="font-semibold op-60">Cause: </span>{{ cause }}
             </div>
 

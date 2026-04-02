@@ -54,19 +54,19 @@ function copyId(id: number) {
     <div v-for="{ events, category, log } of filtered" :key="category" mb-8>
       <div mb-4 text-xl>
         {{ category }}
-        <span v-if="log" op-40 text-sm ml-2>{{ log }} Log</span>
+        <span v-if="log" ml-2 text-sm op-40>{{ log }} Log</span>
       </div>
 
-      <div class="grid grid-cols-1 gap-12px sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
         <c-card
           v-for="{ id, name, description, severity } of events"
           :key="id"
           class="flex flex-col justify-between"
         >
           <div>
-            <div flex items-start justify-between gap-2 mb-2>
+            <div mb-2 flex items-start justify-between gap-2>
               <span
-                class="font-mono font-bold text-primary"
+                class="text-primary font-bold font-mono"
                 style="font-size: 1.4rem; letter-spacing: 0.05em; line-height: 1;"
               >{{ id }}</span>
               <div flex items-center gap-1>
@@ -85,7 +85,7 @@ function copyId(id: number) {
                 </c-tooltip>
               </div>
             </div>
-            <div class="text-sm font-semibold mb-1">
+            <div class="mb-1 text-sm font-semibold">
               {{ name }}
             </div>
             <div
