@@ -8,42 +8,38 @@ home:
   toggleMenu: 'Toggle menu'
   home: Home
   uiLib: 'UI Lib'
-  support: 'Support IT-Tools development'
+  support: 'Support killer-tools development'
   buyMeACoffee: 'Buy me a coffee'
   follow:
-    title: 'You like it-tools?'
-    p1: 'Give us a star on'
-    githubRepository: 'IT-Tools GitHub repository'
-    p2: 'or follow us on'
-    twitterXAccount: 'IT-Tools X account'
+    title: 'You like killer-tools?'
+    p1: 'Give me a star on'
+    githubRepository: 'StevetheKiller GitHub repository'
     thankYou: 'Thank you!'
   nav:
     github: 'GitHub repository'
-    githubRepository: 'IT-Tools GitHub repository'
-    twitterX: 'X account'
-    twitterXAccount: 'IT Tools X account'
-    about: 'About  IT-Tools'
+    githubRepository: 'killer-tools GitHub repository'
+    about: 'About  killer-tools'
     aboutLabel: 'About'
     darkMode: 'Dark mode'
     lightMode: 'Light mode'
     mode: 'Toggle dark/light mode'
 about:
   content: >
-    # About IT-Tools
+    # About killer-tools
 
-    This wonderful website, made with ❤ by [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) , aggregates useful tools for developer and people working in IT. If you find it useful, please feel free to share it to people you think may find it useful too and don't forget to bookmark it in your shortcut bar!
+    This wonderful website, made with ❤ by [Steve the Killer](https://thekiller.net) , aggregates useful tools for developer and people working in IT. If you find it useful, please feel free to share it to people you think may find it useful too and don't forget to bookmark it in your shortcut bar!
 
-    IT Tools is open-source (under the GPL-3.0 license) and free, and will always be, but it costs me money to host and renew the domain name. If you want to support my work, and encourage me to add more tools, please consider supporting by [sponsoring me](https://www.buymeacoffee.com/cthmsst).
+    killer-tools is open-source (under the GPL-3.0 license) and free, and will always be, but it costs me money to host and renew the domain name. If you want to support my work, and encourage me to add more tools, please consider supporting by [sponsoring me](https://www.buymeacoffee.com/StevetheKiller).
 
     ## Technologies
 
-    IT Tools is made in Vue.js (Vue 3) with the the Naive UI component library and is hosted and continuously deployed by Vercel. Third-party open-source libraries are used in some tools, you may find the complete list in the [package.json](https://github.com/CorentinTh/it-tools/blob/main/package.json) file of the repository.
+    killer-tools is made in Vue.js (Vue 3) with the the Naive UI component library and is hosted and continuously deployed by Vercel. Third-party open-source libraries are used in some tools, you may find the complete list in the [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) file of the repository.
 
     ## Found a bug? A tool is missing?
 
-    If you need a tool that is currently not present here, and you think can be useful, you are welcome to submit a feature request in the [issues section](https://github.com/CorentinTh/it-tools/issues/new/choose) in the GitHub repository.
+    If you need a tool that is currently not present here, and you think can be useful, you are welcome to submit a feature request in the [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) in the GitHub repository.
 
-    And if you found a bug, or something doesn't work as expected, please file a bug report in the [issues section](https://github.com/CorentinTh/it-tools/issues/new/choose) in the GitHub repository.
+    And if you found a bug, or something doesn't work as expected, please file a bug report in the [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) in the GitHub repository.
 
 404:
   notFound: '404 Not Found'
@@ -70,6 +66,7 @@ tools:
     measurement: Measurement
     text: Text
     data: Data
+    windows: Windows
 
   password-strength-analyser:
     title: Password strength analyser
@@ -189,17 +186,9 @@ tools:
     title: Base64 string encoder/decoder
     description: Simply encode and decode strings into their base64 representation.
 
-  toml-to-yaml:
-    title: TOML to YAML
-    description: Parse and convert TOML to YAML.
-
   math-evaluator:
     title: Math evaluator
     description: A calculator for evaluating mathematical expressions. You can use functions like sqrt, cos, sin, abs, etc.
-
-  json-to-yaml-converter:
-    title: JSON to YAML converter
-    description: Simply convert JSON to YAML with this online live converter.
 
   url-parser:
     title: URL parser
@@ -241,10 +230,6 @@ tools:
     title: MIME types
     description: Convert MIME types to file extensions and vice-versa.
 
-  toml-to-json:
-    title: TOML to JSON
-    description: Parse and convert TOML to JSON.
-
   lorem-ipsum-generator:
     title: Lorem ipsum generator
     description: Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content
@@ -276,14 +261,6 @@ tools:
   html-wysiwyg-editor:
     title: HTML WYSIWYG editor
     description: Online, feature-rich WYSIWYG HTML editor which generates the source code of the content immediately.
-
-  yaml-to-toml:
-    title: YAML to TOML
-    description: Parse and convert YAML to TOML.
-
-  mac-address-generator:
-    title: MAC address generator
-    description: Enter the quantity and prefix. MAC addresses will be generated in your chosen case (uppercase or lowercase)
 
   json-diff:
     title: JSON diff
@@ -345,10 +322,6 @@ tools:
     title: Integer base converter
     description: Convert a number between different bases (decimal, hexadecimal, binary, octal, base64, ...)
 
-  yaml-to-json-converter:
-    title: YAML to JSON converter
-    description: Simply convert YAML to JSON with this online live converter.
-
   uuid-generator:
     title: UUIDs generator
     description: A Universally Unique Identifier (UUID) is a 128-bit number used to identify information in computer systems. The number of possible UUIDs is 16^32, which is 2^128 or about 3.4x10^38 (which is a lot!).
@@ -392,3 +365,83 @@ tools:
   text-to-binary:
     title: Text to ASCII binary
     description: Convert text to its ASCII binary representation and vice-versa.
+
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell scripts for Windows administration and MSP field work.
+
+  group-policy-reference:
+    title: Group Policy Reference
+    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+
+  windows-event-lookup:
+    title: Windows Event Lookup
+    description: Look up common Windows Event IDs with descriptions and severity.
+
+  m365-sku-decoder:
+    title: M365 License SKU Decoder
+    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+
+  windows-error-codes:
+    title: Windows Error Code Lookup
+    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+
+  exchange-ndr-lookup:
+    title: Exchange NDR Lookup
+    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+
+  safelink-decoder:
+    title: Outlook Safelink decoder
+    description: Decode Outlook SafeLink links.
+
+  port-protocol-reference:
+    title: Port & Protocol Reference
+    description: Common network ports and protocols with security notes and dangerous port flags.
+
+  cve-lookup:
+    title: CVE Lookup
+    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+
+  email-dns-checker:
+    title: Email DNS Checker
+    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+
+  email-header-parser:
+    title: Email Header Parser
+    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+
+  whois-checker:
+    title: WHOIS Lookup
+    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+
+  ascii-text-drawer:
+    title: ASCII Art Text Generator
+    description: Create ASCII art text with many fonts and styles.
+
+  email-normalizer:
+    title: Email normalizer
+    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
+
+  regex-tester:
+    title: Regex Tester
+    description: Test your regular expressions with sample text.
+
+  yaml-converter:
+    title: YAML converter
+    description: Convert YAML to JSON or TOML.
+
+  json-converter:
+    title: JSON converter
+    description: Convert JSON to YAML or TOML.
+
+  toml-converter:
+    title: TOML converter
+    description: Convert TOML to JSON or YAML.
+
+  xml-json-converter:
+    title: XML ↔ JSON converter
+    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+
+  markdown-to-html:
+    title: Markdown to HTML
+    description: Convert Markdown to Html and allow to print (as PDF).

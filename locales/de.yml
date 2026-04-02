@@ -92,6 +92,7 @@ tools:
     measurement: Messung
     text: Text
     data: Daten
+    windows: Windows
   password-strength-analyser:
     title: Passwortstärken-Analysator
     description: >-
@@ -226,17 +227,11 @@ tools:
   base64-string-converter:
     title: Base64-String-Encoder/Decoder
     description: Codiere und decodiere Strings einfach in ihre Base64-Repräsentation.
-  toml-to-yaml:
-    title: TOML zu YAML
-    description: Parse und konvertiere TOML zu YAML.
   math-evaluator:
     title: Mathematischer Auswerter
     description: >-
       Ein Taschenrechner zum Auswerten mathematischer Ausdrücke. Du kannst
       Funktionen wie sqrt, cos, sin, abs usw. verwenden.
-  json-to-yaml-converter:
-    title: JSON zu YAML
-    description: Konvertiere JSON einfach in YAML mit diesem Live-Online-Konverter.
   url-parser:
     title: URL-Parser
     description: >-
@@ -282,9 +277,6 @@ tools:
   mime-types:
     title: MIME-Typen
     description: Konvertiere MIME-Typen in Erweiterungen und umgekehrt.
-  toml-to-json:
-    title: TOML zu JSON
-    description: Parse und konvertiere TOML zu JSON.
   lorem-ipsum-generator:
     title: Lorem Ipsum Generator
     description: >-
@@ -322,14 +314,6 @@ tools:
     description: >-
       Online-HTML-Editor mit funktionsreichem WYSIWYG-Editor, erhalte sofort den
       Quellcode des Inhalts.
-  yaml-to-toml:
-    title: YAML zu TOML
-    description: Parse und konvertiere YAML zu TOML.
-  mac-address-generator:
-    title: MAC-Adressen-Generator
-    description: >-
-      Gebe die Menge und das Präfix ein. MAC-Adressen werden in deiner gewählten
-      Schreibweise (Groß- oder Kleinbuchstaben) generiert.
   json-diff:
     title: JSON-Unterschied
     description: Vergleiche zwei JSON-Objekte und erhalte die Unterschiede zwischen ihnen.
@@ -400,9 +384,6 @@ tools:
     description: >-
       Konvertiere Zahlen zwischen verschiedenen Basen (Dezimal, Hexadezimal,
       Binär, Oktal, Base64, ...).
-  yaml-to-json-converter:
-    title: YAML zu JSON
-    description: Konvertiere YAML einfach in JSON mit diesem Live-Online-Konverter.
   uuid-generator:
     title: UUID-Generator
     description: >-
@@ -454,3 +435,83 @@ tools:
   text-to-binary:
     title: Text zu ASCII-Binär
     description: Konvertiere Text in seine ASCII-Binärrepräsentation und umgekehrt.
+
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell scripts for Windows administration and MSP field work.
+
+  group-policy-reference:
+    title: Group Policy Reference
+    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+
+  windows-event-lookup:
+    title: Windows Event Lookup
+    description: Look up common Windows Event IDs with descriptions and severity.
+
+  m365-sku-decoder:
+    title: M365 License SKU Decoder
+    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+
+  windows-error-codes:
+    title: Windows Error Code Lookup
+    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+
+  exchange-ndr-lookup:
+    title: Exchange NDR Lookup
+    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+
+  safelink-decoder:
+    title: Outlook Safelink decoder
+    description: Decode Outlook SafeLink links.
+
+  port-protocol-reference:
+    title: Port & Protocol Reference
+    description: Common network ports and protocols with security notes and dangerous port flags.
+
+  cve-lookup:
+    title: CVE Lookup
+    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+
+  email-dns-checker:
+    title: Email DNS Checker
+    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+
+  email-header-parser:
+    title: Email Header Parser
+    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+
+  whois-checker:
+    title: WHOIS Lookup
+    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+
+  ascii-text-drawer:
+    title: ASCII Art Text Generator
+    description: Create ASCII art text with many fonts and styles.
+
+  email-normalizer:
+    title: Email normalizer
+    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
+
+  regex-tester:
+    title: Regex Tester
+    description: Test your regular expressions with sample text.
+
+  yaml-converter:
+    title: YAML converter
+    description: Convert YAML to JSON or TOML.
+
+  json-converter:
+    title: JSON converter
+    description: Convert JSON to YAML or TOML.
+
+  toml-converter:
+    title: TOML converter
+    description: Convert TOML to JSON or YAML.
+
+  xml-json-converter:
+    title: XML ↔ JSON converter
+    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+
+  markdown-to-html:
+    title: Markdown to HTML
+    description: Convert Markdown to Html and allow to print (as PDF).

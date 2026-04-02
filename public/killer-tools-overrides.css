@@ -123,3 +123,70 @@ body {
     flex-wrap: wrap;
   }
 }
+
+/* --- Global Scrollbar Overrides --- */
+
+/* 1. Target the root and all elements */
+* {
+  /* Firefox support */
+  scrollbar-width: thin;
+  scrollbar-color: #1ea54c55 transparent;
+}
+
+/* 2. Webkit (Chrome, Edge, Safari, Brave) */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px; /* For horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1ea54c55;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1ea54c;
+}
+
+/* 3. Force-apply to Naive UI Textareas & Inputs */
+/* Sometimes component libraries stop propagation of styles, this forces it */
+.n-input .n-input__textarea-el::-webkit-scrollbar,
+.n-input .n-input__input-el::-webkit-scrollbar,
+.n-scrollbar-rail::-webkit-scrollbar {
+  width: 4px;
+}
+
+.n-input .n-input__textarea-el::-webkit-scrollbar-thumb,
+.n-scrollbar-rail::-webkit-scrollbar-thumb {
+  background: #1ea54c55;
+  border-radius: 4px;
+}
+
+.custom-sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #1ea54c55 transparent;
+  /* Ensure it has its own scroll context */
+  display: block; 
+  position: relative;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #1ea54c55;
+  border-radius: 4px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #1ea54c;
+}

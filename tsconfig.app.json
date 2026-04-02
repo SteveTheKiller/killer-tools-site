@@ -15,6 +15,7 @@
     "types": ["naive-ui/volar", "@intlify/unplugin-vue-i18n/messages", "unplugin-icons/types/vue"],
     "esModuleInterop": true,
     "jsx": "preserve",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0"
   }
 }

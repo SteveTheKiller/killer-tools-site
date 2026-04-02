@@ -70,6 +70,7 @@ tools:
     measurement: Đo lường
     text: Văn bản
     data: Dữ liệu
+    windows: Windows
 
   password-strength-analyser:
     title: Bộ phân tích độ mạnh mật khẩu
@@ -183,17 +184,9 @@ tools:
   base64-string-converter:
     title: Trình mã hóa/giải mã chuỗi Base64
     description: Đơn giản mã hóa và giải mã chuỗi thành mã Base64.
-  toml-to-yaml:
-    title: Chuyển đổi TOML thành YAML
-    description: Phân tích và chuyển đổi TOML thành YAML.
-
   math-evaluator:
     title: Trình đánh giá toán học
     description: Một máy tính để tính toán biểu thức toán học. Bạn có thể sử dụng các hàm như sqrt, cos, sin, abs, v.v.
-
-  json-to-yaml-converter:
-    title: Chuyển đổi JSON sang YAML
-    description: Chuyển đổi đơn giản JSON sang YAML với công cụ chuyển đổi trực tuyến này.
 
   url-parser:
     title: Trình phân tích URL
@@ -234,10 +227,6 @@ tools:
     title: Loại Mime
     description: Chuyển đổi loại mime thành phần mở rộng và ngược lại.
 
-  toml-to-json:
-    title: Chuyển đổi TOML thành JSON
-    description: Phân tích và chuyển đổi TOML thành JSON.
-
   lorem-ipsum-generator:
     title: Máy tạo văn bản Lorem ipsum
     description: Lorem ipsum là một đoạn văn bản giả được sử dụng phổ biến để thể hiện hình thức của một tài liệu hoặc một kiểu chữ mà không cần dựa vào nội dung có ý nghĩa
@@ -268,14 +257,6 @@ tools:
   html-wysiwyg-editor:
     title: Trình soạn thảo HTML WYSIWYG
     description: Trình soạn thảo HTML trực tuyến với trình soạn thảo WYSIWYG đa chức năng, lấy mã nguồn của nội dung ngay lập tức.
-
-  yaml-to-toml:
-    title: YAML sang TOML
-    description: Phân tích và chuyển đổi YAML sang TOML.
-
-  mac-address-generator:
-    title: Trình tạo địa chỉ MAC
-    description: Nhập số lượng và tiền tố. Địa chỉ MAC sẽ được tạo ra theo kiểu chữ hoa hoặc chữ thường theo lựa chọn của bạn
 
   json-diff:
     title: So sánh JSON
@@ -335,10 +316,6 @@ tools:
     title: Chuyển đổi cơ số số nguyên
     description: Chuyển đổi số giữa các cơ số khác nhau (thập phân, thập lục phân, nhị phân, bát phân, base64, ...)
 
-  yaml-to-json-converter:
-    title: Trình chuyển đổi YAML sang JSON
-    description: Chuyển đổi YAML sang JSON một cách đơn giản với công cụ chuyển đổi trực tuyến này.
-
   uuid-generator:
     title: Trình tạo UUID
     description: Một UUID (Universally Unique Identifier) là một số 128 bit được sử dụng để xác định thông tin trong hệ thống máy tính. Số lượng UUID có thể có là 16^32, tương đương với 2^128 hoặc khoảng 3.4x10^38 (rất lớn!).
@@ -381,3 +358,83 @@ tools:
   text-to-binary:
     title: Chuyển đổi văn bản thành nhị phân ASCII
     description: Chuyển đổi văn bản thành biểu diễn nhị phân ASCII của nó và ngược lại.
+
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell scripts for Windows administration and MSP field work.
+
+  group-policy-reference:
+    title: Group Policy Reference
+    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+
+  windows-event-lookup:
+    title: Windows Event Lookup
+    description: Look up common Windows Event IDs with descriptions and severity.
+
+  m365-sku-decoder:
+    title: M365 License SKU Decoder
+    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+
+  windows-error-codes:
+    title: Windows Error Code Lookup
+    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+
+  exchange-ndr-lookup:
+    title: Exchange NDR Lookup
+    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+
+  safelink-decoder:
+    title: Outlook Safelink decoder
+    description: Decode Outlook SafeLink links.
+
+  port-protocol-reference:
+    title: Port & Protocol Reference
+    description: Common network ports and protocols with security notes and dangerous port flags.
+
+  cve-lookup:
+    title: CVE Lookup
+    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+
+  email-dns-checker:
+    title: Email DNS Checker
+    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+
+  email-header-parser:
+    title: Email Header Parser
+    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+
+  whois-checker:
+    title: WHOIS Lookup
+    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+
+  ascii-text-drawer:
+    title: ASCII Art Text Generator
+    description: Create ASCII art text with many fonts and styles.
+
+  email-normalizer:
+    title: Email normalizer
+    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
+
+  regex-tester:
+    title: Regex Tester
+    description: Test your regular expressions with sample text.
+
+  yaml-converter:
+    title: YAML converter
+    description: Convert YAML to JSON or TOML.
+
+  json-converter:
+    title: JSON converter
+    description: Convert JSON to YAML or TOML.
+
+  toml-converter:
+    title: TOML converter
+    description: Convert TOML to JSON or YAML.
+
+  xml-json-converter:
+    title: XML ↔ JSON converter
+    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+
+  markdown-to-html:
+    title: Markdown to HTML
+    description: Convert Markdown to Html and allow to print (as PDF).

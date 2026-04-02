@@ -70,6 +70,7 @@ tools:
     measurement: Måling
     text: Tekst
     data: Data
+    windows: Windows
 
   password-strength-analyser:
     title: Analyseverktøy for passordstyrke
@@ -189,17 +190,9 @@ tools:
     title: Base64 string kode/dekoder
     description: Enkelt kode eller dekode en tekststreng til base64 representasjonen av strengen.
 
-  toml-to-yaml:
-    title: TOML til YAML
-    description: Parser og konverter TOML til YAML.
-
   math-evaluator:
     title: Matematikkevaluator
     description: En Kalkulator for å evaluere matematiske uttrykk. Du kan bruke funksjoner som sqrt, cos, sin, abs, etc.
-
-  json-to-yaml-converter:
-    title: JSON til YAML konverterer
-    description: Enkelt konverter JSON til YAML med dette verktøyet.
 
   url-parser:
     title: URL analyse
@@ -241,10 +234,6 @@ tools:
     title: MIME typer
     description: Konverter MIME typer til fil utvidelser og visa-versa.
 
-  toml-to-json:
-    title: TOML til JSON
-    description: Parser og konverter TOML til JSON.
-
   lorem-ipsum-generator:
     title: Lorem ipsum generator
     description: Lorem ipsum er brukt som plassholder tekst, vanligvis brukt til å demonstrere den visuelle formen av et dokument eller font-type uten å måtte ha meningsfult innhold.
@@ -276,14 +265,6 @@ tools:
   html-wysiwyg-editor:
     title: HTML WYSIWYG editor
     description: Online, funksjonsrik WYSIWYG HTML editor som genererer kildekoden for innholdet øyeblikkelig.
-
-  yaml-to-toml:
-    title: YAML til TOML
-    description: Parser og konverter YAML til TOML.
-
-  mac-address-generator:
-    title: MAC adresse generator
-    description: Sett inn antall og prefix. MAC addressene blir generert i ønsket format
 
   json-diff:
     title: JSON diff
@@ -345,10 +326,6 @@ tools:
     title: Heltalls konverter
     description: Konverter et heltall mellom forskjellige baser (desimal, hexadesimal, binær, oktal, base64, etc.)
 
-  yaml-to-json-converter:
-    title: YAML til JSON konverter
-    description: Konverterl YAML til JSON.
-
   uuid-generator:
     title: UUIDs generator
     description: En universell Unik Identifikator (UUID) er et 128-bit nummer, brukt til å identifisere informasjon i datasystemer.
@@ -392,3 +369,83 @@ tools:
   text-to-binary:
     title: Tekst til ASCII binært
     description: Konverter tekst til sin ASCII binære representasjon og visa-versa.
+
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell scripts for Windows administration and MSP field work.
+
+  group-policy-reference:
+    title: Group Policy Reference
+    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+
+  windows-event-lookup:
+    title: Windows Event Lookup
+    description: Look up common Windows Event IDs with descriptions and severity.
+
+  m365-sku-decoder:
+    title: M365 License SKU Decoder
+    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+
+  windows-error-codes:
+    title: Windows Error Code Lookup
+    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+
+  exchange-ndr-lookup:
+    title: Exchange NDR Lookup
+    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+
+  safelink-decoder:
+    title: Outlook Safelink decoder
+    description: Decode Outlook SafeLink links.
+
+  port-protocol-reference:
+    title: Port & Protocol Reference
+    description: Common network ports and protocols with security notes and dangerous port flags.
+
+  cve-lookup:
+    title: CVE Lookup
+    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+
+  email-dns-checker:
+    title: Email DNS Checker
+    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+
+  email-header-parser:
+    title: Email Header Parser
+    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+
+  whois-checker:
+    title: WHOIS Lookup
+    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+
+  ascii-text-drawer:
+    title: ASCII Art Text Generator
+    description: Create ASCII art text with many fonts and styles.
+
+  email-normalizer:
+    title: Email normalizer
+    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
+
+  regex-tester:
+    title: Regex Tester
+    description: Test your regular expressions with sample text.
+
+  yaml-converter:
+    title: YAML converter
+    description: Convert YAML to JSON or TOML.
+
+  json-converter:
+    title: JSON converter
+    description: Convert JSON to YAML or TOML.
+
+  toml-converter:
+    title: TOML converter
+    description: Convert TOML to JSON or YAML.
+
+  xml-json-converter:
+    title: XML ↔ JSON converter
+    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+
+  markdown-to-html:
+    title: Markdown to HTML
+    description: Convert Markdown to Html and allow to print (as PDF).

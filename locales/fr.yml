@@ -64,6 +64,7 @@ tools:
     measurement: Mesure
     text: Texte
     data: Données
+    windows: Windows
 
   token-generator:
     title: Générateur de token

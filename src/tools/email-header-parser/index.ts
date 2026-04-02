@@ -1,4 +1,4 @@
-import { Mail } from '@vicons/tabler';
+import { MailOpened } from '@vicons/tabler';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
@@ -7,6 +7,6 @@ export const tool = defineTool({
   description: 'Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.',
   keywords: ['email', 'header', 'parser', 'received', 'spf', 'dkim', 'dmarc', 'phishing', 'spam', 'trace', 'ip', 'authentication', 'forensics'],
   component: () => import('./email-header-parser.vue'),
-  icon: Mail,
+  icon: MailOpened,
   createdAt: new Date('2026-04-01'),
 });

@@ -70,6 +70,7 @@ tools:
     measurement: '测量'
     text: '文本'
     data: '数据'
+    windows: Windows
 
   password-strength-analyser:
     title: 密码强度分析仪
@@ -186,17 +187,9 @@ tools:
     title: Base64 字符串编码/解码
     description: 将字符串编码和解码为其 Base64 格式表示形式即可。
 
-  toml-to-yaml:
-    title: TOML 到 YAML
-    description: Parse and convert TOML to YAML.
-
   math-evaluator:
     title: 数学计算器
     description: 计算数学表达式的计算器。您可以使用sqrt、cos、sin、abs等函数。
-
-  json-to-yaml-converter:
-    title: JSON到YAML转换器
-    description: 在线转换将JSON转换为YAML。
 
   url-parser:
     title: Url分析器
@@ -238,10 +231,6 @@ tools:
     title: mime类型
     description: 将mime类型转换为扩展，反之亦然。
 
-  toml-to-json:
-    title: TOML 到 JSON
-    description: 解析TOML并将其转换为JSON。
-
   lorem-ipsum-generator:
     title: Lorem ipsum生成器
     description: Lorem ipsum是一种占位符文本，通常用于演示文档或字体的视觉形式，而不依赖于有意义的内容
@@ -273,14 +262,6 @@ tools:
   html-wysiwyg-editor:
     title: HTML所见即所得编辑器
     description: 在线HTML编辑器具有功能丰富的所见即所得编辑器，立即获得内容的源代码。
-
-  yaml-to-toml:
-    title: YAML 到 TOML
-    description: 解析YAML并将其转换为TOML。
-
-  mac-address-generator:
-    title: MAC 地址生成器
-    description: 输入数量和前缀。MAC地址将以您选择的大小写（大写或小写）生成
 
   json-diff:
     title: JSON 差异比较
@@ -341,10 +322,6 @@ tools:
     title: 整数基转换器
     description: 在不同的基数（十进制、十六进制、二进制、八进制、base64…）之间转换数字
 
-  yaml-to-json-converter:
-    title: YAML到JSON转换器
-    description: 使用此在线转换器将YAML转换为JSON。
-
   uuid-generator:
     title: UUIDs 生成器
     description: 通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。
@@ -388,3 +365,83 @@ tools:
   text-to-binary:
     title: 文本到 ASCII 二进制
     description: 将文本转换为其 ASCII 二进制表示形式，反之亦然。
+
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell scripts for Windows administration and MSP field work.
+
+  group-policy-reference:
+    title: Group Policy Reference
+    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+
+  windows-event-lookup:
+    title: Windows Event Lookup
+    description: Look up common Windows Event IDs with descriptions and severity.
+
+  m365-sku-decoder:
+    title: M365 License SKU Decoder
+    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+
+  windows-error-codes:
+    title: Windows Error Code Lookup
+    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+
+  exchange-ndr-lookup:
+    title: Exchange NDR Lookup
+    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+
+  safelink-decoder:
+    title: Outlook Safelink decoder
+    description: Decode Outlook SafeLink links.
+
+  port-protocol-reference:
+    title: Port & Protocol Reference
+    description: Common network ports and protocols with security notes and dangerous port flags.
+
+  cve-lookup:
+    title: CVE Lookup
+    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+
+  email-dns-checker:
+    title: Email DNS Checker
+    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+
+  email-header-parser:
+    title: Email Header Parser
+    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+
+  whois-checker:
+    title: WHOIS Lookup
+    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+
+  ascii-text-drawer:
+    title: ASCII Art Text Generator
+    description: Create ASCII art text with many fonts and styles.
+
+  email-normalizer:
+    title: Email normalizer
+    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
+
+  regex-tester:
+    title: Regex Tester
+    description: Test your regular expressions with sample text.
+
+  yaml-converter:
+    title: YAML converter
+    description: Convert YAML to JSON or TOML.
+
+  json-converter:
+    title: JSON converter
+    description: Convert JSON to YAML or TOML.
+
+  toml-converter:
+    title: TOML converter
+    description: Convert TOML to JSON or YAML.
+
+  xml-json-converter:
+    title: XML ↔ JSON converter
+    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+
+  markdown-to-html:
+    title: Markdown to HTML
+    description: Convert Markdown to Html and allow to print (as PDF).
