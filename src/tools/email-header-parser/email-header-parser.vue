@@ -5,6 +5,22 @@ const rawHeaders = ref('');
 const parsed = ref(false);
 const copiedValue = ref<string | null>(null);
 
+function softBreak(text: string): string {
+  const escaped = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+  return escaped.replace(/([+.@=/_-])/g, '$1<wbr>');
+}
+
+function splitAuthDetail(detail: string): string[] {
+  return detail
+    .split(/\s+(?=smtp\.|header\.|policy\.|pkix\.|body\.|dkim=|spf=|dmarc=|arc=|from=|fromdomain=|dkdomain=|spfdomain=|i=|d=|s=|b=|p=)/)
+    .map(s => s.trim())
+    .filter(Boolean);
+}
+
 function copyValue(value: string) {
   navigator.clipboard.writeText(value);
   copiedValue.value = value;
@@ -33,6 +49,10 @@ interface ParsedHeaders {
   auth: AuthResult[]
   spamScore: string | null
   spamStatus: string | null
+  scl: string | null
+  sclLabel: string
+  senderMismatch: boolean
+  sendingService: string
 }
 
 const result = ref<ParsedHeaders | null>(null);
@@ -57,6 +77,79 @@ function extractIp(text: string): string {
   }
   const bare = text.match(/\b(\d{1,3}(?:\.\d{1,3}){3})\b/);
   return bare ? bare[1] : '';
+}
+
+function extractEmail(str: string): string {
+  const match = str.match(/<([^>]+)>/);
+  return match ? match[1].trim() : str.trim();
+}
+
+function extractDomain(email: string): string {
+  const at = email.lastIndexOf('@');
+  return at >= 0 ? email.slice(at + 1).toLowerCase() : '';
+}
+
+function getSclLabel(scl: string): string {
+  const n = Number.parseInt(scl);
+  if (Number.isNaN(n)) {
+    return '';
+  }
+  if (n === -1) {
+    return 'Trusted / Bypass';
+  }
+  if (n <= 1) {
+    return 'Not Spam';
+  }
+  if (n <= 4) {
+    return 'Low Suspicion';
+  }
+  if (n <= 6) {
+    return 'Spam';
+  }
+  return 'High Confidence Spam';
+}
+
+function detectSendingService(lines: string[]): string {
+  const received = getAllHeaders(lines, 'Received').join(' ').toLowerCase();
+  const feedbackId = getHeader(lines, 'Feedback-ID').toLowerCase();
+  const xMailer = getHeader(lines, 'X-Mailer').toLowerCase();
+  if (getHeader(lines, 'X-SES-Outgoing') || received.includes('amazonses.com')) {
+    return 'Amazon SES';
+  }
+  if (getHeader(lines, 'X-SG-ID') || getHeader(lines, 'X-Sendgrid-ID') || received.includes('sendgrid.net')) {
+    return 'SendGrid';
+  }
+  if (feedbackId.includes('mailchimp') || received.includes('mailchimp.com')) {
+    return 'Mailchimp';
+  }
+  if (feedbackId.includes('salesforce') || received.includes('exacttarget.com') || received.includes('salesforce.com')) {
+    return 'Salesforce Marketing Cloud';
+  }
+  if (received.includes('sendinblue.com') || received.includes('brevo.com')) {
+    return 'Brevo (Sendinblue)';
+  }
+  if (received.includes('constantcontact.com')) {
+    return 'Constant Contact';
+  }
+  if (received.includes('hubspot.com')) {
+    return 'HubSpot';
+  }
+  if (received.includes('smtp.gmail.com') || received.includes('google.com')) {
+    return 'Google Workspace / Gmail';
+  }
+  if (getHeader(lines, 'X-MS-Exchange-Organization-SCL') || received.includes('protection.outlook.com') || received.includes('outlook.com')) {
+    return 'Microsoft 365 / Exchange';
+  }
+  if (received.includes('zoho.com')) {
+    return 'Zoho Mail';
+  }
+  if (received.includes('protonmail.ch') || received.includes('proton.me')) {
+    return 'Proton Mail';
+  }
+  if (xMailer.includes('apple mail')) {
+    return 'Apple Mail';
+  }
+  return '';
 }
 
 function parseReceivedHops(receivedHeaders: string[]): Hop[] {
@@ -125,14 +218,26 @@ function parseHeaders() {
   const unfolded = raw.replace(/\r?\n[ \t]+/g, ' ');
   const lines = unfolded.split(/\r?\n/).filter((l: string) => l.includes(':'));
 
+  const fromRaw = getHeader(lines, 'From');
+  const senderRaw = getHeader(lines, 'Sender');
+  const fromDomain = extractDomain(extractEmail(fromRaw));
+  const senderDomain = extractDomain(extractEmail(senderRaw));
+  const senderMismatch = !!(senderRaw && fromDomain && senderDomain && fromDomain !== senderDomain);
+
+  const sclRaw = getHeader(lines, 'X-MS-Exchange-Organization-SCL') || null;
+  const sendingService = detectSendingService(lines);
+
   const fields: { label: string; value: string }[] = [
-    { label: 'From', value: getHeader(lines, 'From') },
+    { label: 'From', value: fromRaw },
+    { label: 'Sender', value: senderRaw },
     { label: 'To', value: getHeader(lines, 'To') },
+    { label: 'Delivered-To', value: getHeader(lines, 'Delivered-To') || getHeader(lines, 'X-Forwarded-To') },
+    { label: 'Reply-To', value: getHeader(lines, 'Reply-To') },
+    { label: 'Return-Path', value: getHeader(lines, 'Return-Path') },
     { label: 'Subject', value: getHeader(lines, 'Subject') },
     { label: 'Date', value: getHeader(lines, 'Date') },
     { label: 'Message-ID', value: getHeader(lines, 'Message-ID') },
-    { label: 'Reply-To', value: getHeader(lines, 'Reply-To') },
-    { label: 'Return-Path', value: getHeader(lines, 'Return-Path') },
+    { label: 'Sending Service', value: sendingService },
     { label: 'X-Originating-IP', value: getHeader(lines, 'X-Originating-IP') || getHeader(lines, 'X-Sender-IP') },
     { label: 'X-Mailer', value: getHeader(lines, 'X-Mailer') },
     { label: 'MIME-Version', value: getHeader(lines, 'MIME-Version') },
@@ -145,7 +250,17 @@ function parseHeaders() {
   const spamScore = getHeader(lines, 'X-Spam-Score') || getHeader(lines, 'X-Spam-Level') || null;
   const spamStatus = getHeader(lines, 'X-Spam-Status') || null;
 
-  result.value = { fields, hops, auth, spamScore, spamStatus };
+  result.value = {
+    fields,
+    hops,
+    auth,
+    spamScore,
+    spamStatus,
+    scl: sclRaw,
+    sclLabel: sclRaw ? getSclLabel(sclRaw) : '',
+    senderMismatch,
+    sendingService,
+  };
   parsed.value = true;
 }
 
@@ -195,7 +310,7 @@ const groupedAuth = computed(() => {
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
     <template v-if="!parsed">
-      <div class="text-xs op-60 mb-2">
+      <div class="mb-2 text-xs op-60">
         Paste raw email headers below — in most email clients: View Source, Show Original, or View Message Headers
       </div>
       <c-input-text
@@ -213,30 +328,32 @@ const groupedAuth = computed(() => {
     </template>
 
     <template v-if="parsed && result">
-      <div flex justify-end mb-4>
+      <div mb-4 flex justify-end>
         <c-button variant="text" @click="reset">
           ← Parse Another
         </c-button>
       </div>
 
       <div class="grid grid-cols-1 gap-16px lg:grid-cols-2">
-
         <!-- Left: Message Details + Delivery Hops -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
           <c-card>
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Message Details</span>
             </div>
+            <n-alert v-if="result.senderMismatch" type="warning" mb-3>
+              <span class="text-xs">Sender domain differs from From domain — possible spoofing or delegated sending.</span>
+            </n-alert>
             <div class="grid grid-cols-1 gap-8px">
               <div
                 v-for="field in result.fields"
                 :key="field.label"
                 flex items-start justify-between gap-2
-                class="p-2 rounded"
+                class="rounded p-2"
                 style="background: rgba(255,255,255,0.05)"
               >
                 <div style="min-width: 0;">
-                  <div class="text-xs op-50 mb-0.5">
+                  <div class="mb-0.5 text-xs op-50">
                     {{ field.label }}
                   </div>
                   <div class="text-xs font-mono" style="overflow-wrap: break-word; word-break: normal;">
@@ -251,7 +368,7 @@ const groupedAuth = computed(() => {
           </c-card>
 
           <c-card v-if="result.hops.length">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Delivery Hops</span>
               <span class="text-xs op-50">oldest first</span>
             </div>
@@ -260,22 +377,22 @@ const groupedAuth = computed(() => {
               :key="i"
               mb-3
             >
-              <div flex items-center gap-2 mb-1>
-                <n-tag size="small" type="default">
-                  Hop {{ i + 1 }}
-                </n-tag>
-                <span v-if="hop.delay" class="text-xs op-40">{{ hop.delay }}</span>
-              </div>
               <div
-                class="p-2 rounded text-xs font-mono"
-                style="background: rgba(255,255,255,0.05); overflow-wrap: break-word; word-break: normal;"
+                class="rounded p-2 text-xs font-mono"
+                style="background: rgba(255,255,255,0.05); overflow: hidden;"
               >
-                <div v-if="hop.from" class="mb-1">
-                  <span class="op-50">From: </span>{{ hop.from }}
+                <div style="float: right; margin-left: 8px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span v-if="hop.delay" class="op-40">{{ hop.delay }}</span>
+                  <n-tag size="small" type="default">
+                    Hop {{ i + 1 }}
+                  </n-tag>
+                </div>
+                <div v-if="hop.from" class="mb-1" style="overflow-wrap: break-word; word-break: normal;">
+                  <span class="op-50">From: </span><span v-html="softBreak(hop.from)" />
                   <span v-if="hop.ip" class="op-50"> [{{ hop.ip }}]</span>
                 </div>
-                <div v-if="hop.by" class="mb-1">
-                  <span class="op-50">By: </span>{{ hop.by }}
+                <div v-if="hop.by" class="mb-1" style="overflow-wrap: break-word; word-break: normal;">
+                  <span class="op-50">By: </span><span v-html="softBreak(hop.by)" />
                 </div>
                 <div v-if="hop.timestamp" class="op-40">
                   {{ hop.timestamp }}
@@ -288,7 +405,7 @@ const groupedAuth = computed(() => {
         <!-- Right: Auth Results + Spam -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
           <c-card v-if="result.auth.length">
-            <div flex items-center justify-between mb-3>
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Authentication Results</span>
             </div>
             <div class="grid grid-cols-1 gap-12px">
@@ -296,23 +413,26 @@ const groupedAuth = computed(() => {
                 v-for="group in groupedAuth"
                 :key="group.protocol"
               >
-                <div class="text-xs font-bold font-mono op-60 mb-1 uppercase tracking-wider">
+                <div class="mb-1 text-xs font-bold tracking-wider font-mono uppercase op-60">
                   {{ group.protocol }}
                 </div>
                 <div class="grid grid-cols-1 gap-8px sm:grid-cols-2">
                   <div
                     v-for="(a, i) in group.entries"
                     :key="i"
-                    class="p-2 rounded"
-                    style="background: rgba(255,255,255,0.05)"
+                    class="rounded p-2"
+                    style="background: rgba(255,255,255,0.05); overflow: hidden;"
                   >
-                    <div flex items-center gap-2 mb-1>
-                      <n-tag :type="authStatusType(a.result)" size="small">
-                        {{ a.result }}
-                      </n-tag>
-                    </div>
-                    <div v-if="a.detail" class="text-xs font-mono op-50" style="overflow-wrap: break-word; word-break: normal;">
-                      {{ a.detail }}
+                    <n-tag :type="authStatusType(a.result)" size="small" style="float: right; margin-left: 8px; margin-bottom: 2px;">
+                      {{ a.result }}
+                    </n-tag>
+                    <div class="text-xs font-mono op-50">
+                      <div
+                        v-for="(seg, si) in splitAuthDetail(a.detail)"
+                        :key="si"
+                        style="overflow-wrap: break-word; word-break: normal; padding-left: 0.75em; text-indent: -0.75em;"
+                        v-html="softBreak(seg)"
+                      />
                     </div>
                   </div>
                 </div>
@@ -320,17 +440,29 @@ const groupedAuth = computed(() => {
             </div>
           </c-card>
 
-          <c-card v-if="result.spamScore || result.spamStatus">
-            <div flex items-center justify-between mb-3>
+          <c-card v-if="result.spamScore || result.spamStatus || result.scl">
+            <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Spam Analysis</span>
             </div>
             <div class="grid grid-cols-1 gap-8px">
               <div
-                v-if="result.spamScore"
-                class="p-2 rounded"
+                v-if="result.scl"
+                class="rounded p-2"
                 style="background: rgba(255,255,255,0.05)"
               >
-                <div class="text-xs op-50 mb-0.5">
+                <div class="mb-0.5 text-xs op-50">
+                  M365 Spam Confidence Level (SCL)
+                </div>
+                <div class="text-xs font-mono">
+                  {{ result.scl }} — {{ result.sclLabel }}
+                </div>
+              </div>
+              <div
+                v-if="result.spamScore"
+                class="rounded p-2"
+                style="background: rgba(255,255,255,0.05)"
+              >
+                <div class="mb-0.5 text-xs op-50">
                   Spam Score
                 </div>
                 <div class="text-xs font-mono">
@@ -339,10 +471,10 @@ const groupedAuth = computed(() => {
               </div>
               <div
                 v-if="result.spamStatus"
-                class="p-2 rounded"
+                class="rounded p-2"
                 style="background: rgba(255,255,255,0.05)"
               >
-                <div class="text-xs op-50 mb-0.5">
+                <div class="mb-0.5 text-xs op-50">
                   Spam Status
                 </div>
                 <div class="text-xs font-mono" style="overflow-wrap: break-word; word-break: normal;">
@@ -352,7 +484,6 @@ const groupedAuth = computed(() => {
             </div>
           </c-card>
         </div>
-
       </div>
     </template>
   </div>
