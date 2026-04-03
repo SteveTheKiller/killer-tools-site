@@ -459,7 +459,7 @@ const cheatsheet = [
   gap: 12px;
   flex: 1 1 900px;
   max-width: 1600px;
-  margin-top: -28px;
+  margin-top: 0;
   container-type: inline-size;
 }
 

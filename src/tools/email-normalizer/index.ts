@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.',
   keywords: ['email', 'normalizer'],
   component: () => import('./email-normalizer.vue'),
+  fullscreen: true,
   icon: Mail,
   createdAt: new Date('2024-08-15'),
 });

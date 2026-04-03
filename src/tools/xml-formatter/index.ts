@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.xml-formatter.description'),
   keywords: ['xml', 'prettify', 'format'],
   component: () => import('./xml-formatter.vue'),
+  fullscreen: true,
   icon: Code,
   createdAt: new Date('2023-06-17'),
 });

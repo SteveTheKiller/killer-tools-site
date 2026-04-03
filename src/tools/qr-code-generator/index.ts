@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.qrcode-generator.description'),
   keywords: ['qr', 'code', 'generator', 'square', 'color', 'link', 'low', 'medium', 'quartile', 'high', 'transparent'],
   component: () => import('./qr-code-generator.vue'),
+  fullscreen: true,
   icon: Qrcode,
 });

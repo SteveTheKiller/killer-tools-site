@@ -24,5 +24,6 @@ export const tool = defineTool({
     'HMAC',
   ],
   component: () => import('./otp-code-generator-and-validator.vue'),
+  fullscreen: true,
   icon: DeviceMobile,
 });

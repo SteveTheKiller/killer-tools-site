@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.eta-calculator.description'),
   keywords: ['eta', 'calculator', 'estimated', 'time', 'arrival', 'average'],
   component: () => import('./eta-calculator.vue'),
+  fullscreen: true,
   icon: Hourglass,
 });

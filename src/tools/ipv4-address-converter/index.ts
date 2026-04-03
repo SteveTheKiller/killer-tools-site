@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.ipv4-address-converter.description'),
   keywords: ['ipv4', 'address', 'converter', 'decimal', 'hexadecimal', 'binary', 'ipv6'],
   component: () => import('./ipv4-address-converter.vue'),
+  fullscreen: true,
   icon: Binary,
   createdAt: new Date('2023-04-08'),
 });

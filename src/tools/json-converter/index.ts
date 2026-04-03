@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Convert JSON to YAML or TOML.',
   keywords: ['json', 'yaml', 'toml', 'convert', 'converter'],
   component: () => import('./json-converter.vue'),
+  fullscreen: true,
   icon: Braces,
   createdAt: new Date('2026-04-01'),
 });

@@ -23,5 +23,6 @@ export const tool = defineTool({
     'SQL Server Transact-SQL',
   ],
   component: () => import('./sql-prettify.vue'),
+  fullscreen: true,
   icon: Database,
 });

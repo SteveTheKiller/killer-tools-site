@@ -22,5 +22,6 @@ export const tool = defineTool({
     'snakeCase',
   ],
   component: () => import('./case-converter.vue'),
+  fullscreen: true,
   icon: LetterCaseToggle,
 });

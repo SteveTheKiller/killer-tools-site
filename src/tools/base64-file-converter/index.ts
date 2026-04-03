@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.base64-file-converter.description'),
   keywords: ['base64', 'converter', 'upload', 'image', 'file', 'conversion', 'web', 'data', 'format'],
   component: () => import('./base64-file-converter.vue'),
+  fullscreen: true,
   icon: FileDigit,
 });

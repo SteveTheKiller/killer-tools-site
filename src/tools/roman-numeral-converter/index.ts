@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.roman-numeral-converter.description'),
   keywords: ['roman', 'arabic', 'converter', 'X', 'I', 'V', 'L', 'C', 'D', 'M'],
   component: () => import('./roman-numeral-converter.vue'),
+  fullscreen: true,
   icon: LetterX,
 });

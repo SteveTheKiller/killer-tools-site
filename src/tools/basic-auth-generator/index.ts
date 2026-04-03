@@ -18,5 +18,6 @@ export const tool = defineTool({
     'authorization',
   ],
   component: () => import('./basic-auth-generator.vue'),
+  fullscreen: true,
   icon: PasswordRound,
 });

@@ -15,6 +15,7 @@ export const tool = defineTool({
     ...codesByCategories.flatMap(({ codes }) => codes.flatMap(({ code, name }) => [String(code), name])),
   ],
   component: () => import('./http-status-codes.vue'),
+  fullscreen: true,
   icon: HttpRound,
   createdAt: new Date('2023-04-13'),
 });

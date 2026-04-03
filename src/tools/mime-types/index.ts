@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.mime-types.description'),
   keywords: ['mime', 'types', 'extension', 'content', 'type'],
   component: () => import('./mime-types.vue'),
+  fullscreen: true,
   icon: World,
 });

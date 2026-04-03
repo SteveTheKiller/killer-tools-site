@@ -28,37 +28,100 @@ const { t } = useI18n();
 const i18nKey = computed<string>(() => route.path.trim().replace('/', ''));
 const toolTitle = computed<string>(() => t(`tools.${i18nKey.value}.title`, String(route.meta.name)));
 const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.description`, String(route.meta.description)));
+const isFullscreen = computed<boolean>(() => !!route.meta.fullscreen);
+const headerLink = computed<{ label: string; href: string } | undefined>(
+  () => route.meta.headerLink as { label: string; href: string } | undefined,
+);
 </script>
 
 <template>
   <BaseLayout>
-    <div class="tool-layout">
-      <div class="tool-header">
-        <div flex flex-nowrap items-center justify-between>
-          <n-h1>
-            {{ toolTitle }}
-          </n-h1>
-
-          <div>
-            <FavoriteButton :tool="{ name: route.meta.name, path: route.path } as Tool" />
-          </div>
+    <div :class="isFullscreen ? 'tool-wrapper-fullscreen' : 'tool-wrapper'">
+      <div v-if="isFullscreen" class="tool-header-compact">
+        <div class="tool-header-compact-left">
+          <span class="tool-title-compact">{{ toolTitle }}</span>
+          <span class="tool-desc-compact">{{ toolDescription }}</span>
         </div>
-
-        <div class="separator" />
-
-        <div class="description">
-          {{ toolDescription }}
+        <div class="tool-header-compact-right">
+          <a
+            v-if="headerLink"
+            :href="headerLink.href"
+            target="_blank"
+            class="tool-header-link"
+          >{{ headerLink.label }}</a>
+          <FavoriteButton :tool="{ name: route.meta.name, path: route.path } as Tool" />
         </div>
       </div>
-    </div>
-
-    <div class="tool-content">
-      <slot />
+      <div v-else class="tool-layout">
+        <div class="tool-header">
+          <div flex flex-nowrap items-center justify-between>
+            <n-h1>
+              {{ toolTitle }}
+            </n-h1>
+            <div>
+              <FavoriteButton :tool="{ name: route.meta.name, path: route.path } as Tool" />
+            </div>
+          </div>
+          <div class="separator" />
+          <div class="description">
+            {{ toolDescription }}
+          </div>
+        </div>
+      </div>
+      <div :class="isFullscreen ? 'tool-content tool-content-fullscreen' : 'tool-content'">
+        <slot />
+      </div>
     </div>
   </BaseLayout>
 </template>
 
 <style lang="less" scoped>
+.tool-header-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 12px;
+}
+
+.tool-header-compact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tool-title-compact {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tool-header-compact-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tool-header-link {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.tool-desc-compact {
+  font-size: 0.75rem;
+  opacity: 0.45;
+}
+
 .tool-content {
   display: flex;
   flex-direction: row;
@@ -66,6 +129,20 @@ const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.descrip
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 16px;
+
+  ::v-deep(& > *) {
+    flex: 0 1 600px;
+  }
+}
+
+.tool-content-fullscreen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 16px;
 
   ::v-deep(& > *) {
     flex: 0 1 600px;

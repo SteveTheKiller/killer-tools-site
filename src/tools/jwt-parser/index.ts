@@ -24,5 +24,6 @@ export const tool = defineTool({
     'token',
   ],
   component: () => import('./jwt-parser.vue'),
+  fullscreen: true,
   icon: Key,
 });

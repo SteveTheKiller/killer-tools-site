@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Convert Markdown to Html and allow to print (as PDF)',
   keywords: ['markdown', 'html', 'converter', 'pdf'],
   component: () => import('./markdown-to-html.vue'),
+  fullscreen: true,
   icon: Markdown,
   createdAt: new Date('2024-08-25'),
 });

@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.string-obfuscator.description'),
   keywords: ['string', 'obfuscator', 'secret', 'token', 'hide', 'obscure', 'mask', 'masking'],
   component: () => import('./string-obfuscator.vue'),
+  fullscreen: true,
   icon: EyeOff,
   createdAt: new Date('2023-08-16'),
 });

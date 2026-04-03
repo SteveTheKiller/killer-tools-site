@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.url-encoder.description'),
   keywords: ['url', 'encode', 'decode', 'percent', '%20', 'format'],
   component: () => import('./url-encoder.vue'),
+  fullscreen: true,
   icon: Link,
 });

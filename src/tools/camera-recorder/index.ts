@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.camera-recorder.description'),
   keywords: ['camera', 'recoder'],
   component: () => import('./camera-recorder.vue'),
+  fullscreen: true,
   icon: Camera,
   createdAt: new Date('2023-05-15'),
 });

@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Create ASCII art text with many fonts and styles.',
   keywords: ['ascii', 'asciiart', 'text', 'drawer'],
   component: () => import('./ascii-text-drawer.vue'),
+  fullscreen: true,
   icon: Artboard,
   createdAt: new Date('2024-03-03'),
 });

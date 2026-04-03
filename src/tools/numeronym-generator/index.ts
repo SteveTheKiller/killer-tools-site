@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.numeronym-generator.description'),
   keywords: ['numeronym', 'generator', 'abbreviation', 'i18n', 'a11y', 'l10n'],
   component: () => import('./numeronym-generator.vue'),
+  fullscreen: true,
   icon: n7mIcon,
   createdAt: new Date('2023-11-05'),
 });

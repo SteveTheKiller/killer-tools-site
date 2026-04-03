@@ -33,7 +33,7 @@ async function copyToClipboard(text: string) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;" class="w-full">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;" class="w-full">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <div class="min-w-0">
         <div class="mb-1 text-xs opacity-60">

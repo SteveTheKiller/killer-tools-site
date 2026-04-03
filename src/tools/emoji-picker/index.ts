@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.emoji-picker.description'),
   keywords: ['emoji', 'picker', 'unicode', 'copy', 'paste'],
   component: () => import('./emoji-picker.vue'),
+  fullscreen: true,
   icon: MoodSmile,
   createdAt: new Date('2023-08-07'),
 });

@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.json-prettify.description'),
   keywords: ['json', 'viewer', 'prettify', 'format'],
   component: () => import('./json-viewer.vue'),
+  fullscreen: true,
   icon: Braces,
   redirectFrom: ['/json-viewer'],
 });

@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.token-generator.description'),
   keywords: ['token', 'random', 'string', 'alphanumeric', 'symbols', 'number', 'letters', 'lowercase', 'uppercase', 'password'],
   component: () => import('./token-generator.tool.vue'),
+  fullscreen: true,
   icon: ArrowsShuffle,
 });

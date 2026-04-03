@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Common network ports and protocols with security notes and dangerous port flags.',
   keywords: ['port', 'protocol', 'tcp', 'udp', 'network', 'firewall', 'service', 'smtp', 'rdp', 'ssh', 'dns', 'http', 'ftp', 'snmp'],
   component: () => import('./port-protocol-reference.vue'),
+  fullscreen: true,
   icon: Router,
   createdAt: new Date('2026-03-31'),
 });

@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.percentage-calculator.description'),
   keywords: ['percentage', 'calculator', 'calculate', 'value', 'number', '%'],
   component: () => import('./percentage-calculator.vue'),
+  fullscreen: true,
   icon: Percentage,
   createdAt: new Date('2023-06-18'),
 });

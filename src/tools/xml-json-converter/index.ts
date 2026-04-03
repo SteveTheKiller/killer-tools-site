@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Bidirectional XML and JSON converter. Edit either side and the other updates automatically.',
   keywords: ['xml', 'json', 'convert', 'converter', 'bidirectional'],
   component: () => import('./xml-json-converter.vue'),
+  fullscreen: true,
   icon: ArrowsRightLeft,
   createdAt: new Date('2026-04-01'),
 });

@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.yaml-prettify.description'),
   keywords: ['yaml', 'viewer', 'prettify', 'format'],
   component: () => import('./yaml-viewer.vue'),
+  fullscreen: true,
   icon: AlignJustified,
   createdAt: new Date('2024-01-31'),
 });

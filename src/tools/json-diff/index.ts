@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.json-diff.description'),
   keywords: ['json', 'diff', 'compare', 'difference', 'object', 'data'],
   component: () => import('./json-diff.vue'),
+  fullscreen: true,
   icon: CompareArrowsRound,
   createdAt: new Date('2023-04-20'),
 });

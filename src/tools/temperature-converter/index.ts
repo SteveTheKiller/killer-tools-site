@@ -20,5 +20,6 @@ export const tool = defineTool({
     'Rømer',
   ],
   component: () => import('./temperature-converter.vue'),
+  fullscreen: true,
   icon: Temperature,
 });

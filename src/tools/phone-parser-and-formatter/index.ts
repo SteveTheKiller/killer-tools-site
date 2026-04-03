@@ -20,6 +20,7 @@ export const tool = defineTool({
     'national',
   ],
   component: () => import('./phone-parser-and-formatter.vue'),
+  fullscreen: true,
   icon: Phone,
   createdAt: new Date('2023-05-01'),
 });

@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.random-port-generator.description'),
   keywords: ['system', 'port', 'lan', 'generator', 'random', 'development', 'computer'],
   component: () => import('./random-port-generator.vue'),
+  fullscreen: true,
   icon: Server,
 });

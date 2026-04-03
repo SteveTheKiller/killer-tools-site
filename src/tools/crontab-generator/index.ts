@@ -22,5 +22,6 @@ export const tool = defineTool({
     'second',
   ],
   component: () => import('./crontab-generator.vue'),
+  fullscreen: true,
   icon: Alarm,
 });

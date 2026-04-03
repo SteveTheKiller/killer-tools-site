@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.text-to-unicode.description'),
   keywords: ['text', 'to', 'unicode'],
   component: () => import('./text-to-unicode.vue'),
+  fullscreen: true,
   icon: TextWrap,
   createdAt: new Date('2024-01-31'),
 });

@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.date-converter.description'),
   keywords: ['date', 'time', 'converter', 'iso', 'utc', 'timezone', 'year', 'month', 'day', 'minute', 'seconde'],
   component: () => import('./date-time-converter.vue'),
+  fullscreen: true,
   icon: Calendar,
 });

@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.slugify-string.description'),
   keywords: ['slugify', 'string', 'escape', 'emoji', 'special', 'character', 'space', 'trim'],
   component: () => import('./slugify-string.vue'),
+  fullscreen: true,
   icon: AbcRound,
 });

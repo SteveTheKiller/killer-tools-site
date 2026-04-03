@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.text-to-nato-alphabet.description'),
   keywords: ['string', 'nato', 'alphabet', 'phonetic', 'oral', 'transmission'],
   component: () => import('./text-to-nato-alphabet.vue'),
+  fullscreen: true,
   icon: Speakerphone,
 });

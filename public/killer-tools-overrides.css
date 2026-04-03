@@ -190,3 +190,20 @@ body {
 .custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
   background: #1ea54c;
 }
+/* --- tool header: unconstrain on desktop --- */
+@media (min-width: 769px) {
+  .tool-layout {
+    max-width: none !important;
+    padding: 0 32px;
+  }
+}
+
+/* --- powershell builder compact header: fix visibility --- */
+.tool-header-compact {
+  opacity: 1 !important;
+}
+
+.tool-title-compact {
+  opacity: 0.7 !important;
+  font-size: 0.9rem !important;
+}

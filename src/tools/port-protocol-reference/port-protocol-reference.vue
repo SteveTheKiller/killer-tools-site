@@ -47,7 +47,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <div mb-4 flex flex-wrap gap-3>
       <c-input-text
         v-model:value="search"

@@ -22,6 +22,7 @@ export const tool = defineTool({
     'RIPEMD160',
   ],
   component: () => import('./hash-text.vue'),
+  fullscreen: true,
   icon: EyeOff,
   redirectFrom: ['/hash'],
 });

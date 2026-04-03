@@ -140,7 +140,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <div class="grid grid-cols-1 gap-16px lg:grid-cols-2" style="align-items: start;">
       <!-- Left: Input + Results -->
       <div>

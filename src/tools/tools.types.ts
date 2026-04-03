@@ -10,6 +10,8 @@ export interface Tool {
   redirectFrom?: string[]
   isNew: boolean
   createdAt?: Date
+  fullscreen?: boolean
+  headerLink?: { label: string; href: string }
 }
 
 export interface ToolCategory {

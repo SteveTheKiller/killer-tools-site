@@ -20,5 +20,6 @@ export const tool = defineTool({
     'agent',
   ],
   component: () => import('./device-information.vue'),
+  fullscreen: true,
   icon: DeviceDesktop,
 });

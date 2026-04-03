@@ -22,5 +22,6 @@ export const tool = defineTool({
     'og',
   ],
   component: () => import('./meta-tag-generator.vue'),
+  fullscreen: true,
   icon: Tags,
 });

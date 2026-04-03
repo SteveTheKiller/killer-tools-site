@@ -40,5 +40,6 @@ export const tool = defineTool({
     'tanh',
   ],
   component: () => import('./math-evaluator.vue'),
+  fullscreen: true,
   icon: Math,
 });

@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.list-converter.description'),
   keywords: ['list', 'converter', 'sort', 'reverse', 'prefix', 'suffix', 'lowercase', 'truncate'],
   component: () => import('./list-converter.vue'),
+  fullscreen: true,
   icon: List,
   createdAt: new Date('2023-05-07'),
 });

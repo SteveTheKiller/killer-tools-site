@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.mac-address-lookup.description'),
   keywords: ['mac', 'address', 'lookup', 'vendor', 'parser', 'manufacturer'],
   component: () => import('./mac-address-lookup.vue'),
+  fullscreen: true,
   icon: Devices,
   createdAt: new Date('2023-04-06'),
 });

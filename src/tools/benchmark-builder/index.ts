@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.benchmark-builder.description'),
   keywords: ['benchmark', 'builder', 'execution', 'duration', 'mean', 'variance'],
   component: () => import('./benchmark-builder.vue'),
+  fullscreen: true,
   icon: SpeedFilled,
   createdAt: new Date('2023-04-05'),
 });

@@ -199,7 +199,7 @@ const overallMessage: Record<string, string> = {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <div mb-6 flex gap-3>
       <c-input-text
         v-model:value="domain"

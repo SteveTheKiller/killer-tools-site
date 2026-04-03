@@ -48,7 +48,7 @@ function copyOutput() {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <div mb-4 flex items-center gap-3>
       <span class="text-sm op-60">Convert to:</span>
       <n-radio-group v-model:value="outputFormat" size="small">

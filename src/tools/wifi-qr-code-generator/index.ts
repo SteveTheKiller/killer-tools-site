@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.wifi-qrcode-generator.description'),
   keywords: ['qr', 'code', 'generator', 'square', 'color', 'link', 'low', 'medium', 'quartile', 'high', 'transparent', 'wifi'],
   component: () => import('./wifi-qr-code-generator.vue'),
+  fullscreen: true,
   icon: Qrcode,
   createdAt: new Date('2023-09-06'),
 });

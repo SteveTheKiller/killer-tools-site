@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.iban-validator-and-parser.description'),
   keywords: ['iban', 'validator', 'and', 'parser', 'bic', 'bank'],
   component: () => import('./iban-validator-and-parser.vue'),
+  fullscreen: true,
   icon: Bank,
   createdAt: new Date('2023-08-26'),
 });

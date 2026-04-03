@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.color-converter.description'),
   keywords: ['color', 'converter'],
   component: () => import('./color-converter.vue'),
+  fullscreen: true,
   icon: Palette,
   redirectFrom: ['/color-picker-converter'],
 });

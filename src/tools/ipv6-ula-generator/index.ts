@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.ipv6-ula-generator.description'),
   keywords: ['ipv6', 'ula', 'generator', 'rfc4193', 'network', 'private'],
   component: () => import('./ipv6-ula-generator.vue'),
+  fullscreen: true,
   icon: BuildingFactory,
   createdAt: new Date('2023-04-09'),
 });

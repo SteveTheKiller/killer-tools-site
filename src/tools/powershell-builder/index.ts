@@ -9,4 +9,5 @@ export const tool = defineTool({
   component: () => import('./powershell-builder.vue'),
   icon: Terminal2,
   createdAt: new Date('2026-04-02'),
-});
+  fullscreen: true,
+});

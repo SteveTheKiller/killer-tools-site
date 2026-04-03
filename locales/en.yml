@@ -74,7 +74,7 @@ tools:
 
   chronometer:
     title: Chronometer
-    description: Monitor the duration of a thing. Basically a chronometer with simple chronometer features.
+    description: Track elapsed time with a simple stopwatch and lap timer.
 
   token-generator:
     title: Token generator
@@ -136,11 +136,11 @@ tools:
 
   benchmark-builder:
     title: Benchmark builder
-    description: Easily compare execution time of tasks with this very simple online benchmark builder.
+    description: Compare execution time of code snippets to find the fastest approach.
 
   git-memo:
     title: Git cheatsheet
-    description: Git is a decentralized version management software. With this cheatsheet, you will have quick access to the most common git commands.
+    description: Quick reference for the most common Git commands and workflows.
 
   slugify-string:
     title: Slugify string
@@ -160,7 +160,7 @@ tools:
 
   eta-calculator:
     title: ETA calculator
-    description: An ETA (Estimated Time of Arrival) calculator to determine the approximate end time of a task, for example, the end time and duration of a file download.
+    description: Calculate estimated completion time and remaining duration for any task.
 
   roman-numeral-converter:
     title: Roman numeral converter
@@ -204,7 +204,7 @@ tools:
 
   numeronym-generator:
     title: Numeronym generator
-    description: A numeronym is a word where a number is used to form an abbreviation. For example, "i18n" is a numeronym of "internationalization" where 18 stands for the number of letters between the first i and the last n in the word.
+    description: Generate numeronyms like i18n or k8s from any word.
 
   case-converter:
     title: Case converter
@@ -232,7 +232,7 @@ tools:
 
   lorem-ipsum-generator:
     title: Lorem ipsum generator
-    description: Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content
+    description: Generate placeholder lorem ipsum text for mockups and design work.
 
   qrcode-generator:
     title: QR Code generator
@@ -292,7 +292,7 @@ tools:
 
   hash-text:
     title: Hash text
-    description: 'Hash a text string using the function you need : MD5, SHA1, SHA256, SHA224, SHA512, SHA384, SHA3 or RIPEMD160'
+    description: Hash text using MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160, and more.
 
   json-to-toml:
     title: JSON to TOML
@@ -324,7 +324,7 @@ tools:
 
   uuid-generator:
     title: UUIDs generator
-    description: A Universally Unique Identifier (UUID) is a 128-bit number used to identify information in computer systems. The number of possible UUIDs is 16^32, which is 2^128 or about 3.4x10^38 (which is a lot!).
+    description: Generate random UUIDs (v1 and v4) and inspect their structure.
 
   ipv4-address-converter:
     title: IPv4 address converter
@@ -380,23 +380,22 @@ tools:
 
   windows-event-lookup:
     title: Windows Event Lookup
-    description: Look up common Windows Event IDs with descriptions and severity.
+    description: Look up Windows Event IDs with descriptions, severity levels, and common causes.
 
   m365-sku-decoder:
     title: M365 License SKU Decoder
-    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+    description: Decode Microsoft 365 license SKU strings and GUIDs to their product names.
 
   windows-error-codes:
     title: Windows Error Code Lookup
-    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
-
+    description: Look up Windows error codes by hex or decimal, including system errors, BSOD stop codes, WMI, RPC, MSI installer errors, and more.
   exchange-ndr-lookup:
     title: Exchange NDR Lookup
-    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+    description: Look up Exchange and M365 bounce codes with plain-language cause and fix guidance.
 
   safelink-decoder:
     title: Outlook Safelink decoder
-    description: Decode Outlook SafeLink links.
+    description: Unwrap Microsoft Defender SafeLinks to reveal the original destination URL.
 
   port-protocol-reference:
     title: Port & Protocol Reference
@@ -448,4 +447,4 @@ tools:
 
   markdown-to-html:
     title: Markdown to HTML
-    description: Convert Markdown to Html and allow to print (as PDF).
+    description: Convert Markdown to HTML and export or print as PDF.

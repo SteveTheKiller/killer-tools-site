@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.json-minify.description'),
   keywords: ['json', 'minify', 'format'],
   component: () => import('./json-minify.vue'),
+  fullscreen: true,
   icon: Braces,
 });

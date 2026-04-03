@@ -57,7 +57,7 @@ watch(jsonValue, (val) => {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;" class="w-full">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;" class="w-full">
     <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
       <div>
         <div class="mb-1 text-xs op-60">

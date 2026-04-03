@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.',
   keywords: ['email', 'header', 'parser', 'received', 'spf', 'dkim', 'dmarc', 'phishing', 'spam', 'trace', 'ip', 'authentication', 'forensics'],
   component: () => import('./email-header-parser.vue'),
+  fullscreen: true,
   icon: MailOpened,
   createdAt: new Date('2026-04-01'),
 });

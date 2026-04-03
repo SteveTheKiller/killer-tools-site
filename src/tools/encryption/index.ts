@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.encryption.description'),
   keywords: ['cypher', 'encipher', 'text', 'AES', 'TripleDES', 'Rabbit', 'RC4'],
   component: () => import('./encryption.vue'),
+  fullscreen: true,
   icon: Lock,
   redirectFrom: ['/cypher'],
 });

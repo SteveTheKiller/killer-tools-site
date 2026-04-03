@@ -19,5 +19,6 @@ export const tool = defineTool({
     'octal',
   ],
   component: () => import('./chmod-calculator.vue'),
+  fullscreen: true,
   icon: FileInvoice,
 });

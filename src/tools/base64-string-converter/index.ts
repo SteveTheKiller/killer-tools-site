@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.base64-string-converter.description'),
   keywords: ['base64', 'converter', 'conversion', 'web', 'data', 'format', 'atob', 'btoa'],
   component: () => import('./base64-string-converter.vue'),
+  fullscreen: true,
   icon: FileDigit,
   redirectFrom: ['/file-to-base64', '/base64-converter'],
 });

@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.json-to-csv.description'),
   keywords: ['json', 'to', 'csv', 'convert'],
   component: () => import('./json-to-csv.vue'),
+  fullscreen: true,
   icon: List,
   createdAt: new Date('2023-06-18'),
 });

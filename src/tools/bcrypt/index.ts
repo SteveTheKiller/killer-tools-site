@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.bcrypt.description'),
   keywords: ['bcrypt', 'hash', 'compare', 'password', 'salt', 'round', 'storage', 'crypto'],
   component: () => import('./bcrypt.vue'),
+  fullscreen: true,
   icon: LockSquare,
 });

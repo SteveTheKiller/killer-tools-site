@@ -23,5 +23,6 @@ export const tool = defineTool({
     'shift',
   ],
   component: () => import('./keycode-info.vue'),
+  fullscreen: true,
   icon: Keyboard,
 });

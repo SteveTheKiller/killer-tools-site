@@ -308,7 +308,7 @@ const groupedAuth = computed(() => {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <template v-if="!parsed">
       <div class="mb-2 text-xs op-60">
         Paste raw email headers below — in most email clients: View Source, Show Original, or View Message Headers

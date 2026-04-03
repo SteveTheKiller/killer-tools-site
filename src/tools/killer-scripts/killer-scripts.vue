@@ -59,19 +59,7 @@ async function downloadScript(script: { name: string; download_url: string }) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
-    <div mb-2 flex items-center justify-end>
-      <a
-        href="https://github.com/SteveTheKiller/killer-scripts"
-        target="_blank"
-        op-50 transition hover:op-100
-        style="color: inherit; text-decoration: none; font-size: 0.85rem;"
-      >
-        GitHub ↗
-      </a>
-    </div>
-
-    <div v-if="loading" flex justify-center py-10>
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">    <div v-if="loading" flex justify-center py-10>
       <n-spin size="large" />
     </div>
 

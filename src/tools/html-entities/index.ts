@@ -8,5 +8,6 @@ export const tool = defineTool({
   description: translate('tools.html-entities.description'),
   keywords: ['html', 'entities', 'escape', 'unescape', 'special', 'characters', 'tags'],
   component: () => import('./html-entities.vue'),
+  fullscreen: true,
   icon: Code,
 });

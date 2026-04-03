@@ -7,6 +7,7 @@ export const tool = defineTool({
   description: 'Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.',
   keywords: ['email', 'dns', 'mx', 'spf', 'dkim', 'dmarc', 'mail', 'domain', 'spoofing', 'deliverability', 'exchange', 'm365'],
   component: () => import('./email-dns-checker.vue'),
+  fullscreen: true,
   icon: ShieldCheck,
   createdAt: new Date('2026-03-31'),
 });

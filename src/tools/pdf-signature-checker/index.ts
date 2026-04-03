@@ -8,6 +8,7 @@ export const tool = defineTool({
   description: translate('tools.pdf-signature-checker.description'),
   keywords: ['pdf', 'signature', 'checker', 'verify', 'validate', 'sign'],
   component: () => import('./pdf-signature-checker.vue'),
+  fullscreen: true,
   icon: FileCertIcon,
   createdAt: new Date('2023-12-09'),
 });

@@ -176,7 +176,7 @@ const cheatsheet = [
 </script>
 
 <template>
-  <div class="regex-layout" style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px; display: flex; gap: 16px; align-items: start;">
+  <div class="regex-layout" style="flex: 1 1 900px; max-width: 1400px; margin-top: 0; display: flex; gap: 16px; align-items: start;">
     <!-- Left: Tester -->
     <div style="flex: 1; min-width: 0;">
       <c-card title="Regex" mb-1>
