@@ -124,7 +124,13 @@ async function checkDmarc(d: string) {
       return;
     }
     const issues: string[] = [];
-    if (dmarc.includes('p=none')) {
+    const dmarcTags = Object.fromEntries(
+      dmarc.split(';').map(t => t.trim()).filter(Boolean).map((t) => {
+        const eq = t.indexOf('=');
+        return [t.slice(0, eq).trim(), t.slice(eq + 1).trim()];
+      }),
+    );
+    if (dmarcTags.p === 'none') {
       issues.push('⚠ p=none — monitor only, no enforcement. Emails will not be rejected.');
     }
     if (!dmarc.includes('rua=')) {
