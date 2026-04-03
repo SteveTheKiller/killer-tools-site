@@ -799,6 +799,12 @@ const cheatsheet = [
     max-height: none;
     box-shadow: none;
     border-radius: 0;
+    overflow-x: auto;
+  }
+
+  .cheatsheet-panel table {
+    width: max-content;
+    min-width: 100%;
   }
 }
 
