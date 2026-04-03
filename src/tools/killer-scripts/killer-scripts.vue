@@ -5,8 +5,6 @@ const loading = ref(true);
 const error = ref(false);
 const downloading = ref<string | null>(null);
 const copied = ref<string | null>(null);
-const search = ref('');
-
 onMounted(async () => {
   try {
     const [contentsRes, descRes] = await Promise.all([
@@ -25,21 +23,6 @@ onMounted(async () => {
   finally {
     loading.value = false;
   }
-});
-
-const filteredScripts = computed(() => {
-  const q = search.value.toLowerCase().trim();
-  if (!q) {
-    return scripts.value;
-  }
-  return scripts.value.filter((s: { name: string; download_url: string }) => {
-    const desc = descriptions.value[s.name];
-    return (
-      s.name.toLowerCase().includes(q)
-      || desc?.name?.toLowerCase().includes(q)
-      || desc?.description?.toLowerCase().includes(q)
-    );
-  });
 });
 
 function acronym(filename: string) {
@@ -77,22 +60,15 @@ async function downloadScript(script: { name: string; download_url: string }) {
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
-    <div mb-2 flex items-center justify-end gap-3>
+    <div mb-2 flex items-center justify-end>
       <a
         href="https://github.com/SteveTheKiller/killer-scripts"
         target="_blank"
-
         op-50 transition hover:op-100
         style="color: inherit; text-decoration: none; font-size: 0.85rem;"
       >
         GitHub ↗
       </a>
-      <c-input-text
-        v-model:value="search"
-        placeholder="Search scripts..."
-        style="max-width: 260px;"
-        clearable
-      />
     </div>
 
     <div v-if="loading" flex justify-center py-10>
@@ -105,18 +81,10 @@ async function downloadScript(script: { name: string; download_url: string }) {
 
     <template v-else>
       <div
-        v-if="filteredScripts.length === 0"
-        flex justify-center py-10 op-50
-      >
-        No scripts match "{{ search }}"
-      </div>
-
-      <div
-        v-else
         class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4"
       >
         <c-card
-          v-for="script in filteredScripts"
+          v-for="script in scripts"
           :key="script.name"
           class="flex flex-col justify-between transition transition-duration-0.5s !border-2px !hover:border-primary"
         >
