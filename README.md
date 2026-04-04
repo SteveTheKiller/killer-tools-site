@@ -2,7 +2,7 @@
 
 ![killer-tools](./public/banner.png)
 
-A custom fork of [IT-Tools](https://github.com/CorentinTh/it-tools) with personalized branding, deployed at [tools.thekiller.net](https://tools.thekiller.net).
+A custom fork of [IT-Tools](https://github.com/CorentinTh/it-tools) with personalized branding, deployed at [killertools.net](https://killertools.net).
 
 Built and maintained by [SteveTheKiller](https://thekiller.net).
 
