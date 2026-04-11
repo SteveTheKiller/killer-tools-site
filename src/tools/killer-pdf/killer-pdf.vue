@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
+
+onMounted(() => {
+  document.body.classList.add('killer-pdf-active');
+});
+onUnmounted(() => {
+  document.body.classList.remove('killer-pdf-active');
+});
+
 const features = [
   { title: 'View & Navigate', desc: 'High-quality bitmap rendering via PDFium. Page thumbnails, Ctrl+scroll zoom, and keyboard shortcuts for fast navigation.' },
   { title: 'Merge & Split', desc: 'Combine multiple PDFs into one or extract selected pages into a new file. Drag-and-drop page reordering in the sidebar.' },
@@ -19,7 +28,7 @@ const features = [
       </h1>
       <p style="color: #a0a0a0; font-size: 15px; max-width: 520px; margin: 0 auto 24px;">
         Portable PDF editor built for field techs. View, annotate, merge, split, edit text,
-        draw, sign, and print -- all from a single lightweight app.
+        draw, sign, and print - all from a single lightweight app.
       </p>
       <a
         href="https://dl.killertools.net/KillerPDF.zip"
@@ -110,9 +119,8 @@ const features = [
 </style>
 
 <style>
-/* Hide the auto-generated compact header for this tool page */
-.tool-header-compact { display: none !important; }
-/* Break out of the 600px flex constraint and fill the available width */
-.tool-content-fullscreen { max-width: 100%; padding: 0 32px; }
-.tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; }
+/* Only apply when KillerPDF page is active */
+body.killer-pdf-active .tool-header-compact { display: none !important; }
+body.killer-pdf-active .tool-content-fullscreen { max-width: 100%; padding: 0 32px; }
+body.killer-pdf-active .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; }
 </style>

@@ -128,6 +128,7 @@ declare module '@vue/runtime-core' {
     JsonViewer: typeof import('./src/tools/json-viewer/json-viewer.vue')['default']
     JwtParser: typeof import('./src/tools/jwt-parser/jwt-parser.vue')['default']
     KeycodeInfo: typeof import('./src/tools/keycode-info/keycode-info.vue')['default']
+    KillerPdf: typeof import('./src/tools/killer-pdf/killer-pdf.vue')['default']
     KillerScan: typeof import('./src/tools/killer-scan/killer-scan.vue')['default']
     KillerScripts: typeof import('./src/tools/killer-scripts/killer-scripts.vue')['default']
     ListConverter: typeof import('./src/tools/list-converter/list-converter.vue')['default']
