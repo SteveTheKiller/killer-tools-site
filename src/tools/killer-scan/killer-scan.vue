@@ -2,7 +2,7 @@
 const features = [
   { title: 'ARP + Ping Discovery', desc: 'Dual-method host detection catches devices that don\'t respond to ICMP, including IoT devices and firewalled endpoints.' },
   { title: 'Port Probing', desc: 'Parallel scan of common service ports (SSH, RDP, SMB, HTTP, printing, hypervisor, NAS) with 200ms timeout per port.' },
-  { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database identifies device manufacturers -- printers, switches, APs, IoT, and more.' },
+  { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database to identify device manufacturers including printers, switches, APs, IoT, and more.' },
   { title: 'Device Classification', desc: 'Automatic typing via hostname keywords, OUI vendor, and port fingerprinting. Right-click to manually override any device type.' },
   { title: 'Export', desc: 'Export scan results as CSV or HTML report. Right-click any device to copy IP, MAC, hostname, or launch RDP/SSH/browser.' },
   { title: 'Single File, No Install', desc: 'One exe, ~500 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
