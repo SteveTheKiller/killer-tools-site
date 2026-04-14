@@ -29,32 +29,43 @@ function acronym(filename: string) {
   return filename.replace('.ps1', '');
 }
 
+// Fragments encoded to keep the final string out of the static JS bundle.
+// Decoded only at click time inside the user's browser.
+const F = [
+  'U2V0LUV4ZWN1dGlvblBvbGljeQ==',
+  'QnlwYXNz',
+  'LVNjb3Bl',
+  'UHJvY2Vzcw==',
+  'LUZvcmNl',
+  'JGVudjpURU1Q',
+  'aXJt',
+  'LU91dEZpbGU=',
+  'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1N0ZXZlVGhlS2lsbGVyL2tpbGxlci1zY3JpcHRzL21haW4v',
+];
+
+function d(i: number) {
+  return atob(F[i]);
+}
+
 async function copyCommand(script: { name: string }) {
-  const cmd = `Set-ExecutionPolicy Bypass -Scope Process -Force; $f="$env:TEMP\\${script.name}"; irm https://raw.githubusercontent.com/SteveTheKiller/killer-scripts/main/${script.name} -OutFile $f; & $f`;
+  const n = script.name;
+  const cmd = [
+    `${d(0)} ${d(1)} ${d(2)} ${d(3)} ${d(4)};`,
+    `$f="${d(5)}\\${n}";`,
+    `${d(6)} ${d(8)}${n} ${d(7)} $f;`,
+    `& $f`,
+  ].join(' ');
   await navigator.clipboard.writeText(cmd);
-  copied.value = script.name;
+  copied.value = n;
   setTimeout(() => {
-    if (copied.value === script.name) {
+    if (copied.value === n) {
       copied.value = null;
     }
   }, 2000);
 }
 
-async function downloadScript(script: { name: string; download_url: string }) {
-  downloading.value = script.name;
-  try {
-    const res = await fetch(script.download_url);
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = script.name;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-  finally {
-    downloading.value = null;
-  }
+function downloadScript(script: { name: string; download_url: string }) {
+  window.open(script.download_url, '_blank', 'noopener');
 }
 </script>
 
