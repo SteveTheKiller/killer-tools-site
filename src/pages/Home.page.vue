@@ -11,7 +11,41 @@ import { config } from '@/config';
 
 const toolStore = useToolStore();
 
-useHead({ title: 'killer tools' });
+const homeTitle = 'Killer Tools - Handy online tools for developers and IT pros';
+const homeDescription = 'A free, open-source collection of handy online tools for developers, sysadmins, and IT pros. Converters, generators, network utilities, and more. No ads, no tracking.';
+const homeUrl = 'https://killertools.net/';
+useHead({
+  title: homeTitle,
+  link: [
+    { rel: 'canonical', href: homeUrl },
+  ],
+  meta: [
+    { name: 'description', content: homeDescription },
+    { property: 'og:title', content: homeTitle },
+    { property: 'og:description', content: homeDescription },
+    { property: 'og:url', content: homeUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: homeTitle },
+    { name: 'twitter:description', content: homeDescription },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': 'Killer Tools',
+        'url': homeUrl,
+        'description': homeDescription,
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Killer Tools',
+          'url': homeUrl,
+        },
+      }),
+    },
+  ],
+});
 const { t } = useI18n();
 
 const favoriteTools = computed(() => toolStore.favoriteTools);

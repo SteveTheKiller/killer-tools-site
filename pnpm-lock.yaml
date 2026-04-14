@@ -12591,7 +12591,7 @@ snapshots:
   update-browserslist-db@1.0.13(browserslist@4.22.1):
     dependencies:
       browserslist: 4.22.1
-      escalade: 3.1.1
+      escalade: 3.2.0
       picocolors: 1.0.0
 
   update-browserslist-db@1.2.3(browserslist@4.28.1):

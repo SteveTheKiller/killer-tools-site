@@ -1,7 +1,24 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
-useHead({ title: 'Privacy Policy - Killer Tools' });
+const privacyTitle = 'Privacy Policy - Killer Tools';
+const privacyDescription = 'Privacy policy for Killer Tools. No tracking, no cookies, no data collection. All tool processing happens in your browser.';
+const privacyUrl = 'https://killertools.net/privacy';
+useHead({
+  title: privacyTitle,
+  link: [
+    { rel: 'canonical', href: privacyUrl },
+  ],
+  meta: [
+    { name: 'description', content: privacyDescription },
+    { property: 'og:title', content: privacyTitle },
+    { property: 'og:description', content: privacyDescription },
+    { property: 'og:url', content: privacyUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: privacyTitle },
+    { name: 'twitter:description', content: privacyDescription },
+  ],
+});
 </script>
 
 <template>

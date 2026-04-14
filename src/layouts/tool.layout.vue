@@ -9,19 +9,54 @@ import type { Tool } from '@/tools/tools.types';
 
 const route = useRoute();
 
-const head = computed<HeadObject>(() => ({
-  title: `${route.meta.name} - Killer Tools`,
-  meta: [
-    {
-      name: 'description',
-      content: route.meta?.description as string,
+const head = computed<HeadObject>(() => {
+  const title = `${route.meta.name} - Killer Tools`;
+  const description = (route.meta?.description as string) ?? '';
+  const url = `https://killertools.net${route.path}`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': route.meta.name,
+    'description': description,
+    'url': url,
+    'applicationCategory': 'DeveloperApplication',
+    'operatingSystem': 'Any',
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'USD',
     },
-    {
-      name: 'keywords',
-      content: ((route.meta.keywords ?? []) as string[]).join(','),
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Killer Tools',
+      'url': 'https://killertools.net',
     },
-  ],
-}));
+  };
+  return {
+    title,
+    link: [
+      { rel: 'canonical', href: url },
+    ],
+    meta: [
+      { name: 'description', content: description },
+      { name: 'keywords', content: ((route.meta.keywords ?? []) as string[]).join(',') },
+      // Open Graph
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:url', content: url },
+      { property: 'og:type', content: 'website' },
+      // Twitter
+      { name: 'twitter:title', content: title },
+      { name: 'twitter:description', content: description },
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify(jsonLd),
+      },
+    ],
+  };
+});
 useHead(head);
 const { t } = useI18n();
 

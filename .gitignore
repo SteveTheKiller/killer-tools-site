@@ -45,6 +45,7 @@ capacitor.config.ts
 # Build artifacts
 build-out.txt
 build-err.txt
+.vite-ssg-temp/
 
 # App store assets
 feature-graphic.png
