@@ -40,7 +40,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.1.1 &middot; Windows 10/11 x64 &middot; ~500 KB &middot; Requires
+        v1.1.2 &middot; Windows 10/11 x64 &middot; ~500 KB &middot; Requires
         <a
           href="https://dotnet.microsoft.com/download/dotnet/8.0"
           target="_blank"
