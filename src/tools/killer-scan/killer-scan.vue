@@ -5,7 +5,7 @@ const features = [
   { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database to identify device manufacturers including printers, switches, APs, IoT, and more.' },
   { title: 'Device Classification', desc: 'Automatic typing via hostname keywords, OUI vendor, and port fingerprinting. Right-click to manually override any device type.' },
   { title: 'Export', desc: 'Export scan results as CSV or HTML report. Right-click any device to copy IP, MAC, hostname, or launch RDP/SSH/browser.' },
-  { title: 'Single File, No Install', desc: 'One exe, ~500 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
+  { title: 'Single File, No Install', desc: 'One exe, ~508 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
 ];
 </script>
 
@@ -15,9 +15,12 @@ const features = [
       <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">
         <span style="color: #1ea54c;">Killer</span>Scan
       </h1>
+      <p style="font-family: Consolas, monospace; color: #1ea54c; font-size: 16px; max-width: 520px; margin: 0 auto 10px;">
+        &gt; Free. Open. No telemetry. No bullshit.
+      </p>
       <p style="color: #a0a0a0; font-size: 15px; max-width: 520px; margin: 0 auto 24px;">
-        Fast network scanner built for field techs. ARP + ping discovery, port probing, vendor lookup,
-        and automatic device classification in a single portable exe.
+        One exe you drop on a USB stick and go. No installer, no agent, no account, no phone-home.
+        Fast discovery, smart classification, zero dependencies beyond .NET. Built by a field tech, for field techs.
       </p>
       <a
         href="https://dl.killertools.net/KillerScan.zip"
@@ -40,7 +43,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.1.3 &middot; Windows 10/11 x64 &middot; ~500 KB &middot; Requires
+        v1.1.3 &middot; Windows 10/11 x64 &middot; ~508 KB &middot; Requires
         <a
           href="https://dotnet.microsoft.com/download/dotnet/8.0"
           target="_blank"
