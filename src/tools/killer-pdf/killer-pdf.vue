@@ -29,10 +29,24 @@ const features = [
       <p style="font-family: Consolas, monospace; color: #1ea54c; font-size: 16px; max-width: 520px; margin: 0 auto 10px;">
         &gt; Free. Open. No subscription. No nonsense.
       </p>
-      <p style="color: #a0a0a0; font-size: 15px; max-width: 520px; margin: 0 auto 24px;">
-        One exe you drop on a USB stick and go. No installer, no account, no telemetry.
-        The PDF equivalent of Notepad, built by a field tech who is really tired of Adobe.
-      </p>
+      <ul style="list-style: none; margin: 0 auto 24px; max-width: 480px; text-align: left; padding: 0;">
+        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
+          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
+          View, edit, annotate, merge, split, sign, and print
+        </li>
+        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
+          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
+          No installer, no account, no subscription
+        </li>
+        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
+          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
+          No telemetry, no phone-home, no nonsense
+        </li>
+        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
+          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
+          Built by a field tech who is really tired of Adobe
+        </li>
+      </ul>
       <a
         href="https://dl.killertools.net/KillerPDF.zip"
         style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
