@@ -26,27 +26,33 @@ const features = [
       <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">
         Killer<span style="color: #1ea54c;">PDF</span>
       </h1>
-      <p style="font-family: Consolas, monospace; color: #1ea54c; font-size: 16px; max-width: 520px; margin: 0 auto 10px;">
-        &gt; Free. Open. No subscription. No nonsense.
-      </p>
-      <ul style="list-style: none; margin: 0 auto 24px; max-width: 480px; text-align: left; padding: 0;">
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          View, edit, annotate, merge, split, sign, and print
-        </li>
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          No installer, no account, no subscription
-        </li>
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          No telemetry, no phone-home, no nonsense
-        </li>
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          Built by a field tech who is really tired of Adobe
-        </li>
-      </ul>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot" /><span class="terminal-dot" /><span class="terminal-dot" />
+          <span class="terminal-title">
+            ~/killerpdf
+          </span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-prompt">$</span> <span class="t-cmd">killerpdf</span> <span class="t-flag">invoice.pdf</span><br>
+          <br>
+          <span class="t-out"><span class="t-label">view</span> high-quality rendering, thumbnails, zoom</span><br>
+          <span class="t-out"><span class="t-label">edit</span> inline text editing with font matching</span><br>
+          <span class="t-out"><span class="t-label">annotate</span> highlights, drawings, text boxes</span><br>
+          <span class="t-out"><span class="t-label">sign</span> reusable signatures, click to place</span><br>
+          <span class="t-out"><span class="t-label">merge</span> combine, split, reorder pages</span><br>
+          <span class="t-out"><span class="t-label">print</span> annotations flattened into output</span><br>
+          <br>
+          <span class="t-out">
+            No installer. No account. No subscription. No telemetry.
+          </span><br>
+          <span class="t-out">
+            Free. Open. GPLv3. Built by a field tech who hates Adobe.
+          </span><br>
+          <br>
+          <span class="t-prompt">$</span> <span class="t-cursor" />
+        </div>
+      </div>
       <a
         href="https://dl.killertools.net/KillerPDF.zip"
         style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
@@ -140,6 +146,57 @@ const features = [
 .killer-pdf-page {
   width: 100%;
 }
+.terminal {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  max-width: 520px;
+  margin: 0 auto 24px;
+  text-align: left;
+  overflow: hidden;
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #151515;
+  border-bottom: 1px solid #2a2a2a;
+}
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #333;
+  display: inline-block;
+}
+.terminal-title {
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  color: #555;
+  margin-left: auto;
+  margin-right: auto;
+}
+.terminal-body {
+  padding: 16px 18px;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.t-prompt { color: #0C7A43; font-weight: bold; }
+.t-cmd { color: #fff; font-weight: bold; }
+.t-flag { color: #1ea54c; }
+.t-out { color: #a0a0a0; }
+.t-label { color: #1ea54c; }
+.t-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background: #1ea54c;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
