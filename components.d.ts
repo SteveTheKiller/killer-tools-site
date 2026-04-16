@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     '404.page': typeof import('./src/pages/404.page.vue')['default']
     About: typeof import('./src/pages/About.vue')['default']
-    APISETUP: typeof import('./src/tools/service-tag-lookup/API-SETUP.md')['default']
     App: typeof import('./src/App.vue')['default']
     AsciiTextDrawer: typeof import('./src/tools/ascii-text-drawer/ascii-text-drawer.vue')['default']
     'Base.layout': typeof import('./src/layouts/base.layout.vue')['default']
@@ -208,7 +207,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     RsaKeyPairGenerator: typeof import('./src/tools/rsa-key-pair-generator/rsa-key-pair-generator.vue')['default']
     SafelinkDecoder: typeof import('./src/tools/safelink-decoder/safelink-decoder.vue')['default']
-    ServiceTagLookup: typeof import('./src/tools/service-tag-lookup/service-tag-lookup.vue')['default']
     SlugifyString: typeof import('./src/tools/slugify-string/slugify-string.vue')['default']
     SpanCopyable: typeof import('./src/components/SpanCopyable.vue')['default']
     SqlPrettify: typeof import('./src/tools/sql-prettify/sql-prettify.vue')['default']

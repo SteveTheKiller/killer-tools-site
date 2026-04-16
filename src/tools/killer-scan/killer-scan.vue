@@ -5,7 +5,7 @@ const features = [
   { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database to identify device manufacturers including printers, switches, APs, IoT, and more.' },
   { title: 'Device Classification', desc: 'Automatic typing via hostname keywords, OUI vendor, and port fingerprinting. Right-click to manually override any device type.' },
   { title: 'Export', desc: 'Export scan results as CSV or HTML report. Right-click any device to copy IP, MAC, hostname, or launch RDP/SSH/browser.' },
-  { title: 'Single File, No Install', desc: 'One exe, ~508 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
+  { title: 'Single File, No Install', desc: 'Fully self-contained EXE, ~865 KB zipped. No installer, no runtime install, no admin rights, no dependencies.' },
 ];
 </script>
 
@@ -61,15 +61,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.1.3 &middot; Windows 10/11 x64 &middot; ~508 KB &middot; Requires
-        <a
-          href="https://dotnet.microsoft.com/download/dotnet/8.0"
-          target="_blank"
-          rel="noopener"
-          style="color: #1ea54c;"
-        >
-          .NET 8 Desktop Runtime
-        </a>
+        v1.2.0 &middot; Windows 10/11 x64 &middot; ~865 KB &middot; No runtime required
       </p>
       <a
         href="https://github.com/SteveTheKiller/KillerScan"
@@ -115,15 +107,7 @@ const features = [
         <strong style="color: #e0e0e0;">OS:</strong> Windows 10 or 11 (x64)
       </p>
       <p style="font-size: 13px; color: #a0a0a0; margin-bottom: 6px;">
-        <strong style="color: #e0e0e0;">Runtime:</strong>
-        <a
-          href="https://dotnet.microsoft.com/download/dotnet/8.0"
-          target="_blank"
-          rel="noopener"
-          style="color: #1ea54c;"
-        >
-          .NET 8 Desktop Runtime
-        </a>
+        <strong style="color: #e0e0e0;">Runtime:</strong> None. Everything needed is inside the EXE.
       </p>
       <p style="font-size: 13px; color: #a0a0a0;">
         <strong style="color: #e0e0e0;">Network:</strong> Run as admin for best ARP results on some networks

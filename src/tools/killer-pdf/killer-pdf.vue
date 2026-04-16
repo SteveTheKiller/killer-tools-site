@@ -16,7 +16,7 @@ const features = [
   { title: 'Signatures', desc: 'Draw and save reusable signatures. Click to place them anywhere on a page, just like Acrobat. Signatures persist between sessions.' },
   { title: 'Search & Select', desc: 'Ctrl+F full-text search with highlighted results. Drag-select to copy text, or Ctrl+A to grab the whole page.' },
   { title: 'Print', desc: 'Print with annotations flattened into the output. Ctrl+P or toolbar button sends directly to the system print dialog.' },
-  { title: 'Portable', desc: 'Single exe, ~10 MB zipped. No installer, no admin rights, no config files. Runs anywhere with the .NET 8 Desktop Runtime.' },
+  { title: 'Portable', desc: 'Fully self-contained EXE, ~6 MB zipped. No installer, no runtime install, no admin rights, no config files. Runs anywhere.' },
 ];
 </script>
 
@@ -74,15 +74,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.0.1 &middot; Windows 10/11 x64 &middot; ~10 MB &middot; Requires
-        <a
-          href="https://dotnet.microsoft.com/download/dotnet/8.0"
-          target="_blank"
-          rel="noopener"
-          style="color: #1ea54c;"
-        >
-          .NET 8 Desktop Runtime
-        </a>
+        v1.1.0 &middot; Windows 10/11 x64 &middot; ~6 MB &middot; No runtime required
       </p>
       <a
         href="https://github.com/SteveTheKiller/KillerPDF"
@@ -128,15 +120,7 @@ const features = [
         <strong style="color: #e0e0e0;">OS:</strong> Windows 10 or 11 (x64)
       </p>
       <p style="font-size: 13px; color: #a0a0a0;">
-        <strong style="color: #e0e0e0;">Runtime:</strong>
-        <a
-          href="https://dotnet.microsoft.com/download/dotnet/8.0"
-          target="_blank"
-          rel="noopener"
-          style="color: #1ea54c;"
-        >
-          .NET 8 Desktop Runtime
-        </a>
+        <strong style="color: #e0e0e0;">Runtime:</strong> None. Everything needed is inside the EXE.
       </p>
     </n-card>
   </div>
