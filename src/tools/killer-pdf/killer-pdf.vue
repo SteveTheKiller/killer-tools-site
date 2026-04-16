@@ -27,7 +27,7 @@ const features = [
         Killer<span style="color: #1ea54c;">PDF</span>
       </h1>
       <p style="font-family: Consolas, monospace; color: #1ea54c; font-size: 16px; max-width: 520px; margin: 0 auto 10px;">
-        &gt; Free. Open. No subscription. No bullshit.
+        &gt; Free. Open. No subscription. No nonsense.
       </p>
       <p style="color: #a0a0a0; font-size: 15px; max-width: 520px; margin: 0 auto 24px;">
         One exe you drop on a USB stick and go. No installer, no account, no telemetry.
