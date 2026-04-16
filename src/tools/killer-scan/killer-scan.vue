@@ -15,27 +15,31 @@ const features = [
       <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">
         <span style="color: #1ea54c;">Killer</span>Scan
       </h1>
-      <p style="font-family: Consolas, monospace; color: #1ea54c; font-size: 16px; max-width: 520px; margin: 0 auto 10px;">
-        &gt; Free. Open. No telemetry. No nonsense.
-      </p>
-      <ul style="list-style: none; margin: 0 auto 24px; max-width: 480px; text-align: left; padding: 0;">
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          ARP + ping discovery, port probing, vendor ID, device classification
-        </li>
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          No installer, no agent, no account, no phone-home
-        </li>
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          No telemetry, no nonsense, zero dependencies beyond .NET
-        </li>
-        <li style="font-size: 14px; color: #a0a0a0; padding: 3px 0 3px 20px; position: relative;">
-          <span style="position: absolute; left: 0; color: #1ea54c; font-family: Consolas, monospace; font-weight: bold;">&gt;</span>
-          Built by a field tech, for field techs
-        </li>
-      </ul>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot" /><span class="terminal-dot" /><span class="terminal-dot" />
+          <span class="terminal-title">
+            ~/killerscan
+          </span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-prompt">$</span> <span class="t-cmd">killerscan</span> <span class="t-flag">--scan</span> <span class="t-out">192.168.1.0/24</span><br>
+          <br>
+          <span class="t-out"><span class="t-label">found</span> 47 hosts in 3.2s</span><br>
+          <span class="t-out"><span class="t-label">probed</span> 12 open ports across 6 services</span><br>
+          <span class="t-out"><span class="t-label">identified</span> 38 vendors via MAC OUI</span><br>
+          <span class="t-out"><span class="t-label">classified</span> printers, switches, APs, endpoints</span><br>
+          <br>
+          <span class="t-out">
+            No installer. No agent. No account. No telemetry.
+          </span><br>
+          <span class="t-out">
+            Free. Open. GPLv3. Built by a field tech, for field techs.
+          </span><br>
+          <br>
+          <span class="t-prompt">$</span> <span class="t-cursor" />
+        </div>
+      </div>
       <a
         href="https://dl.killertools.net/KillerScan.zip"
         style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
@@ -129,6 +133,57 @@ const features = [
 </template>
 
 <style scoped>
+.terminal {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  max-width: 520px;
+  margin: 0 auto 24px;
+  text-align: left;
+  overflow: hidden;
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #151515;
+  border-bottom: 1px solid #2a2a2a;
+}
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #333;
+  display: inline-block;
+}
+.terminal-title {
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  color: #555;
+  margin-left: auto;
+  margin-right: auto;
+}
+.terminal-body {
+  padding: 16px 18px;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.t-prompt { color: #0C7A43; font-weight: bold; }
+.t-cmd { color: #fff; font-weight: bold; }
+.t-flag { color: #1ea54c; }
+.t-out { color: #a0a0a0; }
+.t-label { color: #1ea54c; }
+.t-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background: #1ea54c;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
