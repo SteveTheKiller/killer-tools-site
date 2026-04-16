@@ -61,7 +61,13 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.2.0 &middot; Windows 10/11 x64 &middot; ~865 KB &middot; No runtime required
+        v1.2.0 &middot; Windows 10/11 x64 &middot; ~865 KB &middot; No runtime required &middot;
+        <a
+          href="https://dl.killertools.net/KillerScan-1.2.0-src.zip"
+          style="color: #1ea54c;"
+        >
+          source (zip)
+        </a>
       </p>
       <a
         href="https://github.com/SteveTheKiller/KillerScan"
