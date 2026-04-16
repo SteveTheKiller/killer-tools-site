@@ -24,11 +24,14 @@ const features = [
   <div class="killer-pdf-page">
     <div style="text-align: center; margin-bottom: 32px;">
       <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">
-        <span style="color: #1ea54c;">Killer</span>PDF
+        Killer<span style="color: #1ea54c;">PDF</span>
       </h1>
+      <p style="font-family: Consolas, monospace; color: #1ea54c; font-size: 16px; max-width: 520px; margin: 0 auto 10px;">
+        &gt; Free. Open. No subscription. No bullshit.
+      </p>
       <p style="color: #a0a0a0; font-size: 15px; max-width: 520px; margin: 0 auto 24px;">
-        Portable PDF editor built for field techs. View, annotate, merge, split, edit text,
-        draw, sign, and print - all from a single lightweight app.
+        One exe you drop on a USB stick and go. No installer, no account, no telemetry.
+        The PDF equivalent of Notepad, built by a field tech who is really tired of Adobe.
       </p>
       <a
         href="https://dl.killertools.net/KillerPDF.zip"
@@ -51,7 +54,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.0.0 &middot; Windows 10/11 x64 &middot; ~10 MB &middot; Requires
+        v1.0.1 &middot; Windows 10/11 x64 &middot; ~10 MB &middot; Requires
         <a
           href="https://dotnet.microsoft.com/download/dotnet/8.0"
           target="_blank"
@@ -61,6 +64,18 @@ const features = [
           .NET 8 Desktop Runtime
         </a>
       </p>
+      <a
+        href="https://github.com/SteveTheKiller/KillerPDF"
+        target="_blank"
+        rel="noopener"
+        style="display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; background: #232323; border: 1px solid #1ea54c; border-radius: 4px; font-size: 13px; color: #e0e0e0; text-decoration: none;"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#1ea54c">
+          <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.44 9.77 8.2 11.36.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0024 12.5C24 5.87 18.63.5 12 .5z" />
+        </svg>
+        <span>Now open source under GPLv3</span>
+        <span style="color: #1ea54c; font-weight: 600;">View on GitHub &rarr;</span>
+      </a>
     </div>
 
     <n-divider />
