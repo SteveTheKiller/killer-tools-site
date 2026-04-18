@@ -41,7 +41,7 @@ const features = [
         </div>
       </div>
       <a
-        href="https://dl.killertools.net/KillerScan.zip"
+        href="https://github.com/SteveTheKiller/KillerScan/releases/latest/download/KillerScan.zip"
         style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
       >
         <svg
@@ -63,7 +63,7 @@ const features = [
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
         v1.2.1 &middot; Windows 10/11 x64 &middot; ~865 KB &middot; No runtime required &middot;
         <a
-          href="https://dl.killertools.net/KillerScan-1.2.1-src.zip"
+          href="https://github.com/SteveTheKiller/KillerScan/releases/download/v1.2.1/KillerScan-1.2.1-src.zip"
           style="color: #1ea54c;"
         >
           source (zip)

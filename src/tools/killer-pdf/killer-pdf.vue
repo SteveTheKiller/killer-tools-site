@@ -54,7 +54,7 @@ const features = [
         </div>
       </div>
       <a
-        href="https://dl.killertools.net/KillerPDF.zip"
+        href="https://github.com/SteveTheKiller/KillerPDF/releases/latest/download/KillerPDF.zip"
         style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
       >
         <svg
@@ -76,7 +76,7 @@ const features = [
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
         v1.1.1 &middot; Windows 10/11 x64 &middot; ~6 MB &middot; No runtime required &middot;
         <a
-          href="https://dl.killertools.net/KillerPDF-1.1.1-src.zip"
+          href="https://github.com/SteveTheKiller/KillerPDF/releases/download/v1.1.1/KillerPDF-1.1.1-src.zip"
           style="color: #1ea54c;"
         >
           source (zip)
