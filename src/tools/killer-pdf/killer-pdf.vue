@@ -74,9 +74,9 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.1.0 &middot; Windows 10/11 x64 &middot; ~6 MB &middot; No runtime required &middot;
+        v1.1.1 &middot; Windows 10/11 x64 &middot; ~6 MB &middot; No runtime required &middot;
         <a
-          href="https://dl.killertools.net/KillerPDF-1.1.0-src.zip"
+          href="https://dl.killertools.net/KillerPDF-1.1.1-src.zip"
           style="color: #1ea54c;"
         >
           source (zip)
