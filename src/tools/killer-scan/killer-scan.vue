@@ -61,13 +61,19 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.2.1 &middot; Windows 10/11 x64 &middot; ~865 KB &middot; No runtime required &middot;
+        Windows 10/11 x64 &middot; ~865 KB &middot;
         <a
           href="https://github.com/SteveTheKiller/KillerScan/releases/download/v1.2.1/KillerScan-1.2.1-src.zip"
           style="color: #1ea54c;"
         >
           source (zip)
         </a>
+      </p>
+      <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
+        <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.2.1 &middot; updated 4/18/2026
+      </div>
+      <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center;">
+        <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>2bb7d19a820b268bf2cfcb0200fe2092a7f96a10aa9c70d6cd49730c45412e1b
       </p>
       <a
         href="https://github.com/SteveTheKiller/KillerScan"

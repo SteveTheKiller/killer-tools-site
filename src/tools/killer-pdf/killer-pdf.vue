@@ -74,13 +74,19 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.1.1 &middot; Windows 10/11 x64 &middot; ~6 MB &middot; No runtime required &middot;
+        Windows 10/11 x64 &middot; ~6 MB &middot;
         <a
           href="https://github.com/SteveTheKiller/KillerPDF/releases/download/v1.1.1/KillerPDF-1.1.1-src.zip"
           style="color: #1ea54c;"
         >
           source (zip)
         </a>
+      </p>
+      <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
+        <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.1.1 &middot; updated 4/18/2026
+      </div>
+      <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center;">
+        <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>61c32f0bc08c36ea0a7edf8b08c5106ba1335289bc4d6edcbd33017e23eafa43
       </p>
       <a
         href="https://github.com/SteveTheKiller/KillerPDF"
