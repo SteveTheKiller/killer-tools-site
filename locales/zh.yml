@@ -79,20 +79,6 @@ tools:
   chronometer:
     title: 计时器
     description: 监控事物的持续时间。基本上是一种具有简单计时器功能的计时器。
-  token-generator:
-    title: Token 生成器
-    description: 使用您想要的字符、大写或小写字母、数字和/或符号生成随机字符串。
-
-    uppercase: '大写 (ABC...)'
-    lowercase: '小写 (abc...)'
-    numbers: '数字 (123...)'
-    symbols: '符号 (!-;...)'
-    length: '长度'
-    tokenPlaceholder: '令牌...'
-    copied: 复制到剪贴板
-    button:
-      copy: 复制
-      refresh: 刷新
   percentage-calculator:
     title: 百分比计算器
     description: 轻松计算从一个值到另一个值的百分比，或从百分比到值的百分比。
@@ -238,10 +224,6 @@ tools:
   qrcode-generator:
     title: 二维码生成器
     description: 生成并下载url或文本的QR代码，并自定义背景和前景颜色。
-
-  wifi-qrcode-generator:
-    title: WiFi 二维码生成器
-    description: 生成和下载QR码以快速连接到WiFi网络。
 
   xml-formatter:
     title: XML 格式化

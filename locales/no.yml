@@ -80,20 +80,6 @@ tools:
     title: Kronometer
     description: Overvåk varigheten av noe. I bunn og grunn et kronometer med enkle funksjoner.
 
-  token-generator:
-    title: Token generator
-    description: Generer en tilfeldig streng med store og/eller små bokstaver, siffer og/eller symboler.
-
-    uppercase: Store bokstaver (ABC...)
-    lowercase: Små bokstaver (abc...)
-    numbers: Siffer (123...)
-    symbols: Symboler (!-;...)
-    length: Lengde
-    tokenPlaceholder: 'Tokenet...'
-    copied: Tokenet er kopiert til utklippstavlen.
-    button:
-      copy: Kopier
-      refresh: Oppfrisk
   percentage-calculator:
     title: Prosent kalkulator
     description: Beregn enkelt prosenter fra en verdi til en annen, eller fra en prosent til en verdi.
@@ -241,10 +227,6 @@ tools:
   qrcode-generator:
     title: QR Kode generator
     description: Generer og last ned en QR kode til en URL (eller ren tekst), og tilpass bakgrunns og forgrunns farger.
-
-  wifi-qrcode-generator:
-    title: WiFi QR Kode generator
-    description: Generer og last ned QR koder for rask tilkobling til wifi nettverket.
 
   xml-formatter:
     title: XML formaterer

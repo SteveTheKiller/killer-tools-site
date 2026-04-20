@@ -102,21 +102,6 @@ tools:
     description: >-
       Überwache die Dauer einer Sache. Im Grunde ein Chronometer mit einfachen
       Chronometerfunktionen.
-  token-generator:
-    title: Token-Generator
-    description: >-
-      Generiere eine zufällige Zeichenfolge mit den von dir gewünschten Zeichen,
-      Groß- oder Kleinbuchstaben, Zahlen und/oder Symbolen.
-    uppercase: Großbuchstaben (ABC...)
-    lowercase: Kleinbuchstaben (abc...)
-    numbers: Zahlen (123...)
-    symbols: Symbole (!-;...)
-    length: Länge
-    tokenPlaceholder: Der Token ...
-    copied: Token in die Zwischenablage kopiert
-    button:
-      copy: Kopieren
-      refresh: Aktualisieren
   percentage-calculator:
     title: Prozentrechner
     description: >-
@@ -287,11 +272,6 @@ tools:
     description: >-
       Generiere und downloade QR-Codes für eine URL oder einfach einen Text und
       passe die Hintergrund- und Vordergrundfarben an.
-  wifi-qrcode-generator:
-    title: WLAN-QR-Code-Generator
-    description: >-
-      Generiere und lade QR-Codes für schnelle Verbindungen zu WLAN-Netzwerken
-      herunter.
   xml-formatter:
     title: XML-Formatter
     description: Verschönere deinen XML-String in ein menschenlesbares Format.

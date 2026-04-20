@@ -80,21 +80,6 @@ tools:
     title: Đồng hồ bấm giờ
     description: Giám sát thời gian của một sự việc. Cơ bản là một đồng hồ bấm giờ với các tính năng đơn giản.
 
-  token-generator:
-    title: Trình tạo mã thông báo
-    description: Tạo chuỗi ngẫu nhiên với các ký tự bạn muốn, chữ hoa hoặc chữ thường, số và/hoặc ký tự đặc biệt.
-
-    uppercase: Chữ hoa (ABC...)
-    lowercase: Chữ thường (abc...)
-    numbers: Số (123...)
-    symbols: Ký tự đặc biệt (!-;...)
-    length: Độ dài
-    tokenPlaceholder: 'Mã thông báo...'
-    copied: Mã thông báo đã được sao chép vào clipboard
-    button:
-      copy: Sao chép
-      refresh: Làm mới
-
   percentage-calculator:
     title: Máy tính phần trăm
     description: Dễ dàng tính toán phần trăm từ một giá trị đến giá trị khác, hoặc từ một phần trăm đến một giá trị.
@@ -234,10 +219,6 @@ tools:
   qrcode-generator:
     title: Tạo mã QR
     description: Tạo và tải xuống mã QR cho một URL hoặc chỉ một đoạn văn bản và tùy chỉnh màu nền và màu chữ.
-
-  wifi-qrcode-generator:
-    title: Tạo mã QR WiFi
-    description: Tạo và tải xuống mã QR để kết nối nhanh đến mạng WiFi.
 
   xml-formatter:
     title: Định dạng XML

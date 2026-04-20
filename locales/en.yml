@@ -76,20 +76,9 @@ tools:
     title: Chronometer
     description: Track elapsed time with a simple stopwatch and lap timer.
 
-  token-generator:
-    title: Token generator
-    description: Generate random string with the chars you want, uppercase or lowercase letters, numbers and/or symbols.
-
-    uppercase: Uppercase (ABC...)
-    lowercase: Lowercase (abc...)
-    numbers: Numbers (123...)
-    symbols: Symbols (!-;...)
-    length: Length
-    tokenPlaceholder: 'The token...'
-    copied: Token copied to the clipboard
-    button:
-      copy: Copy
-      refresh: Refresh
+  password-generator:
+    title: Password generator
+    description: Generate strong passwords, diceware passphrases, pronounceable strings, hex/base64/UUID tokens. Includes MSP presets (local admin, service account, Wi-Fi PSK, PIN), ambiguous-char exclusion, entropy meter, QR code and NATO phonetic readout.
   percentage-calculator:
     title: Percentage calculator
     description: Easily calculate percentages from a value to another value, or from a percentage to a value.
@@ -236,11 +225,7 @@ tools:
 
   qrcode-generator:
     title: QR Code generator
-    description: Generate and download a QR code for a URL (or just plain text), and customize the background and foreground colors.
-
-  wifi-qrcode-generator:
-    title: WiFi QR Code generator
-    description: Generate and download QR codes for quick connections to WiFi networks.
+    description: Generate and download QR codes for URLs, plain text, or Wi-Fi network credentials. Terminal, classic, and custom color themes with configurable error correction.
 
   xml-formatter:
     title: XML formatter

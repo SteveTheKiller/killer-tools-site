@@ -1,6 +1,6 @@
 import { HmacSHA1, enc } from 'crypto-js';
 import _ from 'lodash';
-import { createToken } from '../token-generator/token-generator.service';
+import { createToken } from '../password-generator/password-generator.service';
 
 export {
   generateHOTP,

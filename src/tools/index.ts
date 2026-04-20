@@ -61,14 +61,13 @@ import { tool as metaTagGenerator } from './meta-tag-generator';
 import { tool as mimeTypes } from './mime-types';
 import { tool as otpCodeGeneratorAndValidator } from './otp-code-generator-and-validator';
 import { tool as qrCodeGenerator } from './qr-code-generator';
-import { tool as wifiQrCodeGenerator } from './wifi-qr-code-generator';
 import { tool as randomPortGenerator } from './random-port-generator';
 import { tool as romanNumeralConverter } from './roman-numeral-converter';
 import { tool as sqlPrettify } from './sql-prettify';
 import { tool as svgPlaceholderGenerator } from './svg-placeholder-generator';
 import { tool as temperatureConverter } from './temperature-converter';
 import { tool as textStatistics } from './text-statistics';
-import { tool as tokenGenerator } from './token-generator';
+import { tool as passwordGenerator } from './password-generator';
 import type { ToolCategory } from './tools.types';
 import { tool as urlEncoder } from './url-encoder';
 import { tool as urlParser } from './url-parser';
@@ -160,6 +159,7 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Crypto',
     components: [
+      passwordGenerator,
       bcrypt,
       bip39,
       cypher,
@@ -168,7 +168,6 @@ export const toolsByCategory: ToolCategory[] = [
       passwordStrengthAnalyser,
       pdfSignatureChecker,
       rsaKeyPairGenerator,
-      tokenGenerator,
       ulidGenerator,
       uuidGenerator,
     ],
@@ -216,7 +215,6 @@ export const toolsByCategory: ToolCategory[] = [
       cameraRecorder,
       qrCodeGenerator,
       svgPlaceholderGenerator,
-      wifiQrCodeGenerator,
     ],
   },
   {
