@@ -1,6 +1,46 @@
-import { extension as getExtensionFromMimeType, extension as getMimeTypeFromExtension } from 'mime-types';
 import type { Ref } from 'vue';
 import _ from 'lodash';
+
+// Small bidirectional MIME ↔ extension map covering everything the app actually downloads.
+// Replaces the `mime-types` npm package which depends on Node's `path` module and emits
+// browser-compatibility warnings when bundled by Vite.
+const mimeToExt: Record<string, string> = {
+  'application/pdf': 'pdf',
+  'application/json': 'json',
+  'application/zip': 'zip',
+  'application/xml': 'xml',
+  'application/octet-stream': 'bin',
+  'image/png': 'png',
+  'image/jpeg': 'jpg',
+  'image/jpg': 'jpg',
+  'image/gif': 'gif',
+  'image/svg+xml': 'svg',
+  'image/webp': 'webp',
+  'image/bmp': 'bmp',
+  'image/x-icon': 'ico',
+  'text/plain': 'txt',
+  'text/html': 'html',
+  'text/css': 'css',
+  'text/csv': 'csv',
+  'text/markdown': 'md',
+  'text/xml': 'xml',
+  'audio/mpeg': 'mp3',
+  'audio/wav': 'wav',
+  'video/mp4': 'mp4',
+  'video/webm': 'webm',
+};
+
+const extToMime: Record<string, string> = Object.fromEntries(
+  Object.entries(mimeToExt).map(([mime, ext]) => [ext, mime]),
+);
+
+function getExtensionFromMimeType(mimeType: string): string | undefined {
+  return mimeToExt[mimeType.toLowerCase()];
+}
+
+function getMimeTypeFromExtension(ext: string): string | undefined {
+  return extToMime[ext.replace(/^\./, '').toLowerCase()];
+}
 
 export {
   getMimeTypeFromBase64,
