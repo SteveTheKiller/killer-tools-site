@@ -100,6 +100,11 @@ const features = [
         <span>Now open source under GPLv3</span>
         <span style="color: #1ea54c; font-weight: 600;">View on GitHub &rarr;</span>
       </a>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:14px;">
+        <a href="https://oosmetrics.com/repo/SteveTheKiller/KillerPDF" target="_blank" rel="noopener"><img src="https://api.oosmetrics.com/api/v1/badge/achievement/bf0a2893-0ce5-4fc8-a6cc-084ad0722ed2.svg" alt="oosmetrics Top 5 Desktop by velocity"></a>
+        <a href="https://oosmetrics.com/repo/SteveTheKiller/KillerPDF" target="_blank" rel="noopener"><img src="https://api.oosmetrics.com/api/v1/badge/achievement/dd592456-00ad-445d-b97b-21e44ee4b44e.svg" alt="oosmetrics Top 2 Editors by velocity"></a>
+      </div>
     </div>
 
     <n-divider />
@@ -119,6 +124,7 @@ const features = [
         </template>
         <span style="font-size: 12px; color: #a0a0a0; line-height: 1.5;">{{ feature.desc }}</span>
       </n-card>
+
     </div>
 
     <n-divider />
