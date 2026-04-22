@@ -140,10 +140,6 @@ tools:
     title: Krypter / decrypter tekst
     description: Krypter klartekst og dekrypter ciphertekst ved bruk av krypteringsalgoritmer som AES, TripleDES, Rabbit eller RC4.
 
-  random-port-generator:
-    title: Tilfeldig port generator
-    description: Generer tilfeldige portnumre utenfor scopet av "kjente" porter (0-1023).
-
   yaml-prettify:
     title: YAML forskjønning og formatering
     description: Forskjønn YAML strengene dine til et lettlest format.

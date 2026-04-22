@@ -139,10 +139,6 @@ tools:
     title: Encrypt / decrypt text
     description: Encrypt clear text and decrypt ciphertext using crypto algorithms like AES, TripleDES, Rabbit or RC4.
 
-  random-port-generator:
-    title: Random port generator
-    description: Generate random port numbers outside of the range of "known" ports (0-1023).
-
   yaml-prettify:
     title: YAML prettify and format
     description: Prettify your YAML string into a friendly, human-readable format.
@@ -433,3 +429,19 @@ tools:
   markdown-to-html:
     title: Markdown to HTML
     description: Convert Markdown to HTML and export or print as PDF.
+
+  killer-pdf:
+    title: KillerPDF
+    description: Portable PDF editor for field techs. View, annotate, merge, split, reorder, edit text, draw, highlight, sign, and print.
+
+  killer-scan:
+    title: KillerScan
+    description: Fast network scanner for field techs. ARP + ping discovery, port probing, vendor lookup, and automatic device classification.
+
+  domain-lookup:
+    title: Domain Lookup
+    description: WHOIS registration details and email DNS checks (MX, SPF, DKIM, DMARC) for any domain in a single view.
+
+  email-record-generator:
+    title: Email Record Generator
+    description: Generate SPF and DMARC DNS TXT records. Pick your mail providers and policies, copy the output straight into your DNS.

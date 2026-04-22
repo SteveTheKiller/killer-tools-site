@@ -121,7 +121,6 @@ export default defineConfig({
         '/port-protocol-reference',
         '/powershell-builder',
         '/qrcode-generator',
-        '/random-port-generator',
         '/regex-tester',
         '/roman-numeral-converter',
         '/rsa-key-pair-generator',

@@ -169,11 +169,6 @@ tools:
     description: >-
       Verschlüssele und entschlüssele Klartext mithilfe von Kryptoalgorithmen
       wie AES, TripleDES, Rabbit oder RC4.
-  random-port-generator:
-    title: Zufälliger Port-Generator
-    description: >-
-      Generiere zufällige Portnummern außerhalb des Bereichs der "bekannten"
-      Ports (0-1023).
   yaml-prettify:
     title: YAML verschönern und formatieren
     description: Verschönere deinen YAML-String in ein menschenlesbares Format.
