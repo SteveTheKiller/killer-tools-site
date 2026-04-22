@@ -26,7 +26,7 @@ const textValues = ref<Record<string, string>>({});
 const switchValues = ref<Record<string, boolean>>({});
 const showAllParams = ref(false);
 const copied = ref(false);
-const showCheatsheet = ref(true);
+const showCheatsheet = ref(false);
 const snippetCopied = ref<string | null>(null);
 
 function selectCmdlet(cmdlet: PSCmdlet) {
@@ -413,9 +413,20 @@ const cheatsheet = [
 
     <!-- ── Right: Collapsible Quick Reference ── -->
     <div class="cs-wrap" :class="{ 'cs-open': showCheatsheet }">
-      <button type="button" class="cs-toggle" :title="showCheatsheet ? 'Collapse' : 'Expand Quick Reference'" @click="showCheatsheet = !showCheatsheet">
-        <span v-if="showCheatsheet" style="font-size: 1.1rem; line-height: 1;">›</span>
-        <span v-else class="cs-label">Quick Reference</span>
+      <button
+        type="button"
+        class="cs-toggle"
+        :class="{ 'cs-toggle-open': showCheatsheet }"
+        :title="showCheatsheet ? 'Collapse Quick Reference' : 'Open Quick Reference'"
+        @click="showCheatsheet = !showCheatsheet"
+      >
+        <template v-if="showCheatsheet">
+          <span class="cs-toggle-chev">›</span>
+        </template>
+        <template v-else>
+          <span class="cs-toggle-chev">‹</span>
+          <span class="cs-toggle-label">Quick Reference</span>
+        </template>
       </button>
       <div v-show="showCheatsheet" class="cheatsheet-panel">
         <c-card>
@@ -498,13 +509,13 @@ const cheatsheet = [
 /* ── Collapsible cheatsheet sidebar ── */
 .cs-wrap {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: flex-start;
   flex-shrink: 0;
-  width: 32px;
   position: sticky;
   top: 16px;
   max-height: calc(100vh - 80px);
+  gap: 8px;
 }
 
 .cs-toggle {
@@ -517,38 +528,53 @@ const cheatsheet = [
   cursor: pointer;
   color: rgba(255,255,255,0.55);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  transition: background 0.15s, color 0.15s;
+  padding: 6px 0;
+  gap: 8px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, width 0.15s;
   align-self: stretch;
 }
 
-.cs-toggle:hover {
-  background: rgba(30,165,76,0.12);
+/* Closed state: bigger, themed, more obvious */
+.cs-toggle:not(.cs-toggle-open) {
+  width: 44px;
+  min-height: 180px;
+  background: rgba(30,165,76,0.08);
+  border-color: rgba(30,165,76,0.35);
   color: #1ea54c;
-  border-color: rgba(30,165,76,0.4);
+  padding: 6px 0 18px;
 }
 
-.cs-label {
+.cs-toggle:hover {
+  background: rgba(30,165,76,0.18);
+  color: #1ea54c;
+  border-color: rgba(30,165,76,0.6);
+}
+
+.cs-toggle-chev {
+  font-size: 1.3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.cs-toggle-label {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
   line-height: 1;
 }
 
 .cheatsheet-panel {
-  position: absolute;
-  right: 34px;
-  top: 0;
+  flex-shrink: 0;
   width: 500px;
   overflow-y: auto;
   max-height: calc(100vh - 80px);
-  z-index: 50;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
