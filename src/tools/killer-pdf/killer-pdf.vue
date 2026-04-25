@@ -135,20 +135,6 @@ const features = [
 
     </div>
 
-    <n-divider />
-
-    <h2 style="font-size: 17px; font-weight: 600; margin-bottom: 16px;">
-      Requirements
-    </h2>
-
-    <n-card size="small" style="max-width: 420px;">
-      <p style="font-size: 13px; color: #a0a0a0; margin-bottom: 6px;">
-        <strong style="color: #e0e0e0;">OS:</strong> Windows 10 or 11 (x64)
-      </p>
-      <p style="font-size: 13px; color: #a0a0a0;">
-        <strong style="color: #e0e0e0;">Runtime:</strong> None. Everything needed is inside the EXE.
-      </p>
-    </n-card>
   </div>
 </template>
 
