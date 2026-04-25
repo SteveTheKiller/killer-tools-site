@@ -207,7 +207,7 @@ const features = [
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .hero-columns { grid-template-columns: 1fr; }
 }
 .feature-grid {
