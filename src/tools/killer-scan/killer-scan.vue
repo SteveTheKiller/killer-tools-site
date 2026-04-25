@@ -5,7 +5,7 @@ const features = [
   { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database to identify device manufacturers including printers, switches, APs, IoT, and more.' },
   { title: 'Device Classification', desc: 'Automatic typing via hostname keywords, OUI vendor, and port fingerprinting. Right-click to manually override any device type.' },
   { title: 'Export', desc: 'Export scan results as CSV or HTML report. Right-click any device to copy IP, MAC, hostname, or launch RDP/SSH/browser.' },
-  { title: 'Single File, No Install', desc: 'Fully self-contained EXE, ~865 KB zipped. No installer, no runtime install, no admin rights, no dependencies.' },
+  { title: 'Self-Installer or Portable', desc: 'Run straight from the EXE for a portable no-install experience, or let it install itself to %LOCALAPPDATA% with a Start Menu shortcut. No runtime, no admin rights, no dependencies.' },
 ];
 </script>
 
@@ -33,7 +33,7 @@ const features = [
               <span class="t-out"><span class="t-label">classified</span> printers, switches, APs, endpoints</span><br>
               <br>
               <span class="t-out">
-                No installer. No agent. No account. No telemetry.
+                Optional installer. No agent. No account. No telemetry.
               </span><br>
               <span class="t-out">
                 Free. Open. GPLv3. Built by a field tech, for field techs.
@@ -67,17 +67,17 @@ const features = [
           <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
             Windows 10/11 x64 &middot; ~865 KB &middot;
             <a
-              href="https://github.com/SteveTheKiller/KillerScan/releases/download/v1.2.1/KillerScan-1.2.1-src.zip"
+              href="https://github.com/SteveTheKiller/KillerScan/releases/download/v1.3.0/KillerScan-1.3.0-src.zip"
               style="color: #1ea54c;"
             >
               source (zip)
             </a>
           </p>
           <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
-            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.2.1 &middot; updated 4/18/2026
+            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.3.0 &middot; updated 4/25/2026
           </div>
           <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center;">
-            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>2bb7d19a820b268bf2cfcb0200fe2092a7f96a10aa9c70d6cd49730c45412e1b
+            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>f52707176a98bda7f4a4a0855491ef924676200e895636da1dc927c9deff02c9
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerScan"
