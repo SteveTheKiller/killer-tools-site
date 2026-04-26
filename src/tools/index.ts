@@ -5,6 +5,7 @@ import { tool as emailNormalizer } from './email-normalizer';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as killerScripts } from './killer-scripts';
 import { tool as killerPdf } from './killer-pdf';
+import { tool as killerFind } from './killer-find';
 import { tool as killerScan } from './killer-scan';
 import { tool as textToUnicode } from './text-to-unicode';
 import { tool as safelinkDecoder } from './safelink-decoder';
@@ -105,6 +106,7 @@ export const toolsByCategory: ToolCategory[] = [
       windowsErrorCodes,
       windowsEventLookup,
       killerPdf,
+      killerFind,
     ],
   },
   {
