@@ -61,7 +61,7 @@ export default defineConfig({
       hostname: 'https://killertools.net',
       dynamicRoutes: [
         '/about',
-        '/ascii-text-drawer',
+        '/ascii-word-art',
         '/base64-file-converter',
         '/base64-string-converter',
         '/basic-auth-generator',

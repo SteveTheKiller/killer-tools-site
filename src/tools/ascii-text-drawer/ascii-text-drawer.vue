@@ -3,6 +3,7 @@ import figlet from 'figlet';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
 
 const input = ref('Ascii ART');
+const debouncedInput = refDebounced(input, 400);
 const font = useStorage('ascii-text-drawer:font', 'Standard');
 const width = useStorage('ascii-text-drawer:width', 80);
 const output = ref('');
@@ -20,7 +21,7 @@ watchEffect(async () => {
       whitespaceBreak: true,
     };
     output.value = await (new Promise<string>((resolve, reject) =>
-      figlet.text(input.value, options,
+      figlet.text(debouncedInput.value, options,
         (err, text) => {
           if (err) {
             reject(err);

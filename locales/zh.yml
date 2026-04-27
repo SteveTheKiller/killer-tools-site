@@ -393,7 +393,7 @@ tools:
     description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
 
   ascii-text-drawer:
-    title: ASCII Art Text Generator
+    title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
 
   email-normalizer:
