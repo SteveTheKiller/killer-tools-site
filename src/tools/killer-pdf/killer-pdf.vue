@@ -32,10 +32,10 @@ const features = [
         <div class="hero-terminal">
           <div class="terminal">
             <div class="terminal-bar">
-              <span class="terminal-dot" /><span class="terminal-dot" /><span class="terminal-dot" />
-              <span class="terminal-title">
-                ~/killerpdf
-              </span>
+              <span class="terminal-title">~/killerpdf</span>
+              <div class="terminal-dots">
+                <span class="terminal-dot green" /><span class="terminal-dot yellow" /><span class="terminal-dot red" />
+              </div>
             </div>
             <div class="terminal-body">
               <span class="t-prompt">$</span> <span class="t-cmd">killerpdf</span> <span class="t-flag">invoice.pdf</span><br>
@@ -92,7 +92,7 @@ const features = [
           <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
             <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.2.0 &middot; updated 4/24/2026
           </div>
-          <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center;">
+          <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
             <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>365a4ef2d2b606a58c309c2a1acd6f12f61391789ff798826d35792256290f9c
           </p>
           <a
@@ -153,30 +153,37 @@ const features = [
 .terminal-bar {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: space-between;
   padding: 8px 12px;
   background: #151515;
   border-bottom: 1px solid #2a2a2a;
+}
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 .terminal-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #333;
   display: inline-block;
 }
+.terminal-dot.red    { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green  { background: #28c840; }
 .terminal-title {
   font-family: Consolas, monospace;
   font-size: 11px;
   color: #555;
-  margin-left: auto;
-  margin-right: auto;
 }
 .terminal-body {
   padding: 16px 18px;
   font-family: Consolas, monospace;
   font-size: 12px;
   line-height: 1.8;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .t-prompt { color: #0C7A43; font-weight: bold; }
 .t-cmd { color: #fff; font-weight: bold; }
@@ -198,7 +205,7 @@ const features = [
 }
 .hero-columns {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 48px;
   align-items: center;
 }
@@ -209,6 +216,14 @@ const features = [
 }
 @media (max-width: 900px) {
   .hero-columns { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero-cta { width: 100%; align-items: stretch; }
+  .hero-cta > a, .hero-cta > div, .hero-cta > p {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center;
+  }
 }
 .feature-grid {
   display: grid;
@@ -221,7 +236,10 @@ const features = [
 <style>
 /* Only apply when KillerPDF page is active */
 body.killer-pdf-active .tool-header-compact { display: none !important; }
-body.killer-pdf-active .tool-content-fullscreen { max-width: 100% !important; width: 100% !important; padding: 0 32px; }
+body.killer-pdf-active .tool-content-fullscreen { max-width: 100% !important; width: 100% !important; padding: 0 32px; box-sizing: border-box; }
 body.killer-pdf-active .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
 body.killer-pdf-active .killer-pdf-page { width: 100% !important; max-width: 100% !important; }
+@media (max-width: 600px) {
+  body.killer-pdf-active .tool-content-fullscreen { padding: 0 16px; }
+}
 </style>

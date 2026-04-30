@@ -3,19 +3,23 @@ const scripts = ref<{ name: string; download_url: string }[]>([]);
 const descriptions = ref<Record<string, { name: string; description: string }>>({});
 const loading = ref(true);
 const error = ref(false);
-const downloading = ref<string | null>(null);
 const copied = ref<string | null>(null);
-onMounted(async () => {
+
+const RAW_BASE = 'https://raw.githubusercontent.com/SteveTheKiller/killer-scripts/main/';
+
+async function loadScripts() {
+  loading.value = true;
+  error.value = false;
   try {
-    const [contentsRes, descRes] = await Promise.all([
-      fetch('https://api.github.com/repos/SteveTheKiller/killer-scripts/contents/'),
-      fetch('https://raw.githubusercontent.com/SteveTheKiller/killer-scripts/main/descriptions.json'),
-    ]);
-    const contents = await contentsRes.json();
-    descriptions.value = await descRes.json();
-    scripts.value = contents
-      .filter((f: any) => f.name.endsWith('.ps1'))
-      .sort((a: any, b: any) => a.name.localeCompare(b.name));
+    const res = await fetch(`${RAW_BASE}descriptions.json`);
+    if (!res.ok) {
+      throw new Error('fetch failed');
+    }
+    descriptions.value = await res.json();
+    scripts.value = Object.keys(descriptions.value)
+      .filter(name => name.endsWith('.ps1'))
+      .sort()
+      .map(name => ({ name, download_url: `${RAW_BASE}${name}` }));
   }
   catch {
     error.value = true;
@@ -23,7 +27,9 @@ onMounted(async () => {
   finally {
     loading.value = false;
   }
-});
+}
+
+onMounted(loadScripts);
 
 function acronym(filename: string) {
   return filename.replace('.ps1', '');
@@ -53,7 +59,7 @@ async function copyCommand(script: { name: string }) {
     `${d(0)} ${d(1)} ${d(2)} ${d(3)} ${d(4)};`,
     `$f="${d(5)}\\${n}";`,
     `${d(6)} ${d(8)}${n} ${d(7)} $f;`,
-    `& $f`,
+    '& $f',
   ].join(' ');
   await navigator.clipboard.writeText(cmd);
   copied.value = n;
@@ -76,7 +82,15 @@ function downloadScript(script: { name: string; download_url: string }) {
     </div>
 
     <n-alert v-else-if="error" type="error" mb-4>
-      Failed to load scripts from GitHub.
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+        <span>Failed to load scripts from GitHub. Check your connection or try again.</span>
+        <button
+          style="cursor: pointer; background: transparent; border: 1px solid currentColor; border-radius: 4px; padding: 4px 12px; font-size: 12px; font-weight: 600; white-space: nowrap;"
+          @click="loadScripts"
+        >
+          Retry
+        </button>
+      </div>
     </n-alert>
 
     <template v-else>
@@ -119,13 +133,11 @@ function downloadScript(script: { name: string; download_url: string }) {
             </button>
             <button
               class="cursor-pointer rounded px-2 py-1 text-xs transition"
-              style="background: transparent; color: inherit; border: 1px solid currentColor;"
-              :style="{ opacity: downloading === script.name ? '0.3' : '0.5' }"
-              :disabled="downloading === script.name"
+              style="background: transparent; color: inherit; border: 1px solid currentColor; opacity: 0.5;"
               title="Download .ps1"
               @click.stop="downloadScript(script)"
             >
-              {{ downloading === script.name ? '...' : '↓ Download' }}
+              ↓ Download
             </button>
           </div>
         </c-card>

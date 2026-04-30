@@ -19,10 +19,10 @@ const features = [
         <div class="hero-terminal">
           <div class="terminal">
             <div class="terminal-bar">
-              <span class="terminal-dot" /><span class="terminal-dot" /><span class="terminal-dot" />
-              <span class="terminal-title">
-                ~/killerscan
-              </span>
+              <span class="terminal-title">~/killerscan</span>
+              <div class="terminal-dots">
+                <span class="terminal-dot green" /><span class="terminal-dot yellow" /><span class="terminal-dot red" />
+              </div>
             </div>
             <div class="terminal-body">
               <span class="t-prompt">$</span> <span class="t-cmd">killerscan</span> <span class="t-flag">--scan</span> <span class="t-out">192.168.1.0/24</span><br>
@@ -76,7 +76,7 @@ const features = [
           <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
             <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.3.0 &middot; updated 4/25/2026
           </div>
-          <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center;">
+          <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
             <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>f52707176a98bda7f4a4a0855491ef924676200e895636da1dc927c9deff02c9
           </p>
           <a
@@ -126,9 +126,12 @@ const features = [
 }
 .hero-columns {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 48px;
   align-items: center;
+}
+.hero-terminal {
+  max-width: 440px;
 }
 .hero-cta {
   display: flex;
@@ -137,6 +140,14 @@ const features = [
 }
 @media (max-width: 900px) {
   .hero-columns { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero-cta { width: 100%; align-items: stretch; }
+  .hero-cta > a, .hero-cta > div, .hero-cta > p {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center;
+  }
 }
 .terminal {
   background: #0a0a0a;
@@ -149,30 +160,37 @@ const features = [
 .terminal-bar {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: space-between;
   padding: 8px 12px;
   background: #151515;
   border-bottom: 1px solid #2a2a2a;
+}
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 .terminal-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #333;
   display: inline-block;
 }
+.terminal-dot.red    { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green  { background: #28c840; }
 .terminal-title {
   font-family: Consolas, monospace;
   font-size: 11px;
   color: #555;
-  margin-left: auto;
-  margin-right: auto;
 }
 .terminal-body {
   padding: 16px 18px;
   font-family: Consolas, monospace;
   font-size: 12px;
   line-height: 1.8;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .t-prompt { color: #0C7A43; font-weight: bold; }
 .t-cmd { color: #fff; font-weight: bold; }
