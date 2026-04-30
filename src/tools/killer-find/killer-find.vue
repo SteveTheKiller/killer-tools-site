@@ -73,7 +73,7 @@ const features = [
           <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
             Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
-          <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
+          <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px; white-space: nowrap;">
             <span style="color: #0C7A43; font-weight: bold;">$</span> KillerFind v0.1.0 &middot; released 4/26/2026
           </div>
           <p style="margin-top: 10px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">

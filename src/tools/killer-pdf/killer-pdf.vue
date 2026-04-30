@@ -132,9 +132,7 @@ const features = [
         </template>
         <span style="font-size: 12px; color: #a0a0a0; line-height: 1.5;">{{ feature.desc }}</span>
       </n-card>
-
     </div>
-
   </div>
 </template>
 
