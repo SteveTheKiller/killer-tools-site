@@ -4,16 +4,14 @@
 
 /* --- hide social links, buy me coffee, info button, toolbar circle buttons --- */
 .support-button,
-a[href*="buymeacoffee"],
-a[href*="github.com/CorentinTh"],
 a[href*="twitter.com"],
 .c-button.round.support-button,
 .i-mdi-github,
 .i-mdi-twitter,
 .i-mdi-information-outline,
 .i-mdi-information,
-a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="KillerScan Network Scanner"]),
-.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="KillerScan Network Scanner"]) {
+a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]),
+.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]) {
   display: none !important;
 }
 

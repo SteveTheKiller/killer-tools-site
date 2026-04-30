@@ -12,6 +12,7 @@ import { config } from '@/config';
 import type { ToolCategory } from '@/tools/tools.types';
 import { useToolStore } from '@/tools/tools.store';
 import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
+import NavbarButtons from '@/components/NavbarButtons.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
@@ -37,10 +38,6 @@ const tools = computed<ToolCategory[]>(() => [
           <img src="/kt-logo.png" alt="killer-tools">
         </RouterLink>
 
-        <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
-          <locale-selector w="90%" />
-        </div>
-
         <CollapsibleToolMenu :tools-by-category="tools" />
 
         <div class="footer">
@@ -50,7 +47,7 @@ const tools = computed<ToolCategory[]>(() => [
     </template>
 
     <template #content>
-      <div flex items-center justify-center gap-2>
+      <div flex items-center gap-2>
         <c-button
           circle
           variant="text"
@@ -74,7 +71,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <command-palette />
 
-        <locale-selector v-if="!styleStore.isSmallScreen" />
+        <NavbarButtons />
       </div>
       <slot />
     </template>

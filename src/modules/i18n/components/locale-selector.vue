@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { availableLocales, locale } = useI18n();
+const { availableLocales, locale } = useI18n({ useScope: 'global' });
 
 const localesLong: Record<string, string> = {
   en: 'English',

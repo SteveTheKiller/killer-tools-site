@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IconBrandGithub, IconInfoCircle, IconMoon, IconRadar, IconSun } from '@tabler/icons-vue';
+import { IconBrandGithub, IconInfoCircle, IconMoon, IconSun } from '@tabler/icons-vue';
 import { useStyleStore } from '@/stores/style.store';
 
 const styleStore = useStyleStore();
@@ -7,43 +7,33 @@ const { isDarkTheme } = toRefs(styleStore);
 </script>
 
 <template>
-  <c-tooltip tooltip="KillerScan" position="bottom">
-    <c-button
-      circle
-      variant="text"
-      href="https://scan.killertools.net"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="KillerScan Network Scanner"
-    >
-      <n-icon size="25" :component="IconRadar" />
-    </c-button>
-  </c-tooltip>
+  <div flex items-center>
+    <c-tooltip :tooltip="$t('home.nav.github')" position="bottom">
+      <c-button
+        circle
+        variant="text"
+        href="https://github.com/SteveTheKiller/killer-tools-site"
+        target="_blank"
+        rel="noopener noreferrer"
+        :aria-label="$t('home.nav.githubRepository')"
+      >
+        <n-icon size="25" :component="IconBrandGithub" />
+      </c-button>
+    </c-tooltip>
 
-  <c-tooltip :tooltip="$t('home.nav.github')" position="bottom">
-    <c-button
-      circle
-      variant="text"
-      href="https://github.com/SteveTheKiller/killer-tools-site"
-      target="_blank"
-      rel="noopener noreferrer"
-      :aria-label="$t('home.nav.githubRepository')"
-    >
-      <n-icon size="25" :component="IconBrandGithub" />
-    </c-button>
-  </c-tooltip>
+    <c-tooltip :tooltip="$t('home.nav.about')" position="bottom">
+      <c-button circle variant="text" to="/about" :aria-label="$t('home.nav.aboutLabel')">
+        <n-icon size="25" :component="IconInfoCircle" />
+      </c-button>
+    </c-tooltip>
 
-  <c-tooltip :tooltip="$t('home.nav.about')" position="bottom">
-    <c-button circle variant="text" to="/about" :aria-label="$t('home.nav.aboutLabel')">
-      <n-icon size="25" :component="IconInfoCircle" />
-    </c-button>
-  </c-tooltip>
-  <c-tooltip :tooltip="isDarkTheme ? $t('home.nav.lightMode') : $t('home.nav.darkMode')" position="bottom">
-    <c-button circle variant="text" :aria-label="$t('home.nav.mode')" @click="() => styleStore.toggleDark()">
-      <n-icon v-if="isDarkTheme" size="25" :component="IconSun" />
-      <n-icon v-else size="25" :component="IconMoon" />
-    </c-button>
-  </c-tooltip>
+    <c-tooltip :tooltip="isDarkTheme ? $t('home.nav.lightMode') : $t('home.nav.darkMode')" position="bottom">
+      <c-button circle variant="text" :aria-label="$t('home.nav.mode')" @click="() => styleStore.toggleDark()">
+        <n-icon v-if="isDarkTheme" size="25" :component="IconSun" />
+        <n-icon v-else size="25" :component="IconMoon" />
+      </c-button>
+    </c-tooltip>
+  </div>
 </template>
 
 <style lang="less" scoped>

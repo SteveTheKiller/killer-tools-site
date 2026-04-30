@@ -7,7 +7,7 @@ export function defineTool(tool: WithOptional<Tool, 'isNew'>) {
   const isNew = tool.createdAt ? isAfter(tool.createdAt, subWeeks(new Date(), 2)) : false;
 
   return {
-    isNew,
     ...tool,
+    isNew,
   };
 }

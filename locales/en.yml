@@ -24,22 +24,20 @@ home:
     lightMode: 'Light mode'
     mode: 'Toggle dark/light mode'
 about:
-  content: >
-    # About killer-tools
+  content: |
+    # killer-tools
 
-    killer-tools is a collection of practical utilities built for IT professionals and developers who need to get things done fast. It started as a fork of the excellent [IT-Tools](https://github.com/CorentinTh/it-tools) project, and has grown into its own thing with tools tailored specifically for IT work in the field. Built and maintained by [Steve the Killer](https://thekiller.net).
+    Field techs don't have time for bloat. Every tool here exists because I needed it on the job and couldn't find something that just worked without an account, an install, or telemetry.
 
-    The site is free and always will be. If it saves you time on the job and you want to show some appreciation, [buying me a coffee](https://www.buymeacoffee.com/StevetheKiller) goes a long way.
+    I'm a field tech at an MSP handling networking, sysadmin work, and endpoint support. killer-tools started as a fork of the excellent [IT-Tools](https://github.com/CorentinTh/it-tools) project and grew into something built for the kind of work I actually do. I built it to look up NDR codes mid-ticket, scan a client's subnet, and decode a SafeLink before clicking it.
 
-    ## Technologies
+    Everything runs in your browser. Nothing is tracked. No account is required, ever.
 
-    killer-tools is built on Vue.js (Vue 3) with the Naive UI component library and is hosted and continuously deployed via GitHub. Some tools rely on third-party open-source libraries -- the full list is in the [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) file of the repository.
+    Built and maintained by [Steve the Killer](https://thekiller.net). If this saves you time on the job, [buying me a coffee](https://www.buymeacoffee.com/StevetheKiller) is appreciated but never expected.
 
     ## Missing a tool? Found a bug?
 
-    If there is a tool you wish existed here, open a feature request in the [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) on GitHub and I will take a look.
-
-    If something is broken or behaving unexpectedly, please file a bug report in the same [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) so I can track it down.
+    Open a feature request or bug report in the [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) on GitHub. I read them.
 
 404:
   notFound: '404 Not Found'
