@@ -58,6 +58,7 @@ useHead({
           </p>
           <p>
             Everything runs in your browser. Nothing is tracked. No account is required, ever.
+            The site enforces a strict Content Security Policy to block dependency-chain attacks. If a compromised npm package ever ends up in the bundle, it can't phone home with what you pasted.
           </p>
           <p class="last">
             Built and maintained by
