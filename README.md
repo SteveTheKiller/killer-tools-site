@@ -17,18 +17,18 @@ Built and maintained by [Steve the Killer](https://thekiller.net).
 
 A sampling of what's built into the site beyond the standard IT-Tools toolkit.
 
-- **Exchange NDR Lookup** — look up Exchange and M365 bounce codes with plain-language cause and fix guidance
-- **Group Policy Reference** — search common Windows GPO settings by name, path, registry key, or description
-- **Windows Error Code Lookup** — hex or decimal lookup covering system errors, BSODs, WMI, RPC, and MSI errors
-- **Windows Event Lookup** — event IDs with descriptions, severity levels, and common causes
-- **Domain Lookup** — WHOIS registration details and email DNS checks (MX, SPF, DKIM, DMARC) for any domain in a single view
-- **Email Header Parser** — paste raw headers to trace delivery hops and view auth results
-- **CVE Lookup** — live search against the NIST NVD by ID or keyword
-- **Port & Protocol Reference** — common ports and protocols with security notes and dangerous port flags
-- **Outlook SafeLink Decoder** — unwrap Microsoft Defender SafeLinks to reveal the original URL
-- **M365 License SKU Decoder** — decode Microsoft 365 license SKU strings and GUIDs to product names
-- **PowerShell Builder** — pick a cmdlet, fill in parameters, copy the finished command
-- **Killer Scripts** — PowerShell scripts for Windows administration and MSP field work
+- **Exchange NDR Lookup** looks up Exchange and M365 bounce codes with plain-language cause and fix guidance
+- **Group Policy Reference** searches common Windows GPO settings by name, path, registry key, or description
+- **Windows Error Code Lookup** covers hex and decimal lookup for system errors, BSODs, WMI, RPC, and MSI errors
+- **Windows Event Lookup** provides event IDs with descriptions, severity levels, and common causes
+- **Domain Lookup** pulls WHOIS registration details and email DNS checks (MX, SPF, DKIM, DMARC) for any domain in a single view
+- **Email Header Parser** lets you paste raw headers to trace the delivery hop chain and view auth results
+- **CVE Lookup** runs live searches against the NIST NVD by ID or keyword
+- **Port & Protocol Reference** lists common ports and protocols with security notes and dangerous port flags
+- **Outlook SafeLink Decoder** unwraps Microsoft Defender SafeLinks to reveal the original destination URL
+- **M365 License SKU Decoder** converts Microsoft 365 license SKU strings and GUIDs to readable product names
+- **PowerShell Builder** lets you pick a cmdlet, fill in parameters, and copy the finished command
+- **Killer Scripts** is a library of PowerShell scripts for Windows administration and MSP field work
 
 ---
 
