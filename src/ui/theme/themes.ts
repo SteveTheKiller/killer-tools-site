@@ -2,10 +2,10 @@ import { defineThemes } from './theme.models';
 
 export const { themes: appThemes, useTheme: useAppTheme } = defineThemes({
   light: {
-    background: '#ffffff',
+    background: '#cccccc',
     text: {
-      baseColor: '#333639',
-      mutedColor: '#767c82',
+      baseColor: '#1e2022',
+      mutedColor: '#4a5058',
     },
     default: {
       color: 'rgba(46, 51, 56, 0.05)',

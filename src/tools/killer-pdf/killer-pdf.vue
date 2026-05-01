@@ -130,7 +130,7 @@ const features = [
         <template #header>
           <span style="color: #1ea54c; font-size: 13px; font-weight: 600;">{{ feature.title }}</span>
         </template>
-        <span style="font-size: 12px; color: #a0a0a0; line-height: 1.5;">{{ feature.desc }}</span>
+        <span class="feature-desc" style="font-size: 12px; line-height: 1.5;">{{ feature.desc }}</span>
       </n-card>
     </div>
   </div>

@@ -40,13 +40,13 @@ export const { useTheme } = defineThemes({
   light: {
     sizes,
 
-    backgroundColor: '#ffffff',
-    borderColor: '#e0e0e69e',
-    dropdownShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+    backgroundColor: '#c8c8c8',
+    borderColor: '#adadad',
+    dropdownShadow: 'rgba(0, 0, 0, 0.18) 0px 8px 24px',
 
     option: {
       hover: {
-        backgroundColor: '#eee',
+        backgroundColor: '#c0c0c0',
       },
       active: {
         textColor: appThemes.light.primary.color,
@@ -54,7 +54,7 @@ export const { useTheme } = defineThemes({
     },
 
     focus: {
-      backgroundColor: '#ffffff',
+      backgroundColor: '#c4c4c4',
     },
   },
 });

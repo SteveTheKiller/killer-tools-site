@@ -10,11 +10,11 @@ export const { useTheme } = defineThemes({
     },
   },
   light: {
-    backgroundColor: '#ffffff',
-    borderColor: '#e0e0e69e',
+    backgroundColor: '#c8c8c8',
+    borderColor: '#adadad',
 
     focus: {
-      backgroundColor: '#ffffff',
+      backgroundColor: '#c4c4c4',
     },
   },
 });

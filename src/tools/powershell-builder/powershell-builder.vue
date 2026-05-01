@@ -310,7 +310,7 @@ const cheatsheet = [
         <c-card title="Generated Command" style="margin-bottom: 12px;">
           <template v-if="selectedCmdlet">
             <div class="command-block">
-              <pre style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: #1ea54c; line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
+              <pre class="ps-command-text" style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: #1ea54c; line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
             </div>
             <div style="margin-top: 10px;">
               <n-button size="small" type="primary" @click="copyCommand">
@@ -319,7 +319,7 @@ const cheatsheet = [
             </div>
             <template v-if="selectedCmdlet.snippets?.length">
               <n-divider style="margin: 16px 0 10px;" />
-              <div style="font-size: 0.72rem; font-weight: 700; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;">
+              <div class="ps-section-label" style="font-size: 0.72rem; font-weight: 700; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;">
                 Common Examples
               </div>
               <div
@@ -328,7 +328,7 @@ const cheatsheet = [
                 class="snippet-row"
                 @click="copySnippet(enrichSnippet(snippet.command), snippet.command)"
               >
-                <div style="font-size: 0.74rem; opacity: 0.6; margin-bottom: 3px;">
+                <div class="ps-muted" style="font-size: 0.74rem; opacity: 0.6; margin-bottom: 3px;">
                   {{ snippet.description }}
                 </div>
                 <code style="font-size: 0.74rem; color: #1ea54c; word-break: break-all; font-family: monospace;">{{ enrichSnippet(snippet.command) }}</code>
@@ -341,7 +341,7 @@ const cheatsheet = [
               </div>
             </template>
           </template>
-          <div v-else style="font-size: 0.85rem; opacity: 0.35; font-style: italic; padding: 4px 0;">
+          <div v-else class="ps-muted" style="font-size: 0.85rem; opacity: 0.35; font-style: italic; padding: 4px 0;">
             Select a cmdlet on the left to start building your command.
           </div>
         </c-card>
@@ -351,7 +351,7 @@ const cheatsheet = [
           <div v-if="selectedCmdlet.notes" class="notes-strip">
             {{ selectedCmdlet.notes }}
           </div>
-          <div v-if="selectedCmdlet.parameters.length === 0" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
+          <div v-if="selectedCmdlet.parameters.length === 0" class="ps-muted" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
             No parameters needed — this cmdlet runs as-is.
           </div>
           <n-divider v-if="visibleParams.length > 0" style="margin: 10px 0 14px;" />
@@ -363,7 +363,7 @@ const cheatsheet = [
               <n-checkbox v-model:checked="switchValues[param.name]">
                 <code class="param-code">-{{ param.name }}</code>
               </n-checkbox>
-              <span style="font-size: 0.77rem; opacity: 0.6; padding-top: 2px;">
+              <span class="ps-muted" style="font-size: 0.77rem; opacity: 0.6; padding-top: 2px;">
                 {{ param.description }}
                 <span v-if="param.required" style="color: #e87040; margin-left: 4px;">required</span>
               </span>
@@ -391,7 +391,7 @@ const cheatsheet = [
                   {{ preset.label }}
                 </button>
               </div>
-              <div style="font-size: 0.71rem; opacity: 0.5; margin-top: 2px; padding-left: 2px;">
+              <div class="ps-muted" style="font-size: 0.71rem; opacity: 0.5; margin-top: 2px; padding-left: 2px;">
                 {{ param.description }}
                 <span v-if="param.type === 'string[]'"> — separate multiple values with commas</span>
                 <span v-if="param.type === 'scriptblock'"> — will be wrapped in { }</span>
@@ -844,4 +844,5 @@ const cheatsheet = [
   color: rgba(230, 175, 60, 0.85);
   white-space: pre-line;
 }
+
 </style>
