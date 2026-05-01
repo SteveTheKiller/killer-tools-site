@@ -10,7 +10,7 @@ const output = ref('');
 const errored = ref(false);
 const processing = ref(false);
 
-figlet.defaults({ fontPath: 'https://cdn.jsdelivr.net/npm/figlet@1.11.0/fonts' });
+figlet.defaults({ fontPath: '/figlet-fonts' });
 
 watchEffect(async () => {
   processing.value = true;
