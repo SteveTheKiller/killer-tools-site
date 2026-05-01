@@ -82,7 +82,7 @@ tools:
   categories:
     favorite-tools: Deine Lieblingstools
     crypto: Krypto
-    converter: Konverter
+    conversion: Konverter
     web: Web
     images and videos: Bilder & Videos
     development: Entwicklung
@@ -97,11 +97,6 @@ tools:
     description: >-
       Ermittle die Stärke deines Passworts mit diesem Client-seitigen
       Passwortstärken-Analysator und Tool zur Schätzung der Knackzeit.
-  chronometer:
-    title: Chronometer
-    description: >-
-      Überwache die Dauer einer Sache. Im Grunde ein Chronometer mit einfachen
-      Chronometerfunktionen.
   percentage-calculator:
     title: Prozentrechner
     description: >-
@@ -151,19 +146,11 @@ tools:
     description: >-
       Formatiere und verschönere deine SQL-Abfragen online (unterstützt
       verschiedene SQL-Dialekte).
-  benchmark-builder:
-    title: Benchmark-Builder
-    description: >-
-      Vergleiche ganz einfach die Ausführungszeit von Aufgaben mit diesem sehr
-      einfachen Online-Benchmark-Builder.
   git-memo:
     title: Git-Spickzettel
     description: >-
       Git ist eine dezentrale Versionsverwaltungssoftware. Mit diesem
       Spickzettel hast du schnellen Zugriff auf die gängigsten Git-Befehle.
-  slugify-string:
-    title: Slugify String
-    description: Mache einen String URL-, Dateinamen- und ID-sicher.
   encryption:
     title: Text verschlüsseln / entschlüsseln
     description: >-
@@ -172,11 +159,6 @@ tools:
   yaml-prettify:
     title: YAML verschönern und formatieren
     description: Verschönere deinen YAML-String in ein menschenlesbares Format.
-  eta-calculator:
-    title: ETA-Rechner
-    description: >-
-      Ein ETA (Estimated Time of Arrival)-Rechner, um die ungefähre Endzeit
-      einer Aufgabe zu erfahren, z. B. den Zeitpunkt des Endes eines Downloads.
   roman-numeral-converter:
     title: Römische Zahlen Konverter
     description: >-
@@ -216,24 +198,11 @@ tools:
     description: >-
       Parse eine URL-Zeichenfolge, um alle verschiedenen Teile (Protokoll,
       Ursprung, Parameter, Port, Benutzername-Passwort usw.) zu erhalten.
-  iban-validator-and-parser:
-    title: IBAN-Validator und -Parser
-    description: >-
-      Validiere und parse IBAN-Nummern. Überprüfe, ob die IBAN gültig ist, und
-      erhalte das Land, BBAN, ob es sich um eine QR-IBAN handelt und das
-      IBAN-freundliche Format.
   user-agent-parser:
     title: User-Agent-Parser
     description: >-
       Erkenne und parse Browser, Engine, Betriebssystem, CPU und
       Gerätetyp/-modell aus einer User-Agent-Zeichenfolge.
-  numeronym-generator:
-    title: Numeronym-Generator
-    description: >-
-      Ein Numeronym ist ein Wort, bei dem eine Zahl verwendet wird, um eine
-      Abkürzung zu bilden. Zum Beispiel ist "i18n" ein Numeronym für
-      "internationalization", wobei 18 für die Anzahl der Buchstaben zwischen
-      dem ersten "i" und dem letzten "n" im Wort steht.
   case-converter:
     title: Fall-Konverter
     description: >-
@@ -253,9 +222,6 @@ tools:
   mac-address-lookup:
     title: MAC-Adressensuche
     description: Finde den Anbieter und Hersteller eines Geräts anhand seiner MAC-Adresse.
-  mime-types:
-    title: MIME-Typen
-    description: Konvertiere MIME-Typen in Erweiterungen und umgekehrt.
   lorem-ipsum-generator:
     title: Lorem Ipsum Generator
     description: >-
@@ -299,11 +265,6 @@ tools:
   date-converter:
     title: Datum-Uhrzeit-Konverter
     description: Konvertiere Datum und Uhrzeit in verschiedene Formate.
-  phone-parser-and-formatter:
-    title: Telefonnummer-Parser und -Formatter
-    description: >-
-      Parse, validiere und formatiere Telefonnummern. Erhalte Informationen zur
-      Telefonnummer, wie z. B. die Landesvorwahl, den Typ usw.
   ipv4-subnet-calculator:
     title: IPv4-Subnetzrechner
     description: >-
@@ -347,12 +308,6 @@ tools:
     description: >-
       Generiere zufällige Universally Unique Lexicographically Sortable
       Identifier (ULID).
-  string-obfuscator:
-    title: String-Verschleierer
-    description: >-
-      Verschleiere einen String (wie ein Secret, eine IBAN oder ein Token), um
-      ihn weitergeben zu können und identifizierbar zu machen, ohne seinen
-      Inhalt preiszugeben.
   base-converter:
     title: Ganzzahl-Basiskonverter
     description: >-
@@ -380,14 +335,6 @@ tools:
     description: >-
       Wandle Text in das NATO-Phonetik-Alphabet für die mündliche Übermittlung
       um.
-  basic-auth-generator:
-    title: Basic-Auth-Generator
-    description: >-
-      Generiere einen Base64-Basic-Auth-Header aus einem Benutzernamen und einem
-      Passwort.
-  text-to-unicode:
-    title: Text zu Unicode
-    description: Parse und konvertiere Text in Unicode und umgekehrt.
   ipv4-range-expander:
     title: IPv4-Bereichserweiterer
     description: >-
@@ -401,11 +348,6 @@ tools:
     description: >-
       Generiere und validiere zeitbasierte OTPs (Einmalpasswörter) für
       Multi-Faktor-Authentifizierung.
-  url-encoder:
-    title: Kodieren/Decodieren von URL-formatierten Zeichenfolgen
-    description: >-
-      Kodiere zum URL-kodierten Format (auch als "prozentkodiert" bekannt) oder
-      decodiere es.
   text-to-binary:
     title: Text zu ASCII-Binär
     description: Konvertiere Text in seine ASCII-Binärrepräsentation und umgekehrt.
@@ -461,10 +403,6 @@ tools:
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
-
-  email-normalizer:
-    title: Email normalizer
-    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
 
   regex-tester:
     title: Regex Tester

@@ -61,7 +61,7 @@ tools:
   categories:
     favorite-tools: 'Công cụ yêu thích của bạn'
     crypto: Mã hóa
-    converter: Chuyển đổi
+    conversion: Chuyển đổi
     web: Web
     images and videos: 'Hình ảnh & Video'
     development: Phát triển
@@ -76,9 +76,6 @@ tools:
     title: Bộ phân tích độ mạnh mật khẩu
     description: Khám phá độ mạnh của mật khẩu của bạn với công cụ phân tích độ mạnh mật khẩu chỉ chạy trên phía máy khách và ước tính thời gian phá mật khẩu.
 
-  chronometer:
-    title: Đồng hồ bấm giờ
-    description: Giám sát thời gian của một sự việc. Cơ bản là một đồng hồ bấm giờ với các tính năng đơn giản.
 
   percentage-calculator:
     title: Máy tính phần trăm
@@ -121,16 +118,9 @@ tools:
     title: Định dạng và làm đẹp SQL
     description: Định dạng và làm đẹp các truy vấn SQL của bạn trực tuyến (hỗ trợ nhiều ngôn ngữ SQL khác nhau).
 
-  benchmark-builder:
-    title: Trình tạo bảng đánh giá
-    description: Dễ dàng so sánh thời gian thực thi của các nhiệm vụ với trình tạo bảng đánh giá trực tuyến đơn giản này.
   git-memo:
     title: Lệnh Git
     description: Git là một phần mềm quản lý phiên bản phân tán. Với bảng ghi chú này, bạn sẽ có thể truy cập nhanh vào các lệnh Git phổ biến nhất.
-
-  slugify-string:
-    title: Chuyển đổi chuỗi thành slug
-    description: Biến đổi chuỗi thành dạng an toàn để sử dụng trong URL, tên file và ID.
 
   encryption:
     title: Mã hóa / giải mã văn bản
@@ -140,9 +130,6 @@ tools:
     title: Định dạng và làm đẹp YAML
     description: Định dạng chuỗi YAML của bạn thành một định dạng dễ đọc và thân thiện với con người.
 
-  eta-calculator:
-    title: Máy tính ETA
-    description: Một máy tính ETA (Thời gian dự kiến đến) để biết thời gian kết thúc xấp xỉ của một nhiệm vụ, ví dụ như thời điểm kết thúc của một quá trình tải xuống.
 
   roman-numeral-converter:
     title: Bộ chuyển đổi số La Mã
@@ -173,17 +160,10 @@ tools:
     title: Trình phân tích URL
     description: Phân tích một chuỗi URL để lấy tất cả các phần khác nhau (giao thức, nguồn gốc, tham số, cổng, tên người dùng-mật khẩu, ...)
 
-  iban-validator-and-parser:
-    title: Kiểm tra và phân tích số IBAN
-    description: Xác thực và phân tích số IBAN. Kiểm tra tính hợp lệ của IBAN và lấy thông tin về quốc gia, BBAN, xem có phải là QR-IBAN và định dạng thân thiện của IBAN.
 
   user-agent-parser:
     title: Trình phân tích User-agent
     description: Phát hiện và phân tích trình duyệt, engine, hệ điều hành, CPU và kiểu/mô hình thiết bị từ chuỗi user-agent.
-
-  numeronym-generator:
-    title: Trình tạo Numeronym
-    description: Numeronym là một từ mà một số được sử dụng để tạo thành một từ viết tắt. Ví dụ, "i18n" là một numeronym của "internationalization" trong đó số 18 đại diện cho số chữ cái giữa chữ i đầu tiên và chữ n cuối cùng trong từ.
 
   case-converter:
     title: Chuyển đổi chữ hoa/chữ thường
@@ -203,10 +183,6 @@ tools:
   mac-address-lookup:
     title: Tra cứu địa chỉ MAC
     description: Tìm nhà sản xuất và nhà cung cấp của thiết bị dựa trên địa chỉ MAC.
-
-  mime-types:
-    title: Loại Mime
-    description: Chuyển đổi loại mime thành phần mở rộng và ngược lại.
 
   lorem-ipsum-generator:
     title: Máy tạo văn bản Lorem ipsum
@@ -247,9 +223,6 @@ tools:
     title: Chuyển đổi ngày-tháng
     description: Chuyển đổi ngày và thời gian sang các định dạng khác nhau
 
-  phone-parser-and-formatter:
-    title: Trình phân tích và định dạng số điện thoại
-    description: Phân tích, xác thực và định dạng số điện thoại. Lấy thông tin về số điện thoại, như mã quốc gia, loại, v.v.
 
   ipv4-subnet-calculator:
     title: Máy tính mạng con IPv4
@@ -285,10 +258,6 @@ tools:
   ulid-generator:
     title: Tạo ULID
     description: Tạo ngẫu nhiên mã định danh duy nhất có thể sắp xếp theo thứ tự từ điển (ULID).
-  string-obfuscator:
-    title: Mã hóa chuỗi
-    description: Mã hóa một chuỗi (như một bí mật, một IBAN hoặc một mã thông báo) để có thể chia sẻ và nhận dạng mà không tiết lộ nội dung.
-
   base-converter:
     title: Chuyển đổi cơ số số nguyên
     description: Chuyển đổi số giữa các cơ số khác nhau (thập phân, thập lục phân, nhị phân, bát phân, base64, ...)
@@ -309,13 +278,6 @@ tools:
     title: Chuyển đổi văn bản thành bảng chữ cái NATO
     description: Chuyển đổi văn bản thành bảng chữ cái phiên âm NATO để truyền tải bằng miệng.
 
-  basic-auth-generator:
-    title: Tạo mã xác thực cơ bản
-    description: Tạo một tiêu đề xác thực cơ bản base64 từ tên người dùng và mật khẩu.
-  text-to-unicode:
-    title: Chuyển đổi văn bản thành Unicode
-    description: Phân tích và chuyển đổi văn bản thành Unicode và ngược lại
-
   ipv4-range-expander:
     title: Mở rộng dải IPv4
     description: Cho một địa chỉ IPv4 bắt đầu và kết thúc, công cụ này tính toán một mạng IPv4 hợp lệ với ký hiệu CIDR của nó.
@@ -327,10 +289,6 @@ tools:
   otp-generator:
     title: Tạo mã OTP
     description: Tạo và xác thực mã OTP (mật khẩu một lần) dựa trên thời gian cho xác thực đa yếu tố.
-
-  url-encoder:
-    title: Mã hóa/giải mã chuỗi định dạng URL
-    description: Mã hóa thành định dạng URL (còn được gọi là "percent-encoded") hoặc giải mã từ đó.
 
   text-to-binary:
     title: Chuyển đổi văn bản thành nhị phân ASCII
@@ -387,10 +345,6 @@ tools:
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
-
-  email-normalizer:
-    title: Email normalizer
-    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
 
   regex-tester:
     title: Regex Tester

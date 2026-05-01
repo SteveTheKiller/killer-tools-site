@@ -55,7 +55,7 @@ tools:
   categories:
     favorite-tools: 'Your favorite tools'
     crypto: Crypto
-    converter: Converter
+    conversion: Conversion
     web: Web
     images and videos: 'Images & Videos'
     development: Development
@@ -69,10 +69,6 @@ tools:
   password-strength-analyser:
     title: Password strength analyser
     description: Discover the strength of your password with this client-side-only password strength analyser and crack time estimation tool.
-
-  chronometer:
-    title: Chronometer
-    description: Track elapsed time with a simple stopwatch and lap timer.
 
   password-generator:
     title: Password generator
@@ -121,17 +117,9 @@ tools:
     title: SQL prettify and format
     description: Format and prettify your SQL queries online (it supports various SQL dialects).
 
-  benchmark-builder:
-    title: Benchmark builder
-    description: Compare execution time of code snippets to find the fastest approach.
-
   git-memo:
     title: Git cheatsheet
     description: Quick reference for the most common Git commands and workflows.
-
-  slugify-string:
-    title: Slugify string
-    description: Make a string url, filename and id safe.
 
   encryption:
     title: Encrypt / decrypt text
@@ -141,9 +129,6 @@ tools:
     title: YAML prettify and format
     description: Prettify your YAML string into a friendly, human-readable format.
 
-  eta-calculator:
-    title: ETA calculator
-    description: Calculate estimated completion time and remaining duration for any task.
 
   roman-numeral-converter:
     title: Roman numeral converter
@@ -177,17 +162,9 @@ tools:
     title: URL parser
     description: Parse a URL into its separate constituent parts (protocol, origin, params, port, username-password, ...)
 
-  iban-validator-and-parser:
-    title: IBAN validator and parser
-    description: Validate and parse IBAN numbers. Check if an IBAN is valid and get the country, BBAN, if it is a QR-IBAN and the IBAN friendly format.
-
   user-agent-parser:
     title: User-agent parser
     description: Detect and parse Browser, Engine, OS, CPU, and Device type/model from an user-agent string.
-
-  numeronym-generator:
-    title: Numeronym generator
-    description: Generate numeronyms like i18n or k8s from any word.
 
   case-converter:
     title: Case converter
@@ -208,10 +185,6 @@ tools:
   mac-address-lookup:
     title: MAC address lookup
     description: Find the vendor and manufacturer of a device by its MAC address.
-
-  mime-types:
-    title: MIME types
-    description: Convert MIME types to file extensions and vice-versa.
 
   lorem-ipsum-generator:
     title: Lorem ipsum generator
@@ -253,10 +226,6 @@ tools:
     title: Date-time converter
     description: Convert date and time into the various different formats
 
-  phone-parser-and-formatter:
-    title: Phone parser and formatter
-    description: Parse, validate and format phone numbers. Get information about the phone number, like the country code, type, etc.
-
   ipv4-subnet-calculator:
     title: IPv4 subnet calculator
     description: Parse your IPv4 CIDR blocks and get all the info you need about your subnet.
@@ -293,10 +262,6 @@ tools:
     title: ULID generator
     description: Generate random Universally Unique Lexicographically Sortable Identifier (ULID).
 
-  string-obfuscator:
-    title: String obfuscator
-    description: Obfuscate a string (like a secret, an IBAN, or a token) to make it shareable and identifiable without revealing its content.
-
   base-converter:
     title: Integer base converter
     description: Convert a number between different bases (decimal, hexadecimal, binary, octal, base64, ...)
@@ -317,14 +282,6 @@ tools:
     title: Text to NATO alphabet
     description: Transform text into the NATO phonetic alphabet for oral transmission.
 
-  basic-auth-generator:
-    title: Basic auth generator
-    description: Generate a base64 basic auth header from a username and password.
-
-  text-to-unicode:
-    title: Text to Unicode
-    description: Parse and convert text to unicode and vice-versa
-
   ipv4-range-expander:
     title: IPv4 range expander
     description: Given a start and an end IPv4 address, this tool calculates a valid IPv4 subnet along with its CIDR notation.
@@ -336,10 +293,6 @@ tools:
   otp-generator:
     title: OTP code generator
     description: Generate and validate time-based OTP (one time password) for multi-factor authentication.
-
-  url-encoder:
-    title: Encode/decode URL-formatted strings
-    description: Encode text to URL-encoded format (also known as "percent-encoded"), or decode from it.
 
   text-to-binary:
     title: Text to ASCII binary
@@ -399,10 +352,6 @@ tools:
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII word art text with many fonts and styles.
-
-  email-normalizer:
-    title: Email normalizer
-    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
 
   regex-tester:
     title: Regex Tester

@@ -61,7 +61,7 @@ tools:
   categories:
     favorite-tools: 'Dine favoritt verktøy'
     crypto: Krypto
-    converter: Konvertering
+    conversion: Konvertering
     web: Web
     images and videos: 'Bilder & Videoer'
     development: Utvikling
@@ -76,9 +76,6 @@ tools:
     title: Analyseverktøy for passordstyrke
     description: Oppdag styrken av passordet ditt med dette kun-klient-maskin passordstyrke analyse verktøyet og se den estimerte knekketiden.
 
-  chronometer:
-    title: Kronometer
-    description: Overvåk varigheten av noe. I bunn og grunn et kronometer med enkle funksjoner.
 
   percentage-calculator:
     title: Prosent kalkulator
@@ -124,17 +121,10 @@ tools:
     title: SQL forskjønning and format
     description: Formater og forskjønn SQL spørringene dine (den støtter forskjellige SQL dialekter).
 
-  benchmark-builder:
-    title: Bygg en referansemåler
-    description: Sammenlign enkelt kjøretiden av oppgaver med denne enkle referansemåls byggeren.
 
   git-memo:
     title: Git jukselapp
     description: Git er en desentralisert versjons håndterings programvare. Med denne jukselappen vil du få kjapp tilgang til de vanligste kommandoene.
-
-  slugify-string:
-    title: Slugify streng
-    description: Lag en trygg url, filbane eller id.
 
   encryption:
     title: Krypter / decrypter tekst
@@ -144,9 +134,6 @@ tools:
     title: YAML forskjønning og formatering
     description: Forskjønn YAML strengene dine til et lettlest format.
 
-  eta-calculator:
-    title: ETA kalkulator
-    description: En ETA (Estimert Tid for Ankomst) kalkulator for å anslå den sannsynelige slutt tiden for en oppgave, for eksempel, slutttiden og varigheten av en filnedlastning.
 
   roman-numeral-converter:
     title: Romertall konverter
@@ -180,17 +167,10 @@ tools:
     title: URL analyse
     description: Parsere en URL ned til bestanddelene (protokoll, opprinnelse, parametre, port, brukernavn-passord, ...).
 
-  iban-validator-and-parser:
-    title: IBAN validering og analysering
-    description: Valider og parser IBAN numre. Sjekk om et IBAN er gyldig og få landet, BBAN, om det er en QR-IBAN og IBAN i et vennlig format.
 
   user-agent-parser:
     title: User-agent analysering
     description: Detekter og parser nettleser, motor, OS, CPU, og enhet type/modell fra en user-agent tekst streng.
-
-  numeronym-generator:
-    title: Numeronym generator
-    description: Et numeronym er et ord hvor et nummer er brukt til å lage en forkortelse. For eksempel, "i18n" er et numeronym for "internasjonalisering" hvor 18 står for antall bokstaver mellom første bokstaven i og den siste bokstaven n i ordet.
 
   case-converter:
     title: Bokstavkonvertering
@@ -211,10 +191,6 @@ tools:
   mac-address-lookup:
     title: MAC address oppslagsverk
     description: Finn forhandler og produsent basert på MAC adressen.
-
-  mime-types:
-    title: MIME typer
-    description: Konverter MIME typer til fil utvidelser og visa-versa.
 
   lorem-ipsum-generator:
     title: Lorem ipsum generator
@@ -256,9 +232,6 @@ tools:
     title: Dato-tid konverter
     description: Konverter dato og tid til forskjellige formater.
 
-  phone-parser-and-formatter:
-    title: Telefon format og parserer
-    description: Parser, valider og formater telefon numre. få innformasjonen om telefon nummeret, slik som landskoden, type etc.
 
   ipv4-subnet-calculator:
     title: IPv4 subnet kalkulator
@@ -296,10 +269,6 @@ tools:
     title: ULID generator
     description: Generer tilfeldig Universell Unik Leksikografisk Sorterbar Identifikator (ULID).
 
-  string-obfuscator:
-    title: Streng obfuskator
-    description: Obfusker en streng (som en hemmelighet, en IBAN, eller et token) og gjør den delbar og identifiserbar uten å vise innholdet.
-
   base-converter:
     title: Heltalls konverter
     description: Konverter et heltall mellom forskjellige baser (desimal, hexadesimal, binær, oktal, base64, etc.)
@@ -320,14 +289,6 @@ tools:
     title: Tekst til NATO alfabetet
     description: Transformer teksten til det NATO fonetiske alfabetet for muntlig gjengivelse.
 
-  basic-auth-generator:
-    title: Basic auth generator
-    description: Generer en base64 basic auth header fra et brukernavn og passord.
-
-  text-to-unicode:
-    title: Tekst til Unicode
-    description: Parser og konverter tekst til unicode og visa-versa
-
   ipv4-range-expander:
     title: IPv4 range utvider
     description: Gitt en start og en slutt IPv4 adresse, kalkulerer dette verktøyet et gyldig IPv4 subnet sammen med sin CIDR notasjon.
@@ -339,10 +300,6 @@ tools:
   otp-generator:
     title: OTP kode generator
     description: Generer og valider tidsbasert OTP (one time password) for multi-faktor autentisering.
-
-  url-encoder:
-    title: Kode/dekode URL-formaterte strenger
-    description: Kode tekst til URL-kodet format (også kjent som "prosent-kodet"), eller dekode fra det.
 
   text-to-binary:
     title: Tekst til ASCII binært
@@ -399,10 +356,6 @@ tools:
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
-
-  email-normalizer:
-    title: Email normalizer
-    description: Normalize email addresses to a standard format for easier comparison. Useful for deduplication and data cleaning.
 
   regex-tester:
     title: Regex Tester

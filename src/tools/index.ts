@@ -1,54 +1,43 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
-import { tool as basicAuthGenerator } from './basic-auth-generator';
-import { tool as emailNormalizer } from './email-normalizer';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as killerScripts } from './killer-scripts';
 import { tool as killerPdf } from './killer-pdf';
 import { tool as killerFind } from './killer-find';
 import { tool as killerScan } from './killer-scan';
-import { tool as textToUnicode } from './text-to-unicode';
 import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as regexTester } from './regex-tester';
 import { tool as markdownToHtml } from './markdown-to-html';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
-import { tool as numeronymGenerator } from './numeronym-generator';
 import { tool as textToBinary } from './text-to-binary';
 import { tool as ulidGenerator } from './ulid-generator';
-import { tool as ibanValidatorAndParser } from './iban-validator-and-parser';
-import { tool as stringObfuscator } from './string-obfuscator';
 import { tool as textDiff } from './text-diff';
 import { tool as emojiPicker } from './emoji-picker';
 import { tool as passwordStrengthAnalyser } from './password-strength-analyser';
 import { tool as jsonToCsv } from './json-to-csv';
 import { tool as cameraRecorder } from './camera-recorder';
 import { tool as listConverter } from './list-converter';
-import { tool as phoneParserAndFormatter } from './phone-parser-and-formatter';
 import { tool as jsonDiff } from './json-diff';
 import { tool as ipv4RangeExpander } from './ipv4-range-expander';
 import { tool as httpStatusCodes } from './http-status-codes';
 import { tool as ipv6UlaGenerator } from './ipv6-ula-generator';
 import { tool as ipv4AddressConverter } from './ipv4-address-converter';
-import { tool as benchmarkBuilder } from './benchmark-builder';
 import { tool as userAgentParser } from './user-agent-parser';
 import { tool as ipv4SubnetCalculator } from './ipv4-subnet-calculator';
 import { tool as htmlWysiwygEditor } from './html-wysiwyg-editor';
 import { tool as rsaKeyPairGenerator } from './rsa-key-pair-generator';
 import { tool as textToNatoAlphabet } from './text-to-nato-alphabet';
-import { tool as slugifyString } from './slugify-string';
 import { tool as keycodeInfo } from './keycode-info';
 import { tool as jsonMinify } from './json-minify';
 import { tool as bcrypt } from './bcrypt';
 import { tool as bip39 } from './bip39-generator';
 import { tool as caseConverter } from './case-converter';
 import { tool as chmodCalculator } from './chmod-calculator';
-import { tool as chronometer } from './chronometer';
 import { tool as colorConverter } from './color-converter';
 import { tool as crontabGenerator } from './crontab-generator';
 import { tool as dateTimeConverter } from './date-time-converter';
 import { tool as deviceInformation } from './device-information';
 import { tool as cypher } from './encryption';
-import { tool as etaCalculator } from './eta-calculator';
 import { tool as percentageCalculator } from './percentage-calculator';
 import { tool as hashText } from './hash-text';
 import { tool as hmacGenerator } from './hmac-generator';
@@ -59,7 +48,6 @@ import { tool as jwtParser } from './jwt-parser';
 import { tool as loremIpsumGenerator } from './lorem-ipsum-generator';
 import { tool as mathEvaluator } from './math-evaluator';
 import { tool as metaTagGenerator } from './meta-tag-generator';
-import { tool as mimeTypes } from './mime-types';
 import { tool as otpCodeGeneratorAndValidator } from './otp-code-generator-and-validator';
 import { tool as qrCodeGenerator } from './qr-code-generator';
 import { tool as romanNumeralConverter } from './roman-numeral-converter';
@@ -69,7 +57,6 @@ import { tool as temperatureConverter } from './temperature-converter';
 import { tool as textStatistics } from './text-statistics';
 import { tool as passwordGenerator } from './password-generator';
 import type { ToolCategory } from './tools.types';
-import { tool as urlEncoder } from './url-encoder';
 import { tool as urlParser } from './url-parser';
 import { tool as uuidGenerator } from './uuid-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
@@ -126,9 +113,31 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
+    name: 'Conversion',
+    components: [
+      base64FileConverter,
+      base64StringConverter,
+      baseConverter,
+      caseConverter,
+      colorConverter,
+      dateTimeConverter,
+      jsonConverter,
+      listConverter,
+      markdownToHtml,
+      mathEvaluator,
+      percentageCalculator,
+      romanNumeralConverter,
+      temperatureConverter,
+      textToBinary,
+      textToNatoAlphabet,
+      tomlConverter,
+      xmlJsonConverter,
+      yamlConverter,
+    ],
+  },
+  {
     name: 'Web',
     components: [
-      basicAuthGenerator,
       deviceInformation,
       htmlEntities,
       htmlWysiwygEditor,
@@ -137,10 +146,7 @@ export const toolsByCategory: ToolCategory[] = [
       jwtParser,
       keycodeInfo,
       metaTagGenerator,
-      mimeTypes,
       otpCodeGeneratorAndValidator,
-      slugifyString,
-      urlEncoder,
       urlParser,
       userAgentParser,
     ],
@@ -151,8 +157,6 @@ export const toolsByCategory: ToolCategory[] = [
       asciiTextDrawer,
       emojiPicker,
       loremIpsumGenerator,
-      numeronymGenerator,
-      stringObfuscator,
       textDiff,
       textStatistics,
     ],
@@ -178,7 +182,6 @@ export const toolsByCategory: ToolCategory[] = [
     components: [
       chmodCalculator,
       crontabGenerator,
-      emailNormalizer,
       jsonMinify,
       jsonToCsv,
       jsonViewer,
@@ -189,55 +192,11 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Converter',
-    components: [
-      base64FileConverter,
-      base64StringConverter,
-      baseConverter,
-      caseConverter,
-      colorConverter,
-      dateTimeConverter,
-      jsonConverter,
-      listConverter,
-      markdownToHtml,
-      romanNumeralConverter,
-      textToBinary,
-      textToNatoAlphabet,
-      textToUnicode,
-      tomlConverter,
-      xmlJsonConverter,
-      yamlConverter,
-    ],
-  },
-  {
     name: 'Images and videos',
     components: [
       cameraRecorder,
       qrCodeGenerator,
       svgPlaceholderGenerator,
-    ],
-  },
-  {
-    name: 'Math',
-    components: [
-      etaCalculator,
-      mathEvaluator,
-      percentageCalculator,
-    ],
-  },
-  {
-    name: 'Measurement',
-    components: [
-      benchmarkBuilder,
-      chronometer,
-      temperatureConverter,
-    ],
-  },
-  {
-    name: 'Data',
-    components: [
-      ibanValidatorAndParser,
-      phoneParserAndFormatter,
     ],
   },
 ];
