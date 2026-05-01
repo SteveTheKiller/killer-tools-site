@@ -10,12 +10,13 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "yaml": ["./node_modules/yaml/dist/index.d.ts"],
+      "@it-tools/oggen": ["./node_modules/@it-tools/oggen/dist/index.d.ts"],
     },
     "types": ["@intlify/unplugin-vue-i18n/messages", "unplugin-icons/types/vue"],
     "esModuleInterop": true,
     "jsx": "preserve",
-    "skipLibCheck": true,
-    "ignoreDeprecations": "6.0"
+    "skipLibCheck": true
   }
 }

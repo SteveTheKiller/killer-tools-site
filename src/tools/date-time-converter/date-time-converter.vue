@@ -10,7 +10,6 @@ import {
   isDate,
   isValid,
   parseISO,
-  parseJSON,
 } from 'date-fns';
 import type { DateFormat, ToDateMapper } from './date-time-converter.types';
 import {
@@ -73,7 +72,7 @@ const formats: DateFormat[] = [
   {
     name: 'Timestamp',
     fromDate: date => String(getTime(date)),
-    toDate: ms => parseJSON(+ms),
+    toDate: ms => new Date(+ms),
     formatMatcher: date => isTimestamp(date),
   },
   {

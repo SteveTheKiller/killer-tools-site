@@ -1,11 +1,24 @@
-import jwtDecode, { type JwtHeader, type JwtPayload } from 'jwt-decode';
+import { type JwtPayload, jwtDecode } from 'jwt-decode';
 import _ from 'lodash';
 import { ALGORITHM_DESCRIPTIONS, CLAIM_DESCRIPTIONS } from './jwt-parser.constants';
+
+// jwt-decode v4 removed header decoding — decode manually via base64
+interface JwtHeader {
+  alg?: string
+  typ?: string
+  kid?: string
+  [key: string]: unknown
+}
+
+function decodeJwtHeader(jwt: string): JwtHeader {
+  const base64 = jwt.split('.')[0].replace(/-/g, '+').replace(/_/g, '/');
+  return JSON.parse(atob(base64)) as JwtHeader;
+}
 
 export { decodeJwt };
 
 function decodeJwt({ jwt }: { jwt: string }) {
-  const rawHeader = jwtDecode<JwtHeader>(jwt, { header: true });
+  const rawHeader = decodeJwtHeader(jwt);
   const rawPayload = jwtDecode<JwtPayload>(jwt);
 
   const header = _.map(rawHeader, (value, claim) => parseClaims({ claim, value }));

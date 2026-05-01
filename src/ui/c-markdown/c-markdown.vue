@@ -5,15 +5,15 @@ import DomPurify from 'dompurify';
 const props = withDefaults(defineProps<{ markdown?: string }>(), { markdown: '' });
 const { markdown } = toRefs(props);
 
-marked.use({
-  renderer: {
-    link(href, title, text) {
-      return `<a class="text-primary transition decoration-none hover:underline" href="${href}" target="_blank" rel="noopener">${text}</a>`;
-    },
-  },
+const html = computed(() => {
+  const raw = marked.parse(markdown.value) as string;
+  // Inject classes + target on all links without fighting marked's renderer types
+  const linked = raw.replace(
+    /<a href="/g,
+    '<a class="text-primary transition decoration-none hover:underline" target="_blank" rel="noopener" href="',
+  );
+  return DomPurify.sanitize(linked, { ADD_ATTR: ['target'] });
 });
-
-const html = computed(() => DomPurify.sanitize(marked(markdown.value), { ADD_ATTR: ['target'] }));
 </script>
 
 <template>
