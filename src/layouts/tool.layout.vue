@@ -88,7 +88,7 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
           <FavoriteButton :tool="{ name: route.meta.name, path: route.path } as Tool" />
         </div>
       </div>
-      <div v-else class="tool-layout">
+      <div v-else-if="!isFullscreen" class="tool-layout">
         <div class="tool-header">
           <div flex flex-nowrap items-center justify-between>
             <n-h1>
