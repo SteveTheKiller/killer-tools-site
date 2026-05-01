@@ -145,9 +145,6 @@ tools:
   base64-file-converter:
     title: Trình chuyển đổi tệp Base64
     description: Chuyển đổi chuỗi, tệp hoặc hình ảnh thành mã Base64.
-  list-converter:
-    title: Trình chuyển đổi danh sách
-    description: Công cụ này có thể xử lý dữ liệu dựa trên cột và áp dụng các thay đổi khác nhau (đảo ngược, thêm tiền tố và hậu tố, đảo danh sách, sắp xếp danh sách, giảm giá trị thành chữ thường, cắt giá trị) cho mỗi hàng.
 
   base64-string-converter:
     title: Trình mã hóa/giải mã chuỗi Base64

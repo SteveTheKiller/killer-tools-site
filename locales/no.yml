@@ -151,10 +151,6 @@ tools:
     title: Base64 fil konverter
     description: Konverter en base64 streng til fil eller en fil, bilde til en base64 representasjon.
 
-  list-converter:
-    title: Liste konverterer
-    description: Dette verktøyet kan prosessere kolonnebasert data og foreta forskjellige endringer (transposering, legge til prefix og suffix, reversere lister, sortere lister, gjøre om til små bokstaver, trunkere verdier) på hver rad.
-
   base64-string-converter:
     title: Base64 string kode/dekoder
     description: Enkelt kode eller dekode en tekststreng til base64 representasjonen av strengen.

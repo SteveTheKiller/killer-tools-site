@@ -146,10 +146,6 @@ tools:
     title: Base64 file converter
     description: Convert a string, file, or image into its base64 representation.
 
-  list-converter:
-    title: List converter
-    description: This tool can process column-based data and apply various changes (transpose, add prefix and suffix, reverse list, sort list, lowercase values, truncate values) to each row.
-
   base64-string-converter:
     title: Base64 string encoder/decoder
     description: Simply encode and decode strings into their base64 representation.
@@ -298,6 +294,10 @@ tools:
     title: Text to ASCII binary
     description: Convert text to its ASCII binary representation and vice-versa.
 
+  ascii-word-art:
+    title: ASCII Word Art Generator
+    description: Create ASCII word art text with many fonts and styles.
+
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
@@ -384,6 +384,10 @@ tools:
   killer-scan:
     title: KillerScan
     description: Fast network scanner for field techs. ARP + ping discovery, port probing, vendor lookup, and automatic device classification.
+
+  killer-find:
+    title: KillerFind
+    description: Fast file search for Windows. Search by filename wildcard or file content across any directory. Streams results in real time, no indexing required.
 
   domain-lookup:
     title: Domain Lookup

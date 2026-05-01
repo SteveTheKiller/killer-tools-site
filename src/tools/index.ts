@@ -16,7 +16,6 @@ import { tool as emojiPicker } from './emoji-picker';
 import { tool as passwordStrengthAnalyser } from './password-strength-analyser';
 import { tool as jsonToCsv } from './json-to-csv';
 import { tool as cameraRecorder } from './camera-recorder';
-import { tool as listConverter } from './list-converter';
 import { tool as jsonDiff } from './json-diff';
 import { tool as ipv4RangeExpander } from './ipv4-range-expander';
 import { tool as httpStatusCodes } from './http-status-codes';
@@ -122,7 +121,6 @@ export const toolsByCategory: ToolCategory[] = [
       colorConverter,
       dateTimeConverter,
       jsonConverter,
-      listConverter,
       markdownToHtml,
       mathEvaluator,
       percentageCalculator,

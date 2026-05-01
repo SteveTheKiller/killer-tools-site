@@ -93,7 +93,6 @@ export default defineConfig({
         '/jwt-parser',
         '/keycode-info',
         '/killer-scripts',
-        '/list-converter',
         '/lorem-ipsum-generator',
         '/m365-sku-decoder',
         '/mac-address-lookup',

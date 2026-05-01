@@ -178,13 +178,6 @@ tools:
   base64-file-converter:
     title: Base64-Dateikonverter
     description: Konvertiere Strings, Dateien oder Bilder in ihre Base64-Repräsentation.
-  list-converter:
-    title: Listenkonverter
-    description: >-
-      Dieses Tool kann spaltenbasierte Daten verarbeiten und verschiedene
-      Änderungen (transponieren, Präfix und Suffix hinzufügen, Liste umkehren,
-      Liste sortieren, Werte in Kleinbuchstaben umwandeln, Werte abschneiden)
-      auf jede Zeile anwenden.
   base64-string-converter:
     title: Base64-String-Encoder/Decoder
     description: Codiere und decodiere Strings einfach in ihre Base64-Repräsentation.
