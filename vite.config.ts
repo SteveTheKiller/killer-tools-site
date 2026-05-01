@@ -14,7 +14,7 @@ import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import sitemap from 'vite-plugin-sitemap';
-import markdown from 'vite-plugin-vue-markdown';
+import markdown from 'unplugin-vue-markdown/vite';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
 
@@ -23,12 +23,8 @@ const baseUrl = process.env.BASE_URL ?? '/';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    // @ts-expect-error – CJS default interop
     VueI18n({
       runtimeOnly: true,
-      jitCompilation: true,
-      compositionOnly: true,
-      fullInstall: true,
       strictMessage: false,
       include: [
         resolve(__dirname, 'locales/**'),
@@ -54,7 +50,6 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     vueJsx(),
-    // @ts-expect-error – CJS default interop
     markdown(),
     svgLoader(),
     sitemap({
@@ -157,6 +152,7 @@ export default defineConfig({
       workbox: {
         navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       },
       manifest: {
         name: 'Killer Tools',
@@ -192,7 +188,6 @@ export default defineConfig({
         ],
       },
     }),
-    // @ts-expect-error – CJS default interop
     Components({
       dirs: ['src/'],
       extensions: ['vue', 'md'],

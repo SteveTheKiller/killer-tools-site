@@ -71,7 +71,7 @@ describe('json-to-csv service', () => {
 
       expect(convertArrayToCsv({ array })).toMatchInlineSnapshot(`
         "a,b
-        \\"hello, world\\",2"
+        "hello, world",2"
       `);
     });
 
@@ -82,7 +82,7 @@ describe('json-to-csv service', () => {
 
       expect(convertArrayToCsv({ array })).toMatchInlineSnapshot(`
         "a,b
-        hello \\\\\\"world\\\\\\",2"
+        hello \\"world\\",2"
       `);
     });
   });
