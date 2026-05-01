@@ -11,6 +11,7 @@ export interface Tool {
   isNew: boolean
   createdAt?: Date
   fullscreen?: boolean
+  noHeader?: boolean
   headerLink?: { label: string; href: string }
 }
 

@@ -10,5 +10,6 @@ export const tool = defineTool({
   icon: Activity,
   isNew: true,
   fullscreen: true,
+  noHeader: true,
   createdAt: new Date('2026-04-08'),
 });

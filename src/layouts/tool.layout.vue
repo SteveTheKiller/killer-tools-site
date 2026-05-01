@@ -64,6 +64,7 @@ const i18nKey = computed<string>(() => route.path.trim().replace('/', ''));
 const toolTitle = computed<string>(() => t(`tools.${i18nKey.value}.title`, String(route.meta.name)));
 const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.description`, String(route.meta.description)));
 const isFullscreen = computed<boolean>(() => !!route.meta.fullscreen);
+const noHeader = computed<boolean>(() => !!route.meta.noHeader);
 const headerLink = computed<{ label: string; href: string } | undefined>(
   () => route.meta.headerLink as { label: string; href: string } | undefined,
 );
@@ -72,7 +73,7 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 <template>
   <BaseLayout>
     <div :class="isFullscreen ? 'tool-wrapper-fullscreen' : 'tool-wrapper'">
-      <div v-if="isFullscreen" class="tool-header-compact">
+      <div v-if="isFullscreen && !noHeader" class="tool-header-compact">
         <div class="tool-header-compact-left">
           <span class="tool-title-compact">{{ toolTitle }}</span>
           <span class="tool-desc-compact">{{ toolDescription }}</span>
