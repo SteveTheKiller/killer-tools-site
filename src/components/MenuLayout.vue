@@ -32,6 +32,7 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 <style lang="less" scoped>
 .n-layout-sider {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0 !important;
 }
 
 .overlay {

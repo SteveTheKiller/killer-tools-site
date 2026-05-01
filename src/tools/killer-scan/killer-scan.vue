@@ -119,6 +119,8 @@ const features = [
 <style scoped>
 .killer-scan-page {
   width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .hero-wrap {
   max-width: 1100px;
