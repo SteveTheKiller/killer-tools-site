@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const features = [
+const features: { title: string, desc: string }[] = [
   { title: 'ARP + Ping Discovery', desc: 'Dual-method host detection catches devices that don\'t respond to ICMP, including IoT devices and firewalled endpoints.' },
   { title: 'Port Probing', desc: 'Parallel scan of common service ports (SSH, RDP, SMB, HTTP, printing, hypervisor, NAS) with 200ms timeout per port.' },
   { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database to identify device manufacturers including printers, switches, APs, IoT, and more.' },
@@ -107,6 +107,7 @@ const features = [
         :key="feature.title"
         size="small"
       >
+        <!-- @vue-ignore -->
         <template #header>
           <span style="color: #1ea54c; font-size: 13px; font-weight: 600;">{{ feature.title }}</span>
         </template>

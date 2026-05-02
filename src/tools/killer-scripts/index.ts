@@ -1,4 +1,4 @@
-import BrandWindows from '@vicons/tabler/BrandWindows';
+import { BrandWindows } from '@vicons/tabler';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({

@@ -1,4 +1,4 @@
-import Terminal2 from '@vicons/tabler/Terminal2';
+import { Terminal2 } from '@vicons/tabler';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
