@@ -154,7 +154,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@vueuse/shared": "10.11.1"
+      "@vueuse/shared": "14.3.0"
     },
     "onlyBuiltDependencies": [
       "esbuild",
