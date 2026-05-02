@@ -47,8 +47,17 @@ build-out.txt
 build-err.txt
 .vite-ssg-temp/
 
+# Scratch / temp files
+_tmp.js
+_tmp*
+
+# npm lockfile (pnpm project — only pnpm-lock.yaml should be committed)
+package-lock.json
+
 # App store assets
 feature-graphic.png
+developer-header.png
+developer-icon-512.png
 screenshots/
 
 CLAUDE.md
