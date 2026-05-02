@@ -117,7 +117,6 @@ html:not(.dark) .gpr-registry-key {
 .range-row,
 .ula-row,
 .color-row,
-.url-row,
 .mac-line {
   background: #222222 !important;
   border-color: rgba(30,165,76,0.25) !important;

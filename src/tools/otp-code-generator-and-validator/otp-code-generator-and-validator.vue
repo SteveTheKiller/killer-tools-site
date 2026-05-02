@@ -53,114 +53,109 @@ const secretValidationRules = [
     validator: (value: string) => value !== '',
   },
 ];
+
+const details = computed(() => [
+  { label: 'Secret (hex)', value: base32toHex(secret.value) },
+  { label: 'Epoch', value: String(Math.floor(now.value / 1000)) },
+  { label: 'Count', value: String(getCounterFromTime({ now: now.value, timeStep: 30 })) },
+  { label: 'Padded hex', value: getCounterFromTime({ now: now.value, timeStep: 30 }).toString(16).padStart(16, '0') },
+]);
 </script>
 
 <template>
   <div class="otp-layout">
     <div class="otp-columns">
-      <!-- LEFT: controls -->
-      <div class="otp-col otp-left">
-        <c-card>
-          <!-- Secret input -->
-          <div class="otp-section-label">
-            Secret
-          </div>
-          <c-input-text
-            v-model:value="secret"
-            placeholder="Paste your TOTP secret..."
-            :validation-rules="secretValidationRules"
-            font-mono
-          >
-            <template #suffix>
-              <c-tooltip tooltip="Generate a new random secret">
-                <c-button circle variant="text" size="small" @click="refreshSecret">
-                  <icon-mdi-refresh />
-                </c-button>
-              </c-tooltip>
-            </template>
-          </c-input-text>
 
-          <!-- Token display -->
-          <div class="otp-section-label" style="margin-top: 16px;">
-            Token
+      <!-- LEFT: terminal panel -->
+      <div class="otp-left">
+        <div class="otp-terminal">
+
+          <!-- SECRET input -->
+          <div class="otp-input-area">
+            <label class="otp-field-label">Secret</label>
+            <div class="otp-input-row">
+              <input
+                v-model="secret"
+                class="otp-input"
+                spellcheck="false"
+                autocomplete="off"
+                placeholder="Paste your TOTP secret..."
+              />
+              <button class="otp-refresh-btn" title="Generate new secret" @click="refreshSecret">
+                <icon-mdi-refresh />
+              </button>
+            </div>
           </div>
 
-          <!-- Current OTP -->
+          <!-- TOKEN section header -->
+          <div class="otp-section-header">TOKEN</div>
+
+          <!-- Big token display -->
           <div class="otp-token-frame" @click="copyCurrent(tokens.current)">
-            <div class="otp-token-digits">
-              {{ tokens.current }}
-            </div>
-            <div class="otp-token-hint">
-              {{ currentCopied ? 'Copied!' : 'Click to copy' }}
-            </div>
+            <div class="otp-token-digits">{{ tokens.current }}</div>
+            <div class="otp-token-hint">{{ currentCopied ? '✓ copied' : 'click to copy' }}</div>
           </div>
 
           <!-- Progress bar -->
           <div class="otp-progress-wrap">
             <div class="otp-progress-bar" :style="{ width: `${progressPercent}%` }" />
           </div>
-          <div class="otp-countdown">
-            >_ next in {{ String(secondsRemaining).padStart(2, '0') }}s
+          <div class="otp-countdown">>_ next in {{ String(secondsRemaining).padStart(2, '0') }}s</div>
+
+          <!-- ADJACENT TOKENS -->
+          <div class="otp-section-header">ADJACENT TOKENS</div>
+
+          <div class="otp-row" @click="copyPrevious(tokens.previous)">
+            <span class="otp-prompt">>_</span>
+            <span class="otp-label">Prev</span>
+            <span class="otp-value">{{ tokens.previous }}</span>
+            <span class="otp-copy" :class="{ 'otp-copy-done': previousCopied }">
+              <span v-if="previousCopied">✓</span>
+              <icon-mdi-content-copy v-else />
+            </span>
+          </div>
+          <div class="otp-row" @click="copyNext(tokens.next)">
+            <span class="otp-prompt">>_</span>
+            <span class="otp-label">Next</span>
+            <span class="otp-value">{{ tokens.next }}</span>
+            <span class="otp-copy" :class="{ 'otp-copy-done': nextCopied }">
+              <span v-if="nextCopied">✓</span>
+              <icon-mdi-content-copy v-else />
+            </span>
           </div>
 
-          <!-- Previous / Next -->
-          <div class="otp-section-label" style="margin-top: 14px;">
-            Adjacent tokens
-          </div>
-          <div class="otp-adj-row">
-            <c-tooltip :tooltip="previousCopied ? 'Copied!' : 'Copy previous token'" position="bottom">
-              <button class="otp-adj-btn" @click="copyPrevious(tokens.previous)">
-                <span class="otp-adj-label">Prev</span>
-                <span class="otp-adj-value">{{ tokens.previous }}</span>
-              </button>
-            </c-tooltip>
-            <c-tooltip :tooltip="nextCopied ? 'Copied!' : 'Copy next token'" position="bottom">
-              <button class="otp-adj-btn" @click="copyNext(tokens.next)">
-                <span class="otp-adj-label">Next</span>
-                <span class="otp-adj-value">{{ tokens.next }}</span>
-              </button>
-            </c-tooltip>
+          <!-- DETAILS -->
+          <div class="otp-section-header">DETAILS</div>
+
+          <div v-for="detail in details" :key="detail.label" class="otp-row otp-row-detail">
+            <span class="otp-prompt">>_</span>
+            <span class="otp-label">{{ detail.label }}</span>
+            <span class="otp-value otp-value-sm">{{ detail.value }}</span>
           </div>
 
-          <!-- Details -->
-          <div class="otp-section-label" style="margin-top: 16px;">
-            Details
-          </div>
-          <div class="otp-details-grid">
-            <span class="otp-detail-key">Secret (hex)</span>
-            <span class="otp-detail-val">{{ base32toHex(secret) }}</span>
-            <span class="otp-detail-key">Epoch</span>
-            <span class="otp-detail-val">{{ Math.floor(now / 1000) }}</span>
-            <span class="otp-detail-key">Count</span>
-            <span class="otp-detail-val">{{ getCounterFromTime({ now, timeStep: 30 }) }}</span>
-            <span class="otp-detail-key">Padded hex</span>
-            <span class="otp-detail-val">{{ getCounterFromTime({ now, timeStep: 30 }).toString(16).padStart(16, '0') }}</span>
-          </div>
-        </c-card>
+        </div>
       </div>
 
-      <!-- RIGHT: QR preview -->
-      <div class="otp-col otp-right">
+      <!-- RIGHT: QR panel -->
+      <div class="otp-right">
         <div v-if="qrcode" class="qr-frame">
           <n-image :src="qrcode" class="qr-image" preview-disabled />
         </div>
-        <div class="qr-caption">
-          >_ scan to authenticate
-        </div>
+        <div class="qr-caption">>_ scan to authenticate</div>
         <c-button :href="keyUri" target="_blank" class="qr-open-btn">
           Open Key URI in new tab
         </c-button>
       </div>
+
     </div>
   </div>
 </template>
 
 <style scoped lang="less">
-/* ── Layout ─────────────────────────────────────────────────────── */
+/* ── Layout ── */
 .otp-layout {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   flex: 1 1 900px;
   max-width: 1600px;
   width: 100%;
@@ -174,172 +169,209 @@ const secretValidationRules = [
   align-items: flex-start;
 }
 
-.otp-col {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .otp-left {
   flex: 1 1 440px;
   max-width: 560px;
+  min-width: 0;
 }
 
 .otp-right {
   flex: 1 1 380px;
   max-width: 500px;
-  align-items: center;
-}
-
-@container (max-width: 860px) {
-  .otp-columns {
-    flex-direction: column;
-  }
-
-  .otp-left,
-  .otp-right {
-    flex: 1 1 100%;
-    max-width: none;
-  }
-}
-
-/* ── Section labels ─────────────────────────────────────────────── */
-.otp-section-label {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.55;
-  margin: 0 0 6px;
-  font-weight: 500;
-}
-
-/* ── Token frame (the big OTP display) ─────────────────────────── */
-.otp-token-frame {
-  background: rgba(30, 165, 76, 0.06);
-  border: 1px solid rgba(30, 165, 76, 0.4);
-  border-radius: 10px;
-  padding: 18px 20px 14px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
-  box-shadow: 0 0 20px rgba(30, 165, 76, 0.1), inset 0 0 30px rgba(30, 165, 76, 0.04);
+  gap: 10px;
 }
 
-.otp-token-frame:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.65);
-  box-shadow: 0 0 28px rgba(30, 165, 76, 0.2), inset 0 0 30px rgba(30, 165, 76, 0.06);
+@container (max-width: 860px) {
+  .otp-columns { flex-direction: column; }
+  .otp-left, .otp-right { flex: 1 1 100%; max-width: none; }
+}
+
+/* ── Terminal panel ── */
+.otp-terminal {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* ── Secret input area ── */
+.otp-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.otp-field-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.otp-input-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.otp-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  min-width: 0;
+  &::placeholder { color: rgba(255, 255, 255, 0.2); }
+}
+
+.otp-refresh-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(30, 165, 76, 0.5);
+  padding: 2px 4px;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: color 0.12s;
+  flex-shrink: 0;
+  &:hover { color: #1ea54c; }
+}
+
+/* ── Section headers ── */
+.otp-section-header {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px 3px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Token display ── */
+.otp-token-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 16px 14px;
+  cursor: pointer;
+  transition: background 0.12s;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  &:hover { background: rgba(30, 165, 76, 0.04); }
 }
 
 .otp-token-digits {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   color: #1ea54c;
   line-height: 1;
 }
 
 .otp-token-hint {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.5);
+  font-size: 0.7rem;
+  color: rgba(30, 165, 76, 0.45);
   letter-spacing: 0.04em;
 }
 
-/* ── Progress bar ───────────────────────────────────────────────── */
+/* ── Progress + countdown ── */
 .otp-progress-wrap {
-  margin-top: 10px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
   overflow: hidden;
 }
 
 .otp-progress-bar {
   height: 100%;
   background: #1ea54c;
-  border-radius: 2px;
   transition: width 0.05s linear;
 }
 
 .otp-countdown {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.6);
+  font-size: 0.73rem;
+  color: rgba(30, 165, 76, 0.55);
   text-align: center;
-  margin-top: 5px;
+  padding: 5px 12px 6px;
   letter-spacing: 0.03em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ── Adjacent tokens ────────────────────────────────────────────── */
-.otp-adj-row {
-  display: flex;
-  gap: 8px;
-}
-
-.otp-adj-btn {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s;
-  font-family: inherit;
-}
-
-.otp-adj-btn:hover {
-  background: rgba(30, 165, 76, 0.08);
-  border-color: rgba(30, 165, 76, 0.35);
-}
-
-.otp-adj-label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.45;
-  font-weight: 500;
-}
-
-.otp-adj-value {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: rgba(30, 165, 76, 0.75);
-  letter-spacing: 0.12em;
-}
-
-/* ── Details grid ───────────────────────────────────────────────── */
-.otp-details-grid {
+/* ── Rows (adjacent + details) ── */
+.otp-row {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 12px;
-  font-size: 0.76rem;
+  grid-template-columns: auto 110px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  cursor: pointer;
+  transition: background 0.1s;
+  &:last-child { border-bottom: none; }
+  &:hover { background: rgba(30, 165, 76, 0.05); }
 }
 
-.otp-detail-key {
-  opacity: 0.45;
+.otp-row-detail {
+  cursor: default;
+  &:hover { background: transparent; }
+}
+
+.otp-prompt {
+  color: rgba(30, 165, 76, 0.5);
+  font-weight: 600;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.otp-label {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
   white-space: nowrap;
-  padding-top: 1px;
 }
 
-.otp-detail-val {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.otp-value {
+  color: #1ea54c;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  min-width: 0;
+}
+
+.otp-value-sm {
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.8);
+  font-weight: 400;
+  letter-spacing: 0;
   word-break: break-all;
+  color: rgba(30, 165, 76, 0.8);
 }
 
-/* ── QR frame (same as qr-code-generator) ──────────────────────── */
+.otp-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  font-size: 0.75rem;
+  color: rgba(30, 165, 76, 0.4);
+  transition: color 0.12s;
+  flex-shrink: 0;
+}
+
+.otp-row:hover .otp-copy { color: rgba(30, 165, 76, 0.8); }
+
+.otp-copy-done { color: #1ea54c !important; }
+
+/* ── QR panel ── */
 .qr-frame {
   background: #0a0a0a;
   border: 1px solid rgba(30, 165, 76, 0.45);
@@ -356,36 +388,22 @@ const secretValidationRules = [
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  &:hover {
+    border-color: rgba(30, 165, 76, 0.7);
+    box-shadow:
+      0 0 0 1px rgba(30, 165, 76, 0.15),
+      0 0 44px rgba(30, 165, 76, 0.28),
+      inset 0 0 48px rgba(30, 165, 76, 0.08);
+  }
 }
 
-.qr-frame:hover {
-  border-color: rgba(30, 165, 76, 0.7);
-  box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.15),
-    0 0 44px rgba(30, 165, 76, 0.28),
-    inset 0 0 48px rgba(30, 165, 76, 0.08);
-}
-
-::v-deep(.qr-image) {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-::v-deep(.qr-image) img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+::v-deep(.qr-image) { width: 100%; aspect-ratio: 1 / 1; }
+::v-deep(.qr-image) img { width: 100%; height: auto; display: block; }
 
 .qr-caption {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
   color: rgba(30, 165, 76, 0.75);
   letter-spacing: 0.02em;
-  margin-top: 4px;
-}
-
-.qr-open-btn {
-  margin-top: 4px;
 }
 </style>

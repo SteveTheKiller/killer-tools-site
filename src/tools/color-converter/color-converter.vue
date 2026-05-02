@@ -16,41 +16,13 @@ const formats = {
     format: (v: Colord) => v.toHex(),
     type: 'color-picker',
   }),
-  hex: buildColorFormat({
-    label: 'hex',
-    format: (v: Colord) => v.toHex(),
-    placeholder: '#ff0000',
-  }),
-  rgb: buildColorFormat({
-    label: 'rgb',
-    format: (v: Colord) => v.toRgbString(),
-    placeholder: 'rgb(255, 0, 0)',
-  }),
-  hsl: buildColorFormat({
-    label: 'hsl',
-    format: (v: Colord) => v.toHslString(),
-    placeholder: 'hsl(0, 100%, 50%)',
-  }),
-  hwb: buildColorFormat({
-    label: 'hwb',
-    format: (v: Colord) => v.toHwbString(),
-    placeholder: 'hwb(0, 0%, 0%)',
-  }),
-  lch: buildColorFormat({
-    label: 'lch',
-    format: (v: Colord) => v.toLchString(),
-    placeholder: 'lch(53.24, 104.55, 40.85)',
-  }),
-  cmyk: buildColorFormat({
-    label: 'cmyk',
-    format: (v: Colord) => v.toCmykString(),
-    placeholder: 'cmyk(0, 100%, 100%, 0)',
-  }),
-  name: buildColorFormat({
-    label: 'name',
-    format: (v: Colord) => v.toName({ closest: true }) ?? 'Unknown',
-    placeholder: 'red',
-  }),
+  hex: buildColorFormat({ label: 'hex', format: (v: Colord) => v.toHex(), placeholder: '#ff0000' }),
+  rgb: buildColorFormat({ label: 'rgb', format: (v: Colord) => v.toRgbString(), placeholder: 'rgb(255, 0, 0)' }),
+  hsl: buildColorFormat({ label: 'hsl', format: (v: Colord) => v.toHslString(), placeholder: 'hsl(0, 100%, 50%)' }),
+  hwb: buildColorFormat({ label: 'hwb', format: (v: Colord) => v.toHwbString(), placeholder: 'hwb(0, 0%, 0%)' }),
+  lch: buildColorFormat({ label: 'lch', format: (v: Colord) => v.toLchString(), placeholder: 'lch(53.24, 104.55, 40.85)' }),
+  cmyk: buildColorFormat({ label: 'cmyk', format: (v: Colord) => v.toCmykString(), placeholder: 'cmyk(0, 100%, 100%, 0)' }),
+  name: buildColorFormat({ label: 'name', format: (v: Colord) => v.toName({ closest: true }) ?? 'Unknown', placeholder: 'red' }),
 };
 
 const outputKeys = ['hex', 'rgb', 'hsl', 'hwb', 'lch', 'cmyk', 'name'] as const;
@@ -72,67 +44,60 @@ async function copyValue(key: string, value: string) {
   if (!value) return;
   await navigator.clipboard.writeText(value);
   copiedLabel.value = key;
-  setTimeout(() => {
-    if (copiedLabel.value === key) copiedLabel.value = null;
-  }, 2000);
+  setTimeout(() => { if (copiedLabel.value === key) copiedLabel.value = null; }, 2000);
 }
 </script>
 
 <template>
   <div class="color-tool">
-    <c-card>
-      <div class="color-section-label">
-        Color
-      </div>
+    <div class="color-terminal">
 
-      <!-- swatch + picker -->
-      <div class="color-picker-row">
-        <div class="color-swatch" :style="{ background: currentHex }" />
-        <n-color-picker
-          v-model:value="formats.picker.value.value"
-          class="color-picker"
-          placement="bottom-end"
-          @update:value="(v: string) => updateColorValue(formats.picker.parse(v), 'picker')"
-        />
-      </div>
-
-      <n-divider />
-
-      <div class="color-section-label">
-        Formats
-      </div>
-
-      <div class="color-grid">
-        <div
-          v-for="key in outputKeys"
-          :key="key"
-          class="color-row"
-          :class="{ 'color-row--error': formats[key].validation.attrs.validationStatus === 'error' }"
-        >
-          <span class="color-prompt">&gt;_</span>
-          <span class="color-label">{{ formats[key].label }}</span>
-          <input
-            v-model="formats[key].value.value"
-            class="color-value-input"
-            :placeholder="formats[key].placeholder"
-            spellcheck="false"
-            autocomplete="off"
-            autocorrect="off"
-            @input="(e: Event) => updateColorValue(formats[key].parse((e.target as HTMLInputElement).value), key)"
+      <!-- Color picker area -->
+      <div class="color-input-area">
+        <label class="color-field-label">Color</label>
+        <div class="color-picker-row">
+          <div class="color-swatch" :style="{ background: currentHex }" />
+          <n-color-picker
+            v-model:value="formats.picker.value.value"
+            class="color-picker"
+            placement="bottom-end"
+            @update:value="(v: string) => updateColorValue(formats.picker.parse(v), 'picker')"
           />
-          <button
-            type="button"
-            class="color-copy"
-            :disabled="!formats[key].value.value"
-            :title="copiedLabel === key ? 'Copied!' : 'Copy'"
-            @click="copyValue(key, formats[key].value.value)"
-          >
-            <span v-if="copiedLabel === key" class="color-copy-check">✓</span>
-            <icon-mdi-content-copy v-else />
-          </button>
         </div>
       </div>
-    </c-card>
+
+      <!-- Format rows -->
+      <div class="color-section-header">FORMATS</div>
+
+      <div
+        v-for="key in outputKeys"
+        :key="key"
+        class="color-row"
+        :class="{ 'color-row-error': formats[key].validation.attrs.validationStatus === 'error' }"
+      >
+        <span class="color-prompt">&gt;_</span>
+        <span class="color-label">{{ formats[key].label }}</span>
+        <input
+          v-model="formats[key].value.value"
+          class="color-value-input"
+          :placeholder="formats[key].placeholder"
+          spellcheck="false"
+          autocomplete="off"
+          @input="(e: Event) => updateColorValue(formats[key].parse((e.target as HTMLInputElement).value), key)"
+        >
+        <button
+          type="button"
+          class="color-copy"
+          :class="{ 'color-copy-done': copiedLabel === key }"
+          :disabled="!formats[key].value.value"
+          @click="copyValue(key, formats[key].value.value)"
+        >
+          <span v-if="copiedLabel === key">✓</span>
+          <icon-mdi-content-copy v-else />
+        </button>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -143,13 +108,25 @@ async function copyValue(key: string, value: string) {
   container-type: inline-size;
 }
 
-.color-section-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 8px;
+.color-terminal {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.color-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.color-field-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .color-picker-row {
@@ -159,10 +136,10 @@ async function copyValue(key: string, value: string) {
 }
 
 .color-swatch {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   flex-shrink: 0;
   transition: background 0.15s;
 }
@@ -171,10 +148,15 @@ async function copyValue(key: string, value: string) {
   flex: 1;
 }
 
-.color-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.color-section-header {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px 3px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .color-row {
@@ -182,35 +164,27 @@ async function copyValue(key: string, value: string) {
   grid-template-columns: auto 60px 1fr auto;
   align-items: center;
   gap: 12px;
-  padding: 8px 14px;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 6px;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  transition: border-color 0.12s, background 0.12s;
+  padding: 7px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  cursor: pointer;
+  transition: background 0.1s;
 }
 
-.color-row:hover {
-  border-color: rgba(30, 165, 76, 0.55);
-  background: rgba(0, 0, 0, 0.7);
-}
+.color-row:last-child { border-bottom: none; }
+.color-row:hover { background: rgba(30, 165, 76, 0.05); }
 
-.color-row--error {
-  border-color: rgba(200, 60, 60, 0.5);
-}
+.color-row-error .color-value-input { color: #e05555; }
 
 .color-prompt {
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(30, 165, 76, 0.5);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   user-select: none;
 }
 
 .color-label {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
   white-space: nowrap;
 }
 
@@ -224,61 +198,32 @@ async function copyValue(key: string, value: string) {
   width: 100%;
   min-width: 0;
   caret-color: #1ea54c;
+  cursor: text;
 }
 
-.color-value-input::placeholder {
-  color: rgba(30, 165, 76, 0.25);
-}
+.color-value-input::placeholder { color: rgba(30, 165, 76, 0.25); }
 
 .color-copy {
-  background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
-  cursor: pointer;
-  padding: 4px 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  line-height: 1;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  width: 24px;
+  font-size: 0.75rem;
+  color: rgba(30, 165, 76, 0.4);
+  transition: color 0.12s;
   flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.color-copy:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
-}
-
-.color-copy:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.color-copy-check {
-  color: #1ea54c;
-  font-weight: 700;
-}
+.color-copy:disabled { opacity: 0.2; cursor: default; }
+.color-copy:not(:disabled):hover { color: rgba(30, 165, 76, 0.8); }
+.color-copy-done { color: #1ea54c !important; }
 
 @container (max-width: 480px) {
-  .color-row {
-    grid-template-columns: auto 1fr auto;
-    gap: 8px;
-    padding: 7px 10px;
-  }
-
-  .color-prompt {
-    display: none;
-  }
-
-  .color-label {
-    font-size: 0.72rem;
-  }
-
-  .color-value-input {
-    font-size: 0.76rem;
-  }
+  .color-row { grid-template-columns: auto 1fr auto; gap: 8px; }
+  .color-prompt { display: none; }
 }
 </style>

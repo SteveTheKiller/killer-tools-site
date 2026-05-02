@@ -5,7 +5,6 @@ import { tool as killerScripts } from './killer-scripts';
 import { tool as killerPdf } from './killer-pdf';
 import { tool as killerFind } from './killer-find';
 import { tool as killerScan } from './killer-scan';
-import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as regexTester } from './regex-tester';
 import { tool as markdownToHtml } from './markdown-to-html';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
@@ -20,7 +19,6 @@ import { tool as jsonDiff } from './json-diff';
 import { tool as ipv4RangeExpander } from './ipv4-range-expander';
 import { tool as httpStatusCodes } from './http-status-codes';
 import { tool as ipv6UlaGenerator } from './ipv6-ula-generator';
-import { tool as ipv4AddressConverter } from './ipv4-address-converter';
 import { tool as userAgentParser } from './user-agent-parser';
 import { tool as ipv4SubnetCalculator } from './ipv4-subnet-calculator';
 import { tool as htmlWysiwygEditor } from './html-wysiwyg-editor';
@@ -88,7 +86,6 @@ export const toolsByCategory: ToolCategory[] = [
       groupPolicyReference,
       m365SkuDecoder,
       powershellBuilder,
-      safelinkDecoder,
       windowsErrorCodes,
       windowsEventLookup,
       killerPdf,
@@ -103,7 +100,6 @@ export const toolsByCategory: ToolCategory[] = [
       domainLookup,
       emailHeaderParser,
       emailRecordGenerator,
-      ipv4AddressConverter,
       ipv4RangeExpander,
       ipv4SubnetCalculator,
       ipv6UlaGenerator,

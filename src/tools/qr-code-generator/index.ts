@@ -31,5 +31,5 @@ export const tool = defineTool({
   component: () => import('./qr-code-generator.vue'),
   fullscreen: true,
   icon: Qrcode,
-  createdAt: new Date('2026-04-19'),
+  createdAt: new Date('2026-03-01'),
 });

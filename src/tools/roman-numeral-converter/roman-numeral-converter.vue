@@ -7,70 +7,223 @@ import {
   romanToArabic,
 } from './roman-numeral-converter.service';
 import { useCopy } from '@/composable/copy';
-import { useValidation } from '@/composable/validation';
 
-const inputNumeral = ref(42);
-const outputRoman = computed(() => arabicToRoman(inputNumeral.value));
+const arabic = ref('42');
+const roman = ref('XLII');
+let updating = false;
 
-const { attrs: validationNumeral } = useValidation({
-  source: inputNumeral,
-  rules: [
-    {
-      validator: value => value >= MIN_ARABIC_TO_ROMAN && value <= MAX_ARABIC_TO_ROMAN,
-      message: `We can only convert numbers between ${MIN_ARABIC_TO_ROMAN.toLocaleString()} and ${MAX_ARABIC_TO_ROMAN.toLocaleString()}`,
-    },
-  ],
+const arabicValid = computed(() => {
+  const n = parseInt(arabic.value);
+  return !Number.isNaN(n) && n >= MIN_ARABIC_TO_ROMAN && n <= MAX_ARABIC_TO_ROMAN;
+});
+const romanValid = computed(() => isValidRomanNumber(roman.value));
+
+watch(arabic, (val) => {
+  if (updating) return;
+  const n = parseInt(val);
+  if (!Number.isNaN(n) && n >= MIN_ARABIC_TO_ROMAN && n <= MAX_ARABIC_TO_ROMAN) {
+    updating = true;
+    roman.value = arabicToRoman(n);
+    nextTick(() => { updating = false; });
+  }
 });
 
-const inputRoman = ref('XLII');
-const outputNumeral = computed(() => romanToArabic(inputRoman.value));
-
-const validationRoman = useValidation({
-  source: inputRoman,
-  rules: [
-    {
-      validator: value => isValidRomanNumber(value),
-      message: 'The input you entered is not a valid roman number',
-    },
-  ],
+watch(roman, (val) => {
+  if (updating) return;
+  if (isValidRomanNumber(val)) {
+    updating = true;
+    arabic.value = String(romanToArabic(val));
+    nextTick(() => { updating = false; });
+  }
 });
 
-const { copy: copyRoman } = useCopy({ source: outputRoman, text: 'Roman number copied to the clipboard' });
-const { copy: copyArabic } = useCopy({ source: () => String(outputNumeral), text: 'Arabic number copied to the clipboard' });
+const { copy: copyRoman, copied: copiedRoman } = useCopy({ source: roman, text: 'Roman numeral copied' });
+const { copy: copyArabic, copied: copiedArabic } = useCopy({ source: arabic, text: 'Arabic number copied' });
 </script>
 
 <template>
-  <div>
-    <c-card title="Arabic to roman">
-      <div flex items-center justify-between>
-        <n-form-item v-bind="validationNumeral as any">
-          <n-input-number v-model:value="inputNumeral" :min="1" style="width: 200px" :show-button="false" />
-        </n-form-item>
-        <div class="result">
-          {{ outputRoman }}
+  <div class="rn-wrap">
+    <div class="rn-panel">
+      <!-- Arabic side -->
+      <div class="rn-side">
+        <span class="rn-sublabel">ARABIC</span>
+        <div class="rn-input-wrap" :class="{ 'rn-input-error': arabic && !arabicValid }">
+          <input
+            v-model="arabic"
+            class="rn-input"
+            type="number"
+            :min="MIN_ARABIC_TO_ROMAN"
+            :max="MAX_ARABIC_TO_ROMAN"
+            placeholder="1–3999"
+            autofocus
+            spellcheck="false"
+          >
         </div>
-        <c-button autofocus :disabled="validationNumeral.validationStatus === 'error'" @click="copyRoman()">
-          Copy
-        </c-button>
+        <span v-if="arabic && !arabicValid" class="rn-error-msg">
+          Must be {{ MIN_ARABIC_TO_ROMAN }}–{{ MAX_ARABIC_TO_ROMAN.toLocaleString() }}
+        </span>
+        <button class="rn-copy-btn" :disabled="!arabicValid" @click="copyArabic()">
+          <span v-if="copiedArabic">✓ Copied</span>
+          <template v-else>
+            <icon-mdi-content-copy />
+            Copy
+          </template>
+        </button>
       </div>
-    </c-card>
-    <c-card title="Roman to arabic" mt-5>
-      <div flex items-center justify-between>
-        <c-input-text v-model:value="inputRoman" style="width: 200px" :validation="validationRoman" />
 
-        <div class="result">
-          {{ outputNumeral }}
-        </div>
-        <c-button :disabled="!validationRoman.isValid" @click="copyArabic()">
-          Copy
-        </c-button>
+      <!-- Divider -->
+      <div class="rn-divider">
+        <span class="rn-arrows">⟷</span>
       </div>
-    </c-card>
+
+      <!-- Roman side -->
+      <div class="rn-side">
+        <span class="rn-sublabel">ROMAN NUMERAL</span>
+        <div class="rn-input-wrap" :class="{ 'rn-input-error': roman && !romanValid }">
+          <input
+            v-model="roman"
+            class="rn-input rn-input-roman"
+            placeholder="XIV"
+            spellcheck="false"
+          >
+        </div>
+        <span v-if="roman && !romanValid" class="rn-error-msg">
+          Not a valid Roman numeral
+        </span>
+        <button class="rn-copy-btn" :disabled="!romanValid" @click="copyRoman()">
+          <span v-if="copiedRoman">✓ Copied</span>
+          <template v-else>
+            <icon-mdi-content-copy />
+            Copy
+          </template>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
-<style lang="less" scoped>
-.result {
-  font-size: 22px;
+<style scoped>
+.rn-wrap {
+  flex: 1 1 480px;
+  max-width: 800px;
+}
+
+.rn-panel {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* ── Side ── */
+.rn-side {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rn-sublabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* ── Input ── */
+.rn-input-wrap {
+  border: 1px solid rgba(30, 165, 76, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.rn-input-wrap:focus-within {
+  border-color: rgba(30, 165, 76, 0.55);
+}
+
+.rn-input-error {
+  border-color: rgba(224, 85, 85, 0.45) !important;
+}
+
+.rn-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1ea54c;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.rn-input::-webkit-inner-spin-button,
+.rn-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.rn-input::placeholder {
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* ── Divider ── */
+.rn-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 28px;
+  flex-shrink: 0;
+}
+
+.rn-arrows {
+  font-size: 1.2rem;
+  color: rgba(30, 165, 76, 0.35);
+  user-select: none;
+}
+
+/* ── Error ── */
+.rn-error-msg {
+  font-size: 0.67rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: #e05555;
+}
+
+/* ── Copy button ── */
+.rn-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  align-self: flex-start;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: rgba(30, 165, 76, 0.08);
+  color: rgba(30, 165, 76, 0.8);
+  font-size: 0.75rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.rn-copy-btn:hover:not(:disabled) {
+  background: rgba(30, 165, 76, 0.18);
+  border-color: #1ea54c;
+  color: #1ea54c;
+}
+
+.rn-copy-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 </style>

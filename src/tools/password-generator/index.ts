@@ -29,5 +29,5 @@ export const tool = defineTool({
   component: () => import('./password-generator.tool.vue'),
   fullscreen: true,
   icon: Key,
-  createdAt: new Date('2026-04-19'),
+  createdAt: new Date('2026-03-01'),
 });

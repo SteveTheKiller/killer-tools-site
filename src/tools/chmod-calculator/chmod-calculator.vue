@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { useThemeVars } from 'naive-ui';
-
-import InputCopyable from '../../components/InputCopyable.vue';
 import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
-
 import type { Group, Scope } from './chmod-calculator.types';
+import { useCopy } from '@/composable/copy';
 
-const themeVars = useThemeVars();
-
-const scopes: { scope: Scope; title: string }[] = [
-  { scope: 'read', title: 'Read (4)' },
-  { scope: 'write', title: 'Write (2)' },
-  { scope: 'execute', title: 'Execute (1)' },
+const scopes: { scope: Scope; title: string; bit: number }[] = [
+  { scope: 'read', title: 'Read', bit: 4 },
+  { scope: 'write', title: 'Write', bit: 2 },
+  { scope: 'execute', title: 'Execute', bit: 1 },
 ];
-const groups: Group[] = ['owner', 'group', 'public'];
+
+const groups: { key: Group; label: string; short: string }[] = [
+  { key: 'owner', label: 'Owner', short: 'u' },
+  { key: 'group', label: 'Group', short: 'g' },
+  { key: 'public', label: 'Public', short: 'o' },
+];
 
 const permissions = ref({
   owner: { read: false, write: false, execute: false },
@@ -23,73 +23,274 @@ const permissions = ref({
 
 const octal = computed(() => computeChmodOctalRepresentation({ permissions: permissions.value }));
 const symbolic = computed(() => computeChmodSymbolicRepresentation({ permissions: permissions.value }));
+const command = computed(() => `chmod ${octal.value} path`);
+
+const { copy } = useCopy({ source: command, text: 'chmod command copied' });
+
+// Digit color per octal value
+function digitColor(n: number) {
+  if (n === 0) {
+    return 'rgba(255,255,255,0.15)';
+  }
+  if (n >= 6) {
+    return '#1ea54c';
+  }
+  if (n >= 4) {
+    return '#8be0a8';
+  }
+  return '#c9f5d8';
+}
 </script>
 
 <template>
-  <div>
-    <n-table :bordered="false" :bottom-bordered="false" single-column class="permission-table">
-      <thead>
-        <tr>
-          <th class="text-center" scope="col" />
-          <th class="text-center" scope="col">
-            Owner (u)
-          </th>
-          <th class="text-center" scope="col">
-            Group (g)
-          </th>
-          <th class="text-center" scope="col">
-            Public (o)
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="{ scope, title } of scopes" :key="scope">
-          <td class="line-header">
-            {{ title }}
-          </td>
-          <td v-for="group of groups" :key="group" class="text-center">
-            <!-- <n-switch v-model:value="permissions[group][scope]" /> -->
-            <n-checkbox v-model:checked="permissions[group][scope]" size="large" />
-          </td>
-        </tr>
-      </tbody>
-    </n-table>
+  <div class="ch-wrap">
+    <div class="ch-panel">
 
-    <div class="octal-result">
-      {{ octal }}
-    </div>
-    <div class="octal-result">
-      {{ symbolic }}
-    </div>
+      <!-- Permission grid -->
+      <div class="ch-grid">
+        <!-- Header row -->
+        <div class="ch-cell ch-header-blank" />
+        <div v-for="g in groups" :key="g.key" class="ch-cell ch-col-header">
+          {{ g.label }}
+          <span class="ch-short">({{ g.short }})</span>
+        </div>
 
-    <InputCopyable :value="`chmod ${octal} path`" readonly />
+        <!-- Permission rows -->
+        <template v-for="s in scopes" :key="s.scope">
+          <div class="ch-cell ch-row-label">
+            <span class="ch-scope-name">{{ s.title }}</span>
+            <span class="ch-scope-bit">{{ s.bit }}</span>
+          </div>
+          <div v-for="g in groups" :key="g.key" class="ch-cell ch-checkbox-cell">
+            <button
+              type="button"
+              class="ch-checkbox"
+              :class="{ 'ch-checkbox-on': permissions[g.key][s.scope] }"
+              @click="permissions[g.key][s.scope] = !permissions[g.key][s.scope]"
+            >
+              <icon-mdi-check v-if="permissions[g.key][s.scope]" />
+            </button>
+          </div>
+        </template>
+      </div>
+
+      <!-- Divider -->
+      <div class="ch-divider" />
+
+      <!-- Octal + symbolic display -->
+      <div class="ch-results">
+        <div class="ch-octal-row">
+          <span
+            v-for="(digit, i) in octal.split('')"
+            :key="i"
+            class="ch-digit"
+            :style="{ color: digitColor(Number(digit)) }"
+          >{{ digit }}</span>
+        </div>
+        <div class="ch-symbolic">
+          {{ symbolic }}
+        </div>
+      </div>
+
+      <!-- Command output -->
+      <div class="ch-cmd-wrap">
+        <div class="ch-input-row">
+          <span class="ch-prompt">&gt;_</span>
+          <span class="ch-cmd-text">{{ command }}</span>
+          <button class="ch-copy-btn" title="Copy command" @click="copy()">
+            <icon-mdi-content-copy />
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<style lang="less" scoped>
-.octal-result {
-  text-align: center;
-  font-size: 50px;
-  font-family: monospace;
-  color: v-bind('themeVars.primaryColor');
-  margin: 20px 0;
+<style scoped>
+.ch-wrap {
+  flex: 1 1 480px;
+  max-width: 640px;
 }
-.permission-table {
-  td,
-  th {
-    padding: 15px;
 
-    @media screen and (max-width: 600px) {
-      padding: 5px;
-    }
-  }
+.ch-panel {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
 }
-.line-header {
-  font-weight: bold;
-  text-align: right;
-  max-width: 80px;
+
+/* ── Permission grid ── */
+.ch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
 }
-.text-center {
-  text-align: center;
+
+.ch-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 10px;
+  border-right: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+}
+
+.ch-cell:nth-child(4n) {
+  border-right: none;
+}
+
+.ch-header-blank {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.ch-col-header {
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.75rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ch-short {
+  font-size: 0.6rem;
+  color: rgba(30, 165, 76, 0.5);
+}
+
+.ch-row-label {
+  justify-content: flex-end;
+  gap: 8px;
+  padding-right: 14px;
+}
+
+.ch-scope-name {
+  font-size: 0.75rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.ch-scope-bit {
+  font-size: 0.65rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(30, 165, 76, 0.4);
+  min-width: 10px;
+}
+
+/* ── Custom checkbox ── */
+.ch-checkbox-cell {
+  padding: 10px;
+}
+
+.ch-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: transparent;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.ch-checkbox:hover {
+  border-color: rgba(30, 165, 76, 0.5);
+  background: rgba(30, 165, 76, 0.05);
+}
+
+.ch-checkbox-on {
+  background: rgba(30, 165, 76, 0.18);
+  border-color: #1ea54c;
+  color: #1ea54c;
+}
+
+/* ── Divider ── */
+.ch-divider {
+  height: 1px;
+  background: rgba(30, 165, 76, 0.1);
+}
+
+/* ── Results ── */
+.ch-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px 16px;
+}
+
+.ch-octal-row {
+  display: flex;
+  gap: 4px;
+}
+
+.ch-digit {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.ch-symbolic {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 1rem;
+  color: rgba(30, 165, 76, 0.6);
+  letter-spacing: 0.12em;
+}
+
+/* ── Command row ── */
+.ch-cmd-wrap {
+  padding: 0 0 0 0;
+  border-top: 1px solid rgba(30, 165, 76, 0.1);
+}
+
+.ch-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+}
+
+.ch-prompt {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.75rem;
+  color: rgba(30, 165, 76, 0.4);
+  font-weight: 600;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.ch-cmd-text {
+  flex: 1 1 0;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.82rem;
+  color: #1ea54c;
+}
+
+.ch-copy-btn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 1px solid rgba(30, 165, 76, 0.2);
+  border-radius: 4px;
+  color: rgba(30, 165, 76, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.ch-copy-btn:hover {
+  background: rgba(30, 165, 76, 0.1);
+  border-color: rgba(30, 165, 76, 0.55);
+  color: #1ea54c;
 }
 </style>

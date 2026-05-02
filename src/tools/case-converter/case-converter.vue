@@ -35,58 +35,52 @@ const formats = computed(() => [
   { label: 'Snakecase', value: snakeCase(input.value, baseConfig) },
   {
     label: 'Mockingcase',
-    value: input.value
-      .split('')
-      .map((char, index) => (index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()))
-      .join(''),
+    value: input.value.split('').map((c, i) => i % 2 === 0 ? c.toUpperCase() : c.toLowerCase()).join(''),
   },
 ]);
 
 const copiedLabel = ref<string | null>(null);
-
 async function copyValue(label: string, value: string) {
   if (!value) return;
   await navigator.clipboard.writeText(value);
   copiedLabel.value = label;
-  setTimeout(() => {
-    if (copiedLabel.value === label) copiedLabel.value = null;
-  }, 2000);
+  setTimeout(() => { if (copiedLabel.value === label) copiedLabel.value = null; }, 2000);
 }
 </script>
 
 <template>
   <div class="case-tool">
-    <c-card>
-      <div class="case-section-label">
-        Your string
-      </div>
-      <c-input-text
-        v-model:value="input"
-        placeholder="Your string..."
-        raw-text
-        font-mono
-      />
+    <div class="case-terminal">
 
-      <n-divider />
-
-      <div class="case-section-label">
-        Output
-      </div>
-
-      <div class="case-terminal">
-        <div
-          v-for="{ label, value } in formats"
-          :key="label"
-          class="case-line"
-          @click="copyValue(label, value)"
+      <div class="case-input-area">
+        <label class="case-field-label">Your string</label>
+        <input
+          v-model="input"
+          class="case-input"
+          placeholder="Your string..."
+          spellcheck="false"
+          autofocus
         >
-          <span class="case-prompt">&gt;_</span>
-          <span class="case-label">{{ label }}</span>
-          <code class="case-value">{{ value }}</code>
-          <span class="case-copy-hint">{{ copiedLabel === label ? '✓' : '' }}</span>
-        </div>
       </div>
-    </c-card>
+
+      <div class="case-section-header">OUTPUT</div>
+
+      <div
+        v-for="{ label, value } in formats"
+        :key="label"
+        class="case-row"
+        @click="copyValue(label, value)"
+      >
+        <span class="case-prompt">&gt;_</span>
+        <span class="case-label">{{ label }}</span>
+        <code class="case-value">{{ value }}</code>
+        <span class="case-copy" :class="{ 'case-copy-done': copiedLabel === label }">
+          <span v-if="copiedLabel === label">✓</span>
+          <icon-mdi-content-copy v-else />
+        </span>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -97,48 +91,76 @@ async function copyValue(label: string, value: string) {
   container-type: inline-size;
 }
 
-.case-section-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 8px;
-}
-
 .case-terminal {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
-  padding: 6px 0;
+  overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-.case-line {
+.case-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.case-field-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.case-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.case-input::placeholder { color: rgba(255, 255, 255, 0.2); }
+
+.case-section-header {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px 3px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.case-row {
   display: grid;
-  grid-template-columns: auto 112px 1fr auto;
-  align-items: baseline;
-  gap: 12px;
-  padding: 4px 14px;
+  grid-template-columns: auto 120px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
 }
 
-.case-line:hover {
-  background: rgba(30, 165, 76, 0.07);
-}
+.case-row:last-child { border-bottom: none; }
+.case-row:hover { background: rgba(30, 165, 76, 0.05); }
 
 .case-prompt {
-  color: rgba(30, 165, 76, 0.4);
-  font-size: 0.8rem;
+  color: rgba(30, 165, 76, 0.5);
+  font-weight: 600;
+  font-size: 0.75rem;
   user-select: none;
 }
 
 .case-label {
   color: rgba(255, 255, 255, 0.45);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-size: 0.75rem;
   white-space: nowrap;
 }
 
@@ -146,25 +168,25 @@ async function copyValue(label: string, value: string) {
   color: #1ea54c;
   font-size: 0.82rem;
   word-break: break-all;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-.case-copy-hint {
-  font-size: 0.78rem;
-  color: #1ea54c;
-  font-weight: 700;
-  min-width: 12px;
-  text-align: right;
+.case-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  font-size: 0.75rem;
+  color: rgba(30, 165, 76, 0.4);
+  transition: color 0.12s;
+  flex-shrink: 0;
 }
+
+.case-row:hover .case-copy { color: rgba(30, 165, 76, 0.8); }
+.case-copy-done { color: #1ea54c !important; }
 
 @container (max-width: 480px) {
-  .case-line {
-    grid-template-columns: 112px 1fr auto;
-    gap: 8px;
-    padding: 4px 10px;
-  }
-
-  .case-prompt {
-    display: none;
-  }
+  .case-row { grid-template-columns: 120px 1fr auto; }
+  .case-prompt { display: none; }
 }
 </style>

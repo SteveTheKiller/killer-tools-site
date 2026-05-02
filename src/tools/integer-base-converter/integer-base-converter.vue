@@ -7,12 +7,8 @@ const inputBase = ref(10);
 const outputBase = ref(42);
 
 function errorlessConvert(...args: Parameters<typeof convertBase>) {
-  try {
-    return convertBase(...args);
-  }
-  catch {
-    return '';
-  }
+  try { return convertBase(...args); }
+  catch { return ''; }
 }
 
 const error = computed(() =>
@@ -34,157 +30,220 @@ async function copyValue(label: string, value: string) {
   if (!value) return;
   await navigator.clipboard.writeText(value);
   copiedLabel.value = label;
-  setTimeout(() => {
-    if (copiedLabel.value === label) copiedLabel.value = null;
-  }, 2000);
+  setTimeout(() => { if (copiedLabel.value === label) copiedLabel.value = null; }, 2000);
 }
 </script>
 
 <template>
   <div class="base-tool">
-    <c-card>
-      <div class="base-section-label">
-        Input
-      </div>
-      <div class="base-inputs">
-        <c-input-text
-          v-model:value="input"
-          label="Number"
-          placeholder="42"
-          label-position="left"
-          label-width="80px"
-          font-mono
-        />
-        <n-form-item label="Base" label-placement="left" label-width="80" :show-feedback="false">
-          <n-input-number v-model:value="inputBase" max="64" min="2" w-full />
-        </n-form-item>
-      </div>
+    <div class="base-terminal">
 
-      <n-alert v-if="error" type="error" mt-3>
-        {{ error }}
-      </n-alert>
-
-      <n-divider />
-
-      <div class="base-section-label">
-        Output
-      </div>
-
-      <div class="base-grid">
-        <div
-          v-for="{ label, base } in fixedBases"
-          :key="base"
-          class="base-row"
-        >
-          <span class="base-prompt">&gt;_</span>
-          <span class="base-label">{{ label }} ({{ base }})</span>
-          <code class="base-value">{{ errorlessConvert({ value: input, fromBase: inputBase, toBase: base }) }}</code>
-          <button
-            type="button"
-            class="base-copy"
-            :disabled="!errorlessConvert({ value: input, fromBase: inputBase, toBase: base })"
-            :title="copiedLabel === label ? 'Copied!' : 'Copy'"
-            @click="copyValue(label, errorlessConvert({ value: input, fromBase: inputBase, toBase: base }))"
-          >
-            <span v-if="copiedLabel === label" class="base-copy-check">✓</span>
-            <icon-mdi-content-copy v-else />
-          </button>
-        </div>
-
-        <!-- Custom base row -->
-        <div class="base-row base-custom-row">
-          <span class="base-prompt">&gt;_</span>
-          <div class="base-custom-label">
-            <span class="base-label-text">Custom</span>
-            <n-input-number
-              v-model:value="outputBase"
-              min="2"
-              max="64"
-              size="small"
-              class="base-custom-spinner"
-            />
+      <!-- Input area -->
+      <div class="base-input-area">
+        <div class="base-input-row">
+          <div class="base-field base-field-grow">
+            <label class="base-field-label">Number</label>
+            <input
+              v-model="input"
+              class="base-input"
+              placeholder="42"
+              spellcheck="false"
+              autofocus
+            >
           </div>
-          <code class="base-value">{{ errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase }) }}</code>
-          <button
-            type="button"
-            class="base-copy"
-            :disabled="!errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase })"
-            :title="copiedLabel === 'custom' ? 'Copied!' : 'Copy'"
-            @click="copyValue('custom', errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase }))"
-          >
-            <span v-if="copiedLabel === 'custom'" class="base-copy-check">✓</span>
-            <icon-mdi-content-copy v-else />
-          </button>
+          <div class="base-field">
+            <label class="base-field-label">Input base</label>
+            <div class="base-stepper">
+              <button class="base-step-btn" :disabled="inputBase <= 2" @click="inputBase = Math.max(2, inputBase - 1)">−</button>
+              <span class="base-step-val">{{ inputBase }}</span>
+              <button class="base-step-btn" :disabled="inputBase >= 64" @click="inputBase = Math.min(64, inputBase + 1)">+</button>
+            </div>
+          </div>
         </div>
+        <div v-if="error" class="base-error">{{ error }}</div>
       </div>
-    </c-card>
+
+      <!-- Output rows -->
+      <div class="base-section-header">OUTPUT</div>
+
+      <div
+        v-for="{ label, base } in fixedBases"
+        :key="base"
+        class="base-row"
+        :class="{ 'base-row-empty': !errorlessConvert({ value: input, fromBase: inputBase, toBase: base }) }"
+        @click="copyValue(label, errorlessConvert({ value: input, fromBase: inputBase, toBase: base }))"
+      >
+        <span class="base-prompt">&gt;_</span>
+        <span class="base-label">{{ label }} ({{ base }})</span>
+        <span class="base-value">{{ errorlessConvert({ value: input, fromBase: inputBase, toBase: base }) }}</span>
+        <span class="base-copy" :class="{ 'base-copy-done': copiedLabel === label }">
+          <span v-if="copiedLabel === label">✓</span>
+          <icon-mdi-content-copy v-else-if="errorlessConvert({ value: input, fromBase: inputBase, toBase: base })" />
+        </span>
+      </div>
+
+      <!-- Custom base row -->
+      <div
+        class="base-row"
+        @click="copyValue('custom', errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase }))"
+      >
+        <span class="base-prompt">&gt;_</span>
+        <div class="base-custom-label" @click.stop>
+          <span class="base-label">Custom</span>
+          <div class="base-mini-stepper">
+            <button class="base-mini-btn" :disabled="outputBase <= 2" @click="outputBase = Math.max(2, outputBase - 1)">−</button>
+            <span class="base-mini-val">{{ outputBase }}</span>
+            <button class="base-mini-btn" :disabled="outputBase >= 64" @click="outputBase = Math.min(64, outputBase + 1)">+</button>
+          </div>
+        </div>
+        <span class="base-value">{{ errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase }) }}</span>
+        <span class="base-copy" :class="{ 'base-copy-done': copiedLabel === 'custom' }">
+          <span v-if="copiedLabel === 'custom'">✓</span>
+          <icon-mdi-content-copy v-else-if="errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase })" />
+        </span>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <style scoped>
 .base-tool {
-  flex: 1 1 700px;
-  max-width: 1200px;
+  flex: 1 1 600px;
+  max-width: 1000px;
   container-type: inline-size;
 }
 
-.base-section-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 8px;
-}
-
-.base-inputs {
-  display: flex;
-  gap: 16px;
-  align-items: flex-end;
-}
-
-.base-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.base-row {
-  display: grid;
-  grid-template-columns: auto 160px 1fr auto;
-  align-items: start;
-  gap: 12px;
-  padding: 10px 14px;
+.base-terminal {
   background: rgba(0, 0, 0, 0.55);
   border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 6px;
+  border-radius: 8px;
+  overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  transition: border-color 0.12s, background 0.12s;
 }
 
-.base-row:hover {
-  border-color: rgba(30, 165, 76, 0.55);
-  background: rgba(0, 0, 0, 0.7);
+/* ── Input area ── */
+.base-input-area {
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.base-custom-row {
-  border-color: rgba(30, 165, 76, 0.45);
+.base-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
+
+.base-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.base-field-grow {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.base-field-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.base-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.base-input::placeholder { color: rgba(255, 255, 255, 0.2); }
+
+.base-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.base-step-btn {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 4px;
+  color: #1ea54c;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+  flex-shrink: 0;
+}
+
+.base-step-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
+.base-step-btn:disabled { opacity: 0.3; cursor: default; }
+
+.base-step-val {
+  min-width: 36px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #1ea54c;
+  padding: 0 4px;
+}
+
+.base-error {
+  font-size: 0.72rem;
+  color: #e05555;
+}
+
+/* ── Section header ── */
+.base-section-header {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px 3px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Output rows ── */
+.base-row {
+  display: grid;
+  grid-template-columns: auto 170px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.base-row:last-child { border-bottom: none; }
+.base-row:hover { background: rgba(30, 165, 76, 0.05); }
+.base-row-empty { cursor: default; }
 
 .base-prompt {
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(30, 165, 76, 0.5);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   user-select: none;
-  line-height: 1.5;
 }
 
 .base-label {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
   white-space: nowrap;
 }
 
@@ -194,82 +253,56 @@ async function copyValue(label: string, value: string) {
   gap: 8px;
 }
 
-.base-label-text {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.base-mini-stepper {
+  display: inline-flex;
+  align-items: center;
 }
 
-.base-custom-spinner {
-  width: 80px;
+.base-mini-btn {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  border-radius: 3px;
+  color: #1ea54c;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+  flex-shrink: 0;
+}
+
+.base-mini-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
+.base-mini-btn:disabled { opacity: 0.3; cursor: default; }
+
+.base-mini-val {
+  min-width: 28px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #1ea54c;
+  padding: 0 2px;
 }
 
 .base-value {
   color: #1ea54c;
   font-size: 0.82rem;
-  line-height: 1.5;
   word-break: break-all;
-  white-space: pre-wrap;
   min-width: 0;
 }
 
 .base-copy {
-  background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
-  cursor: pointer;
-  padding: 4px 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  line-height: 1;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  align-self: start;
+  width: 24px;
+  font-size: 0.75rem;
+  color: rgba(30, 165, 76, 0.4);
+  transition: color 0.12s;
+  flex-shrink: 0;
 }
 
-.base-copy:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
-}
-
-.base-copy:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.base-copy-check {
-  color: #1ea54c;
-  font-weight: 700;
-}
-
-@container (max-width: 560px) {
-  .base-inputs {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .base-row {
-    grid-template-columns: auto 1fr auto;
-    gap: 8px;
-    padding: 8px 10px;
-  }
-
-  .base-prompt {
-    display: none;
-  }
-
-  .base-label {
-    font-size: 0.72rem;
-  }
-
-  .base-value {
-    font-size: 0.76rem;
-  }
-}
+.base-row:hover .base-copy { color: rgba(30, 165, 76, 0.8); }
+.base-copy-done { color: #1ea54c !important; }
 </style>

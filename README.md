@@ -27,7 +27,6 @@ A sampling of what's built into the site beyond the standard IT-Tools toolkit.
 | **Email Header Parser** | Paste raw headers to trace the delivery hop chain and view auth results |
 | **CVE Lookup** | Live search against the NIST NVD by ID or keyword |
 | **Port & Protocol Reference** | Common ports and protocols with security notes and dangerous port flags |
-| **Outlook SafeLink Decoder** | Unwrap Microsoft Defender SafeLinks to reveal the original destination URL |
 | **M365 License SKU Decoder** | Convert Microsoft 365 license SKU strings and GUIDs to readable product names |
 | **PowerShell Builder** | Pick a cmdlet, fill in parameters, and copy the finished command |
 | **Killer Scripts** | PowerShell scripts for Windows administration and MSP field work |

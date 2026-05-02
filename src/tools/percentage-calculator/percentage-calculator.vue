@@ -1,78 +1,252 @@
 <script setup lang="ts">
-const percentageX = ref();
-const percentageY = ref();
-const percentageResult = computed(() => {
-  if (percentageX.value === undefined || percentageY.value === undefined) {
-    return '';
-  }
-  return (percentageX.value / 100 * percentageY.value).toString();
+function fmt(n: number) {
+  return Number(n.toFixed(8)).toString();
+}
+
+// What is X% of Y
+const pctX = ref('');
+const pctY = ref('');
+const pctResult = computed(() => {
+  const x = parseFloat(pctX.value);
+  const y = parseFloat(pctY.value);
+  if (Number.isNaN(x) || Number.isNaN(y)) return '';
+  return fmt(x / 100 * y);
 });
 
-const numberX = ref();
-const numberY = ref();
-const numberResult = computed(() => {
-  if (numberX.value === undefined || numberY.value === undefined) {
-    return '';
-  }
-  const result = 100 * numberX.value / numberY.value;
-  return (!Number.isFinite(result) || Number.isNaN(result)) ? '' : result.toString();
+// X is what percent of Y
+const numX = ref('');
+const numY = ref('');
+const numResult = computed(() => {
+  const x = parseFloat(numX.value);
+  const y = parseFloat(numY.value);
+  if (Number.isNaN(x) || Number.isNaN(y) || y === 0) return '';
+  return fmt(100 * x / y) + '%';
 });
 
-const numberFrom = ref();
-const numberTo = ref();
-const percentageIncreaseDecrease = computed(() => {
-  if (numberFrom.value === undefined || numberTo.value === undefined) {
-    return '';
-  }
-  const result = (numberTo.value - numberFrom.value) / numberFrom.value * 100;
-  return (!Number.isFinite(result) || Number.isNaN(result)) ? '' : result.toString();
+// Percentage increase/decrease
+const fromVal = ref('');
+const toVal = ref('');
+const changeResult = computed(() => {
+  const from = parseFloat(fromVal.value);
+  const to = parseFloat(toVal.value);
+  if (Number.isNaN(from) || Number.isNaN(to) || from === 0) return '';
+  const pct = (to - from) / from * 100;
+  return (pct >= 0 ? '+' : '') + fmt(pct) + '%';
 });
+
+const copiedKey = ref<string | null>(null);
+async function copyResult(key: string, val: string) {
+  if (!val) return;
+  await navigator.clipboard.writeText(val);
+  copiedKey.value = key;
+  setTimeout(() => { if (copiedKey.value === key) copiedKey.value = null; }, 2000);
+}
 </script>
 
 <template>
-  <div style="flex: 0 0 100%">
-    <div style="margin: 0 auto; max-width: 600px">
-      <c-card mb-3>
-        <div mb-3 sm:hidden>
-          What is
+  <div class="pc-wrap">
+    <!-- What is X% of Y -->
+    <div class="pc-panel">
+      <span class="pc-sublabel">WHAT IS X% OF Y</span>
+      <div class="pc-row">
+        <span class="pc-text">What is</span>
+        <input v-model="pctX" class="pc-num" type="number" placeholder="X" data-test-id="percentageX">
+        <span class="pc-text">% of</span>
+        <input v-model="pctY" class="pc-num" type="number" placeholder="Y" data-test-id="percentageY">
+        <span class="pc-eq">=</span>
+        <div
+          class="pc-result"
+          :class="{ 'pc-result-active': pctResult }"
+          data-test-id="percentageResult"
+          @click="copyResult('pct', pctResult)"
+        >
+          <span v-if="pctResult" class="pc-result-val">{{ pctResult }}</span>
+          <span v-else class="pc-result-empty">Result</span>
+          <span v-if="pctResult" class="pc-result-copy">
+            <span v-if="copiedKey === 'pct'">✓</span>
+            <icon-mdi-content-copy v-else />
+          </span>
         </div>
-        <div flex gap-2>
-          <div hidden pt-1 sm:block style="min-width: 48px;">
-            What is
-          </div>
-          <n-input-number v-model:value="percentageX" data-test-id="percentageX" placeholder="X" />
-          <div min-w-fit pt-1>
-            % of
-          </div>
-          <n-input-number v-model:value="percentageY" data-test-id="percentageY" placeholder="Y" />
-          <input-copyable v-model:value="percentageResult" data-test-id="percentageResult" readonly placeholder="Result" style="max-width: 150px;" />
-        </div>
-      </c-card>
+      </div>
+    </div>
 
-      <c-card mb-3>
-        <div mb-3 sm:hidden>
-          X is what percent of Y
+    <!-- X is what percent of Y -->
+    <div class="pc-panel">
+      <span class="pc-sublabel">X IS WHAT PERCENT OF Y</span>
+      <div class="pc-row">
+        <input v-model="numX" class="pc-num" type="number" placeholder="X" data-test-id="numberX">
+        <span class="pc-text">is what % of</span>
+        <input v-model="numY" class="pc-num" type="number" placeholder="Y" data-test-id="numberY">
+        <span class="pc-eq">=</span>
+        <div
+          class="pc-result"
+          :class="{ 'pc-result-active': numResult }"
+          data-test-id="numberResult"
+          @click="copyResult('num', numResult)"
+        >
+          <span v-if="numResult" class="pc-result-val">{{ numResult }}</span>
+          <span v-else class="pc-result-empty">Result</span>
+          <span v-if="numResult" class="pc-result-copy">
+            <span v-if="copiedKey === 'num'">✓</span>
+            <icon-mdi-content-copy v-else />
+          </span>
         </div>
-        <div flex gap-2>
-          <n-input-number v-model:value="numberX" data-test-id="numberX" placeholder="X" />
-          <div hidden min-w-fit pt-1 sm:block>
-            is what percent of
-          </div>
-          <n-input-number v-model:value="numberY" data-test-id="numberY" placeholder="Y" />
-          <input-copyable v-model:value="numberResult" data-test-id="numberResult" readonly placeholder="Result" style="max-width: 150px;" />
-        </div>
-      </c-card>
+      </div>
+    </div>
 
-      <c-card mb-3>
-        <div mb-3>
-          What is the percentage increase/decrease
+    <!-- Percentage increase/decrease -->
+    <div class="pc-panel">
+      <span class="pc-sublabel">PERCENTAGE INCREASE / DECREASE</span>
+      <div class="pc-row">
+        <span class="pc-text">From</span>
+        <input v-model="fromVal" class="pc-num" type="number" placeholder="0" data-test-id="numberFrom">
+        <span class="pc-text">to</span>
+        <input v-model="toVal" class="pc-num" type="number" placeholder="0" data-test-id="numberTo">
+        <span class="pc-eq">=</span>
+        <div
+          class="pc-result"
+          :class="{ 'pc-result-active': changeResult, 'pc-result-positive': changeResult.startsWith('+'), 'pc-result-negative': changeResult.startsWith('-') }"
+          data-test-id="percentageIncreaseDecrease"
+          @click="copyResult('chg', changeResult)"
+        >
+          <span v-if="changeResult" class="pc-result-val">{{ changeResult }}</span>
+          <span v-else class="pc-result-empty">Result</span>
+          <span v-if="changeResult" class="pc-result-copy">
+            <span v-if="copiedKey === 'chg'">✓</span>
+            <icon-mdi-content-copy v-else />
+          </span>
         </div>
-        <div flex gap-2>
-          <n-input-number v-model:value="numberFrom" data-test-id="numberFrom" placeholder="From" />
-          <n-input-number v-model:value="numberTo" data-test-id="numberTo" placeholder="To" />
-          <input-copyable v-model:value="percentageIncreaseDecrease" data-test-id="percentageIncreaseDecrease" readonly placeholder="Result" style="max-width: 150px;" />
-        </div>
-      </c-card>
+      </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.pc-wrap {
+  flex: 1 1 480px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pc-panel {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pc-sublabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.pc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pc-text {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+}
+
+.pc-eq {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 1rem;
+  color: rgba(30, 165, 76, 0.5);
+}
+
+/* ── Number input ── */
+.pc-num {
+  width: 110px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(30, 165, 76, 0.2);
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  outline: none;
+  transition: border-color 0.15s;
+  -moz-appearance: textfield;
+}
+
+.pc-num::-webkit-inner-spin-button,
+.pc-num::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.pc-num::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.pc-num:focus {
+  border-color: rgba(30, 165, 76, 0.55);
+}
+
+/* ── Result box ── */
+.pc-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(30, 165, 76, 0.12);
+  border-radius: 5px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.pc-result-active {
+  border-color: rgba(30, 165, 76, 0.3);
+  cursor: pointer;
+}
+
+.pc-result-active:hover {
+  background: rgba(30, 165, 76, 0.06);
+  border-color: rgba(30, 165, 76, 0.5);
+}
+
+.pc-result-val {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1ea54c;
+  flex: 1;
+}
+
+.pc-result-positive .pc-result-val {
+  color: #1ea54c;
+}
+
+.pc-result-negative .pc-result-val {
+  color: #e05555;
+}
+
+.pc-result-empty {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.pc-result-copy {
+  font-size: 0.72rem;
+  color: rgba(30, 165, 76, 0.4);
+  flex-shrink: 0;
+}
+
+.pc-result-active:hover .pc-result-copy {
+  color: rgba(30, 165, 76, 0.8);
+}
+</style>

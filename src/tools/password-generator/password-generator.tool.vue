@@ -237,7 +237,14 @@ function selectBulkCount(n: number) {
             <div class="pg-section-label">
               Length ({{ opts.length }})
             </div>
-            <n-slider v-model:value="opts.length" :step="1" :min="4" :max="128" />
+            <input
+              v-model.number="opts.length"
+              type="range"
+              :step="1"
+              :min="4"
+              :max="128"
+              class="pg-slider"
+            >
           </template>
 
           <!-- Passphrase word count -->
@@ -245,7 +252,14 @@ function selectBulkCount(n: number) {
             <div class="pg-section-label">
               Word count ({{ opts.wordCount }})
             </div>
-            <n-slider v-model:value="opts.wordCount" :step="1" :min="3" :max="12" />
+            <input
+              v-model.number="opts.wordCount"
+              type="range"
+              :step="1"
+              :min="3"
+              :max="12"
+              class="pg-slider"
+            >
 
             <div class="pg-section-label">
               Separator
@@ -797,6 +811,44 @@ function selectBulkCount(n: number) {
   max-height: 354px;
   overflow-y: auto;
   word-break: break-all;
+}
+
+/* ── Slider ── */
+.pg-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(30, 165, 76, 0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  margin: 6px 0 8px;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1ea54c;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    transition: background 0.12s, transform 0.12s;
+  }
+
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1ea54c;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    transition: background 0.12s, transform 0.12s;
+  }
+
+  &:hover::-webkit-slider-thumb { transform: scale(1.2); }
+  &:hover::-moz-range-thumb { transform: scale(1.2); }
 }
 
 /* Passphrase mode: never split words across lines. */

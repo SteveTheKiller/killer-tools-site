@@ -216,3 +216,4 @@ body:has([href="/killer-scan"].router-link-active) .tool-content-fullscreen > * 
   flex: 1 1 100% !important;
   max-width: 100%;
 }
+
