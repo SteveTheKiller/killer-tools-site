@@ -1,9 +1,0 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'unsafe-eval' https://static.cloudflareinsights.com https://analytics.thekiller.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://api.oosmetrics.com https://*.giphy.com; font-src 'self' data:; connect-src 'self' https://analytics.thekiller.net https://services.nvd.nist.gov https://nvd-proxy.cst-498.workers.dev https://rdap.org https://rdap.verisign.com https://rdap.publicinterestregistry.org https://rdap.iana.org https://cloudflare-dns.com https://raw.githubusercontent.com https://cdn.jsdelivr.net https://gif-proxy.cst-498.workers.dev; worker-src 'self' blob:; child-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
