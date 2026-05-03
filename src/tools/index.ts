@@ -68,6 +68,7 @@ import { tool as domainLookup } from './domain-lookup';
 import { tool as emailRecordGenerator } from './email-record-generator';
 import { tool as exchangeNdrLookup } from './exchange-ndr-lookup';
 import { tool as cveLookup } from './cve-lookup';
+import { tool as gifSearch } from './gif-search';
 import { tool as portProtocolReference } from './port-protocol-reference';
 
 // whois-checker and email-dns-checker merged into domain-lookup
@@ -188,6 +189,7 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Images and videos',
     components: [
+      gifSearch,
       cameraRecorder,
       qrCodeGenerator,
       svgPlaceholderGenerator,
