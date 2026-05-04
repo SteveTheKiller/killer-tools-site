@@ -99,7 +99,8 @@ function downloadScript(script: { name: string, download_url: string }) {
         <span class="font-semibold" style="color: inherit; opacity: 0.7;">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
       </div>
       <div
-        class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4"
+        class="grid gap-12px"
+        style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));"
       >
         <c-card
           v-for="script in scripts"
