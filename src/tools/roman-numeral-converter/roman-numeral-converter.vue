@@ -1,44 +1,52 @@
 <script setup lang="ts">
+import { useCopy } from '@/composable/copy';
 import {
-  MAX_ARABIC_TO_ROMAN,
-  MIN_ARABIC_TO_ROMAN,
   arabicToRoman,
   isValidRomanNumber,
+  MAX_ARABIC_TO_ROMAN,
+  MIN_ARABIC_TO_ROMAN,
   romanToArabic,
 } from './roman-numeral-converter.service';
-import { useCopy } from '@/composable/copy';
 
 const arabic = ref('42');
 const roman = ref('XLII');
 let updating = false;
 
 const arabicValid = computed(() => {
-  const n = parseInt(arabic.value);
+  const n = Number.parseInt(arabic.value);
   return !Number.isNaN(n) && n >= MIN_ARABIC_TO_ROMAN && n <= MAX_ARABIC_TO_ROMAN;
 });
 const romanValid = computed(() => isValidRomanNumber(roman.value));
 
 watch(arabic, (val) => {
-  if (updating) return;
-  const n = parseInt(val);
+  if (updating) {
+    return;
+  }
+  const n = Number.parseInt(val);
   if (!Number.isNaN(n) && n >= MIN_ARABIC_TO_ROMAN && n <= MAX_ARABIC_TO_ROMAN) {
     updating = true;
     roman.value = arabicToRoman(n);
-    nextTick(() => { updating = false; });
+    nextTick(() => {
+      updating = false;
+    });
   }
 });
 
 watch(roman, (val) => {
-  if (updating) return;
+  if (updating) {
+    return;
+  }
   if (isValidRomanNumber(val)) {
     updating = true;
     arabic.value = String(romanToArabic(val));
-    nextTick(() => { updating = false; });
+    nextTick(() => {
+      updating = false;
+    });
   }
 });
 
-const { copy: copyRoman, copied: copiedRoman } = useCopy({ source: roman, text: 'Roman numeral copied' });
-const { copy: copyArabic, copied: copiedArabic } = useCopy({ source: arabic, text: 'Arabic number copied' });
+const { copy: copyRoman, isJustCopied: copiedRoman } = useCopy({ source: roman, text: 'Roman numeral copied' });
+const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabic, text: 'Arabic number copied' });
 </script>
 
 <template>
@@ -163,6 +171,7 @@ const { copy: copyArabic, copied: copiedArabic } = useCopy({ source: arabic, tex
   color: #1ea54c;
   box-sizing: border-box;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .rn-input::-webkit-inner-spin-button,

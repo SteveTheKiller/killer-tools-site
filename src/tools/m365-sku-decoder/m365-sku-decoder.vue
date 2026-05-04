@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Check, Copy } from '@vicons/tabler';
-import { skusByCategory } from './m365-sku-decoder.constants';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
+import { skusByCategory } from './m365-sku-decoder.constants';
 
 const search = ref('');
 const copiedId = ref<string | null>(null);
@@ -104,7 +104,7 @@ function copyValue(value: string) {
 
             <div
               class="text-xs text-neutral-500 dark:text-neutral-400"
-              style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
+              style="line-clamp: 3; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ description }}
             </div>

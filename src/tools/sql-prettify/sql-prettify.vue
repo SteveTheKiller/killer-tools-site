@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type FormatOptionsWithLanguage, format as formatSQL } from 'sql-formatter';
+import type { FormatOptionsWithLanguage } from 'sql-formatter';
+import { format as formatSQL } from 'sql-formatter';
 
 const inputElement = ref<HTMLElement>();
 const config = reactive<FormatOptionsWithLanguage>({
@@ -51,6 +52,10 @@ function closeOnBlur(openRef: Ref<boolean>) {
   };
 }
 
+const onDialectBlur = closeOnBlur(dialectOpen);
+const onKeywordBlur = closeOnBlur(keywordOpen);
+const onIndentBlur = closeOnBlur(indentOpen);
+
 const dialectLabel = computed(() => dialectOptions.find(o => o.value === config.language)?.label ?? config.language);
 const keywordLabel = computed(() => keywordOptions.find(o => o.value === config.keywordCase)?.label ?? config.keywordCase);
 const indentLabel = computed(() => indentOptions.find(o => o.value === config.indentStyle)?.label ?? config.indentStyle);
@@ -61,7 +66,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
     <!-- Dialect -->
     <div class="sq-field">
       <span class="sq-sublabel">DIALECT</span>
-      <div class="sq-dropdown" tabindex="0" @blur="closeOnBlur(dialectOpen)($event)">
+      <div class="sq-dropdown" tabindex="0" @blur="onDialectBlur($event)">
         <button type="button" class="sq-dropdown-trigger" @click="dialectOpen = !dialectOpen">
           <span>{{ dialectLabel }}</span>
           <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': dialectOpen }" />
@@ -81,7 +86,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
     <!-- Keyword case -->
     <div class="sq-field">
       <span class="sq-sublabel">KEYWORD CASE</span>
-      <div class="sq-dropdown" tabindex="0" @blur="closeOnBlur(keywordOpen)($event)">
+      <div class="sq-dropdown" tabindex="0" @blur="onKeywordBlur($event)">
         <button type="button" class="sq-dropdown-trigger" @click="keywordOpen = !keywordOpen">
           <span>{{ keywordLabel }}</span>
           <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': keywordOpen }" />
@@ -101,7 +106,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
     <!-- Indent style -->
     <div class="sq-field">
       <span class="sq-sublabel">INDENT STYLE</span>
-      <div class="sq-dropdown" tabindex="0" @blur="closeOnBlur(indentOpen)($event)">
+      <div class="sq-dropdown" tabindex="0" @blur="onIndentBlur($event)">
         <button type="button" class="sq-dropdown-trigger" @click="indentOpen = !indentOpen">
           <span>{{ indentLabel }}</span>
           <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': indentOpen }" />

@@ -13,9 +13,10 @@ import {
   snakeCase,
 } from 'change-case';
 
+// eslint-disable-next-line ts/no-unsafe-assignment
 const baseConfig = {
-  stripRegexp: /[^A-Za-zÀ-ÖØ-öø-ÿ]+/gi,
-};
+  stripRegexp: /[^\p{L}]+/gu,
+} as any;
 
 const input = ref('lorem ipsum dolor sit amet');
 
@@ -41,17 +42,22 @@ const formats = computed(() => [
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(label: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedLabel.value = label;
-  setTimeout(() => { if (copiedLabel.value === label) copiedLabel.value = null; }, 2000);
+  setTimeout(() => {
+    if (copiedLabel.value === label) {
+      copiedLabel.value = null;
+    }
+  }, 2000);
 }
 </script>
 
 <template>
   <div class="case-tool">
     <div class="case-terminal">
-
       <div class="case-input-area">
         <label class="case-field-label">Your string</label>
         <input
@@ -63,7 +69,9 @@ async function copyValue(label: string, value: string) {
         >
       </div>
 
-      <div class="case-section-header">OUTPUT</div>
+      <div class="case-section-header">
+        OUTPUT
+      </div>
 
       <div
         v-for="{ label, value } in formats"
@@ -79,7 +87,6 @@ async function copyValue(label: string, value: string) {
           <icon-mdi-content-copy v-else />
         </span>
       </div>
-
     </div>
   </div>
 </template>

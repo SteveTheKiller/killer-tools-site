@@ -1,10 +1,10 @@
 <script setup lang="ts" generic="T extends unknown">
-import { useAppTheme } from '../theme/themes';
 import type { CLabelProps } from '../c-label/c-label.types';
 import type { CSelectOption } from './c-select.types';
-import { useTheme } from './c-select.theme';
-import { clamp } from '@/modules/shared/number.models';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
+import { clamp } from '@/modules/shared/number.models';
+import { useAppTheme } from '../theme/themes';
+import { useTheme } from './c-select.theme';
 
 const props = withDefaults(
   defineProps<{
@@ -13,7 +13,7 @@ const props = withDefaults(
     placeholder?: string
     size?: 'small' | 'medium' | 'large'
     searchable?: boolean
-  } & CLabelProps >(),
+  } & CLabelProps>(),
   {
     options: () => [],
     value: undefined,

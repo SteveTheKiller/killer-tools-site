@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Check, Copy } from '@vicons/tabler';
 import JSON5 from 'json5';
-import { stringify as stringifyYaml } from 'yaml';
 import { stringify as stringifyToml } from 'iarna-toml-esm';
-import { withDefaultOnError } from '@/utils/defaults';
+import { stringify as stringifyYaml } from 'yaml';
 import { isNotThrowing } from '@/utils/boolean';
+import { withDefaultOnError } from '@/utils/defaults';
 
 const input = ref('');
 const outputFormat = ref<'yaml' | 'toml'>('yaml');

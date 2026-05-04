@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { convertBase } from './integer-base-converter.model';
 import { getErrorMessageIfThrows } from '@/utils/error';
+import { convertBase } from './integer-base-converter.model';
 
 const input = ref('42');
 const inputBase = ref(10);
 const outputBase = ref(42);
 
 function errorlessConvert(...args: Parameters<typeof convertBase>) {
-  try { return convertBase(...args); }
+  try {
+    return convertBase(...args);
+  }
   catch { return ''; }
 }
 
@@ -27,17 +29,22 @@ const fixedBases = [
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(label: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedLabel.value = label;
-  setTimeout(() => { if (copiedLabel.value === label) copiedLabel.value = null; }, 2000);
+  setTimeout(() => {
+    if (copiedLabel.value === label) {
+      copiedLabel.value = null;
+    }
+  }, 2000);
 }
 </script>
 
 <template>
   <div class="base-tool">
     <div class="base-terminal">
-
       <!-- Input area -->
       <div class="base-input-area">
         <div class="base-input-row">
@@ -54,17 +61,25 @@ async function copyValue(label: string, value: string) {
           <div class="base-field">
             <label class="base-field-label">Input base</label>
             <div class="base-stepper">
-              <button class="base-step-btn" :disabled="inputBase <= 2" @click="inputBase = Math.max(2, inputBase - 1)">−</button>
+              <button class="base-step-btn" :disabled="inputBase <= 2" @click="inputBase = Math.max(2, inputBase - 1)">
+                −
+              </button>
               <span class="base-step-val">{{ inputBase }}</span>
-              <button class="base-step-btn" :disabled="inputBase >= 64" @click="inputBase = Math.min(64, inputBase + 1)">+</button>
+              <button class="base-step-btn" :disabled="inputBase >= 64" @click="inputBase = Math.min(64, inputBase + 1)">
+                +
+              </button>
             </div>
           </div>
         </div>
-        <div v-if="error" class="base-error">{{ error }}</div>
+        <div v-if="error" class="base-error">
+          {{ error }}
+        </div>
       </div>
 
       <!-- Output rows -->
-      <div class="base-section-header">OUTPUT</div>
+      <div class="base-section-header">
+        OUTPUT
+      </div>
 
       <div
         v-for="{ label, base } in fixedBases"
@@ -91,9 +106,13 @@ async function copyValue(label: string, value: string) {
         <div class="base-custom-label" @click.stop>
           <span class="base-label">Custom</span>
           <div class="base-mini-stepper">
-            <button class="base-mini-btn" :disabled="outputBase <= 2" @click="outputBase = Math.max(2, outputBase - 1)">−</button>
+            <button class="base-mini-btn" :disabled="outputBase <= 2" @click="outputBase = Math.max(2, outputBase - 1)">
+              −
+            </button>
             <span class="base-mini-val">{{ outputBase }}</span>
-            <button class="base-mini-btn" :disabled="outputBase >= 64" @click="outputBase = Math.min(64, outputBase + 1)">+</button>
+            <button class="base-mini-btn" :disabled="outputBase >= 64" @click="outputBase = Math.min(64, outputBase + 1)">
+              +
+            </button>
           </div>
         </div>
         <span class="base-value">{{ errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase }) }}</span>
@@ -102,7 +121,6 @@ async function copyValue(label: string, value: string) {
           <icon-mdi-content-copy v-else-if="errorlessConvert({ value: input, fromBase: inputBase, toBase: outputBase })" />
         </span>
       </div>
-
     </div>
   </div>
 </template>

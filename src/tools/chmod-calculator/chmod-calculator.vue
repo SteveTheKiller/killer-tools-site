@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
 import type { Group, Scope } from './chmod-calculator.types';
+import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
 import { useCopy } from '@/composable/copy';
 
-const scopes: { scope: Scope; title: string; bit: number }[] = [
+const scopes: { scope: Scope, title: string, bit: number }[] = [
   { scope: 'read', title: 'Read', bit: 4 },
   { scope: 'write', title: 'Write', bit: 2 },
   { scope: 'execute', title: 'Execute', bit: 1 },
 ];
 
-const groups: { key: Group; label: string; short: string }[] = [
+const groups: { key: Group, label: string, short: string }[] = [
   { key: 'owner', label: 'Owner', short: 'u' },
   { key: 'group', label: 'Group', short: 'g' },
   { key: 'public', label: 'Public', short: 'o' },
@@ -45,7 +45,6 @@ function digitColor(n: number) {
 <template>
   <div class="ch-wrap">
     <div class="ch-panel">
-
       <!-- Permission grid -->
       <div class="ch-grid">
         <!-- Header row -->

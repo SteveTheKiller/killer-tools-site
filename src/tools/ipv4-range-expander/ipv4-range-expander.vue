@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Exchange } from '@vicons/tabler';
-import { isValidIpv4 } from '../ipv4-address-converter/ipv4-address-converter.service';
 import type { Ipv4RangeExpanderResult } from './ipv4-range-expander.types';
-import { calculateCidr } from './ipv4-range-expander.service';
+import { Exchange } from '@vicons/tabler';
 import { useValidation } from '@/composable/validation';
+import { isValidIpv4 } from '../ipv4-address-converter/ipv4-address-converter.service';
+import { calculateCidr } from './ipv4-range-expander.service';
 
 const rawStartAddress = useStorage('ipv4-range-expander:startAddress', '192.168.1.1');
 const rawEndAddress = useStorage('ipv4-range-expander:endAddress', '192.168.6.255');
@@ -39,11 +39,11 @@ const calculatedValues: {
 
 const startIpValidation = useValidation({
   source: rawStartAddress,
-  rules: [{ message: 'Invalid ipv4 address', validator: ip => isValidIpv4({ ip }) }],
+  rules: [{ message: 'Invalid ipv4 address', validator: (ip: string) => isValidIpv4({ ip }) }],
 });
 const endIpValidation = useValidation({
   source: rawEndAddress,
-  rules: [{ message: 'Invalid ipv4 address', validator: ip => isValidIpv4({ ip }) }],
+  rules: [{ message: 'Invalid ipv4 address', validator: (ip: string) => isValidIpv4({ ip }) }],
 });
 
 const showResult = computed(() => endIpValidation.isValid && startIpValidation.isValid && result.value !== undefined);
@@ -61,11 +61,15 @@ function onSwitchStartEndClicked() {
 const copiedLabel = ref<string | null>(null);
 
 async function copyValue(label: string, value: string | undefined) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedLabel.value = label;
   setTimeout(() => {
-    if (copiedLabel.value === label) copiedLabel.value = null;
+    if (copiedLabel.value === label) {
+      copiedLabel.value = null;
+    }
   }, 2000);
 }
 </script>

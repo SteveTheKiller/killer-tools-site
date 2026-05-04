@@ -105,14 +105,14 @@ function copyValue(value: string) {
 
             <div
               class="mb-2 text-xs op-50"
-              style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
+              style="line-clamp: 2; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ path }}
             </div>
 
             <div
               v-if="hasRegistry(registry)"
-              class="mb-2 text-primary font-mono gpr-registry-key" style="font-size: 0.7rem;"
+              class="mb-2 font-mono text-primary gpr-registry-key" style="font-size: 0.7rem;"
             >
               {{ breakRegistry(registry) }}
             </div>
@@ -127,7 +127,7 @@ function copyValue(value: string) {
 
             <div
               class="text-xs text-neutral-500 dark:text-neutral-400"
-              style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
+              style="line-clamp: 3; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ description }}
             </div>

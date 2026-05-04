@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { codesByCategories } from './http-status-codes.constants';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
+import { codesByCategories } from './http-status-codes.constants';
 
 const search = ref('');
 
@@ -59,7 +59,7 @@ const codesByCategoryFiltered = computed(() => {
             <div class="mb-1 text-sm font-semibold">
               {{ name }}
             </div>
-            <div class="text-xs text-neutral-500 dark:text-neutral-400" style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">
+            <div class="text-xs text-neutral-500 dark:text-neutral-400" style="line-clamp: 3; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">
               {{ description }}
             </div>
           </div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useBase64 } from '@vueuse/core';
 import type { Ref } from 'vue';
+import { useBase64 } from '@vueuse/core';
 import { useCopy } from '@/composable/copy';
 import { getExtensionFromMimeType, getMimeTypeFromBase64, previewImageFromBase64, useDownloadFileFromBase64Refs } from '@/composable/downloadBase64';
 import { isValidBase64 } from '@/utils/base64';
@@ -22,27 +22,36 @@ watch(base64Input, (newValue) => {
 });
 
 function previewImage() {
-  if (!b64IsValid.value) return;
+  if (!b64IsValid.value) {
+    return;
+  }
   try {
     const image = previewImageFromBase64(base64Input.value);
     image.style.maxWidth = '100%';
     image.style.maxHeight = '400px';
     const container = document.getElementById('bf-preview');
-    if (container) { container.innerHTML = ''; container.appendChild(image); }
+    if (container) {
+      container.innerHTML = '';
+      container.appendChild(image);
+    }
   }
-  catch (_) {}
+  catch {}
 }
 
 function downloadFile() {
-  if (!b64IsValid.value) return;
-  try { download(); }
-  catch (_) {}
+  if (!b64IsValid.value) {
+    return;
+  }
+  try {
+    download();
+  }
+  catch {}
 }
 
 // File to base64
 const fileInput = ref() as Ref<File>;
 const { base64: fileBase64 } = useBase64(fileInput);
-const { copy: copyFileBase64, copied: copiedFile } = useCopy({ source: fileBase64, text: 'Base64 string copied to the clipboard' });
+const { copy: copyFileBase64, isJustCopied: copiedFile } = useCopy({ source: fileBase64, text: 'Base64 string copied to the clipboard' });
 
 const nativeFileInput = ref<HTMLInputElement>();
 const isDragging = ref(false);
@@ -75,20 +84,20 @@ function onDrop(e: DragEvent) {
       <div class="bf-row">
         <div class="bf-field bf-field-grow">
           <span class="bf-label">FILE NAME</span>
-          <input class="bf-input" type="text" v-model="fileName" placeholder="Download filename" spellcheck="false" />
+          <input v-model="fileName" class="bf-input" type="text" placeholder="Download filename" spellcheck="false">
         </div>
         <div class="bf-field">
           <span class="bf-label">EXTENSION</span>
-          <input class="bf-input" type="text" v-model="fileExtension" placeholder="ext" spellcheck="false" />
+          <input v-model="fileExtension" class="bf-input" type="text" placeholder="ext" spellcheck="false">
         </div>
       </div>
 
       <div class="bf-field">
         <span class="bf-label">BASE64 STRING</span>
         <textarea
+          v-model="base64Input"
           class="bf-textarea"
           :class="{ 'bf-textarea-error': !b64IsValid }"
-          v-model="base64Input"
           placeholder="Put your base64 file string here..."
           rows="6"
           spellcheck="false"
@@ -139,7 +148,7 @@ function onDrop(e: DragEvent) {
           type="file"
           class="bf-file-input"
           @change="onFileInputChange($event)"
-        />
+        >
         <icon-mdi-upload class="bf-drop-icon" />
         <span v-if="uploadedFileName" class="bf-drop-filename">{{ uploadedFileName }}</span>
         <span v-else class="bf-drop-hint">Drag and drop a file here, or click to select</span>

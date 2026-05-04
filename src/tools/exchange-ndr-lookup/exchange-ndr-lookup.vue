@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Check, Copy } from '@vicons/tabler';
-import { ndrCategories } from './exchange-ndr-lookup.constants';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
+import { ndrCategories } from './exchange-ndr-lookup.constants';
 
 const search = ref('');
 const copiedValue = ref<string | null>(null);

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Check, Copy } from '@vicons/tabler';
-import { parse as parseYaml } from 'yaml';
 import { stringify as stringifyToml } from 'iarna-toml-esm';
-import { withDefaultOnError } from '@/utils/defaults';
+import { parse as parseYaml } from 'yaml';
 import { isNotThrowing } from '@/utils/boolean';
+import { withDefaultOnError } from '@/utils/defaults';
 
 const input = ref('');
 const outputFormat = ref<'json' | 'toml'>('json');

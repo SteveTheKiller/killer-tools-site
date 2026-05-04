@@ -20,7 +20,7 @@ import {
 type TemperatureScale = 'kelvin' | 'celsius' | 'fahrenheit' | 'rankine' | 'delisle' | 'newton' | 'reaumur' | 'romer';
 
 const units = reactive<
-  Record<string | TemperatureScale, { title: string; unit: string; ref: number; toKelvin: (v: number) => number; fromKelvin: (v: number) => number }>
+  Record<string | TemperatureScale, { title: string, unit: string, ref: number, toKelvin: (v: number) => number, fromKelvin: (v: number) => number }>
 >({
   kelvin: { title: 'Kelvin', unit: 'K', ref: 0, toKelvin: _.identity, fromKelvin: _.identity },
   celsius: { title: 'Celsius', unit: '°C', ref: 0, toKelvin: convertCelsiusToKelvin, fromKelvin: convertKelvinToCelsius },
@@ -127,6 +127,7 @@ update('kelvin');
   width: 100%;
   box-sizing: border-box;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .tc-input::-webkit-inner-spin-button,

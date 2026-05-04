@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { lib } from 'crypto-js';
-import { MD5, RIPEMD160, SHA1, SHA224, SHA256, SHA3, SHA384, SHA512, enc } from 'crypto-js';
-
-import { convertHexToBin } from './hash-text.service';
-import { useQueryParam } from '@/composable/queryParams';
 import { onClickOutside } from '@vueuse/core';
+import { enc, MD5, RIPEMD160, SHA1, SHA3, SHA224, SHA256, SHA384, SHA512 } from 'crypto-js';
+import { useQueryParam } from '@/composable/queryParams';
+import { convertHexToBin } from './hash-text.service';
 
 const algos = {
   MD5,
@@ -35,11 +34,15 @@ const hashText = (algo: AlgoNames, value: string) => formatWithEncoding(algos[al
 
 async function copyHash(algo: AlgoNames) {
   const value = hashText(algo, clearText.value);
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedAlgo.value = algo;
   setTimeout(() => {
-    if (copiedAlgo.value === algo) copiedAlgo.value = null;
+    if (copiedAlgo.value === algo) {
+      copiedAlgo.value = null;
+    }
   }, 2000);
 }
 
@@ -52,7 +55,9 @@ const encodingOptions = [
 
 const encodingMenuOpen = ref(false);
 const encodingMenuRef = ref<HTMLElement | null>(null);
-onClickOutside(encodingMenuRef, () => { encodingMenuOpen.value = false; });
+onClickOutside(encodingMenuRef, () => {
+  encodingMenuOpen.value = false;
+});
 
 const currentEncodingLabel = computed(
   () => encodingOptions.find(o => o.value === encoding.value)?.label ?? encoding.value,
@@ -67,7 +72,6 @@ function selectEncoding(val: Encoding) {
 <template>
   <div class="hash-tool">
     <div class="hash-terminal">
-
       <!-- Input -->
       <div class="hash-input-area">
         <label class="hash-field-label">Your text to hash</label>
@@ -108,7 +112,9 @@ function selectEncoding(val: Encoding) {
       </div>
 
       <!-- Output rows -->
-      <div class="hash-section-header">OUTPUT</div>
+      <div class="hash-section-header">
+        OUTPUT
+      </div>
 
       <div
         v-for="algo in algoNames"
@@ -124,7 +130,6 @@ function selectEncoding(val: Encoding) {
           <icon-mdi-content-copy v-else />
         </span>
       </div>
-
     </div>
   </div>
 </template>

@@ -1,16 +1,9 @@
 <script setup lang="ts">
 import type { QRCodeErrorCorrectionLevel } from 'qrcode';
+import type { EAPMethod, EAPPhase2Method, WifiEncryption } from './useQRCode';
 import { computed, ref } from 'vue';
-import {
-  type EAPMethod,
-  EAPMethods,
-  type EAPPhase2Method,
-  EAPPhase2Methods,
-  type WifiEncryption,
-  buildWifiQRText,
-  useQRCode,
-} from './useQRCode';
 import { useDownloadFileFromBase64Refs } from '@/composable/downloadBase64';
+import { buildWifiQRText, EAPMethods, EAPPhase2Methods, useQRCode } from './useQRCode';
 
 type Mode = 'text' | 'wifi';
 
@@ -34,14 +27,14 @@ const foreground = ref('#1ea54cff');
 const background = ref('#0a0a0aff');
 const errorCorrectionLevel = ref<QRCodeErrorCorrectionLevel>('medium');
 
-const encryptionOptions: Array<{ label: string; value: WifiEncryption }> = [
+const encryptionOptions: Array<{ label: string, value: WifiEncryption }> = [
   { label: 'WPA/WPA2', value: 'WPA' },
   { label: 'WEP', value: 'WEP' },
   { label: 'No password', value: 'nopass' },
   { label: 'WPA2-EAP', value: 'WPA2-EAP' },
 ];
 
-const errorLevels: Array<{ label: string; value: QRCodeErrorCorrectionLevel }> = [
+const errorLevels: Array<{ label: string, value: QRCodeErrorCorrectionLevel }> = [
   { label: 'Low (~7%)', value: 'low' },
   { label: 'Medium (~15%)', value: 'medium' },
   { label: 'Quartile (~25%)', value: 'quartile' },

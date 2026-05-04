@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-import _ from 'lodash';
-import { useCommandPaletteStore } from './command-palette.store';
 import type { PaletteOption } from './command-palette.types';
+import _ from 'lodash';
+import { storeToRefs } from 'pinia';
+import { useCommandPaletteStore } from './command-palette.store';
 
 const isModalOpen = ref(false);
 const inputRef = ref();

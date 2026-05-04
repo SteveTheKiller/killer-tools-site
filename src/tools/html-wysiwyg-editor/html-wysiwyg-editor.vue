@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { format } from 'prettier/standalone';
-import htmlParser from 'prettier/plugins/html';
 import { useStorage } from '@vueuse/core';
-import Editor from './editor/editor.vue';
+import htmlParser from 'prettier/plugins/html';
+import { format } from 'prettier/standalone';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
+import Editor from './editor/editor.vue';
 
 const html = useStorage('html-wysiwyg-editor--html', '<h1>Hey!</h1><p>Welcome to this html wysiwyg editor</p>');
 

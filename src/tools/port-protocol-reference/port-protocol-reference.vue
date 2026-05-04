@@ -121,7 +121,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 
             <div
               class="mb-2 text-xs text-neutral-500 dark:text-neutral-400"
-              style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
+              style="-webkit-line-clamp: 3; line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ p.description }}
             </div>

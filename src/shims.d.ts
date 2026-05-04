@@ -1,13 +1,14 @@
 declare module 'figue' {
   export function figue(schema: Record<string, any>): {
-    loadEnv(env: Record<string, any>): ReturnType<typeof figue>;
-    validate(): ReturnType<typeof figue>;
-    getConfig(): any;
+    loadEnv: (env: Record<string, any>) => ReturnType<typeof figue>,
+    validate: () => ReturnType<typeof figue>,
+    getConfig: () => any,
   };
 }
 
 declare module 'naive-ui' {
   import type { Component, DefineComponent, Ref } from 'vue';
+
   export const darkTheme: any;
   export const lightTheme: any;
   export const zhCN: any;
@@ -120,6 +121,7 @@ declare module 'naive-ui' {
 
 declare module '@tabler/icons-vue' {
   import type { Component } from 'vue';
+
   export const IconBrandGithub: Component;
   export const IconBrandX: Component;
   export const IconInfoCircle: Component;
@@ -161,13 +163,15 @@ declare module '@tabler/icons-vue' {
 }
 
 declare module '*.vue' {
-  import type {  ComponentOptions } from 'vue';
+  import type { ComponentOptions } from 'vue';
+
   const Component: ComponentOptions;
   export default Component;
 }
 
 declare module '*.md' {
-  import type {  ComponentOptions } from 'vue';
+  import type { ComponentOptions } from 'vue';
+
   const Component: ComponentOptions;
   export default Component;
 }
@@ -184,20 +188,20 @@ declare module 'emojilib' {
 
 declare module 'unicode-emoji-json' {
   const emoji: Record<string, {
-    name: string;
-    slug: string;
-    group: string;
-    emoji_version: string;
-    unicode_version: string;
-    skin_tone_support: boolean;
-    skin_tone_support_unicode_version: string;
+    name: string,
+    slug: string,
+    group: string,
+    emoji_version: string,
+    unicode_version: string,
+    skin_tone_support: boolean,
+    skin_tone_support_unicode_version: string,
   }>;
-  
+
   export default emoji;
 }
 
 declare module 'pdf-signature-reader' {
-  const verifySignature: (pdf: ArrayBuffer) => ({signatures: SignatureInfo[]});
+  const verifySignature: (pdf: ArrayBuffer) => ({ signatures: SignatureInfo[] });
 
   export default verifySignature;
 }

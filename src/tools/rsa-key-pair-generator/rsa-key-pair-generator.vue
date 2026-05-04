@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { generateKeyPair } from './rsa-key-pair-generator.service';
-import { withDefaultOnErrorAsync } from '@/utils/defaults';
-import { useValidation } from '@/composable/validation';
 import { computedRefreshableAsync } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
+import { useValidation } from '@/composable/validation';
+import { withDefaultOnErrorAsync } from '@/utils/defaults';
+import { generateKeyPair } from './rsa-key-pair-generator.service';
 
 const bits = ref(2048);
 const emptyCerts = { publicKeyPem: '', privateKeyPem: '' };
@@ -13,7 +13,7 @@ const bitsValidation = useValidation({
   rules: [
     {
       message: 'Bits must be 256–16384 and a multiple of 8',
-      validator: value => value >= 256 && value <= 16384 && value % 8 === 0,
+      validator: (value: number) => value >= 256 && value <= 16384 && value % 8 === 0,
     },
   ],
 });
@@ -23,13 +23,13 @@ const [certs, refreshCerts] = computedRefreshableAsync(
   emptyCerts,
 );
 
-const publicKey = computed(() => certs.value.publicKeyPem);
-const privateKey = computed(() => certs.value.privateKeyPem);
+const publicKey = computed(() => certs.value?.publicKeyPem ?? '');
+const privateKey = computed(() => certs.value?.privateKeyPem ?? '');
 
 const { copy: copyPublic } = useCopy({ source: publicKey, text: 'Public key copied' });
 const { copy: copyPrivate } = useCopy({ source: privateKey, text: 'Private key copied' });
 
-const loading = computed(() => !certs.value.publicKeyPem && !certs.value.privateKeyPem);
+const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.privateKeyPem);
 </script>
 
 <template>
@@ -188,6 +188,7 @@ const loading = computed(() => !certs.value.publicKeyPem && !certs.value.private
   color: #1ea54c;
   text-align: center;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .rsa-bits-input::-webkit-inner-spin-button,
@@ -253,6 +254,16 @@ const loading = computed(() => !certs.value.publicKeyPem && !certs.value.private
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 8px;
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .rsa-keys-row {
+    flex-direction: column;
+  }
+  .rsa-panel {
+    width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .rsa-panel-header {

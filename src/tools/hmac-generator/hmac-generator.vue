@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import type { lib } from 'crypto-js';
 import {
+  enc,
   HmacMD5,
   HmacRIPEMD160,
   HmacSHA1,
+  HmacSHA3,
   HmacSHA224,
   HmacSHA256,
-  HmacSHA3,
   HmacSHA384,
   HmacSHA512,
-  enc,
 } from 'crypto-js';
-
-import { convertHexToBin } from '../hash-text/hash-text.service';
 import { useCopy } from '@/composable/copy';
+import { convertHexToBin } from '../hash-text/hash-text.service';
 
 const algos = {
   MD5: HmacMD5,
@@ -28,7 +27,7 @@ const algos = {
 
 type Encoding = keyof typeof enc | 'Bin';
 
-const encodingOptions: { label: string; value: Encoding }[] = [
+const encodingOptions: { label: string, value: Encoding }[] = [
   { label: 'Binary (base 2)', value: 'Bin' },
   { label: 'Hexadecimal (base 16)', value: 'Hex' },
   { label: 'Base64', value: 'Base64' },
@@ -63,11 +62,11 @@ function selectEncoding(val: Encoding) {
   encoding.value = val;
   encodingOpen.value = false;
 }
-function closeOnBlur(openRef: Ref<boolean>) {
+function closeOnBlur(set: (val: boolean) => void) {
   return (e: FocusEvent) => {
     const rel = e.relatedTarget as HTMLElement | null;
     if (!rel?.closest?.('.hm-dropdown')) {
-      openRef.value = false;
+      set(false);
     }
   };
 }
@@ -113,7 +112,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
         <!-- Hashing function -->
         <div class="hm-field-col hm-field-col-half">
           <span class="hm-sublabel">HASHING FUNCTION</span>
-          <div class="hm-dropdown" tabindex="0" @blur="closeOnBlur(algoOpen)($event)">
+          <div class="hm-dropdown" tabindex="0" @blur="closeOnBlur(v => algoOpen = v)($event)">
             <button type="button" class="hm-dropdown-trigger" @click="algoOpen = !algoOpen">
               <span>{{ hashFunction }}</span>
               <icon-mdi-chevron-down class="hm-chevron" :class="{ 'hm-chevron-open': algoOpen }" />
@@ -136,7 +135,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
         <!-- Output encoding -->
         <div class="hm-field-col hm-field-col-half">
           <span class="hm-sublabel">OUTPUT ENCODING</span>
-          <div class="hm-dropdown" tabindex="0" @blur="closeOnBlur(encodingOpen)($event)">
+          <div class="hm-dropdown" tabindex="0" @blur="closeOnBlur(v => encodingOpen = v)($event)">
             <button type="button" class="hm-dropdown-trigger" @click="encodingOpen = !encodingOpen">
               <span>{{ encodingLabel }}</span>
               <icon-mdi-chevron-down class="hm-chevron" :class="{ 'hm-chevron-open': encodingOpen }" />

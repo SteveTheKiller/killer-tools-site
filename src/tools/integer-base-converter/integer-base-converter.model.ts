@@ -1,4 +1,4 @@
-export function convertBase({ value, fromBase, toBase }: { value: string; fromBase: number; toBase: number }) {
+export function convertBase({ value, fromBase, toBase }: { value: string, fromBase: number, toBase: number }) {
   const range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
   const fromRange = range.slice(0, fromBase);
   const toRange = range.slice(0, toBase);

@@ -22,7 +22,9 @@ const whoisError = ref('');
 const whoisResult = ref<any>(null);
 
 function cleanDomain(input: string) {
-  return input.trim().toLowerCase()
+  return input
+    .trim()
+    .toLowerCase()
     .replace(/^https?:\/\//, '')
     .replace(/\/.*$/, '')
     .replace(/^www\./, '');
@@ -254,7 +256,7 @@ interface DnsResult {
 }
 
 const emailChecked = ref(false);
-const emailResults = ref<{ mx: DnsResult; spf: DnsResult; dkim: DnsResult; dmarc: DnsResult }>({
+const emailResults = ref<{ mx: DnsResult, spf: DnsResult, dkim: DnsResult, dmarc: DnsResult }>({
   mx: { status: 'loading', value: [] },
   spf: { status: 'loading', value: [] },
   dkim: { status: 'loading', value: [] },

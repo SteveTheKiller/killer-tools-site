@@ -10,13 +10,13 @@ test.describe('Date time converter - json to yaml', () => {
   });
 
   test('Format is auto detected from a date and the date is correctly converted', async ({ page }) => {
-    const initialFormat = await page.getByTestId('date-time-converter-format-select').innerText();
-    expect(initialFormat.trim()).toEqual('Timestamp');
+    const initialFormat = await page.getByTestId('date-time-converter-format-select').textContent();
+    expect(initialFormat?.trim()).toEqual('Timestamp');
 
     await page.getByTestId('date-time-converter-input').fill('2023-04-12T23:10:24+02:00');
 
-    const detectedFormat = await page.getByTestId('date-time-converter-format-select').innerText();
-    expect(detectedFormat.trim()).toEqual('ISO 8601');
+    const detectedFormat = await page.getByTestId('date-time-converter-format-select').textContent();
+    expect(detectedFormat?.trim()).toEqual('ISO 8601');
 
     expect((await page.getByTestId('JS locale date string').inputValue()).trim()).toEqual(
       'Wed Apr 12 2023 23:10:24 GMT+0200 (Central European Summer Time)',

@@ -107,9 +107,7 @@ const features = [
         :key="feature.title"
         size="small"
       >
-        <template #header>
-          <span style="color: #1ea54c; font-size: 13px; font-weight: 600;">{{ feature.title }}</span>
-        </template>
+        <span style="color: #1ea54c; font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px;">{{ feature.title }}</span>
         <span class="feature-desc" style="font-size: 12px; line-height: 1.5;">{{ feature.desc }}</span>
       </n-card>
     </div>

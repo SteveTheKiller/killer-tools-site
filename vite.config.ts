@@ -1,6 +1,6 @@
-import process from 'node:process';
 import { resolve } from 'node:path';
-import { URL, fileURLToPath } from 'node:url';
+import process from 'node:process';
+import { fileURLToPath, URL } from 'node:url';
 
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import vue from '@vitejs/plugin-vue';
@@ -13,8 +13,8 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
-import sitemap from 'vite-plugin-sitemap';
 import markdown from 'unplugin-vue-markdown/vite';
+import sitemap from 'vite-plugin-sitemap';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
 
@@ -50,7 +50,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     vueJsx(),
-    markdown(),
+    markdown({}),
     svgLoader(),
     sitemap({
       hostname: 'https://killertools.net',

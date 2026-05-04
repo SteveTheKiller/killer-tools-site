@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import * as monaco from 'monaco-editor';
-import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
+import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
 import { useStyleStore } from '@/stores/style.store';
-
-window.MonacoEnvironment = {
-  getWorker() {
-    return new editorWorker();
-  },
-};
 
 const props = withDefaults(defineProps<{ options?: monaco.editor.IDiffEditorOptions }>(), { options: () => ({}) });
 const { options } = toRefs(props);
+
+window.MonacoEnvironment = {
+  getWorker() {
+    return new EditorWorker();
+  },
+};
 
 const editorContainer = ref<HTMLElement | null>(null);
 let editor: monaco.editor.IStandaloneDiffEditor | null = null;

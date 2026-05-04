@@ -5,7 +5,7 @@ const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
 const NUMBERS = '0123456789';
 const SYMBOLS = '!@#$%^&*()-_=+[]{};:,.<>/?';
-const AMBIGUOUS = /[0O1lI|`'".,;:{}\[\]()\\\/]/g;
+const AMBIGUOUS = /[0O1lI|`'".,;:{}[\]()\\/]/g;
 
 // Consonants and vowels for pronounceable mode (avoid visually ambiguous letters).
 const CONSONANTS = 'bcdfghjkmnpqrstvwxz';
@@ -79,7 +79,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-function buildAlphabet(opts: Pick<PasswordOptions, 'withUppercase' | 'withLowercase' | 'withNumbers' | 'withSymbols' | 'excludeAmbiguous'>): { alphabet: string; pools: string[] } {
+function buildAlphabet(opts: Pick<PasswordOptions, 'withUppercase' | 'withLowercase' | 'withNumbers' | 'withSymbols' | 'excludeAmbiguous'>): { alphabet: string, pools: string[] } {
   const pools = [
     opts.withUppercase ? UPPERCASE : '',
     opts.withLowercase ? LOWERCASE : '',

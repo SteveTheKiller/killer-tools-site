@@ -24,7 +24,7 @@ function getCommitTypeSortIndex(type) {
 function parseCommitLine(commit) {
   const [sha, ...splittedRawMessage] = commit.trim().split(' ');
   const rawMessage = splittedRawMessage.join(' ');
-  const { type, scope, subject } = /^(?<type>.*?)(\((?<scope>.*)\))?: ?(?<subject>.+)$/.exec(rawMessage)?.groups ?? {};
+  const { type, scope, subject } = /^(?<type>[^(:?]*)(?:\((?<scope>[^)]*)\))?: ?(?<subject>.+)$/.exec(rawMessage)?.groups ?? {};
 
   return {
     sha: sha.slice(0, 7),

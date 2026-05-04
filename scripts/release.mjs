@@ -1,8 +1,8 @@
 import process from 'node:process';
-import { $, argv } from 'zx';
 import { consola } from 'consola';
-import { rawCommitsToMarkdown } from './shared/commits.mjs';
+import { $, argv } from 'zx';
 import { addToChangelog } from './shared/changelog.mjs';
+import { rawCommitsToMarkdown } from './shared/commits.mjs';
 
 $.verbose = false;
 

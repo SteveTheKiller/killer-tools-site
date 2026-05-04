@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type PSCmdlet, type PSParameter, categories, cmdlets } from './powershell-builder.data';
+import type { PSCmdlet, PSParameter } from './powershell-builder.data';
+import { categories, cmdlets } from './powershell-builder.data';
 
 const selectedCmdletName = ref<string | null>(null);
 const selectedCmdlet = ref<PSCmdlet | null>(null);
@@ -844,5 +845,4 @@ const cheatsheet = [
   color: rgba(230, 175, 60, 0.85);
   white-space: pre-line;
 }
-
 </style>

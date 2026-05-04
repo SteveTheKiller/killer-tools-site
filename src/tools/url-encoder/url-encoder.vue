@@ -11,7 +11,7 @@ const encodedValidation = useValidation({
   source: encodeInput,
   rules: [
     {
-      validator: value => isNotThrowing(() => encodeURIComponent(value)),
+      validator: (value: string) => isNotThrowing(() => encodeURIComponent(value)),
       message: 'Impossible to parse this string',
     },
   ],
@@ -26,7 +26,7 @@ const decodeValidation = useValidation({
   source: decodeInput,
   rules: [
     {
-      validator: value => isNotThrowing(() => decodeURIComponent(value)),
+      validator: (value: string) => isNotThrowing(() => decodeURIComponent(value)),
       message: 'Impossible to parse this string',
     },
   ],

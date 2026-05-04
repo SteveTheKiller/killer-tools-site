@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue';
+import type { OutputFormat, PasswordMode, PasswordOptions } from './password-generator.service';
 import { onClickOutside } from '@vueuse/core';
-import {
-  type OutputFormat,
-  type PasswordMode,
-  type PasswordOptions,
-  defaultOptions,
-  estimateCrackTime,
-  generatePassword,
-  getEntropyBits,
-  toPhonetic,
-} from './password-generator.service';
-import { presets } from './presets';
+import { computed, nextTick, ref, watch } from 'vue';
 import { useCopy } from '@/composable/copy';
 import { useQRCode } from '@/tools/qr-code-generator/useQRCode';
+import { defaultOptions, estimateCrackTime, generatePassword, getEntropyBits, toPhonetic } from './password-generator.service';
+import { presets } from './presets';
 
 const opts = ref<PasswordOptions>({ ...defaultOptions });
 const selectedPreset = ref<string>('custom');
@@ -100,14 +92,14 @@ const { copy: copyBulk } = useCopy({
 });
 const { copy: copyPhonetic } = useCopy({ source: phonetic, text: 'Phonetic spelling copied' });
 
-const modeOptions: Array<{ label: string; value: PasswordMode }> = [
+const modeOptions: Array<{ label: string, value: PasswordMode }> = [
   { label: 'Random', value: 'random' },
   { label: 'Passphrase', value: 'passphrase' },
   { label: 'Pronounceable', value: 'pronounceable' },
   { label: 'Format', value: 'format' },
 ];
 
-const formatOptions: Array<{ label: string; value: OutputFormat }> = [
+const formatOptions: Array<{ label: string, value: OutputFormat }> = [
   { label: 'Plain', value: 'plain' },
   { label: 'Hex', value: 'hex' },
   { label: 'Base64', value: 'base64' },

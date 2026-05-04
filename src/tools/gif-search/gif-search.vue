@@ -20,14 +20,18 @@ const searched = ref(false);
 
 async function search() {
   const q = query.value.trim();
-  if (!q) return;
+  if (!q) {
+    return;
+  }
   loading.value = true;
   error.value = '';
   results.value = [];
   searched.value = false;
   try {
     const res = await fetch(`${PROXY}?q=${encodeURIComponent(q)}&limit=36`);
-    if (!res.ok) throw new Error(`Error ${res.status}`);
+    if (!res.ok) {
+      throw new Error(`Error ${res.status}`);
+    }
     const data = await res.json();
     results.value = (data.data ?? []).map((r: any) => ({
       id: r.id,
@@ -48,13 +52,14 @@ async function search() {
 async function copyGif(gif: GifResult) {
   await navigator.clipboard.writeText(gif.fullUrl);
   copiedId.value = gif.id;
-  setTimeout(() => { copiedId.value = null; }, 1800);
+  setTimeout(() => {
+    copiedId.value = null;
+  }, 1800);
 }
 </script>
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
-
     <div mb-4 flex flex-wrap items-center gap-3>
       <c-input-text
         v-model:value="query"
@@ -73,7 +78,7 @@ async function copyGif(gif: GifResult) {
       </c-button>
     </div>
 
-    <n-alert v-if="error" type="error" mb-4 closable @close="error = ''">
+    <n-alert v-if="error" type="error" closable mb-4 @close="error = ''">
       {{ error }}
     </n-alert>
 
@@ -100,7 +105,7 @@ async function copyGif(gif: GifResult) {
           :alt="gif.title"
           class="gif-img"
           loading="lazy"
-        />
+        >
         <div v-if="copiedId === gif.id" class="gif-overlay-copied">
           <n-icon :component="Check" size="26" />
           <span>Copied!</span>
@@ -115,7 +120,6 @@ async function copyGif(gif: GifResult) {
     <div v-if="results.length > 0" mt-3 style="font-size: 0.75rem;" op-40>
       {{ results.length }} results — click to copy URL — paste in Teams, Telegram, Slack
     </div>
-
   </div>
 </template>
 

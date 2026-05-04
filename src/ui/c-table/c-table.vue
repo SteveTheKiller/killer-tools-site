@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import _ from 'lodash';
 import type { HeaderConfiguration } from './c-table.types';
+import _ from 'lodash';
 
-const props = withDefaults(defineProps<{ data?: Record<string, unknown>[]; headers?: HeaderConfiguration ; hideHeaders?: boolean; description?: string }>(), { data: () => [], headers: undefined, hideHeaders: false, description: 'Data table' });
+const props = withDefaults(defineProps<{ data?: Record<string, unknown>[], headers?: HeaderConfiguration, hideHeaders?: boolean, description?: string }>(), { data: () => [], headers: undefined, hideHeaders: false, description: 'Data table' });
 const { data, headers: rawHeaders, hideHeaders } = toRefs(props);
 
 const headers = computed(() => {
@@ -23,7 +23,8 @@ const headers = computed(() => {
     }
 
     return _.map(rawHeaders.value, (value, key) => ({
-      key, label: value,
+      key,
+      label: value,
     }));
   }
 

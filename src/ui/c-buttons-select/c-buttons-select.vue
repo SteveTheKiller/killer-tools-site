@@ -1,14 +1,14 @@
 <script setup lang="ts" generic="T extends unknown">
-import _ from 'lodash';
 import type { CLabelProps } from '../c-label/c-label.types';
 import type { CButtonSelectOption } from './c-buttons-select.types';
+import _ from 'lodash';
 
 const props = withDefaults(
   defineProps<{
     options?: CButtonSelectOption<T>[] | string[] | Record<string, T>
     value?: T
     size?: 'small' | 'medium' | 'large'
-  } & CLabelProps >(),
+  } & CLabelProps>(),
   {
     options: () => [],
     value: undefined,
@@ -47,7 +47,7 @@ function selectOption(option: CButtonSelectOption<T>) {
   <c-label v-bind="props">
     <div class="flex gap-2">
       <c-tooltip
-        v-for="option in options" :key="option.value"
+        v-for="option in options" :key="String(option.value)"
         :tooltip="option.tooltip"
       >
         <c-button

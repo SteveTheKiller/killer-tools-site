@@ -1,23 +1,23 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "**/*.d.ts", "node_modules/vite-plugin-pwa/client.d.ts"],
-  "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "composite": true,
     "target": "es2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "baseUrl": ".",
+    "jsx": "preserve",
     "module": "es2022",
     "moduleResolution": "Bundler",
-    "composite": true,
     "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "yaml": ["./node_modules/yaml/dist/index.d.ts"],
-      "@it-tools/oggen": ["./node_modules/@it-tools/oggen/dist/index.d.ts"],
+      "@it-tools/oggen": ["./node_modules/@it-tools/oggen/dist/index.d.ts"]
     },
     "types": ["@intlify/unplugin-vue-i18n/messages", "unplugin-icons/types/vue"],
     "esModuleInterop": true,
-    "jsx": "preserve",
     "skipLibCheck": true
-  }
+  },
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "**/*.d.ts", "node_modules/vite-plugin-pwa/client.d.ts"],
+  "exclude": ["src/**/__tests__/*"]
 }

@@ -10,10 +10,14 @@ const lines = computed(() => details.value?.split('\n').filter(l => l.trim()) ??
 
 const copied = ref(false);
 async function copyVendor() {
-  if (!details.value) return;
+  if (!details.value) {
+    return;
+  }
   await navigator.clipboard.writeText(details.value);
   copied.value = true;
-  setTimeout(() => { copied.value = false; }, 2000);
+  setTimeout(() => {
+    copied.value = false;
+  }, 2000);
 }
 </script>
 

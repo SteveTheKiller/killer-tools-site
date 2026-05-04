@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const scripts = ref<{ name: string; download_url: string }[]>([]);
-const descriptions = ref<Record<string, { name: string; description: string }>>({});
+const scripts = ref<{ name: string, download_url: string }[]>([]);
+const descriptions = ref<Record<string, { name: string, description: string }>>({});
 const loading = ref(true);
 const error = ref(false);
 const copied = ref<string | null>(null);
@@ -70,7 +70,7 @@ async function copyCommand(script: { name: string }) {
   }, 2000);
 }
 
-function downloadScript(script: { name: string; download_url: string }) {
+function downloadScript(script: { name: string, download_url: string }) {
   window.open(script.download_url, '_blank', 'noopener');
 }
 </script>

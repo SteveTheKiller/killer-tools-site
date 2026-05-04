@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { darkTheme, NGlobalStyle, NMessageProvider, NNotificationProvider } from 'naive-ui';
 import { RouterView, useRoute } from 'vue-router';
-import { NGlobalStyle, NMessageProvider, NNotificationProvider, darkTheme } from 'naive-ui';
-import { darkThemeOverrides, lightThemeOverrides } from './themes';
 import { layouts } from './layouts';
+import { darkThemeOverrides, lightThemeOverrides } from './themes';
 import { useStyleStore } from './stores/style.store';
 
 const route = useRoute();
@@ -17,6 +17,7 @@ const { locale } = useI18n({ useScope: 'global' });
 syncRef(
   locale,
   useStorage('locale', locale),
+  { direction: 'ltr' },
 );
 </script>
 

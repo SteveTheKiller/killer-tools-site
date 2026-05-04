@@ -37,7 +37,7 @@ describe('password-generator service', () => {
           withSymbols: true,
           excludeAmbiguous: true,
         });
-        expect(pw).not.toMatch(/[0O1lI|`'".,;:{}\[\]()\\\/]/);
+        expect(pw).not.toMatch(/[0O1lI|`'".,;:{}[\]()\\/]/);
       }
     });
 
@@ -56,8 +56,8 @@ describe('password-generator service', () => {
         });
         expect(pw).toMatch(/[A-Z]/);
         expect(pw).toMatch(/[a-z]/);
-        expect(pw).toMatch(/[0-9]/);
-        expect(pw).toMatch(/[!@#$%^&*()\-_=+\[\]{};:,.<>/?]/);
+        expect(pw).toMatch(/\d/);
+        expect(pw).toMatch(/[!@#$%^&*()-_=+[\]{};:,.<>/?]/);
       }
     });
 
@@ -126,7 +126,7 @@ describe('password-generator service', () => {
         appendNumber: false,
       });
       expect(pw).toHaveLength(10);
-      expect(pw).toMatch(/^[bcdfghjkmnpqrstvwxz][aeiouy][bcdfghjkmnpqrstvwxz][aeiouy]/);
+      expect(pw).toMatch(/^[bcdfghjkmnp-tvwxz][aeiouy][bcdfghjkmnp-tvwxz][aeiouy]/);
     });
 
     it('replaces last two chars with digits when appendNumber is true', () => {
@@ -155,7 +155,7 @@ describe('password-generator service', () => {
     it('produces base64url without padding or unsafe chars', () => {
       const pw = generatePassword({ ...defaultOptions, mode: 'format', format: 'base64url', length: 32 });
       expect(pw).toHaveLength(32);
-      expect(pw).toMatch(/^[A-Za-z0-9\-_]+$/);
+      expect(pw).toMatch(/^[\w-]+$/);
     });
   });
 

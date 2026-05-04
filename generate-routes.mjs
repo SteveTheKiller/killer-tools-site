@@ -1,11 +1,12 @@
 /**
  * Post-build script: copies dist/index.html into each route's folder
  * so GitHub Pages returns 200 instead of 404 for direct URL access.
- * 
+ *
  * Run after vite build: node generate-routes.mjs
  */
-import { readFileSync, mkdirSync, copyFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import process from 'node:process';
 
 // Parse routes from vite.config.ts (single source of truth)
 const config = readFileSync('vite.config.ts', 'utf8');
@@ -35,4 +36,4 @@ for (const route of routes) {
   }
 }
 
-console.log(`Route generation complete: ${created} routes created, ${routes.length - created} already existed.`);
+console.warn(`Route generation complete: ${created} routes created, ${routes.length - created} already existed.`);

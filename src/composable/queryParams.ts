@@ -1,6 +1,7 @@
+import type { Ref } from 'vue';
+import { useStorage } from '@vueuse/core';
 import { useRouteQuery } from '@vueuse/router';
 import { computed } from 'vue';
-import { useStorage } from '@vueuse/core';
 
 export { useQueryParam, useQueryParamOrStorage };
 
@@ -25,7 +26,7 @@ const transformers = {
   },
 };
 
-function useQueryParam<T>({ name, defaultValue }: { name: string; defaultValue: T }) {
+function useQueryParam<T>({ name, defaultValue }: { name: string, defaultValue: T }) {
   const type = typeof defaultValue;
   const transformer = transformers[type as keyof typeof transformers] ?? transformers.string;
 
@@ -41,7 +42,7 @@ function useQueryParam<T>({ name, defaultValue }: { name: string; defaultValue: 
   });
 }
 
-function useQueryParamOrStorage<T>({ name, storageName, defaultValue }: { name: string; storageName: string; defaultValue: T }) {
+function useQueryParamOrStorage<T>({ name, storageName, defaultValue }: { name: string, storageName: string, defaultValue: T }): Ref<T> {
   const type = typeof defaultValue;
   const transformer = transformers[type as keyof typeof transformers] ?? transformers.string;
 
@@ -49,14 +50,16 @@ function useQueryParamOrStorage<T>({ name, storageName, defaultValue }: { name: 
   const proxyDefaultValue = transformer.toQuery(defaultValue as never);
   const proxy = useRouteQuery(name, proxyDefaultValue);
 
-  const r = ref(defaultValue);
+  const r = ref(defaultValue) as Ref<T>;
 
-  watch(r,
+  watch(
+    r,
     (value) => {
       proxy.value = transformer.toQuery(value as never);
       storageRef.value = value as never;
     },
-    { deep: true });
+    { deep: true },
+  );
 
   r.value = (proxy.value && proxy.value !== proxyDefaultValue
     ? transformer.fromQuery(proxy.value) as unknown as T

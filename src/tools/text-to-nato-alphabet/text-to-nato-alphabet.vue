@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { natoAlphabet } from './text-to-nato-alphabet.constants';
 import { useCopy } from '@/composable/copy';
+import { natoAlphabet } from './text-to-nato-alphabet.constants';
 
 const input = ref('');
 
 interface NatoRow {
-  char: string;
-  display: string;
-  nato: string;
-  isAlpha: boolean;
+  char: string
+  display: string
+  nato: string
+  isAlpha: boolean
 }
 
 const rows = computed<NatoRow[]>(() => {
@@ -32,7 +32,7 @@ const natoText = computed(() =>
     .join(' '),
 );
 
-const { copy, copied } = useCopy({ source: natoText, text: 'NATO string copied.' });
+const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO string copied.' });
 </script>
 
 <template>
@@ -48,7 +48,9 @@ const { copy, copied } = useCopy({ source: natoText, text: 'NATO string copied.'
           spellcheck="false"
           autofocus
         >
-        <button v-if="input" class="nato-clear-btn" @click="input = ''">✕</button>
+        <button v-if="input" class="nato-clear-btn" @click="input = ''">
+          ✕
+        </button>
       </div>
     </div>
 

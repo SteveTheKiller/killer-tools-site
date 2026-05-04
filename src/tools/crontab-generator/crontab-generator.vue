@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import cronstrue from 'cronstrue';
 import { isValidCron } from 'cron-validator';
+import cronstrue from 'cronstrue';
 import { useStyleStore } from '@/stores/style.store';
 
 function isCronValid(v: string) {
@@ -131,22 +131,36 @@ const cronValidationRules = [
 
       <div class="cheatsheet-cols">
         <div class="cheatsheet-section">
-          <div class="section-label">Symbols</div>
+          <div class="section-label">
+            Symbols
+          </div>
           <table class="ref-table">
             <tr v-for="row in symbols" :key="row.symbol">
-              <td class="ref-symbol"><code>{{ row.symbol }}</code></td>
-              <td class="ref-meaning">{{ row.meaning }}</td>
-              <td class="ref-example"><code>{{ row.example }}</code></td>
+              <td class="ref-symbol">
+                <code>{{ row.symbol }}</code>
+              </td>
+              <td class="ref-meaning">
+                {{ row.meaning }}
+              </td>
+              <td class="ref-example">
+                <code>{{ row.example }}</code>
+              </td>
             </tr>
           </table>
         </div>
 
         <div class="cheatsheet-section">
-          <div class="section-label">@ Aliases</div>
+          <div class="section-label">
+            @ Aliases
+          </div>
           <table class="ref-table">
             <tr v-for="row in aliases" :key="row.alias">
-              <td class="ref-alias"><code>{{ row.alias }}</code></td>
-              <td class="ref-equivalent"><code>{{ row.equivalent }}</code></td>
+              <td class="ref-alias">
+                <code>{{ row.alias }}</code>
+              </td>
+              <td class="ref-equivalent">
+                <code>{{ row.equivalent }}</code>
+              </td>
             </tr>
           </table>
         </div>

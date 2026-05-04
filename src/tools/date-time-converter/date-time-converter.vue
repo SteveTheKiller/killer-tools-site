@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { DateFormat, ToDateMapper } from './date-time-converter.types';
+import { onClickOutside } from '@vueuse/core';
 import {
   formatISO,
   formatISO9075,
@@ -11,7 +13,8 @@ import {
   isValid,
   parseISO,
 } from 'date-fns';
-import type { DateFormat, ToDateMapper } from './date-time-converter.types';
+import { useValidation } from '@/composable/validation';
+import { withDefaultOnError } from '@/utils/defaults';
 import {
   dateToExcelFormat,
   excelFormatToDate,
@@ -22,12 +25,9 @@ import {
   isRFC3339DateString,
   isRFC7231DateString,
   isTimestamp,
-  isUTCDateString,
   isUnixTimestamp,
+  isUTCDateString,
 } from './date-time-converter.models';
-import { withDefaultOnError } from '@/utils/defaults';
-import { useValidation } from '@/composable/validation';
-import { onClickOutside } from '@vueuse/core';
 
 const inputDate = ref('');
 const toDate: ToDateMapper = date => new Date(date);
@@ -50,14 +50,22 @@ const now = useNow();
 const isLive = computed(() => !inputDate.value);
 
 const normalizedDate = computed(() => {
-  if (!inputDate.value) return now.value;
-  try { return formats[formatIndex.value].toDate(inputDate.value); }
-  catch { return undefined; }
+  if (!inputDate.value) {
+    return now.value;
+  }
+  try {
+    return formats[formatIndex.value].toDate(inputDate.value);
+  }
+  catch {
+    return undefined;
+  }
 });
 
 function onDateInputChanged(value: string) {
   const matchingIndex = formats.findIndex(({ formatMatcher }) => formatMatcher(value));
-  if (matchingIndex !== -1) formatIndex.value = matchingIndex;
+  if (matchingIndex !== -1) {
+    formatIndex.value = matchingIndex;
+  }
 }
 
 const validation = useValidation({
@@ -65,8 +73,10 @@ const validation = useValidation({
   watch: [formatIndex],
   rules: [{
     message: 'This date is invalid for this format',
-    validator: value => withDefaultOnError(() => {
-      if (value === '') return true;
+    validator: (value: string) => withDefaultOnError(() => {
+      if (value === '') {
+        return true;
+      }
       const maybeDate = formats[formatIndex.value].toDate(value);
       return isDate(maybeDate) && isValid(maybeDate);
     }, false),
@@ -74,28 +84,37 @@ const validation = useValidation({
 });
 
 function formatDateUsingFormatter(formatter: (date: Date) => string, date?: Date) {
-  if (!date || !validation.isValid) return '';
+  if (!date || !validation.isValid) {
+    return '';
+  }
   return withDefaultOnError(() => formatter(date), '');
 }
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(name: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedLabel.value = name;
-  setTimeout(() => { if (copiedLabel.value === name) copiedLabel.value = null; }, 2000);
+  setTimeout(() => {
+    if (copiedLabel.value === name) {
+      copiedLabel.value = null;
+    }
+  }, 2000);
 }
 
 // Format dropdown
 const fmtMenuOpen = ref(false);
 const fmtMenuRef = ref<HTMLElement | null>(null);
-onClickOutside(fmtMenuRef, () => { fmtMenuOpen.value = false; });
+onClickOutside(fmtMenuRef, () => {
+  fmtMenuOpen.value = false;
+});
 </script>
 
 <template>
   <div class="dt-tool">
     <div class="dt-terminal">
-
       <!-- Input area -->
       <div class="dt-input-area">
         <div class="dt-input-row">
@@ -136,9 +155,10 @@ onClickOutside(fmtMenuRef, () => { fmtMenuOpen.value = false; });
             </div>
           </div>
         </div>
-        <div v-if="inputDate && !validation.isValid" class="dt-error">Invalid date for this format</div>
+        <div v-if="inputDate && !validation.isValid" class="dt-error">
+          Invalid date for this format
+        </div>
       </div>
-
       <!-- Output header -->
       <div class="dt-section-header">
         <span>OUTPUT</span>
@@ -146,10 +166,9 @@ onClickOutside(fmtMenuRef, () => { fmtMenuOpen.value = false; });
           <span class="dt-live-dot" /> LIVE
         </span>
       </div>
-
       <!-- Output rows -->
       <div
-        v-for="({ name, fromDate }, i) in formats"
+        v-for="{ name, fromDate } in formats"
         :key="name"
         class="dt-row"
         @click="copyValue(name, formatDateUsingFormatter(fromDate, normalizedDate))"
@@ -162,7 +181,6 @@ onClickOutside(fmtMenuRef, () => { fmtMenuOpen.value = false; });
           <icon-mdi-content-copy v-else-if="formatDateUsingFormatter(fromDate, normalizedDate)" />
         </span>
       </div>
-
     </div>
   </div>
 </template>

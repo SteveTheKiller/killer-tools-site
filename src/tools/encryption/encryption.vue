@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AES, RC4, Rabbit, TripleDES, enc } from 'crypto-js';
+import { AES, enc, Rabbit, RC4, TripleDES } from 'crypto-js';
 import { computedCatch } from '@/composable/computed/catchedComputed';
 
 const algos = { AES, TripleDES, Rabbit, RC4 };
@@ -23,10 +23,12 @@ const [decryptOutput, decryptError] = computedCatch(
 const cypherAlgoOpen = ref(false);
 const decryptAlgoOpen = ref(false);
 
-function closeOnBlur(openRef: Ref<boolean>) {
+function closeOnBlur(set: (val: boolean) => void) {
   return (e: FocusEvent) => {
     const rel = e.relatedTarget as HTMLElement | null;
-    if (!rel?.closest?.('.en-dropdown')) openRef.value = false;
+    if (!rel?.closest?.('.en-dropdown')) {
+      set(false);
+    }
   };
 }
 </script>
@@ -42,8 +44,8 @@ function closeOnBlur(openRef: Ref<boolean>) {
         <div class="en-field en-field-grow">
           <span class="en-label">YOUR TEXT</span>
           <textarea
-            class="en-textarea"
             v-model="cypherInput"
+            class="en-textarea"
             rows="5"
             placeholder="The string to encrypt"
             spellcheck="false"
@@ -53,16 +55,16 @@ function closeOnBlur(openRef: Ref<boolean>) {
           <div class="en-field">
             <span class="en-label">YOUR SECRET KEY</span>
             <input
+              v-model="cypherSecret"
               class="en-input"
               type="text"
-              v-model="cypherSecret"
               placeholder="Secret key..."
               spellcheck="false"
-            />
+            >
           </div>
           <div class="en-field">
             <span class="en-label">ALGORITHM</span>
-            <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(cypherAlgoOpen)($event)">
+            <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => cypherAlgoOpen = v)($event)">
               <button type="button" class="en-dropdown-trigger" @click="cypherAlgoOpen = !cypherAlgoOpen">
                 <span>{{ cypherAlgo }}</span>
                 <icon-mdi-chevron-down class="en-chevron" :class="{ 'en-chevron-open': cypherAlgoOpen }" />
@@ -72,7 +74,9 @@ function closeOnBlur(openRef: Ref<boolean>) {
                   v-for="algo in algoOptions" :key="algo" type="button"
                   class="en-dropdown-item" :class="{ 'en-dropdown-item-active': algo === cypherAlgo }"
                   @click="cypherAlgo = algo; cypherAlgoOpen = false"
-                >{{ algo }}</button>
+                >
+                  {{ algo }}
+                </button>
               </div>
             </div>
           </div>
@@ -95,8 +99,8 @@ function closeOnBlur(openRef: Ref<boolean>) {
         <div class="en-field en-field-grow">
           <span class="en-label">YOUR ENCRYPTED TEXT</span>
           <textarea
-            class="en-textarea"
             v-model="decryptInput"
+            class="en-textarea"
             rows="5"
             placeholder="The ciphertext to decrypt"
             spellcheck="false"
@@ -106,16 +110,16 @@ function closeOnBlur(openRef: Ref<boolean>) {
           <div class="en-field">
             <span class="en-label">YOUR SECRET KEY</span>
             <input
+              v-model="decryptSecret"
               class="en-input"
               type="text"
-              v-model="decryptSecret"
               placeholder="Secret key..."
               spellcheck="false"
-            />
+            >
           </div>
           <div class="en-field">
             <span class="en-label">ALGORITHM</span>
-            <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(decryptAlgoOpen)($event)">
+            <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => decryptAlgoOpen = v)($event)">
               <button type="button" class="en-dropdown-trigger" @click="decryptAlgoOpen = !decryptAlgoOpen">
                 <span>{{ decryptAlgo }}</span>
                 <icon-mdi-chevron-down class="en-chevron" :class="{ 'en-chevron-open': decryptAlgoOpen }" />
@@ -125,7 +129,9 @@ function closeOnBlur(openRef: Ref<boolean>) {
                   v-for="algo in algoOptions" :key="algo" type="button"
                   class="en-dropdown-item" :class="{ 'en-dropdown-item-active': algo === decryptAlgo }"
                   @click="decryptAlgo = algo; decryptAlgoOpen = false"
-                >{{ algo }}</button>
+                >
+                  {{ algo }}
+                </button>
               </div>
             </div>
           </div>

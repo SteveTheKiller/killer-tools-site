@@ -12,7 +12,7 @@ export interface Tool {
   createdAt?: Date
   fullscreen?: boolean
   noHeader?: boolean
-  headerLink?: { label: string; href: string }
+  headerLink?: { label: string, href: string }
 }
 
 export interface ToolCategory {

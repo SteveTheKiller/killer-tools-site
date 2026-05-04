@@ -27,11 +27,15 @@ const fields = computed(() => [
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(label: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedLabel.value = label;
   setTimeout(() => {
-    if (copiedLabel.value === label) copiedLabel.value = null;
+    if (copiedLabel.value === label) {
+      copiedLabel.value = null;
+    }
   }, 2000);
 }
 </script>

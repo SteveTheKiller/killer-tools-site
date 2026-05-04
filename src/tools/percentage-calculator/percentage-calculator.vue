@@ -7,9 +7,11 @@ function fmt(n: number) {
 const pctX = ref('');
 const pctY = ref('');
 const pctResult = computed(() => {
-  const x = parseFloat(pctX.value);
-  const y = parseFloat(pctY.value);
-  if (Number.isNaN(x) || Number.isNaN(y)) return '';
+  const x = Number.parseFloat(pctX.value);
+  const y = Number.parseFloat(pctY.value);
+  if (Number.isNaN(x) || Number.isNaN(y)) {
+    return '';
+  }
   return fmt(x / 100 * y);
 });
 
@@ -17,29 +19,39 @@ const pctResult = computed(() => {
 const numX = ref('');
 const numY = ref('');
 const numResult = computed(() => {
-  const x = parseFloat(numX.value);
-  const y = parseFloat(numY.value);
-  if (Number.isNaN(x) || Number.isNaN(y) || y === 0) return '';
-  return fmt(100 * x / y) + '%';
+  const x = Number.parseFloat(numX.value);
+  const y = Number.parseFloat(numY.value);
+  if (Number.isNaN(x) || Number.isNaN(y) || y === 0) {
+    return '';
+  }
+  return `${fmt(100 * x / y)}%`;
 });
 
 // Percentage increase/decrease
 const fromVal = ref('');
 const toVal = ref('');
 const changeResult = computed(() => {
-  const from = parseFloat(fromVal.value);
-  const to = parseFloat(toVal.value);
-  if (Number.isNaN(from) || Number.isNaN(to) || from === 0) return '';
+  const from = Number.parseFloat(fromVal.value);
+  const to = Number.parseFloat(toVal.value);
+  if (Number.isNaN(from) || Number.isNaN(to) || from === 0) {
+    return '';
+  }
   const pct = (to - from) / from * 100;
-  return (pct >= 0 ? '+' : '') + fmt(pct) + '%';
+  return `${pct >= 0 ? '+' : ''}${fmt(pct)}%`;
 });
 
 const copiedKey = ref<string | null>(null);
 async function copyResult(key: string, val: string) {
-  if (!val) return;
+  if (!val) {
+    return;
+  }
   await navigator.clipboard.writeText(val);
   copiedKey.value = key;
-  setTimeout(() => { if (copiedKey.value === key) copiedKey.value = null; }, 2000);
+  setTimeout(() => {
+    if (copiedKey.value === key) {
+      copiedKey.value = null;
+    }
+  }, 2000);
 }
 </script>
 
@@ -180,6 +192,7 @@ async function copyResult(key: string, val: string) {
   color: rgba(255, 255, 255, 0.85);
   outline: none;
   transition: border-color 0.15s;
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 

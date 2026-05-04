@@ -458,6 +458,18 @@ function switchToBlock({ count = 1 }: { count?: number }) {
   align-self: stretch;
 }
 
+@media (max-width: 640px) {
+  .k-terminal-body {
+    grid-template-columns: 1fr;
+  }
+  .k-col-divider {
+    display: none;
+  }
+  .k-col + .k-col {
+    border-top: 1px solid rgba(30, 165, 76, 0.15);
+  }
+}
+
 .k-nav-row {
   display: flex;
   justify-content: space-between;

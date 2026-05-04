@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Check, Copy } from '@vicons/tabler';
-import { errorsByCategory } from './windows-error-codes.constants';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
+import { errorsByCategory } from './windows-error-codes.constants';
 
 const search = ref('');
 const copiedValue = ref<string | null>(null);
@@ -101,7 +101,7 @@ function copyValue(value: string) {
 
             <div
               class="text-xs text-neutral-500 dark:text-neutral-400"
-              style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
+              style="line-clamp: 3; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
             >
               {{ description }}
             </div>

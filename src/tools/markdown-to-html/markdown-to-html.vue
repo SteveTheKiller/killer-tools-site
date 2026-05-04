@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
 import markdownit from 'markdown-it';
 import { useMessage } from 'naive-ui';
+import { computed, ref } from 'vue';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
 
 const message = useMessage();
@@ -26,7 +26,7 @@ async function copyToClipboard(text: string) {
     await navigator.clipboard.writeText(text);
     message?.success('HTML copied to clipboard!');
   }
-  catch (err) {
+  catch {
     message?.error('Failed to copy text.');
   }
 }
@@ -55,9 +55,7 @@ async function copyToClipboard(text: string) {
             Output HTML:
           </div>
           <n-button quaternary size="tiny" @click="copyToClipboard(outputHtml)">
-            <template #icon>
-              <span class="i-carbon-copy inline-block h-4 w-4" />
-            </template>
+            <span class="i-carbon-copy mr-1 inline-block h-4 w-4" />
             Copy HTML
           </n-button>
         </div>

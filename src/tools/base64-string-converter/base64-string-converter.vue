@@ -8,7 +8,7 @@ const decodeUrlSafe = useStorage('base64-string-converter--decode-url-safe', fal
 
 const textInput = ref('');
 const base64Output = computed(() => textToBase64(textInput.value, { makeUrlSafe: encodeUrlSafe.value }));
-const { copy: copyTextBase64, copied: copiedEncode } = useCopy({ source: base64Output, text: 'Base64 string copied to the clipboard' });
+const { copy: copyTextBase64, isJustCopied: copiedEncode } = useCopy({ source: base64Output, text: 'Base64 string copied to the clipboard' });
 
 const base64Input = ref('');
 const b64IsValid = computed(() =>
@@ -17,7 +17,7 @@ const b64IsValid = computed(() =>
 const textOutput = computed(() =>
   withDefaultOnError(() => base64ToText(base64Input.value.trim(), { makeUrlSafe: decodeUrlSafe.value }), ''),
 );
-const { copy: copyText, copied: copiedDecode } = useCopy({ source: textOutput, text: 'String copied to the clipboard' });
+const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOutput, text: 'String copied to the clipboard' });
 </script>
 
 <template>
@@ -30,16 +30,20 @@ const { copy: copyText, copied: copiedDecode } = useCopy({ source: textOutput, t
       <div class="b6-pill-row">
         <span class="b6-label">ENCODING</span>
         <div class="b6-pills">
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !encodeUrlSafe }" @click="encodeUrlSafe = false">Standard</button>
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': encodeUrlSafe }" @click="encodeUrlSafe = true">URL Safe</button>
+          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !encodeUrlSafe }" @click="encodeUrlSafe = false">
+            Standard
+          </button>
+          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': encodeUrlSafe }" @click="encodeUrlSafe = true">
+            URL Safe
+          </button>
         </div>
       </div>
 
       <div class="b6-field">
         <span class="b6-label">STRING TO ENCODE</span>
         <textarea
-          class="b6-textarea"
           v-model="textInput"
+          class="b6-textarea"
           placeholder="Put your string here..."
           rows="5"
           spellcheck="false"
@@ -77,17 +81,21 @@ const { copy: copyText, copied: copiedDecode } = useCopy({ source: textOutput, t
       <div class="b6-pill-row">
         <span class="b6-label">ENCODING</span>
         <div class="b6-pills">
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !decodeUrlSafe }" @click="decodeUrlSafe = false">Standard</button>
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': decodeUrlSafe }" @click="decodeUrlSafe = true">URL Safe</button>
+          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !decodeUrlSafe }" @click="decodeUrlSafe = false">
+            Standard
+          </button>
+          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': decodeUrlSafe }" @click="decodeUrlSafe = true">
+            URL Safe
+          </button>
         </div>
       </div>
 
       <div class="b6-field">
         <span class="b6-label">BASE64 STRING TO DECODE</span>
         <textarea
+          v-model="base64Input"
           class="b6-textarea"
           :class="{ 'b6-textarea-error': !b64IsValid }"
-          v-model="base64Input"
           placeholder="Your base64 string..."
           rows="5"
           spellcheck="false"

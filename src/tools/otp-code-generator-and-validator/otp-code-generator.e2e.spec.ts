@@ -23,13 +23,13 @@ test.describe('Tool - OTP code generator', () => {
   test('OTP a generated from the provided secret', async ({ page }) => {
     await page.getByPlaceholder('Paste your TOTP secret...').fill('ITTOOLS');
 
-    const previousOtp = await page.getByTestId('previous-otp').innerText();
-    const currentOtp = await page.getByTestId('current-otp').innerText();
-    const nextOtp = await page.getByTestId('next-otp').innerText();
+    const previousOtp = await page.getByTestId('previous-otp').textContent();
+    const currentOtp = await page.getByTestId('current-otp').textContent();
+    const nextOtp = await page.getByTestId('next-otp').textContent();
 
-    expect(previousOtp.trim()).toEqual('028034');
-    expect(currentOtp.trim()).toEqual('162195');
-    expect(nextOtp.trim()).toEqual('452815');
+    expect(previousOtp?.trim()).toEqual('028034');
+    expect(currentOtp?.trim()).toEqual('162195');
+    expect(nextOtp?.trim()).toEqual('452815');
   });
 
   test('You can generate a new random secret', async ({ page }) => {

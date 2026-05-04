@@ -9,7 +9,9 @@ const inputAreaRef = ref<HTMLDivElement | null>(null);
 onMounted(async () => {
   await nextTick();
   const forceDark = (el: HTMLElement | null) => {
-    if (!el) return;
+    if (!el) {
+      return;
+    }
     el.style.setProperty('background-color', 'transparent', 'important');
     el.style.setProperty('background', 'transparent', 'important');
     el.style.setProperty('box-shadow', 'none', 'important');

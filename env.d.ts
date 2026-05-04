@@ -2,20 +2,21 @@
 /// <reference types="vite-svg-loader" />
 
 interface ImportMetaEnv {
-  VITE_PLAUSIBLE_API_HOST: string;
-  VITE_PLAUSIBLE_DOMAIN: string;
-  PACKAGE_VERSION: string;
-  GIT_SHORT_SHA: string;
-  PROD: boolean;
+  VITE_PLAUSIBLE_API_HOST: string
+  VITE_PLAUSIBLE_DOMAIN: string
+  PACKAGE_VERSION: string
+  GIT_SHORT_SHA: string
+  PROD: boolean
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+  readonly env: ImportMetaEnv
 }
 
 // @vicons/tabler ambient declarations — installed version lacks type definitions
 declare module '@vicons/tabler' {
   import type { Component } from 'vue';
+
   export const Activity: Component;
   export const Adjustments: Component;
   export const Alarm: Component;

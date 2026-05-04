@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { decodeJwt } from './jwt-parser.service';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
+import { decodeJwt } from './jwt-parser.service';
 
 const rawJwt = ref(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
@@ -22,11 +22,15 @@ const sections = [
 
 const copiedKey = ref<string | null>(null);
 async function copyValue(key: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedKey.value = key;
   setTimeout(() => {
-    if (copiedKey.value === key) copiedKey.value = null;
+    if (copiedKey.value === key) {
+      copiedKey.value = null;
+    }
   }, 2000);
 }
 </script>

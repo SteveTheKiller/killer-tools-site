@@ -39,16 +39,20 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
       <div class="sp-field">
         <span class="sp-label">WIDTH (px)</span>
         <div class="sp-stepper">
-          <button class="sp-step-btn" :disabled="width <= 1" @click="width = Math.max(1, width - 1)">−</button>
-          <input class="sp-step-input" type="number" v-model.number="width" min="1" />
-          <button class="sp-step-btn" @click="width++">+</button>
+          <button class="sp-step-btn" :disabled="width <= 1" @click="width = Math.max(1, width - 1)">
+            −
+          </button>
+          <input v-model.number="width" class="sp-step-input" type="number" min="1">
+          <button class="sp-step-btn" @click="width++">
+            +
+          </button>
         </div>
       </div>
       <div class="sp-field">
         <span class="sp-label">BACKGROUND</span>
         <div class="sp-color-row">
-          <input class="sp-color-swatch" type="color" v-model="bgColor" />
-          <input class="sp-color-hex" type="text" v-model="bgColor" maxlength="7" spellcheck="false" />
+          <input v-model="bgColor" class="sp-color-swatch" type="color">
+          <input v-model="bgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
         </div>
       </div>
     </div>
@@ -58,16 +62,20 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
       <div class="sp-field">
         <span class="sp-label">HEIGHT (px)</span>
         <div class="sp-stepper">
-          <button class="sp-step-btn" :disabled="height <= 1" @click="height = Math.max(1, height - 1)">−</button>
-          <input class="sp-step-input" type="number" v-model.number="height" min="1" />
-          <button class="sp-step-btn" @click="height++">+</button>
+          <button class="sp-step-btn" :disabled="height <= 1" @click="height = Math.max(1, height - 1)">
+            −
+          </button>
+          <input v-model.number="height" class="sp-step-input" type="number" min="1">
+          <button class="sp-step-btn" @click="height++">
+            +
+          </button>
         </div>
       </div>
       <div class="sp-field">
         <span class="sp-label">TEXT COLOR</span>
         <div class="sp-color-row">
-          <input class="sp-color-swatch" type="color" v-model="fgColor" />
-          <input class="sp-color-hex" type="text" v-model="fgColor" maxlength="7" spellcheck="false" />
+          <input v-model="fgColor" class="sp-color-swatch" type="color">
+          <input v-model="fgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
         </div>
       </div>
     </div>
@@ -77,21 +85,25 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
       <div class="sp-field">
         <span class="sp-label">FONT SIZE</span>
         <div class="sp-stepper">
-          <button class="sp-step-btn" :disabled="fontSize <= 1" @click="fontSize = Math.max(1, fontSize - 1)">−</button>
-          <input class="sp-step-input" type="number" v-model.number="fontSize" min="1" />
-          <button class="sp-step-btn" @click="fontSize++">+</button>
+          <button class="sp-step-btn" :disabled="fontSize <= 1" @click="fontSize = Math.max(1, fontSize - 1)">
+            −
+          </button>
+          <input v-model.number="fontSize" class="sp-step-input" type="number" min="1">
+          <button class="sp-step-btn" @click="fontSize++">
+            +
+          </button>
         </div>
       </div>
       <div class="sp-field sp-field-grow">
         <span class="sp-label">CUSTOM TEXT</span>
         <input
+          v-model="customText"
           class="sp-text-input"
           type="text"
-          v-model="customText"
           :placeholder="`Default is ${width}x${height}`"
           autocomplete="off"
           spellcheck="false"
-        />
+        >
       </div>
     </div>
 
@@ -117,9 +129,15 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 
     <!-- Actions -->
     <div class="sp-actions">
-      <button class="sp-btn" @click="copySVG()">Copy svg</button>
-      <button class="sp-btn" @click="copyBase64()">Copy base64</button>
-      <button class="sp-btn sp-btn-accent" @click="download()">Download svg</button>
+      <button class="sp-btn" @click="copySVG()">
+        Copy svg
+      </button>
+      <button class="sp-btn" @click="copyBase64()">
+        Copy base64
+      </button>
+      <button class="sp-btn sp-btn-accent" @click="download()">
+        Download svg
+      </button>
     </div>
   </div>
 
@@ -127,7 +145,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   <div class="sp-preview-panel">
     <span class="sp-label">PREVIEW</span>
     <div class="sp-preview-frame">
-      <img :src="base64" alt="SVG preview" class="sp-preview-img" />
+      <img :src="base64" alt="SVG preview" class="sp-preview-img">
     </div>
   </div>
 </template>
@@ -182,6 +200,13 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 
 .sp-field-grow {
   flex: 2;
+}
+
+@media (max-width: 640px) {
+  .sp-row {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* Sublabels */
@@ -239,6 +264,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   color: #1ea54c;
   outline: none;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .sp-step-input::-webkit-inner-spin-button,

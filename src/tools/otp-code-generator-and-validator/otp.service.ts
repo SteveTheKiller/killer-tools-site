@@ -1,17 +1,17 @@
-import { HmacSHA1, enc } from 'crypto-js';
+import { enc, HmacSHA1 } from 'crypto-js';
 import _ from 'lodash';
 import { createToken } from '../password-generator/password-generator.service';
 
 export {
+  base32toHex,
+  buildKeyUri,
   generateHOTP,
+  generateSecret,
+  generateTOTP,
+  getCounterFromTime,
   hexToBytes,
   verifyHOTP,
-  generateTOTP,
   verifyTOTP,
-  buildKeyUri,
-  generateSecret,
-  base32toHex,
-  getCounterFromTime,
 };
 
 function hexToBytes(hex: string) {
@@ -37,7 +37,7 @@ function base32toHex(base32: string) {
   return hex;
 }
 
-function generateHOTP({ key, counter = 0 }: { key: string; counter?: number }) {
+function generateHOTP({ key, counter = 0 }: { key: string, counter?: number }) {
   // Compute HMACdigest
   const digest = computeHMACSha1(counter.toString(16).padStart(16, '0'), key);
 
@@ -49,7 +49,7 @@ function generateHOTP({ key, counter = 0 }: { key: string; counter?: number }) {
   const v
     = ((bytes[offset] & 0x7F) << 24)
     | ((bytes[offset + 1] & 0xFF) << 16)
-    | ((bytes[offset + 2] & 0xFF) << 8)
+      | ((bytes[offset + 2] & 0xFF) << 8)
     | (bytes[offset + 3] & 0xFF);
 
   const code = String(v % 1000000).padStart(6, '0');
@@ -77,11 +77,11 @@ function verifyHOTP({
   return false;
 }
 
-function getCounterFromTime({ now, timeStep }: { now: number; timeStep: number }) {
+function getCounterFromTime({ now, timeStep }: { now: number, timeStep: number }) {
   return Math.floor(now / 1000 / timeStep);
 }
 
-function generateTOTP({ key, now = Date.now(), timeStep = 30 }: { key: string; now?: number; timeStep?: number }) {
+function generateTOTP({ key, now = Date.now(), timeStep = 30 }: { key: string, now?: number, timeStep?: number }) {
   const counter = getCounterFromTime({ now, timeStep });
 
   return generateHOTP({ key, counter });

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { convertAsciiBinaryToText, convertTextToAsciiBinary } from './text-to-binary.models';
-import { withDefaultOnError } from '@/utils/defaults';
-import { isNotThrowing } from '@/utils/boolean';
 import { useCopy } from '@/composable/copy';
+import { isNotThrowing } from '@/utils/boolean';
+import { withDefaultOnError } from '@/utils/defaults';
+import { convertAsciiBinaryToText, convertTextToAsciiBinary } from './text-to-binary.models';
 
 const text = ref('');
 const binary = ref('');
@@ -13,23 +13,31 @@ const binaryValid = computed(() =>
 );
 
 watch(text, (val) => {
-  if (updating) return;
+  if (updating) {
+    return;
+  }
   updating = true;
   binary.value = convertTextToAsciiBinary(val);
-  nextTick(() => { updating = false; });
+  nextTick(() => {
+    updating = false;
+  });
 });
 
 watch(binary, (val) => {
-  if (updating) return;
+  if (updating) {
+    return;
+  }
   if (val === '' || isNotThrowing(() => convertAsciiBinaryToText(val))) {
     updating = true;
     text.value = withDefaultOnError(() => convertAsciiBinaryToText(val), '');
-    nextTick(() => { updating = false; });
+    nextTick(() => {
+      updating = false;
+    });
   }
 });
 
-const { copy: copyText, copied: copiedText } = useCopy({ source: text, text: 'Text copied' });
-const { copy: copyBinary, copied: copiedBinary } = useCopy({ source: binary, text: 'Binary copied' });
+const { copy: copyText, isJustCopied: copiedText } = useCopy({ source: text, text: 'Text copied' });
+const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binary, text: 'Binary copied' });
 </script>
 
 <template>

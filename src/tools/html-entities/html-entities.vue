@@ -13,13 +13,17 @@ const copiedUnescape = ref(false);
 async function copyEscape() {
   await navigator.clipboard.writeText(escapeOutput.value);
   copiedEscape.value = true;
-  setTimeout(() => { copiedEscape.value = false; }, 2000);
+  setTimeout(() => {
+    copiedEscape.value = false;
+  }, 2000);
 }
 
 async function copyUnescape() {
   await navigator.clipboard.writeText(unescapeOutput.value);
   copiedUnescape.value = true;
-  setTimeout(() => { copiedUnescape.value = false; }, 2000);
+  setTimeout(() => {
+    copiedUnescape.value = false;
+  }, 2000);
 }
 </script>
 
@@ -38,7 +42,9 @@ async function copyUnescape() {
         />
       </div>
 
-      <div class="he-section-header">ESCAPED OUTPUT</div>
+      <div class="he-section-header">
+        ESCAPED OUTPUT
+      </div>
 
       <div class="he-output-area">
         <textarea
@@ -72,7 +78,9 @@ async function copyUnescape() {
         />
       </div>
 
-      <div class="he-section-header">UNESCAPED OUTPUT</div>
+      <div class="he-section-header">
+        UNESCAPED OUTPUT
+      </div>
 
       <div class="he-output-area">
         <textarea

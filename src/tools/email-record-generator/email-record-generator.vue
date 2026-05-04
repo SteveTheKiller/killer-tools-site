@@ -7,7 +7,9 @@ const copiedValue = ref<string | null>(null);
 function copyValue(value: string) {
   navigator.clipboard.writeText(value);
   copiedValue.value = value;
-  setTimeout(() => { copiedValue.value = null; }, 1500);
+  setTimeout(() => {
+    copiedValue.value = null;
+  }, 1500);
 }
 
 // --- SPF ---
@@ -41,18 +43,30 @@ const spfEnforcementOptions = [
 
 function toggleProvider(val: string) {
   const idx = spfProviders.value.indexOf(val);
-  if (idx === -1) spfProviders.value.push(val);
-  else spfProviders.value.splice(idx, 1);
+  if (idx === -1) {
+    spfProviders.value.push(val);
+  }
+  else {
+    spfProviders.value.splice(idx, 1);
+  }
 }
 
 const spfRecord = computed(() => {
   const parts = ['v=spf1'];
-  for (const p of spfProviders.value) parts.push(p);
+  for (const p of spfProviders.value) {
+    parts.push(p);
+  }
   const ips = spfCustomIps.value.split(/[\s,;]+/).map(ip => ip.trim()).filter(Boolean);
   for (const ip of ips) {
-    if (ip.includes('/')) parts.push(ip.includes(':') ? `ip6:${ip}` : `ip4:${ip}`);
-    else if (ip.includes(':')) parts.push(`ip6:${ip}`);
-    else parts.push(`ip4:${ip}`);
+    if (ip.includes('/')) {
+      parts.push(ip.includes(':') ? `ip6:${ip}` : `ip4:${ip}`);
+    }
+    else if (ip.includes(':')) {
+      parts.push(`ip6:${ip}`);
+    }
+    else {
+      parts.push(`ip4:${ip}`);
+    }
   }
   parts.push(spfEnforcement.value);
   return parts.join(' ');
@@ -63,7 +77,9 @@ const spfLookupCount = computed(() => spfProviders.value.length);
 // SPF enforcement dropdown
 const spfEnfMenu = ref(false);
 const spfEnfRef = ref<HTMLElement | null>(null);
-onClickOutside(spfEnfRef, () => { spfEnfMenu.value = false; });
+onClickOutside(spfEnfRef, () => {
+  spfEnfMenu.value = false;
+});
 const spfEnfLabel = computed(() => spfEnforcementOptions.find(o => o.value === spfEnforcement.value)?.label ?? spfEnforcement.value);
 
 // --- DMARC ---
@@ -89,20 +105,28 @@ const dmarcAlignmentOptions = [
 // DMARC policy dropdown
 const dmarcPolMenu = ref(false);
 const dmarcPolRef = ref<HTMLElement | null>(null);
-onClickOutside(dmarcPolRef, () => { dmarcPolMenu.value = false; });
+onClickOutside(dmarcPolRef, () => {
+  dmarcPolMenu.value = false;
+});
 const dmarcPolLabel = computed(() => dmarcPolicyOptions.find(o => o.value === dmarcPolicy.value)?.label ?? dmarcPolicy.value);
 
 // DMARC subdomain policy dropdown
 const dmarcSpMenu = ref(false);
 const dmarcSpRef = ref<HTMLElement | null>(null);
-onClickOutside(dmarcSpRef, () => { dmarcSpMenu.value = false; });
+onClickOutside(dmarcSpRef, () => {
+  dmarcSpMenu.value = false;
+});
 const dmarcSpOptions = computed(() => [{ label: 'Same as main policy', value: '' }, ...dmarcPolicyOptions]);
 const dmarcSpLabel = computed(() => dmarcSpOptions.value.find(o => o.value === dmarcSubdomainPolicy.value)?.label ?? 'Same as main policy');
 
 const dmarcRecord = computed(() => {
   const parts = [`v=DMARC1; p=${dmarcPolicy.value}`];
-  if (dmarcSubdomainPolicy.value) parts.push(`sp=${dmarcSubdomainPolicy.value}`);
-  if (dmarcPercentage.value < 100) parts.push(`pct=${dmarcPercentage.value}`);
+  if (dmarcSubdomainPolicy.value) {
+    parts.push(`sp=${dmarcSubdomainPolicy.value}`);
+  }
+  if (dmarcPercentage.value < 100) {
+    parts.push(`pct=${dmarcPercentage.value}`);
+  }
   if (dmarcRuaEmail.value.trim()) {
     const emails = dmarcRuaEmail.value.split(/[\s,;]+/).filter(Boolean).map(e => `mailto:${e.replace(/^mailto:/, '')}`).join(',');
     parts.push(`rua=${emails}`);
@@ -111,15 +135,18 @@ const dmarcRecord = computed(() => {
     const emails = dmarcRufEmail.value.split(/[\s,;]+/).filter(Boolean).map(e => `mailto:${e.replace(/^mailto:/, '')}`).join(',');
     parts.push(`ruf=${emails}`);
   }
-  if (dmarcAdkim.value) parts.push(`adkim=${dmarcAdkim.value}`);
-  if (dmarcAspf.value) parts.push(`aspf=${dmarcAspf.value}`);
+  if (dmarcAdkim.value) {
+    parts.push(`adkim=${dmarcAdkim.value}`);
+  }
+  if (dmarcAspf.value) {
+    parts.push(`aspf=${dmarcAspf.value}`);
+  }
   return parts.join('; ');
 });
 </script>
 
 <template>
   <div class="erg-wrap">
-
     <!-- Tab switcher -->
     <div class="erg-tabs">
       <button
@@ -142,7 +169,6 @@ const dmarcRecord = computed(() => {
 
     <!-- ═══ SPF TAB ═══ -->
     <div v-if="activeTab === 'spf'" class="erg-terminal">
-
       <!-- Record output -->
       <div class="erg-record-area" @click="copyValue(spfRecord)">
         <div class="erg-record-meta">
@@ -156,7 +182,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- Mail providers -->
-      <div class="erg-section-header">MAIL PROVIDERS</div>
+      <div class="erg-section-header">
+        MAIL PROVIDERS
+      </div>
       <div class="erg-pill-grid">
         <button
           v-for="opt in spfProviderOptions"
@@ -171,7 +199,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- Custom IPs -->
-      <div class="erg-section-header">CUSTOM IPs OR RANGES (OPTIONAL)</div>
+      <div class="erg-section-header">
+        CUSTOM IPs OR RANGES (OPTIONAL)
+      </div>
       <div class="erg-input-area">
         <input
           v-model="spfCustomIps"
@@ -182,7 +212,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- Enforcement -->
-      <div class="erg-section-header">ENFORCEMENT</div>
+      <div class="erg-section-header">
+        ENFORCEMENT
+      </div>
       <div ref="spfEnfRef" class="erg-dropdown-area">
         <button
           type="button"
@@ -206,12 +238,10 @@ const dmarcRecord = computed(() => {
           </button>
         </div>
       </div>
-
     </div>
 
     <!-- ═══ DMARC TAB ═══ -->
     <div v-else class="erg-terminal">
-
       <!-- Record output -->
       <div class="erg-record-area" @click="copyValue(dmarcRecord)">
         <div class="erg-record-meta">
@@ -222,7 +252,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- Policy -->
-      <div class="erg-section-header">POLICY</div>
+      <div class="erg-section-header">
+        POLICY
+      </div>
       <div ref="dmarcPolRef" class="erg-dropdown-area">
         <button
           type="button"
@@ -248,7 +280,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- Subdomain policy -->
-      <div class="erg-section-header">SUBDOMAIN POLICY (OPTIONAL)</div>
+      <div class="erg-section-header">
+        SUBDOMAIN POLICY (OPTIONAL)
+      </div>
       <div ref="dmarcSpRef" class="erg-dropdown-area">
         <button
           type="button"
@@ -274,7 +308,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- Percentage -->
-      <div class="erg-section-header">POLICY COVERAGE — {{ dmarcPercentage }}%</div>
+      <div class="erg-section-header">
+        POLICY COVERAGE — {{ dmarcPercentage }}%
+      </div>
       <div class="erg-slider-area">
         <input
           v-model.number="dmarcPercentage"
@@ -284,11 +320,15 @@ const dmarcRecord = computed(() => {
           :step="5"
           class="erg-slider"
         >
-        <div class="erg-slider-hint">{{ dmarcPercentage }}% of failing mail will be acted on. Use less than 100% for gradual rollout.</div>
+        <div class="erg-slider-hint">
+          {{ dmarcPercentage }}% of failing mail will be acted on. Use less than 100% for gradual rollout.
+        </div>
       </div>
 
       <!-- RUA email -->
-      <div class="erg-section-header">AGGREGATE REPORT EMAIL (rua)</div>
+      <div class="erg-section-header">
+        AGGREGATE REPORT EMAIL (rua)
+      </div>
       <div class="erg-input-area">
         <input
           v-model="dmarcRuaEmail"
@@ -299,7 +339,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- RUF email -->
-      <div class="erg-section-header">FORENSIC REPORT EMAIL (ruf, optional)</div>
+      <div class="erg-section-header">
+        FORENSIC REPORT EMAIL (ruf, optional)
+      </div>
       <div class="erg-input-area">
         <input
           v-model="dmarcRufEmail"
@@ -310,7 +352,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- DKIM alignment -->
-      <div class="erg-section-header">DKIM ALIGNMENT</div>
+      <div class="erg-section-header">
+        DKIM ALIGNMENT
+      </div>
       <div class="erg-pill-row">
         <button
           v-for="opt in dmarcAlignmentOptions"
@@ -325,7 +369,9 @@ const dmarcRecord = computed(() => {
       </div>
 
       <!-- SPF alignment -->
-      <div class="erg-section-header">SPF ALIGNMENT</div>
+      <div class="erg-section-header">
+        SPF ALIGNMENT
+      </div>
       <div class="erg-pill-row erg-pill-row-last">
         <button
           v-for="opt in dmarcAlignmentOptions"
@@ -338,7 +384,6 @@ const dmarcRecord = computed(() => {
           {{ opt.label }}
         </button>
       </div>
-
     </div>
   </div>
 </template>
@@ -454,9 +499,9 @@ const dmarcRecord = computed(() => {
 
 /* ── Provider pill grid ── */
 .erg-pill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 5px;
   padding: 10px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -478,13 +523,14 @@ const dmarcRecord = computed(() => {
 .erg-pill {
   font-size: 0.72rem;
   font-weight: 500;
-  padding: 3px 11px;
-  border-radius: 12px;
+  padding: 5px 11px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   white-space: nowrap;
+  text-align: center;
   transition: background 0.12s, border-color 0.12s, color 0.12s;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }

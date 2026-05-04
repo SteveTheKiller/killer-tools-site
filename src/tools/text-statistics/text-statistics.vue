@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getStringSizeInBytes } from './text-statistics.service';
 import { formatBytes } from '@/utils/convert';
+import { getStringSizeInBytes } from './text-statistics.service';
 
 const text = ref('');
 
@@ -13,8 +13,8 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
 <template>
   <div class="ts-wrap">
     <textarea
-      class="ts-input"
       v-model="text"
+      class="ts-input"
       placeholder="Your text..."
       rows="8"
       spellcheck="false"

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useTimestamp } from '@vueuse/core';
-import { useQRCode } from '../qr-code-generator/useQRCode';
-import { base32toHex, buildKeyUri, generateSecret, generateTOTP, getCounterFromTime } from './otp.service';
-import { useStyleStore } from '@/stores/style.store';
 import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
+import { useStyleStore } from '@/stores/style.store';
+import { useQRCode } from '../qr-code-generator/useQRCode';
+import { base32toHex, buildKeyUri, generateSecret, generateTOTP, getCounterFromTime } from './otp.service';
 
 const now = useTimestamp();
 const interval = computed(() => (now.value / 1000) % 30);
@@ -43,10 +43,10 @@ const { copy: copyNext, isJustCopied: nextCopied } = useCopy({ createToast: fals
 const secondsRemaining = computed(() => Math.floor(30 - interval.value));
 const progressPercent = computed(() => (100 * interval.value) / 30);
 
-const secretValidationRules = [
+const _secretValidationRules = [
   {
     message: 'Secret should be a base32 string',
-    validator: (value: string) => value.toUpperCase().match(/^[A-Z234567]+$/),
+    validator: (value: string) => value.toUpperCase().match(/^[A-Z2-7]+$/),
   },
   {
     message: 'Please set a secret',
@@ -65,11 +65,9 @@ const details = computed(() => [
 <template>
   <div class="otp-layout">
     <div class="otp-columns">
-
       <!-- LEFT: terminal panel -->
       <div class="otp-left">
         <div class="otp-terminal">
-
           <!-- SECRET input -->
           <div class="otp-input-area">
             <label class="otp-field-label">Secret</label>
@@ -80,7 +78,7 @@ const details = computed(() => [
                 spellcheck="false"
                 autocomplete="off"
                 placeholder="Paste your TOTP secret..."
-              />
+              >
               <button class="otp-refresh-btn" title="Generate new secret" @click="refreshSecret">
                 <icon-mdi-refresh />
               </button>
@@ -88,22 +86,32 @@ const details = computed(() => [
           </div>
 
           <!-- TOKEN section header -->
-          <div class="otp-section-header">TOKEN</div>
+          <div class="otp-section-header">
+            TOKEN
+          </div>
 
           <!-- Big token display -->
           <div class="otp-token-frame" @click="copyCurrent(tokens.current)">
-            <div class="otp-token-digits">{{ tokens.current }}</div>
-            <div class="otp-token-hint">{{ currentCopied ? '✓ copied' : 'click to copy' }}</div>
+            <div class="otp-token-digits">
+              {{ tokens.current }}
+            </div>
+            <div class="otp-token-hint">
+              {{ currentCopied ? '✓ copied' : 'click to copy' }}
+            </div>
           </div>
 
           <!-- Progress bar -->
           <div class="otp-progress-wrap">
             <div class="otp-progress-bar" :style="{ width: `${progressPercent}%` }" />
           </div>
-          <div class="otp-countdown">>_ next in {{ String(secondsRemaining).padStart(2, '0') }}s</div>
+          <div class="otp-countdown">
+            >_ next in {{ String(secondsRemaining).padStart(2, '0') }}s
+          </div>
 
           <!-- ADJACENT TOKENS -->
-          <div class="otp-section-header">ADJACENT TOKENS</div>
+          <div class="otp-section-header">
+            ADJACENT TOKENS
+          </div>
 
           <div class="otp-row" @click="copyPrevious(tokens.previous)">
             <span class="otp-prompt">>_</span>
@@ -125,14 +133,15 @@ const details = computed(() => [
           </div>
 
           <!-- DETAILS -->
-          <div class="otp-section-header">DETAILS</div>
+          <div class="otp-section-header">
+            DETAILS
+          </div>
 
           <div v-for="detail in details" :key="detail.label" class="otp-row otp-row-detail">
             <span class="otp-prompt">>_</span>
             <span class="otp-label">{{ detail.label }}</span>
             <span class="otp-value otp-value-sm">{{ detail.value }}</span>
           </div>
-
         </div>
       </div>
 
@@ -141,7 +150,9 @@ const details = computed(() => [
         <div v-if="qrcode" class="qr-frame">
           <n-image :src="qrcode" class="qr-image" preview-disabled />
         </div>
-        <div class="qr-caption">>_ scan to authenticate</div>
+        <div class="qr-caption">
+          >_ scan to authenticate
+        </div>
         <c-button :href="keyUri" target="_blank" class="qr-open-btn">
           Open Key URI in new tab
         </c-button>

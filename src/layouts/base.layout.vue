@@ -1,23 +1,18 @@
 <script lang="ts" setup>
-import { NIcon, useThemeVars } from 'naive-ui';
-
-import { RouterLink } from 'vue-router';
-import { Home2, Menu2 } from '@vicons/tabler';
-
-import { storeToRefs } from 'pinia';
-
-import MenuLayout from '../components/MenuLayout.vue';
-import { useStyleStore } from '@/stores/style.store';
-import { config } from '@/config';
 import type { ToolCategory } from '@/tools/tools.types';
-import { useToolStore } from '@/tools/tools.store';
+import { Home2, Menu2 } from '@vicons/tabler';
+import { NIcon, useThemeVars } from 'naive-ui';
+import { storeToRefs } from 'pinia';
+import { RouterLink } from 'vue-router';
 import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 import NavbarButtons from '@/components/NavbarButtons.vue';
+import { config } from '@/config';
+import { useStyleStore } from '@/stores/style.store';
+import { useToolStore } from '@/tools/tools.store';
+import MenuLayout from '../components/MenuLayout.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
-const version = config.app.version;
-const commitSha = config.app.lastCommitSha.slice(0, 7);
 
 const { t } = useI18n();
 

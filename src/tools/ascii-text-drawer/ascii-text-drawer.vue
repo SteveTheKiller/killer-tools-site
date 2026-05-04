@@ -9,7 +9,7 @@ const width = useStorage('ascii-text-drawer:width', 80);
 const output = ref('');
 const errored = ref(false);
 const processing = ref(false);
-const { copy, copied } = useCopy({ source: output });
+const { copy, isJustCopied: copied } = useCopy({ source: output });
 
 figlet.defaults({ fontPath: '/figlet-fonts' });
 
@@ -19,14 +19,21 @@ watchEffect(async () => {
     const options = { font: font.value as string, width: width.value, whitespaceBreak: true };
     output.value = await new Promise<string>((resolve, reject) =>
       figlet.text(debouncedInput.value, options, (err, text) => {
-        if (err) { reject(err); return; }
+        if (err) {
+          reject(err);
+          return;
+        }
         resolve(text ?? '');
       }));
     errored.value = false;
   }
   catch {
-    if (font.value !== 'Standard') font.value = 'Standard';
-    else errored.value = true;
+    if (font.value !== 'Standard') {
+      font.value = 'Standard';
+    }
+    else {
+      errored.value = true;
+    }
   }
   processing.value = false;
 });
@@ -58,7 +65,9 @@ function selectFont(f: string) {
 
 function onFontBlur(e: FocusEvent) {
   const rel = e.relatedTarget as HTMLElement | null;
-  if (!rel?.closest?.('.aa-font-dropdown')) fontOpen.value = false;
+  if (!rel?.closest?.('.aa-font-dropdown')) {
+    fontOpen.value = false;
+  }
 }
 </script>
 
@@ -68,8 +77,8 @@ function onFontBlur(e: FocusEvent) {
     <div class="aa-field">
       <span class="aa-label">YOUR TEXT</span>
       <textarea
-        class="aa-textarea"
         v-model="input"
+        class="aa-textarea"
         placeholder="Your text to draw"
         rows="4"
         spellcheck="false"
@@ -91,20 +100,24 @@ function onFontBlur(e: FocusEvent) {
               <icon-mdi-magnify class="aa-search-icon" />
               <input
                 ref="fontSearchInput"
-                class="aa-search-input"
                 v-model="fontSearch"
+                class="aa-search-input"
                 placeholder="Search fonts..."
                 type="text"
                 spellcheck="false"
-              />
+              >
             </div>
             <div class="aa-dropdown-list">
               <button
                 v-for="f in filteredFonts" :key="f" type="button"
                 class="aa-dropdown-item" :class="{ 'aa-dropdown-item-active': f === font }"
                 @click="selectFont(f)"
-              >{{ f }}</button>
-              <div v-if="filteredFonts.length === 0" class="aa-no-results">No fonts match</div>
+              >
+                {{ f }}
+              </button>
+              <div v-if="filteredFonts.length === 0" class="aa-no-results">
+                No fonts match
+              </div>
             </div>
           </div>
         </div>
@@ -114,9 +127,13 @@ function onFontBlur(e: FocusEvent) {
       <div class="aa-field">
         <span class="aa-label">WIDTH</span>
         <div class="aa-stepper">
-          <button class="aa-step-btn" :disabled="width <= 0" @click="width = Math.max(0, width - 5)">−</button>
-          <input class="aa-step-input" type="number" v-model.number="width" min="0" max="10000" />
-          <button class="aa-step-btn" @click="width = Math.min(10000, width + 5)">+</button>
+          <button class="aa-step-btn" :disabled="width <= 0" @click="width = Math.max(0, width - 5)">
+            −
+          </button>
+          <input v-model.number="width" class="aa-step-input" type="number" min="0" max="10000">
+          <button class="aa-step-btn" @click="width = Math.min(10000, width + 5)">
+            +
+          </button>
         </div>
       </div>
     </div>
@@ -353,6 +370,7 @@ function onFontBlur(e: FocusEvent) {
   font-size: 0.85rem;
   color: #1ea54c;
   outline: none;
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 

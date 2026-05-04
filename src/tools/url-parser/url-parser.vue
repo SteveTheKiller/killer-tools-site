@@ -35,17 +35,23 @@ const sections = computed(() => {
 });
 
 const searchParams = computed(() => {
-  if (!urlParsed.value) return [];
+  if (!urlParsed.value) {
+    return [];
+  }
   return Array.from(urlParsed.value.searchParams.entries());
 });
 
 const copiedKey = ref<string | null>(null);
 async function copyValue(key: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedKey.value = key;
   setTimeout(() => {
-    if (copiedKey.value === key) copiedKey.value = null;
+    if (copiedKey.value === key) {
+      copiedKey.value = null;
+    }
   }, 2000);
 }
 </script>
@@ -71,7 +77,9 @@ async function copyValue(key: string, value: string) {
       <!-- Output sections -->
       <template v-if="urlParsed">
         <template v-for="section in sections" :key="section.name">
-          <div class="url-section-header">{{ section.name.toUpperCase() }}</div>
+          <div class="url-section-header">
+            {{ section.name.toUpperCase() }}
+          </div>
           <div
             v-for="row in section.rows"
             :key="row.label"
@@ -91,7 +99,9 @@ async function copyValue(key: string, value: string) {
         </template>
 
         <template v-if="searchParams.length">
-          <div class="url-section-header">PARAMS</div>
+          <div class="url-section-header">
+            PARAMS
+          </div>
           <div
             v-for="[k, v] in searchParams"
             :key="k"

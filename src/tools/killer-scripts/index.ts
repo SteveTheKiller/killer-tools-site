@@ -1,4 +1,4 @@
-import { BrandWindows } from '@vicons/tabler';
+import { Terminal2 } from '@vicons/tabler';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
@@ -9,5 +9,5 @@ export const tool = defineTool({
   component: () => import('./killer-scripts.vue'),
   fullscreen: true,
   headerLink: { label: 'GitHub ↗', href: 'https://github.com/SteveTheKiller/killer-scripts' },
-  icon: BrandWindows,
+  icon: Terminal2,
 });

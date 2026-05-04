@@ -44,7 +44,7 @@ interface AuthResult {
 }
 
 interface ParsedHeaders {
-  fields: { label: string; value: string }[]
+  fields: { label: string, value: string }[]
   hops: Hop[]
   auth: AuthResult[]
   spamScore: string | null
@@ -157,7 +157,7 @@ function parseReceivedHops(receivedHeaders: string[]): Hop[] {
   const dates: (Date | null)[] = [];
 
   for (const raw of receivedHeaders) {
-    const dateMatch = raw.match(/;\s*(.+)$/);
+    const dateMatch = raw.match(/;(.+)$/);
     const dateStr = dateMatch ? dateMatch[1].trim() : '';
     const date = dateStr ? new Date(dateStr) : null;
     dates.push(date);
@@ -227,7 +227,7 @@ function parseHeaders() {
   const sclRaw = getHeader(lines, 'X-MS-Exchange-Organization-SCL') || null;
   const sendingService = detectSendingService(lines);
 
-  const fields: { label: string; value: string }[] = [
+  const fields: { label: string, value: string }[] = [
     { label: 'From', value: fromRaw },
     { label: 'Sender', value: senderRaw },
     { label: 'To', value: getHeader(lines, 'To') },

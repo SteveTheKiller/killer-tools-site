@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { Colord } from 'colord';
 import { colord, extend } from 'colord';
-import _ from 'lodash';
 import cmykPlugin from 'colord/plugins/cmyk';
 import hwbPlugin from 'colord/plugins/hwb';
-import namesPlugin from 'colord/plugins/names';
 import lchPlugin from 'colord/plugins/lch';
+import namesPlugin from 'colord/plugins/names';
+import _ from 'lodash';
 import { buildColorFormat } from './color-converter.models';
 
 extend([cmykPlugin, hwbPlugin, namesPlugin, lchPlugin]);
@@ -26,14 +26,17 @@ const formats = {
 };
 
 const outputKeys = ['hex', 'rgb', 'hsl', 'hwb', 'lch', 'cmyk', 'name'] as const;
-type OutputKey = typeof outputKeys[number];
 
 updateColorValue(colord('#1ea54c'));
 
 function updateColorValue(value: Colord | undefined, omitLabel?: string) {
-  if (value === undefined || !value.isValid()) return;
+  if (value === undefined || !value.isValid()) {
+    return;
+  }
   _.forEach(formats, ({ value: valueRef, format }, key) => {
-    if (key !== omitLabel) valueRef.value = format(value);
+    if (key !== omitLabel) {
+      valueRef.value = format(value);
+    }
   });
 }
 
@@ -41,17 +44,22 @@ const currentHex = computed(() => formats.hex.value.value || '#1ea54c');
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(key: string, value: string) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   await navigator.clipboard.writeText(value);
   copiedLabel.value = key;
-  setTimeout(() => { if (copiedLabel.value === key) copiedLabel.value = null; }, 2000);
+  setTimeout(() => {
+    if (copiedLabel.value === key) {
+      copiedLabel.value = null;
+    }
+  }, 2000);
 }
 </script>
 
 <template>
   <div class="color-tool">
     <div class="color-terminal">
-
       <!-- Color picker area -->
       <div class="color-input-area">
         <label class="color-field-label">Color</label>
@@ -67,7 +75,9 @@ async function copyValue(key: string, value: string) {
       </div>
 
       <!-- Format rows -->
-      <div class="color-section-header">FORMATS</div>
+      <div class="color-section-header">
+        FORMATS
+      </div>
 
       <div
         v-for="key in outputKeys"
@@ -96,7 +106,6 @@ async function copyValue(key: string, value: string) {
           <icon-mdi-content-copy v-else />
         </button>
       </div>
-
     </div>
   </div>
 </template>

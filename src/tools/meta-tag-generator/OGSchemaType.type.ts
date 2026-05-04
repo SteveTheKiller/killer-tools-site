@@ -1,6 +1,6 @@
 import type { SelectGroupOption, SelectOption } from 'naive-ui/es/select/src/interface';
 
-export type { OGSchemaType, OGSchemaTypeElementInput, OGSchemaTypeElementSelect, OGSchemaTypeElementInputMultiple };
+export type { OGSchemaType, OGSchemaTypeElementInput, OGSchemaTypeElementInputMultiple, OGSchemaTypeElementSelect };
 
 interface OGSchemaTypeElementBase {
   key: string

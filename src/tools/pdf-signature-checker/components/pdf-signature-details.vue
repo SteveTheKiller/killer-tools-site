@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { SignatureInfo } from '../pdf-signature-checker.types';
 
+type Cert = SignatureInfo['meta']['certs'][number];
+interface ValidityPeriod { notBefore: string, notAfter: string }
+type IssuedParty = Cert['issuedBy'];
+
 const props = defineProps<{ signature: SignatureInfo }>();
 const { signature } = toRefs(props);
 
@@ -25,71 +29,71 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
 <template>
   <div flex flex-col gap-2>
     <c-table :data="certs" :headers="tableHeaders">
-      <template #validityPeriod="{ value }">
+      <template #validityPeriod="{ value: vp }">
         <c-key-value-list
           :items="[{
             label: 'Not before',
-            value: value.notBefore,
+            value: (vp as ValidityPeriod).notBefore,
           }, {
             label: 'Not after',
-            value: value.notAfter,
+            value: (vp as ValidityPeriod).notAfter,
           }]"
         />
       </template>
 
-      <template #issuedBy="{ value }">
+      <template #issuedBy="{ value: party }">
         <c-key-value-list
           :items="[{
             label: 'Common name',
-            value: value.commonName,
+            value: (party as IssuedParty).commonName,
           }, {
             label: 'Organization name',
-            value: value.organizationName,
+            value: (party as IssuedParty).organizationName,
           }, {
             label: 'Country name',
-            value: value.countryName,
+            value: (party as IssuedParty).countryName ?? '',
           }, {
             label: 'Locality name',
-            value: value.localityName,
+            value: (party as IssuedParty).localityName ?? '',
           }, {
             label: 'Organizational unit name',
-            value: value.organizationalUnitName,
+            value: (party as IssuedParty).organizationalUnitName ?? '',
           }, {
             label: 'State or province name',
-            value: value.stateOrProvinceName,
+            value: (party as IssuedParty).stateOrProvinceName ?? '',
           }]"
         />
       </template>
 
-      <template #issuedTo="{ value }">
+      <template #issuedTo="{ value: party }">
         <c-key-value-list
           :items="[{
             label: 'Common name',
-            value: value.commonName,
+            value: (party as IssuedParty).commonName,
           }, {
             label: 'Organization name',
-            value: value.organizationName,
+            value: (party as IssuedParty).organizationName,
           }, {
             label: 'Country name',
-            value: value.countryName,
+            value: (party as IssuedParty).countryName ?? '',
           }, {
             label: 'Locality name',
-            value: value.localityName,
+            value: (party as IssuedParty).localityName ?? '',
           }, {
             label: 'Organizational unit name',
-            value: value.organizationalUnitName,
+            value: (party as IssuedParty).organizationalUnitName ?? '',
           }, {
             label: 'State or province name',
-            value: value.stateOrProvinceName,
+            value: (party as IssuedParty).stateOrProvinceName ?? '',
           }]"
         />
       </template>
 
-      <template #pemCertificate="{ value }">
-        <c-modal-value :value="value" label="View PEM cert">
+      <template #pemCertificate="{ value: pem }">
+        <c-modal-value :value="(pem as string)" label="View PEM cert">
           <template #value>
             <div break-all text-xs>
-              {{ value }}
+              {{ pem }}
             </div>
           </template>
         </c-modal-value>

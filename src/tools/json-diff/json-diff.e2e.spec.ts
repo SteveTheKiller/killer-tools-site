@@ -13,7 +13,7 @@ test.describe('Tool - JSON diff', () => {
     await page.getByTestId('leftJson').fill('{"foo":"bar"}');
     await page.getByTestId('rightJson').fill('{   "foo":  "bar" }  ');
 
-    const result = await page.getByTestId('diff-result').innerText();
+    const result = await page.getByTestId('diff-result').textContent();
 
     expect(result).toContain('The provided JSONs are the same');
   });
@@ -22,7 +22,7 @@ test.describe('Tool - JSON diff', () => {
     await page.getByTestId('leftJson').fill('{"foo":"bar"}');
     await page.getByTestId('rightJson').fill('{"foo":"buz","baz":"qux"}');
 
-    const result = await page.getByTestId('diff-result').innerText();
+    const result = await page.getByTestId('diff-result').textContent();
 
     expect(result).toContain('{\nfoo: "bar""buz",\nbaz: "qux",\n},');
   });
@@ -32,7 +32,7 @@ test.describe('Tool - JSON diff', () => {
     await page.getByTestId('rightJson').fill('{"foo":"bar","baz":"qux"}');
     await page.getByRole('switch').click();
 
-    const result = await page.getByTestId('diff-result').innerText();
+    const result = await page.getByTestId('diff-result').textContent();
 
     expect(result).toContain('{\nbaz: "qux",\n},');
   });

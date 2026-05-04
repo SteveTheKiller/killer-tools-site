@@ -12,9 +12,9 @@ test.describe('Tool - XML formatter', () => {
   test('XML is converted into a human readable format', async ({ page }) => {
     await page.getByTestId('input').fill('<foo><bar>baz</bar><bar>baz</bar></foo>');
 
-    const formattedXml = await page.getByTestId('area-content').innerText();
+    const formattedXml = await page.getByTestId('area-content').textContent();
 
-    expect(formattedXml.trim()).toEqual(`
+    expect((formattedXml ?? '').trim()).toEqual(`
 <foo>
   <bar>baz</bar>
   <bar>baz</bar>

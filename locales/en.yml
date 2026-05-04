@@ -158,6 +158,10 @@ tools:
     title: URL parser
     description: Parse a URL into its separate constituent parts (protocol, origin, params, port, username-password, ...)
 
+  phone-parser-and-formatter:
+    title: Phone number parser
+    description: Parse and format phone numbers. Detect country, validate, and display international, national, E.164, and RFC3966 formats.
+
   user-agent-parser:
     title: User-agent parser
     description: Detect and parse Browser, Engine, OS, CPU, and Device type/model from an user-agent string.

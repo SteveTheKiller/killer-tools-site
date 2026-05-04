@@ -2,7 +2,7 @@
 import _ from 'lodash';
 import { useMediaRecorder } from './useMediaRecorder';
 
-interface Media { type: 'image' | 'video'; value: string; createdAt: Date }
+interface Media { type: 'image' | 'video', value: string, createdAt: Date }
 
 const {
   videoInputs: cameras,
@@ -37,10 +37,10 @@ onRecordAvailable((value) => {
 });
 
 function refreshCurrentDevices() {
-  if (_.isNil(currentCamera) || !cameras.value.find(i => i.deviceId === currentCamera.value)) {
+  if (_.isNil(currentCamera) || !cameras.value.some(i => i.deviceId === currentCamera.value)) {
     currentCamera.value = cameras.value[0]?.deviceId;
   }
-  if (_.isNil(microphones) || !microphones.value.find(i => i.deviceId === currentMicrophone.value)) {
+  if (_.isNil(microphones) || !microphones.value.some(i => i.deviceId === currentMicrophone.value)) {
     currentMicrophone.value = microphones.value[0]?.deviceId;
   }
 }
@@ -115,11 +115,11 @@ const micOpen = ref(false);
 const cameraLabel = computed(() => cameras.value.find(c => c.deviceId === currentCamera.value)?.label ?? 'Select camera');
 const micLabel = computed(() => microphones.value.find(m => m.deviceId === currentMicrophone.value)?.label ?? 'Select microphone');
 
-function closeOnBlur(openRef: Ref<boolean>) {
+function closeOnBlur(set: (val: boolean) => void) {
   return (e: FocusEvent) => {
     const rel = e.relatedTarget as HTMLElement | null;
     if (!rel?.closest?.('.cr-dropdown')) {
-      openRef.value = false;
+      set(false);
     }
   };
 }
@@ -152,13 +152,12 @@ function formatDate(d: Date) {
 
     <!-- Main UI -->
     <div v-else class="cr-panel">
-
       <!-- Device selects -->
       <div class="cr-device-row">
         <!-- Camera dropdown -->
         <div class="cr-device-field">
           <span class="cr-sublabel">VIDEO</span>
-          <div class="cr-dropdown" tabindex="0" @blur="closeOnBlur(cameraOpen)($event)">
+          <div class="cr-dropdown" tabindex="0" @blur="closeOnBlur(v => cameraOpen = v)($event)">
             <button type="button" class="cr-dropdown-trigger" @click="cameraOpen = !cameraOpen">
               <icon-mdi-camera class="cr-device-icon" />
               <span class="cr-dropdown-text">{{ cameraLabel }}</span>
@@ -179,7 +178,7 @@ function formatDate(d: Date) {
         <!-- Mic dropdown -->
         <div v-if="microphones.length > 0" class="cr-device-field">
           <span class="cr-sublabel">AUDIO</span>
-          <div class="cr-dropdown" tabindex="0" @blur="closeOnBlur(micOpen)($event)">
+          <div class="cr-dropdown" tabindex="0" @blur="closeOnBlur(v => micOpen = v)($event)">
             <button type="button" class="cr-dropdown-trigger" @click="micOpen = !micOpen">
               <icon-mdi-microphone class="cr-device-icon" />
               <span class="cr-dropdown-text">{{ micLabel }}</span>

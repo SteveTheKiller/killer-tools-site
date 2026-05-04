@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import type { OGSchemaType, OGSchemaTypeElementSelect } from './OGSchemaType.type';
 import { generateMeta } from '@it-tools/oggen';
 import _ from 'lodash';
-import { image, ogSchemas, twitter, website } from './og-schemas';
-import type { OGSchemaType, OGSchemaTypeElementSelect } from './OGSchemaType.type';
 import { useCopy } from '@/composable/copy';
+import { image, ogSchemas, twitter, website } from './og-schemas';
 
-const metadata = ref<{ type: string; [k: string]: any }>({
+const metadata = ref<{ type: string, [k: string]: any }>({
   'type': 'website',
   'twitter:card': 'summary_large_image',
 });
@@ -14,7 +14,9 @@ watch(
   () => ref(metadata.value.type),
   (_ignored, prevSection) => {
     const section = ogSchemas[prevSection.value];
-    if (!section) return;
+    if (!section) {
+      return;
+    }
     section.elements.forEach(({ key }) => {
       metadata.value[key] = '';
     });
@@ -24,7 +26,9 @@ watch(
 const sections = computed(() => {
   const secs: OGSchemaType[] = [website, image, twitter];
   const additionalSchema = ogSchemas[metadata.value.type];
-  if (additionalSchema) secs.push(additionalSchema);
+  if (additionalSchema) {
+    secs.push(additionalSchema);
+  }
   return secs;
 });
 
@@ -37,7 +41,7 @@ const metaTags = computed(() => {
   return generateMeta({ ...otherMeta, twitter: twitterMeta }, { generateTwitterCompatibleMeta: true });
 });
 
-const { copy, copied } = useCopy({ source: metaTags, text: 'Meta tags copied!' });
+const { copy, isJustCopied: copied } = useCopy({ source: metaTags, text: 'Meta tags copied!' });
 
 // ── HTML syntax highlighter ──
 function escapeHtml(s: string) {
@@ -85,7 +89,9 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   for (const opt of opts) {
     if (opt.children) {
       const child = opt.children.find((c: any) => c.value === metadata.value[element.key]);
-      if (child) return child.label;
+      if (child) {
+        return child.label;
+      }
     }
     else if (opt.value === metadata.value[element.key]) {
       return opt.label;

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { generateLoremIpsum } from './lorem-ipsum-generator.service';
+import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
 import { randIntFromInterval } from '@/utils/random';
-import { computedRefreshable } from '@/composable/computedRefreshable';
+import { generateLoremIpsum } from './lorem-ipsum-generator.service';
 
 const paragraphs = ref(1);
 const sentencesMin = ref(3);
@@ -13,10 +13,26 @@ const startWithLoremIpsum = ref(true);
 const asHTML = ref(false);
 
 // Keep mins from exceeding maxes
-watch(sentencesMin, v => { if (v > sentencesMax.value) sentencesMax.value = v; });
-watch(sentencesMax, v => { if (v < sentencesMin.value) sentencesMin.value = v; });
-watch(wordsMin, v => { if (v > wordsMax.value) wordsMax.value = v; });
-watch(wordsMax, v => { if (v < wordsMin.value) wordsMin.value = v; });
+watch(sentencesMin, (v) => {
+  if (v > sentencesMax.value) {
+    sentencesMax.value = v;
+  }
+});
+watch(sentencesMax, (v) => {
+  if (v < sentencesMin.value) {
+    sentencesMin.value = v;
+  }
+});
+watch(wordsMin, (v) => {
+  if (v > wordsMax.value) {
+    wordsMax.value = v;
+  }
+});
+watch(wordsMax, (v) => {
+  if (v < wordsMin.value) {
+    wordsMin.value = v;
+  }
+});
 
 const [loremIpsumText, refreshLoremIpsum] = computedRefreshable(() =>
   generateLoremIpsum({
@@ -153,7 +169,6 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   align-items: center;
   gap: 14px;
 }
-
 
 .li-label {
   font-size: 0.76rem;
@@ -295,7 +310,6 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   gap: 8px;
   flex-wrap: wrap;
 }
-
 
 /* ── Output ── */
 .li-output-wrap {

@@ -169,6 +169,12 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   ::v-deep(& > *) {
     flex: 0 1 600px;
   }
+
+  @media (max-width: 640px) {
+    ::v-deep(& > *) {
+      flex: 1 1 100%;
+    }
+  }
 }
 
 .tool-content-fullscreen {
@@ -182,6 +188,12 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 
   ::v-deep(& > *) {
     flex: 0 1 600px;
+  }
+
+  @media (max-width: 640px) {
+    ::v-deep(& > *) {
+      flex: 1 1 100%;
+    }
   }
 }
 
