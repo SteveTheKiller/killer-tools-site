@@ -100,7 +100,7 @@ function downloadScript(script: { name: string, download_url: string }) {
       </div>
       <div
         class="grid gap-12px"
-        style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));"
+        style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"
       >
         <c-card
           v-for="script in scripts"
