@@ -38,9 +38,9 @@ async function copyValue(label: string, value: string) {
 <template>
   <div class="ula-tool">
     <c-card>
-      <n-alert type="info" mb-4>
+      <div class="kt-alert kt-alert-info" style="margin-bottom: 16px;">
         Uses current timestamp + MAC address, SHA1 hashed. Lower 40 bits form the global ID per RFC 4193.
-      </n-alert>
+      </div>
 
       <div class="ula-section-label">
         MAC Address
@@ -50,12 +50,13 @@ async function copyValue(label: string, value: string) {
         placeholder="20:37:06:12:34:56"
         clearable
         raw-text
+        autofocus
         :validation="addressValidation"
         font-mono
       />
 
       <template v-if="addressValidation.isValid">
-        <n-divider />
+        <div class="kt-divider" />
         <div class="ula-section-label">
           Output
         </div>

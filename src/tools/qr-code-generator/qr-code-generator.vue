@@ -124,6 +124,7 @@ const caption = computed(() => {
               multiline
               rows="2"
               autosize
+              autofocus
               placeholder="Your link or text..."
             />
           </template>
@@ -257,14 +258,12 @@ const caption = computed(() => {
           <div class="qrg-section-label">
             Colors
           </div>
-          <n-form label-width="110" label-placement="left">
-            <n-form-item label="Foreground:">
-              <n-color-picker v-model:value="foreground" :modes="['hex']" />
-            </n-form-item>
-            <n-form-item label="Background:">
-              <n-color-picker v-model:value="background" :modes="['hex']" />
-            </n-form-item>
-          </n-form>
+          <div class="qrg-color-grid">
+            <span class="qrg-color-label">Foreground:</span>
+            <n-color-picker v-model:value="foreground" :modes="['hex']" />
+            <span class="qrg-color-label">Background:</span>
+            <n-color-picker v-model:value="background" :modes="['hex']" />
+          </div>
 
           <div class="qrg-section-label">
             Error correction
@@ -365,6 +364,20 @@ const caption = computed(() => {
 
 .qrg-section-label:first-child {
   margin-top: 0;
+}
+
+.qrg-color-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.qrg-color-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .qrg-pill-row {

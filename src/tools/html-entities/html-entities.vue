@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { escape, unescape } from 'lodash';
 
-const escapeInput = ref('<title>IT Tool</title>');
+const escapeInput = ref('<a href="https://killertools.net">Killer Tools & Utilities</a>');
 const escapeOutput = computed(() => escape(escapeInput.value));
 
-const unescapeInput = ref('&lt;title&gt;IT Tool&lt;/title&gt;');
+const unescapeInput = ref('&lt;a href=&quot;https://killertools.net&quot;&gt;Killer Tools &amp; Utilities&lt;/a&gt;');
 const unescapeOutput = computed(() => unescape(unescapeInput.value));
 
 const copiedEscape = ref(false);

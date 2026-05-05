@@ -52,9 +52,7 @@ const codesByCategoryFiltered = computed(() => {
                 class="text-primary font-bold font-mono"
                 style="font-size: 1.4rem; letter-spacing: 0.05em; line-height: 1;"
               >{{ code }}</span>
-              <n-tag v-if="type !== 'HTTP'" size="small" :type="typeColor[type]">
-                {{ type }}
-              </n-tag>
+              <span v-if="type !== 'HTTP'" class="kt-tag" :class="`kt-tag-${typeColor[type]}`">{{ type }}</span>
             </div>
             <div class="mb-1 text-sm font-semibold">
               {{ name }}

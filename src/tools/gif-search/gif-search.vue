@@ -66,6 +66,7 @@ async function copyGif(gif: GifResult) {
         placeholder="Search GIFs (e.g. facepalm, nice work, this is fine)"
         style="flex: 1 1 260px; min-width: 0;"
         raw-text
+        autofocus
         @keyup.enter="search"
       >
         <template #prefix>
@@ -78,9 +79,10 @@ async function copyGif(gif: GifResult) {
       </c-button>
     </div>
 
-    <n-alert v-if="error" type="error" closable mb-4 @close="error = ''">
+    <div v-if="error" class="kt-alert kt-alert-error" style="margin-bottom: 16px;">
+      <button class="kt-alert-close" @click="error = ''">✕</button>
       {{ error }}
-    </n-alert>
+    </div>
 
     <div v-if="searched && results.length === 0 && !loading" py-10 text-center op-50>
       No GIFs found for "{{ query }}".

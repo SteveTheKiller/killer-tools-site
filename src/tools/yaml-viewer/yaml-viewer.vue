@@ -27,12 +27,9 @@ const rawYamlValidation = useValidation({
 
 <template>
   <div class="yv-controls">
-    <div class="yv-control">
-      <span class="yv-control-label">Sort keys</span>
-      <button type="button" class="yv-switch" :class="{ 'yv-switch-on': sortKeys }" @click="sortKeys = !sortKeys">
-        <span class="yv-switch-thumb" />
-      </button>
-    </div>
+    <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
+      Sort keys
+    </button>
     <div class="yv-control">
       <span class="yv-control-label">Indent size</span>
       <div class="yv-stepper">
@@ -47,27 +44,31 @@ const rawYamlValidation = useValidation({
     </div>
   </div>
 
-  <n-form-item
-    label="Your raw YAML"
-    :feedback="rawYamlValidation.message"
-    :validation-status="rawYamlValidation.status"
-  >
+  <div style="flex: 1 1 300px; min-width: 0;">
+    <div class="kt-section-label">
+      Your raw YAML
+    </div>
     <c-input-text
       ref="inputElement"
       v-model:value="rawYaml"
+      :validation="rawYamlValidation"
       placeholder="Paste your raw YAML here..."
       rows="20"
       multiline
+      autofocus
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
       monospace
     />
-  </n-form-item>
-  <n-form-item label="Prettified version of your YAML">
+  </div>
+  <div style="flex: 1 1 300px; min-width: 0;">
+    <div class="kt-section-label">
+      Prettified version of your YAML
+    </div>
     <TextareaCopyable :value="cleanYaml" language="yaml" :follow-height-of="inputElement" />
-  </n-form-item>
+  </div>
 </template>
 
 <style scoped>
@@ -76,28 +77,10 @@ const rawYamlValidation = useValidation({
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 4px;
 }
-.yv-control { display: flex; align-items: center; gap: 10px; }
-.yv-control-label {
-  font-size: 0.72rem;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: rgba(255, 255, 255, 0.4);
-  white-space: nowrap;
-}
-.yv-switch {
-  position: relative; width: 40px; height: 22px; border-radius: 11px;
-  border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(0,0,0,0.4);
-  cursor: pointer; transition: background 0.2s, border-color 0.2s; padding: 0; flex-shrink: 0;
-}
-.yv-switch-on { background: rgba(30,165,76,0.25); border-color: #1ea54c; }
-.yv-switch-thumb {
-  position: absolute; top: 2px; left: 2px; width: 16px; height: 16px;
-  border-radius: 50%; background: rgba(255,255,255,0.3); transition: transform 0.2s, background 0.2s;
-}
-.yv-switch-on .yv-switch-thumb { transform: translateX(18px); background: #1ea54c; }
 .yv-stepper {
   display: inline-flex; align-items: center;
   background: rgba(0,0,0,0.4); border: 1px solid rgba(30,165,76,0.2); border-radius: 5px; overflow: hidden;

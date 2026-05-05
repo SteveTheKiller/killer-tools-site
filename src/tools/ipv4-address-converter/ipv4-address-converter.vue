@@ -50,9 +50,10 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
         v-model:value="rawIpAddress"
         placeholder="192.168.1.1"
         font-mono
+        autofocus
       />
 
-      <n-divider />
+      <div class="kt-divider" />
 
       <div class="ip-section-label">
         Output

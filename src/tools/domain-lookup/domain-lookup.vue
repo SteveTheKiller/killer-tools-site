@@ -471,6 +471,7 @@ async function runLookup() {
         placeholder="Enter a domain (e.g. killertools.net)"
         style="flex: 1;"
         raw-text
+        autofocus
         @keyup.enter="runLookup"
       />
       <c-button :disabled="loading || !domain.trim()" @click="runLookup">
@@ -479,19 +480,20 @@ async function runLookup() {
     </div>
 
     <!-- Alerts -->
-    <n-alert v-if="whoisError" type="error" mb-4>
+    <div v-if="whoisError" class="kt-alert kt-alert-error" style="margin-bottom: 16px;">
       {{ whoisError }}
-    </n-alert>
-    <n-alert
-      v-if="emailChecked && overallEmailStatus === 'fail'"
-      type="error"
-      mb-4
-    >
+    </div>
+    <div v-if="emailChecked && overallEmailStatus === 'fail'" class="kt-alert kt-alert-error" style="margin-bottom: 16px;">
       {{ overallEmailMessage.fail }}
-    </n-alert>
-    <n-alert v-if="whoisResult && expiryAlertType" :type="expiryAlertType" mb-4>
+    </div>
+    <div
+      v-if="whoisResult && expiryAlertType"
+      class="kt-alert"
+      :class="`kt-alert-${expiryAlertType}`"
+      style="margin-bottom: 16px;"
+    >
       {{ expiryAlertMessage }}
-    </n-alert>
+    </div>
 
     <!-- Loading skeleton -->
     <template v-if="whoisLoading">
@@ -530,9 +532,7 @@ async function runLookup() {
             <span class="text-lg font-bold">
               {{ whoisResult.ldhName ?? domain }}
             </span>
-            <n-tag v-if="expiryDays !== null" :type="expiryTagType" size="small">
-              {{ expiryLabel }}
-            </n-tag>
+            <span v-if="expiryDays !== null" class="kt-tag" :class="`kt-tag-${expiryTagType}`">{{ expiryLabel }}</span>
           </div>
           <div class="grid grid-cols-1 gap-2px">
             <div
@@ -563,9 +563,7 @@ async function runLookup() {
             <span class="text-lg font-bold">
               DNSSEC
             </span>
-            <n-tag :type="dnssec.signed ? 'success' : 'warning'" size="small">
-              {{ dnssec.signed ? 'Signed' : 'Unsigned' }}
-            </n-tag>
+            <span class="kt-tag" :class="dnssec.signed ? 'kt-tag-success' : 'kt-tag-warning'">{{ dnssec.signed ? 'Signed' : 'Unsigned' }}</span>
           </div>
           <div class="text-xs op-70">
             <template v-if="dnssec.signed">
@@ -589,9 +587,7 @@ async function runLookup() {
           <div class="grid grid-cols-1 gap-2px">
             <div v-for="(s, i) in whoisResult.status" :key="i" class="rounded p-1.5 px-2" style="background: rgba(255,255,255,0.05)">
               <div mb-1>
-                <n-tag :type="statusType(s)" size="small">
-                  {{ s }}
-                </n-tag>
+                <span class="kt-tag" :class="`kt-tag-${statusType(s)}`">{{ s }}</span>
               </div>
               <div v-if="statusDescriptions[s.toLowerCase()]" class="text-xs op-50">
                 {{ statusDescriptions[s.toLowerCase()] }}
@@ -697,10 +693,7 @@ async function runLookup() {
             <span class="text-lg font-bold">
               MX Records
             </span>
-            <n-tag :type="emailStatusColor[emailResults.mx.status]" size="small">
-              <n-icon :component="emailStatusIcon[emailResults.mx.status]" mr-1 />
-              {{ emailStatusLabel[emailResults.mx.status] }}
-            </n-tag>
+            <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.mx.status]}`">{{ emailStatusLabel[emailResults.mx.status] }}</span>
           </div>
           <div v-if="emailResults.mx.value.length > 0">
             <div
@@ -727,10 +720,7 @@ async function runLookup() {
             <span class="text-lg font-bold">
               SPF Record
             </span>
-            <n-tag :type="emailStatusColor[emailResults.spf.status]" size="small">
-              <n-icon :component="emailStatusIcon[emailResults.spf.status]" mr-1 />
-              {{ emailStatusLabel[emailResults.spf.status] }}
-            </n-tag>
+            <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.spf.status]}`">{{ emailStatusLabel[emailResults.spf.status] }}</span>
           </div>
           <div
             v-if="emailResults.spf.raw && emailResults.spf.raw !== 'DNS lookup failed.' && emailResults.spf.raw !== 'No SPF record found.'"
@@ -757,10 +747,7 @@ async function runLookup() {
             <span class="text-lg font-bold">
               DKIM Records
             </span>
-            <n-tag :type="emailStatusColor[emailResults.dkim.status]" size="small">
-              <n-icon :component="emailStatusIcon[emailResults.dkim.status]" mr-1 />
-              {{ emailStatusLabel[emailResults.dkim.status] }}
-            </n-tag>
+            <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.dkim.status]}`">{{ emailStatusLabel[emailResults.dkim.status] }}</span>
           </div>
           <div v-if="emailResults.dkim.value.length > 0">
             <div
@@ -783,10 +770,7 @@ async function runLookup() {
             <span class="text-lg font-bold">
               DMARC Record
             </span>
-            <n-tag :type="emailStatusColor[emailResults.dmarc.status]" size="small">
-              <n-icon :component="emailStatusIcon[emailResults.dmarc.status]" mr-1 />
-              {{ emailStatusLabel[emailResults.dmarc.status] }}
-            </n-tag>
+            <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.dmarc.status]}`">{{ emailStatusLabel[emailResults.dmarc.status] }}</span>
           </div>
           <div
             v-if="emailResults.dmarc.raw && emailResults.dmarc.raw !== 'DNS lookup failed.' && emailResults.dmarc.raw !== 'No DMARC record found. Domain is unprotected against spoofing.'"

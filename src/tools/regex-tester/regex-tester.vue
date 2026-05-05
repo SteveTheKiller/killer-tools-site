@@ -185,31 +185,32 @@ const cheatsheet = [
           label="Regex to test:"
           placeholder="Put the regex to test"
           multiline
+          autofocus
           rows="3"
           :validation="regexValidation"
         />
-        <n-space>
-          <n-checkbox v-model:checked="global">
-            <span title="Global search">Global search. (<code>g</code>)</span>
-          </n-checkbox>
-          <n-checkbox v-model:checked="ignoreCase">
-            <span title="Case-insensitive search">Case-insensitive search. (<code>i</code>)</span>
-          </n-checkbox>
-          <n-checkbox v-model:checked="multiline">
-            <span title="Allows ^ and $ to match next to newline characters.">Multiline(<code>m</code>)</span>
-          </n-checkbox>
-          <n-checkbox v-model:checked="dotAll">
-            <span title="Allows . to match newline characters.">Singleline(<code>s</code>)</span>
-          </n-checkbox>
-          <n-checkbox v-model:checked="unicode">
-            <span title="Unicode; treat a pattern as a sequence of Unicode code points.">Unicode(<code>u</code>)</span>
-          </n-checkbox>
-          <n-checkbox v-model:checked="unicodeSets">
-            <span title="An upgrade to the u mode with more Unicode features.">Unicode Sets (<code>v</code>)</span>
-          </n-checkbox>
-        </n-space>
+        <div class="kt-pill-row" style="margin-top: 10px;">
+          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': global }" title="Global search" @click="global = !global">
+            Global
+          </button>
+          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': ignoreCase }" title="Case-insensitive search" @click="ignoreCase = !ignoreCase">
+            Ignore case
+          </button>
+          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': multiline }" title="Allows ^ and $ to match next to newline characters." @click="multiline = !multiline">
+            Multiline
+          </button>
+          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': dotAll }" title="Allows . to match newline characters." @click="dotAll = !dotAll">
+            Singleline
+          </button>
+          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicode }" title="Unicode; treat a pattern as a sequence of Unicode code points." @click="unicode = !unicode">
+            Unicode
+          </button>
+          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicodeSets }" title="An upgrade to the u mode with more Unicode features." @click="unicodeSets = !unicodeSets">
+            Unicode Sets
+          </button>
+        </div>
 
-        <n-divider />
+        <div class="kt-divider" />
 
         <c-input-text
           v-model:value="text"
@@ -332,10 +333,10 @@ const cheatsheet = [
   background: transparent;
 }
 .cheatsheet-panel::-webkit-scrollbar-thumb {
-  background: #1ea54c55;
-  border-radius: 4px;
+  background: rgba(30, 165, 76, 0.3);
+  border-radius: 2px;
 }
 .cheatsheet-panel::-webkit-scrollbar-thumb:hover {
-  background: #1ea54c;
+  background: rgba(30, 165, 76, 0.55);
 }
 </style>

@@ -124,23 +124,30 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
     </div>
   </div>
 
-  <n-form-item label="Your SQL query">
+  <div style="flex: 1 1 300px; min-width: 0;">
+    <div class="kt-section-label">
+      Your SQL query
+    </div>
     <c-input-text
       ref="inputElement"
       v-model:value="rawSQL"
       placeholder="Put your SQL query here..."
       rows="20"
       multiline
+      autofocus
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
       monospace
     />
-  </n-form-item>
-  <n-form-item label="Prettify version of your query">
+  </div>
+  <div style="flex: 1 1 300px; min-width: 0;">
+    <div class="kt-section-label">
+      Prettified version of your query
+    </div>
     <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
-  </n-form-item>
+  </div>
 </template>
 
 <style scoped>

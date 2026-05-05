@@ -51,14 +51,10 @@ function copyOutput() {
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <div mb-4 flex items-center gap-3>
       <span class="text-sm op-60">Convert to:</span>
-      <n-radio-group v-model:value="outputFormat" size="small">
-        <n-radio-button value="json">
-          JSON
-        </n-radio-button>
-        <n-radio-button value="toml">
-          TOML
-        </n-radio-button>
-      </n-radio-group>
+      <div class="kt-pill-row">
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'json' }" @click="outputFormat = 'json'">JSON</button>
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'toml' }" @click="outputFormat = 'toml'">TOML</button>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
@@ -66,13 +62,14 @@ function copyOutput() {
         <div class="mb-1 text-xs op-60">
           Your YAML
         </div>
-        <n-input
+        <c-input-text
           v-model:value="input"
-          type="textarea"
-          placeholder="Paste your YAML here..."
+          multiline
           :rows="20"
-          :status="isValid ? undefined : 'error'"
-          style="font-family: monospace; font-size: 0.8rem;"
+          autofocus
+          placeholder="Paste your YAML here..."
+          raw-text
+          font-mono
         />
         <div v-if="!isValid" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
           Provided YAML is not valid.

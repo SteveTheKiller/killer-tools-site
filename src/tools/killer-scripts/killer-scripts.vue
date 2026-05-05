@@ -81,17 +81,12 @@ function downloadScript(script: { name: string, download_url: string }) {
       <n-spin size="large" />
     </div>
 
-    <n-alert v-else-if="error" type="error" mb-4>
-      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
-        <span>Failed to load scripts from GitHub. Check your connection or try again.</span>
-        <button
-          style="cursor: pointer; background: transparent; border: 1px solid currentColor; border-radius: 4px; padding: 4px 12px; font-size: 12px; font-weight: 600; white-space: nowrap;"
-          @click="loadScripts"
-        >
-          Retry
-        </button>
-      </div>
-    </n-alert>
+    <div v-else-if="error" class="kt-alert kt-alert-error" style="margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+      <span>Failed to load scripts from GitHub. Check your connection or try again.</span>
+      <button class="kt-pill" style="color: inherit; border-color: currentColor;" @click="loadScripts">
+        Retry
+      </button>
+    </div>
 
     <template v-else>
       <div class="mb-4 rounded px-4 py-3 text-sm" style="background: rgba(30, 165, 76, 0.08); border: 1px solid rgba(30, 165, 76, 0.25); color: inherit;">

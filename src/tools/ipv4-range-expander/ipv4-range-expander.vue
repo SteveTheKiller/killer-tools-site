@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Ipv4RangeExpanderResult } from './ipv4-range-expander.types';
-import { Exchange } from '@vicons/tabler';
 import { useValidation } from '@/composable/validation';
 import { isValidIpv4 } from '../ipv4-address-converter/ipv4-address-converter.service';
 import { calculateCidr } from './ipv4-range-expander.service';
@@ -87,6 +86,7 @@ async function copyValue(label: string, value: string | undefined) {
           placeholder="192.168.1.1"
           :validation="startIpValidation"
           clearable
+          autofocus
           font-mono
         />
         <c-input-text
@@ -99,7 +99,7 @@ async function copyValue(label: string, value: string | undefined) {
         />
       </div>
 
-      <n-divider />
+      <div class="kt-divider" />
 
       <template v-if="showResult">
         <div class="range-section-label">
@@ -135,19 +135,17 @@ async function copyValue(label: string, value: string | undefined) {
         </div>
       </template>
 
-      <n-alert
-        v-else-if="invalidCombination"
-        title="Invalid combination of start and end IPv4 address"
-        type="error"
-      >
-        <div my-3 op-70>
+      <div v-else-if="invalidCombination" class="kt-alert kt-alert-error">
+        <div class="kt-alert-title">
+          Invalid combination of start and end IPv4 address
+        </div>
+        <div style="opacity: 0.8; margin-bottom: 12px;">
           The end IPv4 address is lower than the start IPv4 address. This is not valid and no result could be calculated.
         </div>
-        <c-button @click="onSwitchStartEndClicked">
-          <n-icon mr-2 :component="Exchange" depth="3" size="22" />
+        <button type="button" class="kt-pill" style="color: inherit; border-color: currentColor;" @click="onSwitchStartEndClicked">
           Switch start and end IPv4 address
-        </c-button>
-      </n-alert>
+        </button>
+      </div>
     </c-card>
   </div>
 </template>

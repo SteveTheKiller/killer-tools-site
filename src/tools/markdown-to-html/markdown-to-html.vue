@@ -54,10 +54,10 @@ async function copyToClipboard(text: string) {
           <div class="text-xs opacity-60">
             Output HTML:
           </div>
-          <n-button quaternary size="tiny" @click="copyToClipboard(outputHtml)">
-            <span class="i-carbon-copy mr-1 inline-block h-4 w-4" />
+          <button type="button" class="kt-pill" @click="copyToClipboard(outputHtml)">
+            <span class="i-carbon-copy mr-1 inline-block h-3 w-3" />
             Copy HTML
-          </n-button>
+          </button>
         </div>
 
         <div class="min-h-[500px] flex-1">
@@ -71,12 +71,12 @@ async function copyToClipboard(text: string) {
       </div>
     </div>
 
-    <n-divider />
+    <div class="kt-divider" />
 
     <div class="mt-4 flex justify-center">
-      <n-button type="primary" @click="printHtml">
+      <button type="button" class="kt-pill kt-pill-active" @click="printHtml">
         Print as PDF
-      </n-button>
+      </button>
     </div>
   </div>
 </template>

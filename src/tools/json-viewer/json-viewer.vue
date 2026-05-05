@@ -26,18 +26,9 @@ const rawJsonValidation = useValidation({
 
 <template>
   <div class="jv-controls">
-    <!-- Sort keys toggle -->
-    <div class="jv-control">
-      <span class="jv-control-label">Sort keys</span>
-      <button
-        type="button"
-        class="jv-switch"
-        :class="{ 'jv-switch-on': sortKeys }"
-        @click="sortKeys = !sortKeys"
-      >
-        <span class="jv-switch-thumb" />
-      </button>
-    </div>
+    <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
+      Sort keys
+    </button>
 
     <!-- Indent size stepper -->
     <div class="jv-control">
@@ -54,27 +45,31 @@ const rawJsonValidation = useValidation({
     </div>
   </div>
 
-  <n-form-item
-    label="Your raw JSON"
-    :feedback="rawJsonValidation.message"
-    :validation-status="rawJsonValidation.status"
-  >
+  <div style="flex: 1 1 300px; min-width: 0;">
+    <div class="kt-section-label">
+      Your raw JSON
+    </div>
     <c-input-text
       ref="inputElement"
       v-model:value="rawJson"
+      :validation="rawJsonValidation"
       placeholder="Paste your raw JSON here..."
       rows="20"
       multiline
+      autofocus
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
       monospace
     />
-  </n-form-item>
-  <n-form-item label="Prettified version of your JSON">
+  </div>
+  <div style="flex: 1 1 300px; min-width: 0;">
+    <div class="kt-section-label">
+      Prettified version of your JSON
+    </div>
     <TextareaCopyable :value="cleanJson" language="json" :follow-height-of="inputElement" />
-  </n-form-item>
+  </div>
 </template>
 
 <style scoped>
@@ -87,54 +82,6 @@ const rawJsonValidation = useValidation({
   gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 4px;
-}
-
-.jv-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.jv-control-label {
-  font-size: 0.72rem;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: rgba(255, 255, 255, 0.4);
-  white-space: nowrap;
-}
-
-/* ── Toggle switch ── */
-.jv-switch {
-  position: relative;
-  width: 40px;
-  height: 22px;
-  border-radius: 11px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.jv-switch-on {
-  background: rgba(30, 165, 76, 0.25);
-  border-color: #1ea54c;
-}
-
-.jv-switch-thumb {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transition: transform 0.2s, background 0.2s;
-}
-
-.jv-switch-on .jv-switch-thumb {
-  transform: translateX(18px);
-  background: #1ea54c;
 }
 
 /* ── Stepper ── */

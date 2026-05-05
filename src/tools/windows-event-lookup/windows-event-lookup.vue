@@ -70,9 +70,7 @@ function copyId(id: number) {
                 style="font-size: 1.4rem; letter-spacing: 0.05em; line-height: 1;"
               >{{ id }}</span>
               <div flex items-center gap-1>
-                <n-tag size="small" :type="severityColor[severity]">
-                  {{ severity }}
-                </n-tag>
+                <span class="kt-tag" :class="`kt-tag-${severityColor[severity]}`">{{ severity }}</span>
                 <c-tooltip :tooltip="copiedId === id ? 'Copied!' : 'Copy ID'">
                   <c-button
                     circle

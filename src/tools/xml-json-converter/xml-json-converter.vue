@@ -63,13 +63,14 @@ watch(jsonValue, (val) => {
         <div class="mb-1 text-xs op-60">
           XML
         </div>
-        <n-input
+        <c-input-text
           v-model:value="xmlValue"
-          type="textarea"
-          placeholder="Paste your XML here..."
+          multiline
           :rows="24"
-          :status="xmlError ? 'error' : undefined"
-          style="font-family: monospace; font-size: 0.8rem;"
+          autofocus
+          placeholder="Paste your XML here..."
+          raw-text
+          font-mono
         />
         <div v-if="xmlError" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
           {{ xmlError }}
@@ -80,13 +81,13 @@ watch(jsonValue, (val) => {
         <div class="mb-1 text-xs op-60">
           JSON
         </div>
-        <n-input
+        <c-input-text
           v-model:value="jsonValue"
-          type="textarea"
-          placeholder="Paste your JSON here..."
+          multiline
           :rows="24"
-          :status="jsonError ? 'error' : undefined"
-          style="font-family: monospace; font-size: 0.8rem;"
+          placeholder="Paste your JSON here..."
+          raw-text
+          font-mono
         />
         <div v-if="jsonError" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
           {{ jsonError }}

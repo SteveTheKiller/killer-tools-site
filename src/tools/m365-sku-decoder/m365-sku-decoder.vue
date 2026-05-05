@@ -76,9 +76,7 @@ function copyValue(value: string) {
         >
           <div>
             <div mb-2 flex items-start justify-between gap-2>
-              <n-tag size="small" :type="tierColor[tier]">
-                {{ tier }}
-              </n-tag>
+              <span class="kt-tag" :class="`kt-tag-${tierColor[tier]}`">{{ tier }}</span>
               <c-tooltip :tooltip="copiedId === stringId ? 'Copied!' : 'Copy String ID'">
                 <c-button
                   circle

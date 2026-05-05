@@ -44,6 +44,9 @@ const fonts = ['1Row', '3-D', '3D Diagonal', '3D-ASCII', '3x5', '4Max', '5 Line 
 const fontOpen = ref(false);
 const fontSearch = ref('');
 const fontSearchInput = ref<HTMLInputElement>();
+const fontTriggerBtn = ref<HTMLButtonElement>();
+const fontDropdownList = ref<HTMLElement>();
+const focusedIndex = ref(-1);
 
 const filteredFonts = computed(() =>
   fontSearch.value === ''
@@ -51,22 +54,76 @@ const filteredFonts = computed(() =>
     : fonts.filter(f => f.toLowerCase().includes(fontSearch.value.toLowerCase())),
 );
 
+watch(fontSearch, () => {
+  focusedIndex.value = -1;
+});
+
 function openFontDropdown() {
   fontOpen.value = true;
   fontSearch.value = '';
-  nextTick(() => fontSearchInput.value?.focus());
+  focusedIndex.value = filteredFonts.value.indexOf(font.value);
+  nextTick(() => {
+    fontSearchInput.value?.focus();
+    scrollFocusedIntoView();
+  });
 }
 
 function selectFont(f: string) {
   font.value = f;
   fontOpen.value = false;
   fontSearch.value = '';
+  nextTick(() => fontTriggerBtn.value?.focus());
 }
 
 function onFontBlur(e: FocusEvent) {
   const rel = e.relatedTarget as HTMLElement | null;
   if (!rel?.closest?.('.aa-font-dropdown')) {
     fontOpen.value = false;
+  }
+}
+
+function scrollFocusedIntoView() {
+  nextTick(() => {
+    const list = fontDropdownList.value;
+    if (!list) return;
+    const active = list.querySelector('.aa-dropdown-item-focused') as HTMLElement | null;
+    active?.scrollIntoView({ block: 'nearest' });
+  });
+}
+
+function onTriggerKeydown(e: KeyboardEvent) {
+  if (fontOpen.value) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const idx = fonts.indexOf(font.value);
+    if (e.key === 'ArrowDown') font.value = fonts[(idx + 1) % fonts.length];
+    else font.value = fonts[(idx - 1 + fonts.length) % fonts.length];
+  }
+}
+
+function onTriggerWheel(e: WheelEvent) {
+  if (fontOpen.value) return;
+  e.preventDefault();
+  const idx = fonts.indexOf(font.value);
+  if (e.deltaY > 0) font.value = fonts[(idx + 1) % fonts.length];
+  else font.value = fonts[(idx - 1 + fonts.length) % fonts.length];
+}
+
+function onSearchKeydown(e: KeyboardEvent) {
+  if (!filteredFonts.value.length) return;
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    focusedIndex.value = (focusedIndex.value + 1) % filteredFonts.value.length;
+    scrollFocusedIntoView();
+  }
+  else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    focusedIndex.value = (focusedIndex.value - 1 + filteredFonts.value.length) % filteredFonts.value.length;
+    scrollFocusedIntoView();
+  }
+  else if (e.key === 'Enter' && focusedIndex.value >= 0) {
+    e.preventDefault();
+    selectFont(filteredFonts.value[focusedIndex.value]);
   }
 }
 </script>
@@ -91,7 +148,7 @@ function onFontBlur(e: FocusEvent) {
       <div class="aa-field aa-field-grow">
         <span class="aa-label">FONT</span>
         <div class="aa-font-dropdown" tabindex="0" @blur="onFontBlur($event)">
-          <button type="button" class="aa-dropdown-trigger" @click="openFontDropdown()">
+          <button ref="fontTriggerBtn" type="button" class="aa-dropdown-trigger" @click="openFontDropdown()" @keydown="onTriggerKeydown" @wheel.prevent="onTriggerWheel">
             <span>{{ font }}</span>
             <icon-mdi-chevron-down class="aa-chevron" :class="{ 'aa-chevron-open': fontOpen }" />
           </button>
@@ -105,12 +162,14 @@ function onFontBlur(e: FocusEvent) {
                 placeholder="Search fonts..."
                 type="text"
                 spellcheck="false"
+                @keydown="onSearchKeydown"
               >
             </div>
-            <div class="aa-dropdown-list">
+            <div ref="fontDropdownList" class="aa-dropdown-list">
               <button
-                v-for="f in filteredFonts" :key="f" type="button"
-                class="aa-dropdown-item" :class="{ 'aa-dropdown-item-active': f === font }"
+                v-for="(f, i) in filteredFonts" :key="f" type="button"
+                class="aa-dropdown-item"
+                :class="{ 'aa-dropdown-item-active': f === font, 'aa-dropdown-item-focused': i === focusedIndex }"
                 @click="selectFont(f)"
               >
                 {{ f }}
@@ -318,6 +377,7 @@ function onFontBlur(e: FocusEvent) {
 .aa-dropdown-item:last-child { border-bottom: none; }
 .aa-dropdown-item:hover { background: rgba(30, 165, 76, 0.1); color: #fff; }
 .aa-dropdown-item-active { color: #1ea54c; background: rgba(30, 165, 76, 0.08); }
+.aa-dropdown-item-focused { background: rgba(30, 165, 76, 0.15); color: #fff; outline: none; }
 
 .aa-no-results {
   padding: 12px 14px;

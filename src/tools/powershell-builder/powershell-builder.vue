@@ -252,7 +252,7 @@ const cheatsheet = [
       <div class="ps-left">
         <c-card title="Cmdlet Browser">
           <!-- Search -->
-          <n-input
+          <c-input-text
             v-model:value="cmdletSearch"
             placeholder="Search by name, description, or module..."
             clearable
@@ -314,12 +314,12 @@ const cheatsheet = [
               <pre class="ps-command-text" style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: #1ea54c; line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
             </div>
             <div style="margin-top: 10px;">
-              <n-button size="small" type="primary" @click="copyCommand">
+              <button type="button" class="kt-pill kt-pill-active" @click="copyCommand">
                 {{ copied ? '✓ Copied!' : 'Copy Command' }}
-              </n-button>
+              </button>
             </div>
             <template v-if="selectedCmdlet.snippets?.length">
-              <n-divider style="margin: 16px 0 10px;" />
+              <div class="kt-divider" style="margin: 16px 0 10px;" />
               <div class="ps-section-label" style="font-size: 0.72rem; font-weight: 700; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;">
                 Common Examples
               </div>
@@ -355,7 +355,7 @@ const cheatsheet = [
           <div v-if="selectedCmdlet.parameters.length === 0" class="ps-muted" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
             No parameters needed — this cmdlet runs as-is.
           </div>
-          <n-divider v-if="visibleParams.length > 0" style="margin: 10px 0 14px;" />
+          <div v-if="visibleParams.length > 0" class="kt-divider" style="margin: 10px 0 14px;" />
 
           <!-- Parameter form -->
           <div v-for="param in visibleParams" :key="param.name" style="margin-bottom: 14px;">

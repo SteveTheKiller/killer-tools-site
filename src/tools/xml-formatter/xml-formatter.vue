@@ -24,12 +24,9 @@ const rules: UseValidationRule<string>[] = [
 
 <template>
   <div class="xf-controls">
-    <div class="xf-control">
-      <span class="xf-control-label">Collapse content</span>
-      <button type="button" class="xf-switch" :class="{ 'xf-switch-on': collapseContent }" @click="collapseContent = !collapseContent">
-        <span class="xf-switch-thumb" />
-      </button>
-    </div>
+    <button type="button" class="kt-pill" :class="{ 'kt-pill-active': collapseContent }" @click="collapseContent = !collapseContent">
+      Collapse
+    </button>
     <div class="xf-control">
       <span class="xf-control-label">Indent size</span>
       <div class="xf-stepper">
@@ -61,28 +58,10 @@ const rules: UseValidationRule<string>[] = [
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 4px;
 }
-.xf-control { display: flex; align-items: center; gap: 10px; }
-.xf-control-label {
-  font-size: 0.72rem;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: rgba(255, 255, 255, 0.4);
-  white-space: nowrap;
-}
-.xf-switch {
-  position: relative; width: 40px; height: 22px; border-radius: 11px;
-  border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4);
-  cursor: pointer; transition: background 0.2s, border-color 0.2s; padding: 0; flex-shrink: 0;
-}
-.xf-switch-on { background: rgba(30,165,76,0.25); border-color: #1ea54c; }
-.xf-switch-thumb {
-  position: absolute; top: 2px; left: 2px; width: 16px; height: 16px;
-  border-radius: 50%; background: rgba(255,255,255,0.3); transition: transform 0.2s, background 0.2s;
-}
-.xf-switch-on .xf-switch-thumb { transform: translateX(18px); background: #1ea54c; }
 .xf-stepper {
   display: inline-flex; align-items: center;
   background: rgba(0,0,0,0.4); border: 1px solid rgba(30,165,76,0.2); border-radius: 5px; overflow: hidden;

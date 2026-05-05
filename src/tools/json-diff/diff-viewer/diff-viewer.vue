@@ -19,10 +19,15 @@ const showResults = computed(() => !_.isUndefined(leftJson.value) && !_.isUndefi
 
 <template>
   <div v-if="showResults">
-    <div flex justify-center>
-      <n-form-item label="Only show differences" label-placement="left">
-        <n-switch v-model:value="onlyShowDifferences" />
-      </n-form-item>
+    <div flex justify-center mb-3>
+      <button
+        type="button"
+        class="kt-pill"
+        :class="{ 'kt-pill-active': onlyShowDifferences }"
+        @click="onlyShowDifferences = !onlyShowDifferences"
+      >
+        Only show differences
+      </button>
     </div>
 
     <c-card data-test-id="diff-result">

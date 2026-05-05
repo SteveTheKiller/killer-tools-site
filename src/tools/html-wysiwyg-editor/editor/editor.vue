@@ -25,7 +25,7 @@ tryOnBeforeUnmount(() => {
 <template>
   <c-card v-if="editor" important:p0>
     <MenuBar class="editor-header" :editor="editor" />
-    <n-divider style="margin-top: 0" />
+    <div class="kt-divider" style="margin-top: 0; margin-bottom: 0;" />
 
     <div px8 pb6>
       <EditorContent class="editor-content" :editor="editor" />

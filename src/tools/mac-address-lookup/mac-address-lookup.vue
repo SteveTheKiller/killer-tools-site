@@ -31,6 +31,7 @@ async function copyVendor() {
         v-model:value="macAddress"
         placeholder="20:37:06:12:34:56"
         clearable
+        autofocus
         autocomplete="off"
         autocorrect="off"
         autocapitalize="off"
@@ -39,7 +40,7 @@ async function copyVendor() {
         font-mono
       />
 
-      <n-divider />
+      <div class="kt-divider" />
 
       <div class="mac-section-label">
         Vendor Info

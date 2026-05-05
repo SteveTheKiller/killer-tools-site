@@ -311,19 +311,20 @@ const groupedAuth = computed(() => {
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <template v-if="!parsed">
       <div class="mb-2 text-xs op-60">
-        Paste raw email headers below — in most email clients: View Source, Show Original, or View Message Headers
+        Paste raw email headers below.
       </div>
       <c-input-text
         v-model:value="rawHeaders"
         placeholder="Received: from mail.example.com...&#10;From: sender@example.com&#10;To: recipient@example.com&#10;Subject: ..."
         :rows="12"
         multiline
+        autofocus
         mb-4
       />
       <div flex justify-end gap-3>
-        <c-button :disabled="!rawHeaders.trim()" @click="parseHeaders">
+        <button type="button" class="kt-pill kt-pill-active" :disabled="!rawHeaders.trim()" @click="parseHeaders">
           Parse Headers
-        </c-button>
+        </button>
       </div>
     </template>
 
@@ -341,9 +342,9 @@ const groupedAuth = computed(() => {
             <div mb-3 flex items-center justify-between>
               <span class="text-lg font-bold">Message Details</span>
             </div>
-            <n-alert v-if="result.senderMismatch" type="warning" mb-3>
-              <span class="text-xs">Sender domain differs from From domain — possible spoofing or delegated sending.</span>
-            </n-alert>
+            <div v-if="result.senderMismatch" class="kt-alert kt-alert-warning" style="margin-bottom: 12px; font-size: 0.75rem;">
+              Sender domain differs from From domain - possible spoofing or delegated sending.
+            </div>
             <div class="grid grid-cols-1 gap-8px">
               <div
                 v-for="field in result.fields"
@@ -383,9 +384,7 @@ const groupedAuth = computed(() => {
               >
                 <div style="float: right; margin-left: 8px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
                   <span v-if="hop.delay" class="op-40">{{ hop.delay }}</span>
-                  <n-tag size="small" type="default">
-                    Hop {{ i + 1 }}
-                  </n-tag>
+                  <span class="kt-tag kt-tag-default">Hop {{ i + 1 }}</span>
                 </div>
                 <div v-if="hop.from" class="mb-1" style="overflow-wrap: break-word; word-break: normal;">
                   <span class="op-50">From: </span><span v-html="softBreak(hop.from)" />
@@ -423,9 +422,7 @@ const groupedAuth = computed(() => {
                     class="rounded p-2"
                     style="background: rgba(255,255,255,0.05); overflow: hidden;"
                   >
-                    <n-tag :type="authStatusType(a.result)" size="small" style="float: right; margin-left: 8px; margin-bottom: 2px;">
-                      {{ a.result }}
-                    </n-tag>
+                    <span class="kt-tag" :class="`kt-tag-${authStatusType(a.result)}`" style="float: right; margin-left: 8px; margin-bottom: 2px;">{{ a.result }}</span>
                     <div class="text-xs font-mono op-50">
                       <div
                         v-for="(seg, si) in splitAuthDetail(a.detail)"

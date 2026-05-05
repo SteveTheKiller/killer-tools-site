@@ -15,22 +15,31 @@ const { copy } = useCopy({ source: obfuscatedString });
   <div>
     <c-input-text v-model:value="str" raw-text placeholder="Enter string to obfuscate" label="String to obfuscate:" clearable multiline />
 
-    <div mt-4 flex gap-10px>
+    <div mt-4 flex flex-wrap gap-10px items-end>
+      <c-input-text
+        v-model:value="keepFirst"
+        label="Keep first:"
+        type="number"
+        style="width: 110px;"
+        raw-text
+      />
+      <c-input-text
+        v-model:value="keepLast"
+        label="Keep last:"
+        type="number"
+        style="width: 110px;"
+        raw-text
+      />
       <div>
-        <div>Keep first:</div>
-        <n-input-number v-model:value="keepFirst" min="0" />
-      </div>
-
-      <div>
-        <div>Keep last:</div>
-        <n-input-number v-model:value="keepLast" min="0" />
-      </div>
-
-      <div>
-        <div mb-5px>
-          Keep&nbsp;spaces:
-        </div>
-        <n-switch v-model:value="keepSpace" />
+        <div class="so-label">Keep spaces:</div>
+        <button
+          type="button"
+          class="kt-pill"
+          :class="{ 'kt-pill-active': keepSpace }"
+          @click="keepSpace = !keepSpace"
+        >
+          {{ keepSpace ? 'On' : 'Off' }}
+        </button>
       </div>
     </div>
 
@@ -45,3 +54,14 @@ const { copy } = useCopy({ source: obfuscatedString });
     </c-card>
   </div>
 </template>
+
+<style scoped>
+.so-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+</style>

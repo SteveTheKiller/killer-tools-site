@@ -39,20 +39,9 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
           />
 
           <div v-if="extensionsFound.length > 0">
-            Extensions of files with the <n-tag round :bordered="false">
-              {{ selectedMimeType }}
-            </n-tag> mime-type:
-            <div style="margin-top: 10px">
-              <n-tag
-                v-for="extension of extensionsFound"
-                :key="extension"
-                round
-                :bordered="false"
-                type="primary"
-                style="margin-right: 10px"
-              >
-                .{{ extension }}
-              </n-tag>
+            Extensions of files with the <span class="kt-tag kt-tag-default">{{ selectedMimeType }}</span> mime-type:
+            <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span v-for="extension of extensionsFound" :key="extension" class="kt-tag kt-tag-primary">.{{ extension }}</span>
             </div>
           </div>
         </c-card>
@@ -73,13 +62,9 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
           />
 
           <div v-if="selectedExtension">
-            Mime type associated to the extension <n-tag round :bordered="false">
-              {{ selectedExtension }}
-            </n-tag> file extension:
-            <div style="margin-top: 10px">
-              <n-tag round :bordered="false" type="primary" style="margin-right: 10px">
-                {{ mimeTypeFound }}
-              </n-tag>
+            Mime type associated to the extension <span class="kt-tag kt-tag-default">{{ selectedExtension }}</span> file extension:
+            <div style="margin-top: 10px;">
+              <span class="kt-tag kt-tag-primary">{{ mimeTypeFound }}</span>
             </div>
           </div>
         </c-card>
@@ -98,9 +83,7 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
             <tr v-for="{ mimeType, extensions } of mimeInfos" :key="mimeType">
               <td>{{ mimeType }}</td>
               <td>
-                <n-tag v-for="extension of extensions" :key="extension" round :bordered="false" style="margin-right: 10px">
-                  .{{ extension }}
-                </n-tag>
+                <span v-for="extension of extensions" :key="extension" class="kt-tag kt-tag-default" style="margin-right: 6px;">.{{ extension }}</span>
               </td>
             </tr>
           </tbody>

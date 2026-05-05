@@ -82,9 +82,7 @@ function copyValue(value: string) {
                 {{ category }}
               </div>
               <div flex items-center gap-1 style="flex-shrink: 0;">
-                <n-tag size="small" :type="severityColor[severity]">
-                  {{ severity }}
-                </n-tag>
+                <span class="kt-tag" :class="`kt-tag-${severityColor[severity]}`">{{ severity }}</span>
                 <c-tooltip :tooltip="copiedValue === registry ? 'Copied!' : 'Copy registry key'">
                   <c-button
                     v-if="hasRegistry(registry)"

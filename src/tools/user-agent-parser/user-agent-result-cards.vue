@@ -22,9 +22,7 @@ const { userAgentInfo, sections } = toRefs(props);
           <div mt-5 flex gap-2>
             <span v-for="{ label, getValue } in content" :key="label">
               <c-tooltip v-if="getValue(userAgentInfo)" :tooltip="label">
-                <n-tag type="success" size="large" round :bordered="false">
-                  {{ getValue(userAgentInfo) }}
-                </n-tag>
+                <span class="kt-tag kt-tag-success" style="font-size: 0.85rem; padding: 3px 14px; border-radius: 20px;">{{ getValue(userAgentInfo) }}</span>
               </c-tooltip>
             </span>
           </div>

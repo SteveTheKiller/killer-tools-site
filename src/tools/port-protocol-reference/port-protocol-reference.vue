@@ -67,10 +67,14 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
           { label: 'TCP/UDP', value: 'TCP/UDP' },
         ]"
       />
-      <div flex items-center gap-2>
-        <n-switch v-model:value="filterDangerous" />
-        <span class="text-sm op-70">Dangerous only</span>
-      </div>
+      <button
+        type="button"
+        class="kt-pill"
+        :class="{ 'kt-pill-active': filterDangerous }"
+        @click="filterDangerous = !filterDangerous"
+      >
+        Dangerous only
+      </button>
     </div>
 
     <div class="mb-6 text-xs op-40">
@@ -92,12 +96,8 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
                 style="font-size: 1.4rem; letter-spacing: 0.03em; line-height: 1;"
               >{{ p.port }}</span>
               <div flex items-center gap-1>
-                <n-tag :type="p.protocol === 'TCP' ? 'info' : p.protocol === 'UDP' ? 'success' : 'default'" size="small">
-                  {{ p.protocol }}
-                </n-tag>
-                <n-tag v-if="p.dangerous" type="warning" size="small">
-                  Dangerous
-                </n-tag>
+                <span class="kt-tag" :class="`kt-tag-${p.protocol === 'TCP' ? 'info' : p.protocol === 'UDP' ? 'success' : 'default'}`">{{ p.protocol }}</span>
+                <span v-if="p.dangerous" class="kt-tag kt-tag-warning">Dangerous</span>
                 <c-tooltip :tooltip="copiedValue === String(p.port) ? 'Copied!' : 'Copy port'">
                   <c-button
                     circle

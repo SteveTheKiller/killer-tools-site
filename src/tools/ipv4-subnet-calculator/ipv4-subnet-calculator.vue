@@ -219,6 +219,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
         label="An IPv4 address with or without mask"
         placeholder="192.168.0.0/24"
         :validation-rules="ipValidationRules"
+        autofocus
         mb-3
       />
 
@@ -269,12 +270,8 @@ function switchToBlock({ count = 1 }: { count?: number }) {
       <div v-if="networkInfo" class="k-terminal">
         <!-- Tags-only header bar -->
         <div class="k-terminal-bar">
-          <n-tag :type="isPrivate ? 'success' : 'warning'" size="small">
-            {{ isPrivate ? 'Private' : 'Public' }} IP
-          </n-tag>
-          <n-tag type="info" size="small">
-            {{ usableHosts?.toLocaleString() }} usable hosts
-          </n-tag>
+          <span class="kt-tag" :class="isPrivate ? 'kt-tag-success' : 'kt-tag-warning'">{{ isPrivate ? 'Private' : 'Public' }} IP</span>
+          <span class="kt-tag kt-tag-info">{{ usableHosts?.toLocaleString() }} usable hosts</span>
         </div>
 
         <!-- Two-column body -->

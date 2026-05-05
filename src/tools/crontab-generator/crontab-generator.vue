@@ -67,6 +67,7 @@ const cronValidationRules = [
         size="large"
         placeholder="* * * * *"
         :validation-rules="cronValidationRules"
+        autofocus
         mb-3
       />
     </div>
@@ -76,7 +77,7 @@ const cronValidationRules = [
       <span class="cron-output">{{ cronString || '...' }}</span>
     </div>
 
-    <n-divider />
+    <div class="kt-divider" />
 
     <div class="toggle-row">
       <button
@@ -351,6 +352,6 @@ const cronValidationRules = [
 .ref-equivalent code {
   color: rgba(30, 165, 76, 0.75);
   background: transparent;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
 }
 </style>

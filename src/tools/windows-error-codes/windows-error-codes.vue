@@ -75,9 +75,7 @@ function copyValue(value: string) {
                 style="font-size: 1.1rem; letter-spacing: 0.03em; line-height: 1;"
               >{{ hex }}</span>
               <div flex items-center gap-1>
-                <n-tag size="small" :type="severityColor[severity]">
-                  {{ severity }}
-                </n-tag>
+                <span class="kt-tag" :class="`kt-tag-${severityColor[severity]}`">{{ severity }}</span>
                 <c-tooltip :tooltip="copiedValue === hex ? 'Copied!' : 'Copy hex code'">
                   <c-button
                     circle

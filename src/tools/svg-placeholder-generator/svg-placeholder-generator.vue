@@ -107,11 +107,10 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
       </div>
     </div>
 
-    <!-- Use exact size toggle -->
+    <!-- Use exact size pill -->
     <div class="sp-toggle-row">
-      <span class="sp-label">USE EXACT SIZE</span>
-      <button type="button" class="sp-switch" :class="{ 'sp-switch-on': useExactSize }" @click="useExactSize = !useExactSize">
-        <span class="sp-switch-thumb" />
+      <button type="button" class="kt-pill" :class="{ 'kt-pill-active': useExactSize }" @click="useExactSize = !useExactSize">
+        Use exact size
       </button>
     </div>
 
@@ -341,35 +340,31 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   gap: 12px;
 }
 
-.sp-switch {
-  position: relative;
-  width: 40px;
-  height: 22px;
-  border-radius: 11px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(0, 0, 0, 0.4);
+.kt-pill {
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 3px 11px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-  padding: 0;
-  flex-shrink: 0;
+  white-space: nowrap;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  font-family: inherit;
 }
 
-.sp-switch-on { background: rgba(30, 165, 76, 0.25); border-color: #1ea54c; }
-
-.sp-switch-thumb {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transition: transform 0.2s, background 0.2s;
+.kt-pill:hover {
+  background: rgba(30, 165, 76, 0.1);
+  border-color: rgba(30, 165, 76, 0.4);
+  color: #1ea54c;
 }
 
-.sp-switch-on .sp-switch-thumb {
-  transform: translateX(18px);
-  background: #1ea54c;
+.kt-pill-active {
+  background: rgba(30, 165, 76, 0.18) !important;
+  border-color: #1ea54c !important;
+  color: #1ea54c !important;
 }
 
 /* Output blocks */
@@ -408,3 +403,4 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 .sp-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
 .sp-btn-accent:hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
 </style>
+                          

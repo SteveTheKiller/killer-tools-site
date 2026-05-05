@@ -75,6 +75,36 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
     borderColor: '#282828',
   },
 
+  Button: {
+    color: 'rgba(0, 0, 0, 0.3)',
+    colorHover: 'rgba(30, 165, 76, 0.1)',
+    colorPressed: 'rgba(30, 165, 76, 0.18)',
+    colorFocus: 'rgba(30, 165, 76, 0.1)',
+    border: '1px solid rgba(255, 255, 255, 0.12)',
+    borderHover: '1px solid rgba(30, 165, 76, 0.5)',
+    borderPressed: '1px solid rgba(30, 165, 76, 0.7)',
+    borderFocus: '1px solid rgba(30, 165, 76, 0.5)',
+    textColor: 'rgba(255, 255, 255, 0.6)',
+    textColorHover: '#1ea54c',
+    textColorPressed: '#4dd07a',
+    textColorFocus: '#1ea54c',
+    borderRadius: '12px',
+    fontWeight: '500',
+  },
+
+  Input: {
+    color: 'rgba(0, 0, 0, 0.45)',
+    colorFocus: 'rgba(0, 0, 0, 0.55)',
+    border: '1px solid rgba(30, 165, 76, 0.28)',
+    borderHover: '1px solid rgba(30, 165, 76, 0.55)',
+    borderFocus: '1px solid rgba(30, 165, 76, 0.75)',
+    textColor: 'rgba(255, 255, 255, 0.85)',
+    textColorDisabled: 'rgba(255, 255, 255, 0.3)',
+    placeholderColor: 'rgba(255, 255, 255, 0.2)',
+    caretColor: '#1ea54c',
+    boxShadowFocus: '0 0 0 2px rgba(30, 165, 76, 0.12)',
+  },
+
   Table: {
     tdColor: '#232323',
     thColor: '#353535',

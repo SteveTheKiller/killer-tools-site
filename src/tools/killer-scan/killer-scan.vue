@@ -95,7 +95,7 @@ const features: { title: string, desc: string }[] = [
       </div>
     </div>
 
-    <n-divider />
+    <div class="kt-divider" />
 
     <h2 style="font-size: 17px; font-weight: 600; margin-bottom: 16px;">
       What it does

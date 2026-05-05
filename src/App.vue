@@ -50,10 +50,174 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  scrollbar-gutter: stable;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* ── Global pill button ─────────────────────────────────────────────── */
+.kt-pill {
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 5px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  font-family: inherit;
+}
+
+.kt-pill:hover {
+  background: rgba(30, 165, 76, 0.1);
+  border-color: rgba(30, 165, 76, 0.4);
+  color: #1ea54c;
+}
+
+.kt-pill-active {
+  background: rgba(30, 165, 76, 0.18) !important;
+  border-color: #1ea54c !important;
+  color: #1ea54c !important;
+}
+
+.kt-pill:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.kt-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* ── Global tags / badges ───────────────────────────────────────────── */
+.kt-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 10px;
+  border: 1px solid;
+  white-space: nowrap;
+  line-height: 1.7;
+  vertical-align: middle;
+}
+
+.kt-tag-default {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.kt-tag-success {
+  background: rgba(30, 165, 76, 0.12);
+  border-color: rgba(30, 165, 76, 0.45);
+  color: #4dd07a;
+}
+
+.kt-tag-warning {
+  background: rgba(200, 140, 0, 0.1);
+  border-color: rgba(200, 140, 0, 0.45);
+  color: rgba(255, 195, 55, 0.9);
+}
+
+.kt-tag-error {
+  background: rgba(200, 50, 50, 0.1);
+  border-color: rgba(200, 50, 50, 0.45);
+  color: rgba(255, 110, 110, 0.9);
+}
+
+.kt-tag-info {
+  background: rgba(60, 140, 210, 0.1);
+  border-color: rgba(60, 140, 210, 0.45);
+  color: rgba(110, 185, 255, 0.9);
+}
+
+.kt-tag-primary {
+  background: rgba(30, 165, 76, 0.12);
+  border-color: rgba(30, 165, 76, 0.45);
+  color: #1ea54c;
+}
+
+/* ── Global alerts ──────────────────────────────────────────────────── */
+.kt-alert {
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.kt-alert-info {
+  background: rgba(30, 165, 76, 0.08);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.kt-alert-warning {
+  background: rgba(200, 140, 0, 0.1);
+  border: 1px solid rgba(200, 140, 0, 0.45);
+  color: rgba(255, 200, 60, 0.9);
+}
+
+.kt-alert-error {
+  background: rgba(200, 50, 50, 0.1);
+  border: 1px solid rgba(200, 50, 50, 0.45);
+  color: rgba(255, 110, 110, 0.9);
+}
+
+.kt-alert-success {
+  background: rgba(30, 165, 76, 0.12);
+  border: 1px solid rgba(30, 165, 76, 0.5);
+  color: #4dd07a;
+}
+
+.kt-alert-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+
+.kt-alert-close {
+  float: right;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 0 0 8px;
+}
+.kt-alert-close:hover { opacity: 1; }
+
+/* ── Global section label ───────────────────────────────────────────── */
+.kt-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 8px;
+}
+
+/* ── Global divider ─────────────────────────────────────────────────── */
+.kt-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 12px 0;
+}
+
+html:not(.dark) .kt-divider {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* Terminal-style section labels: white text is invisible on light backgrounds.
