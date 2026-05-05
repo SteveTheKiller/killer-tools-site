@@ -110,7 +110,7 @@ function copyValue(value: string) {
 
             <div
               v-if="hasRegistry(registry)"
-              class="mb-2 font-mono text-primary gpr-registry-key" style="font-size: 0.7rem;"
+              class="mb-2 font-mono gpr-registry-key" style="font-size: 0.7rem; color: #00bcd4;"
             >
               {{ breakRegistry(registry) }}
             </div>

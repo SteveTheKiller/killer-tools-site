@@ -338,150 +338,268 @@ const groupedAuth = computed(() => {
       <div class="grid grid-cols-1 gap-16px lg:grid-cols-2">
         <!-- Left: Message Details + Delivery Hops -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
-          <c-card>
-            <div mb-3 flex items-center justify-between>
-              <span class="text-lg font-bold">Message Details</span>
+
+          <!-- Message Details -->
+          <div class="ehp-terminal">
+            <div class="ehp-terminal-bar">
+              <span class="ehp-terminal-title">Message Details</span>
             </div>
-            <div v-if="result.senderMismatch" class="kt-alert kt-alert-warning" style="margin-bottom: 12px; font-size: 0.75rem;">
-              Sender domain differs from From domain - possible spoofing or delegated sending.
+            <div v-if="result.senderMismatch" class="kt-alert kt-alert-warning" style="margin: 8px 12px; font-size: 0.75rem;">
+              Sender domain differs from From domain — possible spoofing or delegated sending.
             </div>
-            <div class="grid grid-cols-1 gap-8px">
-              <div
-                v-for="field in result.fields"
-                :key="field.label"
-                flex items-start justify-between gap-2
-                class="rounded p-2"
-                style="background: rgba(255,255,255,0.05)"
-              >
-                <div style="min-width: 0;">
-                  <div class="mb-0.5 text-xs op-50">
-                    {{ field.label }}
-                  </div>
-                  <div class="text-xs font-mono" style="overflow-wrap: break-word; word-break: normal;">
-                    {{ field.value }}
-                  </div>
-                </div>
+            <div class="ehp-terminal-body">
+              <div v-for="field in result.fields" :key="field.label" class="ehp-row">
+                <span class="ehp-label">{{ field.label }}</span>
+                <span class="ehp-value">{{ field.value }}</span>
                 <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(field.value)">
                   <n-icon size="12" :component="copiedValue === field.value ? Check : Copy" />
                 </c-button>
               </div>
             </div>
-          </c-card>
+          </div>
 
-          <c-card v-if="result.hops.length">
-            <div mb-3 flex items-center justify-between>
-              <span class="text-lg font-bold">Delivery Hops</span>
-              <span class="text-xs op-50">oldest first</span>
+          <!-- Delivery Hops -->
+          <div v-if="result.hops.length" class="ehp-terminal">
+            <div class="ehp-terminal-bar">
+              <span class="ehp-terminal-title">Delivery Hops</span>
+              <span class="ehp-terminal-sub">oldest first</span>
             </div>
-            <div
-              v-for="(hop, i) in [...result.hops].reverse()"
-              :key="i"
-              mb-3
-            >
-              <div
-                class="rounded p-2 text-xs font-mono"
-                style="background: rgba(255,255,255,0.05); overflow: hidden;"
-              >
-                <div style="float: right; margin-left: 8px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
-                  <span v-if="hop.delay" class="op-40">{{ hop.delay }}</span>
-                  <span class="kt-tag kt-tag-default">Hop {{ i + 1 }}</span>
-                </div>
-                <div v-if="hop.from" class="mb-1" style="overflow-wrap: break-word; word-break: normal;">
-                  <span class="op-50">From: </span><span v-html="softBreak(hop.from)" />
-                  <span v-if="hop.ip" class="op-50"> [{{ hop.ip }}]</span>
-                </div>
-                <div v-if="hop.by" class="mb-1" style="overflow-wrap: break-word; word-break: normal;">
-                  <span class="op-50">By: </span><span v-html="softBreak(hop.by)" />
-                </div>
-                <div v-if="hop.timestamp" class="op-40">
-                  {{ hop.timestamp }}
+            <div class="ehp-terminal-body">
+              <div v-for="(hop, i) in [...result.hops].reverse()" :key="i" class="ehp-hop">
+                <div class="ehp-hop-num">{{ String(i + 1).padStart(2, '0') }}</div>
+                <div class="ehp-hop-content">
+                  <div v-if="hop.from" class="ehp-hop-line">
+                    <span class="ehp-hop-key">From:</span>
+                    <span v-html="softBreak(hop.from)" />
+                    <span v-if="hop.ip" class="ehp-hop-ip"> [{{ hop.ip }}]</span>
+                  </div>
+                  <div v-if="hop.by" class="ehp-hop-line">
+                    <span class="ehp-hop-key">By:</span>
+                    <span v-html="softBreak(hop.by)" />
+                  </div>
+                  <div v-if="hop.timestamp || hop.delay" class="ehp-hop-ts">
+                    <span v-if="hop.timestamp">{{ hop.timestamp }}</span>
+                    <span v-if="hop.delay" class="ehp-hop-delay"> {{ hop.delay }}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </c-card>
+          </div>
         </div>
 
         <!-- Right: Auth Results + Spam -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
-          <c-card v-if="result.auth.length">
-            <div mb-3 flex items-center justify-between>
-              <span class="text-lg font-bold">Authentication Results</span>
+
+          <!-- Authentication Results -->
+          <div v-if="result.auth.length" class="ehp-terminal">
+            <div class="ehp-terminal-bar">
+              <span class="ehp-terminal-title">Authentication Results</span>
             </div>
-            <div class="grid grid-cols-1 gap-12px">
-              <div
-                v-for="group in groupedAuth"
-                :key="group.protocol"
-              >
-                <div class="mb-1 text-xs font-bold tracking-wider font-mono uppercase op-60">
-                  {{ group.protocol }}
-                </div>
-                <div class="grid grid-cols-1 gap-8px sm:grid-cols-2">
-                  <div
-                    v-for="(a, i) in group.entries"
-                    :key="i"
-                    class="rounded p-2"
-                    style="background: rgba(255,255,255,0.05); overflow: hidden;"
-                  >
-                    <span class="kt-tag" :class="`kt-tag-${authStatusType(a.result)}`" style="float: right; margin-left: 8px; margin-bottom: 2px;">{{ a.result }}</span>
-                    <div class="text-xs font-mono op-50">
-                      <div
-                        v-for="(seg, si) in splitAuthDetail(a.detail)"
-                        :key="si"
-                        style="overflow-wrap: break-word; word-break: normal; padding-left: 0.75em; text-indent: -0.75em;"
-                        v-html="softBreak(seg)"
-                      />
+            <div class="ehp-terminal-body">
+              <div v-for="group in groupedAuth" :key="group.protocol" class="ehp-auth-group">
+                <div class="ehp-section-header">{{ group.protocol }}</div>
+                <div class="ehp-auth-grid">
+                  <div v-for="(a, i) in group.entries" :key="i" class="ehp-auth-entry">
+                    <div class="ehp-auth-entry-inner">
+                      <div class="ehp-auth-detail">
+                        <div
+                          v-for="(seg, si) in splitAuthDetail(a.detail)"
+                          :key="si"
+                          style="overflow-wrap: break-word; word-break: normal; padding-left: 0.75em; text-indent: -0.75em;"
+                          v-html="softBreak(seg)"
+                        />
+                      </div>
+                      <span class="kt-tag" :class="`kt-tag-${authStatusType(a.result)}`" style="flex-shrink: 0;">{{ a.result }}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </c-card>
+          </div>
 
-          <c-card v-if="result.spamScore || result.spamStatus || result.scl">
-            <div mb-3 flex items-center justify-between>
-              <span class="text-lg font-bold">Spam Analysis</span>
+          <!-- Spam Analysis -->
+          <div v-if="result.spamScore || result.spamStatus || result.scl" class="ehp-terminal">
+            <div class="ehp-terminal-bar">
+              <span class="ehp-terminal-title">Spam Analysis</span>
             </div>
-            <div class="grid grid-cols-1 gap-8px">
-              <div
-                v-if="result.scl"
-                class="rounded p-2"
-                style="background: rgba(255,255,255,0.05)"
-              >
-                <div class="mb-0.5 text-xs op-50">
-                  M365 Spam Confidence Level (SCL)
-                </div>
-                <div class="text-xs font-mono">
-                  {{ result.scl }} — {{ result.sclLabel }}
-                </div>
+            <div class="ehp-terminal-body">
+              <div v-if="result.scl" class="ehp-row">
+                <span class="ehp-label">SCL</span>
+                <span class="ehp-value">{{ result.scl }} — {{ result.sclLabel }}</span>
               </div>
-              <div
-                v-if="result.spamScore"
-                class="rounded p-2"
-                style="background: rgba(255,255,255,0.05)"
-              >
-                <div class="mb-0.5 text-xs op-50">
-                  Spam Score
-                </div>
-                <div class="text-xs font-mono">
-                  {{ result.spamScore }}
-                </div>
+              <div v-if="result.spamScore" class="ehp-row">
+                <span class="ehp-label">Spam Score</span>
+                <span class="ehp-value">{{ result.spamScore }}</span>
               </div>
-              <div
-                v-if="result.spamStatus"
-                class="rounded p-2"
-                style="background: rgba(255,255,255,0.05)"
-              >
-                <div class="mb-0.5 text-xs op-50">
-                  Spam Status
-                </div>
-                <div class="text-xs font-mono" style="overflow-wrap: break-word; word-break: normal;">
-                  {{ result.spamStatus }}
-                </div>
+              <div v-if="result.spamStatus" class="ehp-row">
+                <span class="ehp-label">Spam Status</span>
+                <span class="ehp-value" style="word-break: break-word;">{{ result.spamStatus }}</span>
               </div>
             </div>
-          </c-card>
+          </div>
         </div>
       </div>
     </template>
   </div>
 </template>
+
+<style scoped>
+/* ── Terminal chrome ── */
+.ehp-terminal {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ehp-terminal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+}
+
+.ehp-terminal-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1ea54c;
+  letter-spacing: 0.02em;
+}
+
+.ehp-terminal-sub {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ehp-terminal-body {
+  padding: 4px 0;
+}
+
+/* ── Detail rows ── */
+.ehp-row {
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  align-items: start;
+  gap: 10px;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  transition: background 0.1s;
+}
+.ehp-row:last-child { border-bottom: none; }
+.ehp-row:hover { background: rgba(30, 165, 76, 0.05); }
+
+.ehp-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.38);
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.ehp-value {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.82);
+  word-break: break-all;
+  line-height: 1.45;
+}
+
+/* ── Delivery Hops ── */
+.ehp-hop {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.ehp-hop:last-child { border-bottom: none; }
+
+.ehp-hop-num {
+  font-size: 0.68rem;
+  color: rgba(30, 165, 76, 0.35);
+  text-align: right;
+  padding-top: 1px;
+  user-select: none;
+}
+
+.ehp-hop-content {
+  min-width: 0;
+}
+
+.ehp-hop-line {
+  color: rgba(255, 255, 255, 0.72);
+  overflow-wrap: break-word;
+  word-break: normal;
+  margin-bottom: 2px;
+}
+
+.ehp-hop-key {
+  color: rgba(30, 165, 76, 0.55);
+  margin-right: 5px;
+}
+
+.ehp-hop-ip {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ehp-hop-ts {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.28);
+  margin-top: 3px;
+}
+
+.ehp-hop-delay {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+/* ── Auth Results ── */
+.ehp-auth-group {
+  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+}
+.ehp-auth-group:last-child { border-bottom: none; }
+
+.ehp-section-header {
+  padding: 5px 12px 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ehp-auth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(30, 165, 76, 0.07);
+}
+
+.ehp-auth-entry {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 8px 10px;
+  overflow: hidden;
+}
+
+.ehp-auth-entry-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ehp-auth-detail {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.5;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .ehp-auth-grid { grid-template-columns: 1fr; }
+}
+</style>

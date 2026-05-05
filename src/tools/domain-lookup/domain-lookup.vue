@@ -526,270 +526,201 @@ async function runLookup() {
     <div v-if="whoisResult || emailChecked" class="grid grid-cols-1 gap-12px lg:grid-cols-2">
       <!-- LEFT: WHOIS -->
       <div v-if="whoisResult" class="grid grid-cols-1 gap-12px" style="align-content: start;">
+
         <!-- Registration -->
-        <c-card>
-          <div mb-2 flex items-center justify-between>
-            <span class="text-lg font-bold">
-              {{ whoisResult.ldhName ?? domain }}
-            </span>
+        <div class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">{{ whoisResult.ldhName ?? domain }}</span>
             <span v-if="expiryDays !== null" class="kt-tag" :class="`kt-tag-${expiryTagType}`">{{ expiryLabel }}</span>
           </div>
-          <div class="grid grid-cols-1 gap-2px">
-            <div
-              v-for="row in registrationRows"
-              :key="row.label"
-              flex items-center justify-between gap-2
-              class="rounded p-1.5 px-2"
-              style="background: rgba(255,255,255,0.05)"
-            >
-              <div style="min-width: 0;">
-                <div class="mb-0.5 text-xs op-50">
-                  {{ row.label }}
-                </div>
-                <div class="text-xs font-mono" style="overflow-wrap: break-word; word-break: normal;">
-                  {{ row.value }}
-                </div>
-              </div>
+          <div class="whois-terminal-body">
+            <div v-for="row in registrationRows" :key="row.label" class="whois-row">
+              <span class="whois-label">{{ row.label }}</span>
+              <span class="whois-value">{{ row.value }}</span>
               <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(row.value)">
                 <n-icon size="12" :component="copiedValue === row.value ? Check : Copy" />
               </c-button>
             </div>
           </div>
-        </c-card>
+        </div>
 
         <!-- DNSSEC -->
-        <c-card v-if="dnssec">
-          <div mb-2 flex items-center justify-between>
-            <span class="text-lg font-bold">
-              DNSSEC
-            </span>
+        <div v-if="dnssec" class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">DNSSEC</span>
             <span class="kt-tag" :class="dnssec.signed ? 'kt-tag-success' : 'kt-tag-warning'">{{ dnssec.signed ? 'Signed' : 'Unsigned' }}</span>
           </div>
-          <div class="text-xs op-70">
+          <div class="whois-body-text">
             <template v-if="dnssec.signed">
-              Delegation is signed.
-              <span v-if="dnssec.dsCount"> {{ dnssec.dsCount }} DS record{{ dnssec.dsCount !== 1 ? 's' : '' }}.</span>
-              <span v-if="dnssec.keyCount"> {{ dnssec.keyCount }} key record{{ dnssec.keyCount !== 1 ? 's' : '' }}.</span>
+              Delegation is signed.<span v-if="dnssec.dsCount"> {{ dnssec.dsCount }} DS record{{ dnssec.dsCount !== 1 ? 's' : '' }}.</span><span v-if="dnssec.keyCount"> {{ dnssec.keyCount }} key record{{ dnssec.keyCount !== 1 ? 's' : '' }}.</span>
             </template>
             <template v-else>
               This domain is not protected by DNSSEC. DNS responses cannot be cryptographically verified.
             </template>
           </div>
-        </c-card>
+        </div>
 
         <!-- Status -->
-        <c-card v-if="whoisResult.status?.length">
-          <div mb-2>
-            <span class="text-lg font-bold">
-              Status
-            </span>
+        <div v-if="whoisResult.status?.length" class="whois-terminal">
+          <div class="whois-terminal-bar" style="flex-wrap: wrap; gap: 6px;">
+            <span class="whois-terminal-title">Status</span>
+            <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+              <span v-for="(s, i) in whoisResult.status" :key="i" class="kt-tag" :class="`kt-tag-${statusType(s)}`">{{ s }}</span>
+            </div>
           </div>
-          <div class="grid grid-cols-1 gap-2px">
-            <div v-for="(s, i) in whoisResult.status" :key="i" class="rounded p-1.5 px-2" style="background: rgba(255,255,255,0.05)">
-              <div mb-1>
-                <span class="kt-tag" :class="`kt-tag-${statusType(s)}`">{{ s }}</span>
-              </div>
-              <div v-if="statusDescriptions[s.toLowerCase()]" class="text-xs op-50">
+          <div v-if="whoisResult.status.some(s => statusDescriptions[s.toLowerCase()])" class="whois-terminal-body">
+            <div
+              v-for="(s, i) in whoisResult.status.filter(s => statusDescriptions[s.toLowerCase()])"
+              :key="i"
+              class="whois-status-entry"
+            >
+              <div class="whois-status-desc" style="margin-top: 0;">
                 {{ statusDescriptions[s.toLowerCase()] }}
               </div>
             </div>
           </div>
-        </c-card>
+        </div>
 
         <!-- Contacts -->
-        <c-card v-if="contacts.length">
-          <div mb-2>
-            <span class="text-lg font-bold">
-              Contacts
-            </span>
+        <div v-if="contacts.length" class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">Contacts</span>
           </div>
-          <div class="grid grid-cols-1 gap-6px">
-            <div v-for="contact in contacts" :key="contact.role">
-              <div class="mb-1 text-xs font-bold font-mono uppercase op-60">
-                {{ contact.role }}
-              </div>
-              <div class="grid grid-cols-1 gap-8px">
-                <div
-                  v-for="field in [
-                    { label: 'Name', value: contact.name },
-                    { label: 'Organization', value: contact.org },
-                    { label: 'Email', value: contact.email },
-                    { label: 'Phone', value: contact.phone },
-                  ].filter(f => f.value && f.value !== 'REDACTED FOR PRIVACY' && !f.value.toLowerCase().includes('redacted'))"
-                  :key="field.label"
-                  flex items-center justify-between gap-2
-                  class="rounded p-1.5 px-2"
-                  style="background: rgba(255,255,255,0.05)"
-                >
-                  <div style="min-width: 0;">
-                    <div class="mb-0.5 text-xs op-50">
-                      {{ field.label }}
-                    </div>
-                    <a v-if="field.label === 'Email'" :href="`mailto:${field.value}`" class="text-xs text-primary font-mono" style="text-decoration: none;">
-                      {{ field.value }}
-                    </a>
-                    <a v-else-if="field.label === 'Phone'" :href="`tel:${field.value}`" class="text-xs text-primary font-mono" style="text-decoration: none;">
-                      {{ field.value }}
-                    </a>
-                    <div v-else class="text-xs font-mono" style="overflow-wrap: break-word;">
-                      {{ field.value }}
-                    </div>
-                  </div>
-                  <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(field.value)">
-                    <n-icon size="12" :component="copiedValue === field.value ? Check : Copy" />
-                  </c-button>
-                </div>
+          <div class="whois-terminal-body">
+            <div v-for="contact in contacts" :key="contact.role" class="whois-contact-group">
+              <div class="whois-contact-role">{{ contact.role }}</div>
+              <div
+                v-for="field in [
+                  { label: 'Name', value: contact.name },
+                  { label: 'Organization', value: contact.org },
+                  { label: 'Email', value: contact.email },
+                  { label: 'Phone', value: contact.phone },
+                ].filter(f => f.value && f.value !== 'REDACTED FOR PRIVACY' && !f.value.toLowerCase().includes('redacted'))"
+                :key="field.label"
+                class="whois-row"
+              >
+                <span class="whois-label">{{ field.label }}</span>
+                <span class="whois-value">
+                  <a v-if="field.label === 'Email'" :href="`mailto:${field.value}`" style="color: inherit; text-decoration: none;">{{ field.value }}</a>
+                  <a v-else-if="field.label === 'Phone'" :href="`tel:${field.value}`" style="color: inherit; text-decoration: none;">{{ field.value }}</a>
+                  <template v-else>{{ field.value }}</template>
+                </span>
+                <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(field.value)">
+                  <n-icon size="12" :component="copiedValue === field.value ? Check : Copy" />
+                </c-button>
               </div>
             </div>
           </div>
-        </c-card>
+        </div>
 
         <!-- Remarks -->
-        <c-card v-if="remarks.length">
-          <div mb-2>
-            <span class="text-lg font-bold">
-              Remarks
-            </span>
+        <div v-if="remarks.length" class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">Remarks</span>
           </div>
-          <div class="grid grid-cols-1 gap-8px">
-            <div v-for="(remark, i) in remarks" :key="i" class="rounded p-2" style="background: rgba(255,255,255,0.05)">
-              <div v-if="remark.title" class="mb-1 text-xs font-semibold">
-                {{ remark.title }}
-              </div>
-              <div v-for="(line, j) in remark.description" :key="j" class="text-xs op-70" style="overflow-wrap: break-word;">
-                {{ line }}
-              </div>
+          <div class="whois-terminal-body">
+            <div v-for="(remark, i) in remarks" :key="i" class="whois-remark-entry">
+              <div v-if="remark.title" class="whois-remark-title">{{ remark.title }}</div>
+              <div v-for="(line, j) in remark.description" :key="j" class="whois-remark-line">{{ line }}</div>
             </div>
           </div>
-        </c-card>
+        </div>
       </div>
 
       <!-- RIGHT: Email DNS -->
       <div v-if="emailChecked || loading" class="grid grid-cols-1 gap-12px" style="align-content: start;">
-        <!-- Nameservers -->
-        <c-card v-if="whoisResult?.nameservers?.length">
-          <div mb-2>
-            <span class="text-lg font-bold">
-              Nameservers
-            </span>
-          </div>
-          <div
-            v-for="(ns, i) in whoisResult.nameservers"
-            :key="i"
-            flex items-center justify-between
-            class="mb-0.5 rounded p-1.5 px-2 text-xs font-mono"
-            style="background: rgba(255,255,255,0.05)"
-          >
-            <span>{{ ns.ldhName }}</span>
-            <c-button circle variant="text" style="width:20px;height:20px;" @click="copyValue(ns.ldhName)">
-              <n-icon size="12" :component="copiedValue === ns.ldhName ? Check : Copy" />
-            </c-button>
-          </div>
-        </c-card>
 
-        <!-- MX -->
-        <c-card>
-          <div mb-2 flex items-center justify-between>
-            <span class="text-lg font-bold">
-              MX Records
-            </span>
-            <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.mx.status]}`">{{ emailStatusLabel[emailResults.mx.status] }}</span>
+        <!-- Nameservers -->
+        <div v-if="whoisResult?.nameservers?.length" class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">Nameservers</span>
           </div>
-          <div v-if="emailResults.mx.value.length > 0">
-            <div
-              v-for="(record, i) in emailResults.mx.value"
-              :key="i"
-              flex items-center justify-between
-              class="mb-0.5 rounded p-1.5 px-2 text-xs font-mono"
-              style="background: rgba(255,255,255,0.05)"
-            >
-              <span>{{ record }}</span>
-              <c-button circle variant="text" style="width:20px;height:20px;" @click="copyValue(record)">
-                <n-icon size="12" :component="copiedValue === record ? Check : Copy" />
+          <div class="whois-terminal-body">
+            <div v-for="(ns, i) in whoisResult.nameservers" :key="i" class="whois-record-row">
+              <span class="whois-value" style="flex: 1;">{{ ns.ldhName }}</span>
+              <c-button circle variant="text" style="width:20px;height:20px;" @click="copyValue(ns.ldhName)">
+                <n-icon size="12" :component="copiedValue === ns.ldhName ? Check : Copy" />
               </c-button>
             </div>
           </div>
-          <div v-else-if="emailResults.mx.raw" class="text-xs op-70">
-            {{ emailResults.mx.raw }}
+        </div>
+
+        <!-- MX -->
+        <div class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">MX Records</span>
+            <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.mx.status]}`">{{ emailStatusLabel[emailResults.mx.status] }}</span>
           </div>
-        </c-card>
+          <div class="whois-terminal-body">
+            <template v-if="emailResults.mx.value.length > 0">
+              <div v-for="(record, i) in emailResults.mx.value" :key="i" class="whois-record-row">
+                <span class="whois-value" style="flex: 1;">{{ record }}</span>
+                <c-button circle variant="text" style="width:20px;height:20px;" @click="copyValue(record)">
+                  <n-icon size="12" :component="copiedValue === record ? Check : Copy" />
+                </c-button>
+              </div>
+            </template>
+            <div v-else-if="emailResults.mx.raw" class="whois-body-text">{{ emailResults.mx.raw }}</div>
+          </div>
+        </div>
 
         <!-- SPF -->
-        <c-card>
-          <div mb-2 flex items-center justify-between>
-            <span class="text-lg font-bold">
-              SPF Record
-            </span>
+        <div class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">SPF Record</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.spf.status]}`">{{ emailStatusLabel[emailResults.spf.status] }}</span>
           </div>
-          <div
-            v-if="emailResults.spf.raw && emailResults.spf.raw !== 'DNS lookup failed.' && emailResults.spf.raw !== 'No SPF record found.'"
-            flex items-start justify-between gap-2
-            class="mb-1 rounded p-1.5 px-2 text-xs font-mono"
-            style="background: rgba(255,255,255,0.05); overflow-wrap: break-word;"
-          >
-            <span>{{ emailResults.spf.raw }}</span>
-            <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(emailResults.spf.raw ?? '')">
-              <n-icon size="12" :component="copiedValue === emailResults.spf.raw ? Check : Copy" />
-            </c-button>
+          <div class="whois-terminal-body">
+            <div
+              v-if="emailResults.spf.raw && emailResults.spf.raw !== 'DNS lookup failed.' && emailResults.spf.raw !== 'No SPF record found.'"
+              class="whois-record-block"
+            >
+              <span style="flex: 1;">{{ emailResults.spf.raw }}</span>
+              <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(emailResults.spf.raw ?? '')">
+                <n-icon size="12" :component="copiedValue === emailResults.spf.raw ? Check : Copy" />
+              </c-button>
+            </div>
+            <div v-else-if="emailResults.spf.raw" class="whois-body-text">{{ emailResults.spf.raw }}</div>
+            <div v-for="(issue, i) in emailResults.spf.value" :key="i" class="whois-warn-line">{{ issue }}</div>
           </div>
-          <div v-else-if="emailResults.spf.raw" class="mb-2 text-xs op-70">
-            {{ emailResults.spf.raw }}
-          </div>
-          <div v-for="(issue, i) in emailResults.spf.value" :key="i" class="text-warning mb-1 text-xs">
-            {{ issue }}
-          </div>
-        </c-card>
+        </div>
 
         <!-- DKIM -->
-        <c-card>
-          <div mb-2 flex items-center justify-between>
-            <span class="text-lg font-bold">
-              DKIM Records
-            </span>
+        <div class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">DKIM Records</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.dkim.status]}`">{{ emailStatusLabel[emailResults.dkim.status] }}</span>
           </div>
-          <div v-if="emailResults.dkim.value.length > 0">
-            <div
-              v-for="(record, i) in emailResults.dkim.value"
-              :key="i"
-              class="mb-0.5 rounded p-1.5 px-2 text-xs font-mono"
-              style="background: rgba(255,255,255,0.05); overflow-wrap: break-word;"
-            >
-              {{ record }}
-            </div>
+          <div class="whois-terminal-body">
+            <template v-if="emailResults.dkim.value.length > 0">
+              <div v-for="(record, i) in emailResults.dkim.value" :key="i" class="whois-record-block" style="border-bottom: 1px solid rgba(30,165,76,0.07);">
+                <span>{{ record }}</span>
+              </div>
+            </template>
+            <div v-else-if="emailResults.dkim.raw" class="whois-body-text">{{ emailResults.dkim.raw }}</div>
           </div>
-          <div v-else-if="emailResults.dkim.raw" class="text-xs op-70">
-            {{ emailResults.dkim.raw }}
-          </div>
-        </c-card>
+        </div>
 
         <!-- DMARC -->
-        <c-card>
-          <div mb-2 flex items-center justify-between>
-            <span class="text-lg font-bold">
-              DMARC Record
-            </span>
+        <div class="whois-terminal">
+          <div class="whois-terminal-bar">
+            <span class="whois-terminal-title">DMARC Record</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.dmarc.status]}`">{{ emailStatusLabel[emailResults.dmarc.status] }}</span>
           </div>
-          <div
-            v-if="emailResults.dmarc.raw && emailResults.dmarc.raw !== 'DNS lookup failed.' && emailResults.dmarc.raw !== 'No DMARC record found. Domain is unprotected against spoofing.'"
-            flex items-start justify-between gap-2
-            class="mb-1 rounded p-1.5 px-2 text-xs font-mono"
-            style="background: rgba(255,255,255,0.05); overflow-wrap: break-word;"
-          >
-            <span>{{ emailResults.dmarc.raw }}</span>
-            <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(emailResults.dmarc.raw ?? '')">
-              <n-icon size="12" :component="copiedValue === emailResults.dmarc.raw ? Check : Copy" />
-            </c-button>
+          <div class="whois-terminal-body">
+            <div
+              v-if="emailResults.dmarc.raw && emailResults.dmarc.raw !== 'DNS lookup failed.' && emailResults.dmarc.raw !== 'No DMARC record found. Domain is unprotected against spoofing.'"
+              class="whois-record-block"
+            >
+              <span style="flex: 1;">{{ emailResults.dmarc.raw }}</span>
+              <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(emailResults.dmarc.raw ?? '')">
+                <n-icon size="12" :component="copiedValue === emailResults.dmarc.raw ? Check : Copy" />
+              </c-button>
+            </div>
+            <div v-else-if="emailResults.dmarc.raw" class="whois-body-text">{{ emailResults.dmarc.raw }}</div>
+            <div v-for="(issue, i) in emailResults.dmarc.value" :key="i" class="whois-warn-line">{{ issue }}</div>
           </div>
-          <div v-else-if="emailResults.dmarc.raw" class="mb-2 text-xs op-70">
-            {{ emailResults.dmarc.raw }}
-          </div>
-          <div v-for="(issue, i) in emailResults.dmarc.value" :key="i" class="mb-1 text-xs" style="color: var(--warning-color, #f0a020)">
-            {{ issue }}
-          </div>
-        </c-card>
+        </div>
       </div>
     </div>
   </div>
@@ -805,5 +736,168 @@ async function runLookup() {
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+/* ── WHOIS terminal card ── */
+.whois-terminal {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.whois-terminal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+}
+
+.whois-terminal-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1ea54c;
+  letter-spacing: 0.02em;
+}
+
+.whois-terminal-body {
+  padding: 4px 0;
+}
+
+.whois-row {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  transition: background 0.1s;
+}
+
+.whois-row:last-child {
+  border-bottom: none;
+}
+
+.whois-row:hover {
+  background: rgba(30, 165, 76, 0.05);
+}
+
+.whois-prompt {
+  color: rgba(30, 165, 76, 0.4);
+  font-weight: 600;
+  font-size: 0.72rem;
+  user-select: none;
+}
+
+.whois-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.whois-value {
+  color: #1ea54c;
+  font-size: 0.75rem;
+  word-break: break-all;
+}
+
+.whois-body-text {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.55;
+}
+
+/* Simple flex rows (Nameservers, MX) */
+.whois-record-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  transition: background 0.1s;
+}
+.whois-record-row:last-child { border-bottom: none; }
+.whois-record-row:hover { background: rgba(30, 165, 76, 0.05); }
+
+/* Record row values (MX, NS) should read as data, not labels */
+.whois-record-row .whois-value {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Monospace raw record block (SPF, DMARC, DKIM) */
+.whois-record-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.82);
+  word-break: break-all;
+  line-height: 1.55;
+}
+
+/* Status entries */
+.whois-status-entry {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+}
+.whois-status-entry:last-child { border-bottom: none; }
+
+.whois-status-desc {
+  margin-top: 4px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.5;
+}
+
+/* Contact groups */
+.whois-contact-group {
+  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+}
+.whois-contact-group:last-child { border-bottom: none; }
+
+.whois-contact-role {
+  padding: 5px 12px 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Remarks */
+.whois-remark-entry {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+}
+.whois-remark-entry:last-child { border-bottom: none; }
+
+.whois-remark-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 4px;
+}
+
+.whois-remark-line {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Warning lines (SPF/DMARC issues) */
+.whois-warn-line {
+  padding: 5px 12px;
+  font-size: 0.7rem;
+  color: #f0a020;
+  line-height: 1.5;
 }
 </style>

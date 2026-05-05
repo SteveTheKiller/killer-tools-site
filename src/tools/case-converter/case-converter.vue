@@ -57,18 +57,15 @@ async function copyValue(label: string, value: string) {
 
 <template>
   <div class="case-tool">
-    <div class="case-terminal">
-      <div class="case-input-area">
-        <label class="case-field-label">Your string</label>
-        <input
-          v-model="input"
-          class="case-input"
-          placeholder="Your string..."
-          spellcheck="false"
-          autofocus
-        >
-      </div>
+    <c-input-text
+      v-model:value="input"
+      placeholder="Your string..."
+      raw-text
+      autofocus
+      mb-3
+    />
 
+    <div class="case-terminal">
       <div class="case-section-header">
         OUTPUT
       </div>
@@ -106,32 +103,6 @@ async function copyValue(label: string, value: string) {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-.case-input-area {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.case-field-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.case-input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-  box-sizing: border-box;
-}
-
-.case-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 .case-section-header {
   font-size: 0.65rem;
