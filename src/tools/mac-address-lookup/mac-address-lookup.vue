@@ -23,29 +23,24 @@ async function copyVendor() {
 
 <template>
   <div class="mac-tool">
-    <c-card>
-      <div class="mac-section-label">
-        MAC Address
-      </div>
-      <c-input-text
-        v-model:value="macAddress"
-        placeholder="20:37:06:12:34:56"
-        clearable
-        autofocus
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-        spellcheck="false"
-        :validation-rules="macAddressValidationRules"
-        font-mono
-      />
+    <c-input-text
+      v-model:value="macAddress"
+      label="MAC Address"
+      placeholder="20:37:06:12:34:56"
+      clearable
+      autofocus
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+      :validation-rules="macAddressValidationRules"
+      font-mono
+      mb-3
+    />
 
-      <div class="kt-divider" />
-
-      <div class="mac-section-label">
-        Vendor Info
-      </div>
-      <div class="mac-terminal">
+    <div class="mac-terminal">
+      <div class="mac-terminal-bar">
+        <span class="mac-terminal-title">Vendor Info</span>
         <button
           type="button"
           class="mac-copy-btn"
@@ -56,23 +51,21 @@ async function copyVendor() {
           <span v-if="copied" class="mac-copy-check">✓</span>
           <icon-mdi-content-copy v-else />
         </button>
-
-        <template v-if="lines.length">
-          <div
-            v-for="(line, i) in lines"
-            :key="i"
-            class="mac-line"
-          >
-            <span class="mac-prompt">&gt;_</span>
-            <code class="mac-value">{{ line }}</code>
-          </div>
-        </template>
-        <div v-else class="mac-line mac-empty">
-          <span class="mac-prompt">&gt;_</span>
-          <code class="mac-unknown">Unknown vendor for this address</code>
-        </div>
       </div>
-    </c-card>
+
+      <template v-if="lines.length">
+        <div
+          v-for="(line, i) in lines"
+          :key="i"
+          class="mac-row"
+        >
+          <code class="mac-value">{{ line }}</code>
+        </div>
+      </template>
+      <div v-else class="mac-row">
+        <code class="mac-unknown">Unknown vendor for this address</code>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -83,75 +76,41 @@ async function copyVendor() {
   container-type: inline-size;
 }
 
-.mac-section-label {
+/* ── Terminal ── */
+.mac-terminal {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.mac-terminal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
+}
+
+.mac-terminal-title {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.mac-terminal {
-  position: relative;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  padding: 10px 14px;
-  padding-right: 52px;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+/* ── Rows ── */
+.mac-row {
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  transition: background 0.1s;
 }
 
-.mac-copy-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
-  cursor: pointer;
-  padding: 4px 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  line-height: 1;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-}
-
-.mac-copy-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
-}
-
-.mac-copy-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.mac-copy-check {
-  color: #1ea54c;
-  font-weight: 700;
-}
-
-.mac-line {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.mac-prompt {
-  color: rgba(30, 165, 76, 0.55);
-  font-weight: 600;
-  font-size: 0.85rem;
-  user-select: none;
-  flex-shrink: 0;
-}
+.mac-row:last-child { border-bottom: none; }
+.mac-row:hover { background: rgba(30, 165, 76, 0.05); }
 
 .mac-value {
   color: #1ea54c;
@@ -166,4 +125,34 @@ async function copyVendor() {
   font-style: italic;
   line-height: 1.6;
 }
+
+/* ── Copy button ── */
+.mac-copy-btn {
+  background: transparent;
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 4px;
+  color: rgba(30, 165, 76, 0.65);
+  cursor: pointer;
+  padding: 2px 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  flex-shrink: 0;
+}
+
+.mac-copy-btn:hover:not(:disabled) {
+  background: rgba(30, 165, 76, 0.12);
+  border-color: rgba(30, 165, 76, 0.7);
+  color: #1ea54c;
+}
+
+.mac-copy-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.mac-copy-check { color: #1ea54c; font-weight: 700; }
 </style>

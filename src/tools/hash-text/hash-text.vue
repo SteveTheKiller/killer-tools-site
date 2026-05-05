@@ -71,51 +71,48 @@ function selectEncoding(val: Encoding) {
 
 <template>
   <div class="hash-tool">
-    <div class="hash-terminal">
-      <!-- Input -->
-      <div class="hash-input-area">
-        <label class="hash-field-label">Your text to hash</label>
-        <textarea
-          v-model="clearText"
-          class="hash-textarea"
-          placeholder="Your string to hash..."
-          rows="3"
-          spellcheck="false"
-          autofocus
-        />
-      </div>
+    <!-- Input -->
+    <c-input-text
+      v-model:value="clearText"
+      placeholder="Your string to hash..."
+      :rows="3"
+      multiline
+      raw-text
+      autofocus
+      mb-3
+    />
 
-      <!-- Encoding selector -->
-      <div ref="encodingMenuRef" class="hash-encoding-area">
-        <label class="hash-field-label">Digest encoding</label>
+    <!-- Encoding selector -->
+    <div ref="encodingMenuRef" class="hash-encoding-outer" mb-3>
+      <span class="hash-enc-outer-label">Encoding</span>
+      <button
+        type="button"
+        class="hash-enc-btn"
+        :class="{ 'hash-enc-btn-open': encodingMenuOpen }"
+        @click="encodingMenuOpen = !encodingMenuOpen"
+      >
+        <span class="hash-enc-label">{{ currentEncodingLabel }}</span>
+        <span class="hash-enc-caret">{{ encodingMenuOpen ? '▴' : '▾' }}</span>
+      </button>
+      <div v-if="encodingMenuOpen" class="hash-enc-menu">
         <button
+          v-for="opt in encodingOptions"
+          :key="opt.value"
           type="button"
-          class="hash-enc-btn"
-          :class="{ 'hash-enc-btn-open': encodingMenuOpen }"
-          @click="encodingMenuOpen = !encodingMenuOpen"
+          class="hash-enc-option"
+          :class="{ 'hash-enc-option-active': encoding === opt.value }"
+          @click="selectEncoding(opt.value as Encoding)"
         >
-          <span class="hash-enc-label">{{ currentEncodingLabel }}</span>
-          <span class="hash-enc-caret">{{ encodingMenuOpen ? '▴' : '▾' }}</span>
+          {{ opt.label }}
         </button>
-        <div v-if="encodingMenuOpen" class="hash-enc-menu">
-          <button
-            v-for="opt in encodingOptions"
-            :key="opt.value"
-            type="button"
-            class="hash-enc-option"
-            :class="{ 'hash-enc-option-active': encoding === opt.value }"
-            @click="selectEncoding(opt.value as Encoding)"
-          >
-            {{ opt.label }}
-          </button>
-        </div>
       </div>
+    </div>
 
-      <!-- Output rows -->
+    <!-- Output terminal -->
+    <div class="hash-terminal">
       <div class="hash-section-header">
         OUTPUT
       </div>
-
       <div
         v-for="algo in algoNames"
         :key="algo"
@@ -150,48 +147,20 @@ function selectEncoding(val: Encoding) {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-/* ── Input area ── */
-.hash-input-area {
+/* ── Encoding selector (outside terminal) ── */
+.hash-encoding-outer {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* ── Encoding area ── */
-.hash-encoding-area {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  align-items: center;
+  gap: 10px;
   position: relative;
-}
-
-.hash-field-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-.hash-textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  padding: 0;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.85);
-  resize: vertical;
-  line-height: 1.6;
-  box-sizing: border-box;
-}
-
-.hash-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+.hash-enc-outer-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  user-select: none;
 }
 
 .hash-enc-btn {

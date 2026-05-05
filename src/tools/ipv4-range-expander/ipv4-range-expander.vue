@@ -75,78 +75,66 @@ async function copyValue(label: string, value: string | undefined) {
 
 <template>
   <div class="range-tool">
-    <c-card>
-      <div class="range-section-label">
-        IP Range
+    <div class="range-inputs" mb-3>
+      <c-input-text
+        v-model:value="rawStartAddress"
+        label="Start address"
+        placeholder="192.168.1.1"
+        :validation="startIpValidation"
+        clearable
+        autofocus
+        font-mono
+      />
+      <c-input-text
+        v-model:value="rawEndAddress"
+        label="End address"
+        placeholder="192.168.6.255"
+        :validation="endIpValidation"
+        clearable
+        font-mono
+      />
+    </div>
+
+    <div v-if="invalidCombination" class="kt-alert kt-alert-error" mb-3>
+      <div class="kt-alert-title">
+        Invalid combination of start and end IPv4 address
       </div>
-      <div class="range-inputs">
-        <c-input-text
-          v-model:value="rawStartAddress"
-          label="Start address"
-          placeholder="192.168.1.1"
-          :validation="startIpValidation"
-          clearable
-          autofocus
-          font-mono
-        />
-        <c-input-text
-          v-model:value="rawEndAddress"
-          label="End address"
-          placeholder="192.168.6.255"
-          :validation="endIpValidation"
-          clearable
-          font-mono
-        />
+      <div style="opacity: 0.8; margin-bottom: 12px;">
+        The end IPv4 address is lower than the start IPv4 address. This is not valid and no result could be calculated.
       </div>
+      <button type="button" class="kt-pill" style="color: inherit; border-color: currentColor;" @click="onSwitchStartEndClicked">
+        Switch start and end IPv4 address
+      </button>
+    </div>
 
-      <div class="kt-divider" />
-
-      <template v-if="showResult">
-        <div class="range-section-label">
-          Result
+    <div v-if="showResult" class="range-terminal">
+      <div class="range-terminal-bar">
+        <span class="range-terminal-title">Result</span>
+        <div class="range-col-headers">
+          <span class="range-h-col">Input</span>
+          <span class="range-h-col">Expanded</span>
+          <span class="range-h-spacer" />
         </div>
-        <div class="range-grid">
-          <div class="range-header-row">
-            <span class="range-h-prompt" />
-            <span class="range-h-label" />
-            <span class="range-h-col">Input</span>
-            <span class="range-h-col">Expanded</span>
-            <span class="range-h-copy" />
-          </div>
-          <div
-            v-for="{ label, getOldValue, getNewValue } in calculatedValues"
-            :key="label"
-            class="range-row"
-          >
-            <span class="range-prompt">&gt;_</span>
-            <span class="range-label">{{ label }}</span>
-            <code class="range-old">{{ getOldValue(result) }}</code>
-            <code class="range-new">{{ getNewValue(result) }}</code>
-            <button
-              type="button"
-              class="range-copy"
-              :title="copiedLabel === label ? 'Copied!' : 'Copy result'"
-              @click="copyValue(label, getNewValue(result))"
-            >
-              <span v-if="copiedLabel === label" class="range-copy-check">✓</span>
-              <icon-mdi-content-copy v-else />
-            </button>
-          </div>
-        </div>
-      </template>
-
-      <div v-else-if="invalidCombination" class="kt-alert kt-alert-error">
-        <div class="kt-alert-title">
-          Invalid combination of start and end IPv4 address
-        </div>
-        <div style="opacity: 0.8; margin-bottom: 12px;">
-          The end IPv4 address is lower than the start IPv4 address. This is not valid and no result could be calculated.
-        </div>
-        <button type="button" class="kt-pill" style="color: inherit; border-color: currentColor;" @click="onSwitchStartEndClicked">
-          Switch start and end IPv4 address
+      </div>
+      <div
+        v-for="{ label, getOldValue, getNewValue } in calculatedValues"
+        :key="label"
+        class="range-row"
+      >
+        <span class="range-label">{{ label }}</span>
+        <code class="range-old">{{ getOldValue(result) }}</code>
+        <code class="range-new">{{ getNewValue(result) }}</code>
+        <button
+          type="button"
+          class="range-copy"
+          :title="copiedLabel === label ? 'Copied!' : 'Copy result'"
+          @click="copyValue(label, getNewValue(result))"
+        >
+          <span v-if="copiedLabel === label" class="range-copy-check">✓</span>
+          <icon-mdi-content-copy v-else />
         </button>
       </div>
-    </c-card>
+    </div>
   </div>
 </template>
 
@@ -157,41 +145,40 @@ async function copyValue(label: string, value: string | undefined) {
   container-type: inline-size;
 }
 
-.range-section-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 8px;
-}
-
 .range-inputs {
   display: flex;
   gap: 16px;
 }
 
-.range-grid {
+/* ── Terminal ── */
+.range-terminal {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.range-terminal-bar {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
 }
 
-/* header row */
-.range-header-row {
-  display: grid;
-  grid-template-columns: auto 140px 1fr 1fr auto;
-  gap: 12px;
-  padding: 0 14px 4px;
+.range-terminal-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.range-h-prompt,
-.range-h-copy {
-  /* spacers to align with data rows */
-}
-
-.range-h-label {
-  /* empty */
+.range-col-headers {
+  display: flex;
+  gap: 0;
 }
 
 .range-h-col {
@@ -200,73 +187,60 @@ async function copyValue(label: string, value: string | undefined) {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.3);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  width: 160px;
+  text-align: left;
 }
 
-/* data rows */
+.range-h-spacer {
+  width: 36px;
+}
+
+/* ── Rows ── */
 .range-row {
   display: grid;
-  grid-template-columns: auto 140px 1fr 1fr auto;
-  align-items: start;
-  gap: 12px;
-  padding: 10px 14px;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 6px;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  transition: border-color 0.12s, background 0.12s;
+  grid-template-columns: 140px 1fr 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  transition: background 0.1s;
 }
 
-.range-row:hover {
-  border-color: rgba(30, 165, 76, 0.55);
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.range-prompt {
-  color: rgba(30, 165, 76, 0.55);
-  font-weight: 600;
-  font-size: 0.85rem;
-  user-select: none;
-  line-height: 1.5;
-}
+.range-row:last-child { border-bottom: none; }
+.range-row:hover { background: rgba(30, 165, 76, 0.05); }
 
 .range-label {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
   white-space: nowrap;
 }
 
 .range-old {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.82rem;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 0.8rem;
   word-break: break-all;
 }
 
 .range-new {
   color: #1ea54c;
-  font-size: 0.82rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
   word-break: break-all;
 }
 
 .range-copy {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(30, 165, 76, 0.65);
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 2px 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   line-height: 1;
   transition: background 0.12s, border-color 0.12s, color 0.12s;
-  align-self: start;
+  flex-shrink: 0;
 }
 
 .range-copy:hover {
@@ -275,35 +249,13 @@ async function copyValue(label: string, value: string | undefined) {
   color: #1ea54c;
 }
 
-.range-copy-check {
-  color: #1ea54c;
-  font-weight: 700;
-}
+.range-copy-check { color: #1ea54c; font-weight: 700; }
 
-@container (max-width: 600px) {
-  .range-inputs {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .range-header-row,
-  .range-row {
-    grid-template-columns: auto 1fr 1fr auto;
-    gap: 8px;
-    padding: 8px 10px;
-  }
-
-  .range-prompt {
-    display: none;
-  }
-
-  .range-label {
-    font-size: 0.7rem;
-  }
-
-  .range-old,
-  .range-new {
-    font-size: 0.76rem;
-  }
+@container (max-width: 560px) {
+  .range-inputs { flex-direction: column; gap: 8px; }
+  .range-col-headers { display: none; }
+  .range-row { grid-template-columns: 100px 1fr 1fr auto; gap: 6px; padding: 6px 8px; }
+  .range-label { font-size: 0.7rem; }
+  .range-old, .range-new { font-size: 0.74rem; }
 }
 </style>
