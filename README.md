@@ -44,7 +44,7 @@ Standalone executables for field work. No installer, no runtime, no dependencies
 | [KillerFind](https://find.killertools.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
 
 > [!WARNING]
-> **Windows Defender may flag these as threats.** These are false positives. Network scanning and file system access trigger heuristic flags on unknown binaries. There is no telemetry, no outbound callback, and nothing written to system paths. Code signing is in progress. In the meantime, the source is public and SHA-256 hashes are provided on each tool's page.
+> **Windows Defender may flag these as threats.** These are false positives. Network scanning and file system access trigger heuristic flags on new binaries. There is no telemetry, no outbound callback, and nothing written to system paths. All apps are code signed with a Certum certificate. SHA-256 hashes are provided on each tool's page.
 
 ---
 
