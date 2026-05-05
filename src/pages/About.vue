@@ -91,10 +91,7 @@ useHead({
           <span class="av-icon">⚠</span>
           <div>
             <strong>Windows Defender may flag these as threats.</strong>
-            These are false positives. Network scanning and file system access trigger heuristic flags on unknown binaries. There is no telemetry, no outbound callback, and nothing written to system paths.
-            Code signing is in progress. In the meantime, the
-            <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">source is public</a>
-            and SHA-256 hashes are provided on each tool's page.
+            These are false positives. Network scanning and file system access trigger heuristic flags on new binaries. There is no telemetry, no outbound callback, and nothing written to system paths. All apps are code signed with a Certum certificate. SHA-256 hashes are provided on each tool's page.
           </div>
         </div>
       </div>
