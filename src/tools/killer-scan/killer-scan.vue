@@ -45,7 +45,7 @@ const features: { title: string, desc: string }[] = [
         </div>
         <div class="hero-cta">
           <a
-            href="https://github.com/SteveTheKiller/KillerScan/releases/latest/download/KillerScan.zip"
+            href="https://github.com/SteveTheKiller/KillerScan/releases/latest/download/KillerScan.exe"
             style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
           >
             <svg
@@ -65,19 +65,13 @@ const features: { title: string, desc: string }[] = [
             Download for Windows (.zip)
           </a>
           <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-            Windows 10/11 x64 &middot; ~865 KB &middot;
-            <a
-              href="https://github.com/SteveTheKiller/KillerScan/releases/download/v1.3.0/KillerScan-1.3.0-src.zip"
-              style="color: #1ea54c;"
-            >
-              source (zip)
-            </a>
+            Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
           <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
-            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.3.0 &middot; updated 4/25/2026
+            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.3.1 &middot; updated 5/4/2026
           </div>
           <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
-            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>f52707176a98bda7f4a4a0855491ef924676200e895636da1dc927c9deff02c9
+            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>96A0BEE4511CFD532FA30E6E074D6A5659CBD1C8B1604493FEBB55360122B812
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerScan"
