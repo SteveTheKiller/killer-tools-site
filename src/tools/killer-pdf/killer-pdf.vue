@@ -61,7 +61,7 @@ const features = [
         </div>
         <div class="hero-cta">
           <a
-            href="https://github.com/SteveTheKiller/KillerPDF/releases/latest/download/KillerPDF.zip"
+            href="https://github.com/SteveTheKiller/KillerPDF/releases/latest/download/KillerPDF.exe"
             style="display: inline-flex; align-items: center; gap: 8px; background: #1ea54c; color: #fff; font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 4px; text-decoration: none;"
           >
             <svg
@@ -78,22 +78,16 @@ const features = [
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Download for Windows (.zip)
+            Download for Windows (.exe)
           </a>
           <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-            Windows 10/11 x64 &middot; ~6 MB &middot;
-            <a
-              href="https://github.com/SteveTheKiller/KillerPDF/releases/download/v1.2.0/KillerPDF-1.2.0-src.zip"
-              style="color: #1ea54c;"
-            >
-              source (zip)
-            </a>
+            Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
           <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
-            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.2.0 &middot; updated 4/24/2026
+            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.2.1 &middot; updated 5/4/2026
           </div>
           <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
-            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>365a4ef2d2b606a58c309c2a1acd6f12f61391789ff798826d35792256290f9c
+            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>ABB11D3E84A843A69AC25D2330088F29709F9406CC154325400E8DFF9E8F5B7B
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerPDF"
