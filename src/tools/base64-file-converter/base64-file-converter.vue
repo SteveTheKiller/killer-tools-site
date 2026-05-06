@@ -234,7 +234,7 @@ function onDrop(e: DragEvent) {
 
 .bf-input {
   height: 32px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 0 10px;
@@ -251,7 +251,7 @@ function onDrop(e: DragEvent) {
 .bf-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 .bf-textarea {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -337,7 +337,7 @@ function onDrop(e: DragEvent) {
   align-items: center;
   gap: 6px;
   padding: 7px 18px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);

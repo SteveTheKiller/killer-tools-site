@@ -151,7 +151,7 @@ const sections = [
 
 <style scoped>
 .k-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -178,6 +178,7 @@ const sections = [
   padding: 7px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .k-row:last-child {
@@ -185,7 +186,7 @@ const sections = [
 }
 
 .k-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .k-prompt {

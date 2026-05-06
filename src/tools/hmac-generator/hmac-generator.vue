@@ -221,7 +221,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 /* ── Textarea ── */
 .hm-textarea {
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -248,7 +248,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   display: flex;
   align-items: center;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -262,7 +262,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 .hm-input {
   flex: 1 1 0;
   min-width: 0;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 7px 10px;
@@ -279,7 +279,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   flex-shrink: 0;
   width: 30px;
   height: 30px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   border-left: 1px solid rgba(30, 165, 76, 0.12);
   color: rgba(255, 255, 255, 0.5);
@@ -306,7 +306,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -351,7 +351,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   display: block;
   width: 100%;
   padding: 7px 14px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   border-bottom: 1px solid rgba(30, 165, 76, 0.06);
   text-align: left;
@@ -378,7 +378,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 
 /* ── Output ── */
 .hm-output {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.15);
   border-radius: 5px;
   padding: 10px 12px;
@@ -408,7 +408,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   padding: 5px 14px;
   border-radius: 5px;
   border: 1px solid rgba(30, 165, 76, 0.35);
-  background: transparent;
+  background: transparent !important;
   color: rgba(30, 165, 76, 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

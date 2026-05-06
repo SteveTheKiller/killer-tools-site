@@ -80,7 +80,9 @@ async function copyGif(gif: GifResult) {
     </div>
 
     <div v-if="error" class="kt-alert kt-alert-error" style="margin-bottom: 16px;">
-      <button class="kt-alert-close" @click="error = ''">✕</button>
+      <button class="kt-alert-close" @click="error = ''">
+        ✕
+      </button>
       {{ error }}
     </div>
 

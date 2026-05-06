@@ -432,7 +432,7 @@ const dmarcRecord = computed(() => {
 
 /* ── Terminal panel ── */
 .erg-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -555,7 +555,7 @@ const dmarcRecord = computed(() => {
 
 .erg-input {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -626,7 +626,7 @@ const dmarcRecord = computed(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 0;
@@ -675,7 +675,7 @@ const dmarcRecord = computed(() => {
   width: 100%;
   text-align: left;
   padding: 7px 12px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid transparent;
   border-radius: 4px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

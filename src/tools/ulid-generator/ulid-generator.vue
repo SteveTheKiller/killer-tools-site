@@ -123,7 +123,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
 .ul-stepper {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -200,7 +200,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
 }
 
 .ul-output {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.15);
   border-radius: 5px;
   padding: 10px 14px;

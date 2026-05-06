@@ -208,6 +208,29 @@ function switchToBlock({ count = 1 }: { count?: number }) {
     ip.value = next.toString();
   }
 }
+
+const rangeBar = computed(() => {
+  const info = networkInfo.value;
+  if (!info) {
+    return null;
+  }
+  const size = info.size;
+  const cidr = info.bitmask;
+  // Always give network+broadcast at least 5% so they're visible
+  const minPct = Math.max(1 / size * 100, cidr >= 30 ? 33 : 6);
+  const hostPct = Math.max(0, 100 - minPct * 2);
+  return {
+    netPct: minPct,
+    hostPct,
+    bcastPct: minPct,
+    network: info.base,
+    first: info.first,
+    last: info.last,
+    broadcast: info.broadcast ?? '—',
+    hosts: Math.max(0, size - 2),
+    cidr,
+  };
+})
 </script>
 
 <template>
@@ -266,12 +289,36 @@ function switchToBlock({ count = 1 }: { count?: number }) {
         </div>
       </div>
 
+      <!-- Host range bar -->
+      <div v-if="rangeBar" class="range-bar-wrap" mb-3>
+        <div class="range-bar">
+          <div class="rb-seg rb-net" :style="`width:${rangeBar.netPct}%`" />
+          <div class="rb-seg rb-hosts" :style="`width:${rangeBar.hostPct}%`" />
+          <div class="rb-seg rb-bcast" :style="`width:${rangeBar.bcastPct}%`" />
+        </div>
+        <div class="rb-labels">
+          <div class="rb-lbl rb-lbl-net">
+            <span class="rb-lbl-tag">network</span>
+            <code class="rb-lbl-addr">{{ rangeBar.network }}</code>
+          </div>
+          <div class="rb-lbl rb-lbl-hosts">
+            <span class="rb-lbl-tag">{{ rangeBar.hosts.toLocaleString() }} hosts</span>
+            <code v-if="rangeBar.hosts > 0" class="rb-lbl-addr rb-lbl-range">{{ rangeBar.first }} – {{ rangeBar.last }}</code>
+          </div>
+          <div class="rb-lbl rb-lbl-bcast">
+            <span class="rb-lbl-tag">broadcast</span>
+            <code class="rb-lbl-addr">{{ rangeBar.broadcast }}</code>
+          </div>
+        </div>
+      </div>
+
       <!-- Unified terminal output -->
       <div v-if="networkInfo" class="k-terminal">
-        <!-- Tags-only header bar -->
+        <!-- Terminal header bar -->
         <div class="k-terminal-bar">
-          <span class="kt-tag" :class="isPrivate ? 'kt-tag-success' : 'kt-tag-warning'">{{ isPrivate ? 'Private' : 'Public' }} IP</span>
-          <span class="kt-tag kt-tag-info">{{ usableHosts?.toLocaleString() }} usable hosts</span>
+          <span class="k-status-dot" :class="isPrivate ? 'k-status-private' : 'k-status-public'" />
+          <span class="k-status-label">{{ isPrivate ? 'Private' : 'Public' }} IP</span>
+          <span class="k-terminal-bar-title">SUBNET DETAIL</span>
         </div>
 
         <!-- Two-column body -->
@@ -397,6 +444,12 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 </template>
 
 <style scoped>
+/* Explicit terminal colors — same values used across all tools */
+.k-terminal { background: #0a0a0c !important; }
+.k-terminal-bar { background: #0f0f11 !important; }
+.k-row { background: transparent !important; }
+.k-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+
 /* ── Root layout ── */
 .sc-layout {
   display: flex;
@@ -423,7 +476,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 
 /* ── Unified terminal output ── */
 .k-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -435,8 +488,34 @@ function switchToBlock({ count = 1 }: { count?: number }) {
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border-bottom: 1px solid rgba(30, 165, 76, 0.2);
+}
+
+.k-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.k-status-private { background: #1ea54c; box-shadow: 0 0 5px rgba(30, 165, 76, 0.6); }
+.k-status-public  { background: #e0a020; box-shadow: 0 0 5px rgba(224, 160, 32, 0.6); }
+
+.k-status-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: auto;
+}
+
+.k-terminal-bar-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
 .k-terminal-body {
@@ -455,7 +534,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
   align-self: stretch;
 }
 
-@media (max-width: 640px) {
+@container (max-width: 640px) {
   .k-terminal-body {
     grid-template-columns: 1fr;
   }
@@ -499,7 +578,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 }
 
 .k-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .k-prompt {
@@ -535,7 +614,7 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 }
 
 .k-copy {
-  background: transparent;
+  background: transparent !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 4px;
   color: rgba(30, 165, 76, 0.65);
@@ -632,12 +711,12 @@ function switchToBlock({ count = 1 }: { count?: number }) {
   max-height: calc(100vh - 80px);
   border-radius: 8px;
   padding: 14px;
-  background: rgba(0,0,0,0.4);
+  background: #0f0f11 !important;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
 .cs-panel::-webkit-scrollbar { width: 4px; }
-.cs-panel::-webkit-scrollbar-track { background: transparent; }
+.cs-panel::-webkit-scrollbar-track { background: transparent !important; }
 .cs-panel::-webkit-scrollbar-thumb { background: rgba(30,165,76,0.35); border-radius: 4px; }
 .cs-panel::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
 
@@ -702,8 +781,94 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 }
 
 /* ── Bit map & slider ── */
+/* ── Host range bar ── */
+.range-bar-wrap {
+  background: #0f0f11 !important;
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.range-bar {
+  display: flex;
+  height: 32px;
+  border-radius: 5px;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.rb-seg {
+  border-radius: 3px;
+  transition: width 0.25s ease;
+}
+
+.rb-net {
+  background: rgba(30, 165, 76, 0.22);
+  border: 1px solid rgba(30, 165, 76, 0.5);
+}
+
+.rb-hosts {
+  background: rgba(30, 165, 76, 0.55);
+  border: 1px solid rgba(30, 165, 76, 0.7);
+}
+
+.rb-bcast {
+  background: rgba(224, 160, 32, 0.25);
+  border: 1px solid rgba(224, 160, 32, 0.55);
+}
+
+.rb-labels {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  margin-top: 7px;
+  gap: 4px;
+}
+
+.rb-lbl {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.rb-lbl-net { align-items: flex-start; }
+.rb-lbl-hosts { align-items: center; }
+.rb-lbl-bcast { align-items: flex-end; }
+
+.rb-lbl-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.rb-lbl-net .rb-lbl-tag { color: rgba(30, 165, 76, 0.6); }
+.rb-lbl-hosts .rb-lbl-tag { color: #1ea54c; }
+.rb-lbl-bcast .rb-lbl-tag { color: rgba(224, 160, 32, 0.8); }
+
+.rb-lbl-addr {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.rb-lbl-net .rb-lbl-addr { color: rgba(30, 165, 76, 0.75); }
+.rb-lbl-hosts .rb-lbl-addr { color: rgba(255, 255, 255, 0.55); }
+.rb-lbl-bcast .rb-lbl-addr { color: rgba(224, 160, 32, 0.7); }
+
+.rb-lbl-range { font-size: 0.65rem; }
+
+@container (max-width: 560px) {
+  .rb-lbl-addr { display: none; }
+}
+
 .viz-wrap {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 8px;
   padding: 12px 14px;
@@ -738,8 +903,8 @@ function switchToBlock({ count = 1 }: { count?: number }) {
   width: 12px;
   height: 12px;
   border-radius: 2px;
-  background: rgba(30, 165, 76, 0.15);
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: rgba(224, 160, 32, 0.25);
+  border: 1px solid rgba(224, 160, 32, 0.6);
 }
 
 .bit-map {
@@ -789,14 +954,14 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 }
 
 .bit-host {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.3);
-  color: rgba(30, 165, 76, 0.6);
+  background: rgba(224, 160, 32, 0.12);
+  border-color: rgba(224, 160, 32, 0.4);
+  color: rgba(224, 160, 32, 0.8);
 }
 
 .bit-host:hover {
-  background: rgba(30, 165, 76, 0.25);
-  border-color: rgba(30, 165, 76, 0.6);
+  background: rgba(224, 160, 32, 0.28);
+  border-color: rgba(224, 160, 32, 0.75);
   transform: scale(1.12);
 }
 

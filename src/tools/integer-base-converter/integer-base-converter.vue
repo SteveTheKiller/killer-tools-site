@@ -133,7 +133,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .base-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -174,7 +174,7 @@ async function copyValue(label: string, value: string) {
 
 .base-input {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -195,7 +195,7 @@ async function copyValue(label: string, value: string) {
 .base-step-btn {
   width: 26px;
   height: 26px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 4px;
   color: #1ea54c;
@@ -246,10 +246,11 @@ async function copyValue(label: string, value: string) {
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .base-row:last-child { border-bottom: none; }
-.base-row:hover { background: rgba(30, 165, 76, 0.05); }
+.base-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 .base-row-empty { cursor: default; }
 
 .base-prompt {
@@ -279,7 +280,7 @@ async function copyValue(label: string, value: string) {
 .base-mini-btn {
   width: 20px;
   height: 20px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 3px;
   color: #1ea54c;

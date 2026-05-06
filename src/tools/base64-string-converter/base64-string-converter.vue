@@ -181,7 +181,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 
 .b6-pills {
   display: flex;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -204,7 +204,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 .b6-pill-active { background: rgba(30, 165, 76, 0.15); color: #1ea54c; }
 
 .b6-textarea {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -242,7 +242,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   align-items: center;
   gap: 6px;
   padding: 7px 18px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);

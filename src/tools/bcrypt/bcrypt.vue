@@ -175,7 +175,7 @@ const compareMatch = computed(() => {
 /* ── Text input ── */
 .bc-input {
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 6px 10px;
@@ -207,7 +207,7 @@ const compareMatch = computed(() => {
   height: 26px;
   border-radius: 5px;
   border: 1px solid rgba(30, 165, 76, 0.3);
-  background: transparent;
+  background: transparent !important;
   color: #1ea54c;
   font-size: 1rem;
   line-height: 1;
@@ -252,7 +252,7 @@ const compareMatch = computed(() => {
 }
 
 .bc-output {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.15);
   border-radius: 5px;
   padding: 8px 12px;
@@ -281,7 +281,7 @@ const compareMatch = computed(() => {
   padding: 5px 14px;
   border-radius: 5px;
   border: 1px solid rgba(30, 165, 76, 0.35);
-  background: transparent;
+  background: transparent !important;
   color: rgba(30, 165, 76, 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

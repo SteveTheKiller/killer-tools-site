@@ -136,7 +136,7 @@ async function copyValue(key: string, value: string) {
 
 /* ── Terminal (wraps everything) ── */
 .url-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -160,7 +160,7 @@ async function copyValue(key: string, value: string) {
 
 .url-textarea {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 0;
@@ -217,7 +217,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .url-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .url-row-empty {
@@ -225,7 +225,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .url-row-empty:hover {
-  background: transparent;
+  background: transparent !important;
 }
 
 .url-prompt {

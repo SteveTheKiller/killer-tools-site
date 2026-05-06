@@ -740,7 +740,7 @@ async function runLookup() {
 
 /* ── WHOIS terminal card ── */
 .whois-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -775,6 +775,7 @@ async function runLookup() {
   padding: 6px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .whois-row:last-child {
@@ -782,7 +783,7 @@ async function runLookup() {
 }
 
 .whois-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .whois-prompt {
@@ -819,9 +820,10 @@ async function runLookup() {
   padding: 6px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   transition: background 0.1s;
+  background: transparent !important;
 }
 .whois-record-row:last-child { border-bottom: none; }
-.whois-record-row:hover { background: rgba(30, 165, 76, 0.05); }
+.whois-record-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 
 /* Record row values (MX, NS) should read as data, not labels */
 .whois-record-row .whois-value {

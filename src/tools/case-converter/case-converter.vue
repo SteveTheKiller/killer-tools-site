@@ -96,7 +96,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .case-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -124,10 +124,11 @@ async function copyValue(label: string, value: string) {
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .case-row:last-child { border-bottom: none; }
-.case-row:hover { background: rgba(30, 165, 76, 0.05); }
+.case-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 
 .case-prompt {
   color: rgba(30, 165, 76, 0.5);

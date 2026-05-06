@@ -53,25 +53,25 @@ async function copyValue(label: string, value: string) {
       mb-3
     />
 
-    <div v-if="addressValidation.isValid" class="ula-terminal">
-      <div class="ula-terminal-bar">
-        <span class="ula-terminal-title">Output</span>
+    <div v-if="addressValidation.isValid" class="kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">Output</span>
       </div>
       <div
         v-for="{ label, value } in calculatedSections"
         :key="label"
-        class="ula-row"
+        class="kt-row ula-row"
       >
-        <span class="ula-prompt">&gt;_</span>
-        <span class="ula-label">{{ label }}</span>
-        <code class="ula-value">{{ value }}</code>
+        <span class="kt-prompt">&gt;_</span>
+        <span class="kt-label">{{ label }}</span>
+        <code class="kt-value">{{ value }}</code>
         <button
           type="button"
-          class="ula-copy"
+          class="kt-copy"
           :title="copiedLabel === label ? 'Copied!' : 'Copy'"
           @click="copyValue(label, value)"
         >
-          <span v-if="copiedLabel === label" class="ula-copy-check">✓</span>
+          <span v-if="copiedLabel === label" class="kt-copy-check">✓</span>
           <icon-mdi-content-copy v-else />
         </button>
       </div>
@@ -80,99 +80,27 @@ async function copyValue(label: string, value: string) {
 </template>
 
 <style scoped>
+/* Scoped overrides beat NaiveUI's injected backgrounds */
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: #0f0f11 !important; }
+.kt-row { background: transparent !important; }
+.kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+
 .ula-tool {
   flex: 1 1 700px;
   max-width: 1200px;
   container-type: inline-size;
 }
 
-/* ── Terminal ── */
-.ula-terminal {
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-
-.ula-terminal-bar {
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
-}
-
-.ula-terminal-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.3);
-}
-
-/* ── Rows ── */
 .ula-row {
-  display: grid;
   grid-template-columns: auto 130px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 10px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
-  transition: background 0.1s;
 }
-
-.ula-row:last-child { border-bottom: none; }
-.ula-row:hover { background: rgba(30, 165, 76, 0.05); }
-
-.ula-prompt {
-  color: rgba(30, 165, 76, 0.5);
-  font-weight: 600;
-  font-size: 0.75rem;
-  user-select: none;
-}
-
-.ula-label {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.75rem;
-  white-space: nowrap;
-}
-
-.ula-value {
-  color: #1ea54c;
-  font-size: 0.8rem;
-  word-break: break-all;
-  min-width: 0;
-}
-
-.ula-copy {
-  background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 4px;
-  color: rgba(30, 165, 76, 0.65);
-  cursor: pointer;
-  padding: 2px 5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  line-height: 1;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  flex-shrink: 0;
-}
-
-.ula-copy:hover {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
-}
-
-.ula-copy-check { color: #1ea54c; font-weight: 700; }
 
 @container (max-width: 560px) {
-  .ula-row { grid-template-columns: 100px 1fr auto; gap: 6px; padding: 6px 8px; }
-  .ula-prompt { display: none; }
-  .ula-label { font-size: 0.7rem; }
-  .ula-value { font-size: 0.74rem; }
+  .ula-row {
+    grid-template-columns: auto 100px 1fr auto;
+    gap: 6px;
+    padding: 6px 8px;
+  }
 }
 </style>

@@ -83,7 +83,7 @@ const rawYamlValidation = useValidation({
 }
 .yv-stepper {
   display: inline-flex; align-items: center;
-  background: rgba(0,0,0,0.4); border: 1px solid rgba(30,165,76,0.2); border-radius: 5px; overflow: hidden;
+  background: #0f0f11; border: 1px solid rgba(30,165,76,0.2); border-radius: 5px; overflow: hidden;
 }
 .yv-step-btn {
   width: 28px; height: 28px; background: transparent; border: none;

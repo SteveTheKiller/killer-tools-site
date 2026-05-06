@@ -140,7 +140,7 @@ function selectEncoding(val: Encoding) {
 
 /* ── Terminal container ── */
 .hash-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -167,7 +167,7 @@ function selectEncoding(val: Encoding) {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 2px 0;
@@ -214,7 +214,7 @@ function selectEncoding(val: Encoding) {
   width: 100%;
   text-align: left;
   padding: 7px 12px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid transparent;
   border-radius: 4px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -258,6 +258,7 @@ function selectEncoding(val: Encoding) {
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .hash-row:last-child {
@@ -265,7 +266,7 @@ function selectEncoding(val: Encoding) {
 }
 
 .hash-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .hash-prompt {

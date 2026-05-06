@@ -161,7 +161,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 
 .rn-input {
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: none;
   outline: none;
   padding: 10px 12px;

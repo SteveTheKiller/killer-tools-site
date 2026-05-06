@@ -446,7 +446,7 @@ const groupedAuth = computed(() => {
 <style scoped>
 /* ── Terminal chrome ── */
 .ehp-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -471,7 +471,7 @@ const groupedAuth = computed(() => {
 
 .ehp-terminal-sub {
   font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .ehp-terminal-body {
@@ -487,20 +487,21 @@ const groupedAuth = computed(() => {
   padding: 6px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   transition: background 0.1s;
+  background: transparent !important;
 }
 .ehp-row:last-child { border-bottom: none; }
-.ehp-row:hover { background: rgba(30, 165, 76, 0.05); }
+.ehp-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 
 .ehp-label {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.55);
   white-space: nowrap;
   padding-top: 1px;
 }
 
 .ehp-value {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.92);
   word-break: break-all;
   line-height: 1.45;
 }
@@ -519,7 +520,7 @@ const groupedAuth = computed(() => {
 
 .ehp-hop-num {
   font-size: 0.68rem;
-  color: rgba(30, 165, 76, 0.35);
+  color: rgba(30, 165, 76, 0.7);
   text-align: right;
   padding-top: 1px;
   user-select: none;
@@ -530,29 +531,29 @@ const groupedAuth = computed(() => {
 }
 
 .ehp-hop-line {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.88);
   overflow-wrap: break-word;
   word-break: normal;
   margin-bottom: 2px;
 }
 
 .ehp-hop-key {
-  color: rgba(30, 165, 76, 0.55);
+  color: #1ea54c;
   margin-right: 5px;
 }
 
 .ehp-hop-ip {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .ehp-hop-ts {
   font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 3px;
 }
 
 .ehp-hop-delay {
-  color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* ── Auth Results ── */
@@ -567,9 +568,9 @@ const groupedAuth = computed(() => {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ehp-auth-grid {
@@ -580,7 +581,7 @@ const groupedAuth = computed(() => {
 }
 
 .ehp-auth-entry {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   padding: 8px 10px;
   overflow: hidden;
 }
@@ -594,7 +595,7 @@ const groupedAuth = computed(() => {
 
 .ehp-auth-detail {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.5;
   min-width: 0;
 }

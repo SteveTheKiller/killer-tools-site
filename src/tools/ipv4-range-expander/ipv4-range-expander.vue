@@ -107,30 +107,34 @@ async function copyValue(label: string, value: string | undefined) {
       </button>
     </div>
 
-    <div v-if="showResult" class="range-terminal">
-      <div class="range-terminal-bar">
-        <span class="range-terminal-title">Result</span>
+    <div v-if="showResult" class="kt-terminal">
+      <div class="kt-terminal-bar range-bar">
+        <span class="kt-terminal-bar-title">Result</span>
         <div class="range-col-headers">
           <span class="range-h-col">Input</span>
           <span class="range-h-col">Expanded</span>
           <span class="range-h-spacer" />
         </div>
       </div>
+      <div class="kt-section-row">
+        CIDR EXPANSION
+      </div>
       <div
         v-for="{ label, getOldValue, getNewValue } in calculatedValues"
         :key="label"
-        class="range-row"
+        class="kt-row range-row"
       >
-        <span class="range-label">{{ label }}</span>
-        <code class="range-old">{{ getOldValue(result) }}</code>
-        <code class="range-new">{{ getNewValue(result) }}</code>
+        <span class="kt-prompt">&gt;_</span>
+        <span class="kt-label">{{ label }}</span>
+        <code class="kt-value-faded">{{ getOldValue(result) }}</code>
+        <code class="kt-value">{{ getNewValue(result) }}</code>
         <button
           type="button"
-          class="range-copy"
+          class="kt-copy"
           :title="copiedLabel === label ? 'Copied!' : 'Copy result'"
           @click="copyValue(label, getNewValue(result))"
         >
-          <span v-if="copiedLabel === label" class="range-copy-check">✓</span>
+          <span v-if="copiedLabel === label" class="kt-copy-check">✓</span>
           <icon-mdi-content-copy v-else />
         </button>
       </div>
@@ -139,6 +143,12 @@ async function copyValue(label: string, value: string | undefined) {
 </template>
 
 <style scoped>
+/* Scoped overrides beat NaiveUI's injected backgrounds */
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: #0f0f11 !important; }
+.kt-row { background: transparent !important; }
+.kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+
 .range-tool {
   flex: 1 1 700px;
   max-width: 1200px;
@@ -150,35 +160,16 @@ async function copyValue(label: string, value: string | undefined) {
   gap: 16px;
 }
 
-/* ── Terminal ── */
-.range-terminal {
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.range-row {
+  grid-template-columns: auto 140px 1fr 1fr auto;
 }
 
-.range-terminal-bar {
-  display: flex;
-  align-items: center;
+.range-bar {
   justify-content: space-between;
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
-}
-
-.range-terminal-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .range-col-headers {
   display: flex;
-  gap: 0;
 }
 
 .range-h-col {
@@ -195,67 +186,9 @@ async function copyValue(label: string, value: string | undefined) {
   width: 36px;
 }
 
-/* ── Rows ── */
-.range-row {
-  display: grid;
-  grid-template-columns: 140px 1fr 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 10px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
-  transition: background 0.1s;
-}
-
-.range-row:last-child { border-bottom: none; }
-.range-row:hover { background: rgba(30, 165, 76, 0.05); }
-
-.range-label {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.75rem;
-  white-space: nowrap;
-}
-
-.range-old {
-  color: rgba(255, 255, 255, 0.28);
-  font-size: 0.8rem;
-  word-break: break-all;
-}
-
-.range-new {
-  color: #1ea54c;
-  font-size: 0.8rem;
-  word-break: break-all;
-}
-
-.range-copy {
-  background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 4px;
-  color: rgba(30, 165, 76, 0.65);
-  cursor: pointer;
-  padding: 2px 5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  line-height: 1;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  flex-shrink: 0;
-}
-
-.range-copy:hover {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
-}
-
-.range-copy-check { color: #1ea54c; font-weight: 700; }
-
 @container (max-width: 560px) {
   .range-inputs { flex-direction: column; gap: 8px; }
   .range-col-headers { display: none; }
-  .range-row { grid-template-columns: 100px 1fr 1fr auto; gap: 6px; padding: 6px 8px; }
-  .range-label { font-size: 0.7rem; }
-  .range-old, .range-new { font-size: 0.74rem; }
+  .range-row { grid-template-columns: auto 100px 1fr 1fr auto; gap: 6px; padding: 6px 8px; }
 }
 </style>

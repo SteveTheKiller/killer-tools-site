@@ -267,7 +267,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 
 /* ── Text input ── */
 .mg-input {
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 8px 10px;
@@ -298,7 +298,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   display: flex;
   align-items: center;
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   padding: 8px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -354,7 +354,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   display: block;
   width: 100%;
   padding: 7px 14px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   border-bottom: 1px solid rgba(30, 165, 76, 0.06);
   text-align: left;
@@ -413,7 +413,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 
 .mg-code-panel {
   flex: 1;
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 8px;
   padding: 14px 16px;

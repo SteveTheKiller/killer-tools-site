@@ -261,7 +261,7 @@ function onSearchKeydown(e: KeyboardEvent) {
 .aa-textarea {
   width: 100%;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 6px;
   padding: 10px 12px;
@@ -285,7 +285,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -390,7 +390,7 @@ function onSearchKeydown(e: KeyboardEvent) {
 .aa-stepper {
   display: inline-flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -507,7 +507,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 5px;
   padding: 4px 12px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 4px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

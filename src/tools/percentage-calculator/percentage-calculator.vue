@@ -183,7 +183,7 @@ async function copyResult(key: string, val: string) {
 /* ── Number input ── */
 .pc-num {
   width: 110px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 6px 10px;

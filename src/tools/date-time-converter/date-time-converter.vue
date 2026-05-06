@@ -193,7 +193,7 @@ onClickOutside(fmtMenuRef, () => {
 }
 
 .dt-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -230,7 +230,7 @@ onClickOutside(fmtMenuRef, () => {
 
 .dt-input {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -261,7 +261,7 @@ onClickOutside(fmtMenuRef, () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 0;
@@ -300,7 +300,7 @@ onClickOutside(fmtMenuRef, () => {
   width: 100%;
   text-align: left;
   padding: 6px 10px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid transparent;
   border-radius: 4px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -319,10 +319,10 @@ onClickOutside(fmtMenuRef, () => {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   display: flex;
   align-items: center;
@@ -360,13 +360,14 @@ onClickOutside(fmtMenuRef, () => {
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .dt-row:last-child { border-bottom: none; }
-.dt-row:hover { background: rgba(30, 165, 76, 0.05); }
+.dt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 
 .dt-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(30, 165, 76, 0.75);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -374,7 +375,7 @@ onClickOutside(fmtMenuRef, () => {
 }
 
 .dt-label {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.75rem;
   line-height: 1.6;
   white-space: nowrap;
@@ -396,13 +397,13 @@ onClickOutside(fmtMenuRef, () => {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(30, 165, 76, 0.65);
   transition: color 0.12s;
   flex-shrink: 0;
   padding-top: 2px;
 }
 
-.dt-row:hover .dt-copy { color: rgba(30, 165, 76, 0.8); }
+.dt-row:hover .dt-copy { color: #1ea54c; }
 .dt-copy-done { color: #1ea54c !important; }
 
 @container (max-width: 580px) {

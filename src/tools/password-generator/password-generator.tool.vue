@@ -439,7 +439,7 @@ function selectBulkCount(n: number) {
 
 /* ── Terminal-style password display ───────────────────────────────── */
 .terminal-block {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 8px;
   padding: 16px 20px;
@@ -678,7 +678,7 @@ function selectBulkCount(n: number) {
   align-items: baseline;
   gap: 10px;
   padding: 10px 16px;
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -734,7 +734,7 @@ function selectBulkCount(n: number) {
   align-items: baseline;
   gap: 10px;
   padding: 7px 12px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid transparent;
   border-radius: 5px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -854,7 +854,7 @@ function selectBulkCount(n: number) {
 }
 
 .bulk-body::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
 .bulk-body::-webkit-scrollbar-thumb {

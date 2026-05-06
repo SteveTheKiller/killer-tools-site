@@ -205,7 +205,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 .uu-stepper {
   display: inline-flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -253,7 +253,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 /* ── Text inputs (v3/v5) ── */
 .uu-input {
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -291,7 +291,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 }
 
 .uu-output {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.15);
   border-radius: 5px;
   padding: 10px 14px;

@@ -122,7 +122,7 @@ async function copyUnescape() {
 .he-terminal {
   flex: 1 1 400px;
   min-width: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -148,7 +148,7 @@ async function copyUnescape() {
 
 .he-textarea {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   box-shadow: none;
@@ -200,7 +200,7 @@ async function copyUnescape() {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: transparent;
+  background: transparent !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 4px;
   color: rgba(30, 165, 76, 0.75);

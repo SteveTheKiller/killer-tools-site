@@ -38,17 +38,17 @@ async function copyVendor() {
       mb-3
     />
 
-    <div class="mac-terminal">
-      <div class="mac-terminal-bar">
-        <span class="mac-terminal-title">Vendor Info</span>
+    <div class="kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">Vendor Info</span>
         <button
           type="button"
-          class="mac-copy-btn"
+          class="kt-copy"
           :disabled="!details"
           :title="copied ? 'Copied!' : 'Copy vendor info'"
           @click="copyVendor"
         >
-          <span v-if="copied" class="mac-copy-check">✓</span>
+          <span v-if="copied" class="kt-copy-check">✓</span>
           <icon-mdi-content-copy v-else />
         </button>
       </div>
@@ -57,102 +57,32 @@ async function copyVendor() {
         <div
           v-for="(line, i) in lines"
           :key="i"
-          class="mac-row"
+          class="kt-row mac-row"
         >
-          <code class="mac-value">{{ line }}</code>
+          <code class="kt-value">{{ line }}</code>
         </div>
       </template>
-      <div v-else class="mac-row">
-        <code class="mac-unknown">Unknown vendor for this address</code>
+      <div v-else class="kt-row mac-row">
+        <code class="kt-fallback">Unknown vendor for this address</code>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Scoped overrides beat NaiveUI's injected backgrounds */
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: #0f0f11 !important; }
+.kt-row { background: transparent !important; }
+.kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+
 .mac-tool {
   flex: 1 1 700px;
   max-width: 1200px;
-  container-type: inline-size;
 }
 
-/* ── Terminal ── */
-.mac-terminal {
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-
-.mac-terminal-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
-}
-
-.mac-terminal-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.3);
-}
-
-/* ── Rows ── */
 .mac-row {
+  grid-template-columns: 1fr;
   padding: 6px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
-  transition: background 0.1s;
 }
-
-.mac-row:last-child { border-bottom: none; }
-.mac-row:hover { background: rgba(30, 165, 76, 0.05); }
-
-.mac-value {
-  color: #1ea54c;
-  font-size: 0.82rem;
-  line-height: 1.6;
-  word-break: break-all;
-}
-
-.mac-unknown {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.82rem;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-/* ── Copy button ── */
-.mac-copy-btn {
-  background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 4px;
-  color: rgba(30, 165, 76, 0.65);
-  cursor: pointer;
-  padding: 2px 5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  line-height: 1;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  flex-shrink: 0;
-}
-
-.mac-copy-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
-}
-
-.mac-copy-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.mac-copy-check { color: #1ea54c; font-weight: 700; }
 </style>

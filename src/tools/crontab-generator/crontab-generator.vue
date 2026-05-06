@@ -183,7 +183,7 @@ const cronValidationRules = [
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 8px;
   padding: 14px 18px;
@@ -327,7 +327,7 @@ const cronValidationRules = [
 
 .ref-example code {
   color: rgba(30, 165, 76, 0.75);
-  background: transparent;
+  background: transparent !important;
   font-size: 0.74rem;
 }
 
@@ -351,7 +351,7 @@ const cronValidationRules = [
 
 .ref-equivalent code {
   color: rgba(30, 165, 76, 0.75);
-  background: transparent;
+  background: transparent !important;
   font-size: 0.78rem;
 }
 </style>

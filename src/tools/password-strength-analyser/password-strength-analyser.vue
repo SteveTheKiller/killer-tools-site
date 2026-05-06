@@ -125,7 +125,7 @@ const details = computed(() => [
 .ps-input-row {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -242,8 +242,8 @@ const details = computed(() => [
 
 /* ── Terminal rows ── */
 .ps-terminal {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(30, 165, 76, 0.12);
+  background: #0a0a0c !important;
+  border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -255,6 +255,11 @@ const details = computed(() => [
   gap: 10px;
   padding: 7px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  background: transparent !important;
+}
+
+.ps-row:hover {
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .ps-row:last-child {

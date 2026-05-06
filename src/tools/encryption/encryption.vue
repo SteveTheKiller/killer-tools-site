@@ -218,7 +218,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 
 /* Textarea */
 .en-textarea {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -245,7 +245,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 /* Input */
 .en-input {
   height: 32px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 0 10px;
@@ -269,7 +269,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;

@@ -217,7 +217,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   height: 4px;
   -webkit-appearance: none;
   appearance: none;
-  background: transparent;
+  background: transparent !important;
   outline: none;
   pointer-events: none;
   margin: 0;
@@ -289,7 +289,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   padding: 3px 14px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: transparent;
+  background: transparent !important;
   color: rgba(255, 255, 255, 0.3);
   font-size: 0.72rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -313,7 +313,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 /* ── Output ── */
 .li-output-wrap {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -356,7 +356,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 .li-output {
   width: 100%;
   min-height: 160px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   padding: 14px;
@@ -382,7 +382,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   padding: 5px 14px;
   border-radius: 5px;
   border: 1px solid rgba(30, 165, 76, 0.35);
-  background: transparent;
+  background: transparent !important;
   color: rgba(30, 165, 76, 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

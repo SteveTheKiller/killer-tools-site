@@ -202,7 +202,7 @@ const details = computed(() => [
 
 /* ── Terminal panel ── */
 .otp-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -232,7 +232,7 @@ const details = computed(() => [
 
 .otp-input {
   flex: 1;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -244,7 +244,7 @@ const details = computed(() => [
 }
 
 .otp-refresh-btn {
-  background: transparent;
+  background: transparent !important;
   border: none;
   cursor: pointer;
   color: rgba(30, 165, 76, 0.5);
@@ -330,12 +330,12 @@ const details = computed(() => [
   cursor: pointer;
   transition: background 0.1s;
   &:last-child { border-bottom: none; }
-  &:hover { background: rgba(30, 165, 76, 0.05); }
+  &:hover { background: rgba(30, 165, 76, 0.05) !important; }
 }
 
 .otp-row-detail {
   cursor: default;
-  &:hover { background: transparent; }
+  &:hover { background: transparent !important; }
 }
 
 .otp-prompt {

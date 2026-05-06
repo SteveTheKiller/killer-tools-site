@@ -135,7 +135,7 @@ const sections = computed(() => {
 }
 
 .ua-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -159,7 +159,7 @@ const sections = computed(() => {
 
 .ua-input {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   box-shadow: none;
@@ -206,7 +206,7 @@ const sections = computed(() => {
 }
 
 .ua-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .ua-row-empty {

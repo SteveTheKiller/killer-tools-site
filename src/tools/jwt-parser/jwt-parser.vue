@@ -125,7 +125,7 @@ async function copyValue(key: string, value: string) {
 
 .jwt-textarea {
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11 !important;
   border: none;
   outline: none;
   padding: 8px 10px;
@@ -150,7 +150,7 @@ async function copyValue(key: string, value: string) {
 
 /* ── Terminal ── */
 .jwt-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -176,6 +176,7 @@ async function copyValue(key: string, value: string) {
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .jwt-row:last-child {
@@ -183,7 +184,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .jwt-row:hover {
-  background: rgba(30, 165, 76, 0.05);
+  background: rgba(30, 165, 76, 0.05) !important;
 }
 
 .jwt-prompt {

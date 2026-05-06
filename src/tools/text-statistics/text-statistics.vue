@@ -55,7 +55,7 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
 .ts-input {
   width: 100%;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0f0f11;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 6px;
   padding: 12px 14px;

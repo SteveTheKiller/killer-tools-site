@@ -56,7 +56,7 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
 
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px', color: '#1e1e1e' },
+      InternalSelectMenu: { height: '500px', color: '#141414' },
     },
   },
 
@@ -65,14 +65,14 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Layout: {
-    color: '#1c1c1c',
-    siderColor: '#232323',
+    color: '#0f0f0f',
+    siderColor: '#141414',
     siderBorderColor: 'transparent',
   },
 
   Card: {
-    color: '#232323',
-    borderColor: '#282828',
+    color: '#1a1a1a',
+    borderColor: '#222222',
   },
 
   Button: {

@@ -118,7 +118,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .color-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -161,10 +161,10 @@ async function copyValue(key: string, value: string) {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -177,28 +177,29 @@ async function copyValue(key: string, value: string) {
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
+  background: transparent !important;
 }
 
 .color-row:last-child { border-bottom: none; }
-.color-row:hover { background: rgba(30, 165, 76, 0.05); }
+.color-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 
 .color-row-error .color-value-input { color: #e05555; }
 
 .color-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(30, 165, 76, 0.75);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
 }
 
 .color-label {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.75rem;
   white-space: nowrap;
 }
 
 .color-value-input {
-  background: transparent;
+  background: transparent !important;
   border: none;
   outline: none;
   color: #1ea54c;
@@ -218,17 +219,17 @@ async function copyValue(key: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(30, 165, 76, 0.65);
   transition: color 0.12s;
   flex-shrink: 0;
-  background: transparent;
+  background: transparent !important;
   border: none;
   padding: 0;
   cursor: pointer;
 }
 
-.color-copy:disabled { opacity: 0.2; cursor: default; }
-.color-copy:not(:disabled):hover { color: rgba(30, 165, 76, 0.8); }
+.color-copy:disabled { opacity: 0.3; cursor: default; }
+.color-copy:not(:disabled):hover { color: #1ea54c; }
 .color-copy-done { color: #1ea54c !important; }
 
 @container (max-width: 480px) {

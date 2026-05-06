@@ -8,6 +8,7 @@ import { i18nPlugin } from './plugins/i18n.plugin';
 import { naive } from './plugins/naive.plugin';
 import router from './router';
 import 'virtual:uno.css';
+import '@/assets/kt-terminal.css';
 
 registerSW();
 

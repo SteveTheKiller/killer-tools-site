@@ -76,7 +76,7 @@ update('kelvin');
 }
 
 .tc-terminal {
-  background: rgba(0, 0, 0, 0.55);
+  background: #0a0a0c !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -115,7 +115,7 @@ update('kelvin');
 }
 
 .tc-input {
-  background: transparent;
+  background: transparent !important;
   border: none;
   border-left: 1px solid rgba(30, 165, 76, 0.08);
   border-right: 1px solid rgba(30, 165, 76, 0.08);
