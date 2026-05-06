@@ -2,6 +2,300 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2026.05.05
+
+### Features
+
+- **ipv4-subnet-calculator**: interactive host range bar showing network, usable hosts, and broadcast segments with proportional widths
+- **ipv4-subnet-calculator**: amber color for host bits in bitmap to visually distinguish network vs host portions
+- **ipv4-subnet-calculator**: replaced pill tag header with glowing status dot for Private/Public IP indicator
+- **ipv4-subnet-calculator**: container query responsive collapse for two-column subnet/address layout
+
+### Refactoring
+
+- **theme**: unified dark terminal theme across all tools — `#0a0a0c` background, `#0f0f11` header bar, `#1ea54c` green values
+- **theme**: added global `kt-terminal.css` as single source of truth for terminal chrome styles
+- **theme**: scoped `!important` overrides on all terminal components to defeat NaiveUI background injection
+- **theme**: `background: transparent !important` added to all terminal row classes across the tool suite
+- **email-header-parser**: bumped text opacity across labels, values, hop lines, and auth details for readability
+- **color-converter**: bumped label, prompt, and copy icon opacity; fixed transparent row backgrounds
+- **date-time-converter**: bumped label, prompt, and copy icon opacity; fixed transparent row backgrounds
+- **password-strength-analyser**: updated terminal background from `rgba(0,0,0,0.3)` to `#0a0a0c` with proper row overrides
+
+### Bug fixes
+
+- **ipv4-subnet-calculator**: restored truncated file tail caused by previous batch script (missing `</style>` and slider thumb CSS)
+- **ipv4-subnet-calculator**: switched `@media` to `@container` for two-column collapse so layout responds to panel width not viewport
+- **ipv4-subnet-calculator**: host range bar labels decoupled from segment proportions so network/broadcast text never clips
+
+## Version 2026.05.02
+
+### Features
+
+- **gif-search**: new tool — search and preview animated GIFs via Giphy proxy Cloudflare Worker
+- **KillerFind**: new landing page with terminal hero, feature cards, download link, and SHA256 checksum
+
+### Refactoring
+
+- **terminal retheme**: unified dark panel aesthetic (`#0a0a0c` / `#1ea54c`) applied across 90+ tool components
+- **terminal retheme**: replaced NaiveUI inputs, dropdowns, sliders, and toggles with native HTML elements and custom styled variants throughout the tool suite
+- **chore**: removed stale killer-scripts README; cleaned up tracked junk files; tightened `.gitignore`
+
+---
+
+## Version 2026.05.01
+
+### Features
+
+- **noHeader flag**: suppress compact header bar on fullscreen embedded tools (e.g. KillerScan)
+
+### Bug fixes
+
+- **noHeader**: corrected v-else fallthrough causing header to render on all fullscreen tools
+- **sidebar**: locked sidebar width to prevent feature grid reflow when categories expand
+
+### Chores
+
+- **deps**: upgrade to Vite 8 and vue-router 5; migrate breaking changes from figue and change-case
+
+---
+
+## Version 2026.04.30
+
+### Features
+
+- **dark mode**: set dark mode as site default
+- **about page**: full redesign with updated copy and CSP documentation
+
+### Refactoring
+
+- **tool pruning**: removed 13 low-value tools, dropped 3 nav categories, renamed Converter to Conversion, reordered nav, revamped OTP generator layout
+- **tool pruning**: removed list-converter; applied terminal green styling to 6 additional tools
+- **light mode**: fixed gray palette and terminal block contrast so dark terminals remain readable in light mode
+- **ascii-word-art**: serve figlet fonts locally instead of jsdelivr CDN
+
+### Bug fixes
+
+- **ascii-word-art**: drop jsdelivr CDN dependency to fix CSP violations
+- **mobile**: fixed version badge nowrap on small screens; fixed mobile overflow on Killer pages
+
+### Chores
+
+- **deps**: phase 2 build stack upgrade to Vite 7, vitest 3, ESLint 9, UnoCSS 66
+- **deps**: phase 1 bumps: Vue 3.5, naive-ui 2.44, marked 18, jwt-decode 4, date-fns 4, TypeScript 5.9, vue-tsc 2.2; fixed all breaking changes
+
+---
+
+## Version 2026.04.26
+
+### Features
+
+- **KillerFind**: add tool landing page with terminal hero, feature cards, download link, and SHA256
+
+### Bug fixes
+
+- **ascii-word-art**: debounce input to fix page freeze on long strings; rename tool for clarity
+
+---
+
+## Version 2026.04.24
+
+### Features
+
+- **KillerScan**: two-column hero layout for landing page; bump to v1.3.0
+- **KillerPDF**: two-column hero layout; flatten and password-protect feature cards; bump to v1.2.0
+
+---
+
+## Version 2026.04.21
+
+### Features
+
+- **crontab-generator**: terminal output panel, pill toggles, compact cheatsheet layout
+- **hash-text**: retheme output as terminal rows; widen layout; cap encoding selector width
+- **exchange-ndr-lookup**: deduplicate 4 hybrid NDR variants; add 18 new error codes
+- **powershell-builder**: add 44 cmdlets; fix quick reference layout jump; default panel to closed state
+- **password-generator**: new tool; merge WiFi QR into QR generator tool
+
+### Bug fixes
+
+- **mime-types**: replace `mime-types` package with inline map; fix extension lookup bug
+- **wysiwyg**: fix toolbar icon rendering and missing en locale keys
+- **cve-lookup**: proxy NVD API through Cloudflare Worker to avoid browser CORS blocking
+
+---
+
+## Version 2026.04.16
+
+### Features
+
+- **KillerScan**: add dedicated tool page with terminal hero and chevron feature list; bump to v1.1.0 (drop .NET 8 dependency)
+- **KillerPDF**: add dedicated tool page with terminal hero; bump to v1.1.0 (drop .NET 8 dependency)
+- **KillerScan**: auto-sort discovered devices by IP address; bump to v1.1.2
+- **KillerScan / KillerPDF**: switch download links to GitHub Releases
+
+### Refactoring
+
+- **KillerScan / KillerPDF**: rebel OSS hero copy; add source links; add oosmetrics badges
+
+---
+
+## Version 2026.04.13
+
+### Features
+
+- **SEO**: per-page canonical URLs, Open Graph tags, Twitter cards, JSON-LD schema markup
+- **sitemap**: add all tool routes to sitemap for search engine indexing
+
+### Bug fixes
+
+- **killer-scripts**: defang script content to clear Google Safe Browsing flag
+
+---
+
+## Version 2026.04.08
+
+### Features
+
+- **KillerScan**: add tool landing page; fix sidebar icons
+
+---
+
+## Version 2026.04.06
+
+### Features
+
+- **domain-lookup**: merge WHOIS and Email DNS checker into single unified Domain Lookup tool
+- **email-record-generator**: new tool generating SPF and DMARC records
+
+### Bug fixes
+
+- **mobile**: fix CVE lookup search bar wrapping; fix search field autofocus on mobile; shorten long placeholder text
+- **mobile menu**: add slide and fade animations to sidebar open/close transitions
+
+---
+
+## Version 2026.04.05
+
+### Features
+
+- **GPO reference**: add 386 new group policies across 33 categories (total 623 policies)
+- **privacy policy**: add standalone privacy policy page for GitHub Pages hosting
+- **post-build**: add route generation step for GitHub Pages 200 responses
+
+### Refactoring
+
+- **killer-scripts**: add description banner explaining Copy Command and Download behavior
+- **killer-scripts**: move `sync-m365skus.ps1` to `scripts/` to keep out of public dist
+- **SEO**: update meta descriptions for all tools
+
+### Bug fixes
+
+- **sidebar**: fix categories requiring two clicks to toggle on first visit
+- **sidebar**: fix mobile menu not closing on item tap
+- **og:image**: fix banner.jpg reference for social sharing previews
+- **plausible-tracker**: remove leftover upstream dependency
+
+---
+
+## Version 2026.04.03
+
+### Features
+
+- **domain migration**: move all references from it-tools to killertools.net
+- **compact header**: apply compact header bar to all tools; uncap layout width on desktop; fix tool descriptions and nav order
+
+### Refactoring
+
+- **branding**: remove Twitter/X references; fix i18n locale config
+- **DMARC checker**: fix false positive warnings on valid DMARC records
+
+---
+
+## Version 2026.04.02
+
+### Features
+
+- **PowerShell Builder**: launch new tool with cmdlet builder UI, quick reference panel, and full TS/lint cleanup
+- **XML / JSON / YAML / TOML converters**: add four new format conversion tools with updated locales
+- **email header parser**: expanded hop analysis, auth results, and routing detail
+
+### Refactoring
+
+- **killer-scripts**: fix copy command, fix IEX piping, fix script download links
+- **nav**: fix sidebar menu item order
+
+### Bug fixes
+
+- **linting**: resolve hundreds of ESLint warnings across codebase
+
+---
+
+## Version 2026.04.01
+
+### Features
+
+- **WHOIS lookup**: new tool
+- **email header parser**: new tool
+- **port and protocol reference**: expand entries; add two-column layout for subnet calculator and MIME types
+
+### Refactoring
+
+- **regex tester**: various tweaks and UX improvements
+- **email DNS checker**: miscellaneous fixes
+- **GPO reference**: expand from 202 to 237 entries across 42 categories
+
+---
+
+## Version 2026.03.31
+
+### Features
+
+- **Windows tools suite**: new tools added: Windows Error Codes, NDR Lookup, Email DNS Checker, CVE Lookup, Port Reference
+- **M365 SKU decoder**: new tool decoding Microsoft 365 license SKUs with full product names
+- **GPO reference**: new tool with 202 group policy entries across 42 categories
+- **password policy reference**: new tool
+- **subnet calculator**: improvements to layout and field organization
+- **M365 Maps link**: add link to M365 Maps from SKU Decoder page
+
+### Bug fixes
+
+- **WYSIWYG editor**: fix toolbar rendering issues
+- **QR generator**: fix rendering bug
+- **mobile**: fix layout, scrollbar, menu, and spacing issues across multiple views
+- **branding**: update favicons, banner, and linting fixes
+
+### Chores
+
+- **CI**: remove Docker nightly release workflow
+
+---
+
+## Version 2026.03.29
+
+### Features
+
+- **initial fork**: fork from IT-Tools; initial Killer Tools build targeting killertools.net
+- **killer-scripts page**: new page listing downloadable PowerShell scripts with names, descriptions, and copy-command cards loaded from `descriptions.json`
+- **branding**: VT323 retro terminal font style for sidebar logo, icons, and banner image
+- **sidebar**: widen sidebar, collapse all categories by default except Killer Scripts; Killer Scripts pinned to top
+- **PWA**: update manifest and page titles to Killer Tools branding
+- **custom 404**: add custom 404 page and client-side redirects
+
+### Bug fixes
+
+- **ASCII art**: fix figlet font path, switch to jsdelivr CDN, add graceful fallback for missing fonts; remove duplicate font entry
+- **mobile menu**: fix toggle button hidden behind circle button override; fix logo click blocked by gradient overlay
+- **sidebar**: fix collapsed menu template structure; fix logo positioning; hide circle toolbar buttons
+- **deploy**: fix GitHub Actions deploy using pnpm; skip vue-tsc in CI; add CNAME
+- **token generator**: fix layout wrapping on mobile
+
+### Chores
+
+- **IT-Tools workflows**: remove upstream CI workflows; clean build after cache purge
+
+---
+
 ## Version 2024.10.22-7ca5933
 
 ### Features

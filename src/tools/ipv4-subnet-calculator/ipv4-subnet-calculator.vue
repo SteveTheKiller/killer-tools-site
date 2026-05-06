@@ -41,7 +41,7 @@ function isPrivateIP(base: string): boolean {
   return false;
 }
 
-const usableHosts = computed(() => {
+const _usableHosts = computed(() => {
   if (!networkInfo.value) {
     return null;
   }
@@ -230,7 +230,7 @@ const rangeBar = computed(() => {
     hosts: Math.max(0, size - 2),
     cidr,
   };
-})
+});
 </script>
 
 <template>
