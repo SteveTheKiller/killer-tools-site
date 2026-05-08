@@ -13,7 +13,7 @@ const features = [
   { title: 'Merge & Split', desc: 'Combine multiple PDFs into one or extract selected pages into a new file. Drag-and-drop page reordering in the sidebar.' },
   { title: 'Edit Text', desc: 'Double-click any line of text to edit it inline. Font matching from the original PDF preserves the look of the document.' },
   { title: 'Annotate', desc: 'Text boxes, freehand drawing, and highlight overlays with customizable colors, sizes, and opacity. Undo and clear per page.' },
-  { title: 'Signatures', desc: 'Draw and save reusable signatures. Click to place them anywhere on a page, just like Acrobat. Signatures persist between sessions.' },
+  { title: 'Signatures', desc: 'Draw reusable signatures or import a PNG/JPG/BMP image as a signature. Click to place anywhere on a page. Signatures persist between sessions.' },
   { title: 'Search & Select', desc: 'Ctrl+F full-text search with highlighted results. Drag-select to copy text, or Ctrl+A to grab the whole page.' },
   { title: 'Print', desc: 'Print with annotations flattened into the output. Ctrl+P or toolbar button sends directly to the system print dialog.' },
   { title: 'Install or Run Portable', desc: 'Run directly from anywhere, or use the built-in installer to register it in Start Menu as a PDF handler. No admin rights needed either way.' },
@@ -84,10 +84,10 @@ const features = [
             Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
           <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
-            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.2.1 &middot; updated 5/4/2026
+            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.3.0 &middot; updated 5/8/2026
           </div>
           <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
-            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>ABB11D3E84A843A69AC25D2330088F29709F9406CC154325400E8DFF9E8F5B7B
+            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>7F4F58B1F907D21E2268647432258763EE88D18437E317C43CF3EC4CCF5BC158
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerPDF"
