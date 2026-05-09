@@ -71,7 +71,9 @@ const metricsRes = await fetch(
   { headers: { Authorization: `Bearer ${token}` } },
 );
 if (!metricsRes.ok) {
+  const body = await metricsRes.text();
   console.error(`Metrics fetch failed: ${metricsRes.status} ${metricsRes.statusText}`);
+  console.error(`Response body: ${body}`);
   process.exit(1);
 }
 
