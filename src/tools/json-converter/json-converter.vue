@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Check, Copy } from '@vicons/tabler';
-import JSON5 from 'json5';
 import { stringify as stringifyToml } from 'iarna-toml-esm';
+import JSON5 from 'json5';
 import { stringify as stringifyYaml } from 'yaml';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
@@ -50,8 +50,12 @@ function copyOutput() {
     <div mb-4 flex items-center gap-3>
       <span class="text-sm op-60">Convert to:</span>
       <div class="kt-pill-row">
-        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'yaml' }" @click="outputFormat = 'yaml'">YAML</button>
-        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'toml' }" @click="outputFormat = 'toml'">TOML</button>
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'yaml' }" @click="outputFormat = 'yaml'">
+          YAML
+        </button>
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'toml' }" @click="outputFormat = 'toml'">
+          TOML
+        </button>
       </div>
     </div>
 

@@ -9,34 +9,92 @@ const { copy } = useCopy();
 </script>
 
 <template>
-  <c-card flex items-center gap-3 important:py-8px important:pl-10px important:pr-5px>
-    <div cursor-pointer text-30px @click="copy(emojiInfo.emoji, { notificationMessage: `Emoji ${emojiInfo.emoji} copied to the clipboard` })">
+  <div class="ec-card" @click="copy(emojiInfo.emoji, { notificationMessage: `Emoji ${emojiInfo.emoji} copied to the clipboard` })">
+    <div class="ec-emoji">
       {{ emojiInfo.emoji }}
     </div>
 
-    <div min-w-0 flex-1>
-      <div truncate font-bold>
+    <div class="ec-info">
+      <div class="ec-title">
         {{ emojiInfo.title }}
       </div>
-
-      <!-- <div>
-        <c-link>
-          {{ emojiInfo.codePoints }}
-        </c-link>
-      </div>
-      <div />
-      <div rounded op-70>
-        Unicode:  <span border="1px solid current op-30" b-rd-xl px-12px py-4px>{{ emojiInfo.unicode }}</span>
-      </div> -->
-
-      <div flex gap-2 text-xs font-mono op-70>
-        <span cursor-pointer transition hover:text-primary @click="copy(emojiInfo.codePoints, { notificationMessage: `Code points '${emojiInfo.codePoints}' copied to the clipboard` })">
+      <div class="ec-meta">
+        <span class="ec-code" @click.stop="copy(emojiInfo.codePoints, { notificationMessage: `Code points '${emojiInfo.codePoints}' copied to the clipboard` })">
           {{ emojiInfo.codePoints }}
         </span>
-        <span cursor-pointer truncate transition hover:text-primary @click="copy(emojiInfo.unicode, { notificationMessage: `Unicode '${emojiInfo.unicode}' copied to the clipboard` })">
+        <span class="ec-code ec-unicode" @click.stop="copy(emojiInfo.unicode, { notificationMessage: `Unicode '${emojiInfo.unicode}' copied to the clipboard` })">
           {{ emojiInfo.unicode }}
         </span>
       </div>
     </div>
-  </c-card>
+  </div>
 </template>
+
+<style scoped>
+.ec-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(30, 165, 76, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.12s;
+  min-width: 0;
+}
+
+.ec-card:hover {
+  background: rgba(30, 165, 76, 0.08);
+  border-color: rgba(30, 165, 76, 0.4);
+}
+
+.ec-emoji {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.ec-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ec-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ec-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.ec-code {
+  font-size: 0.68rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.1s;
+}
+
+.ec-code:hover {
+  color: #1ea54c;
+}
+
+.ec-unicode {
+  min-width: 0;
+}
+</style>

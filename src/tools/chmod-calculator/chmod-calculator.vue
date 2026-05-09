@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Group, Scope } from './chmod-calculator.types';
-import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
 import { useCopy } from '@/composable/copy';
+import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
 
 const scopes: { scope: Scope, title: string, bit: number }[] = [
   { scope: 'read', title: 'Read', bit: 4 },

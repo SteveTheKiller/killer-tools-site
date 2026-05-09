@@ -322,7 +322,7 @@ const groupedAuth = computed(() => {
         mb-4
       />
       <div flex justify-end gap-3>
-        <button type="button" class="kt-pill kt-pill-active" :disabled="!rawHeaders.trim()" @click="parseHeaders">
+        <button type="button" class="kt-search-btn" style="width: 140px;" :disabled="!rawHeaders.trim()" @click="parseHeaders">
           Parse Headers
         </button>
       </div>
@@ -330,15 +330,14 @@ const groupedAuth = computed(() => {
 
     <template v-if="parsed && result">
       <div mb-4 flex justify-end>
-        <c-button variant="text" @click="reset">
+        <button type="button" class="kt-search-btn" style="width: 150px;" @click="reset">
           ← Parse Another
-        </c-button>
+        </button>
       </div>
 
       <div class="grid grid-cols-1 gap-16px lg:grid-cols-2">
         <!-- Left: Message Details + Delivery Hops -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
-
           <!-- Message Details -->
           <div class="ehp-terminal">
             <div class="ehp-terminal-bar">
@@ -366,7 +365,9 @@ const groupedAuth = computed(() => {
             </div>
             <div class="ehp-terminal-body">
               <div v-for="(hop, i) in [...result.hops].reverse()" :key="i" class="ehp-hop">
-                <div class="ehp-hop-num">{{ String(i + 1).padStart(2, '0') }}</div>
+                <div class="ehp-hop-num">
+                  {{ String(i + 1).padStart(2, '0') }}
+                </div>
                 <div class="ehp-hop-content">
                   <div v-if="hop.from" class="ehp-hop-line">
                     <span class="ehp-hop-key">From:</span>
@@ -389,7 +390,6 @@ const groupedAuth = computed(() => {
 
         <!-- Right: Auth Results + Spam -->
         <div class="grid grid-cols-1 gap-16px" style="align-content: start;">
-
           <!-- Authentication Results -->
           <div v-if="result.auth.length" class="ehp-terminal">
             <div class="ehp-terminal-bar">
@@ -397,7 +397,9 @@ const groupedAuth = computed(() => {
             </div>
             <div class="ehp-terminal-body">
               <div v-for="group in groupedAuth" :key="group.protocol" class="ehp-auth-group">
-                <div class="ehp-section-header">{{ group.protocol }}</div>
+                <div class="ehp-section-header">
+                  {{ group.protocol }}
+                </div>
                 <div class="ehp-auth-grid">
                   <div v-for="(a, i) in group.entries" :key="i" class="ehp-auth-entry">
                     <div class="ehp-auth-entry-inner">
@@ -458,7 +460,7 @@ const groupedAuth = computed(() => {
   align-items: center;
   justify-content: space-between;
   padding: 7px 12px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--kt-term-bar-bg);
   border-bottom: 1px solid rgba(30, 165, 76, 0.15);
 }
 
@@ -569,8 +571,8 @@ const groupedAuth = computed(() => {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .ehp-auth-grid {

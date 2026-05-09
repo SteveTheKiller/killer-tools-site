@@ -441,7 +441,7 @@ const dmarcRecord = computed(() => {
 /* ── Record output ── */
 .erg-record-area {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   cursor: pointer;
   transition: background 0.1s;
 }
@@ -490,10 +490,10 @@ const dmarcRecord = computed(() => {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -503,7 +503,7 @@ const dmarcRecord = computed(() => {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 5px;
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 /* ── Alignment pill rows ── */
@@ -512,7 +512,7 @@ const dmarcRecord = computed(() => {
   flex-wrap: wrap;
   gap: 6px;
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .erg-pill-row-last {
@@ -550,7 +550,7 @@ const dmarcRecord = computed(() => {
 /* ── Input areas ── */
 .erg-input-area {
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .erg-input {
@@ -571,7 +571,7 @@ const dmarcRecord = computed(() => {
 /* ── Slider ── */
 .erg-slider-area {
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .erg-slider {
@@ -618,7 +618,7 @@ const dmarcRecord = computed(() => {
 /* ── Custom dropdowns ── */
 .erg-dropdown-area {
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   position: relative;
 }
 

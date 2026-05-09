@@ -48,9 +48,9 @@ function generateHOTP({ key, counter = 0 }: { key: string, counter?: number }) {
   const offset = bytes[19] & 0xF;
   const v
     = ((bytes[offset] & 0x7F) << 24)
-    | ((bytes[offset + 1] & 0xFF) << 16)
+      | ((bytes[offset + 1] & 0xFF) << 16)
       | ((bytes[offset + 2] & 0xFF) << 8)
-    | (bytes[offset + 3] & 0xFF);
+      | (bytes[offset + 3] & 0xFF);
 
   const code = String(v % 1000000).padStart(6, '0');
 

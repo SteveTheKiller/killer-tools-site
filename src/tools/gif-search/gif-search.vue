@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Check, Copy, Photo } from '@vicons/tabler';
+import { Check, Copy, Photo, Search } from '@vicons/tabler';
 
 const PROXY = 'https://gif-proxy.cst-498.workers.dev';
 
@@ -74,9 +74,15 @@ async function copyGif(gif: GifResult) {
         </template>
       </c-input-text>
 
-      <c-button :disabled="loading || !query.trim()" style="flex-shrink: 0;" @click="search">
+      <button
+        type="button"
+        class="kt-search-btn"
+        :disabled="loading || !query.trim()"
+        @click="search"
+      >
+        <n-icon v-if="!loading" :component="Search" />
         {{ loading ? 'Searching...' : 'Search' }}
-      </c-button>
+      </button>
     </div>
 
     <div v-if="error" class="kt-alert kt-alert-error" style="margin-bottom: 16px;">

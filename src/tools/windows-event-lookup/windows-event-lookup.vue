@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Check, Copy } from '@vicons/tabler';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { eventsByCategory } from './windows-event-lookup.constants';
 
@@ -48,53 +47,157 @@ function copyId(id: number) {
       placeholder="Search by event ID, name, or description..."
       autofocus
       raw-text
-      mb-10
+      mb-4
     />
 
-    <div v-for="{ events, category, log } of filtered" :key="category" mb-8>
-      <div mb-4 text-xl>
+    <div v-for="{ events, category, log } of filtered" :key="category" class="wel-section">
+      <div class="wel-category-header">
         {{ category }}
-        <span v-if="log" ml-2 text-sm op-40>{{ log }} Log</span>
+        <span v-if="log" class="wel-log-badge">{{ log }}</span>
       </div>
 
-      <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
-        <c-card
+      <div class="wel-grid">
+        <div
           v-for="{ id, name, description, severity } of events"
           :key="id"
-          class="flex flex-col justify-between"
+          class="kt-terminal wel-card"
         >
-          <div>
-            <div mb-2 flex items-start justify-between gap-2>
-              <span
-                class="text-primary font-bold font-mono"
-                style="font-size: 1.4rem; letter-spacing: 0.05em; line-height: 1;"
-              >{{ id }}</span>
-              <div flex items-center gap-1>
-                <span class="kt-tag" :class="`kt-tag-${severityColor[severity]}`">{{ severity }}</span>
-                <c-tooltip :tooltip="copiedId === id ? 'Copied!' : 'Copy ID'">
-                  <c-button
-                    circle
-                    variant="text"
-                    style="width: 24px; height: 24px;"
-                    @click.stop="copyId(id)"
-                  >
-                    <n-icon size="14" :component="copiedId === id ? Check : Copy" />
-                  </c-button>
-                </c-tooltip>
-              </div>
-            </div>
-            <div class="mb-1 text-sm font-semibold">
+          <div
+            class="kt-terminal-bar wel-bar"
+            :class="{ 'wel-bar-copied': copiedId === id }"
+            :title="copiedId === id ? 'Copied!' : 'Click to copy event ID'"
+            @click="copyId(id)"
+          >
+            <span class="kt-prompt">&gt;_</span>
+            <code class="wel-id">{{ copiedId === id ? '✓ copied' : id }}</code>
+            <span class="wel-severity" :class="`wel-sev-${severityColor[severity]}`">{{ severity }}</span>
+          </div>
+
+          <div class="wel-body">
+            <div class="wel-name">
               {{ name }}
             </div>
-            <div
-              class="text-xs text-neutral-500 dark:text-neutral-400"
-              style="line-clamp: 3; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
-            >
+            <div class="wel-desc">
               {{ description }}
             </div>
           </div>
-        </c-card>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+.wel-section {
+  margin-bottom: 32px;
+}
+
+.wel-category-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(30, 165, 76, 0.65);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  padding: 0 2px 8px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wel-log-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(30, 165, 76, 0.1);
+  color: rgba(30, 165, 76, 0.6);
+  border: 1px solid rgba(30, 165, 76, 0.2);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  white-space: nowrap;
+}
+
+.wel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.wel-bar {
+  padding: 3px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.wel-bar:hover {
+  background: rgba(30, 165, 76, 0.18) !important;
+}
+
+.wel-bar-copied {
+  background: rgba(30, 165, 76, 0.22) !important;
+}
+
+.wel-id {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1ea54c;
+  letter-spacing: 0.05em;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.wel-severity {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.wel-sev-default  { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+.wel-sev-warning  { background: rgba(234,179,8,0.12);   color: #ca8a04; border: 1px solid rgba(234,179,8,0.3); }
+.wel-sev-error    { background: rgba(239,68,68,0.12);   color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+
+.wel-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wel-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.wel-desc {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 2px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+</style>

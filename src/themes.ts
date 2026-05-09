@@ -65,14 +65,14 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Layout: {
-    color: '#0f0f0f',
-    siderColor: '#141414',
-    siderBorderColor: 'transparent',
+    color: '#2b2b2b',
+    siderColor: '#262626',
+    siderBorderColor: 'rgba(30, 165, 76, 0.1)',
   },
 
   Card: {
-    color: '#1a1a1a',
-    borderColor: '#222222',
+    color: '#1e1e1e',
+    borderColor: '#2a2a2a',
   },
 
   Button: {
@@ -93,8 +93,8 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Input: {
-    color: 'rgba(0, 0, 0, 0.45)',
-    colorFocus: 'rgba(0, 0, 0, 0.55)',
+    color: '#0f0f11',
+    colorFocus: '#111114',
     border: '1px solid rgba(30, 165, 76, 0.28)',
     borderHover: '1px solid rgba(30, 165, 76, 0.55)',
     borderFocus: '1px solid rgba(30, 165, 76, 0.75)',

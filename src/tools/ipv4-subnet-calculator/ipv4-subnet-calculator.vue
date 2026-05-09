@@ -390,14 +390,14 @@ const rangeBar = computed(() => {
 
       <!-- Prev / Next block nav -->
       <div v-if="networkInfo" class="k-nav-row">
-        <c-button size="small" @click="switchToBlock({ count: -1 })">
+        <button type="button" class="kt-nav-btn" @click="switchToBlock({ count: -1 })">
           <n-icon :component="ArrowLeft" />
           Previous block
-        </c-button>
-        <c-button size="small" @click="switchToBlock({ count: 1 })">
+        </button>
+        <button type="button" class="kt-nav-btn" @click="switchToBlock({ count: 1 })">
           Next block
           <n-icon :component="ArrowRight" />
-        </c-button>
+        </button>
       </div>
     </div>
 
@@ -446,7 +446,7 @@ const rangeBar = computed(() => {
 <style scoped>
 /* Explicit terminal colors — same values used across all tools */
 .k-terminal { background: #0a0a0c !important; }
-.k-terminal-bar { background: #0f0f11 !important; }
+.k-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 .k-row { background: transparent !important; }
 .k-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 
@@ -488,7 +488,7 @@ const rangeBar = computed(() => {
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  background: #0f0f11 !important;
+  background: var(--kt-term-bar-bg) !important;
   border-bottom: 1px solid rgba(30, 165, 76, 0.2);
 }
 
@@ -547,19 +547,42 @@ const rangeBar = computed(() => {
 }
 
 .k-nav-row {
+  gap: 8px;
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
+
+.kt-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  height: 32px;
+  background: rgba(30, 165, 76, 0.08);
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 6px;
+  color: #1ea54c;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.kt-nav-btn:hover {
+  background: rgba(30, 165, 76, 0.16);
+  border-color: rgba(30, 165, 76, 0.6);
+}
 }
 
 .k-section-row {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -731,7 +754,7 @@ const rangeBar = computed(() => {
   flex-direction: column;
   gap: 2px;
   padding: 6px 10px;
-  background: rgba(255,255,255,0.03);
+  background: var(--kt-term-bar-bg);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 6px;
   cursor: pointer;

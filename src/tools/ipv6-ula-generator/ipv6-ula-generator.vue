@@ -45,12 +45,12 @@ async function copyValue(label: string, value: string) {
       v-model:value="macAddress"
       label="MAC Address"
       placeholder="20:37:06:12:34:56"
+      mb-3
       clearable
       raw-text
       autofocus
-      :validation="addressValidation"
       font-mono
-      mb-3
+      :validation="addressValidation"
     />
 
     <div v-if="addressValidation.isValid" class="kt-terminal">
@@ -82,7 +82,7 @@ async function copyValue(label: string, value: string) {
 <style scoped>
 /* Scoped overrides beat NaiveUI's injected backgrounds */
 .kt-terminal { background: #0a0a0c !important; }
-.kt-terminal-bar { background: #0f0f11 !important; }
+/* bar color now from global kt-terminal.css var(--kt-term-bar-bg) */
 .kt-row { background: transparent !important; }
 .kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 

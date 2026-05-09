@@ -1,13 +1,13 @@
 declare module 'figue' {
   export function figue(schema: Record<string, any>): {
-    loadEnv: (env: Record<string, any>) => ReturnType<typeof figue>,
-    validate: () => ReturnType<typeof figue>,
-    getConfig: () => any,
+    loadEnv: (env: Record<string, any>) => ReturnType<typeof figue>
+    validate: () => ReturnType<typeof figue>
+    getConfig: () => any
   };
 }
 
 declare module 'naive-ui' {
-  import type { Component, DefineComponent, Ref } from 'vue';
+  import type { DefineComponent } from 'vue';
 
   export const darkTheme: any;
   export const lightTheme: any;
@@ -188,13 +188,13 @@ declare module 'emojilib' {
 
 declare module 'unicode-emoji-json' {
   const emoji: Record<string, {
-    name: string,
-    slug: string,
-    group: string,
-    emoji_version: string,
-    unicode_version: string,
-    skin_tone_support: boolean,
-    skin_tone_support_unicode_version: string,
+    name: string
+    slug: string
+    group: string
+    emoji_version: string
+    unicode_version: string
+    skin_tone_support: boolean
+    skin_tone_support_unicode_version: string
   }>;
 
   export default emoji;

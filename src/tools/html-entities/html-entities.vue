@@ -137,7 +137,7 @@ async function copyUnescape() {
   flex-direction: column;
   gap: 4px;
   padding: 12px 12px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .he-field-label {
@@ -170,17 +170,17 @@ async function copyUnescape() {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 /* ── Output area ── */
 .he-output-area {
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   flex: 1;
 }
 

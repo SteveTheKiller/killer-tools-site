@@ -29,6 +29,7 @@ const regexValidation = useValidation({
     },
   ],
 });
+
 const results = computed(() => {
   let flags = 'd';
   if (global.value) {
@@ -178,139 +179,160 @@ const cheatsheet = [
 <template>
   <div class="regex-layout" style="flex: 1 1 900px; max-width: 1400px; margin-top: 0; display: flex; gap: 16px; align-items: start;">
     <!-- Left: Tester -->
-    <div style="flex: 1; min-width: 0;">
-      <c-card title="Regex" mb-1>
-        <c-input-text
-          v-model:value="regex"
-          label="Regex to test:"
-          placeholder="Put the regex to test"
-          multiline
-          autofocus
-          rows="3"
-          :validation="regexValidation"
-        />
-        <div class="kt-pill-row" style="margin-top: 10px;">
-          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': global }" title="Global search" @click="global = !global">
-            Global
-          </button>
-          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': ignoreCase }" title="Case-insensitive search" @click="ignoreCase = !ignoreCase">
-            Ignore case
-          </button>
-          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': multiline }" title="Allows ^ and $ to match next to newline characters." @click="multiline = !multiline">
-            Multiline
-          </button>
-          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': dotAll }" title="Allows . to match newline characters." @click="dotAll = !dotAll">
-            Singleline
-          </button>
-          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicode }" title="Unicode; treat a pattern as a sequence of Unicode code points." @click="unicode = !unicode">
-            Unicode
-          </button>
-          <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicodeSets }" title="An upgrade to the u mode with more Unicode features." @click="unicodeSets = !unicodeSets">
-            Unicode Sets
-          </button>
+    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+      <!-- Regex input -->
+      <div class="kt-terminal rt-card">
+        <div class="kt-terminal-bar rt-bar">
+          <span class="kt-prompt">&gt;_</span>
+          <span class="rt-title">REGEX</span>
         </div>
+        <div class="rt-body">
+          <c-input-text
+            v-model:value="regex"
+            label="Regex to test:"
+            placeholder="Put the regex to test"
+            multiline
+            autofocus
+            rows="3"
+            :validation="regexValidation"
+          />
+          <div class="kt-pill-row" style="margin-top: 10px;">
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': global }" title="Global search" @click="global = !global">
+              Global
+            </button>
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': ignoreCase }" title="Case-insensitive search" @click="ignoreCase = !ignoreCase">
+              Ignore case
+            </button>
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': multiline }" title="Allows ^ and $ to match next to newline characters." @click="multiline = !multiline">
+              Multiline
+            </button>
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': dotAll }" title="Allows . to match newline characters." @click="dotAll = !dotAll">
+              Singleline
+            </button>
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicode }" title="Unicode; treat a pattern as a sequence of Unicode code points." @click="unicode = !unicode">
+              Unicode
+            </button>
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicodeSets }" title="An upgrade to the u mode with more Unicode features." @click="unicodeSets = !unicodeSets">
+              Unicode Sets
+            </button>
+          </div>
+          <div class="kt-divider" />
+          <c-input-text
+            v-model:value="text"
+            label="Text to match:"
+            placeholder="Put the text to match"
+            multiline
+            rows="5"
+          />
+        </div>
+      </div>
 
-        <div class="kt-divider" />
+      <!-- Matches -->
+      <div class="kt-terminal rt-card">
+        <div class="kt-terminal-bar rt-bar">
+          <span class="kt-prompt">&gt;_</span>
+          <span class="rt-title">MATCHES</span>
+          <span v-if="results?.length > 0" class="rt-count">{{ results.length }}</span>
+        </div>
+        <div class="rt-body rt-body-matches">
+          <template v-if="results?.length > 0">
+            <div class="rt-match-header">
+              <span class="rt-match-col-idx">Index</span>
+              <span class="rt-match-col-val">Value</span>
+              <span class="rt-match-col-cap">Captures</span>
+              <span class="rt-match-col-grp">Groups</span>
+            </div>
+            <div
+              v-for="match of results"
+              :key="match.index"
+              class="rt-match-row"
+            >
+              <span class="rt-match-col-idx rt-match-idx">{{ match.index }}</span>
+              <span class="rt-match-col-val rt-match-val">{{ match.value }}</span>
+              <span class="rt-match-col-cap rt-match-meta">
+                <span v-for="capture in match.captures" :key="capture.name" class="rt-capture">
+                  "{{ capture.name }}" = {{ capture.value }} [{{ capture.start }}-{{ capture.end }}]
+                </span>
+              </span>
+              <span class="rt-match-col-grp rt-match-meta">
+                <span v-for="group in match.groups" :key="group.name" class="rt-capture">
+                  "{{ group.name }}" = {{ group.value }} [{{ group.start }}-{{ group.end }}]
+                </span>
+              </span>
+            </div>
+          </template>
+          <div v-else class="rt-no-match">
+            <span class="kt-prompt">&gt;_</span> No match
+          </div>
+        </div>
+      </div>
 
-        <c-input-text
-          v-model:value="text"
-          label="Text to match:"
-          placeholder="Put the text to match"
-          multiline
-          rows="5"
-        />
-      </c-card>
+      <!-- Sample -->
+      <div class="kt-terminal rt-card">
+        <div class="kt-terminal-bar rt-bar">
+          <span class="kt-prompt">&gt;_</span>
+          <span class="rt-title">SAMPLE</span>
+        </div>
+        <div class="rt-body">
+          <pre class="rt-sample">{{ sample || '—' }}</pre>
+        </div>
+      </div>
 
-      <c-card title="Matches" mb-1 mt-3>
-        <n-table v-if="results?.length > 0">
-          <thead>
-            <tr>
-              <th scope="col">
-                Index in text
-              </th>
-              <th scope="col">
-                Value
-              </th>
-              <th scope="col">
-                Captures
-              </th>
-              <th scope="col">
-                Groups
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="match of results" :key="match.index">
-              <td>{{ match.index }}</td>
-              <td>{{ match.value }}</td>
-              <td>
-                <ul>
-                  <li v-for="capture in match.captures" :key="capture.name">
-                    "{{ capture.name }}" = {{ capture.value }} [{{ capture.start }} - {{ capture.end }}]
-                  </li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li v-for="group in match.groups" :key="group.name">
-                    "{{ group.name }}" = {{ group.value }} [{{ group.start }} - {{ group.end }}]
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </n-table>
-        <c-alert v-else>
-          No match
-        </c-alert>
-      </c-card>
-
-      <c-card title="Sample matching text" mt-3>
-        <pre style="white-space: pre-wrap; word-break: break-all;">{{ sample }}</pre>
-      </c-card>
-
-      <c-card title="Regex Diagram" style="overflow-x: auto;" mt-3>
-        <shadow-root ref="visualizerSVG">
+      <!-- Diagram -->
+      <div class="kt-terminal rt-card">
+        <div class="kt-terminal-bar rt-bar">
+          <span class="kt-prompt">&gt;_</span>
+          <span class="rt-title">DIAGRAM</span>
+        </div>
+        <div class="rt-body rt-diagram-body">
+          <shadow-root ref="visualizerSVG">
 &#xa0;
-        </shadow-root>
-      </c-card>
+          </shadow-root>
+        </div>
+      </div>
     </div>
 
     <!-- Right: Cheatsheet -->
-    <div class="cheatsheet-panel" style="width: 360px; flex-shrink: 0; position: sticky; top: 16px; max-height: calc(100vh - 80px); overflow-y: auto;">
-      <c-card>
-        <div class="mb-3 text-base font-bold">
-          Quick Reference
+    <div class="cheatsheet-panel">
+      <div class="rt-cs-panel">
+        <div class="rt-cs-panel-bar">
+          <span class="rt-cs-dot" />
+          <span class="rt-cs-panel-title">Quick Reference</span>
         </div>
-        <div
-          v-for="section in cheatsheet"
-          :key="section.title"
-          mb-4
-        >
-          <div class="mb-1 text-xs font-bold uppercase op-60">
-            {{ section.title }}
+        <div class="rt-cheatsheet-body">
+          <div
+            v-for="section in cheatsheet"
+            :key="section.title"
+            class="rt-cs-section"
+          >
+            <div class="rt-cs-header">
+              {{ section.title }}
+            </div>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr
+                v-for="row in section.rows"
+                :key="row.expr"
+                style="border-bottom: 1px solid rgba(255,255,255,0.05);"
+              >
+                <td style="padding: 3px 8px 3px 0; white-space: nowrap; width: 1%;">
+                  <code class="rt-cs-expr">{{ row.expr }}</code>
+                </td>
+                <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7;">
+                  {{ row.desc }}
+                </td>
+              </tr>
+            </table>
           </div>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr
-              v-for="row in section.rows"
-              :key="row.expr"
-              style="border-bottom: 1px solid rgba(255,255,255,0.05);"
-            >
-              <td style="padding: 3px 8px 3px 0; white-space: nowrap; width: 1%;">
-                <code style="font-size: 0.72rem; color: #1ea54c; background: rgba(30,165,76,0.1); padding: 1px 4px; border-radius: 3px;">{{ row.expr }}</code>
-              </td>
-              <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7;">
-                {{ row.desc }}
-              </td>
-            </tr>
-          </table>
         </div>
-      </c-card>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
 .regex-layout {
   container-type: inline-size;
 }
@@ -319,6 +341,7 @@ const cheatsheet = [
   .regex-layout {
     flex-direction: column;
   }
+
   .cheatsheet-panel {
     width: 100% !important;
     position: static !important;
@@ -326,17 +349,211 @@ const cheatsheet = [
   }
 }
 
+.cheatsheet-panel {
+  width: 340px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
 .cheatsheet-panel::-webkit-scrollbar {
   width: 4px;
 }
+
 .cheatsheet-panel::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .cheatsheet-panel::-webkit-scrollbar-thumb {
   background: rgba(30, 165, 76, 0.3);
   border-radius: 2px;
 }
+
 .cheatsheet-panel::-webkit-scrollbar-thumb:hover {
   background: rgba(30, 165, 76, 0.55);
+}
+
+.rt-bar {
+  padding: 3px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rt-title {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1ea54c;
+  letter-spacing: 0.05em;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.rt-count {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(30, 165, 76, 0.15);
+  color: #1ea54c;
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.rt-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rt-body-matches {
+  padding: 0;
+}
+
+.rt-match-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 5px 14px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+}
+
+.rt-match-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 7px 14px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  font-size: 0.75rem;
+  align-items: start;
+}
+
+.rt-match-row:last-child {
+  border-bottom: none;
+}
+
+.rt-match-idx {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.rt-match-val {
+  color: #1ea54c;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  word-break: break-all;
+}
+
+.rt-match-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rt-capture {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  word-break: break-all;
+}
+
+.rt-no-match {
+  padding: 14px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rt-sample {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.82rem;
+  color: #1ea54c;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}
+
+.rt-diagram-body {
+  overflow-x: auto;
+  padding: 12px 14px;
+}
+
+/* Cheatsheet panel - matches PS Builder style */
+.rt-cs-panel {
+  background: var(--kt-term-bg);
+  border: 1px solid var(--kt-term-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rt-cs-panel-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
+  padding: 6px 12px;
+  min-height: 32px;
+}
+
+.rt-cs-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(30, 165, 76, 0.55);
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(30, 165, 76, 0.3);
+}
+
+.rt-cs-panel-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.rt-cheatsheet-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rt-cs-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.rt-cs-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  opacity: 0.5;
+  margin-bottom: 6px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.rt-cs-expr {
+  font-size: 0.72rem;
+  color: #1ea54c;
+  background: rgba(30, 165, 76, 0.1);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 </style>

@@ -49,8 +49,8 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
       <c-input-text
         v-model:value="rawIpAddress"
         placeholder="192.168.1.1"
-        font-mono
         autofocus
+        font-mono
       />
 
       <div class="kt-divider" />

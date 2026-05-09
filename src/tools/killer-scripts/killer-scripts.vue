@@ -89,55 +89,151 @@ function downloadScript(script: { name: string, download_url: string }) {
     </div>
 
     <template v-else>
-      <div class="mb-4 rounded px-4 py-3 text-sm" style="background: rgba(30, 165, 76, 0.08); border: 1px solid rgba(30, 165, 76, 0.25); color: inherit;">
+      <div class="mb-4 rounded px-4 py-3 text-sm" style="background: rgba(234, 179, 8, 0.07); border: 1px solid rgba(234, 179, 8, 0.3); color: rgba(255, 255, 255, 0.6);">
         <span class="font-semibold" style="color: #1ea54c;">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
-        <span class="font-semibold" style="color: inherit; opacity: 0.7;">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
+        <span class="font-semibold" style="color: rgba(255, 255, 255, 0.5);">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
       </div>
       <div
         class="grid gap-12px"
         style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"
       >
-        <c-card
+        <div
           v-for="script in scripts"
           :key="script.name"
-          class="flex flex-col justify-between transition transition-duration-0.5s !border-2px !hover:border-primary"
+          class="kt-terminal ks-card"
         >
-          <div>
-            <div mb-3 flex items-start justify-between gap-2>
-              <span
-                class="text-primary font-bold font-mono"
-                style="font-size: 1.4rem; letter-spacing: 0.05em; line-height: 1;"
-              >>_{{ acronym(script.name) }}</span>
-            </div>
+          <div class="kt-terminal-bar ks-bar">
+            <span class="kt-prompt">&gt;_</span>
+            <span class="ks-acronym">{{ acronym(script.name) }}</span>
+          </div>
 
-            <div class="mb-1 text-sm text-black font-semibold dark:text-white">
+          <div class="ks-body">
+            <div class="ks-name">
               {{ descriptions[script.name]?.name ?? script.name }}
             </div>
-
-            <div class="text-xs text-neutral-500 dark:text-neutral-400" style="-webkit-line-clamp: 3; line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">
+            <div class="ks-desc">
               {{ descriptions[script.name]?.description ?? '' }}
             </div>
           </div>
 
-          <div mt-3 flex items-center gap-2>
+          <div class="ks-actions">
             <button
-              class="flex-1 cursor-pointer rounded px-2 py-1 text-xs font-semibold transition"
-              style="background: transparent; color: #1ea54c; border: 1px solid #1ea54c;"
+              class="ks-btn-copy"
               @click.stop="copyCommand(script)"
             >
               {{ copied === script.name ? '✓ Copied!' : '⧉ Copy Command' }}
             </button>
             <button
-              class="cursor-pointer rounded px-2 py-1 text-xs transition"
-              style="background: transparent; color: inherit; border: 1px solid currentColor; opacity: 0.5;"
+              class="ks-btn-dl"
               title="Download .ps1"
               @click.stop="downloadScript(script)"
             >
               ↓ Download
             </button>
           </div>
-        </c-card>
+        </div>
       </div>
     </template>
   </div>
 </template>
+
+<style scoped>
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+.ks-card {
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s;
+}
+
+.ks-card:hover {
+  border-color: rgba(30, 165, 76, 0.6) !important;
+}
+
+.ks-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px !important;
+}
+
+.ks-acronym {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1ea54c;
+  letter-spacing: 0.05em;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ks-body {
+  padding: 12px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ks-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.3;
+}
+
+.ks-desc {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ks-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(30, 165, 76, 0.1);
+}
+
+.ks-btn-copy {
+  flex: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: transparent;
+  color: #1ea54c;
+  border: 1px solid rgba(30, 165, 76, 0.5);
+  transition: background 0.12s, border-color 0.12s;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ks-btn-copy:hover {
+  background: rgba(30, 165, 76, 0.12);
+  border-color: #1ea54c;
+}
+
+.ks-btn-dl {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ks-btn-dl:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+</style>

@@ -25,8 +25,9 @@ const compareMatch = computed(() => {
 <template>
   <div class="bc-wrap">
     <!-- Hash panel -->
-    <div class="bc-panel">
-      <div class="bc-panel-header">
+    <div class="kt-terminal bc-panel">
+      <div class="kt-terminal-bar bc-panel-header">
+        <span class="kt-prompt">&gt;_</span>
         <span class="bc-panel-title">HASH</span>
       </div>
 
@@ -71,8 +72,9 @@ const compareMatch = computed(() => {
     </div>
 
     <!-- Compare panel -->
-    <div class="bc-panel">
-      <div class="bc-panel-header">
+    <div class="kt-terminal bc-panel">
+      <div class="kt-terminal-bar bc-panel-header">
+        <span class="kt-prompt">&gt;_</span>
         <span class="bc-panel-title">COMPARE</span>
       </div>
 
@@ -127,26 +129,26 @@ const compareMatch = computed(() => {
   align-items: flex-start;
 }
 
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
 /* ── Panel ── */
 .bc-panel {
   flex: 1 1 340px;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .bc-panel-header {
-  padding: 5px 14px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .bc-panel-title {
-  font-size: 0.65rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+  color: #1ea54c;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 

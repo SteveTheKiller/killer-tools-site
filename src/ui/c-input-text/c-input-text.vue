@@ -71,10 +71,10 @@ const { id, placeholder, label, validationRules, labelPosition, labelWidth, labe
 const validation
   = props.validation
     ?? useValidation({
-    rules: validationRules,
-    source: value,
-    watch: props.validationWatch,
-  });
+      rules: validationRules,
+      source: value,
+      watch: props.validationWatch,
+    });
 
 const theme = useTheme();
 const appTheme = useAppTheme();

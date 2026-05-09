@@ -474,9 +474,14 @@ async function runLookup() {
         autofocus
         @keyup.enter="runLookup"
       />
-      <c-button :disabled="loading || !domain.trim()" @click="runLookup">
-        {{ loading ? 'Looking up...' : 'Lookup' }}
-      </c-button>
+      <button
+        type="button"
+        class="dl-lookup-btn"
+        :disabled="loading || !domain.trim()"
+        @click="runLookup"
+      >
+        {{ loading ? 'Searching...' : 'Search' }}
+      </button>
     </div>
 
     <!-- Alerts -->
@@ -523,14 +528,14 @@ async function runLookup() {
     <!-- ============================================================= -->
     <!-- Two-column results: WHOIS left, Email DNS right                -->
     <!-- ============================================================= -->
-    <div v-if="whoisResult || emailChecked" class="grid grid-cols-1 gap-12px lg:grid-cols-2">
+    <div v-if="!loading && (whoisResult || emailChecked)" class="grid grid-cols-1 gap-12px lg:grid-cols-2">
       <!-- LEFT: WHOIS -->
       <div v-if="whoisResult" class="grid grid-cols-1 gap-12px" style="align-content: start;">
 
         <!-- Registration -->
         <div class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">{{ whoisResult.ldhName ?? domain }}</span>
+            <span class="whois-terminal-title whois-domain-name">{{ whoisResult.ldhName ?? domain }}</span>
             <span v-if="expiryDays !== null" class="kt-tag" :class="`kt-tag-${expiryTagType}`">{{ expiryLabel }}</span>
           </div>
           <div class="whois-terminal-body">
@@ -727,6 +732,35 @@ async function runLookup() {
 </template>
 
 <style scoped>
+.dl-lookup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 34px;
+  width: 130px;
+  padding: 0;
+  background: rgba(30, 165, 76, 0.15);
+  border: 1px solid rgba(30, 165, 76, 0.5);
+  border-radius: 5px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.82rem;
+  color: #1ea54c;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.dl-lookup-btn:hover:not(:disabled) {
+  background: rgba(30, 165, 76, 0.25);
+  border-color: rgba(30, 165, 76, 0.8);
+  color: #4ade80;
+}
+
+.dl-lookup-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
 .skeleton-line {
   border-radius: 4px;
   background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.05) 75%);
@@ -740,8 +774,8 @@ async function runLookup() {
 
 /* ── WHOIS terminal card ── */
 .whois-terminal {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg) !important;
+  border: 1px solid var(--kt-term-border);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -752,8 +786,8 @@ async function runLookup() {
   align-items: center;
   justify-content: space-between;
   padding: 7px 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .whois-terminal-title {
@@ -761,6 +795,13 @@ async function runLookup() {
   font-weight: 600;
   color: #1ea54c;
   letter-spacing: 0.02em;
+}
+
+.whois-domain-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
 }
 
 .whois-terminal-body {

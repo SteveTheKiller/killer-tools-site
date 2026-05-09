@@ -118,7 +118,7 @@ const caption = computed(() => {
                 Wi-Fi
               </button>
             </div>
-  
+
             <!-- ── Text / URL mode ── -->
             <template v-if="mode === 'text'">
               <div class="qrg-section-label">
@@ -133,7 +133,7 @@ const caption = computed(() => {
                 placeholder="Your link or text..."
               />
             </template>
-  
+
             <!-- ── Wi-Fi mode ── -->
             <template v-if="mode === 'wifi'">
               <div class="qrg-section-label">
@@ -151,7 +151,7 @@ const caption = computed(() => {
                   {{ enc.label }}
                 </button>
               </div>
-  
+
               <div class="qrg-section-label">
                 SSID
               </div>
@@ -161,7 +161,7 @@ const caption = computed(() => {
                 autosize
                 rows="1"
               />
-  
+
               <div v-if="encryption !== 'nopass'" class="qrg-section-label">
                 Password
               </div>
@@ -173,7 +173,7 @@ const caption = computed(() => {
                 autosize
                 rows="1"
               />
-  
+
               <div class="qrg-section-label">
                 Options
               </div>
@@ -196,7 +196,7 @@ const caption = computed(() => {
                   Anonymous identity
                 </button>
               </div>
-  
+
               <!-- EAP-specific fields -->
               <template v-if="encryption === 'WPA2-EAP'">
                 <div class="qrg-section-label">
@@ -207,7 +207,7 @@ const caption = computed(() => {
                   searchable
                   :options="EAPMethods.map((m) => ({ label: m, value: m }))"
                 />
-  
+
                 <div class="qrg-section-label">
                   EAP phase 2
                 </div>
@@ -215,7 +215,7 @@ const caption = computed(() => {
                   v-model:value="eapPhase2Method"
                   :options="EAPPhase2Methods.map((m) => ({ label: m, value: m }))"
                 />
-  
+
                 <div v-if="!eapAnonymous" class="qrg-section-label">
                   EAP identity
                 </div>
@@ -228,7 +228,7 @@ const caption = computed(() => {
                 />
               </template>
             </template>
-  
+
             <!-- Shared: theme / colors / error correction -->
             <div class="qrg-section-label">
               Theme
@@ -259,7 +259,7 @@ const caption = computed(() => {
                 Inverted
               </button>
             </div>
-  
+
             <div class="qrg-section-label">
               Colors
             </div>
@@ -269,7 +269,7 @@ const caption = computed(() => {
               <span class="qrg-color-label">Background:</span>
               <n-color-picker v-model:value="background" :modes="['hex']" />
             </div>
-  
+
             <div class="qrg-section-label">
               Error correction
             </div>

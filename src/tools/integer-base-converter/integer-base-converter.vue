@@ -44,38 +44,34 @@ async function copyValue(label: string, value: string) {
 
 <template>
   <div class="base-tool">
-    <div class="base-terminal">
-      <!-- Input area -->
-      <div class="base-input-area">
-        <div class="base-input-row">
-          <div class="base-field base-field-grow">
-            <label class="base-field-label">Number</label>
-            <input
-              v-model="input"
-              class="base-input"
-              placeholder="42"
-              spellcheck="false"
-              autofocus
-            >
-          </div>
-          <div class="base-field">
-            <label class="base-field-label">Input base</label>
-            <div class="base-stepper">
-              <button class="base-step-btn" :disabled="inputBase <= 2" @click="inputBase = Math.max(2, inputBase - 1)">
-                −
-              </button>
-              <span class="base-step-val">{{ inputBase }}</span>
-              <button class="base-step-btn" :disabled="inputBase >= 64" @click="inputBase = Math.min(64, inputBase + 1)">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-        <div v-if="error" class="base-error">
-          {{ error }}
+    <!-- Input outside terminal -->
+    <div class="base-input-area">
+      <div class="base-input-box">
+        <input
+          v-model="input"
+          class="base-input"
+          placeholder="42"
+          spellcheck="false"
+          autofocus
+        >
+        <div class="base-input-divider" />
+        <div class="base-stepper">
+          <span class="base-stepper-label">base</span>
+          <button class="base-step-btn" :disabled="inputBase <= 2" @click="inputBase = Math.max(2, inputBase - 1)">
+            −
+          </button>
+          <span class="base-step-val">{{ inputBase }}</span>
+          <button class="base-step-btn" :disabled="inputBase >= 64" @click="inputBase = Math.min(64, inputBase + 1)">
+            +
+          </button>
         </div>
       </div>
+      <div v-if="error" class="base-error">
+        {{ error }}
+      </div>
+    </div>
 
+    <div class="base-terminal">
       <!-- Output rows -->
       <div class="base-section-header">
         OUTPUT
@@ -140,56 +136,62 @@ async function copyValue(label: string, value: string) {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-/* ── Input area ── */
+/* ── Input area (outside terminal) ── */
 .base-input-area {
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
-.base-input-row {
+.base-input-box {
   display: flex;
-  gap: 12px;
-  align-items: flex-end;
-  flex-wrap: wrap;
+  align-items: center;
+  background: #0f0f11;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  border-radius: 6px;
+  transition: border-color 0.15s;
 }
 
-.base-field {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.base-field-grow {
-  flex: 1 1 200px;
-  min-width: 0;
-}
-
-.base-field-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
-}
+.base-input-box:focus-within { border-color: rgba(30, 165, 76, 0.7); }
 
 .base-input {
-  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
   background: transparent !important;
   border: none;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  padding: 7px 12px;
   box-sizing: border-box;
 }
 
 .base-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 
+.base-input-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(30, 165, 76, 0.2);
+  flex-shrink: 0;
+}
+
 .base-stepper {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  gap: 6px;
+  padding: 0 10px;
+  flex-shrink: 0;
+}
+
+.base-stepper-label {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  letter-spacing: 0.04em;
+  margin-right: 2px;
 }
 
 .base-step-btn {
@@ -229,10 +231,10 @@ async function copyValue(label: string, value: string) {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 

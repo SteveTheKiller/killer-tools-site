@@ -19,7 +19,7 @@ const showResults = computed(() => !_.isUndefined(leftJson.value) && !_.isUndefi
 
 <template>
   <div v-if="showResults">
-    <div flex justify-center mb-3>
+    <div mb-3 flex justify-center>
       <button
         type="button"
         class="kt-pill"

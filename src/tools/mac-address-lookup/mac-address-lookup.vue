@@ -34,8 +34,8 @@ async function copyVendor() {
       autocapitalize="off"
       spellcheck="false"
       :validation-rules="macAddressValidationRules"
-      font-mono
       mb-3
+      font-mono
     />
 
     <div class="kt-terminal">
@@ -72,7 +72,7 @@ async function copyVendor() {
 <style scoped>
 /* Scoped overrides beat NaiveUI's injected backgrounds */
 .kt-terminal { background: #0a0a0c !important; }
-.kt-terminal-bar { background: #0f0f11 !important; }
+/* bar color now from global kt-terminal.css var(--kt-term-bar-bg) */
 .kt-row { background: transparent !important; }
 .kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
 

@@ -114,51 +114,48 @@ onClickOutside(fmtMenuRef, () => {
 
 <template>
   <div class="dt-tool">
-    <div class="dt-terminal">
-      <!-- Input area -->
-      <div class="dt-input-area">
-        <div class="dt-input-row">
-          <div class="dt-input-field">
-            <label class="dt-field-label">Input</label>
-            <input
-              v-model="inputDate"
-              class="dt-input"
-              placeholder="Paste a date string or leave empty for live clock..."
-              spellcheck="false"
-              autofocus
-              :class="{ 'dt-input-error': inputDate && !validation.isValid }"
-              @input="onDateInputChanged(($event.target as HTMLInputElement).value)"
-            >
-          </div>
-          <div ref="fmtMenuRef" class="dt-format-wrap">
-            <label class="dt-field-label">Format</label>
+    <!-- Input outside terminal -->
+    <div class="dt-input-area">
+      <div class="dt-input-row">
+        <input
+          v-model="inputDate"
+          class="dt-input"
+          placeholder="Paste a date string or leave empty for live clock..."
+          spellcheck="false"
+          autofocus
+          :class="{ 'dt-input-error': inputDate && !validation.isValid }"
+          @input="onDateInputChanged(($event.target as HTMLInputElement).value)"
+        >
+        <div ref="fmtMenuRef" class="dt-format-wrap">
+          <button
+            type="button"
+            class="dt-fmt-btn"
+            :class="{ 'dt-fmt-btn-open': fmtMenuOpen }"
+            @click="fmtMenuOpen = !fmtMenuOpen"
+          >
+            <span class="dt-fmt-label">{{ formats[formatIndex].name }}</span>
+            <span class="dt-fmt-caret">{{ fmtMenuOpen ? '▴' : '▾' }}</span>
+          </button>
+          <div v-if="fmtMenuOpen" class="dt-fmt-menu">
             <button
+              v-for="(fmt, i) in formats"
+              :key="fmt.name"
               type="button"
-              class="dt-fmt-btn"
-              :class="{ 'dt-fmt-btn-open': fmtMenuOpen }"
-              @click="fmtMenuOpen = !fmtMenuOpen"
+              class="dt-fmt-option"
+              :class="{ 'dt-fmt-option-active': formatIndex === i }"
+              @click="formatIndex = i; fmtMenuOpen = false"
             >
-              <span class="dt-fmt-label">{{ formats[formatIndex].name }}</span>
-              <span class="dt-fmt-caret">{{ fmtMenuOpen ? '▴' : '▾' }}</span>
+              {{ fmt.name }}
             </button>
-            <div v-if="fmtMenuOpen" class="dt-fmt-menu">
-              <button
-                v-for="(fmt, i) in formats"
-                :key="fmt.name"
-                type="button"
-                class="dt-fmt-option"
-                :class="{ 'dt-fmt-option-active': formatIndex === i }"
-                @click="formatIndex = i; fmtMenuOpen = false"
-              >
-                {{ fmt.name }}
-              </button>
-            </div>
           </div>
-        </div>
-        <div v-if="inputDate && !validation.isValid" class="dt-error">
-          Invalid date for this format
         </div>
       </div>
+      <div v-if="inputDate && !validation.isValid" class="dt-error">
+        Invalid date for this format
+      </div>
+    </div>
+
+    <div class="dt-terminal">
       <!-- Output header -->
       <div class="dt-section-header">
         <span>OUTPUT</span>
@@ -199,49 +196,39 @@ onClickOutside(fmtMenuRef, () => {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-/* ── Input area ── */
+/* ── Input area (outside terminal) ── */
 .dt-input-area {
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-bottom: 12px;
 }
 
 .dt-input-row {
   display: flex;
-  gap: 12px;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.dt-input-field {
-  flex: 1 1 300px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.dt-field-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
+  gap: 10px;
+  align-items: center;
 }
 
 .dt-input {
-  width: 100%;
-  background: transparent !important;
-  border: none;
+  flex: 1 1 0;
+  min-width: 0;
+  background: #0f0f11 !important;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  border-radius: 6px;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  padding: 7px 12px;
   box-sizing: border-box;
+  transition: border-color 0.15s;
 }
 
+.dt-input:focus { border-color: rgba(30, 165, 76, 0.7); }
 .dt-input::placeholder { color: rgba(255, 255, 255, 0.2); }
-.dt-input-error { color: #e05555; }
+.dt-input-error { border-color: rgba(224, 85, 85, 0.5); color: #e05555; }
 
 .dt-error {
   font-size: 0.7rem;
@@ -251,9 +238,6 @@ onClickOutside(fmtMenuRef, () => {
 /* ── Format dropdown ── */
 .dt-format-wrap {
   flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   position: relative;
 }
 
@@ -261,20 +245,21 @@ onClickOutside(fmtMenuRef, () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: transparent !important;
-  border: none;
+  background: #0f0f11 !important;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  border-radius: 6px;
   outline: none;
-  padding: 0;
+  padding: 7px 12px;
   cursor: pointer;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.65);
-  transition: color 0.12s;
+  transition: color 0.12s, border-color 0.15s;
   white-space: nowrap;
 }
 
 .dt-fmt-btn:hover,
-.dt-fmt-btn-open { color: #1ea54c; }
+.dt-fmt-btn-open { color: #1ea54c; border-color: rgba(30, 165, 76, 0.7); }
 
 .dt-fmt-label { flex: 1; }
 .dt-fmt-caret { font-size: 0.7rem; color: rgba(30, 165, 76, 0.65); }
@@ -321,8 +306,8 @@ onClickOutside(fmtMenuRef, () => {
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.5);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   display: flex;
   align-items: center;
@@ -407,8 +392,8 @@ onClickOutside(fmtMenuRef, () => {
 .dt-copy-done { color: #1ea54c !important; }
 
 @container (max-width: 580px) {
-  .dt-input-row { flex-direction: column; gap: 8px; }
-  .dt-format-wrap { width: 100%; }
+  .dt-input-row { flex-direction: column; align-items: stretch; gap: 8px; }
+  .dt-fmt-btn { width: 100%; }
   .dt-row { grid-template-columns: auto 1fr auto; gap: 8px; }
   .dt-prompt { display: none; }
   .dt-label { font-size: 0.7rem; }

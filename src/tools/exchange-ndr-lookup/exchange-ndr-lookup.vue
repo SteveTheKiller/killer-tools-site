@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Check, Copy } from '@vicons/tabler';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { ndrCategories } from './exchange-ndr-lookup.constants';
 
@@ -55,59 +54,177 @@ function copyValue(value: string) {
       placeholder="Search by NDR code, error name, cause, or fix..."
       autofocus
       raw-text
-      mb-10
+      mb-4
     />
 
-    <div v-for="{ codes, category } of filtered" :key="category" mb-8>
-      <div mb-4 text-xl>
+    <div v-for="{ codes, category } of filtered" :key="category" class="ndr-section">
+      <div class="ndr-category-header">
         {{ category }}
       </div>
 
-      <div class="grid grid-cols-1 gap-12px md:grid-cols-2 xl:grid-cols-3">
-        <c-card
+      <div class="ndr-grid">
+        <div
           v-for="{ code, name, description, cause, fix, severity } of codes"
           :key="code"
-          class="flex flex-col justify-between"
+          class="kt-terminal ndr-card"
         >
-          <div>
-            <div mb-2 flex items-start justify-between gap-2>
-              <span
-                class="text-primary font-bold font-mono"
-                style="font-size: 1.3rem; letter-spacing: 0.03em; line-height: 1;"
-              >{{ code }}</span>
-              <div flex items-center gap-1>
-                <span class="kt-tag" :class="`kt-tag-${severityColor[severity]}`">{{ severity }}</span>
-                <c-tooltip :tooltip="copiedValue === code ? 'Copied!' : 'Copy code'">
-                  <c-button
-                    circle
-                    variant="text"
-                    style="width: 24px; height: 24px;"
-                    @click.stop="copyValue(code)"
-                  >
-                    <n-icon size="14" :component="copiedValue === code ? Check : Copy" />
-                  </c-button>
-                </c-tooltip>
-              </div>
-            </div>
+          <div
+            class="kt-terminal-bar ndr-bar"
+            :class="{ 'ndr-bar-copied': copiedValue === code }"
+            :title="copiedValue === code ? 'Copied!' : 'Click to copy NDR code'"
+            @click="copyValue(code)"
+          >
+            <span class="kt-prompt">&gt;_</span>
+            <code class="ndr-code">{{ copiedValue === code ? '✓ copied' : code }}</code>
+            <span class="ndr-severity" :class="`ndr-sev-${severityColor[severity]}`">{{ severity }}</span>
+          </div>
 
-            <div class="mb-1 text-sm font-semibold">
+          <div class="ndr-body">
+            <div class="ndr-name">
               {{ name }}
             </div>
-
-            <div class="mb-2 text-xs op-70">
+            <div class="ndr-description">
               {{ description }}
             </div>
-
-            <div class="mb-1 text-xs">
-              <span class="font-semibold op-60">Cause: </span>{{ cause }}
-            </div>
-
-            <div class="text-xs" style="color: #1ea54c;">
-              <span class="font-semibold" style="opacity: 0.6; color: inherit;">Fix: </span>{{ fix }}
+            <div class="ndr-kv-block">
+              <div class="ndr-kv-row">
+                <span class="ndr-kv-label">Cause</span>
+                <span class="ndr-kv-value">{{ cause }}</span>
+              </div>
+              <div class="ndr-kv-row">
+                <span class="ndr-kv-label">Fix</span>
+                <span class="ndr-kv-value ndr-kv-fix">{{ fix }}</span>
+              </div>
             </div>
           </div>
-        </c-card>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+.ndr-section {
+  margin-bottom: 32px;
+}
+
+.ndr-category-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(30, 165, 76, 0.65);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  padding: 0 2px 8px;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  margin-bottom: 12px;
+}
+
+.ndr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 10px;
+}
+
+.ndr-bar {
+  padding: 3px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.ndr-bar:hover {
+  background: rgba(30, 165, 76, 0.18) !important;
+}
+
+.ndr-bar-copied {
+  background: rgba(30, 165, 76, 0.22) !important;
+}
+
+.ndr-code {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1ea54c;
+  letter-spacing: 0.05em;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ndr-severity {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ndr-sev-default { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+.ndr-sev-warning  { background: rgba(234,179,8,0.12);  color: #ca8a04; border: 1px solid rgba(234,179,8,0.3); }
+.ndr-sev-error    { background: rgba(239,68,68,0.12);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+
+.ndr-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ndr-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.3;
+}
+
+.ndr-description {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+.ndr-kv-block {
+  border: 1px solid rgba(30, 165, 76, 0.12);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.ndr-kv-row {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  gap: 8px;
+}
+
+.ndr-kv-row + .ndr-kv-row {
+  border-top: 1px solid rgba(30, 165, 76, 0.08);
+}
+
+.ndr-kv-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 1px;
+}
+
+.ndr-kv-value {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.ndr-kv-fix {
+  color: #1ea54c;
+}
+</style>

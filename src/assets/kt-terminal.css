@@ -1,11 +1,23 @@
 /* ─────────────────────────────────────────────────────────
    Killer Tools — shared terminal output styles
    Used by all tools that render a terminal-style result box.
+
+   THEMING: change these variables to restyle every terminal
+   window site-wide in one place.
    ───────────────────────────────────────────────────────── */
 
+:root {
+  --kt-term-bg:         #0a0a0c;
+  --kt-term-bar-bg:     rgba(30, 165, 76, 0.12);
+  --kt-term-border:     rgba(30, 165, 76, 0.3);
+  --kt-term-bar-border: rgba(30, 165, 76, 0.2);
+  --kt-green:           #1ea54c;
+  --kt-green-dim:       rgba(30, 165, 76, 0.3);
+}
+
 .kt-terminal {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg) !important;
+  border: 1px solid var(--kt-term-border);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -16,8 +28,8 @@
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  background: #0f0f11;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .kt-terminal-bar-title {
@@ -25,17 +37,17 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .kt-section-row {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -67,7 +79,7 @@
 }
 
 .kt-label {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.75rem;
   white-space: nowrap;
   overflow: hidden;
@@ -82,7 +94,7 @@
 }
 
 .kt-value-faded {
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.8rem;
   word-break: break-all;
 }
@@ -123,4 +135,37 @@
 .kt-copy-check {
   color: #1ea54c;
   font-weight: 700;
+}
+
+/* ── Global search button — fixed width so content changes never shift layout ── */
+.kt-search-btn {
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 110px;
+  height: 34px;
+  padding: 0 16px;
+  background: rgba(30, 165, 76, 0.1);
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  border-radius: 6px;
+  color: #1ea54c;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.kt-search-btn:hover:not(:disabled) {
+  background: rgba(30, 165, 76, 0.2);
+  border-color: rgba(30, 165, 76, 0.6);
+}
+
+.kt-search-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }

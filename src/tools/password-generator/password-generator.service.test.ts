@@ -57,7 +57,7 @@ describe('password-generator service', () => {
         expect(pw).toMatch(/[A-Z]/);
         expect(pw).toMatch(/[a-z]/);
         expect(pw).toMatch(/\d/);
-        expect(pw).toMatch(/[!@#$%^&*()-_=+[\]{};:,.<>/?]/);
+        expect(pw).toMatch(/[!@#$%^&*()\-_=+[\]{};:,.<>/?]/);
       }
     });
 

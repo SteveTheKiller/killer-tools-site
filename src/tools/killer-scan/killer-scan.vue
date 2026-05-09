@@ -159,7 +159,7 @@ const features: { title: string, desc: string }[] = [
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
-  background: #151515;
+  background: var(--kt-term-bar-bg);
   border-bottom: 1px solid #2a2a2a;
 }
 .terminal-dots {

@@ -250,165 +250,185 @@ const cheatsheet = [
     <div class="ps-main">
       <!-- ── Left: Cmdlet Browser ── -->
       <div class="ps-left">
-        <c-card title="Cmdlet Browser">
-          <!-- Search -->
-          <c-input-text
-            v-model:value="cmdletSearch"
-            placeholder="Search by name, description, or module..."
-            clearable
-            style="margin-bottom: 8px;"
-          />
-          <!-- Category filter pills -->
-          <div class="cat-pills">
-            <button
-              v-for="cat in categories"
-              :key="cat"
-              type="button"
-              class="cat-pill"
-              :class="{ 'cat-pill-active': categoryFilter === cat }"
-              @click="categoryFilter = cat; cmdletSearch = ''"
-            >
-              {{ cat }}
-            </button>
+        <div class="ps-panel">
+          <div class="ps-panel-bar">
+            <span class="ps-panel-dot" />
+            <span class="ps-panel-title">Cmdlet Browser</span>
+            <span v-if="selectedCmdlet" class="ps-panel-bar-right">
+              <span class="badge" :class="selectedCmdlet.ps51 ? 'ps-yes' : 'ps-no'">PS 5.1</span>
+              <span class="badge" :class="selectedCmdlet.ps7 ? 'ps-yes' : 'ps-no'">PS 7</span>
+              <span v-if="selectedCmdlet.requiresAdmin" class="badge admin">⚠ Admin</span>
+            </span>
           </div>
-          <!-- Scrollable cmdlet list -->
-          <div class="cmdlet-list">
-            <div
-              v-for="c in filteredCmdlets"
-              :key="c.cmdlet"
-              class="cmdlet-row"
-              :class="{ 'cmdlet-row-selected': selectedCmdlet?.cmdlet === c.cmdlet }"
-              @click="selectCmdlet(c); selectedCmdletName = c.cmdlet"
-            >
-              <div class="cmdlet-row-top">
-                <code class="cmdlet-row-name">{{ c.cmdlet }}</code>
-                <span class="cmdlet-row-badge">{{ c.module }}</span>
+          <div class="ps-panel-body">
+            <!-- Search -->
+            <c-input-text
+              v-model:value="cmdletSearch"
+              placeholder="Search by name, description, or module..."
+              clearable
+              style="margin-bottom: 8px;"
+            />
+            <!-- Category filter pills -->
+            <div class="cat-pills">
+              <button
+                v-for="cat in categories"
+                :key="cat"
+                type="button"
+                class="cat-pill"
+                :class="{ 'cat-pill-active': categoryFilter === cat }"
+                @click="categoryFilter = cat; cmdletSearch = ''"
+              >
+                {{ cat }}
+              </button>
+            </div>
+            <!-- Scrollable cmdlet list -->
+            <div class="cmdlet-list">
+              <div
+                v-for="c in filteredCmdlets"
+                :key="c.cmdlet"
+                class="cmdlet-row"
+                :class="{ 'cmdlet-row-selected': selectedCmdlet?.cmdlet === c.cmdlet }"
+                @click="selectCmdlet(c); selectedCmdletName = c.cmdlet"
+              >
+                <div class="cmdlet-row-top">
+                  <code class="cmdlet-row-name">{{ c.cmdlet }}</code>
+                  <span class="cmdlet-row-badge">{{ c.module }}</span>
+                </div>
+                <div class="cmdlet-row-desc">
+                  {{ c.description }}
+                </div>
               </div>
-              <div class="cmdlet-row-desc">
-                {{ c.description }}
+              <div v-if="filteredCmdlets.length === 0" class="cmdlet-empty">
+                No cmdlets match "{{ cmdletSearch }}"
               </div>
             </div>
-            <div v-if="filteredCmdlets.length === 0" class="cmdlet-empty">
-              No cmdlets match "{{ cmdletSearch }}"
+            <!-- Selected cmdlet name footer -->
+            <div v-if="selectedCmdlet" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(30,165,76,0.12);">
+              <code style="font-size: 0.72rem; color: #1ea54c;">{{ selectedCmdlet.cmdlet }}</code>
             </div>
           </div>
-          <!-- Selected cmdlet meta badges -->
-          <div
-            v-if="selectedCmdlet"
-            style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.07);"
-          >
-            <code style="font-size: 0.72rem; color: #1ea54c; flex: 1 1 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ selectedCmdlet.cmdlet }}</code>
-            <span class="badge" :class="selectedCmdlet.ps51 ? 'ps-yes' : 'ps-no'">PS 5.1</span>
-            <span class="badge" :class="selectedCmdlet.ps7 ? 'ps-yes' : 'ps-no'">PS 7</span>
-            <span v-if="selectedCmdlet.requiresAdmin" class="badge admin">⚠ Admin</span>
-          </div>
-        </c-card>
+        </div>
       </div><!-- /ps-left -->
 
       <!-- ── Right: Generated Command + Parameters ── -->
       <div class="ps-right">
         <!-- Generated Command -->
-        <c-card title="Generated Command" style="margin-bottom: 12px;">
-          <template v-if="selectedCmdlet">
-            <div class="command-block">
-              <pre class="ps-command-text" style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: #1ea54c; line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
-            </div>
-            <div style="margin-top: 10px;">
-              <button type="button" class="kt-pill kt-pill-active" @click="copyCommand">
-                {{ copied ? '✓ Copied!' : 'Copy Command' }}
-              </button>
-            </div>
-            <template v-if="selectedCmdlet.snippets?.length">
-              <div class="kt-divider" style="margin: 16px 0 10px;" />
-              <div class="ps-section-label" style="font-size: 0.72rem; font-weight: 700; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;">
-                Common Examples
+        <div class="ps-panel" style="margin-bottom: 12px;">
+          <div class="ps-panel-bar">
+            <span class="ps-panel-dot" />
+            <span class="ps-panel-title">Generated Command</span>
+            <span v-if="selectedCmdlet" class="ps-panel-bar-right">
+              <span class="ps-panel-bar-cmd">{{ selectedCmdlet.cmdlet }}</span>
+            </span>
+          </div>
+          <div class="ps-panel-body">
+            <template v-if="selectedCmdlet">
+              <div class="command-block">
+                <pre class="ps-command-text" style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: #1ea54c; line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
               </div>
-              <div
-                v-for="snippet in selectedCmdlet.snippets"
-                :key="snippet.command"
-                class="snippet-row"
-                @click="copySnippet(enrichSnippet(snippet.command), snippet.command)"
-              >
-                <div class="ps-muted" style="font-size: 0.74rem; opacity: 0.6; margin-bottom: 3px;">
-                  {{ snippet.description }}
-                </div>
-                <code style="font-size: 0.74rem; color: #1ea54c; word-break: break-all; font-family: monospace;">{{ enrichSnippet(snippet.command) }}</code>
-                <div
-                  v-if="snippetCopied === snippet.command"
-                  style="font-size: 0.7rem; color: #1ea54c; margin-top: 3px; opacity: 0.8;"
-                >
-                  ✓ Copied!
-                </div>
-              </div>
-            </template>
-          </template>
-          <div v-else class="ps-muted" style="font-size: 0.85rem; opacity: 0.35; font-style: italic; padding: 4px 0;">
-            Select a cmdlet on the left to start building your command.
-          </div>
-        </c-card>
-
-        <!-- Parameters -->
-        <c-card v-if="selectedCmdlet" title="Parameters">
-          <div v-if="selectedCmdlet.notes" class="notes-strip">
-            {{ selectedCmdlet.notes }}
-          </div>
-          <div v-if="selectedCmdlet.parameters.length === 0" class="ps-muted" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
-            No parameters needed — this cmdlet runs as-is.
-          </div>
-          <div v-if="visibleParams.length > 0" class="kt-divider" style="margin: 10px 0 14px;" />
-
-          <!-- Parameter form -->
-          <div v-for="param in visibleParams" :key="param.name" style="margin-bottom: 14px;">
-            <!-- Switch param -->
-            <div v-if="param.type === 'switch'" style="display: flex; align-items: flex-start; gap: 8px; padding: 6px 0;">
-              <n-checkbox v-model:checked="switchValues[param.name]">
-                <code class="param-code">-{{ param.name }}</code>
-              </n-checkbox>
-              <span class="ps-muted" style="font-size: 0.77rem; opacity: 0.6; padding-top: 2px;">
-                {{ param.description }}
-                <span v-if="param.required" style="color: #e87040; margin-left: 4px;">required</span>
-              </span>
-            </div>
-
-            <!-- Text / scriptblock / string[] / int param -->
-            <template v-else>
-              <c-input-text
-                v-model:value="textValues[param.name]"
-                :label="`-${param.name}${param.required ? ' *' : ''}`"
-                :placeholder="param.placeholder ?? param.description"
-                :multiline="param.type === 'scriptblock'"
-                :rows="param.type === 'scriptblock' ? 2 : undefined"
-              />
-              <!-- Quick-select preset chips -->
-              <div v-if="param.presets?.length" class="preset-chips">
-                <button
-                  v-for="preset in param.presets"
-                  :key="preset.value"
-                  type="button"
-                  class="preset-chip"
-                  :class="{ 'preset-chip-active': isPresetActive(param.name, preset.value, param.type) }"
-                  @click="applyPreset(param.name, preset.value, param.type)"
-                >
-                  {{ preset.label }}
+              <div style="margin-top: 10px;">
+                <button type="button" class="kt-pill kt-pill-active" @click="copyCommand">
+                  {{ copied ? '✓ Copied!' : 'Copy Command' }}
                 </button>
               </div>
-              <div class="ps-muted" style="font-size: 0.71rem; opacity: 0.5; margin-top: 2px; padding-left: 2px;">
-                {{ param.description }}
-                <span v-if="param.type === 'string[]'"> — separate multiple values with commas</span>
-                <span v-if="param.type === 'scriptblock'"> — will be wrapped in { }</span>
-              </div>
+              <template v-if="selectedCmdlet.snippets?.length">
+                <div class="kt-divider" style="margin: 16px 0 10px;" />
+                <div class="ps-section-label" style="font-size: 0.72rem; font-weight: 700; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;">
+                  Common Examples
+                </div>
+                <div
+                  v-for="snippet in selectedCmdlet.snippets"
+                  :key="snippet.command"
+                  class="snippet-row"
+                  @click="copySnippet(enrichSnippet(snippet.command), snippet.command)"
+                >
+                  <div class="ps-muted" style="font-size: 0.74rem; opacity: 0.6; margin-bottom: 3px;">
+                    {{ snippet.description }}
+                  </div>
+                  <code style="font-size: 0.74rem; color: #1ea54c; word-break: break-all; font-family: monospace;">{{ enrichSnippet(snippet.command) }}</code>
+                  <div
+                    v-if="snippetCopied === snippet.command"
+                    style="font-size: 0.7rem; color: #1ea54c; margin-top: 3px; opacity: 0.8;"
+                  >
+                    ✓ Copied!
+                  </div>
+                </div>
+              </template>
             </template>
+            <div v-else class="ps-muted" style="font-size: 0.85rem; opacity: 0.35; font-style: italic; padding: 4px 0;">
+              Select a cmdlet on the left to start building your command.
+            </div>
           </div>
+        </div>
 
-          <!-- Show all/fewer toggle -->
-          <div
-            v-if="hiddenParamCount > 0 || showAllParams"
-            class="toggle-link"
-            @click="showAllParams = !showAllParams"
-          >
-            {{ showAllParams ? '▲ Show fewer parameters' : `▼ Show ${hiddenParamCount} more parameter${hiddenParamCount !== 1 ? 's' : ''}` }}
+        <!-- Parameters -->
+        <div v-if="selectedCmdlet" class="ps-panel">
+          <div class="ps-panel-bar">
+            <span class="ps-panel-dot" />
+            <span class="ps-panel-title">Parameters</span>
           </div>
-        </c-card>
+          <div class="ps-panel-body">
+            <div v-if="selectedCmdlet.notes" class="notes-strip">
+              {{ selectedCmdlet.notes }}
+            </div>
+            <div v-if="selectedCmdlet.parameters.length === 0" class="ps-muted" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
+              No parameters needed — this cmdlet runs as-is.
+            </div>
+            <div v-if="visibleParams.length > 0" class="kt-divider" style="margin: 10px 0 14px;" />
+
+            <!-- Parameter form -->
+            <div v-for="param in visibleParams" :key="param.name" style="margin-bottom: 14px;">
+              <!-- Switch param -->
+              <div v-if="param.type === 'switch'" style="display: flex; align-items: flex-start; gap: 8px; padding: 6px 0;">
+                <n-checkbox v-model:checked="switchValues[param.name]">
+                  <code class="param-code">-{{ param.name }}</code>
+                </n-checkbox>
+                <span class="ps-muted" style="font-size: 0.77rem; opacity: 0.6; padding-top: 2px;">
+                  {{ param.description }}
+                  <span v-if="param.required" style="color: #e87040; margin-left: 4px;">required</span>
+                </span>
+              </div>
+
+              <!-- Text / scriptblock / string[] / int param -->
+              <template v-else>
+                <c-input-text
+                  v-model:value="textValues[param.name]"
+                  :label="`-${param.name}${param.required ? ' *' : ''}`"
+                  :placeholder="param.placeholder ?? param.description"
+                  :multiline="param.type === 'scriptblock'"
+                  :rows="param.type === 'scriptblock' ? 2 : undefined"
+                />
+                <!-- Quick-select preset chips -->
+                <div v-if="param.presets?.length" class="preset-chips">
+                  <button
+                    v-for="preset in param.presets"
+                    :key="preset.value"
+                    type="button"
+                    class="preset-chip"
+                    :class="{ 'preset-chip-active': isPresetActive(param.name, preset.value, param.type) }"
+                    @click="applyPreset(param.name, preset.value, param.type)"
+                  >
+                    {{ preset.label }}
+                  </button>
+                </div>
+                <div class="ps-muted" style="font-size: 0.71rem; opacity: 0.5; margin-top: 2px; padding-left: 2px;">
+                  {{ param.description }}
+                  <span v-if="param.type === 'string[]'"> — separate multiple values with commas</span>
+                  <span v-if="param.type === 'scriptblock'"> — will be wrapped in { }</span>
+                </div>
+              </template>
+            </div>
+
+            <!-- Show all/fewer toggle -->
+            <div
+              v-if="hiddenParamCount > 0 || showAllParams"
+              class="toggle-link"
+              @click="showAllParams = !showAllParams"
+            >
+              {{ showAllParams ? '▲ Show fewer parameters' : `▼ Show ${hiddenParamCount} more parameter${hiddenParamCount !== 1 ? 's' : ''}` }}
+            </div>
+          </div>
+        </div>
       </div><!-- /ps-right -->
     </div><!-- /ps-main -->
 
@@ -430,34 +450,37 @@ const cheatsheet = [
         </template>
       </button>
       <div v-show="showCheatsheet" class="cheatsheet-panel">
-        <c-card>
-          <div class="mb-3 text-base font-bold">
-            Quick Reference
+        <div class="ps-panel">
+          <div class="ps-panel-bar">
+            <span class="ps-panel-dot" />
+            <span class="ps-panel-title">Quick Reference</span>
           </div>
-          <div
-            v-for="section in cheatsheet"
-            :key="section.title"
-            mb-4
-          >
-            <div class="mb-1 text-xs font-bold uppercase op-60">
-              {{ section.title }}
+          <div class="ps-panel-body">
+            <div
+              v-for="section in cheatsheet"
+              :key="section.title"
+              style="margin-bottom: 16px;"
+            >
+              <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; opacity: 0.5; margin-bottom: 6px;">
+                {{ section.title }}
+              </div>
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr
+                  v-for="row in section.rows"
+                  :key="row.expr"
+                  style="border-bottom: 1px solid rgba(255,255,255,0.05);"
+                >
+                  <td style="padding: 3px 8px 3px 0; white-space: nowrap; width: 1%;">
+                    <code style="font-size: 0.72rem; color: #1ea54c; background: rgba(30,165,76,0.1); padding: 1px 4px; border-radius: 3px;">{{ row.expr }}</code>
+                  </td>
+                  <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7; white-space: nowrap;">
+                    {{ row.desc }}
+                  </td>
+                </tr>
+              </table>
             </div>
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr
-                v-for="row in section.rows"
-                :key="row.expr"
-                style="border-bottom: 1px solid rgba(255,255,255,0.05);"
-              >
-                <td style="padding: 3px 8px 3px 0; white-space: nowrap; width: 1%;">
-                  <code style="font-size: 0.72rem; color: #1ea54c; background: rgba(30,165,76,0.1); padding: 1px 4px; border-radius: 3px;">{{ row.expr }}</code>
-                </td>
-                <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7; white-space: nowrap;">
-                  {{ row.desc }}
-                </td>
-              </tr>
-            </table>
           </div>
-        </c-card>
+        </div>
       </div><!-- /cheatsheet-panel -->
     </div><!-- /cs-wrap -->
   </div><!-- /ps-layout -->
@@ -586,6 +609,61 @@ const cheatsheet = [
 .cheatsheet-panel::-webkit-scrollbar-thumb { background: #1ea54c55; border-radius: 4px; }
 .cheatsheet-panel::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
 
+/* ── Terminal-style panels ── */
+.ps-panel {
+  background: var(--kt-term-bg);
+  border: 1px solid var(--kt-term-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ps-panel-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--kt-term-bar-bg);
+  border-bottom: 1px solid var(--kt-term-bar-border);
+  padding: 5px 12px;
+  min-height: 30px;
+}
+
+.ps-panel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(30, 165, 76, 0.55);
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(30, 165, 76, 0.3);
+}
+
+.ps-panel-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+}
+
+.ps-panel-bar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-panel-bar-cmd {
+  font-size: 0.72rem;
+  color: #1ea54c;
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+  opacity: 0.85;
+}
+
+.ps-panel-body {
+  padding: 14px 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* ── Param code label ── */
 .param-code {
   font-size: 0.78rem;
@@ -604,8 +682,8 @@ const cheatsheet = [
 
 /* ── Command output block ── */
 .command-block {
-  background: rgba(0,0,0,0.3);
-  border: 1px solid rgba(30,165,76,0.25);
+  background: #0a0a0c;
+  border: 1px solid rgba(30,165,76,0.2);
   border-radius: 6px;
   padding: 12px 14px;
   min-height: 50px;
@@ -614,10 +692,10 @@ const cheatsheet = [
 /* ── Snippet rows ── */
 .snippet-row {
   padding: 8px 10px; border-radius: 5px; cursor: pointer; margin-bottom: 6px;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  background: #0f0f11; border: 1px solid rgba(30,165,76,0.12);
   transition: background 0.1s;
 }
-.snippet-row:hover { background: rgba(30,165,76,0.07); border-color: rgba(30,165,76,0.3); }
+.snippet-row:hover { background: rgba(30,165,76,0.08); border-color: rgba(30,165,76,0.35); }
 
 /* ── Category filter pills ── */
 .cat-pills {
@@ -682,8 +760,8 @@ const cheatsheet = [
 }
 
 .cmdlet-row:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
 }
 
 .cmdlet-row-selected {
@@ -833,6 +911,21 @@ const cheatsheet = [
     width: max-content;
     min-width: 100%;
   }
+}
+
+/* ── Elevate c-input-text inside terminal panels so they're visible ── */
+.ps-panel-body :deep(.c-input-text .input-wrapper) {
+  background-color: #0f0f11 !important;
+  border-color: rgba(30, 165, 76, 0.2) !important;
+}
+
+.ps-panel-body :deep(.c-input-text .input-wrapper:hover) {
+  border-color: rgba(30, 165, 76, 0.45) !important;
+}
+
+.ps-panel-body :deep(.c-input-text .input-wrapper:focus-within) {
+  background-color: #0f0f11 !important;
+  border-color: rgba(30, 165, 76, 0.65) !important;
 }
 
 /* ── Notes strip ── */
