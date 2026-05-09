@@ -8,25 +8,16 @@ on:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10.33.2
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-
       - name: Fetch popularity data from Umami
         env:
-          UMAMI_URL: ${{ secrets.UMAMI_URL }}
+          UMAMI_URL: http://localhost:3000
           UMAMI_WEBSITE: ${{ secrets.UMAMI_WEBSITE }}
           UMAMI_USER: ${{ secrets.UMAMI_USER }}
           UMAMI_PASS: ${{ secrets.UMAMI_PASS }}
