@@ -219,7 +219,7 @@ const sortedTools = computed(() => {
   border-right: 1px solid rgba(30, 165, 76, 0.15);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--n-text-color, rgba(128, 128, 128, 0.8));
   cursor: pointer;
   transition: background 0.12s, color 0.12s;
 
@@ -229,7 +229,7 @@ const sortedTools = computed(() => {
 
   &:hover {
     background: rgba(30, 165, 76, 0.08);
-    color: rgba(255, 255, 255, 0.75);
+    color: #1ea54c;
   }
 }
 
