@@ -2,10 +2,11 @@
 // @ts-expect-error tabler icons type export mismatch
 import { IconDragDrop, IconHeart } from '@tabler/icons-vue';
 import { useHead } from '@vueuse/head';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import Draggable from 'vuedraggable';
 import { config } from '@/config';
 import { useToolStore } from '@/tools/tools.store';
+import popularity from '@/data/tool-popularity.json';
 import ColoredCard from '../components/ColoredCard.vue';
 import ToolCard from '../components/ToolCard.vue';
 
@@ -50,10 +51,35 @@ const { t } = useI18n();
 
 const favoriteTools = computed(() => toolStore.favoriteTools);
 
-// Update favorite tools order when drag is finished
 function onUpdateFavoriteTools() {
-  toolStore.updateFavoriteTools(favoriteTools.value); // Update the store with the new order
+  toolStore.updateFavoriteTools(favoriteTools.value);
 }
+
+// ── Sort ──────────────────────────────────────────────────────────────────
+type SortMode = 'popular' | 'az' | 'za';
+const sortMode = ref<SortMode>('popular');
+
+const popularityMap = popularity as Record<string, number>;
+
+function pageviews(path: string): number {
+  return popularityMap[path] ?? 0;
+}
+
+const sortedTools = computed(() => {
+  const all = [...toolStore.tools];
+  if (sortMode.value === 'az') {
+    return all.sort((a, b) => a.name.localeCompare(b.name));
+  }
+  if (sortMode.value === 'za') {
+    return all.sort((a, b) => b.name.localeCompare(a.name));
+  }
+  // popular — sort by pageviews desc, then alpha for ties
+  return all.sort((a, b) => {
+    const diff = pageviews(b.path) - pageviews(a.path);
+    return diff !== 0 ? diff : a.name.localeCompare(b.name);
+  });
+});
+
 </script>
 
 <template>
@@ -104,11 +130,40 @@ function onUpdateFavoriteTools() {
         </div>
       </div>
 
-      <h3 class="mb-5px mt-25px text-neutral-400 font-500">
-        {{ $t('home.categories.allTools') }}
-      </h3>
+      <!-- All tools with sort controls -->
+      <div class="mb-5px mt-25px" style="display: flex; align-items: center; gap: 12px;">
+        <h3 class="text-neutral-400 font-500" style="margin: 0;">
+          {{ $t('home.categories.allTools') }}
+        </h3>
+        <div class="home-sort-group">
+          <button
+            class="home-sort-btn"
+            :class="{ 'home-sort-btn-active': sortMode === 'popular' }"
+            type="button"
+            @click="sortMode = 'popular'"
+          >
+            Popular
+          </button>
+          <button
+            class="home-sort-btn"
+            :class="{ 'home-sort-btn-active': sortMode === 'az' }"
+            type="button"
+            @click="sortMode = 'az'"
+          >
+            A – Z
+          </button>
+          <button
+            class="home-sort-btn"
+            :class="{ 'home-sort-btn-active': sortMode === 'za' }"
+            type="button"
+            @click="sortMode = 'za'"
+          >
+            Z – A
+          </button>
+        </div>
+      </div>
       <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
-        <ToolCard v-for="tool in toolStore.tools" :key="tool.name" :tool="tool" />
+        <ToolCard v-for="tool in sortedTools" :key="tool.name" :tool="tool" />
       </div>
     </div>
   </div>
@@ -148,5 +203,38 @@ function onUpdateFavoriteTools() {
     opacity: 0.4;
     transform: scale(1.0);
   }
+}
+
+.home-sort-group {
+  display: inline-flex;
+  border: 1px solid rgba(30, 165, 76, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.home-sort-btn {
+  padding: 3px 12px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid rgba(30, 165, 76, 0.15);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    background: rgba(30, 165, 76, 0.08);
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.home-sort-btn-active {
+  background: rgba(30, 165, 76, 0.12);
+  color: #1ea54c;
 }
 </style>
