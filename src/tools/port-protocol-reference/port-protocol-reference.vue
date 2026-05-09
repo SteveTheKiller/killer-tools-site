@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Check, Copy } from '@vicons/tabler';
 import { portCategories } from './port-protocol-reference.constants';
 
 const search = ref('');
@@ -56,82 +55,185 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
         raw-text
         style="flex: 1; min-width: 200px;"
       />
-      <c-select
-        v-model:value="filterProtocol"
-        placeholder="All protocols"
-        clearable
-        style="width: 140px;"
-        :options="[
-          { label: 'TCP', value: 'TCP' },
-          { label: 'UDP', value: 'UDP' },
-          { label: 'TCP/UDP', value: 'TCP/UDP' },
-        ]"
-      />
+      <div class="ppr-proto-filter">
+        <button
+          v-for="proto in ['', 'TCP', 'UDP', 'TCP/UDP']"
+          :key="proto"
+          type="button"
+          class="ppr-seg-btn"
+          :class="{ 'ppr-seg-btn-active': filterProtocol === proto }"
+          @click="filterProtocol = proto"
+        >
+          {{ proto || 'All' }}
+        </button>
+      </div>
       <button
         type="button"
-        class="kt-pill"
-        :class="{ 'kt-pill-active': filterDangerous }"
+        class="kt-pill ppr-dangerous-btn"
+        :class="{ 'ppr-dangerous-btn-active': filterDangerous }"
         @click="filterDangerous = !filterDangerous"
       >
         Dangerous only
       </button>
     </div>
 
-    <div class="mb-6 text-xs op-40">
+    <div class="mb-4 text-xs op-40">
       Showing {{ totalVisible }} ports
     </div>
 
-    <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="ppr-grid">
       <template v-for="{ ports, category } of filtered" :key="category">
-        <c-card
+        <div
           v-for="p of ports"
           :key="`${p.port}-${p.protocol}`"
-          class="flex flex-col justify-between"
-          :class="p.dangerous ? '!border-warning' : ''"
+          class="kt-terminal ppr-card"
+          :class="{ 'ppr-card-dangerous': p.dangerous }"
         >
-          <div>
-            <div mb-2 flex items-start justify-between gap-2>
-              <span
-                class="text-primary font-bold font-mono"
-                style="font-size: 1.4rem; letter-spacing: 0.03em; line-height: 1;"
-              >{{ p.port }}</span>
-              <div flex items-center gap-1>
-                <span class="kt-tag" :class="`kt-tag-${p.protocol === 'TCP' ? 'info' : p.protocol === 'UDP' ? 'success' : 'default'}`">{{ p.protocol }}</span>
-                <span v-if="p.dangerous" class="kt-tag kt-tag-warning">Dangerous</span>
-                <c-tooltip :tooltip="copiedValue === String(p.port) ? 'Copied!' : 'Copy port'">
-                  <c-button
-                    circle
-                    variant="text"
-                    style="width: 24px; height: 24px;"
-                    @click.stop="copyValue(String(p.port))"
-                  >
-                    <n-icon size="14" :component="copiedValue === String(p.port) ? Check : Copy" />
-                  </c-button>
-                </c-tooltip>
-              </div>
+          <div
+            class="kt-terminal-bar ppr-bar"
+            :class="{ 'ppr-bar-copied': copiedValue === String(p.port) }"
+            :title="copiedValue === String(p.port) ? 'Copied!' : 'Click to copy port number'"
+            @click="copyValue(String(p.port))"
+          >
+            <span class="kt-prompt">&gt;_</span>
+            <code class="ppr-port">{{ copiedValue === String(p.port) ? '✓ copied' : p.port }}</code>
+            <div class="ppr-pills">
+              <span class="ppr-proto" :class="`ppr-proto-${p.protocol === 'TCP' ? 'tcp' : p.protocol === 'UDP' ? 'udp' : 'both'}`">{{ p.protocol }}</span>
+              <span v-if="p.dangerous" class="ppr-dangerous-pill">Dangerous</span>
             </div>
+          </div>
 
-            <div class="mb-1 text-xs op-40">
+          <div class="ppr-body">
+            <div class="ppr-category">
               {{ category }}
             </div>
-
-            <div class="mb-1 text-sm font-semibold">
+            <div class="ppr-service">
               {{ p.service }}
             </div>
-
-            <div
-              class="mb-2 text-xs text-neutral-500 dark:text-neutral-400"
-              style="-webkit-line-clamp: 3; line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;"
-            >
+            <div class="ppr-desc">
               {{ p.description }}
             </div>
-
-            <div v-if="p.notes" class="mt-1 rounded p-2 text-xs" style="background: rgba(240, 160, 32, 0.1); color: #f0a020;">
+            <div v-if="p.notes" class="ppr-notes">
               {{ p.notes }}
             </div>
           </div>
-        </c-card>
+        </div>
       </template>
     </div>
   </div>
 </template>
+
+<style scoped>
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+.ppr-dangerous-btn {
+  border-color: rgba(234, 179, 8, 0.3) !important;
+  color: rgba(234, 179, 8, 0.6) !important;
+}
+
+.ppr-dangerous-btn:hover {
+  background: rgba(234, 179, 8, 0.08) !important;
+  border-color: rgba(234, 179, 8, 0.5) !important;
+  color: #ca8a04 !important;
+}
+
+.ppr-dangerous-btn-active {
+  background: rgba(234, 179, 8, 0.12) !important;
+  border-color: rgba(234, 179, 8, 0.6) !important;
+  color: #ca8a04 !important;
+}
+
+.ppr-proto-filter {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ppr-seg-btn {
+  padding: 0 12px;
+  height: 34px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  border: none;
+  border-right: 1px solid rgba(30, 165, 76, 0.2);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+
+.ppr-seg-btn:last-child {
+  border-right: none;
+}
+
+.ppr-seg-btn:hover {
+  background: rgba(30, 165, 76, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ppr-seg-btn-active {
+  background: rgba(30, 165, 76, 0.15) !important;
+  color: #1ea54c !important;
+}
+
+.ppr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.ppr-card-dangerous {
+  border-color: rgba(234, 179, 8, 0.4) !important;
+}
+
+.ppr-bar {
+  padding: 3px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.ppr-bar:hover {
+  background: rgba(30, 165, 76, 0.18) !important;
+}
+
+.ppr-bar-copied {
+  background: rgba(30, 165, 76, 0.22) !important;
+}
+
+.ppr-port {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1ea54c;
+  letter-spacing: 0.05em;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ppr-pills {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ppr-proto {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ppr-proto-tcp  { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+.ppr-proto-udp  { background: rgba(3

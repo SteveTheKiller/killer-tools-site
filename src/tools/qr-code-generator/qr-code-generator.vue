@@ -91,196 +91,202 @@ const caption = computed(() => {
     <div class="qrg-columns">
       <!-- LEFT: controls -->
       <div class="qrg-col qrg-left">
-        <c-card>
-          <div class="qrg-section-label">
-            Type
+        <div class="kt-terminal qrg-panel">
+          <div class="kt-terminal-bar qrg-bar">
+            <span class="kt-prompt">&gt;_</span>
+            <span class="qrg-title">QR CODE</span>
           </div>
-          <div class="qrg-pill-row">
-            <button
-              type="button"
-              class="qrg-pill"
-              :class="{ 'qrg-pill-active': mode === 'text' }"
-              @click="mode = 'text'"
-            >
-              Text / URL
-            </button>
-            <button
-              type="button"
-              class="qrg-pill"
-              :class="{ 'qrg-pill-active': mode === 'wifi' }"
-              @click="mode = 'wifi'"
-            >
-              Wi-Fi
-            </button>
-          </div>
-
-          <!-- ── Text / URL mode ── -->
-          <template v-if="mode === 'text'">
+          <div class="qrg-body">
             <div class="qrg-section-label">
-              Text or URL
-            </div>
-            <c-input-text
-              v-model:value="text"
-              multiline
-              rows="2"
-              autosize
-              autofocus
-              placeholder="Your link or text..."
-            />
-          </template>
-
-          <!-- ── Wi-Fi mode ── -->
-          <template v-if="mode === 'wifi'">
-            <div class="qrg-section-label">
-              Encryption
-            </div>
-            <div class="qrg-pill-row">
-              <button
-                v-for="enc in encryptionOptions"
-                :key="enc.value"
-                type="button"
-                class="qrg-pill"
-                :class="{ 'qrg-pill-active': encryption === enc.value }"
-                @click="encryption = enc.value"
-              >
-                {{ enc.label }}
-              </button>
-            </div>
-
-            <div class="qrg-section-label">
-              SSID
-            </div>
-            <c-input-text
-              v-model:value="ssid"
-              placeholder="Network name..."
-              autosize
-              rows="1"
-            />
-
-            <div v-if="encryption !== 'nopass'" class="qrg-section-label">
-              Password
-            </div>
-            <c-input-text
-              v-if="encryption !== 'nopass'"
-              v-model:value="wifiPassword"
-              type="password"
-              placeholder="Network password..."
-              autosize
-              rows="1"
-            />
-
-            <div class="qrg-section-label">
-              Options
+              Type
             </div>
             <div class="qrg-pill-row">
               <button
                 type="button"
                 class="qrg-pill"
-                :class="{ 'qrg-pill-active': isHiddenSSID }"
-                @click="isHiddenSSID = !isHiddenSSID"
+                :class="{ 'qrg-pill-active': mode === 'text' }"
+                @click="mode = 'text'"
               >
-                Hidden SSID
+                Text / URL
               </button>
               <button
-                v-if="encryption === 'WPA2-EAP'"
                 type="button"
                 class="qrg-pill"
-                :class="{ 'qrg-pill-active': eapAnonymous }"
-                @click="eapAnonymous = !eapAnonymous"
+                :class="{ 'qrg-pill-active': mode === 'wifi' }"
+                @click="mode = 'wifi'"
               >
-                Anonymous identity
+                Wi-Fi
               </button>
             </div>
-
-            <!-- EAP-specific fields -->
-            <template v-if="encryption === 'WPA2-EAP'">
+  
+            <!-- ── Text / URL mode ── -->
+            <template v-if="mode === 'text'">
               <div class="qrg-section-label">
-                EAP method
-              </div>
-              <c-select
-                v-model:value="eapMethod"
-                searchable
-                :options="EAPMethods.map((m) => ({ label: m, value: m }))"
-              />
-
-              <div class="qrg-section-label">
-                EAP phase 2
-              </div>
-              <c-select
-                v-model:value="eapPhase2Method"
-                :options="EAPPhase2Methods.map((m) => ({ label: m, value: m }))"
-              />
-
-              <div v-if="!eapAnonymous" class="qrg-section-label">
-                EAP identity
+                Text or URL
               </div>
               <c-input-text
-                v-if="!eapAnonymous"
-                v-model:value="eapIdentity"
-                placeholder="Your EAP identity..."
+                v-model:value="text"
+                multiline
+                rows="2"
+                autosize
+                autofocus
+                placeholder="Your link or text..."
+              />
+            </template>
+  
+            <!-- ── Wi-Fi mode ── -->
+            <template v-if="mode === 'wifi'">
+              <div class="qrg-section-label">
+                Encryption
+              </div>
+              <div class="qrg-pill-row">
+                <button
+                  v-for="enc in encryptionOptions"
+                  :key="enc.value"
+                  type="button"
+                  class="qrg-pill"
+                  :class="{ 'qrg-pill-active': encryption === enc.value }"
+                  @click="encryption = enc.value"
+                >
+                  {{ enc.label }}
+                </button>
+              </div>
+  
+              <div class="qrg-section-label">
+                SSID
+              </div>
+              <c-input-text
+                v-model:value="ssid"
+                placeholder="Network name..."
                 autosize
                 rows="1"
               />
+  
+              <div v-if="encryption !== 'nopass'" class="qrg-section-label">
+                Password
+              </div>
+              <c-input-text
+                v-if="encryption !== 'nopass'"
+                v-model:value="wifiPassword"
+                type="password"
+                placeholder="Network password..."
+                autosize
+                rows="1"
+              />
+  
+              <div class="qrg-section-label">
+                Options
+              </div>
+              <div class="qrg-pill-row">
+                <button
+                  type="button"
+                  class="qrg-pill"
+                  :class="{ 'qrg-pill-active': isHiddenSSID }"
+                  @click="isHiddenSSID = !isHiddenSSID"
+                >
+                  Hidden SSID
+                </button>
+                <button
+                  v-if="encryption === 'WPA2-EAP'"
+                  type="button"
+                  class="qrg-pill"
+                  :class="{ 'qrg-pill-active': eapAnonymous }"
+                  @click="eapAnonymous = !eapAnonymous"
+                >
+                  Anonymous identity
+                </button>
+              </div>
+  
+              <!-- EAP-specific fields -->
+              <template v-if="encryption === 'WPA2-EAP'">
+                <div class="qrg-section-label">
+                  EAP method
+                </div>
+                <c-select
+                  v-model:value="eapMethod"
+                  searchable
+                  :options="EAPMethods.map((m) => ({ label: m, value: m }))"
+                />
+  
+                <div class="qrg-section-label">
+                  EAP phase 2
+                </div>
+                <c-select
+                  v-model:value="eapPhase2Method"
+                  :options="EAPPhase2Methods.map((m) => ({ label: m, value: m }))"
+                />
+  
+                <div v-if="!eapAnonymous" class="qrg-section-label">
+                  EAP identity
+                </div>
+                <c-input-text
+                  v-if="!eapAnonymous"
+                  v-model:value="eapIdentity"
+                  placeholder="Your EAP identity..."
+                  autosize
+                  rows="1"
+                />
+              </template>
             </template>
-          </template>
-
-          <!-- Shared: theme / colors / error correction -->
-          <div class="qrg-section-label">
-            Theme
+  
+            <!-- Shared: theme / colors / error correction -->
+            <div class="qrg-section-label">
+              Theme
+            </div>
+            <div class="qrg-pill-row">
+              <button
+                type="button"
+                class="qrg-pill"
+                :class="{ 'qrg-pill-active': foreground === '#1ea54cff' && background === '#0a0a0aff' }"
+                @click="applyTheme('#1ea54cff', '#0a0a0aff')"
+              >
+                Terminal
+              </button>
+              <button
+                type="button"
+                class="qrg-pill"
+                :class="{ 'qrg-pill-active': foreground === '#000000ff' && background === '#ffffffff' }"
+                @click="applyTheme('#000000ff', '#ffffffff')"
+              >
+                Classic
+              </button>
+              <button
+                type="button"
+                class="qrg-pill"
+                :class="{ 'qrg-pill-active': foreground === '#ffffffff' && background === '#000000ff' }"
+                @click="applyTheme('#ffffffff', '#000000ff')"
+              >
+                Inverted
+              </button>
+            </div>
+  
+            <div class="qrg-section-label">
+              Colors
+            </div>
+            <div class="qrg-color-grid">
+              <span class="qrg-color-label">Foreground:</span>
+              <n-color-picker v-model:value="foreground" :modes="['hex']" />
+              <span class="qrg-color-label">Background:</span>
+              <n-color-picker v-model:value="background" :modes="['hex']" />
+            </div>
+  
+            <div class="qrg-section-label">
+              Error correction
+            </div>
+            <div class="qrg-pill-row">
+              <button
+                v-for="level in errorLevels"
+                :key="level.value"
+                type="button"
+                class="qrg-pill"
+                :class="{ 'qrg-pill-active': errorCorrectionLevel === level.value }"
+                @click="errorCorrectionLevel = level.value"
+              >
+                {{ level.label }}
+              </button>
+            </div>
           </div>
-          <div class="qrg-pill-row">
-            <button
-              type="button"
-              class="qrg-pill"
-              :class="{ 'qrg-pill-active': foreground === '#1ea54cff' && background === '#0a0a0aff' }"
-              @click="applyTheme('#1ea54cff', '#0a0a0aff')"
-            >
-              Terminal
-            </button>
-            <button
-              type="button"
-              class="qrg-pill"
-              :class="{ 'qrg-pill-active': foreground === '#000000ff' && background === '#ffffffff' }"
-              @click="applyTheme('#000000ff', '#ffffffff')"
-            >
-              Classic
-            </button>
-            <button
-              type="button"
-              class="qrg-pill"
-              :class="{ 'qrg-pill-active': foreground === '#ffffffff' && background === '#000000ff' }"
-              @click="applyTheme('#ffffffff', '#000000ff')"
-            >
-              Inverted
-            </button>
-          </div>
-
-          <div class="qrg-section-label">
-            Colors
-          </div>
-          <div class="qrg-color-grid">
-            <span class="qrg-color-label">Foreground:</span>
-            <n-color-picker v-model:value="foreground" :modes="['hex']" />
-            <span class="qrg-color-label">Background:</span>
-            <n-color-picker v-model:value="background" :modes="['hex']" />
-          </div>
-
-          <div class="qrg-section-label">
-            Error correction
-          </div>
-          <div class="qrg-pill-row">
-            <button
-              v-for="level in errorLevels"
-              :key="level.value"
-              type="button"
-              class="qrg-pill"
-              :class="{ 'qrg-pill-active': errorCorrectionLevel === level.value }"
-              @click="errorCorrectionLevel = level.value"
-            >
-              {{ level.label }}
-            </button>
-          </div>
-        </c-card>
+        </div>
       </div>
 
       <!-- RIGHT: QR preview -->
@@ -296,9 +302,9 @@ const caption = computed(() => {
         <div v-if="qrcode" class="qr-caption">
           {{ caption }}
         </div>
-        <c-button v-if="qrcode" class="qr-download" @click="download">
-          Download PNG
-        </c-button>
+        <button v-if="qrcode" type="button" class="qrg-pill qrg-pill-active qr-download" @click="download">
+          ↓ Download PNG
+        </button>
       </div>
     </div>
   </div>
@@ -352,6 +358,28 @@ const caption = computed(() => {
   }
 }
 
+.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+.qrg-bar {
+  padding: 3px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qrg-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1ea54c;
+  letter-spacing: 0.05em;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.qrg-body {
+  padding: 14px 16px;
+}
+
 /* ── Section labels + pill rows (matches password generator) ────── */
 .qrg-section-label {
   font-size: 0.72rem;
@@ -362,7 +390,7 @@ const caption = computed(() => {
   font-weight: 500;
 }
 
-.qrg-section-label:first-child {
+.qrg-body .qrg-section-label:first-child {
   margin-top: 0;
 }
 
@@ -473,6 +501,11 @@ const caption = computed(() => {
 }
 
 .qr-download {
-  margin-top: 4px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 500px;
+  padding: 7px 16px !important;
+  font-size: 0.82rem !important;
+  border-radius: 6px !important;
 }
 </style>
