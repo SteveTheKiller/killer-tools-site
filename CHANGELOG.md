@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2026.05.08
+
+### Features
+
+- **cve-lookup**: alias table expanded to 540 entries covering named vulnerabilities from 2001-2026 — searches like "dirty frag", "copy fail", "log4shell", "eternalblue", "heartbleed", and "xz backdoor" now resolve directly to CVE IDs without hitting the API
+- **cve-lookup**: bare number search — entering a partial CVE number like "43284" tries CVE-YYYY-NNNNN across the last four years in parallel
+- **cve-lookup**: GitHub Advisory Database searched alongside NVD for keyword queries, catching named CVEs not indexed by NVD description text
+- **cve-lookup**: NVD direct link added to every result card
+- **cve-lookup**: CVSS metrics table redesigned as a right-aligned column on each card with color-coded values (red = high risk, orange = medium, green = low, gray = no impact)
+- **cve-lookup**: Scope added to CVSS metrics table (CHANGED = red, UNCHANGED = gray)
+- **cve-lookup**: CWE badges are now clickable links to cwe.mitre.org definitions
+- **cve-lookup**: all dropdowns and Search button restyled to match terminal green theme (dark background, green border, monospace font, chevron animation, clearable filters)
+
+### Bug fixes
+
+- **cve-lookup**: fixed infinite "Searching..." hang caused by missing fetch timeouts — all requests now abort after 10-15s via `AbortSignal.timeout()`
+- **cve-lookup**: `keywordExactMatch` added to NVD requests to prevent false positives from AND-matching unrelated words across descriptions
+
 ## Version 2026.05.05
 
 ### Features
