@@ -15,7 +15,7 @@
  *   node scripts/update-popularity.mjs
  */
 
-import { writeFileSync } from 'fs';
+import { writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -97,5 +97,6 @@ const sorted = Object.fromEntries(
   Object.entries(popularity).sort(([, a], [, b]) => b - a),
 );
 
+mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, JSON.stringify(sorted, null, 2) + '\n');
 console.log(`Wrote ${Object.keys(sorted).length} entries to ${OUT}`);
