@@ -61,7 +61,7 @@ const startAt = endAt - days * 24 * 60 * 60 * 1000;
 const params = new URLSearchParams({
   startAt: String(startAt),
   endAt: String(endAt),
-  type: 'url',
+  type: 'pageUrl',
   limit: '500',
   offset: '0',
 });
