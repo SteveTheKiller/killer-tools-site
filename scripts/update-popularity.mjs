@@ -38,6 +38,8 @@ if (!UMAMI_URL || !UMAMI_WEBSITE || !UMAMI_USER || !UMAMI_PASS) {
 const base = UMAMI_URL.replace(/\/$/, '');
 const days = Number(UMAMI_DAYS);
 
+console.log(`Authenticating as ${UMAMI_USER} at ${base}/api/auth/login`);
+
 // ── 1. Authenticate ──────────────────────────────────────────────────────────
 const authRes = await fetch(`${base}/api/auth/login`, {
   method: 'POST',
@@ -45,7 +47,9 @@ const authRes = await fetch(`${base}/api/auth/login`, {
   body: JSON.stringify({ username: UMAMI_USER, password: UMAMI_PASS }),
 });
 if (!authRes.ok) {
+  const body = await authRes.text();
   console.error(`Auth failed: ${authRes.status} ${authRes.statusText}`);
+  console.error(`Response body: ${body}`);
   process.exit(1);
 }
 const { token } = await authRes.json();
