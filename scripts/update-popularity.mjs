@@ -66,18 +66,19 @@ const params = new URLSearchParams({
   offset: '0',
 });
 
+const metricsUrl = `${base}/api/websites/${UMAMI_WEBSITE}/metrics?${params}`;
+console.log(`Fetching metrics from: ${metricsUrl}`);
 const metricsRes = await fetch(
-  `${base}/api/websites/${UMAMI_WEBSITE}/metrics?${params}`,
+  metricsUrl,
   { headers: { Authorization: `Bearer ${token}` } },
 );
+const metricsBody = await metricsRes.text();
+console.log(`Metrics response ${metricsRes.status}: ${metricsBody.slice(0, 500)}`);
 if (!metricsRes.ok) {
-  const body = await metricsRes.text();
-  console.error(`Metrics fetch failed: ${metricsRes.status} ${metricsRes.statusText}`);
-  console.error(`Response body: ${body}`);
   process.exit(1);
 }
 
-const metrics = await metricsRes.json();
+const metrics = JSON.parse(metricsBody);
 
 // ── 3. Build path → pageview map ─────────────────────────────────────────────
 // Umami returns [{ x: '/path', y: pageviewCount }, ...]
