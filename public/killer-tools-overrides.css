@@ -88,6 +88,26 @@ body {
   overflow-x: hidden !important;
 }
 
+/* --- subtle noise texture: baked into the layout background ---
+   Grain tiles on the n-layout base color; solid cards/panels
+   sit on top and naturally block it. */
+html.dark .n-layout {
+  background-color: #2b2b2b !important;
+  background-image: url('/grain.png') !important;
+  background-repeat: repeat !important;
+  background-size: 256px 256px !important;
+}
+
+html:not(.dark) .n-layout {
+  background-image: url('/grain.png') !important;
+  background-repeat: repeat !important;
+  background-size: 256px 256px !important;
+}
+
+html.dark .n-layout-scroll-container {
+  background-color: transparent !important;
+}
+
 /* --- code output wrap --- */
 .n-code pre,
 .n-code code {
@@ -192,6 +212,78 @@ body {
 .custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
   background: #1ea54c;
 }
+/* --- dark mode: increase text contrast --- */
+
+/* card titles */
+html.dark .truncat {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* card descriptions */
+html.dark .c-card .line-clamp-2,
+html.dark .n-card .line-clamp-2 {
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+
+/* section headings ("Newest tools", "All the tools", category labels) */
+html.dark h3.text-neutral-400,
+html.dark .text-neutral-400 {
+  color: rgba(255, 255, 255, 0.60) !important;
+}
+
+/* search bar text + placeholder + icon */
+html.dark .n-input__input-el {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+html.dark .n-input__input-el::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+html.dark .n-input .n-input__prefix,
+html.dark .n-input .n-base-icon {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* --- card title: green on hover --- */
+.c-card .truncat {
+  transition: color 0.18s ease;
+}
+
+html.dark .c-card:hover .truncat {
+  color: #1ea54c !important;
+}
+
+/* --- dark mode: darken cards and sidebar --- */
+html.dark .n-card,
+html.dark .c-card {
+  background-color: #252525 !important;
+}
+
+html.dark .n-layout-sider,
+html.dark .sider-content {
+  background-color: #252525 !important;
+}
+
+/* --- about page: dark mode contrast fixes --- */
+html.dark .app-desc,
+html.dark .col-intro {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+html.dark .section-heading,
+html.dark .link-label {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+html.dark .link-label {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+html.dark .killer-apps,
+html.dark .links-bar,
+html.dark .about-footer {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
 /* --- tool header: unconstrain on desktop --- */
 @media (min-width: 769px) {
   .tool-layout {
