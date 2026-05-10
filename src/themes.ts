@@ -6,7 +6,7 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
     primaryColorHover: '#1ea54cFF',
     primaryColorPressed: '#0a5a28FF',
     primaryColorSuppl: '#1ea54cFF',
-    bodyColor: '#cccccc',
+    bodyColor: '#b8b8b8',
     textColorBase: '#1a1e22',
     textColor1: '#1a1e22',
     textColor2: '#2e3440',
@@ -16,7 +16,7 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
 
   Menu: {
     itemHeight: '32px',
-    color: '#c0c0c0',
+    color: 'transparent',
     itemTextColor: '#1e2022',
     itemTextColorActive: '#0d7033',
     itemTextColorHover: '#0d7033',
@@ -25,8 +25,8 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
   },
 
   Layout: {
-    color: '#cccccc',
-    siderColor: '#c0c0c0',
+    color: '#b8b8b8',
+    siderColor: '#b0b0b0',
     siderBorderColor: '#aaaaaa',
   },
 
@@ -37,7 +37,18 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
 
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px' },
+      InternalSelectMenu: { height: '500px', color: '#d0d0d0', optionTextColor: 'rgba(0,0,0,0.75)', optionTextColorActive: '#0d7033' },
+    },
+  },
+
+  Popover: {
+    color: '#d0d0d0',
+    textColor: '#1a1e22',
+  },
+
+  Select: {
+    peers: {
+      InternalSelectMenu: { color: '#d0d0d0', optionTextColor: 'rgba(0,0,0,0.75)', optionTextColorActive: '#0d7033', optionColorActive: 'rgba(13,112,51,0.10)', optionColorActivePending: 'rgba(13,112,51,0.15)' },
     },
   },
 };

@@ -324,4 +324,9 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   color: rgba(30, 165, 76, 0.4);
   font-style: italic;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .rsa-key-text    { color: #0b5c28; }
+html:not(.dark) .rsa-generating  { color: rgba(13, 112, 51, 0.55); }
+html:not(.dark) .rsa-bits-input  { color: #0d7033 !important; background: transparent !important; }
 </style>

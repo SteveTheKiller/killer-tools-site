@@ -389,6 +389,10 @@ tools:
     title: KillerScan
     description: Fast network scanner for field techs. ARP + ping discovery, port probing, vendor lookup, and automatic device classification.
 
+  gif-search:
+    title: GIF Search
+    description: Search Giphy for reaction GIFs. Click any result to copy the URL.
+
   killer-find:
     title: KillerFind
     description: Fast file search for Windows. Search by filename wildcard or file content across any directory. Streams results in real time, no indexing required.

@@ -295,7 +295,7 @@ const cheatsheet = [
     <!-- Right: Cheatsheet -->
     <div class="cheatsheet-panel">
       <div class="rt-cs-panel">
-        <div class="rt-cs-panel-bar">
+        <div class="rt-cs-panel-bar kt-terminal-bar">
           <span class="rt-cs-dot" />
           <span class="rt-cs-panel-title">Quick Reference</span>
         </div>
@@ -335,6 +335,9 @@ const cheatsheet = [
 
 .regex-layout {
   container-type: inline-size;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 1000px) {
@@ -407,8 +410,16 @@ const cheatsheet = [
   padding: 12px 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
+
+/* Collapse NaiveUI form-item margin inside rt-body */
+.rt-body ::v-deep(.n-form-item) { margin-bottom: 0 !important; }
+.rt-body ::v-deep(.n-form-item-label) { padding-bottom: 2px !important; }
+.rt-body ::v-deep(.n-form-item-feedback-wrapper) { min-height: 0 !important; }
+
+/* Shrink the divider margin in this context */
+.rt-body .kt-divider { margin: 4px 0; }
 
 .rt-body-matches {
   padding: 0;
@@ -525,6 +536,9 @@ const cheatsheet = [
   color: rgba(255, 255, 255, 0.5);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
+
+html:not(.dark) .rt-cs-panel-title { color: #1ea54c; }
+html:not(.dark) .rt-cs-dot { background: #1ea54c; box-shadow: 0 0 5px rgba(13, 112, 51, 0.4); }
 
 .rt-cheatsheet-body {
   padding: 14px 16px;

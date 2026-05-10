@@ -235,4 +235,36 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
   opacity: 0.3;
   cursor: default;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .rn-panel {
+  background: var(--kt-term-bg, #cccccc);
+  border-color: rgba(13, 112, 51, 0.30);
+}
+
+html:not(.dark) .rn-sublabel { color: rgba(0, 0, 0, 0.55); }
+
+html:not(.dark) .rn-arrows { color: rgba(13, 112, 51, 0.45); }
+
+html:not(.dark) .rn-input-wrap { border-color: rgba(13, 112, 51, 0.25); }
+html:not(.dark) .rn-input-wrap:focus-within { border-color: rgba(13, 112, 51, 0.55); }
+
+html:not(.dark) .rn-input {
+  background: #f0f0f0;
+  color: #0d7033;
+}
+
+html:not(.dark) .rn-input::placeholder { color: rgba(0, 0, 0, 0.25); }
+
+html:not(.dark) .rn-copy-btn {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.30);
+  color: #0b5c28;
+}
+
+html:not(.dark) .rn-copy-btn:hover:not(:disabled) {
+  background: rgba(13, 112, 51, 0.15);
+  border-color: #0d7033;
+  color: #083d1a;
+}
 </style>

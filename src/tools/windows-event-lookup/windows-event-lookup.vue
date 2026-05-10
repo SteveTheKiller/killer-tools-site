@@ -41,7 +41,7 @@ function copyId(id: number) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0; min-width: 0; width: 100%;">
     <c-input-text
       v-model:value="search"
       placeholder="Search by event ID, name, or description..."
@@ -126,7 +126,7 @@ function copyId(id: number) {
 
 .wel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
 }
 

@@ -195,7 +195,7 @@ const details = computed(() => [
 }
 
 @container (max-width: 860px) {
-  .otp-columns { flex-direction: column; }
+  .otp-columns { flex-direction: column; align-items: stretch; }
   .otp-left, .otp-right { flex: 1 1 100%; max-width: none; }
 }
 
@@ -415,5 +415,35 @@ const details = computed(() => [
   font-size: 0.8rem;
   color: rgba(30, 165, 76, 0.75);
   letter-spacing: 0.02em;
+}
+
+html:not(.dark) .qr-caption { color: #0b5c28; }
+
+/* ── Open Key URI button ── */
+::v-deep(.qr-open-btn.n-button) {
+  background: transparent !important;
+  border: 1px solid rgba(30, 165, 76, 0.35) !important;
+  border-radius: 5px !important;
+  color: rgba(30, 165, 76, 0.80) !important;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace !important;
+  font-size: 0.78rem !important;
+  box-shadow: none !important;
+}
+
+::v-deep(.qr-open-btn.n-button:hover) {
+  background: rgba(30, 165, 76, 0.10) !important;
+  border-color: #1ea54c !important;
+  color: #1ea54c !important;
+}
+
+html:not(.dark) ::v-deep(.qr-open-btn.n-button) {
+  border-color: rgba(13, 112, 51, 0.35) !important;
+  color: #0b5c28 !important;
+}
+
+html:not(.dark) ::v-deep(.qr-open-btn.n-button:hover) {
+  background: rgba(13, 112, 51, 0.10) !important;
+  border-color: #0d7033 !important;
+  color: #083d1a !important;
 }
 </style>

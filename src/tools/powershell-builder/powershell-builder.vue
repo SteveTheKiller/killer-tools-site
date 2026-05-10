@@ -473,7 +473,7 @@ const cheatsheet = [
                   <td style="padding: 3px 8px 3px 0; white-space: nowrap; width: 1%;">
                     <code style="font-size: 0.72rem; color: #1ea54c; background: rgba(30,165,76,0.1); padding: 1px 4px; border-radius: 3px;">{{ row.expr }}</code>
                   </td>
-                  <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7; white-space: nowrap;">
+                  <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7;">
                     {{ row.desc }}
                   </td>
                 </tr>

@@ -376,7 +376,7 @@ async function checkDmarc(d: string) {
   }
 }
 
-const emailStatusIcon = { pass: Check, fail: X, warn: AlertTriangle, loading: Loader };
+const _emailStatusIcon = { pass: Check, fail: X, warn: AlertTriangle, loading: Loader };
 const emailStatusColor: Record<string, 'default' | 'success' | 'error' | 'warning'> = {
   pass: 'success',
   fail: 'error',
@@ -531,7 +531,6 @@ async function runLookup() {
     <div v-if="!loading && (whoisResult || emailChecked)" class="grid grid-cols-1 gap-12px lg:grid-cols-2">
       <!-- LEFT: WHOIS -->
       <div v-if="whoisResult" class="grid grid-cols-1 gap-12px" style="align-content: start;">
-
         <!-- Registration -->
         <div class="whois-terminal">
           <div class="whois-terminal-bar">
@@ -573,9 +572,9 @@ async function runLookup() {
               <span v-for="(s, i) in whoisResult.status" :key="i" class="kt-tag" :class="`kt-tag-${statusType(s)}`">{{ s }}</span>
             </div>
           </div>
-          <div v-if="whoisResult.status.some(s => statusDescriptions[s.toLowerCase()])" class="whois-terminal-body">
+          <div v-if="whoisResult.status.some((s: string) => statusDescriptions[s.toLowerCase()])" class="whois-terminal-body">
             <div
-              v-for="(s, i) in whoisResult.status.filter(s => statusDescriptions[s.toLowerCase()])"
+              v-for="(s, i) in whoisResult.status.filter((s: string) => statusDescriptions[s.toLowerCase()])"
               :key="i"
               class="whois-status-entry"
             >
@@ -593,7 +592,9 @@ async function runLookup() {
           </div>
           <div class="whois-terminal-body">
             <div v-for="contact in contacts" :key="contact.role" class="whois-contact-group">
-              <div class="whois-contact-role">{{ contact.role }}</div>
+              <div class="whois-contact-role">
+                {{ contact.role }}
+              </div>
               <div
                 v-for="field in [
                   { label: 'Name', value: contact.name },
@@ -625,8 +626,12 @@ async function runLookup() {
           </div>
           <div class="whois-terminal-body">
             <div v-for="(remark, i) in remarks" :key="i" class="whois-remark-entry">
-              <div v-if="remark.title" class="whois-remark-title">{{ remark.title }}</div>
-              <div v-for="(line, j) in remark.description" :key="j" class="whois-remark-line">{{ line }}</div>
+              <div v-if="remark.title" class="whois-remark-title">
+                {{ remark.title }}
+              </div>
+              <div v-for="(line, j) in remark.description" :key="j" class="whois-remark-line">
+                {{ line }}
+              </div>
             </div>
           </div>
         </div>
@@ -634,7 +639,6 @@ async function runLookup() {
 
       <!-- RIGHT: Email DNS -->
       <div v-if="emailChecked || loading" class="grid grid-cols-1 gap-12px" style="align-content: start;">
-
         <!-- Nameservers -->
         <div v-if="whoisResult?.nameservers?.length" class="whois-terminal">
           <div class="whois-terminal-bar">
@@ -665,7 +669,9 @@ async function runLookup() {
                 </c-button>
               </div>
             </template>
-            <div v-else-if="emailResults.mx.raw" class="whois-body-text">{{ emailResults.mx.raw }}</div>
+            <div v-else-if="emailResults.mx.raw" class="whois-body-text">
+              {{ emailResults.mx.raw }}
+            </div>
           </div>
         </div>
 
@@ -685,8 +691,12 @@ async function runLookup() {
                 <n-icon size="12" :component="copiedValue === emailResults.spf.raw ? Check : Copy" />
               </c-button>
             </div>
-            <div v-else-if="emailResults.spf.raw" class="whois-body-text">{{ emailResults.spf.raw }}</div>
-            <div v-for="(issue, i) in emailResults.spf.value" :key="i" class="whois-warn-line">{{ issue }}</div>
+            <div v-else-if="emailResults.spf.raw" class="whois-body-text">
+              {{ emailResults.spf.raw }}
+            </div>
+            <div v-for="(issue, i) in emailResults.spf.value" :key="i" class="whois-warn-line">
+              {{ issue }}
+            </div>
           </div>
         </div>
 
@@ -702,7 +712,9 @@ async function runLookup() {
                 <span>{{ record }}</span>
               </div>
             </template>
-            <div v-else-if="emailResults.dkim.raw" class="whois-body-text">{{ emailResults.dkim.raw }}</div>
+            <div v-else-if="emailResults.dkim.raw" class="whois-body-text">
+              {{ emailResults.dkim.raw }}
+            </div>
           </div>
         </div>
 
@@ -722,8 +734,12 @@ async function runLookup() {
                 <n-icon size="12" :component="copiedValue === emailResults.dmarc.raw ? Check : Copy" />
               </c-button>
             </div>
-            <div v-else-if="emailResults.dmarc.raw" class="whois-body-text">{{ emailResults.dmarc.raw }}</div>
-            <div v-for="(issue, i) in emailResults.dmarc.value" :key="i" class="whois-warn-line">{{ issue }}</div>
+            <div v-else-if="emailResults.dmarc.raw" class="whois-body-text">
+              {{ emailResults.dmarc.raw }}
+            </div>
+            <div v-for="(issue, i) in emailResults.dmarc.value" :key="i" class="whois-warn-line">
+              {{ issue }}
+            </div>
           </div>
         </div>
       </div>

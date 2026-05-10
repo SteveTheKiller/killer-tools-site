@@ -80,19 +80,20 @@ const features = [
             </svg>
             Download for Windows (.exe)
           </a>
-          <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
+          <p class="kapp-subtitle" style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
             Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
-          <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
+          <div class="kapp-version" style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
             <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.3.0 &middot; updated 5/8/2026
           </div>
-          <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
+          <p class="kapp-sha256" style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
             <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>7F4F58B1F907D21E2268647432258763EE88D18437E317C43CF3EC4CCF5BC158
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerPDF"
             target="_blank"
             rel="noopener"
+            class="kapp-gh-link"
             style="display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; background: #232323; border: 1px solid #1ea54c; border-radius: 4px; font-size: 13px; color: #e0e0e0; text-decoration: none;"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#1ea54c">
@@ -133,8 +134,8 @@ const features = [
   width: 100%;
 }
 .terminal {
-  background: #0a0a0a;
-  border: 1px solid #2a2a2a;
+  background: var(--kt-term-bg);
+  border: 1px solid var(--kt-term-border);
   border-radius: 6px;
   margin: 0;
   text-align: left;
@@ -146,7 +147,7 @@ const features = [
   justify-content: space-between;
   padding: 8px 12px;
   background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 .terminal-dots {
   display: flex;

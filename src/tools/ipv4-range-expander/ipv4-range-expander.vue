@@ -158,6 +158,13 @@ async function copyValue(label: string, value: string | undefined) {
 
 @container (max-width: 560px) {
   .range-inputs { flex-direction: column; gap: 8px; }
-  .range-row { grid-template-columns: auto 100px 1fr 1fr auto; gap: 6px; padding: 6px 8px; }
+  .range-row { grid-template-columns: auto 110px 1fr 1fr auto; gap: 6px; padding: 6px 8px; }
+}
+
+/* Very small screens: drop "before" value column, wrap label */
+@container (max-width: 400px) {
+  .range-row { grid-template-columns: auto 1fr auto auto; gap: 4px; padding: 6px 8px; }
+  .range-row .kt-value-faded { display: none; }
+  .range-row .kt-label { white-space: normal; font-size: 0.7rem; }
 }
 </style>

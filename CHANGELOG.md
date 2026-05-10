@@ -1,5 +1,61 @@
 # Changelog
 
+## [Unreleased] - 2026-05-09
+
+### Terminal Theme
+
+- Introduced `kt-terminal.css` with a shared design system for all tool panels: unified `--kt-term-bg` CSS variable (`#0a0a0c` dark / `#cccccc` light), `kt-section-row` titlebar class, `kt-tag`, `kt-divider`, `kt-pill`, and `kt-prompt` utility classes
+- All tool input panels and output terminals now share consistent monospace typography, green accent borders, and hover states
+- Section titlebars use a shared green-tinted background so input header, output header, and section labels all render at the same shade in both themes
+
+### Light Mode
+
+- NaiveUI theme config: light mode page background set to `#b8b8b8`, layout body color matched
+- Sidebar logo darkened in light mode via `filter: brightness(0.55)` so the green logo remains visible against the light background
+- JWT parser: input field, textarea, and decoded terminal render correct backgrounds in light mode; data rows use `#ffffff` with green hover
+- JSON diff: both input panels use correct light/dark textarea backgrounds via inline style binding
+- Encryption tool: panel backgrounds, inputs, textareas, and dropdowns all respond correctly to light mode
+- Domain lookup: email DNS result panels use correct backgrounds in light mode
+- All `kt-sublabel` text switches to `rgba(0,0,0,0.50)` in light mode via global rule
+
+### Mobile
+
+- Responsive fixes for `pre` blocks: `max-width: 100%`, `overflow-x: auto`, `box-sizing: border-box`
+- NaiveUI cards constrained to viewport width on small screens
+- Textarea and input elements use `word-break: break-all` / `overflow-wrap: break-word` on mobile
+- WYSIWYG editor toolbar buttons restored to `inline-flex` on mobile
+
+### Scrollbars
+
+- Global slim scrollbar theme: 4px width, green-tinted thumb, transparent track, full-green on hover
+- Applied to Firefox via `scrollbar-width: thin` + `scrollbar-color`
+- Applied to WebKit via `::-webkit-scrollbar` rules; force-applied to NaiveUI elements that block style propagation
+- Custom sidebar scroll class added for the navigation panel
+
+### Tool Improvements
+
+- **JWT parser**: replaced NaiveUI input with custom textarea; added copy-to-clipboard per claim with checkmark feedback; renamed classes to avoid global wildcard background bleed
+- **JSON diff**: replaced `c-input-text` components with custom textareas; added live JSON5 validation with error messages; unified titlebar styling with `kt-section-row`
+- **Encryption**: full custom panel UI with dark textareas, inline dropdowns with keyboard support, and algorithm selector for AES, TripleDES, Rabbit, and RC4
+- **ASCII text drawer**: custom font dropdown with keyboard navigation (arrow keys, scroll wheel), search filtering, and scroll-into-view on focus
+- **Chmod calculator**: digit color function shows muted, green, or bright-green per octet value
+- **SVG placeholder generator**: stripped null bytes from end of file; added missing trailing newline
+- **Regex tester**: removed double blank line in CSS block
+- **Diff editor**: custom narrow-viewport fallback with stacked textareas when Monaco is too narrow for side-by-side
+
+### Code Quality
+
+- Fixed `antfu/if-newline` and `curly` violations across chmod calculator, base64 file converter, ASCII text drawer, and diff editor
+- Fixed `vue/html-indent` violations in encryption tool template (+2 spaces throughout)
+- Fixed `vue/singleline-html-element-content-newline` violations in domain lookup and diff editor
+- Fixed `vue/multiline-html-element-content-newline` violations (removed extra blank lines after opening tags)
+- Fixed `unused-imports/no-unused-vars` in domain lookup (`emailStatusIcon` prefixed with `_`)
+- Fixed implicit `any` TypeScript errors in domain lookup template expressions
+- Fixed `perfectionist/sort-imports` violations across JWT parser, JSON diff, and lorem ipsum generator
+- Fixed `style/no-multiple-empty-lines` in regex tester
+- Fixed `style/eol-last` in SVG placeholder generator
+
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## Version 2026.05.08

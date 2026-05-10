@@ -217,4 +217,26 @@ async function copyValue(label: string, value: string) {
 .kc-copy-done {
   color: #1ea54c !important;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .kc-display {
+  background: var(--kt-term-bg, #cccccc);
+  border-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .kc-key-placeholder { color: rgba(0, 0, 0, 0.18); }
+html:not(.dark) .kc-key-char  { color: #0d7033; }
+html:not(.dark) .kc-key-name  { color: #0d7033; }
+html:not(.dark) .kc-hint      { color: rgba(0, 0, 0, 0.40); }
+
+html:not(.dark) .kc-terminal {
+  background: var(--kt-term-bg, #cccccc) !important;
+  border-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .kc-label     { color: rgba(0, 0, 0, 0.50); }
+html:not(.dark) .kc-value     { color: #0d7033; }
+html:not(.dark) .kc-copy-icon { color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .kc-row:hover .kc-copy-icon { color: rgba(13, 112, 51, 0.75); }
+html:not(.dark) .kc-copy-done { color: #0d7033 !important; }
 </style>

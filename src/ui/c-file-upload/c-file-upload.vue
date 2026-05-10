@@ -87,9 +87,44 @@ function handleUpload(files: FileList | null | undefined) {
         <div class="h-1px max-w-100px flex-1 bg-gray-300 op-50" />
       </div>
 
-      <c-button>
+      <button type="button" class="fu-browse-btn">
         Browse files
-      </c-button>
+      </button>
     </slot>
   </div>
 </template>
+
+<style scoped>
+.fu-browse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border-radius: 6px;
+  border: 1px solid rgba(30, 165, 76, 0.45);
+  background: rgba(30, 165, 76, 0.10);
+  color: #1ea54c;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.fu-browse-btn:hover {
+  background: rgba(30, 165, 76, 0.18);
+  border-color: rgba(30, 165, 76, 0.70);
+  color: #1ea54c;
+}
+
+html:not(.dark) .fu-browse-btn {
+  background: rgba(13, 112, 51, 0.10);
+  border-color: rgba(13, 112, 51, 0.45);
+  color: #0b5c28;
+}
+
+html:not(.dark) .fu-browse-btn:hover {
+  background: rgba(13, 112, 51, 0.18);
+  border-color: rgba(13, 112, 51, 0.70);
+  color: #083d1a;
+}
+</style>

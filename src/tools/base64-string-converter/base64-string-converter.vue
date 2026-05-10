@@ -21,112 +21,137 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 </script>
 
 <template>
-  <!-- Encode panel -->
-  <div class="b6-panel">
-    <div class="b6-panel-header">
-      <span class="b6-panel-title">STRING TO BASE64</span>
-    </div>
-    <div class="b6-body">
-      <div class="b6-pill-row">
-        <span class="b6-label">ENCODING</span>
-        <div class="b6-pills">
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !encodeUrlSafe }" @click="encodeUrlSafe = false">
-            Standard
-          </button>
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': encodeUrlSafe }" @click="encodeUrlSafe = true">
-            URL Safe
+  <div class="b6-layout">
+    <!-- Encode panel -->
+    <div class="b6-panel">
+      <div class="b6-panel-header">
+        <span class="b6-panel-title">STRING TO BASE64</span>
+      </div>
+      <div class="b6-body">
+        <div class="b6-pill-row">
+          <span class="b6-label">ENCODING</span>
+          <div class="b6-pills">
+            <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !encodeUrlSafe }" @click="encodeUrlSafe = false">
+              Standard
+            </button>
+            <button type="button" class="b6-pill" :class="{ 'b6-pill-active': encodeUrlSafe }" @click="encodeUrlSafe = true">
+              URL Safe
+            </button>
+          </div>
+        </div>
+
+        <div class="b6-field">
+          <span class="b6-label">STRING TO ENCODE</span>
+          <textarea
+            v-model="textInput"
+            class="b6-textarea"
+            placeholder="Put your string here..."
+            rows="5"
+            spellcheck="false"
+          />
+        </div>
+
+        <div class="b6-field">
+          <span class="b6-label">BASE64 OUTPUT</span>
+          <textarea
+            class="b6-textarea b6-textarea-output"
+            :value="base64Output"
+            placeholder="The base64 encoding of your string will be here"
+            rows="5"
+            readonly
+            spellcheck="false"
+          />
+        </div>
+
+        <div class="b6-actions">
+          <button class="b6-btn b6-btn-accent" @click="copyTextBase64()">
+            <icon-mdi-check v-if="copiedEncode" />
+            <icon-mdi-content-copy v-else />
+            {{ copiedEncode ? 'Copied!' : 'Copy base64' }}
           </button>
         </div>
       </div>
-
-      <div class="b6-field">
-        <span class="b6-label">STRING TO ENCODE</span>
-        <textarea
-          v-model="textInput"
-          class="b6-textarea"
-          placeholder="Put your string here..."
-          rows="5"
-          spellcheck="false"
-        />
-      </div>
-
-      <div class="b6-field">
-        <span class="b6-label">BASE64 OUTPUT</span>
-        <textarea
-          class="b6-textarea b6-textarea-output"
-          :value="base64Output"
-          placeholder="The base64 encoding of your string will be here"
-          rows="5"
-          readonly
-          spellcheck="false"
-        />
-      </div>
-
-      <div class="b6-actions">
-        <button class="b6-btn b6-btn-accent" @click="copyTextBase64()">
-          <icon-mdi-check v-if="copiedEncode" />
-          <icon-mdi-content-copy v-else />
-          {{ copiedEncode ? 'Copied!' : 'Copy base64' }}
-        </button>
-      </div>
     </div>
-  </div>
 
-  <!-- Decode panel -->
-  <div class="b6-panel">
-    <div class="b6-panel-header">
-      <span class="b6-panel-title">BASE64 TO STRING</span>
-    </div>
-    <div class="b6-body">
-      <div class="b6-pill-row">
-        <span class="b6-label">ENCODING</span>
-        <div class="b6-pills">
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !decodeUrlSafe }" @click="decodeUrlSafe = false">
-            Standard
-          </button>
-          <button type="button" class="b6-pill" :class="{ 'b6-pill-active': decodeUrlSafe }" @click="decodeUrlSafe = true">
-            URL Safe
+    <!-- Decode panel -->
+    <div class="b6-panel">
+      <div class="b6-panel-header">
+        <span class="b6-panel-title">BASE64 TO STRING</span>
+      </div>
+      <div class="b6-body">
+        <div class="b6-pill-row">
+          <span class="b6-label">ENCODING</span>
+          <div class="b6-pills">
+            <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !decodeUrlSafe }" @click="decodeUrlSafe = false">
+              Standard
+            </button>
+            <button type="button" class="b6-pill" :class="{ 'b6-pill-active': decodeUrlSafe }" @click="decodeUrlSafe = true">
+              URL Safe
+            </button>
+          </div>
+        </div>
+
+        <div class="b6-field">
+          <span class="b6-label">BASE64 STRING TO DECODE</span>
+          <textarea
+            v-model="base64Input"
+            class="b6-textarea"
+            :class="{ 'b6-textarea-error': !b64IsValid }"
+            placeholder="Your base64 string..."
+            rows="5"
+            spellcheck="false"
+          />
+          <span v-if="!b64IsValid" class="b6-error-msg">Invalid base64 string</span>
+        </div>
+
+        <div class="b6-field">
+          <span class="b6-label">DECODED STRING</span>
+          <textarea
+            class="b6-textarea b6-textarea-output"
+            :value="textOutput"
+            placeholder="The decoded string will be here"
+            rows="5"
+            readonly
+            spellcheck="false"
+          />
+        </div>
+
+        <div class="b6-actions">
+          <button class="b6-btn b6-btn-accent" @click="copyText()">
+            <icon-mdi-check v-if="copiedDecode" />
+            <icon-mdi-content-copy v-else />
+            {{ copiedDecode ? 'Copied!' : 'Copy decoded string' }}
           </button>
         </div>
-      </div>
-
-      <div class="b6-field">
-        <span class="b6-label">BASE64 STRING TO DECODE</span>
-        <textarea
-          v-model="base64Input"
-          class="b6-textarea"
-          :class="{ 'b6-textarea-error': !b64IsValid }"
-          placeholder="Your base64 string..."
-          rows="5"
-          spellcheck="false"
-        />
-        <span v-if="!b64IsValid" class="b6-error-msg">Invalid base64 string</span>
-      </div>
-
-      <div class="b6-field">
-        <span class="b6-label">DECODED STRING</span>
-        <textarea
-          class="b6-textarea b6-textarea-output"
-          :value="textOutput"
-          placeholder="The decoded string will be here"
-          rows="5"
-          readonly
-          spellcheck="false"
-        />
-      </div>
-
-      <div class="b6-actions">
-        <button class="b6-btn b6-btn-accent" @click="copyText()">
-          <icon-mdi-check v-if="copiedDecode" />
-          <icon-mdi-content-copy v-else />
-          {{ copiedDecode ? 'Copied!' : 'Copy decoded string' }}
-        </button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* ── Layout ── */
+.b6-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .b6-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .b6-panel {
+    width: 100%;
+  }
+}
+
+/* ── Panel ── */
 .b6-panel {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(30, 165, 76, 0.25);
@@ -135,6 +160,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
 }
 
 .b6-panel-header {
@@ -255,4 +281,71 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 .b6-btn:hover { background: rgba(30, 165, 76, 0.1); border-color: rgba(30, 165, 76, 0.5); color: #fff; }
 .b6-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
 .b6-btn-accent:hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
+
+/* ── Light mode ── */
+html:not(.dark) .b6-panel {
+  background: #c8c8c8;
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .b6-panel-header {
+  background: rgba(13, 112, 51, 0.15);
+  border-bottom-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .b6-panel-title { color: #0b5c28; }
+
+html:not(.dark) .b6-label { color: rgba(0, 0, 0, 0.60); }
+
+html:not(.dark) .b6-pills {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.20);
+}
+
+html:not(.dark) .b6-pill {
+  color: rgba(0, 0, 0, 0.50);
+  border-right-color: rgba(0, 0, 0, 0.12);
+}
+
+html:not(.dark) .b6-pill:hover:not(.b6-pill-active) {
+  background: rgba(13, 112, 51, 0.08);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+html:not(.dark) .b6-pill-active {
+  background: rgba(13, 112, 51, 0.18);
+  color: #0b5c28;
+}
+
+html:not(.dark) .b6-textarea {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.20);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+html:not(.dark) .b6-textarea::placeholder { color: rgba(0, 0, 0, 0.32); }
+html:not(.dark) .b6-textarea:focus { border-color: rgba(13, 112, 51, 0.55); }
+html:not(.dark) .b6-textarea-output { color: #0b5c28; }
+
+html:not(.dark) .b6-btn {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.22);
+  color: rgba(0, 0, 0, 0.70);
+}
+
+html:not(.dark) .b6-btn:hover {
+  background: rgba(0, 0, 0, 0.14);
+  border-color: rgba(13, 112, 51, 0.50);
+  color: rgba(0, 0, 0, 0.90);
+}
+
+html:not(.dark) .b6-btn-accent {
+  border-color: rgba(13, 112, 51, 0.55);
+  color: #083d1a;
+}
+
+html:not(.dark) .b6-btn-accent:hover {
+  background: rgba(13, 112, 51, 0.14);
+  color: #052d12;
+}
 </style>

@@ -447,4 +447,62 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 :deep(.hl-value) {
   color: #1ea54c;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .mg-section-label { color: rgba(0, 0, 0, 0.50); }
+
+html:not(.dark) .mg-fields {
+  background: var(--kt-term-bg, #cccccc);
+  border-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .mg-row { border-bottom-color: rgba(0, 0, 0, 0.08); }
+
+html:not(.dark) .mg-field-label {
+  color: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.04);
+  border-right-color: rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .mg-input { color: rgba(0, 0, 0, 0.85); }
+html:not(.dark) .mg-input::placeholder { color: rgba(0, 0, 0, 0.28); }
+html:not(.dark) .mg-input:focus { background: rgba(13, 112, 51, 0.04); }
+
+html:not(.dark) .mg-dropdown-trigger { color: rgba(0, 0, 0, 0.75); }
+html:not(.dark) .mg-dropdown-trigger:hover,
+html:not(.dark) .mg-dropdown:focus-within .mg-dropdown-trigger { background: rgba(13, 112, 51, 0.04); }
+
+html:not(.dark) .mg-dropdown-menu {
+  background: #d0d0d0;
+  border-color: rgba(13, 112, 51, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+html:not(.dark) .mg-group-header {
+  color: rgba(0, 0, 0, 0.40);
+  background: rgba(0, 0, 0, 0.04);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .mg-dropdown-item {
+  color: rgba(0, 0, 0, 0.65);
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .mg-dropdown-item:hover { background: rgba(13, 112, 51, 0.10); color: rgba(0, 0, 0, 0.90); }
+html:not(.dark) .mg-item-active { color: #0b5c28; background: rgba(13, 112, 51, 0.10); }
+
+html:not(.dark) .mg-copy-btn {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.30);
+  color: #0b5c28;
+}
+html:not(.dark) .mg-copy-btn:hover { background: rgba(13, 112, 51, 0.15); border-color: #0d7033; color: #083d1a; }
+
+html:not(.dark) .mg-code-panel {
+  background: var(--kt-term-bg, #cccccc) !important;
+  border-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .mg-pre { color: rgba(0, 0, 0, 0.75); }
 </style>

@@ -63,6 +63,10 @@ a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/l
   object-position: top;
 }
 
+html:not(.dark) .sider-logo img {
+  filter: brightness(0.55);
+}
+
 .pt-50px {
   padding-top: 0 !important;
 }

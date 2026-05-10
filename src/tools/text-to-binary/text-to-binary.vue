@@ -235,4 +235,54 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
   opacity: 0.3;
   cursor: default;
 }
+
+/* ── Responsive: single column ── */
+@media (max-width: 500px) {
+  .tb-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tb-divider {
+    flex-direction: row;
+    padding-top: 0;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+/* ── Light mode ── */
+html:not(.dark) .tb-panel {
+  background: var(--kt-term-bg, #cccccc);
+  border-color: rgba(13, 112, 51, 0.30);
+}
+
+html:not(.dark) .tb-sublabel { color: rgba(0, 0, 0, 0.55); }
+
+html:not(.dark) .tb-arrows { color: rgba(13, 112, 51, 0.45); }
+
+html:not(.dark) .tb-divider-label { color: rgba(0, 0, 0, 0.30); }
+
+html:not(.dark) .tb-textarea {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+html:not(.dark) .tb-textarea::placeholder { color: rgba(0, 0, 0, 0.25); }
+html:not(.dark) .tb-textarea:focus { border-color: rgba(13, 112, 51, 0.55); }
+html:not(.dark) .tb-textarea-binary { color: #0d7033; }
+
+html:not(.dark) .tb-copy-btn {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.30);
+  color: #0b5c28;
+}
+
+html:not(.dark) .tb-copy-btn:hover:not(:disabled) {
+  background: rgba(13, 112, 51, 0.15);
+  border-color: #0d7033;
+  color: #083d1a;
+}
 </style>

@@ -85,7 +85,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
       <template v-for="{ ports, category } of filtered" :key="category">
         <div
           v-for="p of ports"
-          :key="`${p.port}-${p.protocol}`"
+          :key="`${category}-${p.port}-${p.protocol}-${p.service}`"
           class="kt-terminal ppr-card"
           :class="{ 'ppr-card-dangerous': p.dangerous }"
         >

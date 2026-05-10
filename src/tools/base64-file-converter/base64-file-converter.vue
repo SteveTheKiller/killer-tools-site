@@ -64,120 +64,149 @@ function handleFile(file: File) {
 
 function onFileInputChange(e: Event) {
   const f = (e.target as HTMLInputElement).files?.[0];
-  if (f) handleFile(f);
+  if (f) {
+    handleFile(f);
+  }
 }
 
 function onDrop(e: DragEvent) {
   isDragging.value = false;
   const f = e.dataTransfer?.files?.[0];
-  if (f) handleFile(f);
+  if (f) {
+    handleFile(f);
+  }
 }
 </script>
 
 <template>
-  <!-- Base64 to file -->
-  <div class="bf-panel">
-    <div class="bf-panel-header">
-      <span class="bf-panel-title">BASE64 TO FILE</span>
-    </div>
-    <div class="bf-body">
-      <div class="bf-row">
-        <div class="bf-field bf-field-grow">
-          <span class="bf-label">FILE NAME</span>
-          <input v-model="fileName" class="bf-input" type="text" placeholder="Download filename" spellcheck="false">
+  <div class="bf-layout">
+    <!-- Base64 to file -->
+    <div class="bf-panel">
+      <div class="bf-panel-header">
+        <span class="bf-panel-title">BASE64 TO FILE</span>
+      </div>
+      <div class="bf-body">
+        <div class="bf-row">
+          <div class="bf-field bf-field-grow">
+            <span class="bf-label">FILE NAME</span>
+            <input v-model="fileName" class="bf-input" type="text" placeholder="Download filename" spellcheck="false">
+          </div>
+          <div class="bf-field">
+            <span class="bf-label">EXTENSION</span>
+            <input v-model="fileExtension" class="bf-input" type="text" placeholder="ext" spellcheck="false">
+          </div>
         </div>
+
         <div class="bf-field">
-          <span class="bf-label">EXTENSION</span>
-          <input v-model="fileExtension" class="bf-input" type="text" placeholder="ext" spellcheck="false">
+          <span class="bf-label">BASE64 STRING</span>
+          <textarea
+            v-model="base64Input"
+            class="bf-textarea"
+            :class="{ 'bf-textarea-error': !b64IsValid }"
+            placeholder="Put your base64 file string here..."
+            rows="6"
+            spellcheck="false"
+          />
+          <span v-if="!b64IsValid" class="bf-error-msg">Invalid base64 string</span>
+        </div>
+
+        <div id="bf-preview" class="bf-preview-container" />
+
+        <div class="bf-actions">
+          <button
+            class="bf-btn"
+            :disabled="base64Input === '' || !b64IsValid"
+            @click="previewImage()"
+          >
+            <icon-mdi-image-outline />
+            Preview image
+          </button>
+          <button
+            class="bf-btn bf-btn-accent"
+            :disabled="base64Input === '' || !b64IsValid"
+            @click="downloadFile()"
+          >
+            <icon-mdi-download />
+            Download file
+          </button>
         </div>
       </div>
-
-      <div class="bf-field">
-        <span class="bf-label">BASE64 STRING</span>
-        <textarea
-          v-model="base64Input"
-          class="bf-textarea"
-          :class="{ 'bf-textarea-error': !b64IsValid }"
-          placeholder="Put your base64 file string here..."
-          rows="6"
-          spellcheck="false"
-        />
-        <span v-if="!b64IsValid" class="bf-error-msg">Invalid base64 string</span>
-      </div>
-
-      <div id="bf-preview" class="bf-preview-container" />
-
-      <div class="bf-actions">
-        <button
-          class="bf-btn"
-          :disabled="base64Input === '' || !b64IsValid"
-          @click="previewImage()"
-        >
-          <icon-mdi-image-outline />
-          Preview image
-        </button>
-        <button
-          class="bf-btn bf-btn-accent"
-          :disabled="base64Input === '' || !b64IsValid"
-          @click="downloadFile()"
-        >
-          <icon-mdi-download />
-          Download file
-        </button>
-      </div>
     </div>
-  </div>
 
-  <!-- File to base64 -->
-  <div class="bf-panel">
-    <div class="bf-panel-header">
-      <span class="bf-panel-title">FILE TO BASE64</span>
-    </div>
-    <div class="bf-body">
-      <!-- Drop zone -->
-      <div
-        class="bf-dropzone"
-        :class="{ 'bf-dropzone-active': isDragging }"
-        @dragover.prevent="isDragging = true"
-        @dragleave.prevent="isDragging = false"
-        @drop.prevent="onDrop($event)"
-        @click="nativeFileInput?.click()"
-      >
-        <input
-          ref="nativeFileInput"
-          type="file"
-          class="bf-file-input"
-          @change="onFileInputChange($event)"
+    <!-- File to base64 -->
+    <div class="bf-panel">
+      <div class="bf-panel-header">
+        <span class="bf-panel-title">FILE TO BASE64</span>
+      </div>
+      <div class="bf-body">
+        <!-- Drop zone -->
+        <div
+          class="bf-dropzone"
+          :class="{ 'bf-dropzone-active': isDragging }"
+          @dragover.prevent="isDragging = true"
+          @dragleave.prevent="isDragging = false"
+          @drop.prevent="onDrop($event)"
+          @click="nativeFileInput?.click()"
         >
-        <icon-mdi-upload class="bf-drop-icon" />
-        <span v-if="uploadedFileName" class="bf-drop-filename">{{ uploadedFileName }}</span>
-        <span v-else class="bf-drop-hint">Drag and drop a file here, or click to select</span>
-      </div>
+          <input
+            ref="nativeFileInput"
+            type="file"
+            class="bf-file-input"
+            @change="onFileInputChange($event)"
+          >
+          <icon-mdi-upload class="bf-drop-icon" />
+          <span v-if="uploadedFileName" class="bf-drop-filename">{{ uploadedFileName }}</span>
+          <span v-else class="bf-drop-hint">Drag and drop a file here, or click to select</span>
+        </div>
 
-      <div class="bf-field">
-        <span class="bf-label">FILE IN BASE64</span>
-        <textarea
-          class="bf-textarea bf-textarea-output"
-          :value="fileBase64"
-          placeholder="File in base64 will be here"
-          rows="6"
-          readonly
-          spellcheck="false"
-        />
-      </div>
+        <div class="bf-field">
+          <span class="bf-label">FILE IN BASE64</span>
+          <textarea
+            class="bf-textarea bf-textarea-output"
+            :value="fileBase64"
+            placeholder="File in base64 will be here"
+            rows="6"
+            readonly
+            spellcheck="false"
+          />
+        </div>
 
-      <div class="bf-actions">
-        <button class="bf-btn bf-btn-accent" @click="copyFileBase64()">
-          <icon-mdi-check v-if="copiedFile" />
-          <icon-mdi-content-copy v-else />
-          {{ copiedFile ? 'Copied!' : 'Copy base64' }}
-        </button>
+        <div class="bf-actions">
+          <button class="bf-btn bf-btn-accent" @click="copyFileBase64()">
+            <icon-mdi-check v-if="copiedFile" />
+            <icon-mdi-content-copy v-else />
+            {{ copiedFile ? 'Copied!' : 'Copy base64' }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* ── Layout ── */
+.bf-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .bf-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bf-panel {
+    width: 100%;
+  }
+}
+
+/* ── Panel ── */
 .bf-panel {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(30, 165, 76, 0.25);
@@ -186,6 +215,7 @@ function onDrop(e: DragEvent) {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
 }
 
 .bf-panel-header {
@@ -210,6 +240,7 @@ function onDrop(e: DragEvent) {
   flex: 1;
 }
 
+/* ── Labels & fields ── */
 .bf-label {
   font-size: 0.6rem;
   font-weight: 700;
@@ -232,6 +263,7 @@ function onDrop(e: DragEvent) {
   align-items: flex-end;
 }
 
+/* ── Inputs ── */
 .bf-input {
   height: 32px;
   background: #0f0f11;
@@ -277,7 +309,7 @@ function onDrop(e: DragEvent) {
   color: #e05555;
 }
 
-/* Drop zone */
+/* ── Drop zone ── */
 .bf-dropzone {
   border: 2px dashed rgba(30, 165, 76, 0.3);
   border-radius: 6px;
@@ -295,9 +327,7 @@ function onDrop(e: DragEvent) {
 .bf-dropzone:hover { border-color: rgba(30, 165, 76, 0.6); background: rgba(30, 165, 76, 0.04); }
 .bf-dropzone-active { border-color: #1ea54c; background: rgba(30, 165, 76, 0.08); }
 
-.bf-file-input {
-  display: none;
-}
+.bf-file-input { display: none; }
 
 .bf-drop-icon {
   font-size: 1.8rem;
@@ -324,6 +354,7 @@ function onDrop(e: DragEvent) {
   justify-content: center;
 }
 
+/* ── Buttons ── */
 .bf-actions {
   display: flex;
   justify-content: center;
@@ -351,4 +382,74 @@ function onDrop(e: DragEvent) {
 .bf-btn:not(:disabled):hover { background: rgba(30, 165, 76, 0.1); border-color: rgba(30, 165, 76, 0.5); color: #fff; }
 .bf-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
 .bf-btn-accent:not(:disabled):hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
+
+/* ── Light mode ── */
+html:not(.dark) .bf-panel {
+  background: #c8c8c8;
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .bf-panel-header {
+  background: rgba(13, 112, 51, 0.15);
+  border-bottom-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .bf-panel-title { color: #0b5c28; }
+
+html:not(.dark) .bf-label { color: rgba(0, 0, 0, 0.60); }
+
+html:not(.dark) .bf-input {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.20);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+html:not(.dark) .bf-input::placeholder { color: rgba(0, 0, 0, 0.32); }
+html:not(.dark) .bf-input:focus { border-color: rgba(13, 112, 51, 0.55); }
+
+html:not(.dark) .bf-textarea {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.20);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+html:not(.dark) .bf-textarea::placeholder { color: rgba(0, 0, 0, 0.32); }
+html:not(.dark) .bf-textarea:focus { border-color: rgba(13, 112, 51, 0.55); }
+html:not(.dark) .bf-textarea-output { color: #0b5c28; }
+
+html:not(.dark) .bf-dropzone {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .bf-dropzone:hover {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.55);
+}
+
+html:not(.dark) .bf-drop-icon { color: rgba(13, 112, 51, 0.55); }
+html:not(.dark) .bf-drop-hint { color: rgba(0, 0, 0, 0.50); }
+html:not(.dark) .bf-drop-filename { color: #0b5c28; }
+
+html:not(.dark) .bf-btn {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.22);
+  color: rgba(0, 0, 0, 0.70);
+}
+
+html:not(.dark) .bf-btn:not(:disabled):hover {
+  background: rgba(0, 0, 0, 0.14);
+  border-color: rgba(13, 112, 51, 0.50);
+  color: rgba(0, 0, 0, 0.90);
+}
+
+html:not(.dark) .bf-btn-accent {
+  border-color: rgba(13, 112, 51, 0.55);
+  color: #083d1a;
+}
+
+html:not(.dark) .bf-btn-accent:not(:disabled):hover {
+  background: rgba(13, 112, 51, 0.14);
+  color: #052d12;
+}
 </style>

@@ -61,6 +61,10 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
   ::v-deep(.n-layout-scroll-container) {
     padding: 26px;
     scrollbar-gutter: stable;
+
+    @media (max-width: 640px) {
+      padding: 12px 6px;
+    }
   }
 }
 

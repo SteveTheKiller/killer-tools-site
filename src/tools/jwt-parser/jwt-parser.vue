@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { useStyleStore } from '@/stores/style.store';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 import { decodeJwt } from './jwt-parser.service';
+
+const styleStore = useStyleStore();
+const isLight = computed(() => !styleStore.isDarkTheme);
 
 const rawJwt = ref(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
@@ -38,9 +42,14 @@ async function copyValue(key: string, value: string) {
 <template>
   <div class="jwt-wrap">
     <!-- Input -->
-    <div class="jwt-input-panel">
-      <span class="jwt-sublabel">JWT TO DECODE</span>
-      <div class="jwt-textarea-wrap" :class="{ 'jwt-textarea-error': rawJwt && !isValid }">
+    <div class="jwt-top-box">
+      <div
+        class="jwt-field-wrap"
+        :class="{ 'jwt-textarea-error': rawJwt && !isValid }"
+      >
+        <div class="jwt-field-header kt-section-row">
+          <span class="jwt-sublabel">JWT TO DECODE</span>
+        </div>
         <textarea
           v-model="rawJwt"
           class="jwt-textarea"
@@ -48,15 +57,20 @@ async function copyValue(key: string, value: string) {
           rows="4"
           spellcheck="false"
           autofocus
+          :style="isLight ? 'background: #ffffff !important; color: rgba(0,0,0,0.85) !important' : 'background: #0f0f11 !important; color: rgba(255,255,255,0.85) !important'"
         />
       </div>
       <span v-if="rawJwt && !isValid" class="jwt-error-msg">Invalid JWT</span>
     </div>
 
     <!-- Decoded terminal -->
-    <div v-if="isValid" class="jwt-terminal">
+    <div
+      v-if="isValid"
+      class="jwt-terminal"
+      :style="isLight ? 'background: #b8b8b8 !important' : 'background: #0a0a0c !important'"
+    >
       <template v-for="section of sections" :key="section.key">
-        <div class="jwt-section-header">
+        <div class="jwt-section-header kt-section-row">
           {{ section.title.toUpperCase() }}
         </div>
         <div
@@ -94,28 +108,22 @@ async function copyValue(key: string, value: string) {
 }
 
 /* ── Input ── */
-.jwt-input-panel {
+.jwt-top-box {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.jwt-sublabel {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-
-.jwt-textarea-wrap {
-  border: 1px solid rgba(30, 165, 76, 0.2);
-  border-radius: 5px;
+.jwt-field-wrap {
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: border-color 0.15s;
 }
 
-.jwt-textarea-wrap:focus-within {
+.jwt-field-wrap:focus-within {
   border-color: rgba(30, 165, 76, 0.55);
 }
 
@@ -123,9 +131,24 @@ async function copyValue(key: string, value: string) {
   border-color: rgba(224, 85, 85, 0.5) !important;
 }
 
+.jwt-field-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 7px 7px 0 0;
+}
+
+.jwt-sublabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
 .jwt-textarea {
   width: 100%;
-  background: #0f0f11 !important;
+  background: #0f0f11;
   border: none;
   outline: none;
   padding: 8px 10px;
@@ -150,7 +173,7 @@ async function copyValue(key: string, value: string) {
 
 /* ── Terminal ── */
 .jwt-terminal {
-  background: #0a0a0c !important;
+  background: #0a0a0c;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -161,10 +184,6 @@ async function copyValue(key: string, value: string) {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
 .jwt-row {
@@ -254,4 +273,32 @@ async function copyValue(key: string, value: string) {
 .jwt-copy-done {
   color: #1ea54c !important;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .jwt-sublabel { color: rgba(0, 0, 0, 0.65); }
+
+html:not(.dark) .jwt-field-wrap { border-color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .jwt-field-wrap:focus-within { border-color: rgba(13, 112, 51, 0.55); }
+html:not(.dark) .jwt-textarea::placeholder { color: rgba(0, 0, 0, 0.25); }
+
+html:not(.dark) .jwt-terminal {
+  background: #b8b8b8 !important;
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .jwt-section-header {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+html:not(.dark) .jwt-claim-key { color: rgba(0, 0, 0, 0.80); }
+html:not(.dark) .jwt-claim-desc { color: rgba(0, 0, 0, 0.35); }
+
+html:not(.dark) .jwt-value { color: #0d7033; }
+html:not(.dark) .jwt-friendly { color: rgba(0, 0, 0, 0.35); }
+
+html:not(.dark) .jwt-copy-icon { color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .jwt-row { background: #ffffff !important; }
+html:not(.dark) .jwt-row:hover { background: rgba(13, 112, 51, 0.08) !important; }
+html:not(.dark) .jwt-row:hover .jwt-copy-icon { color: rgba(13, 112, 51, 0.75); }
+html:not(.dark) .jwt-copy-done { color: #0d7033 !important; }
 </style>

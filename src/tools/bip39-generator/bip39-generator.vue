@@ -447,4 +447,30 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   min-width: 14px;
   text-align: right;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .bip-passphrase       { color: #0b5c28; }
+html:not(.dark) .bip-input            { color: rgba(0, 0, 0, 0.80); }
+html:not(.dark) .bip-input::placeholder { color: rgba(0, 0, 0, 0.30); }
+
+html:not(.dark) .bip-word-chip {
+  background: rgba(13, 112, 51, 0.10);
+  border-color: rgba(13, 112, 51, 0.25);
+  color: #0b5c28;
+}
+html:not(.dark) .bip-word-idx         { color: rgba(13, 112, 51, 0.50); }
+
+html:not(.dark) .bip-icon-btn         { color: rgba(13, 112, 51, 0.55); border-left-color: rgba(0, 0, 0, 0.08); }
+html:not(.dark) .bip-icon-btn:hover   { color: #0b5c28; background: rgba(13, 112, 51, 0.10); }
+
+html:not(.dark) .bip-dropdown-trigger {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.80);
+}
+html:not(.dark) .bip-dropdown-chevron { color: rgba(13, 112, 51, 0.60); }
+html:not(.dark) .bip-dropdown-menu    { background: #fff; border-color: rgba(13, 112, 51, 0.25); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+html:not(.dark) .bip-dropdown-item    { color: rgba(0, 0, 0, 0.65); border-bottom-color: rgba(0,0,0,0.06); }
+html:not(.dark) .bip-dropdown-item:hover { background: rgba(13, 112, 51, 0.08); color: #083d1a; }
+html:not(.dark) .bip-dropdown-item-active { color: #0b5c28; background: rgba(13, 112, 51, 0.10); }
 </style>

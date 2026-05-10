@@ -89,9 +89,9 @@ function downloadScript(script: { name: string, download_url: string }) {
     </div>
 
     <template v-else>
-      <div class="mb-4 rounded px-4 py-3 text-sm" style="background: rgba(234, 179, 8, 0.07); border: 1px solid rgba(234, 179, 8, 0.3); color: rgba(255, 255, 255, 0.6);">
-        <span class="font-semibold" style="color: #1ea54c;">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
-        <span class="font-semibold" style="color: rgba(255, 255, 255, 0.5);">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
+      <div class="ks-info mb-4 rounded px-4 py-3 text-sm">
+        <span class="ks-info-cmd font-semibold">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
+        <span class="ks-info-dl font-semibold">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
       </div>
       <div
         class="grid gap-12px"
@@ -139,6 +139,15 @@ function downloadScript(script: { name: string, download_url: string }) {
 
 <style scoped>
 .kt-terminal { background: #0a0a0c !important; }
+
+.ks-info {
+  background: rgba(234, 179, 8, 0.07);
+  border: 1px solid rgba(234, 179, 8, 0.65);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ks-info-cmd { color: #1ea54c; }
+.ks-info-dl  { color: rgba(255, 255, 255, 0.5); }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ks-card {

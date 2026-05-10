@@ -294,4 +294,20 @@ const details = computed(() => [
   line-height: 1.6;
   margin: 0;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .ps-crack-block {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(13, 112, 51, 0.20);
+}
+
+html:not(.dark) .ps-bar-track { background: rgba(0, 0, 0, 0.12); }
+
+html:not(.dark) .ps-crack-time  { color: #0b5c28; }
+html:not(.dark) .ps-detail-value { color: #0d7033 !important; }
+html:not(.dark) .ps-note        { color: rgba(0, 0, 0, 0.40); }
+
+html:not(.dark) .ps-input       { color: rgba(0, 0, 0, 0.85) !important; }
+html:not(.dark) .ps-icon-btn    { color: rgba(0, 0, 0, 0.40); border-left-color: rgba(0, 0, 0, 0.10); }
+html:not(.dark) .ps-icon-btn:hover { color: rgba(0, 0, 0, 0.70); }
 </style>

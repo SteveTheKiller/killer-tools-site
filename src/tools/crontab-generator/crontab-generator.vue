@@ -354,4 +354,42 @@ const cronValidationRules = [
   background: transparent !important;
   font-size: 0.78rem;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .cron-terminal {
+  background: var(--kt-term-bg, #e8e8e8) !important;
+  border-color: rgba(13, 112, 51, 0.30);
+}
+
+html:not(.dark) .toggle-pill {
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.60);
+}
+
+html:not(.dark) .toggle-pill:hover {
+  background: rgba(13, 112, 51, 0.10);
+  border-color: rgba(13, 112, 51, 0.40);
+  color: #0d7033;
+}
+
+html:not(.dark) .toggle-pill-active {
+  background: rgba(13, 112, 51, 0.15) !important;
+  border-color: #0d7033 !important;
+  color: #0b5c28 !important;
+}
+
+html:not(.dark) .toggle-dot { background: rgba(0, 0, 0, 0.20); }
+html:not(.dark) .toggle-pill-active .toggle-dot { background: #0d7033; box-shadow: 0 0 8px rgba(13, 112, 51, 0.5); }
+
+html:not(.dark) .field-diagram { color: rgba(0, 0, 0, 0.75); }
+
+html:not(.dark) .section-label { color: rgba(0, 0, 0, 0.50); }
+
+html:not(.dark) .ref-table tr { border-bottom-color: rgba(0, 0, 0, 0.08); }
+
+html:not(.dark) .ref-meaning { color: rgba(0, 0, 0, 0.75); }
+
+html:not(.dark) .ref-symbol code { background: rgba(13, 112, 51, 0.12); }
+html:not(.dark) .ref-alias code { background: rgba(13, 112, 51, 0.12); }
 </style>

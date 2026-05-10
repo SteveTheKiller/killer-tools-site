@@ -64,19 +64,20 @@ const features: { title: string, desc: string }[] = [
             </svg>
             Download for Windows (.exe)
           </a>
-          <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
+          <p class="kapp-subtitle" style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
             Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
-          <div style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
+          <div class="kapp-version" style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
             <span style="color: #0C7A43; font-weight: bold;">$</span> KillerScan v1.3.1 &middot; updated 5/4/2026
           </div>
-          <p style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
+          <p class="kapp-sha256" style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
             <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>96A0BEE4511CFD532FA30E6E074D6A5659CBD1C8B1604493FEBB55360122B812
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerScan"
             target="_blank"
             rel="noopener"
+            class="kapp-gh-link"
             style="display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; background: #232323; border: 1px solid #1ea54c; border-radius: 4px; font-size: 13px; color: #e0e0e0; text-decoration: none;"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#1ea54c">

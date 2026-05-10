@@ -15,6 +15,298 @@
   --kt-green-dim:       rgba(30, 165, 76, 0.3);
 }
 
+/* ── Light mode: terminals go light gray, bars stay green ── */
+html:not(.dark) {
+  --kt-term-bg:         #cccccc;
+  --kt-term-bar-bg:     rgba(13, 112, 51, 0.22);
+  --kt-term-border:     rgba(13, 112, 51, 0.32);
+  --kt-term-bar-border: rgba(13, 112, 51, 0.24);
+  --kt-green:           #0d7033;
+  --kt-green-dim:       rgba(13, 112, 51, 0.3);
+}
+
+/* Beat scoped `.kt-terminal { background: #0a0a0c !important }` in tool files.
+   Specificity (0,2,1) > scoped [data-v-xxx].kt-terminal (0,2,0). */
+html:not(.dark) .kt-terminal {
+  background: var(--kt-term-bg) !important;
+}
+
+/* ── Site-wide: all text inside any terminal card → readable dark on gray bg ──
+   Specificity [0,2,1] beats scoped [data-v-xxx].class [0,2,0] without !important.
+   Inline styles (JS-computed severity colors etc.) are NOT affected — they're
+   at [1,0,0] and only !important can beat them, which we intentionally avoid here.
+   Exceptions below come later in the cascade and win the tie at the same specificity. */
+html:not(.dark) .kt-terminal *,
+html:not(.dark) .cve-card *         { color: rgba(0, 0, 0, 0.80); }
+
+/* Everything inside the terminal BAR row → dark green, not black */
+html:not(.dark) .kt-terminal-bar *     { color: #0d7033; }
+/* Bar title and section rows: dark green */
+html:not(.dark) .kt-terminal-bar-title { color: #0d7033; }
+html:not(.dark) .kt-section-row        { color: #0b6129; }
+/* Row data: dark enough to read on light gray bg */
+html:not(.dark) .kt-label              { color: rgba(0, 0, 0, 0.82); }
+html:not(.dark) .kt-value              { color: #0d7033; }
+html:not(.dark) .kt-value-faded        { color: rgba(0, 0, 0, 0.68); }
+html:not(.dark) .kt-fallback           { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .kt-prompt             { color: rgba(13, 112, 51, 0.85); }
+html:not(.dark) .kt-row                { border-bottom-color: rgba(0, 0, 0, 0.10); }
+/* Copy button: visible on gray bg */
+html:not(.dark) .kt-copy               { border-color: rgba(13, 112, 51, 0.45); color: rgba(13, 112, 51, 0.75); }
+html:not(.dark) .kt-copy:hover         { background: rgba(13, 112, 51, 0.12); border-color: rgba(13, 112, 51, 0.75); color: #0d7033; }
+/* ── IPv4 Subnet Calculator uses .k-terminal (no 't') — mirror all light mode overrides ── */
+html:not(.dark) .k-terminal          { background: var(--kt-term-bg) !important; }
+html:not(.dark) .k-terminal *        { color: rgba(0, 0, 0, 0.80); }
+html:not(.dark) .k-terminal-bar *    { color: #0d7033; }
+html:not(.dark) .k-terminal-bar-title { color: #0d7033; }
+html:not(.dark) .k-section-label     { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .k-status-label      { color: #0d7033; }
+html:not(.dark) .cs-panel            { background: #d0d0d0 !important; border-color: rgba(0, 0, 0, 0.15) !important; }
+html:not(.dark) .cs-card             { border-color: rgba(0, 0, 0, 0.15) !important; }
+html:not(.dark) .cs-card:hover       { border-color: rgba(13, 112, 51, 0.5) !important; }
+html:not(.dark) .cs-card-hosts       { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .cs-card-mask        { color: rgba(0, 0, 0, 0.50); }
+html:not(.dark) .range-bar-wrap      { background: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.30) !important; }
+html:not(.dark) .viz-wrap            { background: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.30) !important; }
+html:not(.dark) .viz-legend          { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .bit-dot             { color: rgba(0, 0, 0, 0.30); }
+html:not(.dark) .slider-label        { color: rgba(0, 0, 0, 0.50); }
+html:not(.dark) .k-row               { border-bottom-color: rgba(0, 0, 0, 0.10); }
+
+/* ── Killer App landing page terminals (.terminal, .t-*) ── */
+html:not(.dark) .hero-terminal       { background: var(--kt-term-bg); border-radius: 6px; }
+html:not(.dark) .terminal            { background: var(--kt-term-bg) !important; border-color: var(--kt-term-border) !important; }
+html:not(.dark) .terminal-bar        { border-bottom-color: var(--kt-term-bar-border) !important; }
+html:not(.dark) .terminal-title      { color: #0d7033; }
+html:not(.dark) .t-cmd               { color: rgba(0, 0, 0, 0.85); }
+html:not(.dark) .t-out               { color: rgba(0, 0, 0, 0.60); }
+
+/* Tool-specific green accents — override the broad dark rule above */
+html:not(.dark) .ks-acronym          { color: #0d7033; }
+html:not(.dark) .ks-btn-copy         { color: #0d7033; border-color: rgba(13, 112, 51, 0.45); }
+html:not(.dark) .ks-btn-copy:hover   { background: rgba(13, 112, 51, 0.10); border-color: rgba(13, 112, 51, 0.70); }
+
+/* ── Systemic: every *-btn class → dark green text in light mode ────────────
+   #1ea54c on a light gray background is ~2:1 contrast — unreadable.
+   [0,2,1] beats every scoped [data-v-xxx].classname [0,2,0] without !important.
+   App.vue !important overrides (ks-btn-dl etc.) still win over this.
+   Catches kt-nav-btn, kt-search-btn, and any future [prefix]-btn button.   ── */
+html:not(.dark) [class*="-btn"] {
+  color: #083d1a !important;
+  border-color: rgba(13, 112, 51, 0.45) !important;
+}
+html:not(.dark) [class*="-btn"]:hover:not(:disabled) {
+  color: #052d12 !important;
+  border-color: rgba(13, 112, 51, 0.70) !important;
+}
+
+/* ── Exception: "Dangerous" buttons stay amber, not green, in light mode ── */
+html:not(.dark) [class*="-dangerous-btn"] {
+  color: #92600a !important;
+  border-color: rgba(180, 120, 0, 0.45) !important;
+}
+html:not(.dark) [class*="-dangerous-btn"]:hover:not(:disabled) {
+  color: #7a4f08 !important;
+  border-color: rgba(180, 120, 0, 0.65) !important;
+  background: rgba(180, 120, 0, 0.08) !important;
+}
+html:not(.dark) [class*="-dangerous-btn-active"] {
+  color: #7a4f08 !important;
+  border-color: rgba(180, 120, 0, 0.60) !important;
+  background: rgba(180, 120, 0, 0.12) !important;
+}
+
+/* ── Systemic: all tool inputs and textareas → light bg in light mode ───────
+   Targets plain input/textarea elements. Excludes color/checkbox/radio/range
+   which have their own rendering. NaiveUI wraps its own inputs so those are
+   unaffected. Container boxes with *-input-box class are also caught.
+   The [class*="-textarea"] and [class*="-input"] rules use [0,2,1] specificity
+   to beat scoped `!important` rules at [0,2,0] specificity.                ── */
+html:not(.dark) input:not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]) {
+  background: #f0f0f0 !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.20) !important;
+}
+html:not(.dark) input:not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"])::placeholder {
+  color: rgba(0, 0, 0, 0.32) !important;
+}
+html:not(.dark) textarea {
+  background: #f0f0f0 !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.20) !important;
+}
+html:not(.dark) textarea::placeholder {
+  color: rgba(0, 0, 0, 0.32) !important;
+}
+/* Higher-specificity textarea class override — beats scoped !important at [0,2,0] */
+html:not(.dark) [class*="-textarea"] {
+  background: #f0f0f0 !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.20) !important;
+}
+html:not(.dark) [class*="-textarea"]::placeholder { color: rgba(0, 0, 0, 0.32) !important; }
+html:not(.dark) [class*="-textarea"]:focus        { border-color: rgba(13, 112, 51, 0.55) !important; }
+
+/* Higher-specificity input class override — beats scoped !important at [0,2,0] */
+html:not(.dark) [class*="-input"]:not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]) {
+  background: #f0f0f0 !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.20) !important;
+}
+html:not(.dark) [class*="-input"]::placeholder { color: rgba(0, 0, 0, 0.32) !important; }
+
+html:not(.dark) [class*="-input-box"] {
+  background: #f0f0f0 !important;
+  border-color: rgba(13, 112, 51, 0.35) !important;
+}
+html:not(.dark) select {
+  background: #f0f0f0 !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.20) !important;
+}
+
+/* Icon buttons inside input rows */
+html:not(.dark) [class*="-icon-btn"] {
+  color: rgba(0, 0, 0, 0.40) !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+html:not(.dark) [class*="-icon-btn"]:hover { color: rgba(0, 0, 0, 0.70) !important; }
+
+/* ── Systemic: active pills/tabs use #1ea54c !important in dark mode —
+   override site-wide so every tool's active state is readable in light mode ── */
+html:not(.dark) [class*="-pill-active"] { color: #0b5c28 !important; }
+html:not(.dark) [class*="-tab-active"]  { color: #0b5c28 !important; border-color: rgba(13, 112, 51, 0.60) !important; }
+
+/* ── Systemic: floating dropdown menus (*-dd-menu and *-dropdown-menu) ──────
+   Covers .erg-dd-menu, .sq-dropdown-menu, .mg-dropdown-menu, etc.         ── */
+html:not(.dark) [class*="-dd-menu"],
+html:not(.dark) [class*="-dropdown-menu"]         { background: #d4d4d4 !important; border-color: rgba(13, 112, 51, 0.45) !important; box-shadow: 0 6px 24px rgba(0,0,0,0.18) !important; }
+html:not(.dark) [class*="-dd-option"],
+html:not(.dark) [class*="-dropdown-item"]         { color: rgba(0, 0, 0, 0.65) !important; border-color: rgba(0, 0, 0, 0.07) !important; background: transparent !important; }
+html:not(.dark) [class*="-dd-option"]:hover,
+html:not(.dark) [class*="-dropdown-item"]:hover   { background: rgba(13, 112, 51, 0.10) !important; color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) [class*="-dd-option-active"],
+html:not(.dark) [class*="-dropdown-item-active"]  { color: #0b5c28 !important; background: rgba(13, 112, 51, 0.12) !important; }
+
+/* ── Systemic: dropdown trigger buttons (*-dropdown-trigger) ─────────────────
+   Covers .sq-dropdown-trigger, .mg-dropdown-trigger, etc.
+   Note: also caught by *-btn but these have non-standard background #0f0f11. ── */
+html:not(.dark) [class*="-dropdown-trigger"] {
+  background: #f0f0f0 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+html:not(.dark) [class*="-dropdown-trigger"]:hover,
+html:not(.dark) [class*="-dropdown"]:focus-within [class*="-dropdown-trigger"] {
+  border-color: rgba(13, 112, 51, 0.50) !important;
+}
+
+/* ── Systemic: sublabels and labels (*-sublabel, *-label) above form fields ──
+   Tools use rgba(255,255,255,0.5) which is invisible on light gray.
+   Excludes .kt-label (handled separately) and section/error label variants. ── */
+html:not(.dark) [class*="-sublabel"],
+html:not(.dark) [class*="-label"]:not(.kt-label):not([class*="-bar"]):not([class*="-error"]):not([class*="-section"]):not([class*="-control"]) {
+  color: rgba(0, 0, 0, 0.50) !important;
+}
+
+/* panel title/header text — white by default, needs dark override */
+html:not(.dark) [class*="-panel-title"] { color: rgba(0, 0, 0, 0.55) !important; }
+html:not(.dark) [class*="-panel-header"] {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.10) !important;
+}
+
+/* stepper container rows (e.g. rsa-input-row) that aren't named *-stepper */
+html:not(.dark) [class*="-input-row"] {
+  background: #f0f0f0 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ── Systemic: tool panel containers (*-panel) ───────────────────────────────
+   The most common pattern: a dark rgba(0,0,0,0.45) panel that needs to go light.
+   Excludes bar/title/body/text variants so only outer container divs are hit.  ── */
+html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]) {
+  background: var(--kt-term-bg) !important;
+  border-color: rgba(13, 112, 51, 0.25) !important;
+}
+
+/* ── Systemic: toggle buttons (inactive) (*-toggle) ─────────────────────────
+   Catches .uu-toggle, etc. Excludes -group, -on, and -row container variants. ── */
+html:not(.dark) [class*="-toggle"]:not([class*="-group"]):not([class*="-on"]):not([class*="-row"]):not([class*="-pill"]) {
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  color: rgba(0, 0, 0, 0.55) !important;
+}
+html:not(.dark) [class*="-toggle"]:not([class*="-group"]):not([class*="-on"]):not([class*="-row"]):not([class*="-pill"]):hover {
+  background: rgba(13, 112, 51, 0.08) !important;
+  border-color: rgba(13, 112, 51, 0.40) !important;
+  color: #0d7033 !important;
+}
+
+/* ── Systemic: output boxes (*-output) ───────────────────────────────────────
+   Catches .uu-output, etc. Excludes -text and -wrap variants.               ── */
+html:not(.dark) [class*="-output"]:not([class*="-text"]):not([class*="-wrap"]):not([class*="-panel"]) {
+  background: #f0f0f0 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ── Systemic: stepper containers (*-stepper) ────────────────────────────────
+   Covers .sq-stepper, .yv-stepper, .xf-stepper, .sp-stepper, etc.        ── */
+html:not(.dark) [class*="-stepper"] {
+  background: #f0f0f0 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+html:not(.dark) [class*="-step-btn"] {
+  color: #0d7033 !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+html:not(.dark) [class*="-step-btn"]:hover:not(:disabled) { background: rgba(13, 112, 51, 0.08) !important; }
+html:not(.dark) [class*="-step-val"] { color: #0d7033 !important; }
+
+/* ── Systemic: any [prefix]-terminal container → light bg in light mode ──────
+   Attribute-selector approach catches .ehp-terminal, .whois-terminal, and any
+   future tool terminal wrappers without per-tool CSS.
+   :not() clauses exclude bar/title/sub/body/num variants so only the outer
+   container divs get the background override.
+   Specificity [0,6,1] beats all scoped [data-v-xxx].class rules [0,2,0].    ── */
+html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]) {
+  background: var(--kt-term-bg) !important;
+}
+/* All text inside those containers → readable dark on light gray bg.
+   No !important here — App.vue !important overrides win for green accents. */
+html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]) * {
+  color: rgba(0, 0, 0, 0.80);
+}
+/* Terminal bar contents → dark green (needs !important to beat broad * rule) */
+html:not(.dark) [class*="-terminal-bar"] *  { color: #0d7033 !important; }
+/* Terminal title → dark green */
+html:not(.dark) [class*="-terminal-title"]  { color: #0b5c28 !important; }
+/* Terminal sub-label → dim */
+html:not(.dark) [class*="-terminal-sub"]    { color: rgba(0, 0, 0, 0.45) !important; }
+
+/* ── kt-search-btn: primary action button (Parse, Search, Lookup…) ─────────
+   In light mode #1ea54c text on rgba(30,165,76,0.1) bg = near-zero contrast.
+   Fix: very dark green text + more opaque border, site-wide.               ── */
+html:not(.dark) .kt-search-btn {
+  background: rgba(13, 112, 51, 0.14);
+  border-color: rgba(13, 112, 51, 0.55);
+  color: #083d1a;
+}
+html:not(.dark) .kt-search-btn:hover:not(:disabled) {
+  background: rgba(13, 112, 51, 0.22);
+  border-color: rgba(13, 112, 51, 0.75);
+  color: #052d12;
+}
+/* kt-copy buttons follow the same pattern */
+html:not(.dark) .kt-copy {
+  border-color: rgba(13, 112, 51, 0.45);
+  color: #0a5228;
+}
+html:not(.dark) .kt-copy:hover {
+  background: rgba(13, 112, 51, 0.12);
+  border-color: rgba(13, 112, 51, 0.75);
+  color: #083d1a;
+}
+
 .kt-terminal {
   background: var(--kt-term-bg) !important;
   border: 1px solid var(--kt-term-border);

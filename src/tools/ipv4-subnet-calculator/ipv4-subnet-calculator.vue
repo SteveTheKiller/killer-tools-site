@@ -410,13 +410,7 @@ const rangeBar = computed(() => {
         :title="showCheatSheet ? 'Collapse Cheat Sheet' : 'Subnet Cheat Sheet'"
         @click="showCheatSheet = !showCheatSheet"
       >
-        <template v-if="showCheatSheet">
-          <span class="cs-chev">›</span>
-        </template>
-        <template v-else>
-          <span class="cs-chev">‹</span>
-          <span class="cs-label">Cheat Sheet</span>
-        </template>
+        <span class="cs-chev">{{ showCheatSheet ? '›' : '‹' }}</span>
       </button>
       <div v-show="showCheatSheet" class="cs-panel">
         <div mb-3 class="k-section-label" style="font-size:0.8rem;">
@@ -481,6 +475,7 @@ const rangeBar = computed(() => {
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  container-type: inline-size;
 }
 
 .k-terminal-bar {
@@ -534,7 +529,7 @@ const rangeBar = computed(() => {
   align-self: stretch;
 }
 
-@container (max-width: 640px) {
+@container (max-width: 750px) {
   .k-terminal-body {
     grid-template-columns: 1fr;
   }
@@ -588,8 +583,8 @@ const rangeBar = computed(() => {
 
 .k-row {
   display: grid;
-  grid-template-columns: auto 160px 1fr auto;
-  align-items: center;
+  grid-template-columns: auto minmax(0, 130px) 1fr auto;
+  align-items: start;
   gap: 10px;
   padding: 5px 10px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
@@ -615,18 +610,14 @@ const rangeBar = computed(() => {
 .k-label {
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.75rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .k-value {
   color: #1ea54c;
   font-size: 0.8rem;
   word-break: break-all;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   min-width: 0;
 }
 
@@ -1042,5 +1033,31 @@ const rangeBar = computed(() => {
   background: #1ea54c;
   border: 2px solid #000;
   cursor: pointer;
+}
+
+/* ── Cheat sheet: stack + always show when layout is too narrow for side-by-side ── */
+@media (max-width: 1300px) {
+  .sc-layout {
+    flex-direction: column;
+  }
+
+  .cs-wrap {
+    width: 100%;
+    flex-direction: column;
+    position: static;
+    max-height: none;
+    align-items: stretch;
+  }
+
+  /* No point collapsing the cheat sheet when it's already stacked below */
+  .cs-toggle {
+    display: none !important;
+  }
+
+  .cs-panel {
+    display: block !important;
+    width: 100%;
+    max-height: none !important;
+  }
 }
 </style>

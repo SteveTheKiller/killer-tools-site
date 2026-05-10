@@ -97,4 +97,27 @@ const { copy } = useCopy();
 .ec-unicode {
   min-width: 0;
 }
+
+/* Light mode */
+html:not(.dark) .ec-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .ec-card:hover {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .ec-title {
+  color: rgba(0, 0, 0, 0.82);
+}
+
+html:not(.dark) .ec-code {
+  color: rgba(0, 0, 0, 0.58);
+}
+
+html:not(.dark) .ec-code:hover {
+  color: #0d7033;
+}
 </style>

@@ -2,8 +2,8 @@
 import { darkTheme, NGlobalStyle, NMessageProvider, NNotificationProvider } from 'naive-ui';
 import { RouterView, useRoute } from 'vue-router';
 import { layouts } from './layouts';
-import { darkThemeOverrides, lightThemeOverrides } from './themes';
 import { useStyleStore } from './stores/style.store';
+import { darkThemeOverrides, lightThemeOverrides } from './themes';
 
 const route = useRoute();
 const layout = computed(() => route?.meta?.layout ?? layouts.base);
@@ -39,7 +39,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background: #cccccc;
+  background: #b8b8b8;
 }
 
 html.dark body {
@@ -57,31 +57,54 @@ html {
   box-sizing: border-box;
 }
 
+/* ── Tool header: explicit dark colors for light mode — opacity alone is not enough ── */
+html:not(.dark) .tool-title-compact  { color: rgba(0, 0, 0, 0.92) !important; opacity: 1 !important; }
+html:not(.dark) .tool-desc-compact   { color: rgba(0, 0, 0, 0.75) !important; opacity: 1 !important; }
+html:not(.dark) .tool-layout .n-h1   { color: rgba(0, 0, 0, 0.92) !important; opacity: 1 !important; }
+html:not(.dark) .tool-layout .description { color: rgba(0, 0, 0, 0.75) !important; opacity: 1 !important; }
+html:not(.dark) .tool-header-link          { color: rgba(0, 0, 0, 0.60) !important; opacity: 1 !important; }
+html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !important; }
+
+/* ── Sidebar: NaiveUI menu injects a white background in light mode ── */
+html:not(.dark) .n-menu { background-color: transparent !important; }
+
 /* ── Global pill button ─────────────────────────────────────────────── */
+.kt-pill-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
 .kt-pill {
   font-size: 0.72rem;
   font-weight: 500;
   line-height: 1.5;
   padding: 5px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid rgba(30, 165, 76, 0.2);
+  background: transparent;
   color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  transition: background 0.12s, color 0.12s;
   font-family: inherit;
+}
+
+.kt-pill:last-child {
+  border-right: none;
 }
 
 .kt-pill:hover {
   background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
   color: #1ea54c;
 }
 
 .kt-pill-active {
   background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
   color: #1ea54c !important;
 }
 
@@ -91,10 +114,30 @@ html {
   pointer-events: none;
 }
 
-.kt-pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+/* On narrow screens, break connected pill rows into individually-bordered pills */
+@media (max-width: 640px) {
+  .kt-pill-row,
+  html:not(.dark) .kt-pill-row {
+    flex-wrap: wrap;
+    overflow: visible;
+    border: none !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    gap: 4px;
+    flex-shrink: 1;
+  }
+
+  .kt-pill-row .kt-pill,
+  html:not(.dark) .kt-pill-row .kt-pill {
+    border: 1px solid rgba(30, 165, 76, 0.3) !important;
+    border-radius: 5px !important;
+  }
+
+  .kt-pill-row .kt-pill-active,
+  html:not(.dark) .kt-pill-row .kt-pill-active {
+    border-color: #1ea54c !important;
+  }
 }
 
 /* ── Global tags / badges ───────────────────────────────────────────── */
@@ -287,6 +330,27 @@ html:not(.dark) .gpr-registry-key {
   border-color: rgba(30,165,76,0.25) !important;
 }
 
+/* ── Date-Time Converter ── */
+html:not(.dark) .dt-fmt-btn {
+  background: #f0f0f0 !important;
+  border-color: rgba(13, 112, 51, 0.35) !important;
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+html:not(.dark) .dt-fmt-btn:hover,
+html:not(.dark) .dt-fmt-btn-open {
+  border-color: rgba(13, 112, 51, 0.60) !important;
+  color: #083d1a !important;
+}
+html:not(.dark) .dt-fmt-caret { color: rgba(13, 112, 51, 0.55) !important; }
+html:not(.dark) .dt-fmt-menu {
+  background: #e8e8e8 !important;
+  border-color: rgba(13, 112, 51, 0.40) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15) !important;
+}
+html:not(.dark) .dt-fmt-option { color: rgba(0, 0, 0, 0.65) !important; }
+html:not(.dark) .dt-fmt-option:hover { background: rgba(13, 112, 51, 0.10) !important; color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .dt-fmt-option-active { color: #0b5c28 !important; background: rgba(13, 112, 51, 0.12) !important; }
+
 /* Subnet calculator: data table, not a terminal — light mode border fix */
 html:not(.dark) .subnet-results {
   border-color: rgba(0,0,0,0.15) !important;
@@ -311,9 +375,9 @@ html:not(.dark) .cs-toggle {
   color: rgba(0,0,0,0.55) !important;
 }
 html:not(.dark) .cs-toggle:not(.cs-toggle-open) {
-  background: rgba(30,165,76,0.08) !important;
-  border-color: rgba(30,165,76,0.35) !important;
-  color: #1ea54c !important;
+  background: rgba(13, 112, 51, 0.10) !important;
+  border-color: rgba(13, 112, 51, 0.40) !important;
+  color: #083d1a !important;
 }
 
 /* Category filter pills */
@@ -393,4 +457,237 @@ html:not(.dark) .ps-section-label {
   opacity: 1 !important;
   color: #5a6370 !important;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   LIGHT MODE — kt-pill, kt-tag, kt-alert, kt-section-label
+   ══════════════════════════════════════════════════════════════ */
+
+html:not(.dark) .kt-pill-row {
+  border-color: rgba(13, 112, 51, 0.30) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+@media (max-width: 640px) {
+  html:not(.dark) .kt-pill-row {
+    background: transparent !important;
+    border: none !important;
+  }
+}
+html:not(.dark) .kt-pill {
+  border-right-color: rgba(0, 0, 0, 0.12) !important;
+  color: rgba(0, 0, 0, 0.55) !important;
+}
+html:not(.dark) .kt-pill:hover {
+  background: rgba(13, 112, 51, 0.10) !important;
+  color: #0d7033 !important;
+}
+html:not(.dark) .kt-pill-active {
+  background: rgba(13, 112, 51, 0.15) !important;
+  color: #0b5c28 !important;
+}
+
+html:not(.dark) .kt-tag-default {
+  background:   rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+  color:        rgba(0, 0, 0, 0.50);
+}
+html:not(.dark) .kt-tag-success { color: #0d7033; }
+html:not(.dark) .kt-tag-warning { color: #92600a; }
+html:not(.dark) .kt-tag-error   { color: #b91c1c; }
+html:not(.dark) .kt-tag-info    { color: #1d5fa8; }
+
+html:not(.dark) .kt-section-label { color: rgba(0, 0, 0, 0.45); }
+
+html:not(.dark) .kt-alert-info {
+  color: rgba(0, 0, 0, 0.65);
+  background: rgba(13, 112, 51, 0.08);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LIGHT MODE — Tool-specific terminal card text
+   html:not(.dark) prefix gives (0,2,1) specificity, beating
+   scoped [data-v-xxx].class (0,2,0).
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Domain Lookup ── */
+html:not(.dark) .whois-terminal-title { color: #0b5c28 !important; }
+html:not(.dark) .whois-prompt       { color: rgba(13, 112, 51, 0.55) !important; }
+html:not(.dark) .whois-label        { color: rgba(0, 0, 0, 0.50) !important; }
+html:not(.dark) .whois-body-text    { color: rgba(0, 0, 0, 0.55) !important; }
+html:not(.dark) .whois-record-block { color: rgba(0, 0, 0, 0.75) !important; }
+html:not(.dark) .whois-record-row .whois-value { color: rgba(0, 0, 0, 0.75) !important; }
+html:not(.dark) .whois-status-desc  { color: rgba(0, 0, 0, 0.40) !important; }
+html:not(.dark) .whois-contact-role { color: rgba(0, 0, 0, 0.35) !important; background: rgba(0,0,0,0.03) !important; }
+html:not(.dark) .whois-remark-title { color: rgba(0, 0, 0, 0.50) !important; }
+html:not(.dark) .whois-remark-line  { color: rgba(0, 0, 0, 0.40) !important; }
+
+/* ── Exchange NDR Lookup ── */
+html:not(.dark) .ndr-name           { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .ndr-description    { color: rgba(0, 0, 0, 0.60) !important; }
+html:not(.dark) .ndr-kv-label       { color: rgba(0, 0, 0, 0.45) !important; }
+html:not(.dark) .ndr-kv-value       { color: rgba(0, 0, 0, 0.75) !important; }
+html:not(.dark) .ndr-kv-fix         { color: #0d7033 !important; }
+html:not(.dark) .ndr-kv-block       { border-color: rgba(0, 0, 0, 0.10) !important; }
+html:not(.dark) .ndr-sev-default    { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
+html:not(.dark) .ndr-sev-error      { color: #b91c1c !important; }
+
+/* ── Category headers (between card groups) — all tools ── */
+html:not(.dark) .ndr-category-header,
+html:not(.dark) .hsc-category-header,
+html:not(.dark) .wec-category-header,
+html:not(.dark) .wel-category-header,
+html:not(.dark) .sku-category-header { color: #0b5c28 !important; border-bottom-color: rgba(11, 92, 40, 0.25) !important; }
+
+/* ── Group Policy Reference ── */
+html:not(.dark) .gpr-name           { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .gpr-path           { color: rgba(0, 0, 0, 0.60) !important; }
+html:not(.dark) .gpr-kv-label       { color: rgba(0, 0, 0, 0.45) !important; }
+html:not(.dark) .gpr-kv-value       { color: rgba(0, 0, 0, 0.80) !important; }
+html:not(.dark) .gpr-kv-block       { border-color: rgba(0, 0, 0, 0.10) !important; }
+html:not(.dark) .gpr-registry       { color: #007a8a !important; background: rgba(0,122,138,0.06) !important; border-color: rgba(0,122,138,0.25) !important; }
+html:not(.dark) .gpr-sev-default    { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
+html:not(.dark) .gpr-sev-error      { color: #b91c1c !important; }
+
+/* ── Windows Event Lookup ── */
+html:not(.dark) .wel-name           { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .wel-desc           { color: rgba(0, 0, 0, 0.58) !important; border-top-color: rgba(0,0,0,0.08) !important; }
+
+/* ── Windows Error Codes ── */
+html:not(.dark) .wec-name           { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .wec-decimal        { color: rgba(0, 0, 0, 0.40) !important; }
+html:not(.dark) .wec-desc           { color: rgba(0, 0, 0, 0.58) !important; border-top-color: rgba(0,0,0,0.08) !important; }
+html:not(.dark) .wec-sev-default    { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
+html:not(.dark) .wec-sev-error      { color: #b91c1c !important; }
+
+/* ── HTTP Status Codes ── */
+html:not(.dark) .hsc-name           { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .hsc-desc           { color: rgba(0, 0, 0, 0.58) !important; border-top-color: rgba(0,0,0,0.08) !important; }
+
+/* ── Port Protocol Reference ── */
+html:not(.dark) .ppr-seg-btn        { color: rgba(0, 0, 0, 0.55) !important; }
+html:not(.dark) .ppr-seg-btn:hover  { color: rgba(0, 0, 0, 0.80) !important; background: rgba(13,112,51,0.08) !important; }
+html:not(.dark) .ppr-category       { color: rgba(0, 0, 0, 0.38) !important; }
+html:not(.dark) .ppr-service        { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .ppr-desc           { color: rgba(0, 0, 0, 0.58) !important; border-top-color: rgba(0,0,0,0.08) !important; }
+html:not(.dark) .ppr-proto-both     { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
+/* Dangerous button stays amber in both modes — override the systemic green btn rule */
+html:not(.dark) .ppr-dangerous-btn              { color: rgba(180, 130, 0, 0.75) !important; border-color: rgba(234, 179, 8, 0.35) !important; }
+html:not(.dark) .ppr-dangerous-btn:hover        { color: #b45309 !important; border-color: rgba(234, 179, 8, 0.55) !important; background: rgba(234, 179, 8, 0.08) !important; }
+html:not(.dark) .ppr-dangerous-btn-active       { color: #b45309 !important; border-color: rgba(234, 179, 8, 0.65) !important; background: rgba(234, 179, 8, 0.14) !important; }
+.ppr-dangerous-btn                              { color: rgba(234, 179, 8, 0.65) !important; border-color: rgba(234, 179, 8, 0.30) !important; }
+.ppr-dangerous-btn:hover                        { color: #ca8a04 !important; border-color: rgba(234, 179, 8, 0.55) !important; background: rgba(234, 179, 8, 0.08) !important; }
+.ppr-dangerous-btn-active                       { color: #ca8a04 !important; border-color: rgba(234, 179, 8, 0.65) !important; background: rgba(234, 179, 8, 0.14) !important; }
+
+/* ── M365 SKU Decoder ── */
+html:not(.dark) .sku-name           { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .sku-desc           { color: rgba(0, 0, 0, 0.55) !important; }
+html:not(.dark) .sku-tier-default   { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
+
+/* ── Killer Scripts ── */
+html:not(.dark) .ks-info            { background: rgba(180, 145, 0, 0.10) !important; border-color: rgba(100, 78, 0, 0.75) !important; color: rgba(0, 0, 0, 0.72) !important; }
+html:not(.dark) .ks-info-cmd        { color: #0d7033 !important; }
+html:not(.dark) .ks-info-dl         { color: rgba(0, 0, 0, 0.55) !important; }
+html:not(.dark) .ks-name            { color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) .ks-desc            { color: rgba(0, 0, 0, 0.60) !important; }
+html:not(.dark) .ks-btn-dl          { color: rgba(0, 0, 0, 0.45) !important; }
+html:not(.dark) .ks-btn-dl:hover    { background: rgba(0,0,0,0.06) !important; color: rgba(0,0,0,0.70) !important; }
+
+/* ── c-input-text (NaiveUI wrapper) — global light mode fix ── */
+html:not(.dark) .c-input-text .input-wrapper         { background-color: #f0f0f0 !important; border-color: rgba(0, 0, 0, 0.20) !important; box-shadow: none !important; }
+html:not(.dark) .c-input-text .input-wrapper:hover   { border-color: rgba(13, 112, 51, 0.45) !important; }
+html:not(.dark) .c-input-text .input-wrapper:focus-within { border-color: rgba(13, 112, 51, 0.70) !important; box-shadow: none !important; }
+
+/* ── PowerShell Builder ── */
+html:not(.dark) .ps-panel-title      { color: #0d7033 !important; }
+html:not(.dark) .ps-panel-body       { color: rgba(0, 0, 0, 0.80) !important; }
+html:not(.dark) .command-block       { background: #c8c8c8 !important; border-color: rgba(13, 112, 51, 0.25) !important; }
+html:not(.dark) .notes-strip         { color: rgba(0, 0, 0, 0.72) !important; }
+html:not(.dark) .badge.module        { color: rgba(0, 0, 0, 0.55) !important; opacity: 1 !important; }
+html:not(.dark) .badge.ps-no         { opacity: 0.5 !important; }
+/* Input inside ps-panel-body — slightly darker bg to distinguish from page */
+html:not(.dark) .ps-panel-body .c-input-text .input-wrapper         { background-color: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.30) !important; }
+html:not(.dark) .ps-panel-body .c-input-text .input-wrapper:hover   { border-color: rgba(13, 112, 51, 0.55) !important; }
+html:not(.dark) .ps-panel-body .c-input-text .input-wrapper:focus-within { background-color: #cccccc !important; border-color: rgba(13, 112, 51, 0.70) !important; }
+
+/* ── CVE Lookup — custom dropdowns ── */
+html:not(.dark) .cv-trigger         { background: #c8c8c8 !important; border-color: rgba(13, 112, 51, 0.30) !important; color: rgba(0, 0, 0, 0.80) !important; }
+html:not(.dark) .cv-trigger:hover,
+html:not(.dark) .cv-dropdown:focus-within .cv-trigger { border-color: rgba(13, 112, 51, 0.65) !important; }
+html:not(.dark) .cv-placeholder     { color: rgba(0, 0, 0, 0.35) !important; }
+html:not(.dark) .cv-chevron         { color: rgba(13, 112, 51, 0.70) !important; }
+html:not(.dark) .cv-clear           { color: rgba(0, 0, 0, 0.35) !important; }
+html:not(.dark) .cv-clear:hover     { color: rgba(0, 0, 0, 0.65) !important; }
+html:not(.dark) .cv-menu            { background: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.35) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important; }
+html:not(.dark) .cv-item            { color: rgba(0, 0, 0, 0.65) !important; border-bottom-color: rgba(0, 0, 0, 0.07) !important; }
+html:not(.dark) .cv-item:hover      { background: rgba(13, 112, 51, 0.10) !important; color: rgba(0, 0, 0, 0.90) !important; }
+html:not(.dark) .cv-item-active     { color: #0d7033 !important; background: rgba(13, 112, 51, 0.10) !important; }
+
+/* ── CVE Lookup ── */
+html:not(.dark) .cve-card-id        { color: #0d7033 !important; }
+html:not(.dark) .cve-copy-id        { color: rgba(0, 0, 0, 0.38) !important; }
+html:not(.dark) .cve-bar-title      { color: rgba(0, 0, 0, 0.38) !important; }
+html:not(.dark) .cve-meta-label     { color: rgba(0, 0, 0, 0.50) !important; }
+html:not(.dark) .cve-meta-val       { color: rgba(0, 0, 0, 0.80) !important; }
+html:not(.dark) .cve-meta-sep       { color: rgba(0, 0, 0, 0.25) !important; }
+html:not(.dark) .cve-desc           { color: rgba(0, 0, 0, 0.85) !important; }
+html:not(.dark) .cve-section-label  { color: rgba(0, 0, 0, 0.45) !important; }
+html:not(.dark) .cve-metric-label   { color: rgba(0, 0, 0, 0.50) !important; }
+html:not(.dark) .cve-score-default  { color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.15) !important; }
+html:not(.dark) .cve-dot-default    { background: rgba(0,0,0,0.20) !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE — Card grids: minmax(420px) overflows narrow viewports.
+   !important beats non-!important scoped grid-template-columns.
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 520px) {
+  .ndr-grid,
+  .gpr-grid,
+  .wec-grid,
+  .hsc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Killer App landing pages (KillerPDF, KillerFind, KillerScan) ── */
+html:not(.dark) .kapp-subtitle  { color: rgba(0, 0, 0, 0.55) !important; }
+html:not(.dark) .kapp-sha256    { color: rgba(0, 0, 0, 0.50) !important; }
+html:not(.dark) .kapp-version   { background: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.35) !important; }
+html:not(.dark) .kapp-gh-link   { background: #d8d8d8 !important; color: rgba(0, 0, 0, 0.75) !important; }
+
+/* ── Email Record Generator ── */
+html:not(.dark) .erg-tab         { background: rgba(0, 0, 0, 0.08) !important; border-color: rgba(0, 0, 0, 0.18) !important; color: rgba(0, 0, 0, 0.45) !important; }
+html:not(.dark) .erg-tab:hover   { background: rgba(0, 0, 0, 0.12) !important; border-color: rgba(13, 112, 51, 0.40) !important; color: rgba(0, 0, 0, 0.70) !important; }
+html:not(.dark) .erg-tab-active  { background: rgba(13, 112, 51, 0.18) !important; border-color: rgba(13, 112, 51, 0.65) !important; }
+html:not(.dark) .erg-pill        { border-color: rgba(13, 112, 51, 0.20) !important; background: rgba(13, 112, 51, 0.04) !important; }
+html:not(.dark) .erg-pill:hover  { color: #0b5c28 !important; border-color: rgba(13, 112, 51, 0.45) !important; background: rgba(13, 112, 51, 0.10) !important; }
+html:not(.dark) .erg-pill-active { background: rgba(13, 112, 51, 0.16) !important; border-color: rgba(13, 112, 51, 0.55) !important; }
+/* Record output text — should be dark green, not gray */
+html:not(.dark) .erg-record-text  { color: #0b5c28 !important; }
+html:not(.dark) .erg-record-label { color: rgba(13, 112, 51, 0.65) !important; }
+html:not(.dark) .erg-copy-hint    { color: rgba(13, 112, 51, 0.55) !important; }
+html:not(.dark) .erg-dd-caret     { color: rgba(13, 112, 51, 0.70) !important; }
+html:not(.dark) .erg-slider-hint  { color: rgba(0, 0, 0, 0.40) !important; }
+html:not(.dark) .erg-input::placeholder { color: rgba(0, 0, 0, 0.28) !important; }
+html:not(.dark) .erg-warn         { color: #92600a !important; }
+
+/* ── Meta Tag Generator — syntax highlight in light mode ── */
+html:not(.dark) .mg-pre           { color: rgba(0, 0, 0, 0.75) !important; }
+html:not(.dark) .hl-comment       { color: rgba(0, 0, 0, 0.38) !important; font-style: italic; }
+html:not(.dark) .hl-tag           { color: rgba(0, 0, 0, 0.60) !important; }
+html:not(.dark) .hl-attr          { color: #92600a !important; }
+html:not(.dark) .hl-value         { color: #0d7033 !important; }
+
+/* ── Email Header Parser — classes not caught by the broad *-terminal rule ── */
+/* .ehp-auth-entry has its own #0a0a0c !important bg — needs explicit override */
+html:not(.dark) .ehp-auth-entry     { background: var(--kt-term-bg) !important; }
+html:not(.dark) .ehp-auth-grid      { background: rgba(13, 112, 51, 0.10) !important; }
+/* Green accent elements inside terminals need !important to survive the broad * rule */
+html:not(.dark) .ehp-hop-key        { color: #0d7033 !important; }
+html:not(.dark) .ehp-hop-num        { color: rgba(13, 112, 51, 0.70) !important; }
+html:not(.dark) .ehp-section-header { color: #0b5c28 !important; }
+/* Dim elements */
+html:not(.dark) .ehp-hop-ip         { color: rgba(0, 0, 0, 0.45) !important; }
+html:not(.dark) .ehp-hop-ts         { color: rgba(0, 0, 0, 0.42) !important; }
+html:not(.dark) .ehp-hop-delay      { color: rgba(0, 0, 0, 0.38) !important; }
+html:not(.dark) .ehp-auth-detail    { color: rgba(0, 0, 0, 0.70) !important; }
 </style>

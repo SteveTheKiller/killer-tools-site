@@ -241,7 +241,7 @@ async function copyValue(label: string, value: string) {
 /* ── Output rows ── */
 .base-row {
   display: grid;
-  grid-template-columns: auto 170px 1fr auto;
+  grid-template-columns: auto minmax(0, 140px) 1fr auto;
   align-items: center;
   gap: 10px;
   padding: 7px 12px;
@@ -326,4 +326,48 @@ async function copyValue(label: string, value: string) {
 
 .base-row:hover .base-copy { color: rgba(30, 165, 76, 0.8); }
 .base-copy-done { color: #1ea54c !important; }
+
+/* ── Light mode ── */
+html:not(.dark) .base-input-box {
+  background: #f0f0f0;
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .base-input {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+html:not(.dark) .base-input::placeholder { color: rgba(0, 0, 0, 0.30); }
+
+html:not(.dark) .base-input-divider { background: rgba(13, 112, 51, 0.20); }
+
+html:not(.dark) .base-stepper-label { color: rgba(0, 0, 0, 0.45); }
+
+html:not(.dark) .base-step-btn {
+  border-color: rgba(13, 112, 51, 0.35);
+  color: #083d1a;
+}
+
+html:not(.dark) .base-step-val { color: #083d1a; }
+
+html:not(.dark) .base-terminal {
+  background: var(--kt-term-bg) !important;
+}
+
+html:not(.dark) .base-section-header { color: #0b5c28; }
+
+html:not(.dark) .base-label { color: rgba(0, 0, 0, 0.55); }
+
+html:not(.dark) .base-value { color: #0d7033; }
+
+html:not(.dark) .base-mini-btn {
+  border-color: rgba(13, 112, 51, 0.30);
+  color: #083d1a;
+}
+
+html:not(.dark) .base-mini-val { color: #083d1a; }
+
+html:not(.dark) .base-copy { color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .base-row:hover .base-copy { color: rgba(13, 112, 51, 0.70); }
+html:not(.dark) .base-copy-done { color: #0d7033 !important; }
 </style>

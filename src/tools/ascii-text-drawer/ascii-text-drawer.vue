@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import figlet from 'figlet';
 import { useCopy } from '@/composable/copy';
+import { useStyleStore } from '@/stores/style.store';
+
+const styleStore = useStyleStore();
+const isLight = computed(() => !styleStore.isDarkTheme);
 
 const input = ref('Ascii ART');
 const debouncedInput = refDebounced(input, 400);
@@ -85,32 +89,48 @@ function onFontBlur(e: FocusEvent) {
 function scrollFocusedIntoView() {
   nextTick(() => {
     const list = fontDropdownList.value;
-    if (!list) return;
+    if (!list) {
+      return;
+    }
     const active = list.querySelector('.aa-dropdown-item-focused') as HTMLElement | null;
     active?.scrollIntoView({ block: 'nearest' });
   });
 }
 
 function onTriggerKeydown(e: KeyboardEvent) {
-  if (fontOpen.value) return;
+  if (fontOpen.value) {
+    return;
+  }
   if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
     e.preventDefault();
     const idx = fonts.indexOf(font.value);
-    if (e.key === 'ArrowDown') font.value = fonts[(idx + 1) % fonts.length];
-    else font.value = fonts[(idx - 1 + fonts.length) % fonts.length];
+    if (e.key === 'ArrowDown') {
+      font.value = fonts[(idx + 1) % fonts.length];
+    }
+    else {
+      font.value = fonts[(idx - 1 + fonts.length) % fonts.length];
+    }
   }
 }
 
 function onTriggerWheel(e: WheelEvent) {
-  if (fontOpen.value) return;
+  if (fontOpen.value) {
+    return;
+  }
   e.preventDefault();
   const idx = fonts.indexOf(font.value);
-  if (e.deltaY > 0) font.value = fonts[(idx + 1) % fonts.length];
-  else font.value = fonts[(idx - 1 + fonts.length) % fonts.length];
+  if (e.deltaY > 0) {
+    font.value = fonts[(idx + 1) % fonts.length];
+  }
+  else {
+    font.value = fonts[(idx - 1 + fonts.length) % fonts.length];
+  }
 }
 
 function onSearchKeydown(e: KeyboardEvent) {
-  if (!filteredFonts.value.length) return;
+  if (!filteredFonts.value.length) {
+    return;
+  }
   if (e.key === 'ArrowDown') {
     e.preventDefault();
     focusedIndex.value = (focusedIndex.value + 1) % filteredFonts.value.length;
@@ -210,8 +230,13 @@ function onSearchKeydown(e: KeyboardEvent) {
     </div>
 
     <!-- Output -->
-    <div v-else class="aa-output-block">
-      <div class="aa-output-header">
+    <div v-else class="aa-output-wrap">
+      <div
+        class="aa-output-header"
+        :style="isLight
+          ? 'background: rgba(13,112,51,0.28) !important; border-bottom: 1px solid rgba(13,112,51,0.36) !important'
+          : 'background: rgba(30,165,76,0.25) !important; border-bottom: 1px solid rgba(30,165,76,0.30) !important'"
+      >
         <span class="aa-label">ASCII ART OUTPUT</span>
         <button class="aa-copy-btn" @click="copy()">
           <icon-mdi-check v-if="copied" />
@@ -237,7 +262,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.75);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -476,50 +501,78 @@ function onSearchKeydown(e: KeyboardEvent) {
 }
 
 /* Output */
-.aa-output-block {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.aa-output-wrap {
+  border: 1px solid rgba(30, 165, 76, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .aa-output-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 6px 14px;
+  background: rgba(30, 165, 76, 0.25);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.30);
 }
 
 .aa-pre {
   margin: 0;
   padding: 14px 16px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.35);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
   color: #1ea54c;
   white-space: pre;
   line-height: 1.4;
   min-width: max-content;
+  overflow-x: auto;
 }
 
 .aa-copy-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 4px 12px;
-  background: #0f0f11;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(30, 165, 76, 0.4);
   border-radius: 4px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.80);
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .aa-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  background: rgba(30, 165, 76, 0.2);
+  border-color: rgba(30, 165, 76, 0.7);
+  color: #fff;
+}
+
+/* Light mode */
+html:not(.dark) .aa-label {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+html:not(.dark) .aa-output-wrap {
+  border-color: rgba(13, 112, 51, 0.35);
+}
+
+html:not(.dark) .aa-pre {
+  background: #ffffff;
+  color: #0d7033;
+}
+
+html:not(.dark) .aa-copy-btn {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(13, 112, 51, 0.5);
+  color: rgba(0, 0, 0, 0.70);
+}
+
+html:not(.dark) .aa-copy-btn:hover {
+  background: rgba(13, 112, 51, 0.12);
+  border-color: rgba(13, 112, 51, 0.7);
+  color: #0d7033;
 }
 </style>

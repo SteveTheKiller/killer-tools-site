@@ -500,6 +500,8 @@ const caption = computed(() => {
   margin-top: 4px;
 }
 
+html:not(.dark) .qr-caption { color: #0b5c28; }
+
 .qr-download {
   margin-top: 8px;
   width: 100%;

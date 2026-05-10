@@ -81,6 +81,26 @@ const rawYamlValidation = useValidation({
   flex-wrap: wrap;
   margin-bottom: 4px;
 }
+
+/* Standalone pill — restore border-radius overridden by the global connected-row rule */
+.kt-pill {
+  border-radius: 6px !important;
+  border: 1px solid rgba(30, 165, 76, 0.3) !important;
+}
+
+.yv-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.yv-control-label {
+  font-size: 0.72rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
 .yv-stepper {
   display: inline-flex; align-items: center;
   background: #0f0f11; border: 1px solid rgba(30,165,76,0.2); border-radius: 5px; overflow: hidden;
@@ -97,4 +117,13 @@ const rawYamlValidation = useValidation({
   min-width: 28px; text-align: center;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace; font-size: 0.82rem; color: #1ea54c;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .yv-control-label { color: rgba(0, 0, 0, 0.55); }
+
+html:not(.dark) .yv-stepper { background: #f0f0f0; border-color: rgba(0, 0, 0, 0.18); }
+html:not(.dark) .yv-step-btn { color: #0d7033; border-color: rgba(0, 0, 0, 0.10); }
+html:not(.dark) .yv-step-btn:last-child { border-color: rgba(0, 0, 0, 0.10); }
+html:not(.dark) .yv-step-btn:hover:not(:disabled) { background: rgba(13, 112, 51, 0.08); }
+html:not(.dark) .yv-step-val { color: #0d7033; }
 </style>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
+import { useStyleStore } from '@/stores/style.store';
 import { randIntFromInterval } from '@/utils/random';
 import { generateLoremIpsum } from './lorem-ipsum-generator.service';
 
@@ -48,6 +49,9 @@ const wordCount = computed(() => loremIpsumText.value.trim().split(/\s+/).filter
 const charCount = computed(() => loremIpsumText.value.length);
 
 const { copy } = useCopy({ source: loremIpsumText, text: 'Lorem ipsum copied to the clipboard' });
+
+const styleStore = useStyleStore();
+const isLight = computed(() => !styleStore.isDarkTheme);
 
 function sliderStyle(val: number, min: number, max: number) {
   return `--val: ${((val - min) / (max - min)) * 100}`;
@@ -120,7 +124,12 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
     <!-- Output -->
     <div class="li-output-wrap">
-      <div class="li-output-header">
+      <div
+        class="li-output-header"
+        :style="isLight
+          ? 'background: rgba(13,112,51,0.28) !important; border-bottom: 1px solid rgba(13,112,51,0.36) !important'
+          : 'background: rgba(30,165,76,0.25) !important; border-bottom: 1px solid rgba(30,165,76,0.30) !important'"
+      >
         <span class="li-section-label">OUTPUT</span>
         <div class="li-stats">
           <span class="li-stat">{{ wordCount.toLocaleString() }} words</span>
@@ -129,16 +138,16 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
         </div>
       </div>
       <textarea class="li-output" :value="loremIpsumText" readonly />
-      <div class="li-actions">
-        <button type="button" class="li-btn li-btn-primary" @click="copy()">
-          <icon-mdi-content-copy />
-          Copy
-        </button>
-        <button type="button" class="li-btn" @click="refreshLoremIpsum()">
-          <icon-mdi-refresh />
-          Refresh
-        </button>
-      </div>
+    </div>
+    <div class="li-actions">
+      <button type="button" class="li-btn li-btn-primary" @click="copy()">
+        <icon-mdi-content-copy />
+        Copy
+      </button>
+      <button type="button" class="li-btn" @click="refreshLoremIpsum()">
+        <icon-mdi-refresh />
+        Refresh
+      </button>
     </div>
   </div>
 </template>
@@ -154,7 +163,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 /* ── Controls ── */
 .li-controls {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 8px;
   padding: 14px 18px;
@@ -172,7 +181,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 .li-label {
   font-size: 0.76rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.75);
   white-space: nowrap;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -313,7 +322,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 /* ── Output ── */
 .li-output-wrap {
-  background: #0a0a0c !important;
+  background: #0a0a0c;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -323,16 +332,21 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 14px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 6px 14px;
+  background: rgba(30, 165, 76, 0.25) !important;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.30) !important;
+}
+
+.li-output-header-light {
+  background: rgba(13, 112, 51, 0.28) !important;
+  border-bottom-color: rgba(13, 112, 51, 0.36) !important;
 }
 
 .li-section-label {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(30, 165, 76, 0.7);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -355,8 +369,8 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 .li-output {
   width: 100%;
-  min-height: 160px;
-  background: transparent !important;
+  min-height: 260px;
+  background: transparent;
   border: none;
   outline: none;
   padding: 14px;
@@ -372,7 +386,6 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   display: flex;
   gap: 8px;
   padding: 10px 14px;
-  border-top: 1px solid rgba(30, 165, 76, 0.12);
 }
 
 .li-btn {
@@ -406,4 +419,56 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   background: rgba(30, 165, 76, 0.22);
   border-color: #1ea54c;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .li-controls {
+  background: rgba(255, 255, 255, 0.70) !important;
+  border-color: rgba(0, 0, 0, 0.10);
+}
+html:not(.dark) .li-label    { color: rgba(0, 0, 0, 0.70); }
+html:not(.dark) .li-val      { color: #0d7033; }
+
+html:not(.dark) .li-dual-range::before {
+  background: linear-gradient(
+    to right,
+    rgba(13, 112, 51, 0.15) var(--min, 0%),
+    #0d7033 var(--min, 0%),
+    #0d7033 var(--max, 100%),
+    rgba(13, 112, 51, 0.15) var(--max, 100%)
+  );
+}
+html:not(.dark) .li-dual-min::-webkit-slider-thumb,
+html:not(.dark) .li-dual-max::-webkit-slider-thumb { background: #0d7033; border-color: #fff; box-shadow: 0 0 0 3px rgba(13,112,51,0.25); }
+html:not(.dark) .li-dual-min::-moz-range-thumb,
+html:not(.dark) .li-dual-max::-moz-range-thumb { background: #0d7033; border-color: #fff; }
+
+html:not(.dark) .li-slider {
+  background: linear-gradient(
+    to right,
+    #0d7033 calc(var(--val, 50) * 1%),
+    rgba(13, 112, 51, 0.18) calc(var(--val, 50) * 1%)
+  );
+}
+html:not(.dark) .li-slider::-webkit-slider-thumb { background: #0d7033; border-color: #fff; box-shadow: 0 0 0 3px rgba(13,112,51,0.25); }
+html:not(.dark) .li-slider::-moz-range-thumb     { background: #0d7033; border-color: #fff; }
+
+html:not(.dark) .li-toggle {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.50);
+}
+html:not(.dark) .li-toggle-on {
+  border-color: #0d7033 !important;
+  background: rgba(13, 112, 51, 0.12) !important;
+  color: #0b5c28 !important;
+}
+
+html:not(.dark) .li-output-wrap   { background: #ffffff; border-color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .li-section-label { color: #0b5c28; }
+html:not(.dark) .li-stat          { color: rgba(13, 112, 51, 0.70); }
+html:not(.dark) .li-stat-sep      { color: rgba(0, 0, 0, 0.25); }
+html:not(.dark) .li-output        { background: transparent; color: rgba(0, 0, 0, 0.75); }
+html:not(.dark) .li-btn           { color: #0d7033; border-color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .li-btn:hover     { background: rgba(13, 112, 51, 0.08) !important; border-color: rgba(13,112,51,0.65); color: #0b5c28; }
+html:not(.dark) .li-btn-primary   { background: rgba(13, 112, 51, 0.10) !important; border-color: rgba(13,112,51,0.45); color: #0b5c28; }
+html:not(.dark) .li-btn-primary:hover { background: rgba(13, 112, 51, 0.18) !important; border-color: #0d7033; }
 </style>

@@ -114,8 +114,8 @@ async function copyUnescape() {
   container-type: inline-size;
 }
 
-@container (max-width: 700px) {
-  .he-layout { flex-direction: column; }
+@media (max-width: 600px) {
+  .he-layout { flex-direction: column; align-items: stretch; }
 }
 
 /* ── Terminal panel ── */

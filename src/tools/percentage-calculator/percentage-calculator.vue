@@ -262,4 +262,30 @@ async function copyResult(key: string, val: string) {
 .pc-result-active:hover .pc-result-copy {
   color: rgba(30, 165, 76, 0.8);
 }
+
+/* ── Light mode ── */
+html:not(.dark) .pc-panel {
+  background: var(--kt-term-bg, #cccccc);
+  border-color: rgba(13, 112, 51, 0.30);
+}
+
+html:not(.dark) .pc-sublabel { color: rgba(0, 0, 0, 0.55); }
+
+html:not(.dark) .pc-text { color: rgba(0, 0, 0, 0.60); }
+
+html:not(.dark) .pc-result {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(13, 112, 51, 0.15);
+}
+
+html:not(.dark) .pc-result-active { border-color: rgba(13, 112, 51, 0.30); }
+html:not(.dark) .pc-result-active:hover { background: rgba(13, 112, 51, 0.06); border-color: rgba(13, 112, 51, 0.50); }
+
+html:not(.dark) .pc-result-val { color: #0d7033; }
+html:not(.dark) .pc-result-negative .pc-result-val { color: #b02020; }
+
+html:not(.dark) .pc-result-empty { color: rgba(0, 0, 0, 0.25); }
+
+html:not(.dark) .pc-result-copy { color: rgba(13, 112, 51, 0.40); }
+html:not(.dark) .pc-result-active:hover .pc-result-copy { color: rgba(13, 112, 51, 0.75); }
 </style>

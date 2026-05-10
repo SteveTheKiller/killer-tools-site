@@ -402,5 +402,63 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 
 .sp-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
 .sp-btn-accent:hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
+
+/* ── Light mode ── */
+html:not(.dark) .sp-label { color: rgba(0, 0, 0, 0.50); }
+
+html:not(.dark) .sp-stepper {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+html:not(.dark) .sp-step-btn {
+  color: #0d7033;
+  border-color: rgba(0, 0, 0, 0.10);
+}
+html:not(.dark) .sp-step-btn:last-child { border-color: rgba(0, 0, 0, 0.10); }
+html:not(.dark) .sp-step-btn:hover:not(:disabled) { background: rgba(13, 112, 51, 0.08); }
+
+html:not(.dark) .sp-step-input { color: #0d7033; }
+
+html:not(.dark) .sp-color-row {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.18);
+}
+html:not(.dark) .sp-color-row:focus-within { border-color: rgba(13, 112, 51, 0.50); }
+
+html:not(.dark) .sp-color-hex { color: rgba(0, 0, 0, 0.75); }
+
+html:not(.dark) .sp-text-input {
+  background: #f0f0f0;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.80);
+}
+html:not(.dark) .sp-text-input::placeholder { color: rgba(0, 0, 0, 0.28); }
+html:not(.dark) .sp-text-input:focus { border-color: rgba(13, 112, 51, 0.50); }
+
+html:not(.dark) .sp-preview-frame {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(13, 112, 51, 0.20);
+}
+
+html:not(.dark) .sp-btn {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.65);
+}
+html:not(.dark) .sp-btn:hover {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(13, 112, 51, 0.45);
+  color: rgba(0, 0, 0, 0.88);
+}
+html:not(.dark) .sp-btn-accent { border-color: rgba(13, 112, 51, 0.50); color: #0b5c28; }
+html:not(.dark) .sp-btn-accent:hover { background: rgba(13, 112, 51, 0.12); color: #083d1a; }
+
+html:not(.dark) .kt-pill {
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.55);
+}
+html:not(.dark) .kt-pill:hover { background: rgba(13, 112, 51, 0.10); border-color: rgba(13, 112, 51, 0.40); color: #0d7033; }
+html:not(.dark) .kt-pill-active { background: rgba(13, 112, 51, 0.15) !important; border-color: #0d7033 !important; color: #0b5c28 !important; }
 </style>
-                          

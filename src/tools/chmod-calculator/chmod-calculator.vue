@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Group, Scope } from './chmod-calculator.types';
 import { useCopy } from '@/composable/copy';
+import { useStyleStore } from '@/stores/style.store';
 import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
 
 const scopes: { scope: Scope, title: string, bit: number }[] = [
@@ -27,18 +28,21 @@ const command = computed(() => `chmod ${octal.value} path`);
 
 const { copy } = useCopy({ source: command, text: 'chmod command copied' });
 
+const styleStore = useStyleStore();
+
 // Digit color per octal value
 function digitColor(n: number) {
+  const dark = styleStore.isDarkTheme;
   if (n === 0) {
-    return 'rgba(255,255,255,0.15)';
+    return dark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.18)';
   }
   if (n >= 6) {
     return '#1ea54c';
   }
   if (n >= 4) {
-    return '#8be0a8';
+    return dark ? '#8be0a8' : '#2a9650';
   }
-  return '#c9f5d8';
+  return dark ? '#c9f5d8' : '#4db87a';
 }
 </script>
 
@@ -291,5 +295,61 @@ function digitColor(n: number) {
   background: rgba(30, 165, 76, 0.1);
   border-color: rgba(30, 165, 76, 0.55);
   color: #1ea54c;
+}
+
+/* ── Light mode ── */
+html:not(.dark) .ch-panel {
+  background: var(--kt-term-bg, #e0e0e0);
+  border-color: rgba(13, 112, 51, 0.25);
+}
+
+html:not(.dark) .ch-grid {
+  border-bottom-color: rgba(13, 112, 51, 0.15);
+}
+
+html:not(.dark) .ch-cell {
+  border-right-color: rgba(13, 112, 51, 0.10);
+  border-bottom-color: rgba(13, 112, 51, 0.10);
+}
+
+html:not(.dark) .ch-col-header {
+  color: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+html:not(.dark) .ch-scope-name { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .ch-scope-bit  { color: rgba(13, 112, 51, 0.55); }
+
+html:not(.dark) .ch-checkbox {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(13, 112, 51, 0.30);
+}
+
+html:not(.dark) .ch-checkbox:hover {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.55);
+}
+
+html:not(.dark) .ch-checkbox-on {
+  background: rgba(13, 112, 51, 0.15);
+  border-color: #0d7033;
+  color: #0d7033;
+}
+
+html:not(.dark) .ch-symbolic   { color: rgba(13, 112, 51, 0.70); }
+
+html:not(.dark) .ch-cmd-wrap   { border-top-color: rgba(13, 112, 51, 0.15); }
+
+html:not(.dark) .ch-prompt     { color: rgba(13, 112, 51, 0.55); }
+
+html:not(.dark) .ch-copy-btn {
+  border-color: rgba(13, 112, 51, 0.25);
+  color: rgba(13, 112, 51, 0.60);
+}
+
+html:not(.dark) .ch-copy-btn:hover {
+  background: rgba(13, 112, 51, 0.10);
+  border-color: rgba(13, 112, 51, 0.55);
+  color: #0d7033;
 }
 </style>

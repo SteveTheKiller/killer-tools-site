@@ -65,12 +65,13 @@ async function copyValue(key: string, value: string) {
         <label class="color-field-label">Color</label>
         <div class="color-picker-row">
           <div class="color-swatch" :style="{ background: currentHex }" />
-          <n-color-picker
-            v-model:value="formats.picker.value.value"
-            class="color-picker"
-            placement="bottom-end"
-            @update:value="(v: string) => updateColorValue(formats.picker.parse(v), 'picker')"
-          />
+          <div class="color-picker">
+            <n-color-picker
+              v-model:value="formats.picker.value.value"
+              placement="bottom-end"
+              @update:value="(v: string) => updateColorValue(formats.picker.parse(v), 'picker')"
+            />
+          </div>
         </div>
       </div>
 

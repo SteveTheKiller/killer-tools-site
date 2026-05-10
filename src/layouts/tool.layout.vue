@@ -125,20 +125,28 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .tool-title-compact {
   font-size: 0.8rem;
   font-weight: 600;
-  opacity: 0.4;
+  opacity: 0.88;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+:global(html:not(.dark)) .tool-title-compact {
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.90);
 }
 
 .tool-header-compact-right {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .tool-header-link {
@@ -155,7 +163,12 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 
 .tool-desc-compact {
   font-size: 0.75rem;
-  opacity: 0.45;
+  opacity: 0.72;
+}
+
+:global(html:not(.dark)) .tool-desc-compact {
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.72);
 }
 
 .tool-content {
@@ -226,7 +239,7 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
     .description {
       margin: 0;
 
-      opacity: 0.7;
+      opacity: 0.85;
     }
   }
 }

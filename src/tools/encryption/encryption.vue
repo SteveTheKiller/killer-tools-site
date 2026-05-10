@@ -34,122 +34,133 @@ function closeOnBlur(set: (val: boolean) => void) {
 </script>
 
 <template>
-  <!-- Encrypt panel -->
-  <div class="en-panel">
-    <div class="en-panel-header">
-      <span class="en-panel-title">ENCRYPT</span>
-    </div>
-    <div class="en-body">
-      <div class="en-row">
-        <div class="en-field en-field-grow">
-          <span class="en-label">YOUR TEXT</span>
-          <textarea
-            v-model="cypherInput"
-            class="en-textarea"
-            rows="5"
-            placeholder="The string to encrypt"
-            spellcheck="false"
-          />
-        </div>
-        <div class="en-field-col">
-          <div class="en-field">
-            <span class="en-label">YOUR SECRET KEY</span>
-            <input
-              v-model="cypherSecret"
-              class="en-input"
-              type="text"
-              placeholder="Secret key..."
+  <div class="en-wrap">
+    <!-- Encrypt panel -->
+    <div class="en-panel">
+      <div class="en-panel-header">
+        <span class="en-panel-title">ENCRYPT</span>
+      </div>
+      <div class="en-body">
+        <div class="en-row">
+          <div class="en-field en-field-grow">
+            <span class="en-label">YOUR TEXT</span>
+            <textarea
+              v-model="cypherInput"
+              class="en-textarea"
+              rows="5"
+              placeholder="The string to encrypt"
               spellcheck="false"
-            >
+            />
           </div>
-          <div class="en-field">
-            <span class="en-label">ALGORITHM</span>
-            <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => cypherAlgoOpen = v)($event)">
-              <button type="button" class="en-dropdown-trigger" @click="cypherAlgoOpen = !cypherAlgoOpen">
-                <span>{{ cypherAlgo }}</span>
-                <icon-mdi-chevron-down class="en-chevron" :class="{ 'en-chevron-open': cypherAlgoOpen }" />
-              </button>
-              <div v-if="cypherAlgoOpen" class="en-dropdown-menu">
-                <button
-                  v-for="algo in algoOptions" :key="algo" type="button"
-                  class="en-dropdown-item" :class="{ 'en-dropdown-item-active': algo === cypherAlgo }"
-                  @click="cypherAlgo = algo; cypherAlgoOpen = false"
-                >
-                  {{ algo }}
+          <div class="en-field-col">
+            <div class="en-field">
+              <span class="en-label">YOUR SECRET KEY</span>
+              <input
+                v-model="cypherSecret"
+                class="en-input"
+                type="text"
+                placeholder="Secret key..."
+                spellcheck="false"
+              >
+            </div>
+            <div class="en-field">
+              <span class="en-label">ALGORITHM</span>
+              <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => cypherAlgoOpen = v)($event)">
+                <button type="button" class="en-dropdown-trigger" @click="cypherAlgoOpen = !cypherAlgoOpen">
+                  <span>{{ cypherAlgo }}</span>
+                  <icon-mdi-chevron-down class="en-chevron" :class="{ 'en-chevron-open': cypherAlgoOpen }" />
                 </button>
+                <div v-if="cypherAlgoOpen" class="en-dropdown-menu">
+                  <button
+                    v-for="algo in algoOptions" :key="algo" type="button"
+                    class="en-dropdown-item" :class="{ 'en-dropdown-item-active': algo === cypherAlgo }"
+                    @click="cypherAlgo = algo; cypherAlgoOpen = false"
+                  >
+                    {{ algo }}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="en-field">
-        <span class="en-label">ENCRYPTED OUTPUT</span>
-        <textarea class="en-textarea en-textarea-output" :value="cypherOutput" rows="3" readonly spellcheck="false" />
+        <div class="en-field">
+          <span class="en-label">ENCRYPTED OUTPUT</span>
+          <textarea class="en-textarea en-textarea-output" :value="cypherOutput" rows="3" readonly spellcheck="false" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Decrypt panel -->
-  <div class="en-panel">
-    <div class="en-panel-header">
-      <span class="en-panel-title">DECRYPT</span>
-    </div>
-    <div class="en-body">
-      <div class="en-row">
-        <div class="en-field en-field-grow">
-          <span class="en-label">YOUR ENCRYPTED TEXT</span>
-          <textarea
-            v-model="decryptInput"
-            class="en-textarea"
-            rows="5"
-            placeholder="The ciphertext to decrypt"
-            spellcheck="false"
-          />
-        </div>
-        <div class="en-field-col">
-          <div class="en-field">
-            <span class="en-label">YOUR SECRET KEY</span>
-            <input
-              v-model="decryptSecret"
-              class="en-input"
-              type="text"
-              placeholder="Secret key..."
+    <!-- Decrypt panel -->
+    <div class="en-panel">
+      <div class="en-panel-header">
+        <span class="en-panel-title">DECRYPT</span>
+      </div>
+      <div class="en-body">
+        <div class="en-row">
+          <div class="en-field en-field-grow">
+            <span class="en-label">YOUR ENCRYPTED TEXT</span>
+            <textarea
+              v-model="decryptInput"
+              class="en-textarea"
+              rows="5"
+              placeholder="The ciphertext to decrypt"
               spellcheck="false"
-            >
+            />
           </div>
-          <div class="en-field">
-            <span class="en-label">ALGORITHM</span>
-            <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => decryptAlgoOpen = v)($event)">
-              <button type="button" class="en-dropdown-trigger" @click="decryptAlgoOpen = !decryptAlgoOpen">
-                <span>{{ decryptAlgo }}</span>
-                <icon-mdi-chevron-down class="en-chevron" :class="{ 'en-chevron-open': decryptAlgoOpen }" />
-              </button>
-              <div v-if="decryptAlgoOpen" class="en-dropdown-menu">
-                <button
-                  v-for="algo in algoOptions" :key="algo" type="button"
-                  class="en-dropdown-item" :class="{ 'en-dropdown-item-active': algo === decryptAlgo }"
-                  @click="decryptAlgo = algo; decryptAlgoOpen = false"
-                >
-                  {{ algo }}
+          <div class="en-field-col">
+            <div class="en-field">
+              <span class="en-label">YOUR SECRET KEY</span>
+              <input
+                v-model="decryptSecret"
+                class="en-input"
+                type="text"
+                placeholder="Secret key..."
+                spellcheck="false"
+              >
+            </div>
+            <div class="en-field">
+              <span class="en-label">ALGORITHM</span>
+              <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => decryptAlgoOpen = v)($event)">
+                <button type="button" class="en-dropdown-trigger" @click="decryptAlgoOpen = !decryptAlgoOpen">
+                  <span>{{ decryptAlgo }}</span>
+                  <icon-mdi-chevron-down class="en-chevron" :class="{ 'en-chevron-open': decryptAlgoOpen }" />
                 </button>
+                <div v-if="decryptAlgoOpen" class="en-dropdown-menu">
+                  <button
+                    v-for="algo in algoOptions" :key="algo" type="button"
+                    class="en-dropdown-item" :class="{ 'en-dropdown-item-active': algo === decryptAlgo }"
+                    @click="decryptAlgo = algo; decryptAlgoOpen = false"
+                  >
+                    {{ algo }}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div v-if="decryptError" class="en-error">
-        <icon-mdi-alert-circle class="en-error-icon" />
-        <span>{{ decryptError }}</span>
-      </div>
-      <div v-else class="en-field">
-        <span class="en-label">DECRYPTED OUTPUT</span>
-        <textarea class="en-textarea en-textarea-output" :value="decryptOutput" rows="3" readonly spellcheck="false" />
+        <div v-if="decryptError" class="en-error">
+          <icon-mdi-alert-circle class="en-error-icon" />
+          <span>{{ decryptError }}</span>
+        </div>
+        <div v-else class="en-field">
+          <span class="en-label">DECRYPTED OUTPUT</span>
+          <textarea class="en-textarea en-textarea-output" :value="decryptOutput" rows="3" readonly spellcheck="false" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Outer wrapper */
+.en-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+  width: 100%;
+}
+
 /* Panel */
 .en-panel {
   background: rgba(0, 0, 0, 0.35);
@@ -158,7 +169,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 320px;
 }
 
 .en-panel-header {

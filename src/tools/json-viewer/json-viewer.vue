@@ -45,7 +45,7 @@ const rawJsonValidation = useValidation({
     </div>
   </div>
 
-  <div style="flex: 1 1 300px; min-width: 0;">
+  <div class="jv-panel">
     <div class="kt-section-label">
       Your raw JSON
     </div>
@@ -73,15 +73,44 @@ const rawJsonValidation = useValidation({
 </template>
 
 <style scoped>
+/* ── Content panel — collapse NaiveUI form-item empty label/feedback space ── */
+.jv-panel {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.jv-panel ::v-deep(.n-form-item) { margin-bottom: 0 !important; }
+.jv-panel ::v-deep(.n-form-item-label) { padding-bottom: 0 !important; min-height: 0 !important; height: 0 !important; overflow: hidden !important; }
+.jv-panel ::v-deep(.n-form-item-feedback-wrapper) { min-height: 0 !important; }
+
 /* ── Controls bar ── */
 .jv-controls {
   flex: 0 0 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 4px;
+}
+
+/* Standalone pill — override the global connected-row border-radius reset */
+.kt-pill {
+  border-radius: 6px !important;
+  border: 1px solid rgba(30, 165, 76, 0.3) !important;
+}
+
+.jv-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jv-control-label {
+  font-size: 0.72rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
 }
 
 /* ── Stepper ── */
@@ -131,4 +160,13 @@ const rawJsonValidation = useValidation({
   font-size: 0.82rem;
   color: #1ea54c;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .jv-control-label { color: rgba(0, 0, 0, 0.55); }
+
+html:not(.dark) .jv-stepper { background: #f0f0f0; border-color: rgba(0, 0, 0, 0.18); }
+html:not(.dark) .jv-step-btn { color: #0d7033; border-color: rgba(0, 0, 0, 0.10); }
+html:not(.dark) .jv-step-btn:last-child { border-color: rgba(0, 0, 0, 0.10); }
+html:not(.dark) .jv-step-btn:hover:not(:disabled) { background: rgba(13, 112, 51, 0.08); }
+html:not(.dark) .jv-step-val { color: #0d7033; }
 </style>

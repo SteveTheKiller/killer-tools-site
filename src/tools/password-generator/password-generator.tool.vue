@@ -4,8 +4,13 @@ import { onClickOutside } from '@vueuse/core';
 import { computed, nextTick, ref, watch } from 'vue';
 import { useCopy } from '@/composable/copy';
 import { useQRCode } from '@/tools/qr-code-generator/useQRCode';
+import { useStyleStore } from '@/stores/style.store';
 import { defaultOptions, estimateCrackTime, generatePassword, getEntropyBits, toPhonetic } from './password-generator.service';
 import { presets } from './presets';
+
+const styleStore = useStyleStore();
+const qrBg = computed(() => styleStore.isDarkTheme ? '#0a0a0aff' : '#f5f5f5ff');
+const qrFg = computed(() => styleStore.isDarkTheme ? '#1ea54cff' : '#0b5c28ff');
 
 const opts = ref<PasswordOptions>({ ...defaultOptions });
 const selectedPreset = ref<string>('custom');
@@ -79,8 +84,8 @@ const phonetic = computed(() => toPhonetic(password.value));
 const { qrcode } = useQRCode({
   text: password,
   color: {
-    background: ref('#0a0a0aff'),
-    foreground: ref('#1ea54cff'),
+    background: qrBg,
+    foreground: qrFg,
   },
   options: { width: 512, margin: 2 },
 });
@@ -558,6 +563,20 @@ function selectBulkCount(n: number) {
   .pg-columns {
     flex-direction: column;
   }
+
+  .pg-middle {
+    flex: 1 1 100%;
+    align-items: stretch;
+  }
+
+  .qr-wrap {
+    align-items: stretch;
+  }
+
+  .qr-frame {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 /* ── Section labels + pill rows (density taken from powershell-builder) ── */
@@ -864,5 +883,62 @@ function selectBulkCount(n: number) {
 
 .bulk-body::-webkit-scrollbar-thumb:hover {
   background: #1ea54c;
+}
+
+/* ── Light mode ── */
+html:not(.dark) .terminal-block {
+  background: var(--kt-term-bg, #e8e8e8) !important;
+  border-color: rgba(13, 112, 51, 0.25);
+}
+html:not(.dark) .terminal-text  { color: #0b5c28; }
+html:not(.dark) .terminal-body  { color: #0b5c28; }
+html:not(.dark) .prompt-arrow   { color: #0b5c28; }
+html:not(.dark) .meta-label     { color: rgba(0, 0, 0, 0.50); }
+html:not(.dark) .entropy-row    { color: #0d7033; }
+html:not(.dark) .entropy-bar    { background: rgba(13, 112, 51, 0.15); }
+html:not(.dark) .terminal-tag   { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .qr-caption     { color: rgba(13, 112, 51, 0.80); }
+
+html:not(.dark) .bulk-chiclet {
+  background: var(--kt-term-bg, #e8e8e8) !important;
+  border-color: rgba(13, 112, 51, 0.30);
+}
+html:not(.dark) .bulk-chiclet:hover { background: rgba(13, 112, 51, 0.10) !important; border-color: #0d7033; }
+html:not(.dark) .bulk-chiclet-open  { background: rgba(13, 112, 51, 0.10) !important; border-color: #0d7033; }
+html:not(.dark) .bulk-chiclet-label { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .bulk-chiclet-count { color: #0d7033; }
+html:not(.dark) .bulk-chiclet-caret { color: rgba(13, 112, 51, 0.70); }
+html:not(.dark) .bulk-chiclet-menu  { background: #fff; border-color: rgba(13, 112, 51, 0.30); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15); }
+html:not(.dark) .bulk-chiclet-option-count { color: #0d7033; }
+html:not(.dark) .bulk-chiclet-option-label { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .bulk-chiclet-option:hover { background: rgba(13, 112, 51, 0.08) !important; border-color: rgba(13, 112, 51, 0.30); }
+html:not(.dark) .bulk-chiclet-option-active { background: rgba(13, 112, 51, 0.12) !important; border-color: rgba(13, 112, 51, 0.50); }
+
+html:not(.dark) .pg-pill {
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.60);
+}
+html:not(.dark) .pg-pill:hover {
+  background: rgba(13, 112, 51, 0.10);
+  border-color: rgba(13, 112, 51, 0.40);
+  color: #0b5c28;
+}
+html:not(.dark) .pg-pill-active {
+  background: rgba(13, 112, 51, 0.15) !important;
+  border-color: #0d7033 !important;
+  color: #0b5c28 !important;
+}
+html:not(.dark) .pg-section-label { color: rgba(0, 0, 0, 0.55); opacity: 1; }
+html:not(.dark) .pg-slider { background: rgba(13, 112, 51, 0.20); }
+
+html:not(.dark) .qr-frame {
+  background: #f5f5f5;
+  border-color: rgba(13, 112, 51, 0.35);
+  box-shadow: 0 0 0 1px rgba(13, 112, 51, 0.06), 0 0 16px rgba(13, 112, 51, 0.10), inset 0 0 20px rgba(13, 112, 51, 0.03);
+}
+html:not(.dark) .qr-frame:hover {
+  border-color: rgba(13, 112, 51, 0.60);
+  box-shadow: 0 0 0 1px rgba(13, 112, 51, 0.10), 0 0 24px rgba(13, 112, 51, 0.18), inset 0 0 20px rgba(13, 112, 51, 0.05);
 }
 </style>
