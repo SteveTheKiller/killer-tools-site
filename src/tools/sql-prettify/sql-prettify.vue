@@ -169,7 +169,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
 .sq-dropdown { position: relative; outline: none; }
 .sq-dropdown-trigger {
   display: flex; align-items: center; gap: 8px; min-width: 160px;
-  background: #0f0f11; border: 1px solid rgba(30,165,76,0.2); border-radius: 5px;
+  background: #121212; border: 1px solid rgba(30,165,76,0.2); border-radius: 5px;
   padding: 7px 10px; font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem; color: rgba(255,255,255,0.75); cursor: pointer;
   transition: border-color 0.15s; text-align: left;

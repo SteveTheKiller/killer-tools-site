@@ -756,8 +756,8 @@ async function runLookup() {
   height: 34px;
   width: 130px;
   padding: 0;
-  background: rgba(30, 165, 76, 0.15);
-  border: 1px solid rgba(30, 165, 76, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(30, 165, 76, 0.45);
   border-radius: 5px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
@@ -767,9 +767,9 @@ async function runLookup() {
 }
 
 .dl-lookup-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.25);
-  border-color: rgba(30, 165, 76, 0.8);
-  color: #4ade80;
+  background: rgba(10, 10, 12, 0.95);
+  border-color: rgba(30, 165, 76, 0.75);
+  color: #1ea54c;
 }
 
 .dl-lookup-btn:disabled {
@@ -800,16 +800,20 @@ async function runLookup() {
 .whois-terminal-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
   padding: 7px 12px;
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
+.whois-terminal-bar .kt-tag {
+  margin-left: auto;
+}
+
 .whois-terminal-title {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.82);
   letter-spacing: 0.02em;
 }
 
@@ -884,7 +888,7 @@ async function runLookup() {
 
 /* Record row values (MX, NS) should read as data, not labels */
 .whois-record-row .whois-value {
-  color: rgba(255, 255, 255, 0.82);
+  color: #1ea54c;
 }
 
 /* Monospace raw record block (SPF, DMARC, DKIM) */
@@ -895,7 +899,7 @@ async function runLookup() {
   padding: 8px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: #1ea54c;
   word-break: break-all;
   line-height: 1.55;
 }
@@ -956,7 +960,12 @@ async function runLookup() {
 .whois-warn-line {
   padding: 5px 12px;
   font-size: 0.7rem;
-  color: #f0a020;
+  color: rgba(240, 160, 32, 0.85);
   line-height: 1.5;
+  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+}
+
+.whois-warn-line:last-child {
+  border-bottom: none;
 }
 </style>

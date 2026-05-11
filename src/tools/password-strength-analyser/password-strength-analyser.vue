@@ -125,7 +125,7 @@ const details = computed(() => [
 .ps-input-row {
   display: flex;
   align-items: center;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -242,7 +242,7 @@ const details = computed(() => [
 
 /* ── Terminal rows ── */
 .ps-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;

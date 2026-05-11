@@ -133,80 +133,121 @@ const sections = [
 </script>
 
 <template>
-  <div class="k-terminal">
-    <template v-for="{ name, information } in sections" :key="name">
-      <div class="k-section-row">
-        {{ name.toUpperCase() }}
-      </div>
-      <template v-for="{ label, value: { value } } in information" :key="label">
-        <div v-if="value !== undefined" class="k-row">
-          <span class="k-prompt">&gt;_</span>
-          <span class="k-label">{{ label }}</span>
-          <span class="k-value">{{ value }}</span>
+  <div class="di-grid">
+    <!-- Left column: Screen, Network -->
+    <div class="di-col">
+      <div
+        v-for="{ name, information } in [sections[0], sections[2]]"
+        :key="name"
+        class="kt-terminal di-card"
+      >
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">{{ name.toUpperCase() }}</span>
         </div>
-      </template>
-    </template>
+        <template v-for="{ label, value: { value } } in information" :key="label">
+          <div v-if="value !== undefined" class="di-row">
+            <div class="di-label-group">
+              <span class="kt-prompt">&gt;_</span>
+              <span class="di-label">{{ label }}</span>
+            </div>
+            <span class="di-value">{{ value }}</span>
+          </div>
+        </template>
+      </div>
+    </div>
+    <!-- Right column: Hardware, Browser -->
+    <div class="di-col">
+      <div
+        v-for="{ name, information } in [sections[1], sections[3]]"
+        :key="name"
+        class="kt-terminal di-card"
+      >
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">{{ name.toUpperCase() }}</span>
+        </div>
+        <template v-for="{ label, value: { value } } in information" :key="label">
+          <div v-if="value !== undefined" class="di-row">
+            <div class="di-label-group">
+              <span class="kt-prompt">&gt;_</span>
+              <span class="di-label">{{ label }}</span>
+            </div>
+            <span class="di-value">{{ value }}</span>
+          </div>
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.k-terminal {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  flex: 1 1 900px;
+.di-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  flex: 1 1 700px;
   max-width: 1400px;
 }
 
-.k-section-row {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
+.di-col {
+  flex: 1 1 300px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.k-row {
-  display: grid;
-  grid-template-columns: auto 180px 1fr;
+.di-card {
+  overflow: hidden;
+}
+
+.di-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
   padding: 7px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
-  transition: background 0.1s;
-  background: transparent !important;
+  gap: 12px;
 }
 
-.k-row:last-child {
+.di-row:last-child {
   border-bottom: none;
 }
 
-.k-row:hover {
+.di-row:hover {
   background: rgba(30, 165, 76, 0.05) !important;
 }
 
-.k-prompt {
-  color: rgba(30, 165, 76, 0.5);
-  font-weight: 600;
-  font-size: 0.75rem;
-  user-select: none;
+.di-label-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   flex-shrink: 0;
 }
 
-.k-label {
-  color: rgba(255, 255, 255, 0.45);
+.di-label {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
   white-space: nowrap;
 }
 
-.k-value {
-  color: #1ea54c;
+.di-value {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
+  color: #1ea54c;
+  text-align: right;
   word-break: break-all;
   min-width: 0;
+}
+
+
+html:not(.dark) .di-label {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+html:not(.dark) .di-value {
+  color: #0d7033;
 }
 </style>

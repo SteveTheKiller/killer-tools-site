@@ -39,18 +39,14 @@ async function copyVendor() {
     />
 
     <div class="kt-terminal">
-      <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">Vendor Info</span>
-        <button
-          type="button"
-          class="kt-copy"
-          :disabled="!details"
-          :title="copied ? 'Copied!' : 'Copy vendor info'"
-          @click="copyVendor"
-        >
-          <span v-if="copied" class="kt-copy-check">✓</span>
-          <icon-mdi-content-copy v-else />
-        </button>
+      <div
+        class="kt-terminal-bar"
+        :class="{ 'kt-terminal-bar--copied': copied }"
+        :style="details ? 'cursor: pointer' : ''"
+        :title="details ? (copied ? 'Copied!' : 'Click to copy vendor info') : ''"
+        @click="copyVendor"
+      >
+        <span class="kt-terminal-bar-title">{{ copied ? '✓ copied' : 'Vendor Info' }}</span>
       </div>
 
       <template v-if="lines.length">
@@ -71,7 +67,7 @@ async function copyVendor() {
 
 <style scoped>
 /* Scoped overrides beat NaiveUI's injected backgrounds */
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 /* bar color now from global kt-terminal.css var(--kt-term-bar-bg) */
 .kt-row { background: transparent !important; }
 .kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }

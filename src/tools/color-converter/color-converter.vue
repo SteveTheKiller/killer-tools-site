@@ -59,24 +59,24 @@ async function copyValue(key: string, value: string) {
 
 <template>
   <div class="color-tool">
-    <div class="color-terminal">
-      <!-- Color picker area -->
-      <div class="color-input-area">
-        <label class="color-field-label">Color</label>
-        <div class="color-picker-row">
-          <div class="color-swatch" :style="{ background: currentHex }" />
-          <div class="color-picker">
-            <n-color-picker
-              v-model:value="formats.picker.value.value"
-              placement="bottom-end"
-              @update:value="(v: string) => updateColorValue(formats.picker.parse(v), 'picker')"
-            />
-          </div>
+    <!-- Color picker area — above the terminal -->
+    <div class="color-input-area" mb-3>
+      <label class="color-field-label">Color</label>
+      <div class="color-picker-row">
+        <div class="color-swatch" :style="{ background: currentHex }" />
+        <div class="color-picker">
+          <n-color-picker
+            v-model:value="formats.picker.value.value"
+            placement="bottom-end"
+            @update:value="(v: string) => updateColorValue(formats.picker.parse(v), 'picker')"
+          />
         </div>
       </div>
+    </div>
 
+    <div class="kt-terminal color-terminal">
       <!-- Format rows -->
-      <div class="color-section-header">
+      <div class="kt-terminal-bar color-section-header">
         FORMATS
       </div>
 
@@ -119,7 +119,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .color-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -130,9 +130,6 @@ async function copyValue(key: string, value: string) {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid var(--kt-term-bar-border);
-  background: var(--kt-term-bar-bg);
 }
 
 .color-field-label {
@@ -157,17 +154,6 @@ async function copyValue(key: string, value: string) {
 
 .color-picker {
   flex: 1;
-}
-
-.color-section-header {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .color-row {

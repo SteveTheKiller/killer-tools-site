@@ -58,10 +58,12 @@ async function copyValue(key: string, value: string) {
 
 <template>
   <div class="url-wrap">
-    <div class="url-terminal">
-      <!-- Input area at top of terminal -->
+    <!-- Input card — full width -->
+    <div class="url-input-card kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">URL</span>
+      </div>
       <div class="url-input-area">
-        <label class="url-input-label">URL</label>
         <textarea
           v-model="urlToParse"
           class="url-textarea"
@@ -73,89 +75,84 @@ async function copyValue(key: string, value: string) {
         />
         <span v-if="isError" class="url-error-msg">Invalid URL</span>
       </div>
+    </div>
 
-      <!-- Output sections -->
-      <template v-if="urlParsed">
-        <template v-for="section in sections" :key="section.name">
-          <div class="url-section-header">
-            {{ section.name.toUpperCase() }}
-          </div>
-          <div
-            v-for="row in section.rows"
-            :key="row.label"
-            class="url-row"
-            :class="{ 'url-row-empty': !row.value }"
-            @click="copyValue(row.label, row.value)"
-          >
-            <span class="url-prompt">&gt;_</span>
-            <span class="url-label">{{ row.label }}</span>
-            <span v-if="row.value" class="url-value">{{ row.value }}</span>
-            <span v-else class="url-fallback">—</span>
-            <span class="url-copy-icon" :class="{ 'url-copy-done': copiedKey === row.label }">
-              <span v-if="copiedKey === row.label">✓</span>
-              <icon-mdi-content-copy v-else-if="row.value" />
-            </span>
-          </div>
-        </template>
-
-        <template v-if="searchParams.length">
-          <div class="url-section-header">
-            PARAMS
-          </div>
-          <div
-            v-for="[k, v] in searchParams"
-            :key="k"
-            class="url-row"
-            @click="copyValue(`param:${k}`, v)"
-          >
-            <span class="url-prompt url-prompt-dim">→</span>
-            <span class="url-param-key">{{ k }}</span>
-            <span class="url-value">{{ v }}</span>
-            <span class="url-copy-icon" :class="{ 'url-copy-done': copiedKey === `param:${k}` }">
-              <span v-if="copiedKey === `param:${k}`">✓</span>
-              <icon-mdi-content-copy v-else />
-            </span>
-          </div>
-        </template>
-      </template>
-
-      <template v-else-if="!isError && !urlToParse.trim()">
-        <div class="url-empty-state">
-          <span class="url-fallback">Enter a URL above to parse</span>
+    <!-- Section cards + params in a grid -->
+    <div v-if="urlParsed" class="url-grid">
+      <!-- Fixed sections -->
+      <div
+        v-for="section in sections"
+        :key="section.name"
+        class="url-card kt-terminal"
+      >
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">{{ section.name.toUpperCase() }}</span>
         </div>
-      </template>
+        <div
+          v-for="row in section.rows"
+          :key="row.label"
+          class="url-row"
+          :class="{ 'url-row-empty': !row.value }"
+          @click="copyValue(row.label, row.value)"
+        >
+          <span class="url-prompt">&gt;_</span>
+          <span class="url-label">{{ row.label }}</span>
+          <span v-if="row.value" class="url-value">{{ row.value }}</span>
+          <span v-else class="url-fallback">—</span>
+          <span class="url-copy-icon" :class="{ 'url-copy-done': copiedKey === row.label }">
+            <span v-if="copiedKey === row.label">✓</span>
+            <icon-mdi-content-copy v-else-if="row.value" />
+          </span>
+        </div>
+      </div>
+
+      <!-- Params card -->
+      <div v-if="searchParams.length" class="url-card kt-terminal">
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">PARAMS</span>
+        </div>
+        <div
+          v-for="[k, v] in searchParams"
+          :key="k"
+          class="url-row"
+          @click="copyValue(`param:${k}`, v)"
+        >
+          <span class="url-prompt url-prompt-dim">→</span>
+          <span class="url-param-key">{{ k }}</span>
+          <span class="url-value">{{ v }}</span>
+          <span class="url-copy-icon" :class="{ 'url-copy-done': copiedKey === `param:${k}` }">
+            <span v-if="copiedKey === `param:${k}`">✓</span>
+            <icon-mdi-content-copy v-else />
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div v-else-if="!isError && !urlToParse.trim()" class="url-empty-hint">
+      Enter a URL above to parse
     </div>
   </div>
 </template>
 
 <style scoped>
 .url-wrap {
-  flex: 1 1 600px;
-  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
 
-/* ── Terminal (wraps everything) ── */
-.url-terminal {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
+/* ── Input card ── */
+.url-input-card {
+  width: 100%;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-/* ── Input area (top of terminal) ── */
 .url-input-area {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid var(--kt-term-bar-border);
-}
-
-.url-input-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  padding: 10px 12px;
 }
 
 .url-textarea {
@@ -172,13 +169,8 @@ async function copyValue(key: string, value: string) {
   box-sizing: border-box;
 }
 
-.url-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.url-textarea-error {
-  color: #e05555;
-}
+.url-textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
+.url-textarea-error { color: #e05555; }
 
 .url-error-msg {
   font-size: 0.67rem;
@@ -186,47 +178,46 @@ async function copyValue(key: string, value: string) {
   color: #e05555;
 }
 
-.url-empty-state {
-  padding: 16px;
+/* ── Section card grid ── */
+.url-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: start;
 }
 
-.url-section-header {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
+@media (max-width: 1100px) {
+  .url-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (max-width: 900px) {
+  .url-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.url-card {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* ── Rows ── */
 .url-row {
   display: grid;
-  grid-template-columns: auto 100px 1fr auto;
+  grid-template-columns: auto 1fr 1fr auto;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 7px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   cursor: pointer;
   transition: background 0.1s;
-  background: transparent !important;
 }
 
-.url-row:last-child {
-  border-bottom: none;
-}
-
-.url-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
-}
-
-.url-row-empty {
-  cursor: default;
-}
-
-.url-row-empty:hover {
-  background: transparent !important;
-}
+.url-row:last-child { border-bottom: none; }
+.url-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.url-row-empty { cursor: default; }
+.url-row-empty:hover { background: transparent !important; }
 
 .url-prompt {
   color: rgba(30, 165, 76, 0.5);
@@ -277,11 +268,13 @@ async function copyValue(key: string, value: string) {
   flex-shrink: 0;
 }
 
-.url-row:hover .url-copy-icon {
-  color: rgba(30, 165, 76, 0.8);
-}
+.url-row:hover .url-copy-icon { color: rgba(30, 165, 76, 0.8); }
+.url-copy-done { color: #1ea54c !important; }
 
-.url-copy-done {
-  color: #1ea54c !important;
+.url-empty-hint {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 16px;
 }
 </style>

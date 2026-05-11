@@ -64,8 +64,8 @@ async function copyValue(label: string, value: string) {
       mb-3
     />
 
-    <div class="case-terminal">
-      <div class="case-section-header">
+    <div class="kt-terminal case-terminal">
+      <div class="kt-terminal-bar case-section-header">
         OUTPUT
       </div>
 
@@ -95,22 +95,11 @@ async function copyValue(label: string, value: string) {
 }
 
 .case-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-
-.case-section-header {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .case-row {

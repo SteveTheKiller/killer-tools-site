@@ -177,13 +177,12 @@ const cheatsheet = [
 </script>
 
 <template>
-  <div class="regex-layout" style="flex: 1 1 900px; max-width: 1400px; margin-top: 0; display: flex; gap: 16px; align-items: start;">
+  <div class="regex-layout" style="flex: 1 1 auto; width: 100%; max-width: 1400px; margin-top: 0; display: flex; gap: 16px; align-items: start;">
     <!-- Left: Tester -->
     <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
       <!-- Regex input -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="kt-prompt">&gt;_</span>
           <span class="rt-title">REGEX</span>
         </div>
         <div class="rt-body">
@@ -230,7 +229,6 @@ const cheatsheet = [
       <!-- Matches -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="kt-prompt">&gt;_</span>
           <span class="rt-title">MATCHES</span>
           <span v-if="results?.length > 0" class="rt-count">{{ results.length }}</span>
         </div>
@@ -270,7 +268,6 @@ const cheatsheet = [
       <!-- Sample -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="kt-prompt">&gt;_</span>
           <span class="rt-title">SAMPLE</span>
         </div>
         <div class="rt-body">
@@ -281,7 +278,6 @@ const cheatsheet = [
       <!-- Diagram -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="kt-prompt">&gt;_</span>
           <span class="rt-title">DIAGRAM</span>
         </div>
         <div class="rt-body rt-diagram-body">
@@ -296,7 +292,6 @@ const cheatsheet = [
     <div class="cheatsheet-panel">
       <div class="rt-cs-panel">
         <div class="rt-cs-panel-bar kt-terminal-bar">
-          <span class="rt-cs-dot" />
           <span class="rt-cs-panel-title">Quick Reference</span>
         </div>
         <div class="rt-cheatsheet-body">
@@ -330,14 +325,14 @@ const cheatsheet = [
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .regex-layout {
   container-type: inline-size;
   min-width: 0;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 @media (max-width: 1000px) {
@@ -387,10 +382,10 @@ const cheatsheet = [
 
 .rt-title {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #1ea54c;
-  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.1em;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -411,12 +406,30 @@ const cheatsheet = [
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Allow flag pills to wrap rather than blow out the card width */
+.rt-body .kt-pill-row {
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  width: auto;
+  overflow: visible;
+  border-radius: 6px;
 }
 
 /* Collapse NaiveUI form-item margin inside rt-body */
 .rt-body ::v-deep(.n-form-item) { margin-bottom: 0 !important; }
 .rt-body ::v-deep(.n-form-item-label) { padding-bottom: 2px !important; }
 .rt-body ::v-deep(.n-form-item-feedback-wrapper) { min-height: 0 !important; }
+
+/* Green text inside Regex and Text inputs */
+.rt-body ::v-deep(.n-input__textarea-el),
+.rt-body ::v-deep(.n-input__input-el) {
+  color: #1ea54c !important;
+  caret-color: #1ea54c;
+}
 
 /* Shrink the divider margin in this context */
 .rt-body .kt-divider { margin: 4px 0; }
@@ -506,7 +519,7 @@ const cheatsheet = [
   background: var(--kt-term-bg);
   border: 1px solid var(--kt-term-border);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .rt-cs-panel-bar {
@@ -519,15 +532,6 @@ const cheatsheet = [
   min-height: 32px;
 }
 
-.rt-cs-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(30, 165, 76, 0.55);
-  flex-shrink: 0;
-  box-shadow: 0 0 5px rgba(30, 165, 76, 0.3);
-}
-
 .rt-cs-panel-title {
   font-size: 0.7rem;
   font-weight: 700;
@@ -538,7 +542,6 @@ const cheatsheet = [
 }
 
 html:not(.dark) .rt-cs-panel-title { color: #1ea54c; }
-html:not(.dark) .rt-cs-dot { background: #1ea54c; box-shadow: 0 0 5px rgba(13, 112, 51, 0.4); }
 
 .rt-cheatsheet-body {
   padding: 14px 16px;

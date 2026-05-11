@@ -96,7 +96,7 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .wec-section {
@@ -104,11 +104,11 @@ function copyValue(value: string) {
 }
 
 .wec-category-header {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(30, 165, 76, 0.65);
+  color: #1ea54c;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.15);
@@ -130,10 +130,6 @@ function copyValue(value: string) {
   transition: background 0.1s;
 }
 
-.wec-bar:hover {
-  background: rgba(30, 165, 76, 0.18) !important;
-}
-
 .wec-bar-copied {
   background: rgba(30, 165, 76, 0.22) !important;
 }
@@ -142,7 +138,7 @@ function copyValue(value: string) {
   flex: 1;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -173,21 +169,21 @@ function copyValue(value: string) {
 .wec-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1ea54c;
   line-height: 1.3;
   word-break: break-word;
 }
 
 .wec-decimal {
   font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.78);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   letter-spacing: 0.03em;
 }
 
 .wec-desc {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;

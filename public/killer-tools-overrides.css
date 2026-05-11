@@ -258,9 +258,35 @@ html.dark .c-card {
   background-color: #252525 !important;
 }
 
-html.dark .n-layout-sider,
+html.dark .n-layout-sider {
+  background-color: #111111 !important;
+  background-image: url('/grain.png') !important;
+  background-repeat: repeat !important;
+  background-size: 256px 256px !important;
+}
+
 html.dark .sider-content {
-  background-color: #252525 !important;
+  background-color: transparent !important;
+}
+
+/* Selected menu item: pill shape — color via NaiveUI theme (itemColorActive) */
+html.dark .n-menu-item-content--selected,
+html.dark .n-menu-item-content--selected:hover {
+  border-radius: 6px !important;
+  margin: 0 8px !important;
+  width: calc(100% - 16px) !important;
+}
+
+
+/* --- killer app landing pages: match new dark theme --- */
+html.dark .kapp-version {
+  background: #1a1d22 !important;
+  border-color: rgba(30, 165, 76, 0.25) !important;
+}
+
+html.dark .kapp-gh-link {
+  background: #252525 !important;
+  border-color: rgba(30, 165, 76, 0.5) !important;
 }
 
 /* --- about page: dark mode contrast fixes --- */
@@ -311,5 +337,40 @@ body:has([href="/killer-scan"].router-link-active) .tool-header-compact {
 body:has([href="/killer-scan"].router-link-active) .tool-content-fullscreen > * {
   flex: 1 1 100% !important;
   max-width: 100%;
+}
+
+/* --- JSON Diff: use full width --- */
+body:has([href="/json-diff"].router-link-active) .tool-content-fullscreen > * {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* --- User-Agent Parser: use full width --- */
+body:has([href="/user-agent-parser"].router-link-active) .tool-content-fullscreen > * {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* --- URL Parser: use full width --- */
+body:has([href="/url-parser"].router-link-active) .tool-content-fullscreen > * {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* --- OTP Generator: use full width --- */
+body:has([href="/otp-code-generator-and-validator"].router-link-active) .tool-content-fullscreen > * {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* --- ASCII Word Art: use full width --- */
+body:has([href="/ascii-word-art"].router-link-active) .tool-content-fullscreen > * {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 

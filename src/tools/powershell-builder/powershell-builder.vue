@@ -250,10 +250,9 @@ const cheatsheet = [
     <div class="ps-main">
       <!-- ── Left: Cmdlet Browser ── -->
       <div class="ps-left">
-        <div class="ps-panel">
-          <div class="ps-panel-bar">
-            <span class="ps-panel-dot" />
-            <span class="ps-panel-title">Cmdlet Browser</span>
+        <div class="kt-terminal ps-panel">
+          <div class="kt-terminal-bar ps-panel-bar">
+            <span class="kt-terminal-bar-title ps-panel-title">Cmdlet Browser</span>
             <span v-if="selectedCmdlet" class="ps-panel-bar-right">
               <span class="badge" :class="selectedCmdlet.ps51 ? 'ps-yes' : 'ps-no'">PS 5.1</span>
               <span class="badge" :class="selectedCmdlet.ps7 ? 'ps-yes' : 'ps-no'">PS 7</span>
@@ -313,10 +312,9 @@ const cheatsheet = [
       <!-- ── Right: Generated Command + Parameters ── -->
       <div class="ps-right">
         <!-- Generated Command -->
-        <div class="ps-panel" style="margin-bottom: 12px;">
-          <div class="ps-panel-bar">
-            <span class="ps-panel-dot" />
-            <span class="ps-panel-title">Generated Command</span>
+        <div class="kt-terminal ps-panel" style="margin-bottom: 12px;">
+          <div class="kt-terminal-bar ps-panel-bar">
+            <span class="kt-terminal-bar-title ps-panel-title">Generated Command</span>
             <span v-if="selectedCmdlet" class="ps-panel-bar-right">
               <span class="ps-panel-bar-cmd">{{ selectedCmdlet.cmdlet }}</span>
             </span>
@@ -362,10 +360,9 @@ const cheatsheet = [
         </div>
 
         <!-- Parameters -->
-        <div v-if="selectedCmdlet" class="ps-panel">
-          <div class="ps-panel-bar">
-            <span class="ps-panel-dot" />
-            <span class="ps-panel-title">Parameters</span>
+        <div v-if="selectedCmdlet" class="kt-terminal ps-panel">
+          <div class="kt-terminal-bar ps-panel-bar">
+            <span class="kt-terminal-bar-title ps-panel-title">Parameters</span>
           </div>
           <div class="ps-panel-body">
             <div v-if="selectedCmdlet.notes" class="notes-strip">
@@ -450,10 +447,9 @@ const cheatsheet = [
         </template>
       </button>
       <div v-show="showCheatsheet" class="cheatsheet-panel">
-        <div class="ps-panel">
-          <div class="ps-panel-bar">
-            <span class="ps-panel-dot" />
-            <span class="ps-panel-title">Quick Reference</span>
+        <div class="kt-terminal ps-panel">
+          <div class="kt-terminal-bar ps-panel-bar">
+            <span class="kt-terminal-bar-title ps-panel-title">Quick Reference</span>
           </div>
           <div class="ps-panel-body">
             <div
@@ -627,24 +623,6 @@ const cheatsheet = [
   min-height: 30px;
 }
 
-.ps-panel-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(30, 165, 76, 0.55);
-  flex-shrink: 0;
-  box-shadow: 0 0 5px rgba(30, 165, 76, 0.3);
-}
-
-.ps-panel-title {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Cascadia Code', 'Fira Code', monospace;
-}
-
 .ps-panel-bar-right {
   margin-left: auto;
   display: flex;
@@ -682,7 +660,7 @@ const cheatsheet = [
 
 /* ── Command output block ── */
 .command-block {
-  background: #0a0a0c;
+  background: #121212;
   border: 1px solid rgba(30,165,76,0.2);
   border-radius: 6px;
   padding: 12px 14px;
@@ -692,7 +670,7 @@ const cheatsheet = [
 /* ── Snippet rows ── */
 .snippet-row {
   padding: 8px 10px; border-radius: 5px; cursor: pointer; margin-bottom: 6px;
-  background: #0f0f11; border: 1px solid rgba(30,165,76,0.12);
+  background: #121212; border: 1px solid rgba(30,165,76,0.12);
   transition: background 0.1s;
 }
 .snippet-row:hover { background: rgba(30,165,76,0.08); border-color: rgba(30,165,76,0.35); }
@@ -864,7 +842,7 @@ const cheatsheet = [
 .toggle-link:hover { opacity: 1; }
 
 /* ── Mobile: stack everything, always show cheatsheet ── */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .ps-layout {
     flex-direction: column;
   }
@@ -915,7 +893,7 @@ const cheatsheet = [
 
 /* ── Elevate c-input-text inside terminal panels so they're visible ── */
 .ps-panel-body :deep(.c-input-text .input-wrapper) {
-  background-color: #0f0f11 !important;
+  background-color: #121212 !important;
   border-color: rgba(30, 165, 76, 0.2) !important;
 }
 
@@ -924,7 +902,7 @@ const cheatsheet = [
 }
 
 .ps-panel-body :deep(.c-input-text .input-wrapper:focus-within) {
-  background-color: #0f0f11 !important;
+  background-color: #121212 !important;
   border-color: rgba(30, 165, 76, 0.65) !important;
 }
 

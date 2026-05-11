@@ -221,7 +221,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 /* ── Textarea ── */
 .hm-textarea {
   width: 100%;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -248,7 +248,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   display: flex;
   align-items: center;
   width: 100%;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -306,7 +306,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -339,7 +339,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   top: calc(100% + 4px);
   left: 0;
   min-width: 100%;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;
@@ -378,7 +378,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 
 /* ── Output ── */
 .hm-output {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.15);
   border-radius: 5px;
   padding: 10px 12px;

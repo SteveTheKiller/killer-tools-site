@@ -36,9 +36,9 @@ function closeOnBlur(set: (val: boolean) => void) {
 <template>
   <div class="en-wrap">
     <!-- Encrypt panel -->
-    <div class="en-panel">
-      <div class="en-panel-header">
-        <span class="en-panel-title">ENCRYPT</span>
+    <div class="en-panel kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">ENCRYPT</span>
       </div>
       <div class="en-body">
         <div class="en-row">
@@ -91,9 +91,9 @@ function closeOnBlur(set: (val: boolean) => void) {
     </div>
 
     <!-- Decrypt panel -->
-    <div class="en-panel">
-      <div class="en-panel-header">
-        <span class="en-panel-title">DECRYPT</span>
+    <div class="en-panel kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">DECRYPT</span>
       </div>
       <div class="en-body">
         <div class="en-row">
@@ -152,38 +152,26 @@ function closeOnBlur(set: (val: boolean) => void) {
 </template>
 
 <style scoped>
-/* Outer wrapper */
+/* Outer wrapper — 2-col grid at wide viewports */
 .en-wrap {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 14px;
-  align-items: flex-start;
+  align-items: start;
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .en-wrap {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Panel */
 .en-panel {
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  flex: 1 1 320px;
-}
-
-.en-panel-header {
-  padding: 10px 16px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
-  background: rgba(30, 165, 76, 0.05);
-}
-
-.en-panel-title {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #1ea54c;
+  min-width: 0;
 }
 
 .en-body {
@@ -229,7 +217,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 
 /* Textarea */
 .en-textarea {
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -256,7 +244,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 /* Input */
 .en-input {
   height: 32px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 0 10px;
@@ -280,7 +268,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -311,7 +299,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   top: calc(100% + 4px);
   left: 0;
   min-width: 100%;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;

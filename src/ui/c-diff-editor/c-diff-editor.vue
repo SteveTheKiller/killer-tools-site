@@ -98,8 +98,8 @@ onMounted(() => {
   <div ref="wrapperRef" class="cd-wrapper">
     <!-- Narrow: two stacked textareas -->
     <div v-if="isNarrow" class="cd-narrow">
-      <div class="cd-pane">
-        <div class="cd-pane-label">
+      <div class="cd-pane kt-terminal">
+        <div class="cd-pane-label kt-terminal-bar">
           ORIGINAL
         </div>
         <textarea
@@ -110,8 +110,8 @@ onMounted(() => {
           placeholder="Original text..."
         />
       </div>
-      <div class="cd-pane">
-        <div class="cd-pane-label">
+      <div class="cd-pane kt-terminal">
+        <div class="cd-pane-label kt-terminal-bar">
           MODIFIED
         </div>
         <textarea
@@ -149,23 +149,22 @@ onMounted(() => {
 .cd-pane {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  overflow: hidden;
 }
 
+/* kt-terminal-bar handles bg/border/dot — just set font/size */
 .cd-pane-label {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.45);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
 .cd-textarea {
   width: 100%;
   box-sizing: border-box;
-  background: #0f0f11;
-  border: 1px solid rgba(30, 165, 76, 0.2);
-  border-radius: 6px;
+  background: transparent;
+  border: none;
   padding: 10px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
@@ -173,19 +172,11 @@ onMounted(() => {
   outline: none;
   resize: vertical;
   line-height: 1.6;
-  transition: border-color 0.15s;
 }
 
-.cd-textarea:focus { border-color: rgba(30, 165, 76, 0.5); }
 .cd-textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 /* Light mode */
-html:not(.dark) .cd-pane-label { color: rgba(0, 0, 0, 0.45); }
-html:not(.dark) .cd-textarea {
-  background: #f5f5f5;
-  border-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.80);
-}
-html:not(.dark) .cd-textarea:focus { border-color: rgba(13, 112, 51, 0.50); }
+html:not(.dark) .cd-textarea { color: rgba(0, 0, 0, 0.80); }
 html:not(.dark) .cd-textarea::placeholder { color: rgba(0, 0, 0, 0.30); }
 </style>

@@ -132,7 +132,8 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 .tool-title-compact {
   font-size: 0.8rem;
   font-weight: 600;
-  opacity: 0.88;
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -151,19 +152,20 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 
 .tool-header-link {
   font-size: 0.8rem;
-  opacity: 0.5;
-  color: inherit;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
-  transition: opacity 0.15s;
+  transition: color 0.15s;
 
   &:hover {
-    opacity: 1;
+    color: rgba(255, 255, 255, 1);
   }
 }
 
 .tool-desc-compact {
   font-size: 0.75rem;
-  opacity: 0.72;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 :global(html:not(.dark)) .tool-desc-compact {
@@ -220,7 +222,7 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
     width: 100%;
 
     .n-h1 {
-      opacity: 0.9;
+      opacity: 1;
       font-size: 40px;
       font-weight: 400;
       margin: 0;
@@ -238,8 +240,8 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 
     .description {
       margin: 0;
-
-      opacity: 0.85;
+      opacity: 1;
+      color: rgba(255, 255, 255, 0.82);
     }
   }
 }

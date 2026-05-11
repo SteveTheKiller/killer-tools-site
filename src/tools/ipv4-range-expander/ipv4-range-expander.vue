@@ -75,7 +75,7 @@ async function copyValue(label: string, value: string | undefined) {
 
 <template>
   <div class="range-tool">
-    <div class="range-inputs" mb-3>
+    <div class="range-fields" mb-3>
       <c-input-text
         v-model:value="rawStartAddress"
         label="Start address"
@@ -136,7 +136,7 @@ async function copyValue(label: string, value: string | undefined) {
 
 <style scoped>
 /* Scoped overrides beat NaiveUI's injected backgrounds */
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 /* bar color now from global kt-terminal.css var(--kt-term-bar-bg) */
 .kt-row { background: transparent !important; }
 .kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
@@ -147,7 +147,7 @@ async function copyValue(label: string, value: string | undefined) {
   container-type: inline-size;
 }
 
-.range-inputs {
+.range-fields {
   display: flex;
   gap: 16px;
 }
@@ -157,7 +157,7 @@ async function copyValue(label: string, value: string | undefined) {
 }
 
 @container (max-width: 560px) {
-  .range-inputs { flex-direction: column; gap: 8px; }
+  .range-fields { flex-direction: column; gap: 8px; }
   .range-row { grid-template-columns: auto 110px 1fr 1fr auto; gap: 6px; padding: 6px 8px; }
 }
 

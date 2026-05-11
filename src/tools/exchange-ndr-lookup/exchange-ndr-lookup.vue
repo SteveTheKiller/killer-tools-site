@@ -74,7 +74,6 @@ function copyValue(value: string) {
             :title="copiedValue === code ? 'Copied!' : 'Click to copy NDR code'"
             @click="copyValue(code)"
           >
-            <span class="kt-prompt">&gt;_</span>
             <code class="ndr-code">{{ copiedValue === code ? '✓ copied' : code }}</code>
             <span class="ndr-severity" :class="`ndr-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
@@ -104,7 +103,7 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ndr-section {
@@ -112,11 +111,11 @@ function copyValue(value: string) {
 }
 
 .ndr-category-header {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(30, 165, 76, 0.65);
+  color: #1ea54c;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.15);
@@ -138,10 +137,6 @@ function copyValue(value: string) {
   transition: background 0.1s;
 }
 
-.ndr-bar:hover {
-  background: rgba(30, 165, 76, 0.18) !important;
-}
-
 .ndr-bar-copied {
   background: rgba(30, 165, 76, 0.22) !important;
 }
@@ -150,7 +145,7 @@ function copyValue(value: string) {
   flex: 1;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -181,7 +176,7 @@ function copyValue(value: string) {
 .ndr-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1ea54c;
   line-height: 1.3;
 }
 

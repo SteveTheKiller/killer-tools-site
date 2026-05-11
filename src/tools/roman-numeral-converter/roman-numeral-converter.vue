@@ -51,60 +51,65 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 
 <template>
   <div class="rn-wrap">
-    <div class="rn-panel">
-      <!-- Arabic side -->
-      <div class="rn-side">
-        <span class="rn-sublabel">ARABIC</span>
-        <div class="rn-input-wrap" :class="{ 'rn-input-error': arabic && !arabicValid }">
-          <input
-            v-model="arabic"
-            class="rn-input"
-            type="number"
-            :min="MIN_ARABIC_TO_ROMAN"
-            :max="MAX_ARABIC_TO_ROMAN"
-            placeholder="1–3999"
-            autofocus
-            spellcheck="false"
-          >
-        </div>
-        <span v-if="arabic && !arabicValid" class="rn-error-msg">
-          Must be {{ MIN_ARABIC_TO_ROMAN }}–{{ MAX_ARABIC_TO_ROMAN.toLocaleString() }}
-        </span>
-        <button class="rn-copy-btn" :disabled="!arabicValid" @click="copyArabic()">
-          <span v-if="copiedArabic">✓ Copied</span>
-          <template v-else>
-            <icon-mdi-content-copy />
-            Copy
-          </template>
-        </button>
+    <div class="rn-panel kt-terminal">
+      <div class="rn-panel-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">CONVERTER</span>
       </div>
-
-      <!-- Divider -->
-      <div class="rn-divider">
-        <span class="rn-arrows">⟷</span>
-      </div>
-
-      <!-- Roman side -->
-      <div class="rn-side">
-        <span class="rn-sublabel">ROMAN NUMERAL</span>
-        <div class="rn-input-wrap" :class="{ 'rn-input-error': roman && !romanValid }">
-          <input
-            v-model="roman"
-            class="rn-input rn-input-roman"
-            placeholder="XIV"
-            spellcheck="false"
-          >
+      <div class="rn-body">
+        <!-- Arabic side -->
+        <div class="rn-side">
+          <span class="rn-sublabel">ARABIC</span>
+          <div class="rn-input-wrap" :class="{ 'rn-input-error': arabic && !arabicValid }">
+            <input
+              v-model="arabic"
+              class="rn-input"
+              type="number"
+              :min="MIN_ARABIC_TO_ROMAN"
+              :max="MAX_ARABIC_TO_ROMAN"
+              placeholder="1–3999"
+              autofocus
+              spellcheck="false"
+            >
+          </div>
+          <span v-if="arabic && !arabicValid" class="rn-error-msg">
+            Must be {{ MIN_ARABIC_TO_ROMAN }}–{{ MAX_ARABIC_TO_ROMAN.toLocaleString() }}
+          </span>
+          <button class="rn-copy-btn" :disabled="!arabicValid" @click="copyArabic()">
+            <span v-if="copiedArabic">✓ Copied</span>
+            <template v-else>
+              <icon-mdi-content-copy />
+              Copy
+            </template>
+          </button>
         </div>
-        <span v-if="roman && !romanValid" class="rn-error-msg">
-          Not a valid Roman numeral
-        </span>
-        <button class="rn-copy-btn" :disabled="!romanValid" @click="copyRoman()">
-          <span v-if="copiedRoman">✓ Copied</span>
-          <template v-else>
-            <icon-mdi-content-copy />
-            Copy
-          </template>
-        </button>
+
+        <!-- Divider -->
+        <div class="rn-divider">
+          <span class="rn-arrows">⟷</span>
+        </div>
+
+        <!-- Roman side -->
+        <div class="rn-side">
+          <span class="rn-sublabel">ROMAN NUMERAL</span>
+          <div class="rn-input-wrap" :class="{ 'rn-input-error': roman && !romanValid }">
+            <input
+              v-model="roman"
+              class="rn-input rn-input-roman"
+              placeholder="XIV"
+              spellcheck="false"
+            >
+          </div>
+          <span v-if="roman && !romanValid" class="rn-error-msg">
+            Not a valid Roman numeral
+          </span>
+          <button class="rn-copy-btn" :disabled="!romanValid" @click="copyRoman()">
+            <span v-if="copiedRoman">✓ Copied</span>
+            <template v-else>
+              <icon-mdi-content-copy />
+              Copy
+            </template>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -117,13 +122,19 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 }
 
 .rn-panel {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rn-panel-bar {
+  padding: 7px 12px;
+}
+
+.rn-body {
   display: flex;
   align-items: flex-start;
   gap: 24px;
+  padding: 20px 24px;
 }
 
 /* ── Side ── */
@@ -161,7 +172,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 
 .rn-input {
   width: 100%;
-  background: #0f0f11;
+  background: #121212;
   border: none;
   outline: none;
   padding: 10px 12px;
@@ -237,11 +248,6 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 }
 
 /* ── Light mode ── */
-html:not(.dark) .rn-panel {
-  background: var(--kt-term-bg, #cccccc);
-  border-color: rgba(13, 112, 51, 0.30);
-}
-
 html:not(.dark) .rn-sublabel { color: rgba(0, 0, 0, 0.55); }
 
 html:not(.dark) .rn-arrows { color: rgba(13, 112, 51, 0.45); }
@@ -264,7 +270,5 @@ html:not(.dark) .rn-copy-btn {
 
 html:not(.dark) .rn-copy-btn:hover:not(:disabled) {
   background: rgba(13, 112, 51, 0.15);
-  border-color: #0d7033;
-  color: #083d1a;
 }
 </style>

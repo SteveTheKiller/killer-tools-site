@@ -58,7 +58,7 @@ function copyValue(value: string) {
       mb-4
     />
 
-    <div class="mb-6 text-xs op-40">
+    <div class="mb-6 text-xs" style="color: rgba(255,255,255,0.4);">
       See also: <a href="https://m365maps.com" target="_blank" rel="noopener" style="color: #1ea54c; text-decoration: none;">M365 Maps</a> by Aaron Dinnage
     </div>
 
@@ -74,7 +74,6 @@ function copyValue(value: string) {
           class="kt-terminal sku-card"
         >
           <div class="kt-terminal-bar sku-bar">
-            <span class="kt-prompt">&gt;_</span>
             <span class="sku-tier" :class="`sku-tier-${tierColor[tier]}`">{{ tier }}</span>
           </div>
           <div
@@ -98,7 +97,7 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .sku-section {
@@ -106,14 +105,14 @@ function copyValue(value: string) {
 }
 
 .sku-category-header {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(30, 165, 76, 0.65);
+  color: #1ea54c;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
   margin-bottom: 12px;
 }
 
@@ -134,7 +133,7 @@ function copyValue(value: string) {
 .sku-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 1);
   margin-bottom: 4px;
   line-height: 1.3;
 }
@@ -162,11 +161,6 @@ function copyValue(value: string) {
   cursor: pointer;
   transition: background 0.1s;
 }
-
-.sku-body:hover {
-  background: rgba(30, 165, 76, 0.06);
-}
-
 .sku-body-copied {
   background: rgba(30, 165, 76, 0.12) !important;
 }
@@ -187,7 +181,7 @@ function copyValue(value: string) {
 
 .sku-desc {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;

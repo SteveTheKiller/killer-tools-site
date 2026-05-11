@@ -34,7 +34,7 @@ async function copyToClipboard(text: string) {
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;" class="w-full">
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
       <div class="min-w-0">
         <div class="mb-1 text-xs opacity-60">
           Your Markdown to convert:

@@ -3,8 +3,8 @@ import type { OutputFormat, PasswordMode, PasswordOptions } from './password-gen
 import { onClickOutside } from '@vueuse/core';
 import { computed, nextTick, ref, watch } from 'vue';
 import { useCopy } from '@/composable/copy';
-import { useQRCode } from '@/tools/qr-code-generator/useQRCode';
 import { useStyleStore } from '@/stores/style.store';
+import { useQRCode } from '@/tools/qr-code-generator/useQRCode';
 import { defaultOptions, estimateCrackTime, generatePassword, getEntropyBits, toPhonetic } from './password-generator.service';
 import { presets } from './presets';
 
@@ -150,217 +150,231 @@ function selectBulkCount(n: number) {
     <div class="pg-columns">
       <!-- LEFT: terminal display + controls -->
       <div class="pg-col pg-left">
-        <div class="terminal-block">
-          <div class="terminal-prompt">
-            <span class="prompt-arrow">&gt;_</span>
-            <pre class="terminal-text" :class="{ 'no-word-break': opts.mode === 'passphrase' }">{{ password || '...' }}</pre>
+        <!-- Password display -->
+        <div class="kt-terminal">
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">PASSWORD</span>
           </div>
-          <div class="terminal-meta">
-            <div class="entropy-row">
-              <span><span class="meta-label">Entropy:</span> <strong>{{ Math.round(entropy) }}</strong> bits</span>
-              <span><span class="meta-label">Crack:</span> {{ crackTime }}</span>
+          <div class="pg-pw-body">
+            <div class="terminal-prompt">
+              <span class="prompt-arrow">&gt;_</span>
+              <pre class="terminal-text" :class="{ 'no-word-break': opts.mode === 'passphrase' }">{{ password || '...' }}</pre>
             </div>
-            <div class="entropy-bar">
-              <div class="entropy-fill" :style="{ width: `${entropyPercent}%`, background: entropyColor }" />
+            <div class="terminal-meta">
+              <div class="entropy-row">
+                <span><span class="meta-label">Entropy:</span> <strong>{{ Math.round(entropy) }}</strong> bits</span>
+                <span><span class="meta-label">Crack:</span> {{ crackTime }}</span>
+              </div>
+              <div class="entropy-bar">
+                <div class="entropy-fill" :style="{ width: `${entropyPercent}%`, background: entropyColor }" />
+              </div>
             </div>
-          </div>
-          <div class="terminal-actions">
-            <c-button @click="copy()">
-              Copy
-            </c-button>
-            <c-button @click="regenerate">
-              Refresh
-            </c-button>
+            <div class="terminal-actions">
+              <button type="button" class="pg-btn pg-btn-primary" @click="copy()">
+                <icon-mdi-content-copy />
+                Copy
+              </button>
+              <button type="button" class="pg-btn" @click="regenerate">
+                <icon-mdi-refresh />
+                Refresh
+              </button>
+            </div>
           </div>
         </div>
 
-        <c-card>
-          <!-- Presets -->
-          <div class="pg-section-label">
-            Preset
+        <!-- Options / controls -->
+        <div class="kt-terminal">
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">OPTIONS</span>
           </div>
-          <div class="pg-pill-row">
-            <button
-              v-for="p in presets"
-              :key="p.id"
-              type="button"
-              class="pg-pill"
-              :class="{ 'pg-pill-active': selectedPreset === p.id }"
-              :title="p.description"
-              @click="applyPreset(p.id)"
-            >
-              {{ p.label }}
-            </button>
-          </div>
-
-          <!-- Mode -->
-          <div class="pg-section-label">
-            Mode
-          </div>
-          <div class="pg-pill-row">
-            <button
-              v-for="m in modeOptions"
-              :key="m.value"
-              type="button"
-              class="pg-pill"
-              :class="{ 'pg-pill-active': opts.mode === m.value }"
-              @click="opts.mode = m.value"
-            >
-              {{ m.label }}
-            </button>
-          </div>
-
-          <!-- Format (only in format mode) -->
-          <template v-if="opts.mode === 'format'">
+          <div class="pg-controls-body">
+            <!-- Presets -->
             <div class="pg-section-label">
-              Format
+              Preset
             </div>
             <div class="pg-pill-row">
               <button
-                v-for="f in formatOptions"
-                :key="f.value"
+                v-for="p in presets"
+                :key="p.id"
                 type="button"
                 class="pg-pill"
-                :class="{ 'pg-pill-active': opts.format === f.value }"
-                @click="opts.format = f.value"
+                :class="{ 'pg-pill-active': selectedPreset === p.id }"
+                :title="p.description"
+                @click="applyPreset(p.id)"
               >
-                {{ f.label }}
+                {{ p.label }}
               </button>
             </div>
-          </template>
 
-          <!-- Length (random / pronounceable / non-UUID format) -->
-          <template v-if="showLengthSlider">
+            <!-- Mode -->
             <div class="pg-section-label">
-              Length ({{ opts.length }})
-            </div>
-            <input
-              v-model.number="opts.length"
-              type="range"
-              :step="1"
-              :min="4"
-              :max="128"
-              class="pg-slider"
-            >
-          </template>
-
-          <!-- Passphrase word count -->
-          <template v-if="opts.mode === 'passphrase'">
-            <div class="pg-section-label">
-              Word count ({{ opts.wordCount }})
-            </div>
-            <input
-              v-model.number="opts.wordCount"
-              type="range"
-              :step="1"
-              :min="3"
-              :max="12"
-              class="pg-slider"
-            >
-
-            <div class="pg-section-label">
-              Separator
+              Mode
             </div>
             <div class="pg-pill-row">
               <button
-                v-for="s in separatorOptions"
-                :key="s.value"
+                v-for="m in modeOptions"
+                :key="m.value"
                 type="button"
-                class="pg-pill pg-pill-mono"
-                :class="{ 'pg-pill-active': opts.wordSeparator === s.value }"
-                @click="opts.wordSeparator = s.value"
+                class="pg-pill"
+                :class="{ 'pg-pill-active': opts.mode === m.value }"
+                @click="opts.mode = m.value"
               >
-                {{ s.label }}
+                {{ m.label }}
               </button>
             </div>
-          </template>
 
-          <!-- Character classes (random only) -->
-          <template v-if="opts.mode === 'random'">
-            <div class="pg-section-label">
-              Character classes
-            </div>
-            <div class="pg-pill-row">
-              <button
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.withUppercase }"
-                @click="opts.withUppercase = !opts.withUppercase"
-              >
-                Uppercase
-              </button>
-              <button
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.withLowercase }"
-                @click="opts.withLowercase = !opts.withLowercase"
-              >
-                Lowercase
-              </button>
-              <button
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.withNumbers }"
-                @click="opts.withNumbers = !opts.withNumbers"
-              >
-                Numbers
-              </button>
-              <button
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.withSymbols }"
-                @click="opts.withSymbols = !opts.withSymbols"
-              >
-                Symbols
-              </button>
-            </div>
-          </template>
+            <!-- Format (only in format mode) -->
+            <template v-if="opts.mode === 'format'">
+              <div class="pg-section-label">
+                Format
+              </div>
+              <div class="pg-pill-row">
+                <button
+                  v-for="f in formatOptions"
+                  :key="f.value"
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.format === f.value }"
+                  @click="opts.format = f.value"
+                >
+                  {{ f.label }}
+                </button>
+              </div>
+            </template>
 
-          <!-- Options row -->
-          <template v-if="opts.mode === 'random' || opts.mode === 'pronounceable' || opts.mode === 'passphrase'">
-            <div class="pg-section-label">
-              Options
-            </div>
-            <div class="pg-pill-row">
-              <button
-                v-if="opts.mode === 'random'"
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.excludeAmbiguous }"
-                @click="opts.excludeAmbiguous = !opts.excludeAmbiguous"
+            <!-- Length (random / pronounceable / non-UUID format) -->
+            <template v-if="showLengthSlider">
+              <div class="pg-section-label">
+                Length ({{ opts.length }})
+              </div>
+              <input
+                v-model.number="opts.length"
+                type="range"
+                :step="1"
+                :min="4"
+                :max="128"
+                class="pg-slider"
               >
-                Exclude ambiguous
-              </button>
-              <button
-                v-if="opts.mode === 'random'"
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.requireOneOfEach }"
-                @click="opts.requireOneOfEach = !opts.requireOneOfEach"
+            </template>
+
+            <!-- Passphrase word count -->
+            <template v-if="opts.mode === 'passphrase'">
+              <div class="pg-section-label">
+                Word count ({{ opts.wordCount }})
+              </div>
+              <input
+                v-model.number="opts.wordCount"
+                type="range"
+                :step="1"
+                :min="3"
+                :max="12"
+                class="pg-slider"
               >
-                Require one of each
-              </button>
-              <button
-                v-if="opts.mode === 'passphrase'"
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.capitalizeWords }"
-                @click="opts.capitalizeWords = !opts.capitalizeWords"
-              >
-                Capitalize words
-              </button>
-              <button
-                v-if="opts.mode === 'passphrase' || opts.mode === 'pronounceable'"
-                type="button"
-                class="pg-pill"
-                :class="{ 'pg-pill-active': opts.appendNumber }"
-                @click="opts.appendNumber = !opts.appendNumber"
-              >
-                Append 2 digits
-              </button>
-            </div>
-          </template>
-        </c-card>
+
+              <div class="pg-section-label">
+                Separator
+              </div>
+              <div class="pg-pill-row">
+                <button
+                  v-for="s in separatorOptions"
+                  :key="s.value"
+                  type="button"
+                  class="pg-pill pg-pill-mono"
+                  :class="{ 'pg-pill-active': opts.wordSeparator === s.value }"
+                  @click="opts.wordSeparator = s.value"
+                >
+                  {{ s.label }}
+                </button>
+              </div>
+            </template>
+
+            <!-- Character classes (random only) -->
+            <template v-if="opts.mode === 'random'">
+              <div class="pg-section-label">
+                Character classes
+              </div>
+              <div class="pg-pill-row">
+                <button
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.withUppercase }"
+                  @click="opts.withUppercase = !opts.withUppercase"
+                >
+                  Uppercase
+                </button>
+                <button
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.withLowercase }"
+                  @click="opts.withLowercase = !opts.withLowercase"
+                >
+                  Lowercase
+                </button>
+                <button
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.withNumbers }"
+                  @click="opts.withNumbers = !opts.withNumbers"
+                >
+                  Numbers
+                </button>
+                <button
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.withSymbols }"
+                  @click="opts.withSymbols = !opts.withSymbols"
+                >
+                  Symbols
+                </button>
+              </div>
+            </template>
+
+            <!-- Options row -->
+            <template v-if="opts.mode === 'random' || opts.mode === 'pronounceable' || opts.mode === 'passphrase'">
+              <div class="pg-section-label">
+                Options
+              </div>
+              <div class="pg-pill-row">
+                <button
+                  v-if="opts.mode === 'random'"
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.excludeAmbiguous }"
+                  @click="opts.excludeAmbiguous = !opts.excludeAmbiguous"
+                >
+                  Exclude ambiguous
+                </button>
+                <button
+                  v-if="opts.mode === 'random'"
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.requireOneOfEach }"
+                  @click="opts.requireOneOfEach = !opts.requireOneOfEach"
+                >
+                  Require one of each
+                </button>
+                <button
+                  v-if="opts.mode === 'passphrase'"
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.capitalizeWords }"
+                  @click="opts.capitalizeWords = !opts.capitalizeWords"
+                >
+                  Capitalize words
+                </button>
+                <button
+                  v-if="opts.mode === 'passphrase' || opts.mode === 'pronounceable'"
+                  type="button"
+                  class="pg-pill"
+                  :class="{ 'pg-pill-active': opts.appendNumber }"
+                  @click="opts.appendNumber = !opts.appendNumber"
+                >
+                  Append 2 digits
+                </button>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
 
       <!-- MIDDLE: QR code only -->
@@ -377,14 +391,15 @@ function selectBulkCount(n: number) {
 
       <!-- RIGHT: phonetic + number-of-passwords + bulk list -->
       <div class="pg-col pg-right">
-        <div v-if="opts.mode !== 'passphrase'" class="terminal-block phonetic-block">
-          <div class="terminal-header">
-            <span class="terminal-tag">PHONETIC</span>
-            <c-button size="small" @click="copyPhonetic()">
+        <div v-if="opts.mode !== 'passphrase'" class="kt-terminal">
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">PHONETIC</span>
+            <button type="button" class="pg-copy-btn" @click="copyPhonetic()">
+              <icon-mdi-content-copy />
               Copy
-            </c-button>
+            </button>
           </div>
-          <pre class="terminal-body">{{ phonetic }}</pre>
+          <pre class="terminal-body pg-body-pad">{{ phonetic }}</pre>
         </div>
 
         <div ref="bulkChicletRef" class="bulk-chiclet-wrap">
@@ -415,14 +430,15 @@ function selectBulkCount(n: number) {
           </div>
         </div>
 
-        <div v-if="bulkPasswords.length > 1" class="terminal-block bulk-block">
-          <div class="terminal-header">
-            <span class="terminal-tag">{{ bulkPasswords.length }} PASSWORDS</span>
-            <c-button size="small" @click="copyBulk()">
+        <div v-if="bulkPasswords.length > 1" class="kt-terminal">
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">{{ bulkPasswords.length }} PASSWORDS</span>
+            <button type="button" class="pg-copy-btn" @click="copyBulk()">
+              <icon-mdi-content-copy />
               Copy all
-            </c-button>
+            </button>
           </div>
-          <pre class="terminal-body bulk-body" :class="{ 'no-word-break': opts.mode === 'passphrase' }">{{ bulkPasswords.join('\n') }}</pre>
+          <pre class="terminal-body bulk-body pg-body-pad" :class="{ 'no-word-break': opts.mode === 'passphrase' }">{{ bulkPasswords.join('\n') }}</pre>
         </div>
       </div>
     </div>
@@ -442,13 +458,20 @@ function selectBulkCount(n: number) {
   container-type: inline-size;
 }
 
-/* ── Terminal-style password display ───────────────────────────────── */
-.terminal-block {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  border-radius: 8px;
+/* ── Password display body ── */
+.pg-pw-body {
   padding: 16px 20px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* ── Controls body ── */
+.pg-controls-body {
+  padding: 12px 14px;
+}
+
+/* ── Generic padded body for phonetic / bulk pre blocks ── */
+.pg-body-pad {
+  padding: 10px 14px;
 }
 
 .terminal-prompt {
@@ -511,6 +534,29 @@ function selectBulkCount(n: number) {
   margin-top: 12px;
   display: flex;
   gap: 8px;
+}
+
+/* ── Copy button (phonetic / bulk titlebar) ── */
+.pg-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  background: transparent !important;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  border-radius: 4px;
+  color: rgba(30, 165, 76, 0.75);
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.72rem;
+  padding: 2px 10px;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+}
+
+.pg-copy-btn:hover {
+  color: #1ea54c;
+  border-color: rgba(30, 165, 76, 0.7);
+  background: rgba(30, 165, 76, 0.06) !important;
 }
 
 /* ── Two-column body ───────────────────────────────────────────────── */
@@ -697,7 +743,7 @@ function selectBulkCount(n: number) {
   align-items: baseline;
   gap: 10px;
   padding: 10px 16px;
-  background: #0a0a0c !important;
+  background: var(--kt-term-bg, #121212) !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -784,22 +830,7 @@ function selectBulkCount(n: number) {
   font-size: 0.8rem;
 }
 
-/* ── Shared terminal-block variants for phonetic + bulk ──────────── */
-.terminal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.terminal-tag {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
+/* ── Shared terminal body for phonetic + bulk ── */
 .terminal-body {
   margin: 0;
   color: #1ea54c;
@@ -808,14 +839,6 @@ function selectBulkCount(n: number) {
   line-height: 1.5;
   word-break: break-word;
   white-space: pre-wrap;
-}
-
-.phonetic-block {
-  padding: 10px 14px;
-}
-
-.bulk-block {
-  padding: 10px 14px;
 }
 
 .bulk-body {
@@ -885,19 +908,62 @@ function selectBulkCount(n: number) {
   background: #1ea54c;
 }
 
-/* ── Light mode ── */
-html:not(.dark) .terminal-block {
-  background: var(--kt-term-bg, #e8e8e8) !important;
-  border-color: rgba(13, 112, 51, 0.25);
+/* ── Action buttons (Copy / Refresh) ── */
+.pg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 5px;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: transparent !important;
+  color: rgba(30, 165, 76, 0.8);
+  font-size: 0.78rem;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
 }
+
+.pg-btn:hover {
+  background: rgba(30, 165, 76, 0.1) !important;
+  border-color: rgba(30, 165, 76, 0.65);
+  color: #1ea54c;
+}
+
+.pg-btn-primary {
+  background: rgba(30, 165, 76, 0.12) !important;
+  border-color: rgba(30, 165, 76, 0.5);
+  color: #1ea54c;
+}
+
+.pg-btn-primary:hover {
+  background: rgba(30, 165, 76, 0.22) !important;
+  border-color: #1ea54c;
+}
+
+/* ── Light mode ── */
 html:not(.dark) .terminal-text  { color: #0b5c28; }
 html:not(.dark) .terminal-body  { color: #0b5c28; }
 html:not(.dark) .prompt-arrow   { color: #0b5c28; }
 html:not(.dark) .meta-label     { color: rgba(0, 0, 0, 0.50); }
 html:not(.dark) .entropy-row    { color: #0d7033; }
 html:not(.dark) .entropy-bar    { background: rgba(13, 112, 51, 0.15); }
-html:not(.dark) .terminal-tag   { color: rgba(0, 0, 0, 0.55); }
 html:not(.dark) .qr-caption     { color: rgba(13, 112, 51, 0.80); }
+
+html:not(.dark) .pg-btn           { color: #0d7033; border-color: rgba(13, 112, 51, 0.35); }
+html:not(.dark) .pg-btn:hover     { background: rgba(13, 112, 51, 0.08) !important; border-color: rgba(13, 112, 51, 0.65); color: #0b5c28; }
+html:not(.dark) .pg-btn-primary   { background: rgba(13, 112, 51, 0.10) !important; border-color: rgba(13, 112, 51, 0.45); color: #0b5c28; }
+html:not(.dark) .pg-btn-primary:hover { background: rgba(13, 112, 51, 0.18) !important; border-color: #0d7033; }
+
+html:not(.dark) .pg-copy-btn {
+  border-color: rgba(13, 112, 51, 0.35);
+  color: rgba(13, 112, 51, 0.75);
+}
+html:not(.dark) .pg-copy-btn:hover {
+  color: #0b5c28;
+  border-color: rgba(13, 112, 51, 0.7);
+  background: rgba(13, 112, 51, 0.06) !important;
+}
 
 html:not(.dark) .bulk-chiclet {
   background: var(--kt-term-bg, #e8e8e8) !important;

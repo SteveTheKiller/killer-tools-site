@@ -88,7 +88,7 @@ function copyId(id: number) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .wel-section {
@@ -96,11 +96,11 @@ function copyId(id: number) {
 }
 
 .wel-category-header {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(30, 165, 76, 0.65);
+  color: #1ea54c;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.15);
@@ -118,7 +118,7 @@ function copyId(id: number) {
   padding: 2px 7px;
   border-radius: 4px;
   background: rgba(30, 165, 76, 0.1);
-  color: rgba(30, 165, 76, 0.6);
+  color: #1ea54c;
   border: 1px solid rgba(30, 165, 76, 0.2);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   white-space: nowrap;
@@ -139,10 +139,6 @@ function copyId(id: number) {
   transition: background 0.1s;
 }
 
-.wel-bar:hover {
-  background: rgba(30, 165, 76, 0.18) !important;
-}
-
 .wel-bar-copied {
   background: rgba(30, 165, 76, 0.22) !important;
 }
@@ -151,7 +147,7 @@ function copyId(id: number) {
   flex: 1;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -182,14 +178,14 @@ function copyId(id: number) {
 .wel-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1ea54c;
   line-height: 1.3;
   word-break: break-word;
 }
 
 .wel-desc {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;

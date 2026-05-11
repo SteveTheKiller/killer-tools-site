@@ -448,7 +448,7 @@ const groupedAuth = computed(() => {
 <style scoped>
 /* ── Terminal chrome ── */
 .ehp-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -583,7 +583,7 @@ const groupedAuth = computed(() => {
 }
 
 .ehp-auth-entry {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   padding: 8px 10px;
   overflow: hidden;
 }

@@ -58,9 +58,11 @@ async function copyResult(key: string, val: string) {
 <template>
   <div class="pc-wrap">
     <!-- What is X% of Y -->
-    <div class="pc-panel">
-      <span class="pc-sublabel">WHAT IS X% OF Y</span>
-      <div class="pc-row">
+    <div class="pc-panel kt-terminal">
+      <div class="pc-panel-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">WHAT IS X% OF Y</span>
+      </div>
+      <div class="pc-row pc-body">
         <span class="pc-text">What is</span>
         <input v-model="pctX" class="pc-num" type="number" placeholder="X" data-test-id="percentageX">
         <span class="pc-text">% of</span>
@@ -83,9 +85,11 @@ async function copyResult(key: string, val: string) {
     </div>
 
     <!-- X is what percent of Y -->
-    <div class="pc-panel">
-      <span class="pc-sublabel">X IS WHAT PERCENT OF Y</span>
-      <div class="pc-row">
+    <div class="pc-panel kt-terminal">
+      <div class="pc-panel-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">X IS WHAT PERCENT OF Y</span>
+      </div>
+      <div class="pc-row pc-body">
         <input v-model="numX" class="pc-num" type="number" placeholder="X" data-test-id="numberX">
         <span class="pc-text">is what % of</span>
         <input v-model="numY" class="pc-num" type="number" placeholder="Y" data-test-id="numberY">
@@ -107,9 +111,11 @@ async function copyResult(key: string, val: string) {
     </div>
 
     <!-- Percentage increase/decrease -->
-    <div class="pc-panel">
-      <span class="pc-sublabel">PERCENTAGE INCREASE / DECREASE</span>
-      <div class="pc-row">
+    <div class="pc-panel kt-terminal">
+      <div class="pc-panel-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">PERCENTAGE INCREASE / DECREASE</span>
+      </div>
+      <div class="pc-row pc-body">
         <span class="pc-text">From</span>
         <input v-model="fromVal" class="pc-num" type="number" placeholder="0" data-test-id="numberFrom">
         <span class="pc-text">to</span>
@@ -143,21 +149,16 @@ async function copyResult(key: string, val: string) {
 }
 
 .pc-panel {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-.pc-sublabel {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.pc-panel-bar {
+  padding: 7px 12px;
+}
+
+.pc-body {
+  padding: 12px 14px;
 }
 
 .pc-row {
@@ -183,7 +184,7 @@ async function copyResult(key: string, val: string) {
 /* ── Number input ── */
 .pc-num {
   width: 110px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 6px 10px;
@@ -264,13 +265,6 @@ async function copyResult(key: string, val: string) {
 }
 
 /* ── Light mode ── */
-html:not(.dark) .pc-panel {
-  background: var(--kt-term-bg, #cccccc);
-  border-color: rgba(13, 112, 51, 0.30);
-}
-
-html:not(.dark) .pc-sublabel { color: rgba(0, 0, 0, 0.55); }
-
 html:not(.dark) .pc-text { color: rgba(0, 0, 0, 0.60); }
 
 html:not(.dark) .pc-result {

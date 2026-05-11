@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
-import { useStyleStore } from '@/stores/style.store';
 import { randIntFromInterval } from '@/utils/random';
 import { generateLoremIpsum } from './lorem-ipsum-generator.service';
 
@@ -49,10 +48,6 @@ const wordCount = computed(() => loremIpsumText.value.trim().split(/\s+/).filter
 const charCount = computed(() => loremIpsumText.value.length);
 
 const { copy } = useCopy({ source: loremIpsumText, text: 'Lorem ipsum copied to the clipboard' });
-
-const styleStore = useStyleStore();
-const isLight = computed(() => !styleStore.isDarkTheme);
-
 function sliderStyle(val: number, min: number, max: number) {
   return `--val: ${((val - min) / (max - min)) * 100}`;
 }
@@ -123,14 +118,9 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
     </div>
 
     <!-- Output -->
-    <div class="li-output-wrap">
-      <div
-        class="li-output-header"
-        :style="isLight
-          ? 'background: rgba(13,112,51,0.28) !important; border-bottom: 1px solid rgba(13,112,51,0.36) !important'
-          : 'background: rgba(30,165,76,0.25) !important; border-bottom: 1px solid rgba(30,165,76,0.30) !important'"
-      >
-        <span class="li-section-label">OUTPUT</span>
+    <div class="li-output-wrap kt-terminal">
+      <div class="kt-terminal-bar li-output-header">
+        <span class="kt-terminal-bar-title">OUTPUT</span>
         <div class="li-stats">
           <span class="li-stat">{{ wordCount.toLocaleString() }} words</span>
           <span class="li-stat-sep">·</span>
@@ -163,7 +153,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 /* ── Controls ── */
 .li-controls {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 8px;
   padding: 14px 18px;
@@ -322,32 +312,15 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 /* ── Output ── */
 .li-output-wrap {
-  background: #0a0a0c;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
   overflow: hidden;
 }
 
 .li-output-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 14px;
-  background: rgba(30, 165, 76, 0.25) !important;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.30) !important;
+  justify-content: flex-start;
 }
 
-.li-output-header-light {
-  background: rgba(13, 112, 51, 0.28) !important;
-  border-bottom-color: rgba(13, 112, 51, 0.36) !important;
-}
-
-.li-section-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(30, 165, 76, 0.7);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.li-stats {
+  margin-left: auto;
 }
 
 .li-stats {
@@ -395,7 +368,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   padding: 5px 14px;
   border-radius: 5px;
   border: 1px solid rgba(30, 165, 76, 0.35);
-  background: transparent !important;
+  background: rgba(0, 0, 0, 0.35) !important;
   color: rgba(30, 165, 76, 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -404,19 +377,19 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 }
 
 .li-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(10, 10, 12, 0.95) !important;
   border-color: rgba(30, 165, 76, 0.65);
   color: #1ea54c;
 }
 
 .li-btn-primary {
-  background: rgba(30, 165, 76, 0.12);
+  background: rgba(0, 0, 0, 0.35) !important;
   border-color: rgba(30, 165, 76, 0.5);
   color: #1ea54c;
 }
 
 .li-btn-primary:hover {
-  background: rgba(30, 165, 76, 0.22);
+  background: rgba(10, 10, 12, 0.95) !important;
   border-color: #1ea54c;
 }
 
@@ -462,8 +435,6 @@ html:not(.dark) .li-toggle-on {
   color: #0b5c28 !important;
 }
 
-html:not(.dark) .li-output-wrap   { background: #ffffff; border-color: rgba(13, 112, 51, 0.35); }
-html:not(.dark) .li-section-label { color: #0b5c28; }
 html:not(.dark) .li-stat          { color: rgba(13, 112, 51, 0.70); }
 html:not(.dark) .li-stat-sep      { color: rgba(0, 0, 0, 0.25); }
 html:not(.dark) .li-output        { background: transparent; color: rgba(0, 0, 0, 0.75); }

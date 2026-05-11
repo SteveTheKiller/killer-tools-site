@@ -23,9 +23,9 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 <template>
   <div class="b6-layout">
     <!-- Encode panel -->
-    <div class="b6-panel">
-      <div class="b6-panel-header">
-        <span class="b6-panel-title">STRING TO BASE64</span>
+    <div class="b6-panel kt-terminal">
+      <div class="b6-panel-header kt-terminal-bar">
+        <span class="b6-panel-title kt-terminal-bar-title">STRING TO BASE64</span>
       </div>
       <div class="b6-body">
         <div class="b6-pill-row">
@@ -74,9 +74,9 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
     </div>
 
     <!-- Decode panel -->
-    <div class="b6-panel">
-      <div class="b6-panel-header">
-        <span class="b6-panel-title">BASE64 TO STRING</span>
+    <div class="b6-panel kt-terminal">
+      <div class="b6-panel-header kt-terminal-bar">
+        <span class="b6-panel-title kt-terminal-bar-title">BASE64 TO STRING</span>
       </div>
       <div class="b6-body">
         <div class="b6-pill-row">
@@ -131,6 +131,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 <style scoped>
 /* ── Layout ── */
 .b6-layout {
+  flex-wrap: wrap;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -140,41 +141,16 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   min-width: 0;
 }
 
-@media (max-width: 700px) {
-  .b6-layout {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .b6-panel {
-    width: 100%;
-  }
-}
-
 /* ── Panel ── */
 .b6-panel {
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 300px;
   min-width: 0;
 }
 
 .b6-panel-header {
-  padding: 10px 16px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
-  background: rgba(30, 165, 76, 0.05);
-}
-
-.b6-panel-title {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #1ea54c;
+  padding: 8px 12px;
 }
 
 .b6-body {
@@ -182,7 +158,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   display: flex;
   flex-direction: column;
   gap: 14px;
-  flex: 1;
+  flex: 1 1 300px;
 }
 
 .b6-label {
@@ -207,7 +183,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 
 .b6-pills {
   display: flex;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -230,7 +206,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 .b6-pill-active { background: rgba(30, 165, 76, 0.15); color: #1ea54c; }
 
 .b6-textarea {
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
@@ -268,7 +244,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   align-items: center;
   gap: 6px;
   padding: 7px 18px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);
@@ -283,18 +259,6 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 .b6-btn-accent:hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
 
 /* ── Light mode ── */
-html:not(.dark) .b6-panel {
-  background: #c8c8c8;
-  border-color: rgba(13, 112, 51, 0.35);
-}
-
-html:not(.dark) .b6-panel-header {
-  background: rgba(13, 112, 51, 0.15);
-  border-bottom-color: rgba(13, 112, 51, 0.25);
-}
-
-html:not(.dark) .b6-panel-title { color: #0b5c28; }
-
 html:not(.dark) .b6-label { color: rgba(0, 0, 0, 0.60); }
 
 html:not(.dark) .b6-pills {

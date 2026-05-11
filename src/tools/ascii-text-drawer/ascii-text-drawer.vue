@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import figlet from 'figlet';
 import { useCopy } from '@/composable/copy';
-import { useStyleStore } from '@/stores/style.store';
-
-const styleStore = useStyleStore();
-const isLight = computed(() => !styleStore.isDarkTheme);
 
 const input = ref('Ascii ART');
 const debouncedInput = refDebounced(input, 400);
@@ -150,159 +146,212 @@ function onSearchKeydown(e: KeyboardEvent) {
 
 <template>
   <div class="aa-wrap">
-    <!-- Text input -->
-    <div class="aa-field">
-      <span class="aa-label">YOUR TEXT</span>
-      <textarea
-        v-model="input"
-        class="aa-textarea"
-        placeholder="Your text to draw"
-        rows="4"
-        spellcheck="false"
-      />
-    </div>
+    <!-- LEFT: controls -->
+    <div class="aa-left">
+      <!-- Text input -->
+      <div class="aa-input-card kt-terminal">
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">YOUR TEXT</span>
+        </div>
+        <div class="aa-input-area">
+          <textarea
+            v-model="input"
+            class="aa-textarea"
+            placeholder="Your text to draw"
+            rows="6"
+            spellcheck="false"
+            autofocus
+          />
+        </div>
+      </div>
 
-    <!-- Controls row -->
-    <div class="aa-controls">
-      <!-- Font searchable dropdown -->
-      <div class="aa-field aa-field-grow">
-        <span class="aa-label">FONT</span>
-        <div class="aa-font-dropdown" tabindex="0" @blur="onFontBlur($event)">
-          <button ref="fontTriggerBtn" type="button" class="aa-dropdown-trigger" @click="openFontDropdown()" @keydown="onTriggerKeydown" @wheel.prevent="onTriggerWheel">
-            <span>{{ font }}</span>
-            <icon-mdi-chevron-down class="aa-chevron" :class="{ 'aa-chevron-open': fontOpen }" />
-          </button>
-          <div v-if="fontOpen" class="aa-dropdown-menu">
-            <div class="aa-search-wrap">
-              <icon-mdi-magnify class="aa-search-icon" />
-              <input
-                ref="fontSearchInput"
-                v-model="fontSearch"
-                class="aa-search-input"
-                placeholder="Search fonts..."
-                type="text"
-                spellcheck="false"
-                @keydown="onSearchKeydown"
-              >
-            </div>
-            <div ref="fontDropdownList" class="aa-dropdown-list">
-              <button
-                v-for="(f, i) in filteredFonts" :key="f" type="button"
-                class="aa-dropdown-item"
-                :class="{ 'aa-dropdown-item-active': f === font, 'aa-dropdown-item-focused': i === focusedIndex }"
-                @click="selectFont(f)"
-              >
-                {{ f }}
+      <!-- Controls -->
+      <div class="aa-controls kt-terminal">
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">OPTIONS</span>
+        </div>
+        <div class="aa-controls-body">
+          <!-- Font searchable dropdown -->
+          <div class="aa-field aa-field-grow">
+            <span class="aa-label">FONT</span>
+            <div class="aa-font-dropdown" tabindex="0" @blur="onFontBlur($event)">
+              <button ref="fontTriggerBtn" type="button" class="aa-dropdown-trigger" @click="openFontDropdown()" @keydown="onTriggerKeydown" @wheel.prevent="onTriggerWheel">
+                <span>{{ font }}</span>
+                <icon-mdi-chevron-down class="aa-chevron" :class="{ 'aa-chevron-open': fontOpen }" />
               </button>
-              <div v-if="filteredFonts.length === 0" class="aa-no-results">
-                No fonts match
+              <div v-if="fontOpen" class="aa-dropdown-menu">
+                <div class="aa-search-wrap">
+                  <icon-mdi-magnify class="aa-search-icon" />
+                  <input
+                    ref="fontSearchInput"
+                    v-model="fontSearch"
+                    class="aa-search-input"
+                    placeholder="Search fonts..."
+                    type="text"
+                    spellcheck="false"
+                    @keydown="onSearchKeydown"
+                  >
+                </div>
+                <div ref="fontDropdownList" class="aa-dropdown-list">
+                  <button
+                    v-for="(f, i) in filteredFonts" :key="f" type="button"
+                    class="aa-dropdown-item"
+                    :class="{ 'aa-dropdown-item-active': f === font, 'aa-dropdown-item-focused': i === focusedIndex }"
+                    @click="selectFont(f)"
+                  >
+                    {{ f }}
+                  </button>
+                  <div v-if="filteredFonts.length === 0" class="aa-no-results">
+                    No fonts match
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <!-- Width stepper -->
+          <div class="aa-field">
+            <span class="aa-label">WIDTH</span>
+            <div class="aa-stepper">
+              <button class="aa-step-btn" :disabled="width <= 0" @click="width = Math.max(0, width - 5)">
+                −
+              </button>
+              <input v-model.number="width" class="aa-step-input" type="number" min="0" max="10000">
+              <button class="aa-step-btn" @click="width = Math.min(10000, width + 5)">
+                +
+              </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Width stepper -->
-      <div class="aa-field">
-        <span class="aa-label">WIDTH</span>
-        <div class="aa-stepper">
-          <button class="aa-step-btn" :disabled="width <= 0" @click="width = Math.max(0, width - 5)">
-            −
-          </button>
-          <input v-model.number="width" class="aa-step-input" type="number" min="0" max="10000">
-          <button class="aa-step-btn" @click="width = Math.min(10000, width + 5)">
-            +
-          </button>
+    <!-- RIGHT: output -->
+    <div class="aa-right">
+      <!-- Loading -->
+      <div v-if="processing" class="aa-output-wrap kt-terminal">
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">ASCII ART OUTPUT</span>
+        </div>
+        <div class="aa-loading">
+          <span class="aa-loading-dot" />
+          Loading font...
         </div>
       </div>
-    </div>
 
-    <!-- Loading -->
-    <div v-if="processing" class="aa-loading">
-      <span class="aa-loading-dot" />
-      Loading font...
-    </div>
-
-    <!-- Error -->
-    <div v-else-if="errored" class="aa-error">
-      <icon-mdi-alert-circle />
-      Current settings resulted in an error.
-    </div>
-
-    <!-- Output -->
-    <div v-else class="aa-output-wrap">
-      <div
-        class="aa-output-header"
-        :style="isLight
-          ? 'background: rgba(13,112,51,0.28) !important; border-bottom: 1px solid rgba(13,112,51,0.36) !important'
-          : 'background: rgba(30,165,76,0.25) !important; border-bottom: 1px solid rgba(30,165,76,0.30) !important'"
-      >
-        <span class="aa-label">ASCII ART OUTPUT</span>
-        <button class="aa-copy-btn" @click="copy()">
-          <icon-mdi-check v-if="copied" />
-          <icon-mdi-content-copy v-else />
-          {{ copied ? 'Copied!' : 'Copy' }}
-        </button>
+      <!-- Error -->
+      <div v-else-if="errored" class="aa-output-wrap kt-terminal">
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">ASCII ART OUTPUT</span>
+        </div>
+        <div class="aa-error">
+          <icon-mdi-alert-circle />
+          Current settings resulted in an error.
+        </div>
       </div>
-      <pre class="aa-pre">{{ output }}</pre>
+
+      <!-- Output -->
+      <div v-else class="aa-output-wrap kt-terminal">
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">ASCII ART OUTPUT</span>
+          <button class="aa-copy-btn" @click="copy()">
+            <icon-mdi-check v-if="copied" />
+            <icon-mdi-content-copy v-else />
+            {{ copied ? 'Copied!' : 'Copy' }}
+          </button>
+        </div>
+        <div class="aa-pre-scroll">
+          <pre class="aa-pre">{{ output }}</pre>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* ── 2-column layout ── */
 .aa-wrap {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
+  grid-template-columns: 340px 1fr;
+  gap: 14px;
   width: 100%;
+  align-items: start;
 }
 
-/* Labels */
-.aa-label {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.75);
+@media (max-width: 860px) {
+  .aa-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aa-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.aa-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ── Input card ── */
+.aa-input-card {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-/* Field */
+.aa-input-area {
+  padding: 10px 12px;
+}
+
+.aa-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent !important;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  resize: none;
+  line-height: 1.6;
+}
+
+.aa-textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
+
+/* ── Controls card ── */
+.aa-controls {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.aa-controls-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+/* ── Field ── */
 .aa-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.aa-field-grow { flex: 1; }
+.aa-field-grow { flex: 1; min-width: 0; }
 
-/* Controls row */
-.aa-controls {
-  display: flex;
-  gap: 16px;
-  align-items: flex-end;
-}
-
-/* Textarea */
-.aa-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  background: #0f0f11;
-  border: 1px solid rgba(30, 165, 76, 0.2);
-  border-radius: 6px;
-  padding: 10px 12px;
+.aa-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
-  outline: none;
-  resize: vertical;
-  line-height: 1.6;
-  transition: border-color 0.15s;
 }
 
-.aa-textarea:focus { border-color: rgba(30, 165, 76, 0.5); }
-.aa-textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
-
-/* Font dropdown */
+/* ── Font dropdown ── */
 .aa-font-dropdown { position: relative; outline: none; }
 
 .aa-dropdown-trigger {
@@ -310,7 +359,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: #0f0f11;
+  background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -342,7 +391,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   left: 0;
   width: 100%;
   min-width: 240px;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;
@@ -350,7 +399,6 @@ function onSearchKeydown(e: KeyboardEvent) {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 
-/* Search bar inside dropdown */
 .aa-search-wrap {
   display: flex;
   align-items: center;
@@ -360,10 +408,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   background: rgba(30, 165, 76, 0.04);
 }
 
-.aa-search-icon {
-  color: rgba(30, 165, 76, 0.4);
-  flex-shrink: 0;
-}
+.aa-search-icon { color: rgba(30, 165, 76, 0.4); flex-shrink: 0; }
 
 .aa-search-input {
   flex: 1;
@@ -411,11 +456,11 @@ function onSearchKeydown(e: KeyboardEvent) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Width stepper */
+/* ── Width stepper ── */
 .aa-stepper {
   display: inline-flex;
   align-items: center;
-  background: #0f0f11;
+  background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -438,11 +483,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   flex-shrink: 0;
 }
 
-.aa-step-btn:last-child {
-  border-right: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
-}
-
+.aa-step-btn:last-child { border-right: none; border-left: 1px solid rgba(30, 165, 76, 0.12); }
 .aa-step-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
 .aa-step-btn:disabled { opacity: 0.3; cursor: default; }
 
@@ -462,7 +503,33 @@ function onSearchKeydown(e: KeyboardEvent) {
 .aa-step-input::-webkit-inner-spin-button,
 .aa-step-input::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-/* Loading */
+/* ── Output card ── */
+.aa-output-wrap {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  height: 100%;
+}
+
+.aa-copy-btn {
+  margin-left: auto;
+}
+
+.aa-pre-scroll {
+  overflow-x: auto;
+}
+
+.aa-pre {
+  margin: 0;
+  padding: 14px 16px;
+  background: transparent;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 0.8rem;
+  color: #1ea54c;
+  white-space: pre;
+  line-height: 1.4;
+  min-width: max-content;
+}
+
+/* ── Loading / Error ── */
 .aa-loading {
   display: flex;
   align-items: center;
@@ -486,93 +553,41 @@ function onSearchKeydown(e: KeyboardEvent) {
   50% { opacity: 0.2; }
 }
 
-/* Error */
 .aa-error {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
-  background: rgba(200, 50, 50, 0.1);
-  border: 1px solid rgba(200, 50, 50, 0.3);
-  border-radius: 5px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
   color: #e05555;
 }
 
-/* Output */
-.aa-output-wrap {
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.aa-output-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 14px;
-  background: rgba(30, 165, 76, 0.25);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.30);
-}
-
-.aa-pre {
-  margin: 0;
-  padding: 14px 16px;
-  background: rgba(0, 0, 0, 0.35);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.8rem;
-  color: #1ea54c;
-  white-space: pre;
-  line-height: 1.4;
-  min-width: max-content;
-  overflow-x: auto;
-}
-
+/* ── Copy button ── */
 .aa-copy-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 3px 10px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(30, 165, 76, 0.4);
+  padding: 2px 8px;
   border-radius: 4px;
+  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: rgba(30, 165, 76, 0.08);
+  color: rgba(30, 165, 76, 0.8);
+  font-size: 0.67rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.80);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
 }
 
 .aa-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.2);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #fff;
+  background: rgba(30, 165, 76, 0.18);
+  border-color: #1ea54c;
+  color: #1ea54c;
 }
 
-/* Light mode */
-html:not(.dark) .aa-label {
-  color: rgba(0, 0, 0, 0.55);
-}
+/* ── Light mode ── */
+html:not(.dark) .aa-copy-btn { background: rgba(13, 112, 51, 0.08); border-color: rgba(13, 112, 51, 0.30); color: #0b5c28; }
+html:not(.dark) .aa-copy-btn:hover { background: rgba(13, 112, 51, 0.15); border-color: #0d7033; color: #083d1a; }
 
-html:not(.dark) .aa-output-wrap {
-  border-color: rgba(13, 112, 51, 0.35);
-}
-
-html:not(.dark) .aa-pre {
-  background: #ffffff;
-  color: #0d7033;
-}
-
-html:not(.dark) .aa-copy-btn {
-  background: rgba(255, 255, 255, 0.5);
-  border-color: rgba(13, 112, 51, 0.5);
-  color: rgba(0, 0, 0, 0.70);
-}
-
-html:not(.dark) .aa-copy-btn:hover {
-  background: rgba(13, 112, 51, 0.12);
-  border-color: rgba(13, 112, 51, 0.7);
-  color: #0d7033;
-}
+html:not(.dark) .aa-pre { color: rgba(0, 0, 0, 0.82); }
 </style>

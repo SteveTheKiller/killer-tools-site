@@ -183,7 +183,7 @@ const cronValidationRules = [
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 8px;
   padding: 14px 18px;

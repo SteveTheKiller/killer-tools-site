@@ -124,10 +124,11 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ppr-dangerous-btn {
+  background: rgba(0, 0, 0, 0.35) !important;
   border-color: rgba(234, 179, 8, 0.3) !important;
   color: rgba(234, 179, 8, 0.6) !important;
 }
@@ -151,6 +152,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .ppr-seg-btn {
@@ -159,17 +161,12 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
   background: transparent;
   color: rgba(255, 255, 255, 0.45);
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.2);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.12s, color 0.12s;
   white-space: nowrap;
-}
-
-.ppr-seg-btn:last-child {
-  border-right: none;
 }
 
 .ppr-seg-btn:hover {
@@ -201,10 +198,6 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
   transition: background 0.1s;
 }
 
-.ppr-bar:hover {
-  background: rgba(30, 165, 76, 0.18) !important;
-}
-
 .ppr-bar-copied {
   background: rgba(30, 165, 76, 0.22) !important;
 }
@@ -213,7 +206,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
   flex: 1;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -271,7 +264,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 .ppr-service {
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1ea54c;
   line-height: 1.3;
 }
 

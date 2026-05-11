@@ -1,4 +1,5 @@
 # Changelog
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [Unreleased] - 2026-05-09
 
@@ -54,9 +55,6 @@
 - Fixed `perfectionist/sort-imports` violations across JWT parser, JSON diff, and lorem ipsum generator
 - Fixed `style/no-multiple-empty-lines` in regex tester
 - Fixed `style/eol-last` in SVG placeholder generator
-
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## Version 2026.05.08
 

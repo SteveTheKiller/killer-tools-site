@@ -1,5 +1,5 @@
 <template>
-  <c-card w-full important:flex-1 important:pa-0>
+  <div style="width: 100%; flex: 1;">
     <c-diff-editor />
-  </c-card>
+  </div>
 </template>

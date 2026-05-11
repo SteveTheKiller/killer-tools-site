@@ -261,7 +261,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 6px 10px;
@@ -295,7 +295,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   top: calc(100% + 4px);
   left: 0;
   min-width: 100%;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;
@@ -337,7 +337,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   display: flex;
   align-items: center;
   width: 100%;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;

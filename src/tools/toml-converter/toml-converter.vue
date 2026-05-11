@@ -49,8 +49,12 @@ function copyOutput() {
     <div mb-4 flex items-center gap-3>
       <span class="text-sm op-60">Convert to:</span>
       <div class="kt-pill-row">
-        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'json' }" @click="outputFormat = 'json'">JSON</button>
-        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'yaml' }" @click="outputFormat = 'yaml'">YAML</button>
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'json' }" @click="outputFormat = 'json'">
+          JSON
+        </button>
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'yaml' }" @click="outputFormat = 'yaml'">
+          YAML
+        </button>
       </div>
     </div>
 

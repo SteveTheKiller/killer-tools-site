@@ -107,9 +107,11 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
     <div
       v-for="{ name, elements } of sections"
       :key="name"
-      class="mg-section"
+      class="mg-section kt-terminal"
     >
-      <span class="mg-section-label">{{ name.toUpperCase() }}</span>
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">{{ name.toUpperCase() }}</span>
+      </div>
 
       <div class="mg-fields">
         <div
@@ -183,9 +185,9 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   </div>
 
   <!-- Right: output panel -->
-  <div class="mg-output-wrap">
-    <div class="mg-output-header">
-      <span class="mg-section-label">YOUR META TAGS</span>
+  <div class="mg-output-wrap kt-terminal">
+    <div class="kt-terminal-bar mg-output-bar">
+      <span class="kt-terminal-bar-title">YOUR META TAGS</span>
       <button type="button" class="mg-copy-btn" @click="copy()">
         <span v-if="copied">✓ Copied</span>
         <template v-else>
@@ -216,35 +218,23 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   max-width: 640px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-self: start;
 }
 
 /* ── Section ── */
 .mg-section {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-.mg-section-label {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
 /* ── Fields ── */
 .mg-fields {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
   overflow: hidden;
 }
 
 .mg-row {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 140px 1fr;
   align-items: stretch;
   border-bottom: 1px solid rgba(30, 165, 76, 0.08);
 }
@@ -331,7 +321,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   top: calc(100% + 2px);
   left: -110px;
   right: 0;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 6px;
   overflow: hidden;
@@ -384,9 +374,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 /* ── Output panel ── */
-.mg-output-header {
-  display: flex;
-  align-items: center;
+.mg-output-bar {
   justify-content: space-between;
 }
 
@@ -394,12 +382,12 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 4px;
   border: 1px solid rgba(30, 165, 76, 0.35);
   background: rgba(30, 165, 76, 0.08);
   color: rgba(30, 165, 76, 0.8);
-  font-size: 0.7rem;
+  font-size: 0.67rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s, color 0.12s;
@@ -412,10 +400,6 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 .mg-code-panel {
-  flex: 1;
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
   padding: 14px 16px;
   overflow: auto;
 }
@@ -449,13 +433,6 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 /* ── Light mode ── */
-html:not(.dark) .mg-section-label { color: rgba(0, 0, 0, 0.50); }
-
-html:not(.dark) .mg-fields {
-  background: var(--kt-term-bg, #cccccc);
-  border-color: rgba(13, 112, 51, 0.25);
-}
-
 html:not(.dark) .mg-row { border-bottom-color: rgba(0, 0, 0, 0.08); }
 
 html:not(.dark) .mg-field-label {
@@ -464,11 +441,8 @@ html:not(.dark) .mg-field-label {
   border-right-color: rgba(0, 0, 0, 0.08);
 }
 
-html:not(.dark) .mg-input { color: rgba(0, 0, 0, 0.85); }
-html:not(.dark) .mg-input::placeholder { color: rgba(0, 0, 0, 0.28); }
 html:not(.dark) .mg-input:focus { background: rgba(13, 112, 51, 0.04); }
 
-html:not(.dark) .mg-dropdown-trigger { color: rgba(0, 0, 0, 0.75); }
 html:not(.dark) .mg-dropdown-trigger:hover,
 html:not(.dark) .mg-dropdown:focus-within .mg-dropdown-trigger { background: rgba(13, 112, 51, 0.04); }
 
@@ -484,25 +458,12 @@ html:not(.dark) .mg-group-header {
   border-bottom-color: rgba(0, 0, 0, 0.08);
 }
 
-html:not(.dark) .mg-dropdown-item {
-  color: rgba(0, 0, 0, 0.65);
-  border-bottom-color: rgba(0, 0, 0, 0.06);
-}
-
+html:not(.dark) .mg-dropdown-item { color: rgba(0, 0, 0, 0.65); border-bottom-color: rgba(0, 0, 0, 0.06); }
 html:not(.dark) .mg-dropdown-item:hover { background: rgba(13, 112, 51, 0.10); color: rgba(0, 0, 0, 0.90); }
 html:not(.dark) .mg-item-active { color: #0b5c28; background: rgba(13, 112, 51, 0.10); }
 
-html:not(.dark) .mg-copy-btn {
-  background: rgba(13, 112, 51, 0.08);
-  border-color: rgba(13, 112, 51, 0.30);
-  color: #0b5c28;
-}
+html:not(.dark) .mg-copy-btn { background: rgba(13, 112, 51, 0.08); border-color: rgba(13, 112, 51, 0.30); color: #0b5c28; }
 html:not(.dark) .mg-copy-btn:hover { background: rgba(13, 112, 51, 0.15); border-color: #0d7033; color: #083d1a; }
-
-html:not(.dark) .mg-code-panel {
-  background: var(--kt-term-bg, #cccccc) !important;
-  border-color: rgba(13, 112, 51, 0.25);
-}
 
 html:not(.dark) .mg-pre { color: rgba(0, 0, 0, 0.75); }
 </style>

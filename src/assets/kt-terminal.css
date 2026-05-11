@@ -7,12 +7,13 @@
    ───────────────────────────────────────────────────────── */
 
 :root {
-  --kt-term-bg:         #0a0a0c;
-  --kt-term-bar-bg:     rgba(30, 165, 76, 0.12);
-  --kt-term-border:     rgba(30, 165, 76, 0.3);
-  --kt-term-bar-border: rgba(30, 165, 76, 0.2);
-  --kt-green:           #1ea54c;
-  --kt-green-dim:       rgba(30, 165, 76, 0.3);
+  --kt-term-bg:           #121212;
+  --kt-term-bar-bg:       rgba(255, 255, 255, 0.07);
+  --kt-term-bar-hover-bg: rgba(30, 165, 76, 0.14);
+  --kt-term-border:       rgba(30, 165, 76, 0.3);
+  --kt-term-bar-border:   rgba(255, 255, 255, 0.08);
+  --kt-green:             #1ea54c;
+  --kt-green-dim:         rgba(30, 165, 76, 0.3);
 }
 
 /* ── Light mode: terminals go light gray, bars stay green ── */
@@ -264,6 +265,25 @@ html:not(.dark) [class*="-step-btn"] {
 html:not(.dark) [class*="-step-btn"]:hover:not(:disabled) { background: rgba(13, 112, 51, 0.08) !important; }
 html:not(.dark) [class*="-step-val"] { color: #0d7033 !important; }
 
+/* ── Dark mode: tool inputs, textareas, dropdowns → #121212 terminal bg ───────
+   Uses class-based selectors (not bare input/textarea) so NaiveUI components
+   are unaffected. Specificity [0,2,1] beats scoped [data-v-xxx].class.      ── */
+html.dark [class*="-input"]:not(.c-input-text):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
+  background: var(--kt-term-bg) !important;
+}
+html.dark [class*="-textarea"] {
+  background: var(--kt-term-bg) !important;
+}
+html.dark [class*="-dropdown-trigger"] {
+  background: var(--kt-term-bg) !important;
+}
+html.dark [class*="-dropdown-menu"] {
+  background: var(--kt-term-bg) !important;
+}
+html.dark [class*="-stepper"] {
+  background: var(--kt-term-bg) !important;
+}
+
 /* ── Systemic: any [prefix]-terminal container → light bg in light mode ──────
    Attribute-selector approach catches .ehp-terminal, .whois-terminal, and any
    future tool terminal wrappers without per-tool CSS.
@@ -315,6 +335,25 @@ html:not(.dark) .kt-copy:hover {
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  transition: border-color 0.15s;
+}
+
+.kt-terminal.kt-terminal:hover {
+  border-color: rgba(30, 165, 76, 0.6) !important;
+}
+
+/* ── IPv4 Subnet Calculator uses .k-terminal — mirror hover effects ── */
+.k-terminal {
+  transition: border-color 0.15s;
+}
+
+.k-terminal.k-terminal:hover {
+  border-color: rgba(30, 165, 76, 0.6) !important;
+}
+
+.k-terminal:hover .k-terminal-bar,
+.k-terminal:hover .kt-terminal-bar {
+  background: var(--kt-term-bar-hover-bg) !important;
 }
 
 .kt-terminal-bar {
@@ -324,6 +363,27 @@ html:not(.dark) .kt-copy:hover {
   padding: 6px 10px;
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid var(--kt-term-bar-border);
+  transition: background 0.1s;
+}
+
+.kt-terminal-bar::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(30, 165, 76, 0.55);
+  box-shadow: 0 0 5px rgba(30, 165, 76, 0.3);
+  flex-shrink: 0;
+}
+
+/* Suppress the global green dot when the tool supplies its own severity dot */
+.kt-terminal-bar-no-dot::before {
+  display: none;
+}
+
+.kt-terminal:hover .kt-terminal-bar {
+  background: var(--kt-term-bar-hover-bg) !important;
 }
 
 .kt-terminal-bar-title {
@@ -331,7 +391,7 @@ html:not(.dark) .kt-copy:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .kt-section-row {
@@ -368,8 +428,8 @@ html:not(.dark) .kt-copy:hover {
   color: rgba(30, 165, 76, 0.5);
   font-weight: 600;
   font-size: 0.75rem;
-  user-select: none;
   flex-shrink: 0;
+  user-select: none;
 }
 
 .kt-label {
@@ -438,8 +498,8 @@ html:not(.dark) .kt-copy:hover {
   width: 110px;
   height: 34px;
   padding: 0 16px;
-  background: rgba(30, 165, 76, 0.1);
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(30, 165, 76, 0.45);
   border-radius: 6px;
   color: #1ea54c;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -455,8 +515,8 @@ html:not(.dark) .kt-copy:hover {
 }
 
 .kt-search-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.2);
-  border-color: rgba(30, 165, 76, 0.6);
+  background: rgba(10, 10, 12, 0.95);
+  border-color: rgba(30, 165, 76, 0.75);
 }
 
 .kt-search-btn:disabled {

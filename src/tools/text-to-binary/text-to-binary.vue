@@ -42,60 +42,65 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 
 <template>
   <div class="tb-wrap">
-    <div class="tb-panel">
-      <!-- Text side -->
-      <div class="tb-side">
-        <div class="tb-side-header">
-          <span class="tb-sublabel">TEXT</span>
-          <button class="tb-copy-btn" :disabled="!text" @click="copyText()">
-            <span v-if="copiedText">✓ Copied</span>
-            <template v-else>
-              <icon-mdi-content-copy />
-              Copy
-            </template>
-          </button>
-        </div>
-        <textarea
-          v-model="text"
-          class="tb-textarea"
-          placeholder="e.g. Hello world"
-          rows="8"
-          spellcheck="false"
-          autofocus
-          data-test-id="text-to-binary-input"
-        />
+    <div class="tb-panel kt-terminal">
+      <div class="tb-panel-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">TEXT ↔ ASCII BINARY</span>
       </div>
-
-      <!-- Divider -->
-      <div class="tb-divider">
-        <span class="tb-arrows">⟷</span>
-        <span class="tb-divider-label">ASCII<br>BIN</span>
-      </div>
-
-      <!-- Binary side -->
-      <div class="tb-side">
-        <div class="tb-side-header">
-          <span class="tb-sublabel">BINARY</span>
-          <button class="tb-copy-btn" :disabled="!binary || !binaryValid" @click="copyBinary()">
-            <span v-if="copiedBinary">✓ Copied</span>
-            <template v-else>
-              <icon-mdi-content-copy />
-              Copy
-            </template>
-          </button>
+      <div class="tb-body">
+        <!-- Text side -->
+        <div class="tb-side">
+          <div class="tb-side-header">
+            <span class="tb-sublabel">TEXT</span>
+            <button class="tb-copy-btn" :disabled="!text" @click="copyText()">
+              <span v-if="copiedText">✓ Copied</span>
+              <template v-else>
+                <icon-mdi-content-copy />
+                Copy
+              </template>
+            </button>
+          </div>
+          <textarea
+            v-model="text"
+            class="tb-textarea"
+            placeholder="e.g. Hello world"
+            rows="8"
+            spellcheck="false"
+            autofocus
+            data-test-id="text-to-binary-input"
+          />
         </div>
-        <textarea
-          v-model="binary"
-          class="tb-textarea tb-textarea-binary"
-          :class="{ 'tb-textarea-error': binary && !binaryValid }"
-          placeholder="e.g. 01001000 01100101 01101100 01101100 01101111"
-          rows="8"
-          spellcheck="false"
-          data-test-id="binary-to-text-input"
-        />
-        <span v-if="binary && !binaryValid" class="tb-error-msg">
-          Must be valid ASCII binary (multiples of 8 bits)
-        </span>
+
+        <!-- Divider -->
+        <div class="tb-divider">
+          <span class="tb-arrows">⟷</span>
+          <span class="tb-divider-label">ASCII<br>BIN</span>
+        </div>
+
+        <!-- Binary side -->
+        <div class="tb-side">
+          <div class="tb-side-header">
+            <span class="tb-sublabel">BINARY</span>
+            <button class="tb-copy-btn" :disabled="!binary || !binaryValid" @click="copyBinary()">
+              <span v-if="copiedBinary">✓ Copied</span>
+              <template v-else>
+                <icon-mdi-content-copy />
+                Copy
+              </template>
+            </button>
+          </div>
+          <textarea
+            v-model="binary"
+            class="tb-textarea tb-textarea-binary"
+            :class="{ 'tb-textarea-error': binary && !binaryValid }"
+            placeholder="e.g. 01001000 01100101 01101100 01101100 01101111"
+            rows="8"
+            spellcheck="false"
+            data-test-id="binary-to-text-input"
+          />
+          <span v-if="binary && !binaryValid" class="tb-error-msg">
+            Must be valid ASCII binary (multiples of 8 bits)
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -108,13 +113,19 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 }
 
 .tb-panel {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tb-panel-bar {
+  padding: 7px 12px;
+}
+
+.tb-body {
   display: flex;
   gap: 16px;
   align-items: flex-start;
+  padding: 16px;
 }
 
 /* ── Side ── */
@@ -143,7 +154,7 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 /* ── Textarea ── */
 .tb-textarea {
   width: 100%;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 10px 12px;
@@ -238,7 +249,7 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 
 /* ── Responsive: single column ── */
 @media (max-width: 500px) {
-  .tb-panel {
+  .tb-body {
     flex-direction: column;
     align-items: stretch;
   }
@@ -253,11 +264,6 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 }
 
 /* ── Light mode ── */
-html:not(.dark) .tb-panel {
-  background: var(--kt-term-bg, #cccccc);
-  border-color: rgba(13, 112, 51, 0.30);
-}
-
 html:not(.dark) .tb-sublabel { color: rgba(0, 0, 0, 0.55); }
 
 html:not(.dark) .tb-arrows { color: rgba(13, 112, 51, 0.45); }
@@ -281,8 +287,8 @@ html:not(.dark) .tb-copy-btn {
 }
 
 html:not(.dark) .tb-copy-btn:hover:not(:disabled) {
-  background: rgba(13, 112, 51, 0.15);
+  background: rgba(13, 112, 51, 0.18);
   border-color: #0d7033;
-  color: #083d1a;
+  color: #0d7033;
 }
 </style>

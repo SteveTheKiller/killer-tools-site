@@ -1,5 +1,5 @@
-import ErrorIcon from '~icons/mdi/close-circle-outline';
 import WarningIcon from '~icons/mdi/alert-circle-outline';
+import ErrorIcon from '~icons/mdi/close-circle-outline';
 import { darken } from '../color/color.models';
 import { defineThemes } from '../theme/theme.models';
 import { appThemes } from '../theme/themes';

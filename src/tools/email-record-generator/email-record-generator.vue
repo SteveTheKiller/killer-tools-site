@@ -147,20 +147,20 @@ const dmarcRecord = computed(() => {
 
 <template>
   <div class="erg-wrap">
-    <!-- Tab switcher -->
-    <div class="erg-tabs">
+    <!-- Tab switcher: connected pill row -->
+    <div class="kt-pill-row erg-tabs">
       <button
         type="button"
-        class="erg-tab"
-        :class="{ 'erg-tab-active': activeTab === 'spf' }"
+        class="kt-pill"
+        :class="{ 'kt-pill-active': activeTab === 'spf' }"
         @click="activeTab = 'spf'"
       >
         SPF
       </button>
       <button
         type="button"
-        class="erg-tab"
-        :class="{ 'erg-tab-active': activeTab === 'dmarc' }"
+        class="kt-pill"
+        :class="{ 'kt-pill-active': activeTab === 'dmarc' }"
         @click="activeTab = 'dmarc'"
       >
         DMARC
@@ -168,7 +168,10 @@ const dmarcRecord = computed(() => {
     </div>
 
     <!-- ═══ SPF TAB ═══ -->
-    <div v-if="activeTab === 'spf'" class="erg-terminal">
+    <div v-if="activeTab === 'spf'" class="kt-terminal erg-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">SPF RECORD</span>
+      </div>
       <!-- Record output -->
       <div class="erg-record-area" @click="copyValue(spfRecord)">
         <div class="erg-record-meta">
@@ -241,7 +244,10 @@ const dmarcRecord = computed(() => {
     </div>
 
     <!-- ═══ DMARC TAB ═══ -->
-    <div v-else class="erg-terminal">
+    <div v-else class="kt-terminal erg-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">DMARC RECORD</span>
+      </div>
       <!-- Record output -->
       <div class="erg-record-area" @click="copyValue(dmarcRecord)">
         <div class="erg-record-meta">
@@ -432,7 +438,7 @@ const dmarcRecord = computed(() => {
 
 /* ── Terminal panel ── */
 .erg-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -659,7 +665,7 @@ const dmarcRecord = computed(() => {
   top: calc(100% - 2px);
   left: 12px;
   min-width: 300px;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.5);
   border-radius: 6px;
   padding: 4px;

@@ -76,7 +76,7 @@ update('kelvin');
 }
 
 .tc-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;

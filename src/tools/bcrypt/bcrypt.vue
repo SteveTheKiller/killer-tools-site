@@ -27,8 +27,7 @@ const compareMatch = computed(() => {
     <!-- Hash panel -->
     <div class="kt-terminal bc-panel">
       <div class="kt-terminal-bar bc-panel-header">
-        <span class="kt-prompt">&gt;_</span>
-        <span class="bc-panel-title">HASH</span>
+        <span class="kt-terminal-bar-title">HASH</span>
       </div>
 
       <div class="bc-body">
@@ -74,8 +73,7 @@ const compareMatch = computed(() => {
     <!-- Compare panel -->
     <div class="kt-terminal bc-panel">
       <div class="kt-terminal-bar bc-panel-header">
-        <span class="kt-prompt">&gt;_</span>
-        <span class="bc-panel-title">COMPARE</span>
+        <span class="kt-terminal-bar-title">COMPARE</span>
       </div>
 
       <div class="bc-body">
@@ -129,7 +127,7 @@ const compareMatch = computed(() => {
   align-items: flex-start;
 }
 
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 /* ── Panel ── */
@@ -142,14 +140,6 @@ const compareMatch = computed(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.bc-panel-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #1ea54c;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
 .bc-body {
@@ -177,7 +167,7 @@ const compareMatch = computed(() => {
 /* ── Text input ── */
 .bc-input {
   width: 100%;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 6px 10px;
@@ -254,7 +244,7 @@ const compareMatch = computed(() => {
 }
 
 .bc-output {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.15);
   border-radius: 5px;
   padding: 8px 12px;

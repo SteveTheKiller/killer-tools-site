@@ -3,24 +3,6 @@ import { UAParser } from 'ua-parser-js';
 import { withDefaultOnError } from '@/utils/defaults';
 
 const ua = ref(navigator.userAgent as string);
-const textareaRef = ref<HTMLTextAreaElement | null>(null);
-const inputAreaRef = ref<HTMLDivElement | null>(null);
-
-onMounted(async () => {
-  await nextTick();
-  const forceDark = (el: HTMLElement | null) => {
-    if (!el) {
-      return;
-    }
-    el.style.setProperty('background-color', 'transparent', 'important');
-    el.style.setProperty('background', 'transparent', 'important');
-    el.style.setProperty('box-shadow', 'none', 'important');
-    el.style.setProperty('-webkit-box-shadow', 'none', 'important');
-    el.style.setProperty('border', 'none', 'important');
-  };
-  forceDark(textareaRef.value);
-  forceDark(inputAreaRef.value);
-});
 
 function getUserAgentInfo(userAgent: string) {
   return userAgent.trim().length > 0
@@ -78,12 +60,13 @@ const sections = computed(() => {
 
 <template>
   <div class="ua-wrap">
-    <div class="ua-terminal">
-      <!-- Input area -->
-      <div ref="inputAreaRef" class="ua-input-area">
-        <label class="ua-input-label">User agent string</label>
+    <!-- Input card — full width -->
+    <div class="ua-input-card kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">USER AGENT STRING</span>
+      </div>
+      <div class="ua-input-area">
         <textarea
-          ref="textareaRef"
           v-model="ua"
           class="ua-input"
           placeholder="Put your user-agent here..."
@@ -92,69 +75,69 @@ const sections = computed(() => {
           autofocus
         />
       </div>
+    </div>
 
-      <!-- Output sections -->
-      <template v-if="uaInfo">
-        <template v-for="{ name, rows: sectionRows } in sections" :key="name">
-          <div class="ua-section-header">
-            {{ name.toUpperCase() }}
-          </div>
-          <template v-for="row in sectionRows" :key="`${name}-${row.label}`">
-            <div v-if="row.value" class="ua-row" @click="copyValue(`${name}-${row.label}`, row.value)">
-              <span class="ua-prompt">&gt;_</span>
-              <span class="ua-label">{{ row.label }}</span>
-              <span class="ua-value">{{ row.value }}</span>
-              <span class="ua-copy" :class="{ 'ua-copy-done': copiedKey === `${name}-${row.label}` }">
-                <span v-if="copiedKey === `${name}-${row.label}`">✓</span>
-                <icon-mdi-content-copy v-else />
-              </span>
-            </div>
-            <div v-else class="ua-row ua-row-empty">
-              <span class="ua-prompt">&gt;_</span>
-              <span class="ua-label">{{ row.label }}</span>
-              <span class="ua-fallback">Unknown</span>
-              <span class="ua-copy-placeholder" />
-            </div>
-          </template>
-        </template>
-      </template>
-
-      <template v-else>
-        <div class="ua-empty-state">
-          <span class="ua-fallback">Could not parse user agent string</span>
+    <!-- Section cards grid -->
+    <div v-if="uaInfo" class="ua-grid">
+      <div
+        v-for="{ name, rows: sectionRows } in sections"
+        :key="name"
+        class="ua-card kt-terminal"
+      >
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">{{ name.toUpperCase() }}</span>
         </div>
-      </template>
+        <template v-for="row in sectionRows" :key="`${name}-${row.label}`">
+          <div
+            v-if="row.value"
+            class="ua-row"
+            @click="copyValue(`${name}-${row.label}`, row.value)"
+          >
+            <span class="ua-prompt">&gt;_</span>
+            <span class="ua-label">{{ row.label }}</span>
+            <span class="ua-value">{{ row.value }}</span>
+            <span class="ua-copy" :class="{ 'ua-copy-done': copiedKey === `${name}-${row.label}` }">
+              <span v-if="copiedKey === `${name}-${row.label}`">✓</span>
+              <icon-mdi-content-copy v-else />
+            </span>
+          </div>
+          <div v-else class="ua-row ua-row-empty">
+            <span class="ua-prompt">&gt;_</span>
+            <span class="ua-label">{{ row.label }}</span>
+            <span class="ua-fallback">Unknown</span>
+            <span class="ua-copy-placeholder" />
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <div v-else-if="ua.trim()" class="ua-empty-state kt-terminal">
+      <div class="kt-terminal-bar">
+        <span class="kt-terminal-bar-title">ERROR</span>
+      </div>
+      <div style="padding: 12px 16px;">
+        <span class="ua-fallback">Could not parse user agent string</span>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .ua-wrap {
-  flex: 1 1 600px;
-  max-width: 1000px;
-}
-
-.ua-terminal {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-
-/* ── Input area ── */
-.ua-input-area {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid var(--kt-term-bar-border);
+  gap: 12px;
+  width: 100%;
 }
 
-.ua-input-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
+/* ── Input card ── */
+.ua-input-card {
+  width: 100%;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+.ua-input-area {
+  padding: 10px 12px;
 }
 
 .ua-input {
@@ -176,25 +159,36 @@ const sections = computed(() => {
   color: rgba(255, 255, 255, 0.2);
 }
 
-.ua-empty-state {
-  padding: 16px;
+/* ── Section card grid ── */
+.ua-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: start;
 }
 
-.ua-section-header {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
+@media (max-width: 1100px) {
+  .ua-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (max-width: 900px) {
+  .ua-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ua-card {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* ── Rows ── */
 .ua-row {
   display: grid;
-  grid-template-columns: auto 120px 1fr auto;
+  grid-template-columns: auto 1fr 1fr auto;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 7px 12px;
   border-bottom: 1px solid rgba(30, 165, 76, 0.07);
   transition: background 0.1s;

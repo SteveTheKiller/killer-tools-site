@@ -77,7 +77,6 @@ function copyValue(value: string) {
         >
           <!-- Titlebar: category + severity pill -->
           <div class="kt-terminal-bar gpr-bar">
-            <span class="kt-prompt">&gt;_</span>
             <span class="gpr-category">{{ category }}</span>
             <span class="gpr-severity" :class="`gpr-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
@@ -123,7 +122,7 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .gpr-grid {
@@ -138,7 +137,7 @@ function copyValue(value: string) {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.92);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   white-space: nowrap;
   overflow: hidden;
@@ -157,7 +156,7 @@ function copyValue(value: string) {
 .gpr-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1ea54c;
   margin-bottom: 2px;
 }
 
@@ -249,7 +248,7 @@ function copyValue(value: string) {
 
 .gpr-desc {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;

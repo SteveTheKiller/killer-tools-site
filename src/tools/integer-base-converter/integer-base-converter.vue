@@ -129,7 +129,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .base-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -147,7 +147,7 @@ async function copyValue(label: string, value: string) {
 .base-input-box {
   display: flex;
   align-items: center;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 6px;
   transition: border-color 0.15s;

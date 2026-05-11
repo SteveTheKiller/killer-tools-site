@@ -103,7 +103,6 @@ function downloadScript(script: { name: string, download_url: string }) {
           class="kt-terminal ks-card"
         >
           <div class="kt-terminal-bar ks-bar">
-            <span class="kt-prompt">&gt;_</span>
             <span class="ks-acronym">{{ acronym(script.name) }}</span>
           </div>
 
@@ -138,7 +137,7 @@ function downloadScript(script: { name: string, download_url: string }) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 
 .ks-info {
   background: rgba(234, 179, 8, 0.07);
@@ -155,11 +154,6 @@ function downloadScript(script: { name: string, download_url: string }) {
   flex-direction: column;
   transition: border-color 0.15s;
 }
-
-.ks-card:hover {
-  border-color: rgba(30, 165, 76, 0.6) !important;
-}
-
 .ks-bar {
   display: flex;
   align-items: center;
@@ -170,7 +164,7 @@ function downloadScript(script: { name: string, download_url: string }) {
 .ks-acronym {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -186,7 +180,7 @@ function downloadScript(script: { name: string, download_url: string }) {
 .ks-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1ea54c;
   line-height: 1.3;
 }
 

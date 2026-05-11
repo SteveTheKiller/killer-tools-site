@@ -109,8 +109,8 @@ function selectEncoding(val: Encoding) {
     </div>
 
     <!-- Output terminal -->
-    <div class="hash-terminal">
-      <div class="hash-section-header">
+    <div class="hash-terminal kt-terminal">
+      <div class="hash-section-header kt-terminal-bar">
         OUTPUT
       </div>
       <div
@@ -138,10 +138,9 @@ function selectEncoding(val: Encoding) {
   container-type: inline-size;
 }
 
-/* ── Terminal container ── */
+/* ── Terminal container (kt-terminal handles hover border) ── */
 .hash-terminal {
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: #121212 !important;
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -198,7 +197,7 @@ function selectEncoding(val: Encoding) {
   top: calc(100% + 2px);
   left: 0;
   min-width: 260px;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.5);
   border-radius: 6px;
   padding: 4px;
@@ -236,16 +235,13 @@ function selectEncoding(val: Encoding) {
   color: #1ea54c;
 }
 
-/* ── Section header ── */
+/* ── Section header (kt-terminal-bar handles bg/border/dot/hover) ── */
 .hash-section-header {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.55);
   padding: 5px 12px 3px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 /* ── Hash rows ── */

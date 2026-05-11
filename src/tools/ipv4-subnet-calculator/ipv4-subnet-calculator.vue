@@ -246,51 +246,54 @@ const rangeBar = computed(() => {
         mb-3
       />
 
-      <!-- Interactive bit map + CIDR slider -->
-      <div v-if="bareIpValid" class="viz-wrap">
-        <div class="viz-header">
-          <span class="k-section-label" style="margin-bottom:0;">Bit Map</span>
+      <!-- Bitmap + range bar: shared terminal card -->
+      <div v-if="bareIpValid || rangeBar" class="k-terminal sc-viz-terminal" mb-3>
+        <div class="k-terminal-bar sc-viz-bar">
+          <span class="k-terminal-bar-title">BIT MAP</span>
           <span class="viz-legend">
             <span class="viz-legend-net" /> Network
             <span class="viz-legend-host" /> Host
           </span>
         </div>
-        <div class="bit-map">
-          <template v-for="(octetStart, oi) in [0, 8, 16, 24]" :key="oi">
-            <div class="bit-octet">
-              <button
-                v-for="i in 8"
-                :key="i"
-                type="button"
-                class="bit-sq"
-                :class="(octetStart + i - 1) < (currentBitmask ?? 0) ? 'bit-net' : 'bit-host'"
-                :title="`Set prefix to /${octetStart + i}`"
-                @click="setPrefix(octetStart + i - 1)"
-              >
-                {{ ipBits[octetStart + i - 1] }}
-              </button>
-            </div>
-            <span v-if="oi < 3" class="bit-dot">·</span>
-          </template>
-        </div>
-        <div class="slider-row">
-          <span class="slider-label">/1</span>
-          <input
-            type="range"
-            min="1"
-            max="32"
-            :value="currentBitmask ?? 24"
-            class="cidr-slider"
-            :style="`--val: ${currentBitmask ?? 24}`"
-            @input="onSliderChange(+($event.target as HTMLInputElement).value)"
-          >
-          <span class="slider-label">/32</span>
-          <span class="slider-val">/{{ currentBitmask ?? 24 }}</span>
-        </div>
-      </div>
 
-      <!-- Host range bar -->
-      <div v-if="rangeBar" class="range-bar-wrap" mb-3>
+        <!-- Interactive bit map + CIDR slider -->
+        <div v-if="bareIpValid" class="viz-wrap">
+          <div class="bit-map">
+            <template v-for="(octetStart, oi) in [0, 8, 16, 24]" :key="oi">
+              <div class="bit-octet">
+                <button
+                  v-for="i in 8"
+                  :key="i"
+                  type="button"
+                  class="bit-sq"
+                  :class="(octetStart + i - 1) < (currentBitmask ?? 0) ? 'bit-net' : 'bit-host'"
+                  :title="`Set prefix to /${octetStart + i}`"
+                  @click="setPrefix(octetStart + i - 1)"
+                >
+                  {{ ipBits[octetStart + i - 1] }}
+                </button>
+              </div>
+              <span v-if="oi < 3" class="bit-dot">·</span>
+            </template>
+          </div>
+          <div class="slider-row">
+            <span class="slider-label">/1</span>
+            <input
+              type="range"
+              min="1"
+              max="32"
+              :value="currentBitmask ?? 24"
+              class="cidr-slider"
+              :style="`--val: ${currentBitmask ?? 24}`"
+              @input="onSliderChange(+($event.target as HTMLInputElement).value)"
+            >
+            <span class="slider-label">/32</span>
+            <span class="slider-val">/{{ currentBitmask ?? 24 }}</span>
+          </div>
+        </div>
+
+        <!-- Host range bar -->
+        <div v-if="rangeBar" class="range-bar-wrap">
         <div class="range-bar">
           <div class="rb-seg rb-net" :style="`width:${rangeBar.netPct}%`" />
           <div class="rb-seg rb-hosts" :style="`width:${rangeBar.hostPct}%`" />
@@ -310,6 +313,7 @@ const rangeBar = computed(() => {
             <code class="rb-lbl-addr">{{ rangeBar.broadcast }}</code>
           </div>
         </div>
+      </div>
       </div>
 
       <!-- Unified terminal output -->
@@ -439,7 +443,7 @@ const rangeBar = computed(() => {
 
 <style scoped>
 /* Explicit terminal colors — same values used across all tools */
-.k-terminal { background: #0a0a0c !important; }
+.k-terminal { background: #121212 !important; }
 .k-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 .k-row { background: transparent !important; }
 .k-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
@@ -470,7 +474,7 @@ const rangeBar = computed(() => {
 
 /* ── Unified terminal output ── */
 .k-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -509,7 +513,7 @@ const rangeBar = computed(() => {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.75);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -725,7 +729,7 @@ const rangeBar = computed(() => {
   max-height: calc(100vh - 80px);
   border-radius: 8px;
   padding: 14px;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -797,10 +801,8 @@ const rangeBar = computed(() => {
 /* ── Bit map & slider ── */
 /* ── Host range bar ── */
 .range-bar-wrap {
-  background: #0f0f11 !important;
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
   padding: 12px 14px;
+  border-top: 1px solid rgba(30, 165, 76, 0.15);
 }
 
 .range-bar {
@@ -881,12 +883,16 @@ const rangeBar = computed(() => {
   .rb-lbl-addr { display: none; }
 }
 
-.viz-wrap {
-  background: #0f0f11 !important;
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  padding: 12px 14px;
+.sc-viz-terminal {
   margin-bottom: 14px;
+}
+
+.sc-viz-bar {
+  justify-content: space-between;
+}
+
+.viz-wrap {
+  padding: 12px 14px;
 }
 
 .viz-header {

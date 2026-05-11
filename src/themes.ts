@@ -73,11 +73,23 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
 
   Menu: {
     itemHeight: '32px',
+    color: 'transparent',
+    itemColorActive: 'rgba(30, 165, 76, 0.12)',
+    itemColorActiveHover: '#1c502c',
+    itemTextColorActive: '#1ea54c',
+    itemIconColorActive: '#1ea54c',
+    itemTextColorActiveHover: 'rgba(255, 255, 255, 0.92)',
+    itemIconColorActiveHover: 'rgba(255, 255, 255, 0.92)',
+    itemTextColorChildActive: '#1ea54c',
+    itemIconColorChildActive: '#1ea54c',
+    itemColorHover: 'rgba(255, 255, 255, 0.07)',
+    itemTextColorHover: 'rgba(255, 255, 255, 0.92)',
+    itemIconColorHover: 'rgba(255, 255, 255, 0.92)',
   },
 
   Layout: {
     color: '#2b2b2b',
-    siderColor: '#262626',
+    siderColor: '#111111',
     siderBorderColor: 'rgba(30, 165, 76, 0.1)',
   },
 
@@ -104,8 +116,8 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Input: {
-    color: '#0f0f11',
-    colorFocus: '#111114',
+    color: '#121212',
+    colorFocus: '#121212',
     border: '1px solid rgba(30, 165, 76, 0.28)',
     borderHover: '1px solid rgba(30, 165, 76, 0.55)',
     borderFocus: '1px solid rgba(30, 165, 76, 0.75)',

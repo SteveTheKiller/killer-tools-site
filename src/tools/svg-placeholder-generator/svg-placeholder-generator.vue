@@ -221,7 +221,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 .sp-stepper {
   display: inline-flex;
   align-items: center;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -276,7 +276,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 4px 8px;
@@ -317,7 +317,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 /* Text input */
 .sp-text-input {
   height: 32px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 0 10px;
@@ -384,7 +384,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 
 .sp-btn {
   padding: 7px 18px;
-  background: #0f0f11;
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);

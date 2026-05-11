@@ -93,32 +93,24 @@ const caption = computed(() => {
       <div class="qrg-col qrg-left">
         <div class="kt-terminal qrg-panel">
           <div class="kt-terminal-bar qrg-bar">
-            <span class="kt-prompt">&gt;_</span>
-            <span class="qrg-title">QR CODE</span>
+            <button
+              type="button"
+              class="qrg-tab"
+              :class="{ 'qrg-tab-active': mode === 'text' }"
+              @click="mode = 'text'"
+            >
+              Text / URL
+            </button>
+            <button
+              type="button"
+              class="qrg-tab"
+              :class="{ 'qrg-tab-active': mode === 'wifi' }"
+              @click="mode = 'wifi'"
+            >
+              Wi-Fi
+            </button>
           </div>
           <div class="qrg-body">
-            <div class="qrg-section-label">
-              Type
-            </div>
-            <div class="qrg-pill-row">
-              <button
-                type="button"
-                class="qrg-pill"
-                :class="{ 'qrg-pill-active': mode === 'text' }"
-                @click="mode = 'text'"
-              >
-                Text / URL
-              </button>
-              <button
-                type="button"
-                class="qrg-pill"
-                :class="{ 'qrg-pill-active': mode === 'wifi' }"
-                @click="mode = 'wifi'"
-              >
-                Wi-Fi
-              </button>
-            </div>
-
             <!-- ── Text / URL mode ── -->
             <template v-if="mode === 'text'">
               <div class="qrg-section-label">
@@ -358,22 +350,75 @@ const caption = computed(() => {
   }
 }
 
-.kt-terminal { background: #0a0a0c !important; }
+.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .qrg-bar {
-  padding: 3px 10px !important;
+  padding: 0 !important;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: stretch;
+  gap: 0;
+  min-height: 32px;
 }
 
-.qrg-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1ea54c;
+/* suppress the single default dot — each tab gets its own */
+.qrg-bar::before {
+  display: none !important;
+}
+
+.qrg-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  padding: 0 12px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+
+.qrg-tab:last-child {
+  border-right: none;
+}
+
+.qrg-tab::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+
+.qrg-tab:hover {
+  color: rgba(30, 165, 76, 0.8);
+  background: rgba(30, 165, 76, 0.06);
+}
+
+.qrg-tab:hover::before {
+  background: rgba(30, 165, 76, 0.5);
+}
+
+.qrg-tab-active {
+  color: #1ea54c !important;
+  border-bottom-color: #1ea54c !important;
+  background: rgba(30, 165, 76, 0.08) !important;
+}
+
+.qrg-tab-active::before {
+  background: #1ea54c !important;
 }
 
 .qrg-body {

@@ -117,7 +117,7 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 
 .nato-input {
   width: 100%;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 9px 36px 9px 12px;
@@ -156,7 +156,7 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 
 /* ── Terminal ── */
 .nato-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;

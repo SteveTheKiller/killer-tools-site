@@ -65,8 +65,31 @@ html:not(.dark) .tool-layout .description { color: rgba(0, 0, 0, 0.75) !importan
 html:not(.dark) .tool-header-link          { color: rgba(0, 0, 0, 0.60) !important; opacity: 1 !important; }
 html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !important; }
 
-/* ── Sidebar: NaiveUI menu injects a white background in light mode ── */
-html:not(.dark) .n-menu { background-color: transparent !important; }
+/* ── Sidebar: NaiveUI menu injects its own background — force transparent so sider color shows ── */
+.n-menu { background-color: transparent !important; }
+
+/* ── Sidebar: color + grain on the sider root ── */
+#kt-sider {
+  background: #111111 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E") repeat !important;
+  background-size: auto, 200px 200px !important;
+}
+
+/* ── Sidebar: clear child element backgrounds so sider color shows through ── */
+#kt-sider .n-scrollbar,
+#kt-sider .n-scrollbar-container,
+#kt-sider .n-scrollbar-content,
+#kt-sider .n-layout-sider-scroll-container {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ── Sidebar: active — inset pill style (selected only, not hover) ── */
+.dark .n-menu-item-content--selected,
+.dark .n-menu-item-content--selected:hover {
+  border-radius: 6px !important;
+  margin: 0 8px !important;
+  width: calc(100% - 16px) !important;
+}
 
 /* ── Global pill button ─────────────────────────────────────────────── */
 .kt-pill-row {
@@ -76,6 +99,8 @@ html:not(.dark) .n-menu { background-color: transparent !important; }
   border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.35);
+  width: fit-content;
 }
 
 .kt-pill {
@@ -85,17 +110,12 @@ html:not(.dark) .n-menu { background-color: transparent !important; }
   padding: 5px 14px;
   border-radius: 0;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.2);
   background: transparent;
   color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.12s, color 0.12s;
   font-family: inherit;
-}
-
-.kt-pill:last-child {
-  border-right: none;
 }
 
 .kt-pill:hover {
@@ -624,7 +644,6 @@ html:not(.dark) .cv-item-active     { color: #0d7033 !important; background: rgb
 
 /* ── CVE Lookup ── */
 html:not(.dark) .cve-card-id        { color: #0d7033 !important; }
-html:not(.dark) .cve-copy-id        { color: rgba(0, 0, 0, 0.38) !important; }
 html:not(.dark) .cve-bar-title      { color: rgba(0, 0, 0, 0.38) !important; }
 html:not(.dark) .cve-meta-label     { color: rgba(0, 0, 0, 0.50) !important; }
 html:not(.dark) .cve-meta-val       { color: rgba(0, 0, 0, 0.80) !important; }

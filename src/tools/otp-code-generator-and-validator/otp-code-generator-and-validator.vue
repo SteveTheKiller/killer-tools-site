@@ -67,10 +67,12 @@ const details = computed(() => [
     <div class="otp-columns">
       <!-- LEFT: terminal panel -->
       <div class="otp-left">
-        <div class="otp-terminal">
-          <!-- SECRET input -->
+        <div class="otp-terminal kt-terminal">
+          <!-- SECRET bar -->
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">SECRET</span>
+          </div>
           <div class="otp-input-area">
-            <label class="otp-field-label">Secret</label>
             <div class="otp-input-row">
               <input
                 v-model="secret"
@@ -201,7 +203,7 @@ const details = computed(() => [
 
 /* ── Terminal panel ── */
 .otp-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -443,7 +445,6 @@ html:not(.dark) ::v-deep(.qr-open-btn.n-button) {
 
 html:not(.dark) ::v-deep(.qr-open-btn.n-button:hover) {
   background: rgba(13, 112, 51, 0.10) !important;
-  border-color: #0d7033 !important;
-  color: #083d1a !important;
+  border-color: rgba(13, 112, 51, 0.55) !important;
 }
 </style>

@@ -30,9 +30,11 @@ async function copyUnescape() {
 <template>
   <div class="he-layout">
     <!-- ESCAPE panel -->
-    <div class="he-terminal">
-      <div class="he-input-area">
-        <label class="he-field-label">Your string</label>
+    <div class="he-terminal kt-terminal">
+      <div class="he-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">YOUR STRING</span>
+      </div>
+      <div class="he-body-area">
         <textarea
           v-model="escapeInput"
           class="he-textarea"
@@ -66,9 +68,11 @@ async function copyUnescape() {
     </div>
 
     <!-- UNESCAPE panel -->
-    <div class="he-terminal">
-      <div class="he-input-area">
-        <label class="he-field-label">Your escaped string</label>
+    <div class="he-terminal kt-terminal">
+      <div class="he-bar kt-terminal-bar">
+        <span class="kt-terminal-bar-title">YOUR ESCAPED STRING</span>
+      </div>
+      <div class="he-body-area">
         <textarea
           v-model="unescapeInput"
           class="he-textarea"
@@ -114,36 +118,27 @@ async function copyUnescape() {
   container-type: inline-size;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .he-layout { flex-direction: column; align-items: stretch; }
+  .he-terminal { flex-basis: auto; }
 }
 
 /* ── Terminal panel ── */
 .he-terminal {
   flex: 1 1 400px;
   min-width: 0;
-  background: #0a0a0c !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   display: flex;
   flex-direction: column;
 }
 
-/* ── Input area ── */
-.he-input-area {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 12px 10px;
+.he-bar {
+  padding: 7px 12px;
+}
+
+/* ── Body area ── */
+.he-body-area {
+  padding: 10px 12px;
   border-bottom: 1px solid var(--kt-term-bar-border);
-}
-
-.he-field-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
 .he-textarea {
@@ -175,6 +170,11 @@ async function copyUnescape() {
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid var(--kt-term-bar-border);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.1s;
+}
+
+.he-terminal:hover .he-section-header {
+  background: var(--kt-term-bar-hover-bg);
 }
 
 /* ── Output area ── */

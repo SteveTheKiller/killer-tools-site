@@ -9,6 +9,7 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 <template>
   <n-layout has-sider>
     <n-layout-sider
+      id="kt-sider"
       bordered
       collapse-mode="transform"
       :collapsed-width="0"
@@ -17,6 +18,7 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
       :show-trigger="false"
       :native-scrollbar="false"
       :position="siderPosition"
+      :style="{ backgroundColor: '#111111' }"
     >
       <slot name="sider" />
     </n-layout-sider>

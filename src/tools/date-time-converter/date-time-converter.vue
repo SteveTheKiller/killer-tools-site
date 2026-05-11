@@ -190,7 +190,7 @@ onClickOutside(fmtMenuRef, () => {
 }
 
 .dt-terminal {
-  background: #0a0a0c !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -213,7 +213,7 @@ onClickOutside(fmtMenuRef, () => {
 .dt-input {
   flex: 1 1 0;
   min-width: 0;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 6px;
   outline: none;
@@ -245,7 +245,7 @@ onClickOutside(fmtMenuRef, () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #0f0f11 !important;
+  background: #121212 !important;
   border: 1px solid rgba(30, 165, 76, 0.35);
   border-radius: 6px;
   outline: none;
@@ -269,7 +269,7 @@ onClickOutside(fmtMenuRef, () => {
   top: calc(100% + 4px);
   right: 0;
   min-width: 220px;
-  background: rgba(10, 10, 10, 0.97);
+  background: #121212;
   border: 1px solid rgba(30, 165, 76, 0.5);
   border-radius: 6px;
   padding: 4px;

@@ -20,38 +20,42 @@ const rightIsValid = computed(() => rawRightJson.value === '' || isNotThrowing((
 
 <template>
   <div class="jd-wrap">
-    <div class="jd-field-block">
-      <div class="jd-field-wrap" :class="{ 'jd-field-error': rawLeftJson && !leftIsValid }">
-        <div class="jd-field-header kt-section-row">
-          <span class="jd-sublabel">YOUR FIRST JSON</span>
+    <div class="jd-panels">
+      <!-- Left input -->
+      <div class="jd-field-block">
+        <div class="jd-field-wrap kt-terminal" :class="{ 'jd-field-error': rawLeftJson && !leftIsValid }">
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">YOUR FIRST JSON</span>
+          </div>
+          <textarea
+            v-model="rawLeftJson"
+            class="jd-textarea"
+            placeholder="Paste your first JSON here..."
+            rows="18"
+            spellcheck="false"
+            :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #121212 !important; color: rgba(255,255,255,0.85) !important'"
+          />
         </div>
-        <textarea
-          v-model="rawLeftJson"
-          class="jd-textarea"
-          placeholder="Paste your first JSON here..."
-          rows="20"
-          spellcheck="false"
-          :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #0f0f11 !important; color: rgba(255,255,255,0.85) !important'"
-        />
+        <span v-if="rawLeftJson && !leftIsValid" class="jd-error-msg">Invalid JSON format</span>
       </div>
-      <span v-if="rawLeftJson && !leftIsValid" class="jd-error-msg">Invalid JSON format</span>
-    </div>
 
-    <div class="jd-field-block">
-      <div class="jd-field-wrap" :class="{ 'jd-field-error': rawRightJson && !rightIsValid }">
-        <div class="jd-field-header kt-section-row">
-          <span class="jd-sublabel">YOUR JSON TO COMPARE</span>
+      <!-- Right input -->
+      <div class="jd-field-block">
+        <div class="jd-field-wrap kt-terminal" :class="{ 'jd-field-error': rawRightJson && !rightIsValid }">
+          <div class="kt-terminal-bar">
+            <span class="kt-terminal-bar-title">YOUR JSON TO COMPARE</span>
+          </div>
+          <textarea
+            v-model="rawRightJson"
+            class="jd-textarea"
+            placeholder="Paste your JSON to compare here..."
+            rows="18"
+            spellcheck="false"
+            :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #121212 !important; color: rgba(255,255,255,0.85) !important'"
+          />
         </div>
-        <textarea
-          v-model="rawRightJson"
-          class="jd-textarea"
-          placeholder="Paste your JSON to compare here..."
-          rows="20"
-          spellcheck="false"
-          :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #0f0f11 !important; color: rgba(255,255,255,0.85) !important'"
-        />
+        <span v-if="rawRightJson && !rightIsValid" class="jd-error-msg">Invalid JSON format</span>
       </div>
-      <span v-if="rawRightJson && !rightIsValid" class="jd-error-msg">Invalid JSON format</span>
     </div>
 
     <DiffsViewer :left-json="leftJson" :right-json="rightJson" />
@@ -63,49 +67,48 @@ const rightIsValid = computed(() => rawRightJson.value === '' || isNotThrowing((
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+}
+
+/* Side-by-side inputs at full width */
+.jd-panels {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
   width: 100%;
 }
 
 .jd-field-block {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.jd-field-wrap {
-  border: 1px solid rgba(30, 165, 76, 0.3);
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.15s;
+@media (max-width: 900px) {
+  .jd-panels {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
-.jd-field-wrap:focus-within {
-  border-color: rgba(30, 165, 76, 0.55);
+.jd-field-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .jd-field-error {
   border-color: rgba(224, 85, 85, 0.5) !important;
 }
 
-.jd-field-header {
-  display: flex;
-  align-items: center;
-  padding: 6px 14px;
-}
-
-.jd-sublabel {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.80);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.jd-field-wrap:focus-within {
+  border-color: rgba(30, 165, 76, 0.55) !important;
 }
 
 .jd-textarea {
   width: 100%;
-  background: #0f0f11;
+  background: #121212;
   border: none;
   outline: none;
   padding: 8px 10px;
@@ -129,7 +132,5 @@ const rightIsValid = computed(() => rawRightJson.value === '' || isNotThrowing((
 }
 
 /* Light mode */
-html:not(.dark) .jd-field-wrap { border-color: rgba(13, 112, 51, 0.35); }
-html:not(.dark) .jd-field-wrap:focus-within { border-color: rgba(13, 112, 51, 0.55); }
 html:not(.dark) .jd-textarea::placeholder { color: rgba(0, 0, 0, 0.25); }
 </style>

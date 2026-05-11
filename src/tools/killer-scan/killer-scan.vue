@@ -148,8 +148,8 @@ const features: { title: string, desc: string }[] = [
   }
 }
 .terminal {
-  background: #0a0a0a;
-  border: 1px solid #2a2a2a;
+  background: var(--kt-term-bg);
+  border: 1px solid var(--kt-term-border);
   border-radius: 6px;
   margin: 0;
   text-align: left;
@@ -161,7 +161,7 @@ const features: { title: string, desc: string }[] = [
   justify-content: space-between;
   padding: 8px 12px;
   background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid var(--kt-term-bar-border);
 }
 .terminal-dots {
   display: flex;

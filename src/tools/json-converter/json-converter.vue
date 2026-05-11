@@ -59,7 +59,7 @@ function copyOutput() {
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-12px xl:grid-cols-2">
       <div>
         <div class="mb-1 text-xs op-60">
           Your JSON
