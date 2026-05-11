@@ -688,4 +688,18 @@ const dmarcRecord = computed(() => {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.65);
   cursor: pointer;
-  transition: background 0.1s, border-col
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+
+.erg-dd-option:hover {
+  background: rgba(30, 165, 76, 0.1);
+  border-color: rgba(30, 165, 76, 0.35);
+  color: #1ea54c;
+}
+
+.erg-dd-option-active {
+  background: rgba(30, 165, 76, 0.15);
+  border-color: rgba(30, 165, 76, 0.55);
+  color: #1ea54c;
+}
+</style>

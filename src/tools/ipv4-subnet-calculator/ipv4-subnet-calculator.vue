@@ -1057,4 +1057,15 @@ const rangeBar = computed(() => {
     align-items: stretch;
   }
 
-  /* No point col
+  /* No point collapsing the cheat sheet when it's already stacked below */
+  .cs-toggle {
+    display: none !important;
+  }
+
+  .cs-panel {
+    display: block !important;
+    width: 100%;
+    max-height: none !important;
+  }
+}
+</style>

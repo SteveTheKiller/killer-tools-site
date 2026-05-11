@@ -282,4 +282,13 @@ html:not(.dark) .tb-textarea-binary { color: #0d7033; }
 
 html:not(.dark) .tb-copy-btn {
   background: rgba(13, 112, 51, 0.08);
-  border-color: rgba(13, 112, 51, 0
+  border-color: rgba(13, 112, 51, 0.30);
+  color: #0b5c28;
+}
+
+html:not(.dark) .tb-copy-btn:hover:not(:disabled) {
+  background: rgba(13, 112, 51, 0.18);
+  border-color: #0d7033;
+  color: #0d7033;
+}
+</style>

@@ -417,4 +417,3 @@ html:not(.dark) .bf-btn-accent:not(:disabled):hover {
   color: #052d12;
 }
 </style>
- 
