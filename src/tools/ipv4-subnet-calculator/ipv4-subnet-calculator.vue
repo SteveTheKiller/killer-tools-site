@@ -294,26 +294,26 @@ const rangeBar = computed(() => {
 
         <!-- Host range bar -->
         <div v-if="rangeBar" class="range-bar-wrap">
-        <div class="range-bar">
-          <div class="rb-seg rb-net" :style="`width:${rangeBar.netPct}%`" />
-          <div class="rb-seg rb-hosts" :style="`width:${rangeBar.hostPct}%`" />
-          <div class="rb-seg rb-bcast" :style="`width:${rangeBar.bcastPct}%`" />
+          <div class="range-bar">
+            <div class="rb-seg rb-net" :style="`width:${rangeBar.netPct}%`" />
+            <div class="rb-seg rb-hosts" :style="`width:${rangeBar.hostPct}%`" />
+            <div class="rb-seg rb-bcast" :style="`width:${rangeBar.bcastPct}%`" />
+          </div>
+          <div class="rb-labels">
+            <div class="rb-lbl rb-lbl-net">
+              <span class="rb-lbl-tag">network</span>
+              <code class="rb-lbl-addr">{{ rangeBar.network }}</code>
+            </div>
+            <div class="rb-lbl rb-lbl-hosts">
+              <span class="rb-lbl-tag">{{ rangeBar.hosts.toLocaleString() }} hosts</span>
+              <code v-if="rangeBar.hosts > 0" class="rb-lbl-addr rb-lbl-range">{{ rangeBar.first }} – {{ rangeBar.last }}</code>
+            </div>
+            <div class="rb-lbl rb-lbl-bcast">
+              <span class="rb-lbl-tag">broadcast</span>
+              <code class="rb-lbl-addr">{{ rangeBar.broadcast }}</code>
+            </div>
+          </div>
         </div>
-        <div class="rb-labels">
-          <div class="rb-lbl rb-lbl-net">
-            <span class="rb-lbl-tag">network</span>
-            <code class="rb-lbl-addr">{{ rangeBar.network }}</code>
-          </div>
-          <div class="rb-lbl rb-lbl-hosts">
-            <span class="rb-lbl-tag">{{ rangeBar.hosts.toLocaleString() }} hosts</span>
-            <code v-if="rangeBar.hosts > 0" class="rb-lbl-addr rb-lbl-range">{{ rangeBar.first }} – {{ rangeBar.last }}</code>
-          </div>
-          <div class="rb-lbl rb-lbl-bcast">
-            <span class="rb-lbl-tag">broadcast</span>
-            <code class="rb-lbl-addr">{{ rangeBar.broadcast }}</code>
-          </div>
-        </div>
-      </div>
       </div>
 
       <!-- Unified terminal output -->
@@ -455,6 +455,7 @@ const rangeBar = computed(() => {
   gap: 12px;
   flex: 1 1 900px;
   max-width: 1400px;
+  width: 100%;
   container-type: inline-size;
 }
 
@@ -1045,6 +1046,7 @@ const rangeBar = computed(() => {
 @media (max-width: 1300px) {
   .sc-layout {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .cs-wrap {
