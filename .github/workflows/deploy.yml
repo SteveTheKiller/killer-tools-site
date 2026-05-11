@@ -26,7 +26,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: NODE_OPTIONS=--max-old-space-size=4096 npx vite build
+        run: mkdir -p dist && cp public/robots.txt dist/robots.txt && pnpm build
 
       - uses: actions/upload-pages-artifact@v3
         with:
