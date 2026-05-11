@@ -212,8 +212,4 @@ async function copyUnescape() {
 }
 
 .he-copy-btn:hover {
-  color: #1ea54c;
-  border-color: rgba(30, 165, 76, 0.7);
-  background: rgba(30, 165, 76, 0.06);
-}
-</style>
+  color: #1ea5

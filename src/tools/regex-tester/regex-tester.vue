@@ -552,25 +552,4 @@ html:not(.dark) .rt-cs-panel-title { color: #1ea54c; }
 
 .rt-cs-section {
   display: flex;
-  flex-direction: column;
-}
-
-.rt-cs-header {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  opacity: 0.5;
-  margin-bottom: 6px;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-
-.rt-cs-expr {
-  font-size: 0.72rem;
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.1);
-  padding: 1px 4px;
-  border-radius: 3px;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-}
-</style>
+  flex-direction: co

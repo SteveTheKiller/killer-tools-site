@@ -961,11 +961,4 @@ async function runLookup() {
   padding: 5px 12px;
   font-size: 0.7rem;
   color: rgba(240, 160, 32, 0.85);
-  line-height: 1.5;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
-}
-
-.whois-warn-line:last-child {
-  border-bottom: none;
-}
-</style>
+  l

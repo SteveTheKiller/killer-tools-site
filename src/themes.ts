@@ -112,24 +112,4 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
     textColorPressed: '#4dd07a',
     textColorFocus: '#1ea54c',
     borderRadius: '12px',
-    fontWeight: '500',
-  },
-
-  Input: {
-    color: '#121212',
-    colorFocus: '#121212',
-    border: '1px solid rgba(30, 165, 76, 0.28)',
-    borderHover: '1px solid rgba(30, 165, 76, 0.55)',
-    borderFocus: '1px solid rgba(30, 165, 76, 0.75)',
-    textColor: 'rgba(255, 255, 255, 0.85)',
-    textColorDisabled: 'rgba(255, 255, 255, 0.3)',
-    placeholderColor: 'rgba(255, 255, 255, 0.2)',
-    caretColor: '#1ea54c',
-    boxShadowFocus: '0 0 0 2px rgba(30, 165, 76, 0.12)',
-  },
-
-  Table: {
-    tdColor: '#232323',
-    thColor: '#353535',
-  },
-};
+    fontWe

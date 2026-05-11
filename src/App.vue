@@ -705,8 +705,4 @@ html:not(.dark) .ehp-hop-key        { color: #0d7033 !important; }
 html:not(.dark) .ehp-hop-num        { color: rgba(13, 112, 51, 0.70) !important; }
 html:not(.dark) .ehp-section-header { color: #0b5c28 !important; }
 /* Dim elements */
-html:not(.dark) .ehp-hop-ip         { color: rgba(0, 0, 0, 0.45) !important; }
-html:not(.dark) .ehp-hop-ts         { color: rgba(0, 0, 0, 0.42) !important; }
-html:not(.dark) .ehp-hop-delay      { color: rgba(0, 0, 0, 0.38) !important; }
-html:not(.dark) .ehp-auth-detail    { color: rgba(0, 0, 0, 0.70) !important; }
-</style>
+html:not(.dark) .ehp-hop-ip

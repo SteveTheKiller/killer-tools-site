@@ -528,31 +528,4 @@ const caption = computed(() => {
 
 ::v-deep(.qr-image) {
   width: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-::v-deep(.qr-image) img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.qr-caption {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.8rem;
-  color: rgba(30, 165, 76, 0.75);
-  letter-spacing: 0.02em;
-  margin-top: 4px;
-}
-
-html:not(.dark) .qr-caption { color: #0b5c28; }
-
-.qr-download {
-  margin-top: 8px;
-  width: 100%;
-  max-width: 500px;
-  padding: 7px 16px !important;
-  font-size: 0.82rem !important;
-  border-radius: 6px !important;
-}
-</style>
+  aspect-rat
