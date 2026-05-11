@@ -140,6 +140,10 @@ const features = [
   margin: 0;
   text-align: left;
   overflow: hidden;
+  transition: border-color 0.15s;
+}
+.terminal:hover {
+  border-color: rgba(30, 165, 76, 0.6) !important;
 }
 .terminal-bar {
   display: flex;
@@ -148,6 +152,10 @@ const features = [
   padding: 8px 12px;
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid var(--kt-term-bar-border);
+  transition: background 0.1s;
+}
+.terminal:hover .terminal-bar {
+  background: var(--kt-term-bar-hover-bg) !important;
 }
 .terminal-dots {
   display: flex;
@@ -166,7 +174,7 @@ const features = [
 .terminal-title {
   font-family: Consolas, monospace;
   font-size: 11px;
-  color: #555;
+  color: rgba(255, 255, 255, 0.40);
 }
 .terminal-body {
   padding: 16px 18px;
@@ -192,7 +200,7 @@ const features = [
 @keyframes blink { 50% { opacity: 0; } }
 .hero-wrap {
   max-width: 1100px;
-  margin: 0 auto 32px;
+  margin: 0 auto 8px;
 }
 .hero-columns {
   display: grid;

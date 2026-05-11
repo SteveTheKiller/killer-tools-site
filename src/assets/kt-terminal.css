@@ -80,7 +80,7 @@ html:not(.dark) .k-row               { border-bottom-color: rgba(0, 0, 0, 0.10);
 html:not(.dark) .hero-terminal       { background: var(--kt-term-bg); }
 html:not(.dark) .terminal            { background: var(--kt-term-bg) !important; border-color: var(--kt-term-border) !important; }
 html:not(.dark) .terminal-bar        { border-bottom-color: var(--kt-term-bar-border) !important; }
-html:not(.dark) .terminal-title      { color: #0d7033; }
+html:not(.dark) .terminal-title      { color: #0d7033 !important; }
 html:not(.dark) .t-cmd               { color: rgba(0, 0, 0, 0.85); }
 html:not(.dark) .t-out               { color: rgba(0, 0, 0, 0.60); }
 
