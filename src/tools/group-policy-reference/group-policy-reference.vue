@@ -250,11 +250,6 @@ function copyValue(value: string) {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   margin-top: 4px;
   padding-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);

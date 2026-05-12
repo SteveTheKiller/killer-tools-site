@@ -97,10 +97,12 @@ html:not(.dark) .ks-btn-copy:hover   { background: rgba(13, 112, 51, 0.10); bord
 html:not(.dark) [class*="-btn"] {
   color: #083d1a !important;
   border-color: rgba(13, 112, 51, 0.45) !important;
+  background: rgba(13, 112, 51, 0.08) !important;
 }
 html:not(.dark) [class*="-btn"]:hover:not(:disabled) {
   color: #052d12 !important;
   border-color: rgba(13, 112, 51, 0.70) !important;
+  background: rgba(13, 112, 51, 0.16) !important;
 }
 
 /* ── Exception: "Dangerous" buttons stay amber, not green, in light mode ── */
