@@ -188,11 +188,6 @@ function downloadScript(script: { name: string, download_url: string }) {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .ks-actions {

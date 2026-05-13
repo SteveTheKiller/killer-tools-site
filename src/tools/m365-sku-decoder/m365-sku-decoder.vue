@@ -183,10 +183,5 @@ function copyValue(value: string) {
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 </style>
