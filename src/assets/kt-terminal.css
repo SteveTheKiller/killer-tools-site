@@ -271,19 +271,19 @@ html:not(.dark) [class*="-step-val"] { color: #0d7033 !important; }
    Uses class-based selectors (not bare input/textarea) so NaiveUI components
    are unaffected. Specificity [0,2,1] beats scoped [data-v-xxx].class.      ── */
 html.dark [class*="-input"]:not(.c-input-text):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
-  background: var(--kt-term-bg) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 html.dark [class*="-textarea"] {
-  background: var(--kt-term-bg) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 html.dark [class*="-dropdown-trigger"] {
-  background: var(--kt-term-bg) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 html.dark [class*="-dropdown-menu"] {
-  background: var(--kt-term-bg) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 html.dark [class*="-stepper"] {
-  background: var(--kt-term-bg) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 
 /* ── Systemic: any [prefix]-terminal container → light bg in light mode ──────
@@ -329,6 +329,19 @@ html:not(.dark) .kt-copy:hover {
   background: rgba(13, 112, 51, 0.12);
   border-color: rgba(13, 112, 51, 0.75);
   color: #083d1a;
+}
+
+/* ── Segmented controls / button groups on the page background ───────────────
+   Any *-sort-group, *-filter-group, *-seg-group, *-tab-group container that
+   sits on the heather-gray page background gets a dark translucent base so
+   green text/borders remain readable. Mirrors the .ppr-proto-filter pattern.
+   Standalone nav buttons (.kt-nav-btn) defined per-tool also use rgba(0,0,0,0.35)
+   as their base background per the same convention.                         ── */
+[class*="-sort-group"],
+[class*="-filter-group"],
+[class*="-seg-group"],
+[class*="-tab-group"] {
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .kt-terminal {

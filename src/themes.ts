@@ -116,8 +116,8 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Input: {
-    color: '#121212',
-    colorFocus: '#121212',
+    color: 'rgba(0, 0, 0, 0.35)',
+    colorFocus: 'rgba(0, 0, 0, 0.35)',
     border: '1px solid rgba(30, 165, 76, 0.28)',
     borderHover: '1px solid rgba(30, 165, 76, 0.55)',
     borderFocus: '1px solid rgba(30, 165, 76, 0.75)',

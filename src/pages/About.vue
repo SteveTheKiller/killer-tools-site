@@ -179,6 +179,15 @@ useHead({
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 40px #1ea54c18;
+  transition: border-color 0.15s;
+}
+
+.terminal-card:hover {
+  border-color: rgba(30, 165, 76, 0.6);
+}
+
+.terminal-card:hover .terminal-bar {
+  background: rgba(30, 165, 76, 0.14);
 }
 
 .terminal-bar {
@@ -228,7 +237,7 @@ a:hover { color: #36ad6a; text-decoration: underline; }
 .section-heading {
   font-size: 11px;
   font-weight: 700;
-  color: #555;
+  color: #999;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin: 0 0 10px 0;
@@ -240,10 +249,10 @@ a:hover { color: #36ad6a; text-decoration: underline; }
 /* Killer apps column */
 .killer-apps { padding-top: 2px; }
 
-.col-intro { font-size: 12px; color: #666; margin-bottom: 12px; }
+.col-intro { font-size: 12px; color: #999; margin-bottom: 12px; }
 .app-entry { margin-bottom: 10px; }
 .app-name { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
-.app-desc { font-size: 12px; color: #666; line-height: 1.5; }
+.app-desc { font-size: 12px; color: #999; line-height: 1.5; }
 
 .av-note {
   display: flex;
@@ -295,7 +304,7 @@ a:hover { color: #36ad6a; text-decoration: underline; }
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #555;
+  color: #888;
   margin-bottom: 2px;
   white-space: nowrap;
 }

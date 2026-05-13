@@ -220,8 +220,8 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
 }
 
 .kt-alert-info {
-  background: rgba(30, 165, 76, 0.08);
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(30, 165, 76, 0.4);
   color: rgba(255, 255, 255, 0.65);
 }
 
@@ -709,4 +709,274 @@ html:not(.dark) .ehp-hop-ip         { color: rgba(0, 0, 0, 0.45) !important; }
 html:not(.dark) .ehp-hop-ts         { color: rgba(0, 0, 0, 0.42) !important; }
 html:not(.dark) .ehp-hop-delay      { color: rgba(0, 0, 0, 0.38) !important; }
 html:not(.dark) .ehp-auth-detail    { color: rgba(0, 0, 0, 0.70) !important; }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Migrated from public/killer-tools-overrides.css
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* --- hide social links, buy me coffee, info button, toolbar circle buttons --- */
+.support-button,
+a[href*="twitter.com"],
+.c-button.round.support-button,
+.i-mdi-github,
+.i-mdi-twitter,
+.i-mdi-information-outline,
+.i-mdi-information,
+a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]),
+.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]) {
+  display: none !important;
+}
+
+/* --- hide sidebar hero elements --- */
+.hero-wrapper svg,
+.hero-wrapper .title,
+.hero-wrapper .subtitle,
+.hero-wrapper .divider,
+.hero-wrapper .text-wrapper,
+.sider-content::before,
+.n-layout-sider .n-scrollbar-rail {
+  display: none !important;
+}
+
+/* --- sidebar layout --- */
+.sider-content {
+  margin-top: -170px !important;
+  position: relative;
+  padding-top: -10 !important;
+}
+
+.sider-content > div > div:first-child {
+  margin-top: 20px !important;
+}
+
+.logo-click-target {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 72px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.sider-logo {
+  display: block;
+  height: 38px;
+  padding-left: 0px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.sider-logo img {
+  height: 38px;
+  object-fit: contain;
+  object-position: top;
+}
+
+html:not(.dark) .sider-logo img {
+  filter: brightness(0.55);
+}
+
+.pt-50px {
+  padding-top: 0 !important;
+}
+
+.menu-wrapper {
+  margin-bottom: 0 !important;
+}
+
+div:first-child > .menu-wrapper .n-menu-item-content {
+  padding-left: 32px !important;
+}
+
+.n-layout-sider,
+.sider-content {
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+/* --- subtle noise texture --- */
+html.dark .n-layout {
+  background-color: #2b2b2b !important;
+  background-image: url('/grain.png') !important;
+  background-repeat: repeat !important;
+  background-size: 256px 256px !important;
+}
+
+html:not(.dark) .n-layout {
+  background-image: url('/grain.png') !important;
+  background-repeat: repeat !important;
+  background-size: 256px 256px !important;
+}
+
+html.dark .n-layout-scroll-container {
+  background-color: transparent !important;
+}
+
+/* --- code output wrap --- */
+.n-code pre,
+.n-code code {
+  white-space: pre-wrap !important;
+  word-break: break-all;
+}
+
+/* --- restore wysiwyg editor toolbar buttons --- */
+.editor-header .c-button.circle {
+  display: inline-flex !important;
+}
+
+/* --- mobile fixes --- */
+@media (max-width: 768px) {
+  pre {
+    max-width: 100%;
+    overflow-x: auto !important;
+    box-sizing: border-box;
+  }
+
+  .n-card,
+  .c-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .n-input__textarea-el,
+  .n-input__input-el {
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  .editor-header {
+    flex-wrap: wrap;
+  }
+}
+
+/* --- global scrollbar --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1ea54c55 transparent;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1ea54c55; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
+
+.n-input .n-input__textarea-el::-webkit-scrollbar,
+.n-input .n-input__input-el::-webkit-scrollbar,
+.n-scrollbar-rail::-webkit-scrollbar { width: 4px; }
+
+.n-input .n-input__textarea-el::-webkit-scrollbar-thumb,
+.n-scrollbar-rail::-webkit-scrollbar-thumb { background: #1ea54c55; border-radius: 4px; }
+
+.custom-sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #1ea54c55 transparent;
+  display: block;
+  position: relative;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar { width: 4px; }
+.custom-sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+.custom-sidebar-scroll::-webkit-scrollbar-thumb { background: #1ea54c55; border-radius: 4px; }
+.custom-sidebar-scroll::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
+
+/* --- dark mode: increase text contrast --- */
+html.dark .truncat { color: rgba(255, 255, 255, 0.88) !important; }
+
+html.dark .c-card .line-clamp-2,
+html.dark .n-card .line-clamp-2 { color: rgba(255, 255, 255, 0.50) !important; }
+
+html.dark h3.text-neutral-400,
+html.dark .text-neutral-400 { color: rgba(255, 255, 255, 0.60) !important; }
+
+html.dark .n-input__input-el { color: rgba(255, 255, 255, 0.75) !important; }
+html.dark .n-input__input-el::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
+html.dark .n-input .n-input__prefix,
+html.dark .n-input .n-base-icon { color: rgba(255, 255, 255, 0.45) !important; }
+
+/* --- card title: green on hover --- */
+.c-card .truncat { transition: color 0.18s ease; }
+html.dark .c-card:hover .truncat { color: #1ea54c !important; }
+
+/* --- dark mode: darken cards and sidebar --- */
+html.dark .n-card,
+html.dark .c-card { background-color: #252525 !important; }
+
+html.dark .n-layout-sider {
+  background-color: #111111 !important;
+  background-image: url('/grain.png') !important;
+  background-repeat: repeat !important;
+  background-size: 256px 256px !important;
+}
+
+html.dark .sider-content { background-color: transparent !important; }
+
+html.dark .n-menu-item-content--selected,
+html.dark .n-menu-item-content--selected:hover {
+  border-radius: 6px !important;
+  margin: 0 8px !important;
+  width: calc(100% - 16px) !important;
+}
+
+/* --- killer app landing pages --- */
+html.dark .kapp-version {
+  background: #1a1d22 !important;
+  border-color: rgba(30, 165, 76, 0.25) !important;
+}
+
+html.dark .kapp-gh-link {
+  background: #252525 !important;
+  border-color: rgba(30, 165, 76, 0.5) !important;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+html.dark .kapp-gh-link:hover {
+  background: #111111 !important;
+  border-color: rgba(30, 165, 76, 0.9) !important;
+}
+
+html:not(.dark) .kapp-gh-link:hover {
+  background: #c8c8c8 !important;
+  border-color: rgba(13, 112, 51, 0.7) !important;
+}
+
+/* --- about page: dark mode contrast --- */
+html.dark .app-desc,
+html.dark .col-intro { color: rgba(255, 255, 255, 0.75) !important; }
+
+html.dark .section-heading { color: rgba(255, 255, 255, 0.75) !important; }
+html.dark .link-label { color: rgba(255, 255, 255, 0.65) !important; }
+
+html.dark .killer-apps,
+html.dark .links-bar,
+html.dark .about-footer { color: rgba(255, 255, 255, 0.80) !important; }
+
+/* --- tool header: unconstrain on desktop --- */
+@media (min-width: 769px) {
+  .tool-layout {
+    max-width: none !important;
+    padding: 0 32px;
+  }
+}
+
+/* --- compact header visibility --- */
+.tool-header-compact { opacity: 1 !important; }
+.tool-title-compact { opacity: 0.7 !important; font-size: 0.9rem !important; }
+
+/* --- hide compact header on KillerScan page --- */
+body:has([href="/killer-scan"].router-link-active) .tool-header-compact { display: none !important; }
+
+/* --- full-width tool overrides --- */
+body:has([href="/killer-scan"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100%; }
+body:has([href="/json-diff"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
+body:has([href="/user-agent-parser"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
+body:has([href="/url-parser"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
+body:has([href="/otp-code-generator-and-validator"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
+body:has([href="/ascii-word-art"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
 </style>

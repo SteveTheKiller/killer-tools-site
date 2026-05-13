@@ -561,14 +561,14 @@ const cheatsheet = [
 .cs-toggle:not(.cs-toggle-open) {
   width: 44px;
   min-height: 180px;
-  background: rgba(30,165,76,0.08);
+  background: rgba(0,0,0,0.35);
   border-color: rgba(30,165,76,0.35);
   color: #1ea54c;
   padding: 6px 0 18px;
 }
 
 .cs-toggle:hover {
-  background: rgba(30,165,76,0.18);
+  background: rgba(0,0,0,0.50);
   color: #1ea54c;
   border-color: rgba(30,165,76,0.6);
 }

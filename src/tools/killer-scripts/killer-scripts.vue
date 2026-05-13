@@ -140,8 +140,8 @@ function downloadScript(script: { name: string, download_url: string }) {
 .kt-terminal { background: #121212 !important; }
 
 .ks-info {
-  background: rgba(234, 179, 8, 0.07);
-  border: 1px solid rgba(234, 179, 8, 0.65);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(30, 165, 76, 0.4);
   color: rgba(255, 255, 255, 0.6);
 }
 

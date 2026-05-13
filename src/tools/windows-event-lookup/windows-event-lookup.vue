@@ -117,9 +117,9 @@ function copyId(id: number) {
   text-transform: uppercase;
   padding: 2px 7px;
   border-radius: 4px;
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(0, 0, 0, 0.35);
   color: #1ea54c;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(30, 165, 76, 0.35);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   white-space: nowrap;
 }

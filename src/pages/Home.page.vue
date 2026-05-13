@@ -210,6 +210,7 @@ const sortedTools = computed(() => {
   border: 1px solid rgba(30, 165, 76, 0.25);
   border-radius: 5px;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .home-sort-btn {
