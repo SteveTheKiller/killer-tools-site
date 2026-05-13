@@ -26,8 +26,8 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
 
   Layout: {
     color: '#b8b8b8',
-    siderColor: '#b0b0b0',
-    siderBorderColor: '#aaaaaa',
+    siderColor: '#c8c8c8',
+    siderBorderColor: '#b8b8b8',
   },
 
   Card: {
@@ -99,9 +99,9 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Button: {
-    color: 'rgba(0, 0, 0, 0.3)',
+    color: 'rgba(0, 0, 0, 0.35)',
     colorHover: 'rgba(30, 165, 76, 0.1)',
-    colorPressed: 'rgba(30, 165, 76, 0.18)',
+    colorPressed: 'rgba(0, 0, 0, 0.50)',
     colorFocus: 'rgba(30, 165, 76, 0.1)',
     border: '1px solid rgba(255, 255, 255, 0.12)',
     borderHover: '1px solid rgba(30, 165, 76, 0.5)',

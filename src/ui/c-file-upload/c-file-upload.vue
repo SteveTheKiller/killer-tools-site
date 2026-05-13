@@ -102,7 +102,7 @@ function handleUpload(files: FileList | null | undefined) {
   padding: 6px 18px;
   border-radius: 6px;
   border: 1px solid rgba(30, 165, 76, 0.45);
-  background: rgba(30, 165, 76, 0.10);
+  background: rgba(0, 0, 0, 0.35);
   color: #1ea54c;
   font-size: 0.82rem;
   font-family: inherit;
@@ -111,7 +111,7 @@ function handleUpload(files: FileList | null | undefined) {
 }
 
 .fu-browse-btn:hover {
-  background: rgba(30, 165, 76, 0.18);
+  background: rgba(0, 0, 0, 0.50);
   border-color: rgba(30, 165, 76, 0.70);
   color: #1ea54c;
 }

@@ -442,6 +442,7 @@ const dmarcRecord = computed(() => {
   border: 1px solid rgba(30, 165, 76, 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  overflow: visible; /* allow dropdown menus to escape the card */
 }
 
 /* ── Record output ── */
@@ -642,7 +643,6 @@ const dmarcRecord = computed(() => {
   color: rgba(255, 255, 255, 0.75);
   transition: color 0.12s;
   width: 100%;
-  max-width: 440px;
 }
 
 .erg-dd-btn:hover,
@@ -701,5 +701,73 @@ const dmarcRecord = computed(() => {
   background: rgba(30, 165, 76, 0.15);
   border-color: rgba(30, 165, 76, 0.55);
   color: #1ea54c;
+}
+
+/* ── Light mode ── */
+html:not(.dark) .erg-terminal {
+  background: var(--kt-term-bg) !important;
+  border-color: rgba(13, 112, 51, 0.25) !important;
+}
+
+html:not(.dark) .erg-section-header {
+  color: rgba(0, 0, 0, 0.45) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  border-top-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .erg-record-label { color: rgba(13, 112, 51, 0.60) !important; }
+html:not(.dark) .erg-copy-hint    { color: rgba(13, 112, 51, 0.50) !important; }
+html:not(.dark) .erg-record-text  { color: #0d7033 !important; }
+
+html:not(.dark) .erg-pill {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: rgba(0, 0, 0, 0.55) !important;
+}
+html:not(.dark) .erg-pill:hover {
+  background: rgba(13, 112, 51, 0.08) !important;
+  border-color: rgba(13, 112, 51, 0.40) !important;
+  color: #0d7033 !important;
+}
+html:not(.dark) .erg-pill-active {
+  background: rgba(13, 112, 51, 0.12) !important;
+  border-color: #0d7033 !important;
+  color: #0d7033 !important;
+}
+
+html:not(.dark) .erg-input { color: rgba(0, 0, 0, 0.80) !important; }
+html:not(.dark) .erg-input::placeholder { color: rgba(0, 0, 0, 0.25) !important; }
+
+html:not(.dark) .erg-slider-hint { color: rgba(0, 0, 0, 0.40) !important; }
+
+/* .erg-dd-btn contains "-btn" → systemic rule gives rgba(13,112,51,0.08) bg;
+   base: scoped (0,3,0) beats systemic (0,2,0)
+   hover: systemic :hover rule is (0,4,0); doubled class reaches (0,5,0) to win */
+html:not(.dark) .erg-dd-btn {
+  background: transparent !important;
+  color: rgba(0, 0, 0, 0.70) !important;
+}
+html:not(.dark) .erg-dd-btn.erg-dd-btn:hover,
+html:not(.dark) .erg-dd-btn.erg-dd-btn-open {
+  background: transparent !important;
+  color: #0d7033 !important;
+}
+html:not(.dark) .erg-dd-caret { color: rgba(13, 112, 51, 0.60) !important; }
+
+html:not(.dark) .erg-dd-menu {
+  background: #ffffff !important;
+  border-color: rgba(13, 112, 51, 0.40) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+html:not(.dark) .erg-dd-option { color: rgba(0, 0, 0, 0.65) !important; }
+html:not(.dark) .erg-dd-option:hover {
+  background: rgba(13, 112, 51, 0.08) !important;
+  border-color: rgba(13, 112, 51, 0.30) !important;
+  color: #0d7033 !important;
+}
+html:not(.dark) .erg-dd-option-active {
+  background: rgba(13, 112, 51, 0.10) !important;
+  border-color: rgba(13, 112, 51, 0.45) !important;
+  color: #0d7033 !important;
 }
 </style>

@@ -354,7 +354,9 @@ html:not(.dark) .base-terminal {
   background: var(--kt-term-bg) !important;
 }
 
-html:not(.dark) .base-section-header { color: #0b5c28; }
+/* Systemic [class*="-terminal"]:not()×5 * reaches (0,7,1) without !important,
+   beating scoped (0,3,1) — needs !important to override. */
+html:not(.dark) .base-section-header { color: rgba(0, 0, 0, 0.55) !important; }
 
 html:not(.dark) .base-label { color: rgba(0, 0, 0, 0.55); }
 
@@ -370,4 +372,8 @@ html:not(.dark) .base-mini-val { color: #083d1a; }
 html:not(.dark) .base-copy { color: rgba(13, 112, 51, 0.35); }
 html:not(.dark) .base-row:hover .base-copy { color: rgba(13, 112, 51, 0.70); }
 html:not(.dark) .base-copy-done { color: #0d7033 !important; }
+
+/* Systemic [class*="-stepper"] rule applies #f0f0f0 to these — override to transparent */
+html:not(.dark) .base-stepper     { background: transparent !important; }
+html:not(.dark) .base-mini-stepper { background: transparent !important; }
 </style>

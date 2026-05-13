@@ -46,6 +46,20 @@ html.dark body {
   background: #1c1c1c;
 }
 
+/* ── Film grain boost: second overlay layer amplifies texture without darkening ── */
+html.dark body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/grain.png');
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 99999;
+}
+
 html {
   height: 100%;
   margin: 0;
@@ -68,10 +82,24 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
 /* ── Sidebar: NaiveUI menu injects its own background — force transparent so sider color shows ── */
 .n-menu { background-color: transparent !important; }
 
-/* ── Sidebar: color + grain on the sider root ── */
-#kt-sider {
+/* ── Sidebar: grain texture (dark mode) ── */
+html.dark #kt-sider {
   background: #111111 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E") repeat !important;
   background-size: auto, 200px 200px !important;
+}
+
+/* ── Sidebar: grain texture (light mode) — layered over inline background-color ── */
+html:not(.dark) #kt-sider {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E") !important;
+  background-repeat: repeat !important;
+  background-size: 200px 200px !important;
+}
+
+/* ── Body: grain texture in light mode ── */
+html:not(.dark) body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.10'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
 }
 
 /* ── Sidebar: clear child element backgrounds so sider color shows through ── */
@@ -496,6 +524,16 @@ html:not(.dark) .kt-pill-row {
 html:not(.dark) .kt-pill {
   border-right-color: rgba(0, 0, 0, 0.12) !important;
   color: rgba(0, 0, 0, 0.55) !important;
+}
+/* Standalone pill (not in a row) — needs its own visible border */
+html:not(.dark) .kt-pill:not(.kt-pill-row .kt-pill) {
+  border: 1px solid rgba(13, 112, 51, 0.40) !important;
+  border-radius: 5px !important;
+  background: rgba(13, 112, 51, 0.06) !important;
+}
+html:not(.dark) .kt-pill-active:not(.kt-pill-row .kt-pill-active) {
+  border-color: rgba(13, 112, 51, 0.65) !important;
+  background: rgba(13, 112, 51, 0.15) !important;
 }
 html:not(.dark) .kt-pill:hover {
   background: rgba(13, 112, 51, 0.10) !important;

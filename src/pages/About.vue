@@ -325,4 +325,52 @@ a:hover { color: #36ad6a; text-decoration: underline; }
 .about-footer {
   padding-top: 18px;
 }
+
+/* ── Light mode overrides ────────────────────────────────────────────────── */
+
+/* Terminal card goes light to match site kt-terminal style */
+html:not(.dark) .terminal-card {
+  background: #cccccc;
+  border-color: rgba(13, 112, 51, 0.32);
+  box-shadow: none;
+}
+html:not(.dark) .terminal-bar {
+  background: rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.10);
+}
+html:not(.dark) .terminal-title { color: #555; }
+html:not(.dark) .terminal-body  { color: rgba(0, 0, 0, 0.75); }
+html:not(.dark) .terminal-body a { color: #1a6b3a; }
+html:not(.dark) .terminal-body a:hover { color: #0d7033; }
+html:not(.dark) .site-title { color: #0d7033; }
+html:not(.dark) .terminal-card:hover {
+  border-color: rgba(13, 112, 51, 0.65);
+}
+html:not(.dark) .terminal-card:hover .terminal-bar {
+  background: rgba(13, 112, 51, 0.18);
+}
+
+/* Killer apps column */
+html:not(.dark) .col-intro    { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .app-desc     { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .section-heading { color: rgba(0, 0, 0, 0.45); }
+
+/* Warning box — amber on amber-tinted light bg instead of near-black */
+html:not(.dark) .av-note {
+  background: rgba(254, 188, 46, 0.10);
+  border-color: rgba(254, 188, 46, 0.45);
+  color: rgba(0, 0, 0, 0.60);
+}
+html:not(.dark) .av-note strong { color: #7a5a00; display: block; margin-bottom: 3px; }
+html:not(.dark) .av-icon        { color: #b88000; }
+
+/* Links bar */
+html:not(.dark) .links-bar     { border-top-color: rgba(13, 112, 51, 0.18); border-bottom-color: rgba(13, 112, 51, 0.18); }
+html:not(.dark) .link-divider  { background: rgba(13, 112, 51, 0.18); }
+html:not(.dark) .link-label    { color: rgba(0, 0, 0, 0.42); }
+html:not(.dark) a              { color: #1a6b3a; }
+html:not(.dark) a:hover        { color: #0d7033; }
+html:not(.dark) .link-group a  { color: #1a6b3a; }
+html:not(.dark) .link-group a:hover { color: #0d7033; }
+html:not(.dark) .prompt        { color: rgba(13, 112, 51, 0.65); }
 </style>

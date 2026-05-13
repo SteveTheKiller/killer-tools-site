@@ -519,7 +519,7 @@ const cheatsheet = [
   background: var(--kt-term-bg);
   border: 1px solid var(--kt-term-border);
   border-radius: 8px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .rt-cs-panel-bar {

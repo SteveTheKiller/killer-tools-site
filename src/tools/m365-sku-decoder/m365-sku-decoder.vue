@@ -58,8 +58,8 @@ function copyValue(value: string) {
       mb-4
     />
 
-    <div class="mb-6 text-xs" style="color: rgba(255,255,255,0.4);">
-      See also: <a href="https://m365maps.com" target="_blank" rel="noopener" style="color: #1ea54c; text-decoration: none;">M365 Maps</a> by Aaron Dinnage
+    <div class="mb-6 text-xs sku-see-also">
+      See also: <a href="https://m365maps.com" target="_blank" rel="noopener" class="sku-see-also-link">M365 Maps</a> by Aaron Dinnage
     </div>
 
     <div v-for="{ skus, category } of filtered" :key="category" class="sku-section">
@@ -184,4 +184,25 @@ function copyValue(value: string) {
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
 }
+
+.sku-see-also {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sku-see-also-link {
+  color: #1ea54c;
+  text-decoration: none;
+}
+
+/* ── Light mode ── */
+html:not(.dark) .sku-see-also       { color: rgba(0, 0, 0, 0.50) !important; }
+html:not(.dark) .sku-see-also-link  { color: #0d7033 !important; }
+html:not(.dark) .sku-category-header { color: #0d7033 !important; border-bottom-color: rgba(13, 112, 51, 0.25) !important; }
+html:not(.dark) .sku-name           { color: rgba(0, 0, 0, 0.85) !important; }
+html:not(.dark) .sku-string-id      { color: #0d7033 !important; }
+html:not(.dark) .sku-string-id:hover { color: #083d1a !important; }
+html:not(.dark) .sku-desc           { color: rgba(0, 0, 0, 0.65) !important; }
+html:not(.dark) .sku-tier-default   { background: rgba(0,0,0,0.06) !important; color: rgba(0,0,0,0.45) !important; border-color: rgba(0,0,0,0.12) !important; }
+html:not(.dark) .sku-tier-success   { color: #0d7033 !important; }
+html:not(.dark) .sku-tier-error     { color: #b02020 !important; border-color: rgba(176,32,32,0.35) !important; background: rgba(176,32,32,0.10) !important; }
 </style>

@@ -14,16 +14,20 @@
   --kt-term-bar-border:   rgba(255, 255, 255, 0.08);
   --kt-green:             #1ea54c;
   --kt-green-dim:         rgba(30, 165, 76, 0.3);
+  /* Dark translucent background for buttons/inputs sitting on the page bg */
+  --kt-dark-bg:           rgba(0, 0, 0, 0.35);
+  --kt-dark-bg-hover:     rgba(0, 0, 0, 0.50);
 }
 
-/* ── Light mode: terminals go light gray, bars stay green ── */
+/* ── Light mode: terminals go light gray, bars neutral until hover ── */
 html:not(.dark) {
-  --kt-term-bg:         #cccccc;
-  --kt-term-bar-bg:     rgba(13, 112, 51, 0.22);
-  --kt-term-border:     rgba(13, 112, 51, 0.32);
-  --kt-term-bar-border: rgba(13, 112, 51, 0.24);
-  --kt-green:           #0d7033;
-  --kt-green-dim:       rgba(13, 112, 51, 0.3);
+  --kt-term-bg:           #cccccc;
+  --kt-term-bar-bg:       transparent;
+  --kt-term-bar-hover-bg: rgba(13, 112, 51, 0.18);
+  --kt-term-border:       rgba(13, 112, 51, 0.32);
+  --kt-term-bar-border:   rgba(0, 0, 0, 0.10);
+  --kt-green:             #0d7033;
+  --kt-green-dim:         rgba(13, 112, 51, 0.3);
 }
 
 /* Beat scoped `.kt-terminal { background: #0a0a0c !important }` in tool files.
@@ -32,26 +36,52 @@ html:not(.dark) .kt-terminal {
   background: var(--kt-term-bg) !important;
 }
 
-/* ── Site-wide: all text inside any terminal card → readable dark on gray bg ──
-   Specificity [0,2,1] beats scoped [data-v-xxx].class [0,2,0] without !important.
-   Inline styles (JS-computed severity colors etc.) are NOT affected — they're
-   at [1,0,0] and only !important can beat them, which we intentionally avoid here.
-   Exceptions below come later in the cascade and win the tie at the same specificity. */
+/* ── Site-wide: terminal body text → readable dark on gray bg ─────────────────
+   Specificity [0,2,1] beats scoped [data-v-xxx].class [0,2,0] without !important. */
 html:not(.dark) .kt-terminal *,
 html:not(.dark) .cve-card *         { color: rgba(0, 0, 0, 0.80); }
 
-/* Everything inside the terminal BAR row → dark green, not black */
-html:not(.dark) .kt-terminal-bar *     { color: #0d7033; }
-/* Bar title and section rows: dark green */
-html:not(.dark) .kt-terminal-bar-title { color: #0d7033; }
-html:not(.dark) .kt-section-row        { color: #0b6129; }
-/* Row data: dark enough to read on light gray bg */
-html:not(.dark) .kt-label              { color: rgba(0, 0, 0, 0.82); }
+/* Tool card title names (*-name) → green to match dark mode feel */
+html:not(.dark) .kt-terminal [class*="-name"] { color: #0d7033 !important; }
+
+/* BAR row: titles dark/black — not green */
+html:not(.dark) .kt-terminal-bar *     { color: rgba(0, 0, 0, 0.70) !important; }
+html:not(.dark) .kt-terminal-bar-title { color: #1a1a1a !important; }
+html:not(.dark) .kt-prompt             { color: rgba(13, 112, 51, 0.65) !important; }
+/* Section rows: dark */
+html:not(.dark) .kt-section-row        { color: rgba(0, 0, 0, 0.55); }
+/* Row data */
+html:not(.dark) .kt-label              { color: rgba(0, 0, 0, 0.65); }
 html:not(.dark) .kt-value              { color: #0d7033; }
-html:not(.dark) .kt-value-faded        { color: rgba(0, 0, 0, 0.68); }
-html:not(.dark) .kt-fallback           { color: rgba(0, 0, 0, 0.55); }
-html:not(.dark) .kt-prompt             { color: rgba(13, 112, 51, 0.85); }
+html:not(.dark) .kt-value-faded        { color: rgba(0, 0, 0, 0.50); }
+html:not(.dark) .kt-fallback           { color: rgba(0, 0, 0, 0.40); }
 html:not(.dark) .kt-row                { border-bottom-color: rgba(0, 0, 0, 0.10); }
+
+/* ── Light mode hover effects on kt-terminal cards ──────────────────────────
+   Two cases:
+   1. Plain kt-terminal (bcrypt, WEL, WEC, etc.) — no systemic panel rule applies.
+   2. *-panel.kt-terminal (RSA) — systemic panel rule has (0,6,1)+!important;
+      hover variant must have (0,7,1)+!important to win.                       */
+html:not(.dark) .kt-terminal:hover {
+  border-color: rgba(13, 112, 51, 0.65) !important;
+}
+html:not(.dark) .kt-terminal:hover .kt-terminal-bar {
+  background: var(--kt-term-bar-hover-bg) !important;
+}
+/* Panel variant — mirrors systemic [class*="-panel"] selector exactly + :hover */
+html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]):hover {
+  border-color: rgba(13, 112, 51, 0.65) !important;
+}
+html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]):hover .kt-terminal-bar {
+  background: var(--kt-term-bar-hover-bg) !important;
+}
+/* Systemic hover for any [prefix]-terminal container in light mode */
+html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]):hover {
+  border-color: rgba(13, 112, 51, 0.65) !important;
+}
+html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]):hover [class*="-terminal-bar"]:not([class*="-bar-title"]):not([class*="-bar-dot"]) {
+  background: var(--kt-term-bar-hover-bg) !important;
+}
 /* Copy button: visible on gray bg */
 html:not(.dark) .kt-copy               { border-color: rgba(13, 112, 51, 0.45); color: rgba(13, 112, 51, 0.75); }
 html:not(.dark) .kt-copy:hover         { background: rgba(13, 112, 51, 0.12); border-color: rgba(13, 112, 51, 0.75); color: #0d7033; }
@@ -153,12 +183,12 @@ html:not(.dark) [class*="-textarea"]::placeholder { color: rgba(0, 0, 0, 0.32) !
 html:not(.dark) [class*="-textarea"]:focus        { border-color: rgba(13, 112, 51, 0.55) !important; }
 
 /* Higher-specificity input class override — beats scoped !important at [0,2,0] */
-html:not(.dark) [class*="-input"]:not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]) {
+html:not(.dark) [class*="-input"]:not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-panel"]):not([class*="-input-wrap"]) {
   background: #f0f0f0 !important;
   color: rgba(0, 0, 0, 0.85) !important;
   border-color: rgba(0, 0, 0, 0.20) !important;
 }
-html:not(.dark) [class*="-input"]::placeholder { color: rgba(0, 0, 0, 0.32) !important; }
+html:not(.dark) [class*="-input"]:not([class*="-input-text"])::placeholder { color: rgba(0, 0, 0, 0.32) !important; }
 
 html:not(.dark) [class*="-input-box"] {
   background: #f0f0f0 !important;
@@ -249,7 +279,7 @@ html:not(.dark) [class*="-toggle"]:not([class*="-group"]):not([class*="-on"]):no
 
 /* ── Systemic: output boxes (*-output) ───────────────────────────────────────
    Catches .uu-output, etc. Excludes -text and -wrap variants.               ── */
-html:not(.dark) [class*="-output"]:not([class*="-text"]):not([class*="-wrap"]):not([class*="-panel"]) {
+html:not(.dark) [class*="-output"]:not([class*="-text"]):not([class*="-wrap"]):not([class*="-panel"]):not([class*="-block"]) {
   background: #f0f0f0 !important;
   border-color: rgba(0, 0, 0, 0.18) !important;
 }
@@ -270,7 +300,7 @@ html:not(.dark) [class*="-step-val"] { color: #0d7033 !important; }
 /* ── Dark mode: tool inputs, textareas, dropdowns → #121212 terminal bg ───────
    Uses class-based selectors (not bare input/textarea) so NaiveUI components
    are unaffected. Specificity [0,2,1] beats scoped [data-v-xxx].class.      ── */
-html.dark [class*="-input"]:not(.c-input-text):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
+html.dark [class*="-input"]:not(.c-input-text):not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
   background: rgba(0, 0, 0, 0.35) !important;
 }
 html.dark [class*="-textarea"] {
@@ -295,15 +325,15 @@ html.dark [class*="-stepper"] {
 html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]) {
   background: var(--kt-term-bg) !important;
 }
-/* All text inside those containers → readable dark on light gray bg.
-   No !important here — App.vue !important overrides win for green accents. */
+/* All text inside those containers → green on light gray bg (mirrors dark mode). */
 html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]) * {
-  color: rgba(0, 0, 0, 0.80);
+  color: #0d7033;
 }
-/* Terminal bar contents → dark green (needs !important to beat broad * rule) */
-html:not(.dark) [class*="-terminal-bar"] *  { color: #0d7033 !important; }
-/* Terminal title → dark green */
-html:not(.dark) [class*="-terminal-title"]  { color: #0b5c28 !important; }
+/* Terminal bar contents → dark/black, not green (element itself + children) */
+html:not(.dark) [class*="-terminal-bar"]    { color: rgba(0, 0, 0, 0.70) !important; }
+html:not(.dark) [class*="-terminal-bar"] *  { color: rgba(0, 0, 0, 0.70) !important; }
+/* Terminal title → near-black */
+html:not(.dark) [class*="-terminal-title"]  { color: #1a1a1a !important; }
 /* Terminal sub-label → dim */
 html:not(.dark) [class*="-terminal-sub"]    { color: rgba(0, 0, 0, 0.45) !important; }
 

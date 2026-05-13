@@ -695,4 +695,70 @@ function formatDate(d: Date) {
   border-color: rgba(224,85,85,0.5);
   color: #e05555;
 }
+
+/* ── Light mode ── */
+html:not(.dark) .cr-panel {
+  background: var(--kt-term-bg) !important;
+  border-color: rgba(13, 112, 51, 0.25) !important;
+}
+
+html:not(.dark) .cr-message {
+  color: rgba(0, 0, 0, 0.55) !important;
+}
+
+html:not(.dark) .cr-message-icon {
+  color: rgba(13, 112, 51, 0.5) !important;
+}
+
+html:not(.dark) .cr-unsupported {
+  color: rgba(0, 0, 0, 0.40) !important;
+}
+
+html:not(.dark) .cr-btn {
+  border-color: rgba(13, 112, 51, 0.40) !important;
+  color: #0b5c28 !important;
+}
+html:not(.dark) .cr-btn:hover {
+  background: rgba(13, 112, 51, 0.10) !important;
+  border-color: rgba(13, 112, 51, 0.65) !important;
+  color: #083d1a !important;
+}
+html:not(.dark) .cr-btn-primary {
+  background: rgba(13, 112, 51, 0.12) !important;
+  border-color: rgba(13, 112, 51, 0.55) !important;
+  color: #083d1a !important;
+}
+html:not(.dark) .cr-btn-primary:hover {
+  background: rgba(13, 112, 51, 0.22) !important;
+}
+
+html:not(.dark) .cr-clear-btn {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+html:not(.dark) .cr-clear-btn:hover { color: #b02020 !important; }
+
+html:not(.dark) .cr-media-card {
+  background: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(13, 112, 51, 0.20) !important;
+}
+
+html:not(.dark) .cr-media-time {
+  color: rgba(0, 0, 0, 0.40) !important;
+}
+
+html:not(.dark) .cr-media-badge {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(13, 112, 51, 0.30) !important;
+  color: #0d7033 !important;
+}
+
+html:not(.dark) .cr-icon-btn {
+  border-color: rgba(13, 112, 51, 0.25) !important;
+  color: rgba(13, 112, 51, 0.55) !important;
+}
+html:not(.dark) .cr-icon-btn:hover {
+  background: rgba(13, 112, 51, 0.10) !important;
+  border-color: rgba(13, 112, 51, 0.55) !important;
+  color: #0d7033 !important;
+}
 </style>

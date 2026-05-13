@@ -66,10 +66,10 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
     <!-- Key panels -->
     <div class="rsa-keys-row">
       <!-- Public key -->
-      <div class="rsa-panel">
-        <div class="rsa-panel-header">
-          <span class="rsa-panel-title">PUBLIC KEY</span>
-          <button class="rsa-copy-btn" title="Copy public key" @click="copyPublic()">
+      <div class="rsa-panel kt-terminal">
+        <div class="rsa-panel-header kt-terminal-bar">
+          <span class="kt-terminal-bar-title">Public Key</span>
+          <button class="rsa-copy-btn kt-copy" title="Copy public key" @click="copyPublic()">
             <icon-mdi-content-copy />
             Copy
           </button>
@@ -81,10 +81,10 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
       </div>
 
       <!-- Private key -->
-      <div class="rsa-panel">
-        <div class="rsa-panel-header">
-          <span class="rsa-panel-title">PRIVATE KEY</span>
-          <button class="rsa-copy-btn" title="Copy private key" @click="copyPrivate()">
+      <div class="rsa-panel kt-terminal">
+        <div class="rsa-panel-header kt-terminal-bar">
+          <span class="kt-terminal-bar-title">Private Key</span>
+          <button class="rsa-copy-btn kt-copy" title="Copy private key" @click="copyPrivate()">
             <icon-mdi-content-copy />
             Copy
           </button>
@@ -132,7 +132,7 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 .rsa-input-row {
   display: flex;
   align-items: center;
-  background: #121212;
+  background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -227,13 +227,13 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 }
 
 .rsa-btn-primary {
-  background: rgba(30, 165, 76, 0.12);
+  background: rgba(0, 0, 0, 0.35);
   border-color: rgba(30, 165, 76, 0.5);
   color: #1ea54c;
 }
 
 .rsa-btn-primary:hover {
-  background: rgba(30, 165, 76, 0.22);
+  background: rgba(0, 0, 0, 0.50);
   border-color: #1ea54c;
 }
 
@@ -250,10 +250,6 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   flex: 1 1 0;
   min-width: 0;
   width: 0;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 @media (max-width: 640px) {
@@ -266,21 +262,8 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   }
 }
 
-.rsa-panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 12px 3px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.rsa-panel-title {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.3);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+.rsa-copy-btn {
+  margin-left: auto;
 }
 
 .rsa-copy-btn {

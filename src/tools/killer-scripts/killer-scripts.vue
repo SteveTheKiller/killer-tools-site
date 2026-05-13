@@ -147,6 +147,15 @@ function downloadScript(script: { name: string, download_url: string }) {
 
 .ks-info-cmd { color: #1ea54c; }
 .ks-info-dl  { color: rgba(255, 255, 255, 0.5); }
+
+html:not(.dark) .ks-info {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.35);
+  color: rgba(0, 0, 0, 0.65);
+}
+
+html:not(.dark) .ks-info-cmd { color: #0d7033; }
+html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ks-card {

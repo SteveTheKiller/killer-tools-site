@@ -118,7 +118,7 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 }
 
 .tb-panel-bar {
-  padding: 7px 12px;
+  /* padding inherits from .kt-terminal-bar global (6px 10px) */
 }
 
 .tb-body {

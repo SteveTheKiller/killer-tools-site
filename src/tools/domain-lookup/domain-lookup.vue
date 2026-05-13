@@ -795,13 +795,22 @@ async function runLookup() {
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  transition: border-color 0.15s;
+}
+
+.whois-terminal:hover {
+  border-color: rgba(30, 165, 76, 0.6) !important;
+}
+
+.whois-terminal:hover .whois-terminal-bar {
+  background: var(--kt-term-bar-hover-bg) !important;
 }
 
 .whois-terminal-bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 12px;
+  padding: 6px 10px;
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid var(--kt-term-bar-border);
 }

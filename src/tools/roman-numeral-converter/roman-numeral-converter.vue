@@ -127,7 +127,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 }
 
 .rn-panel-bar {
-  padding: 7px 12px;
+  /* padding inherits from .kt-terminal-bar global (6px 10px) */
 }
 
 .rn-body {
@@ -252,7 +252,8 @@ html:not(.dark) .rn-sublabel { color: rgba(0, 0, 0, 0.55); }
 
 html:not(.dark) .rn-arrows { color: rgba(13, 112, 51, 0.45); }
 
-html:not(.dark) .rn-input-wrap { border-color: rgba(13, 112, 51, 0.25); }
+/* .rn-input-wrap matches systemic [class*="-input"] → keep bg transparent (input inside gets f0f0f0) */
+html:not(.dark) .rn-input-wrap { background: transparent !important; border-color: rgba(13, 112, 51, 0.25); }
 html:not(.dark) .rn-input-wrap:focus-within { border-color: rgba(13, 112, 51, 0.55); }
 
 html:not(.dark) .rn-input {
@@ -271,4 +272,5 @@ html:not(.dark) .rn-copy-btn {
 html:not(.dark) .rn-copy-btn:hover:not(:disabled) {
   background: rgba(13, 112, 51, 0.15);
 }
+
 </style>

@@ -179,6 +179,26 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
   color: #1ea54c !important;
 }
 
+/* ── Light mode overrides ── */
+html:not(.dark) .ppr-proto-filter {
+  background: rgba(13, 112, 51, 0.06) !important;
+  border-color: rgba(13, 112, 51, 0.30) !important;
+}
+
+html:not(.dark) .ppr-seg-btn {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+
+html:not(.dark) .ppr-seg-btn:hover {
+  background: rgba(13, 112, 51, 0.10) !important;
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+
+html:not(.dark) .ppr-seg-btn-active {
+  background: rgba(13, 112, 51, 0.15) !important;
+  color: #0d7033 !important;
+}
+
 .ppr-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

@@ -15,10 +15,10 @@ const { selected } = toRefs(props);
     role="option"
     :aria-selected="selected"
     :class="{
-      'text-white': selected,
-      'bg-primary': selected,
+      'text-primary': selected,
+      'bg-[rgba(0,0,0,0.50)]': selected,
     }"
-    w-full flex cursor-pointer items-center overflow-hidden rounded pa-3 transition hover:bg-primary hover:text-white
+    w-full flex cursor-pointer items-center overflow-hidden rounded pa-3 transition hover:bg-[rgba(0,0,0,0.50)] hover:text-primary
     @click="() => emit('activated', option)"
   >
     <component :is="option.icon" v-if="option.icon" mr-3 h-30px w-30px shrink-0 op-50 />

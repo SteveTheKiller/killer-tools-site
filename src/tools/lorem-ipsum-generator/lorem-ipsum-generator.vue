@@ -437,7 +437,15 @@ html:not(.dark) .li-toggle-on {
 
 html:not(.dark) .li-stat          { color: rgba(13, 112, 51, 0.70); }
 html:not(.dark) .li-stat-sep      { color: rgba(0, 0, 0, 0.25); }
-html:not(.dark) .li-output        { background: transparent; color: rgba(0, 0, 0, 0.75); }
+
+/* Match output terminal bg to controls panel so the rounded corners aren't gray.
+   Systemic [class*="-terminal"]:not()x6 = (0,7,0)+!important.
+   7x repeated class → (0,9,0)+!important — wins. */
+html:not(.dark) .li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap {
+  background: rgba(255, 255, 255, 0.70) !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+html:not(.dark) .li-output.li-output { background: transparent !important; color: rgba(0, 0, 0, 0.75) !important; }
 html:not(.dark) .li-btn           { color: #0d7033; border-color: rgba(13, 112, 51, 0.35); }
 html:not(.dark) .li-btn:hover     { background: rgba(13, 112, 51, 0.08) !important; border-color: rgba(13,112,51,0.65); color: #0b5c28; }
 html:not(.dark) .li-btn-primary   { background: rgba(13, 112, 51, 0.10) !important; border-color: rgba(13,112,51,0.45); color: #0b5c28; }

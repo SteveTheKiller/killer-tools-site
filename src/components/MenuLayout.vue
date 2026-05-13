@@ -18,7 +18,7 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
       :show-trigger="false"
       :native-scrollbar="false"
       :position="siderPosition"
-      :style="{ backgroundColor: '#111111' }"
+      :style="{ backgroundColor: styleStore.isDarkTheme ? '#111111' : '#c8c8c8' }"
     >
       <slot name="sider" />
     </n-layout-sider>

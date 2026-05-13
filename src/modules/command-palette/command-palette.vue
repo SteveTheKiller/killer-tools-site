@@ -40,7 +40,7 @@ function close() {
   searchPrompt.value = '';
 }
 
-const selectedOptionIndex = ref(0);
+const selectedOptionIndex = ref(-1);
 
 function handleKeydown(event: KeyboardEvent) {
   const { key } = event;
@@ -57,7 +57,7 @@ function handleKeydown(event: KeyboardEvent) {
     return;
   }
 
-  if (isEnterPressed) {
+  if (isEnterPressed && selectedOptionIndex.value >= 0) {
     const option = _.chain(filteredSearchResult.value)
       .values()
       .flatten()

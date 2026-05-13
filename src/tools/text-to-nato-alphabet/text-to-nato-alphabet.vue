@@ -226,6 +226,47 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
   font-style: italic;
 }
 
+/* ── Light mode ── */
+html:not(.dark) .nato-sublabel { color: rgba(0, 0, 0, 0.65); }
+
+html:not(.dark) .nato-input {
+  background: #f0f0f0 !important;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.85);
+}
+html:not(.dark) .nato-input::placeholder { color: rgba(0, 0, 0, 0.28); }
+html:not(.dark) .nato-input:focus { border-color: rgba(13, 112, 51, 0.55); }
+
+/* .nato-input-panel matched by systemic [class*="-panel"] → gets #cccccc bg, visible on page */
+html:not(.dark) .nato-input-panel { background: transparent !important; border: none !important; }
+/* .nato-input-row caught by systemic [class*="-input-row"] → reset it */
+html:not(.dark) .nato-input-row { background: transparent !important; border: none !important; }
+
+html:not(.dark) .nato-clear-btn { color: rgba(0, 0, 0, 0.35); }
+html:not(.dark) .nato-clear-btn:hover { color: rgba(0, 0, 0, 0.65); }
+
+html:not(.dark) .nato-terminal-header {
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .nato-char { color: rgba(0, 0, 0, 0.75); }
+html:not(.dark) .nato-char-symbol { color: rgba(0, 0, 0, 0.35); }
+html:not(.dark) .nato-arrow { color: rgba(13, 112, 51, 0.40); }
+html:not(.dark) .nato-word { color: #0d7033; }
+html:not(.dark) .nato-word-dim { color: rgba(0, 0, 0, 0.30); }
+
+html:not(.dark) .nato-copy-btn {
+  background: rgba(13, 112, 51, 0.08);
+  border-color: rgba(13, 112, 51, 0.30);
+  color: #0b5c28;
+}
+html:not(.dark) .nato-copy-btn:hover {
+  background: rgba(13, 112, 51, 0.18);
+  border-color: #0d7033;
+  color: #0d7033;
+}
+
 /* ── Copy button ── */
 .nato-copy-btn {
   display: inline-flex;

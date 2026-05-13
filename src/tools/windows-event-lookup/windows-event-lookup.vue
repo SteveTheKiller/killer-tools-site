@@ -191,4 +191,21 @@ function copyId(id: number) {
   padding-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+/* ── Light mode ── */
+html:not(.dark) .wel-category-header { color: #0d7033 !important; border-bottom-color: rgba(13, 112, 51, 0.20) !important; }
+
+html:not(.dark) .wel-log-badge {
+  background: rgba(13, 112, 51, 0.10) !important;
+  color: #0b5c28 !important;
+  border-color: rgba(13, 112, 51, 0.35) !important;
+}
+
+html:not(.dark) .wel-id           { color: rgba(0, 0, 0, 0.85) !important; }
+html:not(.dark) .wel-name         { color: #0d7033 !important; }
+html:not(.dark) .wel-desc         { color: rgba(0, 0, 0, 0.60) !important; border-top-color: rgba(0, 0, 0, 0.08) !important; }
+
+html:not(.dark) .wel-sev-default  { background: rgba(0,0,0,0.06) !important; color: rgba(0,0,0,0.45) !important; border-color: rgba(0,0,0,0.12) !important; }
+html:not(.dark) .wel-sev-warning  { color: #92600a !important; border-color: rgba(180,120,0,0.35) !important; }
+html:not(.dark) .wel-sev-error    { color: #b02020 !important; border-color: rgba(176,32,32,0.35) !important; background: rgba(176,32,32,0.08) !important; }
 </style>

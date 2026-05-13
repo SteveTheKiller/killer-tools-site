@@ -459,7 +459,7 @@ const groupedAuth = computed(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 12px;
+  padding: 6px 10px;
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid rgba(30, 165, 76, 0.15);
 }

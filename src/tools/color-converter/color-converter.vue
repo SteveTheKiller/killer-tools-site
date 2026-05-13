@@ -224,4 +224,16 @@ async function copyValue(key: string, value: string) {
   .color-row { grid-template-columns: auto 1fr auto; gap: 8px; }
   .color-prompt { display: none; }
 }
+
+/* ── Light mode overrides ── */
+html:not(.dark) .color-field-label { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .color-swatch      { border-color: rgba(0, 0, 0, 0.18); }
+
+/* color-value-input: systemic bare input rule (specificity 0,6,2 + !important) overrides
+   the scoped transparent bg. Match that specificity by repeating classes so this wins. */
+html:not(.dark) .color-terminal.color-terminal .color-row.color-row input.color-value-input {
+  background: transparent !important;
+  color: #0d7033 !important;
+  border: none !important;
+}
 </style>

@@ -154,7 +154,7 @@ async function copyResult(key: string, val: string) {
 }
 
 .pc-panel-bar {
-  padding: 7px 12px;
+  /* padding inherits from .kt-terminal-bar global (6px 10px) */
 }
 
 .pc-body {
@@ -265,6 +265,10 @@ async function copyResult(key: string, val: string) {
 }
 
 /* ── Light mode ── */
+/* Bar and title: beat the systemic [class*="-terminal"] * green via scoped [data-v] specificity boost */
+html:not(.dark) .pc-panel-bar { color: rgba(0, 0, 0, 0.70) !important; }
+html:not(.dark) .pc-panel-bar .kt-terminal-bar-title { color: rgba(0, 0, 0, 0.70) !important; }
+
 html:not(.dark) .pc-text { color: rgba(0, 0, 0, 0.60); }
 
 html:not(.dark) .pc-result {

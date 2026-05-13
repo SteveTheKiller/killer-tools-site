@@ -36,7 +36,7 @@ const tools = computed<ToolCategory[]>(() => [
         <CollapsibleToolMenu :tools-by-category="tools" />
 
         <div class="footer">
-          <c-link style="display: inline; color: #1ea54c" target="_blank" rel="noopener" href="https://thekiller.net">Steve the Killer</c-link> · © {{ new Date().getFullYear() }}
+          <c-link class="footer-link" target="_blank" rel="noopener" href="https://thekiller.net">Steve the Killer</c-link> · © {{ new Date().getFullYear() }}
         </div>
       </div>
     </template>
@@ -79,6 +79,15 @@ const tools = computed<ToolCategory[]>(() => [
   color: #838587;
   margin-top: 20px;
   padding: 20px 0;
+}
+
+.footer-link {
+  display: inline;
+  color: #1ea54c;
+}
+
+html:not(.dark) .footer-link {
+  color: #0d7033;
 }
 
 .sider-content {
