@@ -4,7 +4,7 @@
 
 [CmdletBinding()]
 param(
-    [string]$ConstantsFile = "$PSScriptRoot\src\tools\m365-sku-decoder\m365-sku-decoder.constants.ts",
+    [string]$ConstantsFile = "$PSScriptRoot\..\src\tools\m365-sku-decoder\m365-sku-decoder.constants.ts",
     [switch]$OpenCsv
 )
 
@@ -31,9 +31,9 @@ Write-Host "Parsing CSV..." -ForegroundColor Cyan
 $raw = Import-Csv $TempCsv
 
 # Column names vary slightly between CSV versions — normalize them
-$guidCol     = $raw[0].PSObject.Properties.Name | Where-Object { $_ -match 'GUID' }         | Select-Object -First 1
-$stringCol   = $raw[0].PSObject.Properties.Name | Where-Object { $_ -match 'String ID' }    | Select-Object -First 1
-$nameCol     = $raw[0].PSObject.Properties.Name | Where-Object { $_ -match 'Product Name' } | Select-Object -First 1
+$guidCol     = $raw[0].PSObject.Properties.Name | Where-Object { $_ -match 'GUID' }                      | Select-Object -First 1
+$stringCol   = $raw[0].PSObject.Properties.Name | Where-Object { $_ -match 'String.?ID|String_Id' }      | Select-Object -First 1
+$nameCol     = $raw[0].PSObject.Properties.Name | Where-Object { $_ -match 'Product.?Name|Product_Display_Name' } | Select-Object -First 1
 
 if (-not $guidCol -or -not $stringCol -or -not $nameCol) {
     Write-Host "  ERROR: Could not identify expected columns in CSV." -ForegroundColor Red

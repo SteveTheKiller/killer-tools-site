@@ -58,7 +58,7 @@ function copyValue(value: string) {
       mb-4
     />
 
-    <div class="mb-6 text-xs sku-see-also">
+    <div class="sku-see-also mb-6 text-xs">
       See also: <a href="https://m365maps.com" target="_blank" rel="noopener" class="sku-see-also-link">M365 Maps</a> by Aaron Dinnage
     </div>
 
