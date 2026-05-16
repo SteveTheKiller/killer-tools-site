@@ -83,7 +83,7 @@ const sortedTools = computed(() => {
 </script>
 
 <template>
-  <div class="pt-50px">
+  <div>
     <div class="grid-wrapper">
       <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
         <ColoredCard v-if="config.showBanner" :title="$t('home.follow.title')" :icon="IconHeart">

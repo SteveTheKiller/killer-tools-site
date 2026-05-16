@@ -817,10 +817,6 @@ html:not(.dark) .sider-logo img {
   filter: brightness(0.55);
 }
 
-.pt-50px {
-  padding-top: 0 !important;
-}
-
 .menu-wrapper {
   margin-bottom: 0 !important;
 }
