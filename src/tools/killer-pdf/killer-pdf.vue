@@ -16,7 +16,7 @@ const features = [
   { title: 'Signatures', desc: 'Draw reusable signatures or import a PNG/JPG/BMP image as a signature. Click to place anywhere on a page. Signatures persist between sessions.' },
   { title: 'Search & Select', desc: 'Ctrl+F full-text search with highlighted results. Drag-select to copy text, or Ctrl+A to grab the whole page.' },
   { title: 'Print', desc: 'Print with annotations flattened into the output. Ctrl+P or toolbar button sends directly to the system print dialog.' },
-  { title: 'Install or Run Portable', desc: 'Run directly from anywhere, or use the built-in installer to register it in Start Menu as a PDF handler. No admin rights needed either way.' },
+  { title: 'Install or Run Portable', desc: 'Three ways to get it running: drop the EXE anywhere and run it directly (USB drive, network share, Downloads folder), use the built-in installer to register it in Start Menu as your default PDF handler, or pull it from winget with `winget install killerpdf`. No admin rights needed for any method.' },
   { title: 'Password-Protected PDFs', desc: 'Opening an encrypted PDF prompts for the password instead of throwing an error. The decrypted copy is held in temp for the session.' },
   { title: 'Flatten PDF', desc: 'Save a fully uneditable version by rasterizing every page at 150 DPI via PDFium. Standard in legal, compliance, and reporting workflows. Annotations burned in before flattening.' },
 ];
@@ -38,7 +38,7 @@ const features = [
               </div>
             </div>
             <div class="terminal-body">
-              <span class="t-prompt">$</span> <span class="t-cmd">killerpdf</span> <span class="t-flag">invoice.pdf</span><br>
+              <span class="t-prompt">$</span> <span class="t-cmd">winget install killerpdf</span><br>
               <br>
               <span class="t-out"><span class="t-label">view</span> high-quality rendering, thumbnails, zoom</span><br>
               <span class="t-out"><span class="t-label">edit</span> inline text editing with font matching</span><br>
@@ -229,8 +229,7 @@ const features = [
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 12px;
   width: 100%;
-}
-</style>
+}</style>
 
 <style>
 /* Only apply when KillerPDF page is active */
