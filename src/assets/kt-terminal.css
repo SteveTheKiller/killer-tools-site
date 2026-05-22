@@ -300,20 +300,22 @@ html:not(.dark) [class*="-step-val"] { color: #0d7033 !important; }
 /* ── Dark mode: tool inputs, textareas, dropdowns → #121212 terminal bg ───────
    Uses class-based selectors (not bare input/textarea) so NaiveUI components
    are unaffected. Specificity [0,2,1] beats scoped [data-v-xxx].class.      ── */
+/* Solid backgrounds — rgba(0,0,0,0.35) on the grain texture created visible stripe
+   artifacts. These values are the opaque equivalent on #2b2b2b (n-layout dark bg). */
 html.dark [class*="-input"]:not(.c-input-text):not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: #1a1a1a !important;
 }
 html.dark [class*="-textarea"] {
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: #1a1a1a !important;
 }
 html.dark [class*="-dropdown-trigger"] {
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: #1a1a1a !important;
 }
 html.dark [class*="-dropdown-menu"] {
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: #111111 !important;
 }
 html.dark [class*="-stepper"] {
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: #1a1a1a !important;
 }
 
 /* ── Systemic: any [prefix]-terminal container → light bg in light mode ──────

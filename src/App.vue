@@ -46,19 +46,9 @@ html.dark body {
   background: #1c1c1c;
 }
 
-/* ── Film grain boost: second overlay layer amplifies texture without darkening ── */
-html.dark body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url('/grain.png');
-  background-repeat: repeat;
-  background-size: 256px 256px;
-  mix-blend-mode: overlay;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 99999;
-}
+/* Grain boost overlay removed — n-layout already carries grain background.
+   The overlay was at z-index 99999 and rendered over n-select input boxes,
+   causing visible stripe artifacts on custom UI components. */
 
 html {
   height: 100%;

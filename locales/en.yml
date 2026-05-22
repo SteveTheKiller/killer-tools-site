@@ -65,6 +65,7 @@ tools:
     text: Text
     data: Data
     windows: Windows
+    photography: Photography
 
   password-strength-analyser:
     title: Password strength analyser
@@ -88,6 +89,26 @@ tools:
   camera-recorder:
     title: Camera recorder
     description: Take a picture or record a video from your webcam or camera.
+
+  reciprocity-calculator:
+    title: Reciprocity failure calculator
+    description: Calculate corrected long exposures for 40+ analog film stocks using the Schwarzschild power law. Covers B&W, color negative, and slide films.
+
+  nd-filter-calculator:
+    title: ND filter calculator
+    description: Calculate corrected shutter speeds for neutral density filters. Supports all common ND strengths and custom stop values.
+
+  depth-of-field-calculator:
+    title: Depth of field calculator
+    description: Calculate near limit, far limit, and total depth of field for any lens and sensor combination. Includes hyperfocal distance output.
+
+  exposure-equivalence:
+    title: Exposure equivalence
+    description: Find equivalent shutter speeds across all apertures for the same exposure. Pick your base shutter and aperture to see what you need at every other f-stop.
+
+  dev-calculator:
+    title: Film development calculator
+    description: Calculate adjusted development times with temperature compensation, push/pull processing, and dilution mixing. Includes a database of common B&W developers and film stocks.
 
   keycode-info:
     title: Keycode info

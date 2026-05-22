@@ -351,6 +351,20 @@ function onSearchKeydown(e: KeyboardEvent) {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
+/* ── Controls card: allow dropdown to escape the card boundary ── */
+/* kt-terminal sets overflow: hidden for rounded corners — that clips the
+   absolutely-positioned font menu. Override for this specific card only. */
+.aa-controls {
+  overflow: visible !important;
+}
+
+/* Re-apply overflow: hidden only to the terminal bar so its border-radius
+   still clips correctly at the top of the card */
+.aa-controls .kt-terminal-bar {
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+
 /* ── Font dropdown ── */
 .aa-font-dropdown { position: relative; outline: none; }
 
@@ -359,7 +373,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.35);
+  background: #1a1a1a;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   padding: 7px 10px;
@@ -404,8 +418,8 @@ function onSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
-  background: rgba(30, 165, 76, 0.04);
+  border-bottom: 1px solid rgba(30, 165, 76, 0.25);
+  background: rgba(30, 165, 76, 0.08);
 }
 
 .aa-search-icon { color: rgba(30, 165, 76, 0.4); flex-shrink: 0; }
@@ -460,7 +474,7 @@ function onSearchKeydown(e: KeyboardEvent) {
 .aa-stepper {
   display: inline-flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.35);
+  background: #1a1a1a;
   border: 1px solid rgba(30, 165, 76, 0.2);
   border-radius: 5px;
   overflow: hidden;

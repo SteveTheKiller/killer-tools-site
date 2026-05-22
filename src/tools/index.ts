@@ -11,6 +11,8 @@ import { tool as colorConverter } from './color-converter';
 import { tool as crontabGenerator } from './crontab-generator';
 import { tool as cveLookup } from './cve-lookup';
 import { tool as dateTimeConverter } from './date-time-converter';
+import { tool as depthOfFieldCalculator } from './depth-of-field-calculator';
+import { tool as devCalculator } from './dev-calculator';
 import { tool as deviceInformation } from './device-information';
 import { tool as domainLookup } from './domain-lookup'; // whois-checker and email-dns-checker merged here
 import { tool as emailHeaderParser } from './email-header-parser';
@@ -18,6 +20,7 @@ import { tool as emailRecordGenerator } from './email-record-generator';
 import { tool as emojiPicker } from './emoji-picker';
 import { tool as cypher } from './encryption';
 import { tool as exchangeNdrLookup } from './exchange-ndr-lookup';
+import { tool as exposureEquivalence } from './exposure-equivalence';
 import { tool as gifSearch } from './gif-search';
 import { tool as groupPolicyReference } from './group-policy-reference';
 import { tool as hashText } from './hash-text';
@@ -46,6 +49,7 @@ import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as markdownToHtml } from './markdown-to-html';
 import { tool as mathEvaluator } from './math-evaluator';
 import { tool as metaTagGenerator } from './meta-tag-generator';
+import { tool as ndFilterCalculator } from './nd-filter-calculator';
 import { tool as otpCodeGeneratorAndValidator } from './otp-code-generator-and-validator';
 import { tool as passwordGenerator } from './password-generator';
 import { tool as passwordStrengthAnalyser } from './password-strength-analyser';
@@ -55,6 +59,7 @@ import { tool as phoneParserAndFormatter } from './phone-parser-and-formatter';
 import { tool as portProtocolReference } from './port-protocol-reference';
 import { tool as powershellBuilder } from './powershell-builder';
 import { tool as qrCodeGenerator } from './qr-code-generator';
+import { tool as reciprocityCalculator } from './reciprocity-calculator';
 import { tool as regexTester } from './regex-tester';
 import { tool as romanNumeralConverter } from './roman-numeral-converter';
 import { tool as rsaKeyPairGenerator } from './rsa-key-pair-generator';
@@ -184,6 +189,16 @@ export const toolsByCategory: ToolCategory[] = [
       sqlPrettify,
       xmlFormatter,
       yamlViewer,
+    ],
+  },
+  {
+    name: 'Photography',
+    components: [
+      depthOfFieldCalculator,
+      exposureEquivalence,
+      devCalculator,
+      ndFilterCalculator,
+      reciprocityCalculator,
     ],
   },
   {

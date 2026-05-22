@@ -67,7 +67,34 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
 
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px', color: '#141414' },
+      InternalSelectMenu: { height: '500px', color: '#111111' },
+    },
+  },
+
+  Select: {
+    peers: {
+      // Trigger (InternalSelection) — solid bg so grain doesn't bleed through
+      InternalSelection: {
+        color: '#1c1c1c',
+        colorActive: '#1c1c1c',
+        border: '1px solid rgba(30, 165, 76, 0.28)',
+        borderHover: '1px solid rgba(30, 165, 76, 0.55)',
+        borderActive: '1px solid rgba(30, 165, 76, 0.75)',
+        borderFocus: '1px solid rgba(30, 165, 76, 0.75)',
+        textColor: 'rgba(255, 255, 255, 0.85)',
+        placeholderColor: 'rgba(255, 255, 255, 0.25)',
+        arrowColor: 'rgba(30, 165, 76, 0.6)',
+        arrowColorDisabled: 'rgba(255, 255, 255, 0.2)',
+      },
+      // Dropdown popup — solid dark with green theming
+      InternalSelectMenu: {
+        color: '#111111',
+        optionTextColor: 'rgba(255, 255, 255, 0.75)',
+        optionTextColorActive: '#1ea54c',
+        optionColorActive: 'rgba(30, 165, 76, 0.10)',
+        optionColorActivePending: 'rgba(30, 165, 76, 0.18)',
+        groupHeaderTextColor: 'rgba(30, 165, 76, 0.60)',
+      },
     },
   },
 
@@ -116,8 +143,8 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Input: {
-    color: 'rgba(0, 0, 0, 0.35)',
-    colorFocus: 'rgba(0, 0, 0, 0.35)',
+    color: '#1c1c1c',
+    colorFocus: '#1c1c1c',
     border: '1px solid rgba(30, 165, 76, 0.28)',
     borderHover: '1px solid rgba(30, 165, 76, 0.55)',
     borderFocus: '1px solid rgba(30, 165, 76, 0.75)',
