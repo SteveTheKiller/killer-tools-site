@@ -1,7 +1,19 @@
 # Changelog
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased] - 2026-05-09
+## 2026-05-21
+
+### New Photography Tools
+
+- **Depth of field calculator**: hyperfocal distance, near/far limits, circle of confusion; supports all common sensor formats
+- **Exposure equivalence**: find equivalent exposures across apertures using a drag/click dial interface for shutter speed and aperture
+- **Film development calculator**: temperature-adjusted dev times with push/pull support, dilution volume calculator, and a full process timer with per-stage agitation notes and audio cues; supports B&W, C-41, and E6
+- **ND filter calculator**: calculates long exposure shutter speed for any ND filter strength in stops or factor
+- **Reciprocity failure calculator**: corrected exposure times for common film stocks using per-stock exponents
+
+---
+
+## 2026-05-09
 
 ### Terminal Theme
 
