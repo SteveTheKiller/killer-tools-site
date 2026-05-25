@@ -18,11 +18,16 @@ function resizeCanvas() {
   if (!canvasRef.value || !signaturePad) {
     return;
   }
-  const data = signaturePad.toData();
   const canvas = canvasRef.value;
+  const w = canvas.offsetWidth;
+  const h = canvas.offsetHeight;
+  if (w === 0 || h === 0) {
+    return;
+  }
+  const data = signaturePad.toData();
   const ratio = Math.max(window.devicePixelRatio || 1, 1);
-  canvas.width = canvas.offsetWidth * ratio;
-  canvas.height = canvas.offsetHeight * ratio;
+  canvas.width = w * ratio;
+  canvas.height = h * ratio;
   const ctx = canvas.getContext('2d');
   if (ctx) {
     ctx.scale(ratio, ratio);
@@ -38,6 +43,10 @@ function initPad() {
     return;
   }
   const canvas = canvasRef.value;
+  if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
+    requestAnimationFrame(initPad);
+    return;
+  }
   const ratio = Math.max(window.devicePixelRatio || 1, 1);
   canvas.width = canvas.offsetWidth * ratio;
   canvas.height = canvas.offsetHeight * ratio;
@@ -217,7 +226,7 @@ onMounted(() => {
   initPad();
   resizeObserver = new ResizeObserver(() => {
     if (mode.value === 'draw') {
-      resizeCanvas();
+      requestAnimationFrame(resizeCanvas);
     }
   });
   if (canvasRef.value?.parentElement) {
@@ -452,11 +461,19 @@ onUnmounted(() => {
     flex-direction: column;
   }
   .sig-left {
-    flex: 1 1 100%;
+    flex: 0 0 auto;
     max-width: none;
+    width: 100%;
   }
   .sig-right {
-    flex: 1 1 100%;
+    flex: 0 0 auto;
+    width: 100%;
+    align-items: stretch;
+  }
+  .sig-canvas-frame {
+    min-height: 260px;
+    height: 50vw;
+    max-height: 420px;
   }
 }
 
