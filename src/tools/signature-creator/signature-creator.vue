@@ -383,7 +383,6 @@ onUnmounted(() => {
         <!-- Draw canvas -->
         <div v-show="mode === 'draw'" class="sig-canvas-frame">
           <canvas ref="canvasRef" class="sig-canvas" />
-          <span v-if="isEmpty" class="sig-canvas-hint">Sign here</span>
         </div>
 
         <!-- Remove BG preview -->
@@ -694,15 +693,6 @@ onUnmounted(() => {
   height: 100%;
   border-radius: 2px;
   touch-action: none;
-}
-
-.sig-canvas-hint {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.85rem;
-  color: rgba(0, 0, 0, 0.25);
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
 }
 
 /* ── Image previews ── */
