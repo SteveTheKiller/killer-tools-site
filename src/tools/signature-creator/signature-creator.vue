@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
-import SignaturePad from 'signature_pad';
 import { removeBackground } from '@imgly/background-removal';
+import SignaturePad from 'signature_pad';
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 type Mode = 'draw' | 'removebg';
 
@@ -15,26 +15,36 @@ const strokeWidth = ref(3);
 const isEmpty = ref(true);
 
 function resizeCanvas() {
-  if (!canvasRef.value || !signaturePad) return;
+  if (!canvasRef.value || !signaturePad) {
+    return;
+  }
   const data = signaturePad.toData();
   const canvas = canvasRef.value;
   const ratio = Math.max(window.devicePixelRatio || 1, 1);
   canvas.width = canvas.offsetWidth * ratio;
   canvas.height = canvas.offsetHeight * ratio;
   const ctx = canvas.getContext('2d');
-  if (ctx) ctx.scale(ratio, ratio);
+  if (ctx) {
+    ctx.scale(ratio, ratio);
+  }
   signaturePad.clear();
-  if (data.length > 0) signaturePad.fromData(data);
+  if (data.length > 0) {
+    signaturePad.fromData(data);
+  }
 }
 
 function initPad() {
-  if (!canvasRef.value) return;
+  if (!canvasRef.value) {
+    return;
+  }
   const canvas = canvasRef.value;
   const ratio = Math.max(window.devicePixelRatio || 1, 1);
   canvas.width = canvas.offsetWidth * ratio;
   canvas.height = canvas.offsetHeight * ratio;
   const ctx = canvas.getContext('2d');
-  if (ctx) ctx.scale(ratio, ratio);
+  if (ctx) {
+    ctx.scale(ratio, ratio);
+  }
 
   signaturePad = new SignaturePad(canvas, {
     penColor: inkColor.value,
@@ -63,7 +73,9 @@ function undoPad() {
 }
 
 function downloadSignature() {
-  if (!signaturePad || signaturePad.isEmpty()) return;
+  if (!signaturePad || signaturePad.isEmpty()) {
+    return;
+  }
   const dataUrl = signaturePad.toDataURL('image/png');
   const a = document.createElement('a');
   a.href = dataUrl;
@@ -72,7 +84,9 @@ function downloadSignature() {
 }
 
 watch(inkColor, (val) => {
-  if (signaturePad) signaturePad.penColor = val;
+  if (signaturePad) {
+    signaturePad.penColor = val;
+  }
 });
 
 watch(strokeWidth, (val) => {
@@ -107,14 +121,18 @@ const fileInputRef = ref<HTMLInputElement | null>(null);
 function onFileSelect(event: Event) {
   const input = event.target as HTMLInputElement;
   const file = input.files?.[0];
-  if (file) loadFile(file);
+  if (file) {
+    loadFile(file);
+  }
 }
 
 function onDrop(event: DragEvent) {
   event.preventDefault();
   isDragOver.value = false;
   const file = event.dataTransfer?.files?.[0];
-  if (file && file.type.startsWith('image/')) loadFile(file);
+  if (file && file.type.startsWith('image/')) {
+    loadFile(file);
+  }
 }
 
 function onDragOver(event: DragEvent) {
@@ -132,7 +150,9 @@ function loadFile(file: File) {
 }
 
 async function runRemoveBackground() {
-  if (!uploadedImage.value) return;
+  if (!uploadedImage.value) {
+    return;
+  }
   processing.value = true;
   processingStatus.value = 'Loading AI model...';
 
@@ -154,7 +174,9 @@ async function runRemoveBackground() {
       },
     });
 
-    if (resultImage.value) URL.revokeObjectURL(resultImage.value);
+    if (resultImage.value) {
+      URL.revokeObjectURL(resultImage.value);
+    }
     resultImage.value = URL.createObjectURL(resultBlob);
     processingStatus.value = '';
   }
@@ -168,7 +190,9 @@ async function runRemoveBackground() {
 }
 
 function downloadResult() {
-  if (!resultImage.value) return;
+  if (!resultImage.value) {
+    return;
+  }
   const a = document.createElement('a');
   a.href = resultImage.value;
   const base = uploadedFilename.value.replace(/\.[^/.]+$/, '') || 'image';
@@ -181,7 +205,9 @@ function resetUpload() {
   resultImage.value = null;
   processingStatus.value = '';
   uploadedFilename.value = '';
-  if (fileInputRef.value) fileInputRef.value.value = '';
+  if (fileInputRef.value) {
+    fileInputRef.value.value = '';
+  }
 }
 
 // ── Lifecycle ──────────────────────────────────────────────────────
@@ -190,7 +216,9 @@ let resizeObserver: ResizeObserver | null = null;
 onMounted(() => {
   initPad();
   resizeObserver = new ResizeObserver(() => {
-    if (mode.value === 'draw') resizeCanvas();
+    if (mode.value === 'draw') {
+      resizeCanvas();
+    }
   });
   if (canvasRef.value?.parentElement) {
     resizeObserver.observe(canvasRef.value.parentElement);
@@ -199,7 +227,9 @@ onMounted(() => {
 
 onUnmounted(() => {
   resizeObserver?.disconnect();
-  if (resultImage.value) URL.revokeObjectURL(resultImage.value);
+  if (resultImage.value) {
+    URL.revokeObjectURL(resultImage.value);
+  }
 });
 </script>
 
@@ -622,11 +652,26 @@ onUnmounted(() => {
 
 /* ── Canvas / preview frame ── */
 .sig-canvas-frame {
-  background: #ffffff;
+  background:
+    linear-gradient(90deg,
+      transparent 109px,
+      rgba(210, 60, 60, 0.5) 109px,
+      rgba(210, 60, 60, 0.5) 111px,
+      transparent 111px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 28px,
+      rgba(100, 160, 230, 0.55) 28px,
+      rgba(100, 160, 230, 0.55) 29px
+    ),
+    #f9f9f8;
   border: 1px solid rgba(30, 165, 76, 0.45);
-  border-radius: 12px;
+  border-radius: 2px;
   box-shadow:
     0 0 0 1px rgba(30, 165, 76, 0.08),
+    0 2px 12px rgba(0, 0, 0, 0.18),
     0 0 32px rgba(30, 165, 76, 0.18),
     inset 0 0 48px rgba(30, 165, 76, 0.05);
   width: 100%;
@@ -647,16 +692,17 @@ onUnmounted(() => {
   inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 2px;
   touch-action: none;
 }
 
 .sig-canvas-hint {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.25);
   pointer-events: none;
   user-select: none;
+  z-index: 1;
 }
 
 /* ── Image previews ── */
