@@ -77,6 +77,7 @@ import { tool as userAgentParser } from './user-agent-parser';
 import { tool as uuidGenerator } from './uuid-generator';
 import { tool as windowsErrorCodes } from './windows-error-codes';
 import { tool as windowsEventLookup } from './windows-event-lookup';
+import { tool as signatureCreator } from './signature-creator';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as xmlJsonConverter } from './xml-json-converter';
 import { tool as yamlConverter } from './yaml-converter';
@@ -207,6 +208,7 @@ export const toolsByCategory: ToolCategory[] = [
       gifSearch,
       cameraRecorder,
       qrCodeGenerator,
+      signatureCreator,
       svgPlaceholderGenerator,
     ],
   },

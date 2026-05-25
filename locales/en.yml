@@ -215,6 +215,10 @@ tools:
     title: QR Code generator
     description: Generate and download QR codes for URLs, plain text, or Wi-Fi network credentials. Terminal, classic, and custom color themes with configurable error correction.
 
+  signature-creator:
+    title: Signature creator
+    description: Draw a handwritten signature on-canvas and export as a transparent PNG. Or upload any image and strip its background with one click using on-device AI.
+
   xml-formatter:
     title: XML formatter
     description: Prettify your XML string into a friendly, human-readable format.
