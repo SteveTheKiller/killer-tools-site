@@ -139,6 +139,7 @@ export default defineConfig({
         navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        globIgnores: ['**/*.wasm', '**/ort-*'],
       },
       manifest: {
         name: 'Killer Tools',
