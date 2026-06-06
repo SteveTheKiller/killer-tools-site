@@ -84,10 +84,10 @@ const features = [
             Windows 10/11 x64 &middot; .NET Framework 4.8
           </p>
           <div class="kapp-version" style="display: inline-block; background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 3px; padding: 4px 12px; font-family: Consolas, monospace; font-size: 12px; color: #1ea54c; margin-top: 12px;">
-            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.4.1 &middot; updated 5/21/2026
+            <span style="color: #0C7A43; font-weight: bold;">$</span> KillerPDF v1.4.2 &middot; updated 6/6/2026
           </div>
           <p class="kapp-sha256" style="margin-top: 12px; font-size: 11px; color: #a0a0a0; font-family: Consolas, monospace; text-align: center; word-break: break-all; overflow-wrap: break-word; width: 100%;">
-            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>6D01CF6DE21E50BAD23D55D3C60BB2AAF1037D21B3470AA0045CC4F3BFD1CAD1
+            <span style="color: #1ea54c; margin-right: 8px;">SHA256</span>502AEF72DD4FB69AA21A2E5D38CA8C37B77A90B3C125B9CAB5EF6C78DC3D450E
           </p>
           <a
             href="https://github.com/SteveTheKiller/KillerPDF"
