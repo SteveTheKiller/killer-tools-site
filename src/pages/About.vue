@@ -75,15 +75,15 @@ useHead({
         <p class="col-intro">Standalone executables for field work. No installer, no runtime, no dependencies.</p>
 
         <div class="app-entry">
-          <div class="app-name"><a href="https://scan.killertools.net" target="_blank" rel="noopener">KillerScan</a></div>
+          <div class="app-name"><a href="https://killerscan.net" target="_blank" rel="noopener">KillerScan</a></div>
           <div class="app-desc">Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification.</div>
         </div>
         <div class="app-entry">
-          <div class="app-name"><a href="https://pdf.killertools.net" target="_blank" rel="noopener">KillerPDF</a></div>
+          <div class="app-name"><a href="https://killerpdf.net" target="_blank" rel="noopener">KillerPDF</a></div>
           <div class="app-desc">Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files.</div>
         </div>
         <div class="app-entry">
-          <div class="app-name"><a href="https://find.killertools.net" target="_blank" rel="noopener">KillerFind</a></div>
+          <div class="app-name"><a href="https://killerfind.net" target="_blank" rel="noopener">KillerFind</a></div>
           <div class="app-desc">Fast file search for Windows. Search by filename, wildcard, or file content across any directory.</div>
         </div>
 
