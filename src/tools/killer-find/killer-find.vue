@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 onMounted(() => {
-  window.open('https://find.killertools.net', '_blank', 'noopener');
+  window.open('https://killerfind.net', '_blank', 'noopener');
   router.replace('/');
 });
 </script>
