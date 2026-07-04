@@ -13,10 +13,11 @@ export const { themes: appThemes, useTheme: useAppTheme } = defineThemes({
       colorPressed: 'rgba(46, 51, 56, 0.22)',
     },
     primary: {
-      color: '#18a058',
-      colorHover: '#1ea54c',
-      colorPressed: '#0C7A43',
-      colorFaded: '#18a0582f',
+      // Theme engine accent (follows the active theme + accent dot)
+      color: 'var(--kt-accent)',
+      colorHover: 'var(--kt-accent)',
+      colorPressed: 'var(--kt-accent-2)',
+      colorFaded: 'rgba(var(--kt-accent-rgb), 0.18)',
     },
     warning: {
       color: '#f59e0b',
@@ -49,10 +50,11 @@ export const { themes: appThemes, useTheme: useAppTheme } = defineThemes({
       colorPressed: 'rgba(255, 255, 255, 0.24)',
     },
     primary: {
-      color: '#1ea54c',
-      colorHover: '#36AD6A',
-      colorPressed: '#0C7A43',
-      colorFaded: '#18a0582f',
+      // Theme engine accent (follows the active theme + accent dot)
+      color: 'var(--kt-accent)',
+      colorHover: 'var(--kt-accent)',
+      colorPressed: 'var(--kt-accent-2)',
+      colorFaded: 'rgba(var(--kt-accent-rgb), 0.18)',
     },
     warning: {
       color: '#f59e0b',

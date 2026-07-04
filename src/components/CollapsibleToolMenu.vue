@@ -10,8 +10,30 @@ const props = withDefaults(defineProps<{ toolsByCategory?: ToolCategory[] }>(), 
 const { toolsByCategory } = toRefs(props);
 const route = useRoute();
 
-const makeLabel = (tool: Tool) => () => h(RouterLink, { to: tool.path }, { default: () => tool.name });
-const makeIcon = (tool: Tool) => () => h(MenuIconItem, { tool });
+// Killer app entries carry their own brand icon + wordmark in the menu
+const APP_BRAND: Record<string, { icon: string, wm: string }> = {
+  '/killer-pdf': { icon: '/brand/kp-icon.png', wm: 'killerpdf' },
+  '/killer-find': { icon: '/brand/kf-icon.png', wm: 'killerfind' },
+  '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
+};
+
+const makeLabel = (tool: Tool) => () => {
+  const brand = APP_BRAND[tool.path];
+  if (brand) {
+    return h(RouterLink, { to: tool.path }, { default: () => [
+      h('img', { class: 'wm-menu wm-menu-dark', src: `/brand/${brand.wm}-wordmark-dark.png`, alt: tool.name }),
+      h('img', { class: 'wm-menu wm-menu-light', src: `/brand/${brand.wm}-wordmark-light.png`, alt: tool.name }),
+    ] });
+  }
+  return h(RouterLink, { to: tool.path }, { default: () => tool.name });
+};
+const makeIcon = (tool: Tool) => () => {
+  const brand = APP_BRAND[tool.path];
+  if (brand) {
+    return h('img', { class: 'menu-app-icon', src: brand.icon, alt: '' });
+  }
+  return h(MenuIconItem, { tool });
+};
 
 const collapsedCategories = useStorage<Record<string, boolean>>(
   'menu-tool-option:collapsed-categories',
@@ -55,11 +77,11 @@ function onMenuSelect() {
 
 <template>
   <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name">
-    <div v-if="tools.length > 1" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
+    <div v-if="tools.length > 1" class="cat-header" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
       <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
         <icon-mdi-chevron-right />
       </span>
-      <span ml-8px text-13px>
+      <span class="cat-name" ml-8px>
         {{ name }}
       </span>
     </div>
@@ -106,15 +128,103 @@ function onMenuSelect() {
     opacity: 0.5;
   }
 }
+/* Category headers: family section-header voice (small caps, spaced), accent on hover */
+.cat-header {
+  transition: opacity 0.15s ease;
+  &:hover {
+    opacity: 1;
+    .cat-name { color: v-bind('themeVars.primaryColor'); }
+  }
+}
+.cat-name {
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 15.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: color 0.15s ease;
+}
+
+/* Light family nulls text strokes (family rule) + swaps brand wordmarks */
+html:not(.dark) .menu-wrapper ::v-deep(.n-menu-item-content-header) {
+  text-shadow: none !important;
+}
+html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-dark) {
+  display: none;
+}
+html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
+  display: block;
+}
+
 .menu-wrapper {
   display: flex;
   flex-direction: row;
   .menu {
     flex: 1;
     margin-bottom: -10px;
+    /* Family voice: menu items in the killer font */
+    ::v-deep(.n-menu-item-content-header) {
+      font-family: 'KillerScan', 'Courier New', monospace;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
     ::v-deep(.n-menu-item-content::before) {
       left: 0;
       right: 13px;
+      border-radius: 6px;
+      transition: background-color 0.15s ease;
+    }
+    /* Grunge motion: items nudge right on hover; the active item grows an
+       accent stripe on its left edge (the sidebar cousin of the tab stripe) */
+    ::v-deep(.n-menu-item-content) {
+      position: relative;
+      transition: transform 0.16s ease;
+      &:hover {
+        transform: translateX(3px);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 22%;
+        bottom: 22%;
+        width: 2.5px;
+        border-radius: 2px;
+        background-color: v-bind('themeVars.primaryColor');
+        transform: scaleY(0);
+        transition: transform 0.18s ease;
+        pointer-events: none;
+      }
+    }
+    ::v-deep(.n-menu-item-content--selected) {
+      &:hover { transform: none; }
+      &::after { transform: scaleY(1); }
+
+      /* White SelectionFg over the solid bar, with the family text stroke
+         so the lettering stands out (nulled in Light, per the family rule) */
+      .n-menu-item-content-header {
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    /* Hover: accent lettering gets the same stroke on the gray bar */
+    ::v-deep(.n-menu-item-content:hover .n-menu-item-content-header) {
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Killer app entries: brand icon + wordmark sized to sit like text */
+    ::v-deep(.menu-app-icon) {
+      width: 21px;
+      height: 21px;
+      object-fit: contain;
+      display: block;
+    }
+    ::v-deep(.wm-menu) {
+      height: 15px;
+      width: auto;
+      display: block;
+    }
+    ::v-deep(.wm-menu-light) {
+      display: none;
     }
   }
   .toggle-bar {

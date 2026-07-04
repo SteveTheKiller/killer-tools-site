@@ -26,19 +26,12 @@ useHead({
     <!-- Row 1: terminal left, killer apps right -->
     <div class="about-main">
 
-      <div class="terminal-card">
-        <div class="terminal-bar">
-          <span class="terminal-title">~/about</span>
-          <div class="dots">
-            <span class="dot green" />
-            <span class="dot yellow" />
-            <span class="dot red" />
-          </div>
-        </div>
+      <!-- Grunge card (family standard): dark grained surface, rounded, replaces the old terminal chrome -->
+      <div class="g-card">
         <div class="terminal-body">
           <div class="prompt-line">
             <span class="prompt">&gt;_</span>
-            <h1 class="site-title">killer-tools</h1>
+            <h1 class="site-title killer-font">killer-tools</h1>
           </div>
           <p>
             Field techs don't have time for bloat. Every tool here exists because I needed it on the job and
@@ -71,36 +64,44 @@ useHead({
       </div>
 
       <div class="killer-apps">
-        <h2 class="section-heading" style="margin-top: 30px;"><span class="prompt">#</span> Killer Apps</h2>
-        <p class="col-intro">Standalone executables for field work. No installer, no runtime, no dependencies.</p>
-
-        <div class="app-entry">
-          <div class="app-name"><a href="https://killerscan.net" target="_blank" rel="noopener">KillerScan</a></div>
-          <div class="app-desc">Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification.</div>
+        <!-- Same cross-promo card as the app landing pages: "Also try..." in the
+             family typewriter face, cards on a grained Grunge surface -->
+        <div class="g-card">
+        <h2 class="also-heading killer-font">Also try...</h2>
+        <div class="app-cards">
+          <a class="app-card" href="https://killerscan.net" target="_blank" rel="noopener">
+            <img class="app-icon" src="/brand/ks-icon.png" alt="KillerScan" width="46" height="46">
+            <span class="app-body">
+              <img class="app-wm wm-dark" src="/brand/killerscan-wordmark-dark.png" alt="KillerScan">
+              <img class="app-wm wm-light" src="/brand/killerscan-wordmark-light.png" alt="KillerScan">
+              <span class="app-tag">Open-source network scanner for Windows</span>
+            </span>
+          </a>
+          <a class="app-card" href="https://killerpdf.net" target="_blank" rel="noopener">
+            <img class="app-icon" src="/brand/kp-icon.png" alt="KillerPDF" width="46" height="46">
+            <span class="app-body">
+              <img class="app-wm wm-dark" src="/brand/killerpdf-wordmark-dark.png" alt="KillerPDF">
+              <img class="app-wm wm-light" src="/brand/killerpdf-wordmark-light.png" alt="KillerPDF">
+              <span class="app-tag">Open-source PDF editor for Windows</span>
+            </span>
+          </a>
+          <a class="app-card" href="https://killerfind.net" target="_blank" rel="noopener">
+            <img class="app-icon" src="/brand/kf-icon.png" alt="KillerFind" width="46" height="46">
+            <span class="app-body">
+              <img class="app-wm wm-dark" src="/brand/killerfind-wordmark-dark.png" alt="KillerFind">
+              <img class="app-wm wm-light" src="/brand/killerfind-wordmark-light.png" alt="KillerFind">
+              <span class="app-tag">Open-source file search for Windows</span>
+            </span>
+          </a>
         </div>
-        <div class="app-entry">
-          <div class="app-name"><a href="https://killerpdf.net" target="_blank" rel="noopener">KillerPDF</a></div>
-          <div class="app-desc">Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files.</div>
-        </div>
-        <div class="app-entry">
-          <div class="app-name"><a href="https://killerfind.net" target="_blank" rel="noopener">KillerFind</a></div>
-          <div class="app-desc">Fast file search for Windows. Search by filename, wildcard, or file content across any directory.</div>
-        </div>
-
-        <div class="av-note">
-          <span class="av-icon">⚠</span>
-          <div>
-            <strong>Windows Defender may flag these as threats.</strong>
-            These are false positives. Network scanning and file system access trigger heuristic flags on new binaries. There is no telemetry, no outbound callback, and nothing written to system paths. All apps are code signed with a Certum certificate. SHA-256 hashes are provided on each tool's page.
-          </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Row 2: full-width links bar -->
-    <div class="links-bar">
-      <h2 class="section-heading"><span class="prompt">#</span> Links</h2>
+    <!-- Row 2: full-width links card -->
+    <div class="links-bar g-card">
+      <h2 class="also-heading killer-font">Links</h2>
       <div class="links-row">
         <div class="link-group">
           <div class="link-label">Site</div>
@@ -135,9 +136,9 @@ useHead({
       </div>
     </div>
 
-    <!-- Row 3: full-width footer -->
-    <div class="about-footer">
-      <h2 class="section-heading"><span class="prompt">#</span> Missing a tool? Found a bug?</h2>
+    <!-- Row 3: full-width footer card -->
+    <div class="about-footer g-card">
+      <h2 class="also-heading killer-font">Missing a tool? Found a bug?</h2>
       <p>
         Open a feature request or bug report in the
         <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">issues section</a>
@@ -169,45 +170,42 @@ useHead({
 
 @media (max-width: 1050px) {
   .about-main { grid-template-columns: 1fr; }
-  .killer-apps .section-heading { margin-top: 0 !important; }
 }
 
-/* Terminal card */
-.terminal-card {
-  background: #0e0e0e;
-  border: 1px solid #1ea54c33;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 40px #1ea54c18;
-  transition: border-color 0.15s;
+/* ── Grunge (family) pieces: typewriter face + grained card surface ── */
+@font-face {
+  font-family: 'KillerScan';
+  src: url('/brand/KillerScan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
-.terminal-card:hover {
-  border-color: rgba(30, 165, 76, 0.6);
+.killer-font {
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-weight: normal;
+  letter-spacing: 0.5px;
 }
 
-.terminal-card:hover .terminal-bar {
-  background: rgba(30, 165, 76, 0.14);
+/* Dark grained card, same language as the landing pages' about cards */
+.g-card {
+  background: #1e1e1e url('/grain.png') repeat;
+  background-size: 256px 256px;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  padding: 18px 24px 22px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
-.terminal-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 14px;
-  background: #1a1a1a;
-  border-bottom: 1px solid #1ea54c22;
+.also-heading {
+  font-size: 20px;
+  color: #e0e0e0;
+  margin: 0 0 14px 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-.terminal-title { font-size: 12px; color: #555; }
-.dots { display: flex; gap: 6px; align-items: center; }
-.dot { width: 11px; height: 11px; border-radius: 50%; }
-.dot.red    { background: #ff5f57; }
-.dot.yellow { background: #febc2e; }
-.dot.green  { background: #28c840; }
 
 .terminal-body {
-  padding: 18px 24px 22px;
+  padding: 0;
   line-height: 1.65;
   color: #b0b0b0;
 }
@@ -219,20 +217,22 @@ useHead({
   margin-bottom: 14px;
 }
 
-.prompt { color: #1ea54c; font-weight: 700; }
+.prompt { color: var(--kt-accent); font-weight: 700; }
 
 .site-title {
   font-size: 22px;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   margin: 0;
+  /* Family heading shadow: every theme except Light */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 p { margin: 0 0 10px 0; }
 p.last { margin-bottom: 0; }
 
-a { color: #1ea54c; text-decoration: none; transition: color 0.15s; }
-a:hover { color: #36ad6a; text-decoration: underline; }
+a { color: var(--kt-accent); text-decoration: none; transition: color 0.15s; }
+a:hover { color: var(--kt-accent-2); text-decoration: underline; }
 
 .section-heading {
   font-size: 11px;
@@ -246,35 +246,31 @@ a:hover { color: #36ad6a; text-decoration: underline; }
   gap: 6px;
 }
 
-/* Killer apps column */
+/* Killer apps column: landing-page style cross-promo cards (icon + wordmark + tagline) */
 .killer-apps { padding-top: 2px; }
 
-.col-intro { font-size: 12px; color: #999; margin-bottom: 12px; }
-.app-entry { margin-bottom: 10px; }
-.app-name { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
-.app-desc { font-size: 12px; color: #999; line-height: 1.5; }
-
-.av-note {
+.app-cards { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.app-card {
   display: flex;
-  gap: 8px;
-  margin-top: 14px;
+  align-items: center;
+  gap: 16px;
   padding: 10px 12px;
-  background: #1a1200;
-  border: 1px solid #febc2e44;
-  border-radius: 4px;
-  font-size: 11px;
-  color: #888;
-  line-height: 1.55;
+  border-radius: 10px;
+  transition: background 0.15s;
 }
-.av-icon { color: #febc2e; flex-shrink: 0; margin-top: 1px; }
-.av-note strong { color: #febc2e; display: block; margin-bottom: 3px; }
+.app-card:hover { background: color-mix(in srgb, var(--kt-accent) 10%, transparent); text-decoration: none; }
+.app-icon { width: 46px; height: 46px; border-radius: 9px; flex-shrink: 0; }
+.app-body { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; min-width: 0; }
+/* Family standard wordmark height (30px), dark/light swap follows the site theme */
+.app-wm { height: 30px; width: auto; display: block; max-width: 100%; object-fit: contain; object-position: left center; }
+.app-wm.wm-light { display: none; }
+html:not(.dark) .app-wm.wm-dark { display: none; }
+html:not(.dark) .app-wm.wm-light { display: block; }
+.app-tag { font-size: 12.5px; color: #999; }
 
-/* Row 2: links bar */
+/* Row 2: links card (surface comes from .g-card) */
 .links-bar {
   margin-top: 24px;
-  padding: 18px 0 16px;
-  border-top: 1px solid #1ea54c22;
-  border-bottom: 1px solid #1ea54c22;
 }
 
 .links-row {
@@ -295,7 +291,7 @@ a:hover { color: #36ad6a; text-decoration: underline; }
 .link-divider {
   width: 1px;
   flex-shrink: 0;
-  background: #1ea54c22;
+  background: color-mix(in srgb, var(--kt-accent) 13%, transparent);
   align-self: stretch;
   margin: 0 28px 0 0;
 }
@@ -321,56 +317,38 @@ a:hover { color: #36ad6a; text-decoration: underline; }
   .link-group { padding: 0; }
 }
 
-/* Row 3: footer */
+/* Row 3: footer card */
 .about-footer {
-  padding-top: 18px;
+  margin-top: 24px;
 }
+.about-footer p { margin: 0; }
 
 /* ── Light mode overrides ────────────────────────────────────────────────── */
 
-/* Terminal card goes light to match site kt-terminal style */
-html:not(.dark) .terminal-card {
-  background: #cccccc;
-  border-color: rgba(13, 112, 51, 0.32);
-  box-shadow: none;
+/* Grunge card goes light: light grained surface, same family rules */
+html:not(.dark) .g-card {
+  background: #e8e8e8 url('/grain.png') repeat;
+  background-size: 256px 256px;
+  border-color: #b0b0b0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
-html:not(.dark) .terminal-bar {
-  background: rgba(0, 0, 0, 0.08);
-  border-bottom-color: rgba(0, 0, 0, 0.10);
-}
-html:not(.dark) .terminal-title { color: #555; }
+html:not(.dark) .also-heading { color: #1a1a1a; text-shadow: none; }
 html:not(.dark) .terminal-body  { color: rgba(0, 0, 0, 0.75); }
-html:not(.dark) .terminal-body a { color: #1a6b3a; }
-html:not(.dark) .terminal-body a:hover { color: #0d7033; }
-html:not(.dark) .site-title { color: #0d7033; }
-html:not(.dark) .terminal-card:hover {
-  border-color: rgba(13, 112, 51, 0.65);
-}
-html:not(.dark) .terminal-card:hover .terminal-bar {
-  background: rgba(13, 112, 51, 0.18);
-}
+html:not(.dark) .terminal-body a { color: var(--kt-accent); }
+html:not(.dark) .terminal-body a:hover { color: var(--kt-accent-2); }
+html:not(.dark) .site-title { color: var(--kt-accent); text-shadow: none; }
 
 /* Killer apps column */
-html:not(.dark) .col-intro    { color: rgba(0, 0, 0, 0.55); }
-html:not(.dark) .app-desc     { color: rgba(0, 0, 0, 0.55); }
 html:not(.dark) .section-heading { color: rgba(0, 0, 0, 0.45); }
+html:not(.dark) .app-tag  { color: rgba(0, 0, 0, 0.55); }
+html:not(.dark) .app-card:hover { background: color-mix(in srgb, var(--kt-accent) 10%, transparent); }
 
-/* Warning box — amber on amber-tinted light bg instead of near-black */
-html:not(.dark) .av-note {
-  background: rgba(254, 188, 46, 0.10);
-  border-color: rgba(254, 188, 46, 0.45);
-  color: rgba(0, 0, 0, 0.60);
-}
-html:not(.dark) .av-note strong { color: #7a5a00; display: block; margin-bottom: 3px; }
-html:not(.dark) .av-icon        { color: #b88000; }
-
-/* Links bar */
-html:not(.dark) .links-bar     { border-top-color: rgba(13, 112, 51, 0.18); border-bottom-color: rgba(13, 112, 51, 0.18); }
-html:not(.dark) .link-divider  { background: rgba(13, 112, 51, 0.18); }
+/* Links card */
+html:not(.dark) .link-divider  { background: color-mix(in srgb, var(--kt-accent) 18%, transparent); }
 html:not(.dark) .link-label    { color: rgba(0, 0, 0, 0.42); }
-html:not(.dark) a              { color: #1a6b3a; }
-html:not(.dark) a:hover        { color: #0d7033; }
-html:not(.dark) .link-group a  { color: #1a6b3a; }
-html:not(.dark) .link-group a:hover { color: #0d7033; }
-html:not(.dark) .prompt        { color: rgba(13, 112, 51, 0.65); }
+html:not(.dark) a              { color: var(--kt-accent); }
+html:not(.dark) a:hover        { color: var(--kt-accent-2); }
+html:not(.dark) .link-group a  { color: var(--kt-accent); }
+html:not(.dark) .link-group a:hover { color: var(--kt-accent-2); }
+html:not(.dark) .prompt        { color: color-mix(in srgb, var(--kt-accent) 65%, transparent); }
 </style>

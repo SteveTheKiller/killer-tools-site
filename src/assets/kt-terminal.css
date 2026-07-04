@@ -7,13 +7,16 @@
    ───────────────────────────────────────────────────────── */
 
 :root {
-  --kt-term-bg:           #121212;
-  --kt-term-bar-bg:       rgba(255, 255, 255, 0.07);
-  --kt-term-bar-hover-bg: rgba(30, 165, 76, 0.14);
-  --kt-term-border:       rgba(30, 165, 76, 0.3);
-  --kt-term-bar-border:   rgba(255, 255, 255, 0.08);
-  --kt-green:             #1ea54c;
-  --kt-green-dim:         rgba(30, 165, 76, 0.3);
+  /* Cards sit on the landing --modal tone: near-black, darker than panels */
+  --kt-term-bg:           var(--kt-modal, #0a0a0a);
+  /* Terminal strip look retired (landing card style): bar surfaces are
+     transparent, which also neutralizes every per-tool bar override */
+  --kt-term-bar-bg:       transparent;
+  --kt-term-bar-hover-bg: transparent;
+  --kt-term-border:       rgba(var(--kt-accent-rgb),0.3);
+  --kt-term-bar-border:   transparent;
+  --kt-green:             var(--kt-accent);
+  --kt-green-dim:         rgba(var(--kt-accent-rgb),0.3);
   /* Dark translucent background for buttons/inputs sitting on the page bg */
   --kt-dark-bg:           rgba(0, 0, 0, 0.35);
   --kt-dark-bg-hover:     rgba(0, 0, 0, 0.50);
@@ -21,13 +24,13 @@
 
 /* ── Light mode: terminals go light gray, bars neutral until hover ── */
 html:not(.dark) {
-  --kt-term-bg:           #cccccc;
+  --kt-term-bg:           var(--kt-modal, #ffffff);
   --kt-term-bar-bg:       transparent;
-  --kt-term-bar-hover-bg: rgba(13, 112, 51, 0.18);
-  --kt-term-border:       rgba(13, 112, 51, 0.32);
-  --kt-term-bar-border:   rgba(0, 0, 0, 0.10);
-  --kt-green:             #0d7033;
-  --kt-green-dim:         rgba(13, 112, 51, 0.3);
+  --kt-term-bar-hover-bg: transparent;
+  --kt-term-border:       rgba(var(--kt-accent-rgb),0.32);
+  --kt-term-bar-border:   transparent;
+  --kt-green:             var(--kt-accent);
+  --kt-green-dim:         rgba(var(--kt-accent-rgb),0.3);
 }
 
 /* Beat scoped `.kt-terminal { background: #0a0a0c !important }` in tool files.
@@ -42,17 +45,17 @@ html:not(.dark) .kt-terminal *,
 html:not(.dark) .cve-card *         { color: rgba(0, 0, 0, 0.80); }
 
 /* Tool card title names (*-name) → green to match dark mode feel */
-html:not(.dark) .kt-terminal [class*="-name"] { color: #0d7033 !important; }
+html:not(.dark) .kt-terminal [class*="-name"] { color: var(--kt-accent) !important; }
 
 /* BAR row: titles dark/black — not green */
 html:not(.dark) .kt-terminal-bar *     { color: rgba(0, 0, 0, 0.70) !important; }
 html:not(.dark) .kt-terminal-bar-title { color: #1a1a1a !important; }
-html:not(.dark) .kt-prompt             { color: rgba(13, 112, 51, 0.65) !important; }
+html:not(.dark) .kt-prompt             { color: rgba(var(--kt-accent-rgb),0.65) !important; }
 /* Section rows: dark */
 html:not(.dark) .kt-section-row        { color: rgba(0, 0, 0, 0.55); }
 /* Row data */
 html:not(.dark) .kt-label              { color: rgba(0, 0, 0, 0.65); }
-html:not(.dark) .kt-value              { color: #0d7033; }
+html:not(.dark) .kt-value              { color: var(--kt-accent); }
 html:not(.dark) .kt-value-faded        { color: rgba(0, 0, 0, 0.50); }
 html:not(.dark) .kt-fallback           { color: rgba(0, 0, 0, 0.40); }
 html:not(.dark) .kt-row                { border-bottom-color: rgba(0, 0, 0, 0.10); }
@@ -63,42 +66,42 @@ html:not(.dark) .kt-row                { border-bottom-color: rgba(0, 0, 0, 0.10
    2. *-panel.kt-terminal (RSA) — systemic panel rule has (0,6,1)+!important;
       hover variant must have (0,7,1)+!important to win.                       */
 html:not(.dark) .kt-terminal:hover {
-  border-color: rgba(13, 112, 51, 0.65) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.65) !important;
 }
 html:not(.dark) .kt-terminal:hover .kt-terminal-bar {
-  background: var(--kt-term-bar-hover-bg) !important;
+  background: transparent !important;
 }
 /* Panel variant — mirrors systemic [class*="-panel"] selector exactly + :hover */
 html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]):hover {
-  border-color: rgba(13, 112, 51, 0.65) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.65) !important;
 }
 html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]):hover .kt-terminal-bar {
   background: var(--kt-term-bar-hover-bg) !important;
 }
 /* Systemic hover for any [prefix]-terminal container in light mode */
 html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]):hover {
-  border-color: rgba(13, 112, 51, 0.65) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.65) !important;
 }
 html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]):hover [class*="-terminal-bar"]:not([class*="-bar-title"]):not([class*="-bar-dot"]) {
   background: var(--kt-term-bar-hover-bg) !important;
 }
 /* Copy button: visible on gray bg */
-html:not(.dark) .kt-copy               { border-color: rgba(13, 112, 51, 0.45); color: rgba(13, 112, 51, 0.75); }
-html:not(.dark) .kt-copy:hover         { background: rgba(13, 112, 51, 0.12); border-color: rgba(13, 112, 51, 0.75); color: #0d7033; }
+html:not(.dark) .kt-copy               { border-color: rgba(var(--kt-accent-rgb),0.45); color: rgba(var(--kt-accent-rgb),0.75); }
+html:not(.dark) .kt-copy:hover         { background: rgba(var(--kt-accent-rgb),0.12); border-color: rgba(var(--kt-accent-rgb),0.75); color: var(--kt-accent); }
 /* ── IPv4 Subnet Calculator uses .k-terminal (no 't') — mirror all light mode overrides ── */
 html:not(.dark) .k-terminal          { background: var(--kt-term-bg) !important; }
 html:not(.dark) .k-terminal *        { color: rgba(0, 0, 0, 0.80); }
-html:not(.dark) .k-terminal-bar *    { color: #0d7033; }
-html:not(.dark) .k-terminal-bar-title { color: #0d7033; }
+html:not(.dark) .k-terminal-bar *    { color: var(--kt-accent); }
+html:not(.dark) .k-terminal-bar-title { color: var(--kt-accent); }
 html:not(.dark) .k-section-label     { color: rgba(0, 0, 0, 0.55); }
-html:not(.dark) .k-status-label      { color: #0d7033; }
+html:not(.dark) .k-status-label      { color: var(--kt-accent); }
 html:not(.dark) .cs-panel            { background: #d0d0d0 !important; border-color: rgba(0, 0, 0, 0.15) !important; }
 html:not(.dark) .cs-card             { border-color: rgba(0, 0, 0, 0.15) !important; }
-html:not(.dark) .cs-card:hover       { border-color: rgba(13, 112, 51, 0.5) !important; }
+html:not(.dark) .cs-card:hover       { border-color: rgba(var(--kt-accent-rgb),0.5) !important; }
 html:not(.dark) .cs-card-hosts       { color: rgba(0, 0, 0, 0.55); }
 html:not(.dark) .cs-card-mask        { color: rgba(0, 0, 0, 0.50); }
-html:not(.dark) .range-bar-wrap      { background: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.30) !important; }
-html:not(.dark) .viz-wrap            { background: #d0d0d0 !important; border-color: rgba(13, 112, 51, 0.30) !important; }
+html:not(.dark) .range-bar-wrap      { background: #d0d0d0 !important; border-color: rgba(var(--kt-accent-rgb),0.30) !important; }
+html:not(.dark) .viz-wrap            { background: #d0d0d0 !important; border-color: rgba(var(--kt-accent-rgb),0.30) !important; }
 html:not(.dark) .viz-legend          { color: rgba(0, 0, 0, 0.55); }
 html:not(.dark) .bit-dot             { color: rgba(0, 0, 0, 0.30); }
 html:not(.dark) .slider-label        { color: rgba(0, 0, 0, 0.50); }
@@ -110,29 +113,29 @@ html:not(.dark) .k-row               { border-bottom-color: rgba(0, 0, 0, 0.10);
 html:not(.dark) .hero-terminal       { background: var(--kt-term-bg); }
 html:not(.dark) .terminal            { background: var(--kt-term-bg) !important; border-color: var(--kt-term-border) !important; }
 html:not(.dark) .terminal-bar        { border-bottom-color: var(--kt-term-bar-border) !important; }
-html:not(.dark) .terminal-title      { color: #0d7033 !important; }
+html:not(.dark) .terminal-title      { color: var(--kt-accent) !important; }
 html:not(.dark) .t-cmd               { color: rgba(0, 0, 0, 0.85); }
 html:not(.dark) .t-out               { color: rgba(0, 0, 0, 0.60); }
 
 /* Tool-specific green accents — override the broad dark rule above */
-html:not(.dark) .ks-acronym          { color: #0d7033; }
-html:not(.dark) .ks-btn-copy         { color: #0d7033; border-color: rgba(13, 112, 51, 0.45); }
-html:not(.dark) .ks-btn-copy:hover   { background: rgba(13, 112, 51, 0.10); border-color: rgba(13, 112, 51, 0.70); }
+html:not(.dark) .ks-acronym          { color: var(--kt-accent); }
+html:not(.dark) .ks-btn-copy         { color: var(--kt-accent); border-color: rgba(var(--kt-accent-rgb),0.45); }
+html:not(.dark) .ks-btn-copy:hover   { background: rgba(var(--kt-accent-rgb),0.10); border-color: rgba(var(--kt-accent-rgb),0.70); }
 
 /* ── Systemic: every *-btn class → dark green text in light mode ────────────
-   #1ea54c on a light gray background is ~2:1 contrast — unreadable.
+   var(--kt-accent) on a light gray background is ~2:1 contrast — unreadable.
    [0,2,1] beats every scoped [data-v-xxx].classname [0,2,0] without !important.
    App.vue !important overrides (ks-btn-dl etc.) still win over this.
    Catches kt-nav-btn, kt-search-btn, and any future [prefix]-btn button.   ── */
 html:not(.dark) [class*="-btn"] {
   color: #083d1a !important;
-  border-color: rgba(13, 112, 51, 0.45) !important;
-  background: rgba(13, 112, 51, 0.08) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.45) !important;
+  background: rgba(var(--kt-accent-rgb),0.08) !important;
 }
 html:not(.dark) [class*="-btn"]:hover:not(:disabled) {
   color: #052d12 !important;
-  border-color: rgba(13, 112, 51, 0.70) !important;
-  background: rgba(13, 112, 51, 0.16) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.70) !important;
+  background: rgba(var(--kt-accent-rgb),0.16) !important;
 }
 
 /* ── Exception: "Dangerous" buttons stay amber, not green, in light mode ── */
@@ -180,7 +183,7 @@ html:not(.dark) [class*="-textarea"] {
   border-color: rgba(0, 0, 0, 0.20) !important;
 }
 html:not(.dark) [class*="-textarea"]::placeholder { color: rgba(0, 0, 0, 0.32) !important; }
-html:not(.dark) [class*="-textarea"]:focus        { border-color: rgba(13, 112, 51, 0.55) !important; }
+html:not(.dark) [class*="-textarea"]:focus        { border-color: rgba(var(--kt-accent-rgb),0.55) !important; }
 
 /* Higher-specificity input class override — beats scoped !important at [0,2,0] */
 html:not(.dark) [class*="-input"]:not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-panel"]):not([class*="-input-wrap"]) {
@@ -192,7 +195,7 @@ html:not(.dark) [class*="-input"]:not([class*="-input-text"])::placeholder { col
 
 html:not(.dark) [class*="-input-box"] {
   background: #f0f0f0 !important;
-  border-color: rgba(13, 112, 51, 0.35) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.35) !important;
 }
 html:not(.dark) select {
   background: #f0f0f0 !important;
@@ -207,21 +210,21 @@ html:not(.dark) [class*="-icon-btn"] {
 }
 html:not(.dark) [class*="-icon-btn"]:hover { color: rgba(0, 0, 0, 0.70) !important; }
 
-/* ── Systemic: active pills/tabs use #1ea54c !important in dark mode —
+/* ── Systemic: active pills/tabs use var(--kt-accent) !important in dark mode —
    override site-wide so every tool's active state is readable in light mode ── */
 html:not(.dark) [class*="-pill-active"] { color: #0b5c28 !important; }
-html:not(.dark) [class*="-tab-active"]  { color: #0b5c28 !important; border-color: rgba(13, 112, 51, 0.60) !important; }
+html:not(.dark) [class*="-tab-active"]  { color: #0b5c28 !important; border-color: rgba(var(--kt-accent-rgb),0.60) !important; }
 
 /* ── Systemic: floating dropdown menus (*-dd-menu and *-dropdown-menu) ──────
    Covers .erg-dd-menu, .sq-dropdown-menu, .mg-dropdown-menu, etc.         ── */
 html:not(.dark) [class*="-dd-menu"],
-html:not(.dark) [class*="-dropdown-menu"]         { background: #d4d4d4 !important; border-color: rgba(13, 112, 51, 0.45) !important; box-shadow: 0 6px 24px rgba(0,0,0,0.18) !important; }
+html:not(.dark) [class*="-dropdown-menu"]         { background: #d4d4d4 !important; border-color: rgba(var(--kt-accent-rgb),0.45) !important; box-shadow: 0 6px 24px rgba(0,0,0,0.18) !important; }
 html:not(.dark) [class*="-dd-option"],
 html:not(.dark) [class*="-dropdown-item"]         { color: rgba(0, 0, 0, 0.65) !important; border-color: rgba(0, 0, 0, 0.07) !important; background: transparent !important; }
 html:not(.dark) [class*="-dd-option"]:hover,
-html:not(.dark) [class*="-dropdown-item"]:hover   { background: rgba(13, 112, 51, 0.10) !important; color: rgba(0, 0, 0, 0.88) !important; }
+html:not(.dark) [class*="-dropdown-item"]:hover   { background: rgba(var(--kt-accent-rgb),0.10) !important; color: rgba(0, 0, 0, 0.88) !important; }
 html:not(.dark) [class*="-dd-option-active"],
-html:not(.dark) [class*="-dropdown-item-active"]  { color: #0b5c28 !important; background: rgba(13, 112, 51, 0.12) !important; }
+html:not(.dark) [class*="-dropdown-item-active"]  { color: #0b5c28 !important; background: rgba(var(--kt-accent-rgb),0.12) !important; }
 
 /* ── Systemic: dropdown trigger buttons (*-dropdown-trigger) ─────────────────
    Covers .sq-dropdown-trigger, .mg-dropdown-trigger, etc.
@@ -233,7 +236,7 @@ html:not(.dark) [class*="-dropdown-trigger"] {
 }
 html:not(.dark) [class*="-dropdown-trigger"]:hover,
 html:not(.dark) [class*="-dropdown"]:focus-within [class*="-dropdown-trigger"] {
-  border-color: rgba(13, 112, 51, 0.50) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.50) !important;
 }
 
 /* ── Systemic: sublabels and labels (*-sublabel, *-label) above form fields ──
@@ -262,7 +265,7 @@ html:not(.dark) [class*="-input-row"] {
    Excludes bar/title/body/text variants so only outer container divs are hit.  ── */
 html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]) {
   background: var(--kt-term-bg) !important;
-  border-color: rgba(13, 112, 51, 0.25) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.25) !important;
 }
 
 /* ── Systemic: toggle buttons (inactive) (*-toggle) ─────────────────────────
@@ -272,9 +275,9 @@ html:not(.dark) [class*="-toggle"]:not([class*="-group"]):not([class*="-on"]):no
   color: rgba(0, 0, 0, 0.55) !important;
 }
 html:not(.dark) [class*="-toggle"]:not([class*="-group"]):not([class*="-on"]):not([class*="-row"]):not([class*="-pill"]):hover {
-  background: rgba(13, 112, 51, 0.08) !important;
-  border-color: rgba(13, 112, 51, 0.40) !important;
-  color: #0d7033 !important;
+  background: rgba(var(--kt-accent-rgb),0.08) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.40) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Systemic: output boxes (*-output) ───────────────────────────────────────
@@ -291,11 +294,11 @@ html:not(.dark) [class*="-stepper"] {
   border-color: rgba(0, 0, 0, 0.18) !important;
 }
 html:not(.dark) [class*="-step-btn"] {
-  color: #0d7033 !important;
+  color: var(--kt-accent) !important;
   border-color: rgba(0, 0, 0, 0.10) !important;
 }
-html:not(.dark) [class*="-step-btn"]:hover:not(:disabled) { background: rgba(13, 112, 51, 0.08) !important; }
-html:not(.dark) [class*="-step-val"] { color: #0d7033 !important; }
+html:not(.dark) [class*="-step-btn"]:hover:not(:disabled) { background: rgba(var(--kt-accent-rgb),0.08) !important; }
+html:not(.dark) [class*="-step-val"] { color: var(--kt-accent) !important; }
 
 /* ── Dark mode: tool inputs, textareas, dropdowns → #121212 terminal bg ───────
    Uses class-based selectors (not bare input/textarea) so NaiveUI components
@@ -329,7 +332,7 @@ html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"])
 }
 /* All text inside those containers → green on light gray bg (mirrors dark mode). */
 html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"]):not([class*="-sub"]):not([class*="-body"]):not([class*="-num"]) * {
-  color: #0d7033;
+  color: var(--kt-accent);
 }
 /* Terminal bar contents → dark/black, not green (element itself + children) */
 html:not(.dark) [class*="-terminal-bar"]    { color: rgba(0, 0, 0, 0.70) !important; }
@@ -340,26 +343,26 @@ html:not(.dark) [class*="-terminal-title"]  { color: #1a1a1a !important; }
 html:not(.dark) [class*="-terminal-sub"]    { color: rgba(0, 0, 0, 0.45) !important; }
 
 /* ── kt-search-btn: primary action button (Parse, Search, Lookup…) ─────────
-   In light mode #1ea54c text on rgba(30,165,76,0.1) bg = near-zero contrast.
+   In light mode var(--kt-accent) text on rgba(var(--kt-accent-rgb),0.1) bg = near-zero contrast.
    Fix: very dark green text + more opaque border, site-wide.               ── */
 html:not(.dark) .kt-search-btn {
-  background: rgba(13, 112, 51, 0.14);
-  border-color: rgba(13, 112, 51, 0.55);
+  background: rgba(var(--kt-accent-rgb),0.14);
+  border-color: rgba(var(--kt-accent-rgb),0.55);
   color: #083d1a;
 }
 html:not(.dark) .kt-search-btn:hover:not(:disabled) {
-  background: rgba(13, 112, 51, 0.22);
-  border-color: rgba(13, 112, 51, 0.75);
+  background: rgba(var(--kt-accent-rgb),0.22);
+  border-color: rgba(var(--kt-accent-rgb),0.75);
   color: #052d12;
 }
 /* kt-copy buttons follow the same pattern */
 html:not(.dark) .kt-copy {
-  border-color: rgba(13, 112, 51, 0.45);
+  border-color: rgba(var(--kt-accent-rgb),0.45);
   color: #0a5228;
 }
 html:not(.dark) .kt-copy:hover {
-  background: rgba(13, 112, 51, 0.12);
-  border-color: rgba(13, 112, 51, 0.75);
+  background: rgba(var(--kt-accent-rgb),0.12);
+  border-color: rgba(var(--kt-accent-rgb),0.75);
   color: #083d1a;
 }
 
@@ -376,17 +379,46 @@ html:not(.dark) .kt-copy:hover {
   background: rgba(0, 0, 0, 0.35);
 }
 
+/* Landing feature-card recipe: grained panel, pane border with an accent top
+   edge, 6px radius, shadow on hover (no lift - these hold live controls) */
 .kt-terminal {
-  background: var(--kt-term-bg) !important;
-  border: 1px solid var(--kt-term-border);
-  border-radius: 8px;
+  background: var(--kt-term-bg) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  /* Uniform 1px border keeps the rounded corners clean; the accent top edge
+     is an inner strip (clipped by the radius), not a fatter border */
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border-radius: 6px;
   overflow: hidden;
+  position: relative;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.12s, transform 0.12s;
+}
+
+.kt-terminal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  /* Tab-stripe rule: the MUTED SelectionBg accent at rest, brightening to
+     the full accent on hover (see the KillerPDF tab outlines) */
+  background: var(--kt-accent-sel, var(--kt-accent));
+  transition: background 0.15s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kt-terminal:hover::after {
+  background: var(--kt-accent);
 }
 
 .kt-terminal.kt-terminal:hover {
-  border-color: rgba(30, 165, 76, 0.6) !important;
+  transform: translateY(-3px);
+  border-right-color: rgba(var(--kt-accent-rgb), 0.6) !important;
+  border-bottom-color: rgba(var(--kt-accent-rgb), 0.6) !important;
+  border-left-color: rgba(var(--kt-accent-rgb), 0.6) !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
 }
 
 /* ── IPv4 Subnet Calculator uses .k-terminal — mirror hover effects ── */
@@ -395,33 +427,27 @@ html:not(.dark) .kt-copy:hover {
 }
 
 .k-terminal.k-terminal:hover {
-  border-color: rgba(30, 165, 76, 0.6) !important;
+  border-color: rgba(var(--kt-accent-rgb),0.6) !important;
 }
 
 .k-terminal:hover .k-terminal-bar,
 .k-terminal:hover .kt-terminal-bar {
-  background: var(--kt-term-bar-hover-bg) !important;
+  background: transparent !important;
 }
 
+/* Card heading row (landing style): no terminal strip - the title sits
+   directly on the card surface inside the padding */
 .kt-terminal-bar {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 10px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
-  transition: background 0.1s;
+  padding: 12px 16px 2px;
+  background: transparent;
+  border-bottom: none;
 }
 
 .kt-terminal-bar::before {
-  content: '';
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(30, 165, 76, 0.55);
-  box-shadow: 0 0 5px rgba(30, 165, 76, 0.3);
-  flex-shrink: 0;
+  display: none;
 }
 
 /* Suppress the global green dot when the tool supplies its own severity dot */
@@ -433,12 +459,20 @@ html:not(.dark) .kt-copy:hover {
   background: var(--kt-term-bar-hover-bg) !important;
 }
 
+/* Card heading voice: the family typewriter font in the accent color,
+   text-stroke shadow on dark (nulled in light, same as the apps) */
 .kt-terminal-bar-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.82);
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  color: var(--kt-accent);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .kt-terminal-bar-title {
+  text-shadow: none;
 }
 
 .kt-section-row {
@@ -458,7 +492,7 @@ html:not(.dark) .kt-copy:hover {
   align-items: center;
   gap: 10px;
   padding: 6px 10px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb),0.07);
   transition: background 0.1s;
   background: transparent;
 }
@@ -468,11 +502,11 @@ html:not(.dark) .kt-copy:hover {
 }
 
 .kt-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb),0.05) !important;
 }
 
 .kt-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb),0.5);
   font-weight: 600;
   font-size: 0.75rem;
   flex-shrink: 0;
@@ -488,7 +522,7 @@ html:not(.dark) .kt-copy:hover {
 }
 
 .kt-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.8rem;
   word-break: break-all;
   min-width: 0;
@@ -508,9 +542,9 @@ html:not(.dark) .kt-copy:hover {
 
 .kt-copy {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb),0.3);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb),0.65);
   cursor: pointer;
   padding: 2px 5px;
   display: inline-flex;
@@ -523,9 +557,9 @@ html:not(.dark) .kt-copy:hover {
 }
 
 .kt-copy:hover {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb),0.12);
+  border-color: rgba(var(--kt-accent-rgb),0.7);
+  color: var(--kt-accent);
 }
 
 .kt-copy:disabled {
@@ -534,7 +568,7 @@ html:not(.dark) .kt-copy:hover {
 }
 
 .kt-copy-check {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-weight: 700;
 }
 
@@ -546,9 +580,9 @@ html:not(.dark) .kt-copy:hover {
   height: 34px;
   padding: 0 16px;
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  border: 1px solid rgba(var(--kt-accent-rgb),0.45);
   border-radius: 6px;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
   font-weight: 600;
@@ -563,7 +597,7 @@ html:not(.dark) .kt-copy:hover {
 
 .kt-search-btn:hover:not(:disabled) {
   background: rgba(10, 10, 12, 0.95);
-  border-color: rgba(30, 165, 76, 0.75);
+  border-color: rgba(var(--kt-accent-rgb),0.75);
 }
 
 .kt-search-btn:disabled {

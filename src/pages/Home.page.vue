@@ -131,7 +131,7 @@ const sortedTools = computed(() => {
       </div>
 
       <!-- All tools with sort controls -->
-      <div class="mb-5px mt-25px" style="display: flex; align-items: center; gap: 12px;">
+      <div class="mb-5px" style="display: flex; align-items: center; gap: 12px;">
         <h3 class="text-neutral-400 font-500" style="margin: 0;">
           {{ $t('home.categories.allTools') }}
         </h3>
@@ -207,7 +207,7 @@ const sortedTools = computed(() => {
 
 .home-sort-group {
   display: inline-flex;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid color-mix(in srgb, var(--kt-accent) 25%, transparent);
   border-radius: 5px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.35);
@@ -217,7 +217,7 @@ const sortedTools = computed(() => {
   padding: 3px 12px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.15);
+  border-right: 1px solid color-mix(in srgb, var(--kt-accent) 15%, transparent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
   color: var(--n-text-color, rgba(128, 128, 128, 0.8));
@@ -229,13 +229,13 @@ const sortedTools = computed(() => {
   }
 
   &:hover {
-    background: rgba(30, 165, 76, 0.08);
-    color: #1ea54c;
+    background: color-mix(in srgb, var(--kt-accent) 8%, transparent);
+    color: var(--kt-accent);
   }
 }
 
 .home-sort-btn-active {
-  background: rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  background: color-mix(in srgb, var(--kt-accent) 12%, transparent);
+  color: var(--kt-accent);
 }
 </style>

@@ -14,7 +14,9 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
     colors: {
-      primary: '#1ea54c',
+      // Theme engine accent: every `*-primary` utility follows the active
+      // theme + accent via the CSS variable (no hardcoded color duplication)
+      primary: 'var(--kt-accent)',
 
     },
   },

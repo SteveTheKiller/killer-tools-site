@@ -129,18 +129,24 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   min-width: 0;
 }
 
+/* Page title: big killer-font heading in the accent color (landing style),
+   sized above the card titles so the hierarchy reads right */
 .tool-title-compact {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.15;
   opacity: 1;
-  color: rgba(255, 255, 255, 1);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--kt-accent);
+  letter-spacing: 0.5px;
+  text-transform: none;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 :global(html:not(.dark)) .tool-title-compact {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.90);
+  color: var(--kt-accent);
+  text-shadow: none;
 }
 
 .tool-header-compact-right {

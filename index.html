@@ -21,8 +21,8 @@
     <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4ADE80" />
-    <meta name="msapplication-TileColor" content="#0B1523" />
-    <meta name="theme-color" content="#0B1523" />
+    <meta name="msapplication-TileColor" content="#0d0d0d" />
+    <meta name="theme-color" content="#0d0d0d" />
 
     <!-- open graph -->
     <meta property="og:url" content="https://killertools.net/" />
@@ -41,6 +41,37 @@
     <meta name="twitter:image:alt" content="Killer Tools — killertools.net" />
 
 <script defer src="https://koya.thekiller.net/script.js" data-website-id="1591e017-baaf-4c59-8c6d-fd43e590a58c"></script>
+  <script>
+    /* First paint: apply the saved theme before Vue mounts, so there is no
+       white flash and no theme flicker (same trick as the landing pages). */
+    (function () {
+      var d = document.documentElement;
+      var bg = { dark: '#333333', light: '#b8b8b8', black: '#0d0d0d', blood: '#4a1f20', greed: '#0a5234', cyanotic: '#0a4a6e' };
+      var t = 'black';
+      try {
+        var s = localStorage.getItem('kt-theme');
+        if (s) { s = s.replace(/^"|"$/g, ''); if (bg[s]) { t = s; } }
+      }
+      catch (e) {}
+      d.setAttribute('data-kt-theme', t);
+      if (t !== 'light') { d.classList.add('dark'); }
+      d.style.backgroundColor = bg[t];
+      /* Saved accent (neutral themes only), cached by the style store */
+      if ({ dark: 1, light: 1, black: 1 }[t]) {
+        try {
+          var v = localStorage.getItem('kt-av');
+          if (v) {
+            var s = v.split('|');
+            d.style.setProperty('--kt-accent', s[0]);
+            d.style.setProperty('--kt-accent-2', s[1]);
+            if (s[2]) { d.style.setProperty('--kt-accent-rgb', s[2]); }
+            if (s[3]) { d.style.setProperty('--kt-accent-sel', s[3]); }
+          }
+        }
+        catch (e) {}
+      }
+    })();
+  </script>
   <script>
     (function () {
       const redirect = new URLSearchParams(window.location.search).get('redirect');

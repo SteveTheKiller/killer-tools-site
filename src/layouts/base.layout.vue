@@ -6,6 +6,7 @@ import { storeToRefs } from 'pinia';
 import { RouterLink } from 'vue-router';
 import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 import NavbarButtons from '@/components/NavbarButtons.vue';
+import ThemeDots from '@/components/ThemeDots.vue';
 import { config } from '@/config';
 import { useStyleStore } from '@/stores/style.store';
 import { useToolStore } from '@/tools/tools.store';
@@ -29,19 +30,20 @@ const tools = computed<ToolCategory[]>(() => [
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
       <div class="sider-content">
-        <RouterLink to="/" class="sider-logo">
-          <img src="/kt-logo.png" alt="killer-tools">
+        <RouterLink to="/" class="sider-logo" aria-label="KillerTools home">
+          <!-- Live wordmark: real text in the family font, so "Tools" follows
+               the active theme + accent with zero baked-asset duplication -->
+          <span class="wm"><span class="wm-killer">Killer</span><span class="wm-tools">Tools</span></span>
         </RouterLink>
 
         <CollapsibleToolMenu :tools-by-category="tools" />
-
-        <div class="footer">
-          <c-link class="footer-link" target="_blank" rel="noopener" href="https://thekiller.net">Steve the Killer</c-link> · © {{ new Date().getFullYear() }}
-        </div>
       </div>
     </template>
 
-    <template #content>
+    <!-- Frame system (Grunge): the titlebar is chrome that lives in MenuLayout's
+         fixed shell - present on every page, sidebar-toned, with the content pane
+         recessed and scrolling beneath it, exactly like the app windows. -->
+    <template #titlebar>
       <div flex items-center gap-2>
         <c-button
           circle
@@ -64,34 +66,78 @@ const tools = computed<ToolCategory[]>(() => [
           </c-button>
         </c-tooltip>
 
-        <command-palette />
+        <!-- Search stays a comfortable width instead of swallowing the whole bar;
+             the spacer pushes the nav buttons to the right edge. -->
+        <div class="palette-wrap">
+          <command-palette />
+        </div>
+        <div flex-1 />
 
+        <ThemeDots />
         <NavbarButtons />
       </div>
+    </template>
+
+    <template #content>
       <slot />
     </template>
   </MenuLayout>
 </template>
 
 <style lang="less" scoped>
-.footer {
-  text-align: center;
-  color: #838587;
-  margin-top: 20px;
-  padding: 20px 0;
+/* Titlebar shell (position, chrome color, grain) lives in MenuLayout.vue;
+   this only shapes the row's contents. */
+.palette-wrap {
+  flex: 1 1 auto;
+  max-width: 520px;
+  min-width: 0;
 }
 
-.footer-link {
-  display: inline;
-  color: #1ea54c;
+/* Sider wordmark: chrome block at the top of the sidebar, matching the titlebar
+   band height so the frame line runs continuously across the corner */
+.sider-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px 10px;
+  text-decoration: none;
+
+  .wm {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    font-family: 'KillerScan', 'Courier New', monospace;
+    line-height: 1;
+  }
+
+  .wm-killer {
+    font-size: 49px;
+    color: #f2f2f2;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.85), 6px 6px 12px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Suffix: 1.3x, accent-colored, stroke-bolded - the family wordmark rule */
+  .wm-tools {
+    font-size: 64px;
+    color: var(--kt-accent, #0AFFE7);
+    -webkit-text-stroke: 1.6px var(--kt-accent, #0AFFE7);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.85), 6px 6px 12px rgba(0, 0, 0, 0.55);
+  }
 }
 
-html:not(.dark) .footer-link {
-  color: #0d7033;
+/* Light family: dark "Killer", no text shadows (family rule) */
+html:not(.dark) .sider-logo {
+  .wm-killer {
+    color: #111111;
+    text-shadow: none;
+  }
+  .wm-tools {
+    text-shadow: none;
+  }
 }
 
 .sider-content {
-  padding-top: 160px;
+  padding-top: 0;
   padding-bottom: 200px;
 }
 

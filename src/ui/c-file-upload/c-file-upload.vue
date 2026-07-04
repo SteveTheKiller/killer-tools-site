@@ -101,9 +101,9 @@ function handleUpload(files: FileList | null | undefined) {
   gap: 6px;
   padding: 6px 18px;
   border-radius: 6px;
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   background: rgba(0, 0, 0, 0.35);
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   font-family: inherit;
   cursor: pointer;
@@ -112,14 +112,14 @@ function handleUpload(files: FileList | null | undefined) {
 
 .fu-browse-btn:hover {
   background: rgba(0, 0, 0, 0.50);
-  border-color: rgba(30, 165, 76, 0.70);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.70);
+  color: var(--kt-accent);
 }
 
 html:not(.dark) .fu-browse-btn {
-  background: rgba(13, 112, 51, 0.10);
-  border-color: rgba(13, 112, 51, 0.45);
-  color: #0b5c28;
+  background: rgba(var(--kt-accent-rgb), 0.10);
+  border-color: rgba(var(--kt-accent-rgb), 0.45);
+  color: var(--kt-accent-2);
 }
 
 html:not(.dark) .fu-browse-btn:hover {

@@ -137,26 +137,26 @@ function downloadScript(script: { name: string, download_url: string }) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
+/* Card surface comes from the global kt-terminal skin (panel + grain + accent
+   top edge) - no local background override */
 
 .ks-info {
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.4);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.4);
   color: rgba(255, 255, 255, 0.6);
 }
 
-.ks-info-cmd { color: #1ea54c; }
+.ks-info-cmd { color: var(--kt-accent); }
 .ks-info-dl  { color: rgba(255, 255, 255, 0.5); }
 
 html:not(.dark) .ks-info {
-  background: rgba(13, 112, 51, 0.08);
-  border-color: rgba(13, 112, 51, 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  border-color: rgba(var(--kt-accent-rgb), 0.35);
   color: rgba(0, 0, 0, 0.65);
 }
 
-html:not(.dark) .ks-info-cmd { color: #0d7033; }
+html:not(.dark) .ks-info-cmd { color: var(--kt-accent); }
 html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
-.kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ks-card {
   display: flex;
@@ -167,15 +167,23 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 10px !important;
+  padding: 12px 14px 0 !important;
 }
 
+/* Card title: killer font, big and neutral - fixed white/near-black per
+   family, deliberately NOT tied to the accent color */
 .ks-acronym {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
-  letter-spacing: 0.05em;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-size: 1.7rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.94);
+  letter-spacing: 0.5px;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .ks-acronym {
+  color: #1a1a1a;
+  text-shadow: none;
 }
 
 .ks-body {
@@ -189,7 +197,7 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
 .ks-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.3;
 }
 
@@ -204,7 +212,7 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border-top: 1px solid rgba(30, 165, 76, 0.1);
+  border-top: none;
 }
 
 .ks-btn-copy {
@@ -215,15 +223,15 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
   font-size: 0.75rem;
   font-weight: 600;
   background: transparent;
-  color: #1ea54c;
-  border: 1px solid rgba(30, 165, 76, 0.5);
+  color: var(--kt-accent);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   transition: background 0.12s, border-color 0.12s;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
 .ks-btn-copy:hover {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: var(--kt-accent);
 }
 
 .ks-btn-dl {

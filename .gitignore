@@ -54,6 +54,9 @@ _tmp*
 # npm lockfile (pnpm project — only pnpm-lock.yaml should be committed)
 package-lock.json
 
+# Heavy art source files (full-size PSD/XCF/PNG masters, not repo assets)
+/brand/
+
 # App store assets
 feature-graphic.png
 developer-header.png
