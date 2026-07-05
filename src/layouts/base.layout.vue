@@ -252,7 +252,9 @@ const tools = computed<ToolCategory[]>(() => [
 
 .sider-content {
   padding-top: 0;
-  padding-bottom: 200px;
+  /* Just enough tail room below the last item (the 200px reservation was
+     for the old sidebar footer, long gone) */
+  padding-bottom: 16px;
   position: relative;
 }
 

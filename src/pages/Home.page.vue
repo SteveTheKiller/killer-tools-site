@@ -131,8 +131,8 @@ const sortedTools = computed(() => {
       </div>
 
       <!-- All tools with sort controls -->
-      <div class="mb-5px" style="display: flex; align-items: center; gap: 12px;">
-        <h3 class="text-neutral-400 font-500" style="margin: 0;">
+      <div class="home-all-tools-row" style="display: flex; align-items: center; gap: 12px;">
+        <h3 class="home-all-tools" style="margin: 0;">
           {{ $t('home.categories.allTools') }}
         </h3>
         <div class="home-sort-group">
@@ -170,6 +170,25 @@ const sortedTools = computed(() => {
 </template>
 
 <style scoped lang="less">
+/* "All the tools": family heading voice, with a touch more air below the row */
+.home-all-tools-row {
+  margin-bottom: 10px;
+}
+
+.home-all-tools {
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 1.3rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .home-all-tools {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
 .height-enter-active,
 .height-leave-active {
   transition: all 0.5s ease-in-out;
