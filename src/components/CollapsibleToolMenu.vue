@@ -169,7 +169,9 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
     }
     ::v-deep(.n-menu-item-content::before) {
       left: 0;
-      right: 13px;
+      /* 7px: pill end sits 17px from the content pane (8 box + 7 + 2 pane
+         gap), matching the 17px on the left (was 13px = 23px total) */
+      right: 7px;
       border-radius: 6px;
       transition: background-color 0.15s ease;
     }

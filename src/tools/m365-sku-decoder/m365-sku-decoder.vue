@@ -126,7 +126,8 @@ function copyValue(value: string) {
   align-items: center;
   gap: 6px;
   justify-content: space-between;
-  padding: 3px 10px !important;
+  /* 9px vertical: same chip clearance as the NDR lookup bars (41px total) */
+  padding: 9px 10px !important;
 }
 
 .sku-name {

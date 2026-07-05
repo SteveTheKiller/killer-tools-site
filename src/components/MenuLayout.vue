@@ -167,10 +167,12 @@ function popEgg() {
 .content {
   /* Inset pane: a grained chrome gutter lines all four sides, fully
      enclosing the rounded pane (KillerFind results-pane style) */
-  height: calc(100% - 12px);
+  height: calc(100% - 8px);
   /* 2px left: the pane (and its shadow) hugs the sidebar so the selected
-     menu pill reads directly against the content edge */
-  margin: 8px 8px 4px 2px;
+     menu pill reads directly against the content edge. No bottom margin:
+     the statusbar text then sits 4px from the pane and 4px from the window
+     edge, evenly (was 8px above / 4px below). */
+  margin: 8px 8px 0 2px;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--kt-chrome-border, #1f1f1f);
   border-radius: 14px;
@@ -195,13 +197,14 @@ html:not(.dark) .content {
 
 /* ── Frame titlebar shell (Grunge chrome): sidebar tone + grain + frame edge ── */
 .kt-titlebar-shell {
-  /* A touch taller than the old 57px band; contents vertically centered so the
-     space above and below the search bar is equal */
-  height: 64px;
+  /* Skinny band: search bar keeps 8px of air above and below (was 19/19 at
+     64px; centered contents lose 11px per side) */
+  height: 42px;
   display: flex;
   align-items: center;
-  /* 9px top offset evens out the visual gap (was 20px above / 29px below) */
-  padding: 9px 26px 0;
+  /* 8px top offset: the search button's visual field is top-aligned in its
+     34px box, so box gaps 8/0 read as an even 8px above and below */
+  padding: 8px 26px 0;
 
   /* Phones: shorter bar (no full search field to house), tighter gutters.
      4px top offset re-centers the row optically (was 9 above / 17 below);
@@ -240,13 +243,13 @@ html:not(.dark) .content {
 /* Titlebar (57px) + inset gutters + content fill the column exactly, so
    nothing outside the content pane ever scrolls and both rails stay fixed. */
 .content.has-titlebar {
-  height: calc(100% - 64px - 12px) !important;
+  height: calc(100% - 42px - 8px) !important;
 }
 
 /* Matches the phone titlebar height above */
 @media (max-width: 700px) {
   .content.has-titlebar {
-    height: calc(100% - 36px - 12px) !important;
+    height: calc(100% - 36px - 8px) !important;
   }
 }
 

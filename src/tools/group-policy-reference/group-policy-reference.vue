@@ -151,7 +151,8 @@ html:not(.dark) .gpr-category {
 }
 
 .gpr-bar {
-  padding: 3px 10px !important;
+  /* 7px vertical: same 41px bar as the NDR lookup (its title line is taller) */
+  padding: 7px 10px !important;
   display: flex;
   align-items: center;
   gap: 6px;

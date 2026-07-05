@@ -197,6 +197,11 @@ export default defineConfig({
   },
   server: {
     host: true,
+    // no-store: the browser never caches dev modules, so a corrupted disk
+    // cache (ERR_CACHE_READ_FAILURE on 304s) can't kill route navigation
+    headers: {
+      'Cache-Control': 'no-store',
+    },
   },
   build: {
     target: 'esnext',
