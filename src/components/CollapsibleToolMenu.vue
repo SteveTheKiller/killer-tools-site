@@ -133,7 +133,7 @@ function onMenuSelect() {
   transition: opacity 0.15s ease;
   &:hover {
     opacity: 1;
-    .cat-name { color: v-bind('themeVars.primaryColor'); }
+    .cat-name { color: var(--kt-accent); }
   }
 }
 .cat-name {
