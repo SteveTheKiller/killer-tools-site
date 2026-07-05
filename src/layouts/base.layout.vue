@@ -20,10 +20,14 @@ const styleStore = useStyleStore();
 // fall back to the teal site identity)
 const wmSrc = computed(() => {
   const t = styleStore.ktTheme;
-  const accent = NEUTRAL_THEMES.includes(t)
-    ? (styleStore.ktAccent || THEME_DEFAULT_ACCENT[t] || 'teal')
-    : 'teal';
-  return `/brand/killertools-wordmark-${accent}-${t === 'light' ? 'light' : 'dark'}.png`;
+  // Colored themes (blood/greed/cyanotic) use bespoke textured wordmarks
+  // with the warm theme-ink 'Tools' baked in.
+  if (!NEUTRAL_THEMES.includes(t)) {
+    return `/brand/killertools-wordmark-${t}.png`;
+  }
+  const accent = styleStore.ktAccent || THEME_DEFAULT_ACCENT[t] || 'teal';
+  const suffix = t === 'light' ? 'light' : t === 'black' ? 'black' : 'dark';
+  return `/brand/killertools-wordmark-${accent}-${suffix}.png`;
 });
 
 const { t } = useI18n();
@@ -175,7 +179,9 @@ const tools = computed<ToolCategory[]>(() => [
   }
 
   .tb-brand-wm {
-    height: 19px;
+    /* 36px art height renders the "Tools" ink at ~27px, matching the
+       .tb-brand-icon beside it so the lockup reads even */
+    height: 36px;
     display: block;
   }
 }
@@ -208,17 +214,17 @@ const tools = computed<ToolCategory[]>(() => [
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Extra top padding pushes the wordmark down so the brand icon behind it
-     has room to show its full top edge; 6px below so the art's baked shadow
+  /* Top padding sets how far the taller wordmark sits below the brand icon's
+     top edge so the icon still shows; 8px below so the art's baked shadow
      never touches the clip edge */
-  padding: 96px 12px 6px;
+  padding: 64px 3px 6px;
   text-decoration: none;
   position: relative;
   overflow: hidden;
   /* Hard guarantee: the block is always taller than the icon's fade extent
      (10px top + 150px x 86% mask = 139px), so the icon can NEVER flat-cut
      against the clip edge no matter how the wordmark sizing changes */
-  min-height: 148px;
+  min-height: 140px;
 
   /* Brand icon behind the wordmark: large, dimmed, anchored to the top of the
      block (never clipped) and fading out toward the bottom */
@@ -233,8 +239,8 @@ const tools = computed<ToolCategory[]>(() => [
     opacity: 0.85;
     pointer-events: none;
     /* Fade must reach FULL transparency before the container's clip edge
-       (~143px tall now that the wordmark is a 41px image) — otherwise the
-       icon flat-cuts at the bottom */
+       (~147px block now that the wordmark art is a ~77px-tall image), otherwise
+       the icon flat-cuts at the bottom */
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 86%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 86%);
     z-index: 0;
@@ -245,7 +251,7 @@ const tools = computed<ToolCategory[]>(() => [
     position: relative;
     z-index: 1;
     display: block;
-    width: 252px;
+    width: 293px;
     height: auto;
   }
 }

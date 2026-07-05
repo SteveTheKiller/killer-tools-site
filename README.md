@@ -1,4 +1,4 @@
-# KillerTOOLS.net
+# KillerTools.net
 
 <p align="center">
   <img src="./public/banner.png" alt="killer-tools" width="640">
@@ -10,8 +10,8 @@ I'm a field tech at an MSP handling networking, sysadmin work, and endpoint supp
 
 Everything runs in your browser. Nothing is tracked. No account is required, ever.
 
-**Live site:** [KillerTOOLS.net](https://killertools.net)  
-Built and maintained by [Steve the Killer](https://thekiller.net).
+**Live site:** [KillerTools.net](https://KillerTools.net)  
+Built and maintained by [Steve the Killer](https://theKiller.net).
 
 ---
 
@@ -41,9 +41,9 @@ Standalone executables for field work. No installer, no runtime, no dependencies
 
 | App | Description |
 |-----|-------------|
-| [KillerScan](https://killerscan.net) | Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification. |
-| [KillerPDF](https://killerpdf.net) | Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files. |
-| [KillerFind](https://killerfind.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
+| [KillerScan](https://KillerScan.net) | Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification. |
+| [KillerPDF](https://KillerPDF.net) | Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files. |
+| [KillerFind](https://KillerFind.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
 
 ---
 

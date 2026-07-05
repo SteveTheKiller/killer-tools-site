@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file. See [standa
 - safari-pinned-tab.svg traced from the tools icon silhouette (was a "kt" placeholder)
 - New og-image and README banner
 
-### KillerScan Type Treatment
+### Killer-App Type Treatment
 
 - Tool page titles, card titles, and section headers use the family typeface with the text stroke
 - Applied to NDR codes, GPO policy headers, Windows Event IDs, port numbers, and emoji picker categories

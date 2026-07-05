@@ -857,7 +857,13 @@ a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/l
   position: relative;
 }
 
-.sider-content > div > div:first-child {
+/* First category tucks up under the logo (-12px, above the baseline) so the
+   leading gap below the wordmark is tight but not cramped. */
+.sider-content > div:first-of-type > div:first-child {
+  margin-top: -12px !important;
+}
+/* Remaining category headers keep their normal separation. */
+.sider-content > div:not(:first-of-type) > div:first-child {
   margin-top: 20px !important;
 }
 
