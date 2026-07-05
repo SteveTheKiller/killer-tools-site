@@ -185,7 +185,7 @@ async function copyUnescape() {
 }
 
 .he-textarea-readonly {
-  color: #1ea54c;
+  color: var(--kt-accent);
   cursor: default;
 }
 
@@ -201,9 +201,9 @@ async function copyUnescape() {
   align-items: center;
   gap: 6px;
   background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
   padding: 4px 12px;
@@ -212,8 +212,8 @@ async function copyUnescape() {
 }
 
 .he-copy-btn:hover {
-  color: #1ea54c;
-  border-color: rgba(30, 165, 76, 0.7);
-  background: rgba(30, 165, 76, 0.06);
+  color: var(--kt-accent);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
+  background: rgba(var(--kt-accent-rgb), 0.06);
 }
 </style>

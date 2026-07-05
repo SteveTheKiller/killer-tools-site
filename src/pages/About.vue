@@ -30,8 +30,8 @@ useHead({
       <div class="g-card">
         <div class="terminal-body">
           <div class="prompt-line">
-            <span class="prompt">&gt;_</span>
-            <h1 class="site-title killer-font">killer-tools</h1>
+            <img class="site-icon" src="/app-icon-512.png" alt="">
+            <h1 class="site-title killer-font">About Killer Tools</h1>
           </div>
           <p>
             Field techs don't have time for bloat. Every tool here exists because I needed it on the job and
@@ -39,7 +39,7 @@ useHead({
           </p>
           <p>
             I'm a field tech at an MSP handling networking, sysadmin work, and endpoint support.
-            killer-tools started as a fork of the excellent
+            KillerTools.net started as a fork of the excellent
             <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools</a>
             project by
             <a href="https://github.com/CorentinTh" target="_blank" rel="noopener">Corentin Thomasset</a>
@@ -67,33 +67,43 @@ useHead({
         <!-- Same cross-promo card as the app landing pages: "Also try..." in the
              family typewriter face, cards on a grained Grunge surface -->
         <div class="g-card">
-        <h2 class="also-heading killer-font">Also try...</h2>
-        <div class="app-cards">
-          <a class="app-card" href="https://killerscan.net" target="_blank" rel="noopener">
-            <img class="app-icon" src="/brand/ks-icon.png" alt="KillerScan" width="46" height="46">
-            <span class="app-body">
-              <img class="app-wm wm-dark" src="/brand/killerscan-wordmark-dark.png" alt="KillerScan">
-              <img class="app-wm wm-light" src="/brand/killerscan-wordmark-light.png" alt="KillerScan">
-              <span class="app-tag">Open-source network scanner for Windows</span>
-            </span>
-          </a>
-          <a class="app-card" href="https://killerpdf.net" target="_blank" rel="noopener">
-            <img class="app-icon" src="/brand/kp-icon.png" alt="KillerPDF" width="46" height="46">
-            <span class="app-body">
-              <img class="app-wm wm-dark" src="/brand/killerpdf-wordmark-dark.png" alt="KillerPDF">
-              <img class="app-wm wm-light" src="/brand/killerpdf-wordmark-light.png" alt="KillerPDF">
-              <span class="app-tag">Open-source PDF editor for Windows</span>
-            </span>
-          </a>
-          <a class="app-card" href="https://killerfind.net" target="_blank" rel="noopener">
-            <img class="app-icon" src="/brand/kf-icon.png" alt="KillerFind" width="46" height="46">
-            <span class="app-body">
-              <img class="app-wm wm-dark" src="/brand/killerfind-wordmark-dark.png" alt="KillerFind">
-              <img class="app-wm wm-light" src="/brand/killerfind-wordmark-light.png" alt="KillerFind">
-              <span class="app-tag">Open-source file search for Windows</span>
-            </span>
-          </a>
+          <h2 class="also-heading killer-font">Also try...</h2>
+          <div class="app-cards">
+            <a class="app-card" href="https://killerscan.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/ks-icon.png" alt="KillerScan" width="46" height="46">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killerscan-wordmark-dark.png" alt="KillerScan">
+                <img class="app-wm wm-light" src="/brand/killerscan-wordmark-light.png" alt="KillerScan">
+                <span class="app-tag">Open-source network scanner for Windows</span>
+              </span>
+            </a>
+            <a class="app-card" href="https://killerpdf.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/kp-icon.png" alt="KillerPDF" width="46" height="46">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killerpdf-wordmark-dark.png" alt="KillerPDF">
+                <img class="app-wm wm-light" src="/brand/killerpdf-wordmark-light.png" alt="KillerPDF">
+                <span class="app-tag">Open-source PDF editor for Windows</span>
+              </span>
+            </a>
+            <a class="app-card" href="https://killerfind.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/kf-icon.png" alt="KillerFind" width="46" height="46">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killerfind-wordmark-dark.png" alt="KillerFind">
+                <img class="app-wm wm-light" src="/brand/killerfind-wordmark-light.png" alt="KillerFind">
+                <span class="app-tag">Open-source file search for Windows</span>
+              </span>
+            </a>
+          </div>
         </div>
+
+        <!-- Missing a tool: same column, under the Also try card -->
+        <div class="about-footer g-card">
+          <h2 class="also-heading killer-font">Missing a tool? Found a bug?</h2>
+          <p>
+            Open a feature request or bug report in the
+            <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">issues section</a>
+            on GitHub. I read them.
+          </p>
         </div>
       </div>
 
@@ -134,16 +144,6 @@ useHead({
           <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools (fork)</a>
         </div>
       </div>
-    </div>
-
-    <!-- Row 3: full-width footer card -->
-    <div class="about-footer g-card">
-      <h2 class="also-heading killer-font">Missing a tool? Found a bug?</h2>
-      <p>
-        Open a feature request or bug report in the
-        <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">issues section</a>
-        on GitHub. I read them.
-      </p>
     </div>
 
   </div>
@@ -187,14 +187,41 @@ useHead({
   letter-spacing: 0.5px;
 }
 
-/* Dark grained card, same language as the landing pages' about cards */
+/* Family card recipe (kt-terminal language): near-black grained surface on
+   --kt-modal, chrome border, accent top edge, hover accent (no lift - text) */
 .g-card {
-  background: #1e1e1e url('/grain.png') repeat;
+  position: relative;
+  overflow: hidden;
+  background: var(--kt-modal, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat;
   background-size: 256px 256px;
-  border: 1px solid #2e2e2e;
-  border-radius: 10px;
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border-radius: 6px;
   padding: 18px 24px 22px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.15s, box-shadow 0.12s, transform 0.12s;
+}
+
+.g-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--kt-accent-sel, var(--kt-accent));
+  transition: background 0.15s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.g-card:hover::after {
+  background: var(--kt-accent);
+}
+
+.g-card:hover {
+  /* Family pop: same lift as the kt-terminal cards */
+  transform: translateY(-3px);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
 }
 
 .also-heading {
@@ -207,7 +234,7 @@ useHead({
 .terminal-body {
   padding: 0;
   line-height: 1.65;
-  color: #b0b0b0;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .prompt-line {
@@ -217,7 +244,13 @@ useHead({
   margin-bottom: 14px;
 }
 
-.prompt { color: var(--kt-accent); font-weight: 700; }
+.site-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: center;
+}
 
 .site-title {
   font-size: 22px;
@@ -325,12 +358,10 @@ html:not(.dark) .app-wm.wm-light { display: block; }
 
 /* ── Light mode overrides ────────────────────────────────────────────────── */
 
-/* Grunge card goes light: light grained surface, same family rules */
-html:not(.dark) .g-card {
-  background: #e8e8e8 url('/grain.png') repeat;
-  background-size: 256px 256px;
-  border-color: #b0b0b0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+/* Light mode: the card surface adapts through the theme vars (--kt-modal,
+   --kt-grain-img, --kt-chrome-border), matching kt-terminal behavior */
+html:not(.dark) .g-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
 }
 html:not(.dark) .also-heading { color: #1a1a1a; text-shadow: none; }
 html:not(.dark) .terminal-body  { color: rgba(0, 0, 0, 0.75); }
@@ -350,5 +381,4 @@ html:not(.dark) a              { color: var(--kt-accent); }
 html:not(.dark) a:hover        { color: var(--kt-accent-2); }
 html:not(.dark) .link-group a  { color: var(--kt-accent); }
 html:not(.dark) .link-group a:hover { color: var(--kt-accent-2); }
-html:not(.dark) .prompt        { color: color-mix(in srgb, var(--kt-accent) 65%, transparent); }
 </style>

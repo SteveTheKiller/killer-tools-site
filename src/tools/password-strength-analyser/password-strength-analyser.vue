@@ -113,7 +113,7 @@ const details = computed(() => [
 /* ── Panel ── */
 .ps-panel {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -126,14 +126,14 @@ const details = computed(() => [
   display: flex;
   align-items: center;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   transition: border-color 0.15s;
 }
 
 .ps-input-row:focus-within {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .ps-input {
@@ -160,7 +160,7 @@ const details = computed(() => [
   height: 32px;
   background: transparent;
   border: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.1);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.1);
   color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
   display: flex;
@@ -221,7 +221,7 @@ const details = computed(() => [
   gap: 4px;
   padding: 12px 14px;
   background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(30, 165, 76, 0.12);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.12);
   border-radius: 6px;
 }
 
@@ -237,13 +237,14 @@ const details = computed(() => [
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 /* ── Terminal rows ── */
 .ps-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -254,12 +255,12 @@ const details = computed(() => [
   align-items: center;
   gap: 10px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   background: transparent !important;
 }
 
 .ps-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .ps-row:last-child {
@@ -267,7 +268,7 @@ const details = computed(() => [
 }
 
 .ps-prompt {
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   font-size: 0.72rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-weight: 600;
@@ -283,7 +284,7 @@ const details = computed(() => [
 .ps-detail-value {
   font-size: 0.8rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 /* ── Note ── */

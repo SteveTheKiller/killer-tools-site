@@ -154,7 +154,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 /* ── Controls ── */
 .li-controls {
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   padding: 14px 18px;
   display: flex;
@@ -179,7 +179,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 .li-val {
   font-size: 0.76rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: #1ea54c;
+  color: var(--kt-accent);
   text-align: right;
   white-space: nowrap;
 }
@@ -201,10 +201,10 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   border-radius: 2px;
   background: linear-gradient(
     to right,
-    rgba(30, 165, 76, 0.18) var(--min, 0%),
-    #1ea54c var(--min, 0%),
-    #1ea54c var(--max, 100%),
-    rgba(30, 165, 76, 0.18) var(--max, 100%)
+    rgba(var(--kt-accent-rgb), 0.18) var(--min, 0%),
+    var(--kt-accent) var(--min, 0%),
+    var(--kt-accent) var(--max, 100%),
+    rgba(var(--kt-accent-rgb), 0.18) var(--max, 100%)
   );
   pointer-events: none;
 }
@@ -229,10 +229,10 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(30, 165, 76, 0.3);
+  box-shadow: 0 0 0 3px rgba(var(--kt-accent-rgb), 0.3);
   pointer-events: all;
 }
 
@@ -241,7 +241,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
   pointer-events: all;
@@ -258,8 +258,8 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   cursor: pointer;
   background: linear-gradient(
     to right,
-    #1ea54c calc(var(--val, 50) * 1%),
-    rgba(30, 165, 76, 0.18) calc(var(--val, 50) * 1%)
+    var(--kt-accent) calc(var(--val, 50) * 1%),
+    rgba(var(--kt-accent-rgb), 0.18) calc(var(--val, 50) * 1%)
   );
 }
 
@@ -268,17 +268,17 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(30, 165, 76, 0.3);
+  box-shadow: 0 0 0 3px rgba(var(--kt-accent-rgb), 0.3);
 }
 
 .li-slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
 }
@@ -298,9 +298,9 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 }
 
 .li-toggle-on {
-  border-color: #1ea54c;
-  background: rgba(30, 165, 76, 0.15);
-  color: #1ea54c;
+  border-color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  color: var(--kt-accent);
 }
 
 .li-toggle-group {
@@ -332,7 +332,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 .li-stat {
   font-size: 0.65rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: rgba(30, 165, 76, 0.6);
+  color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .li-stat-sep {
@@ -349,7 +349,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   padding: 14px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.7;
   resize: vertical;
   box-sizing: border-box;
@@ -367,9 +367,9 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
   gap: 6px;
   padding: 5px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: rgba(0, 0, 0, 0.35) !important;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -378,19 +378,19 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
 .li-btn:hover {
   background: rgba(10, 10, 12, 0.95) !important;
-  border-color: rgba(30, 165, 76, 0.65);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .li-btn-primary {
   background: rgba(0, 0, 0, 0.35) !important;
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .li-btn-primary:hover {
   background: rgba(10, 10, 12, 0.95) !important;
-  border-color: #1ea54c;
+  border-color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

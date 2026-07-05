@@ -17,7 +17,7 @@ const isTargetHovered = useElementHover(targetRef);
 
     <div
       v-if="tooltip || $slots.tooltip"
-      class="absolute z-10 whitespace-nowrap rounded bg-black px-12px py-6px text-sm text-white shadow-lg transition transition transition-duration-0.2s"
+      class="kt-ctip absolute z-10 whitespace-nowrap transition transition transition-duration-0.2s"
       :class="{
         'op-0 scale-0': isTargetHovered === false,
         'op-100 scale-100': isTargetHovered,
@@ -36,3 +36,24 @@ const isTargetHovered = useElementHover(targetRef);
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Family tooltip chrome: modal tone, pane border, rounded (matches the
+   data-tip tooltips in kt-terminal.css) */
+.kt-ctip {
+  background: var(--kt-modal, #141414);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+html:not(.dark) .kt-ctip {
+  color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+</style>

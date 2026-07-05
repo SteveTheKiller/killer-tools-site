@@ -178,14 +178,14 @@ async function copyResult(key: string, val: string) {
 .pc-eq {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 1rem;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 /* ── Number input ── */
 .pc-num {
   width: 110px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 6px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -207,7 +207,7 @@ async function copyResult(key: string, val: string) {
 }
 
 .pc-num:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 /* ── Result box ── */
@@ -218,31 +218,31 @@ async function copyResult(key: string, val: string) {
   min-width: 120px;
   padding: 6px 10px;
   background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(30, 165, 76, 0.12);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.12);
   border-radius: 5px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   transition: border-color 0.12s, background 0.12s;
 }
 
 .pc-result-active {
-  border-color: rgba(30, 165, 76, 0.3);
+  border-color: rgba(var(--kt-accent-rgb), 0.3);
   cursor: pointer;
 }
 
 .pc-result-active:hover {
-  background: rgba(30, 165, 76, 0.06);
-  border-color: rgba(30, 165, 76, 0.5);
+  background: rgba(var(--kt-accent-rgb), 0.06);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 .pc-result-val {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   flex: 1;
 }
 
 .pc-result-positive .pc-result-val {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .pc-result-negative .pc-result-val {
@@ -256,12 +256,12 @@ async function copyResult(key: string, val: string) {
 
 .pc-result-copy {
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   flex-shrink: 0;
 }
 
 .pc-result-active:hover .pc-result-copy {
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 /* ── Light mode ── */

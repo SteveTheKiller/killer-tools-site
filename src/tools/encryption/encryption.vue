@@ -34,7 +34,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 </script>
 
 <template>
-  <div class="en-wrap">
+  <div class="en-wrap" style="flex: 1 1 900px; max-width: 1400px;">
     <!-- Encrypt panel -->
     <div class="en-panel kt-terminal">
       <div class="kt-terminal-bar">
@@ -218,7 +218,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 /* Textarea */
 .en-textarea {
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 8px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -232,11 +232,11 @@ function closeOnBlur(set: (val: boolean) => void) {
   line-height: 1.5;
 }
 
-.en-textarea:focus { border-color: rgba(30, 165, 76, 0.5); }
+.en-textarea:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 .en-textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 .en-textarea-output {
-  color: #1ea54c;
+  color: var(--kt-accent);
   cursor: default;
   resize: none;
 }
@@ -245,7 +245,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 .en-input {
   height: 32px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 0 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -257,7 +257,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   box-sizing: border-box;
 }
 
-.en-input:focus { border-color: rgba(30, 165, 76, 0.5); }
+.en-input:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 .en-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 /* Dropdown */
@@ -269,7 +269,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   gap: 8px;
   width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -282,12 +282,12 @@ function closeOnBlur(set: (val: boolean) => void) {
 
 .en-dropdown-trigger:hover,
 .en-dropdown:focus-within .en-dropdown-trigger {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .en-chevron {
   margin-left: auto;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   transition: transform 0.15s;
   flex-shrink: 0;
 }
@@ -300,7 +300,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   left: 0;
   min-width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   z-index: 100;
@@ -313,7 +313,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   padding: 7px 14px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
   text-align: left;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
@@ -323,8 +323,8 @@ function closeOnBlur(set: (val: boolean) => void) {
 }
 
 .en-dropdown-item:last-child { border-bottom: none; }
-.en-dropdown-item:hover { background: rgba(30, 165, 76, 0.1); color: #fff; }
-.en-dropdown-item-active { color: #1ea54c; background: rgba(30, 165, 76, 0.08); }
+.en-dropdown-item:hover { background: rgba(var(--kt-accent-rgb), 0.1); color: #fff; }
+.en-dropdown-item-active { color: var(--kt-accent); background: rgba(var(--kt-accent-rgb), 0.08); }
 
 /* Error */
 .en-error {

@@ -407,7 +407,7 @@ async function copy(val: string) {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid rgba(30, 165, 76, 0.7);
+  border-top: 6px solid rgba(var(--kt-accent-rgb), 0.7);
 }
 
 .nd-dial-track {
@@ -456,7 +456,7 @@ async function copy(val: string) {
 
 .nd-dial-item.dial-active .nd-dial-tick {
   height: 14px;
-  background: #1ea54c;
+  background: var(--kt-accent);
 }
 
 .nd-dial-label {
@@ -472,7 +472,7 @@ async function copy(val: string) {
 
 .nd-dial-item.dial-active .nd-dial-label {
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   transform: scale(1.18);
 }
 
@@ -488,7 +488,7 @@ async function copy(val: string) {
 
 .nd-filter-btn {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.18);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.18);
   border-radius: 5px;
   padding: 8px 6px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -501,7 +501,7 @@ async function copy(val: string) {
 }
 
 .nd-filter-btn:hover {
-  border-color: rgba(30, 165, 76, 0.5);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 .nd-filter-btn:hover .nd-filter-name {
@@ -513,16 +513,16 @@ async function copy(val: string) {
 }
 
 .nd-filter-active {
-  background: rgba(30, 165, 76, 0.12) !important;
-  border-color: rgba(30, 165, 76, 0.7) !important;
+  background: rgba(var(--kt-accent-rgb), 0.12) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.7) !important;
 }
 
 .nd-filter-active .nd-filter-name {
-  color: #1ea54c !important;
+  color: var(--kt-accent) !important;
 }
 
 .nd-filter-active .nd-filter-stops {
-  color: rgba(30, 165, 76, 0.65) !important;
+  color: rgba(var(--kt-accent-rgb), 0.65) !important;
 }
 
 .nd-filter-name {
@@ -541,7 +541,7 @@ async function copy(val: string) {
 .nd-num {
   width: 140px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -563,7 +563,7 @@ async function copy(val: string) {
 .nd-num::-webkit-inner-spin-button,
 .nd-num::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-.nd-num:focus { border-color: rgba(30, 165, 76, 0.55); }
+.nd-num:focus { border-color: rgba(var(--kt-accent-rgb), 0.55); }
 
 .nd-result-row {
   display: flex;
@@ -576,7 +576,7 @@ async function copy(val: string) {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 
@@ -588,33 +588,33 @@ async function copy(val: string) {
 .nd-result-sub {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .nd-copy-btn {
   margin-left: auto;
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 4px;
   padding: 4px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
   cursor: pointer;
   transition: border-color 0.12s, color 0.12s;
 }
 
-.nd-copy-btn:hover { border-color: rgba(30, 165, 76, 0.55); color: rgba(30, 165, 76, 0.9); }
-.nd-copy-done { border-color: rgba(30, 165, 76, 0.55) !important; color: rgba(30, 165, 76, 0.9) !important; }
+.nd-copy-btn:hover { border-color: rgba(var(--kt-accent-rgb), 0.55); color: rgba(var(--kt-accent-rgb), 0.9); }
+.nd-copy-done { border-color: rgba(var(--kt-accent-rgb), 0.55) !important; color: rgba(var(--kt-accent-rgb), 0.9) !important; }
 
 .nd-alert {
   display: flex;
   gap: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
-  color: rgba(30, 165, 76, 0.75);
-  background: rgba(30, 165, 76, 0.06);
-  border-left: 3px solid rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.75);
+  background: rgba(var(--kt-accent-rgb), 0.06);
+  border-left: 3px solid rgba(var(--kt-accent-rgb), 0.4);
   padding: 8px 10px;
   border-radius: 4px;
 }
@@ -625,8 +625,8 @@ async function copy(val: string) {
 .nd-footnote {
   flex: 0 0 100%;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   padding: 0 2px;
   display: flex;
@@ -639,24 +639,24 @@ async function copy(val: string) {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .nd-fn-sep {
-  color: rgba(30, 165, 76, 0.25);
-  font-size: 0.75rem;
+  color: rgba(var(--kt-accent-rgb), 0.55);
+  font-size: 0.85rem;
 }
 
 .nd-footnote-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 16px;
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .nd-footnote em {
   font-style: normal;
-  color: rgba(30, 165, 76, 0.45);
+  color: rgba(var(--kt-accent-rgb), 0.9);
 }
 
 /* -- Light mode -- */
@@ -686,8 +686,8 @@ html:not(.dark) .nd-result-sub { color: rgba(13,112,51,0.55); }
 html:not(.dark) .nd-copy-btn { border-color: rgba(13,112,51,0.25); color: rgba(13,112,51,0.55); }
 html:not(.dark) .nd-copy-btn:hover, html:not(.dark) .nd-copy-done { border-color: rgba(13,112,51,0.55) !important; color: rgba(13,112,51,0.9) !important; }
 html:not(.dark) .nd-footnote { color: rgba(0,0,0,0.25); }
-html:not(.dark) .nd-footnote-formulas { color: rgba(0,0,0,0.28); }
-html:not(.dark) .nd-footnote-legend { color: rgba(0,0,0,0.2); }
+html:not(.dark) .nd-footnote-formulas { color: rgba(0,0,0,0.6); }
+html:not(.dark) .nd-footnote-legend { color: rgba(0,0,0,0.5); }
 html:not(.dark) .nd-fn-sep { color: rgba(13,112,51,0.25); }
 html:not(.dark) .nd-footnote em { color: rgba(13,112,51,0.5); }
 </style>

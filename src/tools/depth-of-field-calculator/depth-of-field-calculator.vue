@@ -459,7 +459,7 @@ function toggleUnit() {
 
 .dof-sensor-btn {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.18);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.18);
   border-radius: 5px;
   padding: 8px 6px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -472,19 +472,19 @@ function toggleUnit() {
 }
 
 .dof-sensor-btn:hover {
-  border-color: rgba(30, 165, 76, 0.5);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 .dof-sensor-btn:hover .dof-sensor-name { color: rgba(255, 255, 255, 0.9); }
 .dof-sensor-btn:hover .dof-sensor-sub { color: rgba(255, 255, 255, 0.5); }
 
 .dof-sensor-active {
-  background: rgba(30, 165, 76, 0.12) !important;
-  border-color: rgba(30, 165, 76, 0.7) !important;
+  background: rgba(var(--kt-accent-rgb), 0.12) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.7) !important;
 }
 
-.dof-sensor-active .dof-sensor-name { color: #1ea54c !important; }
-.dof-sensor-active .dof-sensor-sub { color: rgba(30, 165, 76, 0.65) !important; }
+.dof-sensor-active .dof-sensor-name { color: var(--kt-accent) !important; }
+.dof-sensor-active .dof-sensor-sub { color: rgba(var(--kt-accent-rgb), 0.65) !important; }
 
 .dof-sensor-name {
   font-size: 0.82rem;
@@ -514,7 +514,7 @@ function toggleUnit() {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid rgba(30, 165, 76, 0.7);
+  border-top: 6px solid rgba(var(--kt-accent-rgb), 0.7);
 }
 
 .dof-dial-track {
@@ -561,7 +561,7 @@ function toggleUnit() {
 
 .dof-dial-item.dial-active .dof-dial-tick {
   height: 14px;
-  background: #1ea54c;
+  background: var(--kt-accent);
 }
 
 .dof-dial-label {
@@ -576,7 +576,7 @@ function toggleUnit() {
 
 .dof-dial-item.dial-active .dof-dial-label {
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   transform: scale(1.18);
 }
 
@@ -586,7 +586,7 @@ function toggleUnit() {
 .dof-num {
   width: 140px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -603,7 +603,7 @@ function toggleUnit() {
 .dof-num::-webkit-inner-spin-button,
 .dof-num::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-.dof-num:focus { border-color: rgba(30, 165, 76, 0.55); }
+.dof-num:focus { border-color: rgba(var(--kt-accent-rgb), 0.55); }
 
 .dof-distance-row {
   display: flex;
@@ -613,20 +613,20 @@ function toggleUnit() {
 
 .dof-unit-btn {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 4px;
   padding: 6px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
-  color: rgba(30, 165, 76, 0.7);
+  color: rgba(var(--kt-accent-rgb), 0.7);
   cursor: pointer;
   transition: border-color 0.12s, color 0.12s;
   text-transform: uppercase;
 }
 
 .dof-unit-btn:hover {
-  border-color: rgba(30, 165, 76, 0.6);
-  color: rgba(30, 165, 76, 1);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
+  color: rgba(var(--kt-accent-rgb), 1);
 }
 
 .dof-hyperfocal-block {
@@ -647,14 +647,14 @@ function toggleUnit() {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 
 .dof-hf-hint {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.7rem;
-  color: rgba(30, 165, 76, 0.45);
+  color: rgba(var(--kt-accent-rgb), 0.45);
   line-height: 1.5;
 }
 
@@ -687,16 +687,16 @@ function toggleUnit() {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.dof-infinity { color: #1ea54c; }
+.dof-infinity { color: var(--kt-accent); }
 
 .dof-alert {
   display: flex;
   gap: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
-  color: rgba(30, 165, 76, 0.75);
-  background: rgba(30, 165, 76, 0.06);
-  border-left: 3px solid rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.75);
+  background: rgba(var(--kt-accent-rgb), 0.06);
+  border-left: 3px solid rgba(var(--kt-accent-rgb), 0.4);
   padding: 8px 10px;
   border-radius: 4px;
 }
@@ -706,8 +706,8 @@ function toggleUnit() {
 .dof-footnote {
   flex: 0 0 100%;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   padding: 0 2px;
   display: flex;
@@ -720,24 +720,24 @@ function toggleUnit() {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dof-fn-sep {
-  color: rgba(30, 165, 76, 0.25);
-  font-size: 0.75rem;
+  color: rgba(var(--kt-accent-rgb), 0.5);
+  font-size: 0.85rem;
 }
 
 .dof-footnote-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 16px;
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dof-footnote em {
   font-style: normal;
-  color: rgba(30, 165, 76, 0.45);
+  color: rgba(var(--kt-accent-rgb), 0.9);
 }
 
 /* -- Light mode -- */
@@ -771,9 +771,9 @@ html:not(.dark) .dof-stat-value { color: rgba(0,0,0,0.75); }
 html:not(.dark) .dof-infinity { color: #0d7033; }
 html:not(.dark) .dof-unit-btn { border-color: rgba(13,112,51,0.25); color: rgba(13,112,51,0.7); }
 html:not(.dark) .dof-unit-btn:hover { border-color: rgba(13,112,51,0.6); color: #0d7033; }
-html:not(.dark) .dof-footnote { color: rgba(0,0,0,0.25); }
-html:not(.dark) .dof-footnote-formulas { color: rgba(0,0,0,0.28); }
-html:not(.dark) .dof-footnote-legend { color: rgba(0,0,0,0.2); }
-html:not(.dark) .dof-fn-sep { color: rgba(13,112,51,0.25); }
-html:not(.dark) .dof-footnote em { color: rgba(13,112,51,0.5); }
+html:not(.dark) .dof-footnote { color: rgba(0,0,0,0.6); }
+html:not(.dark) .dof-footnote-formulas { color: rgba(0,0,0,0.6); }
+html:not(.dark) .dof-footnote-legend { color: rgba(0,0,0,0.6); }
+html:not(.dark) .dof-fn-sep { color: rgba(13,112,51,0.5); }
+html:not(.dark) .dof-footnote em { color: rgba(13,112,51,0.6); }
 </style>

@@ -32,6 +32,8 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <!-- Controls -->
   <div class="sp-controls">
     <!-- Width + Background -->
@@ -147,6 +149,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
       <img :src="base64" alt="SVG preview" class="sp-preview-img">
     </div>
   </div>
+  </div>
 </template>
 
 <style scoped>
@@ -168,7 +171,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 
 .sp-preview-frame {
   background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 6px;
   padding: 16px;
   display: flex;
@@ -222,7 +225,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   display: inline-flex;
   align-items: center;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   height: 32px;
@@ -233,8 +236,8 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   height: 32px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.12);
+  color: var(--kt-accent);
   font-size: 1.1rem;
   cursor: pointer;
   display: flex;
@@ -246,10 +249,10 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 
 .sp-step-btn:last-child {
   border-right: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12);
 }
 
-.sp-step-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
+.sp-step-btn:hover:not(:disabled) { background: rgba(var(--kt-accent-rgb), 0.1); }
 .sp-step-btn:disabled { opacity: 0.3; cursor: default; }
 
 .sp-step-input {
@@ -260,7 +263,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   text-align: center;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   outline: none;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -277,7 +280,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
   align-items: center;
   gap: 8px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 4px 8px;
   height: 32px;
@@ -286,7 +289,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 }
 
 .sp-color-row:focus-within {
-  border-color: rgba(30, 165, 76, 0.5);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 .sp-color-swatch {
@@ -318,7 +321,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 .sp-text-input {
   height: 32px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 0 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -331,7 +334,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 }
 
 .sp-text-input::placeholder { color: rgba(255, 255, 255, 0.2); }
-.sp-text-input:focus { border-color: rgba(30, 165, 76, 0.5); }
+.sp-text-input:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 
 /* Toggle */
 .sp-toggle-row {
@@ -356,15 +359,15 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 }
 
 .kt-pill:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .kt-pill-active {
-  background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* Output blocks */
@@ -385,7 +388,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 .sp-btn {
   padding: 7px 18px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -395,13 +398,13 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 }
 
 .sp-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.5);
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
   color: #fff;
 }
 
-.sp-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
-.sp-btn-accent:hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
+.sp-btn-accent { border-color: rgba(var(--kt-accent-rgb), 0.5); color: var(--kt-accent); }
+.sp-btn-accent:hover { background: rgba(var(--kt-accent-rgb), 0.15); color: var(--kt-accent); }
 
 /* ── Light mode ── */
 html:not(.dark) .sp-label { color: rgba(0, 0, 0, 0.50) !important; }

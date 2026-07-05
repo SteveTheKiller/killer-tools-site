@@ -708,7 +708,7 @@ async function runLookup() {
           </div>
           <div class="whois-terminal-body">
             <template v-if="emailResults.dkim.value.length > 0">
-              <div v-for="(record, i) in emailResults.dkim.value" :key="i" class="whois-record-block" style="border-bottom: 1px solid rgba(30,165,76,0.07);">
+              <div v-for="(record, i) in emailResults.dkim.value" :key="i" class="whois-record-block" style="border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);">
                 <span>{{ record }}</span>
               </div>
             </template>
@@ -757,19 +757,19 @@ async function runLookup() {
   width: 130px;
   padding: 0;
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   border-radius: 5px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .dl-lookup-btn:hover:not(:disabled) {
   background: rgba(10, 10, 12, 0.95);
-  border-color: rgba(30, 165, 76, 0.75);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.75);
+  color: var(--kt-accent);
 }
 
 .dl-lookup-btn:disabled {
@@ -799,7 +799,7 @@ async function runLookup() {
 }
 
 .whois-terminal:hover {
-  border-color: rgba(30, 165, 76, 0.6) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.6) !important;
 }
 
 .whois-terminal:hover .whois-terminal-bar {
@@ -843,7 +843,7 @@ async function runLookup() {
   align-items: center;
   gap: 10px;
   padding: 6px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   transition: background 0.1s;
   background: transparent !important;
 }
@@ -853,11 +853,11 @@ async function runLookup() {
 }
 
 .whois-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .whois-prompt {
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   font-weight: 600;
   font-size: 0.72rem;
   user-select: none;
@@ -870,7 +870,7 @@ async function runLookup() {
 }
 
 .whois-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.75rem;
   word-break: break-all;
 }
@@ -888,16 +888,16 @@ async function runLookup() {
   align-items: center;
   gap: 10px;
   padding: 6px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   transition: background 0.1s;
   background: transparent !important;
 }
 .whois-record-row:last-child { border-bottom: none; }
-.whois-record-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.whois-record-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 /* Record row values (MX, NS) should read as data, not labels */
 .whois-record-row .whois-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 /* Monospace raw record block (SPF, DMARC, DKIM) */
@@ -908,7 +908,7 @@ async function runLookup() {
   padding: 8px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   word-break: break-all;
   line-height: 1.55;
 }
@@ -916,7 +916,7 @@ async function runLookup() {
 /* Status entries */
 .whois-status-entry {
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
 }
 .whois-status-entry:last-child { border-bottom: none; }
 
@@ -929,7 +929,7 @@ async function runLookup() {
 
 /* Contact groups */
 .whois-contact-group {
-  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.1);
 }
 .whois-contact-group:last-child { border-bottom: none; }
 
@@ -947,7 +947,7 @@ async function runLookup() {
 /* Remarks */
 .whois-remark-entry {
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
 }
 .whois-remark-entry:last-child { border-bottom: none; }
 
@@ -971,7 +971,7 @@ async function runLookup() {
   font-size: 0.7rem;
   color: rgba(240, 160, 32, 0.85);
   line-height: 1.5;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
 }
 
 .whois-warn-line:last-child {

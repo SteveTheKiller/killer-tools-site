@@ -97,7 +97,6 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .sku-section {
@@ -109,10 +108,10 @@ function copyValue(value: string) {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   margin-bottom: 12px;
 }
 
@@ -151,7 +150,7 @@ function copyValue(value: string) {
 }
 
 .sku-tier-info    { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
-.sku-tier-success { background: rgba(30, 165, 76, 0.12);  color: #1ea54c; border: 1px solid rgba(30, 165, 76, 0.3); }
+.sku-tier-success { background: rgba(var(--kt-accent-rgb), 0.12);  color: var(--kt-accent); border: 1px solid rgba(var(--kt-accent-rgb), 0.3); }
 .sku-tier-warning { background: rgba(234, 179, 8, 0.12);  color: #ca8a04; border: 1px solid rgba(234, 179, 8, 0.3); }
 .sku-tier-error   { background: rgba(239, 68, 68, 0.12);  color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
 .sku-tier-default { background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
@@ -162,21 +161,21 @@ function copyValue(value: string) {
   transition: background 0.1s;
 }
 .sku-body-copied {
-  background: rgba(30, 165, 76, 0.12) !important;
+  background: rgba(var(--kt-accent-rgb), 0.12) !important;
 }
 
 .sku-string-id {
   display: block;
   font-size: 0.68rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   letter-spacing: 0.03em;
   word-break: break-all;
   margin-bottom: 6px;
 }
 
 .sku-string-id:hover {
-  color: #4ade80;
+  color: var(--kt-accent);
 }
 
 .sku-desc {
@@ -190,7 +189,7 @@ function copyValue(value: string) {
 }
 
 .sku-see-also-link {
-  color: #1ea54c;
+  color: var(--kt-accent);
   text-decoration: none;
 }
 

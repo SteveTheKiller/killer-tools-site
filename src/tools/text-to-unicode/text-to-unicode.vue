@@ -12,6 +12,8 @@ const { copy: copyText } = useCopy({ source: textFromUnicode });
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <c-card title="Text to Unicode">
     <c-input-text v-model:value="inputText" multiline placeholder="e.g. 'Hello Avengers'" label="Enter text to convert to unicode" autosize autofocus raw-text test-id="text-to-unicode-input" />
     <c-input-text v-model:value="unicodeFromText" label="Unicode from your text" multiline raw-text readonly mt-2 placeholder="The unicode representation of your text will be here" test-id="text-to-unicode-output" />
@@ -31,4 +33,5 @@ const { copy: copyText } = useCopy({ source: textFromUnicode });
       </c-button>
     </div>
   </c-card>
+  </div>
 </template>

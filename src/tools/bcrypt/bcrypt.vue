@@ -127,7 +127,6 @@ const compareMatch = computed(() => {
   align-items: flex-start;
 }
 
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 /* ── Panel ── */
@@ -167,8 +166,9 @@ const compareMatch = computed(() => {
 /* ── Text input ── */
 .bc-input {
   width: 100%;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 6px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -184,7 +184,7 @@ const compareMatch = computed(() => {
 }
 
 .bc-input:focus {
-  border-color: rgba(30, 165, 76, 0.6);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 /* ── Salt stepper ── */
@@ -198,9 +198,9 @@ const compareMatch = computed(() => {
   width: 26px;
   height: 26px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   background: transparent !important;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;
@@ -211,8 +211,8 @@ const compareMatch = computed(() => {
 }
 
 .bc-salt-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.6);
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .bc-salt-btn:disabled {
@@ -223,7 +223,7 @@ const compareMatch = computed(() => {
 .bc-salt-val {
   font-size: 0.82rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: #1ea54c;
+  color: var(--kt-accent);
   min-width: 24px;
   text-align: center;
 }
@@ -244,8 +244,9 @@ const compareMatch = computed(() => {
 }
 
 .bc-output {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.15);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   border-radius: 5px;
   padding: 8px 12px;
   min-height: 40px;
@@ -256,7 +257,7 @@ const compareMatch = computed(() => {
 .bc-hash-text {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.76rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   word-break: break-all;
 }
 
@@ -272,9 +273,9 @@ const compareMatch = computed(() => {
   gap: 6px;
   padding: 5px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: transparent !important;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -282,20 +283,20 @@ const compareMatch = computed(() => {
 }
 
 .bc-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.65);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .bc-btn-primary {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .bc-btn-primary:hover {
-  background: rgba(30, 165, 76, 0.22);
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.22);
+  border-color: var(--kt-accent);
 }
 
 /* ── Match result ── */
@@ -318,7 +319,7 @@ const compareMatch = computed(() => {
 }
 
 .bc-result-yes {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .bc-result-no {

@@ -117,7 +117,7 @@ function digitColor(n: number) {
 
 .ch-panel {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -126,7 +126,7 @@ function digitColor(n: number) {
 .ch-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .ch-cell {
@@ -134,8 +134,8 @@ function digitColor(n: number) {
   align-items: center;
   justify-content: center;
   padding: 12px 10px;
-  border-right: 1px solid rgba(30, 165, 76, 0.07);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
 }
 
 .ch-cell:nth-child(4n) {
@@ -158,7 +158,7 @@ function digitColor(n: number) {
 
 .ch-short {
   font-size: 0.6rem;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 .ch-row-label {
@@ -176,7 +176,7 @@ function digitColor(n: number) {
 .ch-scope-bit {
   font-size: 0.65rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   min-width: 10px;
 }
 
@@ -189,7 +189,7 @@ function digitColor(n: number) {
   width: 22px;
   height: 22px;
   border-radius: 4px;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   display: flex;
@@ -201,20 +201,20 @@ function digitColor(n: number) {
 }
 
 .ch-checkbox:hover {
-  border-color: rgba(30, 165, 76, 0.5);
-  background: rgba(30, 165, 76, 0.05);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  background: rgba(var(--kt-accent-rgb), 0.05);
 }
 
 .ch-checkbox-on {
-  background: rgba(30, 165, 76, 0.18);
-  border-color: #1ea54c;
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  border-color: var(--kt-accent);
+  color: var(--kt-accent);
 }
 
 /* ── Divider ── */
 .ch-divider {
   height: 1px;
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
 }
 
 /* ── Results ── */
@@ -242,14 +242,14 @@ function digitColor(n: number) {
 .ch-symbolic {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 1rem;
-  color: rgba(30, 165, 76, 0.6);
+  color: rgba(var(--kt-accent-rgb), 0.6);
   letter-spacing: 0.12em;
 }
 
 /* ── Command row ── */
 .ch-cmd-wrap {
   padding: 0 0 0 0;
-  border-top: 1px solid rgba(30, 165, 76, 0.1);
+  border-top: 1px solid rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .ch-input-row {
@@ -262,7 +262,7 @@ function digitColor(n: number) {
 .ch-prompt {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   font-weight: 600;
   flex-shrink: 0;
   user-select: none;
@@ -272,7 +272,7 @@ function digitColor(n: number) {
   flex: 1 1 0;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .ch-copy-btn {
@@ -280,9 +280,9 @@ function digitColor(n: number) {
   width: 28px;
   height: 28px;
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -292,9 +292,9 @@ function digitColor(n: number) {
 }
 
 .ch-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.55);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
+  color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

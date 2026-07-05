@@ -190,8 +190,9 @@ onClickOutside(fmtMenuRef, () => {
 }
 
 .dt-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -213,8 +214,9 @@ onClickOutside(fmtMenuRef, () => {
 .dt-input {
   flex: 1 1 0;
   min-width: 0;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 6px;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -226,7 +228,7 @@ onClickOutside(fmtMenuRef, () => {
   transition: border-color 0.15s;
 }
 
-.dt-input:focus { border-color: rgba(30, 165, 76, 0.7); }
+.dt-input:focus { border-color: rgba(var(--kt-accent-rgb), 0.7); }
 .dt-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 .dt-input-error { border-color: rgba(224, 85, 85, 0.5); color: #e05555; }
 
@@ -245,8 +247,9 @@ onClickOutside(fmtMenuRef, () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 6px;
   outline: none;
   padding: 7px 12px;
@@ -259,10 +262,10 @@ onClickOutside(fmtMenuRef, () => {
 }
 
 .dt-fmt-btn:hover,
-.dt-fmt-btn-open { color: #1ea54c; border-color: rgba(30, 165, 76, 0.7); }
+.dt-fmt-btn-open { color: var(--kt-accent); border-color: rgba(var(--kt-accent-rgb), 0.7); }
 
 .dt-fmt-label { flex: 1; }
-.dt-fmt-caret { font-size: 0.7rem; color: rgba(30, 165, 76, 0.65); }
+.dt-fmt-caret { font-size: 0.7rem; color: rgba(var(--kt-accent-rgb), 0.65); }
 
 .dt-fmt-menu {
   position: absolute;
@@ -270,7 +273,7 @@ onClickOutside(fmtMenuRef, () => {
   right: 0;
   min-width: 220px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.5);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   border-radius: 6px;
   padding: 4px;
   display: flex;
@@ -296,8 +299,8 @@ onClickOutside(fmtMenuRef, () => {
   white-space: nowrap;
 }
 
-.dt-fmt-option:hover { background: rgba(30, 165, 76, 0.1); color: #1ea54c; }
-.dt-fmt-option-active { background: rgba(30, 165, 76, 0.15); border-color: rgba(30, 165, 76, 0.55); color: #1ea54c; }
+.dt-fmt-option:hover { background: rgba(var(--kt-accent-rgb), 0.1); color: var(--kt-accent); }
+.dt-fmt-option-active { background: rgba(var(--kt-accent-rgb), 0.15); border-color: rgba(var(--kt-accent-rgb), 0.55); color: var(--kt-accent); }
 
 /* ── Section header ── */
 .dt-section-header {
@@ -318,7 +321,7 @@ onClickOutside(fmtMenuRef, () => {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.65rem;
 }
 
@@ -326,7 +329,7 @@ onClickOutside(fmtMenuRef, () => {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   animation: dt-pulse 1.2s ease-in-out infinite;
 }
 
@@ -342,17 +345,17 @@ onClickOutside(fmtMenuRef, () => {
   align-items: start;
   gap: 12px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
 }
 
 .dt-row:last-child { border-bottom: none; }
-.dt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.dt-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 .dt-prompt {
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -367,7 +370,7 @@ onClickOutside(fmtMenuRef, () => {
 }
 
 .dt-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   line-height: 1.6;
   word-break: break-all;
@@ -382,14 +385,14 @@ onClickOutside(fmtMenuRef, () => {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb), 0.65);
   transition: color 0.12s;
   flex-shrink: 0;
   padding-top: 2px;
 }
 
-.dt-row:hover .dt-copy { color: #1ea54c; }
-.dt-copy-done { color: #1ea54c !important; }
+.dt-row:hover .dt-copy { color: var(--kt-accent); }
+.dt-copy-done { color: var(--kt-accent) !important; }
 
 @container (max-width: 580px) {
   .dt-input-row { flex-direction: column; align-items: stretch; gap: 8px; }

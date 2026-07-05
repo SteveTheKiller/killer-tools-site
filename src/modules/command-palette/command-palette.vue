@@ -2,8 +2,10 @@
 import type { PaletteOption } from './command-palette.types';
 import _ from 'lodash';
 import { storeToRefs } from 'pinia';
+import { useStyleStore } from '@/stores/style.store';
 import { useCommandPaletteStore } from './command-palette.store';
 
+const styleStore = useStyleStore();
 const isModalOpen = ref(false);
 const inputRef = ref();
 const router = useRouter();
@@ -111,8 +113,14 @@ function activateOption(option: PaletteOption) {
 </script>
 
 <template>
-  <div flex-1>
-    <c-button w-full important:justify-start @click="isModalOpen = true">
+  <div flex-1 class="palette-root">
+    <!-- Desktop: the full search bar -->
+    <c-button
+      v-if="!styleStore.isSmallScreen"
+      class="palette-btn"
+      w-full important:justify-start
+      @click="isModalOpen = true"
+    >
       <span flex items-center gap-3 op-40>
 
         <icon-mdi-search />
@@ -123,6 +131,11 @@ function activateOption(option: PaletteOption) {
         </span>
       </span>
     </c-button>
+
+    <!-- Mobile: bare white icon with the family drop shadow -->
+    <button v-else type="button" class="search-icon-btn" aria-label="Search" @click="isModalOpen = true">
+      <icon-mdi-search />
+    </button>
 
     <c-modal v-model:open="isModalOpen" class="palette-modal" shadow-xl important:max-w-650px important:pa-12px @keydown="handleKeydown">
       <c-input-text ref="inputRef" v-model:value="searchPrompt" raw-text placeholder="Type to search a tool or a command..." autofocus clearable />
@@ -138,6 +151,42 @@ function activateOption(option: PaletteOption) {
 </template>
 
 <style scoped lang="less">
+/* Mobile search trigger: bare white icon, family drop shadow, no chrome */
+/* Root centers its child vertically — without this the icon-mode button
+   pins to the top of the stretched wrapper instead of the row centerline */
+.palette-root {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-btn {
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.92);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.65)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  transition: color 0.12s;
+
+  &:hover {
+    color: var(--kt-accent);
+  }
+}
+
+html:not(.dark) .search-icon-btn {
+  color: #1a1a1a;
+  filter: none;
+
+  &:hover {
+    color: var(--kt-accent);
+  }
+}
+
 .c-input-text {
   font-size: 18px;
 
@@ -150,5 +199,17 @@ function activateOption(option: PaletteOption) {
 .c-modal--overlay {
   align-items: flex-start !important;
   padding-top: 80px;
+}
+</style>
+
+<style lang="less">
+/* Family menu chrome for the palette box: grained modal surface, accent
+   border, rounded corners, drop shadow (the dropdown-menu rule) */
+.palette-modal.c-modal--container {
+  background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 </style>

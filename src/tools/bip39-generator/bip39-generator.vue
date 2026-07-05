@@ -187,7 +187,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 /* ── Panel ── */
 .bip-panel {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -262,7 +262,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   align-items: center;
   gap: 8px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 6px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -276,12 +276,12 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 
 .bip-dropdown-trigger:hover,
 .bip-dropdown:focus-within .bip-dropdown-trigger {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .bip-dropdown-chevron {
   margin-left: auto;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   transition: transform 0.15s;
   flex-shrink: 0;
 }
@@ -296,7 +296,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   left: 0;
   min-width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   z-index: 100;
@@ -315,7 +315,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   transition: background 0.1s, color 0.1s;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
 }
 
 .bip-dropdown-item:last-child {
@@ -323,13 +323,13 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 }
 
 .bip-dropdown-item:hover {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   color: #fff;
 }
 
 .bip-dropdown-item-active {
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.08);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.08);
 }
 
 /* ── Input row (input + icon buttons) ── */
@@ -338,7 +338,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   align-items: center;
   width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   transition: border-color 0.15s;
@@ -346,7 +346,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 }
 
 .bip-input-row:focus-within {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .bip-input-row.bip-error {
@@ -375,7 +375,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 }
 
 .bip-passphrase {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .bip-input::placeholder {
@@ -392,8 +392,8 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   height: 32px;
   background: transparent;
   border: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
-  color: rgba(30, 165, 76, 0.5);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -403,8 +403,8 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 }
 
 .bip-icon-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  color: var(--kt-accent);
 }
 
 .bip-error-msg {
@@ -432,18 +432,18 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgba(30, 165, 76, 0.08);
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 4px;
   padding: 3px 8px 3px 4px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .bip-word-idx {
   font-size: 0.6rem;
-  color: rgba(30, 165, 76, 0.45);
+  color: rgba(var(--kt-accent-rgb), 0.45);
   min-width: 14px;
   text-align: right;
 }

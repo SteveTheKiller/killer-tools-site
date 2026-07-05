@@ -102,6 +102,8 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <!-- Left: form panel -->
   <div class="mg-form-wrap">
     <div
@@ -201,6 +203,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
       <pre class="mg-pre" v-html="highlightedOutput" />
     </div>
   </div>
+  </div>
 </template>
 
 <style scoped>
@@ -236,7 +239,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   display: grid;
   grid-template-columns: 140px 1fr;
   align-items: stretch;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.08);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.08);
 }
 
 .mg-row:last-child {
@@ -251,7 +254,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   font-size: 0.74rem;
   color: rgba(255, 255, 255, 0.45);
   background: rgba(255, 255, 255, 0.02);
-  border-right: 1px solid rgba(30, 165, 76, 0.1);
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.1);
   white-space: nowrap;
 }
 
@@ -274,7 +277,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 .mg-input:focus {
-  background: rgba(30, 165, 76, 0.04);
+  background: rgba(var(--kt-accent-rgb), 0.04);
   outline: none;
 }
 
@@ -302,12 +305,12 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 
 .mg-dropdown-trigger:hover,
 .mg-dropdown:focus-within .mg-dropdown-trigger {
-  background: rgba(30, 165, 76, 0.04);
+  background: rgba(var(--kt-accent-rgb), 0.04);
 }
 
 .mg-chevron {
   margin-left: auto;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   transition: transform 0.15s;
   flex-shrink: 0;
 }
@@ -322,7 +325,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   left: -110px;
   right: 0;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   z-index: 100;
@@ -337,7 +340,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
 }
 
 .mg-dropdown-item {
@@ -346,7 +349,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   padding: 7px 14px;
   background: transparent !important;
   border: none;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
   text-align: left;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
@@ -360,7 +363,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 .mg-dropdown-item:hover {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   color: #fff;
 }
 
@@ -369,8 +372,8 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 .mg-item-active {
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.08);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.08);
 }
 
 /* ── Output panel ── */
@@ -384,9 +387,9 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   gap: 5px;
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  background: rgba(30, 165, 76, 0.08);
-  color: rgba(30, 165, 76, 0.8);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.67rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -394,9 +397,9 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 .mg-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.18);
-  border-color: #1ea54c;
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  border-color: var(--kt-accent);
+  color: var(--kt-accent);
 }
 
 .mg-code-panel {
@@ -429,7 +432,7 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 }
 
 :deep(.hl-value) {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

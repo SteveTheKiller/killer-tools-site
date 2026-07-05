@@ -446,10 +446,11 @@ const groupedAuth = computed(() => {
 </template>
 
 <style scoped>
-/* ── Terminal chrome ── */
+/* ── Card chrome (family recipe: grained surface, no bar divider) ── */
 .ehp-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -459,17 +460,13 @@ const groupedAuth = computed(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 10px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  padding: 10px 12px 2px;
+  background: transparent;
+  border-bottom: none;
 }
 
-.ehp-terminal-title {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #1ea54c;
-  letter-spacing: 0.02em;
-}
+/* Card heading voice comes from the universal *-terminal-title rule in
+   kt-terminal.css (killer font, white, 1.05rem) */
 
 .ehp-terminal-sub {
   font-size: 0.68rem;
@@ -487,12 +484,12 @@ const groupedAuth = computed(() => {
   align-items: start;
   gap: 10px;
   padding: 6px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   transition: background 0.1s;
   background: transparent !important;
 }
 .ehp-row:last-child { border-bottom: none; }
-.ehp-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.ehp-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 .ehp-label {
   font-size: 0.72rem;
@@ -514,7 +511,7 @@ const groupedAuth = computed(() => {
   grid-template-columns: 28px 1fr;
   gap: 8px;
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   font-size: 0.72rem;
   line-height: 1.5;
 }
@@ -522,7 +519,7 @@ const groupedAuth = computed(() => {
 
 .ehp-hop-num {
   font-size: 0.68rem;
-  color: rgba(30, 165, 76, 0.7);
+  color: rgba(var(--kt-accent-rgb), 0.7);
   text-align: right;
   padding-top: 1px;
   user-select: none;
@@ -540,7 +537,7 @@ const groupedAuth = computed(() => {
 }
 
 .ehp-hop-key {
-  color: #1ea54c;
+  color: var(--kt-accent);
   margin-right: 5px;
 }
 
@@ -560,7 +557,7 @@ const groupedAuth = computed(() => {
 
 /* ── Auth Results ── */
 .ehp-auth-group {
-  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.1);
 }
 .ehp-auth-group:last-child { border-bottom: none; }
 
@@ -579,11 +576,12 @@ const groupedAuth = computed(() => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: rgba(30, 165, 76, 0.07);
+  background: rgba(var(--kt-accent-rgb), 0.07);
 }
 
 .ehp-auth-entry {
-  background: #121212 !important;
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
   padding: 8px 10px;
   overflow: hidden;
 }

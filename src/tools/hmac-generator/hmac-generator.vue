@@ -184,7 +184,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 /* ── Panel ── */
 .hm-panel {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -221,8 +221,9 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 /* ── Textarea ── */
 .hm-textarea {
   width: 100%;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 8px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -240,7 +241,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 }
 
 .hm-textarea:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 /* ── Input row ── */
@@ -248,15 +249,16 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   display: flex;
   align-items: center;
   width: 100%;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   transition: border-color 0.15s;
 }
 
 .hm-input-row:focus-within {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .hm-input {
@@ -281,7 +283,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   height: 30px;
   background: transparent !important;
   border: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12);
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   display: flex;
@@ -306,8 +308,9 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -320,12 +323,12 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 
 .hm-dropdown-trigger:hover,
 .hm-dropdown:focus-within .hm-dropdown-trigger {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .hm-chevron {
   margin-left: auto;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   transition: transform 0.15s;
   flex-shrink: 0;
 }
@@ -340,7 +343,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   left: 0;
   min-width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   z-index: 100;
@@ -353,7 +356,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   padding: 7px 14px;
   background: transparent !important;
   border: none;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
   text-align: left;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
@@ -367,19 +370,20 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 }
 
 .hm-dropdown-item:hover {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   color: #fff;
 }
 
 .hm-dropdown-item-active {
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.08);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.08);
 }
 
 /* ── Output ── */
 .hm-output {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.15);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   border-radius: 5px;
   padding: 10px 12px;
   min-height: 42px;
@@ -390,7 +394,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 .hm-output-text {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   word-break: break-all;
   line-height: 1.6;
 }
@@ -407,9 +411,9 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
   gap: 6px;
   padding: 5px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: transparent !important;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -417,19 +421,19 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 }
 
 .hm-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.65);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .hm-btn-primary {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .hm-btn-primary:hover {
-  background: rgba(30, 165, 76, 0.22);
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.22);
+  border-color: var(--kt-accent);
 }
 </style>

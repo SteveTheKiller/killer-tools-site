@@ -84,7 +84,15 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
             :href="headerLink.href"
             target="_blank"
             class="tool-header-link"
-          >{{ headerLink.label }}</a>
+            :aria-label="headerLink.label"
+            :title="headerLink.label"
+          >
+            <!-- GitHub links show the logo instead of text -->
+            <icon-mdi-github v-if="/github/i.test(headerLink.label)" class="tool-header-link-icon" />
+            <template v-else>
+              {{ headerLink.label }}
+            </template>
+          </a>
           <FavoriteButton :tool="{ name: route.meta.name, path: route.path } as Tool" />
         </div>
       </div>
@@ -162,6 +170,14 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* GitHub logo replaces the text label — sized up */
+.tool-header-link-icon {
+  font-size: 30px;
+  display: block;
 
   &:hover {
     color: rgba(255, 255, 255, 1);
@@ -189,6 +205,10 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 
   ::v-deep(& > *) {
     flex: 0 1 600px;
+    /* min-width:auto blocks flex shrink at the item's min-content width,
+       which made wide tools (photo calculators) overflow the pane on
+       phones. 0 lets every tool shrink to the pane and wrap internally. */
+    min-width: 0;
   }
 
   @media (max-width: 640px) {
@@ -209,6 +229,7 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
 
   ::v-deep(& > *) {
     flex: 0 1 600px;
+    min-width: 0; /* same shrink release as .tool-content */
   }
 
   @media (max-width: 640px) {

@@ -37,7 +37,7 @@ const { copy } = useCopy();
   gap: 10px;
   padding: 8px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(30, 165, 76, 0.1);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.1);
   background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: background 0.1s, border-color 0.12s;
@@ -45,8 +45,8 @@ const { copy } = useCopy();
 }
 
 .ec-card:hover {
-  background: rgba(30, 165, 76, 0.08);
-  border-color: rgba(30, 165, 76, 0.4);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
 }
 
 .ec-emoji {
@@ -91,7 +91,7 @@ const { copy } = useCopy();
 }
 
 .ec-code:hover {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .ec-unicode {

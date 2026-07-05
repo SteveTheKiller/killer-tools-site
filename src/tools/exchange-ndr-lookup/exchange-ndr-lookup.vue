@@ -103,7 +103,6 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ndr-section {
@@ -115,10 +114,10 @@ function copyValue(value: string) {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   margin-bottom: 12px;
 }
 
@@ -138,16 +137,22 @@ function copyValue(value: string) {
 }
 
 .ndr-bar-copied {
-  background: rgba(30, 165, 76, 0.22) !important;
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
 }
 
 .ndr-code {
   flex: 1;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.35rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.94);
   letter-spacing: 0.05em;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .ndr-code {
+  color: #1a1a1a;
+  text-shadow: none;
 }
 
 .ndr-severity {
@@ -176,7 +181,7 @@ function copyValue(value: string) {
 .ndr-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.3;
 }
 
@@ -187,7 +192,6 @@ function copyValue(value: string) {
 }
 
 .ndr-kv-block {
-  border: 1px solid rgba(30, 165, 76, 0.12);
   border-radius: 5px;
   overflow: hidden;
   margin-top: 2px;
@@ -202,7 +206,7 @@ function copyValue(value: string) {
 }
 
 .ndr-kv-row + .ndr-kv-row {
-  border-top: 1px solid rgba(30, 165, 76, 0.08);
+  border-top: 1px solid rgba(var(--kt-accent-rgb), 0.08);
 }
 
 .ndr-kv-label {
@@ -220,6 +224,6 @@ function copyValue(value: string) {
 }
 
 .ndr-kv-fix {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 </style>

@@ -76,7 +76,6 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .hsc-section {
@@ -88,10 +87,10 @@ function copyValue(value: string) {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   margin-bottom: 12px;
 }
 
@@ -111,7 +110,7 @@ function copyValue(value: string) {
 }
 
 .hsc-bar-copied {
-  background: rgba(30, 165, 76, 0.22) !important;
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
 }
 
 .hsc-code {
@@ -150,7 +149,7 @@ function copyValue(value: string) {
 .hsc-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.3;
 }
 

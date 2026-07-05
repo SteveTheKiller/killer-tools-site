@@ -81,10 +81,9 @@ async function copyValue(label: string, value: string) {
 
 <style scoped>
 /* Scoped overrides beat NaiveUI's injected backgrounds */
-.kt-terminal { background: #121212 !important; }
 /* bar color now from global kt-terminal.css var(--kt-term-bar-bg) */
 .kt-row { background: transparent !important; }
-.kt-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.kt-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 .ula-tool {
   flex: 1 1 700px;

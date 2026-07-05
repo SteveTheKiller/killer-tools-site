@@ -209,25 +209,25 @@ async function copyValue(key: string, value: string) {
   align-items: center;
   gap: 8px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
 }
 
 .url-row:last-child { border-bottom: none; }
-.url-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.url-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 .url-row-empty { cursor: default; }
 .url-row-empty:hover { background: transparent !important; }
 
 .url-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
 }
 
 .url-prompt-dim {
-  color: rgba(30, 165, 76, 0.35);
+  color: rgba(var(--kt-accent-rgb), 0.35);
   font-weight: 400;
 }
 
@@ -245,7 +245,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .url-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   word-break: break-all;
   min-width: 0;
@@ -263,13 +263,13 @@ async function copyValue(key: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
 }
 
-.url-row:hover .url-copy-icon { color: rgba(30, 165, 76, 0.8); }
-.url-copy-done { color: #1ea54c !important; }
+.url-row:hover .url-copy-icon { color: rgba(var(--kt-accent-rgb), 0.8); }
+.url-copy-done { color: var(--kt-accent) !important; }
 
 .url-empty-hint {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

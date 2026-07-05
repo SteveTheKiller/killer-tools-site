@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { FilmStock } from './reciprocity.data';
 import { filmStocks } from './reciprocity.data';
+import KtSelect from '@/components/KtSelect.vue';
 
 // ── State ──────────────────────────────────────────────────────────────────────
 
@@ -111,7 +112,7 @@ async function copy(val: string) {
         <div class="rc-field-label">
           Film stock
         </div>
-        <n-select v-model:value="selectedId" :options="selectOptions" />
+        <KtSelect v-model:value="selectedId" :options="selectOptions" />
         <div v-if="selected" class="rc-meta-row">
           <span class="rc-badge" :class="`rc-badge-${selected.type}`">
             {{ typeLabel(selected.type) }}
@@ -271,7 +272,7 @@ async function copy(val: string) {
 .rc-select {
   width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -283,7 +284,7 @@ async function copy(val: string) {
 }
 
 .rc-select:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 /* ── Meta row ── */
@@ -325,7 +326,7 @@ async function copy(val: string) {
 .rc-meta-tag {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 .rc-source {
@@ -339,7 +340,7 @@ async function copy(val: string) {
 .rc-num {
   width: 120px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -361,13 +362,14 @@ async function copy(val: string) {
 }
 
 .rc-num:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .rc-unit {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.35);
+  margin-left: 8px;
 }
 
 .rc-formatted {
@@ -388,7 +390,7 @@ async function copy(val: string) {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 2rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 
@@ -400,36 +402,36 @@ async function copy(val: string) {
 .rc-result-sub {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .rc-copy-btn {
   margin-left: auto;
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 4px;
   padding: 4px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
   cursor: pointer;
   transition: border-color 0.12s, color 0.12s;
 }
 
 .rc-copy-btn:hover {
-  border-color: rgba(30, 165, 76, 0.55);
-  color: rgba(30, 165, 76, 0.9);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.9);
 }
 
 .rc-copy-done {
-  border-color: rgba(30, 165, 76, 0.55) !important;
-  color: rgba(30, 165, 76, 0.9) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.55) !important;
+  color: rgba(var(--kt-accent-rgb), 0.9) !important;
 }
 
 .rc-no-failure {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 /* ── Alerts ── */
@@ -451,9 +453,9 @@ async function copy(val: string) {
 }
 
 .rc-alert-info {
-  background: rgba(30, 165, 76, 0.06);
-  border-left-color: rgba(30, 165, 76, 0.4);
-  color: rgba(30, 165, 76, 0.75);
+  background: rgba(var(--kt-accent-rgb), 0.06);
+  border-left-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.75);
 }
 
 .rc-alert-icon {
@@ -472,8 +474,8 @@ async function copy(val: string) {
 /* ── Footnote ── */
 .rc-footnote {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   padding: 0 2px;
 }
@@ -535,6 +537,6 @@ html:not(.dark) .rc-alert-info {
 }
 
 html:not(.dark) .rc-notes { color: rgba(0, 0, 0, 0.3); }
-html:not(.dark) .rc-footnote { color: rgba(0, 0, 0, 0.2); }
+html:not(.dark) .rc-footnote { color: rgba(0, 0, 0, 0.6); }
 html:not(.dark) .rc-source { color: rgba(0, 0, 0, 0.35); }
 </style>

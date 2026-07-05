@@ -122,7 +122,6 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .gpr-grid {
@@ -133,16 +132,22 @@ function copyValue(value: string) {
 
 .gpr-category {
   flex: 1;
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: 'KillerScan', 'Courier New', monospace;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
+}
+
+html:not(.dark) .gpr-category {
+  color: #1a1a1a;
+  text-shadow: none;
 }
 
 .gpr-bar {
@@ -156,7 +161,7 @@ function copyValue(value: string) {
 .gpr-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   margin-bottom: 2px;
 }
 
@@ -208,13 +213,12 @@ function copyValue(value: string) {
 }
 
 .gpr-registry-copied {
-  color: #1ea54c !important;
-  border-color: rgba(30, 165, 76, 0.4) !important;
-  background: rgba(30, 165, 76, 0.1) !important;
+  color: var(--kt-accent) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.4) !important;
+  background: rgba(var(--kt-accent-rgb), 0.1) !important;
 }
 
 .gpr-kv-block {
-  border: 1px solid rgba(30, 165, 76, 0.12);
   border-radius: 5px;
   overflow: hidden;
   margin: 2px 0;
@@ -228,7 +232,7 @@ function copyValue(value: string) {
 }
 
 .gpr-kv-row + .gpr-kv-row {
-  border-top: 1px solid rgba(30, 165, 76, 0.08);
+  border-top: 1px solid rgba(var(--kt-accent-rgb), 0.08);
 }
 
 .gpr-kv-label {
@@ -243,6 +247,7 @@ function copyValue(value: string) {
 }
 
 .gpr-kv-recommended {
+  /* Semantic green (recommended = good), deliberately NOT the theme accent */
   color: #1ea54c;
 }
 

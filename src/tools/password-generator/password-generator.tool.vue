@@ -9,8 +9,20 @@ import { defaultOptions, estimateCrackTime, generatePassword, getEntropyBits, to
 import { presets } from './presets';
 
 const styleStore = useStyleStore();
+
+// QR foreground follows the active theme accent (kt-theme/kt-accent touched
+// for reactivity so the code re-renders on theme or accent change)
+function accentHex8(fallback: string) {
+  const v = getComputedStyle(document.documentElement).getPropertyValue('--kt-accent').trim();
+  return /^#[0-9a-f]{6}$/i.test(v) ? `${v}ff` : fallback;
+}
+
 const qrBg = computed(() => styleStore.isDarkTheme ? '#0a0a0aff' : '#f5f5f5ff');
-const qrFg = computed(() => styleStore.isDarkTheme ? '#1ea54cff' : '#0b5c28ff');
+const qrFg = computed(() => {
+  void styleStore.ktTheme;
+  void styleStore.ktAccent;
+  return styleStore.isDarkTheme ? accentHex8('#1ea54cff') : '#0b5c28ff';
+});
 
 const opts = ref<PasswordOptions>({ ...defaultOptions });
 const selectedPreset = ref<string>('custom');
@@ -76,7 +88,7 @@ const entropyColor = computed(() => {
   if (bits < 80) {
     return '#f1c40f';
   }
-  return '#1ea54c';
+  return 'var(--kt-accent)';
 });
 
 const phonetic = computed(() => toPhonetic(password.value));
@@ -481,7 +493,7 @@ function selectBulkCount(n: number) {
 }
 
 .prompt-arrow {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-weight: 600;
   font-size: 1.25rem;
   user-select: none;
@@ -489,7 +501,7 @@ function selectBulkCount(n: number) {
 
 .terminal-text {
   margin: 0;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 1.3rem;
   line-height: 1.4;
   word-break: break-all;
@@ -506,7 +518,7 @@ function selectBulkCount(n: number) {
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   margin-bottom: 5px;
   gap: 12px;
   flex-wrap: wrap;
@@ -520,7 +532,7 @@ function selectBulkCount(n: number) {
 .entropy-bar {
   width: 100%;
   height: 5px;
-  background: rgba(30, 165, 76, 0.12);
+  background: rgba(var(--kt-accent-rgb), 0.12);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -543,9 +555,9 @@ function selectBulkCount(n: number) {
   gap: 6px;
   margin-left: auto;
   background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
   padding: 2px 10px;
@@ -554,9 +566,9 @@ function selectBulkCount(n: number) {
 }
 
 .pg-copy-btn:hover {
-  color: #1ea54c;
-  border-color: rgba(30, 165, 76, 0.7);
-  background: rgba(30, 165, 76, 0.06) !important;
+  color: var(--kt-accent);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
+  background: rgba(var(--kt-accent-rgb), 0.06) !important;
 }
 
 /* ── Two-column body ───────────────────────────────────────────────── */
@@ -662,15 +674,15 @@ function selectBulkCount(n: number) {
 }
 
 .pg-pill:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .pg-pill-active {
-  background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 .pg-pill-mono {
@@ -690,13 +702,13 @@ function selectBulkCount(n: number) {
 
 .qr-frame {
   background: #0a0a0a;
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   border-radius: 10px;
   padding: 12px;
   box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.08),
-    0 0 24px rgba(30, 165, 76, 0.18),
-    inset 0 0 32px rgba(30, 165, 76, 0.05);
+    0 0 0 1px rgba(var(--kt-accent-rgb), 0.08),
+    0 0 24px rgba(var(--kt-accent-rgb), 0.18),
+    inset 0 0 32px rgba(var(--kt-accent-rgb), 0.05);
   width: 100%;
   max-width: 300px;
   aspect-ratio: 1 / 1;
@@ -707,11 +719,11 @@ function selectBulkCount(n: number) {
 }
 
 .qr-frame:hover {
-  border-color: rgba(30, 165, 76, 0.7);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
   box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.15),
-    0 0 32px rgba(30, 165, 76, 0.28),
-    inset 0 0 32px rgba(30, 165, 76, 0.08);
+    0 0 0 1px rgba(var(--kt-accent-rgb), 0.15),
+    0 0 32px rgba(var(--kt-accent-rgb), 0.28),
+    inset 0 0 32px rgba(var(--kt-accent-rgb), 0.08);
 }
 
 ::v-deep(.qr-image) {
@@ -728,7 +740,7 @@ function selectBulkCount(n: number) {
 .qr-caption {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   letter-spacing: 0.02em;
   margin-top: 2px;
 }
@@ -744,7 +756,7 @@ function selectBulkCount(n: number) {
   gap: 10px;
   padding: 10px 16px;
   background: var(--kt-term-bg, #121212) !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -755,8 +767,8 @@ function selectBulkCount(n: number) {
 
 .bulk-chiclet:hover,
 .bulk-chiclet-open {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: var(--kt-accent);
 }
 
 .bulk-chiclet-label {
@@ -766,14 +778,14 @@ function selectBulkCount(n: number) {
 }
 
 .bulk-chiclet-count {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .bulk-chiclet-caret {
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb), 0.65);
   font-size: 0.9rem;
   margin-left: auto;
 }
@@ -784,7 +796,7 @@ function selectBulkCount(n: number) {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.92);
-  border: 1px solid rgba(30, 165, 76, 0.5);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   border-radius: 8px;
   padding: 4px;
   display: flex;
@@ -809,17 +821,17 @@ function selectBulkCount(n: number) {
 }
 
 .bulk-chiclet-option:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
 }
 
 .bulk-chiclet-option-active {
-  background: rgba(30, 165, 76, 0.15);
-  border-color: rgba(30, 165, 76, 0.6);
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .bulk-chiclet-option-count {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 1.05rem;
   font-weight: 600;
   min-width: 52px;
@@ -833,7 +845,7 @@ function selectBulkCount(n: number) {
 /* ── Shared terminal body for phonetic + bulk ── */
 .terminal-body {
   margin: 0;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
   line-height: 1.5;
@@ -853,7 +865,7 @@ function selectBulkCount(n: number) {
   appearance: none;
   width: 100%;
   height: 4px;
-  background: rgba(30, 165, 76, 0.2);
+  background: rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 2px;
   outline: none;
   cursor: pointer;
@@ -865,7 +877,7 @@ function selectBulkCount(n: number) {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #1ea54c;
+    background: var(--kt-accent);
     cursor: pointer;
     border: 2px solid rgba(0, 0, 0, 0.6);
     transition: background 0.12s, transform 0.12s;
@@ -875,7 +887,7 @@ function selectBulkCount(n: number) {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #1ea54c;
+    background: var(--kt-accent);
     cursor: pointer;
     border: 2px solid rgba(0, 0, 0, 0.6);
     transition: background 0.12s, transform 0.12s;
@@ -900,12 +912,12 @@ function selectBulkCount(n: number) {
 }
 
 .bulk-body::-webkit-scrollbar-thumb {
-  background: rgba(30, 165, 76, 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 4px;
 }
 
 .bulk-body::-webkit-scrollbar-thumb:hover {
-  background: #1ea54c;
+  background: var(--kt-accent);
 }
 
 /* ── Action buttons (Copy / Refresh) ── */
@@ -915,9 +927,9 @@ function selectBulkCount(n: number) {
   gap: 6px;
   padding: 5px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: transparent !important;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -925,20 +937,20 @@ function selectBulkCount(n: number) {
 }
 
 .pg-btn:hover {
-  background: rgba(30, 165, 76, 0.1) !important;
-  border-color: rgba(30, 165, 76, 0.65);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .pg-btn-primary {
-  background: rgba(30, 165, 76, 0.12) !important;
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .pg-btn-primary:hover {
-  background: rgba(30, 165, 76, 0.22) !important;
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
+  border-color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

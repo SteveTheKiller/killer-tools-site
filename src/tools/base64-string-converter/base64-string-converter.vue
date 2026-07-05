@@ -184,7 +184,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
 .b6-pills {
   display: flex;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
 }
@@ -198,16 +198,16 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
-  border-right: 1px solid rgba(30, 165, 76, 0.15);
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.15);
 }
 
 .b6-pill:last-child { border-right: none; }
-.b6-pill:hover:not(.b6-pill-active) { background: rgba(30, 165, 76, 0.07); color: rgba(255, 255, 255, 0.65); }
-.b6-pill-active { background: rgba(30, 165, 76, 0.15); color: #1ea54c; }
+.b6-pill:hover:not(.b6-pill-active) { background: rgba(var(--kt-accent-rgb), 0.07); color: rgba(255, 255, 255, 0.65); }
+.b6-pill-active { background: rgba(var(--kt-accent-rgb), 0.15); color: var(--kt-accent); }
 
 .b6-textarea {
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 8px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -221,9 +221,9 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   line-height: 1.5;
 }
 
-.b6-textarea:focus { border-color: rgba(30, 165, 76, 0.5); }
+.b6-textarea:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 .b6-textarea::placeholder { color: rgba(255, 255, 255, 0.38); }
-.b6-textarea-output { color: #1ea54c; cursor: default; resize: none; }
+.b6-textarea-output { color: var(--kt-accent); cursor: default; resize: none; }
 .b6-textarea-error { border-color: rgba(200, 50, 50, 0.5) !important; }
 
 .b6-error-msg {
@@ -245,7 +245,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   gap: 6px;
   padding: 7px 18px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -254,9 +254,9 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
-.b6-btn:hover { background: rgba(30, 165, 76, 0.1); border-color: rgba(30, 165, 76, 0.5); color: #fff; }
-.b6-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
-.b6-btn-accent:hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
+.b6-btn:hover { background: rgba(var(--kt-accent-rgb), 0.1); border-color: rgba(var(--kt-accent-rgb), 0.5); color: #fff; }
+.b6-btn-accent { border-color: rgba(var(--kt-accent-rgb), 0.5); color: var(--kt-accent); }
+.b6-btn-accent:hover { background: rgba(var(--kt-accent-rgb), 0.15); color: var(--kt-accent); }
 
 /* ── Light mode ── */
 html:not(.dark) .b6-label { color: rgba(0, 0, 0, 0.60); }

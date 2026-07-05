@@ -23,6 +23,8 @@ const rules: UseValidationRule<string>[] = [
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <div class="xf-controls">
     <button type="button" class="kt-pill" :class="{ 'kt-pill-active': collapseContent }" @click="collapseContent = !collapseContent">
       Collapse
@@ -50,6 +52,7 @@ const rules: UseValidationRule<string>[] = [
     :transformer="transformer"
     :input-default="defaultValue"
   />
+  </div>
 </template>
 
 <style scoped>
@@ -65,7 +68,7 @@ const rules: UseValidationRule<string>[] = [
 
 .kt-pill {
   border-radius: 6px !important;
-  border: 1px solid rgba(30, 165, 76, 0.3) !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3) !important;
 }
 
 .xf-control {
@@ -83,19 +86,19 @@ const rules: UseValidationRule<string>[] = [
 
 .xf-stepper {
   display: inline-flex; align-items: center;
-  background: #121212; border: 1px solid rgba(30,165,76,0.2); border-radius: 5px; overflow: hidden;
+  background: #121212; border: 1px solid rgba(var(--kt-accent-rgb), 0.2); border-radius: 5px; overflow: hidden;
 }
 .xf-step-btn {
   width: 28px; height: 28px; background: transparent; border: none;
-  border-right: 1px solid rgba(30,165,76,0.12); color: #1ea54c; font-size: 1rem;
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.12); color: var(--kt-accent); font-size: 1rem;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.12s;
 }
-.xf-step-btn:last-child { border-right: none; border-left: 1px solid rgba(30,165,76,0.12); }
-.xf-step-btn:hover:not(:disabled) { background: rgba(30,165,76,0.1); }
+.xf-step-btn:last-child { border-right: none; border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12); }
+.xf-step-btn:hover:not(:disabled) { background: rgba(var(--kt-accent-rgb), 0.1); }
 .xf-step-btn:disabled { opacity: 0.3; cursor: default; }
 .xf-step-val {
   min-width: 28px; text-align: center;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace; font-size: 0.82rem; color: #1ea54c;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace; font-size: 0.82rem; color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

@@ -443,10 +443,10 @@ const rangeBar = computed(() => {
 
 <style scoped>
 /* Explicit terminal colors — same values used across all tools */
-.k-terminal { background: #121212 !important; }
+.k-terminal { background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important; background-size: 256px 256px !important; }
 .k-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 .k-row { background: transparent !important; }
-.k-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.k-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 /* ── Root layout ── */
 .sc-layout {
@@ -475,8 +475,9 @@ const rangeBar = computed(() => {
 
 /* ── Unified terminal output ── */
 .k-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -489,7 +490,7 @@ const rangeBar = computed(() => {
   gap: 6px;
   padding: 6px 10px;
   background: var(--kt-term-bar-bg) !important;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.2);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.2);
 }
 
 .k-status-dot {
@@ -499,7 +500,7 @@ const rangeBar = computed(() => {
   flex-shrink: 0;
 }
 
-.k-status-private { background: #1ea54c; box-shadow: 0 0 5px rgba(30, 165, 76, 0.6); }
+.k-status-private { background: var(--kt-accent); box-shadow: 0 0 5px rgba(var(--kt-accent-rgb), 0.6); }
 .k-status-public  { background: #e0a020; box-shadow: 0 0 5px rgba(224, 160, 32, 0.6); }
 
 .k-status-label {
@@ -530,7 +531,7 @@ const rangeBar = computed(() => {
 
 .k-col-divider {
   width: 1px;
-  background: rgba(30, 165, 76, 0.15);
+  background: rgba(var(--kt-accent-rgb), 0.15);
   align-self: stretch;
 }
 
@@ -542,7 +543,7 @@ const rangeBar = computed(() => {
     display: none;
   }
   .k-col + .k-col {
-    border-top: 1px solid rgba(30, 165, 76, 0.15);
+    border-top: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   }
 }
 
@@ -559,9 +560,9 @@ const rangeBar = computed(() => {
   padding: 0 14px;
   height: 32px;
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
   font-weight: 600;
@@ -571,7 +572,7 @@ const rangeBar = computed(() => {
 
 .kt-nav-btn:hover {
   background: rgba(0, 0, 0, 0.50);
-  border-color: rgba(30, 165, 76, 0.6);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
 }
 }
 
@@ -592,7 +593,7 @@ const rangeBar = computed(() => {
   align-items: start;
   gap: 10px;
   padding: 5px 10px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   transition: background 0.1s;
 }
 
@@ -601,11 +602,11 @@ const rangeBar = computed(() => {
 }
 
 .k-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .k-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -620,7 +621,7 @@ const rangeBar = computed(() => {
 }
 
 .k-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.8rem;
   word-break: break-all;
   min-width: 0;
@@ -634,9 +635,9 @@ const rangeBar = computed(() => {
 
 .k-copy {
   background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb), 0.65);
   cursor: pointer;
   padding: 2px 5px;
   display: inline-flex;
@@ -650,9 +651,9 @@ const rangeBar = computed(() => {
 }
 
 .k-copy:hover {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
+  color: var(--kt-accent);
 }
 
 .k-copy-placeholder {
@@ -696,15 +697,15 @@ const rangeBar = computed(() => {
   width: 44px;
   min-height: 180px;
   background: rgba(0,0,0,0.35);
-  border-color: rgba(30,165,76,0.35);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.35);
+  color: var(--kt-accent);
   padding: 6px 0 18px;
 }
 
 .cs-toggle:hover {
   background: rgba(0,0,0,0.50);
-  color: #1ea54c;
-  border-color: rgba(30,165,76,0.6);
+  color: var(--kt-accent);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .cs-chev {
@@ -730,14 +731,15 @@ const rangeBar = computed(() => {
   max-height: calc(100vh - 80px);
   border-radius: 8px;
   padding: 14px;
-  background: #121212 !important;
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
 .cs-panel::-webkit-scrollbar { width: 4px; }
 .cs-panel::-webkit-scrollbar-track { background: transparent !important; }
-.cs-panel::-webkit-scrollbar-thumb { background: rgba(30,165,76,0.35); border-radius: 4px; }
-.cs-panel::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
+.cs-panel::-webkit-scrollbar-thumb { background: rgba(var(--kt-accent-rgb), 0.35); border-radius: 4px; }
+.cs-panel::-webkit-scrollbar-thumb:hover { background: var(--kt-accent); }
 
 .cs-grid {
   display: grid;
@@ -760,13 +762,13 @@ const rangeBar = computed(() => {
 }
 
 .cs-card:hover {
-  border-color: rgba(30,165,76,0.5);
-  background: rgba(30,165,76,0.08);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  background: rgba(var(--kt-accent-rgb), 0.08);
 }
 
 .cs-card-active {
-  border-color: #1ea54c !important;
-  background: rgba(30,165,76,0.12) !important;
+  border-color: var(--kt-accent) !important;
+  background: rgba(var(--kt-accent-rgb), 0.12) !important;
 }
 
 .cs-card-top {
@@ -780,7 +782,7 @@ const rangeBar = computed(() => {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .cs-card-hosts {
@@ -803,7 +805,7 @@ const rangeBar = computed(() => {
 /* ── Host range bar ── */
 .range-bar-wrap {
   padding: 12px 14px;
-  border-top: 1px solid rgba(30, 165, 76, 0.15);
+  border-top: 1px solid rgba(var(--kt-accent-rgb), 0.15);
 }
 
 .range-bar {
@@ -862,8 +864,8 @@ const rangeBar = computed(() => {
   max-width: 100%;
 }
 
-.rb-lbl-net .rb-lbl-tag { color: rgba(30, 165, 76, 0.6); }
-.rb-lbl-hosts .rb-lbl-tag { color: #1ea54c; }
+.rb-lbl-net .rb-lbl-tag { color: rgba(30, 165, 76, 0.75); }
+.rb-lbl-hosts .rb-lbl-tag { color: #4dd07a; }
 .rb-lbl-bcast .rb-lbl-tag { color: rgba(224, 160, 32, 0.8); }
 
 .rb-lbl-addr {
@@ -874,7 +876,7 @@ const rangeBar = computed(() => {
   max-width: 100%;
 }
 
-.rb-lbl-net .rb-lbl-addr { color: rgba(30, 165, 76, 0.75); }
+.rb-lbl-net .rb-lbl-addr { color: rgba(30, 165, 76, 0.85); }
 .rb-lbl-hosts .rb-lbl-addr { color: rgba(255, 255, 255, 0.55); }
 .rb-lbl-bcast .rb-lbl-addr { color: rgba(224, 160, 32, 0.7); }
 
@@ -911,6 +913,8 @@ const rangeBar = computed(() => {
   color: rgba(255,255,255,0.5);
 }
 
+/* Bitmap/range-bar palette: semantic green for network bits (vs amber host
+   bits), deliberately NOT theme-accent - avoids confusion across themes */
 .viz-legend-net {
   display: inline-block;
   width: 12px;
@@ -1003,7 +1007,7 @@ const rangeBar = computed(() => {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   min-width: 36px;
 }
 
@@ -1015,8 +1019,8 @@ const rangeBar = computed(() => {
   border-radius: 2px;
   background: linear-gradient(
     to right,
-    #1ea54c calc((var(--val, 24) - 1) / 31 * 100%),
-    rgba(30, 165, 76, 0.2) calc((var(--val, 24) - 1) / 31 * 100%)
+    var(--kt-accent) calc((var(--val, 24) - 1) / 31 * 100%),
+    rgba(var(--kt-accent-rgb), 0.2) calc((var(--val, 24) - 1) / 31 * 100%)
   );
   outline: none;
   cursor: pointer;
@@ -1027,17 +1031,17 @@ const rangeBar = computed(() => {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(30, 165, 76, 0.3);
+  box-shadow: 0 0 0 3px rgba(var(--kt-accent-rgb), 0.3);
 }
 
 .cidr-slider::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
 }

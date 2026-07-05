@@ -26,10 +26,12 @@ export const THEME_DEFAULT_ACCENT: Partial<Record<KtThemeKey, KtAccentKey>> = {
 
 // SelectionBg per family+accent, straight from the app's accent overlay files
 // (Themes/Accents/*/*.xaml): the MUTED accent for tab stripes and selected
-// surfaces. Orange has no muted pair in the apps (sel == base).
+// surfaces. The app leaves Orange's SelectionBg == base (Black/Orange.xaml);
+// here we give Orange a proper muted selection (#4E2900 black / #5E3B16 dark)
+// so every accent follows the two-color rule on the site.
 const ktAccentSel: Record<'dark' | 'light' | 'black', Record<KtAccentKey, string>> = {
-  dark: { red: '#5E1C1C', orange: '#F29A28', green: '#1C5E38', teal: '#1C5E5C', blue: '#1C3B5E', purple: '#411C5E' },
-  black: { red: '#380000', orange: '#FF910A', green: '#003314', teal: '#003832', blue: '#0A2C50', purple: '#250038' },
+  dark: { red: '#5E1C1C', orange: '#5E3B16', green: '#1C5E38', teal: '#1C5E5C', blue: '#1C3B5E', purple: '#411C5E' },
+  black: { red: '#380000', orange: '#4E2900', green: '#003314', teal: '#003832', blue: '#0A2C50', purple: '#250038' },
   light: { red: '#931A1A', orange: '#C7710F', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690' },
 };
 

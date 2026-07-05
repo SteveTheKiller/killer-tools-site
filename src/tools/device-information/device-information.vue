@@ -207,7 +207,7 @@ const sections = [
   justify-content: space-between;
   align-items: center;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   gap: 12px;
 }
 
@@ -216,7 +216,7 @@ const sections = [
 }
 
 .di-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .di-label-group {
@@ -236,7 +236,7 @@ const sections = [
 .di-value {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   text-align: right;
   word-break: break-all;
   min-width: 0;

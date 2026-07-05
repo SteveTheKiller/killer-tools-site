@@ -57,7 +57,7 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
   width: 100%;
   box-sizing: border-box;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 6px;
   padding: 12px 14px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -69,7 +69,7 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
   transition: border-color 0.15s;
 }
 
-.ts-input:focus { border-color: rgba(30, 165, 76, 0.5); }
+.ts-input:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 .ts-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 /* Stats bar */
@@ -77,7 +77,7 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
   display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 6px;
   padding: 16px 0;
 }
@@ -104,7 +104,7 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
   font-size: 1.7rem;
   font-weight: 600;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
   white-space: nowrap;
 }
@@ -112,7 +112,7 @@ const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
 .ts-divider {
   width: 1px;
   height: 48px;
-  background: rgba(30, 165, 76, 0.15);
+  background: rgba(var(--kt-accent-rgb), 0.15);
   flex-shrink: 0;
 }
 
@@ -147,7 +147,7 @@ html:not(.dark) .ts-divider    { background: rgba(0, 0, 0, 0.10); }
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
-    border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+    border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.1);
   }
 
   .ts-stat:last-child { border-bottom: none; }

@@ -47,7 +47,7 @@
     (function () {
       var d = document.documentElement;
       var bg = { dark: '#333333', light: '#b8b8b8', black: '#0d0d0d', blood: '#4a1f20', greed: '#0a5234', cyanotic: '#0a4a6e' };
-      var t = 'black';
+      var t = 'dark';
       try {
         var s = localStorage.getItem('kt-theme');
         if (s) { s = s.replace(/^"|"$/g, ''); if (bg[s]) { t = s; } }

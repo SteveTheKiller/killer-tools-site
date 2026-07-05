@@ -178,7 +178,7 @@ async function copyGif(gif: GifResult) {
 
 .gif-overlay-copied {
   background: rgba(0, 0, 0, 0.6);
-  color: #4ade80;
+  color: var(--kt-accent);
 }
 
 .gif-overlay-hover {

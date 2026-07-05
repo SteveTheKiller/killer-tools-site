@@ -156,14 +156,14 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 
 /* ── Input ── */
 .rn-input-wrap {
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   transition: border-color 0.15s;
 }
 
 .rn-input-wrap:focus-within {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .rn-input-error {
@@ -179,7 +179,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   box-sizing: border-box;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -208,7 +208,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 
 .rn-arrows {
   font-size: 1.2rem;
-  color: rgba(30, 165, 76, 0.35);
+  color: rgba(var(--kt-accent-rgb), 0.35);
   user-select: none;
 }
 
@@ -227,9 +227,9 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
   align-self: flex-start;
   padding: 5px 12px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  background: rgba(30, 165, 76, 0.08);
-  color: rgba(30, 165, 76, 0.8);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.75rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -237,9 +237,9 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 }
 
 .rn-copy-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.18);
-  border-color: #1ea54c;
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  border-color: var(--kt-accent);
+  color: var(--kt-accent);
 }
 
 .rn-copy-btn:disabled {

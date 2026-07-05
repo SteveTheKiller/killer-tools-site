@@ -19,6 +19,35 @@ syncRef(
   useStorage('locale', locale),
   { direction: 'ltr' },
 );
+
+
+// Native title tooltips are unstylable OS chrome (they read as a stray black
+// bar over our dark UI). Convert every title attribute into data-tip, which
+// kt-terminal.css renders as a themed tooltip (pane-border, rounded, grain).
+// NaiveUI select internals get theirs stripped outright — their labels are
+// already fully visible and a tooltip there just cuts across the open menu.
+onMounted(() => {
+  const convertTitles = () => {
+    document.querySelectorAll('[title]').forEach((el) => {
+      const title = el.getAttribute('title');
+      if (!title) {
+        return;
+      }
+      el.removeAttribute('title');
+      if (!el.closest('.n-base-selection, .n-base-select-menu')) {
+        (el as HTMLElement).dataset.tip = title;
+      }
+    });
+  };
+  const observer = new MutationObserver(convertTitles);
+  observer.observe(document.body, {
+    subtree: true,
+    childList: true,
+    attributes: true,
+    attributeFilter: ['title'],
+  });
+  convertTitles();
+});
 </script>
 
 <template>
@@ -27,11 +56,13 @@ syncRef(
     <NMessageProvider placement="bottom">
       <NNotificationProvider placement="bottom-right">
         <component :is="layout">
-          <RouterView v-slot="{ Component }">
-            <transition name="page-fade" mode="out-in">
-              <component :is="Component" />
-            </transition>
-          </RouterView>
+          <!-- NO route transition. Every wrapper we tried (CSS fade, explicit
+               duration, JS hooks) can wedge Vue's out-in state machine when
+               rAF or timers stall (hidden/occluded tabs) or roots are
+               display:contents, leaving pages permanently blank. Instant
+               swap cannot break; the theme cross-fade is handled separately
+               via the View Transitions API in style.store. -->
+          <RouterView />
         </component>
       </NNotificationProvider>
     </NMessageProvider>
@@ -60,12 +91,12 @@ html.dark body {
 /* ── Theme engine CSS variables (six families, ported from the landing pages).
    The chrome vars drive the frame rails (titlebar, sidebar, statusbar); bg
    drives the content pane. data-kt-theme is set by the style store. ── */
-html[data-kt-theme='black']    { --kt-bg: #0d0d0d; --kt-chrome: #000000; --kt-chrome-border: #1f1f1f; --kt-panel: #141414; --kt-modal: #000000; --kt-accent: #0AFFE7; --kt-accent-2: #08CCB9; --kt-accent-sel: #003832; --kt-accent-rgb: 10, 255, 231; --kt-rail-text: #888888; --kt-grain-img: url('/grain-a12.png'); }
+html[data-kt-theme='black']    { --kt-bg: #0d0d0d; --kt-chrome: #000000; --kt-chrome-border: #2a2a2a; --kt-panel: #141414; --kt-modal: #000000; --kt-accent: #0AFFE7; --kt-accent-2: #08CCB9; --kt-accent-sel: #003832; --kt-accent-rgb: 10, 255, 231; --kt-rail-text: #888888; --kt-grain-img: url('/grain-a24.png'); }
 html[data-kt-theme='dark']     { --kt-bg: #333333; --kt-chrome: #1c1c1c; --kt-chrome-border: #2e2e2e; --kt-panel: #3a3a3a; --kt-modal: #1e1e1e; --kt-accent: #50AEE8; --kt-accent-2: #3E93C9; --kt-accent-sel: #1C3B5E; --kt-accent-rgb: 80, 174, 232; --kt-rail-text: #9a9a9a; --kt-grain-img: url('/grain-a24.png'); }
 html[data-kt-theme='light']    { --kt-bg: #b8b8b8; --kt-chrome: #c8c8c8; --kt-chrome-border: #b0b0b0; --kt-panel: #d8d8d8; --kt-modal: #ffffff; --kt-accent: #18608E; --kt-accent-2: #124C73; --kt-accent-sel: #18608E; --kt-accent-rgb: 24, 96, 142; --kt-rail-text: #555555; --kt-grain-img: url('/grain-a34.png'); }
-html[data-kt-theme='blood']    { --kt-bg: #4a1f20; --kt-chrome: #1e0a0b; --kt-chrome-border: #3a1a1d; --kt-panel: #321416; --kt-modal: #1e0a0b; --kt-accent: #ffffff; --kt-accent-2: #f8c99e; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 255, 255, 255; --kt-rail-text: #b09e9c; --kt-grain-img: url('/grain-a34.png'); }
-html[data-kt-theme='greed']    { --kt-bg: #0a5234; --kt-chrome: #001e13; --kt-chrome-border: #07371f; --kt-panel: #003824; --kt-modal: #001e13; --kt-accent: #e6b800; --kt-accent-2: #C19B00; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 230, 184, 0; --kt-rail-text: #a6a99a; --kt-grain-img: url('/grain-a32.png'); }
-html[data-kt-theme='cyanotic'] { --kt-bg: #0a4a6e; --kt-chrome: #001a28; --kt-chrome-border: #093250; --kt-panel: #002e48; --kt-modal: #001624; --kt-accent: #ffffff; --kt-accent-2: #e0d49a; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 255, 255, 255; --kt-rail-text: #9ba3ac; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='blood']    { --kt-bg: #4a1f20; --kt-chrome: #1e0a0b; --kt-chrome-border: #3a1a1d; --kt-panel: #321416; --kt-modal: #1e0a0b; --kt-accent: #fffde8; --kt-accent-2: #f8c99e; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 253, 253, 232; --kt-rail-text: #b09e9c; --kt-grain-img: url('/grain-a34.png'); }
+html[data-kt-theme='greed']    { --kt-bg: #0a5234; --kt-chrome: #001e13; --kt-chrome-border: #07371f; --kt-panel: #003824; --kt-modal: #001e13; --kt-accent: #fffde8; --kt-accent-2: #e0d49a; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 253, 253, 232; --kt-rail-text: #a6a99a; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='cyanotic'] { --kt-bg: #0a4a6e; --kt-chrome: #001a28; --kt-chrome-border: #093250; --kt-panel: #002e48; --kt-modal: #001624; --kt-accent: #fffde8; --kt-accent-2: #e0d49a; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 253, 253, 232; --kt-rail-text: #9ba3ac; --kt-grain-img: url('/grain-a32.png'); }
 
 /* Grain boost overlay removed — n-layout already carries grain background.
    The overlay was at z-index 99999 and rendered over n-select input boxes,
@@ -107,6 +138,16 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
 /* ── Sidebar: NaiveUI menu injects its own background — force transparent so sider color shows ── */
 .n-menu { background-color: transparent !important; }
 
+/* ── NaiveUI select dropdown menus: family menu chrome (grained modal
+   surface, accent border, rounded, drop shadow — the palette/dd-menu rule) ── */
+.n-base-select-menu {
+  background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45) !important;
+}
+
 /* ── Titlebar search: solid panel tone so the chrome grain does not show
    through the translucent button background ── */
 .kt-titlebar-shell .palette-wrap .c-button {
@@ -117,6 +158,9 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
 #kt-sider {
   background: var(--kt-chrome, #000000) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
   background-size: 256px 256px !important;
+  /* Run full height so the sider owns the bottom-left corner; the statusbar is
+     offset right (MenuLayout) so the footer never sits under the sidebar. */
+  height: 100vh !important;
 }
 
 /* ── Body: grain texture in light mode ── */
@@ -234,8 +278,10 @@ html:not(.dark) body {
 }
 
 .kt-tag-success {
-  background: rgba(var(--kt-accent-rgb),0.12);
-  border-color: rgba(var(--kt-accent-rgb),0.45);
+  /* Semantic indicator green (Pass / healthy), deliberately NOT theme-accent -
+     matches the fixed amber warning and red error tags */
+  background: rgba(30, 165, 76, 0.1);
+  border-color: rgba(30, 165, 76, 0.45);
   color: #4dd07a;
 }
 
@@ -290,8 +336,9 @@ html:not(.dark) body {
 }
 
 .kt-alert-success {
-  background: rgba(var(--kt-accent-rgb),0.12);
-  border: 1px solid rgba(var(--kt-accent-rgb),0.5);
+  /* Semantic indicator green, deliberately NOT theme-accent (see kt-tag-success) */
+  background: rgba(30, 165, 76, 0.1);
+  border: 1px solid rgba(30, 165, 76, 0.5);
   color: #4dd07a;
 }
 
@@ -973,11 +1020,11 @@ html.dark .c-card { background-color: var(--kt-modal, #141414) !important; }
 
 .grid-wrapper a:hover .c-card {
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
 }
 
 html:not(.dark) .grid-wrapper a:hover .c-card {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
 }
 
 html.dark .n-layout-sider {
@@ -1053,4 +1100,26 @@ body:has([href="/user-agent-parser"].router-link-active) .tool-content-fullscree
 body:has([href="/url-parser"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
 body:has([href="/otp-code-generator-and-validator"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
 body:has([href="/ascii-word-art"].router-link-active) .tool-content-fullscreen > * { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
+
+/* --- Theme swap fade: active only while the style store holds kt-theme-fade
+       on <html> (400ms), so normal hover/transform animations are unaffected --- */
+html.kt-theme-fade *,
+html.kt-theme-fade *::before,
+html.kt-theme-fade *::after {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+/* Theme swap via the View Transitions API: one composited page cross-fade
+   (chrome + NaiveUI content together). kt-theme-fade above is the fallback. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+}
 </style>

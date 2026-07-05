@@ -140,7 +140,8 @@ function selectEncoding(val: Encoding) {
 
 /* ── Terminal container (kt-terminal handles hover border) ── */
 .hash-terminal {
-  background: #121212 !important;
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -180,7 +181,7 @@ function selectEncoding(val: Encoding) {
 
 .hash-enc-btn:hover,
 .hash-enc-btn-open {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .hash-enc-label {
@@ -189,7 +190,7 @@ function selectEncoding(val: Encoding) {
 
 .hash-enc-caret {
   font-size: 0.7rem;
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb), 0.65);
 }
 
 .hash-enc-menu {
@@ -198,7 +199,7 @@ function selectEncoding(val: Encoding) {
   left: 0;
   min-width: 260px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.5);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   border-radius: 6px;
   padding: 4px;
   display: flex;
@@ -224,15 +225,15 @@ function selectEncoding(val: Encoding) {
 }
 
 .hash-enc-option:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.35);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.35);
+  color: var(--kt-accent);
 }
 
 .hash-enc-option-active {
-  background: rgba(30, 165, 76, 0.15);
-  border-color: rgba(30, 165, 76, 0.55);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
+  color: var(--kt-accent);
 }
 
 /* ── Section header (kt-terminal-bar handles bg/border/dot/hover) ── */
@@ -251,7 +252,7 @@ function selectEncoding(val: Encoding) {
   align-items: start;
   gap: 12px;
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
@@ -262,11 +263,11 @@ function selectEncoding(val: Encoding) {
 }
 
 .hash-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .hash-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -283,7 +284,7 @@ function selectEncoding(val: Encoding) {
 }
 
 .hash-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   line-height: 1.6;
   word-break: break-all;
@@ -298,7 +299,7 @@ function selectEncoding(val: Encoding) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
   align-self: start;
@@ -306,11 +307,11 @@ function selectEncoding(val: Encoding) {
 }
 
 .hash-row:hover .hash-copy {
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 .hash-copy-done {
-  color: #1ea54c !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Mobile ── */

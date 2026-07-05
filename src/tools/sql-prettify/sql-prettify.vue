@@ -62,6 +62,8 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <div class="sq-controls">
     <!-- Dialect -->
     <div class="sq-field">
@@ -148,6 +150,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
     </div>
     <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
   </div>
+  </div>
 </template>
 
 <style scoped>
@@ -169,28 +172,28 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
 .sq-dropdown { position: relative; outline: none; }
 .sq-dropdown-trigger {
   display: flex; align-items: center; gap: 8px; min-width: 160px;
-  background: #121212; border: 1px solid rgba(30,165,76,0.2); border-radius: 5px;
+  background: #121212; border: 1px solid rgba(var(--kt-accent-rgb), 0.2); border-radius: 5px;
   padding: 7px 10px; font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem; color: rgba(255,255,255,0.75); cursor: pointer;
   transition: border-color 0.15s; text-align: left;
 }
 .sq-dropdown-trigger:hover, .sq-dropdown:focus-within .sq-dropdown-trigger {
-  border-color: rgba(30,165,76,0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
-.sq-chevron { margin-left: auto; color: rgba(30,165,76,0.5); transition: transform 0.15s; flex-shrink: 0; }
+.sq-chevron { margin-left: auto; color: rgba(var(--kt-accent-rgb), 0.5); transition: transform 0.15s; flex-shrink: 0; }
 .sq-chevron-open { transform: rotate(180deg); }
 .sq-dropdown-menu {
   position: absolute; top: calc(100% + 4px); left: 0; min-width: 100%;
-  background: rgba(10,10,10,0.97); border: 1px solid rgba(30,165,76,0.3);
+  background: rgba(10,10,10,0.97); border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px; overflow: hidden; z-index: 100; box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
 .sq-dropdown-item {
   display: block; width: 100%; padding: 7px 14px; background: transparent;
-  border: none; border-bottom: 1px solid rgba(30,165,76,0.06); text-align: left;
+  border: none; border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06); text-align: left;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem; color: rgba(255,255,255,0.55); cursor: pointer; transition: background 0.1s, color 0.1s;
 }
 .sq-dropdown-item:last-child { border-bottom: none; }
-.sq-dropdown-item:hover { background: rgba(30,165,76,0.1); color: #fff; }
-.sq-dropdown-item-active { color: #1ea54c; background: rgba(30,165,76,0.08); }
+.sq-dropdown-item:hover { background: rgba(var(--kt-accent-rgb), 0.1); color: #fff; }
+.sq-dropdown-item-active { color: var(--kt-accent); background: rgba(var(--kt-accent-rgb), 0.08); }
 </style>

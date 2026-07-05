@@ -60,6 +60,8 @@ const cronValidationRules = [
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <c-card>
     <div mx-auto max-w-sm>
       <c-input-text
@@ -168,6 +170,7 @@ const cronValidationRules = [
       </div>
     </div>
   </c-card>
+  </div>
 </template>
 
 <style lang="less" scoped>
@@ -183,8 +186,9 @@ const cronValidationRules = [
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 8px;
   padding: 14px 18px;
   margin: 5px 0 15px;
@@ -192,7 +196,7 @@ const cronValidationRules = [
 }
 
 .cron-prompt {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-weight: 600;
   font-size: 1.1rem;
   user-select: none;
@@ -200,7 +204,7 @@ const cronValidationRules = [
 }
 
 .cron-output {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 1.05rem;
   line-height: 1.4;
   flex: 1;
@@ -234,15 +238,15 @@ const cronValidationRules = [
 }
 
 .toggle-pill:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .toggle-pill-active {
-  background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 .toggle-dot {
@@ -254,8 +258,8 @@ const cronValidationRules = [
 }
 
 .toggle-pill-active .toggle-dot {
-  background: #1ea54c;
-  box-shadow: 0 0 8px rgba(30, 165, 76, 0.6);
+  background: var(--kt-accent);
+  box-shadow: 0 0 8px rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .field-diagram {
@@ -308,8 +312,8 @@ const cronValidationRules = [
 }
 
 .ref-symbol code {
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.1);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   padding: 1px 6px;
   border-radius: 3px;
   font-size: 0.8rem;
@@ -326,7 +330,7 @@ const cronValidationRules = [
 }
 
 .ref-example code {
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   background: transparent !important;
   font-size: 0.74rem;
 }
@@ -336,8 +340,8 @@ const cronValidationRules = [
 }
 
 .ref-alias code {
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.1);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   padding: 1px 6px;
   border-radius: 3px;
   font-size: 0.76rem;
@@ -350,7 +354,7 @@ const cronValidationRules = [
 }
 
 .ref-equivalent code {
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   background: transparent !important;
   font-size: 0.78rem;
 }

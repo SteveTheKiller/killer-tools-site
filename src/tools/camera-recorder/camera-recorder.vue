@@ -292,7 +292,7 @@ function formatDate(d: Date) {
 /* ── Panel ── */
 .cr-panel {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   overflow: hidden;
   padding: 16px;
@@ -312,7 +312,7 @@ function formatDate(d: Date) {
 
 .cr-message-icon {
   font-size: 2rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
 }
 
 .cr-alert {
@@ -350,7 +350,7 @@ function formatDate(d: Date) {
 }
 
 .cr-device-icon {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   flex-shrink: 0;
   font-size: 0.9rem;
 }
@@ -367,7 +367,7 @@ function formatDate(d: Date) {
   gap: 8px;
   width: 100%;
   background: #121212;
-  border: 1px solid rgba(30,165,76,0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -381,7 +381,7 @@ function formatDate(d: Date) {
 
 .cr-dropdown-trigger:hover,
 .cr-dropdown:focus-within .cr-dropdown-trigger {
-  border-color: rgba(30,165,76,0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .cr-dropdown-text {
@@ -394,7 +394,7 @@ function formatDate(d: Date) {
 
 .cr-chevron {
   margin-left: auto;
-  color: rgba(30,165,76,0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   transition: transform 0.15s;
   flex-shrink: 0;
 }
@@ -407,7 +407,7 @@ function formatDate(d: Date) {
   left: 0;
   right: 0;
   background: rgba(10,10,10,0.97);
-  border: 1px solid rgba(30,165,76,0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   z-index: 100;
@@ -420,7 +420,7 @@ function formatDate(d: Date) {
   padding: 7px 14px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(30,165,76,0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
   text-align: left;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
@@ -433,8 +433,8 @@ function formatDate(d: Date) {
 }
 
 .cr-dropdown-item:last-child { border-bottom: none; }
-.cr-dropdown-item:hover { background: rgba(30,165,76,0.1); color: #fff; }
-.cr-dropdown-item-active { color: #1ea54c; background: rgba(30,165,76,0.08); }
+.cr-dropdown-item:hover { background: rgba(var(--kt-accent-rgb), 0.1); color: #fff; }
+.cr-dropdown-item-active { color: var(--kt-accent); background: rgba(var(--kt-accent-rgb), 0.08); }
 
 /* ── Video ── */
 .cr-start-wrap {
@@ -453,7 +453,7 @@ function formatDate(d: Date) {
 .cr-video {
   width: 100%;
   border-radius: 6px;
-  border: 1px solid rgba(30,165,76,0.15);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   background: #000;
   display: block;
 }
@@ -534,9 +534,9 @@ function formatDate(d: Date) {
   gap: 6px;
   padding: 6px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30,165,76,0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: transparent;
-  color: rgba(30,165,76,0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -545,20 +545,20 @@ function formatDate(d: Date) {
 }
 
 .cr-btn:hover {
-  background: rgba(30,165,76,0.1);
-  border-color: rgba(30,165,76,0.65);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .cr-btn-primary {
-  background: rgba(30,165,76,0.12);
-  border-color: rgba(30,165,76,0.5);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .cr-btn-primary:hover {
-  background: rgba(30,165,76,0.22);
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.22);
+  border-color: var(--kt-accent);
 }
 
 .cr-btn-lg {
@@ -621,7 +621,7 @@ function formatDate(d: Date) {
 
 .cr-media-card {
   background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(30,165,76,0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
@@ -632,13 +632,13 @@ function formatDate(d: Date) {
   top: 8px;
   left: 8px;
   background: rgba(0,0,0,0.7);
-  border: 1px solid rgba(30,165,76,0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 3px;
   padding: 1px 6px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.6rem;
   font-weight: 700;
-  color: rgba(30,165,76,0.7);
+  color: rgba(var(--kt-accent-rgb), 0.7);
   letter-spacing: 0.08em;
 }
 
@@ -655,7 +655,7 @@ function formatDate(d: Date) {
   align-items: center;
   justify-content: space-between;
   padding: 6px 10px;
-  border-top: 1px solid rgba(30,165,76,0.1);
+  border-top: 1px solid rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .cr-media-time {
@@ -673,9 +673,9 @@ function formatDate(d: Date) {
   width: 26px;
   height: 26px;
   background: transparent;
-  border: 1px solid rgba(30,165,76,0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 4px;
-  color: rgba(30,165,76,0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -685,9 +685,9 @@ function formatDate(d: Date) {
 }
 
 .cr-icon-btn:hover {
-  background: rgba(30,165,76,0.1);
-  border-color: rgba(30,165,76,0.55);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
+  color: var(--kt-accent);
 }
 
 .cr-icon-btn-danger:hover {

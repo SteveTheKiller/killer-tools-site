@@ -478,8 +478,13 @@ onUnmounted(() => {
 }
 
 /* ── Terminal card ── */
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+/* KillerPDF tab rule: the accent stripe belongs to each TAB, not the card —
+   the card-wide line must not run above the inactive tab. */
+.sig-panel::after {
+  display: none;
+}
 
 .sig-bar {
   padding: 0 !important;
@@ -496,13 +501,15 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: normal;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: 'KillerScan', 'Courier New', monospace;
   padding: 0 12px;
   border: none;
+  /* Muted family stripe at rest (accent-sel), full accent when active */
+  border-top: 2px solid var(--kt-accent-sel, rgba(var(--kt-accent-rgb), 0.35));
   border-bottom: 2px solid transparent;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   background: transparent;
@@ -526,19 +533,25 @@ onUnmounted(() => {
 }
 
 .sig-tab:hover {
-  color: rgba(30, 165, 76, 0.8);
-  background: rgba(30, 165, 76, 0.06);
+  color: rgba(var(--kt-accent-rgb), 0.8);
+  background: rgba(var(--kt-accent-rgb), 0.06);
 }
 
-.sig-tab:hover::before { background: rgba(30, 165, 76, 0.5); }
+.sig-tab:hover::before { background: rgba(var(--kt-accent-rgb), 0.5); }
 
 .sig-tab-active {
-  color: #1ea54c !important;
-  border-bottom-color: #1ea54c !important;
-  background: rgba(30, 165, 76, 0.08) !important;
+  /* Active tab: white family voice with the text stroke */
+  color: rgba(255, 255, 255, 0.94) !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+  border-top-color: var(--kt-accent) !important;
+  background: rgba(var(--kt-accent-rgb), 0.08) !important;
 }
 
-.sig-tab-active::before { background: #1ea54c !important; }
+html:not(.dark) .sig-tab-active {
+  text-shadow: none;
+}
+
+.sig-tab-active::before { background: var(--kt-accent) !important; }
 
 .sig-body {
   padding: 14px 16px;
@@ -581,15 +594,15 @@ onUnmounted(() => {
 }
 
 .sig-pill:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .sig-pill-active {
-  background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 .sig-pill:disabled {
@@ -608,7 +621,7 @@ onUnmounted(() => {
 
 /* ── Drop zone ── */
 .sig-dropzone {
-  border: 1px dashed rgba(30, 165, 76, 0.4);
+  border: 1px dashed rgba(var(--kt-accent-rgb), 0.4);
   border-radius: 8px;
   padding: 24px 16px;
   display: flex;
@@ -617,19 +630,19 @@ onUnmounted(() => {
   gap: 6px;
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s;
-  background: rgba(30, 165, 76, 0.04);
+  background: rgba(var(--kt-accent-rgb), 0.04);
   position: relative;
 }
 
 .sig-dropzone:hover,
 .sig-dropzone-over {
-  background: rgba(30, 165, 76, 0.08);
-  border-color: rgba(30, 165, 76, 0.7);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
 }
 
 .sig-dropzone-icon {
   font-size: 1.6rem;
-  color: rgba(30, 165, 76, 0.6);
+  color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .sig-dropzone-text {
@@ -655,7 +668,7 @@ onUnmounted(() => {
 
 .sig-filename {
   font-size: 0.78rem;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   word-break: break-all;
 }
@@ -683,13 +696,13 @@ onUnmounted(() => {
       rgba(100, 160, 230, 0.55) 29px
     ),
     #f9f9f8;
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   border-radius: 2px;
   box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.08),
+    0 0 0 1px rgba(var(--kt-accent-rgb), 0.08),
     0 2px 12px rgba(0, 0, 0, 0.18),
-    0 0 32px rgba(30, 165, 76, 0.18),
-    inset 0 0 48px rgba(30, 165, 76, 0.05);
+    0 0 32px rgba(var(--kt-accent-rgb), 0.18),
+    inset 0 0 48px rgba(var(--kt-accent-rgb), 0.05);
   width: 100%;
   min-height: 340px;
   display: flex;

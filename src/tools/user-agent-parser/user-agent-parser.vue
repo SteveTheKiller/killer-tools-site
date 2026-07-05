@@ -190,7 +190,7 @@ const sections = computed(() => {
   align-items: center;
   gap: 8px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   transition: background 0.1s;
   cursor: pointer;
 }
@@ -200,7 +200,7 @@ const sections = computed(() => {
 }
 
 .ua-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .ua-row-empty {
@@ -208,7 +208,7 @@ const sections = computed(() => {
 }
 
 .ua-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -221,7 +221,7 @@ const sections = computed(() => {
 }
 
 .ua-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   word-break: break-all;
   min-width: 0;
@@ -239,17 +239,17 @@ const sections = computed(() => {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
 }
 
 .ua-row:hover .ua-copy {
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 .ua-copy-done {
-  color: #1ea54c !important;
+  color: var(--kt-accent) !important;
 }
 
 .ua-copy-placeholder {

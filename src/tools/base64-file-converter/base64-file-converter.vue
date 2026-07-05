@@ -243,7 +243,7 @@ function onDrop(e: DragEvent) {
 .bf-input {
   height: 32px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 0 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -255,12 +255,12 @@ function onDrop(e: DragEvent) {
   box-sizing: border-box;
 }
 
-.bf-input:focus { border-color: rgba(30, 165, 76, 0.5); }
+.bf-input:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 .bf-input::placeholder { color: rgba(255, 255, 255, 0.2); }
 
 .bf-textarea {
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 8px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -274,9 +274,9 @@ function onDrop(e: DragEvent) {
   line-height: 1.5;
 }
 
-.bf-textarea:focus { border-color: rgba(30, 165, 76, 0.5); }
+.bf-textarea:focus { border-color: rgba(var(--kt-accent-rgb), 0.5); }
 .bf-textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
-.bf-textarea-output { color: #1ea54c; cursor: default; resize: none; }
+.bf-textarea-output { color: var(--kt-accent); cursor: default; resize: none; }
 .bf-textarea-error { border-color: rgba(200, 50, 50, 0.5) !important; }
 
 .bf-error-msg {
@@ -287,7 +287,7 @@ function onDrop(e: DragEvent) {
 
 /* ── Drop zone ── */
 .bf-dropzone {
-  border: 2px dashed rgba(30, 165, 76, 0.3);
+  border: 2px dashed rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   padding: 28px 16px;
   display: flex;
@@ -300,17 +300,17 @@ function onDrop(e: DragEvent) {
   position: relative;
 }
 
-.bf-dropzone:hover { border-color: rgba(30, 165, 76, 0.6); background: rgba(30, 165, 76, 0.04); }
-.bf-dropzone-active { border-color: #1ea54c; background: rgba(30, 165, 76, 0.08); }
+.bf-dropzone:hover { border-color: rgba(var(--kt-accent-rgb), 0.6); background: rgba(var(--kt-accent-rgb), 0.04); }
+.bf-dropzone-active { border-color: var(--kt-accent); background: rgba(var(--kt-accent-rgb), 0.08); }
 
 .bf-file-input { display: none; }
 
 .bf-drop-icon {
   font-size: 1.8rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
 }
 
-.bf-dropzone-active .bf-drop-icon { color: #1ea54c; }
+.bf-dropzone-active .bf-drop-icon { color: var(--kt-accent); }
 
 .bf-drop-hint {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -322,7 +322,7 @@ function onDrop(e: DragEvent) {
 .bf-drop-filename {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .bf-preview-container {
@@ -345,7 +345,7 @@ function onDrop(e: DragEvent) {
   gap: 6px;
   padding: 7px 18px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.65);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -355,9 +355,9 @@ function onDrop(e: DragEvent) {
 }
 
 .bf-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-.bf-btn:not(:disabled):hover { background: rgba(30, 165, 76, 0.1); border-color: rgba(30, 165, 76, 0.5); color: #fff; }
-.bf-btn-accent { border-color: rgba(30, 165, 76, 0.5); color: #1ea54c; }
-.bf-btn-accent:not(:disabled):hover { background: rgba(30, 165, 76, 0.15); color: #4dd07a; }
+.bf-btn:not(:disabled):hover { background: rgba(var(--kt-accent-rgb), 0.1); border-color: rgba(var(--kt-accent-rgb), 0.5); color: #fff; }
+.bf-btn-accent { border-color: rgba(var(--kt-accent-rgb), 0.5); color: var(--kt-accent); }
+.bf-btn-accent:not(:disabled):hover { background: rgba(var(--kt-accent-rgb), 0.15); color: var(--kt-accent); }
 
 /* ── Light mode ── */
 html:not(.dark) .bf-label { color: rgba(0, 0, 0, 0.60); }

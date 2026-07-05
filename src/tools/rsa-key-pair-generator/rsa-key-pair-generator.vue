@@ -133,14 +133,14 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   transition: border-color 0.15s;
 }
 
 .rsa-input-row:focus-within {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .rsa-input-error {
@@ -152,8 +152,8 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   height: 32px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.12);
+  color: var(--kt-accent);
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -165,11 +165,11 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 
 .rsa-step-btn:last-child {
   border-right: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12);
 }
 
 .rsa-step-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .rsa-step-btn:disabled {
@@ -185,7 +185,7 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   padding: 6px 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   text-align: center;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -209,9 +209,9 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   gap: 6px;
   padding: 6px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: transparent;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -221,20 +221,20 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 }
 
 .rsa-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.65);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .rsa-btn-primary {
   background: rgba(0, 0, 0, 0.35);
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .rsa-btn-primary:hover {
   background: rgba(0, 0, 0, 0.50);
-  border-color: #1ea54c;
+  border-color: var(--kt-accent);
 }
 
 /* ── Key panels row ── */
@@ -271,20 +271,20 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
   align-items: center;
   gap: 4px;
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 4px;
   padding: 2px 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.65rem;
-  color: rgba(30, 165, 76, 0.6);
+  color: rgba(var(--kt-accent-rgb), 0.6);
   cursor: pointer;
   transition: background 0.12s, color 0.12s, border-color 0.12s;
 }
 
 .rsa-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.55);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
+  color: var(--kt-accent);
 }
 
 .rsa-key-body {
@@ -294,7 +294,7 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 .rsa-key-text {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-all;
@@ -304,7 +304,7 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 .rsa-generating {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.78rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   font-style: italic;
 }
 

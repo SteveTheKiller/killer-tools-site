@@ -448,7 +448,7 @@ function formatShutter(seconds: number): string {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid rgba(30, 165, 76, 0.7);
+  border-top: 6px solid rgba(var(--kt-accent-rgb), 0.7);
 }
 
 .ee-dial-track {
@@ -499,7 +499,7 @@ function formatShutter(seconds: number): string {
 
 .ee-dial-item.dial-active .ee-dial-tick {
   height: 14px;
-  background: #1ea54c;
+  background: var(--kt-accent);
 }
 
 .ee-dial-label {
@@ -516,7 +516,7 @@ function formatShutter(seconds: number): string {
 
 .ee-dial-item.dial-active .ee-dial-label {
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   transform: scale(1.18);
 }
 
@@ -545,7 +545,7 @@ function formatShutter(seconds: number): string {
   flex-shrink: 0;
   width: 90px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 6px 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -560,7 +560,7 @@ function formatShutter(seconds: number): string {
 .ee-num::-webkit-inner-spin-button,
 .ee-num::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-.ee-num:focus { border-color: rgba(30, 165, 76, 0.55); }
+.ee-num:focus { border-color: rgba(var(--kt-accent-rgb), 0.55); }
 
 /* Results table */
 .ee-table-wrap { overflow-x: auto; }
@@ -572,7 +572,7 @@ function formatShutter(seconds: number): string {
   font-size: 0.85rem;
 }
 
-.ee-table thead tr { border-bottom: 1px solid rgba(30, 165, 76, 0.2); }
+.ee-table thead tr { border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.2); }
 
 .ee-table th {
   padding: 8px 16px;
@@ -597,9 +597,9 @@ function formatShutter(seconds: number): string {
   font-weight: 400 !important;
 }
 
-.ee-row-active { background: rgba(30, 165, 76, 0.07); }
-.ee-row-active .ee-td-ap { color: #1ea54c; }
-.ee-row-active .ee-td-ss { color: #1ea54c; font-weight: 700; }
+.ee-row-active { background: rgba(var(--kt-accent-rgb), 0.07); }
+.ee-row-active .ee-td-ap { color: var(--kt-accent); }
+.ee-row-active .ee-td-ss { color: var(--kt-accent); font-weight: 700; }
 
 /* Footnote */
 .ee-footnote {
@@ -622,7 +622,7 @@ function formatShutter(seconds: number): string {
   color: rgba(255, 255, 255, 0.28);
 }
 
-.ee-fn-sep { color: rgba(30, 165, 76, 0.25); font-size: 0.75rem; }
+.ee-fn-sep { color: rgba(var(--kt-accent-rgb), 0.25); font-size: 0.75rem; }
 
 .ee-footnote-legend {
   display: flex;
@@ -631,7 +631,7 @@ function formatShutter(seconds: number): string {
   color: rgba(255, 255, 255, 0.18);
 }
 
-.ee-footnote em { font-style: normal; color: rgba(30, 165, 76, 0.45); }
+.ee-footnote em { font-style: normal; color: rgba(var(--kt-accent-rgb), 0.45); }
 
 /* ── Light mode ── */
 html:not(.dark) .ee-field-label { color: rgba(0, 0, 0, 0.4); }

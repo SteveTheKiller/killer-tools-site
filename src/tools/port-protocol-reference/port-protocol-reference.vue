@@ -95,7 +95,6 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
             :title="copiedValue === String(p.port) ? 'Copied!' : 'Click to copy port number'"
             @click="copyValue(String(p.port))"
           >
-            <span class="kt-prompt">&gt;_</span>
             <code class="ppr-port">{{ copiedValue === String(p.port) ? '✓ copied' : p.port }}</code>
             <div class="ppr-pills">
               <span class="ppr-proto" :class="`ppr-proto-${p.protocol === 'TCP' ? 'tcp' : p.protocol === 'UDP' ? 'udp' : 'both'}`">{{ p.protocol }}</span>
@@ -124,7 +123,6 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .ppr-dangerous-btn {
@@ -149,7 +147,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.35);
@@ -170,13 +168,13 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 }
 
 .ppr-seg-btn:hover {
-  background: rgba(30, 165, 76, 0.08);
+  background: rgba(var(--kt-accent-rgb), 0.08);
   color: rgba(255, 255, 255, 0.75);
 }
 
 .ppr-seg-btn-active {
-  background: rgba(30, 165, 76, 0.15) !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.15) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Light mode overrides ── */
@@ -205,8 +203,20 @@ html:not(.dark) .ppr-seg-btn-active {
   gap: 10px;
 }
 
+/* Dangerous cards: amber outline on the sides + bottom only, so the accent
+   tab stripe stays visible along the top edge */
 .ppr-card-dangerous {
-  border-color: rgba(234, 179, 8, 0.4) !important;
+  border-right-color: rgba(234, 179, 8, 0.4) !important;
+  border-bottom-color: rgba(234, 179, 8, 0.4) !important;
+  border-left-color: rgba(234, 179, 8, 0.4) !important;
+}
+
+/* On hover the tab stripe brightens (global kt-terminal rule), but the amber
+   outline holds on the other three sides instead of going accent */
+.ppr-card-dangerous:hover {
+  border-right-color: rgba(234, 179, 8, 0.65) !important;
+  border-bottom-color: rgba(234, 179, 8, 0.65) !important;
+  border-left-color: rgba(234, 179, 8, 0.65) !important;
 }
 
 .ppr-bar {
@@ -219,16 +229,22 @@ html:not(.dark) .ppr-seg-btn-active {
 }
 
 .ppr-bar-copied {
-  background: rgba(30, 165, 76, 0.22) !important;
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
 }
 
 .ppr-port {
   flex: 1;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.35rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.94);
   letter-spacing: 0.05em;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .ppr-port {
+  color: rgba(0, 0, 0, 0.85);
+  text-shadow: none;
 }
 
 .ppr-pills {
@@ -249,7 +265,7 @@ html:not(.dark) .ppr-seg-btn-active {
 }
 
 .ppr-proto-tcp  { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
-.ppr-proto-udp  { background: rgba(30,165,76,0.12);  color: #1ea54c; border: 1px solid rgba(30,165,76,0.3); }
+.ppr-proto-udp  { background: rgba(var(--kt-accent-rgb), 0.12);  color: var(--kt-accent); border: 1px solid rgba(var(--kt-accent-rgb), 0.3); }
 .ppr-proto-both { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
 
 .ppr-dangerous-pill {
@@ -284,7 +300,7 @@ html:not(.dark) .ppr-seg-btn-active {
 .ppr-service {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.3;
 }
 

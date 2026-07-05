@@ -1,6 +1,8 @@
 # killer-tools
 
-![killer-tools](./public/banner.png)
+<p align="center">
+  <img src="./public/banner.png" alt="killer-tools" width="640">
+</p>
 
 Field techs don't have time for bloat. Every tool here exists because I needed it on the job and couldn't find something that just worked without an account, an install, or telemetry.
 
@@ -8,7 +10,7 @@ I'm a field tech at an MSP handling networking, sysadmin work, and endpoint supp
 
 Everything runs in your browser. Nothing is tracked. No account is required, ever.
 
-**Live site:** [killertools.net](https://killertools.net)  
+**Live site:** [KillerTOOLS.net](https://killertools.net)  
 Built and maintained by [Steve the Killer](https://thekiller.net).
 
 ---
@@ -39,9 +41,9 @@ Standalone executables for field work. No installer, no runtime, no dependencies
 
 | App | Description |
 |-----|-------------|
-| [KillerScan](https://scan.killertools.net) | Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification. |
-| [KillerPDF](https://pdf.killertools.net) | Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files. |
-| [KillerFind](https://find.killertools.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
+| [KillerScan](https://killerscan.net) | Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification. |
+| [KillerPDF](https://killerpdf.net) | Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files. |
+| [KillerFind](https://killerfind.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
 
 > [!WARNING]
 > **Windows Defender may flag these as threats.** These are false positives. Network scanning and file system access trigger heuristic flags on new binaries. There is no telemetry, no outbound callback, and nothing written to system paths. All apps are code signed with a Certum certificate. SHA-256 hashes are provided on each tool's page.

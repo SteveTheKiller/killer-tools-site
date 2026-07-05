@@ -1,6 +1,59 @@
 # Changelog
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2026-07-04
+
+### Grunge Theme Engine
+
+- Full site theme system: six themes with per-theme CSS variable tables (background, chrome, pane, modal, grain) and six accent colors (red, orange, green, teal, blue, purple) with separate dark and light palettes
+- Theme dots in the titlebar plus a draggable accent picker popup: docks flush to the content pane top, drags horizontally only, never leaves the pane, position persisted
+- Per-theme grain textures; black mode got heavier grain, a lighter pane border, and darker input fields site-wide
+- Chrome frame: grained titlebar and statusbar rails, corner grip dots, footer with shrink priorities (middle trims first, "Steve the Killer" never trims)
+- All tool cards on the family recipe: chrome-gray border at rest, muted accent stripe along the top edge only, hover pop with accent on the lower edges
+- Theme switching cross-fades in one smooth pass (View Transitions API)
+
+### Brand Art
+
+- KillerTools wordmark regenerated with the beveled lighting treatment in all six accent colors, dark and light variants; sidebar wordmark follows the active accent
+- Sidebar logo: brand icon large behind the wordmark, fading toward the bottom
+- Mobile topbar: centered brand icon and wordmark
+- New app icon rolled through favicons, mstiles, and apple touch icons
+- kt-logo.png rebuilt as the icon-behind-wordmark composite on a transparent background
+- safari-pinned-tab.svg traced from the tools icon silhouette (was a "kt" placeholder)
+- New og-image and README banner
+
+### KillerScan Type Treatment
+
+- Tool page titles, card titles, and section headers use the family typeface with the text stroke
+- Applied to NDR codes, GPO policy headers, Windows Event IDs, port numbers, and emoji picker categories
+- QR and signature tab titles sized up, active tab white
+
+### Mobile
+
+- Sidebar becomes a drawer over the content on small screens, with a collapse chevron next to the logo
+- Search bar collapses to a bare white icon when the sidebar is hidden; theme dots collapse behind the current swatch
+- Shorter 36px topbar with evenly spaced contents
+- Content pane keeps an 8px gutter on the left when the sidebar is collapsed, matching the right side
+- Photo calculators (ND filter, exposure equivalence, DOF) no longer overflow horizontally at narrow widths
+
+### Tools
+
+- **QR code generator**: new Default preset that follows the page theme and accent, Terminal preset kept; per-tab accent stripes, standard black drop shadow, frame blends with the QR background, hover pop
+- **Signature creator / OTP generator**: same tab and QR frame treatment; Open Key URI button themed like the app buttons
+- **New KtSelect dropdown** replacing NaiveUI selects in the film development and reciprocity calculators: scroll wheel steps the selection over the closed control, scrolls the list when open, menu overlays the content below it, family chrome throughout
+- **ND filter / reciprocity / DOF calculators**: footnote text readability raised
+- **Killer apps**: tiles redirect to killerscan.net, killerpdf.net, and killerfind.net
+- GitHub header links render the GitHub logo instead of text
+- 404 page rebuilt on the family card recipe with a styled back-to-home button
+
+### Fixes
+
+- Navigating between tools could permanently stop pages from rendering (route transition state machine wedged when rAF or timers stalled); route transition removed, navigation is instant and cannot hang
+- JSON minify, JSON to CSV, and XML formatter had fragment roots that broke routing
+- Native OS title tooltips replaced app-wide with themed tooltips: pane border color, rounded, modal tone; also removes the tooltip that cut across open dropdown menus
+
+---
+
 ## 2026-05-21
 
 ### New Photography Tools

@@ -418,7 +418,7 @@ const dmarcRecord = computed(() => {
   letter-spacing: 0.08em;
   padding: 6px 20px;
   border-radius: 6px;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   background: rgba(0, 0, 0, 0.3);
   color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
@@ -426,20 +426,21 @@ const dmarcRecord = computed(() => {
 }
 
 .erg-tab:hover {
-  border-color: rgba(30, 165, 76, 0.5);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
   color: rgba(255, 255, 255, 0.7);
 }
 
 .erg-tab-active {
-  background: rgba(30, 165, 76, 0.15) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.15) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Terminal panel ── */
 .erg-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   overflow: visible; /* allow dropdown menus to escape the card */
@@ -454,7 +455,7 @@ const dmarcRecord = computed(() => {
 }
 
 .erg-record-area:hover {
-  background: rgba(30, 165, 76, 0.04);
+  background: rgba(var(--kt-accent-rgb), 0.04);
 }
 
 .erg-record-meta {
@@ -467,18 +468,18 @@ const dmarcRecord = computed(() => {
 
 .erg-record-label {
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .erg-copy-hint {
   font-size: 0.68rem;
-  color: rgba(30, 165, 76, 0.45);
+  color: rgba(var(--kt-accent-rgb), 0.45);
   white-space: nowrap;
 }
 
 .erg-record-text {
   margin: 0;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.88rem;
   line-height: 1.6;
   word-break: break-all;
@@ -543,15 +544,15 @@ const dmarcRecord = computed(() => {
 }
 
 .erg-pill:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .erg-pill-active {
-  background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Input areas ── */
@@ -586,7 +587,7 @@ const dmarcRecord = computed(() => {
   appearance: none;
   width: 100%;
   height: 4px;
-  background: rgba(30, 165, 76, 0.2);
+  background: rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 2px;
   outline: none;
   cursor: pointer;
@@ -599,7 +600,7 @@ const dmarcRecord = computed(() => {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0.6);
   transition: transform 0.12s;
@@ -609,7 +610,7 @@ const dmarcRecord = computed(() => {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0.6);
 }
@@ -647,7 +648,7 @@ const dmarcRecord = computed(() => {
 
 .erg-dd-btn:hover,
 .erg-dd-btn-open {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 .erg-dd-label {
@@ -657,7 +658,7 @@ const dmarcRecord = computed(() => {
 
 .erg-dd-caret {
   font-size: 0.7rem;
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb), 0.65);
 }
 
 .erg-dd-menu {
@@ -666,7 +667,7 @@ const dmarcRecord = computed(() => {
   left: 12px;
   min-width: 300px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.5);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   border-radius: 6px;
   padding: 4px;
   display: flex;
@@ -692,15 +693,15 @@ const dmarcRecord = computed(() => {
 }
 
 .erg-dd-option:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.35);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.35);
+  color: var(--kt-accent);
 }
 
 .erg-dd-option-active {
-  background: rgba(30, 165, 76, 0.15);
-  border-color: rgba(30, 165, 76, 0.55);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
+  color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

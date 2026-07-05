@@ -95,8 +95,9 @@ async function copyValue(label: string, value: string) {
 }
 
 .case-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -108,17 +109,17 @@ async function copyValue(label: string, value: string) {
   align-items: center;
   gap: 10px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
 }
 
 .case-row:last-child { border-bottom: none; }
-.case-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.case-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 .case-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -131,7 +132,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .case-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   word-break: break-all;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -143,13 +144,13 @@ async function copyValue(label: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
 }
 
-.case-row:hover .case-copy { color: rgba(30, 165, 76, 0.8); }
-.case-copy-done { color: #1ea54c !important; }
+.case-row:hover .case-copy { color: rgba(var(--kt-accent-rgb), 0.8); }
+.case-copy-done { color: var(--kt-accent) !important; }
 
 @container (max-width: 480px) {
   .case-row { grid-template-columns: 120px 1fr auto; }

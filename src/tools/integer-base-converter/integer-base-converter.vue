@@ -129,8 +129,9 @@ async function copyValue(label: string, value: string) {
 }
 
 .base-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -148,12 +149,12 @@ async function copyValue(label: string, value: string) {
   display: flex;
   align-items: center;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 6px;
   transition: border-color 0.15s;
 }
 
-.base-input-box:focus-within { border-color: rgba(30, 165, 76, 0.7); }
+.base-input-box:focus-within { border-color: rgba(var(--kt-accent-rgb), 0.7); }
 
 .base-input {
   flex: 1 1 0;
@@ -174,7 +175,7 @@ async function copyValue(label: string, value: string) {
 .base-input-divider {
   width: 1px;
   height: 22px;
-  background: rgba(30, 165, 76, 0.2);
+  background: rgba(var(--kt-accent-rgb), 0.2);
   flex-shrink: 0;
 }
 
@@ -198,9 +199,9 @@ async function copyValue(label: string, value: string) {
   width: 26px;
   height: 26px;
   background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 4px;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.95rem;
   cursor: pointer;
   display: flex;
@@ -210,14 +211,14 @@ async function copyValue(label: string, value: string) {
   flex-shrink: 0;
 }
 
-.base-step-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
+.base-step-btn:hover:not(:disabled) { background: rgba(var(--kt-accent-rgb), 0.1); }
 .base-step-btn:disabled { opacity: 0.3; cursor: default; }
 
 .base-step-val {
   min-width: 36px;
   text-align: center;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   padding: 0 4px;
 }
 
@@ -245,18 +246,18 @@ async function copyValue(label: string, value: string) {
   align-items: center;
   gap: 10px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
 }
 
 .base-row:last-child { border-bottom: none; }
-.base-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.base-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 .base-row-empty { cursor: default; }
 
 .base-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -283,9 +284,9 @@ async function copyValue(label: string, value: string) {
   width: 20px;
   height: 20px;
   background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 3px;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.8rem;
   cursor: pointer;
   display: flex;
@@ -295,19 +296,19 @@ async function copyValue(label: string, value: string) {
   flex-shrink: 0;
 }
 
-.base-mini-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
+.base-mini-btn:hover:not(:disabled) { background: rgba(var(--kt-accent-rgb), 0.1); }
 .base-mini-btn:disabled { opacity: 0.3; cursor: default; }
 
 .base-mini-val {
   min-width: 28px;
   text-align: center;
   font-size: 0.72rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   padding: 0 2px;
 }
 
 .base-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   word-break: break-all;
   min-width: 0;
@@ -319,13 +320,13 @@ async function copyValue(label: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
 }
 
-.base-row:hover .base-copy { color: rgba(30, 165, 76, 0.8); }
-.base-copy-done { color: #1ea54c !important; }
+.base-row:hover .base-copy { color: rgba(var(--kt-accent-rgb), 0.8); }
+.base-copy-done { color: var(--kt-accent) !important; }
 
 /* ── Light mode ── */
 html:not(.dark) .base-input-box {

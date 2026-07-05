@@ -325,7 +325,6 @@ const cheatsheet = [
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .regex-layout {
@@ -365,12 +364,12 @@ const cheatsheet = [
 }
 
 .cheatsheet-panel::-webkit-scrollbar-thumb {
-  background: rgba(30, 165, 76, 0.3);
+  background: rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 2px;
 }
 
 .cheatsheet-panel::-webkit-scrollbar-thumb:hover {
-  background: rgba(30, 165, 76, 0.55);
+  background: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .rt-bar {
@@ -395,9 +394,9 @@ const cheatsheet = [
   letter-spacing: 0.06em;
   padding: 2px 7px;
   border-radius: 4px;
-  background: rgba(30, 165, 76, 0.15);
-  color: #1ea54c;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  color: var(--kt-accent);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
@@ -427,8 +426,8 @@ const cheatsheet = [
 /* Green text inside Regex and Text inputs */
 .rt-body ::v-deep(.n-input__textarea-el),
 .rt-body ::v-deep(.n-input__input-el) {
-  color: #1ea54c !important;
-  caret-color: #1ea54c;
+  color: var(--kt-accent) !important;
+  caret-color: var(--kt-accent);
 }
 
 /* Shrink the divider margin in this context */
@@ -449,7 +448,7 @@ const cheatsheet = [
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.1);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .rt-match-row {
@@ -457,7 +456,7 @@ const cheatsheet = [
   grid-template-columns: 60px 1fr 1fr 1fr;
   gap: 8px;
   padding: 7px 14px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.06);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.06);
   font-size: 0.75rem;
   align-items: start;
 }
@@ -472,7 +471,7 @@ const cheatsheet = [
 }
 
 .rt-match-val {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   word-break: break-all;
 }
@@ -503,7 +502,7 @@ const cheatsheet = [
 .rt-sample {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   white-space: pre-wrap;
   word-break: break-all;
   margin: 0;
@@ -541,7 +540,7 @@ const cheatsheet = [
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-html:not(.dark) .rt-cs-panel-title { color: #1ea54c; }
+html:not(.dark) .rt-cs-panel-title { color: var(--kt-accent); }
 
 .rt-cheatsheet-body {
   padding: 14px 16px;
@@ -567,8 +566,8 @@ html:not(.dark) .rt-cs-panel-title { color: #1ea54c; }
 
 .rt-cs-expr {
   font-size: 0.72rem;
-  color: #1ea54c;
-  background: rgba(30, 165, 76, 0.1);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   padding: 1px 4px;
   border-radius: 3px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;

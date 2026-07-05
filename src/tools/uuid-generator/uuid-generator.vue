@@ -154,7 +154,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 
 .uu-panel {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -196,9 +196,9 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 }
 
 .uu-toggle-on {
-  border-color: #1ea54c;
-  background: rgba(30, 165, 76, 0.15);
-  color: #1ea54c;
+  border-color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  color: var(--kt-accent);
 }
 
 /* ── Stepper ── */
@@ -206,7 +206,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
   display: inline-flex;
   align-items: center;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   align-self: flex-start;
@@ -217,8 +217,8 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
   height: 32px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.12);
+  color: var(--kt-accent);
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -229,11 +229,11 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 
 .uu-step-btn:last-child {
   border-right: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12);
 }
 
 .uu-step-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .uu-step-btn:disabled {
@@ -246,7 +246,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
   text-align: center;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   padding: 0 4px;
 }
 
@@ -254,7 +254,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 .uu-input {
   width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -270,7 +270,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 }
 
 .uu-input:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .uu-input-error {
@@ -292,7 +292,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 
 .uu-output {
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.15);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   border-radius: 5px;
   padding: 10px 14px;
   min-height: 42px;
@@ -301,7 +301,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 .uu-output-text {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   margin: 0;
   white-space: pre-wrap;
   word-break: break-all;
@@ -320,9 +320,9 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
   gap: 6px;
   padding: 5px 14px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   background: transparent;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.78rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -330,19 +330,19 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 }
 
 .uu-btn:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.65);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.65);
+  color: var(--kt-accent);
 }
 
 .uu-btn-primary {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.5);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
+  color: var(--kt-accent);
 }
 
 .uu-btn-primary:hover {
-  background: rgba(30, 165, 76, 0.22);
-  border-color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.22);
+  border-color: var(--kt-accent);
 }
 </style>

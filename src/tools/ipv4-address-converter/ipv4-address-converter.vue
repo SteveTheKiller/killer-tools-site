@@ -112,20 +112,21 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
   align-items: start;
   gap: 12px;
   padding: 10px 14px;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   transition: border-color 0.12s, background 0.12s;
 }
 
 .ip-row:hover {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
   background: rgba(0, 0, 0, 0.7);
 }
 
 .ip-prompt {
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
   font-weight: 600;
   font-size: 0.85rem;
   user-select: none;
@@ -142,7 +143,7 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
 }
 
 .ip-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   line-height: 1.5;
   word-break: break-all;
@@ -152,9 +153,9 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
 
 .ip-copy {
   background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   border-radius: 4px;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   cursor: pointer;
   padding: 4px 8px;
   display: inline-flex;
@@ -167,9 +168,9 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
 }
 
 .ip-copy:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
+  color: var(--kt-accent);
 }
 
 .ip-copy:disabled {
@@ -178,7 +179,7 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
 }
 
 .ip-copy-check {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-weight: 700;
 }
 

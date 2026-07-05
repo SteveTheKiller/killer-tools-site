@@ -34,24 +34,28 @@ const output = computed(() => transformer.value(input.value));
 </script>
 
 <template>
-  <CInputText
-    ref="inputElement"
-    v-model:value="input"
-    :placeholder="inputPlaceholder"
-    :label="inputLabel"
-    rows="20"
-    autosize
-    raw-text
-    multiline
-    test-id="input"
-    :validation-rules="inputValidationRules"
-    monospace
-  />
+  <!-- Single element root: pages render this component as their root, and a
+       fragment root breaks the route <transition mode="out-in"> (blank page) -->
+  <div style="display: contents">
+    <CInputText
+      ref="inputElement"
+      v-model:value="input"
+      :placeholder="inputPlaceholder"
+      :label="inputLabel"
+      rows="20"
+      autosize
+      raw-text
+      multiline
+      test-id="input"
+      :validation-rules="inputValidationRules"
+      monospace
+    />
 
-  <div overflow-auto>
-    <div mb-5px>
-      {{ outputLabel }}
+    <div overflow-auto>
+      <div mb-5px>
+        {{ outputLabel }}
+      </div>
+      <textarea-copyable :value="output" :language="outputLanguage" :follow-height-of="inputElement?.inputWrapperRef" />
     </div>
-    <textarea-copyable :value="output" :language="outputLanguage" :follow-height-of="inputElement?.inputWrapperRef" />
   </div>
 </template>

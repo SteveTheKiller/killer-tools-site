@@ -117,8 +117,9 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 
 .nato-input {
   width: 100%;
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 9px 36px 9px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -134,7 +135,7 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 }
 
 .nato-input:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .nato-clear-btn {
@@ -156,8 +157,9 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 
 /* ── Terminal ── */
 .nato-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -178,7 +180,7 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
   align-items: center;
   gap: 10px;
   padding: 6px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   background: transparent !important;
 }
 
@@ -191,7 +193,7 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 }
 
 .nato-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -211,13 +213,13 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
 
 .nato-arrow {
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.35);
+  color: rgba(var(--kt-accent-rgb), 0.35);
   user-select: none;
 }
 
 .nato-word {
   font-size: 0.85rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   letter-spacing: 0.02em;
 }
 
@@ -274,9 +276,9 @@ html:not(.dark) .nato-copy-btn:hover {
   gap: 5px;
   padding: 3px 10px;
   border-radius: 4px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  background: rgba(30, 165, 76, 0.08);
-  color: rgba(30, 165, 76, 0.8);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.7rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -284,8 +286,8 @@ html:not(.dark) .nato-copy-btn:hover {
 }
 
 .nato-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.18);
-  border-color: #1ea54c;
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  border-color: var(--kt-accent);
+  color: var(--kt-accent);
 }
 </style>

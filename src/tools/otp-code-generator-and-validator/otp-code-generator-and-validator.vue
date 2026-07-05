@@ -27,11 +27,22 @@ const [tokens] = computedRefreshable(
 
 const keyUri = computed(() => buildKeyUri({ secret: secret.value }));
 
+// QR foreground follows the active theme accent (kt-theme/kt-accent touched
+// for reactivity so the code re-renders on theme or accent change)
+function accentHex8(fallback: string) {
+  const v = getComputedStyle(document.documentElement).getPropertyValue('--kt-accent').trim();
+  return /^#[0-9a-f]{6}$/i.test(v) ? `${v}ff` : fallback;
+}
+
 const { qrcode } = useQRCode({
   text: keyUri,
   color: {
     background: computed(() => (styleStore.isDarkTheme ? '#0a0a0aff' : '#ffffffff')),
-    foreground: computed(() => (styleStore.isDarkTheme ? '#1ea54cff' : '#000000ff')),
+    foreground: computed(() => {
+      void styleStore.ktTheme;
+      void styleStore.ktAccent;
+      return styleStore.isDarkTheme ? accentHex8('#1ea54cff') : '#000000ff';
+    }),
   },
   options: { width: 512, margin: 2 },
 });
@@ -203,8 +214,9 @@ const details = computed(() => [
 
 /* ── Terminal panel ── */
 .otp-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -248,7 +260,7 @@ const details = computed(() => [
   background: transparent !important;
   border: none;
   cursor: pointer;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   padding: 2px 4px;
   font-size: 1rem;
   line-height: 1;
@@ -256,7 +268,7 @@ const details = computed(() => [
   align-items: center;
   transition: color 0.12s;
   flex-shrink: 0;
-  &:hover { color: #1ea54c; }
+  &:hover { color: var(--kt-accent); }
 }
 
 /* ── Section headers ── */
@@ -280,21 +292,21 @@ const details = computed(() => [
   padding: 20px 16px 14px;
   cursor: pointer;
   transition: background 0.12s;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
-  &:hover { background: rgba(30, 165, 76, 0.04); }
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
+  &:hover { background: rgba(var(--kt-accent-rgb), 0.04); }
 }
 
 .otp-token-digits {
   font-size: 2.8rem;
   font-weight: 600;
   letter-spacing: 0.28em;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 
 .otp-token-hint {
   font-size: 0.7rem;
-  color: rgba(30, 165, 76, 0.45);
+  color: rgba(var(--kt-accent-rgb), 0.45);
   letter-spacing: 0.04em;
 }
 
@@ -307,13 +319,13 @@ const details = computed(() => [
 
 .otp-progress-bar {
   height: 100%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   transition: width 0.05s linear;
 }
 
 .otp-countdown {
   font-size: 0.73rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
   text-align: center;
   padding: 5px 12px 6px;
   letter-spacing: 0.03em;
@@ -327,11 +339,11 @@ const details = computed(() => [
   align-items: center;
   gap: 10px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   &:last-child { border-bottom: none; }
-  &:hover { background: rgba(30, 165, 76, 0.05) !important; }
+  &:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 }
 
 .otp-row-detail {
@@ -340,7 +352,7 @@ const details = computed(() => [
 }
 
 .otp-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -353,7 +365,7 @@ const details = computed(() => [
 }
 
 .otp-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -365,7 +377,7 @@ const details = computed(() => [
   font-weight: 400;
   letter-spacing: 0;
   word-break: break-all;
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 .otp-copy {
@@ -374,38 +386,54 @@ const details = computed(() => [
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
 }
 
-.otp-row:hover .otp-copy { color: rgba(30, 165, 76, 0.8); }
+.otp-row:hover .otp-copy { color: rgba(var(--kt-accent-rgb), 0.8); }
 
-.otp-copy-done { color: #1ea54c !important; }
+.otp-copy-done { color: var(--kt-accent) !important; }
 
 /* ── QR panel ── */
 .qr-frame {
   background: #0a0a0a;
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  /* Family card frame: chrome-gray at rest, muted accent stripe on top only */
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
   border-radius: 12px;
+  position: relative;
+  overflow: hidden;
   padding: 18px;
-  box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.08),
-    0 0 32px rgba(30, 165, 76, 0.18),
-    inset 0 0 48px rgba(30, 165, 76, 0.05);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--kt-accent-sel, var(--kt-accent));
+    transition: background 0.15s ease;
+    pointer-events: none;
+  }
+  &:hover::after {
+    background: var(--kt-accent);
+  }
+  /* Normal drop shadow — not the accent glow */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   width: 100%;
   max-width: 420px;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
   &:hover {
-    border-color: rgba(30, 165, 76, 0.7);
-    box-shadow:
-      0 0 0 1px rgba(30, 165, 76, 0.15),
-      0 0 44px rgba(30, 165, 76, 0.28),
-      inset 0 0 48px rgba(30, 165, 76, 0.08);
+    border-right-color: rgba(var(--kt-accent-rgb), 0.6);
+    border-bottom-color: rgba(var(--kt-accent-rgb), 0.6);
+    border-left-color: rgba(var(--kt-accent-rgb), 0.6);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    /* family hover pop */
+    transform: translateY(-3px);
   }
 }
 
@@ -415,36 +443,45 @@ const details = computed(() => [
 .qr-caption {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   letter-spacing: 0.02em;
 }
 
 html:not(.dark) .qr-caption { color: #0b5c28; }
 
-/* ── Open Key URI button ── */
+/* ── Open Key URI button — app Scan-button recipe (kt-search-btn family):
+   dark translucent base, accent border + text, mono voice. Targets the
+   element regardless of whether c-button renders n-button chrome. ── */
+::v-deep(.qr-open-btn),
 ::v-deep(.qr-open-btn.n-button) {
-  background: transparent !important;
-  border: 1px solid rgba(30, 165, 76, 0.35) !important;
-  border-radius: 5px !important;
-  color: rgba(30, 165, 76, 0.80) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45) !important;
+  border-radius: 6px !important;
+  color: var(--kt-accent) !important;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace !important;
-  font-size: 0.78rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  padding: 7px 16px !important;
   box-shadow: none !important;
+  transition: background 0.12s, border-color 0.12s !important;
 }
 
+::v-deep(.qr-open-btn:hover),
 ::v-deep(.qr-open-btn.n-button:hover) {
-  background: rgba(30, 165, 76, 0.10) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(10, 10, 12, 0.95) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.75) !important;
+  color: var(--kt-accent) !important;
 }
 
-html:not(.dark) ::v-deep(.qr-open-btn.n-button) {
-  border-color: rgba(13, 112, 51, 0.35) !important;
-  color: #0b5c28 !important;
+html:not(.dark) ::v-deep(.qr-open-btn) {
+  background: rgba(var(--kt-accent-rgb), 0.14) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.55) !important;
+  color: #083d1a !important;
 }
 
-html:not(.dark) ::v-deep(.qr-open-btn.n-button:hover) {
-  background: rgba(13, 112, 51, 0.10) !important;
-  border-color: rgba(13, 112, 51, 0.55) !important;
+html:not(.dark) ::v-deep(.qr-open-btn:hover) {
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.75) !important;
+  color: #052d12 !important;
 }
 </style>

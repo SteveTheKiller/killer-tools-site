@@ -88,7 +88,6 @@ function copyId(id: number) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .wel-section {
@@ -100,10 +99,10 @@ function copyId(id: number) {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -118,8 +117,8 @@ function copyId(id: number) {
   padding: 2px 7px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.35);
-  color: #1ea54c;
-  border: 1px solid rgba(30, 165, 76, 0.35);
+  color: var(--kt-accent);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   white-space: nowrap;
 }
@@ -140,16 +139,17 @@ function copyId(id: number) {
 }
 
 .wel-bar-copied {
-  background: rgba(30, 165, 76, 0.22) !important;
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
 }
 
 .wel-id {
   flex: 1;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.35rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.94);
   letter-spacing: 0.05em;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .wel-severity {
@@ -178,7 +178,7 @@ function copyId(id: number) {
 .wel-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.3;
   word-break: break-word;
 }
@@ -201,7 +201,7 @@ html:not(.dark) .wel-log-badge {
   border-color: rgba(13, 112, 51, 0.35) !important;
 }
 
-html:not(.dark) .wel-id           { color: rgba(0, 0, 0, 0.85) !important; }
+html:not(.dark) .wel-id           { color: rgba(0, 0, 0, 0.85) !important; text-shadow: none; }
 html:not(.dark) .wel-name         { color: #0d7033 !important; }
 html:not(.dark) .wel-desc         { color: rgba(0, 0, 0, 0.60) !important; border-top-color: rgba(0, 0, 0, 0.08) !important; }
 

@@ -98,13 +98,13 @@ const e = () => editor.value;
 }
 
 .mb-btn:hover {
-  background: rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  color: var(--kt-accent);
 }
 
 .mb-btn.active {
-  background: rgba(30, 165, 76, 0.18);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  color: var(--kt-accent);
 }
 
 .mb-btn svg {

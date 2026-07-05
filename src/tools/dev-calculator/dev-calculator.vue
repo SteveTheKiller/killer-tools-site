@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { DeveloperEntry, FilmEntry } from './dev-calculator.data';
 import { computed, onUnmounted, ref, watch } from 'vue';
+import KtSelect from '@/components/KtSelect.vue';
 import {
   calcDilutionVolumes,
   developers,
@@ -386,10 +387,9 @@ onUnmounted(() => {
         <div class="dc-field-label">
           Film stock
         </div>
-        <n-select
+        <KtSelect
           v-model:value="selectedFilmName"
           :options="filmOptions"
-          size="small"
         />
 
         <div class="dc-divider" />
@@ -706,7 +706,7 @@ onUnmounted(() => {
 
 .dc-unit-btn {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 3px;
   padding: 1px 7px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -717,14 +717,14 @@ onUnmounted(() => {
 }
 
 .dc-unit-btn:hover {
-  border-color: rgba(30, 165, 76, 0.45);
+  border-color: rgba(var(--kt-accent-rgb), 0.45);
   color: rgba(255, 255, 255, 0.65);
 }
 
 .dc-unit-active {
-  background: rgba(30, 165, 76, 0.14) !important;
-  border-color: rgba(30, 165, 76, 0.6) !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.14) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.6) !important;
+  color: var(--kt-accent) !important;
 }
 
 html:not(.dark) .dc-unit-btn {
@@ -766,7 +766,7 @@ html:not(.dark) .dc-val {
 .dc-hint {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.65rem;
-  color: rgba(30, 165, 76, 0.6);
+  color: rgba(var(--kt-accent-rgb), 0.6);
   margin-top: -4px;
 }
 
@@ -796,7 +796,7 @@ html:not(.dark) .dc-divider {
 
 .dc-choice-btn {
   background: transparent;
-  border: 1px solid rgba(30, 165, 76, 0.18);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.18);
   border-radius: 4px;
   padding: 5px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -808,7 +808,7 @@ html:not(.dark) .dc-divider {
 }
 
 .dc-choice-btn:hover {
-  border-color: rgba(30, 165, 76, 0.5);
+  border-color: rgba(var(--kt-accent-rgb), 0.5);
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -818,9 +818,9 @@ html:not(.dark) .dc-divider {
 }
 
 .dc-choice-active {
-  background: rgba(30, 165, 76, 0.12) !important;
-  border-color: rgba(30, 165, 76, 0.7) !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.12) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.7) !important;
+  color: var(--kt-accent) !important;
 }
 
 html:not(.dark) .dc-choice-btn {
@@ -860,17 +860,17 @@ html:not(.dark) .dc-choice-active {
 /* Zero - green */
 .dc-pp-btn[data-stops="0"] {
   background: transparent;
-  border-color: rgba(30, 165, 76, 0.25);
-  color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.25);
+  color: rgba(var(--kt-accent-rgb), 0.55);
 }
 .dc-pp-btn[data-stops="0"]:hover,
 .dc-pp-btn[data-stops="0"].dc-pp-active {
-  background: rgba(30, 165, 76, 0.12);
-  border-color: rgba(30, 165, 76, 0.7);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.12);
+  border-color: rgba(var(--kt-accent-rgb), 0.7);
+  color: var(--kt-accent);
 }
 .dc-pp-btn[data-stops="0"].dc-pp-active {
-  background: rgba(30, 165, 76, 0.18) !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
 }
 
 /* ±1 - light amber */
@@ -976,7 +976,7 @@ html:not(.dark) .dc-choice-active {
 /* Number inputs */
 .dc-num {
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 4px;
   padding: 6px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -994,7 +994,7 @@ html:not(.dark) .dc-choice-active {
 }
 
 .dc-num:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 html:not(.dark) .dc-num {
@@ -1055,8 +1055,8 @@ html:not(.dark) .dc-base-sep {
   cursor: pointer;
   background: linear-gradient(
     to right,
-    #1ea54c calc(var(--val, 50) * 1%),
-    rgba(30, 165, 76, 0.18) calc(var(--val, 50) * 1%)
+    var(--kt-accent) calc(var(--val, 50) * 1%),
+    rgba(var(--kt-accent-rgb), 0.18) calc(var(--val, 50) * 1%)
   );
 }
 
@@ -1065,17 +1065,17 @@ html:not(.dark) .dc-base-sep {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(30, 165, 76, 0.3);
+  box-shadow: 0 0 0 3px rgba(var(--kt-accent-rgb), 0.3);
 }
 
 .dc-slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border: 2px solid #000;
   cursor: pointer;
 }
@@ -1122,7 +1122,7 @@ html:not(.dark) .dc-slider-labels {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 2.8rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
   letter-spacing: -0.01em;
 }
@@ -1224,9 +1224,9 @@ html:not(.dark) .dc-mix-plus {
   gap: 8px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.75);
-  background: rgba(30, 165, 76, 0.06);
-  border-left: 3px solid rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.75);
+  background: rgba(var(--kt-accent-rgb), 0.06);
+  border-left: 3px solid rgba(var(--kt-accent-rgb), 0.4);
   padding: 7px 10px;
   border-radius: 4px;
 }
@@ -1261,9 +1261,9 @@ html:not(.dark) .dc-source-note {
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  background: rgba(30, 165, 76, 0.14);
-  border: 1px solid rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.14);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
   padding: 1px 8px;
   border-radius: 3px;
 }
@@ -1299,7 +1299,7 @@ html:not(.dark) .dc-stage-strip {
   gap: 2px;
   padding: 6px 10px;
   border-radius: 5px;
-  border: 1px solid rgba(30, 165, 76, 0.12);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.12);
   min-width: 72px;
   flex-shrink: 0;
   transition: border-color 0.15s, background 0.15s;
@@ -1310,8 +1310,8 @@ html:not(.dark) .dc-stage-chip {
 }
 
 .dc-stage-chip-active {
-  border-color: rgba(30, 165, 76, 0.6) !important;
-  background: rgba(30, 165, 76, 0.08);
+  border-color: rgba(var(--kt-accent-rgb), 0.6) !important;
+  background: rgba(var(--kt-accent-rgb), 0.08);
 }
 
 html:not(.dark) .dc-stage-chip-active {
@@ -1320,14 +1320,14 @@ html:not(.dark) .dc-stage-chip-active {
 }
 
 .dc-stage-chip-done {
-  border-color: rgba(30, 165, 76, 0.22);
-  background: rgba(30, 165, 76, 0.04);
+  border-color: rgba(var(--kt-accent-rgb), 0.22);
+  background: rgba(var(--kt-accent-rgb), 0.04);
   opacity: 0.6;
 }
 
 .dc-stage-chip-check {
   font-size: 0.7rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 html:not(.dark) .dc-stage-chip-check {
@@ -1347,7 +1347,7 @@ html:not(.dark) .dc-stage-chip-name {
 }
 
 .dc-stage-chip-active .dc-stage-chip-name {
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 html:not(.dark) .dc-stage-chip-active .dc-stage-chip-name {
@@ -1400,7 +1400,7 @@ html:not(.dark) .dc-timer-stage-label {
 /* Progress bar */
 .dc-timer-prog-track {
   height: 4px;
-  background: rgba(30, 165, 76, 0.12);
+  background: rgba(var(--kt-accent-rgb), 0.12);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -1411,7 +1411,7 @@ html:not(.dark) .dc-timer-prog-track {
 
 .dc-timer-prog-fill {
   height: 100%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   border-radius: 2px;
   transition: width 0.9s linear;
 }
@@ -1425,7 +1425,7 @@ html:not(.dark) .dc-timer-prog-fill {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 3.5rem;
   font-weight: 700;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
   letter-spacing: -0.02em;
   transition: color 0.2s;
@@ -1462,7 +1462,7 @@ html:not(.dark) .dc-timer-agitation {
 .dc-timer-ag-key {
   font-size: 0.6rem;
   letter-spacing: 0.08em;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
   margin-right: 4px;
 }
 
@@ -1482,7 +1482,7 @@ html:not(.dark) .dc-timer-ag-key {
   flex: 1;
   font-size: 0.85rem;
   padding: 8px 16px;
-  border-color: rgba(30, 165, 76, 0.35) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.35) !important;
 }
 
 html:not(.dark) .dc-timer-main-btn {
@@ -1500,7 +1500,7 @@ html:not(.dark) .dc-timer-main-btn {
 
 .dc-timer-done-check {
   font-size: 2.2rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 

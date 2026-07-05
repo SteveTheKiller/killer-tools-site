@@ -76,8 +76,9 @@ update('kelvin');
 }
 
 .tc-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -87,7 +88,7 @@ update('kelvin');
   display: grid;
   grid-template-columns: auto 120px 1fr 52px;
   align-items: center;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   transition: background 0.1s;
 }
 
@@ -96,11 +97,11 @@ update('kelvin');
 }
 
 .tc-row:focus-within {
-  background: rgba(30, 165, 76, 0.04);
+  background: rgba(var(--kt-accent-rgb), 0.04);
 }
 
 .tc-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -117,13 +118,13 @@ update('kelvin');
 .tc-input {
   background: transparent !important;
   border: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.08);
-  border-right: 1px solid rgba(30, 165, 76, 0.08);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.08);
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.08);
   outline: none;
   padding: 9px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.9rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   width: 100%;
   box-sizing: border-box;
   -moz-appearance: textfield;
@@ -138,7 +139,7 @@ update('kelvin');
 .tc-unit {
   text-align: center;
   font-size: 0.72rem;
-  color: rgba(30, 165, 76, 0.85);
+  color: rgba(var(--kt-accent-rgb), 0.85);
   padding: 0 8px;
   white-space: nowrap;
 }

@@ -25,6 +25,8 @@ async function onVerifyClicked(uploadedFile: File) {
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <div style="flex: 0 0 100%">
     <div mx-auto max-w-600px>
       <c-file-upload title="Drag and drop a PDF file here, or click to select a file" accept=".pdf" @file-upload="onVerifyClicked" />
@@ -55,5 +57,6 @@ async function onVerifyClicked(uploadedFile: File) {
 
       <pdf-signature-details :signature="signature" />
     </div>
+  </div>
   </div>
 </template>

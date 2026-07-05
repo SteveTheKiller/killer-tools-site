@@ -189,7 +189,9 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
         bottom: 22%;
         width: 2.5px;
         border-radius: 2px;
-        background-color: v-bind('themeVars.primaryColor');
+        /* Accent stripe = the theme accent (cream on colored themes), NOT the
+           button/primary color, which is green on Blood/Cyanotic */
+        background-color: var(--kt-accent);
         transform: scaleY(0);
         transition: transform 0.18s ease;
         pointer-events: none;

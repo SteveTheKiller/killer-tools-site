@@ -119,8 +119,9 @@ async function copyValue(key: string, value: string) {
 }
 
 .color-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -162,19 +163,19 @@ async function copyValue(key: string, value: string) {
   align-items: center;
   gap: 12px;
   padding: 7px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
 }
 
 .color-row:last-child { border-bottom: none; }
-.color-row:hover { background: rgba(30, 165, 76, 0.05) !important; }
+.color-row:hover { background: rgba(var(--kt-accent-rgb), 0.05) !important; }
 
 .color-row-error .color-value-input { color: #e05555; }
 
 .color-prompt {
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -190,16 +191,16 @@ async function copyValue(key: string, value: string) {
   background: transparent !important;
   border: none;
   outline: none;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
   width: 100%;
   min-width: 0;
-  caret-color: #1ea54c;
+  caret-color: var(--kt-accent);
   cursor: text;
 }
 
-.color-value-input::placeholder { color: rgba(30, 165, 76, 0.25); }
+.color-value-input::placeholder { color: rgba(var(--kt-accent-rgb), 0.25); }
 
 .color-copy {
   display: inline-flex;
@@ -207,7 +208,7 @@ async function copyValue(key: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.65);
+  color: rgba(var(--kt-accent-rgb), 0.65);
   transition: color 0.12s;
   flex-shrink: 0;
   background: transparent !important;
@@ -217,8 +218,8 @@ async function copyValue(key: string, value: string) {
 }
 
 .color-copy:disabled { opacity: 0.3; cursor: default; }
-.color-copy:not(:disabled):hover { color: #1ea54c; }
-.color-copy-done { color: #1ea54c !important; }
+.color-copy:not(:disabled):hover { color: var(--kt-accent); }
+.color-copy-done { color: var(--kt-accent) !important; }
 
 @container (max-width: 480px) {
   .color-row { grid-template-columns: auto 1fr auto; gap: 8px; }

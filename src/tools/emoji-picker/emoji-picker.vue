@@ -76,7 +76,7 @@ const { searchResult } = useFuzzySearch({
       v-else
       :key="group"
     >
-      <div mt-4 text-20px font-bold>
+      <div mt-4 class="emoji-group-title">
         {{ group }}
       </div>
 
@@ -84,3 +84,20 @@ const { searchResult } = useFuzzySearch({
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Category headers: family typewriter voice (KillerScan) with text stroke */
+.emoji-group-title {
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .emoji-group-title {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+</style>

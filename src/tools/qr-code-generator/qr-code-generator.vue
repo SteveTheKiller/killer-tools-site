@@ -3,7 +3,10 @@ import type { QRCodeErrorCorrectionLevel } from 'qrcode';
 import type { EAPMethod, EAPPhase2Method, WifiEncryption } from './useQRCode';
 import { computed, ref } from 'vue';
 import { useDownloadFileFromBase64Refs } from '@/composable/downloadBase64';
+import { useStyleStore } from '@/stores/style.store';
 import { buildWifiQRText, EAPMethods, EAPPhase2Methods, useQRCode } from './useQRCode';
+
+const styleStore = useStyleStore();
 
 type Mode = 'text' | 'wifi';
 
@@ -22,9 +25,24 @@ const eapAnonymous = ref(false);
 const eapIdentity = ref('');
 const eapPhase2Method = ref<EAPPhase2Method | null>(null);
 
-// Shared QR options
-const foreground = ref('#1ea54cff');
-const background = ref('#0a0a0aff');
+// Shared QR options — the "Default" preset follows the active page theme:
+// current accent on the theme's modal tone. Terminal keeps the classic
+// green-on-black regardless of theme.
+function cssVarHex8(name: string, fallback: string) {
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return /^#[0-9a-f]{6}$/i.test(v) ? `${v}ff` : fallback;
+}
+const themeDefault = computed(() => {
+  // touched so the preset tracks live theme/accent switches
+  void styleStore.ktTheme;
+  void styleStore.ktAccent;
+  return {
+    fg: cssVarHex8('--kt-accent', '#1ea54cff'),
+    bg: cssVarHex8('--kt-modal', '#0a0a0aff'),
+  };
+});
+const foreground = ref(themeDefault.value.fg);
+const background = ref(themeDefault.value.bg);
 const errorCorrectionLevel = ref<QRCodeErrorCorrectionLevel>('medium');
 
 const encryptionOptions: Array<{ label: string, value: WifiEncryption }> = [
@@ -229,7 +247,15 @@ const caption = computed(() => {
               <button
                 type="button"
                 class="qrg-pill"
-                :class="{ 'qrg-pill-active': foreground === '#1ea54cff' && background === '#0a0a0aff' }"
+                :class="{ 'qrg-pill-active': foreground === themeDefault.fg && background === themeDefault.bg }"
+                @click="applyTheme(themeDefault.fg, themeDefault.bg)"
+              >
+                Default
+              </button>
+              <button
+                type="button"
+                class="qrg-pill"
+                :class="{ 'qrg-pill-active': foreground === '#1ea54cff' && background === '#0a0a0aff' && (themeDefault.fg !== '#1ea54cff' || themeDefault.bg !== '#0a0a0aff') }"
                 @click="applyTheme('#1ea54cff', '#0a0a0aff')"
               >
                 Terminal
@@ -283,7 +309,7 @@ const caption = computed(() => {
 
       <!-- RIGHT: QR preview -->
       <div class="qrg-col qrg-right">
-        <div v-if="qrcode" class="qr-frame">
+        <div v-if="qrcode" class="qr-frame" :style="{ background }">
           <n-image :src="qrcode" class="qr-image" />
         </div>
         <div v-else class="qr-frame qr-frame-empty">
@@ -350,8 +376,14 @@ const caption = computed(() => {
   }
 }
 
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
+
+/* KillerPDF tab rule: the accent stripe belongs to each TAB, not the card —
+   the full colored line must not run above the inactive tab. The card-wide
+   stripe is suppressed and each tab carries its own top edge. */
+.qrg-panel::after {
+  display: none;
+}
 
 .qrg-bar {
   padding: 0 !important;
@@ -371,13 +403,15 @@ const caption = computed(() => {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: normal;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: 'KillerScan', 'Courier New', monospace;
   padding: 0 12px;
   border: none;
+  /* Muted family stripe at rest (accent-sel), full accent when active */
+  border-top: 2px solid var(--kt-accent-sel, rgba(var(--kt-accent-rgb), 0.35));
   border-bottom: 2px solid transparent;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   background: transparent;
@@ -403,22 +437,29 @@ const caption = computed(() => {
 }
 
 .qrg-tab:hover {
-  color: rgba(30, 165, 76, 0.8);
-  background: rgba(30, 165, 76, 0.06);
+  color: rgba(var(--kt-accent-rgb), 0.8);
+  background: rgba(var(--kt-accent-rgb), 0.06);
 }
 
 .qrg-tab:hover::before {
-  background: rgba(30, 165, 76, 0.5);
+  background: rgba(var(--kt-accent-rgb), 0.5);
 }
 
 .qrg-tab-active {
-  color: #1ea54c !important;
-  border-bottom-color: #1ea54c !important;
-  background: rgba(30, 165, 76, 0.08) !important;
+  /* Active tab: white family voice with the text stroke (accent stays on
+     the stripe and dot); light mode keeps the systemic dark-green override */
+  color: rgba(255, 255, 255, 0.94) !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+  border-top-color: var(--kt-accent) !important;
+  background: rgba(var(--kt-accent-rgb), 0.08) !important;
+}
+
+html:not(.dark) .qrg-tab-active {
+  text-shadow: none;
 }
 
 .qrg-tab-active::before {
-  background: #1ea54c !important;
+  background: var(--kt-accent) !important;
 }
 
 .qrg-body {
@@ -476,42 +517,62 @@ const caption = computed(() => {
 }
 
 .qrg-pill:hover {
-  background: rgba(30, 165, 76, 0.1);
-  border-color: rgba(30, 165, 76, 0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .qrg-pill-active {
-  background: rgba(30, 165, 76, 0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Terminal-framed QR code ─────────────────────────────────────── */
 .qr-frame {
+  /* Frame padding matches the QR's own background (inline-bound) so there is
+     no darker ring around the code; #0a0a0a is only the empty-state fallback */
   background: #0a0a0a;
-  border: 1px solid rgba(30, 165, 76, 0.45);
+  /* Family card frame: chrome-gray at rest, muted accent stripe on top only */
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
   border-radius: 12px;
+  position: relative;
+  overflow: hidden;
   padding: 18px;
-  box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.08),
-    0 0 32px rgba(30, 165, 76, 0.18),
-    inset 0 0 48px rgba(30, 165, 76, 0.05);
+  /* Normal drop shadow — not the accent glow */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   width: 100%;
   max-width: 500px;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
+}
+
+.qr-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--kt-accent-sel, var(--kt-accent));
+  transition: background 0.15s ease;
+  pointer-events: none;
+}
+
+.qr-frame:hover::after {
+  background: var(--kt-accent);
 }
 
 .qr-frame:hover {
-  border-color: rgba(30, 165, 76, 0.7);
-  box-shadow:
-    0 0 0 1px rgba(30, 165, 76, 0.15),
-    0 0 44px rgba(30, 165, 76, 0.28),
-    inset 0 0 48px rgba(30, 165, 76, 0.08);
+  border-right-color: rgba(var(--kt-accent-rgb), 0.6);
+  border-bottom-color: rgba(var(--kt-accent-rgb), 0.6);
+  border-left-color: rgba(var(--kt-accent-rgb), 0.6);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+  /* family hover pop */
+  transform: translateY(-3px);
 }
 
 .qr-frame-empty {
@@ -521,7 +582,7 @@ const caption = computed(() => {
 .qr-empty-hint {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
-  color: rgba(30, 165, 76, 0.55);
+  color: rgba(var(--kt-accent-rgb), 0.55);
   text-align: center;
   padding: 0 24px;
 }
@@ -540,7 +601,7 @@ const caption = computed(() => {
 .qr-caption {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
-  color: rgba(30, 165, 76, 0.75);
+  color: rgba(var(--kt-accent-rgb), 0.75);
   letter-spacing: 0.02em;
   margin-top: 4px;
 }

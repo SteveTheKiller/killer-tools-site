@@ -155,7 +155,7 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 .tb-textarea {
   width: 100%;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 10px 12px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -173,11 +173,11 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 }
 
 .tb-textarea:focus {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .tb-textarea-binary {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.75rem;
   word-break: break-all;
 }
@@ -199,7 +199,7 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 
 .tb-arrows {
   font-size: 1.1rem;
-  color: rgba(30, 165, 76, 0.35);
+  color: rgba(var(--kt-accent-rgb), 0.35);
   user-select: none;
 }
 
@@ -227,9 +227,9 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
   gap: 5px;
   padding: 3px 10px;
   border-radius: 4px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  background: rgba(30, 165, 76, 0.08);
-  color: rgba(30, 165, 76, 0.8);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.7rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -237,9 +237,9 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
 }
 
 .tb-copy-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.18);
-  border-color: #1ea54c;
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  border-color: var(--kt-accent);
+  color: var(--kt-accent);
 }
 
 .tb-copy-btn:disabled {

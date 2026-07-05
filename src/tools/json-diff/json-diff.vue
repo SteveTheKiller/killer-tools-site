@@ -103,7 +103,7 @@ const rightIsValid = computed(() => rawRightJson.value === '' || isNotThrowing((
 }
 
 .jd-field-wrap:focus-within {
-  border-color: rgba(30, 165, 76, 0.55) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.55) !important;
 }
 
 .jd-textarea {

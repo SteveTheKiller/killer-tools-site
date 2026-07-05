@@ -374,7 +374,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   gap: 8px;
   width: 100%;
   background: #1a1a1a;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   padding: 7px 10px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -387,12 +387,12 @@ function onSearchKeydown(e: KeyboardEvent) {
 
 .aa-dropdown-trigger:hover,
 .aa-font-dropdown:focus-within .aa-dropdown-trigger {
-  border-color: rgba(30, 165, 76, 0.55);
+  border-color: rgba(var(--kt-accent-rgb), 0.55);
 }
 
 .aa-chevron {
   margin-left: auto;
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   transition: transform 0.15s;
   flex-shrink: 0;
 }
@@ -406,7 +406,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   width: 100%;
   min-width: 240px;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 6px;
   overflow: hidden;
   z-index: 200;
@@ -418,11 +418,11 @@ function onSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.25);
-  background: rgba(30, 165, 76, 0.08);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.25);
+  background: rgba(var(--kt-accent-rgb), 0.08);
 }
 
-.aa-search-icon { color: rgba(30, 165, 76, 0.4); flex-shrink: 0; }
+.aa-search-icon { color: rgba(var(--kt-accent-rgb), 0.4); flex-shrink: 0; }
 
 .aa-search-input {
   flex: 1;
@@ -440,7 +440,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   max-height: 260px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(30, 165, 76, 0.3) transparent;
+  scrollbar-color: rgba(var(--kt-accent-rgb), 0.3) transparent;
 }
 
 .aa-dropdown-item {
@@ -449,7 +449,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   padding: 6px 14px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.04);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.04);
   text-align: left;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
@@ -459,9 +459,9 @@ function onSearchKeydown(e: KeyboardEvent) {
 }
 
 .aa-dropdown-item:last-child { border-bottom: none; }
-.aa-dropdown-item:hover { background: rgba(30, 165, 76, 0.1); color: #fff; }
-.aa-dropdown-item-active { color: #1ea54c; background: rgba(30, 165, 76, 0.08); }
-.aa-dropdown-item-focused { background: rgba(30, 165, 76, 0.15); color: #fff; outline: none; }
+.aa-dropdown-item:hover { background: rgba(var(--kt-accent-rgb), 0.1); color: #fff; }
+.aa-dropdown-item-active { color: var(--kt-accent); background: rgba(var(--kt-accent-rgb), 0.08); }
+.aa-dropdown-item-focused { background: rgba(var(--kt-accent-rgb), 0.15); color: #fff; outline: none; }
 
 .aa-no-results {
   padding: 12px 14px;
@@ -475,7 +475,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   display: inline-flex;
   align-items: center;
   background: #1a1a1a;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
   height: 32px;
@@ -486,8 +486,8 @@ function onSearchKeydown(e: KeyboardEvent) {
   height: 32px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.12);
+  color: var(--kt-accent);
   font-size: 1.1rem;
   cursor: pointer;
   display: flex;
@@ -497,8 +497,8 @@ function onSearchKeydown(e: KeyboardEvent) {
   flex-shrink: 0;
 }
 
-.aa-step-btn:last-child { border-right: none; border-left: 1px solid rgba(30, 165, 76, 0.12); }
-.aa-step-btn:hover:not(:disabled) { background: rgba(30, 165, 76, 0.1); }
+.aa-step-btn:last-child { border-right: none; border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12); }
+.aa-step-btn:hover:not(:disabled) { background: rgba(var(--kt-accent-rgb), 0.1); }
 .aa-step-btn:disabled { opacity: 0.3; cursor: default; }
 
 .aa-step-input {
@@ -508,7 +508,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   text-align: center;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.85rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   outline: none;
   appearance: textfield;
   -moz-appearance: textfield;
@@ -537,7 +537,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   background: transparent;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.8rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   white-space: pre;
   line-height: 1.4;
   min-width: max-content;
@@ -558,7 +558,7 @@ function onSearchKeydown(e: KeyboardEvent) {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #1ea54c;
+  background: var(--kt-accent);
   animation: aa-pulse 1s ease-in-out infinite;
 }
 
@@ -584,9 +584,9 @@ function onSearchKeydown(e: KeyboardEvent) {
   gap: 5px;
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(30, 165, 76, 0.35);
-  background: rgba(30, 165, 76, 0.08);
-  color: rgba(30, 165, 76, 0.8);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.35);
+  background: rgba(var(--kt-accent-rgb), 0.08);
+  color: rgba(var(--kt-accent-rgb), 0.8);
   font-size: 0.67rem;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   cursor: pointer;
@@ -594,9 +594,9 @@ function onSearchKeydown(e: KeyboardEvent) {
 }
 
 .aa-copy-btn:hover {
-  background: rgba(30, 165, 76, 0.18);
-  border-color: #1ea54c;
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.18);
+  border-color: var(--kt-accent);
+  color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

@@ -302,8 +302,8 @@ const cheatsheet = [
               </div>
             </div>
             <!-- Selected cmdlet name footer -->
-            <div v-if="selectedCmdlet" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(30,165,76,0.12);">
-              <code style="font-size: 0.72rem; color: #1ea54c;">{{ selectedCmdlet.cmdlet }}</code>
+            <div v-if="selectedCmdlet" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(var(--kt-accent-rgb), 0.12);">
+              <code style="font-size: 0.72rem; color: var(--kt-accent);">{{ selectedCmdlet.cmdlet }}</code>
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@ const cheatsheet = [
           <div class="ps-panel-body">
             <template v-if="selectedCmdlet">
               <div class="command-block">
-                <pre class="ps-command-text" style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: #1ea54c; line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
+                <pre class="ps-command-text" style="margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.83rem; color: var(--kt-accent); line-height: 1.65; font-family: 'Cascadia Code', 'Fira Code', monospace;">{{ assembledCommand }}</pre>
               </div>
               <div style="margin-top: 10px;">
                 <button type="button" class="kt-pill kt-pill-active" @click="copyCommand">
@@ -343,10 +343,10 @@ const cheatsheet = [
                   <div class="ps-muted" style="font-size: 0.74rem; opacity: 0.6; margin-bottom: 3px;">
                     {{ snippet.description }}
                   </div>
-                  <code style="font-size: 0.74rem; color: #1ea54c; word-break: break-all; font-family: monospace;">{{ enrichSnippet(snippet.command) }}</code>
+                  <code style="font-size: 0.74rem; color: var(--kt-accent); word-break: break-all; font-family: monospace;">{{ enrichSnippet(snippet.command) }}</code>
                   <div
                     v-if="snippetCopied === snippet.command"
-                    style="font-size: 0.7rem; color: #1ea54c; margin-top: 3px; opacity: 0.8;"
+                    style="font-size: 0.7rem; color: var(--kt-accent); margin-top: 3px; opacity: 0.8;"
                   >
                     ✓ Copied!
                   </div>
@@ -467,7 +467,7 @@ const cheatsheet = [
                   style="border-bottom: 1px solid rgba(255,255,255,0.05);"
                 >
                   <td style="padding: 3px 8px 3px 0; white-space: nowrap; width: 1%;">
-                    <code style="font-size: 0.72rem; color: #1ea54c; background: rgba(30,165,76,0.1); padding: 1px 4px; border-radius: 3px;">{{ row.expr }}</code>
+                    <code style="font-size: 0.72rem; color: var(--kt-accent); background: rgba(var(--kt-accent-rgb), 0.1); padding: 1px 4px; border-radius: 3px;">{{ row.expr }}</code>
                   </td>
                   <td style="padding: 3px 0; font-size: 0.72rem; opacity: 0.7;">
                     {{ row.desc }}
@@ -510,13 +510,16 @@ const cheatsheet = [
   top: 16px;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
+  /* Headroom so the hover lift (translateY(-3px)) isn't clipped by this
+     scroll container's top edge */
+  padding-top: 4px;
   scrollbar-width: thin;
-  scrollbar-color: #1ea54c33 transparent;
+  scrollbar-color: rgba(var(--kt-accent-rgb), 0.2) transparent;
 }
 
 .ps-left::-webkit-scrollbar { width: 4px; }
 .ps-left::-webkit-scrollbar-track { background: transparent; }
-.ps-left::-webkit-scrollbar-thumb { background: #1ea54c44; border-radius: 4px; }
+.ps-left::-webkit-scrollbar-thumb { background: rgba(var(--kt-accent-rgb), 0.27); border-radius: 4px; }
 
 .ps-right {
   flex: 1 1 0;
@@ -562,15 +565,15 @@ const cheatsheet = [
   width: 44px;
   min-height: 180px;
   background: rgba(0,0,0,0.35);
-  border-color: rgba(30,165,76,0.35);
-  color: #1ea54c;
+  border-color: rgba(var(--kt-accent-rgb), 0.35);
+  color: var(--kt-accent);
   padding: 6px 0 18px;
 }
 
 .cs-toggle:hover {
   background: rgba(0,0,0,0.50);
-  color: #1ea54c;
-  border-color: rgba(30,165,76,0.6);
+  color: var(--kt-accent);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
 }
 
 .cs-toggle-chev {
@@ -595,6 +598,8 @@ const cheatsheet = [
   width: 500px;
   overflow-y: auto;
   max-height: calc(100vh - 80px);
+  /* Headroom so the hover lift isn't clipped by this scroll container */
+  padding-top: 4px;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
@@ -602,8 +607,8 @@ const cheatsheet = [
 /* Cheatsheet scrollbars */
 .cheatsheet-panel::-webkit-scrollbar { width: 4px; }
 .cheatsheet-panel::-webkit-scrollbar-track { background: transparent; }
-.cheatsheet-panel::-webkit-scrollbar-thumb { background: #1ea54c55; border-radius: 4px; }
-.cheatsheet-panel::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
+.cheatsheet-panel::-webkit-scrollbar-thumb { background: rgba(var(--kt-accent-rgb), 0.33); border-radius: 4px; }
+.cheatsheet-panel::-webkit-scrollbar-thumb:hover { background: var(--kt-accent); }
 
 /* ── Terminal-style panels ── */
 .ps-panel {
@@ -632,7 +637,7 @@ const cheatsheet = [
 
 .ps-panel-bar-cmd {
   font-size: 0.72rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', monospace;
   opacity: 0.85;
 }
@@ -645,8 +650,8 @@ const cheatsheet = [
 /* ── Param code label ── */
 .param-code {
   font-size: 0.78rem;
-  color: #1ea54c;
-  background: rgba(30,165,76,0.1);
+  color: var(--kt-accent);
+  background: rgba(var(--kt-accent-rgb), 0.1);
   padding: 1px 5px;
   border-radius: 3px;
 }
@@ -654,14 +659,14 @@ const cheatsheet = [
 /* ── Badges ── */
 .badge { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
 .badge.module { background: rgba(255,255,255,0.08); opacity: 0.65; font-family: monospace; font-size: 0.65rem; }
-.badge.ps-yes { background: rgba(30,165,76,0.15); color: #1ea54c; }
+.badge.ps-yes { background: rgba(var(--kt-accent-rgb), 0.15); color: var(--kt-accent); }
 .badge.ps-no { background: rgba(255,255,255,0.05); opacity: 0.35; text-decoration: line-through; }
 .badge.admin { background: rgba(232,112,64,0.15); color: #e87040; }
 
 /* ── Command output block ── */
 .command-block {
   background: #121212;
-  border: 1px solid rgba(30,165,76,0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 6px;
   padding: 12px 14px;
   min-height: 50px;
@@ -670,10 +675,10 @@ const cheatsheet = [
 /* ── Snippet rows ── */
 .snippet-row {
   padding: 8px 10px; border-radius: 5px; cursor: pointer; margin-bottom: 6px;
-  background: #121212; border: 1px solid rgba(30,165,76,0.12);
+  background: #121212; border: 1px solid rgba(var(--kt-accent-rgb), 0.12);
   transition: background 0.1s;
 }
-.snippet-row:hover { background: rgba(30,165,76,0.08); border-color: rgba(30,165,76,0.35); }
+.snippet-row:hover { background: rgba(var(--kt-accent-rgb), 0.08); border-color: rgba(var(--kt-accent-rgb), 0.35); }
 
 /* ── Category filter pills ── */
 .cat-pills {
@@ -699,15 +704,15 @@ const cheatsheet = [
 }
 
 .cat-pill:hover {
-  background: rgba(30,165,76,0.1);
-  border-color: rgba(30,165,76,0.35);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.35);
+  color: var(--kt-accent);
 }
 
 .cat-pill-active {
-  background: rgba(30,165,76,0.15) !important;
-  border-color: rgba(30,165,76,0.6) !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.15) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.6) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Cmdlet scrollable list ── */
@@ -718,13 +723,13 @@ const cheatsheet = [
   margin: 0 -4px;
   padding: 0 4px;
   scrollbar-width: thin;
-  scrollbar-color: #1ea54c44 transparent;
+  scrollbar-color: rgba(var(--kt-accent-rgb), 0.27) transparent;
 }
 
 .cmdlet-list::-webkit-scrollbar { width: 4px; }
 .cmdlet-list::-webkit-scrollbar-track { background: transparent; }
-.cmdlet-list::-webkit-scrollbar-thumb { background: #1ea54c44; border-radius: 4px; }
-.cmdlet-list::-webkit-scrollbar-thumb:hover { background: #1ea54c; }
+.cmdlet-list::-webkit-scrollbar-thumb { background: rgba(var(--kt-accent-rgb), 0.27); border-radius: 4px; }
+.cmdlet-list::-webkit-scrollbar-thumb:hover { background: var(--kt-accent); }
 
 .cmdlet-row {
   padding: 7px 9px;
@@ -743,8 +748,8 @@ const cheatsheet = [
 }
 
 .cmdlet-row-selected {
-  background: rgba(30,165,76,0.1) !important;
-  border-color: rgba(30,165,76,0.35) !important;
+  background: rgba(var(--kt-accent-rgb), 0.1) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.35) !important;
 }
 
 .cmdlet-row-top {
@@ -758,7 +763,7 @@ const cheatsheet = [
 
 .cmdlet-row-name {
   font-size: 0.8rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', monospace;
   word-break: break-all;
   flex: 1 1 auto;
@@ -777,8 +782,8 @@ const cheatsheet = [
 }
 
 .cmdlet-row-selected .cmdlet-row-badge {
-  background: rgba(30,165,76,0.15);
-  color: rgba(30,165,76,0.7);
+  background: rgba(var(--kt-accent-rgb), 0.15);
+  color: rgba(var(--kt-accent-rgb), 0.7);
 }
 
 .cmdlet-row-desc {
@@ -823,20 +828,20 @@ const cheatsheet = [
 }
 
 .preset-chip:hover {
-  background: rgba(30,165,76,0.1);
-  border-color: rgba(30,165,76,0.4);
-  color: #1ea54c;
+  background: rgba(var(--kt-accent-rgb), 0.1);
+  border-color: rgba(var(--kt-accent-rgb), 0.4);
+  color: var(--kt-accent);
 }
 
 .preset-chip-active {
-  background: rgba(30,165,76,0.18) !important;
-  border-color: #1ea54c !important;
-  color: #1ea54c !important;
+  background: rgba(var(--kt-accent-rgb), 0.18) !important;
+  border-color: var(--kt-accent) !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Show all toggle link ── */
 .toggle-link {
-  font-size: 0.78rem; color: #1ea54c; cursor: pointer;
+  font-size: 0.78rem; color: var(--kt-accent); cursor: pointer;
   margin-top: 6px; opacity: 0.8; user-select: none;
 }
 .toggle-link:hover { opacity: 1; }
@@ -894,16 +899,16 @@ const cheatsheet = [
 /* ── Elevate c-input-text inside terminal panels so they're visible ── */
 .ps-panel-body :deep(.c-input-text .input-wrapper) {
   background-color: #121212 !important;
-  border-color: rgba(30, 165, 76, 0.2) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.2) !important;
 }
 
 .ps-panel-body :deep(.c-input-text .input-wrapper:hover) {
-  border-color: rgba(30, 165, 76, 0.45) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.45) !important;
 }
 
 .ps-panel-body :deep(.c-input-text .input-wrapper:focus-within) {
   background-color: #121212 !important;
-  border-color: rgba(30, 165, 76, 0.65) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.65) !important;
 }
 
 /* ── Notes strip ── */

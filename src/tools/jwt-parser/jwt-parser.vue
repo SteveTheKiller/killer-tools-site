@@ -116,7 +116,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .jwt-field-wrap:focus-within {
-  border-color: rgba(30, 165, 76, 0.55) !important;
+  border-color: rgba(var(--kt-accent-rgb), 0.55) !important;
 }
 
 .jwt-textarea-error {
@@ -159,7 +159,7 @@ async function copyValue(key: string, value: string) {
   align-items: baseline;
   gap: 10px;
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
@@ -170,11 +170,11 @@ async function copyValue(key: string, value: string) {
 }
 
 .jwt-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .jwt-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -210,7 +210,7 @@ async function copyValue(key: string, value: string) {
 }
 
 .jwt-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.82rem;
   word-break: break-all;
 }
@@ -227,18 +227,18 @@ async function copyValue(key: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
   align-self: center;
 }
 
 .jwt-row:hover .jwt-copy-icon {
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 .jwt-copy-done {
-  color: #1ea54c !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Light mode ── */

@@ -88,7 +88,7 @@ async function copyValue(label: string, value: string) {
 /* ── Key display ── */
 .kc-display {
   background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(30, 165, 76, 0.25);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.25);
   border-radius: 8px;
   padding: 24px;
   display: flex;
@@ -111,14 +111,14 @@ async function copyValue(label: string, value: string) {
 .kc-key-char {
   font-size: 3rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 
 .kc-key-name {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1;
 }
 
@@ -137,7 +137,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .kc-cursor {
-  color: rgba(30, 165, 76, 0.6);
+  color: rgba(var(--kt-accent-rgb), 0.6);
   animation: kc-blink 1.1s step-end infinite;
 }
 
@@ -148,8 +148,9 @@ async function copyValue(label: string, value: string) {
 
 /* ── Terminal rows ── */
 .kc-terminal {
-  background: #121212 !important;
-  border: 1px solid rgba(30, 165, 76, 0.3);
+  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -161,7 +162,7 @@ async function copyValue(label: string, value: string) {
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.07);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.07);
   cursor: pointer;
   transition: background 0.1s;
   background: transparent !important;
@@ -172,7 +173,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .kc-row:hover {
-  background: rgba(30, 165, 76, 0.05) !important;
+  background: rgba(var(--kt-accent-rgb), 0.05) !important;
 }
 
 .kc-row-empty {
@@ -180,7 +181,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .kc-prompt {
-  color: rgba(30, 165, 76, 0.5);
+  color: rgba(var(--kt-accent-rgb), 0.5);
   font-weight: 600;
   font-size: 0.75rem;
   user-select: none;
@@ -193,7 +194,7 @@ async function copyValue(label: string, value: string) {
 }
 
 .kc-value {
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-size: 0.85rem;
   word-break: break-all;
   min-width: 0;
@@ -205,17 +206,17 @@ async function copyValue(label: string, value: string) {
   justify-content: center;
   width: 24px;
   font-size: 0.75rem;
-  color: rgba(30, 165, 76, 0.4);
+  color: rgba(var(--kt-accent-rgb), 0.4);
   transition: color 0.12s;
   flex-shrink: 0;
 }
 
 .kc-row:hover .kc-copy-icon {
-  color: rgba(30, 165, 76, 0.8);
+  color: rgba(var(--kt-accent-rgb), 0.8);
 }
 
 .kc-copy-done {
-  color: #1ea54c !important;
+  color: var(--kt-accent) !important;
 }
 
 /* ── Light mode ── */

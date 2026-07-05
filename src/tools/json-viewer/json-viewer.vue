@@ -25,6 +25,8 @@ const rawJsonValidation = useValidation({
 </script>
 
 <template>
+  <!-- single element root: multi-root pages break the route <transition> -->
+  <div style="display: contents">
   <div class="jv-controls">
     <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
       Sort keys
@@ -70,6 +72,7 @@ const rawJsonValidation = useValidation({
     </div>
     <TextareaCopyable :value="cleanJson" language="json" :follow-height-of="inputElement" />
   </div>
+  </div>
 </template>
 
 <style scoped>
@@ -97,7 +100,7 @@ const rawJsonValidation = useValidation({
 /* Standalone pill — override the global connected-row border-radius reset */
 .kt-pill {
   border-radius: 6px !important;
-  border: 1px solid rgba(30, 165, 76, 0.3) !important;
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.3) !important;
 }
 
 .jv-control {
@@ -118,7 +121,7 @@ const rawJsonValidation = useValidation({
   display: inline-flex;
   align-items: center;
   background: #121212;
-  border: 1px solid rgba(30, 165, 76, 0.2);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.2);
   border-radius: 5px;
   overflow: hidden;
 }
@@ -128,8 +131,8 @@ const rawJsonValidation = useValidation({
   height: 28px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(30, 165, 76, 0.12);
-  color: #1ea54c;
+  border-right: 1px solid rgba(var(--kt-accent-rgb), 0.12);
+  color: var(--kt-accent);
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -141,11 +144,11 @@ const rawJsonValidation = useValidation({
 
 .jv-step-btn:last-child {
   border-right: none;
-  border-left: 1px solid rgba(30, 165, 76, 0.12);
+  border-left: 1px solid rgba(var(--kt-accent-rgb), 0.12);
 }
 
 .jv-step-btn:hover:not(:disabled) {
-  background: rgba(30, 165, 76, 0.1);
+  background: rgba(var(--kt-accent-rgb), 0.1);
 }
 
 .jv-step-btn:disabled {
@@ -158,7 +161,7 @@ const rawJsonValidation = useValidation({
   text-align: center;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
-  color: #1ea54c;
+  color: var(--kt-accent);
 }
 
 /* ── Light mode ── */

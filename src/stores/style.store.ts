@@ -2,7 +2,7 @@ import type { Ref } from 'vue';
 import type { KtAccentKey, KtThemeKey } from '@/themes';
 import { useMediaQuery, useStorage } from '@vueuse/core';
 import { defineStore } from 'pinia';
-import { computed, watch, watchEffect } from 'vue';
+import { computed, nextTick, watch, watchEffect } from 'vue';
 import { accentTriple } from '@/themes';
 
 const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic'];
@@ -10,15 +10,15 @@ const VALID_ACCENTS: (KtAccentKey | '')[] = ['', 'red', 'orange', 'green', 'teal
 
 export const useStyleStore = defineStore('style', {
   state: () => {
-    // Six-theme engine (Grunge port). Default = Black(Teal), the site identity.
-    const ktTheme = useStorage('kt-theme', 'black') as Ref<KtThemeKey>;
+    // Six-theme engine (Grunge port). Default = Dark(Teal); saved choice wins.
+    const ktTheme = useStorage('kt-theme', 'dark') as Ref<KtThemeKey>;
     if (!VALID_THEMES.includes(ktTheme.value)) {
-      ktTheme.value = 'black';
+      ktTheme.value = 'dark';
     }
 
-    // Accent override for the neutral themes (Dark/Light/Black). Empty string =
-    // the theme's own default accent (Dark/Light -> blue, Black -> teal).
-    const ktAccent = useStorage('kt-accent', '') as Ref<KtAccentKey | ''>;
+    // Accent override for the neutral themes (Dark/Light/Black). Defaults to
+    // teal (site identity); empty string = the theme's own default accent.
+    const ktAccent = useStorage('kt-accent', 'teal') as Ref<KtAccentKey | ''>;
     if (!VALID_ACCENTS.includes(ktAccent.value)) {
       ktAccent.value = '';
     }
@@ -59,17 +59,65 @@ export const useStyleStore = defineStore('style', {
       }
     });
 
+    // Smooth theme swap: while kt-theme-fade is on <html>, a global rule
+    // transitions colors everywhere, so the CSS-var chrome and the JS-themed
+    // NaiveUI content fade together instead of flipping in two parts.
+    let fadeTimer: ReturnType<typeof setTimeout> | undefined;
+    const themeFade = () => {
+      const d = document.documentElement;
+      d.classList.add('kt-theme-fade');
+      if (fadeTimer) {
+        clearTimeout(fadeTimer);
+      }
+      fadeTimer = setTimeout(() => d.classList.remove('kt-theme-fade'), 400);
+    };
+
+    // One-shot page cross-fade: the View Transitions API snapshots the page,
+    // applies the swap (CSS-var chrome AND the NaiveUI re-render together,
+    // thanks to the awaited tick), and composites a single smooth fade.
+    // Browsers without it get the kt-theme-fade CSS fallback.
+    const applyThemed = (mutate: () => void) => {
+      const doc = document as Document & {
+        startViewTransition?: (cb: () => Promise<void>) => {
+          ready?: Promise<void>
+          finished?: Promise<void>
+          updateCallbackDone?: Promise<void>
+        }
+      };
+      if (typeof doc.startViewTransition === 'function') {
+        try {
+          const vt = doc.startViewTransition(async () => {
+            mutate();
+            await nextTick();
+          });
+          // Rapid re-clicks abort the in-flight transition; that's fine —
+          // swallow the rejections so they don't surface as exceptions
+          vt?.ready?.catch(() => {});
+          vt?.finished?.catch(() => {});
+          vt?.updateCallbackDone?.catch(() => {});
+        }
+        catch {
+          themeFade();
+          mutate();
+        }
+      }
+      else {
+        themeFade();
+        mutate();
+      }
+    };
+
     const setTheme = (t: KtThemeKey) => {
-      ktTheme.value = t;
+      applyThemed(() => (ktTheme.value = t));
     };
 
     const setAccent = (name: KtAccentKey | '') => {
-      ktAccent.value = name;
+      applyThemed(() => (ktAccent.value = name));
     };
 
     // Back-compat: the old sun/moon toggle and command palette action
     const toggleDark = () => {
-      ktTheme.value = ktTheme.value === 'light' ? 'black' : 'light';
+      applyThemed(() => (ktTheme.value = ktTheme.value === 'light' ? 'dark' : 'light'));
     };
 
     return {

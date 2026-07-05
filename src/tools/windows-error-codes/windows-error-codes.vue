@@ -96,7 +96,6 @@ function copyValue(value: string) {
 </template>
 
 <style scoped>
-.kt-terminal { background: #121212 !important; }
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
 .wec-section {
@@ -108,10 +107,10 @@ function copyValue(value: string) {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1ea54c;
+  color: var(--kt-accent);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   padding: 0 2px 8px;
-  border-bottom: 1px solid rgba(30, 165, 76, 0.15);
+  border-bottom: 1px solid rgba(var(--kt-accent-rgb), 0.15);
   margin-bottom: 12px;
 }
 
@@ -131,16 +130,21 @@ function copyValue(value: string) {
 }
 
 .wec-bar-copied {
-  background: rgba(30, 165, 76, 0.22) !important;
+  background: rgba(var(--kt-accent-rgb), 0.22) !important;
 }
 
 .wec-hex {
   flex: 1;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.35rem;
+  font-weight: normal;
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) .wec-hex {
+  text-shadow: none;
 }
 
 .wec-severity {
@@ -169,7 +173,7 @@ function copyValue(value: string) {
 .wec-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1ea54c;
+  color: var(--kt-accent);
   line-height: 1.3;
   word-break: break-word;
 }

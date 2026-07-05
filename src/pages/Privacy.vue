@@ -34,7 +34,7 @@ useHead({
       Overview
     </h2>
     <p mb-4>
-      Killer Tools (<a href="https://killertools.net" style="color: #1ea54c; text-decoration: none;">killertools.net</a>) is a free collection of IT utility tools. Your privacy is important to us, and this policy explains how we handle your data.
+      Killer Tools (<a href="https://killertools.net" style="color: var(--kt-accent); text-decoration: none;">killertools.net</a>) is a free collection of IT utility tools. Your privacy is important to us, and this policy explains how we handle your data.
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
@@ -55,7 +55,7 @@ useHead({
       Analytics
     </h2>
     <p mb-4>
-      This site uses <a href="https://umami.is" target="_blank" rel="noopener" style="color: #1ea54c; text-decoration: none;">Umami</a>, a privacy-focused analytics tool, to understand general usage patterns such as page views and referral sources. Umami does not use cookies, does not track users across sites, and does not collect any personally identifiable information. All data is aggregated and anonymous.
+      This site uses <a href="https://umami.is" target="_blank" rel="noopener" style="color: var(--kt-accent); text-decoration: none;">Umami</a>, a privacy-focused analytics tool, to understand general usage patterns such as page views and referral sources. Umami does not use cookies, does not track users across sites, and does not collect any personally identifiable information. All data is aggregated and anonymous.
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
@@ -76,7 +76,7 @@ useHead({
       Contact
     </h2>
     <p mb-8>
-      If you have questions about this privacy policy, you can reach us at <a href="mailto:steve@thekiller.net" style="color: #1ea54c; text-decoration: none;">steve@thekiller.net</a>.
+      If you have questions about this privacy policy, you can reach us at <a href="mailto:steve@thekiller.net" style="color: var(--kt-accent); text-decoration: none;">steve@thekiller.net</a>.
     </p>
   </div>
 </template>

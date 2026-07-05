@@ -408,7 +408,7 @@ tools:
 
   killer-pdf:
     title: KillerPDF
-    description: Portable PDF editor for field techs. View, annotate, merge, split, reorder, edit text, draw, highlight, sign, and print.
+    description: Open-source PDF editor for Windows. View, annotate, merge, split, flatten, open password-protected PDFs, edit text, draw, highlight, sign, and print.
 
   killer-scan:
     title: KillerScan

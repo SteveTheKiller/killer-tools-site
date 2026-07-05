@@ -321,6 +321,25 @@ html.dark [class*="-stepper"] {
   background: #1a1a1a !important;
 }
 
+/* ── Black theme: the #1a1a1a field tone (tuned for Dark's lighter surfaces)
+   reads too gray on Black's pure-black cards — drop fields to near-black.
+   Same specificity as the html.dark rules; later in the file wins. ── */
+html[data-kt-theme='black'] [class*="-input"]:not(.c-input-text):not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
+  background: #0e0e0e !important;
+}
+html[data-kt-theme='black'] [class*="-textarea"] {
+  background: #0e0e0e !important;
+}
+html[data-kt-theme='black'] [class*="-dropdown-trigger"] {
+  background: #0e0e0e !important;
+}
+html[data-kt-theme='black'] [class*="-dropdown-menu"] {
+  background: #070707 !important;
+}
+html[data-kt-theme='black'] [class*="-stepper"] {
+  background: #0e0e0e !important;
+}
+
 /* ── Systemic: any [prefix]-terminal container → light bg in light mode ──────
    Attribute-selector approach catches .ehp-terminal, .whois-terminal, and any
    future tool terminal wrappers without per-tool CSS.
@@ -379,6 +398,23 @@ html:not(.dark) .kt-copy:hover {
   background: rgba(0, 0, 0, 0.35);
 }
 
+/* ── NaiveUI select dropdown internals: family voice + accent scrollbar ──
+   (menu surface chrome lives in App.vue) */
+.n-base-select-menu {
+  overflow: hidden; /* clip the virtual list to the rounded corners */
+}
+.n-base-select-menu .n-base-select-option,
+.n-base-select-menu .n-base-select-group-header {
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace !important;
+  font-size: 0.82rem !important;
+}
+.n-base-select-menu .n-scrollbar-rail__scrollbar {
+  background: rgba(var(--kt-accent-rgb), 0.35) !important;
+}
+.n-base-select-menu .n-scrollbar-rail__scrollbar:hover {
+  background: rgba(var(--kt-accent-rgb), 0.6) !important;
+}
+
 /* Landing feature-card recipe: grained panel, pane border with an accent top
    edge, 6px radius, shadow on hover (no lift - these hold live controls) */
 .kt-terminal {
@@ -392,6 +428,14 @@ html:not(.dark) .kt-copy:hover {
   position: relative;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   transition: border-color 0.15s, box-shadow 0.12s, transform 0.12s;
+}
+
+/* REST STATE (universal): chrome-gray frame on all four edges — the only
+   accent at rest is the ::after top stripe. The [class] bump gives (0,2,1)
+   so scoped per-tool `border: 1px solid var(--kt-term-border)` overrides
+   at (0,2,0) are beaten; the hover rules below still win via !important. */
+html .kt-terminal[class] {
+  border-color: var(--kt-chrome-border, #1f1f1f);
 }
 
 .kt-terminal::after {
@@ -418,7 +462,14 @@ html:not(.dark) .kt-copy:hover {
   border-right-color: rgba(var(--kt-accent-rgb), 0.6) !important;
   border-bottom-color: rgba(var(--kt-accent-rgb), 0.6) !important;
   border-left-color: rgba(var(--kt-accent-rgb), 0.6) !important;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+/* Opt-out for tall/anchored panels where the lift would clip against the
+   frame (e.g. the PowerShell Builder quick reference): keep the border and
+   shadow feedback, skip the pop */
+.kt-terminal.kt-no-lift:hover {
+  transform: none !important;
 }
 
 /* ── IPv4 Subnet Calculator uses .k-terminal — mirror hover effects ── */
@@ -459,19 +510,28 @@ html:not(.dark) .kt-copy:hover {
   background: var(--kt-term-bar-hover-bg) !important;
 }
 
-/* Card heading voice: the family typewriter font in the accent color,
-   text-stroke shadow on dark (nulled in light, same as the apps) */
-.kt-terminal-bar-title {
+/* Card heading voice (UNIVERSAL): the family typewriter font, white and
+   sized up (ks-acronym cousin), with the family text stroke on dark.
+   The [class] bump gives (0,2,1) specificity so scoped per-tool title rules
+   ([data-v-x].xxx-terminal-title at (0,2,0)) are overridden without hunting
+   every tool file. Catches kt-terminal-bar-title, k-terminal-bar-title,
+   ehp-terminal-title, whois-terminal-title, and future *-terminal-title. */
+html .kt-terminal-bar-title[class],
+html [class*="-terminal-bar-title"][class],
+html [class*="-terminal-title"][class]:not([class*="-sub"]) {
   font-family: 'KillerScan', 'Courier New', monospace;
-  font-size: 13px;
+  font-size: 1.05rem;
   font-weight: normal;
   letter-spacing: 0.5px;
   text-transform: none;
-  color: var(--kt-accent);
+  color: rgba(255, 255, 255, 0.94);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-html:not(.dark) .kt-terminal-bar-title {
+html:not(.dark) .kt-terminal-bar-title[class],
+html:not(.dark) [class*="-terminal-bar-title"][class],
+html:not(.dark) [class*="-terminal-title"][class]:not([class*="-sub"]) {
+  color: #1a1a1a;
   text-shadow: none;
 }
 
@@ -484,6 +544,35 @@ html:not(.dark) .kt-terminal-bar-title {
   background: var(--kt-term-bar-bg);
   border-bottom: 1px solid var(--kt-term-bar-border);
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* Subheader voice (UNIVERSAL): section labels inside tool cards (OUTPUT,
+   FORMATS, SUBNET INFO, ...) get the family typewriter face. Same [class]
+   specificity bump as the title rule so scoped per-tool rules are beaten. */
+html .kt-section-row[class],
+html [class*="-section-header"][class],
+html [class*="-section-row"][class],
+html [class*="-section-label"][class] {
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+}
+
+/* Colored subsection headers (LOGON & AUTHENTICATION, 5.7.X groups, ...):
+   keep each tool's accent color, add the family face and text stroke.
+   Catches wel-category-header, ndr-category-header, and future
+   *-category-header classes. */
+html [class*="-category-header"][class] {
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) [class*="-category-header"][class] {
+  text-shadow: none;
 }
 
 /* Each tool sets its own grid-template-columns on .kt-row */
@@ -603,4 +692,38 @@ html:not(.dark) .kt-terminal-bar-title {
 .kt-search-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+/* ── Themed tooltips (UNIVERSAL): App.vue converts every title attribute into
+   data-tip, and this renders it — modal tone, pane border, rounded. Native
+   OS tooltips are unstylable and read as a stray black bar on the dark UI. */
+[data-tip] {
+  position: relative;
+}
+
+[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--kt-modal, #141414);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  z-index: 400;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+html:not(.dark) [data-tip]:hover::after {
+  color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
