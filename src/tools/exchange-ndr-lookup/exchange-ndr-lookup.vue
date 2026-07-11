@@ -48,7 +48,7 @@ function copyValue(value: string) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
       placeholder="Search by NDR code, error name, cause, or fix..."
@@ -123,12 +123,12 @@ function copyValue(value: string) {
 
 .ndr-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 10px;
 }
 
 .ndr-bar {
-  padding: 3px 10px !important;
+  padding: 16px 16px 0 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -141,6 +141,9 @@ function copyValue(value: string) {
 }
 
 .ndr-code {
+  line-height: 0.8;
+  position: relative;
+  top: 1.2px;
   flex: 1;
   font-size: 1.35rem;
   font-weight: normal;
@@ -172,7 +175,7 @@ html:not(.dark) .ndr-code {
 .ndr-sev-error    { background: rgba(239,68,68,0.12);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
 
 .ndr-body {
-  padding: 10px 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -194,7 +197,6 @@ html:not(.dark) .ndr-code {
 .ndr-kv-block {
   border-radius: 5px;
   overflow: hidden;
-  margin-top: 2px;
 }
 
 .ndr-kv-row {

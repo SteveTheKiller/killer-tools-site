@@ -78,6 +78,7 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
           <span class="tool-title-compact">{{ toolTitle }}</span>
           <span class="tool-desc-compact">{{ toolDescription }}</span>
         </div>
+        <div id="tool-header-extra" class="tool-header-extra" />
         <div class="tool-header-compact-right">
           <a
             v-if="headerLink"
@@ -126,15 +127,29 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   justify-content: space-between;
   padding: 8px 16px 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .tool-header-compact-left {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+/* Center slot: tools can Teleport contextual info into the header dead zone */
+.tool-header-extra {
   flex: 1 1 0;
   min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 }
 
 /* Page title: big killer-font heading in the accent color (landing style),

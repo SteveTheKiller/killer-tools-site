@@ -30,7 +30,7 @@ function copyValue(value: string) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
       placeholder="Search http status..."
@@ -56,7 +56,6 @@ function copyValue(value: string) {
             :title="copiedValue === String(code) ? 'Copied!' : 'Click to copy status code'"
             @click="copyValue(String(code))"
           >
-            <span class="kt-prompt">&gt;_</span>
             <code class="hsc-code">{{ copiedValue === String(code) ? '✓ copied' : code }}</code>
             <span v-if="type !== 'HTTP'" class="hsc-type-pill hsc-type-webdav">{{ type }}</span>
           </div>
@@ -101,7 +100,7 @@ function copyValue(value: string) {
 }
 
 .hsc-bar {
-  padding: 3px 10px !important;
+  padding: 16px 16px 0 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -114,8 +113,11 @@ function copyValue(value: string) {
 }
 
 .hsc-code {
+  line-height: 0.8;
+  position: relative;
+  top: 1.2px;
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.05em;
@@ -135,19 +137,15 @@ function copyValue(value: string) {
 
 .hsc-type-webdav { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
 
-.hsc-bar {
-  padding: 4px 10px !important;
-}
-
 .hsc-body {
-  padding: 10px 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .hsc-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--kt-accent);
   line-height: 1.3;
@@ -157,7 +155,6 @@ function copyValue(value: string) {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
-  margin-top: 2px;
   padding-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }

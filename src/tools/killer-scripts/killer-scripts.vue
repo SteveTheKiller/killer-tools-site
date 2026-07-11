@@ -76,7 +76,7 @@ function downloadScript(script: { name: string, download_url: string }) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <div v-if="loading" flex justify-center py-10>
       <n-spin size="large" />
     </div>
@@ -89,13 +89,15 @@ function downloadScript(script: { name: string, download_url: string }) {
     </div>
 
     <template v-else>
-      <div class="ks-info mb-4 rounded px-4 py-3 text-sm">
-        <span class="ks-info-cmd font-semibold">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
-        <span class="ks-info-dl font-semibold">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
-      </div>
+      <Teleport to="#tool-header-extra">
+        <div class="ks-info rounded px-3 py-1 text-xs">
+          <span class="ks-info-cmd font-semibold">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
+          The <span class="ks-info-dl font-semibold">↓</span> button saves the <code>.ps1</code> file to your machine for manual use.
+        </div>
+      </Teleport>
       <div
-        class="grid gap-12px"
-        style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"
+        class="grid gap-x-12px gap-y-16px"
+        style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));"
       >
         <div
           v-for="script in scripts"
@@ -104,6 +106,22 @@ function downloadScript(script: { name: string, download_url: string }) {
         >
           <div class="kt-terminal-bar ks-bar">
             <span class="ks-acronym">{{ acronym(script.name) }}</span>
+            <div class="ks-actions">
+              <button
+                class="ks-btn-copy"
+                title="Copy PowerShell one-liner"
+                @click.stop="copyCommand(script)"
+              >
+                {{ copied === script.name ? '✓ Copied!' : '⧉ Copy Command' }}
+              </button>
+              <button
+                class="ks-btn-dl"
+                title="Download .ps1"
+                @click.stop="downloadScript(script)"
+              >
+                ↓
+              </button>
+            </div>
           </div>
 
           <div class="ks-body">
@@ -113,22 +131,6 @@ function downloadScript(script: { name: string, download_url: string }) {
             <div class="ks-desc">
               {{ descriptions[script.name]?.description ?? '' }}
             </div>
-          </div>
-
-          <div class="ks-actions">
-            <button
-              class="ks-btn-copy"
-              @click.stop="copyCommand(script)"
-            >
-              {{ copied === script.name ? '✓ Copied!' : '⧉ Copy Command' }}
-            </button>
-            <button
-              class="ks-btn-dl"
-              title="Download .ps1"
-              @click.stop="downloadScript(script)"
-            >
-              ↓ Download
-            </button>
           </div>
         </div>
       </div>
@@ -166,13 +168,17 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
 .ks-bar {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 12px 14px 0 !important;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 16px 0 !important;
 }
 
 /* Card title: killer font, big and neutral - fixed white/near-black per
    family, deliberately NOT tied to the accent color */
 .ks-acronym {
+  line-height: 0.8;
+  position: relative;
+  top: 1.5px;
   font-size: 1.7rem;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.94);
@@ -187,7 +193,7 @@ html:not(.dark) .ks-acronym {
 }
 
 .ks-body {
-  padding: 12px 14px;
+  padding: 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -210,13 +216,11 @@ html:not(.dark) .ks-acronym {
 .ks-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-top: none;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .ks-btn-copy {
-  flex: 1;
   cursor: pointer;
   border-radius: 4px;
   padding: 5px 8px;

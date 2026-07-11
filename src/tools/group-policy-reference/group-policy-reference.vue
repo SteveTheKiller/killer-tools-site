@@ -59,7 +59,7 @@ function copyValue(value: string) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
       placeholder="Search policies, paths, registry keys..."
@@ -126,11 +126,14 @@ function copyValue(value: string) {
 
 .gpr-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
 }
 
 .gpr-category {
+  line-height: 0.8;
+  position: relative;
+  top: 1px;
   flex: 1;
   font-size: 1.05rem;
   font-weight: normal;
@@ -152,7 +155,7 @@ html:not(.dark) .gpr-category {
 
 .gpr-bar {
   /* 7px vertical: same 41px bar as the NDR lookup (its title line is taller) */
-  padding: 7px 10px !important;
+  padding: 16px 16px 0 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -163,7 +166,6 @@ html:not(.dark) .gpr-category {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--kt-accent);
-  margin-bottom: 2px;
 }
 
 .gpr-severity {
@@ -182,7 +184,7 @@ html:not(.dark) .gpr-category {
 .gpr-sev-error    { background: rgba(239,68,68,0.12);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
 
 .gpr-body {
-  padding: 12px 14px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -222,7 +224,6 @@ html:not(.dark) .gpr-category {
 .gpr-kv-block {
   border-radius: 5px;
   overflow: hidden;
-  margin: 2px 0;
 }
 
 .gpr-kv-row {
@@ -256,8 +257,7 @@ html:not(.dark) .gpr-category {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
-  margin-top: 4px;
-  padding-top: 4px;
+  padding-top: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 </style>

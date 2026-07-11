@@ -46,7 +46,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <div mb-4 flex flex-wrap gap-3>
       <c-input-text
         v-model:value="search"
@@ -220,7 +220,7 @@ html:not(.dark) .ppr-seg-btn-active {
 }
 
 .ppr-bar {
-  padding: 3px 10px !important;
+  padding: 16px 16px 0 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -233,6 +233,9 @@ html:not(.dark) .ppr-seg-btn-active {
 }
 
 .ppr-port {
+  line-height: 0.8;
+  position: relative;
+  top: 1.2px;
   flex: 1;
   font-size: 1.35rem;
   font-weight: normal;
@@ -282,10 +285,10 @@ html:not(.dark) .ppr-port {
 }
 
 .ppr-body {
-  padding: 10px 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 6px;
 }
 
 .ppr-category {
@@ -294,7 +297,6 @@ html:not(.dark) .ppr-port {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 1px;
 }
 
 .ppr-service {
@@ -308,13 +310,11 @@ html:not(.dark) .ppr-port {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.5;
-  margin-top: 2px;
-  padding-top: 4px;
+  padding-top: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ppr-notes {
-  margin-top: 4px;
   padding: 5px 8px;
   border-radius: 4px;
   font-size: 0.72rem;

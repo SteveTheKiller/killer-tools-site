@@ -47,7 +47,7 @@ function copyValue(value: string) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
       placeholder="Search by hex code, error name, or description..."
@@ -73,7 +73,6 @@ function copyValue(value: string) {
             :title="copiedValue === hex ? 'Copied!' : 'Click to copy hex code'"
             @click="copyValue(hex)"
           >
-            <span class="kt-prompt">&gt;_</span>
             <code class="wec-hex">{{ copiedValue === hex ? '✓ copied' : hex }}</code>
             <span class="wec-severity" :class="`wec-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
@@ -121,7 +120,7 @@ function copyValue(value: string) {
 }
 
 .wec-bar {
-  padding: 3px 10px !important;
+  padding: 16px 16px 0 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -134,6 +133,9 @@ function copyValue(value: string) {
 }
 
 .wec-hex {
+  line-height: 0.8;
+  position: relative;
+  top: 1.2px;
   flex: 1;
   font-size: 1.35rem;
   font-weight: normal;
@@ -164,14 +166,14 @@ html:not(.dark) .wec-hex {
 .wec-sev-error    { background: rgba(239,68,68,0.12);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
 
 .wec-body {
-  padding: 10px 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .wec-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--kt-accent);
   line-height: 1.3;
@@ -189,7 +191,6 @@ html:not(.dark) .wec-hex {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
-  margin-top: 2px;
   padding-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }

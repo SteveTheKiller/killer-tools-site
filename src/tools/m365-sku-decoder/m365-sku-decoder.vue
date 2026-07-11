@@ -49,7 +49,7 @@ function copyValue(value: string) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
       placeholder="Search by SKU name, string ID, or description..."
@@ -117,7 +117,7 @@ function copyValue(value: string) {
 
 .sku-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 10px;
 }
 
@@ -127,14 +127,13 @@ function copyValue(value: string) {
   gap: 6px;
   justify-content: space-between;
   /* 9px vertical: same chip clearance as the NDR lookup bars (41px total) */
-  padding: 9px 10px !important;
+  padding: 16px 16px 0 !important;
 }
 
 .sku-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
-  margin-bottom: 4px;
   line-height: 1.3;
 }
 
@@ -157,7 +156,10 @@ function copyValue(value: string) {
 .sku-tier-default { background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
 
 .sku-body {
-  padding: 10px 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   cursor: pointer;
   transition: background 0.1s;
 }
@@ -172,7 +174,6 @@ function copyValue(value: string) {
   color: var(--kt-accent);
   letter-spacing: 0.03em;
   word-break: break-all;
-  margin-bottom: 6px;
 }
 
 .sku-string-id:hover {
@@ -180,7 +181,7 @@ function copyValue(value: string) {
 }
 
 .sku-desc {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
 }

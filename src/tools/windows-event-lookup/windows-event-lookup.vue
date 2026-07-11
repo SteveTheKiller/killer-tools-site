@@ -41,7 +41,7 @@ function copyId(id: number) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0; min-width: 0; width: 100%;">
+  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0; min-width: 0; width: 100%;">
     <c-input-text
       v-model:value="search"
       placeholder="Search by event ID, name, or description..."
@@ -68,7 +68,6 @@ function copyId(id: number) {
             :title="copiedId === id ? 'Copied!' : 'Click to copy event ID'"
             @click="copyId(id)"
           >
-            <span class="kt-prompt">&gt;_</span>
             <code class="wel-id">{{ copiedId === id ? '✓ copied' : id }}</code>
             <span class="wel-severity" :class="`wel-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
@@ -125,12 +124,12 @@ function copyId(id: number) {
 
 .wel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 10px;
 }
 
 .wel-bar {
-  padding: 3px 10px !important;
+  padding: 16px 16px 0 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -143,6 +142,9 @@ function copyId(id: number) {
 }
 
 .wel-id {
+  line-height: 0.8;
+  position: relative;
+  top: 1.2px;
   flex: 1;
   font-size: 1.35rem;
   font-weight: normal;
@@ -169,14 +171,14 @@ function copyId(id: number) {
 .wel-sev-error    { background: rgba(239,68,68,0.12);   color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
 
 .wel-body {
-  padding: 10px 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .wel-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--kt-accent);
   line-height: 1.3;
@@ -187,7 +189,6 @@ function copyId(id: number) {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
-  margin-top: 2px;
   padding-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }

@@ -183,25 +183,9 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
       &:hover {
         transform: translateX(3px);
       }
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 22%;
-        bottom: 22%;
-        width: 2.5px;
-        border-radius: 2px;
-        /* Accent stripe = the theme accent (cream on colored themes), NOT the
-           button/primary color, which is green on Blood/Cyanotic */
-        background-color: var(--kt-accent);
-        transform: scaleY(0);
-        transition: transform 0.18s ease;
-        pointer-events: none;
-      }
     }
     ::v-deep(.n-menu-item-content--selected) {
       &:hover { transform: none; }
-      &::after { transform: scaleY(1); }
 
       /* White SelectionFg over the solid bar, with the family text stroke
          so the lettering stands out (nulled in Light, per the family rule) */
