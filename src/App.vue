@@ -64,9 +64,6 @@ onMounted(() => {
                via the View Transitions API in style.store. -->
           <RouterView />
         </component>
-        <!-- Android beta recruitment toast: website only (hides itself inside
-             the Capacitor app), dismiss persists, links to /android -->
-        <AndroidBetaBanner />
       </NNotificationProvider>
     </NMessageProvider>
   </n-config-provider>
@@ -836,8 +833,8 @@ a[href*="twitter.com"],
 .i-mdi-twitter,
 .i-mdi-information-outline,
 .i-mdi-information,
-a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]),
-.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]) {
+a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]),
+.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]) {
   display: none !important;
 }
 
