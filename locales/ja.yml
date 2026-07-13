@@ -1,0 +1,431 @@
+home:
+  categories:
+    newestTools: 新着ツール
+    favoriteTools: 'お気に入りのツール'
+    allTools: 'すべてのツール'
+    favoritesDndToolTip: 'ドラッグ＆ドロップでお気に入りを並べ替えます'
+  subtitle: '開発者のための便利ツール集'
+  toggleMenu: 'メニューを切り替え'
+  home: ホーム
+  uiLib: 'UI Lib'
+  support: 'killer-toolsの開発を支援する'
+  buyMeACoffee: 'コーヒーをおごる'
+  follow:
+    title: 'killer-toolsが気に入りましたか？'
+    p1: 'こちらにスターをお願いします：'
+    githubRepository: 'StevetheKillerのGitHubリポジトリ'
+    thankYou: 'ありがとうございます！'
+  nav:
+    github: 'GitHubリポジトリ'
+    githubRepository: 'killer-toolsのGitHubリポジトリ'
+    about: 'killer-toolsについて'
+    aboutLabel: '概要'
+    darkMode: 'ダークモード'
+    lightMode: 'ライトモード'
+    mode: 'ダーク/ライトモードを切り替え'
+about:
+  content: |
+    # killer-tools
+
+    現場のテクニシャンに余計なものと付き合っている時間はありません。ここにあるツールはどれも、仕事中に必要になったのに、アカウントもインストールもテレメトリーもなしでちゃんと動くものが見つからなかったから作ったものです。
+
+    私はMSPでネットワーク、サーバー管理、エンドポイントサポートを担当するフィールドテクニシャンです。killer-toolsは優れた[IT-Tools](https://github.com/CorentinTh/it-tools)プロジェクトのフォークとして始まり、私が実際にやっている仕事に合わせて育っていきました。チケット対応の途中でNDRコードを調べたり、クライアントのサブネットをスキャンしたり、クリックする前にSafeLinkをデコードしたりするために作りました。
+
+    すべてブラウザ内で動作します。トラッキングは一切ありません。アカウント登録はいつでも不要です。
+
+    開発とメンテナンスは[Steve the Killer](https://thekiller.net)が行っています。このサイトが現場での時間節約に役立ったなら、[コーヒーをおごって](https://www.buymeacoffee.com/StevetheKiller)もらえると嬉しいですが、決して強制ではありません。
+
+    ## ほしいツールがない？バグを見つけた？
+
+    GitHubの[issuesセクション](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose)から機能リクエストやバグ報告を送ってください。ちゃんと読んでいます。
+
+404:
+  notFound: '404 ページが見つかりません'
+  sorry: '申し訳ありません、このページは存在しないようです'
+  maybe: 'キャッシュが悪さをしているのかもしれません。強制リロードを試してみてください'
+  backHome: 'ホームに戻る'
+favoriteButton:
+  remove: 'お気に入りから削除'
+  add: 'お気に入りに追加'
+toolCard:
+  new: 新着
+search:
+  label: 検索
+tools:
+  categories:
+    favorite-tools: 'お気に入りのツール'
+    crypto: 暗号
+    conversion: 変換
+    web: Web
+    images and videos: '画像と動画'
+    development: 開発
+    network: ネットワーク
+    math: 数学
+    measurement: 計測
+    text: テキスト
+    data: データ
+    windows: Windows
+    photography: 写真
+
+  password-strength-analyser:
+    title: パスワード強度チェッカー
+    description: クライアントサイドのみで動作するこのツールで、パスワードの強度を判定し、解読にかかる時間を推定します。
+
+  password-generator:
+    title: パスワード生成
+    description: 強力なパスワード、ダイスウェアのパスフレーズ、発音可能な文字列、hex/Base64/UUIDトークンを生成します。MSP向けプリセット（ローカル管理者、サービスアカウント、Wi-Fi PSK、PIN）、紛らわしい文字の除外、エントロピーメーター、QRコード、NATOフォネティック読みの表示に対応します。
+  percentage-calculator:
+    title: パーセント計算ツール
+    description: ある値から別の値へのパーセンテージや、パーセンテージから値を簡単に計算します。
+
+  svg-placeholder-generator:
+    title: SVGプレースホルダー生成
+    description: アプリケーションでプレースホルダーとして使えるSVG画像を生成します。
+
+  json-to-csv:
+    title: JSON→CSV変換
+    description: ヘッダーを自動検出してJSONをCSVに変換します。
+
+  camera-recorder:
+    title: カメラレコーダー
+    description: ウェブカメラやカメラで写真の撮影や動画の録画を行います。
+
+  reciprocity-calculator:
+    title: 相反則不軌計算ツール
+    description: シュワルツシルトのべき乗則を使い、40種類以上の銀塩フィルムについて補正済みの長時間露出を計算します。白黒、カラーネガ、リバーサルフィルムに対応します。
+
+  nd-filter-calculator:
+    title: NDフィルター計算ツール
+    description: NDフィルター使用時の補正シャッタースピードを計算します。一般的なND濃度すべてとカスタム段数値に対応します。
+
+  depth-of-field-calculator:
+    title: 被写界深度計算ツール
+    description: 任意のレンズとセンサーの組み合わせで、近点、遠点、被写界深度全体を計算します。過焦点距離も表示します。
+
+  exposure-equivalence:
+    title: 露出等価換算
+    description: 同じ露出になるシャッタースピードをすべての絞り値で確認します。基準のシャッタースピードと絞りを選ぶと、他のすべてのF値で必要な値が分かります。
+
+  dev-calculator:
+    title: フィルム現像計算ツール
+    description: 温度補正、増感・減感処理、希釈液の調合を含めた補正済み現像時間を計算します。一般的な白黒現像液とフィルムのデータベースを収録します。
+
+  keycode-info:
+    title: キーコード情報
+    description: 押したキーのJavaScriptキーコード、コード、位置、修飾キーを確認します。
+
+  emoji-picker:
+    title: 絵文字ピッカー
+    description: 絵文字を簡単にコピー＆ペーストでき、各絵文字のUnicode値とコードポイントを取得します。
+
+  color-converter:
+    title: カラーコンバーター
+    description: 色をさまざまな形式（hex、rgb、hsl、CSSカラー名）の間で変換します。
+
+  bcrypt:
+    title: Bcrypt
+    description: bcryptを使って文字列のハッシュ化と照合を行います。bcryptはBlowfish暗号に基づくパスワードハッシュ関数です。
+
+  crontab-generator:
+    title: crontab生成
+    description: crontabの検証と生成を行い、cronスケジュールを人間が読める説明で表示します。
+
+  http-status-codes:
+    title: HTTPステータスコード
+    description: すべてのHTTPステータスコードを、その名前と意味とともに一覧表示します。
+
+  sql-prettify:
+    title: SQL整形・フォーマット
+    description: SQLクエリをオンラインで整形します（各種SQL方言に対応します）。
+
+  git-memo:
+    title: Gitチートシート
+    description: 特によく使うGitコマンドとワークフローのクイックリファレンスです。
+
+  encryption:
+    title: テキストの暗号化/復号
+    description: AES、TripleDES、Rabbit、RC4などの暗号アルゴリズムを使って、平文の暗号化と暗号文の復号を行います。
+
+  yaml-prettify:
+    title: YAML整形・フォーマット
+    description: YAML文字列を人間が読みやすい形式に整形します。
+
+
+  roman-numeral-converter:
+    title: ローマ数字変換
+    description: ローマ数字を数値に、数値をローマ数字に変換します。
+
+  hmac-generator:
+    title: HMAC生成
+    description: 秘密鍵とお好みのハッシュ関数を使って、ハッシュベースメッセージ認証コード（HMAC）を計算します。
+
+  bip39-generator:
+    title: BIP39パスフレーズ生成
+    description: 既存またはランダムなニーモニックからBIP39パスフレーズを生成したり、パスフレーズからニーモニックを取得したりします。
+
+  base64-file-converter:
+    title: Base64ファイルコンバーター
+    description: 文字列、ファイル、画像をBase64表現に変換します。
+
+  base64-string-converter:
+    title: Base64文字列エンコーダー/デコーダー
+    description: 文字列をBase64表現に手軽にエンコード・デコードします。
+
+  math-evaluator:
+    title: 数式評価ツール
+    description: 数式を評価する計算機です。sqrt、cos、sin、absなどの関数が使えます。
+
+  url-parser:
+    title: URLパーサー
+    description: URLを個々の構成要素（プロトコル、オリジン、パラメータ、ポート、ユーザー名とパスワードなど）に分解します。
+
+  phone-parser-and-formatter:
+    title: 電話番号パーサー
+    description: 電話番号の解析とフォーマットを行います。国の判定と検証を行い、国際、国内、E.164、RFC3966の各形式で表示します。
+
+  user-agent-parser:
+    title: ユーザーエージェントパーサー
+    description: ユーザーエージェント文字列からブラウザ、エンジン、OS、CPU、デバイスの種類/モデルを検出して解析します。
+
+  case-converter:
+    title: ケースコンバーター
+    description: 文字列のケースを変換し、さまざまな形式から選択します。
+
+  html-entities:
+    title: HTMLエンティティのエスケープ
+    description: HTMLエンティティのエスケープと解除を行います（<、>、&、"、' などの文字をHTML表記に置き換えます）。
+
+  json-prettify:
+    title: JSON整形・フォーマット
+    description: JSON文字列を人間が読みやすい形式に整形します。
+
+  docker-run-to-docker-compose-converter:
+    title: docker run→Docker compose変換
+    description: 「docker run」コマンドをdocker-composeファイルに変換します。
+
+  mac-address-lookup:
+    title: MACアドレス検索
+    description: MACアドレスからデバイスのベンダーとメーカーを調べます。
+
+  lorem-ipsum-generator:
+    title: Lorem ipsum生成
+    description: モックアップやデザイン作業用のプレースホルダーテキスト（lorem ipsum）を生成します。
+
+  qrcode-generator:
+    title: QRコード生成
+    description: URL、プレーンテキスト、Wi-Fiネットワーク認証情報のQRコードを生成してダウンロードします。ターミナル、クラシック、カスタムのカラーテーマと、誤り訂正レベルの設定に対応します。
+
+  signature-creator:
+    title: 署名作成ツール
+    description: キャンバスに手書きの署名を描いて透過PNGとして書き出します。あるいは任意の画像をアップロードし、オンデバイスAIでワンクリックで背景を除去します。
+
+  xml-formatter:
+    title: XMLフォーマッター
+    description: XML文字列を人間が読みやすい形式に整形します。
+
+  temperature-converter:
+    title: 温度変換
+    description: ケルビン、摂氏、華氏、ランキン度、ドリール度、ニュートン度、レオミュール度、レーマー度の温度変換を行います。
+
+  chmod-calculator:
+    title: chmod計算ツール
+    description: このオンラインchmod計算ツールでパーミッションとコマンドを求めます。
+
+  rsa-key-pair-generator:
+    title: RSA鍵ペア生成
+    description: 新しいランダムなRSAの秘密鍵と公開鍵のPEM証明書鍵ペアを生成します。
+
+  html-wysiwyg-editor:
+    title: HTML WYSIWYGエディター
+    description: コンテンツのソースコードを即座に生成する、多機能なオンラインWYSIWYG HTMLエディターです。
+
+  json-diff:
+    title: JSON差分比較
+    description: 2つのJSONオブジェクトを比較して差分を確認します。
+
+  jwt-parser:
+    title: JWTパーサー
+    description: JSON Web Token（JWT）を解析・デコードして内容を表示します。
+
+  date-converter:
+    title: 日時変換
+    description: 日付と時刻をさまざまな形式に変換します。
+
+  ipv4-subnet-calculator:
+    title: IPv4サブネット計算ツール
+    description: IPv4のCIDRブロックを解析し、サブネットに関して必要な情報をすべて取得します。
+
+  og-meta-generator:
+    title: Open Graphメタタグ生成
+    description: ウェブサイト用のOpen GraphおよびSNS向けHTMLメタタグを生成します。
+
+  ipv6-ula-generator:
+    title: IPv6 ULA生成
+    description: RFC4193に従って、自分のネットワーク用のローカルで非ルーティングのIPアドレスを生成します。
+
+  hash-text:
+    title: テキストハッシュ化
+    description: MD5、SHA1、SHA256、SHA512、SHA3、RIPEMD160などを使ってテキストをハッシュ化します。
+
+  json-to-toml:
+    title: JSON→TOML変換
+    description: JSONを解析してTOMLに変換します。
+
+  device-information:
+    title: デバイス情報
+    description: 現在のデバイスに関する情報（画面サイズ、ピクセル比、ユーザーエージェントなど）を取得します。
+
+  pdf-signature-checker:
+    title: PDF署名チェッカー
+    description: PDFファイルの署名を検証します。署名付きPDFファイルには1つ以上の署名が含まれ、署名後にファイルの内容が改変されていないかどうかの判定に使えます。
+
+  json-minify:
+    title: JSON圧縮
+    description: 不要な空白を取り除いてJSONを圧縮・最小化します。
+
+  ulid-generator:
+    title: ULID生成
+    description: ランダムなULID（辞書順にソート可能な汎用一意識別子）を生成します。
+
+  base-converter:
+    title: 整数基数変換
+    description: 数値を異なる基数（10進、16進、2進、8進、Base64など）の間で変換します。
+
+  uuid-generator:
+    title: UUID生成
+    description: ランダムなUUID（v1およびv4）を生成し、その構造を確認します。
+
+  ipv4-address-converter:
+    title: IPv4アドレス変換
+    description: IPアドレスを10進、2進、16進、さらにはIPv6表現にも変換します。
+
+  text-statistics:
+    title: テキスト統計
+    description: テキストに関する情報として、文字数、単語数、バイトサイズなどを取得します。
+
+  text-to-nato-alphabet:
+    title: テキスト→NATOフォネティックコード
+    description: 口頭で伝えるために、テキストをNATOフォネティックアルファベットに変換します。
+
+  ipv4-range-expander:
+    title: IPv4範囲展開
+    description: 開始と終了のIPv4アドレスから、有効なIPv4サブネットとそのCIDR表記を計算します。
+
+  text-diff:
+    title: テキスト差分比較
+    description: 2つのテキストを比較して差分を確認します。
+
+  otp-generator:
+    title: OTPコード生成
+    description: 多要素認証用の時間ベースOTP（ワンタイムパスワード）の生成と検証を行います。
+
+  text-to-binary:
+    title: テキスト→ASCIIバイナリ
+    description: テキストをASCIIバイナリ表現に、またその逆方向に変換します。
+
+  ascii-word-art:
+    title: ASCIIワードアート生成
+    description: 多彩なフォントとスタイルでASCIIワードアートのテキストを作成します。
+
+  killer-scripts:
+    title: Killer Scripts
+    description: Windows管理とMSP現場作業のためのPowerShellスクリプト集です。
+
+  powershell-builder:
+    title: PowerShellビルダー
+    description: コマンドレットを選び、パラメーターを入力して、完成したPowerShellコマンドをコピーします。
+
+  group-policy-reference:
+    title: グループポリシーリファレンス
+    description: よく使うWindowsグループポリシー設定を、名前、GPOパス、レジストリキー、説明から検索します。
+
+  windows-event-lookup:
+    title: Windowsイベント検索
+    description: WindowsイベントIDを、説明、重大度、一般的な原因とともに調べます。
+
+  m365-sku-decoder:
+    title: M365ライセンスSKUデコーダー
+    description: Microsoft 365ライセンスのSKU文字列とGUIDをデコードして製品名を表示します。
+
+  windows-error-codes:
+    title: Windowsエラーコード検索
+    description: Windowsエラーコードを16進または10進で検索します。システムエラー、BSOD停止コード、WMI、RPC、MSIインストーラーエラーなどに対応します。
+  exchange-ndr-lookup:
+    title: Exchange NDR検索
+    description: ExchangeとM365のバウンスコードを、分かりやすい原因と対処のガイダンスとともに調べます。
+
+  safelink-decoder:
+    title: Outlook SafeLinkデコーダー
+    description: Microsoft Defender SafeLinksを展開して、元のリンク先URLを表示します。
+
+  port-protocol-reference:
+    title: ポート＆プロトコルリファレンス
+    description: 一般的なネットワークポートとプロトコルを、セキュリティに関する注記と危険ポートのフラグとともに掲載します。
+
+  cve-lookup:
+    title: CVE検索
+    description: NIST NVDからCVEをIDまたはキーワードで検索します。NVD APIのライブデータを使用します。
+
+  email-dns-checker:
+    title: メールDNSチェッカー
+    description: 任意のドメインのMX、SPF、DKIM、DMARCレコードを確認します。メール認証の設定を検証し、よくある設定ミスを警告します。
+
+  email-header-parser:
+    title: メールヘッダーパーサー
+    description: 生のメールヘッダーを貼り付けて、送信者情報の抽出、配送ホップチェーンの追跡、SPF、DKIM、DMARCの認証結果の確認を行います。
+
+  whois-checker:
+    title: WHOIS検索
+    description: 任意のドメインの登録情報として、レジストラ、作成日と有効期限、ネームサーバー、ステータスフラグなどを調べます。
+
+  ascii-text-drawer:
+    title: ASCIIワードアート生成
+    description: 多彩なフォントとスタイルでASCIIワードアートのテキストを作成します。
+
+  regex-tester:
+    title: 正規表現テスター
+    description: サンプルテキストで正規表現をテストします。
+
+  yaml-converter:
+    title: YAMLコンバーター
+    description: YAMLをJSONまたはTOMLに変換します。
+
+  json-converter:
+    title: JSONコンバーター
+    description: JSONをYAMLまたはTOMLに変換します。
+
+  toml-converter:
+    title: TOMLコンバーター
+    description: TOMLをJSONまたはYAMLに変換します。
+
+  xml-json-converter:
+    title: XML ↔ JSONコンバーター
+    description: XMLとJSONの双方向コンバーターです。どちら側を編集しても、もう一方が自動的に更新されます。
+
+  markdown-to-html:
+    title: Markdown→HTML変換
+    description: MarkdownをHTMLに変換し、書き出したりPDFとして印刷したりします。
+
+  killer-pdf:
+    title: KillerPDF
+    description: Windows用のオープンソースPDFエディターです。表示、注釈、結合、分割、フラット化、パスワード保護されたPDFのオープン、テキスト編集、描画、ハイライト、署名、印刷に対応します。
+
+  killer-scan:
+    title: KillerScan
+    description: フィールドテクニシャンのための高速ネットワークスキャナーです。ARP＋pingによる探索、ポートプローブ、ベンダー検索、デバイスの自動分類に対応します。
+
+  gif-search:
+    title: GIF検索
+    description: GiphyでリアクションGIFを検索します。結果をクリックするとURLをコピーします。
+
+  killer-find:
+    title: KillerFind
+    description: Windows用の高速ファイル検索です。任意のディレクトリを対象に、ファイル名のワイルドカードまたはファイル内容で検索します。結果はリアルタイムにストリーミング表示され、インデックス作成は不要です。
+
+  domain-lookup:
+    title: ドメイン検索
+    description: WHOIS登録情報とメールDNSチェック（MX、SPF、DKIM、DMARC）を、任意のドメインについて1つの画面で確認します。
+
+  email-record-generator:
+    title: メールレコード生成
+    description: SPFとDMARCのDNS TXTレコードを生成します。メールプロバイダーとポリシーを選び、出力をそのままDNSにコピーします。

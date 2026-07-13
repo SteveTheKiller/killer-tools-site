@@ -64,6 +64,9 @@ onMounted(() => {
                via the View Transitions API in style.store. -->
           <RouterView />
         </component>
+        <!-- Android beta recruitment toast: website only (hides itself inside
+             the Capacitor app), dismiss persists, links to /android -->
+        <AndroidBetaBanner />
       </NNotificationProvider>
     </NMessageProvider>
   </n-config-provider>
