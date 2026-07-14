@@ -1,3 +1,5 @@
+import { App as CapacitorApp } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 import { createHead } from '@vueuse/head';
 import { createPinia } from 'pinia';
 import { registerSW } from 'virtual:pwa-register';
@@ -11,6 +13,19 @@ import 'virtual:uno.css';
 import '@/assets/kt-terminal.css';
 
 registerSW();
+
+// Android hardware/gesture back: go back in history instead of exiting the app.
+// At the history root, minimize like a normal Android app.
+if (Capacitor.isNativePlatform()) {
+  CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+    if (canGoBack) {
+      window.history.back();
+    }
+    else {
+      CapacitorApp.minimizeApp();
+    }
+  });
+}
 
 const app = createApp(App);
 

@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@capacitor/android": "^8.3.1",
+    "@capacitor/app": "^8.0.0",
     "@capacitor/cli": "^8.3.1",
     "@capacitor/core": "^8.3.1",
     "@imgly/background-removal": "^1.7.0",
