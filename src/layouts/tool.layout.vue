@@ -136,6 +136,12 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   gap: 2px;
   flex: 0 0 auto;
   min-width: 0;
+
+  /* Once the center slot is gone, let the left column shrink so the
+     description wraps instead of running off the screen edge */
+  @media (max-width: 1200px) {
+    flex: 1 1 auto;
+  }
 }
 
 /* Center slot: tools can Teleport contextual info into the header dead zone */
@@ -248,6 +254,8 @@ const headerLink = computed<{ label: string; href: string } | undefined>(
   }
 
   @media (max-width: 640px) {
+    padding: 0 4px;
+
     ::v-deep(& > *) {
       flex: 1 1 100%;
     }
