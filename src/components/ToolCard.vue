@@ -10,6 +10,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-pdf': { icon: '/brand/kp-icon.png', wm: 'killerpdf' },
   '/killer-find': { icon: '/brand/kf-icon.png', wm: 'killerfind' },
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
+  '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
 };
 
 const brand = computed(() => APP_BRAND[tool.value.path]);

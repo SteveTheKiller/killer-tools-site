@@ -93,6 +93,14 @@ useHead({
                 <span class="app-tag">Open-source file search for Windows</span>
               </span>
             </a>
+            <a class="app-card" href="https://killernotes.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/kn-icon.png" alt="KillerNotes" width="46" height="46">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killernotes-wordmark-dark.png" alt="KillerNotes">
+                <img class="app-wm wm-light" src="/brand/killernotes-wordmark-light.png" alt="KillerNotes">
+                <span class="app-tag">Open-source encrypted notepad for Windows</span>
+              </span>
+            </a>
           </div>
         </div>
 

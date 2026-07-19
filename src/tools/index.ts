@@ -40,6 +40,7 @@ import { tool as jsonViewer } from './json-viewer';
 import { tool as jwtParser } from './jwt-parser';
 import { tool as keycodeInfo } from './keycode-info';
 import { tool as killerFind } from './killer-find';
+import { tool as killerNotes } from './killer-notes';
 import { tool as killerPdf } from './killer-pdf';
 import { tool as killerScan } from './killer-scan';
 import { tool as killerScripts } from './killer-scripts';
@@ -96,6 +97,7 @@ export const toolsByCategory: ToolCategory[] = [
       windowsEventLookup,
       killerPdf,
       killerFind,
+      killerNotes,
     ],
   },
   {

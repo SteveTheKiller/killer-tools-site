@@ -122,7 +122,7 @@ const sortedTools = computed(() => {
       </transition>
 
       <div v-if="toolStore.newTools.length > 0">
-        <h3 class="mb-5px mt-25px text-neutral-400 font-500">
+        <h3 class="home-newest">
           {{ t('home.categories.newestTools') }}
         </h3>
         <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -170,8 +170,20 @@ const sortedTools = computed(() => {
 </template>
 
 <style scoped lang="less">
-/* "All the tools": family heading voice, with a touch more air below the row */
+/* Section headings share the family voice ("All the tools" / "Newest tools") */
+.home-newest {
+  margin: 0 0 10px;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 1.3rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* "All the tools": with air above the row (it follows the Newest strip) and a touch below */
 .home-all-tools-row {
+  margin-top: 25px;
   margin-bottom: 10px;
 }
 
