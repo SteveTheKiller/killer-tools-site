@@ -83,7 +83,7 @@ function openRepo(mod: KillerModule) {
             <span class="km-label">Commands</span>
             <div class="km-fns-list">
               <code v-for="fn in mod.functions" :key="fn.cmd" class="km-fn">
-                {{ fn.cmd }}<template v-if="fn.alias"><span class="km-alias-tag">alias</span><span class="km-fn-alias">{{ fn.alias }}</span></template>
+                {{ fn.cmd }}<template v-if="fn.alias"> (<span class="km-fn-alias">{{ fn.alias }}</span>)</template>
               </code>
             </div>
           </div>
@@ -209,22 +209,10 @@ html:not(.dark) .km-desc { color: rgba(0, 0, 0, 0.68); }
   white-space: nowrap;
 }
 
-.km-alias-tag {
-  margin-left: 8px;
-  font-size: 0.56rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.4);
-}
-
 .km-fn-alias {
-  margin-left: 5px;
   color: rgba(var(--kt-accent-rgb), 0.95);
   font-weight: 600;
 }
-
-html:not(.dark) .km-alias-tag { color: rgba(0, 0, 0, 0.45); }
 
 html:not(.dark) .km-fn {
   background: rgba(0, 0, 0, 0.04);
