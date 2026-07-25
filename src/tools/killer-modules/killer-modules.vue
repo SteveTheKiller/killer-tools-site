@@ -68,7 +68,6 @@ function openRepo(mod: KillerModule) {
           </div>
           <button
             class="km-btn-repo"
-            title="Open the source repository"
             @click.stop="openRepo(mod)"
           >
             Repo
@@ -99,9 +98,11 @@ function openRepo(mod: KillerModule) {
           <code class="km-cmd">{{ mod.install }}</code>
           <button
             class="km-btn-copy"
+            :class="{ 'is-copied': copied === mod.name }"
             @click.stop="copyInstall(mod)"
           >
-            {{ copied === mod.name ? '✓ Copied!' : '⧉ Copy Install' }}
+            <span class="km-lbl km-lbl-idle">⧉ Copy Install</span>
+            <span class="km-lbl km-lbl-done">✓ Copied!</span>
           </button>
         </div>
       </div>
@@ -270,6 +271,8 @@ html:not(.dark) .km-cmd {
 .km-btn-copy {
   cursor: pointer;
   align-self: flex-end;
+  display: inline-grid;
+  justify-items: center;
   border-radius: 4px;
   padding: 7px 10px;
   font-size: 0.75rem;
@@ -280,6 +283,13 @@ html:not(.dark) .km-cmd {
   transition: background 0.12s, border-color 0.12s;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
+
+/* Both labels share one grid cell, so the button is always as wide as the
+   widest label and never resizes when it swaps to "Copied!" */
+.km-btn-copy .km-lbl { grid-area: 1 / 1; }
+.km-btn-copy .km-lbl-done { visibility: hidden; }
+.km-btn-copy.is-copied .km-lbl-idle { visibility: hidden; }
+.km-btn-copy.is-copied .km-lbl-done { visibility: visible; }
 
 .km-btn-copy:hover {
   background: rgba(var(--kt-accent-rgb), 0.12);

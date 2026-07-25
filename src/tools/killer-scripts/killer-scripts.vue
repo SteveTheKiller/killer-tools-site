@@ -109,14 +109,14 @@ function downloadScript(script: { name: string, download_url: string }) {
             <div class="ks-actions">
               <button
                 class="ks-btn-copy"
-                title="Copy PowerShell one-liner"
+                :class="{ 'is-copied': copied === script.name }"
                 @click.stop="copyCommand(script)"
               >
-                {{ copied === script.name ? '✓ Copied!' : '⧉ Copy Command' }}
+                <span class="ks-lbl ks-lbl-idle">⧉ Copy Command</span>
+                <span class="ks-lbl ks-lbl-done">✓ Copied!</span>
               </button>
               <button
                 class="ks-btn-dl"
-                title="Download .ps1"
                 @click.stop="downloadScript(script)"
               >
                 ↓
@@ -222,6 +222,8 @@ html:not(.dark) .ks-acronym {
 
 .ks-btn-copy {
   cursor: pointer;
+  display: inline-grid;
+  justify-items: center;
   border-radius: 4px;
   padding: 5px 8px;
   font-size: 0.75rem;
@@ -232,6 +234,13 @@ html:not(.dark) .ks-acronym {
   transition: background 0.12s, border-color 0.12s;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
+
+/* Both labels share one grid cell, so the button is always as wide as the
+   widest label and never resizes when it swaps to "Copied!" */
+.ks-btn-copy .ks-lbl { grid-area: 1 / 1; }
+.ks-btn-copy .ks-lbl-done { visibility: hidden; }
+.ks-btn-copy.is-copied .ks-lbl-idle { visibility: hidden; }
+.ks-btn-copy.is-copied .ks-lbl-done { visibility: visible; }
 
 .ks-btn-copy:hover {
   background: rgba(var(--kt-accent-rgb), 0.12);
