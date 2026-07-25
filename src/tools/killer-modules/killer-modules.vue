@@ -54,7 +54,7 @@ function openRepo(mod: KillerModule) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <div
       class="grid gap-x-16px gap-y-20px"
-      style="grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));"
+      style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 560px), 560px));"
     >
       <div
         v-for="mod in modules"
@@ -83,7 +83,7 @@ function openRepo(mod: KillerModule) {
             <span class="km-label">Commands</span>
             <div class="km-fns-list">
               <code v-for="fn in mod.functions" :key="fn.cmd" class="km-fn">
-                {{ fn.cmd }}<template v-if="fn.alias"> (<span class="km-fn-alias">{{ fn.alias }}</span>)</template>
+                {{ fn.cmd }}<template v-if="fn.alias"><span class="km-fn-alias">({{ fn.alias }})</span></template>
               </code>
             </div>
           </div>
@@ -210,6 +210,7 @@ html:not(.dark) .km-desc { color: rgba(0, 0, 0, 0.68); }
 }
 
 .km-fn-alias {
+  margin-left: 5px;
   color: rgba(var(--kt-accent-rgb), 0.95);
   font-weight: 600;
 }
