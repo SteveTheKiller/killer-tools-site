@@ -4,7 +4,7 @@
 
 Field techs don't have time for bloat. Every tool here exists because I needed it on the job and couldn't find something that just worked without an account, an install, or telemetry.
 
-I'm a field tech at an MSP handling networking, sysadmin work, and endpoint support. KillerTOOLS started as a fork of the excellent [IT-Tools](https://github.com/CorentinTh/it-tools) project by [Corentin Thomasset](https://github.com/CorentinTh) and grew into something built for the kind of work I actually do. I built it to look up Group Policy settings mid-ticket, scan a client's subnet, and pull port references without leaving the browser. The [Killer Scripts](https://github.com/SteveTheKiller/killer-scripts) library covers the jobs that come up every ticket cycle. Every script runs in PS 5.1, PS 7, and Kaseya LiveConnect with no dependencies.
+I'm a field tech at an MSP handling networking, sysadmin work, and endpoint support. KillerTools started as a fork of the excellent [IT-Tools](https://github.com/CorentinTh/it-tools) project by [Corentin Thomasset](https://github.com/CorentinTh) and grew into something built for the kind of work I actually do. I built it to look up Group Policy settings mid-ticket, scan a client's subnet, and pull port references without leaving the browser. The [Killer Scripts](https://github.com/SteveTheKiller/killer-scripts) library covers the jobs that come up every ticket cycle. Every script runs in PS 5.1, PS 7, and Kaseya LiveConnect with no dependencies.
 
 Everything runs in your browser. Nothing is tracked. No account is required, ever.
 
@@ -39,8 +39,9 @@ Standalone executables for field work. No installer, no runtime, no dependencies
 | App | Description |
 |-----|-------------|
 | [KillerScan](https://KillerScan.net) | Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification. |
-| [KillerPDF](https://KillerPDF.net) | Portable PDF editor. View, annotate, merge, split, flatten, sign, and open password-protected files. |
+| [KillerPDF](https://KillerPDF.net) | Portable PDF editor. View, annotate, OCR, merge, split, flatten, sign, and open password-protected files. |
 | [KillerFind](https://KillerFind.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
+| [KillerNotes](https://KillerNotes.net) | Encrypted notepad for techs. Rich notes with inline images and tables, instant full-text search, tags and nested groups, and optional password protection for the whole database. |
 
 ---
 
