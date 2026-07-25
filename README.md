@@ -1,5 +1,3 @@
-# KillerTools.net
-
 <p align="center">
   <a href="https://killertools.net"><img src="./public/wordmark.png" alt="killer-tools" width="640"></a>
 </p>
