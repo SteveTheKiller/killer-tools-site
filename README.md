@@ -1,7 +1,7 @@
 # KillerTools.net
 
 <p align="center">
-  <img src="./public/banner.png" alt="killer-tools" width="640">
+  <a href="https://killertools.net"><img src="./public/banner.png" alt="killer-tools" width="640"></a>
 </p>
 
 Field techs don't have time for bloat. Every tool here exists because I needed it on the job and couldn't find something that just worked without an account, an install, or telemetry.
@@ -10,7 +10,6 @@ I'm a field tech at an MSP handling networking, sysadmin work, and endpoint supp
 
 Everything runs in your browser. Nothing is tracked. No account is required, ever.
 
-**Live site:** [KillerTools.net](https://KillerTools.net)  
 Built and maintained by [Steve the Killer](https://theKiller.net).
 
 ---
