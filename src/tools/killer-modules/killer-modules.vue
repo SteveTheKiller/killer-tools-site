@@ -20,7 +20,7 @@ const modules: KillerModule[] = [
       + 'tenant it actually landed in and verifies it before you touch anything. Save your tenants once, '
       + 'then pivot between them by name with identity verification built in.',
     install: 'Install-Module KillerPivot -Scope CurrentUser',
-    repo: 'https://github.com/SteveTheKiller/killer-modules/tree/master/KillerPivot',
+    repo: 'https://github.com/SteveTheKiller/killer-modules/tree/main/KillerPivot',
     functions: [
       { cmd: 'Connect-PivotTenant', alias: 'pivot' },
       { cmd: 'Get-PivotContext', alias: 'pvc' },
