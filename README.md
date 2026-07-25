@@ -1,7 +1,7 @@
 # KillerTools.net
 
 <p align="center">
-  <a href="https://killertools.net"><img src="./public/banner.png" alt="killer-tools" width="640"></a>
+  <a href="https://killertools.net"><img src="./public/wordmark.png" alt="killer-tools" width="640"></a>
 </p>
 
 Field techs don't have time for bloat. Every tool here exists because I needed it on the job and couldn't find something that just worked without an account, an install, or telemetry.
