@@ -31,6 +31,22 @@ const modules: KillerModule[] = [
     ],
     requirements: 'PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (for -Graph)',
   },
+  {
+    name: 'KillerScripts',
+    description:
+      'Every tool in the killer-scripts repo, available as a command in any PowerShell session. '
+      + 'Each script is pulled fresh from GitHub the moment you run it, so you are always on the current '
+      + 'version, with a local cache as an offline fallback. All 18 tools get their own command and a short '
+      + 'alias, so typing urt runs the Universal Rename Tool.',
+    install: 'Install-Module KillerScripts -Scope CurrentUser',
+    repo: 'https://github.com/SteveTheKiller/killer-modules/tree/main/KillerScripts',
+    functions: [
+      { cmd: 'Get-KillerScript' },
+      { cmd: 'Invoke-KillerScript' },
+      { cmd: 'Update-KillerScripts' },
+    ],
+    requirements: 'PowerShell 5.1 & 7 · Internet access to fetch the current script (cached copies run offline)',
+  },
 ];
 
 const copied = ref<string | null>(null);
