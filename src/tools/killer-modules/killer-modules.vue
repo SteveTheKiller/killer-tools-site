@@ -84,7 +84,7 @@ function openRepo(mod: KillerModule) {
             <span class="km-label">Commands</span>
             <div class="km-fns-list">
               <code v-for="fn in mod.functions" :key="fn.cmd" class="km-fn">
-                {{ fn.cmd }}<span v-if="fn.alias" class="km-fn-alias"> · {{ fn.alias }}</span>
+                {{ fn.cmd }}<template v-if="fn.alias"><span class="km-alias-tag">alias</span><span class="km-fn-alias">{{ fn.alias }}</span></template>
               </code>
             </div>
           </div>
@@ -208,7 +208,22 @@ html:not(.dark) .km-desc { color: rgba(0, 0, 0, 0.68); }
   white-space: nowrap;
 }
 
-.km-fn-alias { color: rgba(var(--kt-accent-rgb), 0.9); }
+.km-alias-tag {
+  margin-left: 8px;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.km-fn-alias {
+  margin-left: 5px;
+  color: rgba(var(--kt-accent-rgb), 0.95);
+  font-weight: 600;
+}
+
+html:not(.dark) .km-alias-tag { color: rgba(0, 0, 0, 0.45); }
 
 html:not(.dark) .km-fn {
   background: rgba(0, 0, 0, 0.04);
@@ -226,19 +241,20 @@ html:not(.dark) .km-req-text { color: rgba(0, 0, 0, 0.55); }
 
 .km-install {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   gap: 8px;
   padding: 12px 16px 16px;
 }
 
 .km-cmd {
-  flex: 1;
-  min-width: 0;
-  overflow-x: auto;
-  white-space: nowrap;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.74rem;
-  padding: 7px 10px;
+  line-height: 1.5;
+  padding: 8px 10px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -253,7 +269,7 @@ html:not(.dark) .km-cmd {
 
 .km-btn-copy {
   cursor: pointer;
-  flex-shrink: 0;
+  align-self: flex-end;
   border-radius: 4px;
   padding: 7px 10px;
   font-size: 0.75rem;
