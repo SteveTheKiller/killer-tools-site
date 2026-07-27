@@ -420,7 +420,7 @@ tools:
 
   killer-shell:
     title: KillerShell
-    description: Free shell for power users. A file browser, a terminal and a text editor share one window, one tab strip and one set of keys. Single portable Windows exe, no installer.
+    description: Free shell for power users. A file browser, a terminal and a text editor share one window, one tab strip and one set of keys.
 
   domain-lookup:
     title: Domain Lookup

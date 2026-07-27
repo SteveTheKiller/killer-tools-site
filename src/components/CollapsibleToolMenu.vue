@@ -28,12 +28,12 @@ const makeLabel = (tool: Tool) => () => {
   }
   return h(RouterLink, { to: tool.path }, { default: () => tool.name });
 };
+// Both branches go through MenuIconItem. The brand entries used to return a bare <img>,
+// which skipped the isNew dot that component draws - so a new Killer app was the one kind
+// of tool that could never show it.
 const makeIcon = (tool: Tool) => () => {
   const brand = APP_BRAND[tool.path];
-  if (brand) {
-    return h('img', { class: 'menu-app-icon', src: brand.icon, alt: '' });
-  }
-  return h(MenuIconItem, { tool });
+  return h(MenuIconItem, brand ? { tool, src: brand.icon } : { tool });
 };
 
 const collapsedCategories = useStorage<Record<string, boolean>>(
