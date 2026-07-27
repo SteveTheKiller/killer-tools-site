@@ -85,11 +85,26 @@ const metrics = JSON.parse(metricsBody);
 // Skip root "/" and "/about" — those aren't tool cards.
 const SKIP = new Set(['/', '/about']);
 
+// Renamed tools keep their history. Umami keys on the raw path, so a tool that changed URL
+// restarts from zero and sinks to the bottom of the sidebar, taking the whole UMAMI_DAYS
+// window to climb back to where it already was. The old path is folded into the new one.
+//
+// Both paths report during the overlap: the old one from visits still inside the look-back,
+// the new one from visits since the rename. So the counts are ADDED, not assigned - an
+// assignment would let whichever Umami returned last win and silently drop the other.
+//
+// Entries stay here once the window has passed. They cost one lookup, and they are the only
+// record of why a number is the size it is.
+const ALIAS = {
+  '/killer-find': '/killer-shell',   // renamed 2026-07-27, KillerFind became KillerShell
+};
+
 const popularity = {};
 for (const { x: path, y: views } of metrics) {
   if (SKIP.has(path)) { continue; }
   if (!path.startsWith('/')) { continue; }
-  popularity[path] = views;
+  const key = ALIAS[path] ?? path;
+  popularity[key] = (popularity[key] ?? 0) + views;
 }
 
 // Sort descending by views for readability
