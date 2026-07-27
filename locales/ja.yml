@@ -418,9 +418,9 @@ tools:
     title: GIF検索
     description: GiphyでリアクションGIFを検索します。結果をクリックするとURLをコピーします。
 
-  killer-find:
-    title: KillerFind
-    description: Windows用の高速ファイル検索です。任意のディレクトリを対象に、ファイル名のワイルドカードまたはファイル内容で検索します。結果はリアルタイムにストリーミング表示され、インデックス作成は不要です。
+  killer-shell:
+    title: KillerShell
+    description: パワーユーザーのための無料シェルです。ファイルブラウザー、ターミナル、テキストエディターが1つのウィンドウ、1本のタブ列、1組のキー操作を共有します。インストーラー不要の単一ポータブルWindows exeです。
 
   domain-lookup:
     title: ドメイン検索

@@ -85,12 +85,12 @@ useHead({
                 <span class="app-tag">Open-source PDF editor for Windows</span>
               </span>
             </a>
-            <a class="app-card" href="https://killerfind.net" target="_blank" rel="noopener">
-              <img class="app-icon" src="/brand/kf-icon.png" alt="KillerFind" width="46" height="46">
+            <a class="app-card" href="https://killershell.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/ksh-icon.png" alt="KillerShell" width="46" height="46">
               <span class="app-body">
-                <img class="app-wm wm-dark" src="/brand/killerfind-wordmark-dark.png" alt="KillerFind">
-                <img class="app-wm wm-light" src="/brand/killerfind-wordmark-light.png" alt="KillerFind">
-                <span class="app-tag">Open-source file search for Windows</span>
+                <img class="app-wm wm-dark" src="/brand/killershell-wordmark-dark.png" alt="KillerShell">
+                <img class="app-wm wm-light" src="/brand/killershell-wordmark-light.png" alt="KillerShell">
+                <span class="app-tag">Open-source Windows shell for power users</span>
               </span>
             </a>
             <a class="app-card" href="https://killernotes.net" target="_blank" rel="noopener">

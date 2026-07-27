@@ -12,7 +12,7 @@ const { selected } = toRefs(props);
 // Killer app entries carry their own brand icon + wordmark (same map as the sidebar)
 const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-pdf': { icon: '/brand/kp-icon.png', wm: 'killerpdf' },
-  '/killer-find': { icon: '/brand/kf-icon.png', wm: 'killerfind' },
+  '/killer-shell': { icon: '/brand/ksh-icon.png', wm: 'killershell' },
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
 };
 

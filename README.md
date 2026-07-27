@@ -40,7 +40,7 @@ Standalone executables for field work. No installer, no runtime, no dependencies
 |-----|-------------|
 | [KillerScan](https://KillerScan.net) | Fast network scanner. ARP and ping discovery, port probing, vendor lookup, and automatic device classification. |
 | [KillerPDF](https://KillerPDF.net) | Portable PDF editor. View, annotate, OCR, merge, split, flatten, sign, and open password-protected files. |
-| [KillerFind](https://KillerFind.net) | Fast file search for Windows. Search by filename, wildcard, or file content across any directory. |
+| [KillerShell](https://KillerShell.net) | Free shell for power users. A file browser, a terminal and a text editor in one window, one tab strip and one set of keys. |
 | [KillerNotes](https://KillerNotes.net) | Encrypted notepad for techs. Rich notes with inline images and tables, instant full-text search, tags and nested groups, and optional password protection for the whole database. |
 
 ---

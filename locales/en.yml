@@ -418,9 +418,9 @@ tools:
     title: GIF Search
     description: Search Giphy for reaction GIFs. Click any result to copy the URL.
 
-  killer-find:
-    title: KillerFind
-    description: Fast file search for Windows. Search by filename wildcard or file content across any directory. Streams results in real time, no indexing required.
+  killer-shell:
+    title: KillerShell
+    description: Free shell for power users. A file browser, a terminal and a text editor share one window, one tab strip and one set of keys. Single portable Windows exe, no installer.
 
   domain-lookup:
     title: Domain Lookup

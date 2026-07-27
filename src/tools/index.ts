@@ -39,12 +39,12 @@ import { tool as jsonToCsv } from './json-to-csv';
 import { tool as jsonViewer } from './json-viewer';
 import { tool as jwtParser } from './jwt-parser';
 import { tool as keycodeInfo } from './keycode-info';
-import { tool as killerFind } from './killer-find';
 import { tool as killerModules } from './killer-modules';
 import { tool as killerNotes } from './killer-notes';
 import { tool as killerPdf } from './killer-pdf';
 import { tool as killerScan } from './killer-scan';
 import { tool as killerScripts } from './killer-scripts';
+import { tool as killerShell } from './killer-shell';
 import { tool as loremIpsumGenerator } from './lorem-ipsum-generator';
 import { tool as m365SkuDecoder } from './m365-sku-decoder';
 import { tool as macAddressLookup } from './mac-address-lookup';
@@ -98,7 +98,7 @@ export const toolsByCategory: ToolCategory[] = [
       windowsErrorCodes,
       windowsEventLookup,
       killerPdf,
-      killerFind,
+      killerShell,
       killerNotes,
     ],
   },
