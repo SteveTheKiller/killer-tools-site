@@ -16,6 +16,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-shell': { icon: '/brand/ksh-icon.png', wm: 'killershell' },
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
   '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
+  '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
 };
 
 const makeLabel = (tool: Tool) => () => {
@@ -208,7 +209,9 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
       display: block;
     }
     ::v-deep(.wm-menu) {
-      height: 15px;
+      /* 18, not 15 - the shared-window wordmarks are taller for the same text size.
+         See Killer Branding/make-card-wordmarks.py. */
+      height: 18px;
       width: auto;
       display: block;
     }

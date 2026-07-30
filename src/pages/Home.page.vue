@@ -61,7 +61,12 @@ const sortMode = ref<SortMode>('popular');
 
 const popularityMap = popularity as Record<string, number>;
 
-function pageviews(path: string): number {
+// NOT raw pageviews any more, despite the file name: scripts/update-popularity.mjs normalises
+// each tool by how long its page has actually existed, scaled back to a full-window equivalent.
+// Ranking on raw window totals buried anything added mid-window - KillerNotes was drawing the
+// same daily traffic as KillerScan while sitting 74 places below it, purely because its page
+// was 12 days old against a 90-day look-back.
+function popularityScore(path: string): number {
   return popularityMap[path] ?? 0;
 }
 
@@ -73,9 +78,9 @@ const sortedTools = computed(() => {
   if (sortMode.value === 'za') {
     return all.sort((a, b) => b.name.localeCompare(a.name));
   }
-  // popular — sort by pageviews desc, then alpha for ties
+  // popular — sort by popularity score desc, then alpha for ties
   return all.sort((a, b) => {
-    const diff = pageviews(b.path) - pageviews(a.path);
+    const diff = popularityScore(b.path) - popularityScore(a.path);
     return diff !== 0 ? diff : a.name.localeCompare(b.name);
   });
 });
