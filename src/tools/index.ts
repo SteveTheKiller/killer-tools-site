@@ -40,6 +40,7 @@ import { tool as jsonViewer } from './json-viewer';
 import { tool as jwtParser } from './jwt-parser';
 import { tool as keycodeInfo } from './keycode-info';
 import { tool as killerModules } from './killer-modules';
+import { tool as killendar } from './killendar';
 import { tool as killerNotes } from './killer-notes';
 import { tool as killerPdf } from './killer-pdf';
 import { tool as killerScan } from './killer-scan';
@@ -100,6 +101,7 @@ export const toolsByCategory: ToolCategory[] = [
       killerPdf,
       killerShell,
       killerNotes,
+      killendar,
     ],
   },
   {

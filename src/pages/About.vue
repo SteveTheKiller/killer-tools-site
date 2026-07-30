@@ -26,6 +26,11 @@ useHead({
     <!-- Row 1: terminal left, killer apps right -->
     <div class="about-main">
 
+      <!-- Left column. A wrapper, not a bare card: the About card and the "Missing a tool"
+           card both live here, and .about-main is a two-column grid - a third direct child
+           would be laid out as a grid cell of its own and break the columns. -->
+      <div class="about-left">
+
       <!-- Grunge card (family standard): dark grained surface, rounded, replaces the old terminal chrome -->
       <div class="g-card">
         <div class="terminal-body">
@@ -62,6 +67,19 @@ useHead({
           </p>
         </div>
       </div>
+
+      <!-- Under the About card, not under Also try: the right column is the taller of the two,
+           so hanging this off the left one evens the heights. -->
+      <div class="about-footer g-card">
+        <h2 class="also-heading killer-font">Missing a tool? Found a bug?</h2>
+        <p>
+          Open a feature request or bug report in the
+          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">issues section</a>
+          on GitHub. I read them.
+        </p>
+      </div>
+
+      </div><!-- /.about-left -->
 
       <div class="killer-apps">
         <!-- Same cross-promo card as the app landing pages: "Also try..." in the
@@ -101,18 +119,17 @@ useHead({
                 <span class="app-tag">Open-source encrypted notepad for Windows</span>
               </span>
             </a>
+            <a class="app-card" href="https://killendar.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/kd-icon.png" alt="The Killendar" width="46" height="46">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killendar-wordmark-dark.png" alt="The Killendar">
+                <img class="app-wm wm-light" src="/brand/killendar-wordmark-light.png" alt="The Killendar">
+                <span class="app-tag">Open-source encrypted calendar for Windows</span>
+              </span>
+            </a>
           </div>
         </div>
 
-        <!-- Missing a tool: same column, under the Also try card -->
-        <div class="about-footer g-card">
-          <h2 class="also-heading killer-font">Missing a tool? Found a bug?</h2>
-          <p>
-            Open a feature request or bug report in the
-            <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">issues section</a>
-            on GitHub. I read them.
-          </p>
-        </div>
       </div>
 
     </div>
@@ -303,7 +320,9 @@ a:hover { color: var(--kt-accent-2); text-decoration: underline; }
 .app-icon { width: 46px; height: 46px; border-radius: 9px; flex-shrink: 0; }
 .app-body { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; min-width: 0; }
 /* Family standard wordmark height (30px), dark/light swap follows the site theme */
-.app-wm { height: 30px; width: auto; display: block; max-width: 100%; object-fit: contain; object-position: left center; }
+/* 37, not 30: the shared-window wordmarks (make-card-wordmarks.py) carry more vertical
+   padding than the old ink-cropped ones, so the height scales by the same 22/18 the cards use. */
+.app-wm { height: 37px; width: auto; display: block; max-width: 100%; object-fit: contain; object-position: left center; }
 .app-wm.wm-light { display: none; }
 html:not(.dark) .app-wm.wm-dark { display: none; }
 html:not(.dark) .app-wm.wm-light { display: block; }

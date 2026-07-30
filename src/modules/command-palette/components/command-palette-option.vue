@@ -14,6 +14,10 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-pdf': { icon: '/brand/kp-icon.png', wm: 'killerpdf' },
   '/killer-shell': { icon: '/brand/ksh-icon.png', wm: 'killershell' },
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
+  // killer-notes was missing here while present in the other three maps, so KillerNotes showed
+  // a generic icon in the palette only. Added 2026-07-30 alongside killendar.
+  '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
+  '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
 };
 
 const brand = computed(() => (option.value.to ? APP_BRAND[option.value.to] : undefined));
@@ -72,7 +76,9 @@ const brand = computed(() => (option.value.to ? APP_BRAND[option.value.to] : und
 
 /* Brand wordmarks sized to sit like the option title, dark/light swap */
 .cp-wm {
-  height: 17px;
+  /* 21, not 17 - the shared-window wordmarks are taller for the same text size.
+     See Killer Branding/make-card-wordmarks.py. */
+  height: 21px;
   width: auto;
   display: block;
   margin-bottom: 3px;
