@@ -42,6 +42,7 @@ Standalone executables for field work. No installer, no runtime, no dependencies
 | [KillerPDF](https://KillerPDF.net) | Portable PDF editor. View, annotate, OCR, merge, split, flatten, sign, and open password-protected files. |
 | [KillerShell](https://KillerShell.net) | Free shell for power users. A file browser, a terminal and a text editor in one window, one tab strip and one set of keys. |
 | [KillerNotes](https://KillerNotes.net) | Encrypted notepad for techs. Rich notes with inline images and tables, instant full-text search, tags and nested groups, and optional password protection for the whole database. |
+| [The Killendar](https://Killendar.net) | Encrypted desktop calendar. Month, week, day and agenda views, colour categories, iCalendar import and export, and appointments that stay in one file on your own machine. |
 
 ---
 

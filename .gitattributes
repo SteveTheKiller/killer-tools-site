@@ -1,0 +1,30 @@
+# ── Generated data ───────────────────────────────────────────────────────────
+#
+# src/data/tool-popularity.json is written by a bot, not by hand:
+# .github/workflows/update-popularity.yml runs scripts/update-popularity.mjs on a
+# daily cron, commits the result and pushes to main. So the remote copy is always
+# fresher than anything local, and a local edit to it is guaranteed to collide the
+# next time you pull.
+#
+# take-remote resolves that automatically by keeping the incoming version. That is
+# always the right answer here: the file is derived from Umami, so nothing in it is
+# authored - if the numbers are wrong the fix is in the SCRIPT, and the next cron
+# run regenerates the data anyway.
+#
+# ONE-TIME SETUP, per clone (git will not run a custom driver without it):
+#
+#     git config merge.take-remote.name "keep the incoming copy of a generated file"
+#     git config merge.take-remote.driver "cp -f %B %A"
+#
+# On Windows without a cp on PATH, use:
+#
+#     git config merge.take-remote.driver "copy /Y %B %A"
+#
+# Without that config git falls back to a normal merge and just asks you to resolve,
+# which is the behaviour you have today - so this is safe to commit either way.
+src/data/tool-popularity.json merge=take-remote
+
+# ── Line endings ─────────────────────────────────────────────────────────────
+# Normalise text in the repo, check out native. Keeps a Windows clone from turning
+# every file into a whitespace diff for anyone on another platform.
+* text=auto
