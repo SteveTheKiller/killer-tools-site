@@ -5,7 +5,7 @@ import { defineStore } from 'pinia';
 import { computed, nextTick, watch, watchEffect } from 'vue';
 import { accentTriple } from '@/themes';
 
-const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic'];
+const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic', 'ectoplasm', 'decay', 'malaise', 'sepulchre', 'delirium', 'mourning'];
 const VALID_ACCENTS: (KtAccentKey | '')[] = ['', 'red', 'orange', 'green', 'teal', 'blue', 'purple'];
 
 export const useStyleStore = defineStore('style', {

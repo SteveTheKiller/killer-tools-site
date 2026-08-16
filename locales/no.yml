@@ -71,6 +71,7 @@ tools:
     text: Tekst
     data: Data
     windows: Windows
+    killer apps: 'Killer Apps'
 
   password-strength-analyser:
     title: Analyseverktøy for passordstyrke

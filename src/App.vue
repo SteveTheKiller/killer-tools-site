@@ -99,6 +99,15 @@ html[data-kt-theme='light']    { --kt-bg: #b8b8b8; --kt-chrome: #c8c8c8; --kt-ch
 html[data-kt-theme='blood']    { --kt-bg: #4a1f20; --kt-chrome: #1e0a0b; --kt-chrome-border: #3a1a1d; --kt-panel: #321416; --kt-modal: #1e0a0b; --kt-accent: #f8c99e; --kt-accent-2: #fffde8; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 248, 201, 158; --kt-rail-text: #b09e9c; --kt-grain-img: url('/grain-a34.png'); }
 html[data-kt-theme='greed']    { --kt-bg: #0a5234; --kt-chrome: #001e13; --kt-chrome-border: #07371f; --kt-panel: #003824; --kt-modal: #001e13; --kt-accent: #e0d49a; --kt-accent-2: #fffde8; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 224, 212, 154; --kt-rail-text: #a6a99a; --kt-grain-img: url('/grain-a32.png'); }
 html[data-kt-theme='cyanotic'] { --kt-bg: #0a4a6e; --kt-chrome: #001a28; --kt-chrome-border: #093250; --kt-panel: #002e48; --kt-modal: #001624; --kt-accent: #e0d49a; --kt-accent-2: #fffde8; --kt-accent-sel: rgba(255, 255, 255, 0.27); --kt-accent-rgb: 224, 212, 154; --kt-rail-text: #9ba3ac; --kt-grain-img: url('/grain-a32.png'); }
+/* Grunge themes (landing-page kp.css palettes): unlike blood/greed/cyanotic they
+   carry a real accent of their own, so accent-2 is the pressed shade like the
+   neutral rows, not a cream text tone */
+html[data-kt-theme='ectoplasm'] { --kt-bg: #293c3f; --kt-chrome: #314548; --kt-chrome-bg: linear-gradient(90deg, #5e1764 0%, #25232b 100%); --kt-chrome-border: #096366; --kt-panel: #293c3f; --kt-modal: #383838; --kt-accent: #ead900; --kt-accent-2: #BBAE00; --kt-accent-sel: rgba(234, 217, 0, 0.42); --kt-accent-rgb: 234, 217, 0; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='decay']     { --kt-bg: #403f3b; --kt-chrome: #514e48; --kt-chrome-bg: linear-gradient(90deg, #3b3f46 0%, #50564b 100%); --kt-chrome-border: #5c554c; --kt-panel: #403f3b; --kt-modal: #3b3f46; --kt-accent: #b8aa7c; --kt-accent-2: #938863; --kt-accent-sel: #8a8a78; --kt-accent-rgb: 184, 170, 124; --kt-rail-text: #b5ad9e; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='malaise']   { --kt-bg: #343b3d; --kt-chrome: #3f4947; --kt-chrome-bg: linear-gradient(90deg, #563343 0%, #365b58 100%); --kt-chrome-border: #394742; --kt-panel: #343b3d; --kt-modal: #262b2d; --kt-accent: #ff6f91; --kt-accent-2: #CC5974; --kt-accent-sel: rgba(255, 111, 145, 0.42); --kt-accent-rgb: 255, 111, 145; --kt-rail-text: #b6ad9e; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='sepulchre'] { --kt-bg: #3a352f; --kt-chrome: #454039; --kt-chrome-bg: linear-gradient(90deg, #25282b 0%, #2c5458 100%); --kt-chrome-border: #4d3d2b; --kt-panel: #3a352f; --kt-modal: #242729; --kt-accent: #4faaa8; --kt-accent-2: #3F8886; --kt-accent-sel: rgba(79, 170, 168, 0.42); --kt-accent-rgb: 79, 170, 168; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='delirium']  { --kt-bg: #343344; --kt-chrome: #3e3c50; --kt-chrome-bg: linear-gradient(90deg, #641d25 0%, #2f2853 100%); --kt-chrome-border: #5c527d; --kt-panel: #343344; --kt-modal: #24212b; --kt-accent: #dd8500; --kt-accent-2: #B16A00; --kt-accent-sel: #cf1020; --kt-accent-rgb: 221, 133, 0; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a32.png'); }
+html[data-kt-theme='mourning']  { --kt-bg: #554c5d; --kt-chrome: #3b3642; --kt-chrome-border: #756b79; --kt-panel: #554c5d; --kt-modal: #4f413f; --kt-accent: #ff6f91; --kt-accent-2: #CC5974; --kt-accent-sel: rgba(255, 111, 145, 0.42); --kt-accent-rgb: 255, 111, 145; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a32.png'); }
 
 /* Grain boost overlay removed — n-layout already carries grain background.
    The overlay was at z-index 99999 and rendered over n-select input boxes,
@@ -156,10 +165,14 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
   background-color: var(--kt-panel, #141414) !important;
 }
 
-/* ── Sidebar: chrome tone + family grain at the app's per-theme opacity ── */
+/* ── Sidebar: chrome tone + family grain at the app's per-theme opacity.
+   Grain layer first, then --kt-chrome-bg: a solid on most themes, a gradient
+   on the grunge ones - painted fixed at viewport size so every chrome rail
+   shows the same aligned gradient (landing-page --chrome-bg mechanism) ── */
 #kt-sider {
-  background: var(--kt-chrome, #000000) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
-  background-size: 256px 256px !important;
+  background: var(--kt-grain-img, url('/grain-a12.png')) repeat, var(--kt-chrome-bg, var(--kt-chrome, #000000)) !important;
+  background-size: 256px 256px, 100vw 100vh !important;
+  background-attachment: scroll, fixed !important;
   /* Run full height so the sider owns the bottom-left corner; the statusbar is
      offset right (MenuLayout) so the footer never sits under the sidebar. */
   height: 100vh !important;
@@ -857,10 +870,13 @@ a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/l
   position: relative;
 }
 
-/* First category tucks up under the logo (-12px, above the baseline) so the
-   leading gap below the wordmark is tight but not cramped. */
+/* First category header (Killer Apps): a little air below the logo block.
+   Was -12px, tucked up under the wordmark's trailing space; with the Killer
+   Apps section leading the list it needs to breathe instead. This rule is
+   !important and wins over anything in CollapsibleToolMenu - change the gap
+   HERE, nowhere else. */
 .sider-content > div:first-of-type > div:first-child {
-  margin-top: -12px !important;
+  margin-top: -1px !important;
 }
 /* Remaining category headers keep their normal separation. */
 .sider-content > div:not(:first-of-type) > div:first-child {
@@ -925,8 +941,9 @@ html.dark .n-layout-scroll-container {
    lighter pane color into the 8px gutter around the rounded pane ── */
 html.dark .n-layout.content-col,
 html:not(.dark) .n-layout.content-col {
-  background: var(--kt-chrome, #000000) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
-  background-size: 256px 256px !important;
+  background: var(--kt-grain-img, url('/grain-a12.png')) repeat, var(--kt-chrome-bg, var(--kt-chrome, #000000)) !important;
+  background-size: 256px 256px, 100vw 100vh !important;
+  background-attachment: scroll, fixed !important;
 }
 
 /* --- code output wrap --- */
@@ -1036,10 +1053,9 @@ html:not(.dark) .grid-wrapper a:hover .c-card {
 }
 
 html.dark .n-layout-sider {
-  background-color: var(--kt-chrome, #000000) !important;
-  background-image: var(--kt-grain-img, url('/grain-a12.png')) !important;
-  background-repeat: repeat !important;
-  background-size: 256px 256px !important;
+  background: var(--kt-grain-img, url('/grain-a12.png')) repeat, var(--kt-chrome-bg, var(--kt-chrome, #000000)) !important;
+  background-size: 256px 256px, 100vw 100vh !important;
+  background-attachment: scroll, fixed !important;
 }
 
 html.dark .sider-content { background-color: transparent !important; }

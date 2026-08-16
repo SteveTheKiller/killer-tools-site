@@ -71,6 +71,7 @@ tools:
     text: Văn bản
     data: Dữ liệu
     windows: Windows
+    killer apps: 'Killer Apps'
 
   password-strength-analyser:
     title: Bộ phân tích độ mạnh mật khẩu

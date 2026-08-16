@@ -71,6 +71,7 @@ tools:
     text: '文本'
     data: '数据'
     windows: Windows
+    killer apps: 'Killer Apps'
 
   password-strength-analyser:
     title: 密码强度分析仪

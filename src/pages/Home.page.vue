@@ -136,7 +136,11 @@ const sortedTools = computed(() => {
       </div>
 
       <!-- All tools with sort controls -->
-      <div class="home-all-tools-row" style="display: flex; align-items: center; gap: 12px;">
+      <div
+        class="home-all-tools-row"
+        :class="{ 'home-all-tools-leading': !config.showBanner && toolStore.favoriteTools.length === 0 && toolStore.newTools.length === 0 }"
+        style="display: flex; align-items: center; gap: 12px;"
+      >
         <h3 class="home-all-tools" style="margin: 0;">
           {{ $t('home.categories.allTools') }}
         </h3>
@@ -190,6 +194,14 @@ const sortedTools = computed(() => {
 .home-all-tools-row {
   margin-top: 25px;
   margin-bottom: 10px;
+}
+
+/* Nothing rendered above it (no banner, favorites, or Newest strip): the row
+   leads the page, so the section gap collapses and the scroll container's own
+   padding is the air. Class-bound in the template - :first-child cannot work
+   here, because the banner's grid div renders (empty) even with the banner off. */
+.home-all-tools-row.home-all-tools-leading {
+  margin-top: 0;
 }
 
 .home-all-tools {

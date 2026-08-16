@@ -77,7 +77,12 @@ function popEgg() {
 
 <style lang="less" scoped>
 .n-layout-sider {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* The FULL property list naive-ui animates, not transform alone: a scoped
+     transition shorthand REPLACES naive's own (min/max-width included), so a
+     transform-only list made the width snap open/closed instantly and the only
+     thing left animating was the content pane's 2px->8px margin - the "snaps,
+     then drifts about 8px" collapse (2026-08-16). */
+  transition: min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0 !important;
 }
 
@@ -221,9 +226,12 @@ html:not(.dark) .content {
   }
   /* IDENTICAL background construction to #kt-sider so the rails and the
      sidebar always blend - one chrome, one pre-dimmed grain tile. No border:
-     the frame line lives on the content pane, not between chrome pieces. */
-  background: var(--kt-chrome, #000000) var(--kt-grain-img, url('/grain-a12.png')) repeat;
-  background-size: 256px 256px;
+     the frame line lives on the content pane, not between chrome pieces.
+     --kt-chrome-bg is a gradient on the grunge themes, painted fixed at
+     viewport size so all the rails show one aligned gradient. */
+  background: var(--kt-grain-img, url('/grain-a12.png')) repeat, var(--kt-chrome-bg, var(--kt-chrome, #000000));
+  background-size: 256px 256px, 100vw 100vh;
+  background-attachment: scroll, fixed;
   position: relative;
   flex-shrink: 0;
   > * {
@@ -263,8 +271,9 @@ html:not(.dark) .content {
   /* Only the version + copyright remain, held to the far right */
   justify-content: flex-end;
   padding: 0 16px;
-  background: var(--kt-chrome, #000000) var(--kt-grain-img, url('/grain-a12.png')) repeat;
-  background-size: 256px 256px;
+  background: var(--kt-grain-img, url('/grain-a12.png')) repeat, var(--kt-chrome-bg, var(--kt-chrome, #000000));
+  background-size: 256px 256px, 100vw 100vh;
+  background-attachment: scroll, fixed;
   position: relative;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: Consolas, monospace;

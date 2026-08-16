@@ -65,6 +65,7 @@ tools:
     text: Text
     data: Data
     windows: Windows
+    killer apps: 'Killer Apps'
     photography: Photography
 
   password-strength-analyser:

@@ -50,15 +50,19 @@ const collapsedCategories = useStorage<Record<string, boolean>>(
   },
 );
 
+// First visit: every category collapsed except these two. A visitor's own
+// opens/closes are stored per category and win from then on.
+const DEFAULT_OPEN = ['Windows', 'Network'];
+
 function toggleCategoryCollapse({ name }: { name: string }) {
-  const current = collapsedCategories.value[name] === undefined ? name !== 'Killer Scripts' : collapsedCategories.value[name];
+  const current = collapsedCategories.value[name] === undefined ? !DEFAULT_OPEN.includes(name) : collapsedCategories.value[name];
   collapsedCategories.value[name] = !current;
 }
 
 const menuOptions = computed(() =>
   toolsByCategory.value.map(({ name, components }) => ({
     name,
-    isCollapsed: collapsedCategories.value[name] === undefined ? name !== 'Killer Scripts' : collapsedCategories.value[name],
+    isCollapsed: collapsedCategories.value[name] === undefined ? !DEFAULT_OPEN.includes(name) : collapsedCategories.value[name],
     tools: components.map(tool => ({
       label: makeLabel(tool),
       icon: makeIcon(tool),
@@ -78,7 +82,7 @@ function onMenuSelect() {
 </script>
 
 <template>
-  <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name">
+  <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name" class="cat-block">
     <div v-if="tools.length > 1" class="cat-header" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
       <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
         <icon-mdi-chevron-right />
@@ -130,6 +134,9 @@ function onMenuSelect() {
     opacity: 0.5;
   }
 }
+/* NOTE: the first/other category-header top margins are owned by App.vue
+   (".sider-content > div..." rules, !important) - adjust them THERE. A rule
+   here loses to them silently. */
 /* Category headers: family section-header voice (small caps, spaced), accent on hover */
 .cat-header {
   transition: opacity 0.15s ease;

@@ -88,6 +88,18 @@ import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
   {
+    // The five desktop apps, grouped at the top of the sidebar rather than
+    // scattered through Windows/Network.
+    name: 'Killer Apps',
+    components: [
+      killerPdf,
+      killerShell,
+      killerNotes,
+      killendar,
+      killerScan,
+    ],
+  },
+  {
     name: 'Windows',
     components: [
       killerScripts,
@@ -98,16 +110,11 @@ export const toolsByCategory: ToolCategory[] = [
       powershellBuilder,
       windowsErrorCodes,
       windowsEventLookup,
-      killerPdf,
-      killerShell,
-      killerNotes,
-      killendar,
     ],
   },
   {
     name: 'Network',
     components: [
-      killerScan,
       cveLookup,
       domainLookup,
       emailHeaderParser,

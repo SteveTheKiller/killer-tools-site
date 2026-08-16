@@ -92,6 +92,7 @@ tools:
     text: Text
     data: Daten
     windows: Windows
+    killer apps: 'Killer Apps'
   password-strength-analyser:
     title: Passwortstärken-Analysator
     description: >-
