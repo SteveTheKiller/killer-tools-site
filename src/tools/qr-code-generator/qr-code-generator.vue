@@ -411,7 +411,7 @@ const caption = computed(() => {
   padding: 0 12px;
   border: none;
   /* Muted family stripe at rest (accent-sel), full accent when active */
-  border-top: 2px solid var(--kt-accent-sel, rgba(var(--kt-accent-rgb), 0.35));
+  border-top: 2px solid var(--kt-tab-edge, var(--kt-accent-sel, rgba(var(--kt-accent-rgb), 0.35)));
   border-bottom: 2px solid transparent;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   background: transparent;

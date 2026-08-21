@@ -446,8 +446,9 @@ html .kt-terminal[class] {
   right: 0;
   height: 2px;
   /* Tab-stripe rule: the MUTED SelectionBg accent at rest, brightening to
-     the full accent on hover (see the KillerPDF tab outlines) */
-  background: var(--kt-accent-sel, var(--kt-accent));
+     the full accent on hover (see the KillerPDF tab outlines). Themes with a
+     dedicated landing --tab-edge (Malaise mint #a0ffe6) set --kt-tab-edge. */
+  background: var(--kt-tab-edge, var(--kt-accent-sel, var(--kt-accent)));
   transition: background 0.15s ease;
   pointer-events: none;
   z-index: 1;

@@ -283,8 +283,10 @@ html:not(.dark) .km-cmd {
   font-size: 0.75rem;
   font-weight: 600;
   background: transparent;
-  color: var(--kt-accent);
-  border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
+  /* Outline buttons take OutlineBtnBrush where the theme defines one
+     (Malaise: peach #ffb199); solid buttons stay on the primary */
+  color: var(--kt-outline-btn, var(--kt-accent));
+  border: 1px solid rgba(var(--kt-outline-btn-rgb, var(--kt-accent-rgb)), 0.5);
   transition: background 0.12s, border-color 0.12s;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
@@ -297,8 +299,8 @@ html:not(.dark) .km-cmd {
 .km-btn-copy.is-copied .km-lbl-done { visibility: visible; }
 
 .km-btn-copy:hover {
-  background: rgba(var(--kt-accent-rgb), 0.12);
-  border-color: var(--kt-accent);
+  background: rgba(var(--kt-outline-btn-rgb, var(--kt-accent-rgb)), 0.12);
+  border-color: var(--kt-outline-btn, var(--kt-accent));
 }
 
 .km-btn-repo {

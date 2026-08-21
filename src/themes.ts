@@ -81,6 +81,9 @@ interface DarkPalette {
   tableTd: string
   tableTh: string
   notif: string
+  /* App InputHoverBrush: full-strength hover border on inputs/selects
+     (Malaise sand #c2b280). Falls back to accent at 45% alpha. */
+  inputHover?: string
   accent: [number, number, number]
   accentHex: string
   accentHover: string
@@ -125,7 +128,7 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
           color: p.input,
           colorActive: p.input,
           border: `1px solid ${a(p.accent, 0.22)}`,
-          borderHover: `1px solid ${a(p.accent, 0.45)}`,
+          borderHover: `1px solid ${p.inputHover ?? a(p.accent, 0.45)}`,
           borderActive: `1px solid ${a(p.accent, 0.65)}`,
           borderFocus: `1px solid ${a(p.accent, 0.65)}`,
           textColor: text,
@@ -197,7 +200,7 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
       color: p.input,
       colorFocus: p.input,
       border: `1px solid ${a(p.accent, 0.22)}`,
-      borderHover: `1px solid ${a(p.accent, 0.45)}`,
+      borderHover: `1px solid ${p.inputHover ?? a(p.accent, 0.45)}`,
       borderFocus: `1px solid ${a(p.accent, 0.65)}`,
       textColor: text,
       textColorDisabled: 'rgba(255, 255, 255, 0.3)',
@@ -288,7 +291,7 @@ const SURFACES: Record<Exclude<KtThemeKey, 'light'>, Omit<DarkPalette, 'accent' 
   // that accent rather than a warm cream.
   ectoplasm: { bg: '#293c3f', chrome: '#314548', chromeBorder: '#096366', panel: '#293c3f', panelBorder: '#096366', input: '#223335', popup: '#383838', tableTd: '#293c3f', tableTh: '#096366', notif: '#383838', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ead900' },
   decay: { bg: '#403f3b', chrome: '#514e48', chromeBorder: '#5c554c', panel: '#403f3b', panelBorder: '#5c554c', input: '#35342f', popup: '#3b3f46', tableTd: '#403f3b', tableTh: '#5c554c', notif: '#3b3f46', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#b8aa7c' },
-  malaise: { bg: '#343b3d', chrome: '#3f4947', chromeBorder: '#394742', panel: '#343b3d', panelBorder: '#394742', input: '#2b3133', popup: '#262b2d', tableTd: '#343b3d', tableTh: '#394742', notif: '#262b2d', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#ff6f91' },
+  malaise: { bg: '#343b3d', chrome: '#3f4947', chromeBorder: '#394742', panel: '#343b3d', panelBorder: '#394742', input: '#2b3133', popup: '#262b2d', tableTd: '#343b3d', tableTh: '#394742', notif: '#262b2d', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#ff6f91', inputHover: '#c2b280' },
   sepulchre: { bg: '#3a352f', chrome: '#454039', chromeBorder: '#4d3d2b', panel: '#3a352f', panelBorder: '#4d3d2b', input: '#302c26', popup: '#242729', tableTd: '#3a352f', tableTh: '#4d3d2b', notif: '#242729', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#4faaa8' },
   delirium: { bg: '#343344', chrome: '#3e3c50', chromeBorder: '#5c527d', panel: '#343344', panelBorder: '#5c527d', input: '#2b2a38', popup: '#24212b', tableTd: '#343344', tableTh: '#5c527d', notif: '#24212b', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#dd8500' },
   mourning: { bg: '#554c5d', chrome: '#3b3642', chromeBorder: '#756b79', panel: '#554c5d', panelBorder: '#756b79', input: '#463f4d', popup: '#4f413f', tableTd: '#554c5d', tableTh: '#756b79', notif: '#4f413f', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ff6f91' },
@@ -301,12 +304,13 @@ const FIXED_ACCENTS: Partial<Record<KtThemeKey, AccentTriple>> = {
   blood: { base: '#1ea54c', hover: '#2EBD5E', pressed: '#178A3F', sel: 'rgba(255, 255, 255, 0.27)', rgb: [30, 165, 76] },
   greed: { base: '#e6b800', hover: '#F2CA1F', pressed: '#C19B00', sel: 'rgba(255, 255, 255, 0.27)', rgb: [230, 184, 0] },
   cyanotic: { base: '#1ea54c', hover: '#2EBD5E', pressed: '#178A3F', sel: 'rgba(255, 255, 255, 0.27)', rgb: [30, 165, 76] },
-  // Grunge themes: base = the theme's own accent; sel = the landing tab-edge
-  // (malaise's landing mint #a0ffe6 is skipped - white selection text needs a
-  // fill with contrast, so it takes the accent-derived wash like mourning's).
+  // Grunge themes: base = the theme's own accent; sel = the landing tab-edge.
+  // Malaise follows the app three-color model: pink primary (app trio
+  // #ff6f91/#ff86a2/#e85e80), teal SelectionBg #365b58 for selection fills,
+  // sand InputHoverBrush #c2b280 (SURFACES), mint tab edge in App.vue.
   ectoplasm: { base: '#ead900', hover: '#EEE02E', pressed: '#BBAE00', sel: 'rgba(234, 217, 0, 0.42)', rgb: [234, 217, 0] },
   decay: { base: '#b8aa7c', hover: '#C5B994', pressed: '#938863', sel: '#8a8a78', rgb: [184, 170, 124] },
-  malaise: { base: '#ff6f91', hover: '#FF89A5', pressed: '#CC5974', sel: 'rgba(255, 111, 145, 0.42)', rgb: [255, 111, 145] },
+  malaise: { base: '#ff6f91', hover: '#ff86a2', pressed: '#e85e80', sel: '#365b58', rgb: [255, 111, 145] },
   sepulchre: { base: '#4faaa8', hover: '#6FB9B8', pressed: '#3F8886', sel: 'rgba(79, 170, 168, 0.42)', rgb: [79, 170, 168] },
   delirium: { base: '#dd8500', hover: '#E39B2E', pressed: '#B16A00', sel: '#cf1020', rgb: [221, 133, 0] },
   mourning: { base: '#ff6f91', hover: '#FF89A5', pressed: '#CC5974', sel: 'rgba(255, 111, 145, 0.42)', rgb: [255, 111, 145] },

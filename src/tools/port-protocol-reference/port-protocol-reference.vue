@@ -302,7 +302,7 @@ html:not(.dark) .ppr-port {
 .ppr-service {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--kt-accent);
+  color: var(--kt-heading, var(--kt-accent));
   line-height: 1.3;
 }
 

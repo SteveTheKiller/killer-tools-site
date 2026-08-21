@@ -73,13 +73,18 @@ function copyValue(value: string) {
           :key="stringId"
           class="kt-terminal sku-card"
         >
-          <div class="kt-terminal-bar sku-bar">
+          <!-- Tooltip anchors on the header bar like every other lookup page:
+               on the body it renders below the card and gets clipped by the
+               card's overflow: hidden -->
+          <div
+            class="kt-terminal-bar sku-bar"
+            :title="copiedId === stringId ? 'Copied!' : 'Click to copy string ID'"
+          >
             <span class="sku-tier" :class="`sku-tier-${tierColor[tier]}`">{{ tier }}</span>
           </div>
           <div
             class="sku-body"
             :class="{ 'sku-body-copied': copiedId === stringId }"
-            :title="copiedId === stringId ? 'Copied!' : 'Click to copy string ID'"
             @click="copyValue(stringId)"
           >
             <div class="sku-name">
