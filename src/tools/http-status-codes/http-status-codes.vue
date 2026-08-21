@@ -147,7 +147,7 @@ function copyValue(value: string) {
 .hsc-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--kt-accent);
+  color: var(--kt-heading, var(--kt-accent));
   line-height: 1.3;
 }
 

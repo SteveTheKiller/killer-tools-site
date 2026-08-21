@@ -175,7 +175,7 @@ html:not(.dark) .wec-hex {
 .wec-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--kt-accent);
+  color: var(--kt-heading, var(--kt-accent));
   line-height: 1.3;
   word-break: break-word;
 }

@@ -165,7 +165,7 @@ html:not(.dark) .gpr-category {
 .gpr-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--kt-accent);
+  color: var(--kt-heading, var(--kt-accent));
 }
 
 .gpr-severity {
