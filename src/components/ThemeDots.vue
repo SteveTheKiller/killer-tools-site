@@ -32,6 +32,14 @@ function accentColor(name: KtAccentKey) {
   return ktAccents[accentFamily.value][name];
 }
 
+function themeDotAccent(theme: typeof ktThemes[number]) {
+  if (!NEUTRAL_THEMES.includes(theme.key)) {
+    return theme.swatchAccent;
+  }
+  const family = theme.key === 'light' ? 'light' : theme.key === 'black' ? 'black' : 'dark';
+  return ktAccents[family][effectiveAccent.value];
+}
+
 // ── Accent popup (KillerScan style): opened from a single trigger circle.
 //    Docks to the top rail (KillerPDF annotation-bar behavior): fixed y,
 //    drags left/right along that row only, x position persisted ──
@@ -117,7 +125,7 @@ function startDrag(e: PointerEvent) {
     <!-- Mobile-only collapse trigger: shows the current theme, expands the row -->
     <button
       class="swatch sm-theme-trigger"
-      :style="{ background: currentTheme?.swatchBg, '--sw-accent': currentTheme?.swatchAccent }"
+      :style="currentTheme ? { background: currentTheme.swatchBg, '--sw-accent': themeDotAccent(currentTheme) } : undefined"
       title="Theme"
       aria-label="Toggle theme swatches"
       :aria-expanded="swatchesOpen"
@@ -130,7 +138,7 @@ function startDrag(e: PointerEvent) {
         v-for="t in ktThemes"
         :key="t.key"
         class="swatch"
-        :style="{ background: t.swatchBg, '--sw-accent': t.swatchAccent }"
+        :style="{ background: t.swatchBg, '--sw-accent': themeDotAccent(t) }"
         :title="t.label"
         :aria-label="t.label"
         :aria-pressed="styleStore.ktTheme === t.key"
