@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { KtAccentKey } from '@/themes';
+import type { KtAccentKey, KtThemeKey } from '@/themes';
 import { useStorage } from '@vueuse/core';
 import { computed, nextTick, ref } from 'vue';
 import { useStyleStore } from '@/stores/style.store';
@@ -22,6 +22,11 @@ const effectiveAccent = computed(() =>
 // to make room for the centered brand; tapping it expands the row.
 const swatchesOpen = ref(false);
 const currentTheme = computed(() => ktThemes.find(t => t.key === styleStore.ktTheme));
+
+function selectTheme(key: KtThemeKey) {
+  styleStore.setTheme(key);
+  swatchesOpen.value = false;
+}
 
 function accentColor(name: KtAccentKey) {
   return ktAccents[accentFamily.value][name];
@@ -129,7 +134,7 @@ function startDrag(e: PointerEvent) {
         :title="t.label"
         :aria-label="t.label"
         :aria-pressed="styleStore.ktTheme === t.key"
-        @click="styleStore.setTheme(t.key)"
+        @click="selectTheme(t.key)"
       />
     </div>
 
@@ -176,6 +181,7 @@ function startDrag(e: PointerEvent) {
   display: flex;
   align-items: center;
   margin-right: 12px;
+  position: relative;
 }
 
 .pick-divider {
@@ -277,9 +283,8 @@ html:not(.dark) .acc-trigger {
   display: none;
 }
 
-/* Phones: tighter pickers; the six swatches collapse behind the
-   current-theme circle so the centered brand has room */
-@media (max-width: 700px) {
+/* Narrow headers: keep one current-theme trigger and open the full set as a flyout. */
+@media (max-width: 1120px) {
   .chrome-pickers {
     margin-right: 6px;
   }
@@ -301,7 +306,20 @@ html:not(.dark) .acc-trigger {
 
   .tgrp.tgrp-open {
     display: flex;
-    margin-left: 6px;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 4000;
+    width: 170px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--kt-chrome-border);
+    border-radius: 9px;
+    background: var(--kt-modal) var(--kt-grain-img) repeat;
+    background-size: 256px 256px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.48);
   }
 
   .swatch:not(.sm-theme-trigger) {
