@@ -43,7 +43,8 @@ useHead({
             couldn't find something that just worked without an account, an install, or telemetry.
           </p>
           <p>
-            I'm a field tech at an MSP handling networking, sysadmin work, and endpoint support.
+            I build tools on an MSP's internal AI engineering team now, after six years of full-stack
+            development and eight years as a field technician across several companies.
             KillerTools.net started as a fork of the excellent
             <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools</a>
             project by
