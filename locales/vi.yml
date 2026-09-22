@@ -70,6 +70,7 @@ tools:
     measurement: Đo lường
     text: Văn bản
     data: Dữ liệu
+    photography: Nhiếp ảnh
     windows: Windows
     killer apps: 'Killer Apps'
 
@@ -367,3 +368,67 @@ tools:
   markdown-to-html:
     title: Markdown to HTML
     description: Convert Markdown to Html and allow to print (as PDF).
+
+  password-generator:
+    title: Trình tạo mật khẩu
+    description: Tạo mật khẩu mạnh, cụm mật khẩu Diceware, chuỗi dễ đọc, mã hex, base64 và UUID. Bao gồm các cấu hình sẵn cho MSP, loại bỏ ký tự dễ nhầm, đo độ ngẫu nhiên, mã QR và cách đọc theo bảng chữ cái NATO.
+
+  reciprocity-calculator:
+    title: Máy tính sai lệch tương hỗ
+    description: Tính thời gian phơi sáng dài đã hiệu chỉnh cho hơn 40 loại phim analog bằng định luật lũy thừa Schwarzschild. Hỗ trợ phim đen trắng, âm bản màu và phim slide.
+
+  nd-filter-calculator:
+    title: Máy tính kính lọc ND
+    description: Tính tốc độ màn trập đã hiệu chỉnh cho kính lọc mật độ trung tính. Hỗ trợ mọi mức ND phổ biến và giá trị stop tùy chỉnh.
+
+  depth-of-field-calculator:
+    title: Máy tính độ sâu trường ảnh
+    description: Tính giới hạn gần, giới hạn xa và tổng độ sâu trường ảnh cho mọi kết hợp ống kính và cảm biến. Có kết quả khoảng cách siêu tiêu cự.
+
+  exposure-equivalence:
+    title: Phơi sáng tương đương
+    description: Tìm tốc độ màn trập tương đương ở mọi khẩu độ cho cùng một mức phơi sáng. Chọn tốc độ màn trập và khẩu độ ban đầu để xem thiết lập cần dùng ở từng f-stop khác.
+
+  dev-calculator:
+    title: Máy tính tráng phim
+    description: Tính thời gian tráng đã điều chỉnh theo nhiệt độ, xử lý push hoặc pull và tỷ lệ pha loãng. Bao gồm cơ sở dữ liệu các loại thuốc tráng và phim đen trắng phổ biến.
+
+  phone-parser-and-formatter:
+    title: Trình phân tích số điện thoại
+    description: Phân tích và định dạng số điện thoại. Phát hiện quốc gia, xác thực và hiển thị theo định dạng quốc tế, quốc gia, E.164 và RFC3966.
+
+  signature-creator:
+    title: Trình tạo chữ ký
+    description: Vẽ chữ ký viết tay trên vùng vẽ và xuất thành PNG trong suốt. Hoặc tải lên một hình ảnh và xóa nền bằng AI chạy ngay trên thiết bị.
+
+  ascii-word-art:
+    title: Trình tạo chữ nghệ thuật ASCII
+    description: Tạo chữ nghệ thuật ASCII với nhiều phông chữ và kiểu dáng.
+
+  powershell-builder:
+    title: Trình tạo lệnh PowerShell
+    description: Chọn một cmdlet, điền tham số và sao chép lệnh PowerShell hoàn chỉnh.
+
+  killer-pdf:
+    title: KillerPDF
+    description: Trình chỉnh sửa PDF mã nguồn mở cho Windows. Xem, chú thích, hợp nhất, tách, làm phẳng, mở PDF có mật khẩu, chỉnh sửa văn bản, vẽ, tô sáng, ký và in.
+
+  killer-scan:
+    title: KillerScan
+    description: Trình quét mạng nhanh dành cho kỹ thuật viên hiện trường. Khám phá bằng ARP và ping, dò cổng, tra cứu nhà sản xuất và tự động phân loại thiết bị.
+
+  gif-search:
+    title: Tìm kiếm GIF
+    description: Tìm GIF phản ứng trên Giphy. Nhấp vào kết quả để sao chép URL.
+
+  killer-shell:
+    title: KillerShell
+    description: Trình shell miễn phí cho người dùng chuyên sâu. Trình duyệt tệp, terminal và trình soạn thảo văn bản dùng chung một cửa sổ, một thanh tab và một bộ phím.
+
+  domain-lookup:
+    title: Tra cứu tên miền
+    description: Xem thông tin đăng ký WHOIS và kiểm tra DNS email gồm MX, SPF, DKIM và DMARC cho một tên miền trong cùng một màn hình.
+
+  email-record-generator:
+    title: Trình tạo bản ghi email
+    description: Tạo bản ghi DNS TXT cho SPF và DMARC. Chọn nhà cung cấp thư và chính sách, rồi sao chép kết quả trực tiếp vào DNS.

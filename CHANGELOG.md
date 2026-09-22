@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Unreleased
+
+### Localization
+
+- Completed Vietnamese coverage for current tool categories and descriptions. (Thanks @vuanhvu11982)
+
 ## 2026-07-04
 
 ### Grunge Theme Engine
