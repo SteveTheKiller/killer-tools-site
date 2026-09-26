@@ -108,7 +108,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <RouterLink to="/mcp" class="tb-mcp" aria-label="KillerMCP">
           <img class="tb-mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
-          <span>KillerMCP</span>
+          <span class="tb-mcp-wordmark"><span class="tb-mcp-killer">Killer</span><span class="tb-mcp-accent">MCP</span></span>
         </RouterLink>
         <ThemeDots />
         <NavbarButtons class="tb-about" />
@@ -132,7 +132,6 @@ const tools = computed<ToolCategory[]>(() => [
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--kt-accent);
   text-decoration: none;
   white-space: nowrap;
   font-family: 'KillerScan', 'Courier New', monospace;
@@ -140,7 +139,25 @@ const tools = computed<ToolCategory[]>(() => [
   margin-right: 12px;
 }
 
-.tb-mcp:hover {
+.tb-mcp-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.tb-mcp-killer {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.tb-mcp-accent {
+  color: var(--kt-accent);
+  font-size: 1.3em;
+  -webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.tb-mcp:hover .tb-mcp-accent {
   color: var(--kt-accent-2);
 }
 
