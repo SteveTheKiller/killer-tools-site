@@ -81,11 +81,18 @@ useHead({
         Add KillerTools to your agent
       </h2>
       <p>
-        Choose your app. Cursor and VS Code can open their install prompts directly.
+        Choose your app.
       </p>
       <div class="mcp-install-actions">
         <a class="mcp-action" :href="cursorInstallUrl">Add to Cursor</a>
         <a class="mcp-action" :href="vscodeInstallUrl">Add to VS Code</a>
+        <a class="mcp-action" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener noreferrer" @click="copyText(endpoint, 'Server URL')">Copy URL and open Claude</a>
+        <button type="button" class="mcp-action" @click="copyText(codexCommand, 'Codex command')">
+          Copy Codex setup command
+        </button>
+        <button type="button" class="mcp-action" @click="copyText(claudeCodeCommand, 'Claude Code command')">
+          Copy Claude Code setup command
+        </button>
       </div>
       <p>
         Using another MCP client? Copy the server URL.
@@ -100,44 +107,6 @@ useHead({
         {{ copyStatus }}
       </p>
     </section>
-
-    <div class="mcp-client-grid">
-      <section class="mcp-card mcp-surface">
-        <h2>
-          Claude
-        </h2>
-        <p>
-          Open your connectors and add the copied server URL as a custom connector.
-        </p>
-        <a class="mcp-action mcp-link-action" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener noreferrer" @click="copyText(endpoint, 'Server URL')">
-          Copy URL and open Claude
-        </a>
-      </section>
-
-      <section class="mcp-card mcp-surface">
-        <h2>
-          Codex
-        </h2>
-        <p>
-          Copy one command to add KillerTools in Codex.
-        </p>
-        <button type="button" class="mcp-action" @click="copyText(codexCommand, 'Codex command')">
-          Copy Codex setup command
-        </button>
-      </section>
-
-      <section class="mcp-card mcp-surface">
-        <h2>
-          Claude Code
-        </h2>
-        <p>
-          Copy one command to add KillerTools in Claude Code.
-        </p>
-        <button type="button" class="mcp-action" @click="copyText(claudeCodeCommand, 'Claude Code command')">
-          Copy Claude Code setup command
-        </button>
-      </section>
-    </div>
 
     <div class="mcp-grid">
       <section class="mcp-card mcp-surface">
@@ -236,9 +205,6 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-action:hover, .mcp-action:focus-visible { background: var(--kt-accent); color: var(--kt-modal, #0a0a0a); }
 .mcp-action:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
 .mcp-feedback { margin: 8px 0 0; color: var(--kt-accent); }
-.mcp-client-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.mcp-client-grid .mcp-card { display: flex; flex-direction: column; align-items: flex-start; }
-.mcp-client-grid .mcp-card .mcp-action { margin-top: auto; }
 .mcp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .mcp-card p, .mcp-card li { font-size: 13px; line-height: 1.65; }
 .mcp-card p { margin: 0 0 14px; }
@@ -249,7 +215,7 @@ code { color: var(--kt-accent); overflow-wrap: anywhere; }
 .mcp-card a { color: var(--kt-accent); }
 
 @media (max-width: 720px) {
-  .mcp-grid, .mcp-client-grid { grid-template-columns: 1fr; }
+  .mcp-grid { grid-template-columns: 1fr; }
   .mcp-hero, .mcp-card, .mcp-connect { padding: 20px; }
   .mcp-copy-row { flex-direction: column; }
   .mcp-heading { gap: 0; }
