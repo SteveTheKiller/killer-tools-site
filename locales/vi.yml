@@ -137,6 +137,13 @@ tools:
   keycode-info:
     title: Thông tin Keycode
     description: Tìm mã keycode, mã, vị trí và các phím điều khiển của bất kỳ phím nào được nhấn.
+    ui:
+      pressAnyKey: Nhấn phím bất kỳ để xem thông tin
+      key: Phím
+      keycode: Keycode
+      code: Mã
+      location: Vị trí
+      modifiers: Phím bổ trợ
   emoji-picker:
     title: Bộ chọn biểu tượng cảm xúc
     description: Sao chép và dán biểu tượng cảm xúc một cách dễ dàng và nhận giá trị unicode và mã điểm của mỗi biểu tượng cảm xúc.
@@ -770,6 +777,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
+    ui:
+      loadError: Không tải được script từ GitHub. Hãy kiểm tra kết nối hoặc thử lại.
+      retry: Thử lại
+      copyCommand: Sao chép lệnh
+      copied: Đã sao chép!
+      infoCopySuffix: sao chép vào clipboard một dòng lệnh để tải và chạy script trực tiếp trong PowerShell.
+      infoDownloadPrefix: Nút
+      infoDownloadMiddle: lưu tệp
+      infoDownloadSuffix: vào máy của bạn để dùng thủ công.
   group-policy-reference:
     title: Group Policy Reference
     description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
@@ -1627,6 +1643,20 @@ tools:
       base: cơ số
       output: KẾT QUẢ
       custom: Tùy chỉnh
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Lệnh
+      requires: Yêu cầu
+      copyInstall: Sao chép cài đặt
+      copied: Đã sao chép!
+      modules:
+        KillerPivot:
+          description: Chuyển đổi giữa các tenant Microsoft 365 trong PowerShell mà không lo chạy nhầm lệnh vào tenant khác. KillerPivot tắt auth broker để buộc hiện màn hình đăng nhập thật, sau đó hỏi phiên làm việc xem thực sự đã vào tenant nào và xác minh điều đó trước khi bạn chạm vào bất cứ thứ gì. Lưu các tenant của bạn một lần, sau đó chuyển đổi giữa chúng theo tên với xác minh danh tính có sẵn.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (cho -Graph)
+        KillerScripts:
+          description: Mọi công cụ trong repo killer-scripts, dùng được như một lệnh trong bất kỳ phiên PowerShell nào. Mỗi script được tải trực tiếp từ GitHub ngay khi bạn chạy, nên bạn luôn dùng phiên bản mới nhất, với bộ nhớ đệm cục bộ làm phương án dự phòng khi ngoại tuyến. Cả 18 công cụ đều có lệnh riêng và một alias ngắn, nên gõ urt sẽ chạy Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Cần kết nối internet để lấy script hiện tại (bản sao lưu trong cache chạy được khi ngoại tuyến)
 ui:
   diffEditor:
     originalLabel: BẢN GỐC

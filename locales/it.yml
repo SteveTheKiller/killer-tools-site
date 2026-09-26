@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Info keycode
     description: Trova keycode, code, location e modificatori JavaScript di qualsiasi tasto premuto.
+    ui:
+      pressAnyKey: Premi un tasto qualsiasi per vedere le info
+      key: Tasto
+      keycode: Keycode
+      code: Codice
+      location: Posizione
+      modifiers: Modificatori
   emoji-picker:
     title: Selettore emoji
     description: Copia e incolla facilmente le emoji e ottieni il valore unicode e i code point di ciascuna.
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Script PowerShell per l'amministrazione Windows e il lavoro sul campo in MSP.
+    ui:
+      loadError: Impossibile caricare gli script da GitHub. Controlla la connessione o riprova.
+      retry: Riprova
+      copyCommand: Copia comando
+      copied: Copiato!
+      infoCopySuffix: copia negli appunti un comando in una riga che scarica ed esegue lo script direttamente in PowerShell.
+      infoDownloadPrefix: Il pulsante
+      infoDownloadMiddle: salva il file
+      infoDownloadSuffix: sul tuo computer per uso manuale.
   powershell-builder:
     title: PowerShell Builder
     description: Scegli un cmdlet, compila i parametri e copia il comando PowerShell finito.
@@ -1628,6 +1644,20 @@ tools:
       cheatsheetCmdletsSupportDirectly: Molti cmdlet lo supportano direttamente
       cheatsheetRunViaRemoting: Esegui tramite PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Sessione PS remota interattiva
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Comandi
+      requires: Richiede
+      copyInstall: Copia installazione
+      copied: Copiato!
+      modules:
+        KillerPivot:
+          description: Passa da un tenant Microsoft 365 all'altro in PowerShell senza lanciare comandi su quello sbagliato. KillerPivot disattiva l'auth broker per forzare una vera schermata di accesso, poi chiede alla sessione in quale tenant è effettivamente atterrata e lo verifica prima che tu tocchi qualcosa. Salva i tuoi tenant una volta sola, poi passa da uno all'altro per nome, con verifica dell'identità integrata.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (per -Graph)
+        KillerScripts:
+          description: Ogni strumento del repo killer-scripts, disponibile come comando in qualsiasi sessione PowerShell. Ogni script viene scaricato direttamente da GitHub al momento dell'esecuzione, quindi hai sempre la versione più recente, con una cache locale come riserva offline. Tutti e 18 gli strumenti hanno un proprio comando e un alias breve, quindi digitare urt esegue lo Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Accesso a internet per scaricare lo script attuale (le copie in cache funzionano offline)
 ui:
   diffEditor:
     originalLabel: ORIGINALE

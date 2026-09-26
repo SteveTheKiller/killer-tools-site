@@ -1564,6 +1564,13 @@ tools:
   keycode-info:
     title: Informações de keycode
     description: Encontre o keycode javascript, o code, a location e os modificadores de qualquer tecla pressionada.
+    ui:
+      pressAnyKey: Pressione qualquer tecla para ver as informações
+      key: Tecla
+      keycode: Keycode
+      code: Código
+      location: Localização
+      modifiers: Modificadores
   git-memo:
     title: Cheatsheet do Git
     description: Referência rápida para os comandos e fluxos de trabalho do Git mais comuns.
@@ -1603,6 +1610,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Scripts PowerShell para administração do Windows e trabalho de campo em MSP.
+    ui:
+      loadError: Falha ao carregar os scripts do GitHub. Verifique sua conexão ou tente novamente.
+      retry: Tentar novamente
+      copyCommand: Copiar comando
+      copied: Copiado!
+      infoCopySuffix: copia para sua área de transferência um comando de uma linha que baixa e executa o script direto no PowerShell.
+      infoDownloadPrefix: O botão
+      infoDownloadMiddle: salva o arquivo
+      infoDownloadSuffix: na sua máquina para uso manual.
   powershell-builder:
     title: PowerShell Builder
     description: Escolha um cmdlet, preencha os parâmetros e copie seu comando PowerShell finalizado.
@@ -1627,6 +1643,20 @@ tools:
   killer-shell:
     title: KillerShell
     description: Shell gratuito para usuários avançados. Um navegador de arquivos, um terminal e um editor de texto compartilham uma janela, uma barra de abas e um conjunto de atalhos.
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Comandos
+      requires: Requer
+      copyInstall: Copiar instalação
+      copied: Copiado!
+      modules:
+        KillerPivot:
+          description: Alterne entre tenants do Microsoft 365 no PowerShell sem disparar comandos no tenant errado. O KillerPivot desativa o auth broker para forçar uma tela de login real, depois pergunta à sessão em qual tenant ela realmente caiu e verifica isso antes de você tocar em qualquer coisa. Salve seus tenants uma vez e depois alterne entre eles pelo nome, com verificação de identidade embutida.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (para -Graph)
+        KillerScripts:
+          description: Todas as ferramentas do repo killer-scripts, disponíveis como comando em qualquer sessão do PowerShell. Cada script é baixado direto do GitHub no momento em que você o executa, então você está sempre na versão atual, com um cache local como alternativa offline. As 18 ferramentas têm seu próprio comando e um alias curto, então digitar urt executa o Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Acesso à internet para buscar o script atual (cópias em cache funcionam offline)
 ui:
   diffEditor:
     originalLabel: ORIGINAL

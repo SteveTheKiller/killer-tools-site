@@ -1564,6 +1564,13 @@ tools:
   keycode-info:
     title: Інформація про keycode
     description: Дізнайтеся javascript keycode, code, розташування і модифікатори будь-якої натиснутої клавіші.
+    ui:
+      pressAnyKey: Натисніть будь-яку клавішу, щоб побачити інформацію
+      key: Клавіша
+      keycode: Keycode
+      code: Код
+      location: Розташування
+      modifiers: Модифікатори
   git-memo:
     title: Шпаргалка Git
     description: Швидкий довідник найпоширеніших команд і робочих процесів Git.
@@ -1603,6 +1610,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: PowerShell скрипти для адміністрування Windows і польової роботи MSP.
+    ui:
+      loadError: Не вдалося завантажити скрипти з GitHub. Перевірте з'єднання або спробуйте ще раз.
+      retry: Повторити
+      copyCommand: Копіювати команду
+      copied: Скопійовано!
+      infoCopySuffix: копіює в буфер обміну однорядкову команду, яка завантажує і запускає скрипт прямо в PowerShell.
+      infoDownloadPrefix: Кнопка
+      infoDownloadMiddle: зберігає файл
+      infoDownloadSuffix: на ваш комп'ютер для ручного використання.
   powershell-builder:
     title: PowerShell Builder
     description: Оберіть cmdlet, заповніть параметри й скопіюйте готову команду PowerShell.
@@ -1627,6 +1643,20 @@ tools:
   killer-shell:
     title: KillerShell
     description: Безкоштовна оболонка для досвідчених користувачів. Файловий менеджер, термінал і текстовий редактор в одному вікні, з однією смугою вкладок і одним набором клавіш.
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Команди
+      requires: Потребує
+      copyInstall: Копіювати встановлення
+      copied: Скопійовано!
+      modules:
+        KillerPivot:
+          description: Перемикайтеся між тенантами Microsoft 365 у PowerShell, не ризикуючи надіслати команди не в той тенант. KillerPivot вимикає auth broker, щоб викликати справжнє вікно входу, потім запитує сесію, у якому тенанті вона насправді опинилася, і перевіряє це перш ніж ви щось торкнетеся. Збережіть свої тенанти один раз, а потім перемикайтеся між ними за назвою із вбудованою перевіркою особи.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (для -Graph)
+        KillerScripts:
+          description: Усі інструменти з репозиторію killer-scripts доступні як команда в будь-якій сесії PowerShell. Кожен скрипт завантажується напряму з GitHub у момент запуску, тож у вас завжди актуальна версія, а локальний кеш працює як резерв офлайн. Усі 18 інструментів мають власну команду та короткий псевдонім, тож urt запускає Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Потрібен доступ до інтернету для отримання поточного скрипту (кешовані копії працюють офлайн)
 ui:
   diffEditor:
     originalLabel: ОРИГІНАЛ

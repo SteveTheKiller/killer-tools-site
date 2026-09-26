@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Informacje o keycode
     description: Sprawdź JavaScript keycode, code, location i modyfikatory dowolnego naciśniętego klawisza.
+    ui:
+      pressAnyKey: Naciśnij dowolny klawisz, aby zobaczyć informacje
+      key: Klawisz
+      keycode: Keycode
+      code: Kod
+      location: Lokalizacja
+      modifiers: Modyfikatory
   emoji-picker:
     title: Wybór emoji
     description: Łatwo kopiuj i wklejaj emoji oraz sprawdzaj wartość unicode i code points każdego z nich.
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Skrypty PowerShell do administrowania Windows i pracy MSP w terenie.
+    ui:
+      loadError: Nie udało się wczytać skryptów z GitHub. Sprawdź połączenie lub spróbuj ponownie.
+      retry: Spróbuj ponownie
+      copyCommand: Kopiuj polecenie
+      copied: Skopiowano!
+      infoCopySuffix: kopiuje do schowka jedną linijkę, która pobiera i uruchamia skrypt bezpośrednio w PowerShell.
+      infoDownloadPrefix: Przycisk
+      infoDownloadMiddle: zapisuje plik
+      infoDownloadSuffix: na twoim komputerze do ręcznego użycia.
   powershell-builder:
     title: PowerShell Builder
     description: Wybierz cmdlet, uzupełnij parametry i skopiuj gotowe polecenie PowerShell.
@@ -1628,6 +1644,20 @@ tools:
       cheatsheetCmdletsSupportDirectly: Wiele cmdletów obsługuje to bezpośrednio
       cheatsheetRunViaRemoting: Uruchom przez PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Interaktywna zdalna sesja PS
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Polecenia
+      requires: Wymaga
+      copyInstall: Kopiuj instalację
+      copied: Skopiowano!
+      modules:
+        KillerPivot:
+          description: Przełączaj się między tenantami Microsoft 365 w PowerShell bez ryzyka wysłania poleceń do niewłaściwego. KillerPivot wyłącza auth broker, aby wymusić prawdziwe okno logowania, a następnie sprawdza, do którego tenanta sesja rzeczywiście trafiła, i weryfikuje to, zanim czegokolwiek dotkniesz. Zapisz swoje tenanty raz, a potem przełączaj się między nimi po nazwie, z wbudowaną weryfikacją tożsamości.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (dla -Graph)
+        KillerScripts:
+          description: Każde narzędzie z repo killer-scripts, dostępne jako polecenie w dowolnej sesji PowerShell. Każdy skrypt jest pobierany bezpośrednio z GitHub w chwili uruchomienia, więc zawsze masz aktualną wersję, a lokalny cache działa jako rezerwa offline. Wszystkie 18 narzędzi ma własne polecenie i krótki alias, więc wpisanie urt uruchamia Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Dostęp do internetu potrzebny do pobrania aktualnego skryptu (kopie z cache działają offline)
 ui:
   diffEditor:
     originalLabel: ORYGINAŁ

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const scripts = ref<{ name: string, download_url: string }[]>([]);
 const descriptions = ref<Record<string, { name: string, description: string }>>({});
 const loading = ref(true);
@@ -82,17 +84,17 @@ function downloadScript(script: { name: string, download_url: string }) {
     </div>
 
     <div v-else-if="error" class="kt-alert kt-alert-error" style="margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
-      <span>Failed to load scripts from GitHub. Check your connection or try again.</span>
+      <span>{{ t('tools.killer-scripts.ui.loadError') }}</span>
       <button class="kt-pill" style="color: inherit; border-color: currentColor;" @click="loadScripts">
-        Retry
+        {{ t('tools.killer-scripts.ui.retry') }}
       </button>
     </div>
 
     <template v-else>
       <Teleport to="#tool-header-extra">
         <div class="ks-info rounded px-3 py-1 text-xs">
-          <span class="ks-info-cmd font-semibold">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
-          The <span class="ks-info-dl font-semibold">↓</span> button saves the <code>.ps1</code> file to your machine for manual use.
+          <span class="ks-info-cmd font-semibold">{{ t('tools.killer-scripts.ui.copyCommand') }}</span> {{ t('tools.killer-scripts.ui.infoCopySuffix') }}
+          {{ t('tools.killer-scripts.ui.infoDownloadPrefix') }} <span class="ks-info-dl font-semibold">↓</span> {{ t('tools.killer-scripts.ui.infoDownloadMiddle') }} <code>.ps1</code> {{ t('tools.killer-scripts.ui.infoDownloadSuffix') }}
         </div>
       </Teleport>
       <div
@@ -112,8 +114,8 @@ function downloadScript(script: { name: string, download_url: string }) {
                 :class="{ 'is-copied': copied === script.name }"
                 @click.stop="copyCommand(script)"
               >
-                <span class="ks-lbl ks-lbl-idle">⧉ Copy Command</span>
-                <span class="ks-lbl ks-lbl-done">✓ Copied!</span>
+                <span class="ks-lbl ks-lbl-idle">⧉ {{ t('tools.killer-scripts.ui.copyCommand') }}</span>
+                <span class="ks-lbl ks-lbl-done">✓ {{ t('tools.killer-scripts.ui.copied') }}</span>
               </button>
               <button
                 class="ks-btn-dl"

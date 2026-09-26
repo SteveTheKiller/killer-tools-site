@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Keycode তথ্য
     description: যেকোনো চাপা কী-এর JavaScript keycode, code, location এবং মডিফায়ার খুঁজুন।
+    ui:
+      pressAnyKey: তথ্যের জন্য যেকোনো কী চাপুন
+      key: কী
+      keycode: কীকোড
+      code: কোড
+      location: অবস্থান
+      modifiers: মডিফায়ার
   emoji-picker:
     title: ইমোজি পিকার
     description: সহজে ইমোজি কপি ও পেস্ট করুন এবং প্রতিটি ইমোজির unicode ও code point মান জানুন।
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Windows প্রশাসন এবং MSP ফিল্ডের কাজের জন্য PowerShell স্ক্রিপ্ট।
+    ui:
+      loadError: GitHub থেকে স্ক্রিপ্ট লোড করা যায়নি। আপনার সংযোগ পরীক্ষা করুন অথবা আবার চেষ্টা করুন।
+      retry: আবার চেষ্টা করুন
+      copyCommand: কমান্ড কপি করুন
+      copied: কপি হয়েছে!
+      infoCopySuffix: আপনার ক্লিপবোর্ডে এমন একটি লাইন কপি করে যা সরাসরি PowerShell এ স্ক্রিপ্টটি ডাউনলোড করে চালায়।
+      infoDownloadPrefix: ''
+      infoDownloadMiddle: বাটন দিয়ে
+      infoDownloadSuffix: ফাইলটি ম্যানুয়াল ব্যবহারের জন্য আপনার মেশিনে সংরক্ষণ করা যায়।
   powershell-builder:
     title: PowerShell Builder
     description: একটি cmdlet বেছে নিন, প্যারামিটার পূরণ করুন এবং তৈরি PowerShell কমান্ড কপি করুন।
@@ -1628,6 +1644,20 @@ tools:
       rawLabel: আপনার কাঁচা YAML
       rawPlaceholder: এখানে আপনার কাঁচা YAML পেস্ট করুন...
       prettifiedLabel: আপনার YAML এর সুবিন্যস্ত সংস্করণ
+  killer-modules:
+    ui:
+      repo: রেপো
+      commands: কমান্ড
+      requires: প্রয়োজন
+      copyInstall: কপি ইনস্টল
+      copied: কপি হয়েছে!
+      modules:
+        KillerPivot:
+          description: PowerShell এ Microsoft 365 টেন্যান্টের মধ্যে সহজে সুইচ করুন, ভুল টেন্যান্টে কমান্ড চালানোর ঝুঁকি ছাড়াই। KillerPivot আসল সাইন-ইন প্রম্পট আনতে auth broker বন্ধ করে দেয়, তারপর সেশনটি আসলে কোন টেন্যান্টে পৌঁছেছে তা জিজ্ঞাসা করে এবং যাচাই করে, তারপর আপনি কিছু স্পর্শ করার আগে। একবার আপনার টেন্যান্টগুলো সংরক্ষণ করুন, তারপর নাম দিয়ে সেগুলোর মধ্যে সুইচ করুন, পরিচয় যাচাইসহ।
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (-Graph এর জন্য)
+        KillerScripts:
+          description: killer-scripts রেপোর প্রতিটি টুল, যেকোনো PowerShell সেশনে একটি কমান্ড হিসেবে ব্যবহারযোগ্য। প্রতিটি স্ক্রিপ্ট চালানোর মুহূর্তে GitHub থেকে সরাসরি টেনে আনা হয়, তাই আপনি সবসময় সর্বশেষ সংস্করণে থাকেন, আর অফলাইন ব্যাকআপ হিসেবে একটি লোকাল ক্যাশ থাকে। সব ১৮টি টুলের নিজস্ব কমান্ড ও একটি ছোট alias আছে, তাই urt লিখলে Universal Rename Tool চলে।
+          requirements: PowerShell 5.1 & 7 · বর্তমান স্ক্রিপ্ট আনতে ইন্টারনেট সংযোগ প্রয়োজন (ক্যাশ করা কপি অফলাইনে চলে)
 components:
   androidBetaBanner:
     announcement: Android বিটা ঘোষণা

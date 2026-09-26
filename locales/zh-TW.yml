@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Keycode 資訊
     description: 查詢任何按下按鍵的 JavaScript keycode、code、location 與修飾鍵。
+    ui:
+      pressAnyKey: 按任意鍵取得資訊
+      key: 按鍵
+      keycode: Keycode
+      code: 代碼
+      location: 位置
+      modifiers: 修飾鍵
   emoji-picker:
     title: 表情符號選擇器
     description: 輕鬆複製貼上表情符號，並取得每個表情符號的 unicode 與 code point 值。
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: 用於 Windows 管理與 MSP 現場工作的 PowerShell 指令碼。
+    ui:
+      loadError: 從 GitHub 載入指令碼失敗,請檢查連線或重試。
+      retry: 重試
+      copyCommand: 複製指令
+      copied: 已複製!
+      infoCopySuffix: 會將一行指令複製到剪貼簿,該指令可直接在 PowerShell 中下載並執行指令碼。
+      infoDownloadPrefix: 點擊
+      infoDownloadMiddle: 按鈕即可將
+      infoDownloadSuffix: 檔案儲存到本機,供手動使用。
   powershell-builder:
     title: PowerShell Builder
     description: 選擇 cmdlet、填入參數，然後複製完成的 PowerShell 指令。
@@ -1628,6 +1644,20 @@ tools:
       base: 進位制
       output: 輸出
       custom: 自訂
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: 指令
+      requires: 需求
+      copyInstall: 複製安裝指令
+      copied: 已複製!
+      modules:
+        KillerPivot:
+          description: 在 PowerShell 中切換 Microsoft 365 租戶,不必擔心把指令送到錯誤的租戶。KillerPivot 會停用 auth broker 以強制跳出真正的登入畫面,接着詢問工作階段實際登入到哪個租戶,並在你進行任何動作前完成驗證。只要儲存一次租戶資訊,之後就能依名稱切換,並內建身分驗證。
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (用於 -Graph)
+        KillerScripts:
+          description: killer-scripts repo 中的每個工具,都能在任何 PowerShell 工作階段中當作指令使用。每次執行時都會直接從 GitHub 抓取最新版本,同時以本機快取做為離線備援。全部 18 個工具都有各自的指令與簡短別名,輸入 urt 即可執行 Universal Rename Tool。
+          requirements: PowerShell 5.1 & 7 · 需要網路連線以取得最新指令碼 (快取副本可離線執行)
 ui:
   diffEditor:
     originalLabel: 原始

@@ -137,6 +137,13 @@ tools:
   keycode-info:
     title: Tastekode info
     description: Finn javascript tastekode, kode, plassering og modifikatorer av hvilken som helst tast.
+    ui:
+      pressAnyKey: Trykk på en tast for å se info
+      key: Tast
+      keycode: Keycode
+      code: Kode
+      location: Plassering
+      modifiers: Modifikatorer
   emoji-picker:
     title: Emoji velger
     description: Klipp og lim emojis og få unicode og kode verdien av hver emoji.
@@ -770,6 +777,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
+    ui:
+      loadError: Klarte ikke å laste skript fra GitHub. Sjekk tilkoblingen eller prøv igjen.
+      retry: Prøv igjen
+      copyCommand: Kopier kommando
+      copied: Kopiert!
+      infoCopySuffix: kopierer en enkel kommandolinje til utklippstavlen som laster ned og kjører skriptet direkte i PowerShell.
+      infoDownloadPrefix: Knappen
+      infoDownloadMiddle: lagrer
+      infoDownloadSuffix: filen på maskinen din for manuell bruk.
   group-policy-reference:
     title: Group Policy Reference
     description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
@@ -1627,6 +1643,20 @@ tools:
   killer-shell:
     title: KillerShell
     description: Gratis skall for avanserte brukere. En filutforsker, en terminal og en tekstredigerer deler ett vindu, en fanelinje og et sett med taster.
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Kommandoer
+      requires: Krever
+      copyInstall: Kopier installasjon
+      copied: Kopiert!
+      modules:
+        KillerPivot:
+          description: Bytt mellom Microsoft 365-tenanter i PowerShell uten å sende kommandoer til feil tenant. KillerPivot slår av auth broker for å tvinge frem en ekte innloggingsdialog, spør deretter økten hvilken tenant den faktisk havnet i, og bekrefter det før du rører noe. Lagre tenantene dine én gang, og bytt så mellom dem med navn, med identitetsverifisering innebygd.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (for -Graph)
+        KillerScripts:
+          description: Alle verktøyene i killer-scripts repoet, tilgjengelig som en kommando i enhver PowerShell-økt. Hvert skript hentes direkte fra GitHub når du kjører det, så du er alltid på nyeste versjon, med en lokal buffer som reserve når du er offline. Alle 18 verktøyene får sin egen kommando og et kort alias, så det å skrive urt kjører Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Internettilgang for å hente gjeldende skript (bufrede kopier kjører offline)
 ui:
   diffEditor:
     originalLabel: ORIGINAL

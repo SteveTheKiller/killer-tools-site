@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Informace o keycode
     description: Zjistěte JavaScript keycode, code, location a modifikátory libovolné stisknuté klávesy.
+    ui:
+      pressAnyKey: Stiskněte libovolnou klávesu pro zobrazení informací
+      key: Klávesa
+      keycode: Keycode
+      code: Kód
+      location: Umístění
+      modifiers: Modifikátory
   emoji-picker:
     title: Výběr emoji
     description: Snadno kopírujte a vkládejte emoji a získejte hodnotu unicode a code points každého z nich.
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Skripty PowerShell pro správu Windows a práci MSP v terénu.
+    ui:
+      loadError: Načtení skriptů z GitHubu se nezdařilo. Zkontrolujte připojení nebo to zkuste znovu.
+      retry: Zkusit znovu
+      copyCommand: Kopírovat příkaz
+      copied: Zkopírováno!
+      infoCopySuffix: zkopíruje do schránky jednořádkový příkaz, který skript přímo stáhne a spustí v PowerShellu.
+      infoDownloadPrefix: Tlačítko
+      infoDownloadMiddle: uloží soubor
+      infoDownloadSuffix: na váš počítač pro ruční použití.
   powershell-builder:
     title: PowerShell Builder
     description: Vyberte cmdlet, vyplňte parametry a zkopírujte hotový příkaz PowerShellu.
@@ -1628,6 +1644,20 @@ tools:
       rawLabel: Vaše nezpracované YAML
       rawPlaceholder: Vložte sem své nezpracované YAML...
       prettifiedLabel: Upravená verze vašeho YAML
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Příkazy
+      requires: Vyžaduje
+      copyInstall: Kopírovat instalaci
+      copied: Zkopírováno!
+      modules:
+        KillerPivot:
+          description: Přepínejte mezi tenanty Microsoft 365 v PowerShellu, aniž byste omylem spustili příkazy v tom špatném. KillerPivot vypne auth broker, aby vynutil skutečnou přihlašovací výzvu, poté zjistí, do kterého tenantu se relace opravdu přihlásila, a ověří to dřív, než se čehokoli dotknete. Tenanty si uložte jednou a pak mezi nimi přepínejte podle jména s vestavěným ověřením identity.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (pro -Graph)
+        KillerScripts:
+          description: Každý nástroj z repozitáře killer-scripts, dostupný jako příkaz v jakékoli relaci PowerShellu. Každý skript se při spuštění stáhne přímo z GitHubu, takže máte vždy aktuální verzi, s místní cache jako záložním řešením offline. Všech 18 nástrojů má vlastní příkaz a krátký alias, takže napsáním urt spustíte Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Přístup k internetu pro stažení aktuálního skriptu (uložené kopie fungují offline)
 components:
   androidBetaBanner:
     announcement: Oznameni o beta verzi pro Android

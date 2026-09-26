@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useEventListener } from '@vueuse/core';
 
+const { t } = useI18n();
+
 const event = ref<KeyboardEvent>();
 
 useEventListener(document, 'keydown', (e) => {
@@ -8,12 +10,12 @@ useEventListener(document, 'keydown', (e) => {
 });
 
 const fields = computed(() => [
-  { label: 'Key', value: event.value?.key ?? '' },
-  { label: 'Keycode', value: event.value ? String(event.value.keyCode) : '' },
-  { label: 'Code', value: event.value?.code ?? '' },
-  { label: 'Location', value: event.value ? String(event.value.location) : '' },
+  { label: t('tools.keycode-info.ui.key'), value: event.value?.key ?? '' },
+  { label: t('tools.keycode-info.ui.keycode'), value: event.value ? String(event.value.keyCode) : '' },
+  { label: t('tools.keycode-info.ui.code'), value: event.value?.code ?? '' },
+  { label: t('tools.keycode-info.ui.location'), value: event.value ? String(event.value.location) : '' },
   {
-    label: 'Modifiers',
+    label: t('tools.keycode-info.ui.modifiers'),
     value: event.value
       ? [
           event.value.metaKey && 'Meta',
@@ -51,7 +53,7 @@ async function copyValue(label: string, value: string) {
       </div>
       <span class="kc-hint">
         <span class="kc-cursor">▋</span>
-        Press any key to get info
+        {{ t('tools.keycode-info.ui.pressAnyKey') }}
       </span>
     </div>
 

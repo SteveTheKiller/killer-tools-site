@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Keycode ақпараты
     description: Басылған кез келген пернеңің JavaScript keycode, code, location мәндері мен модификаторларын табыңыз.
+    ui:
+      pressAnyKey: Ақпарат алу үшін кез келген пернені басыңыз
+      key: Перне
+      keycode: Keycode
+      code: Код
+      location: Орналасуы
+      modifiers: Модификаторлар
   emoji-picker:
     title: Эмодзи таңдағыш
     description: Эмодзилерді оңай көшіріп қойыңыз және әрқайсысының unicode мәні мен code point мәндерін алыңыз.
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Windows әкімшілігі мен MSP далалық жұмысына арналған PowerShell скрипттері.
+    ui:
+      loadError: Скрипттерді GitHub-тан жүктеу сәтсіз аяқталды. Байланысты тексеріңіз немесе қайта көріңіз.
+      retry: Қайталау
+      copyCommand: Команданы көшіру
+      copied: Көшірілді!
+      infoCopySuffix: буферге скриптті PowerShell-де тікелей жүктеп, іске қосатын бір жолды команданы көшіреді.
+      infoDownloadPrefix: ''
+      infoDownloadMiddle: түймесі
+      infoDownloadSuffix: файлын қолмен пайдалану үшін құрылғыңызға сақтайды.
   powershell-builder:
     title: PowerShell Builder
     description: Cmdlet таңдаңыз, параметрлерді толтырып, дайын PowerShell командасын көшіріңіз.
@@ -1628,6 +1644,20 @@ tools:
       cheatsheetCmdletsSupportDirectly: Көптеген cmdlet мұны тікелей қолдайды
       cheatsheetRunViaRemoting: PS Remoting (WinRM) арқылы орындау
       cheatsheetInteractiveRemoteSession: Интерактивті қашықтағы PS сеансы
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Командалар
+      requires: Талап етеді
+      copyInstall: Орнатуды көшіру
+      copied: Көшірілді!
+      modules:
+        KillerPivot:
+          description: PowerShell ішінде Microsoft 365 тенанттарын дұрыс емес тенантқа команда жібермей ауыстырыңыз. KillerPivot нақты кіру сұранысын мәжбүрлеу үшін auth broker өшіреді, содан кейін сессия шын мәнінде қай тенантқа түскенін сұрап, сіз ештеңеге тимей тұрып оны тексереді. Тенанттарды бір рет сақтап, содан соң оларды атымен, кірістірілген сәйкестікті тексерумен ауыстырыңыз.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (-Graph үшін)
+        KillerScripts:
+          description: killer-scripts repo ішіндегі әрбір құрал кез келген PowerShell сеансында команда ретінде қолжетімді. Әрбір скрипт іске қосылған сәтте GitHub-тан тікелей алынады, сондықтан сіз әрқашан ағымдағы нұсқада боласыз, ал жергілікті кэш офлайн қосалқы нұсқа ретінде қызмет етеді. 18 құралдың бәрінде өз командасы және қысқа бүркеншік аты бар, сондықтан urt деп теру Universal Rename Tool құралын іске қосады.
+          requirements: PowerShell 5.1 & 7 · Ағымдағы скриптті алу үшін интернет байланысы қажет (кэштелген көшірмелер офлайн жұмыс істейді)
 ui:
   diffEditor:
     originalLabel: ТҮПНҰСҚА

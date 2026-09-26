@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Keycode információ
     description: Bármely lenyomott billentyű JavaScript keycode, code, location és módosító értékeinek megjelenítése.
+    ui:
+      pressAnyKey: Nyomjon meg egy billentyűt az információért
+      key: Billentyű
+      keycode: Keycode
+      code: Kód
+      location: Helyzet
+      modifiers: Módosítók
   emoji-picker:
     title: Emojiválasztó
     description: Emojik egyszerű másolása és beillesztése, valamint az egyes emojik unicode és code point értékei.
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: PowerShell szkriptek Windows-felügyelethez és MSP terepmunkához.
+    ui:
+      loadError: A szkriptek betöltése a GitHubról sikertelen. Ellenőrizze a kapcsolatot, vagy próbálja újra.
+      retry: Újra
+      copyCommand: Parancs másolása
+      copied: Másolva!
+      infoCopySuffix: egy egysoros parancsot másol a vágólapra, amely letölti és közvetlenül a PowerShellben futtatja a szkriptet.
+      infoDownloadPrefix: A
+      infoDownloadMiddle: gomb menti a
+      infoDownloadSuffix: fájlt a gépére kézi használatra.
   powershell-builder:
     title: PowerShell Builder
     description: Válassz egy cmdletet, töltsd ki a paramétereket, és másold ki a kész PowerShell parancsot.
@@ -1628,6 +1644,20 @@ tools:
       rawLabel: Az Ön nyers YAML-je
       rawPlaceholder: Illessze be ide a nyers YAML-t...
       prettifiedLabel: Az Ön YAML-jének formázott verziója
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Parancsok
+      requires: Szükséges
+      copyInstall: Telepítés másolása
+      copied: Másolva!
+      modules:
+        KillerPivot:
+          description: Váltson Microsoft 365 tenantok között PowerShellben anélkül, hogy rossz helyre küldene parancsokat. A KillerPivot letiltja az auth brokert, hogy valódi bejelentkezési ablakot kényszerítsen ki, majd megkérdezi a munkamenettől, valójában melyik tenantba jutott, és ezt ellenőrzi, mielőtt bármihez hozzáérne. Mentse el egyszer a tenantjait, majd váltson köztük néven, beépített azonosság-ellenőrzéssel.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (a -Graph-hoz)
+        KillerScripts:
+          description: A killer-scripts repo minden eszköze, parancsként elérhető bármely PowerShell munkamenetben. Minden szkript futtatáskor frissen a GitHubról töltődik le, így mindig az aktuális verzión dolgozik, helyi gyorsítótárral offline tartalékként. Mind a 18 eszköznek saját parancsa és rövid aliasa van, így az urt begépelése a Universal Rename Toolt futtatja.
+          requirements: PowerShell 5.1 & 7 · Internetkapcsolat szükséges az aktuális szkript letöltéséhez (a gyorsítótárazott másolatok offline is futnak)
 components:
   androidBetaBanner:
     announcement: Android beta bejelentes

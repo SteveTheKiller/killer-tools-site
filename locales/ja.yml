@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: キーコード情報
     description: 押したキーのJavaScriptキーコード、コード、位置、修飾キーを確認します。
+    ui:
+      pressAnyKey: 任意のキーを押すと情報が表示されます
+      key: キー
+      keycode: Keycode
+      code: コード
+      location: 位置
+      modifiers: 修飾キー
   emoji-picker:
     title: 絵文字ピッカー
     description: 絵文字を簡単にコピー＆ペーストでき、各絵文字のUnicode値とコードポイントを取得します。
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Windows管理とMSP現場作業のためのPowerShellスクリプト集です。
+    ui:
+      loadError: GitHubからスクリプトを読み込めませんでした。接続を確認するか、もう一度お試しください。
+      retry: 再試行
+      copyCommand: コマンドをコピー
+      copied: コピーしました!
+      infoCopySuffix: PowerShellでスクリプトを直接ダウンロードして実行するワンライナーをクリップボードにコピーします。
+      infoDownloadPrefix: ''
+      infoDownloadMiddle: ボタンを押すと
+      infoDownloadSuffix: ファイルが手動使用のためにマシンに保存されます。
   powershell-builder:
     title: PowerShellビルダー
     description: コマンドレットを選び、パラメーターを入力して、完成したPowerShellコマンドをコピーします。
@@ -1628,6 +1644,20 @@ tools:
       cheatsheetCmdletsSupportDirectly: 多くのコマンドレットが直接サポート
       cheatsheetRunViaRemoting: PS Remoting (WinRM) 経由で実行
       cheatsheetInteractiveRemoteSession: 対話型リモートPSセッション
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: コマンド
+      requires: 必要条件
+      copyInstall: インストールをコピー
+      copied: コピーしました!
+      modules:
+        KillerPivot:
+          description: PowerShellでMicrosoft 365テナントを切り替え、誤ったテナントにコマンドを送る心配をなくします。KillerPivotはauth brokerを無効化して本物のサインイン画面を強制し、セッションが実際にどのテナントに入ったかを確認してから作業を進めます。テナントを一度保存すれば、あとは名前で切り替えられ、ID検証も組み込まれています。
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (-Graph用)
+        KillerScripts:
+          description: killer-scripts repoのすべてのツールを、PowerShellのどのセッションでもコマンドとして使えます。各スクリプトは実行時にGitHubから直接取得されるため常に最新版になり、オフライン時はローカルキャッシュが使われます。18個すべてのツールに専用コマンドと短いエイリアスがあり、urtと入力するとUniversal Rename Toolが実行されます。
+          requirements: PowerShell 5.1 & 7 · 最新スクリプト取得にはインターネット接続が必要 (キャッシュされたコピーはオフラインで動作)
 ui:
   diffEditor:
     originalLabel: オリジナル

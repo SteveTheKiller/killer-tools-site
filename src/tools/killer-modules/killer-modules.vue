@@ -2,6 +2,13 @@
 import type { KillerModule } from './killer-modules.data';
 import { modules } from './killer-modules.data';
 
+const { t, te } = useI18n();
+
+function modText(mod: KillerModule, field: 'description' | 'requirements') {
+  const key = `tools.killer-modules.ui.modules.${mod.name}.${field}`;
+  return te(key) ? t(key) : mod[field];
+}
+
 const copied = ref<string | null>(null);
 
 async function copyInstall(mod: KillerModule) {
@@ -39,17 +46,17 @@ function openRepo(mod: KillerModule) {
             class="km-btn-repo"
             @click.stop="openRepo(mod)"
           >
-            Repo
+            {{ t('tools.killer-modules.ui.repo') }}
           </button>
         </div>
 
         <div class="km-body">
           <div class="km-desc">
-            {{ mod.description }}
+            {{ modText(mod, 'description') }}
           </div>
 
           <div class="km-fns">
-            <span class="km-label">Commands</span>
+            <span class="km-label">{{ t('tools.killer-modules.ui.commands') }}</span>
             <div class="km-fns-list">
               <code v-for="fn in mod.functions" :key="fn.cmd" class="km-fn">
                 {{ fn.cmd }}<template v-if="fn.alias"><span class="km-fn-alias">({{ fn.alias }})</span></template>
@@ -58,8 +65,8 @@ function openRepo(mod: KillerModule) {
           </div>
 
           <div class="km-req">
-            <span class="km-label">Requires</span>
-            <span class="km-req-text">{{ mod.requirements }}</span>
+            <span class="km-label">{{ t('tools.killer-modules.ui.requires') }}</span>
+            <span class="km-req-text">{{ modText(mod, 'requirements') }}</span>
           </div>
         </div>
 
@@ -70,8 +77,8 @@ function openRepo(mod: KillerModule) {
             :class="{ 'is-copied': copied === mod.name }"
             @click.stop="copyInstall(mod)"
           >
-            <span class="km-lbl km-lbl-idle">⧉ Copy Install</span>
-            <span class="km-lbl km-lbl-done">✓ Copied!</span>
+            <span class="km-lbl km-lbl-idle">⧉ {{ t('tools.killer-modules.ui.copyInstall') }}</span>
+            <span class="km-lbl km-lbl-done">✓ {{ t('tools.killer-modules.ui.copied') }}</span>
           </button>
         </div>
       </div>

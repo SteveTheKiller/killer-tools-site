@@ -359,6 +359,13 @@ tools:
   keycode-info:
     title: Keycode bilgisi
     description: Basılan herhangi bir tuşun JavaScript keycode, code, location ve değiştirici bilgilerini bul.
+    ui:
+      pressAnyKey: Bilgi için herhangi bir tuşa basın
+      key: Tuş
+      keycode: Keycode
+      code: Kod
+      location: Konum
+      modifiers: Değiştiriciler
   emoji-picker:
     title: Emoji seçici
     description: Emojileri kolayca kopyalayıp yapıştır ve her birinin unicode ile code point değerlerini al.
@@ -1047,6 +1054,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: Windows yönetimi ve MSP saha işleri için PowerShell betikleri.
+    ui:
+      loadError: Betikler GitHub'dan yüklenemedi. Bağlantınızı kontrol edin veya tekrar deneyin.
+      retry: Tekrar Dene
+      copyCommand: Komutu Kopyala
+      copied: Kopyalandı!
+      infoCopySuffix: betiği doğrudan PowerShell'de indirip çalıştıran tek satırlık bir komutu panonuza kopyalar.
+      infoDownloadPrefix: ''
+      infoDownloadMiddle: düğmesi
+      infoDownloadSuffix: dosyasını elle kullanım için bilgisayarınıza kaydeder.
   powershell-builder:
     title: PowerShell Builder
     description: Bir cmdlet seç, parametreleri doldur ve hazır PowerShell komutunu kopyala.
@@ -1628,6 +1644,20 @@ tools:
       base: taban
       output: ÇIKTI
       custom: Özel
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: Komutlar
+      requires: Gerektirir
+      copyInstall: Kurulumu Kopyala
+      copied: Kopyalandı!
+      modules:
+        KillerPivot:
+          description: PowerShell'de Microsoft 365 kiracıları arasında, komutları yanlış kiracıya göndermeden geçiş yapın. KillerPivot, gerçek bir oturum açma isteği zorlamak için auth broker'ı devre dışı bırakır, ardından oturumun gerçekte hangi kiracıya bağlandığını sorar ve siz herhangi bir şeye dokunmadan önce bunu doğrular. Kiracılarınızı bir kez kaydedin, ardından yerleşik kimlik doğrulamayla aralarında isimle geçiş yapın.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (-Graph için)
+        KillerScripts:
+          description: killer-scripts reposundaki her araç, herhangi bir PowerShell oturumunda komut olarak kullanılabilir. Her betik çalıştırıldığı anda doğrudan GitHub'dan çekilir, böylece her zaman güncel sürümde olursunuz; çevrimdışı yedek olarak yerel bir önbellek bulunur. 18 aracın tümünün kendi komutu ve kısa bir takma adı vardır, bu yüzden urt yazmak Universal Rename Tool'u çalıştırır.
+          requirements: PowerShell 5.1 & 7 · Güncel betiği almak için internet erişimi gerekir (önbelleğe alınmış kopyalar çevrimdışı çalışır)
 ui:
   diffEditor:
     originalLabel: ORİJİNAL

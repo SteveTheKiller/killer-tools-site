@@ -137,6 +137,13 @@ tools:
   keycode-info:
     title: Keycode 信息
     description: 查找任何按下的键的javascript键代码、代码、位置和修饰符。
+    ui:
+      pressAnyKey: 按任意键获取信息
+      key: 按键
+      keycode: Keycode
+      code: 代码
+      location: 位置
+      modifiers: 修饰键
   emoji-picker:
     title: Emoji 选择器
     description: 轻松复制和粘贴Emoji表情符号，并获得每个表情符号的unicode和code points值.
@@ -770,6 +777,15 @@ tools:
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
+    ui:
+      loadError: 从 GitHub 加载脚本失败,请检查网络连接或重试。
+      retry: 重试
+      copyCommand: 复制命令
+      copied: 已复制!
+      infoCopySuffix: 会将一行命令复制到剪贴板,该命令可直接在 PowerShell 中下载并运行脚本。
+      infoDownloadPrefix: 点击
+      infoDownloadMiddle: 按钮可将
+      infoDownloadSuffix: 文件保存到本机,供手动使用。
   group-policy-reference:
     title: Group Policy Reference
     description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
@@ -1627,6 +1643,20 @@ tools:
   killer-shell:
     title: KillerShell
     description: 面向高级用户的免费 Shell 工具。文件浏览器、终端和文本编辑器共享同一个窗口、同一组标签页和同一套快捷键。
+  killer-modules:
+    ui:
+      repo: Repo
+      commands: 命令
+      requires: 依赖项
+      copyInstall: 复制安装命令
+      copied: 已复制!
+      modules:
+        KillerPivot:
+          description: 在 PowerShell 中切换 Microsoft 365 租户,不必担心命令发到错误的租户。KillerPivot 会禁用 auth broker 以强制弹出真实的登录窗口,然后询问会话实际登录到了哪个租户,并在你进行任何操作前完成验证。只需保存一次租户信息,之后就能按名称切换,并内置身份验证。
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (用于 -Graph)
+        KillerScripts:
+          description: killer-scripts repo 中的每个工具,都可以在任意 PowerShell 会话中作为命令使用。每次运行脚本时都会直接从 GitHub 拉取最新版本,同时本地缓存可作为离线备用。全部 18 个工具都有自己的命令和简短别名,输入 urt 即可运行 Universal Rename Tool。
+          requirements: PowerShell 5.1 & 7 · 需要联网以获取最新脚本 (缓存副本可离线运行)
 ui:
   diffEditor:
     originalLabel: 原始
