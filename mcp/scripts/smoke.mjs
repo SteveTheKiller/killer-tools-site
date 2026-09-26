@@ -298,6 +298,8 @@ if (process.env.MCP_LIVE_NETWORK === '1') {
   assert.ok(gifs.length > 0 && gifs.length <= 2);
   const cve = JSON.parse((await call('lookup_cve', { query: 'CVE-2024-3094' })).content[0].text);
   assert.equal(cve.results[0].id, 'CVE-2024-3094');
+  const chained = JSON.parse((await call('lookup_cve', { query: 'CVE-2021-26855' })).content[0].text);
+  assert.ok(chained.results[0].chains.some(chain => chain.name === 'ProxyLogon' && chain.otherCves.includes('CVE-2021-27065')));
   const dns = JSON.parse((await call('lookup_domain_dns', { name: 'example.com', type: 'A' })).content[0].text);
   assert.ok(dns.answers.some(answer => answer.data));
   const rdap = JSON.parse((await call('lookup_domain_rdap', { domain: 'example.com' })).content[0].text);
