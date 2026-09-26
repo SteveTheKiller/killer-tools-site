@@ -4,6 +4,8 @@ import { ulid } from 'ulid';
 import { NIL, v1, v3, v4, v5, validate as validateUuid } from 'uuid';
 import { z } from 'zod';
 import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from '../../src/tools/chmod-calculator/chmod-calculator.service';
+import { buildSvgPlaceholder } from '../../src/tools/svg-placeholder-generator/svg-placeholder-generator.service';
+import { textToBase64 } from '../../src/utils/base64';
 
 const inputText = z.string().max(4096);
 const permissionGroup = z.object({ read: z.boolean(), write: z.boolean(), execute: z.boolean() });
@@ -14,6 +16,22 @@ function result(value: unknown) {
 }
 
 export function registerSimpleTools(server: McpServer) {
+  server.registerTool('generate_svg_placeholder', {
+    description: 'Generate an SVG placeholder image using KillerTools.',
+    inputSchema: {
+      width: z.number().int().min(1).max(4096),
+      height: z.number().int().min(1).max(4096),
+      fontSize: z.number().int().min(1).max(512).default(26),
+      bgColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#cccccc'),
+      fgColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#333333'),
+      useExactSize: z.boolean().default(true),
+      customText: z.string().max(256).default(''),
+    },
+  }, async options => {
+    const svg = buildSvgPlaceholder(options);
+    return result({ svg, dataUrl: `data:image/svg+xml;base64,${textToBase64(svg)}` });
+  });
+
   server.registerTool('calculate_chmod', {
     description: 'Calculate octal and symbolic Unix permissions using KillerTools Chmod Calculator.',
     inputSchema: { permissions },

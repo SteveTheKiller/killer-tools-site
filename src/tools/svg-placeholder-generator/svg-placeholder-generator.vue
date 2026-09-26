@@ -3,6 +3,7 @@ import TextareaCopyable from '@/components/TextareaCopyable.vue';
 import { useCopy } from '@/composable/copy';
 import { useDownloadFileFromBase64 } from '@/composable/downloadBase64';
 import { textToBase64 } from '@/utils/base64';
+import { buildSvgPlaceholder } from './svg-placeholder-generator.service';
 
 const width = ref(600);
 const height = ref(350);
@@ -12,17 +13,15 @@ const fgColor = ref('#333333');
 const useExactSize = ref(true);
 const customText = ref('');
 
-const svgString = computed(() => {
-  const w = width.value;
-  const h = height.value;
-  const text = customText.value.length > 0 ? customText.value : `${w}x${h}`;
-  const size = useExactSize.value ? ` width="${w}" height="${h}"` : '';
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"${size}>
-  <rect width="${w}" height="${h}" fill="${bgColor.value}"></rect>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="${fontSize.value}px" fill="${fgColor.value}">${text}</text>
-</svg>`.trim();
-});
+const svgString = computed(() => buildSvgPlaceholder({
+  width: width.value,
+  height: height.value,
+  fontSize: fontSize.value,
+  bgColor: bgColor.value,
+  fgColor: fgColor.value,
+  useExactSize: useExactSize.value,
+  customText: customText.value,
+}));
 
 const base64 = computed(() => `data:image/svg+xml;base64,${textToBase64(svgString.value)}`);
 

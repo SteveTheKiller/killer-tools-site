@@ -35,11 +35,14 @@ import { parseUrl } from '../../src/tools/url-parser/url-parser.service';
 import { base64ToText, textToBase64 } from '../../src/utils/base64';
 import { formatBytes } from '../../src/utils/convert';
 import { registerDocumentTools } from './document-tools';
+import { registerFilmDevelopment } from './film-development';
 import { registerFormatParsers } from './format-parsers';
 import { registerPhotoCalculators } from './photo-calculators';
+import { registerPhoneTools } from './phone-tools';
 import { registerReferenceLookups } from './reference-lookups';
 import { registerSimpleTools } from './simple-tools';
 import { registerStructuredText } from './structured-text';
+import { registerTextFormatters } from './text-formatters';
 
 const inputText = z.string().max(4096);
 const maxRequestBytes = 65536;
@@ -101,11 +104,14 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
 function createServer() {
   const server = new McpServer({ name: 'KillerTools MCP', version: '0.1.0' });
   registerDocumentTools(server);
+  registerFilmDevelopment(server);
   registerFormatParsers(server);
   registerPhotoCalculators(server);
+  registerPhoneTools(server);
   registerReferenceLookups(server);
   registerSimpleTools(server);
   registerStructuredText(server);
+  registerTextFormatters(server);
 
   server.registerTool('convert_case', {
     description: 'Return the case conversions shown by the KillerTools Case Converter.',

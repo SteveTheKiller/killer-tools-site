@@ -40,6 +40,7 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'calculate_chmod',
   'calculate_depth_of_field',
   'calculate_exposure_equivalence',
+  'calculate_film_development',
   'calculate_ipv4_subnet',
   'calculate_nd_exposure',
   'calculate_percentage',
@@ -59,11 +60,14 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'escape_html_entities',
   'expand_ipv4_range',
   'format_xml',
+  'format_sql',
   'generate_lorem_ipsum',
+  'generate_svg_placeholder',
   'generate_ulids',
   'generate_uuids',
   'json_to_csv',
   'list_film_stocks',
+  'list_film_development_options',
   'lookup_exchange_ndr',
   'lookup_group_policy',
   'lookup_http_status',
@@ -71,8 +75,10 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'lookup_port_protocol',
   'lookup_windows_error',
   'lookup_windows_event',
+  'markdown_to_html',
   'minify_json',
   'parse_url',
+  'parse_phone_number',
   'parse_user_agent',
   'roman_to_arabic',
   'text_statistics',
@@ -143,6 +149,19 @@ assert.equal(color.name.toLowerCase(), 'red');
 assert.equal((await call('convert_color', { color: 'not a color' })).isError, true);
 assert.ok(JSON.parse((await call('describe_cron', { expression: '40 * * * *' })).content[0].text).description.length > 0);
 assert.equal((await call('describe_cron', { expression: 'bad cron' })).isError, true);
+assert.equal(JSON.parse((await call('markdown_to_html', { markdown: '# Hello' })).content[0].text).text, '<h1>Hello</h1>\n');
+assert.ok(JSON.parse((await call('format_sql', { sql: 'select a from t' })).content[0].text).text.includes('SELECT'));
+const placeholder = JSON.parse((await call('generate_svg_placeholder', { width: 100, height: 50, customText: '<hello>' })).content[0].text);
+assert.ok(placeholder.svg.includes('&lt;hello&gt;'));
+assert.ok(placeholder.dataUrl.startsWith('data:image/svg+xml;base64,'));
+const development = JSON.parse((await call('calculate_film_development', { filmName: 'Ilford HP5 Plus', developerId: 'd76' })).content[0].text);
+assert.equal(development.baseSeconds, 390);
+assert.equal(development.devMl, 500);
+assert.ok(JSON.parse((await call('list_film_development_options', {})).content[0].text).developers.some(dev => dev.id === 'd76'));
+assert.equal((await call('calculate_film_development', { filmName: 'unknown', developerId: 'd76' })).isError, true);
+const phone = JSON.parse((await call('parse_phone_number', { phone: '+1 800 555 0199' })).content[0].text);
+assert.equal(phone.e164, '+18005550199');
+assert.equal((await call('parse_phone_number', { phone: 'bad' })).isError, true);
 assert.equal(JSON.parse((await call('arabic_to_roman', { number: 42 })).content[0].text).roman, 'XLII');
 assert.equal(JSON.parse((await call('roman_to_arabic', { roman: 'XLII' })).content[0].text).number, 42);
 const temperatures = JSON.parse((await call('convert_temperature', { value: 0, scale: 'celsius' })).content[0].text);
