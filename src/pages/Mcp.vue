@@ -52,7 +52,7 @@ useHead({
   <main class="mcp-page">
     <section class="mcp-hero mcp-surface">
       <div class="mcp-heading">
-        <img class="mcp-mark" src="/brand/mcp.png" alt="" aria-hidden="true">
+        <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
         <div>
           <p class="mcp-eyebrow">
             KILLERTOOLS / AGENTS

@@ -107,7 +107,7 @@ const tools = computed<ToolCategory[]>(() => [
         <div flex-1 />
 
         <RouterLink to="/mcp" class="tb-mcp" aria-label="KillerMCP">
-          <img class="tb-mcp-mark" src="/brand/mcp.png" alt="" aria-hidden="true">
+          <img class="tb-mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
           <span>KillerMCP</span>
         </RouterLink>
         <ThemeDots />
