@@ -69,7 +69,7 @@ useHead({
         convert JSON to CSV, or decode Base64. It can use dozens more utilities as your work calls for them.
       </p>
       <p class="mcp-status">
-        Use the link below to give your agent access to 64 KillerTools utilities.
+        KillerTools MCP supports all 81 website tools.
       </p>
     </section>
 
@@ -157,7 +157,7 @@ useHead({
           <li>Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.</li>
         </ul>
         <p>
-          Need tools that work with files or browser data on your own computer? There is also an optional setup for that. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the setup guide</a>.
+          For tools that use your files or browser, set up the local part of KillerTools MCP on your computer. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the setup guide</a>.
         </p>
       </section>
       <section class="mcp-card mcp-surface">
@@ -168,7 +168,7 @@ useHead({
           When your agent uses the link above, it sends tool inputs to KillerTools on Cloudflare for processing. Some lookups also contact external data sources. Do not send passwords, private files, tokens, or client data through this link.
         </p>
         <p>
-          With the optional computer setup, file and browser tools run on your computer. Your agent client may still receive their inputs and results.
+          With the local setup, file and browser tools run on your computer. Your agent client may still receive their inputs and results.
         </p>
       </section>
     </div>
