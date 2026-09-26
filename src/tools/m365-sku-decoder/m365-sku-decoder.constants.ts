@@ -256,24 +256,10 @@ export const skusByCategory: {
         tier: 'Add-on',
       },
       {
-        guid: 'MFA_PREMIUM',
-        stringId: 'MFA_PREMIUM',
-        name: 'Microsoft Entra Multi-Factor Authentication',
-        description: 'Standalone MFA license. Typically included within Entra ID P1/P2. Enables per-user MFA without Conditional Access.',
-        tier: 'Add-on',
-      },
-      {
         guid: '16a55f2f-ff35-4cd5-9146-fb784e3761a5',
         stringId: 'DEFENDER_ENDPOINT_P1',
         name: 'Microsoft Defender for Endpoint P1',
         description: 'Next-gen antivirus, attack surface reduction, and device control. Included in Microsoft 365 Business Premium.',
-        tier: 'Add-on',
-      },
-      {
-        guid: 'DEFENDER_ENDPOINT_P2',
-        stringId: 'DEFENDER_ENDPOINT_P2',
-        name: 'Microsoft Defender for Endpoint P2',
-        description: 'P1 plus EDR, automated investigation and remediation, threat hunting, and vulnerability management (TVM).',
         tier: 'Add-on',
       },
       {
@@ -282,13 +268,6 @@ export const skusByCategory: {
         name: 'Microsoft Defender for Endpoint (Cross-Platform)',
         description: 'Defender for Endpoint coverage for Linux, macOS, iOS, and Android devices.',
         tier: 'Add-on',
-      },
-      {
-        guid: 'MDO_SMB',
-        stringId: 'MDO_SMB',
-        name: 'Microsoft Defender for Business',
-        description: 'Simplified EDR and endpoint protection for SMBs (up to 300 users). Included in M365 Business Premium. Also available standalone.',
-        tier: 'Business',
       },
       {
         guid: '3dd6cf57-d688-4eed-ba52-9e40b5468c3e',
@@ -387,13 +366,6 @@ export const skusByCategory: {
         tier: 'Add-on',
       },
       {
-        guid: 'ENTRA_IDENTITY_GOVERNANCE',
-        stringId: 'ENTRA_IDENTITY_GOVERNANCE',
-        name: 'Microsoft Entra ID Governance',
-        description: 'Access reviews, entitlement management, lifecycle workflows, and Privileged Access Management for internal and external identities.',
-        tier: 'Add-on',
-      },
-      {
         guid: 'MCASFAS',
         stringId: 'MCASFAS',
         name: 'Microsoft Entra Permissions Management',
@@ -487,46 +459,11 @@ export const skusByCategory: {
         description: '8 vCPU, 32GB RAM, 128GB storage. High-performance Cloud PC for power users and developers.',
         tier: 'Business',
       },
-      {
-        guid: 'CPC_E_2C_4RAM_64GB',
-        stringId: 'CPC_E_2C_4RAM_64GB',
-        name: 'Windows 365 Enterprise 2 vCPU / 4 GB / 64 GB',
-        description: 'Enterprise Cloud PC with Intune management, custom images, and advanced networking. 2 vCPU, 4GB RAM, 64GB storage.',
-        tier: 'Enterprise',
-      },
-      {
-        guid: 'CPC_E_2C_8RAM_128GB',
-        stringId: 'CPC_E_2C_8RAM_128GB',
-        name: 'Windows 365 Enterprise 2 vCPU / 8 GB / 128 GB',
-        description: 'Enterprise Cloud PC with Intune and Entra join support. 2 vCPU, 8GB RAM, 128GB storage.',
-        tier: 'Enterprise',
-      },
-      {
-        guid: 'CPC_E_4C_16RAM_128GB',
-        stringId: 'CPC_E_4C_16RAM_128GB',
-        name: 'Windows 365 Enterprise 4 vCPU / 16 GB / 128 GB',
-        description: 'Enterprise Cloud PC. 4 vCPU, 16GB RAM, 128GB. Common tier for knowledge workers needing a full Windows experience.',
-        tier: 'Enterprise',
-      },
-      {
-        guid: 'CPC_E_8C_32RAM_256GB',
-        stringId: 'CPC_E_8C_32RAM_256GB',
-        name: 'Windows 365 Enterprise 8 vCPU / 32 GB / 256 GB',
-        description: 'High-performance Enterprise Cloud PC for power users and developers. 8 vCPU, 32GB RAM, 256GB storage.',
-        tier: 'Enterprise',
-      },
     ],
   },
   {
     category: 'Teams & Communication',
     skus: [
-      {
-        guid: 'TEAMS_ESSENTIALS',
-        stringId: 'TEAMS_ESSENTIALS',
-        name: 'Microsoft Teams Essentials',
-        description: 'Teams meetings (30hr limit), 10GB cloud storage, group chat. No Exchange, SharePoint, or full Office. Lowest-cost Teams option.',
-        tier: 'Business',
-      },
       {
         guid: '710779e8-3d4a-4c88-adb9-386c958d1fdf',
         stringId: 'TEAMS_EXPLORATORY',
