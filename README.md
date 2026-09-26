@@ -10,6 +10,8 @@ Everything runs in your browser. Nothing is tracked. No account is required, eve
 
 Built and maintained by [Steve the Killer](https://theKiller.net).
 
+Use KillerTools from an AI agent with [KillerTools MCP](https://killertools.net/mcp).
+
 ---
 
 ## Notable Tools
