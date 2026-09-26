@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: সবচেয়ে নতুন টুল
+    favoriteTools: আপনার প্রিয় টুল
+    allTools: সব টুল
+    favoritesDndToolTip: প্রিয়গুলোর ক্রম বদলাতে টেনে এনে ছাড়ুন
+  subtitle: ডেভেলপারদের জন্য কাজের টুল
+  toggleMenu: মেনু দেখান/লুকান
+  home: হোম
+  uiLib: UI লাইব্রেরি
+  support: killer-tools-এর উন্নয়নে সহায়তা করুন
+  buyMeACoffee: আমাকে একটা কফি খাওয়ান
+  follow:
+    title: killer-tools ভালো লাগছে?
+    p1: আমাকে একটি তারকা দিন
+    githubRepository: StevetheKiller GitHub রিপোজিটরিতে
+    thankYou: ধন্যবাদ!
+  nav:
+    github: GitHub রিপোজিটরি
+    githubRepository: killer-tools GitHub রিপোজিটরি
+    about: killer-tools সম্পর্কে
+    aboutLabel: সম্পর্কে
+    darkMode: ডার্ক মোড
+    lightMode: লাইট মোড
+    mode: ডার্ক/লাইট মোড পরিবর্তন করুন
+about:
+  content: |
+    # killer-tools
+
+    ফিল্ড টেকদের বাড়তি ঝামেলার জন্য সময় নেই। এখানকার প্রতিটি টুল আছে কারণ কাজের সময় আমার এটি দরকার হয়েছিল, আর অ্যাকাউন্ট, ইনস্টল বা টেলিমেট্রি ছাড়া সহজে কাজ করে এমন কিছু খুঁজে পাইনি।
+
+    আমি একটি MSP-তে ফিল্ড টেক, নেটওয়ার্কিং, সিস্টেম অ্যাডমিনের কাজ এবং এন্ডপয়েন্ট সাপোর্ট সামলাই। killer-tools চমৎকার [IT-Tools](https://github.com/CorentinTh/it-tools) প্রকল্পের একটি ফর্ক হিসেবে শুরু হয়েছিল এবং আমি আসলে যে কাজ করি তার জন্য তৈরি কিছুতে পরিণত হয়েছে। টিকিটের মাঝখানে NDR কোড খুঁজতে, ক্লায়েন্টের সাবনেট স্ক্যান করতে এবং ক্লিক করার আগে একটি SafeLink ডিকোড করতে আমি এটি বানিয়েছিলাম।
+
+    সবকিছু আপনার ব্রাউজারে চলে। কিছুই ট্র্যাক করা হয় না। কখনোই কোনো অ্যাকাউন্ট লাগে না।
+
+    [Steve the Killer](https://thekiller.net) তৈরি ও রক্ষণাবেক্ষণ করেন। এটি যদি কাজে আপনার সময় বাঁচায়, তবে [আমাকে একটা কফি খাওয়ানো](https://www.buymeacoffee.com/StevetheKiller) প্রশংসনীয়, তবে কখনোই প্রত্যাশিত নয়।
+
+    ## কোনো টুল নেই? বাগ পেয়েছেন?
+
+    GitHub-এর [issues বিভাগে](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) একটি ফিচার অনুরোধ বা বাগ রিপোর্ট খুলুন। আমি সেগুলো পড়ি।
+404:
+  notFound: 404 পাওয়া যায়নি
+  sorry: দুঃখিত, এই পৃষ্ঠাটি মনে হয় নেই
+  maybe: হয়তো ক্যাশ কোনো গোলমাল করছে, জোর করে রিফ্রেশ করে দেখবেন?
+  backHome: হোমে ফিরে যান
+favoriteButton:
+  remove: প্রিয় থেকে সরান
+  add: প্রিয়তে যোগ করুন
+toolCard:
+  new: নতুন
+search:
+  label: খুঁজুন
+tools:
+  categories:
+    favorite-tools: আপনার প্রিয় টুল
+    crypto: ক্রিপ্টো
+    conversion: রূপান্তর
+    web: ওয়েব
+    images and videos: ছবি ও ভিডিও
+    development: ডেভেলপমেন্ট
+    network: নেটওয়ার্ক
+    math: গণিত
+    measurement: পরিমাপ
+    text: টেক্সট
+    data: ডেটা
+    windows: Windows
+    killer apps: Killer Apps
+    photography: ফটোগ্রাফি
+  password-strength-analyser:
+    title: পাসওয়ার্ড শক্তি বিশ্লেষক
+    description: শুধু ক্লায়েন্ট-সাইডে চলা এই বিশ্লেষক ও ভাঙার সময় অনুমানের টুল দিয়ে আপনার পাসওয়ার্ড কতটা শক্ত তা জানুন।
+  password-generator:
+    title: পাসওয়ার্ড জেনারেটর
+    description: শক্তিশালী পাসওয়ার্ড, diceware পাসফ্রেজ, উচ্চারণযোগ্য স্ট্রিং এবং hex/base64/UUID টোকেন তৈরি করুন। MSP প্রিসেট (লোকাল অ্যাডমিন, সার্ভিস অ্যাকাউন্ট, Wi-Fi PSK, PIN), দ্ব্যর্থক অক্ষর বাদ দেওয়া, এনট্রপি মিটার, QR কোড এবং NATO ফোনেটিক পাঠ অন্তর্ভুক্ত।
+    ui:
+      terminal:
+        passwordTitle: পাসওয়ার্ড
+        optionsTitle: অপশন
+      meta:
+        entropyLabel: 'এনট্রপি:'
+        bits: বিট
+        crackLabel: 'ক্র্যাক সময়:'
+      actions:
+        copy: কপি করুন
+        refresh: রিফ্রেশ
+      section:
+        preset: প্রিসেট
+        mode: মোড
+        format: ফরম্যাট
+        length: দৈর্ঘ্য ({length})
+        wordCount: শব্দ সংখ্যা ({count})
+        separator: সেপারেটর
+        characterClasses: ক্যারেক্টার শ্রেণি
+        options: অপশন
+      charClass:
+        uppercase: বড় হাতের অক্ষর
+        lowercase: ছোট হাতের অক্ষর
+        numbers: সংখ্যা
+        symbols: চিহ্ন
+      option:
+        excludeAmbiguous: দ্ব্যর্থক অক্ষর বাদ দিন
+        requireOneOfEach: প্রতিটি থেকে একটি করে আবশ্যক
+        capitalizeWords: শব্দের প্রথম অক্ষর বড় করুন
+        appendNumber: শেষে ২ সংখ্যা যোগ করুন
+      mode:
+        random: র‍্যান্ডম
+        passphrase: পাসফ্রেজ
+        pronounceable: উচ্চারণযোগ্য
+        format: ফরম্যাট
+      format:
+        plain: প্লেইন
+        hex: হেক্স
+        base64: বেস৬৪
+        base64url: বেস৬৪-ইউআরএল
+        uuid: UUID v4
+      separator:
+        none: কোনোটি নয়
+      qr:
+        caption: কপি করতে স্ক্যান করুন
+      phonetic:
+        title: ফোনেটিক
+      bulk:
+        generateLabel: জেনারেট করুন
+        single: একক
+        atOnce: একসাথে {n}টি
+        passwordsTitle: '{count}টি পাসওয়ার্ড'
+        copyAll: সব কপি করুন
+      toast:
+        passwordCopied: পাসওয়ার্ড ক্লিপবোর্ডে কপি হয়েছে
+        passwordsCopied: পাসওয়ার্ডগুলো ক্লিপবোর্ডে কপি হয়েছে
+        phoneticCopied: ফোনেটিক বানান কপি হয়েছে
+  percentage-calculator:
+    title: শতাংশ ক্যালকুলেটর
+    description: এক মান থেকে অন্য মানে, বা শতাংশ থেকে মানে সহজে শতাংশ হিসাব করুন।
+    ui:
+      whatIsXPercentOfYTitle: Y এর X% কত
+      whatIsLabel: কত হলো
+      percentOfLabel: '% এর'
+      resultPlaceholder: ফলাফল
+      xIsWhatPercentOfYTitle: X, Y এর কত শতাংশ
+      isWhatPercentOfLabel: কত শতাংশ এর
+      percentageChangeTitle: শতকরা বৃদ্ধি / হ্রাস
+      fromLabel: থেকে
+      toLabel: পর্যন্ত
+  svg-placeholder-generator:
+    title: SVG প্লেসহোল্ডার জেনারেটর
+    description: আপনার অ্যাপ্লিকেশনে প্লেসহোল্ডার হিসেবে ব্যবহারের জন্য SVG ছবি তৈরি করুন।
+    ui:
+      widthLabel: প্রস্থ (px)
+      backgroundLabel: পটভূমি
+      heightLabel: উচ্চতা (px)
+      textColorLabel: টেক্সটের রঙ
+      fontSizeLabel: ফন্টের আকার
+      customTextLabel: কাস্টম টেক্সট
+      customTextPlaceholder: ডিফল্ট হলো {size}
+      useExactSizeToggle: সঠিক আকার ব্যবহার করুন
+      svgHtmlElementLabel: SVG HTML এলিমেন্ট
+      svgBase64Label: SVG Base64-এ
+      copySvgButton: svg কপি করুন
+      copyBase64Button: base64 কপি করুন
+      downloadSvgButton: svg ডাউনলোড করুন
+      previewLabel: প্রিভিউ
+      svgPreviewAlt: SVG প্রিভিউ
+  json-to-csv:
+    title: JSON থেকে CSV
+    description: স্বয়ংক্রিয় হেডার শনাক্তকরণসহ JSON-কে CSV-তে রূপান্তর করুন।
+    ui:
+      invalidJson: প্রদত্ত JSON বৈধ নয়।
+      yourRawJson: আপনার কাঁচা JSON
+      pasteRawJsonPlaceholder: আপনার কাঁচা JSON এখানে পেস্ট করুন...
+      csvOutputLabel: আপনার JSON এর CSV সংস্করণ
+  camera-recorder:
+    title: ক্যামেরা রেকর্ডার
+    description: আপনার ওয়েবক্যাম বা ক্যামেরা থেকে ছবি তুলুন বা ভিডিও রেকর্ড করুন।
+    ui:
+      selectCamera: ক্যামেরা নির্বাচন করুন
+      selectMicrophone: মাইক্রোফোন নির্বাচন করুন
+      notSupported: আপনার ব্রাউজার ক্যামেরা রেকর্ডিং সমর্থন করে না।
+      accessRequired: ক্যামেরা এবং মাইক্রোফোন অ্যাক্সেস প্রয়োজন।
+      permissionBlocked: অনুমতি ব্লক করা হয়েছে। ব্রাউজারের অ্যাড্রেস বারের লক আইকন থেকে ম্যানুয়ালি অ্যাক্সেস দিন।
+      grantPermission: অনুমতি দিন
+      video: ভিডিও
+      audio: অডিও
+      startWebcam: ওয়েবক্যাম শুরু করুন
+      paused: বিরতি দেওয়া হয়েছে
+      rec: রেক
+      screenshot: স্ক্রিনশট
+      record: রেকর্ড করুন
+      pause: বিরতি দিন
+      resume: পুনরায় শুরু করুন
+      stop: থামান
+      recordingNotSupported: এই ব্রাউজারে রেকর্ডিং সমর্থিত নয়
+      captures: ক্যাপচার ({count})
+      clearAll: সব মুছুন
+      screenshotAlt: স্ক্রিনশট
+      download: ডাউনলোড
+      delete: মুছুন
+  reciprocity-calculator:
+    title: রেসিপ্রোসিটি ফেইলিওর ক্যালকুলেটর
+    description: Schwarzschild পাওয়ার ল ব্যবহার করে ৪০টির বেশি অ্যানালগ ফিল্মের জন্য সংশোধিত দীর্ঘ এক্সপোজার হিসাব করুন। সাদাকালো, কালার নেগেটিভ এবং স্লাইড ফিল্ম অন্তর্ভুক্ত।
+    ui:
+      barReciprocity: রেসিপ্রোসিটি ক্যালকুলেটর
+      barCorrected: সংশোধিত এক্সপোজার
+      fieldFilmStock: ফিল্ম স্টক
+      typeBw: B&W
+      typeColorNeg: কালার নেগেটিভ
+      typeSlide: স্লাইড / E6
+      noFailureUpTo: '{seconds}s পর্যন্ত কোনো ব্যর্থতা নেই'
+      sourceManufacturer: প্রস্তুতকারকের তথ্য
+      sourceCommunity: কমিউনিটির তথ্য
+      fieldMeteredExposure: মিটার করা এক্সপোজার
+      unitSeconds: সেকেন্ড
+      noFailureMessage: কোনো সংশোধনের প্রয়োজন নেই, এই স্টকের এই এক্সপোজার দৈর্ঘ্যে কোনো রেসিপ্রোসিটি ব্যর্থতা নেই।
+      copyDone: ✓ কপি হয়েছে
+      copySeconds: সেকেন্ড কপি করুন
+      devReduce10: শ্যাডো ডেনসিটি বৃদ্ধি সামলাতে ডেভেলপমেন্ট ~10% কমানোর কথা বিবেচনা করুন।
+      devReduce1015: ডেভেলপমেন্ট 10-15% কমানোর পরামর্শ দেওয়া হচ্ছে।
+      devReduce1520: ডেভেলপমেন্ট 15-20% কমানোর পরামর্শ দেওয়া হচ্ছে।
+      devReduce2030: খুব দীর্ঘ এক্সপোজারের জন্য ডেভেলপমেন্ট 20-30% কমানোর পরামর্শ দেওয়া হচ্ছে।
+      colorShiftWarning: 'কালার ফিল্ম: এই এক্সপোজার দৈর্ঘ্যে কালার শিফট আশা করুন।'
+      colorShiftSlide: স্লাইড ফিল্ম পোস্টে সংশোধন করা কঠিন, ক্যামেরায় CC ফিল্ট্রেশনের পরামর্শ দেওয়া হচ্ছে।
+      colorShiftNeg: কালার নেগেটিভের বেশি লাটিটিউড থাকে; প্রিন্টিং বা স্ক্যানিংয়ে সংশোধন সম্ভব।
+  nd-filter-calculator:
+    title: ND ফিল্টার ক্যালকুলেটর
+    description: নিউট্রাল ডেনসিটি ফিল্টারের জন্য সংশোধিত শাটার স্পিড হিসাব করুন। সব প্রচলিত ND শক্তি এবং কাস্টম স্টপ মান সমর্থন করে।
+    ui:
+      titleInputs: ND ফিল্টার ক্যালকুলেটর
+      baseShutterSpeed: বেস শাটার স্পিড (ফিল্টার ছাড়া)
+      dragOrClick: টেনে আনুন বা ক্লিক করুন
+      custom: কাস্টম
+      secPlaceholder: সেকেন্ড
+      ndFilter: ND ফিল্টার
+      stopOne: '{count} স্টপ'
+      stopMany: '{count} স্টপ'
+      enterStops: স্টপ লিখুন
+      stopsPlaceholder: স্টপ
+      titleResult: সংশোধিত এক্সপোজার
+      copied: কপি হয়েছে
+      copySeconds: সেকেন্ড কপি করুন
+      longExposureAlert: দীর্ঘ এক্সপোজার, বাল্ব মোড ব্যবহার বিবেচনা করুন।
+      stackingFilters: 'ফিল্টার স্ট্যাকিং: তাদের স্টপ যোগ করুন'
+      legendT1: বেস শাটার স্পিড (ফিল্টার ছাড়া)
+      legendT2: সংশোধিত শাটার স্পিড
+      legendStops: ND ফিল্টারের শক্তি
+  depth-of-field-calculator:
+    title: ডেপথ অফ ফিল্ড ক্যালকুলেটর
+    description: যেকোনো লেন্স ও সেন্সরের সমন্বয়ের জন্য কাছের সীমা, দূরের সীমা এবং মোট ডেপথ অফ ফিল্ড হিসাব করুন। হাইপারফোকাল দূরত্বও দেখায়।
+    ui:
+      sensorMedFormat: মিড ফরম্যাট
+      sensorCustom: কাস্টম
+      sensorEnterCoc: CoC লিখুন
+      infinity: অসীম
+      title: ডেপথ অফ ফিল্ড ক্যালকুলেটর
+      sensorFormat: সেন্সর ফরম্যাট
+      cocPlaceholder: মিমিতে CoC (যেমন 0.029)
+      focalLength: ফোকাল দৈর্ঘ্য (মিমি)
+      aperture: অ্যাপারচার
+      dragOrClick: টেনে আনুন বা ক্লিক করুন
+      focusDistance: ফোকাস দূরত্ব
+      distancePlaceholder: দূরত্ব
+      results: ফলাফল
+      hyperfocalDistance: হাইপারফোকাল দূরত্ব
+      hyperfocalHint: সর্বোচ্চ শার্পনেসের জন্য এই দূরত্বের অর্ধেক থেকে অসীম পর্যন্ত এখানে ফোকাস করুন
+      nearLimit: নিকট সীমা
+      farLimit: দূর সীমা
+      totalDof: মোট ডেপথ অফ ফিল্ড
+      beyondHyperfocal: ফোকাস দূরত্ব হাইপারফোকাল দূরত্বের সমান বা তার বেশি, তাই দূর সীমা অসীম পর্যন্ত বিস্তৃত থাকে।
+      legendHyperfocal: হাইপারফোকাল দূরত্ব
+      legendFocalLength: ফোকাল দৈর্ঘ্য
+      legendFNumber: এফ-নম্বর (অ্যাপারচার)
+      legendCoc: সার্কেল অফ কনফিউশন
+      legendFocusDistance: ফোকাস দূরত্ব
+  exposure-equivalence:
+    title: এক্সপোজার সমতুল্যতা
+    description: একই এক্সপোজারের জন্য সব অ্যাপারচারে সমতুল্য শাটার স্পিড খুঁজুন। আপনার মূল শাটার ও অ্যাপারচার বেছে নিন এবং অন্য প্রতিটি f-stop-এ কী লাগবে দেখুন।
+    ui:
+      titleInputs: এক্সপোজার সমতুল্যতা
+      shutterSpeed: শাটার স্পিড
+      dragOrClick: টেনে আনুন বা ক্লিক করুন
+      custom: কাস্টম
+      secPlaceholder: সেকেন্ড
+      aperture: অ্যাপারচার
+      titleResults: সমতুল্য এক্সপোজার
+      isoIndependent: যেকোনো নির্দিষ্ট ISO-তে ISO-নিরপেক্ষ
+      highlightedBase: হাইলাইট করা সারিটি আপনার বেস
+      legendT1: বেস শাটার স্পিড
+      legendT2: সমতুল্য শাটার স্পিড
+      legendN1: বেস অ্যাপারচার (f-নম্বর)
+      legendN2: লক্ষ্য অ্যাপারচার (f-নম্বর)
+  dev-calculator:
+    title: ফিল্ম ডেভেলপমেন্ট ক্যালকুলেটর
+    description: তাপমাত্রা সমন্বয়, push/pull প্রসেসিং এবং ডাইলিউশন মিশ্রণসহ সমন্বিত ডেভেলপমেন্ট সময় হিসাব করুন। প্রচলিত সাদাকালো ডেভেলপার ও ফিল্মের একটি ডেটাবেস অন্তর্ভুক্ত।
+    ui:
+      hasData: ডেটা আছে
+      noDataGroup: কোনো ডেটা নেই, বেস টাইম ম্যানুয়ালি লিখুন
+      colorBelow: '{process} 36°C এর নিচে: রঙের পরিবর্তন ও অসম্পূর্ণ ডেভেলপমেন্ট হতে পারে'
+      colorAbove: '{process} 40°C এর উপরে: ফগিং ও কালার ক্রসওভারের ঝুঁকি'
+      bwBelow: '18°C এর নিচে: ডেভেলপমেন্ট খুব ধীর হবে'
+      bwAbove: '24°C এর উপরে: রেটিকুলেশন ও ফগিংয়ের ঝুঁকি'
+      start: শুরু করুন
+      pause: বিরতি
+      resume: পুনরায় শুরু করুন
+      calculatorTitle: ফিল্ম ডেভেলপমেন্ট ক্যালকুলেটর
+      developer: ডেভেলপার
+      dilution: ডাইলিউশন
+      filmStock: ফিল্ম স্টক
+      baseTimeAt: '{temp}°C এ বেস টাইম'
+      noData: কোনো ডেটা নেই
+      overridePlaceholder: ওভাররাইড (সে)
+      customBaseActive: কাস্টম বেস টাইম সক্রিয়
+      temperature: 'তাপমাত্রা:'
+      pushPull: পুশ / পুল
+      tankVolume: ট্যাংকের আয়তন
+      customMlPlaceholder: কাস্টম মিলি
+      adjustedTime: সামঞ্জস্যকৃত সময়
+      baseTimeTemp: বেস টাইম ({temp}°C)
+      tempAdj: তাপমাত্রা সমন্বয় ({temp})
+      pushStop: পুশ {n} স্টপ
+      pushStops: পুশ {n} স্টপ
+      pullStop: পুল {n} স্টপ
+      pullStops: পুল {n} স্টপ
+      mixFor: '{volume}মিলি এর জন্য মেশান'
+      mixDeveloper: ডেভেলপার
+      mixWater: পানি
+      noDataWarning: '{film} + {developer} এর জন্য কোনো ডেটা নেই। বেস টাইম ম্যানুয়ালি লিখুন।'
+      pushPullEstimate: পুশ/পুল সময়গুলো আনুমানিক। টেস্ট রোল করার পরামর্শ দেওয়া হয়।
+      sourceNote: বেস টাইম Massive Dev Chart এবং প্রস্তুতকারকের ডেটাশিট থেকে নেওয়া।
+      processTimer: প্রসেস টাইমার
+      devComplete: ডেভেলপমেন্ট সম্পন্ন হয়েছে
+      devCompleteHint: শুকানোর জন্য ঝুলিয়ে রাখুন এবং আপনার নেগেটিভ উপভোগ করুন।
+      stageOf: ধাপ {current} / {total}
+      agitation: আন্দোলন
+      reset: রিসেট
+      skip: এড়িয়ে যান
+      stDeveloper: ডেভেলপার
+      stBleach: ব্লিচ
+      stWash: ওয়াশ
+      stFixer: ফিক্সার
+      stWash2: ওয়াশ ২
+      stStabilizer: স্টেবিলাইজার
+      stFirstDeveloper: প্রথম ডেভেলপার
+      stReversalBath: রিভার্সাল বাথ
+      stColorDeveloper: কালার ডেভেলপার
+      stPreBleach: প্রি ব্লিচ
+      stFinalWash: ফাইনাল ওয়াশ
+      stStopBath: স্টপ বাথ
+      agC30s10: প্রথম ৩০ সে টানা, এরপর প্রতি ৩০ সে অন্তর ১০ সে
+      agRun3Full: চলমান পানি বা ৩টি সম্পূর্ণ পরিবর্তন
+      agGentle: শুধু হালকা ঘোরানো, পরে ধোয়া যাবে না
+      agC30s5: প্রথম ৩০ সে টানা, এরপর প্রতি ৩০ সে অন্তর ৫ সে
+      agRun3: চলমান পানি বা ৩টি পরিবর্তন
+      agContinuous: টানা
+      ag10per30: প্রতি ৩০ সে অন্তর ১০ সে
+      agRun5: চলমান পানি বা ৫টি পরিবর্তন
+      agC60s10: প্রথম ৩০ সে টানা, এরপর প্রতি ৬০ সে অন্তর ১০ সে
+      agCont60: ৬০ সে ধরে টানা
+      ag10per60: প্রতি ৬০ সে অন্তর ১০ সে
+      agRun5Full: চলমান পানি বা ৫টি সম্পূর্ণ পরিবর্তন
+  keycode-info:
+    title: Keycode তথ্য
+    description: যেকোনো চাপা কী-এর JavaScript keycode, code, location এবং মডিফায়ার খুঁজুন।
+  emoji-picker:
+    title: ইমোজি পিকার
+    description: সহজে ইমোজি কপি ও পেস্ট করুন এবং প্রতিটি ইমোজির unicode ও code point মান জানুন।
+    ui:
+      emojiCopied: ইমোজি {emoji} ক্লিপবোর্ডে কপি করা হয়েছে
+      codePointsCopied: কোড পয়েন্ট '{codePoints}' ক্লিপবোর্ডে কপি করা হয়েছে
+      unicodeCopied: ইউনিকোড '{unicode}' ক্লিপবোর্ডে কপি করা হয়েছে
+      searchPlaceholder: ইমোজি খুঁজুন (যেমন 'smile')...
+      noResults: কোনো ফলাফল নেই
+      searchResult: অনুসন্ধান ফলাফল
+  color-converter:
+    title: রং রূপান্তরকারী
+    description: বিভিন্ন ফরম্যাটের মধ্যে রং রূপান্তর করুন (hex, rgb, hsl এবং CSS নাম)
+    ui:
+      color: রঙ
+      formats: ফরম্যাট
+  bcrypt:
+    title: Bcrypt
+    description: bcrypt দিয়ে টেক্সট স্ট্রিং হ্যাশ ও তুলনা করুন। Bcrypt হলো Blowfish সাইফারভিত্তিক একটি পাসওয়ার্ড-হ্যাশিং ফাংশন।
+    ui:
+      copiedToClipboard: হ্যাশ করা স্ট্রিং ক্লিপবোর্ডে কপি করা হয়েছে
+      hashTitle: হ্যাশ
+      compareTitle: তুলনা
+      stringLabel: স্ট্রিং
+      stringPlaceholder: bcrypt করার জন্য আপনার স্ট্রিং...
+      saltRoundsLabel: সল্ট রাউন্ড
+      outputLabel: আউটপুট
+      copyHash: হ্যাশ কপি করুন
+      compareStringPlaceholder: তুলনার জন্য আপনার স্ট্রিং...
+      hashLabel: হ্যাশ
+      compareHashPlaceholder: তুলনার জন্য আপনার হ্যাশ...
+      matchLabel: মিল
+      'yes': হ্যাঁ
+      'no': না
+  crontab-generator:
+    title: Crontab জেনারেটর
+    description: crontab যাচাই ও তৈরি করুন এবং cron সময়সূচির সহজপাঠ্য বিবরণ পান।
+    ui:
+      symbolAnyValue: যেকোনো মান
+      symbolEveryMinute: প্রতি মিনিট
+      symbolRange: মানের পরিসর
+      symbolRangeEquivalent: 1 থেকে 10 মিনিট
+      symbolList: মানের তালিকা
+      symbolListEquivalent: মিনিট 1 এবং 10 এ
+      symbolStep: ধাপ মান
+      symbolStepEquivalent: প্রতি 10 মিনিটে
+      aliasYearly: বছরে একবার (1 জানুয়ারি, মধ্যরাত)
+      aliasMonthly: প্রতি মাসের প্রথম দিন, মধ্যরাত
+      aliasWeekly: রবিবার, মধ্যরাত
+      aliasDaily: প্রতিদিন মধ্যরাতে
+      aliasHourly: প্রতি ঘণ্টায়, ঠিক সময়ে
+      aliasReboot: স্টার্টআপে একবার চালান
+      aliasRebootEquivalent: (স্টার্টআপে)
+      invalidCron: এই cron টি অবৈধ
+      use24HourTime: 24 ঘণ্টার সময়
+      daysStartAtZero: দিন শুরু হয় 0 থেকে
+      labelSymbol: 'প্রতীক:'
+      labelMeaning: 'অর্থ:'
+      labelExample: 'উদাহরণ:'
+      labelEquivalent: 'সমতুল্য:'
+      symbols: প্রতীকসমূহ
+      aliases: উপনাম
+  http-status-codes:
+    title: HTTP স্ট্যাটাস কোড
+    description: সব HTTP স্ট্যাটাস কোডের তালিকা, তাদের নাম এবং অর্থ।
+    ui:
+      searchResults: অনুসন্ধান ফলাফল
+      searchPlaceholder: HTTP স্ট্যাটাস খুঁজুন...
+      copiedTooltip: কপি হয়েছে!
+      clickToCopy: স্ট্যাটাস কোড কপি করতে ক্লিক করুন
+      copiedLabel: কপি হয়েছে
+  sql-prettify:
+    title: SQL ফরম্যাটার
+    description: অনলাইনে আপনার SQL কোয়েরি ফরম্যাট ও সুন্দর করুন (বিভিন্ন SQL ডায়ালেক্ট সমর্থন করে)।
+    ui:
+      dialectLabel: ডায়ালেক্ট
+      keywordCaseLabel: কীওয়ার্ড কেস
+      indentStyleLabel: ইনডেন্ট স্টাইল
+      yourSqlQueryLabel: আপনার SQL কোয়েরি
+      sqlQueryPlaceholder: এখানে আপনার SQL কোয়েরি লিখুন...
+      prettifiedQueryLabel: আপনার কোয়েরির প্রিটিফাইড সংস্করণ
+      keywordCaseUpper: আপারকেস
+      keywordCaseLower: লোয়ারকেস
+      keywordCasePreserve: অপরিবর্তিত রাখুন
+      indentStyleStandard: স্ট্যান্ডার্ড
+      indentStyleTabularLeft: টেবুলার লেফট
+      indentStyleTabularRight: টেবুলার রাইট
+  git-memo:
+    title: Git চিটশিট
+    description: সবচেয়ে প্রচলিত Git কমান্ড ও ওয়ার্কফ্লোর দ্রুত রেফারেন্স।
+  encryption:
+    title: টেক্সট এনক্রিপ্ট / ডিক্রিপ্ট
+    description: AES, TripleDES, Rabbit বা RC4-এর মতো অ্যালগরিদম দিয়ে সাধারণ টেক্সট এনক্রিপ্ট এবং সাইফারটেক্সট ডিক্রিপ্ট করুন।
+    ui:
+      decryptError: আপনার লেখাটি ডিক্রিপ্ট করা যায়নি
+      encryptTitle: এনক্রিপ্ট
+      decryptTitle: ডিক্রিপ্ট
+      yourText: আপনার লেখা
+      yourSecretKey: আপনার সিক্রেট কী
+      algorithm: অ্যালগরিদম
+      encryptedOutput: এনক্রিপ্ট করা আউটপুট
+      yourEncryptedText: আপনার এনক্রিপ্ট করা লেখা
+      decryptedOutput: ডিক্রিপ্ট করা আউটপুট
+      encryptPlaceholder: এনক্রিপ্ট করার জন্য স্ট্রিং
+      decryptPlaceholder: ডিক্রিপ্ট করার জন্য সাইফারটেক্সট
+      secretKeyPlaceholder: সিক্রেট কী...
+  yaml-prettify:
+    title: YAML ফরম্যাটার
+    description: আপনার YAML স্ট্রিংকে সহজপাঠ্য, সুবিন্যস্ত ফরম্যাটে সাজান।
+  roman-numeral-converter:
+    title: রোমান সংখ্যা রূপান্তরকারী
+    description: রোমান সংখ্যাকে সংখ্যায় এবং সংখ্যাকে রোমান সংখ্যায় রূপান্তর করুন।
+    ui:
+      converterTitle: কনভার্টার
+      arabicSideLabel: আরবি
+      romanSideLabel: রোমান সংখ্যা
+      arabicRangeError: অবশ্যই {min}-{max} এর মধ্যে হতে হবে
+      invalidRoman: বৈধ রোমান সংখ্যা নয়
+      copied: কপি হয়েছে
+      copy: কপি করুন
+      romanCopiedToast: রোমান সংখ্যা কপি হয়েছে
+      arabicCopiedToast: আরবি সংখ্যা কপি হয়েছে
+  hmac-generator:
+    title: HMAC জেনারেটর
+    description: একটি গোপন কী এবং আপনার পছন্দের হ্যাশ ফাংশন ব্যবহার করে হ্যাশভিত্তিক বার্তা প্রমাণীকরণ কোড (HMAC) গণনা করে।
+    ui:
+      encodingBinary: বাইনারি (বেস ২)
+      encodingHex: হেক্সাডেসিমাল (বেস ১৬)
+      copied: HMAC ক্লিপবোর্ডে কপি হয়েছে
+      plainText: প্লেইন টেক্সট
+      secretKey: সিক্রেট কী
+      hashingFunction: হ্যাশিং ফাংশন
+      outputEncoding: আউটপুট এনকোডিং
+      hmacOutput: HMAC আউটপুট
+      plainTextPlaceholder: হ্যাশ গণনা করার জন্য প্লেইন টেক্সট...
+      secretKeyPlaceholder: সিক্রেট কী লিখুন...
+      clear: মুছুন
+      copyHmac: HMAC কপি করুন
+  bip39-generator:
+    title: BIP39 পাসফ্রেজ জেনারেটর
+    description: বিদ্যমান বা র‍্যান্ডম মনিমোনিক থেকে BIP39 পাসফ্রেজ তৈরি করুন, অথবা পাসফ্রেজ থেকে মনিমোনিক বের করুন।
+    ui:
+      languageEnglish: ইংরেজি
+      languageChineseSimplified: চীনা (সরলীকৃত)
+      languageChineseTraditional: চীনা (ঐতিহ্যবাহী)
+      languageCzech: চেক
+      languageFrench: ফরাসি
+      languageItalian: ইতালীয়
+      languageJapanese: জাপানি
+      languageKorean: কোরিয়ান
+      languagePortuguese: পর্তুগিজ
+      languageSpanish: স্প্যানিশ
+      entropyLengthError: এনট্রপির দৈর্ঘ্য অবশ্যই ১৬ থেকে ৩২ এর মধ্যে এবং ৪ এর গুণিতক হতে হবে
+      entropyHexError: এনট্রপি অবশ্যই একটি হেক্সাডেসিমেল স্ট্রিং হতে হবে
+      invalidMnemonic: অবৈধ নিমোনিক
+      entropyCopied: এনট্রপি ক্লিপবোর্ডে কপি করা হয়েছে
+      passphraseCopied: পাসফ্রেজ ক্লিপবোর্ডে কপি করা হয়েছে
+      languageLabel: ভাষা
+      entropyHeading: এনট্রপি (সিড)
+      entropyPlaceholder: হেক্স এনট্রপি...
+      regenerate: পুনরায় তৈরি করুন
+      copyEntropy: এনট্রপি কপি করুন
+      passphraseHeading: পাসফ্রেজ (নিমোনিক)
+      passphrasePlaceholder: নিমোনিক শব্দ...
+      copyPassphrase: পাসফ্রেজ কপি করুন
+  base64-file-converter:
+    title: Base64 ফাইল রূপান্তরকারী
+    description: একটি স্ট্রিং, ফাইল বা ছবিকে তার base64 রূপে রূপান্তর করুন।
+    ui:
+      copiedToClipboard: Base64 স্ট্রিং ক্লিপবোর্ডে কপি করা হয়েছে
+      base64ToFileTitle: BASE64 থেকে ফাইল
+      fileNameLabel: ফাইলের নাম
+      fileNamePlaceholder: ডাউনলোড ফাইলের নাম
+      extensionLabel: এক্সটেনশন
+      extensionPlaceholder: ext
+      base64StringLabel: BASE64 স্ট্রিং
+      base64InputPlaceholder: এখানে আপনার ফাইলের base64 স্ট্রিং লিখুন...
+      invalidBase64: অবৈধ base64 স্ট্রিং
+      previewImage: ছবির প্রিভিউ
+      downloadFile: ফাইল ডাউনলোড করুন
+      fileToBase64Title: ফাইল থেকে BASE64
+      dropHint: একটি ফাইল এখানে টেনে আনুন, অথবা নির্বাচন করতে ক্লিক করুন
+      fileInBase64Label: BASE64-এ ফাইল
+      fileOutputPlaceholder: base64-এ ফাইলটি এখানে দেখা যাবে
+      copied: কপি হয়েছে!
+      copyBase64: Base64 কপি করুন
+  base64-string-converter:
+    title: Base64 স্ট্রিং এনকোডার/ডিকোডার
+    description: সহজে স্ট্রিংকে base64 রূপে এনকোড ও ডিকোড করুন।
+    ui:
+      base64CopiedToClipboard: Base64 স্ট্রিং ক্লিপবোর্ডে কপি করা হয়েছে
+      stringCopiedToClipboard: স্ট্রিং ক্লিপবোর্ডে কপি করা হয়েছে
+      stringToBase64Title: স্ট্রিং থেকে BASE64
+      encodingLabel: এনকোডিং
+      standard: স্ট্যান্ডার্ড
+      urlSafe: URL সেফ
+      stringToEncodeLabel: এনকোড করার স্ট্রিং
+      stringInputPlaceholder: এখানে আপনার স্ট্রিং লিখুন...
+      base64OutputLabel: BASE64 আউটপুট
+      base64OutputPlaceholder: আপনার স্ট্রিং-এর base64 এনকোডিং এখানে দেখা যাবে
+      copied: কপি হয়েছে!
+      copyBase64: Base64 কপি করুন
+      base64ToStringTitle: BASE64 থেকে স্ট্রিং
+      base64ToDecodeLabel: ডিকোড করার BASE64 স্ট্রিং
+      base64InputPlaceholder: আপনার base64 স্ট্রিং...
+      invalidBase64: অবৈধ base64 স্ট্রিং
+      decodedStringLabel: ডিকোড করা স্ট্রিং
+      decodedOutputPlaceholder: ডিকোড করা স্ট্রিং এখানে দেখা যাবে
+      copyDecodedString: ডিকোড করা স্ট্রিং কপি করুন
+  math-evaluator:
+    title: গাণিতিক মূল্যায়নকারী
+    description: গাণিতিক রাশি মূল্যায়নের একটি ক্যালকুলেটর। sqrt, cos, sin, abs ইত্যাদি ফাংশন ব্যবহার করতে পারেন।
+    ui:
+      placeholder: 'আপনার গাণিতিক এক্সপ্রেশন (উদাহরণ: 2*sqrt(6) )...'
+      result: ফলাফল
+  url-parser:
+    title: URL পার্সার
+    description: একটি URL-কে তার আলাদা অংশে ভাগ করুন (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: হোস্ট
+      protocol: প্রোটোকল
+      hostname: হোস্টনেম
+      port: পোর্ট
+      sectionAuthentication: প্রমাণীকরণ
+      username: ইউজারনেম
+      password: পাসওয়ার্ড
+      sectionPath: পাথ
+      pathname: পাথনেম
+      search: সার্চ
+      hash: হ্যাশ
+      urlTitle: URL
+      invalidUrl: অবৈধ URL
+      params: প্যারামিটার
+      emptyHint: পার্স করতে উপরে একটি URL লিখুন
+  phone-parser-and-formatter:
+    title: ফোন নম্বর পার্সার
+    description: ফোন নম্বর পার্স ও ফরম্যাট করুন। দেশ শনাক্ত করুন, যাচাই করুন এবং আন্তর্জাতিক, জাতীয়, E.164 ও RFC3966 ফরম্যাট দেখান।
+    ui:
+      invalidPhoneNumber: অবৈধ ফোন নম্বর
+      sectionLocation: অবস্থান
+      countryCode: দেশের কোড
+      country: দেশ
+      callingCode: কলিং কোড
+      sectionValidation: যাচাইকরণ
+      isValid: বৈধ কি?
+      'yes': হ্যাঁ
+      'no': না
+      isPossible: সম্ভব কি?
+      type: ধরন
+      unknown: অজানা
+      sectionFormats: ফরম্যাট
+      international: আন্তর্জাতিক
+      national: জাতীয়
+      defaultCountry: ডিফল্ট দেশ
+      phoneNumber: ফোন নম্বর
+      emptyStatePrompt: পার্স করতে উপরে একটি ফোন নম্বর লিখুন
+  user-agent-parser:
+    title: User-agent পার্সার
+    description: একটি user-agent স্ট্রিং থেকে ব্রাউজার, ইঞ্জিন, OS, CPU এবং ডিভাইসের ধরন/মডেল শনাক্ত করুন।
+    ui:
+      sectionBrowser: ব্রাউজার
+      sectionEngine: ইঞ্জিন
+      sectionOs: OS
+      sectionDevice: ডিভাইস
+      sectionCpu: CPU
+      name: নাম
+      version: ভার্সন
+      model: মডেল
+      type: ধরন
+      vendor: ভেন্ডর
+      architecture: আর্কিটেকচার
+      userAgentString: ইউজার এজেন্ট স্ট্রিং
+      placeholder: এখানে আপনার user-agent দিন...
+      unknown: অজানা
+      error: ত্রুটি
+      parseError: ইউজার এজেন্ট স্ট্রিং পার্স করা যায়নি
+  case-converter:
+    title: কেস রূপান্তরকারী
+    description: বিভিন্ন ফরম্যাট থেকে বেছে নিয়ে একটি স্ট্রিংয়ের কেস বদলান
+    ui:
+      inputPlaceholder: আপনার টেক্সট...
+      output: আউটপুট
+  html-entities:
+    title: HTML এনটিটি এস্কেপ
+    description: HTML এনটিটি এস্কেপ বা আনএস্কেপ করুন (<,>, &, " এবং \' এর মতো অক্ষরকে তাদের HTML রূপ দিয়ে প্রতিস্থাপন করে)
+    ui:
+      yourString: আপনার স্ট্রিং
+      escapePlaceholder: এস্কেপ করার জন্য স্ট্রিং...
+      escapedOutput: এস্কেপড আউটপুট
+      copied: কপি হয়েছে
+      copy: কপি করুন
+      yourEscapedString: আপনার এস্কেপড স্ট্রিং
+      unescapePlaceholder: আনএস্কেপ করার জন্য স্ট্রিং...
+      unescapedOutput: আনএস্কেপড আউটপুট
+  json-prettify:
+    title: JSON ফরম্যাটার
+    description: আপনার JSON স্ট্রিংকে সহজপাঠ্য, সুবিন্যস্ত ফরম্যাটে সাজান।
+  docker-run-to-docker-compose-converter:
+    title: Docker run থেকে Docker compose রূপান্তরকারী
+    description: '"docker run" কমান্ডকে docker-compose ফাইলে রূপান্তর করে!'
+  mac-address-lookup:
+    title: MAC ঠিকানা অনুসন্ধান
+    description: MAC ঠিকানা দিয়ে একটি ডিভাইসের বিক্রেতা ও নির্মাতা খুঁজুন।
+    ui:
+      macAddressLabel: ম্যাক অ্যাড্রেস
+      copiedTooltip: কপি হয়েছে!
+      copyTooltip: ভেন্ডর তথ্য কপি করতে ক্লিক করুন
+      copiedTitle: ✓ কপি হয়েছে
+      vendorInfoTitle: ভেন্ডর তথ্য
+      unknownVendor: এই অ্যাড্রেসের জন্য ভেন্ডর অজানা
+  lorem-ipsum-generator:
+    title: Lorem ipsum জেনারেটর
+    description: মকআপ ও ডিজাইনের কাজের জন্য lorem ipsum প্লেসহোল্ডার টেক্সট তৈরি করুন।
+    ui:
+      copiedMessage: লোরেম ইপসাম ক্লিপবোর্ডে কপি করা হয়েছে
+      paragraphs: অনুচ্ছেদ
+      sentencesPerParagraph: বাক্য / অনুচ্ছেদ
+      wordsPerSentence: শব্দ / বাক্য
+      startWithLoremIpsum: লোরেম ইপসাম দিয়ে শুরু করুন
+      asHtml: HTML হিসেবে
+      output: আউটপুট
+      wordCount: '{count} শব্দ'
+      charCount: '{count} অক্ষর'
+      copy: কপি
+      refresh: রিফ্রেশ
+  qrcode-generator:
+    title: QR কোড জেনারেটর
+    description: URL, সাধারণ টেক্সট বা Wi-Fi নেটওয়ার্কের লগইন তথ্যের জন্য QR কোড তৈরি ও ডাউনলোড করুন। কনফিগারযোগ্য ত্রুটি সংশোধনসহ টার্মিনাল, ক্লাসিক ও কাস্টম রঙের থিম।
+  signature-creator:
+    title: স্বাক্ষর নির্মাতা
+    description: ক্যানভাসে হাতে লেখা স্বাক্ষর আঁকুন এবং স্বচ্ছ PNG হিসেবে এক্সপোর্ট করুন। অথবা যেকোনো ছবি আপলোড করুন এবং ডিভাইসে চলা AI দিয়ে এক ক্লিকে এর পটভূমি সরান।
+    ui:
+      drawSignatureTab: স্বাক্ষর আঁকুন
+      removeBackgroundTab: পটভূমি সরান
+      inkColorLabel: কালির রঙ
+      strokeWeightLabel: স্ট্রোকের বেধ
+      actionsLabel: কার্যক্রম
+      undoButton: ↩ পূর্বাবস্থায় ফেরান
+      clearButton: ✕ মুছুন
+      downloadTransparentPng: ↓ স্বচ্ছ PNG ডাউনলোড করুন
+      uploadImageLabel: ছবি আপলোড করুন
+      dropzoneText: এখানে একটি ছবি টেনে আনুন অথবা ব্রাউজ করতে ক্লিক করুন
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: ছবি লোড হয়েছে
+      removeButton: ✕ সরান
+      removeBackgroundButton: ⚡ পটভূমি সরান
+      exportLabel: এক্সপোর্ট
+      downloadNoBgPng: ↓ PNG ডাউনলোড করুন (পটভূমি ছাড়া)
+      originalLabel: মূল
+      resultLabel: ফলাফল
+      uploadPrompt: শুরু করতে একটি ছবি আপলোড করুন
+      originalAlt: মূল
+      resultAlt: পটভূমি সরানো ফলাফল
+      loadingModelStatus: AI মডেল লোড হচ্ছে...
+      removingBackgroundStatus: পটভূমি সরানো হচ্ছে...
+      processingPercentStatus: প্রসেসিং... {pct}%
+      downloadingModelPercentStatus: মডেল ডাউনলোড হচ্ছে... {pct}%
+      removeBackgroundFailedStatus: পটভূমি সরানো ব্যর্থ হয়েছে। অন্য একটি ছবি চেষ্টা করুন।
+  xml-formatter:
+    title: XML ফরম্যাটার
+    description: আপনার XML স্ট্রিংকে সহজপাঠ্য, সুবিন্যস্ত ফরম্যাটে সাজান।
+    ui:
+      invalidXml: প্রদত্ত XML সঠিক নয়।
+      collapse: সংকুচিত করুন
+      indentSize: ইনডেন্ট সাইজ
+      inputLabel: আপনার XML
+      inputPlaceholder: এখানে আপনার XML পেস্ট করুন...
+      outputLabel: আপনার XML থেকে ফরম্যাট করা XML
+  temperature-converter:
+    title: তাপমাত্রা রূপান্তরকারী
+    description: Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur এবং Rømer-এর জন্য ডিগ্রিতে তাপমাত্রা রূপান্তর।
+    ui:
+      kelvin: কেলভিন
+      celsius: সেলসিয়াস
+      fahrenheit: ফারেনহাইট
+      rankine: র‍্যাঙ্কাইন
+      delisle: ডেলিল
+      newton: নিউটন
+      reaumur: রেওমুর
+      romer: রোমার
+  chmod-calculator:
+    title: Chmod ক্যালকুলেটর
+    description: এই অনলাইন chmod ক্যালকুলেটর দিয়ে আপনার chmod অনুমতি ও কমান্ড হিসাব করুন।
+    ui:
+      read: পড়া
+      write: লেখা
+      execute: এক্সিকিউট
+      owner: মালিক
+      group: গ্রুপ
+      public: পাবলিক
+      commandCopied: chmod কমান্ড কপি হয়েছে
+      copyCommand: কমান্ড কপি করুন
+  rsa-key-pair-generator:
+    title: RSA কী পেয়ার জেনারেটর
+    description: একটি নতুন র‍্যান্ডম RSA প্রাইভেট ও পাবলিক PEM কী পেয়ার তৈরি করুন।
+    ui:
+      bitsRangeError: বিটস অবশ্যই 256-16384 এর মধ্যে এবং 8 এর গুণিতক হতে হবে
+      bitsLabel: বিটস
+      refreshButton: কী পেয়ার রিফ্রেশ করুন
+      publicKeyTitle: পাবলিক কী
+      copyPublicKeyTitle: পাবলিক কী কপি করুন
+      copy: কপি করুন
+      generating: তৈরি হচ্ছে...
+      privateKeyTitle: প্রাইভেট কী
+      copyPrivateKeyTitle: প্রাইভেট কী কপি করুন
+      publicKeyCopiedToast: পাবলিক কী কপি হয়েছে
+      privateKeyCopiedToast: প্রাইভেট কী কপি হয়েছে
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG এডিটর
+    description: অনলাইন, বৈশিষ্ট্যসমৃদ্ধ WYSIWYG HTML এডিটর যা সঙ্গে সঙ্গে কনটেন্টের সোর্স কোড তৈরি করে।
+    ui:
+      bold: বোল্ড
+      italic: ইটালিক
+      strike: স্ট্রাইক
+      inlineCode: ইনলাইন কোড
+      heading1: হেডিং ১
+      heading2: হেডিং ২
+      heading3: হেডিং ৩
+      heading4: হেডিং ৪
+      bulletList: বুলেট তালিকা
+      orderedList: ক্রমিক তালিকা
+      codeBlock: কোড ব্লক
+      blockquote: ব্লককোট
+      hardBreak: হার্ড ব্রেক
+      clearFormat: ফরম্যাট মুছুন
+      undo: পূর্বাবস্থায় ফেরান
+      redo: পুনরায় করুন
+  json-diff:
+    title: JSON ডিফ
+    description: দুটি JSON অবজেক্ট তুলনা করুন এবং তাদের মধ্যে পার্থক্য দেখুন।
+    ui:
+      onlyShowDifferences: শুধু পার্থক্য দেখান
+      jsonsAreTheSame: প্রদত্ত JSON দুটি একই
+      firstJsonTitle: আপনার প্রথম JSON
+      firstJsonPlaceholder: আপনার প্রথম JSON এখানে পেস্ট করুন...
+      invalidJson: অবৈধ JSON ফরম্যাট
+      secondJsonTitle: তুলনার জন্য আপনার JSON
+      secondJsonPlaceholder: তুলনার জন্য আপনার JSON এখানে পেস্ট করুন...
+  jwt-parser:
+    title: JWT পার্সার
+    description: আপনার JSON Web Token (jwt) পার্স ও ডিকোড করুন এবং এর বিষয়বস্তু দেখুন।
+    ui:
+      header: হেডার
+      payload: পেলোড
+      jwtToDecodeTitle: ডিকোড করার জন্য JWT
+      tokenPlaceholder: আপনার টোকেন এখানে দিন...
+      invalidJwt: অবৈধ JWT
+  date-converter:
+    title: তারিখ-সময় রূপান্তরকারী
+    description: তারিখ ও সময়কে বিভিন্ন ফরম্যাটে রূপান্তর করুন
+  ipv4-subnet-calculator:
+    title: IPv4 সাবনেট ক্যালকুলেটর
+    description: আপনার IPv4 CIDR ব্লক পার্স করুন এবং সাবনেট সম্পর্কে প্রয়োজনীয় সব তথ্য পান।
+    ui:
+      invalidAddress: এই ঠিকানাটি পার্স করা যায়নি, ফরম্যাট পরীক্ষা করুন
+      netmask: নেটমাস্ক
+      networkAddress: নেটওয়ার্ক ঠিকানা
+      networkMask: নেটওয়ার্ক মাস্ক
+      networkMaskBinary: বাইনারিতে নেটওয়ার্ক মাস্ক
+      cidrNotation: CIDR নোটেশন
+      wildcardMask: ওয়াইল্ডকার্ড মাস্ক
+      networkSize: নেটওয়ার্কের আকার
+      firstAddress: প্রথম ঠিকানা
+      lastAddress: শেষ ঠিকানা
+      broadcastAddress: ব্রডকাস্ট ঠিকানা
+      noBroadcast: এই মাস্কে কোনো ব্রডকাস্ট ঠিকানা নেই
+      ipClass: IP ক্লাস
+      unknownClassType: অজানা ক্লাস টাইপ
+      decimal: ডেসিমাল
+      hexadecimal: হেক্সাডেসিমাল
+      binary: বাইনারি
+      ipv6Short: IPv6 (সংক্ষিপ্ত)
+      inputLabel: মাস্ক সহ বা ছাড়া একটি IPv4 ঠিকানা
+      bitMap: বিট ম্যাপ
+      network: নেটওয়ার্ক
+      host: হোস্ট
+      setPrefix: প্রিফিক্স /{prefix} সেট করুন
+      networkTag: নেটওয়ার্ক
+      broadcastTag: ব্রডকাস্ট
+      hostsCount: '{count} হোস্ট'
+      privateIp: প্রাইভেট IP
+      publicIp: পাবলিক IP
+      subnetDetail: সাবনেট বিবরণ
+      subnetInfo: সাবনেট তথ্য
+      addressRepresentations: ঠিকানার উপস্থাপনা
+      copy: কপি করুন
+      enterValidIpv4: উপস্থাপনা দেখতে একটি বৈধ IPv4 ঠিকানা লিখুন
+      previousBlock: পূর্ববর্তী ব্লক
+      nextBlock: পরবর্তী ব্লক
+      collapseCheatSheet: চিট শিট সংকুচিত করুন
+      subnetCheatSheet: সাবনেট চিট শিট
+  og-meta-generator:
+    title: Open Graph মেটা জেনারেটর
+    description: আপনার ওয়েবসাইটের জন্য Open Graph ও সোশ্যাল HTML মেটা ট্যাগ তৈরি করুন।
+  ipv6-ula-generator:
+    title: IPv6 ULA জেনারেটর
+    description: RFC4193 অনুযায়ী আপনার নেটওয়ার্কের জন্য নিজস্ব লোকাল, নন-রাউটেবল IP ঠিকানা তৈরি করুন।
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: প্রথম রাউটযোগ্য
+      lastRoutable: শেষ রাউটযোগ্য
+      infoAlert: বর্তমান টাইমস্ট্যাম্প + MAC ঠিকানা ব্যবহার করে, SHA1 দিয়ে হ্যাশ করা হয়। নিম্ন 40 বিট RFC 4193 অনুযায়ী গ্লোবাল আইডি গঠন করে।
+      macAddress: MAC ঠিকানা
+      output: আউটপুট
+      copied: কপি হয়েছে!
+      copy: কপি করুন
+  hash-text:
+    title: টেক্সট হ্যাশ
+    description: MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 এবং আরও অনেক কিছু দিয়ে টেক্সট হ্যাশ করুন।
+    ui:
+      encodingBinary: বাইনারি (বেস ২)
+      encodingHex: হেক্সাডেসিমাল (বেস ১৬)
+      encodingBase64: Base64 (বেস ৬৪)
+      encodingBase64url: Base64url (বেস ৬৪, ইউআরএল-নিরাপদ)
+      inputPlaceholder: হ্যাশ করার জন্য আপনার স্ট্রিং...
+      encoding: এনকোডিং
+      output: আউটপুট
+  json-to-toml:
+    title: JSON থেকে TOML
+    description: JSON পার্স করে TOML-এ রূপান্তর করুন।
+  device-information:
+    title: ডিভাইসের তথ্য
+    description: আপনার বর্তমান ডিভাইস সম্পর্কে তথ্য পান (স্ক্রিনের আকার, পিক্সেল অনুপাত, user agent, ...)
+    ui:
+      screen: স্ক্রিন
+      hardware: হার্ডওয়্যার
+      network: নেটওয়ার্ক
+      browser: ব্রাউজার
+      screenSize: স্ক্রিনের আকার
+      windowSize: উইন্ডোর আকার
+      pixelRatio: পিক্সেল অনুপাত
+      colorDepth: রঙের গভীরতা
+      orientation: অভিমুখ
+      orientationAngle: অভিমুখ কোণ
+      touchPoints: টাচ পয়েন্ট
+      cpuCores: সিপিইউ কোর
+      deviceMemory: ডিভাইস মেমরি
+      platform: প্ল্যাটফর্ম
+      online: অনলাইন
+      connectionType: সংযোগের ধরন
+      downlinkSpeed: ডাউনলিংক গতি
+      roundTripTime: রাউন্ড ট্রিপ সময়
+      dataSaver: ডেটা সেভার
+      vendor: ভেন্ডর
+      languages: ভাষাসমূহ
+      cookiesEnabled: কুকিজ সক্রিয়
+      pdfViewer: পিডিএফ ভিউয়ার
+      doNotTrack: ট্র্যাক করবেন না
+      userAgent: ইউজার এজেন্ট
+      maxTouchPoints: সর্বোচ্চ {count}
+      none: কোনোটি নয়
+      logicalCores: '{count} লজিক্যাল কোর'
+      'yes': হ্যাঁ
+      'no': না
+      enabled: সক্রিয়
+      disabled: নিষ্ক্রিয়
+      supported: সমর্থিত
+      notSupported: অসমর্থিত
+      notSet: নির্ধারিত নয়
+  pdf-signature-checker:
+    title: PDF স্বাক্ষর যাচাইকারী
+    description: একটি PDF ফাইলের স্বাক্ষর যাচাই করুন। স্বাক্ষরিত PDF-এ এক বা একাধিক স্বাক্ষর থাকে, যা দিয়ে বোঝা যায় স্বাক্ষরের পর ফাইলের বিষয়বস্তু বদলানো হয়েছে কি না।
+    ui:
+      tableHeaderValidityPeriod: বৈধতার মেয়াদ
+      tableHeaderIssuedBy: ইস্যুকারী
+      tableHeaderIssuedTo: যাকে ইস্যু করা হয়েছে
+      tableHeaderPemCertificate: PEM সার্টিফিকেট
+      notBefore: এর আগে নয়
+      notAfter: এর পরে নয়
+      commonName: সাধারণ নাম
+      organizationName: প্রতিষ্ঠানের নাম
+      countryName: দেশের নাম
+      localityName: এলাকার নাম
+      organizationalUnitName: প্রাতিষ্ঠানিক ইউনিটের নাম
+      stateOrProvinceName: রাজ্য বা প্রদেশের নাম
+      viewPemCert: PEM সার্টিফিকেট দেখুন
+      uploadPrompt: এখানে একটি PDF ফাইল টেনে আনুন, অথবা ফাইল বেছে নিতে ক্লিক করুন
+      noSignaturesFound: প্রদত্ত ফাইলে কোনো স্বাক্ষর পাওয়া যায়নি।
+      signatureCertificatesLabel: 'স্বাক্ষর {number} সার্টিফিকেট:'
+  json-minify:
+    title: JSON মিনিফাই
+    description: অপ্রয়োজনীয় হোয়াইটস্পেস সরিয়ে আপনার JSON মিনিফাই ও সংকুচিত করুন।
+    ui:
+      invalidJson: প্রদত্ত JSON বৈধ নয়।
+      inputLabel: আপনার অপরিশোধিত JSON
+      inputPlaceholder: এখানে আপনার অপরিশোধিত JSON পেস্ট করুন...
+      outputLabel: আপনার JSON-এর মিনিফাইড সংস্করণ
+  ulid-generator:
+    title: ULID জেনারেটর
+    description: র‍্যান্ডম Universally Unique Lexicographically Sortable Identifier (ULID) তৈরি করুন।
+    ui:
+      copiedMessage: ULID ক্লিপবোর্ডে কপি করা হয়েছে
+      quantity: পরিমাণ
+      format: ফরম্যাট
+      formatRaw: Raw
+      formatJson: JSON
+      output: আউটপুট
+      copy: কপি করুন
+      refresh: রিফ্রেশ করুন
+  base-converter:
+    title: পূর্ণসংখ্যা ভিত্তি রূপান্তরকারী
+    description: একটি সংখ্যাকে বিভিন্ন ভিত্তির মধ্যে রূপান্তর করুন (দশমিক, হেক্সাডেসিমাল, বাইনারি, অক্টাল, base64, ...)
+  uuid-generator:
+    title: UUID জেনারেটর
+    description: র‍্যান্ডম UUID (v1 ও v4) তৈরি করুন এবং তাদের গঠন পরীক্ষা করুন।
+    ui:
+      copiedMessage: UUID ক্লিপবোর্ডে কপি করা হয়েছে
+      version: ভার্সন
+      quantity: পরিমাণ
+      namespacePreset: নেমস্পেস প্রিসেট
+      namespaceUuid: নেমস্পেস UUID
+      invalidUuid: অবৈধ UUID
+      name: নাম
+      namePlaceholder: হ্যাশ করার জন্য নাম...
+      output: আউটপুট
+      copy: কপি করুন
+      refresh: রিফ্রেশ করুন
+  ipv4-address-converter:
+    title: IPv4 ঠিকানা রূপান্তরকারী
+    description: একটি IP ঠিকানাকে দশমিক, বাইনারি, হেক্সাডেসিমাল বা এমনকি IPv6 রূপে রূপান্তর করুন।
+    ui:
+      decimal: ডেসিমাল
+      hexadecimal: হেক্সাডেসিমাল
+      binary: বাইনারি
+      ipv6Short: IPv6 (সংক্ষিপ্ত)
+      invalidIpv4: অবৈধ IPv4 ঠিকানা
+      ipv4Address: IPv4 ঠিকানা
+      output: আউটপুট
+      copied: কপি হয়েছে!
+      copy: কপি করুন
+  text-statistics:
+    title: টেক্সট পরিসংখ্যান
+    description: 'একটি টেক্সট সম্পর্কে তথ্য পান: অক্ষরের সংখ্যা, শব্দের সংখ্যা, বাইটে আকার, ...'
+    ui:
+      textPlaceholder: আপনার টেক্সট...
+      characterCount: অক্ষর সংখ্যা
+      wordCount: শব্দ সংখ্যা
+      lineCount: লাইন সংখ্যা
+      byteSize: বাইট সাইজ
+  text-to-nato-alphabet:
+    title: টেক্সট থেকে NATO বর্ণমালা
+    description: মৌখিকভাবে পাঠানোর জন্য টেক্সটকে NATO ফোনেটিক বর্ণমালায় রূপান্তর করুন।
+    ui:
+      yourText: আপনার টেক্সট
+      inputPlaceholder: যেমন Hello world
+      natoPhonetic: NATO ফোনেটিক
+      copied: কপি হয়েছে
+      copyAll: সব কপি করুন
+      natoStringCopied: NATO স্ট্রিং কপি হয়েছে।
+  ipv4-range-expander:
+    title: IPv4 রেঞ্জ এক্সপ্যান্ডার
+    description: একটি শুরুর ও একটি শেষের IPv4 ঠিকানা দিলে এই টুল CIDR নোটেশনসহ একটি বৈধ IPv4 সাবনেট হিসাব করে।
+    ui:
+      startAddress: শুরুর ঠিকানা
+      endAddress: শেষ ঠিকানা
+      addressesInRange: রেঞ্জের মধ্যে ঠিকানা
+      invalidIpv4: অবৈধ IPv4 ঠিকানা
+      invalidCombinationTitle: শুরু ও শেষ IPv4 ঠিকানার অবৈধ সমন্বয়
+      invalidCombinationDescription: শেষ IPv4 ঠিকানা শুরুর ঠিকানার চেয়ে ছোট। এটি বৈধ নয় এবং কোনো ফলাফল হিসাব করা যায়নি।
+      switchStartEnd: শুরু ও শেষ IPv4 ঠিকানা অদলবদল করুন
+      result: ফলাফল
+      copied: কপি হয়েছে!
+      copyResult: ফলাফল কপি করুন
+  text-diff:
+    title: টেক্সট ডিফ
+    description: দুটি টেক্সট তুলনা করুন এবং তাদের মধ্যে পার্থক্য দেখুন।
+  otp-generator:
+    title: OTP কোড জেনারেটর
+    description: মাল্টি-ফ্যাক্টর প্রমাণীকরণের জন্য সময়ভিত্তিক OTP (ওয়ান-টাইম পাসওয়ার্ড) তৈরি ও যাচাই করুন।
+  text-to-binary:
+    title: টেক্সট থেকে ASCII বাইনারি
+    description: টেক্সটকে তার ASCII বাইনারি রূপে এবং উল্টোভাবে রূপান্তর করুন।
+    ui:
+      textCopied: টেক্সট কপি হয়েছে
+      binaryCopied: বাইনারি কপি হয়েছে
+      panelTitle: TEXT ↔ ASCII BINARY
+      textLabel: টেক্সট
+      binaryLabel: বাইনারি
+      copied: কপি হয়েছে
+      copy: কপি
+      textPlaceholder: যেমন Hello world
+      invalidBinary: বৈধ ASCII বাইনারি হতে হবে (৮ বিটের গুণিতক)
+  ascii-word-art:
+    title: ASCII ওয়ার্ড আর্ট জেনারেটর
+    description: বিভিন্ন ফন্ট ও স্টাইলে ASCII ওয়ার্ড আর্ট টেক্সট তৈরি করুন।
+  killer-scripts:
+    title: Killer Scripts
+    description: Windows প্রশাসন এবং MSP ফিল্ডের কাজের জন্য PowerShell স্ক্রিপ্ট।
+  powershell-builder:
+    title: PowerShell Builder
+    description: একটি cmdlet বেছে নিন, প্যারামিটার পূরণ করুন এবং তৈরি PowerShell কমান্ড কপি করুন।
+  group-policy-reference:
+    title: Group Policy রেফারেন্স
+    description: নাম, GPO পাথ, রেজিস্ট্রি কী বা বিবরণ দিয়ে প্রচলিত Windows Group Policy সেটিং খুঁজুন।
+    ui:
+      searchPlaceholder: পলিসি, পাথ, রেজিস্ট্রি কী অনুসন্ধান করুন...
+      copied: কপি হয়েছে!
+      clickToCopyRegistry: রেজিস্ট্রি কী কপি করতে ক্লিক করুন
+      copiedShort: কপি হয়েছে
+      default: ডিফল্ট
+      recommended: প্রস্তাবিত
+  windows-event-lookup:
+    title: Windows ইভেন্ট অনুসন্ধান
+    description: বিবরণ, তীব্রতার স্তর ও সাধারণ কারণসহ Windows ইভেন্ট ID খুঁজুন।
+    ui:
+      searchResults: অনুসন্ধান ফলাফল
+      searchPlaceholder: ইভেন্ট আইডি, নাম, বা বিবরণ দিয়ে অনুসন্ধান করুন...
+      copied: কপি হয়েছে!
+      clickToCopyEventId: ইভেন্ট আইডি কপি করতে ক্লিক করুন
+      copiedShort: কপি হয়েছে
+  m365-sku-decoder:
+    title: M365 লাইসেন্স SKU ডিকোডার
+    description: Microsoft 365 লাইসেন্স SKU স্ট্রিং ও GUID-কে পণ্যের নামে ডিকোড করুন।
+    ui:
+      searchPlaceholder: SKU নাম, স্ট্রিং আইডি বা বর্ণনা দিয়ে খুঁজুন...
+      copied: কপি হয়েছে!
+      clickToCopy: স্ট্রিং আইডি কপি করতে ক্লিক করুন
+      copiedMark: ✓ কপি হয়েছে
+  windows-error-codes:
+    title: Windows এরর কোড অনুসন্ধান
+    description: হেক্স বা দশমিকে Windows এরর কোড খুঁজুন, যার মধ্যে সিস্টেম এরর, BSOD স্টপ কোড, WMI, RPC, MSI ইনস্টলার এরর এবং আরও অনেক কিছু আছে।
+    ui:
+      searchResults: অনুসন্ধান ফলাফল
+      searchPlaceholder: হেক্স কোড, ত্রুটির নাম বা বিবরণ দিয়ে অনুসন্ধান করুন...
+      copied: কপি হয়েছে!
+      clickToCopy: হেক্স কোড কপি করতে ক্লিক করুন
+      copiedShort: কপি হয়েছে
+      decimal: দশমিক {decimal}
+  exchange-ndr-lookup:
+    title: Exchange NDR অনুসন্ধান
+    description: সহজ ভাষায় কারণ ও সমাধানের নির্দেশনাসহ Exchange ও M365 বাউন্স কোড খুঁজুন।
+    ui:
+      searchResults: অনুসন্ধান ফলাফল
+      searchPlaceholder: NDR কোড, ত্রুটির নাম, কারণ বা সমাধান দিয়ে অনুসন্ধান করুন...
+      copied: কপি হয়েছে!
+      clickToCopy: NDR কোড কপি করতে ক্লিক করুন
+      copiedShort: কপি হয়েছে
+      cause: কারণ
+      fix: সমাধান
+  safelink-decoder:
+    title: Outlook Safelink ডিকোডার
+    description: মূল গন্তব্য URL দেখতে Microsoft Defender SafeLinks খুলে দেখুন।
+  port-protocol-reference:
+    title: পোর্ট ও প্রোটোকল রেফারেন্স
+    description: নিরাপত্তা নোট এবং বিপজ্জনক পোর্ট চিহ্নসহ প্রচলিত নেটওয়ার্ক পোর্ট ও প্রোটোকল।
+  cve-lookup:
+    title: CVE অনুসন্ধান
+    description: ID বা কীওয়ার্ড দিয়ে NIST NVD-তে CVE খুঁজুন। NVD API থেকে লাইভ ডেটা।
+    ui:
+      range6m: ৬ মাস
+      range1y: ১ বছর
+      range2y: ২ বছর
+      range5y: ৫ বছর
+      rangeAll: সব সময়
+      noDescription: কোনো বিবরণ নেই।
+      fetchError: NVD API-তে পৌঁছাতে ব্যর্থ। আপনার সংযোগ পরীক্ষা করুন।
+      sortNewest: নতুন আগে
+      sortOldest: পুরনো আগে
+      sortSeverity: সর্বোচ্চ তীব্রতা
+      severityCritical: জটিল
+      severityHigh: উচ্চ
+      severityMedium: মাঝারি
+      severityLow: নিম্ন
+      placeholder: CVE ID বা কীওয়ার্ড (যেমন CVE-2021-44228, log4j)
+      searching: খোঁজা হচ্ছে...
+      search: অনুসন্ধান
+      hint: CVE ID, আংশিক নম্বর (যেমন 43284), সাধারণ নাম (যেমন log4shell, dirty frag), বা কীওয়ার্ড দিয়ে খুঁজুন। NVD এবং GitHub Advisory Database থেকে লাইভ ডেটা।
+      noResults: '"{query}"-এর জন্য কোনো CVE পাওয়া যায়নি।'
+      noResultsInRange: নির্বাচিত তারিখ পরিসরে "{query}"-এর জন্য কোনো CVE পাওয়া যায়নি।
+      noExactMatch: নির্বাচিত তারিখ পরিসরে সঠিক বাক্যাংশ মেলেনি। সাধারণ দুর্বলতার নাম (যেমন "dirty frag") NVD বিবরণে হুবহু নাও থাকতে পারে। এর পরিবর্তে আংশিক CVE নম্বর ব্যবহার করে দেখুন (যেমন "43284" CVE-2026-43284 খুঁজে পায়)।
+      searchAllTime: সব সময় অনুসন্ধান করুন
+      showingResults: মোট {total}-এর মধ্যে {shown}টি ফলাফল দেখানো হচ্ছে
+      allSeverities: সব তীব্রতা
+      allYears: সব বছর
+      copied: কপি হয়েছে!
+      clickToCopyId: CVE ID কপি করতে ক্লিক করুন
+      copiedShort: কপি হয়েছে
+      cveDetail: CVE বিবরণ
+      published: প্রকাশিত
+      modified: পরিবর্তিত
+      clickToCopy: কপি করতে ক্লিক করুন
+      references: তথ্যসূত্র
+      kevActionDue: 'CISA KEV ব্যবস্থার সময়সীমা:'
+      cvssMetrics: CVSS মেট্রিক্স
+      metricAttackVector: আক্রমণ ভেক্টর
+      metricAttackComplexity: আক্রমণের জটিলতা
+      metricPrivilegesRequired: প্রয়োজনীয় অনুমতি
+      metricUserInteraction: ব্যবহারকারীর মিথস্ক্রিয়া
+      metricScope: পরিধি
+      metricConfidentiality: গোপনীয়তা
+      metricIntegrity: অখণ্ডতা
+      metricAvailability: প্রাপ্যতা
+  email-dns-checker:
+    title: ইমেইল DNS যাচাইকারী
+    description: যেকোনো ডোমেইনের MX, SPF, DKIM ও DMARC রেকর্ড যাচাই করুন। ইমেইল প্রমাণীকরণ কনফিগারেশন যাচাই করে এবং প্রচলিত ভুল কনফিগারেশন চিহ্নিত করে।
+  email-header-parser:
+    title: ইমেইল হেডার পার্সার
+    description: প্রেরকের তথ্য বের করতে, ডেলিভারি হপ চেইন অনুসরণ করতে এবং SPF, DKIM ও DMARC প্রমাণীকরণের ফলাফল দেখতে কাঁচা ইমেইল হেডার পেস্ট করুন।
+    ui:
+      pasteHint: নিচে অপরিশোধিত ইমেল হেডার পেস্ট করুন।
+      parseButton: হেডার পার্স করুন
+      parseAnother: আরেকটি পার্স করুন
+      messageDetails: বার্তার বিবরণ
+      senderMismatch: প্রেরকের ডোমেইন From ডোমেইন থেকে ভিন্ন। এটি স্পুফিং বা ডেলিগেটেড পাঠানো নির্দেশ করতে পারে।
+      deliveryHops: ডেলিভারি হপ
+      oldestFirst: প্রথমে সবচেয়ে পুরনো
+      authResults: প্রমাণীকরণ ফলাফল
+      spamAnalysis: স্প্যাম বিশ্লেষণ
+      spamScore: স্প্যাম স্কোর
+      spamStatus: স্প্যাম স্ট্যাটাস
+  whois-checker:
+    title: WHOIS অনুসন্ধান
+    description: রেজিস্ট্রার, তৈরি ও মেয়াদ শেষের তারিখ, নেমসার্ভার এবং স্ট্যাটাস ফ্ল্যাগসহ যেকোনো ডোমেইনের নিবন্ধন তথ্য খুঁজুন।
+  ascii-text-drawer:
+    title: ASCII ওয়ার্ড আর্ট জেনারেটর
+    description: বিভিন্ন ফন্ট ও স্টাইলে ASCII ওয়ার্ড আর্ট টেক্সট তৈরি করুন।
+    ui:
+      yourText: আপনার টেক্সট
+      textPlaceholder: আঁকার জন্য আপনার টেক্সট
+      options: অপশন
+      font: ফন্ট
+      searchFonts: ফন্ট খুঁজুন...
+      noFontsMatch: কোনো ফন্ট মেলেনি
+      width: প্রস্থ
+      output: ASCII আর্ট আউটপুট
+      loadingFont: ফন্ট লোড হচ্ছে...
+      error: বর্তমান সেটিংসে একটি ত্রুটি হয়েছে।
+      copied: কপি হয়েছে!
+      copy: কপি করুন
+  regex-tester:
+    title: Regex টেস্টার
+    description: নমুনা টেক্সট দিয়ে আপনার রেগুলার এক্সপ্রেশন পরীক্ষা করুন।
+    ui:
+      regexLabel: 'টেস্ট করার জন্য রেজেক্স:'
+      regexPlaceholder: টেস্ট করার রেজেক্স দিন
+      globalLabel: গ্লোবাল
+      globalTitle: গ্লোবাল সার্চ
+      ignoreCaseLabel: কেস উপেক্ষা করুন
+      ignoreCaseTitle: কেস-ইনসেনসিটিভ সার্চ
+      multilineLabel: মাল্টিলাইন
+      singlelineLabel: সিঙ্গেললাইন
+      singlelineTitle: নিউলাইন অক্ষরের সাথে মিল করতে . কে অনুমতি দেয়।
+      unicodeLabel: ইউনিকোড
+      unicodeTitle: ইউনিকোড; প্যাটার্নকে ইউনিকোড কোড পয়েন্টের একটি ক্রম হিসেবে বিবেচনা করে।
+      unicodeSetsLabel: ইউনিকোড সেটস
+      unicodeSetsTitle: আরও ইউনিকোড ফিচারসহ u মোডের একটি আপগ্রেড।
+      textLabel: 'মিলাতে টেক্সট:'
+      textPlaceholder: মিলানোর টেক্সট দিন
+      regexBarTitle: REGEX
+      matchesBarTitle: MATCHES
+      matchIndex: ইনডেক্স
+      matchValue: মান
+      matchCaptures: ক্যাপচার
+      matchGroups: গ্রুপ
+      noMatch: কোনো মিল নেই
+      sampleBarTitle: SAMPLE
+      diagramBarTitle: DIAGRAM
+      quickReference: দ্রুত রেফারেন্স
+  yaml-converter:
+    title: YAML রূপান্তরকারী
+    description: YAML-কে JSON বা TOML-এ রূপান্তর করুন।
+    ui:
+      convertTo: 'যেভাবে রূপান্তর করবেন:'
+      inputLabel: আপনার YAML
+      inputPlaceholder: এখানে আপনার YAML পেস্ট করুন...
+      invalidYaml: প্রদত্ত YAML সঠিক নয়।
+      outputLabel: '{format} আউটপুট'
+  json-converter:
+    title: JSON রূপান্তরকারী
+    description: JSON-কে YAML বা TOML-এ রূপান্তর করুন।
+    ui:
+      convertTo: রূপান্তর করুন
+      yourJson: আপনার JSON
+      pasteJsonPlaceholder: আপনার JSON এখানে পেস্ট করুন...
+      invalidJson: অবৈধ JSON ফরম্যাট
+      formatOutput: '{format} আউটপুট'
+  toml-converter:
+    title: TOML রূপান্তরকারী
+    description: TOML-কে JSON বা YAML-এ রূপান্তর করুন।
+    ui:
+      convertTo: 'রূপান্তর করুন:'
+      yourToml: আপনার TOML
+      pastePlaceholder: এখানে আপনার TOML পেস্ট করুন...
+      invalidToml: প্রদত্ত TOML সঠিক নয়।
+      outputLabel: '{format} আউটপুট'
+  xml-json-converter:
+    title: XML ↔ JSON রূপান্তরকারী
+    description: দ্বিমুখী XML ও JSON রূপান্তরকারী। যেকোনো দিক সম্পাদনা করুন, অন্যটি স্বয়ংক্রিয়ভাবে হালনাগাদ হবে।
+    ui:
+      invalidXml: অবৈধ XML।
+      invalidJson: অবৈধ JSON।
+      xmlLabel: XML
+      xmlPlaceholder: এখানে আপনার XML পেস্ট করুন...
+      jsonLabel: JSON
+      jsonPlaceholder: এখানে আপনার JSON পেস্ট করুন...
+  markdown-to-html:
+    title: Markdown থেকে HTML
+    description: Markdown-কে HTML-এ রূপান্তর করুন এবং PDF হিসেবে এক্সপোর্ট বা প্রিন্ট করুন।
+    ui:
+      copiedSuccess: HTML ক্লিপবোর্ডে কপি হয়েছে!
+      copyFailed: টেক্সট কপি করা যায়নি।
+      inputLabel: 'রূপান্তর করার জন্য আপনার Markdown:'
+      inputPlaceholder: আপনার Markdown কনটেন্ট...
+      outputLabel: 'আউটপুট HTML:'
+      copyHtmlButton: HTML কপি করুন
+      printAsPdfButton: PDF হিসেবে প্রিন্ট করুন
+  killer-pdf:
+    title: KillerPDF
+    description: Windows-এর জন্য ওপেন-সোর্স PDF এডিটর। দেখুন, টীকা দিন, একত্র করুন, ভাগ করুন, ফ্ল্যাটেন করুন, পাসওয়ার্ড-সুরক্ষিত PDF খুলুন, টেক্সট সম্পাদনা, আঁকা, হাইলাইট, স্বাক্ষর ও প্রিন্ট করুন।
+  killer-scan:
+    title: KillerScan
+    description: ফিল্ড টেকদের জন্য দ্রুত নেটওয়ার্ক স্ক্যানার। ARP + ping আবিষ্কার, পোর্ট প্রোবিং, বিক্রেতা অনুসন্ধান এবং স্বয়ংক্রিয় ডিভাইস শ্রেণিবিন্যাস।
+  gif-search:
+    title: GIF অনুসন্ধান
+    description: Giphy-তে রিঅ্যাকশন GIF খুঁজুন। URL কপি করতে যেকোনো ফলাফলে ক্লিক করুন।
+    ui:
+      errorStatus: ত্রুটি {status}
+      fetchFailed: GIF আনতে ব্যর্থ হয়েছে।
+      searchPlaceholder: GIF খুঁজুন (যেমন facepalm, ভালো কাজ, ঠিক আছে)
+      searching: খোঁজা হচ্ছে...
+      search: খুঁজুন
+      noResults: '"{query}" এর জন্য কোনো GIF পাওয়া যায়নি।'
+      copied: কপি হয়েছে!
+      copyUrl: URL কপি করুন
+      resultsHint: '{count} ফলাফল। URL কপি করতে ক্লিক করুন, তারপর Teams, Telegram বা Slack এ পেস্ট করুন।'
+  killer-shell:
+    title: KillerShell
+    description: পাওয়ার ইউজারদের জন্য বিনামূল্যের শেল। একটি ফাইল ব্রাউজার, একটি টার্মিনাল এবং একটি টেক্সট এডিটর একই উইন্ডো, একই ট্যাব স্ট্রিপ এবং একই কী সেট ভাগ করে।
+  domain-lookup:
+    title: ডোমেইন অনুসন্ধান
+    description: যেকোনো ডোমেইনের WHOIS নিবন্ধন তথ্য এবং ইমেইল DNS যাচাই (MX, SPF, DKIM, DMARC) এক ভিউতে।
+    ui:
+      statusDesc:
+        active: ডোমেইনটি সক্রিয় এবং কার্যকর।
+        inactive: ডোমেইনটি নিষ্ক্রিয়।
+        clientDeleteProhibited: রেজিস্ট্রার ডোমেইনটি মুছে ফেলার বিরুদ্ধে লক করে রেখেছে।
+        clientTransferProhibited: রেজিস্ট্রার ডোমেইনটি অন্য রেজিস্ট্রারে স্থানান্তরের বিরুদ্ধে লক করে রেখেছে।
+        clientUpdateProhibited: রেজিস্ট্রার ডোমেইনটি আপডেটের বিরুদ্ধে লক করে রেখেছে।
+        clientHold: রেজিস্ট্রার ডোমেইনটি স্থগিত করেছে, তাই DNS রিজলভ নাও হতে পারে।
+        serverDeleteProhibited: রেজিস্ট্রি ডোমেইনটি মুছে ফেলার বিরুদ্ধে লক করে রেখেছে।
+        serverTransferProhibited: রেজিস্ট্রি ডোমেইনটি স্থানান্তরের বিরুদ্ধে লক করে রেখেছে।
+        serverUpdateProhibited: রেজিস্ট্রি ডোমেইনটি আপডেটের বিরুদ্ধে লক করে রেখেছে।
+        serverHold: রেজিস্ট্রি ডোমেইনটি স্থগিত করেছে, তাই DNS রিজলভ নাও হতে পারে।
+        pendingCreate: ডোমেইন তৈরি করা মুলতুবি রয়েছে।
+        pendingDelete: ডোমেইনটি মোছার অপেক্ষায় আছে এবং শীঘ্রই মুক্ত হয়ে যেতে পারে।
+        pendingRenew: ডোমেইন নবায়ন মুলতুবি রয়েছে।
+        pendingRestore: মোছার পর ডোমেইন পুনরুদ্ধার মুলতুবি রয়েছে।
+        pendingTransfer: অন্য রেজিস্ট্রারে ডোমেইন স্থানান্তর মুলতুবি রয়েছে।
+        pendingUpdate: ডোমেইন আপডেট মুলতুবি রয়েছে।
+        redemptionPeriod: ডোমেইনের মেয়াদ শেষ হয়ে গেছে এবং এটি পুনরুদ্ধার সময়কালে আছে। নিবন্ধনকারী এখনও এটি ফিরে পেতে পারেন।
+        renewPeriod: নিবন্ধনের পর ডোমেইনটি নবায়ন গ্রেস পিরিয়ডে আছে।
+        autoRenewPeriod: ডোমেইনটি স্বয়ংক্রিয় নবায়ন গ্রেস পিরিয়ডে আছে।
+        transferPeriod: ডোমেইনটি স্থানান্তর গ্রেস পিরিয়ডে আছে।
+      expiredAlert: এই ডোমেইনের মেয়াদ {days} দিন আগে শেষ হয়েছে এবং এটি নিবন্ধনের জন্য উপলব্ধ হতে পারে।
+      expiresAlert: এই ডোমেইনের মেয়াদ {days} দিনের মধ্যে শেষ হবে। দ্রুত নবায়নের ব্যবস্থা করা উচিত।
+      expiredTag: '{days} দিন আগে মেয়াদ শেষ'
+      remainingTag: '{days} দিন বাকি'
+      registrar: রেজিস্ট্রার
+      registrarIanaId: রেজিস্ট্রার IANA আইডি
+      created: তৈরি হয়েছে
+      updated: আপডেট হয়েছে
+      expires: মেয়াদ শেষ
+      noMx: কোনো MX রেকর্ড পাওয়া যায়নি।
+      dnsFailed: DNS লুকআপ ব্যর্থ হয়েছে।
+      noSpf: কোনো SPF রেকর্ড পাওয়া যায়নি।
+      noDkim: সাধারণ সিলেক্টরের জন্য কোনো DKIM রেকর্ড পাওয়া যায়নি। কাস্টম সিলেক্টর তবুও থাকতে পারে।
+      noDmarc: কোনো DMARC রেকর্ড পাওয়া যায়নি। ডোমেইনটি স্পুফিং থেকে সুরক্ষিত নয়।
+      spfPlusAll: 'সতর্কতা: +all বিপজ্জনক কারণ এটি যেকোনো সার্ভারকে এই ডোমেইনের নামে মেইল পাঠানোর অনুমতি দেয়।'
+      spfNeutralAll: 'সতর্কতা: ?all নিরপেক্ষ এবং কোনো সুরক্ষা প্রদান করে না।'
+      dmarcPNone: 'সতর্কতা: p=none শুধুমাত্র পর্যবেক্ষণ করে, কার্যকর করে না। ইমেইল প্রত্যাখ্যান করা হবে না।'
+      dmarcNoRua: 'সতর্কতা: কোনো সমষ্টিগত রিপোর্ট ঠিকানা নেই (rua=)। আপনি DMARC রিপোর্ট পাবেন না।'
+      pass: পাস
+      fail: ব্যর্থ
+      warning: সতর্কতা
+      checking: পরীক্ষা করা হচ্ছে...
+      overallPass: সমস্ত ইমেইল পরীক্ষা পাস হয়েছে। এই ডোমেইনটি ইমেইলের জন্য ভালোভাবে কনফিগার করা আছে।
+      overallFail: একটি বা একাধিক গুরুত্বপূর্ণ রেকর্ড অনুপস্থিত। এই ডোমেইনটি স্পুফিংয়ের জন্য ঝুঁকিপূর্ণ হতে পারে।
+      overallWarn: কিছু রেকর্ড আছে তবে কনফিগারেশন সমস্যা রয়েছে যা পর্যালোচনা করা প্রয়োজন।
+      rdapHttpError: 'HTTP {status}: ডোমেইনটি হয়তো নেই, অথবা TLD সমর্থিত নয়।'
+      lookupFailed: লুকআপ ব্যর্থ হয়েছে।
+      domainPlaceholder: একটি ডোমেইন লিখুন (যেমন killertools.net)
+      searching: খোঁজা হচ্ছে...
+      search: খুঁজুন
+      signed: সাইন করা
+      unsigned: সাইন করা হয়নি
+      delegationSigned: ডেলিগেশন সাইন করা আছে।
+      dsRecord: '{count}টি DS রেকর্ড।'
+      dsRecords: '{count}টি DS রেকর্ড।'
+      keyRecord: '{count}টি কী রেকর্ড।'
+      keyRecords: '{count}টি কী রেকর্ড।'
+      dnssecUnsigned: এই ডোমেইনটি DNSSEC দ্বারা সুরক্ষিত নয়। DNS প্রতিক্রিয়া ক্রিপ্টোগ্রাফিকভাবে যাচাই করা যায় না।
+      status: স্ট্যাটাস
+      contacts: যোগাযোগ
+      remarks: মন্তব্য
+      nameservers: নেমসার্ভার
+      mxRecords: MX রেকর্ড
+      spfRecord: SPF রেকর্ড
+      dkimRecords: DKIM রেকর্ড
+      dmarcRecord: DMARC রেকর্ড
+      role:
+        registrant: নিবন্ধনকারী
+        administrative: প্রশাসনিক
+        technical: প্রযুক্তিগত
+        abuse: অপব্যবহার
+      name: নাম
+      organization: প্রতিষ্ঠান
+      email: ইমেইল
+      phone: ফোন
+  email-record-generator:
+    title: ইমেইল রেকর্ড জেনারেটর
+    description: SPF ও DMARC DNS TXT রেকর্ড তৈরি করুন। আপনার মেইল প্রদানকারী ও নীতি বেছে নিন, তারপর ফলাফল সরাসরি আপনার DNS-এ কপি করুন।
+    ui:
+      hardFailRecommended: হার্ড ফেইল, প্রস্তাবিত
+      softFail: সফট ফেইল
+      neutralNotRecommended: নিরপেক্ষ, প্রস্তাবিত নয়
+      blockFailingMail: ব্যর্থ মেইল ব্লক করুন
+      sendToSpam: স্প্যামে পাঠান
+      monitorOnly: শুধু পর্যবেক্ষণ
+      relaxedDefault: শিথিল (ডিফল্ট)
+      strict: কঠোর
+      sameAsMainPolicy: মূল নীতির অনুরূপ
+      spfRecordTitle: SPF রেকর্ড
+      dmarcRecordTitle: DMARC রেকর্ড
+      spfRecordLocation: আপনার রুট ডোমেইনে TXT রেকর্ড
+      dmarcRecordLocation: TXT রেকর্ড এখানে
+      copied: কপি করা হয়েছে
+      clickToCopy: কপি করতে ক্লিক করুন
+      lookupWarning: '{count}টি DNS লুকআপ নির্বাচিত; SPF-এর সীমা ১০টি লুকআপ'
+      mailProviders: মেইল প্রোভাইডার
+      customIps: কাস্টম IP বা রেঞ্জ (ঐচ্ছিক)
+      examplePrefix: যেমন
+      enforcement: প্রয়োগ
+      policy: নীতি
+      subdomainPolicy: সাবডোমেইন নীতি (ঐচ্ছিক)
+      policyCoverage: 'নীতি কভারেজ: {percent}%'
+      coverageHint: ব্যর্থ মেইলের {percent}%-এর উপর ব্যবস্থা নেওয়া হবে। ধাপে ধাপে চালু করতে ১০০%-এর কম ব্যবহার করুন।
+      aggregateReportEmail: সমষ্টিগত রিপোর্ট ইমেইল (rua)
+      forensicReportEmail: ফরেনসিক রিপোর্ট ইমেইল (ruf, ঐচ্ছিক)
+      dkimAlignment: DKIM অ্যালাইনমেন্ট
+      spfAlignment: SPF অ্যালাইনমেন্ট
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS লোকেল তারিখ স্ট্রিং
+      formatUnixTimestamp: ইউনিক্স টাইমস্ট্যাম্প
+      formatTimestamp: টাইমস্ট্যাম্প
+      formatUtc: UTC ফরম্যাট
+      formatExcelDateTime: এক্সেল তারিখ/সময়
+      invalidDateRule: এই তারিখটি এই ফরম্যাটের জন্য অবৈধ
+      inputPlaceholder: একটি তারিখ স্ট্রিং পেস্ট করুন অথবা লাইভ ঘড়ির জন্য খালি রাখুন...
+      invalidDate: এই ফরম্যাটের জন্য তারিখটি অবৈধ
+      output: আউটপুট
+      live: লাইভ
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: সিক্রেট (হেক্স)
+      epochLabel: এপক
+      countLabel: সংখ্যা
+      paddedHexLabel: প্যাডেড হেক্স
+      secretLabel: সিক্রেট
+      secretPlaceholder: আপনার TOTP সিক্রেট পেস্ট করুন...
+      generateNewSecret: নতুন সিক্রেট তৈরি করুন
+      tokenLabel: টোকেন
+      copied: ✓ কপি হয়েছে
+      clickToCopy: কপি করতে ক্লিক করুন
+      nextIn: '>_ পরেরটি {seconds} সেকেন্ডে'
+      adjacentTokensLabel: পার্শ্ববর্তী টোকেন
+      prevLabel: পূর্ববর্তী
+      nextLabel: পরবর্তী
+      detailsLabel: বিস্তারিত
+      scanToAuthenticate: '>_ প্রমাণীকরণের জন্য স্ক্যান করুন'
+      openKeyUriInNewTab: নতুন ট্যাবে Key URI খুলুন
+      tokenDisplayPreviousLabel: পূর্ববর্তী
+      tokenDisplayCurrentLabel: বর্তমান OTP
+      tokenDisplayNextLabel: পরবর্তী
+      copiedExclaim: কপি হয়েছে !
+      copyPreviousOtp: পূর্ববর্তী OTP কপি করুন
+      copyCurrentOtp: বর্তমান OTP কপি করুন
+      copyNextOtp: পরবর্তী OTP কপি করুন
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: শক্তিশালী
+      moderateLabel: মাঝারি
+      weakLabel: দুর্বল
+      veryWeakLabel: অত্যন্ত দুর্বল
+      lengthLabel: দৈর্ঘ্য
+      entropyLabel: এনট্রপি
+      charsetSizeLabel: ক্যারেক্টার সেট আকার
+      scoreDetailLabel: স্কোর
+      passwordPlaceholder: একটি পাসওয়ার্ড লিখুন...
+      hideLabel: লুকান
+      showLabel: দেখান
+      clearLabel: মুছুন
+      crackTimeSublabel: ব্রুট ফোর্স ক্র্যাক টাইম
+      crackTimeNote: প্রতি সেকেন্ডে ১০০ কোটি অনুমান ধরে ব্রুট ফোর্স সময়ের ভিত্তিতে শক্তি অনুমান করা হয়। ডিকশনারি আক্রমণ বিবেচনা করা হয়নি।
+  integer-base-converter:
+    ui:
+      binary: বাইনারি
+      octal: অক্টাল
+      decimal: ডেসিমাল
+      hexadecimal: হেক্সাডেসিমাল
+      base: বেস
+      output: আউটপুট
+      custom: কাস্টম
+  basic-auth-generator:
+    ui:
+      copied: হেডার ক্লিপবোর্ডে কপি হয়েছে
+      username: ইউজারনেম
+      usernamePlaceholder: আপনার ইউজারনেম...
+      password: পাসওয়ার্ড
+      passwordPlaceholder: আপনার পাসওয়ার্ড...
+      headerLabel: 'অথরাইজেশন হেডার:'
+      copyHeader: হেডার কপি করুন
+  meta-tag-generator:
+    ui:
+      copiedSuccess: মেটা ট্যাগ কপি হয়েছে!
+      copiedLabel: ✓ কপি হয়েছে
+      copyButton: কপি করুন
+      outputTitle: আপনার মেটা ট্যাগ
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Mime টাইপ থেকে এক্সটেনশন
+      mimeToExtensionDescription: কোন ফাইল এক্সটেনশন কোন mime টাইপের সাথে যুক্ত তা জানুন
+      mimeTypeSelectPlaceholder: 'এখানে আপনার mimetype নির্বাচন করুন... (যেমন: application/pdf)'
+      extensionsFoundPrefix: যেসব ফাইলের এক্সটেনশন
+      extensionsFoundSuffix: 'mime টাইপের সাথে যুক্ত:'
+      extensionToMimeTitle: ফাইল এক্সটেনশন থেকে mime টাইপ
+      extensionToMimeDescription: একটি ফাইল এক্সটেনশনের সাথে কোন mime টাইপ যুক্ত তা জানুন
+      mimeFoundPrefix: এই এক্সটেনশনের সাথে যুক্ত mime টাইপ
+      mimeFoundSuffix: 'ফাইল এক্সটেনশন:'
+      tableMimeTypesHeader: Mime টাইপ
+      tableExtensionsHeader: এক্সটেনশন
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: টেক্সট থেকে Unicode
+      enterTextLabel: Unicode-এ রূপান্তর করতে টেক্সট লিখুন
+      unicodeFromTextLabel: আপনার টেক্সট থেকে Unicode
+      unicodeOutputPlaceholder: আপনার টেক্সটের Unicode রূপ এখানে দেখাবে
+      copyUnicode: Unicode ক্লিপবোর্ডে কপি করুন
+      unicodeToTextTitle: Unicode থেকে টেক্সট
+      inputUnicodePlaceholder: Unicode ইনপুট করুন
+      enterUnicodeLabel: টেক্সটে রূপান্তর করতে Unicode লিখুন
+      textFromUnicodeLabel: আপনার Unicode থেকে টেক্সট
+      textOutputPlaceholder: আপনার Unicode-এর টেক্সট রূপ এখানে দেখাবে
+      copyText: টেক্সট ক্লিপবোর্ডে কপি করুন
+  json-viewer:
+    ui:
+      invalidJson: প্রদত্ত JSON বৈধ নয়।
+      sortKeys: কী গুলো সাজান
+      indentSize: ইনডেন্ট আকার
+      yourRawJson: আপনার কাঁচা JSON
+      pasteRawJsonPlaceholder: আপনার কাঁচা JSON এখানে পেস্ট করুন...
+      prettifiedVersion: আপনার JSON এর সুবিন্যস্ত সংস্করণ
+  portProtocolReference:
+    ui:
+      searchPlaceholder: পোর্ট, সার্ভিস, প্রোটোকল বা বিবরণ দিয়ে খুঁজুন...
+      allProtocols: সব
+      dangerousOnly: শুধু বিপজ্জনক
+      showingPorts: '{count}টি পোর্ট দেখানো হচ্ছে'
+      copied: কপি হয়েছে!
+      clickToCopy: পোর্ট নম্বর কপি করতে ক্লিক করুন
+      copiedCheck: ✓ কপি হয়েছে
+      dangerousPill: বিপজ্জনক
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet ব্রাউজার
+      adminBadge: অ্যাডমিন
+      cmdletSearchPlaceholder: নাম, বিবরণ বা মডিউল দিয়ে খুঁজুন...
+      noCmdletsMatch: '"{query}" এর সাথে কোনো cmdlet মেলেনি'
+      generatedCommand: জেনারেট করা কমান্ড
+      copiedCheck: ✓ কপি হয়েছে!
+      copyCommand: কমান্ড কপি করুন
+      commonExamples: সাধারণ উদাহরণ
+      selectCmdletPrompt: আপনার কমান্ড তৈরি শুরু করতে বামে একটি cmdlet নির্বাচন করুন।
+      parameters: প্যারামিটার
+      noParametersNeeded: কোনো প্যারামিটারের দরকার নেই - এই cmdlet যেমন আছে তেমনই চলে।
+      required: আবশ্যক
+      separateMultipleValues: একাধিক মান কমা দিয়ে আলাদা করুন
+      showFewerParameters: কম প্যারামিটার দেখান
+      showMoreParameters: আরও {count}টি প্যারামিটার
+      collapseQuickReference: কুইক রেফারেন্স সংকুচিত করুন
+      openQuickReference: কুইক রেফারেন্স খুলুন
+      quickReference: কুইক রেফারেন্স
+      cheatsheetComparisonOperators: তুলনা অপারেটর
+      cheatsheetEqualTo: সমান
+      cheatsheetNotEqualTo: সমান নয়
+      cheatsheetGreaterLessThan: বড় / ছোট
+      cheatsheetGreaterLessEqual: বড় বা সমান / ছোট বা সমান
+      cheatsheetStringOperators: স্ট্রিং অপারেটর
+      cheatsheetWildcardMatch: ওয়াইল্ডকার্ড মিল (* এবং ?)
+      cheatsheetWildcardNonMatch: ওয়াইল্ডকার্ড অমিল
+      cheatsheetRegexMatch: রেজেক্স মিল
+      cheatsheetRegexNonMatch: রেজেক্স অমিল
+      cheatsheetCollectionContains: কালেকশনে মান আছে
+      cheatsheetValueInCollection: মান একটি কালেকশনে আছে
+      cheatsheetLogicalOperators: লজিক্যাল অপারেটর
+      cheatsheetBothTrue: দুটি শর্তই সত্য হতে হবে
+      cheatsheetEitherTrue: যেকোনো একটি শর্ত সত্য
+      cheatsheetNegateCondition: একটি শর্ত বাতিল করুন
+      cheatsheetAutomaticVariables: অটোমেটিক ভেরিয়েবল
+      cheatsheetCurrentPipelineObject: বর্তমান পাইপলাইন অবজেক্ট
+      cheatsheetNullEmptyValue: নাল / খালি মান
+      cheatsheetBooleanTrueFalse: বুলিয়ান true / false
+      cheatsheetLocalComputerName: লোকাল কম্পিউটারের নাম
+      cheatsheetCurrentUser: বর্তমানে লগ-ইন করা ব্যবহারকারী
+      cheatsheetPsVersionInfo: PS ভার্সন তথ্য
+      cheatsheetDateHelpers: তারিখ হেল্পার
+      cheatsheetCurrentDateTime: বর্তমান তারিখ ও সময়
+      cheatsheetThirtyDaysAgo: ৩০ দিন আগে
+      cheatsheetThreeMonthsAgo: ৩ মাস আগে
+      cheatsheetParseDateString: একটি তারিখ স্ট্রিং পার্স করুন
+      cheatsheetPipelineTricks: পাইপলাইন কৌশল
+      cheatsheetLimitFirst10: প্রথম ১০টি ফলাফলে সীমাবদ্ধ করুন
+      cheatsheetCountSumMinMax: কাউন্ট / সাম / মিন / ম্যাক্স
+      cheatsheetInteractiveGuiViewer: ইন্টারঅ্যাক্টিভ GUI ভিউয়ার (লোকাল)
+      cheatsheetConvertToJson: আউটপুটকে JSON এ রূপান্তর করুন
+      cheatsheetOutputScreenAndFile: স্ক্রিন এবং ফাইলে আউটপুট দিন
+      cheatsheetSuppressErrors: নন-ফেটাল এরর দমন করুন
+      cheatsheetRemoteExecution: রিমোট এক্সিকিউশন
+      cheatsheetCmdletsSupportDirectly: অনেক cmdlet সরাসরি এটি সাপোর্ট করে
+      cheatsheetRunViaRemoting: PS রিমোটিং (WinRM) এর মাধ্যমে চালান
+      cheatsheetInteractiveRemoteSession: ইন্টারঅ্যাক্টিভ রিমোট PS সেশন
+  qr-code-generator:
+    ui:
+      tabText: টেক্সট / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: টেক্সট বা URL
+      placeholderTextOrUrl: আপনার লিংক বা টেক্সট...
+      sectionEncryption: এনক্রিপশন
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: পাসওয়ার্ড নেই
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: নেটওয়ার্কের নাম...
+      sectionPassword: পাসওয়ার্ড
+      placeholderPassword: নেটওয়ার্ক পাসওয়ার্ড...
+      sectionOptions: অপশন
+      hiddenSsid: লুকানো SSID
+      anonymousIdentity: বেনামী পরিচয়
+      sectionEapMethod: EAP পদ্ধতি
+      sectionEapPhase2: EAP ফেজ ২
+      sectionEapIdentity: EAP পরিচয়
+      placeholderEapIdentity: আপনার EAP পরিচয়...
+      sectionTheme: থিম
+      themeDefault: ডিফল্ট
+      themeTerminal: টার্মিনাল
+      themeClassic: ক্লাসিক
+      themeInverted: ইনভার্টেড
+      sectionColors: রং
+      labelForeground: 'ফোরগ্রাউন্ড:'
+      labelBackground: 'ব্যাকগ্রাউন্ড:'
+      sectionErrorCorrection: এরর কারেকশন
+      levelLow: নিম্ন (~7%)
+      levelMedium: মাঝারি (~15%)
+      levelQuartile: কোয়ার্টাইল (~25%)
+      levelHigh: উচ্চ (~30%)
+      emptyHintWifi: Wi-Fi QR তৈরি করতে একটি SSID লিখুন
+      emptyHintText: টেক্সট বা একটি URL লিখুন
+      captionJoin: '>_ যোগ দিতে স্ক্যান করুন'
+      captionOpen: '>_ খুলতে স্ক্যান করুন'
+      downloadPng: ↓ PNG ডাউনলোড করুন
+  yaml-viewer:
+    ui:
+      invalidYaml: প্রদত্ত YAML সঠিক নয়।
+      sortKeys: কী সাজান
+      indentSize: ইনডেন্ট সাইজ
+      rawLabel: আপনার কাঁচা YAML
+      rawPlaceholder: এখানে আপনার কাঁচা YAML পেস্ট করুন...
+      prettifiedLabel: আপনার YAML এর সুবিন্যস্ত সংস্করণ
+components:
+  androidBetaBanner:
+    announcement: Android বিটা ঘোষণা
+    title: Killer Tools এবার Android-এ আসছে
+    subtitle: বিটা টেস্টার দরকার, যোগ দিতে ট্যাপ করুন
+    dismiss: বাতিল করুন
+  formatTransformer:
+    input: ইনপুট
+    inputPlaceholder: ইনপুট...
+    output: আউটপুট
+  inputCopyable:
+    copied: কপি হয়েছে!
+    copy: ক্লিপবোর্ডে কপি করুন
+  spanCopyable:
+    copied: কপি হয়েছে!
+    copy: ক্লিপবোর্ডে কপি করুন
+  textareaCopyable:
+    copy: ক্লিপবোর্ডে কপি করুন
+    copied: কপি হয়েছে!
+  navbarButtons:
+    androidTooltip: Android-এর জন্য Killer Tools
+    androidAriaLabel: Android-এর জন্য Killer Tools, বিটাতে যোগ দিন
+  themeDots:
+    accentColor: অ্যাকসেন্ট রং
+    theme: থিম
+    toggleThemeSwatches: থিম সোয়াচ টগল করুন
+    accentColorPicker: অ্যাকসেন্ট রং পিকার
+    dragToMove: সরাতে টেনে আনুন
+    accentLabel: 'অ্যাকসেন্ট:'
+    accentNamed: 'অ্যাকসেন্ট: {name}'
+    closeAccentPicker: অ্যাকসেন্ট পিকার বন্ধ করুন
+    accents:
+      red: লাল
+      orange: কমলা
+      green: সবুজ
+      teal: টিল
+      blue: নীল
+      purple: বেগুনি
+layouts:
+  menuLayout:
+    eggMessage: ৮০টি টুল। কোনো সাবস্ক্রিপশন নেই। একজন বদমেজাজি ফিল্ড টেক।
+    clickMe: এখানে ক্লিক করুন
+    sourceOnGithub: GitHub-এ সোর্স
+  base:
+    collapseMenu: মেনু সংকুচিত করুন
+    homeLabel: KillerTools হোম
+pages:
+  notFound:
+    noSuchFile: এমন কোনো ফাইল বা ডিরেক্টরি নেই
+    exitCode: exit code
+    backToHome: হোমে ফিরে যান
+  privacy:
+    heading: গোপনীয়তা নীতি
+    lastUpdated: 'সর্বশেষ আপডেট: এপ্রিল ৪, ২০২৬'
+    overviewHeading: সংক্ষিপ্ত বিবরণ
+    overviewIntro: KillerTools
+    overviewBody: হলো IT ইউটিলিটি টুলের একটি বিনামূল্যের সংগ্রহ। আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ, এবং এই নীতি ব্যাখ্যা করে যে আমরা আপনার ডেটা কীভাবে পরিচালনা করি।
+    dataCollectionHeading: ডেটা সংগ্রহ
+    dataCollectionBody: KillerTools কোনো ব্যক্তিগত ডেটা সংগ্রহ, সংরক্ষণ বা প্রেরণ করে না। সমস্ত টুল প্রসেসিং সম্পূর্ণভাবে আপনার ব্রাউজারে হয়। কোনো টুলে আপনি যে ডেটা প্রবেশ করান তা কোনো সার্ভারে পাঠানো হয় না।
+    cookiesHeading: কুকিজ
+    cookiesBody: এই সাইট ট্র্যাকিংয়ের জন্য কুকিজ ব্যবহার করে না। আপনার থিম পছন্দ এবং সেটিংস আপনার ব্রাউজারে স্থানীয়ভাবে সংরক্ষিত হয় এবং কখনো প্রেরণ করা হয় না।
+    analyticsHeading: অ্যানালিটিক্স
+    analyticsIntro: এই সাইট ব্যবহার করে
+    analyticsBody: একটি গোপনীয়তা-কেন্দ্রিক অ্যানালিটিক্স টুল, পেজ ভিউ এবং রেফারেল উৎসের মতো সাধারণ ব্যবহারের প্যাটার্ন বোঝার জন্য। Umami কুকিজ ব্যবহার করে না, সাইট জুড়ে ব্যবহারকারীদের ট্র্যাক করে না, এবং কোনো ব্যক্তিগতভাবে শনাক্তযোগ্য তথ্য সংগ্রহ করে না। সমস্ত ডেটা সমষ্টিগত এবং বেনামী।
+    thirdPartyHeading: তৃতীয় পক্ষের পরিষেবা
+    thirdPartyBody: কিছু টুল বাহ্যিক সম্পদ বা ডকুমেন্টেশনের সাথে লিঙ্ক করতে পারে। সেই বাহ্যিক সাইটগুলোর গোপনীয়তা অনুশীলনের জন্য আমরা দায়ী নই।
+    androidAppHeading: অ্যান্ড্রয়েড অ্যাপ
+    androidAppBody: KillerTools অ্যান্ড্রয়েড অ্যাপটি ওয়েব অ্যাপ্লিকেশনের একটি র‌্যাপার। এটি মৌলিক ইন্টারনেট অ্যাক্সেসের বাইরে কোনো ডিভাইস অনুমতি অনুরোধ বা অ্যাক্সেস করে না। কোনো ডিভাইস ডেটা সংগ্রহ বা প্রেরণ করা হয় না।
+    contactHeading: যোগাযোগ
+    contactBody: এই গোপনীয়তা নীতি সম্পর্কে আপনার প্রশ্ন থাকলে, আপনি আমাদের সাথে যোগাযোগ করতে পারেন
+  androidApp:
+    robotAttribution: অ্যান্ড্রয়েড রোবটটি Google দ্বারা তৈরি এবং শেয়ার করা কাজ থেকে পুনরুৎপাদিত বা পরিবর্তিত, এবং Creative Commons 3.0 Attribution License-এ বর্ণিত শর্ত অনুসারে ব্যবহৃত।
+    heading: অ্যান্ড্রয়েডের জন্য KillerTools
+    introBody1: 'পুরো killertools.net টুলবক্স একটি নেটিভ অ্যান্ড্রয়েড অ্যাপ হিসেবে: প্রতিটি টুল, Killer Scripts লাইব্রেরি, এবং আপনার সব পছন্দের জিনিস, আপনার হোম স্ক্রিন থেকে এক ট্যাপ দূরে।'
+    introBody2: সাইটের মতোই একই নিয়ম। সবকিছু আপনার ডিভাইসে চলে। কোনো অ্যাকাউন্ট নেই, কোনো টেলিমেট্রি নেই, ফোন-হোম নেই। মাঠে যদি এটি আপনার একটি টিকিট সাইকেল বাঁচায়, তাহলে এটি তার কাজ করেছে।
+    betaStatusPrefix: অ্যাপটি বর্তমানে আছে
+    betaStatusStrong: Google Play-এ ক্লোজড বেটায়
+    betaStatusSuffix: ', এবং এখানেই আপনার ভূমিকা আসে।'
+    joinBetaHeading: বেটায় যোগ দিন
+    joinBetaIntroPrefix: Google প্রয়োজন
+    joinBetaIntroStrong: ১৪ দিন ধরে টানা অ্যাপ ইনস্টল করা ১২ জন টেস্টার
+    joinBetaIntroSuffix: 'একজন স্বাধীন ডেভেলপারের অ্যাপ পাবলিক হওয়ার আগে। তিনটি ধাপ, প্রায় দুই মিনিট, এবং আপনি সেই বারো জনের একজন হবেন:'
+    step1LinkText: টেস্টার গ্রুপে যোগ দিন
+    step1Suffix: Google Groups-এ ("Join group"-এ ক্লিক করুন)।
+    step2LinkText: টেস্টার হোন
+    step2Suffix: Google Play অপ্ট-ইন পেজে।
+    step3LinkText: অ্যাপ ইনস্টল করুন
+    step3Suffix: Google Play থেকে, এবং দুই সপ্তাহ ইনস্টল রাখুন।
+    sameAccountStrong: তিনটি ধাপেই একই Google অ্যাকাউন্ট ব্যবহার করুন
+    sameAccountSuffix: ' - অপ্ট-ইন পেজ "not available for this account" দেখায় যদি আপনি গ্রুপ বাদ দেন বা অ্যাকাউন্ট পরিবর্তন করেন।'
+    feedbackPrefix: 'কিছু ভাঙা বা অনুপস্থিত? আমাকে জানান:'
+  home:
+    sortPopular: জনপ্রিয়
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: KillerTools সম্পর্কে
+    intro: ফিল্ড টেকদের ভারী কিছুর জন্য সময় নেই। এখানকার প্রতিটি টুল আছে কারণ কাজে আমার সেটার দরকার ছিল এবং এমন কিছু খুঁজে পাইনি যা অ্যাকাউন্ট, ইনস্টল বা টেলিমেট্রি ছাড়াই কাজ করে।
+    originPrefix: আমি এখন একটি MSP-এর অভ্যন্তরীণ AI ইঞ্জিনিয়ারিং টিমে টুল তৈরি করি, ছয় বছরের ফুল-স্ট্যাক ডেভেলপমেন্ট এবং বিভিন্ন কোম্পানিতে আট বছরের ফিল্ড টেকনিশিয়ান অভিজ্ঞতার পর। KillerTools.net শুরু হয়েছিল চমৎকার
+    originMid: প্রজেক্টের একটি ফর্ক হিসেবে, যা তৈরি করেছেন
+    originSuffix: এবং এটি এমন কিছুতে পরিণত হয়েছে যা আমি আসলেই যে ধরনের কাজ করি তার জন্য তৈরি। আমি এটি তৈরি করেছি যাতে টিকিটের মাঝখানে Group Policy সেটিংস দেখা যায়, ক্লায়েন্টের সাবনেট স্ক্যান করা যায়, এবং ব্রাউজার না ছেড়ে পোর্ট রেফারেন্স বের করা যায়।
+    scriptsLibrary: Killer Scripts লাইব্রেরি প্রতিটি টিকিট সাইকেলে আসা কাজগুলো কভার করে। প্রতিটি স্ক্রিপ্ট PS 5.1, PS 7, এবং Kaseya LiveConnect-এ কোনো নির্ভরতা ছাড়াই চলে।
+    privacyBody: সবকিছু আপনার ব্রাউজারে চলে। কিছুই ট্র্যাক করা হয় না। কোনো অ্যাকাউন্ট কখনো প্রয়োজন হয় না। সাইটটি নির্ভরতা-চেইন আক্রমণ ব্লক করার জন্য একটি কঠোর Content Security Policy প্রয়োগ করে। একটি আপোসকৃত npm প্যাকেজ যদি কখনো বান্ডলে চলে আসে, এটি আপনার পেস্ট করা তথ্য নিয়ে ফোন-হোম করতে পারবে না।
+    maintainedByPrefix: তৈরি এবং রক্ষণাবেক্ষণ করেছেন
+    maintainedByMid: যদি এটি কাজে আপনার সময় বাঁচায়,
+    buyMeCoffee: আমাকে এক কাপ কফি কিনে দেওয়া
+    maintainedBySuffix: প্রশংসিত হয় কিন্তু কখনো প্রত্যাশিত নয়।
+    missingToolHeading: কোনো টুল অনুপস্থিত? বাগ পেয়েছেন?
+    issuesPrefix: একটি ফিচার রিকোয়েস্ট বা বাগ রিপোর্ট খুলুন
+    issuesLinkText: issues সেকশনে
+    issuesSuffix: GitHub-এ। আমি সেগুলো পড়ি।
+    alsoTryHeading: এগুলোও চেষ্টা করুন...
+    tagKillerScan: Windows-এর জন্য ওপেন-সোর্স নেটওয়ার্ক স্ক্যানার
+    tagKillerPdf: Windows-এর জন্য ওপেন-সোর্স PDF এডিটর
+    tagKillerShell: পাওয়ার ইউজারদের জন্য ওপেন-সোর্স Windows শেল
+    tagKillerNotes: Windows-এর জন্য ওপেন-সোর্স এনক্রিপ্টেড নোটপ্যাড
+    tagKillendar: Windows-এর জন্য ওপেন-সোর্স এনক্রিপ্টেড ক্যালেন্ডার
+    linksHeading: লিংক
+    linkLabelSite: সাইট
+    linkLabelSource: সোর্স
+    linkLabelIssues: Issues
+    reportBug: একটি বাগ রিপোর্ট করুন
+    requestFeature: একটি ফিচার অনুরোধ করুন
+    linkLabelSupport: সাপোর্ট
+    linkLabelBuiltOn: যার উপর তৈরি
+    itToolsFork: IT-Tools (fork)
+ui:
+  diffEditor:
+    originalLabel: মূল
+    modifiedLabel: পরিবর্তিত
+    originalPlaceholder: মূল টেক্সট...
+    modifiedPlaceholder: পরিবর্তিত টেক্সট...
+  fileUpload:
+    defaultTitle: ফাইল এখানে টেনে আনুন, অথবা নির্বাচন করতে ক্লিক করুন
+    or: অথবা
+    browseFiles: ফাইল ব্রাউজ করুন
+  inputText:
+    defaultPlaceholder: টেক্সট ইনপুট করুন
+  keyValueListItem:
+    'yes': হ্যাঁ
+    'no': না
+    notAvailable: প্রযোজ্য নয়
+  modalValue:
+    copied: কপি হয়েছে!
+    copy: কপি করুন
+  select:
+    searchPlaceholder: খুঁজুন...
+    noResults: কোনো ফলাফল পাওয়া যায়নি
+    defaultPlaceholder: একটি অপশন নির্বাচন করুন
+  table:
+    defaultDescription: ডেটা টেবিল
+  textCopyable:
+    copied: কপি হয়েছে!
+    copyToClipboard: ক্লিপবোর্ডে কপি করুন
+commandPalette:
+  searchAriaLabel: খুঁজুন
+  searchPlaceholder: টুল বা কমান্ড খুঁজতে টাইপ করুন...

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
+const { t } = useI18n();
+
 const privacyTitle = 'Privacy Policy - Killer Tools';
 const privacyDescription = 'Privacy policy for Killer Tools. No tracking, no cookies, no data collection. All tool processing happens in your browser.';
 const privacyUrl = 'https://killertools.net/privacy';
@@ -24,59 +26,59 @@ useHead({
 <template>
   <div mx-auto mt-50px max-w-600px px-4>
     <h1 mb-4 text-2xl font-bold>
-      Privacy Policy
+      {{ t('pages.privacy.heading') }}
     </h1>
     <p mb-2 op-70>
-      Last updated: April 4, 2026
+      {{ t('pages.privacy.lastUpdated') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Overview
+      {{ t('pages.privacy.overviewHeading') }}
     </h2>
     <p mb-4>
-      Killer Tools (<a href="https://killertools.net" style="color: var(--kt-accent); text-decoration: none;">killertools.net</a>) is a free collection of IT utility tools. Your privacy is important to us, and this policy explains how we handle your data.
+      {{ t('pages.privacy.overviewIntro') }} (<a href="https://killertools.net" style="color: var(--kt-accent); text-decoration: none;">killertools.net</a>) {{ t('pages.privacy.overviewBody') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Data Collection
+      {{ t('pages.privacy.dataCollectionHeading') }}
     </h2>
     <p mb-4>
-      Killer Tools does not collect, store, or transmit any personal data. All tool processing happens entirely in your browser. No data you enter into any tool is sent to any server.
+      {{ t('pages.privacy.dataCollectionBody') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Cookies
+      {{ t('pages.privacy.cookiesHeading') }}
     </h2>
     <p mb-4>
-      This site does not use cookies for tracking. Your theme preferences and settings are stored locally in your browser and are never transmitted.
+      {{ t('pages.privacy.cookiesBody') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Analytics
+      {{ t('pages.privacy.analyticsHeading') }}
     </h2>
     <p mb-4>
-      This site uses <a href="https://umami.is" target="_blank" rel="noopener" style="color: var(--kt-accent); text-decoration: none;">Umami</a>, a privacy-focused analytics tool, to understand general usage patterns such as page views and referral sources. Umami does not use cookies, does not track users across sites, and does not collect any personally identifiable information. All data is aggregated and anonymous.
+      {{ t('pages.privacy.analyticsIntro') }} <a href="https://umami.is" target="_blank" rel="noopener" style="color: var(--kt-accent); text-decoration: none;">Umami</a>, {{ t('pages.privacy.analyticsBody') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Third-Party Services
+      {{ t('pages.privacy.thirdPartyHeading') }}
     </h2>
     <p mb-4>
-      Some tools may link to external resources or documentation. We are not responsible for the privacy practices of those external sites.
+      {{ t('pages.privacy.thirdPartyBody') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Android App
+      {{ t('pages.privacy.androidAppHeading') }}
     </h2>
     <p mb-4>
-      The Killer Tools Android app is a wrapper around the web application. It does not request or access any device permissions beyond basic internet access. No device data is collected or transmitted.
+      {{ t('pages.privacy.androidAppBody') }}
     </p>
 
     <h2 mb-2 mt-6 text-lg font-bold>
-      Contact
+      {{ t('pages.privacy.contactHeading') }}
     </h2>
     <p mb-8>
-      If you have questions about this privacy policy, you can reach us at <a href="mailto:steve@thekiller.net" style="color: var(--kt-accent); text-decoration: none;">steve@thekiller.net</a>.
+      {{ t('pages.privacy.contactBody') }} <a href="mailto:steve@thekiller.net" style="color: var(--kt-accent); text-decoration: none;">steve@thekiller.net</a>.
     </p>
   </div>
 </template>

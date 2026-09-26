@@ -6,6 +6,7 @@ import { useValidation } from '@/composable/validation';
 import { withDefaultOnError } from '@/utils/defaults';
 import { formatJson } from './json.models';
 
+const { t } = useI18n();
 const inputElement = ref<HTMLElement>();
 
 const rawJson = useStorage('json-prettify:raw-json', '{"hello": "world", "foo": "bar"}');
@@ -18,7 +19,7 @@ const rawJsonValidation = useValidation({
   rules: [
     {
       validator: (v: string) => v === '' || JSON5.parse(v),
-      message: 'Provided JSON is not valid.',
+      message: t('tools.json-viewer.ui.invalidJson'),
     },
   ],
 });
@@ -29,12 +30,12 @@ const rawJsonValidation = useValidation({
   <div style="display: contents">
   <div class="jv-controls">
     <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
-      Sort keys
+      {{ t('tools.json-viewer.ui.sortKeys') }}
     </button>
 
     <!-- Indent size stepper -->
     <div class="jv-control">
-      <span class="jv-control-label">Indent size</span>
+      <span class="jv-control-label">{{ t('tools.json-viewer.ui.indentSize') }}</span>
       <div class="jv-stepper">
         <button class="jv-step-btn" :disabled="indentSize <= 0" @click="indentSize = Math.max(0, indentSize - 1)">
           −
@@ -49,13 +50,13 @@ const rawJsonValidation = useValidation({
 
   <div class="jv-panel">
     <div class="kt-section-label">
-      Your raw JSON
+      {{ t('tools.json-viewer.ui.yourRawJson') }}
     </div>
     <c-input-text
       ref="inputElement"
       v-model:value="rawJson"
       :validation="rawJsonValidation"
-      placeholder="Paste your raw JSON here..."
+      :placeholder="t('tools.json-viewer.ui.pasteRawJsonPlaceholder')"
       rows="20"
       multiline
       autofocus
@@ -68,7 +69,7 @@ const rawJsonValidation = useValidation({
   </div>
   <div style="flex: 1 1 300px; min-width: 0;">
     <div class="kt-section-label">
-      Prettified version of your JSON
+      {{ t('tools.json-viewer.ui.prettifiedVersion') }}
     </div>
     <TextareaCopyable :value="cleanJson" language="json" :follow-height-of="inputElement" />
   </div>

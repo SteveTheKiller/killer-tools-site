@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: Nejnovější nástroje
+    favoriteTools: Vaše oblíbené nástroje
+    allTools: Všechny nástroje
+    favoritesDndToolTip: Přetažením změníte pořadí oblíbených
+  subtitle: Užitečné nástroje pro vývojáře
+  toggleMenu: Přepnout nabídku
+  home: Domů
+  uiLib: Knihovna UI
+  support: Podpořte vývoj killer-tools
+  buyMeACoffee: Kupte mi kávu
+  follow:
+    title: Líbí se vám killer-tools?
+    p1: Dejte mi hvězdičku na
+    githubRepository: repozitáři StevetheKiller na GitHubu
+    thankYou: Děkuji!
+  nav:
+    github: Repozitář na GitHubu
+    githubRepository: Repozitář killer-tools na GitHubu
+    about: O killer-tools
+    aboutLabel: O aplikaci
+    darkMode: Tmavý režim
+    lightMode: Světlý režim
+    mode: Přepnout tmavý/světlý režim
+about:
+  content: |
+    # killer-tools
+
+    Technici v terénu nemají čas na zbytečnosti. Každý nástroj tady existuje proto, že jsem ho potřeboval v práci a nenašel nic, co by prostě fungovalo bez účtu, instalace nebo telemetrie.
+
+    Pracuji jako technik v terénu v MSP a starám se o sítě, správu systémů a podporu koncových zařízení. killer-tools vznikl jako fork skvělého projektu [IT-Tools](https://github.com/CorentinTh/it-tools) a vyrostl v něco vytvořeného pro práci, kterou skutečně dělám. Vytvořil jsem ho, abych mohl uprostřed tiketu vyhledat kódy NDR, proskenovat podsíť klienta a dekódovat SafeLink dřív, než na něj kliknu.
+
+    Všechno běží ve vašem prohlížeči. Nic se nesleduje. Účet není potřeba, nikdy.
+
+    Vytvořil a spravuje [Steve the Killer](https://thekiller.net). Pokud vám to v práci ušetří čas, [koupit mi kávu](https://www.buymeacoffee.com/StevetheKiller) potěší, ale nikdy se to neočekává.
+
+    ## Chybí vám nástroj? Našli jste chybu?
+
+    Otevřete požadavek na funkci nebo hlášení chyby v [sekci issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) na GitHubu. Čtu je.
+404:
+  notFound: 404 Nenalezeno
+  sorry: Omlouváme se, tato stránka zřejmě neexistuje
+  maybe: Možná si s tím hraje mezipaměť, zkuste vynucené obnovení?
+  backHome: Zpět domů
+favoriteButton:
+  remove: Odebrat z oblíbených
+  add: Přidat do oblíbených
+toolCard:
+  new: Nové
+search:
+  label: Hledat
+tools:
+  categories:
+    favorite-tools: Vaše oblíbené nástroje
+    crypto: Kryptografie
+    conversion: Převody
+    web: Web
+    images and videos: Obrázky a videa
+    development: Vývoj
+    network: Síť
+    math: Matematika
+    measurement: Měření
+    text: Text
+    data: Data
+    windows: Windows
+    killer apps: Killer Apps
+    photography: Fotografie
+  password-strength-analyser:
+    title: Analyzátor síly hesla
+    description: Zjistěte sílu svého hesla pomocí tohoto analyzátoru běžícího pouze na straně klienta s odhadem doby prolomení.
+  password-generator:
+    title: Generátor hesel
+    description: Generujte silná hesla, diceware passphrase, vyslovitelné řetězce a tokeny hex/base64/UUID. Obsahuje předvolby MSP (místní správce, servisní účet, Wi-Fi PSK, PIN), vyloučení nejednoznačných znaků, měřič entropie, QR kód a čtení hláskovací abecedou NATO.
+    ui:
+      terminal:
+        passwordTitle: HESLO
+        optionsTitle: MOŽNOSTI
+      meta:
+        entropyLabel: 'Entropie:'
+        bits: bitů
+        crackLabel: 'Prolomení:'
+      actions:
+        copy: Kopírovat
+        refresh: Obnovit
+      section:
+        preset: Přednastavení
+        mode: Režim
+        format: Formát
+        length: Délka ({length})
+        wordCount: Počet slov ({count})
+        separator: Oddělovač
+        characterClasses: Třídy znaků
+        options: Možnosti
+      charClass:
+        uppercase: Velká písmena
+        lowercase: Malá písmena
+        numbers: Čísla
+        symbols: Symboly
+      option:
+        excludeAmbiguous: Vyloučit zaměnitelné znaky
+        requireOneOfEach: Vyžadovat alespoň jeden z každé třídy
+        capitalizeWords: Slova s velkým počátečním písmenem
+        appendNumber: Přidat 2 číslice na konec
+      mode:
+        random: Náhodné
+        passphrase: Heslová fráze
+        pronounceable: Vyslovitelné
+        format: Formát
+      format:
+        plain: Prostý text
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: žádný
+      qr:
+        caption: naskenováním zkopírujete
+      phonetic:
+        title: FONETICKY
+      bulk:
+        generateLabel: Generovat
+        single: jedno
+        atOnce: '{n} najednou'
+        passwordsTitle: '{count} HESEL'
+        copyAll: Kopírovat vše
+      toast:
+        passwordCopied: Heslo zkopírováno do schránky
+        passwordsCopied: Hesla zkopírována do schránky
+        phoneticCopied: Fonetický přepis zkopírován
+  percentage-calculator:
+    title: Kalkulačka procent
+    description: Snadno vypočítejte procenta z jedné hodnoty na druhou nebo z procenta na hodnotu.
+    ui:
+      whatIsXPercentOfYTitle: KOLIK JE X % Z Y
+      whatIsLabel: Kolik je
+      percentOfLabel: '% z'
+      resultPlaceholder: Výsledek
+      xIsWhatPercentOfYTitle: KOLIK PROCENT Z Y JE X
+      isWhatPercentOfLabel: je kolik % z
+      percentageChangeTitle: PROCENTUÁLNÍ NÁRŮST / POKLES
+      fromLabel: Z
+      toLabel: na
+  svg-placeholder-generator:
+    title: Generátor zástupných SVG
+    description: Generujte obrázky SVG jako zástupné prvky pro vaše aplikace.
+    ui:
+      widthLabel: ŠÍŘKA (px)
+      backgroundLabel: POZADÍ
+      heightLabel: VÝŠKA (px)
+      textColorLabel: BARVA TEXTU
+      fontSizeLabel: VELIKOST PÍSMA
+      customTextLabel: VLASTNÍ TEXT
+      customTextPlaceholder: Výchozí je {size}
+      useExactSizeToggle: Použít přesnou velikost
+      svgHtmlElementLabel: HTML ELEMENT SVG
+      svgBase64Label: SVG V BASE64
+      copySvgButton: Kopírovat svg
+      copyBase64Button: Kopírovat base64
+      downloadSvgButton: Stáhnout svg
+      previewLabel: NÁHLED
+      svgPreviewAlt: Náhled SVG
+  json-to-csv:
+    title: JSON na CSV
+    description: Převeďte JSON na CSV s automatickou detekcí záhlaví.
+    ui:
+      invalidJson: Zadaný JSON není platný.
+      yourRawJson: Váš surový JSON
+      pasteRawJsonPlaceholder: Sem vložte svůj surový JSON...
+      csvOutputLabel: CSV verze vašeho JSON
+  camera-recorder:
+    title: Záznam z kamery
+    description: Vyfoťte snímek nebo nahrajte video z webkamery nebo fotoaparátu.
+    ui:
+      selectCamera: Vybrat kameru
+      selectMicrophone: Vybrat mikrofon
+      notSupported: Váš prohlížeč nepodporuje nahrávání z kamery.
+      accessRequired: Je vyžadován přístup ke kameře a mikrofonu.
+      permissionBlocked: Oprávnění bylo zablokováno. Udělte přístup ručně přes ikonu zámku v adresním řádku prohlížeče.
+      grantPermission: Udělit oprávnění
+      video: VIDEO
+      audio: ZVUK
+      startWebcam: Spustit webkameru
+      paused: POZASTAVENO
+      rec: REC
+      screenshot: Snímek obrazovky
+      record: Nahrávat
+      pause: Pozastavit
+      resume: Pokračovat
+      stop: Zastavit
+      recordingNotSupported: Nahrávání není v tomto prohlížeči podporováno
+      captures: ZÁZNAMY ({count})
+      clearAll: Vymazat vše
+      screenshotAlt: snímek obrazovky
+      download: Stáhnout
+      delete: Smazat
+  reciprocity-calculator:
+    title: Kalkulačka selhání reciprocity
+    description: Vypočítejte opravené dlouhé expozice pro více než 40 analogových filmů pomocí Schwarzschildova mocninného zákona. Pokrývá černobílé, barevné negativní a diapozitivní filmy.
+    ui:
+      barReciprocity: KALKULAČKA RECIPROCITY
+      barCorrected: KOREKCE EXPOZICE
+      fieldFilmStock: Typ filmu
+      typeBw: B&W
+      typeColorNeg: Barevný negativ
+      typeSlide: Slide / E6
+      noFailureUpTo: Žádné selhání do {seconds}s
+      sourceManufacturer: Údaje výrobce
+      sourceCommunity: Údaje komunity
+      fieldMeteredExposure: Naměřená expozice
+      unitSeconds: sekund
+      noFailureMessage: Korekce není potřeba, tento film při této délce expozice nemá selhání reciprocity.
+      copyDone: ✓ zkopírováno
+      copySeconds: kopírovat sekundy
+      devReduce10: Zvažte snížení vyvolání přibližně o 10 % kvůli zvýšené hustotě stínů.
+      devReduce1015: Doporučuje se snížit vyvolání o 10-15 %.
+      devReduce1520: Doporučuje se snížit vyvolání o 15-20 %.
+      devReduce2030: U velmi dlouhých expozic se doporučuje snížit vyvolání o 20-30 %.
+      colorShiftWarning: 'Barevný film: při této délce expozice očekávejte posun barev.'
+      colorShiftSlide: Slide film se v postprodukci obtížně opravuje, doporučuje se CC filtrace přímo při focení.
+      colorShiftNeg: Barevný negativ má větší toleranci; korekce je možná při tisku nebo skenování.
+  nd-filter-calculator:
+    title: Kalkulačka ND filtrů
+    description: Vypočítejte opravené časy závěrky pro neutrální šedé filtry. Podporuje všechny běžné síly ND i vlastní hodnoty clonových čísel.
+    ui:
+      titleInputs: Kalkulačka ND filtru
+      baseShutterSpeed: Základní rychlost závěrky (bez filtru)
+      dragOrClick: přetáhněte nebo klikněte
+      custom: Vlastní
+      secPlaceholder: s
+      ndFilter: ND filtr
+      stopOne: '{count} stop'
+      stopMany: '{count} stopů'
+      enterStops: zadejte stopy
+      stopsPlaceholder: stopy
+      titleResult: Korigovaná expozice
+      copied: zkopírováno
+      copySeconds: kopírovat sekundy
+      longExposureAlert: Dlouhá expozice, zvažte použití režimu Bulb.
+      stackingFilters: 'skládání filtrů: sečtěte jejich stopy'
+      legendT1: základní rychlost závěrky (bez filtru)
+      legendT2: korigovaná rychlost závěrky
+      legendStops: síla ND filtru
+  depth-of-field-calculator:
+    title: Kalkulačka hloubky ostrosti
+    description: Vypočítejte blízkou mez, vzdálenou mez a celkovou hloubku ostrosti pro jakoukoli kombinaci objektivu a snímače. Včetně hyperfokální vzdálenosti.
+    ui:
+      sensorMedFormat: Střední formát
+      sensorCustom: Vlastní
+      sensorEnterCoc: zadejte CoC
+      infinity: nekonečno
+      title: KALKULAČKA HLOUBKY OSTROSTI
+      sensorFormat: Formát snímače
+      cocPlaceholder: CoC v mm (např. 0.029)
+      focalLength: Ohnisková vzdálenost (mm)
+      aperture: Clona
+      dragOrClick: přetáhněte nebo klikněte
+      focusDistance: Vzdálenost zaostření
+      distancePlaceholder: vzdálenost
+      results: VÝSLEDKY
+      hyperfocalDistance: Hyperfokální vzdálenost
+      hyperfocalHint: Zaostřete sem pro maximální ostrost od poloviny této vzdálenosti až po nekonečno
+      nearLimit: Blízká hranice
+      farLimit: Vzdálená hranice
+      totalDof: Celková hloubka ostrosti
+      beyondHyperfocal: Vzdálenost zaostření je na hyperfokální vzdálenosti nebo za ní, takže vzdálená hranice sahá až do nekonečna.
+      legendHyperfocal: hyperfokální vzdálenost
+      legendFocalLength: ohnisková vzdálenost
+      legendFNumber: clonové číslo (clona)
+      legendCoc: kruh neostrosti
+      legendFocusDistance: vzdálenost zaostření
+  exposure-equivalence:
+    title: Ekvivalence expozice
+    description: Najděte ekvivalentní časy závěrky pro všechna clonová čísla při stejné expozici. Zvolte výchozí čas a clonu a uvidíte, co potřebujete při každém dalším f-stop.
+    ui:
+      titleInputs: Ekvivalence expozice
+      shutterSpeed: Rychlost závěrky
+      dragOrClick: přetáhněte nebo klikněte
+      custom: Vlastní
+      secPlaceholder: s
+      aperture: Clona
+      titleResults: Ekvivalentní expozice
+      isoIndependent: Nezávislé na ISO při libovolném pevném ISO
+      highlightedBase: zvýrazněný řádek je vaše základní hodnota
+      legendT1: základní rychlost závěrky
+      legendT2: ekvivalentní rychlost závěrky
+      legendN1: základní clona (f-číslo)
+      legendN2: cílová clona (f-číslo)
+  dev-calculator:
+    title: Kalkulačka vyvolávání filmu
+    description: Vypočítejte upravené časy vyvolávání s teplotní kompenzací, push/pull zpracováním a mícháním ředění. Obsahuje databázi běžných černobílých vývojek a filmů.
+    ui:
+      hasData: Má data
+      noDataGroup: Bez dat, zadejte základní čas ručně
+      colorBelow: '{process} pod 36°C: pravděpodobný posun barev a neúplný vývoj'
+      colorAbove: '{process} nad 40°C: riziko závoje a barevného posunu'
+      bwBelow: 'Pod 18°C: vývoj bude velmi pomalý'
+      bwAbove: 'Nad 24°C: riziko retikulace a závoje'
+      start: Start
+      pause: Pauza
+      resume: Pokračovat
+      calculatorTitle: KALKULAČKA VYVOLÁVÁNÍ FILMU
+      developer: Vývojka
+      dilution: Ředění
+      filmStock: Typ filmu
+      baseTimeAt: Základní čas při {temp}°C
+      noData: žádná data
+      overridePlaceholder: přepis (s)
+      customBaseActive: Aktivní vlastní základní čas
+      temperature: 'Teplota:'
+      pushPull: Push / Pull
+      tankVolume: Objem tanku
+      customMlPlaceholder: vlastní ml
+      adjustedTime: UPRAVENÝ ČAS
+      baseTimeTemp: Základní čas ({temp}°C)
+      tempAdj: Úprava teploty ({temp})
+      pushStop: Push {n} stupeň
+      pushStops: Push {n} stupně
+      pullStop: Pull {n} stupeň
+      pullStops: Pull {n} stupně
+      mixFor: Namíchat na {volume}ml
+      mixDeveloper: vývojka
+      mixWater: voda
+      noDataWarning: Žádná data pro {film} + {developer}. Zadejte základní čas ručně.
+      pushPullEstimate: Časy push/pull jsou odhady. Doporučuje se zkušební film.
+      sourceNote: Základní časy převzaty z Massive Dev Chart a datových listů výrobců.
+      processTimer: ČASOVAČ PROCESU
+      devComplete: Vyvolávání dokončeno
+      devCompleteHint: Pověste k usušení a užijte si své negativy.
+      stageOf: Krok {current} / {total}
+      agitation: AGITACE
+      reset: Reset
+      skip: Přeskočit
+      stDeveloper: Vývojka
+      stBleach: Bělič
+      stWash: Voda
+      stFixer: Ustalovač
+      stWash2: Voda 2
+      stStabilizer: Stabilizátor
+      stFirstDeveloper: První vývojka
+      stReversalBath: Reverzní lázeň
+      stColorDeveloper: Barevná vývojka
+      stPreBleach: Předbělení
+      stFinalWash: Závěrečná voda
+      stStopBath: Přerušovací lázeň
+      agC30s10: Nepřetržitě prvních 30 s, poté 10 s každých 30 s
+      agRun3Full: Tekoucí voda nebo 3 úplné výměny
+      agGentle: Pouze jemné kroužení, po něm neoplachovat
+      agC30s5: Nepřetržitě prvních 30 s, poté 5 s každých 30 s
+      agRun3: Tekoucí voda nebo 3 výměny
+      agContinuous: Nepřetržitě
+      ag10per30: 10 s každých 30 s
+      agRun5: Tekoucí voda nebo 5 výměn
+      agC60s10: Nepřetržitě prvních 30 s, poté 10 s každých 60 s
+      agCont60: Nepřetržitě po dobu 60 s
+      ag10per60: 10 s každých 60 s
+      agRun5Full: Tekoucí voda nebo 5 úplných výměn
+  keycode-info:
+    title: Informace o keycode
+    description: Zjistěte JavaScript keycode, code, location a modifikátory libovolné stisknuté klávesy.
+  emoji-picker:
+    title: Výběr emoji
+    description: Snadno kopírujte a vkládejte emoji a získejte hodnotu unicode a code points každého z nich.
+    ui:
+      emojiCopied: Emoji {emoji} zkopírováno do schránky
+      codePointsCopied: Kódové body '{codePoints}' zkopírovány do schránky
+      unicodeCopied: Unicode '{unicode}' zkopírován do schránky
+      searchPlaceholder: Hledat emoji (např. 'smile')...
+      noResults: Žádné výsledky
+      searchResult: Výsledek hledání
+  color-converter:
+    title: Převodník barev
+    description: Převádějte barvy mezi různými formáty (hex, rgb, hsl a název CSS)
+    ui:
+      color: Barva
+      formats: FORMÁTY
+  bcrypt:
+    title: Bcrypt
+    description: Hashujte a porovnávejte textové řetězce pomocí bcrypt. Bcrypt je hashovací funkce pro hesla založená na šifře Blowfish.
+    ui:
+      copiedToClipboard: Hašovaný řetězec zkopírován do schránky
+      hashTitle: HASH
+      compareTitle: POROVNAT
+      stringLabel: Řetězec
+      stringPlaceholder: Váš řetězec pro bcrypt...
+      saltRoundsLabel: Počet kol soli
+      outputLabel: VÝSTUP
+      copyHash: Kopírovat hash
+      compareStringPlaceholder: Váš řetězec k porovnání...
+      hashLabel: Hash
+      compareHashPlaceholder: Váš hash k porovnání...
+      matchLabel: Shoda
+      'yes': Ano
+      'no': Ne
+  crontab-generator:
+    title: Generátor crontab
+    description: Ověřte a generujte crontab a získejte čitelný popis plánu cron.
+    ui:
+      symbolAnyValue: Libovolná hodnota
+      symbolEveryMinute: Každou minutu
+      symbolRange: Rozsah hodnot
+      symbolRangeEquivalent: Minuty 1 až 10
+      symbolList: Seznam hodnot
+      symbolListEquivalent: V minutách 1 a 10
+      symbolStep: Krokové hodnoty
+      symbolStepEquivalent: Každých 10 minut
+      aliasYearly: Jednou ročně (1. ledna, půlnoc)
+      aliasMonthly: První den každého měsíce, půlnoc
+      aliasWeekly: Neděle, půlnoc
+      aliasDaily: Každý den o půlnoci
+      aliasHourly: Každou celou hodinu
+      aliasReboot: Spustit jednou při startu
+      aliasRebootEquivalent: (při startu)
+      invalidCron: Tento cron je neplatný
+      use24HourTime: 24hodinový čas
+      daysStartAtZero: Dny začínají od 0
+      labelSymbol: 'Symbol:'
+      labelMeaning: 'Význam:'
+      labelExample: 'Příklad:'
+      labelEquivalent: 'Ekvivalent:'
+      symbols: Symboly
+      aliases: Aliasy
+  http-status-codes:
+    title: Stavové kódy HTTP
+    description: Seznam všech stavových kódů HTTP, jejich názvů a významu.
+    ui:
+      searchResults: Výsledky hledání
+      searchPlaceholder: Hledat stavový kód HTTP...
+      copiedTooltip: Zkopírováno!
+      clickToCopy: Kliknutím zkopírujete stavový kód
+      copiedLabel: zkopírováno
+  sql-prettify:
+    title: Formátování SQL
+    description: Formátujte a zpřehledněte své SQL dotazy online (podporuje různé dialekty SQL).
+    ui:
+      dialectLabel: DIALEKT
+      keywordCaseLabel: VELIKOST PÍSMEN KLÍČOVÝCH SLOV
+      indentStyleLabel: STYL ODSAZENÍ
+      yourSqlQueryLabel: Váš SQL dotaz
+      sqlQueryPlaceholder: Sem vložte svůj SQL dotaz...
+      prettifiedQueryLabel: Upravená verze vašeho dotazu
+      keywordCaseUpper: VELKÁ PÍSMENA
+      keywordCaseLower: malá písmena
+      keywordCasePreserve: Zachovat
+      indentStyleStandard: Standardní
+      indentStyleTabularLeft: Tabulkově vlevo
+      indentStyleTabularRight: Tabulkově vpravo
+  git-memo:
+    title: Tahák Git
+    description: Rychlý přehled nejběžnějších příkazů a postupů Gitu.
+  encryption:
+    title: Šifrování / dešifrování textu
+    description: Šifrujte čistý text a dešifrujte šifrový text pomocí algoritmů jako AES, TripleDES, Rabbit nebo RC4.
+    ui:
+      decryptError: Text se nepodařilo dešifrovat
+      encryptTitle: ŠIFROVAT
+      decryptTitle: DEŠIFROVAT
+      yourText: VÁŠ TEXT
+      yourSecretKey: VÁŠ TAJNÝ KLÍČ
+      algorithm: ALGORITMUS
+      encryptedOutput: ZAŠIFROVANÝ VÝSTUP
+      yourEncryptedText: VÁŠ ZAŠIFROVANÝ TEXT
+      decryptedOutput: DEŠIFROVANÝ VÝSTUP
+      encryptPlaceholder: Řetězec k zašifrování
+      decryptPlaceholder: Šifrový text k dešifrování
+      secretKeyPlaceholder: Tajný klíč...
+  yaml-prettify:
+    title: Formátování YAML
+    description: Převeďte řetězec YAML do přehledného, čitelného formátu.
+  roman-numeral-converter:
+    title: Převodník římských číslic
+    description: Převádějte římské číslice na čísla a čísla na římské číslice.
+    ui:
+      converterTitle: PŘEVODNÍK
+      arabicSideLabel: ARABSKÉ
+      romanSideLabel: ŘÍMSKÁ ČÍSLICE
+      arabicRangeError: Musí být {min}-{max}
+      invalidRoman: Neplatná římská číslice
+      copied: Zkopírováno
+      copy: Kopírovat
+      romanCopiedToast: Římská číslice zkopírována
+      arabicCopiedToast: Arabské číslo zkopírováno
+  hmac-generator:
+    title: Generátor HMAC
+    description: Vypočítá autentizační kód zprávy založený na hashi (HMAC) pomocí tajného klíče a vaší oblíbené hashovací funkce.
+    ui:
+      encodingBinary: Binární (base 2)
+      encodingHex: Šestnáctkový (base 16)
+      copied: HMAC zkopírován do schránky
+      plainText: PROSTÝ TEXT
+      secretKey: TAJNÝ KLÍČ
+      hashingFunction: HAŠOVACÍ FUNKCE
+      outputEncoding: KÓDOVÁNÍ VÝSTUPU
+      hmacOutput: VÝSTUP HMAC
+      plainTextPlaceholder: Prostý text pro výpočet hashe...
+      secretKeyPlaceholder: Zadejte tajný klíč...
+      clear: Vymazat
+      copyHmac: Kopírovat HMAC
+  bip39-generator:
+    title: Generátor passphrase BIP39
+    description: Vygenerujte passphrase BIP39 z existující nebo náhodné mnemotechnické fráze, nebo získejte mnemotechnickou frázi z passphrase.
+    ui:
+      languageEnglish: Angličtina
+      languageChineseSimplified: Čínština zjednodušená
+      languageChineseTraditional: Čínština tradiční
+      languageCzech: Čeština
+      languageFrench: Francouzština
+      languageItalian: Italština
+      languageJapanese: Japonština
+      languageKorean: Korejština
+      languagePortuguese: Portugalština
+      languageSpanish: Španělština
+      entropyLengthError: Délka entropie musí být >= 16, <= 32 a násobek 4
+      entropyHexError: Entropie musí být hexadecimální řetězec
+      invalidMnemonic: Neplatná mnemotechnická fráze
+      entropyCopied: Entropie zkopírována do schránky
+      passphraseCopied: Přístupová fráze zkopírována do schránky
+      languageLabel: Jazyk
+      entropyHeading: ENTROPIE (SEED)
+      entropyPlaceholder: Hex entropie...
+      regenerate: Znovu vygenerovat
+      copyEntropy: Kopírovat entropii
+      passphraseHeading: PŘÍSTUPOVÁ FRÁZE (MNEMOTECHNICKÁ)
+      passphrasePlaceholder: Mnemotechnická slova...
+      copyPassphrase: Kopírovat přístupovou frázi
+  base64-file-converter:
+    title: Převodník souborů Base64
+    description: Převeďte řetězec, soubor nebo obrázek na jeho reprezentaci base64.
+    ui:
+      copiedToClipboard: Řetězec Base64 zkopírován do schránky
+      base64ToFileTitle: BASE64 DO SOUBORU
+      fileNameLabel: NÁZEV SOUBORU
+      fileNamePlaceholder: Název staženého souboru
+      extensionLabel: PŘÍPONA
+      extensionPlaceholder: ext
+      base64StringLabel: ŘETĚZEC BASE64
+      base64InputPlaceholder: Sem vložte řetězec base64 vašeho souboru...
+      invalidBase64: Neplatný řetězec base64
+      previewImage: Náhled obrázku
+      downloadFile: Stáhnout soubor
+      fileToBase64Title: SOUBOR DO BASE64
+      dropHint: Přetáhněte sem soubor nebo klikněte pro výběr
+      fileInBase64Label: SOUBOR V BASE64
+      fileOutputPlaceholder: Soubor v base64 se zobrazí zde
+      copied: Zkopírováno!
+      copyBase64: Kopírovat base64
+  base64-string-converter:
+    title: Kodér/dekodér řetězců Base64
+    description: Jednoduše kódujte a dekódujte řetězce do jejich reprezentace base64.
+    ui:
+      base64CopiedToClipboard: Řetězec Base64 zkopírován do schránky
+      stringCopiedToClipboard: Řetězec zkopírován do schránky
+      stringToBase64Title: TEXT DO BASE64
+      encodingLabel: KÓDOVÁNÍ
+      standard: Standardní
+      urlSafe: Bezpečné pro URL
+      stringToEncodeLabel: TEXT KE KÓDOVÁNÍ
+      stringInputPlaceholder: Sem zadejte svůj text...
+      base64OutputLabel: VÝSTUP BASE64
+      base64OutputPlaceholder: Kódování base64 vašeho textu se zobrazí zde
+      copied: Zkopírováno!
+      copyBase64: Kopírovat base64
+      base64ToStringTitle: BASE64 DO TEXTU
+      base64ToDecodeLabel: ŘETĚZEC BASE64 K DEKÓDOVÁNÍ
+      base64InputPlaceholder: Váš řetězec base64...
+      invalidBase64: Neplatný řetězec base64
+      decodedStringLabel: DEKÓDOVANÝ TEXT
+      decodedOutputPlaceholder: Dekódovaný text se zobrazí zde
+      copyDecodedString: Kopírovat dekódovaný text
+  math-evaluator:
+    title: Vyhodnocovač výrazů
+    description: Kalkulačka pro vyhodnocování matematických výrazů. Můžete použít funkce jako sqrt, cos, sin, abs atd.
+    ui:
+      placeholder: Váš matematický výraz (např. 2*sqrt(6) )...
+      result: Výsledek
+  url-parser:
+    title: Parser URL
+    description: Rozložte URL na jednotlivé části (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: Host
+      protocol: Protokol
+      hostname: Hostname
+      port: Port
+      sectionAuthentication: Ověření
+      username: Uživatelské jméno
+      password: Heslo
+      sectionPath: Cesta
+      pathname: Pathname
+      search: Search
+      hash: Hash
+      urlTitle: URL
+      invalidUrl: Neplatná URL
+      params: PARAMETRY
+      emptyHint: Zadejte výše URL k analýze
+  phone-parser-and-formatter:
+    title: Parser telefonních čísel
+    description: Analyzujte a formátujte telefonní čísla. Zjistěte zemi, ověřte číslo a zobrazte mezinárodní, národní, E.164 a RFC3966 formát.
+    ui:
+      invalidPhoneNumber: Neplatné telefonní číslo
+      sectionLocation: Umístění
+      countryCode: Kód země
+      country: Země
+      callingCode: Volací kód
+      sectionValidation: Ověření
+      isValid: Je platné?
+      'yes': Ano
+      'no': Ne
+      isPossible: Je možné?
+      type: Typ
+      unknown: Neznámý
+      sectionFormats: Formáty
+      international: Mezinárodní
+      national: Národní
+      defaultCountry: Výchozí země
+      phoneNumber: Telefonní číslo
+      emptyStatePrompt: Zadejte výše telefonní číslo k analýze
+  user-agent-parser:
+    title: Parser user-agent
+    description: Zjistěte a rozeberte prohlížeč, jádro, OS, CPU a typ/model zařízení z řetězce user-agent.
+    ui:
+      sectionBrowser: Prohlížeč
+      sectionEngine: Engine
+      sectionOs: OS
+      sectionDevice: Zařízení
+      sectionCpu: CPU
+      name: Název
+      version: Verze
+      model: Model
+      type: Typ
+      vendor: Výrobce
+      architecture: Architektura
+      userAgentString: ŘETĚZEC USER AGENT
+      placeholder: Sem vložte svůj user-agent...
+      unknown: Neznámé
+      error: CHYBA
+      parseError: Řetězec user agent se nepodařilo analyzovat
+  case-converter:
+    title: Převodník velikosti písmen
+    description: Změňte velikost písmen v řetězci a vyberte si z různých formátů
+    ui:
+      inputPlaceholder: Váš text...
+      output: VÝSTUP
+  html-entities:
+    title: Escapování entit HTML
+    description: Escapujte nebo zrušte escapování entit HTML (nahradí znaky jako <,>, &, " a \' jejich HTML verzí)
+    ui:
+      yourString: VÁŠ ŘETĚZEC
+      escapePlaceholder: Řetězec k escapování...
+      escapedOutput: ESCAPOVANÝ VÝSTUP
+      copied: Zkopírováno
+      copy: Kopírovat
+      yourEscapedString: VÁŠ ESCAPOVANÝ ŘETĚZEC
+      unescapePlaceholder: Řetězec k odescapování...
+      unescapedOutput: ODESCAPOVANÝ VÝSTUP
+  json-prettify:
+    title: Formátování JSON
+    description: Převeďte řetězec JSON do přehledného, čitelného formátu.
+  docker-run-to-docker-compose-converter:
+    title: Převodník docker run na Docker compose
+    description: Převádí příkazy "docker run" na soubory docker-compose!
+  mac-address-lookup:
+    title: Vyhledání MAC adresy
+    description: Zjistěte dodavatele a výrobce zařízení podle jeho MAC adresy.
+    ui:
+      macAddressLabel: MAC adresa
+      copiedTooltip: Zkopírováno!
+      copyTooltip: Klikněte pro zkopírování informací o výrobci
+      copiedTitle: ✓ zkopírováno
+      vendorInfoTitle: Informace o výrobci
+      unknownVendor: Výrobce pro tuto adresu není znám
+  lorem-ipsum-generator:
+    title: Generátor lorem ipsum
+    description: Generujte zástupný text lorem ipsum pro makety a grafickou práci.
+    ui:
+      copiedMessage: Lorem ipsum zkopírováno do schránky
+      paragraphs: Odstavce
+      sentencesPerParagraph: Vět na odstavec
+      wordsPerSentence: Slov na větu
+      startWithLoremIpsum: Začít textem lorem ipsum
+      asHtml: Jako HTML
+      output: VÝSTUP
+      wordCount: '{count} slov'
+      charCount: '{count} znaků'
+      copy: Kopírovat
+      refresh: Obnovit
+  qrcode-generator:
+    title: Generátor QR kódů
+    description: Generujte a stahujte QR kódy pro URL, prostý text nebo přihlašovací údaje k síti Wi-Fi. Terminálové, klasické a vlastní barevné motivy s nastavitelnou korekcí chyb.
+  signature-creator:
+    title: Tvůrce podpisů
+    description: Nakreslete ručně psaný podpis na plátno a exportujte ho jako průhledné PNG. Nebo nahrajte libovolný obrázek a jedním kliknutím odstraňte pozadí pomocí AI přímo v zařízení.
+    ui:
+      drawSignatureTab: Kreslit podpis
+      removeBackgroundTab: Odstranit pozadí
+      inkColorLabel: Barva inkoustu
+      strokeWeightLabel: Tloušťka čáry
+      actionsLabel: Akce
+      undoButton: ↩ Zpět
+      clearButton: ✕ Vymazat
+      downloadTransparentPng: ↓ Stáhnout průhledné PNG
+      uploadImageLabel: Nahrát obrázek
+      dropzoneText: Přetáhněte sem obrázek nebo klikněte pro procházení
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Obrázek nahrán
+      removeButton: ✕ Odebrat
+      removeBackgroundButton: ⚡ Odstranit pozadí
+      exportLabel: Export
+      downloadNoBgPng: ↓ Stáhnout PNG (bez pozadí)
+      originalLabel: Originál
+      resultLabel: Výsledek
+      uploadPrompt: Nahrajte obrázek a začněte
+      originalAlt: originál
+      resultAlt: výsledek s odstraněným pozadím
+      loadingModelStatus: Načítání AI modelu...
+      removingBackgroundStatus: Odstraňování pozadí...
+      processingPercentStatus: Zpracování... {pct}%
+      downloadingModelPercentStatus: Stahování modelu... {pct}%
+      removeBackgroundFailedStatus: Odstranění pozadí se nezdařilo. Zkuste jiný obrázek.
+  xml-formatter:
+    title: Formátování XML
+    description: Převeďte řetězec XML do přehledného, čitelného formátu.
+    ui:
+      invalidXml: Zadané XML není platné.
+      collapse: Sbalit
+      indentSize: Velikost odsazení
+      inputLabel: Vaše XML
+      inputPlaceholder: Vložte sem své XML...
+      outputLabel: Formátované XML z vašeho XML
+  temperature-converter:
+    title: Převodník teplot
+    description: Převody teplot ve stupních pro Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur a Rømer.
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
+  chmod-calculator:
+    title: Kalkulačka chmod
+    description: Spočítejte oprávnění a příkazy chmod pomocí této online kalkulačky chmod.
+    ui:
+      read: Čtení
+      write: Zápis
+      execute: Spouštění
+      owner: Vlastník
+      group: Skupina
+      public: Veřejné
+      commandCopied: Příkaz chmod zkopírován
+      copyCommand: Kopírovat příkaz
+  rsa-key-pair-generator:
+    title: Generátor páru klíčů RSA
+    description: Vygenerujte nový náhodný pár soukromého a veřejného klíče RSA ve formátu PEM.
+    ui:
+      bitsRangeError: Počet bitů musí být 256-16384 a násobek 8
+      bitsLabel: Bity
+      refreshButton: Obnovit pár klíčů
+      publicKeyTitle: Veřejný klíč
+      copyPublicKeyTitle: Kopírovat veřejný klíč
+      copy: Kopírovat
+      generating: Generuje se...
+      privateKeyTitle: Soukromý klíč
+      copyPrivateKeyTitle: Kopírovat soukromý klíč
+      publicKeyCopiedToast: Veřejný klíč zkopírován
+      privateKeyCopiedToast: Soukromý klíč zkopírován
+  html-wysiwyg-editor:
+    title: Editor HTML WYSIWYG
+    description: Online WYSIWYG editor HTML s bohatými funkcemi, který okamžitě generuje zdrojový kód obsahu.
+    ui:
+      bold: Tučné
+      italic: Kurzíva
+      strike: Přeškrtnuté
+      inlineCode: Vložený kód
+      heading1: Nadpis 1
+      heading2: Nadpis 2
+      heading3: Nadpis 3
+      heading4: Nadpis 4
+      bulletList: Odrážkový seznam
+      orderedList: Číslovaný seznam
+      codeBlock: Blok kódu
+      blockquote: Citace
+      hardBreak: Tvrdý zalom
+      clearFormat: Vymazat formátování
+      undo: Zpět
+      redo: Znovu
+  json-diff:
+    title: Porovnání JSON
+    description: Porovnejte dva objekty JSON a zjistěte rozdíly mezi nimi.
+    ui:
+      onlyShowDifferences: Zobrazit pouze rozdíly
+      jsonsAreTheSame: Zadané JSON soubory jsou stejné
+      firstJsonTitle: VÁŠ PRVNÍ JSON
+      firstJsonPlaceholder: Sem vložte první JSON...
+      invalidJson: Neplatný formát JSON
+      secondJsonTitle: JSON KE SROVNÁNÍ
+      secondJsonPlaceholder: Sem vložte JSON ke srovnání...
+  jwt-parser:
+    title: Parser JWT
+    description: Rozeberte a dekódujte svůj JSON Web Token (jwt) a zobrazte jeho obsah.
+    ui:
+      header: Hlavička
+      payload: Datová část
+      jwtToDecodeTitle: JWT K DEKÓDOVÁNÍ
+      tokenPlaceholder: Sem vložte svůj token...
+      invalidJwt: Neplatný JWT
+  date-converter:
+    title: Převodník data a času
+    description: Převeďte datum a čas do různých formátů
+  ipv4-subnet-calculator:
+    title: Kalkulačka podsítí IPv4
+    description: Rozeberte bloky CIDR IPv4 a získejte všechny potřebné informace o podsíti.
+    ui:
+      invalidAddress: Tuto adresu se nepodařilo rozpoznat, zkontrolujte formát
+      netmask: Maska sítě
+      networkAddress: Adresa sítě
+      networkMask: Síťová maska
+      networkMaskBinary: Síťová maska v binární podobě
+      cidrNotation: Zápis CIDR
+      wildcardMask: Wildcard maska
+      networkSize: Velikost sítě
+      firstAddress: První adresa
+      lastAddress: Poslední adresa
+      broadcastAddress: Broadcastová adresa
+      noBroadcast: S touto maskou neexistuje broadcastová adresa
+      ipClass: Třída IP
+      unknownClassType: Neznámý typ třídy
+      decimal: Desítkově
+      hexadecimal: Šestnáctkově
+      binary: Binárně
+      ipv6Short: IPv6 (zkráceně)
+      inputLabel: Adresa IPv4 s maskou nebo bez ní
+      bitMap: BITOVÁ MAPA
+      network: Síť
+      host: Hostitel
+      setPrefix: Nastavit prefix na /{prefix}
+      networkTag: síť
+      broadcastTag: broadcast
+      hostsCount: '{count} hostitelů'
+      privateIp: Privátní IP
+      publicIp: Veřejná IP
+      subnetDetail: DETAIL PODSÍTĚ
+      subnetInfo: INFORMACE O PODSÍTI
+      addressRepresentations: REPREZENTACE ADRESY
+      copy: Kopírovat
+      enterValidIpv4: Pro zobrazení reprezentací zadejte platnou adresu IPv4
+      previousBlock: Předchozí blok
+      nextBlock: Další blok
+      collapseCheatSheet: Sbalit přehled
+      subnetCheatSheet: Přehled podsítí
+  og-meta-generator:
+    title: Generátor meta Open Graph
+    description: Generujte meta značky HTML Open Graph a pro sociální sítě pro váš web.
+  ipv6-ula-generator:
+    title: Generátor ULA IPv6
+    description: Vygenerujte vlastní místní, nesměrovatelné IP adresy pro svou síť podle RFC4193.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: První směrovatelná
+      lastRoutable: Poslední směrovatelná
+      infoAlert: Používá aktuální časové razítko a MAC adresu, hashované pomocí SHA1. Spodních 40 bitů tvoří globální ID podle RFC 4193.
+      macAddress: MAC adresa
+      output: Výstup
+      copied: Zkopírováno!
+      copy: Kopírovat
+  hash-text:
+    title: Hash textu
+    description: Hashujte text pomocí MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 a dalších.
+    ui:
+      encodingBinary: Binární (base 2)
+      encodingHex: Šestnáctkový (base 16)
+      encodingBase64: Base64 (base 64)
+      encodingBase64url: Base64url (base 64, bezpečný pro URL)
+      inputPlaceholder: Váš řetězec k zahašování...
+      encoding: Kódování
+      output: VÝSTUP
+  json-to-toml:
+    title: JSON na TOML
+    description: Rozeberte a převeďte JSON na TOML.
+  device-information:
+    title: Informace o zařízení
+    description: Získejte informace o svém aktuálním zařízení (velikost obrazovky, poměr pixelů, user agent, ...)
+    ui:
+      screen: Obrazovka
+      hardware: Hardware
+      network: Síť
+      browser: Prohlížeč
+      screenSize: Velikost obrazovky
+      windowSize: Velikost okna
+      pixelRatio: Poměr pixelů
+      colorDepth: Barevná hloubka
+      orientation: Orientace
+      orientationAngle: Úhel orientace
+      touchPoints: Dotykové body
+      cpuCores: Jádra CPU
+      deviceMemory: Paměť zařízení
+      platform: Platforma
+      online: Online
+      connectionType: Typ připojení
+      downlinkSpeed: Rychlost stahování
+      roundTripTime: Doba odezvy
+      dataSaver: Úspora dat
+      vendor: Poskytovatel
+      languages: Jazyky
+      cookiesEnabled: Cookies povoleny
+      pdfViewer: Prohlížeč PDF
+      doNotTrack: Nesledovat
+      userAgent: User agent
+      maxTouchPoints: Maximálně {count}
+      none: Žádné
+      logicalCores: '{count} logických jader'
+      'yes': Ano
+      'no': Ne
+      enabled: Povoleno
+      disabled: Zakázáno
+      supported: Podporováno
+      notSupported: Nepodporováno
+      notSet: Nenastaveno
+  pdf-signature-checker:
+    title: Kontrola podpisů PDF
+    description: Ověřte podpisy souboru PDF. Podepsaný soubor PDF obsahuje jeden nebo více podpisů, podle kterých lze určit, zda byl obsah souboru po podepsání změněn.
+    ui:
+      tableHeaderValidityPeriod: Doba platnosti
+      tableHeaderIssuedBy: Vydal
+      tableHeaderIssuedTo: Vydáno pro
+      tableHeaderPemCertificate: Certifikát PEM
+      notBefore: Platné od
+      notAfter: Platné do
+      commonName: Obecný název
+      organizationName: Název organizace
+      countryName: Název země
+      localityName: Název místa
+      organizationalUnitName: Název organizační jednotky
+      stateOrProvinceName: Stát nebo kraj
+      viewPemCert: Zobrazit certifikát PEM
+      uploadPrompt: Přetáhněte sem soubor PDF, nebo klikněte a vyberte soubor
+      noSignaturesFound: V daném souboru nebyly nalezeny žádné podpisy.
+      signatureCertificatesLabel: 'Certifikáty podpisu {number}:'
+  json-minify:
+    title: Minifikace JSON
+    description: Minifikujte a zkomprimujte JSON odstraněním nadbytečných mezer.
+    ui:
+      invalidJson: Zadaný JSON není platný.
+      inputLabel: Váš surový JSON
+      inputPlaceholder: Sem vložte svůj surový JSON...
+      outputLabel: Minifikovaná verze vašeho JSON
+  ulid-generator:
+    title: Generátor ULID
+    description: Generujte náhodné Universally Unique Lexicographically Sortable Identifier (ULID).
+    ui:
+      copiedMessage: ULID zkopírovány do schránky
+      quantity: MNOŽSTVÍ
+      format: FORMÁT
+      formatRaw: Raw
+      formatJson: JSON
+      output: VÝSTUP
+      copy: Kopírovat
+      refresh: Obnovit
+  base-converter:
+    title: Převodník číselných soustav
+    description: Převeďte číslo mezi různými soustavami (desítková, šestnáctková, dvojková, osmičková, base64, ...)
+  uuid-generator:
+    title: Generátor UUID
+    description: Generujte náhodná UUID (v1 a v4) a prozkoumejte jejich strukturu.
+    ui:
+      copiedMessage: UUID zkopírovány do schránky
+      version: VERZE
+      quantity: MNOŽSTVÍ
+      namespacePreset: PŘEDVOLBA NAMESPACE
+      namespaceUuid: NAMESPACE UUID
+      invalidUuid: Neplatné UUID
+      name: NÁZEV
+      namePlaceholder: Název k hashování...
+      output: VÝSTUP
+      copy: Kopírovat
+      refresh: Obnovit
+  ipv4-address-converter:
+    title: Převodník adres IPv4
+    description: Převeďte IP adresu do desítkové, dvojkové, šestnáctkové nebo dokonce IPv6 podoby.
+    ui:
+      decimal: Desítková
+      hexadecimal: Šestnáctková
+      binary: Binární
+      ipv6Short: IPv6 (zkráceně)
+      invalidIpv4: Neplatná adresa IPv4
+      ipv4Address: Adresa IPv4
+      output: Výstup
+      copied: Zkopírováno!
+      copy: Kopírovat
+  text-statistics:
+    title: Statistika textu
+    description: 'Získejte informace o textu: počet znaků, počet slov, velikost v bajtech, ...'
+    ui:
+      textPlaceholder: Váš text...
+      characterCount: POČET ZNAKŮ
+      wordCount: POČET SLOV
+      lineCount: POČET ŘÁDKŮ
+      byteSize: VELIKOST V BAJTECH
+  text-to-nato-alphabet:
+    title: Text na abecedu NATO
+    description: Převeďte text do hláskovací abecedy NATO pro ústní přenos.
+    ui:
+      yourText: VÁŠ TEXT
+      inputPlaceholder: např. Hello world
+      natoPhonetic: NATO HLÁSKOVACÍ ABECEDA
+      copied: Zkopírováno
+      copyAll: Kopírovat vše
+      natoStringCopied: Řetězec NATO zkopírován.
+  ipv4-range-expander:
+    title: Rozšíření rozsahu IPv4
+    description: Z počáteční a koncové adresy IPv4 tento nástroj vypočítá platnou podsíť IPv4 včetně zápisu CIDR.
+    ui:
+      startAddress: Počáteční adresa
+      endAddress: Koncová adresa
+      addressesInRange: Počet adres v rozsahu
+      invalidIpv4: Neplatná adresa IPv4
+      invalidCombinationTitle: Neplatná kombinace počáteční a koncové adresy IPv4
+      invalidCombinationDescription: Koncová adresa IPv4 je nižší než počáteční. To není platné a výsledek nelze vypočítat.
+      switchStartEnd: Prohodit počáteční a koncovou adresu IPv4
+      result: Výsledek
+      copied: Zkopírováno!
+      copyResult: Kopírovat výsledek
+  text-diff:
+    title: Porovnání textu
+    description: Porovnejte dva texty a zobrazte rozdíly mezi nimi.
+  otp-generator:
+    title: Generátor kódů OTP
+    description: Generujte a ověřujte časově založená OTP (jednorázová hesla) pro vícefaktorové ověřování.
+  text-to-binary:
+    title: Text na binární ASCII
+    description: Převeďte text na jeho binární reprezentaci ASCII a naopak.
+    ui:
+      textCopied: Text zkopírován
+      binaryCopied: Binární kód zkopírován
+      panelTitle: TEXT ↔ ASCII BINARY
+      textLabel: TEXT
+      binaryLabel: BINÁRNĚ
+      copied: Zkopírováno
+      copy: Kopírovat
+      textPlaceholder: např. Hello world
+      invalidBinary: Musí být platný ASCII binární kód (násobky 8 bitů)
+  ascii-word-art:
+    title: Generátor ASCII art
+    description: Vytvářejte text v ASCII art s mnoha písmy a styly.
+  killer-scripts:
+    title: Killer Scripts
+    description: Skripty PowerShell pro správu Windows a práci MSP v terénu.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Vyberte cmdlet, vyplňte parametry a zkopírujte hotový příkaz PowerShellu.
+  group-policy-reference:
+    title: Přehled zásad skupiny
+    description: Vyhledávejte běžná nastavení zásad skupiny Windows podle názvu, cesty GPO, klíče registru nebo popisu.
+    ui:
+      searchPlaceholder: Hledat zásady, cesty, klíče registru...
+      copied: Zkopírováno!
+      clickToCopyRegistry: Kliknutím zkopírujete klíč registru
+      copiedShort: zkopírováno
+      default: Výchozí
+      recommended: Doporučeno
+  windows-event-lookup:
+    title: Vyhledání událostí Windows
+    description: Vyhledejte ID událostí Windows s popisy, úrovněmi závažnosti a běžnými příčinami.
+    ui:
+      searchResults: Výsledky hledání
+      searchPlaceholder: Hledat podle ID události, názvu nebo popisu...
+      copied: Zkopírováno!
+      clickToCopyEventId: Kliknutím zkopírujete ID události
+      copiedShort: zkopírováno
+  m365-sku-decoder:
+    title: Dekodér licenčních SKU M365
+    description: Dekódujte řetězce SKU a GUID licencí Microsoft 365 na názvy produktů.
+    ui:
+      searchPlaceholder: Hledat podle názvu SKU, string ID nebo popisu...
+      copied: Zkopírováno!
+      clickToCopy: Kliknutím zkopírujete string ID
+      copiedMark: ✓ zkopírováno
+  windows-error-codes:
+    title: Vyhledání chybových kódů Windows
+    description: Vyhledávejte chybové kódy Windows v šestnáctkové nebo desítkové podobě, včetně systémových chyb, kódů BSOD, chyb WMI, RPC, instalačního programu MSI a dalších.
+    ui:
+      searchResults: Výsledky hledání
+      searchPlaceholder: Hledat podle hex kódu, názvu chyby nebo popisu...
+      copied: Zkopírováno!
+      clickToCopy: Klikněte pro zkopírování hex kódu
+      copiedShort: zkopírováno
+      decimal: desítkově {decimal}
+  exchange-ndr-lookup:
+    title: Vyhledání NDR Exchange
+    description: Vyhledejte kódy nedoručitelnosti Exchange a M365 se srozumitelnou příčinou a návodem na opravu.
+    ui:
+      searchResults: Výsledky hledání
+      searchPlaceholder: Hledat podle kódu NDR, názvu chyby, příčiny nebo řešení...
+      copied: Zkopírováno!
+      clickToCopy: Klikněte pro zkopírování kódu NDR
+      copiedShort: zkopírováno
+      cause: Příčina
+      fix: Řešení
+  safelink-decoder:
+    title: Dekodér Outlook Safelink
+    description: Rozbalte SafeLinks z Microsoft Defenderu a zobrazte původní cílovou URL.
+  port-protocol-reference:
+    title: Přehled portů a protokolů
+    description: Běžné síťové porty a protokoly s bezpečnostními poznámkami a označením nebezpečných portů.
+  cve-lookup:
+    title: Vyhledání CVE
+    description: Hledejte CVE v NIST NVD podle ID nebo klíčového slova. Aktuální data z API NVD.
+    ui:
+      range6m: 6 měsíců
+      range1y: 1 rok
+      range2y: 2 roky
+      range5y: 5 let
+      rangeAll: Celá doba
+      noDescription: Popis není k dispozici.
+      fetchError: Nepodařilo se spojit s NVD API. Zkontrolujte připojení.
+      sortNewest: Nejnovější první
+      sortOldest: Nejstarší první
+      sortSeverity: Nejvyšší závažnost
+      severityCritical: Kritická
+      severityHigh: Vysoká
+      severityMedium: Střední
+      severityLow: Nízká
+      placeholder: ID CVE nebo klíčové slovo (např. CVE-2021-44228, log4j)
+      searching: Vyhledávání...
+      search: Hledat
+      hint: Hledejte podle ID CVE, části čísla (např. 43284), běžného názvu (např. log4shell, dirty frag) nebo klíčového slova. Živá data z NVD a GitHub Advisory Database.
+      noResults: Pro "{query}" nebyly nalezeny žádné CVE.
+      noResultsInRange: Pro "{query}" nebyly ve vybraném časovém rozsahu nalezeny žádné CVE.
+      noExactMatch: Ve vybraném časovém rozsahu nebyla nalezena přesná shoda fráze. Běžné názvy zranitelností (jako "dirty frag") se nemusí v popisech NVD objevovat doslovně. Zkuste místo toho částečné číslo CVE (např. "43284" najde CVE-2026-43284).
+      searchAllTime: Hledat za celou dobu
+      showingResults: Zobrazeno {shown} z {total} celkových výsledků
+      allSeverities: Všechny závažnosti
+      allYears: Všechny roky
+      copied: Zkopírováno!
+      clickToCopyId: Kliknutím zkopírujete ID CVE
+      copiedShort: zkopírováno
+      cveDetail: DETAIL CVE
+      published: Zveřejněno
+      modified: Upraveno
+      clickToCopy: Kliknutím zkopírujete
+      references: Odkazy
+      kevActionDue: 'Termín opatření CISA KEV:'
+      cvssMetrics: Metriky CVSS
+      metricAttackVector: Vektor útoku
+      metricAttackComplexity: Složitost útoku
+      metricPrivilegesRequired: Potřebná oprávnění
+      metricUserInteraction: Interakce uživatele
+      metricScope: Rozsah
+      metricConfidentiality: Důvěrnost
+      metricIntegrity: Integrita
+      metricAvailability: Dostupnost
+  email-dns-checker:
+    title: Kontrola DNS e-mailu
+    description: Zkontrolujte záznamy MX, SPF, DKIM a DMARC libovolné domény. Ověří konfiguraci ověřování e-mailu a označí běžné chyby v konfiguraci.
+  email-header-parser:
+    title: Parser hlaviček e-mailu
+    description: Vložte nezpracované hlavičky e-mailu, získejte informace o odesílateli, sledujte řetězec doručovacích skoků a zobrazte výsledky ověření SPF, DKIM a DMARC.
+    ui:
+      pasteHint: Vložte níže nezpracované e-mailové hlavičky.
+      parseButton: Analyzovat hlavičky
+      parseAnother: Analyzovat další
+      messageDetails: Podrobnosti zprávy
+      senderMismatch: Doména odesílatele se liší od domény From. To může znamenat spoofing nebo delegované odesílání.
+      deliveryHops: Doručovací uzly
+      oldestFirst: od nejstaršího
+      authResults: Výsledky ověření
+      spamAnalysis: Analýza spamu
+      spamScore: Skóre spamu
+      spamStatus: Stav spamu
+  whois-checker:
+    title: Vyhledání WHOIS
+    description: Vyhledejte registrační údaje libovolné domény včetně registrátora, data vytvoření a vypršení, jmenných serverů a stavových příznaků.
+  ascii-text-drawer:
+    title: Generátor ASCII art
+    description: Vytvářejte text v ASCII art s mnoha písmy a styly.
+    ui:
+      yourText: VÁŠ TEXT
+      textPlaceholder: Váš text ke kreslení
+      options: MOŽNOSTI
+      font: PÍSMO
+      searchFonts: Hledat písma...
+      noFontsMatch: Žádné písmo neodpovídá
+      width: ŠÍŘKA
+      output: VÝSTUP ASCII ART
+      loadingFont: Načítání písma...
+      error: Aktuální nastavení způsobilo chybu.
+      copied: Zkopírováno!
+      copy: Kopírovat
+  regex-tester:
+    title: Tester regulárních výrazů
+    description: Otestujte své regulární výrazy na ukázkovém textu.
+    ui:
+      regexLabel: 'Regex k testování:'
+      regexPlaceholder: Zadejte regex k otestování
+      globalLabel: Globální
+      globalTitle: Globální hledání
+      ignoreCaseLabel: Ignorovat velikost písmen
+      ignoreCaseTitle: Hledání nerozlišující velikost písmen
+      multilineLabel: Víceřádkové
+      singlelineLabel: Jednořádkové
+      singlelineTitle: Umožňuje, aby . odpovídalo i znakům nového řádku.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; vzor se zpracuje jako sekvence Unicode code pointů.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: Vylepšení režimu u o další Unicode funkce.
+      textLabel: 'Text k porovnání:'
+      textPlaceholder: Zadejte text k porovnání
+      regexBarTitle: REGEX
+      matchesBarTitle: MATCHES
+      matchIndex: Index
+      matchValue: Hodnota
+      matchCaptures: Zachycené skupiny
+      matchGroups: Skupiny
+      noMatch: Žádná shoda
+      sampleBarTitle: SAMPLE
+      diagramBarTitle: DIAGRAM
+      quickReference: Rychlá reference
+  yaml-converter:
+    title: Převodník YAML
+    description: Převeďte YAML na JSON nebo TOML.
+    ui:
+      convertTo: 'Převést na:'
+      inputLabel: Vaše YAML
+      inputPlaceholder: Vložte sem své YAML...
+      invalidYaml: Zadané YAML není platné.
+      outputLabel: Výstup {format}
+  json-converter:
+    title: Převodník JSON
+    description: Převeďte JSON na YAML nebo TOML.
+    ui:
+      convertTo: Převést na
+      yourJson: Váš JSON
+      pasteJsonPlaceholder: Sem vložte svůj JSON...
+      invalidJson: Neplatný formát JSON
+      formatOutput: Výstup {format}
+  toml-converter:
+    title: Převodník TOML
+    description: Převeďte TOML na JSON nebo YAML.
+    ui:
+      convertTo: 'Převést na:'
+      yourToml: Váš TOML
+      pastePlaceholder: Sem vložte svůj TOML...
+      invalidToml: Zadaný TOML není platný.
+      outputLabel: Výstup {format}
+  xml-json-converter:
+    title: Převodník XML ↔ JSON
+    description: Obousměrný převodník XML a JSON. Upravte kteroukoli stranu a druhá se automaticky aktualizuje.
+    ui:
+      invalidXml: Neplatné XML.
+      invalidJson: Neplatné JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Vložte sem své XML...
+      jsonLabel: JSON
+      jsonPlaceholder: Vložte sem své JSON...
+  markdown-to-html:
+    title: Markdown na HTML
+    description: Převeďte Markdown na HTML a exportujte nebo vytiskněte jako PDF.
+    ui:
+      copiedSuccess: HTML zkopírováno do schránky!
+      copyFailed: Kopírování textu selhalo.
+      inputLabel: 'Váš Markdown k převodu:'
+      inputPlaceholder: Váš obsah v Markdownu...
+      outputLabel: 'Výstupní HTML:'
+      copyHtmlButton: Kopírovat HTML
+      printAsPdfButton: Vytisknout jako PDF
+  killer-pdf:
+    title: KillerPDF
+    description: Open-source editor PDF pro Windows. Prohlížení, poznámky, slučování, rozdělování, sloučení vrstev, otevírání PDF chráněných heslem, úpravy textu, kreslení, zvýrazňování, podepisování a tisk.
+  killer-scan:
+    title: KillerScan
+    description: Rychlý síťový skener pro techniky v terénu. Zjišťování pomocí ARP + ping, testování portů, vyhledání dodavatele a automatická klasifikace zařízení.
+  gif-search:
+    title: Hledání GIF
+    description: Hledejte reakční GIFy na Giphy. Kliknutím na výsledek zkopírujete URL.
+    ui:
+      errorStatus: Chyba {status}
+      fetchFailed: Nepodařilo se načíst GIFy.
+      searchPlaceholder: Hledat GIFy (např. facepalm, dobrá práce, to je v pořádku)
+      searching: Hledání...
+      search: Hledat
+      noResults: Pro "{query}" nebyly nalezeny žádné GIFy.
+      copied: Zkopírováno!
+      copyUrl: Kopírovat URL
+      resultsHint: '{count} výsledků. Klikněte pro zkopírování URL a poté ji vložte do Teams, Telegram nebo Slack.'
+  killer-shell:
+    title: KillerShell
+    description: Bezplatný shell pro pokročilé uživatele. Správce souborů, terminál a textový editor sdílejí jedno okno, jeden pruh karet a jednu sadu kláves.
+  domain-lookup:
+    title: Vyhledání domény
+    description: Registrační údaje WHOIS a kontroly DNS e-mailu (MX, SPF, DKIM, DMARC) pro libovolnou doménu v jednom zobrazení.
+    ui:
+      statusDesc:
+        active: Doména je aktivní a funkční.
+        inactive: Doména je neaktivní.
+        clientDeleteProhibited: Registrátor uzamkl doménu proti smazání.
+        clientTransferProhibited: Registrátor uzamkl doménu proti převodu k jinému registrátorovi.
+        clientUpdateProhibited: Registrátor uzamkl doménu proti aktualizacím.
+        clientHold: Registrátor pozastavil doménu, takže DNS se nemusí přeložit.
+        serverDeleteProhibited: Registr uzamkl doménu proti smazání.
+        serverTransferProhibited: Registr uzamkl doménu proti převodu.
+        serverUpdateProhibited: Registr uzamkl doménu proti aktualizacím.
+        serverHold: Registr pozastavil doménu, takže DNS se nemusí přeložit.
+        pendingCreate: Vytvoření domény čeká na dokončení.
+        pendingDelete: Doména čeká na smazání a mohla by být brzy uvolněna.
+        pendingRenew: Obnovení domény čeká na dokončení.
+        pendingRestore: Obnova domény po smazání čeká na dokončení.
+        pendingTransfer: Převod domény k jinému registrátorovi čeká na dokončení.
+        pendingUpdate: Aktualizace domény čeká na dokončení.
+        redemptionPeriod: Platnost domény vypršela a nachází se v období vykoupení. Držitel ji stále může obnovit.
+        renewPeriod: Doména je v ochranné lhůtě po obnovení registrace.
+        autoRenewPeriod: Doména je v ochranné lhůtě po automatickém obnovení.
+        transferPeriod: Doména je v ochranné lhůtě po převodu.
+      expiredAlert: Platnost této domény vypršela před {days} dny a mohla by být opět dostupná k registraci.
+      expiresAlert: Platnost této domény vyprší za {days} dní. Obnovení by se mělo zajistit co nejdříve.
+      expiredTag: Vypršelo před {days} dny
+      remainingTag: Zbývá {days} dní
+      registrar: Registrátor
+      registrarIanaId: IANA ID registrátora
+      created: Vytvořeno
+      updated: Aktualizováno
+      expires: Vyprší
+      noMx: Nebyly nalezeny žádné záznamy MX.
+      dnsFailed: Dotaz DNS selhal.
+      noSpf: Nebyl nalezen žádný záznam SPF.
+      noDkim: Nebyly nalezeny žádné záznamy DKIM pro běžné selektory. Vlastní selektory mohou stále existovat.
+      noDmarc: Nebyl nalezen žádný záznam DMARC. Doména není chráněna proti spoofingu.
+      spfPlusAll: 'Upozornění: +all je nebezpečné, protože umožňuje jakémukoli serveru odesílat poštu jménem této domény.'
+      spfNeutralAll: 'Upozornění: ?all je neutrální a neposkytuje žádnou ochranu.'
+      dmarcPNone: 'Upozornění: p=none pouze sleduje, bez vynucování. E-maily nebudou odmítány.'
+      dmarcNoRua: 'Upozornění: chybí adresa pro souhrnné zprávy (rua=). Zprávy DMARC vám nebudou doručovány.'
+      pass: Prošlo
+      fail: Neprošlo
+      warning: Upozornění
+      checking: Kontroluje se...
+      overallPass: Všechny kontroly e-mailu prošly. Tato doména je pro e-mail dobře nastavena.
+      overallFail: Chybí jeden nebo více kritických záznamů. Tato doména může být zranitelná vůči spoofingu.
+      overallWarn: Některé záznamy existují, ale mají problémy s konfigurací, které stojí za kontrolu.
+      rdapHttpError: 'HTTP {status}: doména možná neexistuje, nebo TLD není podporována.'
+      lookupFailed: Vyhledávání selhalo.
+      domainPlaceholder: Zadejte doménu (např. killertools.net)
+      searching: Vyhledává se...
+      search: Hledat
+      signed: Podepsáno
+      unsigned: Nepodepsáno
+      delegationSigned: Delegace je podepsána.
+      dsRecord: '{count} záznam DS.'
+      dsRecords: '{count} záznamů DS.'
+      keyRecord: '{count} klíčový záznam.'
+      keyRecords: '{count} klíčových záznamů.'
+      dnssecUnsigned: Tato doména není chráněna pomocí DNSSEC. Odpovědi DNS nelze kryptograficky ověřit.
+      status: Stav
+      contacts: Kontakty
+      remarks: Poznámky
+      nameservers: Nameservery
+      mxRecords: Záznamy MX
+      spfRecord: Záznam SPF
+      dkimRecords: Záznamy DKIM
+      dmarcRecord: Záznam DMARC
+      role:
+        registrant: držitel
+        administrative: administrativní
+        technical: technický
+        abuse: zneužití
+      name: Jméno
+      organization: Organizace
+      email: E-mail
+      phone: Telefon
+  email-record-generator:
+    title: Generátor e-mailových záznamů
+    description: Generujte TXT záznamy DNS pro SPF a DMARC. Vyberte poskytovatele pošty a zásady a výstup zkopírujte přímo do DNS.
+    ui:
+      hardFailRecommended: hard fail, doporučeno
+      softFail: soft fail
+      neutralNotRecommended: neutrální, nedoporučeno
+      blockFailingMail: blokovat chybnou poštu
+      sendToSpam: odeslat do spamu
+      monitorOnly: pouze sledovat
+      relaxedDefault: Volné (výchozí)
+      strict: Přísné
+      sameAsMainPolicy: Stejné jako hlavní zásady
+      spfRecordTitle: ZÁZNAM SPF
+      dmarcRecordTitle: ZÁZNAM DMARC
+      spfRecordLocation: TXT záznam na vaší kořenové doméně
+      dmarcRecordLocation: TXT záznam na
+      copied: zkopírováno
+      clickToCopy: klikněte pro zkopírování
+      lookupWarning: Vybráno {count} DNS dotazů; SPF má limit 10 dotazů
+      mailProviders: POSKYTOVATELÉ POŠTY
+      customIps: VLASTNÍ IP NEBO ROZSAHY (VOLITELNÉ)
+      examplePrefix: např.
+      enforcement: VYNUCENÍ
+      policy: ZÁSADY
+      subdomainPolicy: ZÁSADY SUBDOMÉNY (VOLITELNÉ)
+      policyCoverage: 'POKRYTÍ ZÁSAD: {percent}%'
+      coverageHint: '{percent}% chybné pošty bude zpracováno. Pro postupné nasazení použijte méně než 100%.'
+      aggregateReportEmail: E-MAIL PRO SOUHRNNÉ ZPRÁVY (rua)
+      forensicReportEmail: E-MAIL PRO FORENZNÍ ZPRÁVY (ruf, volitelné)
+      dkimAlignment: ZAROVNÁNÍ DKIM
+      spfAlignment: ZAROVNÁNÍ SPF
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: Datum ve formátu JS locale
+      formatUnixTimestamp: Unixové časové razítko
+      formatTimestamp: Časové razítko
+      formatUtc: Formát UTC
+      formatExcelDateTime: Datum a čas Excelu
+      invalidDateRule: Toto datum je pro tento formát neplatné
+      inputPlaceholder: Vložte datum nebo nechte prázdné pro živé hodiny...
+      invalidDate: Neplatné datum pro tento formát
+      output: VÝSTUP
+      live: ŽIVĚ
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Tajný klíč (hex)
+      epochLabel: Epocha
+      countLabel: Počet
+      paddedHexLabel: Doplněný hex
+      secretLabel: TAJNÝ KLÍČ
+      secretPlaceholder: Vložte svůj TOTP tajný klíč...
+      generateNewSecret: Vygenerovat nový tajný klíč
+      tokenLabel: TOKEN
+      copied: ✓ zkopírováno
+      clickToCopy: kliknutím zkopírujete
+      nextIn: '>_ další za {seconds} s'
+      adjacentTokensLabel: SOUSEDNÍ TOKENY
+      prevLabel: Předchozí
+      nextLabel: Další
+      detailsLabel: DETAILY
+      scanToAuthenticate: '>_ naskenujte pro ověření'
+      openKeyUriInNewTab: Otevřít Key URI na nové kartě
+      tokenDisplayPreviousLabel: Předchozí
+      tokenDisplayCurrentLabel: Aktuální OTP
+      tokenDisplayNextLabel: Další
+      copiedExclaim: Zkopírováno!
+      copyPreviousOtp: Kopírovat předchozí OTP
+      copyCurrentOtp: Kopírovat aktuální OTP
+      copyNextOtp: Kopírovat další OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Silné
+      moderateLabel: Střední
+      weakLabel: Slabé
+      veryWeakLabel: Velmi slabé
+      lengthLabel: Délka
+      entropyLabel: Entropie
+      charsetSizeLabel: Velikost znakové sady
+      scoreDetailLabel: Skóre
+      passwordPlaceholder: Zadejte heslo...
+      hideLabel: Skrýt
+      showLabel: Zobrazit
+      clearLabel: Vymazat
+      crackTimeSublabel: ČAS PROLOMENÍ HRUBOU SILOU
+      crackTimeNote: Síla se odhaduje na základě prolomení hrubou silou při 1 miliardě pokusů za sekundu. Slovníkové útoky nejsou zohledněny.
+  integer-base-converter:
+    ui:
+      binary: Binární
+      octal: Osmičková
+      decimal: Desítková
+      hexadecimal: Šestnáctková
+      base: soustava
+      output: VÝSTUP
+      custom: Vlastní
+  basic-auth-generator:
+    ui:
+      copied: Hlavička zkopírována do schránky
+      username: Uživatelské jméno
+      usernamePlaceholder: Vaše uživatelské jméno...
+      password: Heslo
+      passwordPlaceholder: Vaše heslo...
+      headerLabel: 'Autorizační hlavička:'
+      copyHeader: Kopírovat hlavičku
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Meta tagy zkopírovány!
+      copiedLabel: ✓ Zkopírováno
+      copyButton: Kopírovat
+      outputTitle: VAŠE META TAGY
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Mime typ na příponu
+      mimeToExtensionDescription: Zjistěte, které přípony souborů jsou spojeny s daným mime typem
+      mimeTypeSelectPlaceholder: 'Zde vyberte svůj mimetype... (např.: application/pdf)'
+      extensionsFoundPrefix: Přípony souborů s
+      extensionsFoundSuffix: 'mime typem:'
+      extensionToMimeTitle: Přípona souboru na mime typ
+      extensionToMimeDescription: Zjistěte, jaký mime typ je spojen s příponou souboru
+      mimeFoundPrefix: Mime typ spojený s příponou
+      mimeFoundSuffix: 'přípona souboru:'
+      tableMimeTypesHeader: Mime typy
+      tableExtensionsHeader: Přípony
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Text na Unicode
+      enterTextLabel: Zadejte text k převodu na Unicode
+      unicodeFromTextLabel: Unicode z vašeho textu
+      unicodeOutputPlaceholder: Unicode reprezentace vašeho textu se zobrazí zde
+      copyUnicode: Kopírovat Unicode do schránky
+      unicodeToTextTitle: Unicode na text
+      inputUnicodePlaceholder: Zadejte Unicode
+      enterUnicodeLabel: Zadejte Unicode k převodu na text
+      textFromUnicodeLabel: Text z vašeho Unicode
+      textOutputPlaceholder: Textová reprezentace vašeho Unicode se zobrazí zde
+      copyText: Kopírovat text do schránky
+  json-viewer:
+    ui:
+      invalidJson: Zadaný JSON není platný.
+      sortKeys: Seřadit klíče
+      indentSize: Velikost odsazení
+      yourRawJson: Váš surový JSON
+      pasteRawJsonPlaceholder: Sem vložte svůj surový JSON...
+      prettifiedVersion: Zformátovaná verze vašeho JSON
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Hledat podle portu, služby, protokolu nebo popisu...
+      allProtocols: Vše
+      dangerousOnly: Jen nebezpečné
+      showingPorts: 'Zobrazeno portů: {count}'
+      copied: Zkopírováno!
+      clickToCopy: Kliknutím zkopírujete číslo portu
+      copiedCheck: ✓ zkopírováno
+      dangerousPill: Nebezpečné
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Prohlížeč cmdletů
+      adminBadge: Admin
+      cmdletSearchPlaceholder: Hledat podle názvu, popisu nebo modulu...
+      noCmdletsMatch: Žádný cmdlet neodpovídá dotazu "{query}"
+      generatedCommand: Vygenerovaný příkaz
+      copiedCheck: ✓ Zkopírováno!
+      copyCommand: Kopírovat příkaz
+      commonExamples: Běžné příklady
+      selectCmdletPrompt: Vyberte cmdlet vlevo a začněte sestavovat příkaz.
+      parameters: Parametry
+      noParametersNeeded: Nejsou potřeba žádné parametry - tento cmdlet se spustí tak, jak je.
+      required: povinné
+      separateMultipleValues: více hodnot oddělte čárkami
+      showFewerParameters: Zobrazit méně parametrů
+      showMoreParameters: Dalších {count} parametrů
+      collapseQuickReference: Sbalit rychlou referenci
+      openQuickReference: Otevřít rychlou referenci
+      quickReference: Rychlá reference
+      cheatsheetComparisonOperators: Porovnávací operátory
+      cheatsheetEqualTo: Rovná se
+      cheatsheetNotEqualTo: Nerovná se
+      cheatsheetGreaterLessThan: Větší než / Menší než
+      cheatsheetGreaterLessEqual: Větší nebo rovno / Menší nebo rovno
+      cheatsheetStringOperators: Řetězcové operátory
+      cheatsheetWildcardMatch: Shoda se zástupným znakem (* a ?)
+      cheatsheetWildcardNonMatch: Neshoda se zástupným znakem
+      cheatsheetRegexMatch: Shoda s regulárním výrazem
+      cheatsheetRegexNonMatch: Neshoda s regulárním výrazem
+      cheatsheetCollectionContains: Kolekce obsahuje hodnotu
+      cheatsheetValueInCollection: Hodnota je v kolekci
+      cheatsheetLogicalOperators: Logické operátory
+      cheatsheetBothTrue: Obě podmínky musí být pravdivé
+      cheatsheetEitherTrue: Alespoň jedna podmínka je pravdivá
+      cheatsheetNegateCondition: Negovat podmínku
+      cheatsheetAutomaticVariables: Automatické proměnné
+      cheatsheetCurrentPipelineObject: Aktuální objekt v pipeline
+      cheatsheetNullEmptyValue: Hodnota null / prázdná
+      cheatsheetBooleanTrueFalse: Booleovská hodnota true / false
+      cheatsheetLocalComputerName: Název lokálního počítače
+      cheatsheetCurrentUser: Aktuálně přihlášený uživatel
+      cheatsheetPsVersionInfo: Informace o verzi PS
+      cheatsheetDateHelpers: Pomocníci pro datum
+      cheatsheetCurrentDateTime: Aktuální datum a čas
+      cheatsheetThirtyDaysAgo: Před 30 dny
+      cheatsheetThreeMonthsAgo: Před 3 měsíci
+      cheatsheetParseDateString: Zpracovat řetězec s datem
+      cheatsheetPipelineTricks: Triky s pipeline
+      cheatsheetLimitFirst10: Omezit na prvních 10 výsledků
+      cheatsheetCountSumMinMax: Count / sum / min / max
+      cheatsheetInteractiveGuiViewer: Interaktivní GUI prohlížeč (lokální)
+      cheatsheetConvertToJson: Převést výstup na JSON
+      cheatsheetOutputScreenAndFile: Výstup na obrazovku i do souboru
+      cheatsheetSuppressErrors: Potlačit nekritické chyby
+      cheatsheetRemoteExecution: Vzdálené spouštění
+      cheatsheetCmdletsSupportDirectly: Mnoho cmdletů to podporuje přímo
+      cheatsheetRunViaRemoting: Spustit přes PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Interaktivní vzdálená PS relace
+  qr-code-generator:
+    ui:
+      tabText: Text / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Text nebo URL
+      placeholderTextOrUrl: Váš odkaz nebo text...
+      sectionEncryption: Šifrování
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Bez hesla
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Název sítě...
+      sectionPassword: Heslo
+      placeholderPassword: Heslo sítě...
+      sectionOptions: Možnosti
+      hiddenSsid: Skryté SSID
+      anonymousIdentity: Anonymní identita
+      sectionEapMethod: Metoda EAP
+      sectionEapPhase2: EAP fáze 2
+      sectionEapIdentity: Identita EAP
+      placeholderEapIdentity: Vaše identita EAP...
+      sectionTheme: Motiv
+      themeDefault: Výchozí
+      themeTerminal: Terminál
+      themeClassic: Klasický
+      themeInverted: Invertovaný
+      sectionColors: Barvy
+      labelForeground: 'Popředí:'
+      labelBackground: 'Pozadí:'
+      sectionErrorCorrection: Oprava chyb
+      levelLow: Nízká (~7 %)
+      levelMedium: Střední (~15 %)
+      levelQuartile: Kvartilová (~25 %)
+      levelHigh: Vysoká (~30 %)
+      emptyHintWifi: Zadejte SSID pro vygenerování Wi-Fi QR kódu
+      emptyHintText: Zadejte text nebo URL
+      captionJoin: '>_ naskenujte pro připojení'
+      captionOpen: '>_ naskenujte pro otevření'
+      downloadPng: ↓ Stáhnout PNG
+  yaml-viewer:
+    ui:
+      invalidYaml: Zadané YAML není platné.
+      sortKeys: Seřadit klíče
+      indentSize: Velikost odsazení
+      rawLabel: Vaše nezpracované YAML
+      rawPlaceholder: Vložte sem své nezpracované YAML...
+      prettifiedLabel: Upravená verze vašeho YAML
+components:
+  androidBetaBanner:
+    announcement: Oznameni o beta verzi pro Android
+    title: Killer Tools miri na Android
+    subtitle: Hledame beta testery, klepnutim se pridate
+    dismiss: Zavrit
+  formatTransformer:
+    input: Vstup
+    inputPlaceholder: Vstup...
+    output: Vystup
+  inputCopyable:
+    copied: Zkopirovano!
+    copy: Kopirovat do schranky
+  spanCopyable:
+    copied: Zkopirovano!
+    copy: Kopirovat do schranky
+  textareaCopyable:
+    copy: Kopirovat do schranky
+    copied: Zkopirovano!
+  navbarButtons:
+    androidTooltip: Killer Tools pro Android
+    androidAriaLabel: Killer Tools pro Android, pridejte se do beta programu
+  themeDots:
+    accentColor: Zvyrazneni barva
+    theme: Motiv
+    toggleThemeSwatches: Prepnout vzorky motivu
+    accentColorPicker: Vyber zvyrazneni barvy
+    dragToMove: Presunte tazenim
+    accentLabel: 'zvyrazneni:'
+    accentNamed: 'Zvyrazneni: {name}'
+    closeAccentPicker: Zavrit vyber zvyrazneni barvy
+    accents:
+      red: Cervena
+      orange: Oranzova
+      green: Zelena
+      teal: Petrolejova
+      blue: Modra
+      purple: Fialova
+layouts:
+  menuLayout:
+    eggMessage: 80 nastroju. Zadna predplatna. Jeden zatrpkly terenni technik.
+    clickMe: klikni na me
+    sourceOnGithub: Zdrojovy kod na Githubu
+  base:
+    collapseMenu: Sbalit nabidku
+    homeLabel: Domu KillerTools
+pages:
+  notFound:
+    noSuchFile: Soubor nebo adresar neexistuje
+    exitCode: navratovy kod
+    backToHome: zpet na uvod
+  privacy:
+    heading: Zasady ochrany osobnich udaju
+    lastUpdated: 'Naposledy aktualizovano: 4. dubna 2026'
+    overviewHeading: Prehled
+    overviewIntro: KillerTools
+    overviewBody: je bezplatna sbirka IT nastroju. Vase soukromi je pro nas dulezite a tyto zasady vysvetluji, jak nakladame s vasimi udaji.
+    dataCollectionHeading: Sber udaju
+    dataCollectionBody: KillerTools neshromazduje, neuklada ani nepredava zadne osobni udaje. Vsechno zpracovani probiha zcela ve vasem prohlizeci. Zadne udaje, ktere zadate do nektereho nastroje, se neodesilaji na server.
+    cookiesHeading: Cookies
+    cookiesBody: Tento web nepouziva cookies pro sledovani. Vase preference vzhledu a nastaveni se ukladaji lokalne ve vasem prohlizeci a nikdy se neprenaseji.
+    analyticsHeading: Analytika
+    analyticsIntro: Tento web pouziva
+    analyticsBody: nastroj analytiky zamereny na soukromi, k pochopeni obecnych vzorcu pouzivani, jako jsou zobrazeni stranek a zdroje odkazu. Umami nepouziva cookies, nesleduje uzivatele napric weby a neshromazduje zadne osobne identifikovatelne informace. Vsechna data jsou agregovana a anonymni.
+    thirdPartyHeading: Sluzby tretich stran
+    thirdPartyBody: Nektere nastroje mohou odkazovat na externi zdroje nebo dokumentaci. Nejsme odpovedni za postupy ochrany soukromi tech externich stranek.
+    androidAppHeading: Aplikace pro Android
+    androidAppBody: Android aplikace KillerTools je obal kolem webove aplikace. Nepozaduje ani nevyuziva zadna opravneni zarizeni nad ramec zakladniho pristupu k internetu. Zadna data zarizeni nejsou shromazdovana ani predavana.
+    contactHeading: Kontakt
+    contactBody: Pokud mate dotazy ohledne techto zasad ochrany osobnich udaju, muzete nas kontaktovat na
+  androidApp:
+    robotAttribution: Android robot je reprodukovan nebo upraven z dila vytvoreneho a sdileneho spolecnosti Google a pouzivan podle podminek licence Creative Commons 3.0 Attribution.
+    heading: KillerTools pro Android
+    introBody1: 'Cela sada nastroju killertools.net jako nativni Android aplikace: kazdy nastroj, knihovna Killer Scripts a vsechny vase oblibene, jedno klepnuti od plochy.'
+    introBody2: Stejna pravidla jako na webu. Vse bezi na vasem zarizeni. Zadny ucet, zadna telemetrie, zadne volani domu. Pokud vam usetri jeden cyklus tiketu v terenu, splnila svuj ucel.
+    betaStatusPrefix: Aplikace je momentalne v
+    betaStatusStrong: uzavrene beta verzi na Google Play
+    betaStatusSuffix: ', a tady prichazite na radu vy.'
+    joinBetaHeading: Pridat se do beta verze
+    joinBetaIntroPrefix: Google vyzaduje
+    joinBetaIntroStrong: 12 testeru s nainstalovanou aplikaci po dobu 14 po sobe jdoucich dni
+    joinBetaIntroSuffix: 'nez muze aplikace nezavisleho vyvojare jit na verejnost. Tri kroky, asi dve minuty, a jste jednim z dvanacti:'
+    step1LinkText: Pridejte se do skupiny testeru
+    step1Suffix: na Google Groups (kliknete na "Join group").
+    step2LinkText: Staňte se testerem
+    step2Suffix: na stránce Google Play pro prihlaseni.
+    step3LinkText: Nainstalujte aplikaci
+    step3Suffix: z Google Play a nechte ji nainstalovanou dva tydny.
+    sameAccountStrong: Pro vsechny tri kroky pouzijte stejny ucet Google
+    sameAccountSuffix: ' - prihlasovaci stranka zobrazi "not available for this account", pokud vynechate skupinu nebo prepnete ucet.'
+    feedbackPrefix: 'Neco je rozbite nebo chybi? Napiste mi:'
+  home:
+    sortPopular: Oblibene
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: O KillerTools
+    intro: Terenni technici nemaji cas na balast. Kazdy nastroj tady existuje proto, ze jsem ho potreboval pri praci a nenasel jsem nic, co by proste fungovalo bez uctu, instalace nebo telemetrie.
+    originPrefix: Nyni tvorim nastroje v internim AI inzenyrskem tymu MSP, po sesti letech full-stack vyvoje a osmi letech jako terenni technik u nekolika firem. KillerTools.net zacal jako fork vyborneho
+    originMid: projektu od
+    originSuffix: a vyrostl v neco, co je postavene pro druh prace, kterou skutecne delam. Postavil jsem ho, abych mohl uprostred tiketu vyhledavat nastaveni Group Policy, skenovat podsit klienta a hledat reference portu, aniz bych opustil prohlizec.
+    scriptsLibrary: Knihovna Killer Scripts pokryva ukoly, ktere se objevuji v kazdem cyklu tiketu. Kazdy skript bezi v PS 5.1, PS 7 a Kaseya LiveConnect bez zavislosti.
+    privacyBody: Vse bezi ve vasem prohlizeci. Nic se nesleduje. Ucet neni nikdy vyzadovan. Web vynucuje prisnou Content Security Policy, aby blokoval utoky pres retezec zavislosti. Pokud by se kompromitovany npm balicek nekdy dostal do bundlu, nemuze poslat domu to, co jste vlozili.
+    maintainedByPrefix: Vytvoril a udrzuje
+    maintainedByMid: Pokud vam to setri cas v praci,
+    buyMeCoffee: koupit mi kavu
+    maintainedBySuffix: je vitano, ale nikdy se necekava.
+    missingToolHeading: Chybi nastroj? Nasli jste chybu?
+    issuesPrefix: Otevrete pozadavek na funkci nebo hlaseni chyby v
+    issuesLinkText: sekci issues
+    issuesSuffix: na GitHubu. Cetu je.
+    alsoTryHeading: Vyzkousejte take...
+    tagKillerScan: Open-source sitovy skener pro Windows
+    tagKillerPdf: Open-source editor PDF pro Windows
+    tagKillerShell: Open-source Windows shell pro pokrocile uzivatele
+    tagKillerNotes: Open-source sifrovany poznamkovy blok pro Windows
+    tagKillendar: Open-source sifrovany kalendar pro Windows
+    linksHeading: Odkazy
+    linkLabelSite: Web
+    linkLabelSource: Zdrojovy kod
+    linkLabelIssues: Issues
+    reportBug: Nahlasit chybu
+    requestFeature: Pozadovat funkci
+    linkLabelSupport: Podpora
+    linkLabelBuiltOn: Postaveno na
+    itToolsFork: IT-Tools (fork)
+ui:
+  diffEditor:
+    originalLabel: PŮVODNÍ
+    modifiedLabel: UPRAVENÉ
+    originalPlaceholder: Původní text...
+    modifiedPlaceholder: Upravený text...
+  fileUpload:
+    defaultTitle: Přetáhněte soubory sem nebo kliknutím vyberte soubory
+    or: nebo
+    browseFiles: Procházet soubory
+  inputText:
+    defaultPlaceholder: Vstupní text
+  keyValueListItem:
+    'yes': Ano
+    'no': Ne
+    notAvailable: Nedostupné
+  modalValue:
+    copied: Zkopírováno!
+    copy: Kopírovat
+  select:
+    searchPlaceholder: Hledat...
+    noResults: Nenalezeny žádné výsledky
+    defaultPlaceholder: Vyberte možnost
+  table:
+    defaultDescription: Datová tabulka
+  textCopyable:
+    copied: Zkopírováno!
+    copyToClipboard: Kopírovat do schránky
+commandPalette:
+  searchAriaLabel: Hledat
+  searchPlaceholder: Napište pro vyhledání nástroje nebo příkazu...

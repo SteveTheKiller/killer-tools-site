@@ -2,10 +2,12 @@
 import { compareSync, hashSync } from 'bcryptjs';
 import { useCopy } from '@/composable/copy';
 
+const { t } = useI18n();
+
 const input = ref('');
 const saltCount = ref(10);
 const hashed = computed(() => hashSync(input.value, saltCount.value));
-const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
+const { copy } = useCopy({ source: hashed, text: t('tools.bcrypt.ui.copiedToClipboard') });
 
 const compareString = ref('');
 const compareHash = ref('');
@@ -27,22 +29,22 @@ const compareMatch = computed(() => {
     <!-- Hash panel -->
     <div class="kt-terminal bc-panel">
       <div class="kt-terminal-bar bc-panel-header">
-        <span class="kt-terminal-bar-title">HASH</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.bcrypt.ui.hashTitle') }}</span>
       </div>
 
       <div class="bc-body">
         <div class="bc-field">
-          <span class="bc-label">String</span>
+          <span class="bc-label">{{ t('tools.bcrypt.ui.stringLabel') }}</span>
           <input
             v-model="input"
             class="bc-input"
-            placeholder="Your string to bcrypt..."
+            :placeholder="t('tools.bcrypt.ui.stringPlaceholder')"
             type="text"
           >
         </div>
 
         <div class="bc-field">
-          <span class="bc-label">Salt rounds</span>
+          <span class="bc-label">{{ t('tools.bcrypt.ui.saltRoundsLabel') }}</span>
           <div class="bc-salt-row">
             <button class="bc-salt-btn" :disabled="saltCount <= 1" @click="saltCount = Math.max(1, saltCount - 1)">
               −
@@ -55,7 +57,7 @@ const compareMatch = computed(() => {
         </div>
 
         <div class="bc-output-wrap">
-          <span class="bc-section-label">OUTPUT</span>
+          <span class="bc-section-label">{{ t('tools.bcrypt.ui.outputLabel') }}</span>
           <div class="bc-output">
             <span class="bc-hash-text">{{ hashed }}</span>
           </div>
@@ -64,7 +66,7 @@ const compareMatch = computed(() => {
         <div class="bc-actions">
           <button class="bc-btn bc-btn-primary" @click="copy()">
             <icon-mdi-content-copy />
-            Copy hash
+            {{ t('tools.bcrypt.ui.copyHash') }}
           </button>
         </div>
       </div>
@@ -73,32 +75,32 @@ const compareMatch = computed(() => {
     <!-- Compare panel -->
     <div class="kt-terminal bc-panel">
       <div class="kt-terminal-bar bc-panel-header">
-        <span class="kt-terminal-bar-title">COMPARE</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.bcrypt.ui.compareTitle') }}</span>
       </div>
 
       <div class="bc-body">
         <div class="bc-field">
-          <span class="bc-label">String</span>
+          <span class="bc-label">{{ t('tools.bcrypt.ui.stringLabel') }}</span>
           <input
             v-model="compareString"
             class="bc-input"
-            placeholder="Your string to compare..."
+            :placeholder="t('tools.bcrypt.ui.compareStringPlaceholder')"
             type="text"
           >
         </div>
 
         <div class="bc-field">
-          <span class="bc-label">Hash</span>
+          <span class="bc-label">{{ t('tools.bcrypt.ui.hashLabel') }}</span>
           <input
             v-model="compareHash"
             class="bc-input"
-            placeholder="Your hash to compare..."
+            :placeholder="t('tools.bcrypt.ui.compareHashPlaceholder')"
             type="text"
           >
         </div>
 
         <div class="bc-result-row">
-          <span class="bc-label">Match</span>
+          <span class="bc-label">{{ t('tools.bcrypt.ui.matchLabel') }}</span>
           <span
             v-if="compareMatch === null"
             class="bc-result bc-result-idle"
@@ -106,11 +108,11 @@ const compareMatch = computed(() => {
           <span
             v-else-if="compareMatch"
             class="bc-result bc-result-yes"
-          >✓ Yes</span>
+          >✓ {{ t('tools.bcrypt.ui.yes') }}</span>
           <span
             v-else
             class="bc-result bc-result-no"
-          >✗ No</span>
+          >✗ {{ t('tools.bcrypt.ui.no') }}</span>
         </div>
       </div>
     </div>

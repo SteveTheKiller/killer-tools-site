@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: En yeni araçlar
+    favoriteTools: Favori araçların
+    allTools: Tüm araçlar
+    favoritesDndToolTip: Favorileri yeniden sıralamak için sürükleyip bırak
+  subtitle: Geliştiriciler için kullanışlı araçlar
+  toggleMenu: Menüyü aç/kapat
+  home: Ana sayfa
+  uiLib: UI Kitaplığı
+  support: killer-tools geliştirmesini destekle
+  buyMeACoffee: Bana bir kahve ısmarla
+  follow:
+    title: killer-tools hoşuna gitti mi?
+    p1: 'Bana bir yıldız ver:'
+    githubRepository: StevetheKiller GitHub deposu
+    thankYou: Teşekkürler!
+  nav:
+    github: GitHub deposu
+    githubRepository: killer-tools GitHub deposu
+    about: killer-tools hakkında
+    aboutLabel: Hakkında
+    darkMode: Koyu mod
+    lightMode: Açık mod
+    mode: Koyu/açık modu değiştir
+about:
+  content: |
+    # killer-tools
+
+    Saha teknisyenlerinin gereksiz şeylere ayıracak vakti yok. Buradaki her araç, işte ihtiyaç duyduğum ve hesap, kurulum ya da telemetri olmadan sadece çalışan bir şey bulamadığım için var.
+
+    Bir MSP'de ağ, sistem yönetimi ve uç nokta desteğiyle ilgilenen bir saha teknisyeniyim. killer-tools, harika [IT-Tools](https://github.com/CorentinTh/it-tools) projesinin bir fork'u olarak başladı ve gerçekten yaptığım iş için tasarlanmış bir şeye dönüştü. Onu bir iş kaydının ortasında NDR kodlarına bakmak, bir müşterinin alt ağını taramak ve bir SafeLink'e tıklamadan önce çözmek için yaptım.
+
+    Her şey tarayıcında çalışır. Hiçbir şey takip edilmez. Hiçbir zaman hesap gerekmez.
+
+    [Steve the Killer](https://thekiller.net) tarafından yapıldı ve sürdürülüyor. İşte sana zaman kazandırıyorsa [bana bir kahve ısmarlamak](https://www.buymeacoffee.com/StevetheKiller) makbule geçer ama asla beklenmez.
+
+    ## Bir araç mı eksik? Hata mı buldun?
+
+    GitHub'daki [issues bölümünde](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) bir özellik isteği veya hata raporu aç. Hepsini okuyorum.
+404:
+  notFound: 404 Bulunamadı
+  sorry: Üzgünüz, bu sayfa mevcut değil gibi görünüyor
+  maybe: Belki önbellek oyun oynuyordur, zorla yenilemeyi dener misin?
+  backHome: Ana sayfaya dön
+favoriteButton:
+  remove: Favorilerden kaldır
+  add: Favorilere ekle
+toolCard:
+  new: Yeni
+search:
+  label: Ara
+tools:
+  categories:
+    favorite-tools: Favori araçların
+    crypto: Kripto
+    conversion: Dönüştürme
+    web: Web
+    images and videos: Görseller ve videolar
+    development: Geliştirme
+    network: Ağ
+    math: Matematik
+    measurement: Ölçüm
+    text: Metin
+    data: Veri
+    windows: Windows
+    killer apps: Killer Apps
+    photography: Fotoğrafçılık
+  password-strength-analyser:
+    title: Parola gücü analizörü
+    description: Yalnızca istemci tarafında çalışan bu analizör ve kırılma süresi tahmini ile parolanın ne kadar güçlü olduğunu öğren.
+  password-generator:
+    title: Parola oluşturucu
+    description: Güçlü parolalar, diceware parola öbekleri, telaffuz edilebilir dizeler ve hex/base64/UUID belirteçleri oluştur. MSP ön ayarları (yerel yönetici, hizmet hesabı, Wi-Fi PSK, PIN), belirsiz karakter hariç tutma, entropi ölçer, QR kodu ve NATO fonetik okuma içerir.
+    ui:
+      terminal:
+        passwordTitle: PAROLA
+        optionsTitle: SEÇENEKLER
+      meta:
+        entropyLabel: 'Entropi:'
+        bits: bit
+        crackLabel: 'Kırılma süresi:'
+      actions:
+        copy: Kopyala
+        refresh: Yenile
+      section:
+        preset: Ön ayar
+        mode: Mod
+        format: Biçim
+        length: Uzunluk ({length})
+        wordCount: Kelime sayısı ({count})
+        separator: Ayırıcı
+        characterClasses: Karakter sınıfları
+        options: Seçenekler
+      charClass:
+        uppercase: Büyük harf
+        lowercase: Küçük harf
+        numbers: Rakamlar
+        symbols: Semboller
+      option:
+        excludeAmbiguous: Karışabilecek karakterleri hariç tut
+        requireOneOfEach: Her sınıftan en az bir karakter
+        capitalizeWords: Kelimelerin baş harfini büyült
+        appendNumber: 2 rakam ekle
+      mode:
+        random: Rastgele
+        passphrase: Parola cümlesi
+        pronounceable: Telaffuz edilebilir
+        format: Biçim
+      format:
+        plain: Düz
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: yok
+      qr:
+        caption: kopyalamak için tarayın
+      phonetic:
+        title: FONETİK
+      bulk:
+        generateLabel: Oluştur
+        single: tek
+        atOnce: aynı anda {n}
+        passwordsTitle: '{count} PAROLA'
+        copyAll: Tümünü kopyala
+      toast:
+        passwordCopied: Parola panoya kopyalandı
+        passwordsCopied: Parolalar panoya kopyalandı
+        phoneticCopied: Fonetik okunuş kopyalandı
+  percentage-calculator:
+    title: Yüzde hesaplayıcı
+    description: Bir değerden diğerine veya bir yüzdeden bir değere yüzdeleri kolayca hesapla.
+    ui:
+      whatIsXPercentOfYTitle: Y'NİN X% KADARI NEDİR
+      whatIsLabel: Nedir
+      percentOfLabel: '%''si, şunun'
+      resultPlaceholder: Sonuç
+      xIsWhatPercentOfYTitle: X, Y'NİN YÜZDE KAÇI
+      isWhatPercentOfLabel: yüzde kaçı, şunun
+      percentageChangeTitle: YÜZDE ARTIŞ / AZALIŞ
+      fromLabel: Başlangıç
+      toLabel: bitiş
+  svg-placeholder-generator:
+    title: SVG yer tutucu oluşturucu
+    description: Uygulamalarında yer tutucu olarak kullanmak için SVG görseller oluştur.
+    ui:
+      widthLabel: GENİŞLİK (px)
+      backgroundLabel: ARKA PLAN
+      heightLabel: YÜKSEKLİK (px)
+      textColorLabel: METİN RENGİ
+      fontSizeLabel: YAZI TİPİ BOYUTU
+      customTextLabel: ÖZEL METİN
+      customTextPlaceholder: Varsayılan {size}
+      useExactSizeToggle: Tam boyutu kullan
+      svgHtmlElementLabel: SVG HTML ÖĞESİ
+      svgBase64Label: BASE64 OLARAK SVG
+      copySvgButton: SVG kopyala
+      copyBase64Button: Base64 kopyala
+      downloadSvgButton: SVG indir
+      previewLabel: ÖNİZLEME
+      svgPreviewAlt: SVG önizlemesi
+  json-to-csv:
+    title: JSON'dan CSV'ye
+    description: JSON'u otomatik başlık algılama ile CSV'ye dönüştür.
+    ui:
+      invalidJson: Girilen JSON geçerli değil.
+      yourRawJson: Ham JSON'unuz
+      pasteRawJsonPlaceholder: Ham JSON'unuzu buraya yapıştırın...
+      csvOutputLabel: JSON'unuzun CSV sürümü
+  camera-recorder:
+    title: Kamera kaydedici
+    description: Web kameran veya kameranla fotoğraf çek ya da video kaydet.
+    ui:
+      selectCamera: Kamera seç
+      selectMicrophone: Mikrofon seç
+      notSupported: Tarayıcınız kamera kaydını desteklemiyor.
+      accessRequired: Kamera ve mikrofon erişimi gerekli.
+      permissionBlocked: İzin engellendi. Tarayıcınızın adres çubuğundaki kilit simgesinden erişimi manuel olarak verin.
+      grantPermission: İzin ver
+      video: VİDEO
+      audio: SES
+      startWebcam: Web kamerasını başlat
+      paused: DURAKLATILDI
+      rec: KAYIT
+      screenshot: Ekran görüntüsü
+      record: Kaydet
+      pause: Duraklat
+      resume: Devam et
+      stop: Durdur
+      recordingNotSupported: Bu tarayıcıda kayıt desteklenmiyor
+      captures: GÖRÜNTÜLER ({count})
+      clearAll: Tümünü temizle
+      screenshotAlt: ekran görüntüsü
+      download: İndir
+      delete: Sil
+  reciprocity-calculator:
+    title: Karşılıklılık hatası hesaplayıcı
+    description: Schwarzschild üs yasasını kullanarak 40'tan fazla analog film için düzeltilmiş uzun pozlamaları hesapla. Siyah beyaz, renkli negatif ve slayt filmleri kapsar.
+    ui:
+      barReciprocity: RECIPROCITY HESAPLAYICI
+      barCorrected: DÜZELTİLMİŞ POZLAMA
+      fieldFilmStock: Film türü
+      typeBw: Siyah beyaz
+      typeColorNeg: Renkli Negatif
+      typeSlide: Slayt / E6
+      noFailureUpTo: '{seconds} sn''ye kadar sapma yok'
+      sourceManufacturer: Üretici verisi
+      sourceCommunity: Topluluk verisi
+      fieldMeteredExposure: Ölçülen pozlama
+      unitSeconds: saniye
+      noFailureMessage: 'Düzeltme gerekmiyor: bu film, bu pozlama süresinde reciprocity sapması göstermiyor.'
+      copyDone: ✓ kopyalandı
+      copySeconds: saniyeyi kopyala
+      devReduce10: Artan gölge yoğunluğunu dengelemek için banyo süresini yaklaşık %10 azaltmayı düşünün.
+      devReduce1015: Banyo süresinin %10-15 azaltılması önerilir.
+      devReduce1520: Banyo süresinin %15-20 azaltılması önerilir.
+      devReduce2030: Çok uzun pozlamalarda banyo süresinin %20-30 azaltılması önerilir.
+      colorShiftWarning: 'Renkli film: bu pozlama süresinde renk kayması beklenir.'
+      colorShiftSlide: Slayt filmini sonradan düzeltmek zordur; kamerada CC filtre kullanılması önerilir.
+      colorShiftNeg: Renkli negatifin toleransı daha yüksektir; düzeltme baskı veya taramada yapılabilir.
+  nd-filter-calculator:
+    title: ND filtre hesaplayıcı
+    description: Nötr yoğunluk filtreleri için düzeltilmiş enstantane hızlarını hesapla. Tüm yaygın ND güçlerini ve özel durak değerlerini destekler.
+    ui:
+      titleInputs: ND FİLTRE HESAPLAYICI
+      baseShutterSpeed: Temel enstantane hızı (filtresiz)
+      dragOrClick: sürükleyin veya tıklayın
+      custom: Özel
+      secPlaceholder: sn
+      ndFilter: ND filtre
+      stopOne: '{count} stop'
+      stopMany: '{count} stop'
+      enterStops: stop girin
+      stopsPlaceholder: stop
+      titleResult: DÜZELTİLMİŞ POZLAMA
+      copied: kopyalandı
+      copySeconds: saniyeyi kopyala
+      longExposureAlert: Uzun pozlama. Bulb modunu kullanmayı düşünün.
+      stackingFilters: filtreleri üst üste kullanırken stoplarını toplayın
+      legendT1: temel enstantane hızı (filtresiz)
+      legendT2: düzeltilmiş enstantane hızı
+      legendStops: ND filtre gücü
+  depth-of-field-calculator:
+    title: Alan derinliği hesaplayıcı
+    description: Herhangi bir lens ve sensör kombinasyonu için yakın sınırı, uzak sınırı ve toplam alan derinliğini hesapla. Hiperfokal mesafeyi de verir.
+    ui:
+      sensorMedFormat: Orta Format
+      sensorCustom: Özel
+      sensorEnterCoc: CoC girin
+      infinity: sonsuz
+      title: ALAN DERİNLİĞİ HESAPLAYICI
+      sensorFormat: Sensör formatı
+      cocPlaceholder: mm cinsinden CoC (örn. 0.029)
+      focalLength: Odak uzaklığı (mm)
+      aperture: Diyafram
+      dragOrClick: sürükleyin veya tıklayın
+      focusDistance: Odak mesafesi
+      distancePlaceholder: mesafe
+      results: SONUÇLAR
+      hyperfocalDistance: Hiperfokal mesafe
+      hyperfocalHint: Bu mesafenin yarısından sonsuza kadar maksimum netlik için buraya odaklanın
+      nearLimit: Yakın sınır
+      farLimit: Uzak sınır
+      totalDof: Toplam alan derinliği
+      beyondHyperfocal: Odak mesafesi hiperfokal mesafeye eşit veya ondan büyük, uzak sınır sonsuza uzanır.
+      legendHyperfocal: hiperfokal mesafe
+      legendFocalLength: odak uzaklığı
+      legendFNumber: f sayısı (diyafram)
+      legendCoc: circle of confusion
+      legendFocusDistance: odak mesafesi
+  exposure-equivalence:
+    title: Pozlama eşdeğerliği
+    description: Aynı pozlama için tüm diyaframlarda eşdeğer enstantane hızlarını bul. Temel enstantane ve diyaframı seç, diğer her f-stop için neye ihtiyacın olduğunu gör.
+    ui:
+      titleInputs: POZLAMA EŞDEĞERİ
+      shutterSpeed: Enstantane hızı
+      dragOrClick: sürükleyin veya tıklayın
+      custom: Özel
+      secPlaceholder: sn
+      aperture: Diyafram
+      titleResults: EŞDEĞER POZLAMALAR
+      isoIndependent: herhangi bir sabit ISO değerinde ISO'dan bağımsız
+      highlightedBase: vurgulanan satır sizin temel değeriniz
+      legendT1: temel enstantane hızı
+      legendT2: eşdeğer enstantane hızı
+      legendN1: temel diyafram (f sayısı)
+      legendN2: hedef diyafram (f sayısı)
+  dev-calculator:
+    title: Film banyo hesaplayıcı
+    description: Sıcaklık telafisi, push/pull işleme ve seyreltme karışımıyla düzeltilmiş banyo sürelerini hesapla. Yaygın siyah beyaz banyo ve film veritabanı içerir.
+    ui:
+      hasData: Veri var
+      noDataGroup: Veri yok, temel süreyi elle girin
+      colorBelow: '{process} 36°C altında: renk kayması ve eksik banyo olasılığı'
+      colorAbove: '{process} 40°C üzerinde: sisleme ve renk kayması riski'
+      bwBelow: '18°C altında: banyo çok yavaş olur'
+      bwAbove: '24°C üzerinde: retikülasyon ve sisleme riski'
+      start: Başlat
+      pause: Duraklat
+      resume: Devam et
+      calculatorTitle: FİLM BANYO HESAPLAYICI
+      developer: Developer
+      dilution: Seyreltme
+      filmStock: Film
+      baseTimeAt: '{temp}°C için temel süre'
+      noData: veri yok
+      overridePlaceholder: geçersiz kıl (sn)
+      customBaseActive: Özel temel süre etkin
+      temperature: 'Sıcaklık:'
+      pushPull: Push / Pull
+      tankVolume: Tank hacmi
+      customMlPlaceholder: özel ml
+      adjustedTime: AYARLANMIŞ SÜRE
+      baseTimeTemp: Temel süre ({temp}°C)
+      tempAdj: Sıcaklık düzeltmesi ({temp})
+      pushStop: '{n} stop push'
+      pushStops: '{n} stop push'
+      pullStop: '{n} stop pull'
+      pullStops: '{n} stop pull'
+      mixFor: '{volume} ml için karıştır'
+      mixDeveloper: developer
+      mixWater: su
+      noDataWarning: '{film} + {developer} için veri yok. Temel süreyi elle girin.'
+      pushPullEstimate: Push/pull süreleri tahminidir. Test film önerilir.
+      sourceNote: Temel süreler Massive Dev Chart ve üretici veri sayfalarından alınmıştır.
+      processTimer: İŞLEM ZAMANLAYICISI
+      devComplete: Banyo tamamlandı
+      devCompleteHint: Kurumaya asın ve negatiflerinizin keyfini çıkarın.
+      stageOf: Aşama {current} / {total}
+      agitation: ÇALKALAMA
+      reset: Sıfırla
+      skip: Atla
+      stDeveloper: Developer
+      stBleach: Ağartıcı
+      stWash: Yıkama
+      stFixer: Sabitleyici
+      stWash2: Yıkama 2
+      stStabilizer: Stabilizatör
+      stFirstDeveloper: İlk Developer
+      stReversalBath: Ters Çevirme Banyosu
+      stColorDeveloper: Renkli Developer
+      stPreBleach: Ön ağartma
+      stFinalWash: Son Yıkama
+      stStopBath: Durdurma Banyosu
+      agC30s10: İlk 30 sn sürekli, ardından her 30 sn'de 10 sn
+      agRun3Full: Akan su veya 3 tam değişim
+      agGentle: Sadece hafif çalkalama, sonrasında durulamayın
+      agC30s5: İlk 30 sn sürekli, ardından her 30 sn'de 5 sn
+      agRun3: Akan su veya 3 değişim
+      agContinuous: Sürekli
+      ag10per30: Her 30 sn'de 10 sn
+      agRun5: Akan su veya 5 değişim
+      agC60s10: İlk 30 sn sürekli, ardından her 60 sn'de 10 sn
+      agCont60: 60 sn sürekli
+      ag10per60: Her 60 sn'de 10 sn
+      agRun5Full: Akan su veya 5 tam değişim
+  keycode-info:
+    title: Keycode bilgisi
+    description: Basılan herhangi bir tuşun JavaScript keycode, code, location ve değiştirici bilgilerini bul.
+  emoji-picker:
+    title: Emoji seçici
+    description: Emojileri kolayca kopyalayıp yapıştır ve her birinin unicode ile code point değerlerini al.
+    ui:
+      emojiCopied: '{emoji} emojisi panoya kopyalandı'
+      codePointsCopied: '''{codePoints}'' kod noktaları panoya kopyalandı'
+      unicodeCopied: '''{unicode}'' Unicode değeri panoya kopyalandı'
+      searchPlaceholder: Emoji ara (örn. 'smile')...
+      noResults: Sonuç yok
+      searchResult: Arama sonucu
+  color-converter:
+    title: Renk dönüştürücü
+    description: Renkleri farklı biçimler arasında dönüştür (hex, rgb, hsl ve CSS adı)
+    ui:
+      color: Renk
+      formats: BİÇİMLER
+  bcrypt:
+    title: Bcrypt
+    description: Metin dizelerini bcrypt ile hash'le ve karşılaştır. Bcrypt, Blowfish şifresine dayalı bir parola hash'leme işlevidir.
+    ui:
+      copiedToClipboard: Hashlenen dize panoya kopyalandı
+      hashTitle: HASH
+      compareTitle: KARŞILAŞTIR
+      stringLabel: Dize
+      stringPlaceholder: Hashlenecek dizeniz...
+      saltRoundsLabel: Salt turları
+      outputLabel: ÇIKTI
+      copyHash: Hash kopyala
+      compareStringPlaceholder: Karşılaştırılacak dizeniz...
+      hashLabel: Hash
+      compareHashPlaceholder: Karşılaştırılacak hash...
+      matchLabel: Eşleşme
+      'yes': Evet
+      'no': Hayır
+  crontab-generator:
+    title: Crontab oluşturucu
+    description: Crontab doğrula ve oluştur, cron zamanlamasının okunabilir açıklamasını al.
+    ui:
+      symbolAnyValue: Herhangi bir değer
+      symbolEveryMinute: Her dakika
+      symbolRange: Değer aralığı
+      symbolRangeEquivalent: 1 ile 10 arasındaki dakikalar
+      symbolList: Değer listesi
+      symbolListEquivalent: 1. ve 10. dakikalarda
+      symbolStep: Adım değerleri
+      symbolStepEquivalent: Her 10 dakikada bir
+      aliasYearly: Yılda bir kez (1 Ocak, gece yarısı)
+      aliasMonthly: Her ayın ilk günü, gece yarısı
+      aliasWeekly: Pazar, gece yarısı
+      aliasDaily: Her gün gece yarısı
+      aliasHourly: Her saat başı
+      aliasReboot: Başlangıçta bir kez çalıştır
+      aliasRebootEquivalent: (başlangıçta)
+      invalidCron: Bu cron geçersiz
+      use24HourTime: 24 saat formatı
+      daysStartAtZero: Günler 0 ile başlar
+      labelSymbol: 'Sembol:'
+      labelMeaning: 'Anlam:'
+      labelExample: 'Örnek:'
+      labelEquivalent: 'Eşdeğer:'
+      symbols: Semboller
+      aliases: Takma adlar
+  http-status-codes:
+    title: HTTP durum kodları
+    description: Tüm HTTP durum kodlarının listesi, adları ve anlamları.
+    ui:
+      searchResults: Arama sonuçları
+      searchPlaceholder: HTTP durum kodu ara...
+      copiedTooltip: Kopyalandı!
+      clickToCopy: Durum kodunu kopyalamak için tıklayın
+      copiedLabel: kopyalandı
+  sql-prettify:
+    title: SQL biçimlendirici
+    description: SQL sorgularını çevrimiçi biçimlendir ve güzelleştir (çeşitli SQL lehçelerini destekler).
+    ui:
+      dialectLabel: LEHÇE
+      keywordCaseLabel: ANAHTAR KELİME BÜYÜK/KÜÇÜK HARF
+      indentStyleLabel: GİRİNTİ STİLİ
+      yourSqlQueryLabel: SQL sorgunuz
+      sqlQueryPlaceholder: SQL sorgunuzu buraya yapıştırın...
+      prettifiedQueryLabel: Sorgunuzun düzenlenmiş hali
+      keywordCaseUpper: BÜYÜK HARF
+      keywordCaseLower: küçük harf
+      keywordCasePreserve: Koru
+      indentStyleStandard: Standart
+      indentStyleTabularLeft: Sola hizalı tablo
+      indentStyleTabularRight: Sağa hizalı tablo
+  git-memo:
+    title: Git kopya kâğıdı
+    description: En yaygın Git komutları ve iş akışları için hızlı başvuru.
+  encryption:
+    title: Metin şifrele / şifre çöz
+    description: Düz metni şifrele ve şifreli metni AES, TripleDES, Rabbit veya RC4 gibi algoritmalarla çöz.
+    ui:
+      decryptError: Metniniz sifresi cozulemedi
+      encryptTitle: SIFRELE
+      decryptTitle: SIFRE COZ
+      yourText: METNINIZ
+      yourSecretKey: GIZLI ANAHTARINIZ
+      algorithm: ALGORITMA
+      encryptedOutput: SIFRELENMIS CIKTI
+      yourEncryptedText: SIFRELENMIS METNINIZ
+      decryptedOutput: SIFRESI COZULMUS CIKTI
+      encryptPlaceholder: Sifrelenecek metin
+      decryptPlaceholder: Sifresi cozulecek metin
+      secretKeyPlaceholder: Gizli anahtar...
+  yaml-prettify:
+    title: YAML biçimlendirici
+    description: YAML dizeni kullanıcı dostu, okunabilir bir biçime dönüştür.
+  roman-numeral-converter:
+    title: Roma rakamı dönüştürücü
+    description: Roma rakamlarını sayılara, sayıları Roma rakamlarına dönüştür.
+    ui:
+      converterTitle: DÖNÜŞTÜRÜCÜ
+      arabicSideLabel: ARAP RAKAMI
+      romanSideLabel: ROMA RAKAMI
+      arabicRangeError: '{min}-{max} arasında olmalı'
+      invalidRoman: Geçerli bir Roma rakamı değil
+      copied: Kopyalandı
+      copy: Kopyala
+      romanCopiedToast: Roma rakamı kopyalandı
+      arabicCopiedToast: Arap rakamı kopyalandı
+  hmac-generator:
+    title: HMAC oluşturucu
+    description: Gizli bir anahtar ve sevdiğin hash işleviyle hash tabanlı mesaj doğrulama kodu (HMAC) hesaplar.
+    ui:
+      encodingBinary: Ikili (taban 2)
+      encodingHex: Onaltilik (taban 16)
+      copied: HMAC panoya kopyalandi
+      plainText: DUZ METIN
+      secretKey: GIZLI ANAHTAR
+      hashingFunction: HASH FONKSIYONU
+      outputEncoding: CIKTI KODLAMASI
+      hmacOutput: HMAC CIKTISI
+      plainTextPlaceholder: Hash hesaplanacak duz metin...
+      secretKeyPlaceholder: Gizli anahtari girin...
+      clear: Temizle
+      copyHmac: HMAC'i Kopyala
+  bip39-generator:
+    title: BIP39 parola öbeği oluşturucu
+    description: Mevcut veya rastgele bir anımsatıcıdan BIP39 parola öbeği oluştur ya da parola öbeğinden anımsatıcıyı al.
+    ui:
+      languageEnglish: İngilizce
+      languageChineseSimplified: Basitleştirilmiş Çince
+      languageChineseTraditional: Geleneksel Çince
+      languageCzech: Çekçe
+      languageFrench: Fransızca
+      languageItalian: İtalyanca
+      languageJapanese: Japonca
+      languageKorean: Korece
+      languagePortuguese: Portekizce
+      languageSpanish: İspanyolca
+      entropyLengthError: Entropi uzunluğu >= 16, <= 32 olmalı ve 4'ün katı olmalı
+      entropyHexError: Entropi onaltılık bir dize olmalı
+      invalidMnemonic: Geçersiz mnemonik
+      entropyCopied: Entropi panoya kopyalandı
+      passphraseCopied: Parola panoya kopyalandı
+      languageLabel: Dil
+      entropyHeading: ENTROPİ (SEED)
+      entropyPlaceholder: Onaltılık entropi...
+      regenerate: Yeniden oluştur
+      copyEntropy: Entropiyi kopyala
+      passphraseHeading: PAROLA (MNEMONİK)
+      passphrasePlaceholder: Mnemonik kelimeler...
+      copyPassphrase: Parolayı kopyala
+  base64-file-converter:
+    title: Base64 dosya dönüştürücü
+    description: Bir dizeyi, dosyayı veya görseli base64 gösterimine dönüştür.
+    ui:
+      copiedToClipboard: Base64 dizesi panoya kopyalandı
+      base64ToFileTitle: BASE64 TEN DOSYAYA
+      fileNameLabel: DOSYA ADI
+      fileNamePlaceholder: İndirme dosya adı
+      extensionLabel: UZANTI
+      extensionPlaceholder: uzantı
+      base64StringLabel: BASE64 DİZESİ
+      base64InputPlaceholder: Base64 dosya dizenizi buraya girin...
+      invalidBase64: Geçersiz base64 dizesi
+      previewImage: Görseli önizle
+      downloadFile: Dosyayı indir
+      fileToBase64Title: DOSYADAN BASE64 E
+      dropHint: Bir dosyayı buraya sürükleyip bırakın veya seçmek için tıklayın
+      fileInBase64Label: BASE64 OLARAK DOSYA
+      fileOutputPlaceholder: Dosyanın base64 hali burada görünecek
+      copied: Kopyalandı!
+      copyBase64: Base64 i kopyala
+  base64-string-converter:
+    title: Base64 dize kodlayıcı/çözücü
+    description: Dizeleri base64 gösterimine kolayca kodla ve çöz.
+    ui:
+      base64CopiedToClipboard: Base64 dizesi panoya kopyalandı
+      stringCopiedToClipboard: Dize panoya kopyalandı
+      stringToBase64Title: DİZEDEN BASE64 E
+      encodingLabel: KODLAMA
+      standard: Standart
+      urlSafe: URL İçin Güvenli
+      stringToEncodeLabel: KODLANACAK DİZE
+      stringInputPlaceholder: Dizenizi buraya girin...
+      base64OutputLabel: BASE64 ÇIKTISI
+      base64OutputPlaceholder: Dizenizin base64 kodlaması burada görünecek
+      copied: Kopyalandı!
+      copyBase64: Base64 i kopyala
+      base64ToStringTitle: BASE64 TEN DİZEYE
+      base64ToDecodeLabel: ÇÖZÜLECEK BASE64 DİZESİ
+      base64InputPlaceholder: Base64 dizeniz...
+      invalidBase64: Geçersiz base64 dizesi
+      decodedStringLabel: ÇÖZÜLMÜŞ DİZE
+      decodedOutputPlaceholder: Çözülmüş dize burada görünecek
+      copyDecodedString: Çözülmüş dizeyi kopyala
+  math-evaluator:
+    title: Matematik değerlendirici
+    description: Matematiksel ifadeleri değerlendirmek için bir hesap makinesi. sqrt, cos, sin, abs gibi işlevleri kullanabilirsin.
+    ui:
+      placeholder: 'Matematik ifadeniz (örn: 2*sqrt(6) )...'
+      result: Sonuç
+  url-parser:
+    title: URL ayrıştırıcı
+    description: Bir URL'yi bileşenlerine ayır (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: Sunucu
+      protocol: Protokol
+      hostname: Sunucu adı
+      port: Port
+      sectionAuthentication: Kimlik doğrulama
+      username: Kullanıcı adı
+      password: Parola
+      sectionPath: Yol
+      pathname: Yol adı
+      search: Sorgu
+      hash: Karma
+      urlTitle: URL
+      invalidUrl: Geçersiz URL
+      params: PARAMETRELER
+      emptyHint: Ayrıştırmak için yukarıya bir URL girin
+  phone-parser-and-formatter:
+    title: Telefon numarası ayrıştırıcı
+    description: Telefon numaralarını ayrıştır ve biçimlendir. Ülkeyi algıla, doğrula ve uluslararası, ulusal, E.164 ve RFC3966 biçimlerini göster.
+    ui:
+      invalidPhoneNumber: Geçersiz telefon numarası
+      sectionLocation: Konum
+      countryCode: Ülke kodu
+      country: Ülke
+      callingCode: Çağrı kodu
+      sectionValidation: Doğrulama
+      isValid: Geçerli mi?
+      'yes': Evet
+      'no': Hayır
+      isPossible: Mümkün mü?
+      type: Tür
+      unknown: Bilinmiyor
+      sectionFormats: Biçimler
+      international: Uluslararası
+      national: Ulusal
+      defaultCountry: Varsayılan ülke
+      phoneNumber: Telefon numarası
+      emptyStatePrompt: Ayrıştırmak için yukarıya bir telefon numarası girin
+  user-agent-parser:
+    title: User-agent ayrıştırıcı
+    description: Bir user-agent dizesinden tarayıcı, motor, işletim sistemi, CPU ve cihaz türü/modelini algıla.
+    ui:
+      sectionBrowser: Tarayıcı
+      sectionEngine: Motor
+      sectionOs: İşletim Sistemi
+      sectionDevice: Cihaz
+      sectionCpu: İşlemci
+      name: Ad
+      version: Sürüm
+      model: Model
+      type: Tür
+      vendor: Üretici
+      architecture: Mimari
+      userAgentString: USER AGENT DİZESİ
+      placeholder: User-agent dizenizi buraya girin...
+      unknown: Bilinmiyor
+      error: HATA
+      parseError: User agent dizesi ayrıştırılamadı
+  case-converter:
+    title: Büyük/küçük harf dönüştürücü
+    description: Bir dizenin harf biçimini farklı seçenekler arasından seçerek dönüştür
+    ui:
+      inputPlaceholder: Metniniz...
+      output: ÇIKTI
+  html-entities:
+    title: HTML varlıklarını kaçışla
+    description: HTML varlıklarını kaçışla veya kaçışı kaldır (<,>, &, " ve \' gibi karakterleri HTML karşılıklarıyla değiştirir)
+    ui:
+      yourString: METNİNİZ
+      escapePlaceholder: Kaçış uygulanacak metin...
+      escapedOutput: KAÇIŞLI ÇIKTI
+      copied: Kopyalandı
+      copy: Kopyala
+      yourEscapedString: KAÇIŞLI METNİNİZ
+      unescapePlaceholder: Kaçışı kaldırılacak metin...
+      unescapedOutput: KAÇIŞI KALDIRILMIŞ ÇIKTI
+  json-prettify:
+    title: JSON biçimlendirici
+    description: JSON dizeni kullanıcı dostu, okunabilir bir biçime dönüştür.
+  docker-run-to-docker-compose-converter:
+    title: Docker run'dan Docker compose'a dönüştürücü
+    description: '"docker run" komutlarını docker-compose dosyalarına dönüştürür!'
+  mac-address-lookup:
+    title: MAC adresi sorgulama
+    description: Bir cihazın satıcısını ve üreticisini MAC adresinden bul.
+    ui:
+      macAddressLabel: MAC Adresi
+      copiedTooltip: Kopyalandı!
+      copyTooltip: Üretici bilgisini kopyalamak için tıklayın
+      copiedTitle: ✓ kopyalandı
+      vendorInfoTitle: Üretici Bilgisi
+      unknownVendor: Bu adres için üretici bilinmiyor
+  lorem-ipsum-generator:
+    title: Lorem ipsum oluşturucu
+    description: Maketler ve tasarım işleri için lorem ipsum yer tutucu metni oluştur.
+    ui:
+      copiedMessage: Lorem ipsum panoya kopyalandı
+      paragraphs: Paragraflar
+      sentencesPerParagraph: Paragraf başına cümle
+      wordsPerSentence: Cümle başına kelime
+      startWithLoremIpsum: Lorem ipsum ile başla
+      asHtml: HTML olarak
+      output: ÇIKTI
+      wordCount: '{count} kelime'
+      charCount: '{count} karakter'
+      copy: Kopyala
+      refresh: Yenile
+  qrcode-generator:
+    title: QR kodu oluşturucu
+    description: URL'ler, düz metin veya Wi-Fi ağ kimlik bilgileri için QR kodları oluştur ve indir. Yapılandırılabilir hata düzeltmeli terminal, klasik ve özel renk temaları.
+  signature-creator:
+    title: İmza oluşturucu
+    description: Tuvale el yazısı bir imza çiz ve şeffaf PNG olarak dışa aktar. Ya da herhangi bir görseli yükle ve cihaz üzerinde çalışan yapay zekâ ile arka planını tek tıkla kaldır.
+    ui:
+      drawSignatureTab: İmza Çiz
+      removeBackgroundTab: Arka Planı Kaldır
+      inkColorLabel: Mürekkep rengi
+      strokeWeightLabel: Kalem kalınlığı
+      actionsLabel: İşlemler
+      undoButton: ↩ Geri al
+      clearButton: ✕ Temizle
+      downloadTransparentPng: ↓ Şeffaf PNG indir
+      uploadImageLabel: Görsel yükle
+      dropzoneText: Görseli buraya sürükleyin veya seçmek için tıklayın
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Görsel yüklendi
+      removeButton: ✕ Kaldır
+      removeBackgroundButton: ⚡ Arka planı kaldır
+      exportLabel: Dışa aktar
+      downloadNoBgPng: ↓ PNG indir (arka plansız)
+      originalLabel: Orijinal
+      resultLabel: Sonuç
+      uploadPrompt: Başlamak için bir görsel yükleyin
+      originalAlt: orijinal
+      resultAlt: arka planı kaldırılmış sonuç
+      loadingModelStatus: Yapay zeka modeli yükleniyor...
+      removingBackgroundStatus: Arka plan kaldırılıyor...
+      processingPercentStatus: İşleniyor... {pct}%
+      downloadingModelPercentStatus: Model indiriliyor... {pct}%
+      removeBackgroundFailedStatus: Arka plan kaldırılamadı. Farklı bir görsel deneyin.
+  xml-formatter:
+    title: XML biçimlendirici
+    description: XML dizeni kullanıcı dostu, okunabilir bir biçime dönüştür.
+    ui:
+      invalidXml: Girilen XML geçerli değil.
+      collapse: Daralt
+      indentSize: Girinti boyutu
+      inputLabel: XML'iniz
+      inputPlaceholder: XML'inizi buraya yapıştırın...
+      outputLabel: XML'inizden biçimlendirilmiş XML
+  temperature-converter:
+    title: Sıcaklık dönüştürücü
+    description: Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur ve Rømer için derece cinsinden sıcaklık dönüşümleri.
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
+  chmod-calculator:
+    title: Chmod hesaplayıcı
+    description: Bu çevrimiçi chmod hesaplayıcı ile chmod izinlerini ve komutlarını hesapla.
+    ui:
+      read: Okuma
+      write: Yazma
+      execute: Çalıştırma
+      owner: Sahip
+      group: Grup
+      public: Herkes
+      commandCopied: chmod komutu kopyalandı
+      copyCommand: Komutu kopyala
+  rsa-key-pair-generator:
+    title: RSA anahtar çifti oluşturucu
+    description: Yeni, rastgele bir RSA özel ve genel PEM anahtar çifti oluştur.
+    ui:
+      bitsRangeError: Bit sayısı 256-16384 arasında ve 8'in katı olmalıdır
+      bitsLabel: Bit
+      refreshButton: Anahtar çiftini yenile
+      publicKeyTitle: Genel Anahtar
+      copyPublicKeyTitle: Genel anahtarı kopyala
+      copy: Kopyala
+      generating: Oluşturuluyor...
+      privateKeyTitle: Özel Anahtar
+      copyPrivateKeyTitle: Özel anahtarı kopyala
+      publicKeyCopiedToast: Genel anahtar kopyalandı
+      privateKeyCopiedToast: Özel anahtar kopyalandı
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG düzenleyici
+    description: İçeriğin kaynak kodunu anında üreten, zengin özellikli çevrimiçi WYSIWYG HTML düzenleyici.
+    ui:
+      bold: Kalın
+      italic: İtalik
+      strike: Üstü çizili
+      inlineCode: Satır içi kod
+      heading1: Başlık 1
+      heading2: Başlık 2
+      heading3: Başlık 3
+      heading4: Başlık 4
+      bulletList: Madde işaretli liste
+      orderedList: Numaralı liste
+      codeBlock: Kod bloğu
+      blockquote: Alıntı
+      hardBreak: Zorunlu satır sonu
+      clearFormat: Biçimlendirmeyi temizle
+      undo: Geri al
+      redo: Yinele
+  json-diff:
+    title: JSON karşılaştırma
+    description: İki JSON nesnesini karşılaştır ve aralarındaki farkları gör.
+    ui:
+      onlyShowDifferences: Yalnızca farkları göster
+      jsonsAreTheSame: Verilen JSON'lar aynı
+      firstJsonTitle: İLK JSON'UNUZ
+      firstJsonPlaceholder: İlk JSON'unuzu buraya yapıştırın...
+      invalidJson: Geçersiz JSON biçimi
+      secondJsonTitle: KARŞILAŞTIRILACAK JSON
+      secondJsonPlaceholder: Karşılaştırılacak JSON'u buraya yapıştırın...
+  jwt-parser:
+    title: JWT ayrıştırıcı
+    description: JSON Web Token'ını (jwt) ayrıştır, çöz ve içeriğini göster.
+    ui:
+      header: Üst bilgi
+      payload: Yük (payload)
+      jwtToDecodeTitle: ÇÖZÜLECEK JWT
+      tokenPlaceholder: Token'ınızı buraya girin...
+      invalidJwt: Geçersiz JWT
+  date-converter:
+    title: Tarih-saat dönüştürücü
+    description: Tarih ve saati çeşitli biçimlere dönüştür
+  ipv4-subnet-calculator:
+    title: IPv4 alt ağ hesaplayıcı
+    description: IPv4 CIDR bloklarını ayrıştır ve alt ağın hakkında ihtiyacın olan tüm bilgileri al.
+    ui:
+      invalidAddress: Bu adres ayrıştırılamıyor, biçimi kontrol edin
+      netmask: Ağ maskesi
+      networkAddress: Ağ adresi
+      networkMask: Ağ maskesi
+      networkMaskBinary: İkili biçimde ağ maskesi
+      cidrNotation: CIDR gösterimi
+      wildcardMask: Joker maske
+      networkSize: Ağ boyutu
+      firstAddress: İlk adres
+      lastAddress: Son adres
+      broadcastAddress: Yayın adresi
+      noBroadcast: Bu maskeyle yayın adresi yok
+      ipClass: IP sınıfı
+      unknownClassType: Bilinmeyen sınıf türü
+      decimal: Ondalık
+      hexadecimal: Onaltılık
+      binary: İkili
+      ipv6Short: IPv6 (kısa)
+      inputLabel: Maskeli veya maskesiz bir IPv4 adresi
+      bitMap: BİT HARİTASI
+      network: Ağ
+      host: Ana bilgisayar
+      setPrefix: Öneki /{prefix} olarak ayarla
+      networkTag: ağ
+      broadcastTag: yayın
+      hostsCount: '{count} ana bilgisayar'
+      privateIp: Özel IP
+      publicIp: Genel IP
+      subnetDetail: ALT AĞ AYRINTISI
+      subnetInfo: ALT AĞ BİLGİSİ
+      addressRepresentations: ADRES GÖSTERİMLERİ
+      copy: Kopyala
+      enterValidIpv4: Gösterimleri görmek için geçerli bir IPv4 adresi girin
+      previousBlock: Önceki blok
+      nextBlock: Sonraki blok
+      collapseCheatSheet: Hızlı Başvuruyu Daralt
+      subnetCheatSheet: Alt Ağ Hızlı Başvurusu
+  og-meta-generator:
+    title: Open Graph meta oluşturucu
+    description: Web siten için Open Graph ve sosyal medya HTML meta etiketleri oluştur.
+  ipv6-ula-generator:
+    title: IPv6 ULA oluşturucu
+    description: RFC4193'e göre ağın için kendi yerel, yönlendirilemeyen IP adreslerini oluştur.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: İlk yönlendirilebilir
+      lastRoutable: Son yönlendirilebilir
+      infoAlert: Geçerli zaman damgası ve MAC adresi kullanılır, SHA1 ile karmalanır. Alt 40 bit, RFC 4193'e göre genel kimliği oluşturur.
+      macAddress: MAC Adresi
+      output: Çıktı
+      copied: Kopyalandı!
+      copy: Kopyala
+  hash-text:
+    title: Metin hash'leme
+    description: Metni MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 ve daha fazlasıyla hash'le.
+    ui:
+      encodingBinary: Ikili (taban 2)
+      encodingHex: Onaltilik (taban 16)
+      encodingBase64: Base64 (taban 64)
+      encodingBase64url: Base64url (URL uyumlu base 64)
+      inputPlaceholder: Hash'lenecek metniniz...
+      encoding: Kodlama
+      output: CIKTI
+  json-to-toml:
+    title: JSON'dan TOML'a
+    description: JSON'u ayrıştır ve TOML'a dönüştür.
+  device-information:
+    title: Cihaz bilgileri
+    description: Mevcut cihazın hakkında bilgi al (ekran boyutu, piksel oranı, user agent, ...)
+    ui:
+      screen: Ekran
+      hardware: Donanım
+      network: Ağ
+      browser: Tarayıcı
+      screenSize: Ekran boyutu
+      windowSize: Pencere boyutu
+      pixelRatio: Piksel oranı
+      colorDepth: Renk derinliği
+      orientation: Yönlendirme
+      orientationAngle: Yönlendirme açısı
+      touchPoints: Dokunma noktaları
+      cpuCores: CPU çekirdekleri
+      deviceMemory: Cihaz belleği
+      platform: Platform
+      online: Çevrimiçi
+      connectionType: Bağlantı türü
+      downlinkSpeed: İndirme hızı
+      roundTripTime: Gidiş dönüş süresi
+      dataSaver: Veri tasarrufu
+      vendor: Üretici
+      languages: Diller
+      cookiesEnabled: Çerezler etkin
+      pdfViewer: PDF görüntüleyici
+      doNotTrack: Beni izleme
+      userAgent: Kullanıcı aracısı
+      maxTouchPoints: '{count} maksimum'
+      none: Yok
+      logicalCores: '{count} mantıksal çekirdek'
+      'yes': Evet
+      'no': Hayır
+      enabled: Etkin
+      disabled: Devre dışı
+      supported: Destekleniyor
+      notSupported: Desteklenmiyor
+      notSet: Ayarlanmamış
+  pdf-signature-checker:
+    title: PDF imza denetleyici
+    description: Bir PDF dosyasının imzalarını doğrula. İmzalı bir PDF, dosya içeriğinin imzalandıktan sonra değiştirilip değiştirilmediğini belirlemek için kullanılabilecek bir veya daha fazla imza içerir.
+    ui:
+      tableHeaderValidityPeriod: Geçerlilik süresi
+      tableHeaderIssuedBy: Veren
+      tableHeaderIssuedTo: Verilen
+      tableHeaderPemCertificate: PEM sertifikası
+      notBefore: Başlangıç tarihi
+      notAfter: Bitiş tarihi
+      commonName: Ortak ad
+      organizationName: Kuruluş adı
+      countryName: Ülke adı
+      localityName: Yerleşim adı
+      organizationalUnitName: Birim adı
+      stateOrProvinceName: Eyalet veya il adı
+      viewPemCert: PEM sertifikasını görüntüle
+      uploadPrompt: Bir PDF dosyasını buraya sürükleyip bırakın veya seçmek için tıklayın
+      noSignaturesFound: Belirtilen dosyada imza bulunamadı.
+      signatureCertificatesLabel: 'İmza {number} sertifikaları:'
+  json-minify:
+    title: JSON küçültme
+    description: Gereksiz boşlukları kaldırarak JSON'unu küçült ve sıkıştır.
+    ui:
+      invalidJson: Girilen JSON geçerli değil.
+      inputLabel: Ham JSON'ınız
+      inputPlaceholder: Ham JSON'ınızı buraya yapıştırın...
+      outputLabel: JSON'ınızın küçültülmüş sürümü
+  ulid-generator:
+    title: ULID oluşturucu
+    description: Rastgele Universally Unique Lexicographically Sortable Identifier (ULID) oluştur.
+    ui:
+      copiedMessage: ULID'ler panoya kopyalandı
+      quantity: MİKTAR
+      format: FORMAT
+      formatRaw: Ham
+      formatJson: JSON
+      output: ÇIKTI
+      copy: Kopyala
+      refresh: Yenile
+  base-converter:
+    title: Tam sayı taban dönüştürücü
+    description: Bir sayıyı farklı tabanlar arasında dönüştür (onluk, onaltılık, ikilik, sekizlik, base64, ...)
+  uuid-generator:
+    title: UUID oluşturucu
+    description: Rastgele UUID'ler (v1 ve v4) oluştur ve yapılarını incele.
+    ui:
+      copiedMessage: UUID'ler panoya kopyalandı
+      version: SÜRÜM
+      quantity: MİKTAR
+      namespacePreset: AD ALANI ÖN AYARI
+      namespaceUuid: AD ALANI UUID
+      invalidUuid: Geçersiz UUID
+      name: AD
+      namePlaceholder: Karma için ad...
+      output: ÇIKTI
+      copy: Kopyala
+      refresh: Yenile
+  ipv4-address-converter:
+    title: IPv4 adres dönüştürücü
+    description: Bir IP adresini onluk, ikilik, onaltılık ve hatta IPv6 gösterimine dönüştür.
+    ui:
+      decimal: Ondalık
+      hexadecimal: Onaltılık
+      binary: İkili
+      ipv6Short: IPv6 (kısa)
+      invalidIpv4: Geçersiz IPv4 adresi
+      ipv4Address: IPv4 Adresi
+      output: Çıktı
+      copied: Kopyalandı!
+      copy: Kopyala
+  text-statistics:
+    title: Metin istatistikleri
+    description: 'Bir metin hakkında bilgi al: karakter sayısı, kelime sayısı, bayt cinsinden boyutu, ...'
+    ui:
+      textPlaceholder: Metniniz...
+      characterCount: KARAKTER SAYISI
+      wordCount: KELİME SAYISI
+      lineCount: SATIR SAYISI
+      byteSize: BAYT BOYUTU
+  text-to-nato-alphabet:
+    title: Metinden NATO alfabesine
+    description: Sözlü iletim için metni NATO fonetik alfabesine dönüştür.
+    ui:
+      yourText: METNİNİZ
+      inputPlaceholder: örn. Hello world
+      natoPhonetic: NATO FONETİK ALFABESİ
+      copied: Kopyalandı
+      copyAll: Tümünü kopyala
+      natoStringCopied: NATO dizisi kopyalandı.
+  ipv4-range-expander:
+    title: IPv4 aralık genişletici
+    description: Bir başlangıç ve bir bitiş IPv4 adresi verildiğinde bu araç, CIDR gösterimiyle birlikte geçerli bir IPv4 alt ağı hesaplar.
+    ui:
+      startAddress: Başlangıç adresi
+      endAddress: Bitiş adresi
+      addressesInRange: Aralıktaki adresler
+      invalidIpv4: Geçersiz IPv4 adresi
+      invalidCombinationTitle: Geçersiz başlangıç ve bitiş IPv4 adresi kombinasyonu
+      invalidCombinationDescription: Bitiş IPv4 adresi başlangıç IPv4 adresinden küçük. Bu geçerli değildir ve sonuç hesaplanamadı.
+      switchStartEnd: Başlangıç ve bitiş IPv4 adresini değiştir
+      result: Sonuç
+      copied: Kopyalandı!
+      copyResult: Sonucu kopyala
+  text-diff:
+    title: Metin karşılaştırma
+    description: İki metni karşılaştır ve aralarındaki farkları gör.
+  otp-generator:
+    title: OTP kodu oluşturucu
+    description: Çok faktörlü kimlik doğrulama için zamana dayalı OTP (tek kullanımlık parola) oluştur ve doğrula.
+  text-to-binary:
+    title: Metinden ASCII ikiliğe
+    description: Metni ASCII ikili gösterimine ve tersine dönüştür.
+    ui:
+      textCopied: Metin kopyalandı
+      binaryCopied: İkili kod kopyalandı
+      panelTitle: METİN ↔ ASCII BINARY
+      textLabel: METİN
+      binaryLabel: İKİLİ
+      copied: Kopyalandı
+      copy: Kopyala
+      textPlaceholder: örn. Hello world
+      invalidBinary: Geçerli bir ASCII binary olmalı (8 bitin katları)
+  ascii-word-art:
+    title: ASCII yazı sanatı oluşturucu
+    description: Birçok yazı tipi ve stille ASCII yazı sanatı metni oluştur.
+  killer-scripts:
+    title: Killer Scripts
+    description: Windows yönetimi ve MSP saha işleri için PowerShell betikleri.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Bir cmdlet seç, parametreleri doldur ve hazır PowerShell komutunu kopyala.
+  group-policy-reference:
+    title: Grup İlkesi başvurusu
+    description: Yaygın Windows Grup İlkesi ayarlarını ada, GPO yoluna, kayıt defteri anahtarına veya açıklamaya göre ara.
+    ui:
+      searchPlaceholder: Politikalarda, yollarda, kayıt defteri anahtarlarında ara...
+      copied: Kopyalandı!
+      clickToCopyRegistry: Kayıt defteri anahtarını kopyalamak için tıklayın
+      copiedShort: kopyalandı
+      default: Varsayılan
+      recommended: Önerilen
+  windows-event-lookup:
+    title: Windows olay sorgulama
+    description: Windows olay kimliklerini açıklamaları, önem düzeyleri ve yaygın nedenleriyle ara.
+    ui:
+      searchResults: Arama sonuçları
+      searchPlaceholder: Olay kimliği, adı veya açıklamasına göre ara...
+      copied: Kopyalandı!
+      clickToCopyEventId: Olay kimliğini kopyalamak için tıklayın
+      copiedShort: kopyalandı
+  m365-sku-decoder:
+    title: M365 lisans SKU çözücü
+    description: Microsoft 365 lisans SKU dizelerini ve GUID'lerini ürün adlarına çöz.
+    ui:
+      searchPlaceholder: SKU adı, dize kimliği veya açıklamaya göre ara...
+      copied: Kopyalandı!
+      clickToCopy: Dize kimliğini kopyalamak için tıklayın
+      copiedMark: ✓ kopyalandı
+  windows-error-codes:
+    title: Windows hata kodu sorgulama
+    description: Sistem hataları, BSOD durdurma kodları, WMI, RPC, MSI yükleyici hataları ve daha fazlası dahil Windows hata kodlarını onaltılık veya onluk olarak ara.
+    ui:
+      searchResults: Arama sonuçları
+      searchPlaceholder: Onaltılık koda, hata adına veya açıklamaya göre ara...
+      copied: Kopyalandı!
+      clickToCopy: Onaltılık kodu kopyalamak için tıklayın
+      copiedShort: kopyalandı
+      decimal: ondalık {decimal}
+  exchange-ndr-lookup:
+    title: Exchange NDR sorgulama
+    description: Exchange ve M365 geri dönme kodlarını anlaşılır neden ve çözüm önerileriyle ara.
+    ui:
+      searchResults: Arama sonuçları
+      searchPlaceholder: NDR koduna, hata adına, nedene veya çözüme göre ara...
+      copied: Kopyalandı!
+      clickToCopy: NDR kodunu kopyalamak için tıklayın
+      copiedShort: kopyalandı
+      cause: Neden
+      fix: Çözüm
+  safelink-decoder:
+    title: Outlook Safelink çözücü
+    description: Özgün hedef URL'yi ortaya çıkarmak için Microsoft Defender SafeLinks'i aç.
+  port-protocol-reference:
+    title: Port ve protokol başvurusu
+    description: Güvenlik notları ve tehlikeli port işaretleriyle yaygın ağ portları ve protokolleri.
+  cve-lookup:
+    title: CVE sorgulama
+    description: NIST NVD'de CVE'leri kimliğe veya anahtar kelimeye göre ara. NVD API'sinden canlı veri.
+    ui:
+      range6m: 6 ay
+      range1y: 1 yıl
+      range2y: 2 yıl
+      range5y: 5 yıl
+      rangeAll: Tüm zamanlar
+      noDescription: Açıklama mevcut değil.
+      fetchError: NVD API'sine ulaşılamadı. Bağlantınızı kontrol edin.
+      sortNewest: En yeniler önce
+      sortOldest: En eskiler önce
+      sortSeverity: En yüksek önem derecesi
+      severityCritical: Kritik
+      severityHigh: Yüksek
+      severityMedium: Orta
+      severityLow: Düşük
+      placeholder: CVE kimliği veya anahtar kelime (ör. CVE-2021-44228, log4j)
+      searching: Aranıyor...
+      search: Ara
+      hint: CVE kimliğine, kısmi numaraya (ör. 43284), yaygın ada (ör. log4shell, dirty frag) veya anahtar kelimeye göre arayın. NVD ve GitHub Advisory Database'den canlı veriler.
+      noResults: '"{query}" için CVE bulunamadı.'
+      noResultsInRange: Seçilen tarih aralığında "{query}" için CVE bulunamadı.
+      noExactMatch: Seçilen tarih aralığında tam ifade eşleşmesi bulunamadı. Yaygın güvenlik açığı adları ("dirty frag" gibi) NVD açıklamalarında birebir görünmeyebilir. Bunun yerine kısmi bir CVE numarası deneyin (ör. "43284", CVE-2026-43284'ü bulur).
+      searchAllTime: Tüm zamanlarda ara
+      showingResults: '{total} sonuçtan {shown} tanesi gösteriliyor'
+      allSeverities: Tüm önem dereceleri
+      allYears: Tüm yıllar
+      copied: Kopyalandı!
+      clickToCopyId: CVE kimliğini kopyalamak için tıklayın
+      copiedShort: kopyalandı
+      cveDetail: CVE DETAYI
+      published: Yayınlanma
+      modified: Değiştirilme
+      clickToCopy: Kopyalamak için tıklayın
+      references: Referanslar
+      kevActionDue: 'CISA KEV işlem son tarihi:'
+      cvssMetrics: CVSS Metrikleri
+      metricAttackVector: Saldırı Vektörü
+      metricAttackComplexity: Saldırı Karmaşıklığı
+      metricPrivilegesRequired: Gerekli Ayrıcalıklar
+      metricUserInteraction: Kullanıcı Etkileşimi
+      metricScope: Kapsam
+      metricConfidentiality: Gizlilik
+      metricIntegrity: Bütünlük
+      metricAvailability: Kullanılabilirlik
+  email-dns-checker:
+    title: E-posta DNS denetleyici
+    description: Herhangi bir alan adının MX, SPF, DKIM ve DMARC kayıtlarını denetle. E-posta kimlik doğrulama yapılandırmasını doğrular ve yaygın yanlış yapılandırmaları işaretler.
+  email-header-parser:
+    title: E-posta başlığı ayrıştırıcı
+    description: Gönderen bilgilerini çıkarmak, teslimat atlama zincirini izlemek ve SPF, DKIM ve DMARC kimlik doğrulama sonuçlarını görmek için ham e-posta başlıklarını yapıştır.
+    ui:
+      pasteHint: Ham e posta başlıklarını aşağıya yapıştırın.
+      parseButton: Başlıkları Ayrıştır
+      parseAnother: Başka Bir Tane Ayrıştır
+      messageDetails: Mesaj Ayrıntıları
+      senderMismatch: Gönderen alan adı From alan adından farklı. Bu, sahtecilik veya yetkilendirilmiş gönderim anlamına gelebilir.
+      deliveryHops: Teslimat Durakları
+      oldestFirst: önce en eski
+      authResults: Kimlik Doğrulama Sonuçları
+      spamAnalysis: Spam Analizi
+      spamScore: Spam Puanı
+      spamStatus: Spam Durumu
+  whois-checker:
+    title: WHOIS sorgulama
+    description: Kayıt kuruluşu, oluşturma ve bitiş tarihleri, ad sunucuları ve durum işaretleri dahil herhangi bir alan adının kayıt ayrıntılarını sorgula.
+  ascii-text-drawer:
+    title: ASCII yazı sanatı oluşturucu
+    description: Birçok yazı tipi ve stille ASCII yazı sanatı metni oluştur.
+    ui:
+      yourText: METNİNİZ
+      textPlaceholder: Çizilecek metniniz
+      options: SEÇENEKLER
+      font: YAZI TİPİ
+      searchFonts: Yazı tiplerinde ara...
+      noFontsMatch: Eşleşen yazı tipi yok
+      width: GENİŞLİK
+      output: ASCII ART ÇIKTISI
+      loadingFont: Yazı tipi yükleniyor...
+      error: Geçerli ayarlar bir hataya yol açtı.
+      copied: Kopyalandı!
+      copy: Kopyala
+  regex-tester:
+    title: Regex test aracı
+    description: Düzenli ifadelerini örnek metinle test et.
+    ui:
+      regexLabel: 'Test edilecek regex:'
+      regexPlaceholder: Test edilecek regex girin
+      globalLabel: Global
+      globalTitle: Global arama
+      ignoreCaseLabel: Büyük/küçük harf yok say
+      ignoreCaseTitle: Büyük/küçük harfe duyarsız arama
+      multilineLabel: Çok satırlı
+      singlelineLabel: Tek satırlı
+      singlelineTitle: Noktanın satır sonu karakterleriyle de eşleşmesine izin verir.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; deseni bir Unicode kod noktası dizisi olarak ele alır.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: Daha fazla Unicode özelliğine sahip u modunun gelişmiş sürümü.
+      textLabel: 'Eşleştirilecek metin:'
+      textPlaceholder: Eşleştirilecek metni girin
+      regexBarTitle: REGEX
+      matchesBarTitle: EŞLEŞMELER
+      matchIndex: Dizin
+      matchValue: Değer
+      matchCaptures: Yakalamalar
+      matchGroups: Gruplar
+      noMatch: Eşleşme yok
+      sampleBarTitle: ÖRNEK
+      diagramBarTitle: DİYAGRAM
+      quickReference: Hızlı Başvuru
+  yaml-converter:
+    title: YAML dönüştürücü
+    description: YAML'ı JSON'a veya TOML'a dönüştür.
+    ui:
+      convertTo: 'Dönüştür:'
+      inputLabel: YAML'ınız
+      inputPlaceholder: YAML'ınızı buraya yapıştırın...
+      invalidYaml: Girilen YAML geçerli değil.
+      outputLabel: '{format} çıktısı'
+  json-converter:
+    title: JSON dönüştürücü
+    description: JSON'u YAML'a veya TOML'a dönüştür.
+    ui:
+      convertTo: Şuna dönüştür
+      yourJson: JSON'unuz
+      pasteJsonPlaceholder: JSON'unuzu buraya yapıştırın...
+      invalidJson: Geçersiz JSON biçimi
+      formatOutput: '{format} çıktısı'
+  toml-converter:
+    title: TOML dönüştürücü
+    description: TOML'ı JSON'a veya YAML'a dönüştür.
+    ui:
+      convertTo: 'Şuna dönüştür:'
+      yourToml: TOML'unuz
+      pastePlaceholder: TOML'unuzu buraya yapıştırın...
+      invalidToml: Girilen TOML geçerli değil.
+      outputLabel: '{format} çıktısı'
+  xml-json-converter:
+    title: XML ↔ JSON dönüştürücü
+    description: Çift yönlü XML ve JSON dönüştürücü. Herhangi bir tarafı düzenle, diğeri otomatik olarak güncellenir.
+    ui:
+      invalidXml: Geçersiz XML.
+      invalidJson: Geçersiz JSON.
+      xmlLabel: XML
+      xmlPlaceholder: XML'inizi buraya yapıştırın...
+      jsonLabel: JSON
+      jsonPlaceholder: JSON'ınızı buraya yapıştırın...
+  markdown-to-html:
+    title: Markdown'dan HTML'ye
+    description: Markdown'ı HTML'ye dönüştür ve PDF olarak dışa aktar veya yazdır.
+    ui:
+      copiedSuccess: HTML panoya kopyalandı!
+      copyFailed: Metin kopyalanamadı.
+      inputLabel: 'Dönüştürülecek Markdown metniniz:'
+      inputPlaceholder: Markdown içeriğiniz...
+      outputLabel: 'Çıktı HTML:'
+      copyHtmlButton: HTML Kopyala
+      printAsPdfButton: PDF Olarak Yazdır
+  killer-pdf:
+    title: KillerPDF
+    description: Windows için açık kaynak PDF düzenleyici. Görüntüle, not ekle, birleştir, böl, düzleştir, parola korumalı PDF'leri aç, metin düzenle, çiz, vurgula, imzala ve yazdır.
+  killer-scan:
+    title: KillerScan
+    description: Saha teknisyenleri için hızlı ağ tarayıcı. ARP + ping keşfi, port yoklama, satıcı sorgulama ve otomatik cihaz sınıflandırma.
+  gif-search:
+    title: GIF arama
+    description: Giphy'de tepki GIF'leri ara. URL'yi kopyalamak için herhangi bir sonuca tıkla.
+    ui:
+      errorStatus: Hata {status}
+      fetchFailed: GIF getirilemedi.
+      searchPlaceholder: GIF ara (örn. facepalm, nice work, this is fine)
+      searching: Aranıyor...
+      search: Ara
+      noResults: '"{query}" için GIF bulunamadı.'
+      copied: Kopyalandı!
+      copyUrl: URL kopyala
+      resultsHint: '{count} sonuç. URL''yi kopyalamak için tıklayın, ardından Teams, Telegram veya Slack''e yapıştırın.'
+  killer-shell:
+    title: KillerShell
+    description: İleri düzey kullanıcılar için ücretsiz kabuk. Bir dosya tarayıcısı, bir terminal ve bir metin düzenleyici tek pencereyi, tek sekme şeridini ve tek tuş setini paylaşır.
+  domain-lookup:
+    title: Alan adı sorgulama
+    description: Herhangi bir alan adı için WHOIS kayıt ayrıntıları ve e-posta DNS denetimleri (MX, SPF, DKIM, DMARC) tek görünümde.
+    ui:
+      statusDesc:
+        active: Alan adi etkin ve calisiyor.
+        inactive: Alan adi etkin degil.
+        clientDeleteProhibited: Kayit kurulusu, alan adinin silinmesini kilitledi.
+        clientTransferProhibited: Kayit kurulusu, alan adinin baska bir kayit kurulusuna aktarilmasini kilitledi.
+        clientUpdateProhibited: Kayit kurulusu, alan adinin guncellenmesini kilitledi.
+        clientHold: Kayit kurulusu alan adini beklemeye aldi, bu nedenle DNS cozumlenemeyebilir.
+        serverDeleteProhibited: Kayit otoritesi, alan adinin silinmesini kilitledi.
+        serverTransferProhibited: Kayit otoritesi, alan adinin aktarilmasini kilitledi.
+        serverUpdateProhibited: Kayit otoritesi, alan adinin guncellenmesini kilitledi.
+        serverHold: Kayit otoritesi alan adini beklemeye aldi, bu nedenle DNS cozumlenemeyebilir.
+        pendingCreate: Alan adi olusturma islemi bekliyor.
+        pendingDelete: Alan adi silinmeyi bekliyor ve yakinda serbest kalabilir.
+        pendingRenew: Alan adi yenileme islemi bekliyor.
+        pendingRestore: Alan adinin silme sonrasi geri yuklenmesi bekliyor.
+        pendingTransfer: Alan adinin baska bir kayit kurulusuna aktarilmasi bekliyor.
+        pendingUpdate: Alan adi guncelleme islemi bekliyor.
+        redemptionPeriod: Alan adinin suresi doldu ve kurtarma doneminde. Sahibi hala geri alabilir.
+        renewPeriod: Alan adi, kayittan sonraki yenileme surecinde.
+        autoRenewPeriod: Alan adi, otomatik yenileme surecinde.
+        transferPeriod: Alan adi, transfer surecinde.
+      expiredAlert: Bu alan adinin suresi {days} gun once doldu ve yeniden kayda acik olabilir.
+      expiresAlert: Bu alan adinin suresi {days} gun icinde doluyor. Yenileme zamaninda yapilmalidir.
+      expiredTag: '{days} gun once suresi doldu'
+      remainingTag: '{days} gun kaldi'
+      registrar: Kayit Kurulusu
+      registrarIanaId: Kayit Kurulusu IANA Kimligi
+      created: Olusturuldu
+      updated: Guncellendi
+      expires: Sona Eriyor
+      noMx: MX kaydi bulunamadi.
+      dnsFailed: DNS sorgusu basarisiz oldu.
+      noSpf: SPF kaydi bulunamadi.
+      noDkim: Yaygin secicilerde DKIM kaydi bulunamadi. Ozel seciciler yine de mevcut olabilir.
+      noDmarc: DMARC kaydi bulunamadi. Alan adi sahtecilige karsi korumasiz.
+      spfPlusAll: 'Uyari: +all tehlikelidir, cunku herhangi bir sunucunun bu alan adi adina posta gondermesine izin verir.'
+      spfNeutralAll: 'Uyari: ?all notrdur ve hicbir koruma saglamaz.'
+      dmarcPNone: 'Uyari: p=none yalnizca izleme amaclidir, zorlama yoktur. E-postalar reddedilmeyecek.'
+      dmarcNoRua: 'Uyari: toplu rapor adresi yok (rua=). DMARC raporlari almayacaksiniz.'
+      pass: Basarili
+      fail: Basarisiz
+      warning: Uyari
+      checking: Kontrol ediliyor...
+      overallPass: Tum e-posta kontrolleri basarili. Bu alan adi e-posta icin dogru yapilandirilmis.
+      overallFail: Bir veya daha fazla kritik kayit eksik. Bu alan adi sahtecilige acik olabilir.
+      overallWarn: Bazi kayitlar mevcut ancak incelenmesi gereken yapilandirma sorunlari var.
+      rdapHttpError: 'HTTP {status}: alan adi mevcut olmayabilir veya TLD desteklenmiyor olabilir.'
+      lookupFailed: Sorgu basarisiz oldu.
+      domainPlaceholder: Bir alan adi girin (orn. killertools.net)
+      searching: Araniyor...
+      search: Ara
+      signed: Imzali
+      unsigned: Imzasiz
+      delegationSigned: Yetkilendirme imzali.
+      dsRecord: '{count} DS kaydi.'
+      dsRecords: '{count} DS kaydi.'
+      keyRecord: '{count} anahtar kaydi.'
+      keyRecords: '{count} anahtar kaydi.'
+      dnssecUnsigned: Bu alan adi DNSSEC ile korunmuyor. DNS yanitlari kriptografik olarak dogrulanamaz.
+      status: Durum
+      contacts: Kisiler
+      remarks: Notlar
+      nameservers: Ad Sunuculari
+      mxRecords: MX Kayitlari
+      spfRecord: SPF Kaydi
+      dkimRecords: DKIM Kayitlari
+      dmarcRecord: DMARC Kaydi
+      role:
+        registrant: kayit sahibi
+        administrative: idari
+        technical: teknik
+        abuse: kotuye kullanim
+      name: Ad
+      organization: Kurulus
+      email: E-posta
+      phone: Telefon
+  email-record-generator:
+    title: E-posta kaydı oluşturucu
+    description: SPF ve DMARC DNS TXT kayıtları oluştur. Posta sağlayıcılarını ve ilkeleri seç, çıktıyı doğrudan DNS'ine kopyala.
+    ui:
+      hardFailRecommended: kesin başarısızlık, önerilir
+      softFail: yumuşak başarısızlık
+      neutralNotRecommended: nötr, önerilmez
+      blockFailingMail: başarısız postaları engelle
+      sendToSpam: spam'e gönder
+      monitorOnly: yalnızca izle
+      relaxedDefault: Esnek (varsayılan)
+      strict: Katı
+      sameAsMainPolicy: Ana politikayla aynı
+      spfRecordTitle: SPF KAYDI
+      dmarcRecordTitle: DMARC KAYDI
+      spfRecordLocation: Kök alan adınızdaki TXT kaydı
+      dmarcRecordLocation: TXT kaydı konumu
+      copied: kopyalandı
+      clickToCopy: kopyalamak için tıklayın
+      lookupWarning: '{count} DNS sorgusu seçildi; SPF sınırı 10 sorgudur'
+      mailProviders: POSTA SAĞLAYICILARI
+      customIps: ÖZEL IP VEYA ARALIKLAR (İSTEĞE BAĞLI)
+      examplePrefix: örn.
+      enforcement: UYGULAMA
+      policy: POLİTİKA
+      subdomainPolicy: ALT ALAN ADI POLİTİKASI (İSTEĞE BAĞLI)
+      policyCoverage: 'POLİTİKA KAPSAMI: %{percent}'
+      coverageHint: Başarısız postaların %{percent} kadarı işleme alınacak. Kademeli geçiş için %100'den düşük bir değer kullanın.
+      aggregateReportEmail: TOPLU RAPOR E-POSTASI (rua)
+      forensicReportEmail: ADLİ RAPOR E-POSTASI (ruf, isteğe bağlı)
+      dkimAlignment: DKIM HİZALAMA
+      spfAlignment: SPF HİZALAMA
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Metinden Unicode'a
+      enterTextLabel: Unicode'a dönüştürmek için metin girin
+      unicodeFromTextLabel: Metninizden elde edilen Unicode
+      unicodeOutputPlaceholder: Metninizin Unicode gösterimi burada görünecek
+      copyUnicode: Unicode'u panoya kopyala
+      unicodeToTextTitle: Unicode'dan Metne
+      inputUnicodePlaceholder: Unicode girin
+      enterUnicodeLabel: Metne dönüştürmek için Unicode girin
+      textFromUnicodeLabel: Unicode'unuzdan elde edilen metin
+      textOutputPlaceholder: Unicode'unuzun metin gösterimi burada görünecek
+      copyText: Metni panoya kopyala
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Port, hizmet, protokol veya açıklamaya göre ara...
+      allProtocols: Tümü
+      dangerousOnly: Yalnızca tehlikeli
+      showingPorts: '{count} port gösteriliyor'
+      copied: Kopyalandı!
+      clickToCopy: Port numarasını kopyalamak için tıklayın
+      copiedCheck: ✓ kopyalandı
+      dangerousPill: Tehlikeli
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet Tarayıcısı
+      adminBadge: Yönetici
+      cmdletSearchPlaceholder: Ada, açıklamaya veya modüle göre ara...
+      noCmdletsMatch: '"{query}" ile eşleşen cmdlet yok'
+      generatedCommand: Oluşturulan Komut
+      copiedCheck: ✓ Kopyalandı!
+      copyCommand: Komutu Kopyala
+      commonExamples: Yaygın Örnekler
+      selectCmdletPrompt: Komutunuzu oluşturmaya başlamak için soldan bir cmdlet seçin.
+      parameters: Parametreler
+      noParametersNeeded: Parametre gerekmiyor; bu cmdlet olduğu gibi çalışır.
+      required: zorunlu
+      separateMultipleValues: birden çok değeri virgülle ayırın
+      showFewerParameters: Daha az parametre göster
+      showMoreParameters: '{count} parametre daha'
+      collapseQuickReference: Hızlı Başvuruyu Daralt
+      openQuickReference: Hızlı Başvuruyu Aç
+      quickReference: Hızlı Başvuru
+      cheatsheetComparisonOperators: Karşılaştırma Operatörleri
+      cheatsheetEqualTo: Eşittir
+      cheatsheetNotEqualTo: Eşit değildir
+      cheatsheetGreaterLessThan: Büyüktür / Küçüktür
+      cheatsheetGreaterLessEqual: Büyük eşit / Küçük eşit
+      cheatsheetStringOperators: Metin Operatörleri
+      cheatsheetWildcardMatch: Joker karakter eşleşmesi (* ve ?)
+      cheatsheetWildcardNonMatch: Joker karakter eşleşmemesi
+      cheatsheetRegexMatch: Regex eşleşmesi
+      cheatsheetRegexNonMatch: Regex eşleşmemesi
+      cheatsheetCollectionContains: Koleksiyon değeri içerir
+      cheatsheetValueInCollection: Değer bir koleksiyonda yer alır
+      cheatsheetLogicalOperators: Mantıksal Operatörler
+      cheatsheetBothTrue: Her iki koşul da doğru olmalı
+      cheatsheetEitherTrue: Koşullardan biri doğru
+      cheatsheetNegateCondition: Bir koşulu tersine çevir
+      cheatsheetAutomaticVariables: Otomatik Değişkenler
+      cheatsheetCurrentPipelineObject: Geçerli pipeline nesnesi
+      cheatsheetNullEmptyValue: Null / boş değer
+      cheatsheetBooleanTrueFalse: Boole true / false
+      cheatsheetLocalComputerName: Yerel bilgisayar adı
+      cheatsheetCurrentUser: Oturum açmış geçerli kullanıcı
+      cheatsheetPsVersionInfo: PS sürüm bilgisi
+      cheatsheetDateHelpers: Tarih Yardımcıları
+      cheatsheetCurrentDateTime: Geçerli tarih ve saat
+      cheatsheetThirtyDaysAgo: 30 gün önce
+      cheatsheetThreeMonthsAgo: 3 ay önce
+      cheatsheetParseDateString: Tarih dizesini ayrıştır
+      cheatsheetPipelineTricks: Pipeline İpuçları
+      cheatsheetLimitFirst10: İlk 10 sonuçla sınırla
+      cheatsheetCountSumMinMax: Sayım / toplam / min / maks
+      cheatsheetInteractiveGuiViewer: Etkileşimli GUI görüntüleyici (yerel)
+      cheatsheetConvertToJson: Çıktıyı JSON'a dönüştür
+      cheatsheetOutputScreenAndFile: Ekrana VE dosyaya çıktı ver
+      cheatsheetSuppressErrors: Kritik olmayan hataları bastır
+      cheatsheetRemoteExecution: Uzaktan Çalıştırma
+      cheatsheetCmdletsSupportDirectly: Birçok cmdlet bunu doğrudan destekler
+      cheatsheetRunViaRemoting: PS Remoting (WinRM) ile çalıştır
+      cheatsheetInteractiveRemoteSession: Etkileşimli uzak PS oturumu
+  basic-auth-generator:
+    ui:
+      copied: Başlık panoya kopyalandı
+      username: Kullanıcı adı
+      usernamePlaceholder: Kullanıcı adınız...
+      password: Parola
+      passwordPlaceholder: Parolanız...
+      headerLabel: 'Authorization başlığı:'
+      copyHeader: Başlığı kopyala
+  yaml-viewer:
+    ui:
+      invalidYaml: Girilen YAML geçerli değil.
+      sortKeys: Anahtarları sırala
+      indentSize: Girinti boyutu
+      rawLabel: Ham YAML'ınız
+      rawPlaceholder: Ham YAML'ınızı buraya yapıştırın...
+      prettifiedLabel: YAML'ınızın düzenlenmiş sürümü
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Meta etiketler kopyalandı!
+      copiedLabel: ✓ Kopyalandı
+      copyButton: Kopyala
+      outputTitle: META ETİKETLERİNİZ
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Mime türünden uzantıya
+      mimeToExtensionDescription: Bir mime türüyle ilişkili dosya uzantılarını öğrenin
+      mimeTypeSelectPlaceholder: 'Mime türünüzü buradan seçin... (örn: application/pdf)'
+      extensionsFoundPrefix: 'Şu türe sahip dosyaların uzantıları:'
+      extensionsFoundSuffix: 'mime türü:'
+      extensionToMimeTitle: Dosya uzantısından mime türüne
+      extensionToMimeDescription: Bir dosya uzantısıyla ilişkili mime türünü öğrenin
+      mimeFoundPrefix: 'Şu uzantıyla ilişkili mime türü:'
+      mimeFoundSuffix: 'dosya uzantısı:'
+      tableMimeTypesHeader: Mime türleri
+      tableExtensionsHeader: Uzantılar
+  json-viewer:
+    ui:
+      invalidJson: Girilen JSON geçerli değil.
+      sortKeys: Anahtarları sırala
+      indentSize: Girinti boyutu
+      yourRawJson: Ham JSON'unuz
+      pasteRawJsonPlaceholder: Ham JSON'unuzu buraya yapıştırın...
+      prettifiedVersion: JSON'unuzun düzenli sürümü
+  qr-code-generator:
+    ui:
+      tabText: Metin / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Metin veya URL
+      placeholderTextOrUrl: Bağlantınız veya metniniz...
+      sectionEncryption: Şifreleme
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Şifre yok
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Ağ adı...
+      sectionPassword: Şifre
+      placeholderPassword: Ağ şifresi...
+      sectionOptions: Seçenekler
+      hiddenSsid: Gizli SSID
+      anonymousIdentity: Anonim kimlik
+      sectionEapMethod: EAP yöntemi
+      sectionEapPhase2: EAP aşama 2
+      sectionEapIdentity: EAP kimliği
+      placeholderEapIdentity: EAP kimliğiniz...
+      sectionTheme: Tema
+      themeDefault: Varsayılan
+      themeTerminal: Terminal
+      themeClassic: Klasik
+      themeInverted: Ters çevrilmiş
+      sectionColors: Renkler
+      labelForeground: 'Ön plan:'
+      labelBackground: 'Arka plan:'
+      sectionErrorCorrection: Hata düzeltme
+      levelLow: Düşük (~%7)
+      levelMedium: Orta (~%15)
+      levelQuartile: Kartil (~%25)
+      levelHigh: Yüksek (~%30)
+      emptyHintWifi: Wi-Fi QR kodu oluşturmak için bir SSID girin
+      emptyHintText: Metin veya URL girin
+      captionJoin: '>_ katılmak için tarayın'
+      captionOpen: '>_ açmak için tarayın'
+      downloadPng: ↓ PNG indir
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS yerel ayar tarih dizesi
+      formatUnixTimestamp: Unix zaman damgası
+      formatTimestamp: Zaman damgası
+      formatUtc: UTC biçimi
+      formatExcelDateTime: Excel tarih/saat
+      invalidDateRule: Bu tarih bu biçim için geçersiz
+      inputPlaceholder: Bir tarih dizesi yapıştırın veya canlı saat için boş bırakın...
+      invalidDate: Bu biçim için geçersiz tarih
+      output: ÇIKTI
+      live: CANLI
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Gizli anahtar (hex)
+      epochLabel: Epoch
+      countLabel: Sayaç
+      paddedHexLabel: Doldurulmuş hex
+      secretLabel: GİZLİ ANAHTAR
+      secretPlaceholder: TOTP gizli anahtarınızı yapıştırın...
+      generateNewSecret: Yeni gizli anahtar oluştur
+      tokenLabel: TOKEN
+      copied: ✓ kopyalandı
+      clickToCopy: kopyalamak için tıklayın
+      nextIn: '>_ {seconds} sn sonra'
+      adjacentTokensLabel: KOMŞU TOKEN'LAR
+      prevLabel: Önceki
+      nextLabel: Sonraki
+      detailsLabel: DETAYLAR
+      scanToAuthenticate: '>_ kimlik doğrulamak için tarayın'
+      openKeyUriInNewTab: Key URI'yi yeni sekmede aç
+      tokenDisplayPreviousLabel: Önceki
+      tokenDisplayCurrentLabel: Geçerli OTP
+      tokenDisplayNextLabel: Sonraki
+      copiedExclaim: Kopyalandı!
+      copyPreviousOtp: Önceki OTP'yi kopyala
+      copyCurrentOtp: Geçerli OTP'yi kopyala
+      copyNextOtp: Sonraki OTP'yi kopyala
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Güçlü
+      moderateLabel: Orta
+      weakLabel: Zayıf
+      veryWeakLabel: Çok zayıf
+      lengthLabel: Uzunluk
+      entropyLabel: Entropi
+      charsetSizeLabel: Karakter kümesi boyutu
+      scoreDetailLabel: Puan
+      passwordPlaceholder: Bir parola girin...
+      hideLabel: Gizle
+      showLabel: Göster
+      clearLabel: Temizle
+      crackTimeSublabel: KABA KUVVETLE KIRMA SÜRESİ
+      crackTimeNote: Güç, saniyede 1 milyar deneme hızıyla kaba kuvvet süresine göre tahmin edilir. Sözlük saldırıları hesaba katılmaz.
+  integer-base-converter:
+    ui:
+      binary: İkili
+      octal: Sekizli
+      decimal: Ondalık
+      hexadecimal: Onaltılık
+      base: taban
+      output: ÇIKTI
+      custom: Özel
+ui:
+  diffEditor:
+    originalLabel: ORİJİNAL
+    modifiedLabel: DEĞİŞTİRİLMİŞ
+    originalPlaceholder: Orijinal metin...
+    modifiedPlaceholder: Değiştirilmiş metin...
+  fileUpload:
+    defaultTitle: Dosyaları buraya sürükleyip bırakın veya seçmek için tıklayın
+    or: veya
+    browseFiles: Dosyalara göz at
+  inputText:
+    defaultPlaceholder: Metin girin
+  keyValueListItem:
+    'yes': Evet
+    'no': Hayır
+    notAvailable: Yok
+  modalValue:
+    copied: Kopyalandı!
+    copy: Kopyala
+  select:
+    searchPlaceholder: Ara...
+    noResults: Sonuç bulunamadı
+    defaultPlaceholder: Bir seçenek seçin
+  table:
+    defaultDescription: Veri tablosu
+  textCopyable:
+    copied: Kopyalandı!
+    copyToClipboard: Panoya kopyala
+commandPalette:
+  searchAriaLabel: Ara
+  searchPlaceholder: Bir araç veya komut aramak için yazın...
+components:
+  androidBetaBanner:
+    announcement: Android beta duyurusu
+    title: Killer Tools Android'e geliyor
+    subtitle: Beta test kullanıcıları aranıyor - katılmak için dokunun
+    dismiss: Kapat
+  formatTransformer:
+    input: Giriş
+    inputPlaceholder: Giriş...
+    output: Çıkış
+  inputCopyable:
+    copied: Kopyalandı!
+    copy: Panoya kopyala
+  spanCopyable:
+    copied: Kopyalandı!
+    copy: Panoya kopyala
+  textareaCopyable:
+    copy: Panoya kopyala
+    copied: Kopyalandı!
+  navbarButtons:
+    androidTooltip: Android için Killer Tools
+    androidAriaLabel: Android için Killer Tools - beta programına katıl
+  themeDots:
+    accentColor: Vurgu rengi
+    theme: Tema
+    toggleThemeSwatches: Tema örneklerini aç/kapat
+    accentColorPicker: Vurgu rengi seçici
+    dragToMove: Taşımak için sürükleyin
+    accentLabel: 'vurgu:'
+    accentNamed: 'Vurgu: {name}'
+    closeAccentPicker: Vurgu renk seçiciyi kapat
+    accents:
+      red: Kırmızı
+      orange: Turuncu
+      green: Yeşil
+      teal: Turkuaz
+      blue: Mavi
+      purple: Mor
+layouts:
+  menuLayout:
+    eggMessage: 80 araç. Sıfır abonelik. Bir kinci saha teknisyeni.
+    clickMe: tıkla
+    sourceOnGithub: Github'da kaynak kodu
+  base:
+    collapseMenu: Menüyü daralt
+    homeLabel: KillerTools ana sayfa
+pages:
+  notFound:
+    noSuchFile: Böyle bir dosya veya dizin yok
+    exitCode: çıkış kodu
+    backToHome: ana sayfaya dön
+  privacy:
+    heading: Gizlilik Politikası
+    lastUpdated: 'Son güncelleme: 4 Nisan 2026'
+    overviewHeading: Genel Bakış
+    overviewIntro: Killer Tools
+    overviewBody: ücretsiz bir BT yardımcı araçları koleksiyonudur. Gizliliğiniz bizim için önemlidir ve bu politika verilerinizi nasıl işlediğimizi açıklar.
+    dataCollectionHeading: Veri Toplama
+    dataCollectionBody: Killer Tools hiçbir kişisel veriyi toplamaz, saklamaz veya iletmez. Tüm araç işlemleri tamamen tarayıcınızda gerçekleşir. Herhangi bir araca girdiğiniz veriler hiçbir sunucuya gönderilmez.
+    cookiesHeading: Çerezler
+    cookiesBody: Bu site takip amacıyla çerez kullanmaz. Tema tercihleriniz ve ayarlarınız tarayıcınızda yerel olarak saklanır ve asla iletilmez.
+    analyticsHeading: Analitik
+    analyticsIntro: Bu site
+    analyticsBody: sayfa görüntüleme ve yönlendirme kaynakları gibi genel kullanım eğilimlerini anlamak için gizlilik odaklı bir analitik aracı kullanır. Umami çerez kullanmaz, kullanıcıları siteler arasında takip etmez ve herhangi bir kişisel olarak tanımlanabilir bilgi toplamaz. Tüm veriler toplu ve anonimdir.
+    thirdPartyHeading: Üçüncü Taraf Hizmetler
+    thirdPartyBody: Bazı araçlar harici kaynaklara veya belgelere bağlantı verebilir. Bu harici sitelerin gizlilik uygulamalarından sorumlu değiliz.
+    androidAppHeading: Android Uygulaması
+    androidAppBody: Killer Tools Android uygulaması, web uygulamasının bir sarmalayıcısıdır. Temel internet erişimi dışında herhangi bir cihaz izni istemez veya kullanmaz. Hiçbir cihaz verisi toplanmaz veya iletilmez.
+    contactHeading: İletişim
+    contactBody: 'Bu gizlilik politikasıyla ilgili sorularınız varsa bize şu adresten ulaşabilirsiniz:'
+  androidApp:
+    robotAttribution: Android robotu, Google tarafından oluşturulup paylaşılan çalışmadan üretilmiş veya değiştirilmiştir ve Creative Commons 3.0 Attribution Lisansı'nda açıklanan koşullara göre kullanılmaktadır.
+    heading: Android için Killer Tools
+    introBody1: 'killertools.net araç kutusunun tamamı yerel bir Android uygulaması olarak: her araç, Killer Scripts kütüphanesi ve tüm favorileriniz, ana ekranınızdan tek dokunuşla.'
+    introBody2: Sitedekiyle aynı kurallar. Her şey cihazınızda çalışır. Hesap yok, telemetri yok, eve telefon yok. Sahada bir bilet döngüsünden tasarruf ettiriyorsa görevini yapmış demektir.
+    betaStatusPrefix: Uygulama şu anda
+    betaStatusStrong: Google Play'de kapalı beta aşamasında
+    betaStatusSuffix: ', ve burada devreye siz giriyorsunuz.'
+    joinBetaHeading: Betaya katılın
+    joinBetaIntroPrefix: Google, bağımsız bir geliştiricinin uygulamasının herkese açık hale gelebilmesi için
+    joinBetaIntroStrong: uygulamayı 14 gün boyunca kesintisiz kurulu tutan 12 test kullanıcısı
+    joinBetaIntroSuffix: 'şartını koyuyor. Üç adım, yaklaşık iki dakika ve o on ikiden biri siz olun:'
+    step1LinkText: Test grubuna katıl
+    step1Suffix: Google Groups üzerinde ("Join group" seçeneğine tıklayın).
+    step2LinkText: Test kullanıcısı ol
+    step2Suffix: Google Play katılım sayfasında.
+    step3LinkText: Uygulamayı kur
+    step3Suffix: Google Play'den ve iki hafta boyunca kurulu tut.
+    sameAccountStrong: Üç adım için de aynı Google hesabını kullanın
+    sameAccountSuffix: ' - grubu atlarsanız veya hesap değiştirirseniz katılım sayfası "bu hesap için kullanılamıyor" der.'
+    feedbackPrefix: 'Bir şey bozuk mu veya eksik mi? Bana söyleyin:'
+  home:
+    sortPopular: Popüler
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: Killer Tools Hakkında
+    intro: Saha teknisyenlerinin gereksiz şeylere ayıracak vakti yok. Buradaki her araç, işte ihtiyacım olduğu ve hesap, kurulum veya telemetri gerektirmeden gerçekten çalışan bir şey bulamadığım için var.
+    originPrefix: Şu anda bir MSP'nin dahili yapay zeka mühendisliği ekibinde araçlar geliştiriyorum; bundan önce altı yıl full-stack geliştirme ve birkaç şirkette sekiz yıl saha teknisyenliği yaptım. KillerTools.net, mükemmel bir
+    originMid: projenin bir forku olarak başladı, bu projeyi yapan
+    originSuffix: ', ve gerçekten yaptığım türden iş için tasarlanmış bir şeye dönüştü. Bileti çözerken Group Policy ayarlarına bakmak, bir müşterinin alt ağını taramak ve tarayıcıdan çıkmadan port referanslarına ulaşmak için oluşturdum.'
+    scriptsLibrary: Killer Scripts kütüphanesi her bilet döngüsünde karşılaşılan işleri kapsar. Her betik, bağımlılık gerektirmeden PS 5.1, PS 7 ve Kaseya LiveConnect üzerinde çalışır.
+    privacyBody: Her şey tarayıcınızda çalışır. Hiçbir şey izlenmez. Hiçbir zaman hesap gerekmez. Site, bağımlılık zinciri saldırılarını engellemek için sıkı bir İçerik Güvenliği Politikası uygular. Ele geçirilmiş bir npm paketi bir gün pakete karışsa bile, yapıştırdığınız veriyle eve telefon edemez.
+    maintainedByPrefix: 'Geliştiren ve sürdüren:'
+    maintainedByMid: Bu, işte size zaman kazandırıyorsa,
+    buyMeCoffee: bana bir kahve ısmarlamak
+    maintainedBySuffix: takdir edilir ama asla beklenmez.
+    missingToolHeading: Bir araç mı eksik? Hata mı buldunuz?
+    issuesPrefix: GitHub'daki
+    issuesLinkText: issues bölümünde
+    issuesSuffix: bir özellik isteği veya hata raporu açın. Onları okuyorum.
+    alsoTryHeading: Şunu da deneyin...
+    tagKillerScan: Windows için açık kaynaklı ağ tarayıcısı
+    tagKillerPdf: Windows için açık kaynaklı PDF düzenleyici
+    tagKillerShell: İleri düzey kullanıcılar için açık kaynaklı Windows kabuğu
+    tagKillerNotes: Windows için açık kaynaklı şifreli not defteri
+    tagKillendar: Windows için açık kaynaklı şifreli takvim
+    linksHeading: Bağlantılar
+    linkLabelSite: Site
+    linkLabelSource: Kaynak Kod
+    linkLabelIssues: Issues
+    reportBug: Hata bildir
+    requestFeature: Özellik talep et
+    linkLabelSupport: Destek
+    linkLabelBuiltOn: 'Şunun üzerine kuruldu:'
+    itToolsFork: IT-Tools (fork)

@@ -4,6 +4,8 @@ import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
 import { withDefaultOnError } from '@/utils/defaults';
 
+const { t } = useI18n();
+
 const versions = ['NIL', 'v1', 'v3', 'v4', 'v5'] as const;
 type Version = typeof versions[number];
 
@@ -45,7 +47,7 @@ const [uuids, refreshUUIDs] = computedRefreshable(() => withDefaultOnError(() =>
     return generator(index);
   }).join('\n'), ''));
 
-const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' });
+const { copy } = useCopy({ source: uuids, text: t('tools.uuid-generator.ui.copiedMessage') });
 </script>
 
 <template>
@@ -53,7 +55,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
     <div class="uu-panel">
       <!-- Version selector -->
       <div class="uu-field">
-        <span class="uu-sublabel">VERSION</span>
+        <span class="uu-sublabel">{{ t('tools.uuid-generator.ui.version') }}</span>
         <div class="uu-toggle-group">
           <button
             v-for="v in versions"
@@ -70,7 +72,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 
       <!-- Quantity -->
       <div class="uu-field">
-        <span class="uu-sublabel">QUANTITY</span>
+        <span class="uu-sublabel">{{ t('tools.uuid-generator.ui.quantity') }}</span>
         <div class="uu-stepper">
           <button class="uu-step-btn" :disabled="count <= 1" @click="count = Math.max(1, count - 1)">
             −
@@ -85,7 +87,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
       <!-- v3/v5 namespace + name -->
       <template v-if="isV35">
         <div class="uu-field">
-          <span class="uu-sublabel">NAMESPACE PRESET</span>
+          <span class="uu-sublabel">{{ t('tools.uuid-generator.ui.namespacePreset') }}</span>
           <div class="uu-toggle-group">
             <button
               v-for="p in namespacePresets"
@@ -101,7 +103,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
         </div>
 
         <div class="uu-field">
-          <span class="uu-sublabel">NAMESPACE UUID</span>
+          <span class="uu-sublabel">{{ t('tools.uuid-generator.ui.namespaceUuid') }}</span>
           <input
             v-model="v35Namespace"
             class="uu-input"
@@ -109,15 +111,15 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
             placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
             spellcheck="false"
           >
-          <span v-if="!namespaceValid" class="uu-error-msg">Invalid UUID</span>
+          <span v-if="!namespaceValid" class="uu-error-msg">{{ t('tools.uuid-generator.ui.invalidUuid') }}</span>
         </div>
 
         <div class="uu-field">
-          <span class="uu-sublabel">NAME</span>
+          <span class="uu-sublabel">{{ t('tools.uuid-generator.ui.name') }}</span>
           <input
             v-model="v35Name"
             class="uu-input"
-            placeholder="Name to hash..."
+            :placeholder="t('tools.uuid-generator.ui.namePlaceholder')"
             spellcheck="false"
           >
         </div>
@@ -125,7 +127,7 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
 
       <!-- Output -->
       <div class="uu-output-wrap">
-        <span class="uu-sublabel">OUTPUT</span>
+        <span class="uu-sublabel">{{ t('tools.uuid-generator.ui.output') }}</span>
         <div class="uu-output">
           <pre class="uu-output-text">{{ uuids }}</pre>
         </div>
@@ -135,11 +137,11 @@ const { copy } = useCopy({ source: uuids, text: 'UUIDs copied to the clipboard' 
       <div class="uu-actions">
         <button type="button" class="uu-btn uu-btn-primary" autofocus @click="copy()">
           <icon-mdi-content-copy />
-          Copy
+          {{ t('tools.uuid-generator.ui.copy') }}
         </button>
         <button type="button" class="uu-btn" @click="refreshUUIDs()">
           <icon-mdi-refresh />
-          Refresh
+          {{ t('tools.uuid-generator.ui.refresh') }}
         </button>
       </div>
     </div>

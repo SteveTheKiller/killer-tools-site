@@ -20,6 +20,8 @@ import { useValidation } from '@/composable/validation';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 
+const { t } = useI18n();
+
 const languages = {
   'English': englishWordList,
   'Chinese simplified': chineseSimplifiedWordList,
@@ -32,6 +34,22 @@ const languages = {
   'Portuguese': portugueseWordList,
   'Spanish': spanishWordList,
 };
+
+const languageLabelKeys: Record<keyof typeof languages, string> = {
+  'English': 'languageEnglish',
+  'Chinese simplified': 'languageChineseSimplified',
+  'Chinese traditional': 'languageChineseTraditional',
+  'Czech': 'languageCzech',
+  'French': 'languageFrench',
+  'Italian': 'languageItalian',
+  'Japanese': 'languageJapanese',
+  'Korean': 'languageKorean',
+  'Portuguese': 'languagePortuguese',
+  'Spanish': 'languageSpanish',
+};
+function languageLabel(lang: keyof typeof languages) {
+  return t(`tools.bip39-generator.ui.${languageLabelKeys[lang]}`);
+}
 
 const entropy = ref(generateEntropy());
 const passphraseInput = ref('');
@@ -52,11 +70,11 @@ const entropyValidation = useValidation({
   rules: [
     {
       validator: (value: string) => value === '' || (value.length <= 32 && value.length >= 16 && value.length % 4 === 0),
-      message: 'Entropy length should be >= 16, <= 32 and be a multiple of 4',
+      message: t('tools.bip39-generator.ui.entropyLengthError'),
     },
     {
       validator: (value: string) => /^[a-f0-9]*$/i.test(value),
-      message: 'Entropy should be a hexadecimal string',
+      message: t('tools.bip39-generator.ui.entropyHexError'),
     },
   ],
 });
@@ -66,7 +84,7 @@ const mnemonicValidation = useValidation({
   rules: [
     {
       validator: (value: string) => isNotThrowing(() => mnemonicToEntropy(value, languages[language.value])),
-      message: 'Invalid mnemonic',
+      message: t('tools.bip39-generator.ui.invalidMnemonic'),
     },
   ],
 });
@@ -88,8 +106,8 @@ function onDropdownBlur(e: FocusEvent) {
   }
 }
 
-const { copy: copyEntropy } = useCopy({ source: entropy, text: 'Entropy copied to the clipboard' });
-const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase copied to the clipboard' });
+const { copy: copyEntropy } = useCopy({ source: entropy, text: t('tools.bip39-generator.ui.entropyCopied') });
+const { copy: copyPassphrase } = useCopy({ source: passphrase, text: t('tools.bip39-generator.ui.passphraseCopied') });
 </script>
 
 <template>
@@ -98,14 +116,14 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
       <div class="bip-body">
         <!-- Language -->
         <div class="bip-lang-row">
-          <span class="bip-label">Language</span>
+          <span class="bip-label">{{ t('tools.bip39-generator.ui.languageLabel') }}</span>
           <div class="bip-dropdown" tabindex="0" @blur="onDropdownBlur">
             <button
               class="bip-dropdown-trigger"
               type="button"
               @click="dropdownOpen = !dropdownOpen"
             >
-              <span>{{ language }}</span>
+              <span>{{ languageLabel(language) }}</span>
               <icon-mdi-chevron-down class="bip-dropdown-chevron" :class="{ 'bip-chevron-open': dropdownOpen }" />
             </button>
             <div v-if="dropdownOpen" class="bip-dropdown-menu">
@@ -117,7 +135,7 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
                 :class="{ 'bip-dropdown-item-active': lang === language }"
                 @click="selectLanguage(lang as keyof typeof languages)"
               >
-                {{ lang }}
+                {{ languageLabel(lang as keyof typeof languages) }}
               </button>
             </div>
           </div>
@@ -125,18 +143,18 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 
         <!-- Entropy -->
         <div class="bip-field bip-field-col">
-          <span class="bip-sublabel">ENTROPY (SEED)</span>
+          <span class="bip-sublabel">{{ t('tools.bip39-generator.ui.entropyHeading') }}</span>
           <div class="bip-input-row" :class="{ 'bip-error': entropyValidation.status === 'error' }">
             <input
               v-model="entropy"
               class="bip-input bip-mono"
-              placeholder="Hex entropy..."
+              :placeholder="t('tools.bip39-generator.ui.entropyPlaceholder')"
               spellcheck="false"
             >
-            <button class="bip-icon-btn" title="Regenerate" @click="refreshEntropy()">
+            <button class="bip-icon-btn" :title="t('tools.bip39-generator.ui.regenerate')" @click="refreshEntropy()">
               <icon-mdi-refresh />
             </button>
-            <button class="bip-icon-btn" title="Copy entropy" @click="copyEntropy()">
+            <button class="bip-icon-btn" :title="t('tools.bip39-generator.ui.copyEntropy')" @click="copyEntropy()">
               <icon-mdi-content-copy />
             </button>
           </div>
@@ -145,17 +163,17 @@ const { copy: copyPassphrase } = useCopy({ source: passphrase, text: 'Passphrase
 
         <!-- Passphrase -->
         <div class="bip-field bip-field-col">
-          <span class="bip-sublabel">PASSPHRASE (MNEMONIC)</span>
+          <span class="bip-sublabel">{{ t('tools.bip39-generator.ui.passphraseHeading') }}</span>
           <div class="bip-input-row bip-input-row-ta" :class="{ 'bip-error': mnemonicValidation.status === 'error' }">
             <textarea
               :value="passphrase"
               class="bip-input bip-mono bip-passphrase"
-              placeholder="Mnemonic words..."
+              :placeholder="t('tools.bip39-generator.ui.passphrasePlaceholder')"
               spellcheck="false"
               rows="3"
               @input="passphrase = ($event.target as HTMLTextAreaElement).value"
             />
-            <button class="bip-icon-btn bip-icon-btn-ta" title="Copy passphrase" @click="copyPassphrase()">
+            <button class="bip-icon-btn bip-icon-btn-ta" :title="t('tools.bip39-generator.ui.copyPassphrase')" @click="copyPassphrase()">
               <icon-mdi-content-copy />
             </button>
           </div>

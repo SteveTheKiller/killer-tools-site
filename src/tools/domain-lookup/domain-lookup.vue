@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { AlertTriangle, Check, Copy, Loader, X } from '@vicons/tabler';
 
+const { t } = useI18n();
+
 const domain = ref('');
 const loading = ref(false);
 
@@ -122,28 +124,28 @@ function getRegistrarIanaId(entities: any[]): string {
   return id?.identifier ?? '';
 }
 
-const statusDescriptions: Record<string, string> = {
-  'active': 'Domain is active and operational.',
-  'inactive': 'Domain is inactive.',
-  'client delete prohibited': 'Registrar has locked the domain against deletion.',
-  'client transfer prohibited': 'Registrar has locked the domain against transfer to another registrar.',
-  'client update prohibited': 'Registrar has locked the domain against updates.',
-  'client hold': 'Registrar has placed the domain on hold -- DNS may not resolve.',
-  'server delete prohibited': 'Registry has locked the domain against deletion.',
-  'server transfer prohibited': 'Registry has locked the domain against transfer.',
-  'server update prohibited': 'Registry has locked the domain against updates.',
-  'server hold': 'Registry has placed the domain on hold -- DNS may not resolve.',
-  'pending create': 'Domain creation is pending.',
-  'pending delete': 'Domain is pending deletion and may be released soon.',
-  'pending renew': 'Domain renewal is pending.',
-  'pending restore': 'Domain restoration from deletion is pending.',
-  'pending transfer': 'Domain transfer to another registrar is pending.',
-  'pending update': 'Domain update is pending.',
-  'redemption period': 'Domain has expired and is in redemption -- registrant can still recover it.',
-  'renew period': 'Domain is in the renewal grace period after registration.',
-  'auto renew period': 'Domain is in the auto-renewal grace period.',
-  'transfer period': 'Domain is in the transfer grace period.',
-};
+const statusDescriptions = computed<Record<string, string>>(() => ({
+  'active': t('tools.domain-lookup.ui.statusDesc.active'),
+  'inactive': t('tools.domain-lookup.ui.statusDesc.inactive'),
+  'client delete prohibited': t('tools.domain-lookup.ui.statusDesc.clientDeleteProhibited'),
+  'client transfer prohibited': t('tools.domain-lookup.ui.statusDesc.clientTransferProhibited'),
+  'client update prohibited': t('tools.domain-lookup.ui.statusDesc.clientUpdateProhibited'),
+  'client hold': t('tools.domain-lookup.ui.statusDesc.clientHold'),
+  'server delete prohibited': t('tools.domain-lookup.ui.statusDesc.serverDeleteProhibited'),
+  'server transfer prohibited': t('tools.domain-lookup.ui.statusDesc.serverTransferProhibited'),
+  'server update prohibited': t('tools.domain-lookup.ui.statusDesc.serverUpdateProhibited'),
+  'server hold': t('tools.domain-lookup.ui.statusDesc.serverHold'),
+  'pending create': t('tools.domain-lookup.ui.statusDesc.pendingCreate'),
+  'pending delete': t('tools.domain-lookup.ui.statusDesc.pendingDelete'),
+  'pending renew': t('tools.domain-lookup.ui.statusDesc.pendingRenew'),
+  'pending restore': t('tools.domain-lookup.ui.statusDesc.pendingRestore'),
+  'pending transfer': t('tools.domain-lookup.ui.statusDesc.pendingTransfer'),
+  'pending update': t('tools.domain-lookup.ui.statusDesc.pendingUpdate'),
+  'redemption period': t('tools.domain-lookup.ui.statusDesc.redemptionPeriod'),
+  'renew period': t('tools.domain-lookup.ui.statusDesc.renewPeriod'),
+  'auto renew period': t('tools.domain-lookup.ui.statusDesc.autoRenewPeriod'),
+  'transfer period': t('tools.domain-lookup.ui.statusDesc.transferPeriod'),
+}));
 
 function statusType(s: string): 'success' | 'warning' | 'error' | 'default' {
   const lower = s.toLowerCase();
@@ -180,9 +182,9 @@ const expiryAlertMessage = computed(() => {
     return '';
   }
   if (expiryDays.value < 0) {
-    return `This domain expired ${Math.abs(expiryDays.value)} days ago and may be available for registration.`;
+    return t('tools.domain-lookup.ui.expiredAlert', { days: Math.abs(expiryDays.value) });
   }
-  return `This domain expires in ${expiryDays.value} days. Renewal should be arranged promptly.`;
+  return t('tools.domain-lookup.ui.expiresAlert', { days: expiryDays.value });
 });
 
 const expiryTagType = computed(() => {
@@ -203,9 +205,9 @@ const expiryLabel = computed(() => {
     return '';
   }
   if (expiryDays.value < 0) {
-    return `Expired ${Math.abs(expiryDays.value)}d ago`;
+    return t('tools.domain-lookup.ui.expiredTag', { days: Math.abs(expiryDays.value) });
   }
-  return `${expiryDays.value}d remaining`;
+  return t('tools.domain-lookup.ui.remainingTag', { days: expiryDays.value });
 });
 
 const registrationRows = computed(() => {
@@ -213,11 +215,11 @@ const registrationRows = computed(() => {
     return [];
   }
   return [
-    { label: 'Registrar', value: getRegistrar(whoisResult.value.entities) },
-    { label: 'Registrar IANA ID', value: getRegistrarIanaId(whoisResult.value.entities) },
-    { label: 'Created', value: formatDate(getEvent(whoisResult.value.events, 'registration')) },
-    { label: 'Updated', value: formatDate(getEvent(whoisResult.value.events, 'last changed')) },
-    { label: 'Expires', value: formatDate(getEvent(whoisResult.value.events, 'expiration')) },
+    { label: t('tools.domain-lookup.ui.registrar'), value: getRegistrar(whoisResult.value.entities) },
+    { label: t('tools.domain-lookup.ui.registrarIanaId'), value: getRegistrarIanaId(whoisResult.value.entities) },
+    { label: t('tools.domain-lookup.ui.created'), value: formatDate(getEvent(whoisResult.value.events, 'registration')) },
+    { label: t('tools.domain-lookup.ui.updated'), value: formatDate(getEvent(whoisResult.value.events, 'last changed')) },
+    { label: t('tools.domain-lookup.ui.expires'), value: formatDate(getEvent(whoisResult.value.events, 'expiration')) },
   ].filter(r => r.value);
 });
 
@@ -279,7 +281,7 @@ async function checkMx(d: string) {
   try {
     const records = await dnsQuery(d, 'MX');
     if (records.length === 0) {
-      emailResults.value.mx = { status: 'fail', value: [], raw: 'No MX records found.' };
+      emailResults.value.mx = { status: 'fail', value: [], raw: t('tools.domain-lookup.ui.noMx') };
     }
     else {
       const sorted = records.sort((a, b) => {
@@ -291,7 +293,7 @@ async function checkMx(d: string) {
     }
   }
   catch {
-    emailResults.value.mx = { status: 'fail', value: [], raw: 'DNS lookup failed.' };
+    emailResults.value.mx = { status: 'fail', value: [], raw: t('tools.domain-lookup.ui.dnsFailed') };
   }
 }
 
@@ -300,20 +302,20 @@ async function checkSpf(d: string) {
     const records = await dnsQuery(d, 'TXT');
     const spf = records.find(r => r.startsWith('v=spf1'));
     if (!spf) {
-      emailResults.value.spf = { status: 'fail', value: [], raw: 'No SPF record found.' };
+      emailResults.value.spf = { status: 'fail', value: [], raw: t('tools.domain-lookup.ui.noSpf') };
       return;
     }
     const issues: string[] = [];
     if (spf.includes('+all')) {
-      issues.push('Warning: +all is dangerous -- allows any server to send mail as this domain.');
+      issues.push(t('tools.domain-lookup.ui.spfPlusAll'));
     }
     if (spf.includes('?all')) {
-      issues.push('Warning: ?all is neutral -- provides no protection.');
+      issues.push(t('tools.domain-lookup.ui.spfNeutralAll'));
     }
     emailResults.value.spf = { status: issues.length > 0 ? 'warn' : 'pass', value: issues, raw: spf };
   }
   catch {
-    emailResults.value.spf = { status: 'fail', value: [], raw: 'DNS lookup failed.' };
+    emailResults.value.spf = { status: 'fail', value: [], raw: t('tools.domain-lookup.ui.dnsFailed') };
   }
 }
 
@@ -332,7 +334,7 @@ async function checkDkim(d: string) {
       emailResults.value.dkim = {
         status: 'warn',
         value: [],
-        raw: 'No DKIM records found for common selectors. Custom selectors may still exist.',
+        raw: t('tools.domain-lookup.ui.noDkim'),
       };
     }
     else {
@@ -340,7 +342,7 @@ async function checkDkim(d: string) {
     }
   }
   catch {
-    emailResults.value.dkim = { status: 'fail', value: [], raw: 'DNS lookup failed.' };
+    emailResults.value.dkim = { status: 'fail', value: [], raw: t('tools.domain-lookup.ui.dnsFailed') };
   }
 }
 
@@ -352,7 +354,7 @@ async function checkDmarc(d: string) {
       emailResults.value.dmarc = {
         status: 'fail',
         value: [],
-        raw: 'No DMARC record found. Domain is unprotected against spoofing.',
+        raw: t('tools.domain-lookup.ui.noDmarc'),
       };
       return;
     }
@@ -364,15 +366,15 @@ async function checkDmarc(d: string) {
       }),
     );
     if (dmarcTags.p === 'none') {
-      issues.push('Warning: p=none -- monitor only, no enforcement. Emails will not be rejected.');
+      issues.push(t('tools.domain-lookup.ui.dmarcPNone'));
     }
     if (!dmarc.includes('rua=')) {
-      issues.push('Warning: No aggregate report address (rua=). You will not receive DMARC reports.');
+      issues.push(t('tools.domain-lookup.ui.dmarcNoRua'));
     }
     emailResults.value.dmarc = { status: issues.length > 0 ? 'warn' : 'pass', value: issues, raw: dmarc };
   }
   catch {
-    emailResults.value.dmarc = { status: 'fail', value: [], raw: 'DNS lookup failed.' };
+    emailResults.value.dmarc = { status: 'fail', value: [], raw: t('tools.domain-lookup.ui.dnsFailed') };
   }
 }
 
@@ -383,12 +385,12 @@ const emailStatusColor: Record<string, 'default' | 'success' | 'error' | 'warnin
   warn: 'warning',
   loading: 'default',
 };
-const emailStatusLabel: Record<string, string> = {
-  pass: 'Pass',
-  fail: 'Fail',
-  warn: 'Warning',
-  loading: 'Checking...',
-};
+const emailStatusLabel = computed<Record<string, string>>(() => ({
+  pass: t('tools.domain-lookup.ui.pass'),
+  fail: t('tools.domain-lookup.ui.fail'),
+  warn: t('tools.domain-lookup.ui.warning'),
+  loading: t('tools.domain-lookup.ui.checking'),
+}));
 
 const overallEmailStatus = computed(() => {
   if (!emailChecked.value) {
@@ -404,11 +406,11 @@ const overallEmailStatus = computed(() => {
   return 'pass';
 });
 
-const overallEmailMessage: Record<string, string> = {
-  pass: 'All email checks passed. This domain is well configured for email.',
-  fail: 'One or more critical records are missing. This domain may be vulnerable to spoofing.',
-  warn: 'Some records exist but have configuration issues worth reviewing.',
-};
+const overallEmailMessage = computed<Record<string, string>>(() => ({
+  pass: t('tools.domain-lookup.ui.overallPass'),
+  fail: t('tools.domain-lookup.ui.overallFail'),
+  warn: t('tools.domain-lookup.ui.overallWarn'),
+}));
 
 // =====================================================================
 // Combined lookup
@@ -417,12 +419,12 @@ async function runWhois(d: string) {
   try {
     const res = await fetch(`https://rdap.org/domain/${encodeURIComponent(d)}`);
     if (!res.ok) {
-      throw new Error(`HTTP ${res.status} -- domain may not exist or TLD is unsupported.`);
+      throw new Error(t('tools.domain-lookup.ui.rdapHttpError', { status: res.status }));
     }
     whoisResult.value = await res.json();
   }
   catch (e: any) {
-    whoisError.value = e.message ?? 'Lookup failed.';
+    whoisError.value = e.message ?? t('tools.domain-lookup.ui.lookupFailed');
   }
   finally {
     whoisLoading.value = false;
@@ -468,7 +470,7 @@ async function runLookup() {
     <div mb-6 flex gap-3>
       <c-input-text
         v-model:value="domain"
-        placeholder="Enter a domain (e.g. killertools.net)"
+        :placeholder="t('tools.domain-lookup.ui.domainPlaceholder')"
         style="flex: 1;"
         raw-text
         autofocus
@@ -480,7 +482,7 @@ async function runLookup() {
         :disabled="loading || !domain.trim()"
         @click="runLookup"
       >
-        {{ loading ? 'Searching...' : 'Search' }}
+        {{ loading ? t('tools.domain-lookup.ui.searching') : t('tools.domain-lookup.ui.search') }}
       </button>
     </div>
 
@@ -552,14 +554,14 @@ async function runLookup() {
         <div v-if="dnssec" class="whois-terminal">
           <div class="whois-terminal-bar">
             <span class="whois-terminal-title">DNSSEC</span>
-            <span class="kt-tag" :class="dnssec.signed ? 'kt-tag-success' : 'kt-tag-warning'">{{ dnssec.signed ? 'Signed' : 'Unsigned' }}</span>
+            <span class="kt-tag" :class="dnssec.signed ? 'kt-tag-success' : 'kt-tag-warning'">{{ dnssec.signed ? t('tools.domain-lookup.ui.signed') : t('tools.domain-lookup.ui.unsigned') }}</span>
           </div>
           <div class="whois-body-text">
             <template v-if="dnssec.signed">
-              Delegation is signed.<span v-if="dnssec.dsCount"> {{ dnssec.dsCount }} DS record{{ dnssec.dsCount !== 1 ? 's' : '' }}.</span><span v-if="dnssec.keyCount"> {{ dnssec.keyCount }} key record{{ dnssec.keyCount !== 1 ? 's' : '' }}.</span>
+              {{ t('tools.domain-lookup.ui.delegationSigned') }}<span v-if="dnssec.dsCount"> {{ dnssec.dsCount !== 1 ? t('tools.domain-lookup.ui.dsRecords', { count: dnssec.dsCount }) : t('tools.domain-lookup.ui.dsRecord', { count: dnssec.dsCount }) }}</span><span v-if="dnssec.keyCount"> {{ dnssec.keyCount !== 1 ? t('tools.domain-lookup.ui.keyRecords', { count: dnssec.keyCount }) : t('tools.domain-lookup.ui.keyRecord', { count: dnssec.keyCount }) }}</span>
             </template>
             <template v-else>
-              This domain is not protected by DNSSEC. DNS responses cannot be cryptographically verified.
+              {{ t('tools.domain-lookup.ui.dnssecUnsigned') }}
             </template>
           </div>
         </div>
@@ -567,7 +569,7 @@ async function runLookup() {
         <!-- Status -->
         <div v-if="whoisResult.status?.length" class="whois-terminal">
           <div class="whois-terminal-bar" style="flex-wrap: wrap; gap: 6px;">
-            <span class="whois-terminal-title">Status</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.status') }}</span>
             <div style="display: flex; gap: 4px; flex-wrap: wrap;">
               <span v-for="(s, i) in whoisResult.status" :key="i" class="kt-tag" :class="`kt-tag-${statusType(s)}`">{{ s }}</span>
             </div>
@@ -588,27 +590,27 @@ async function runLookup() {
         <!-- Contacts -->
         <div v-if="contacts.length" class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">Contacts</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.contacts') }}</span>
           </div>
           <div class="whois-terminal-body">
             <div v-for="contact in contacts" :key="contact.role" class="whois-contact-group">
               <div class="whois-contact-role">
-                {{ contact.role }}
+                {{ t(`tools.domain-lookup.ui.role.${contact.role}`) }}
               </div>
               <div
                 v-for="field in [
-                  { label: 'Name', value: contact.name },
-                  { label: 'Organization', value: contact.org },
-                  { label: 'Email', value: contact.email },
-                  { label: 'Phone', value: contact.phone },
+                  { id: 'name', label: t('tools.domain-lookup.ui.name'), value: contact.name },
+                  { id: 'org', label: t('tools.domain-lookup.ui.organization'), value: contact.org },
+                  { id: 'email', label: t('tools.domain-lookup.ui.email'), value: contact.email },
+                  { id: 'phone', label: t('tools.domain-lookup.ui.phone'), value: contact.phone },
                 ].filter(f => f.value && f.value !== 'REDACTED FOR PRIVACY' && !f.value.toLowerCase().includes('redacted'))"
-                :key="field.label"
+                :key="field.id"
                 class="whois-row"
               >
                 <span class="whois-label">{{ field.label }}</span>
                 <span class="whois-value">
-                  <a v-if="field.label === 'Email'" :href="`mailto:${field.value}`" style="color: inherit; text-decoration: none;">{{ field.value }}</a>
-                  <a v-else-if="field.label === 'Phone'" :href="`tel:${field.value}`" style="color: inherit; text-decoration: none;">{{ field.value }}</a>
+                  <a v-if="field.id === 'email'" :href="`mailto:${field.value}`" style="color: inherit; text-decoration: none;">{{ field.value }}</a>
+                  <a v-else-if="field.id === 'phone'" :href="`tel:${field.value}`" style="color: inherit; text-decoration: none;">{{ field.value }}</a>
                   <template v-else>{{ field.value }}</template>
                 </span>
                 <c-button circle variant="text" style="width:20px;height:20px;flex-shrink:0;" @click="copyValue(field.value)">
@@ -622,7 +624,7 @@ async function runLookup() {
         <!-- Remarks -->
         <div v-if="remarks.length" class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">Remarks</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.remarks') }}</span>
           </div>
           <div class="whois-terminal-body">
             <div v-for="(remark, i) in remarks" :key="i" class="whois-remark-entry">
@@ -642,7 +644,7 @@ async function runLookup() {
         <!-- Nameservers -->
         <div v-if="whoisResult?.nameservers?.length" class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">Nameservers</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.nameservers') }}</span>
           </div>
           <div class="whois-terminal-body">
             <div v-for="(ns, i) in whoisResult.nameservers" :key="i" class="whois-record-row">
@@ -657,7 +659,7 @@ async function runLookup() {
         <!-- MX -->
         <div class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">MX Records</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.mxRecords') }}</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.mx.status]}`">{{ emailStatusLabel[emailResults.mx.status] }}</span>
           </div>
           <div class="whois-terminal-body">
@@ -678,12 +680,12 @@ async function runLookup() {
         <!-- SPF -->
         <div class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">SPF Record</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.spfRecord') }}</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.spf.status]}`">{{ emailStatusLabel[emailResults.spf.status] }}</span>
           </div>
           <div class="whois-terminal-body">
             <div
-              v-if="emailResults.spf.raw && emailResults.spf.raw !== 'DNS lookup failed.' && emailResults.spf.raw !== 'No SPF record found.'"
+              v-if="emailResults.spf.raw && emailResults.spf.raw !== t('tools.domain-lookup.ui.dnsFailed') && emailResults.spf.raw !== t('tools.domain-lookup.ui.noSpf')"
               class="whois-record-block"
             >
               <span style="flex: 1;">{{ emailResults.spf.raw }}</span>
@@ -703,7 +705,7 @@ async function runLookup() {
         <!-- DKIM -->
         <div class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">DKIM Records</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.dkimRecords') }}</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.dkim.status]}`">{{ emailStatusLabel[emailResults.dkim.status] }}</span>
           </div>
           <div class="whois-terminal-body">
@@ -721,12 +723,12 @@ async function runLookup() {
         <!-- DMARC -->
         <div class="whois-terminal">
           <div class="whois-terminal-bar">
-            <span class="whois-terminal-title">DMARC Record</span>
+            <span class="whois-terminal-title">{{ t('tools.domain-lookup.ui.dmarcRecord') }}</span>
             <span class="kt-tag" :class="`kt-tag-${emailStatusColor[emailResults.dmarc.status]}`">{{ emailStatusLabel[emailResults.dmarc.status] }}</span>
           </div>
           <div class="whois-terminal-body">
             <div
-              v-if="emailResults.dmarc.raw && emailResults.dmarc.raw !== 'DNS lookup failed.' && emailResults.dmarc.raw !== 'No DMARC record found. Domain is unprotected against spoofing.'"
+              v-if="emailResults.dmarc.raw && emailResults.dmarc.raw !== t('tools.domain-lookup.ui.dnsFailed') && emailResults.dmarc.raw !== t('tools.domain-lookup.ui.noDmarc')"
               class="whois-record-block"
             >
               <span style="flex: 1;">{{ emailResults.dmarc.raw }}</span>

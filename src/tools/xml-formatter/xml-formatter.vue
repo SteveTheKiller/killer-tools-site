@@ -14,10 +14,12 @@ function transformer(value: string) {
   });
 }
 
+const { t } = useI18n();
+
 const rules: UseValidationRule<string>[] = [
   {
     validator: isValidXML,
-    message: 'Provided XML is not valid.',
+    message: t('tools.xml-formatter.ui.invalidXml'),
   },
 ];
 </script>
@@ -27,10 +29,10 @@ const rules: UseValidationRule<string>[] = [
   <div style="display: contents">
   <div class="xf-controls">
     <button type="button" class="kt-pill" :class="{ 'kt-pill-active': collapseContent }" @click="collapseContent = !collapseContent">
-      Collapse
+      {{ t('tools.xml-formatter.ui.collapse') }}
     </button>
     <div class="xf-control">
-      <span class="xf-control-label">Indent size</span>
+      <span class="xf-control-label">{{ t('tools.xml-formatter.ui.indentSize') }}</span>
       <div class="xf-stepper">
         <button class="xf-step-btn" :disabled="indentSize <= 0" @click="indentSize = Math.max(0, indentSize - 1)">
           −
@@ -44,9 +46,9 @@ const rules: UseValidationRule<string>[] = [
   </div>
 
   <format-transformer
-    input-label="Your XML"
-    input-placeholder="Paste your XML here..."
-    output-label="Formatted XML from your XML"
+    :input-label="t('tools.xml-formatter.ui.inputLabel')"
+    :input-placeholder="t('tools.xml-formatter.ui.inputPlaceholder')"
+    :output-label="t('tools.xml-formatter.ui.outputLabel')"
     output-language="xml"
     :input-validation-rules="rules"
     :transformer="transformer"

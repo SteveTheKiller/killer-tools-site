@@ -5,68 +5,69 @@ const props = defineProps<{ editor: Editor }>();
 const { editor } = toRefs(props);
 
 const e = () => editor.value;
+const { t } = useI18n();
 </script>
 
 <template>
   <div class="mb-bar">
-    <button class="mb-btn" :class="{ active: e().isActive('bold') }" title="Bold" @click="e().chain().focus().toggleBold().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('bold') }" :title="t('tools.html-wysiwyg-editor.ui.bold')" @click="e().chain().focus().toggleBold().run()">
       <icon-mdi-format-bold />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('italic') }" title="Italic" @click="e().chain().focus().toggleItalic().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('italic') }" :title="t('tools.html-wysiwyg-editor.ui.italic')" @click="e().chain().focus().toggleItalic().run()">
       <icon-mdi-format-italic />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('strike') }" title="Strike" @click="e().chain().focus().toggleStrike().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('strike') }" :title="t('tools.html-wysiwyg-editor.ui.strike')" @click="e().chain().focus().toggleStrike().run()">
       <icon-mdi-format-strikethrough />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('code') }" title="Inline code" @click="e().chain().focus().toggleCode().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('code') }" :title="t('tools.html-wysiwyg-editor.ui.inlineCode')" @click="e().chain().focus().toggleCode().run()">
       <icon-mdi-code-tags />
     </button>
 
     <span class="mb-sep" />
 
-    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 1 }) }" title="Heading 1" @click="e().chain().focus().toggleHeading({ level: 1 }).run()">
+    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 1 }) }" :title="t('tools.html-wysiwyg-editor.ui.heading1')" @click="e().chain().focus().toggleHeading({ level: 1 }).run()">
       <icon-mdi-format-header-1 />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 2 }) }" title="Heading 2" @click="e().chain().focus().toggleHeading({ level: 2 }).run()">
+    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 2 }) }" :title="t('tools.html-wysiwyg-editor.ui.heading2')" @click="e().chain().focus().toggleHeading({ level: 2 }).run()">
       <icon-mdi-format-header-2 />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 3 }) }" title="Heading 3" @click="e().chain().focus().toggleHeading({ level: 3 }).run()">
+    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 3 }) }" :title="t('tools.html-wysiwyg-editor.ui.heading3')" @click="e().chain().focus().toggleHeading({ level: 3 }).run()">
       <icon-mdi-format-header-3 />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 4 }) }" title="Heading 4" @click="e().chain().focus().toggleHeading({ level: 4 }).run()">
+    <button class="mb-btn" :class="{ active: e().isActive('heading', { level: 4 }) }" :title="t('tools.html-wysiwyg-editor.ui.heading4')" @click="e().chain().focus().toggleHeading({ level: 4 }).run()">
       <icon-mdi-format-header-4 />
     </button>
 
     <span class="mb-sep" />
 
-    <button class="mb-btn" :class="{ active: e().isActive('bulletList') }" title="Bullet list" @click="e().chain().focus().toggleBulletList().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('bulletList') }" :title="t('tools.html-wysiwyg-editor.ui.bulletList')" @click="e().chain().focus().toggleBulletList().run()">
       <icon-mdi-format-list-bulleted />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('orderedList') }" title="Ordered list" @click="e().chain().focus().toggleOrderedList().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('orderedList') }" :title="t('tools.html-wysiwyg-editor.ui.orderedList')" @click="e().chain().focus().toggleOrderedList().run()">
       <icon-mdi-format-list-numbered />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('codeBlock') }" title="Code block" @click="e().chain().focus().toggleCodeBlock().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('codeBlock') }" :title="t('tools.html-wysiwyg-editor.ui.codeBlock')" @click="e().chain().focus().toggleCodeBlock().run()">
       <icon-mdi-code-braces />
     </button>
-    <button class="mb-btn" :class="{ active: e().isActive('blockquote') }" title="Blockquote" @click="e().chain().focus().toggleBlockquote().run()">
+    <button class="mb-btn" :class="{ active: e().isActive('blockquote') }" :title="t('tools.html-wysiwyg-editor.ui.blockquote')" @click="e().chain().focus().toggleBlockquote().run()">
       <icon-mdi-format-quote-close />
     </button>
 
     <span class="mb-sep" />
 
-    <button class="mb-btn" title="Hard break" @click="e().chain().focus().setHardBreak().run()">
+    <button class="mb-btn" :title="t('tools.html-wysiwyg-editor.ui.hardBreak')" @click="e().chain().focus().setHardBreak().run()">
       <icon-mdi-keyboard-return />
     </button>
-    <button class="mb-btn" title="Clear format" @click="e().chain().focus().clearNodes().unsetAllMarks().run()">
+    <button class="mb-btn" :title="t('tools.html-wysiwyg-editor.ui.clearFormat')" @click="e().chain().focus().clearNodes().unsetAllMarks().run()">
       <icon-mdi-format-clear />
     </button>
 
     <span class="mb-sep" />
 
-    <button class="mb-btn" title="Undo" @click="e().chain().focus().undo().run()">
+    <button class="mb-btn" :title="t('tools.html-wysiwyg-editor.ui.undo')" @click="e().chain().focus().undo().run()">
       <icon-mdi-undo />
     </button>
-    <button class="mb-btn" title="Redo" @click="e().chain().focus().redo().run()">
+    <button class="mb-btn" :title="t('tools.html-wysiwyg-editor.ui.redo')" @click="e().chain().focus().redo().run()">
       <icon-mdi-redo />
     </button>
   </div>

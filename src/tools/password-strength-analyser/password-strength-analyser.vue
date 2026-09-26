@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { getPasswordCrackTimeEstimation } from './password-strength-analyser.service';
 
+const { t } = useI18n();
+
 const password = ref('');
 const showPassword = ref(false);
 const crackTimeEstimation = computed(() => getPasswordCrackTimeEstimation({ password: password.value }));
@@ -22,25 +24,25 @@ const scoreColor = computed(() => {
 
 const scoreLabel = computed(() => {
   if (score.value >= 80) {
-    return 'Strong';
+    return t('tools.passwordStrengthAnalyser.ui.strongLabel');
   }
   if (score.value >= 50) {
-    return 'Moderate';
+    return t('tools.passwordStrengthAnalyser.ui.moderateLabel');
   }
   if (score.value >= 25) {
-    return 'Weak';
+    return t('tools.passwordStrengthAnalyser.ui.weakLabel');
   }
   if (password.value.length === 0) {
     return '';
   }
-  return 'Very weak';
+  return t('tools.passwordStrengthAnalyser.ui.veryWeakLabel');
 });
 
 const details = computed(() => [
-  { label: 'Length', value: crackTimeEstimation.value.passwordLength },
-  { label: 'Entropy', value: `${Math.round(crackTimeEstimation.value.entropy * 100) / 100} bits` },
-  { label: 'Charset size', value: crackTimeEstimation.value.charsetLength },
-  { label: 'Score', value: `${score.value} / 100` },
+  { label: t('tools.passwordStrengthAnalyser.ui.lengthLabel'), value: crackTimeEstimation.value.passwordLength },
+  { label: t('tools.passwordStrengthAnalyser.ui.entropyLabel'), value: `${Math.round(crackTimeEstimation.value.entropy * 100) / 100} bits` },
+  { label: t('tools.passwordStrengthAnalyser.ui.charsetSizeLabel'), value: crackTimeEstimation.value.charsetLength },
+  { label: t('tools.passwordStrengthAnalyser.ui.scoreDetailLabel'), value: `${score.value} / 100` },
 ]);
 </script>
 
@@ -53,16 +55,16 @@ const details = computed(() => [
           v-model="password"
           class="ps-input"
           :type="showPassword ? 'text' : 'password'"
-          placeholder="Enter a password..."
+          :placeholder="t('tools.passwordStrengthAnalyser.ui.passwordPlaceholder')"
           autofocus
           data-test-id="password-input"
           spellcheck="false"
         >
-        <button class="ps-icon-btn" :title="showPassword ? 'Hide' : 'Show'" @click="showPassword = !showPassword">
+        <button class="ps-icon-btn" :title="showPassword ? t('tools.passwordStrengthAnalyser.ui.hideLabel') : t('tools.passwordStrengthAnalyser.ui.showLabel')" @click="showPassword = !showPassword">
           <icon-mdi-eye-off v-if="showPassword" />
           <icon-mdi-eye v-else />
         </button>
-        <button v-if="password" class="ps-icon-btn" title="Clear" @click="password = ''">
+        <button v-if="password" class="ps-icon-btn" :title="t('tools.passwordStrengthAnalyser.ui.clearLabel')" @click="password = ''">
           <icon-mdi-close />
         </button>
       </div>
@@ -83,7 +85,7 @@ const details = computed(() => [
 
       <!-- Crack time -->
       <div class="ps-crack-block">
-        <span class="ps-sublabel">BRUTE FORCE CRACK TIME</span>
+        <span class="ps-sublabel">{{ t('tools.passwordStrengthAnalyser.ui.crackTimeSublabel') }}</span>
         <span class="ps-crack-time" data-test-id="crack-duration">{{ crackTimeEstimation.crackDurationFormatted }}</span>
       </div>
 
@@ -98,7 +100,7 @@ const details = computed(() => [
 
       <!-- Note -->
       <p class="ps-note">
-        Strength is estimated using brute force time at 1B guesses/sec. Dictionary attacks are not modelled.
+        {{ t('tools.passwordStrengthAnalyser.ui.crackTimeNote') }}
       </p>
     </div>
   </div>

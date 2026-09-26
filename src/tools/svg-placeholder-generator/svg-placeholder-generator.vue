@@ -5,6 +5,8 @@ import { useDownloadFileFromBase64 } from '@/composable/downloadBase64';
 import { textToBase64 } from '@/utils/base64';
 import { buildSvgPlaceholder } from './svg-placeholder-generator.service';
 
+const { t } = useI18n();
+
 const width = ref(600);
 const height = ref(350);
 const fontSize = ref(26);
@@ -38,7 +40,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
     <!-- Width + Background -->
     <div class="sp-row">
       <div class="sp-field">
-        <span class="sp-label">WIDTH (px)</span>
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.widthLabel') }}</span>
         <div class="sp-stepper">
           <button class="sp-step-btn" :disabled="width <= 1" @click="width = Math.max(1, width - 1)">
             −
@@ -50,7 +52,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
         </div>
       </div>
       <div class="sp-field">
-        <span class="sp-label">BACKGROUND</span>
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.backgroundLabel') }}</span>
         <div class="sp-color-row">
           <input v-model="bgColor" class="sp-color-swatch" type="color">
           <input v-model="bgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
@@ -61,7 +63,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
     <!-- Height + Text color -->
     <div class="sp-row">
       <div class="sp-field">
-        <span class="sp-label">HEIGHT (px)</span>
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.heightLabel') }}</span>
         <div class="sp-stepper">
           <button class="sp-step-btn" :disabled="height <= 1" @click="height = Math.max(1, height - 1)">
             −
@@ -73,7 +75,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
         </div>
       </div>
       <div class="sp-field">
-        <span class="sp-label">TEXT COLOR</span>
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.textColorLabel') }}</span>
         <div class="sp-color-row">
           <input v-model="fgColor" class="sp-color-swatch" type="color">
           <input v-model="fgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
@@ -84,7 +86,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
     <!-- Font size + Custom text -->
     <div class="sp-row">
       <div class="sp-field">
-        <span class="sp-label">FONT SIZE</span>
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.fontSizeLabel') }}</span>
         <div class="sp-stepper">
           <button class="sp-step-btn" :disabled="fontSize <= 1" @click="fontSize = Math.max(1, fontSize - 1)">
             −
@@ -96,12 +98,12 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
         </div>
       </div>
       <div class="sp-field sp-field-grow">
-        <span class="sp-label">CUSTOM TEXT</span>
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.customTextLabel') }}</span>
         <input
           v-model="customText"
           class="sp-text-input"
           type="text"
-          :placeholder="`Default is ${width}x${height}`"
+          :placeholder="t('tools.svg-placeholder-generator.ui.customTextPlaceholder', { size: `${width}x${height}` })"
           autocomplete="off"
           spellcheck="false"
         >
@@ -111,41 +113,41 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
     <!-- Use exact size pill -->
     <div class="sp-toggle-row">
       <button type="button" class="kt-pill" :class="{ 'kt-pill-active': useExactSize }" @click="useExactSize = !useExactSize">
-        Use exact size
+        {{ t('tools.svg-placeholder-generator.ui.useExactSizeToggle') }}
       </button>
     </div>
 
     <!-- SVG HTML element -->
     <div class="sp-output-block">
-      <span class="sp-label">SVG HTML ELEMENT</span>
+      <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.svgHtmlElementLabel') }}</span>
       <TextareaCopyable :value="svgString" language="xml" copy-placement="none" />
     </div>
 
     <!-- Base64 -->
     <div class="sp-output-block">
-      <span class="sp-label">SVG IN BASE64</span>
+      <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.svgBase64Label') }}</span>
       <TextareaCopyable :value="base64" copy-placement="none" />
     </div>
 
     <!-- Actions -->
     <div class="sp-actions">
       <button class="sp-btn" @click="copySVG()">
-        Copy svg
+        {{ t('tools.svg-placeholder-generator.ui.copySvgButton') }}
       </button>
       <button class="sp-btn" @click="copyBase64()">
-        Copy base64
+        {{ t('tools.svg-placeholder-generator.ui.copyBase64Button') }}
       </button>
       <button class="sp-btn sp-btn-accent" @click="download()">
-        Download svg
+        {{ t('tools.svg-placeholder-generator.ui.downloadSvgButton') }}
       </button>
     </div>
   </div>
 
   <!-- Preview — separate root element so the framework layout gives it full remaining space -->
   <div class="sp-preview-panel">
-    <span class="sp-label">PREVIEW</span>
+    <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.previewLabel') }}</span>
     <div class="sp-preview-frame">
-      <img :src="base64" alt="SVG preview" class="sp-preview-img">
+      <img :src="base64" :alt="t('tools.svg-placeholder-generator.ui.svgPreviewAlt')" class="sp-preview-img">
     </div>
   </div>
   </div>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const filterOptions = [
   { nd: 'ND2', stops: 1, value: 1 },
   { nd: 'ND4', stops: 2, value: 2 },
@@ -211,13 +213,13 @@ async function copy(val: string) {
     <!-- Inputs -->
     <div class="nd-panel kt-terminal">
       <div class="nd-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">ND FILTER CALCULATOR</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.nd-filter-calculator.ui.titleInputs') }}</span>
       </div>
       <div class="nd-body">
         <!-- Base shutter speed -->
         <div class="nd-field-row">
-          <span class="nd-field-label">Base shutter speed (without filter)</span>
-          <span class="nd-field-hint">drag or click</span>
+          <span class="nd-field-label">{{ t('tools.nd-filter-calculator.ui.baseShutterSpeed') }}</span>
+          <span class="nd-field-hint">{{ t('tools.nd-filter-calculator.ui.dragOrClick') }}</span>
         </div>
         <div class="nd-speed-row">
           <div class="nd-dial-wrap">
@@ -238,7 +240,7 @@ async function copy(val: string) {
                   :class="{ 'dial-active': selectedSpeedValue === opt.value }"
                 >
                   <span class="nd-dial-tick" />
-                  <span class="nd-dial-label">{{ opt.label }}</span>
+                  <span class="nd-dial-label">{{ opt.value === -1 ? t('tools.nd-filter-calculator.ui.custom') : opt.label }}</span>
                 </button>
               </div>
             </div>
@@ -248,7 +250,7 @@ async function copy(val: string) {
             v-model="customSpeed"
             class="nd-num nd-num-inline"
             type="number"
-            placeholder="sec"
+            :placeholder="t('tools.nd-filter-calculator.ui.secPlaceholder')"
             min="0.0001"
             step="0.001"
           >
@@ -258,7 +260,7 @@ async function copy(val: string) {
 
         <!-- ND filter -->
         <div class="nd-field-label">
-          ND filter
+          {{ t('tools.nd-filter-calculator.ui.ndFilter') }}
         </div>
         <div class="nd-filter-grid">
           <button
@@ -268,9 +270,9 @@ async function copy(val: string) {
             :class="{ 'nd-filter-active': selectedFilterStops === opt.value }"
             @click="selectedFilterStops = opt.value"
           >
-            <span class="nd-filter-name">{{ opt.nd }}</span>
-            <span v-if="opt.stops !== null" class="nd-filter-stops">{{ opt.stops }} stop{{ opt.stops === 1 ? '' : 's' }}</span>
-            <span v-else class="nd-filter-stops">enter stops</span>
+            <span class="nd-filter-name">{{ opt.value === -1 ? t('tools.nd-filter-calculator.ui.custom') : opt.nd }}</span>
+            <span v-if="opt.stops !== null" class="nd-filter-stops">{{ opt.stops === 1 ? t('tools.nd-filter-calculator.ui.stopOne', { count: opt.stops }) : t('tools.nd-filter-calculator.ui.stopMany', { count: opt.stops }) }}</span>
+            <span v-else class="nd-filter-stops">{{ t('tools.nd-filter-calculator.ui.enterStops') }}</span>
           </button>
         </div>
         <input
@@ -278,7 +280,7 @@ async function copy(val: string) {
           v-model="customStops"
           class="nd-num"
           type="number"
-          placeholder="stops"
+          :placeholder="t('tools.nd-filter-calculator.ui.stopsPlaceholder')"
           min="0.5"
           step="0.5"
         >
@@ -288,7 +290,7 @@ async function copy(val: string) {
     <!-- Result -->
     <div class="nd-panel kt-terminal">
       <div class="nd-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">CORRECTED EXPOSURE</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.nd-filter-calculator.ui.titleResult') }}</span>
       </div>
       <div class="nd-body">
         <div class="nd-result-row">
@@ -304,13 +306,13 @@ async function copy(val: string) {
             :class="{ 'nd-copy-done': copied }"
             @click="copy(corrected.toFixed(2))"
           >
-            <span v-if="copied">copied</span>
-            <span v-else>copy seconds</span>
+            <span v-if="copied">{{ t('tools.nd-filter-calculator.ui.copied') }}</span>
+            <span v-else>{{ t('tools.nd-filter-calculator.ui.copySeconds') }}</span>
           </button>
         </div>
         <div v-if="corrected !== null && corrected > 30" class="nd-alert">
           <span class="nd-alert-icon">&#x2B21;</span>
-          Long exposure - consider using Bulb mode.
+          {{ t('tools.nd-filter-calculator.ui.longExposureAlert') }}
         </div>
       </div>
     </div>
@@ -319,12 +321,12 @@ async function copy(val: string) {
       <div class="nd-footnote-formulas">
         <span><em>t2</em> = <em>t1</em> &times; 2<sup><em>stops</em></sup></span>
         <span class="nd-fn-sep">/</span>
-        <span>stacking filters: add their stops</span>
+        <span>{{ t('tools.nd-filter-calculator.ui.stackingFilters') }}</span>
       </div>
       <div class="nd-footnote-legend">
-        <span><em>t1</em> = base shutter speed (no filter)</span>
-        <span><em>t2</em> = corrected shutter speed</span>
-        <span><em>stops</em> = ND filter strength</span>
+        <span><em>t1</em> = {{ t('tools.nd-filter-calculator.ui.legendT1') }}</span>
+        <span><em>t2</em> = {{ t('tools.nd-filter-calculator.ui.legendT2') }}</span>
+        <span><em>stops</em> = {{ t('tools.nd-filter-calculator.ui.legendStops') }}</span>
       </div>
     </div>
   </div>

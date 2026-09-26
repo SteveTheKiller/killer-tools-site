@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { convertCase } from './case-converter.models';
 
+const { t } = useI18n();
+
 const input = ref('lorem ipsum dolor sit amet');
 
 const formats = computed(() => convertCase(input.value));
@@ -24,7 +26,7 @@ async function copyValue(label: string, value: string) {
   <div class="case-tool">
     <c-input-text
       v-model:value="input"
-      placeholder="Your string..."
+      :placeholder="t('tools.case-converter.ui.inputPlaceholder')"
       raw-text
       autofocus
       mb-3
@@ -32,7 +34,7 @@ async function copyValue(label: string, value: string) {
 
     <div class="kt-terminal case-terminal">
       <div class="kt-terminal-bar case-section-header">
-        OUTPUT
+        {{ t('tools.case-converter.ui.output') }}
       </div>
 
       <div

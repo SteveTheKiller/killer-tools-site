@@ -4,6 +4,7 @@ import { useAppTheme } from '@/ui/theme/themes';
 import { diff } from '../json-diff.models';
 import { DiffRootViewer } from './diff-viewer.models';
 
+const { t } = useI18n();
 const props = defineProps<{ leftJson: unknown, rightJson: unknown }>();
 const onlyShowDifferences = ref(false);
 const { leftJson, rightJson } = toRefs(props);
@@ -26,13 +27,13 @@ const showResults = computed(() => !_.isUndefined(leftJson.value) && !_.isUndefi
         :class="{ 'kt-pill-active': onlyShowDifferences }"
         @click="onlyShowDifferences = !onlyShowDifferences"
       >
-        Only show differences
+        {{ t('tools.json-diff.ui.onlyShowDifferences') }}
       </button>
     </div>
 
     <c-card data-test-id="diff-result">
       <div v-if="jsonAreTheSame" text-center op-70>
-        The provided JSONs are the same
+        {{ t('tools.json-diff.ui.jsonsAreTheSame') }}
       </div>
       <DiffRootViewer v-else :diff="result" />
     </c-card>

@@ -5,6 +5,7 @@ import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 import DiffsViewer from './diff-viewer/diff-viewer.vue';
 
+const { t } = useI18n();
 const styleStore = useStyleStore();
 const isLight = computed(() => !styleStore.isDarkTheme);
 
@@ -25,36 +26,36 @@ const rightIsValid = computed(() => rawRightJson.value === '' || isNotThrowing((
       <div class="jd-field-block">
         <div class="jd-field-wrap kt-terminal" :class="{ 'jd-field-error': rawLeftJson && !leftIsValid }">
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">YOUR FIRST JSON</span>
+            <span class="kt-terminal-bar-title">{{ t('tools.json-diff.ui.firstJsonTitle') }}</span>
           </div>
           <textarea
             v-model="rawLeftJson"
             class="jd-textarea"
-            placeholder="Paste your first JSON here..."
+            :placeholder="t('tools.json-diff.ui.firstJsonPlaceholder')"
             rows="18"
             spellcheck="false"
             :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #121212 !important; color: rgba(255,255,255,0.85) !important'"
           />
         </div>
-        <span v-if="rawLeftJson && !leftIsValid" class="jd-error-msg">Invalid JSON format</span>
+        <span v-if="rawLeftJson && !leftIsValid" class="jd-error-msg">{{ t('tools.json-diff.ui.invalidJson') }}</span>
       </div>
 
       <!-- Right input -->
       <div class="jd-field-block">
         <div class="jd-field-wrap kt-terminal" :class="{ 'jd-field-error': rawRightJson && !rightIsValid }">
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">YOUR JSON TO COMPARE</span>
+            <span class="kt-terminal-bar-title">{{ t('tools.json-diff.ui.secondJsonTitle') }}</span>
           </div>
           <textarea
             v-model="rawRightJson"
             class="jd-textarea"
-            placeholder="Paste your JSON to compare here..."
+            :placeholder="t('tools.json-diff.ui.secondJsonPlaceholder')"
             rows="18"
             spellcheck="false"
             :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #121212 !important; color: rgba(255,255,255,0.85) !important'"
           />
         </div>
-        <span v-if="rawRightJson && !rightIsValid" class="jd-error-msg">Invalid JSON format</span>
+        <span v-if="rawRightJson && !rightIsValid" class="jd-error-msg">{{ t('tools.json-diff.ui.invalidJson') }}</span>
       </div>
     </div>
 

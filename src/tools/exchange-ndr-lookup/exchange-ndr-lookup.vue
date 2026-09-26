@@ -2,6 +2,8 @@
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { ndrCategories } from './exchange-ndr-lookup.constants';
 
+const { t } = useI18n();
+
 const search = ref('');
 const copiedValue = ref<string | null>(null);
 
@@ -35,7 +37,7 @@ const filtered = computed(() => {
   if (!search.value) {
     return ndrCategories;
   }
-  return [{ category: 'Search results', codes: searchResult.value }];
+  return [{ category: t('tools.exchange-ndr-lookup.ui.searchResults'), codes: searchResult.value }];
 });
 
 function copyValue(value: string) {
@@ -51,7 +53,7 @@ function copyValue(value: string) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search by NDR code, error name, cause, or fix..."
+      :placeholder="t('tools.exchange-ndr-lookup.ui.searchPlaceholder')"
       autofocus
       raw-text
       mb-4
@@ -71,10 +73,10 @@ function copyValue(value: string) {
           <div
             class="kt-terminal-bar ndr-bar"
             :class="{ 'ndr-bar-copied': copiedValue === code }"
-            :title="copiedValue === code ? 'Copied!' : 'Click to copy NDR code'"
+            :title="copiedValue === code ? t('tools.exchange-ndr-lookup.ui.copied') : t('tools.exchange-ndr-lookup.ui.clickToCopy')"
             @click="copyValue(code)"
           >
-            <code class="ndr-code">{{ copiedValue === code ? '✓ copied' : code }}</code>
+            <code class="ndr-code">{{ copiedValue === code ? `✓ ${t('tools.exchange-ndr-lookup.ui.copiedShort')}` : code }}</code>
             <span class="ndr-severity" :class="`ndr-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
 
@@ -87,11 +89,11 @@ function copyValue(value: string) {
             </div>
             <div class="ndr-kv-block">
               <div class="ndr-kv-row">
-                <span class="ndr-kv-label">Cause</span>
+                <span class="ndr-kv-label">{{ t('tools.exchange-ndr-lookup.ui.cause') }}</span>
                 <span class="ndr-kv-value">{{ cause }}</span>
               </div>
               <div class="ndr-kv-row">
-                <span class="ndr-kv-label">Fix</span>
+                <span class="ndr-kv-label">{{ t('tools.exchange-ndr-lookup.ui.fix') }}</span>
                 <span class="ndr-kv-value ndr-kv-fix">{{ fix }}</span>
               </div>
             </div>

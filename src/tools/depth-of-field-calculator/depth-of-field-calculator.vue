@@ -1,13 +1,15 @@
 <script setup lang="ts">
-const sensorOptions = [
+const { t } = useI18n();
+
+const sensorOptions = computed(() => [
   { short: 'FF', sub: '35mm', value: 0.029 },
   { short: 'APS-C', sub: 'Canon', value: 0.019 },
   { short: 'APS-C', sub: 'Nikon/Sony', value: 0.020 },
   { short: 'MFT', sub: '4/3"', value: 0.015 },
   { short: '1"', sub: '1-inch', value: 0.011 },
-  { short: 'MF 645', sub: 'Med. Format', value: 0.047 },
-  { short: 'Custom', sub: 'enter CoC', value: -1 },
-];
+  { short: 'MF 645', sub: t('tools.depth-of-field-calculator.ui.sensorMedFormat'), value: 0.047 },
+  { short: t('tools.depth-of-field-calculator.ui.sensorCustom'), sub: t('tools.depth-of-field-calculator.ui.sensorEnterCoc'), value: -1 },
+]);
 
 const apertureOptions = [
   { label: 'f/1', value: 1.0 },
@@ -92,7 +94,7 @@ const results = computed(() => {
 
 function fmt(meters: number | null): string {
   if (meters === null) {
-    return 'infinity';
+    return t('tools.depth-of-field-calculator.ui.infinity');
   }
   if (unit.value === 'ft') {
     const ft = meters / 0.3048;
@@ -228,12 +230,12 @@ function toggleUnit() {
     <!-- Inputs -->
     <div class="dof-panel kt-terminal">
       <div class="dof-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">DEPTH OF FIELD CALCULATOR</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.depth-of-field-calculator.ui.title') }}</span>
       </div>
       <div class="dof-body">
         <!-- Sensor format -->
         <div class="dof-field-label">
-          Sensor format
+          {{ t('tools.depth-of-field-calculator.ui.sensorFormat') }}
         </div>
         <div class="dof-sensor-grid">
           <button
@@ -252,7 +254,7 @@ function toggleUnit() {
           v-model="customCoc"
           class="dof-num"
           type="number"
-          placeholder="CoC in mm (e.g. 0.029)"
+          :placeholder="t('tools.depth-of-field-calculator.ui.cocPlaceholder')"
           min="0.001"
           step="0.001"
         >
@@ -261,7 +263,7 @@ function toggleUnit() {
 
         <!-- Focal length -->
         <div class="dof-field-label">
-          Focal length (mm)
+          {{ t('tools.depth-of-field-calculator.ui.focalLength') }}
         </div>
         <input
           v-model.number="focalLength"
@@ -276,8 +278,8 @@ function toggleUnit() {
 
         <!-- Aperture -->
         <div class="dof-field-row">
-          <span class="dof-field-label">Aperture</span>
-          <span class="dof-field-hint">drag or click</span>
+          <span class="dof-field-label">{{ t('tools.depth-of-field-calculator.ui.aperture') }}</span>
+          <span class="dof-field-hint">{{ t('tools.depth-of-field-calculator.ui.dragOrClick') }}</span>
         </div>
         <div class="dof-dial-wrap">
           <div class="dof-dial-notch" />
@@ -307,14 +309,14 @@ function toggleUnit() {
 
         <!-- Focus distance -->
         <div class="dof-field-label">
-          Focus distance
+          {{ t('tools.depth-of-field-calculator.ui.focusDistance') }}
         </div>
         <div class="dof-distance-row">
           <input
             v-model.number="focusDistance"
             class="dof-num dof-num-wide"
             type="number"
-            placeholder="distance"
+            :placeholder="t('tools.depth-of-field-calculator.ui.distancePlaceholder')"
             min="0.1"
             step="0.1"
           >
@@ -328,18 +330,18 @@ function toggleUnit() {
     <!-- Results -->
     <div v-if="results !== null" class="dof-panel kt-terminal">
       <div class="dof-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">RESULTS</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.depth-of-field-calculator.ui.results') }}</span>
       </div>
       <div class="dof-body">
         <div class="dof-hyperfocal-block">
           <div class="dof-hf-label">
-            Hyperfocal distance
+            {{ t('tools.depth-of-field-calculator.ui.hyperfocalDistance') }}
           </div>
           <div class="dof-hf-value">
             {{ fmt(results.hyperfocal) }}
           </div>
           <div class="dof-hf-hint">
-            Focus here for maximum sharpness from half this distance to infinity
+            {{ t('tools.depth-of-field-calculator.ui.hyperfocalHint') }}
           </div>
         </div>
 
@@ -348,7 +350,7 @@ function toggleUnit() {
         <div class="dof-stat-grid">
           <div class="dof-stat">
             <div class="dof-stat-label">
-              Near limit
+              {{ t('tools.depth-of-field-calculator.ui.nearLimit') }}
             </div>
             <div class="dof-stat-value">
               {{ fmt(results.near) }}
@@ -356,7 +358,7 @@ function toggleUnit() {
           </div>
           <div class="dof-stat">
             <div class="dof-stat-label">
-              Far limit
+              {{ t('tools.depth-of-field-calculator.ui.farLimit') }}
             </div>
             <div class="dof-stat-value" :class="{ 'dof-infinity': results.far === null }">
               {{ fmt(results.far) }}
@@ -364,17 +366,17 @@ function toggleUnit() {
           </div>
           <div class="dof-stat dof-stat-full">
             <div class="dof-stat-label">
-              Total depth of field
+              {{ t('tools.depth-of-field-calculator.ui.totalDof') }}
             </div>
             <div class="dof-stat-value" :class="{ 'dof-infinity': results.dof === null }">
-              {{ results.dof === null ? 'infinity' : fmt(results.dof) }}
+              {{ results.dof === null ? t('tools.depth-of-field-calculator.ui.infinity') : fmt(results.dof) }}
             </div>
           </div>
         </div>
 
         <div v-if="results.far === null" class="dof-alert">
           <span class="dof-alert-icon">&#x2B21;</span>
-          Focus distance is at or beyond hyperfocal - far limit extends to infinity.
+          {{ t('tools.depth-of-field-calculator.ui.beyondHyperfocal') }}
         </div>
       </div>
     </div>
@@ -388,11 +390,11 @@ function toggleUnit() {
         <span>Far = d(H&minus;f) / (H&minus;d)</span>
       </div>
       <div class="dof-footnote-legend">
-        <span><em>H</em> = hyperfocal distance</span>
-        <span><em>f</em> = focal length</span>
-        <span><em>N</em> = f-number (aperture)</span>
-        <span><em>c</em> = circle of confusion</span>
-        <span><em>d</em> = focus distance</span>
+        <span><em>H</em> = {{ t('tools.depth-of-field-calculator.ui.legendHyperfocal') }}</span>
+        <span><em>f</em> = {{ t('tools.depth-of-field-calculator.ui.legendFocalLength') }}</span>
+        <span><em>N</em> = {{ t('tools.depth-of-field-calculator.ui.legendFNumber') }}</span>
+        <span><em>c</em> = {{ t('tools.depth-of-field-calculator.ui.legendCoc') }}</span>
+        <span><em>d</em> = {{ t('tools.depth-of-field-calculator.ui.legendFocusDistance') }}</span>
       </div>
     </div>
   </div>

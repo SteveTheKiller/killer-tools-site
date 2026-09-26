@@ -5,15 +5,17 @@ type Cert = SignatureInfo['meta']['certs'][number];
 interface ValidityPeriod { notBefore: string, notAfter: string }
 type IssuedParty = Cert['issuedBy'];
 
+const { t } = useI18n();
+
 const props = defineProps<{ signature: SignatureInfo }>();
 const { signature } = toRefs(props);
 
-const tableHeaders = {
-  validityPeriod: 'Validity period',
-  issuedBy: 'Issued by',
-  issuedTo: 'Issued to',
-  pemCertificate: 'PEM certificate',
-};
+const tableHeaders = computed(() => ({
+  validityPeriod: t('tools.pdf-signature-checker.ui.tableHeaderValidityPeriod'),
+  issuedBy: t('tools.pdf-signature-checker.ui.tableHeaderIssuedBy'),
+  issuedTo: t('tools.pdf-signature-checker.ui.tableHeaderIssuedTo'),
+  pemCertificate: t('tools.pdf-signature-checker.ui.tableHeaderPemCertificate'),
+}));
 
 const certs = computed(() => signature.value.meta.certs.map((certificate, index) => ({
   ...certificate,
@@ -32,10 +34,10 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
       <template #validityPeriod="{ value: vp }">
         <c-key-value-list
           :items="[{
-            label: 'Not before',
+            label: t('tools.pdf-signature-checker.ui.notBefore'),
             value: (vp as ValidityPeriod).notBefore,
           }, {
-            label: 'Not after',
+            label: t('tools.pdf-signature-checker.ui.notAfter'),
             value: (vp as ValidityPeriod).notAfter,
           }]"
         />
@@ -44,22 +46,22 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
       <template #issuedBy="{ value: party }">
         <c-key-value-list
           :items="[{
-            label: 'Common name',
+            label: t('tools.pdf-signature-checker.ui.commonName'),
             value: (party as IssuedParty).commonName,
           }, {
-            label: 'Organization name',
+            label: t('tools.pdf-signature-checker.ui.organizationName'),
             value: (party as IssuedParty).organizationName,
           }, {
-            label: 'Country name',
+            label: t('tools.pdf-signature-checker.ui.countryName'),
             value: (party as IssuedParty).countryName ?? '',
           }, {
-            label: 'Locality name',
+            label: t('tools.pdf-signature-checker.ui.localityName'),
             value: (party as IssuedParty).localityName ?? '',
           }, {
-            label: 'Organizational unit name',
+            label: t('tools.pdf-signature-checker.ui.organizationalUnitName'),
             value: (party as IssuedParty).organizationalUnitName ?? '',
           }, {
-            label: 'State or province name',
+            label: t('tools.pdf-signature-checker.ui.stateOrProvinceName'),
             value: (party as IssuedParty).stateOrProvinceName ?? '',
           }]"
         />
@@ -68,29 +70,29 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
       <template #issuedTo="{ value: party }">
         <c-key-value-list
           :items="[{
-            label: 'Common name',
+            label: t('tools.pdf-signature-checker.ui.commonName'),
             value: (party as IssuedParty).commonName,
           }, {
-            label: 'Organization name',
+            label: t('tools.pdf-signature-checker.ui.organizationName'),
             value: (party as IssuedParty).organizationName,
           }, {
-            label: 'Country name',
+            label: t('tools.pdf-signature-checker.ui.countryName'),
             value: (party as IssuedParty).countryName ?? '',
           }, {
-            label: 'Locality name',
+            label: t('tools.pdf-signature-checker.ui.localityName'),
             value: (party as IssuedParty).localityName ?? '',
           }, {
-            label: 'Organizational unit name',
+            label: t('tools.pdf-signature-checker.ui.organizationalUnitName'),
             value: (party as IssuedParty).organizationalUnitName ?? '',
           }, {
-            label: 'State or province name',
+            label: t('tools.pdf-signature-checker.ui.stateOrProvinceName'),
             value: (party as IssuedParty).stateOrProvinceName ?? '',
           }]"
         />
       </template>
 
       <template #pemCertificate="{ value: pem }">
-        <c-modal-value :value="(pem as string)" label="View PEM cert">
+        <c-modal-value :value="(pem as string)" :label="t('tools.pdf-signature-checker.ui.viewPemCert')">
           <template #value>
             <div break-all text-xs>
               {{ pem }}

@@ -5,6 +5,8 @@ import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 type Mode = 'draw' | 'removebg';
 
+const { t } = useI18n();
+
 const mode = ref<Mode>('draw');
 
 // ── Draw mode ──────────────────────────────────────────────────────
@@ -163,22 +165,22 @@ async function runRemoveBackground() {
     return;
   }
   processing.value = true;
-  processingStatus.value = 'Loading AI model...';
+  processingStatus.value = t('tools.signature-creator.ui.loadingModelStatus');
 
   try {
     const response = await fetch(uploadedImage.value);
     const blob = await response.blob();
 
-    processingStatus.value = 'Removing background...';
+    processingStatus.value = t('tools.signature-creator.ui.removingBackgroundStatus');
     const resultBlob = await removeBackground(blob, {
       progress: (key: string, current: number, total: number) => {
         if (key.includes('inference') || key.includes('compute')) {
           const pct = total > 0 ? Math.round((current / total) * 100) : 0;
-          processingStatus.value = `Processing... ${pct}%`;
+          processingStatus.value = t('tools.signature-creator.ui.processingPercentStatus', { pct });
         }
         else if (key.includes('fetch') || key.includes('download')) {
           const pct = total > 0 ? Math.round((current / total) * 100) : 0;
-          processingStatus.value = `Downloading model... ${pct}%`;
+          processingStatus.value = t('tools.signature-creator.ui.downloadingModelPercentStatus', { pct });
         }
       },
     });
@@ -191,7 +193,7 @@ async function runRemoveBackground() {
   }
   catch (err) {
     console.error(err);
-    processingStatus.value = 'Failed to remove background. Try a different image.';
+    processingStatus.value = t('tools.signature-creator.ui.removeBackgroundFailedStatus');
   }
   finally {
     processing.value = false;
@@ -256,7 +258,7 @@ onUnmounted(() => {
               :class="{ 'sig-tab-active': mode === 'draw' }"
               @click="mode = 'draw'"
             >
-              Draw Signature
+              {{ t('tools.signature-creator.ui.drawSignatureTab') }}
             </button>
             <button
               type="button"
@@ -264,7 +266,7 @@ onUnmounted(() => {
               :class="{ 'sig-tab-active': mode === 'removebg' }"
               @click="mode = 'removebg'"
             >
-              Remove Background
+              {{ t('tools.signature-creator.ui.removeBackgroundTab') }}
             </button>
           </div>
 
@@ -272,12 +274,12 @@ onUnmounted(() => {
             <!-- ── Draw mode controls ── -->
             <template v-if="mode === 'draw'">
               <div class="sig-section-label">
-                Ink color
+                {{ t('tools.signature-creator.ui.inkColorLabel') }}
               </div>
               <n-color-picker v-model:value="inkColor" :modes="['hex']" />
 
               <div class="sig-section-label">
-                Stroke weight
+                {{ t('tools.signature-creator.ui.strokeWeightLabel') }}
               </div>
               <div class="sig-pill-row">
                 <button
@@ -293,14 +295,14 @@ onUnmounted(() => {
               </div>
 
               <div class="sig-section-label">
-                Actions
+                {{ t('tools.signature-creator.ui.actionsLabel') }}
               </div>
               <div class="sig-pill-row">
                 <button type="button" class="sig-pill" @click="undoPad">
-                  ↩ Undo
+                  {{ t('tools.signature-creator.ui.undoButton') }}
                 </button>
                 <button type="button" class="sig-pill" @click="clearPad">
-                  ✕ Clear
+                  {{ t('tools.signature-creator.ui.clearButton') }}
                 </button>
               </div>
 
@@ -310,7 +312,7 @@ onUnmounted(() => {
                 :disabled="isEmpty"
                 @click="downloadSignature"
               >
-                ↓ Download transparent PNG
+                {{ t('tools.signature-creator.ui.downloadTransparentPng') }}
               </button>
             </template>
 
@@ -318,7 +320,7 @@ onUnmounted(() => {
             <template v-if="mode === 'removebg'">
               <template v-if="!uploadedImage">
                 <div class="sig-section-label">
-                  Upload image
+                  {{ t('tools.signature-creator.ui.uploadImageLabel') }}
                 </div>
                 <div
                   class="sig-dropzone"
@@ -329,8 +331,8 @@ onUnmounted(() => {
                   @click="fileInputRef?.click()"
                 >
                   <span class="sig-dropzone-icon">⬆</span>
-                  <span class="sig-dropzone-text">Drop an image here or click to browse</span>
-                  <span class="sig-dropzone-hint">PNG, JPG, WEBP</span>
+                  <span class="sig-dropzone-text">{{ t('tools.signature-creator.ui.dropzoneText') }}</span>
+                  <span class="sig-dropzone-hint">{{ t('tools.signature-creator.ui.dropzoneHint') }}</span>
                   <input
                     ref="fileInputRef"
                     type="file"
@@ -343,7 +345,7 @@ onUnmounted(() => {
 
               <template v-else>
                 <div class="sig-section-label">
-                  Image loaded
+                  {{ t('tools.signature-creator.ui.imageLoadedLabel') }}
                 </div>
                 <div class="sig-filename">
                   {{ uploadedFilename }}
@@ -351,7 +353,7 @@ onUnmounted(() => {
 
                 <div class="sig-pill-row" style="margin-top: 10px;">
                   <button type="button" class="sig-pill" @click="resetUpload">
-                    ✕ Remove
+                    {{ t('tools.signature-creator.ui.removeButton') }}
                   </button>
                 </div>
 
@@ -362,7 +364,7 @@ onUnmounted(() => {
                   :disabled="processing"
                   @click="runRemoveBackground"
                 >
-                  {{ processing ? processingStatus : '⚡ Remove background' }}
+                  {{ processing ? processingStatus : t('tools.signature-creator.ui.removeBackgroundButton') }}
                 </button>
 
                 <div v-if="processingStatus && !processing" class="sig-status-msg">
@@ -371,14 +373,14 @@ onUnmounted(() => {
 
                 <template v-if="resultImage">
                   <div class="sig-section-label" style="margin-top: 14px;">
-                    Export
+                    {{ t('tools.signature-creator.ui.exportLabel') }}
                   </div>
                   <button
                     type="button"
                     class="sig-pill sig-pill-active sig-download-btn"
                     @click="downloadResult"
                   >
-                    ↓ Download PNG (no background)
+                    {{ t('tools.signature-creator.ui.downloadNoBgPng') }}
                   </button>
                 </template>
               </template>
@@ -397,21 +399,21 @@ onUnmounted(() => {
         <!-- Remove BG preview -->
         <template v-if="mode === 'removebg'">
           <div v-if="!uploadedImage" class="sig-canvas-frame sig-canvas-frame-empty">
-            <span class="sig-canvas-hint">Upload an image to get started</span>
+            <span class="sig-canvas-hint">{{ t('tools.signature-creator.ui.uploadPrompt') }}</span>
           </div>
           <template v-else>
             <div v-if="!resultImage" class="sig-preview-wrap">
               <div class="sig-preview-label">
-                Original
+                {{ t('tools.signature-creator.ui.originalLabel') }}
               </div>
-              <img :src="uploadedImage" class="sig-preview-img" alt="original">
+              <img :src="uploadedImage" class="sig-preview-img" :alt="t('tools.signature-creator.ui.originalAlt')">
             </div>
             <div v-else class="sig-preview-wrap">
               <div class="sig-preview-label">
-                Result
+                {{ t('tools.signature-creator.ui.resultLabel') }}
               </div>
               <div class="sig-result-frame">
-                <img :src="resultImage" class="sig-preview-img" alt="result with background removed">
+                <img :src="resultImage" class="sig-preview-img" :alt="t('tools.signature-creator.ui.resultAlt')">
               </div>
             </div>
           </template>

@@ -2,6 +2,8 @@
 import db from 'oui-data';
 import { macAddressValidationRules } from '@/utils/macAddress';
 
+const { t } = useI18n();
+
 const getVendorValue = (address: string) => address.trim().replace(/[.:-]/g, '').toUpperCase().substring(0, 6);
 
 const macAddress = ref('20:37:06:12:34:56');
@@ -25,7 +27,7 @@ async function copyVendor() {
   <div class="mac-tool">
     <c-input-text
       v-model:value="macAddress"
-      label="MAC Address"
+      :label="t('tools.mac-address-lookup.ui.macAddressLabel')"
       placeholder="20:37:06:12:34:56"
       clearable
       autofocus
@@ -43,10 +45,10 @@ async function copyVendor() {
         class="kt-terminal-bar"
         :class="{ 'kt-terminal-bar--copied': copied }"
         :style="details ? 'cursor: pointer' : ''"
-        :title="details ? (copied ? 'Copied!' : 'Click to copy vendor info') : ''"
+        :title="details ? (copied ? t('tools.mac-address-lookup.ui.copiedTooltip') : t('tools.mac-address-lookup.ui.copyTooltip')) : ''"
         @click="copyVendor"
       >
-        <span class="kt-terminal-bar-title">{{ copied ? '✓ copied' : 'Vendor Info' }}</span>
+        <span class="kt-terminal-bar-title">{{ copied ? t('tools.mac-address-lookup.ui.copiedTitle') : t('tools.mac-address-lookup.ui.vendorInfoTitle') }}</span>
       </div>
 
       <template v-if="lines.length">
@@ -59,7 +61,7 @@ async function copyVendor() {
         </div>
       </template>
       <div v-else class="kt-row mac-row">
-        <code class="kt-fallback">Unknown vendor for this address</code>
+        <code class="kt-fallback">{{ t('tools.mac-address-lookup.ui.unknownVendor') }}</code>
       </div>
     </div>
   </div>

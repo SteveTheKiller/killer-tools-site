@@ -3,6 +3,7 @@ import { Check, Copy } from '@vicons/tabler';
 import type { ParsedHeaders } from './email-header-parser.service';
 import { parseRawHeaders } from './email-header-parser.service';
 
+const { t } = useI18n();
 const rawHeaders = ref('');
 const parsed = ref(false);
 const copiedValue = ref<string | null>(null);
@@ -88,7 +89,7 @@ const groupedAuth = computed(() => {
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <template v-if="!parsed">
       <div class="mb-2 text-xs op-60">
-        Paste raw email headers below.
+        {{ t('tools.email-header-parser.ui.pasteHint') }}
       </div>
       <c-input-text
         v-model:value="rawHeaders"
@@ -100,7 +101,7 @@ const groupedAuth = computed(() => {
       />
       <div flex justify-end gap-3>
         <button type="button" class="kt-search-btn" style="width: 140px;" :disabled="!rawHeaders.trim()" @click="parseHeaders">
-          Parse Headers
+          {{ t('tools.email-header-parser.ui.parseButton') }}
         </button>
       </div>
     </template>
@@ -108,7 +109,7 @@ const groupedAuth = computed(() => {
     <template v-if="parsed && result">
       <div mb-4 flex justify-end>
         <button type="button" class="kt-search-btn" style="width: 150px;" @click="reset">
-          ← Parse Another
+          ← {{ t('tools.email-header-parser.ui.parseAnother') }}
         </button>
       </div>
 
@@ -118,10 +119,10 @@ const groupedAuth = computed(() => {
           <!-- Message Details -->
           <div class="ehp-terminal">
             <div class="ehp-terminal-bar">
-              <span class="ehp-terminal-title">Message Details</span>
+              <span class="ehp-terminal-title">{{ t('tools.email-header-parser.ui.messageDetails') }}</span>
             </div>
             <div v-if="result.senderMismatch" class="kt-alert kt-alert-warning" style="margin: 8px 12px; font-size: 0.75rem;">
-              Sender domain differs from From domain — possible spoofing or delegated sending.
+              {{ t('tools.email-header-parser.ui.senderMismatch') }}
             </div>
             <div class="ehp-terminal-body">
               <div v-for="field in result.fields" :key="field.label" class="ehp-row">
@@ -137,8 +138,8 @@ const groupedAuth = computed(() => {
           <!-- Delivery Hops -->
           <div v-if="result.hops.length" class="ehp-terminal">
             <div class="ehp-terminal-bar">
-              <span class="ehp-terminal-title">Delivery Hops</span>
-              <span class="ehp-terminal-sub">oldest first</span>
+              <span class="ehp-terminal-title">{{ t('tools.email-header-parser.ui.deliveryHops') }}</span>
+              <span class="ehp-terminal-sub">{{ t('tools.email-header-parser.ui.oldestFirst') }}</span>
             </div>
             <div class="ehp-terminal-body">
               <div v-for="(hop, i) in [...result.hops].reverse()" :key="i" class="ehp-hop">
@@ -170,7 +171,7 @@ const groupedAuth = computed(() => {
           <!-- Authentication Results -->
           <div v-if="result.auth.length" class="ehp-terminal">
             <div class="ehp-terminal-bar">
-              <span class="ehp-terminal-title">Authentication Results</span>
+              <span class="ehp-terminal-title">{{ t('tools.email-header-parser.ui.authResults') }}</span>
             </div>
             <div class="ehp-terminal-body">
               <div v-for="group in groupedAuth" :key="group.protocol" class="ehp-auth-group">
@@ -199,7 +200,7 @@ const groupedAuth = computed(() => {
           <!-- Spam Analysis -->
           <div v-if="result.spamScore || result.spamStatus || result.scl" class="ehp-terminal">
             <div class="ehp-terminal-bar">
-              <span class="ehp-terminal-title">Spam Analysis</span>
+              <span class="ehp-terminal-title">{{ t('tools.email-header-parser.ui.spamAnalysis') }}</span>
             </div>
             <div class="ehp-terminal-body">
               <div v-if="result.scl" class="ehp-row">
@@ -207,11 +208,11 @@ const groupedAuth = computed(() => {
                 <span class="ehp-value">{{ result.scl }} — {{ result.sclLabel }}</span>
               </div>
               <div v-if="result.spamScore" class="ehp-row">
-                <span class="ehp-label">Spam Score</span>
+                <span class="ehp-label">{{ t('tools.email-header-parser.ui.spamScore') }}</span>
                 <span class="ehp-value">{{ result.spamScore }}</span>
               </div>
               <div v-if="result.spamStatus" class="ehp-row">
-                <span class="ehp-label">Spam Status</span>
+                <span class="ehp-label">{{ t('tools.email-header-parser.ui.spamStatus') }}</span>
                 <span class="ehp-value" style="word-break: break-word;">{{ result.spamStatus }}</span>
               </div>
             </div>

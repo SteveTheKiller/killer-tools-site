@@ -11,6 +11,8 @@ const router = useRouter();
 const commandPaletteStore = useCommandPaletteStore();
 const { searchPrompt, filteredSearchResult } = storeToRefs(commandPaletteStore);
 
+const { t } = useI18n();
+
 const keys = useMagicKeys({
   passive: false,
   onEventFired(e) {
@@ -111,12 +113,12 @@ function activateOption(option: PaletteOption) {
 
 <template>
   <div flex-1 class="palette-root">
-    <button type="button" class="search-icon-trigger" aria-label="Search" @click="isModalOpen = true">
+    <button type="button" class="search-icon-trigger" :aria-label="t('commandPalette.searchAriaLabel')" @click="isModalOpen = true">
       <icon-mdi-search />
     </button>
 
     <c-modal v-model:open="isModalOpen" class="palette-modal" shadow-xl important:max-w-650px important:pa-12px @keydown="handleKeydown">
-      <c-input-text ref="inputRef" v-model:value="searchPrompt" raw-text placeholder="Type to search a tool or a command..." autofocus clearable />
+      <c-input-text ref="inputRef" v-model:value="searchPrompt" raw-text :placeholder="t('commandPalette.searchPlaceholder')" autofocus clearable />
 
       <div v-for="(options, category) in filteredSearchResult" :key="category">
         <div ml-3 mt-3 text-sm text-primary font-bold op-60>

@@ -3,6 +3,8 @@ import type { UseValidationRule } from '@/composable/validation';
 import _ from 'lodash';
 import CInputText from '@/ui/c-input-text/c-input-text.vue';
 
+const { t } = useI18n();
+
 const props = withDefaults(
   defineProps<{
     transformer?: (v: string) => string
@@ -16,16 +18,19 @@ const props = withDefaults(
   {
     transformer: _.identity,
     inputValidationRules: () => [],
-    inputLabel: 'Input',
+    inputLabel: undefined,
     inputDefault: '',
-    inputPlaceholder: 'Input...',
-    outputLabel: 'Output',
+    inputPlaceholder: undefined,
+    outputLabel: undefined,
     outputLanguage: '',
   },
 );
 
-const { transformer, inputValidationRules, inputLabel, outputLabel, outputLanguage, inputPlaceholder, inputDefault }
+const { transformer, inputValidationRules, outputLanguage, inputDefault }
   = toRefs(props);
+const inputLabel = computed(() => props.inputLabel ?? t('components.formatTransformer.input'));
+const inputPlaceholder = computed(() => props.inputPlaceholder ?? t('components.formatTransformer.inputPlaceholder'));
+const outputLabel = computed(() => props.outputLabel ?? t('components.formatTransformer.output'));
 
 const inputElement = ref<typeof CInputText>();
 

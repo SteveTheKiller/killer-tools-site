@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
+const { t } = useI18n();
+
 const aboutTitle = 'About - Killer Tools';
 const aboutDescription = 'About Killer Tools: a free, open-source collection of handy online tools for developers, sysadmins, and IT pros.';
 const aboutUrl = 'https://killertools.net/about';
@@ -36,35 +38,30 @@ useHead({
         <div class="terminal-body">
           <div class="prompt-line">
             <img class="site-icon" src="/app-icon-512.png" alt="">
-            <h1 class="site-title killer-font">About Killer Tools</h1>
+            <h1 class="site-title killer-font">{{ t('pages.about.heading') }}</h1>
           </div>
           <p>
-            Field techs don't have time for bloat. Every tool here exists because I needed it on the job and
-            couldn't find something that just worked without an account, an install, or telemetry.
+            {{ t('pages.about.intro') }}
           </p>
           <p>
-            I build tools on an MSP's internal AI engineering team now, after six years of full-stack
-            development and eight years as a field technician across several companies.
-            KillerTools.net started as a fork of the excellent
+            {{ t('pages.about.originPrefix') }}
             <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools</a>
-            project by
+            {{ t('pages.about.originMid') }}
             <a href="https://github.com/CorentinTh" target="_blank" rel="noopener">Corentin Thomasset</a>
-            and grew into something built for the kind of work I actually do.
-            I built it to look up Group Policy settings mid-ticket, scan a client's subnet, and pull port references without leaving the browser.
+            {{ t('pages.about.originSuffix') }}
           </p>
           <p>
-            The Killer Scripts library covers the jobs that come up every ticket cycle. Every script runs in PS 5.1, PS 7, and Kaseya LiveConnect with no dependencies.
+            {{ t('pages.about.scriptsLibrary') }}
           </p>
           <p>
-            Everything runs in your browser. Nothing is tracked. No account is required, ever.
-            The site enforces a strict Content Security Policy to block dependency-chain attacks. If a compromised npm package ever ends up in the bundle, it can't phone home with what you pasted.
+            {{ t('pages.about.privacyBody') }}
           </p>
           <p class="last">
-            Built and maintained by
+            {{ t('pages.about.maintainedByPrefix') }}
             <a href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a>.
-            If this saves you time on the job,
-            <a href="https://www.buymeacoffee.com/StevetheKiller" target="_blank" rel="noopener">buying me a coffee</a>
-            is appreciated but never expected.
+            {{ t('pages.about.maintainedByMid') }}
+            <a href="https://www.buymeacoffee.com/StevetheKiller" target="_blank" rel="noopener">{{ t('pages.about.buyMeCoffee') }}</a>
+            {{ t('pages.about.maintainedBySuffix') }}
           </p>
         </div>
       </div>
@@ -72,11 +69,11 @@ useHead({
       <!-- Under the About card, not under Also try: the right column is the taller of the two,
            so hanging this off the left one evens the heights. -->
       <div class="about-footer g-card">
-        <h2 class="also-heading killer-font">Missing a tool? Found a bug?</h2>
+        <h2 class="also-heading killer-font">{{ t('pages.about.missingToolHeading') }}</h2>
         <p>
-          Open a feature request or bug report in the
-          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">issues section</a>
-          on GitHub. I read them.
+          {{ t('pages.about.issuesPrefix') }}
+          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">{{ t('pages.about.issuesLinkText') }}</a>
+          {{ t('pages.about.issuesSuffix') }}
         </p>
       </div>
 
@@ -86,14 +83,14 @@ useHead({
         <!-- Same cross-promo card as the app landing pages: "Also try..." in the
              family typewriter face, cards on a grained Grunge surface -->
         <div class="g-card">
-          <h2 class="also-heading killer-font">Also try...</h2>
+          <h2 class="also-heading killer-font">{{ t('pages.about.alsoTryHeading') }}</h2>
           <div class="app-cards">
             <a class="app-card" href="https://killerscan.net" target="_blank" rel="noopener">
               <img class="app-icon" src="/brand/ks-icon.png" alt="KillerScan" width="46" height="46">
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killerscan-wordmark-dark.png" alt="KillerScan">
                 <img class="app-wm wm-light" src="/brand/killerscan-wordmark-light.png" alt="KillerScan">
-                <span class="app-tag">Open-source network scanner for Windows</span>
+                <span class="app-tag">{{ t('pages.about.tagKillerScan') }}</span>
               </span>
             </a>
             <a class="app-card" href="https://killerpdf.net" target="_blank" rel="noopener">
@@ -101,7 +98,7 @@ useHead({
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killerpdf-wordmark-dark.png" alt="KillerPDF">
                 <img class="app-wm wm-light" src="/brand/killerpdf-wordmark-light.png" alt="KillerPDF">
-                <span class="app-tag">Open-source PDF editor for Windows</span>
+                <span class="app-tag">{{ t('pages.about.tagKillerPdf') }}</span>
               </span>
             </a>
             <a class="app-card" href="https://killershell.net" target="_blank" rel="noopener">
@@ -109,7 +106,7 @@ useHead({
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killershell-wordmark-dark.png" alt="KillerShell">
                 <img class="app-wm wm-light" src="/brand/killershell-wordmark-light.png" alt="KillerShell">
-                <span class="app-tag">Open-source Windows shell for power users</span>
+                <span class="app-tag">{{ t('pages.about.tagKillerShell') }}</span>
               </span>
             </a>
             <a class="app-card" href="https://killernotes.net" target="_blank" rel="noopener">
@@ -117,7 +114,7 @@ useHead({
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killernotes-wordmark-dark.png" alt="KillerNotes">
                 <img class="app-wm wm-light" src="/brand/killernotes-wordmark-light.png" alt="KillerNotes">
-                <span class="app-tag">Open-source encrypted notepad for Windows</span>
+                <span class="app-tag">{{ t('pages.about.tagKillerNotes') }}</span>
               </span>
             </a>
             <a class="app-card" href="https://killendar.net" target="_blank" rel="noopener">
@@ -125,7 +122,7 @@ useHead({
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killendar-wordmark-dark.png" alt="The Killendar">
                 <img class="app-wm wm-light" src="/brand/killendar-wordmark-light.png" alt="The Killendar">
-                <span class="app-tag">Open-source encrypted calendar for Windows</span>
+                <span class="app-tag">{{ t('pages.about.tagKillendar') }}</span>
               </span>
             </a>
           </div>
@@ -137,37 +134,37 @@ useHead({
 
     <!-- Row 2: full-width links card -->
     <div class="links-bar g-card">
-      <h2 class="also-heading killer-font">Links</h2>
+      <h2 class="also-heading killer-font">{{ t('pages.about.linksHeading') }}</h2>
       <div class="links-row">
         <div class="link-group">
-          <div class="link-label">Site</div>
+          <div class="link-label">{{ t('pages.about.linkLabelSite') }}</div>
           <a href="https://killertools.net" target="_blank" rel="noopener">killertools.net</a>
           <a href="https://thekiller.net" target="_blank" rel="noopener">thekiller.net</a>
         </div>
         <div class="link-divider" />
         <div class="link-group">
-          <div class="link-label">Source</div>
+          <div class="link-label">{{ t('pages.about.linkLabelSource') }}</div>
           <a href="https://github.com/SteveTheKiller" target="_blank" rel="noopener">GitHub — SteveTheKiller</a>
           <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">GitHub — killer-tools-site</a>
         </div>
         <div class="link-divider" />
         <div class="link-group">
-          <div class="link-label">Issues</div>
-          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">Report a bug</a>
-          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">Request a feature</a>
+          <div class="link-label">{{ t('pages.about.linkLabelIssues') }}</div>
+          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">{{ t('pages.about.reportBug') }}</a>
+          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">{{ t('pages.about.requestFeature') }}</a>
         </div>
         <div class="link-divider" />
         <div class="link-group">
-          <div class="link-label">Support</div>
-          <a href="https://www.buymeacoffee.com/StevetheKiller" target="_blank" rel="noopener">Buy Me a Coffee</a>
+          <div class="link-label">{{ t('pages.about.linkLabelSupport') }}</div>
+          <a href="https://www.buymeacoffee.com/StevetheKiller" target="_blank" rel="noopener">{{ t('pages.about.buyMeCoffee') }}</a>
         </div>
         <div class="link-divider" />
         <div class="link-group">
-          <div class="link-label">Built on</div>
+          <div class="link-label">{{ t('pages.about.linkLabelBuiltOn') }}</div>
           <a href="https://vuejs.org" target="_blank" rel="noopener">Vue 3</a>
           <a href="https://www.naiveui.com" target="_blank" rel="noopener">Naive UI</a>
           <a href="https://vitejs.dev" target="_blank" rel="noopener">Vite</a>
-          <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools (fork)</a>
+          <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">{{ t('pages.about.itToolsFork') }}</a>
         </div>
       </div>
     </div>

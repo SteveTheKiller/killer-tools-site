@@ -8,18 +8,20 @@ import { convertBase } from '../integer-base-converter/integer-base-converter.mo
 import { ipv4ToInt, ipv4ToIpv6, isValidIpv4 } from '../ipv4-address-converter/ipv4-address-converter.service';
 import { getIPClass } from './ipv4-subnet-calculator.models';
 
+const { t } = useI18n();
+
 const ip = useStorage('ipv4-subnet-calculator:ip', '192.168.0.1/24');
 
 const getNetworkInfo = (address: string) => new Netmask(address.trim());
 
 const networkInfo = computed(() => withDefaultOnError(() => getNetworkInfo(ip.value), undefined));
 
-const ipValidationRules = [
+const ipValidationRules = computed(() => [
   {
-    message: 'We cannot parse this address, check the format',
+    message: t('tools.ipv4-subnet-calculator.ui.invalidAddress'),
     validator: (value: string) => isNotThrowing(() => getNetworkInfo(value.trim())),
   },
-];
+]);
 
 function isPrivateIP(base: string): boolean {
   const parts = base.split('.').map(Number);
@@ -59,58 +61,58 @@ const isPrivate = computed(() => {
   return isPrivateIP(networkInfo.value.base);
 });
 
-const sections: {
+const sections: ComputedRef<{
   label: string
   getValue: (blocks: Netmask) => string | undefined
   undefinedFallback?: string
-}[] = [
+}[]> = computed(() => [
   {
-    label: 'Netmask',
+    label: t('tools.ipv4-subnet-calculator.ui.netmask'),
     getValue: block => block.toString(),
   },
   {
-    label: 'Network address',
+    label: t('tools.ipv4-subnet-calculator.ui.networkAddress'),
     getValue: ({ base }) => base,
   },
   {
-    label: 'Network mask',
+    label: t('tools.ipv4-subnet-calculator.ui.networkMask'),
     getValue: ({ mask }) => mask,
   },
   {
-    label: 'Network mask in binary',
+    label: t('tools.ipv4-subnet-calculator.ui.networkMaskBinary'),
     getValue: ({ bitmask }) => ('1'.repeat(bitmask) + '0'.repeat(32 - bitmask)).match(/.{8}/g)?.join('.') ?? '',
   },
   {
-    label: 'CIDR notation',
+    label: t('tools.ipv4-subnet-calculator.ui.cidrNotation'),
     getValue: ({ bitmask }) => `/${bitmask}`,
   },
   {
-    label: 'Wildcard mask',
+    label: t('tools.ipv4-subnet-calculator.ui.wildcardMask'),
     getValue: ({ hostmask }) => hostmask,
   },
   {
-    label: 'Network size',
+    label: t('tools.ipv4-subnet-calculator.ui.networkSize'),
     getValue: ({ size }) => String(size),
   },
   {
-    label: 'First address',
+    label: t('tools.ipv4-subnet-calculator.ui.firstAddress'),
     getValue: ({ first }) => first,
   },
   {
-    label: 'Last address',
+    label: t('tools.ipv4-subnet-calculator.ui.lastAddress'),
     getValue: ({ last }) => last,
   },
   {
-    label: 'Broadcast address',
+    label: t('tools.ipv4-subnet-calculator.ui.broadcastAddress'),
     getValue: ({ broadcast }) => broadcast,
-    undefinedFallback: 'No broadcast address with this mask',
+    undefinedFallback: t('tools.ipv4-subnet-calculator.ui.noBroadcast'),
   },
   {
-    label: 'IP class',
+    label: t('tools.ipv4-subnet-calculator.ui.ipClass'),
     getValue: ({ base: ip }) => getIPClass({ ip }),
-    undefinedFallback: 'Unknown class type',
+    undefinedFallback: t('tools.ipv4-subnet-calculator.ui.unknownClassType'),
   },
-];
+]);
 
 const cheatSheet = [
   { cidr: '/1', mask: '128.0.0.0', hosts: '2,147,483,646' },
@@ -159,9 +161,9 @@ const addressRepresentations = computed(() => {
   }
   const dec = ipv4ToInt({ ip: bareIp.value });
   return [
-    { label: 'Decimal', value: String(dec) },
-    { label: 'Hexadecimal', value: convertBase({ fromBase: 10, toBase: 16, value: String(dec) }).toUpperCase() },
-    { label: 'Binary', value: convertBase({ fromBase: 10, toBase: 2, value: String(dec) }) },
+    { label: t('tools.ipv4-subnet-calculator.ui.decimal'), value: String(dec) },
+    { label: t('tools.ipv4-subnet-calculator.ui.hexadecimal'), value: convertBase({ fromBase: 10, toBase: 16, value: String(dec) }).toUpperCase() },
+    { label: t('tools.ipv4-subnet-calculator.ui.binary'), value: convertBase({ fromBase: 10, toBase: 2, value: String(dec) }) },
     { label: 'IPv6', value: ipv4ToIpv6({ ip: bareIp.value }) },
     { label: 'IPv6 (short)', value: ipv4ToIpv6({ ip: bareIp.value, prefix: '::ffff:' }) },
   ];
@@ -239,7 +241,7 @@ const rangeBar = computed(() => {
     <div class="sc-main">
       <c-input-text
         v-model:value="ip"
-        label="An IPv4 address with or without mask"
+        :label="t('tools.ipv4-subnet-calculator.ui.inputLabel')"
         placeholder="192.168.0.0/24"
         :validation-rules="ipValidationRules"
         autofocus
@@ -249,10 +251,10 @@ const rangeBar = computed(() => {
       <!-- Bitmap + range bar: shared terminal card -->
       <div v-if="bareIpValid || rangeBar" class="k-terminal sc-viz-terminal" mb-3>
         <div class="k-terminal-bar sc-viz-bar">
-          <span class="k-terminal-bar-title">BIT MAP</span>
+          <span class="k-terminal-bar-title">{{ t('tools.ipv4-subnet-calculator.ui.bitMap') }}</span>
           <span class="viz-legend">
-            <span class="viz-legend-net" /> Network
-            <span class="viz-legend-host" /> Host
+            <span class="viz-legend-net" /> {{ t('tools.ipv4-subnet-calculator.ui.network') }}
+            <span class="viz-legend-host" /> {{ t('tools.ipv4-subnet-calculator.ui.host') }}
           </span>
         </div>
 
@@ -267,7 +269,7 @@ const rangeBar = computed(() => {
                   type="button"
                   class="bit-sq"
                   :class="(octetStart + i - 1) < (currentBitmask ?? 0) ? 'bit-net' : 'bit-host'"
-                  :title="`Set prefix to /${octetStart + i}`"
+                  :title="t('tools.ipv4-subnet-calculator.ui.setPrefix', { prefix: octetStart + i })"
                   @click="setPrefix(octetStart + i - 1)"
                 >
                   {{ ipBits[octetStart + i - 1] }}
@@ -301,15 +303,15 @@ const rangeBar = computed(() => {
           </div>
           <div class="rb-labels">
             <div class="rb-lbl rb-lbl-net">
-              <span class="rb-lbl-tag">network</span>
+              <span class="rb-lbl-tag">{{ t('tools.ipv4-subnet-calculator.ui.networkTag') }}</span>
               <code class="rb-lbl-addr">{{ rangeBar.network }}</code>
             </div>
             <div class="rb-lbl rb-lbl-hosts">
-              <span class="rb-lbl-tag">{{ rangeBar.hosts.toLocaleString() }} hosts</span>
+              <span class="rb-lbl-tag">{{ t('tools.ipv4-subnet-calculator.ui.hostsCount', { count: rangeBar.hosts.toLocaleString() }) }}</span>
               <code v-if="rangeBar.hosts > 0" class="rb-lbl-addr rb-lbl-range">{{ rangeBar.first }} – {{ rangeBar.last }}</code>
             </div>
             <div class="rb-lbl rb-lbl-bcast">
-              <span class="rb-lbl-tag">broadcast</span>
+              <span class="rb-lbl-tag">{{ t('tools.ipv4-subnet-calculator.ui.broadcastTag') }}</span>
               <code class="rb-lbl-addr">{{ rangeBar.broadcast }}</code>
             </div>
           </div>
@@ -321,8 +323,8 @@ const rangeBar = computed(() => {
         <!-- Terminal header bar -->
         <div class="k-terminal-bar">
           <span class="k-status-dot" :class="isPrivate ? 'k-status-private' : 'k-status-public'" />
-          <span class="k-status-label">{{ isPrivate ? 'Private' : 'Public' }} IP</span>
-          <span class="k-terminal-bar-title">SUBNET DETAIL</span>
+          <span class="k-status-label">{{ isPrivate ? t('tools.ipv4-subnet-calculator.ui.privateIp') : t('tools.ipv4-subnet-calculator.ui.publicIp') }}</span>
+          <span class="k-terminal-bar-title">{{ t('tools.ipv4-subnet-calculator.ui.subnetDetail') }}</span>
         </div>
 
         <!-- Two-column body -->
@@ -330,7 +332,7 @@ const rangeBar = computed(() => {
           <!-- Left: Subnet Info -->
           <div class="k-col">
             <div class="k-section-row">
-              SUBNET INFO
+              {{ t('tools.ipv4-subnet-calculator.ui.subnetInfo') }}
             </div>
             <div
               v-for="{ getValue, label, undefinedFallback } in sections"
@@ -347,7 +349,7 @@ const rangeBar = computed(() => {
                 v-if="getValue(networkInfo)"
                 type="button"
                 class="k-copy"
-                title="Copy"
+                :title="t('tools.ipv4-subnet-calculator.ui.copy')"
                 @click="copyValue(label, getValue(networkInfo) ?? '')"
               >
                 <span v-if="copiedLabel === label">✓</span>
@@ -363,7 +365,7 @@ const rangeBar = computed(() => {
           <!-- Right: Address Representations -->
           <div class="k-col">
             <div class="k-section-row">
-              ADDRESS REPRESENTATIONS
+              {{ t('tools.ipv4-subnet-calculator.ui.addressRepresentations') }}
             </div>
             <template v-if="bareIpValid">
               <div
@@ -377,7 +379,7 @@ const rangeBar = computed(() => {
                 <button
                   type="button"
                   class="k-copy"
-                  title="Copy"
+                  :title="t('tools.ipv4-subnet-calculator.ui.copy')"
                   @click="copyValue(label, value)"
                 >
                   <span v-if="copiedLabel === label">✓</span>
@@ -386,7 +388,7 @@ const rangeBar = computed(() => {
               </div>
             </template>
             <div v-else class="k-fallback" style="padding: 10px 12px; font-size: 0.75rem;">
-              Enter a valid IPv4 address to see representations
+              {{ t('tools.ipv4-subnet-calculator.ui.enterValidIpv4') }}
             </div>
           </div>
         </div>
@@ -396,10 +398,10 @@ const rangeBar = computed(() => {
       <div v-if="networkInfo" class="k-nav-row">
         <button type="button" class="kt-nav-btn" @click="switchToBlock({ count: -1 })">
           <n-icon :component="ArrowLeft" />
-          Previous block
+          {{ t('tools.ipv4-subnet-calculator.ui.previousBlock') }}
         </button>
         <button type="button" class="kt-nav-btn" @click="switchToBlock({ count: 1 })">
-          Next block
+          {{ t('tools.ipv4-subnet-calculator.ui.nextBlock') }}
           <n-icon :component="ArrowRight" />
         </button>
       </div>
@@ -411,14 +413,14 @@ const rangeBar = computed(() => {
         type="button"
         class="cs-toggle"
         :class="{ 'cs-toggle-open': showCheatSheet }"
-        :title="showCheatSheet ? 'Collapse Cheat Sheet' : 'Subnet Cheat Sheet'"
+        :title="showCheatSheet ? t('tools.ipv4-subnet-calculator.ui.collapseCheatSheet') : t('tools.ipv4-subnet-calculator.ui.subnetCheatSheet')"
         @click="showCheatSheet = !showCheatSheet"
       >
         <span class="cs-chev">{{ showCheatSheet ? '›' : '‹' }}</span>
       </button>
       <div v-show="showCheatSheet" class="cs-panel">
         <div mb-3 class="k-section-label" style="font-size:0.8rem;">
-          Subnet Cheat Sheet
+          {{ t('tools.ipv4-subnet-calculator.ui.subnetCheatSheet') }}
         </div>
         <div class="cs-grid">
           <button
@@ -431,7 +433,7 @@ const rangeBar = computed(() => {
           >
             <div class="cs-card-top">
               <span class="cs-card-cidr">{{ row.cidr }}</span>
-              <span class="cs-card-hosts">{{ row.hosts }} hosts</span>
+              <span class="cs-card-hosts">{{ t('tools.ipv4-subnet-calculator.ui.hostsCount', { count: row.hosts }) }}</span>
             </div>
             <span class="cs-card-mask">{{ row.mask }}</span>
           </button>

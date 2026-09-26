@@ -3,23 +3,25 @@ import { useValidation } from '@/composable/validation';
 import { convertBase } from '../integer-base-converter/integer-base-converter.model';
 import { ipv4ToInt, ipv4ToIpv6, isValidIpv4 } from './ipv4-address-converter.service';
 
+const { t } = useI18n();
+
 const rawIpAddress = useStorage('ipv4-converter:ip', '192.168.1.1');
 
 const convertedSections = computed(() => {
   const ipInDecimal = ipv4ToInt({ ip: rawIpAddress.value });
 
   return [
-    { label: 'Decimal', value: String(ipInDecimal) },
-    { label: 'Hexadecimal', value: convertBase({ fromBase: 10, toBase: 16, value: String(ipInDecimal) }).toUpperCase() },
-    { label: 'Binary', value: convertBase({ fromBase: 10, toBase: 2, value: String(ipInDecimal) }) },
+    { label: t('tools.ipv4-address-converter.ui.decimal'), value: String(ipInDecimal) },
+    { label: t('tools.ipv4-address-converter.ui.hexadecimal'), value: convertBase({ fromBase: 10, toBase: 16, value: String(ipInDecimal) }).toUpperCase() },
+    { label: t('tools.ipv4-address-converter.ui.binary'), value: convertBase({ fromBase: 10, toBase: 2, value: String(ipInDecimal) }) },
     { label: 'IPv6', value: ipv4ToIpv6({ ip: rawIpAddress.value }) },
-    { label: 'IPv6 (short)', value: ipv4ToIpv6({ ip: rawIpAddress.value, prefix: '::ffff:' }) },
+    { label: t('tools.ipv4-address-converter.ui.ipv6Short'), value: ipv4ToIpv6({ ip: rawIpAddress.value, prefix: '::ffff:' }) },
   ];
 });
 
 const { attrs: validationAttrs } = useValidation({
   source: rawIpAddress,
-  rules: [{ message: 'Invalid ipv4 address', validator: (ip: string) => isValidIpv4({ ip }) }],
+  rules: [{ message: t('tools.ipv4-address-converter.ui.invalidIpv4'), validator: (ip: string) => isValidIpv4({ ip }) }],
 });
 
 const copiedLabel = ref<string | null>(null);
@@ -44,7 +46,7 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
   <div class="ip-tool">
     <c-card>
       <div class="ip-section-label">
-        IPv4 Address
+        {{ t('tools.ipv4-address-converter.ui.ipv4Address') }}
       </div>
       <c-input-text
         v-model:value="rawIpAddress"
@@ -56,7 +58,7 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
       <div class="kt-divider" />
 
       <div class="ip-section-label">
-        Output
+        {{ t('tools.ipv4-address-converter.ui.output') }}
       </div>
 
       <div class="ip-grid">
@@ -71,7 +73,7 @@ const isError = computed(() => validationAttrs.validationStatus === 'error');
           <button
             type="button"
             class="ip-copy"
-            :title="copiedLabel === label ? 'Copied!' : 'Copy'"
+            :title="copiedLabel === label ? t('tools.ipv4-address-converter.ui.copied') : t('tools.ipv4-address-converter.ui.copy')"
             :disabled="isError"
             @click="copyValue(label, value)"
           >

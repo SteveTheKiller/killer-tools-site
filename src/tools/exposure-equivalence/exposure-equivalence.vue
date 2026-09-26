@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const shutterOptions = [
   { label: '1/8000', value: 1 / 8000 },
   { label: '1/4000', value: 1 / 4000 },
@@ -257,13 +259,13 @@ function formatShutter(seconds: number): string {
     <!-- Inputs -->
     <div class="ee-panel kt-terminal">
       <div class="ee-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">EXPOSURE EQUIVALENCE</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.exposure-equivalence.ui.titleInputs') }}</span>
       </div>
       <div class="ee-body">
         <!-- Shutter speed dial -->
         <div class="ee-field-row">
-          <span class="ee-field-label">Shutter speed</span>
-          <span class="ee-field-hint">drag or click</span>
+          <span class="ee-field-label">{{ t('tools.exposure-equivalence.ui.shutterSpeed') }}</span>
+          <span class="ee-field-hint">{{ t('tools.exposure-equivalence.ui.dragOrClick') }}</span>
         </div>
         <div class="ee-shutter-row">
           <div class="ee-dial-wrap">
@@ -283,7 +285,7 @@ function formatShutter(seconds: number): string {
                   :class="{ 'dial-active': selectedShutter === opt.value }"
                 >
                   <span class="ee-dial-tick" />
-                  <span class="ee-dial-label">{{ opt.label }}</span>
+                  <span class="ee-dial-label">{{ opt.value === -1 ? t('tools.exposure-equivalence.ui.custom') : opt.label }}</span>
                 </button>
               </div>
             </div>
@@ -293,7 +295,7 @@ function formatShutter(seconds: number): string {
             v-model="customShutter"
             class="ee-num"
             type="number"
-            placeholder="sec"
+            :placeholder="t('tools.exposure-equivalence.ui.secPlaceholder')"
             min="0.0001"
             step="0.001"
           >
@@ -303,8 +305,8 @@ function formatShutter(seconds: number): string {
 
         <!-- Aperture dial -->
         <div class="ee-field-row">
-          <span class="ee-field-label">Aperture</span>
-          <span class="ee-field-hint">drag or click</span>
+          <span class="ee-field-label">{{ t('tools.exposure-equivalence.ui.aperture') }}</span>
+          <span class="ee-field-hint">{{ t('tools.exposure-equivalence.ui.dragOrClick') }}</span>
         </div>
         <div class="ee-dial-wrap">
           <div class="ee-dial-notch" />
@@ -334,14 +336,14 @@ function formatShutter(seconds: number): string {
     <!-- Results table -->
     <div class="ee-panel kt-terminal">
       <div class="ee-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">EQUIVALENT EXPOSURES</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.exposure-equivalence.ui.titleResults') }}</span>
       </div>
       <div class="ee-table-wrap">
         <table class="ee-table">
           <thead>
             <tr>
-              <th>Aperture</th>
-              <th>Shutter speed</th>
+              <th>{{ t('tools.exposure-equivalence.ui.aperture') }}</th>
+              <th>{{ t('tools.exposure-equivalence.ui.shutterSpeed') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -366,15 +368,15 @@ function formatShutter(seconds: number): string {
       <div class="ee-footnote-formulas">
         <span><em>t2</em> = <em>t1</em> &times; <em>N2</em>&sup2; / <em>N1</em>&sup2;</span>
         <span class="ee-fn-sep">/</span>
-        <span>ISO-independent at any fixed ISO</span>
+        <span>{{ t('tools.exposure-equivalence.ui.isoIndependent') }}</span>
         <span class="ee-fn-sep">/</span>
-        <span>highlighted row is your base</span>
+        <span>{{ t('tools.exposure-equivalence.ui.highlightedBase') }}</span>
       </div>
       <div class="ee-footnote-legend">
-        <span><em>t1</em> = base shutter speed</span>
-        <span><em>t2</em> = equivalent shutter speed</span>
-        <span><em>N1</em> = base aperture (f-number)</span>
-        <span><em>N2</em> = target aperture (f-number)</span>
+        <span><em>t1</em> = {{ t('tools.exposure-equivalence.ui.legendT1') }}</span>
+        <span><em>t2</em> = {{ t('tools.exposure-equivalence.ui.legendT2') }}</span>
+        <span><em>N1</em> = {{ t('tools.exposure-equivalence.ui.legendN1') }}</span>
+        <span><em>N2</em> = {{ t('tools.exposure-equivalence.ui.legendN2') }}</span>
       </div>
     </div>
   </div>

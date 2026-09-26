@@ -4,17 +4,19 @@ import { useCopy } from '@/composable/copy';
 import { useStyleStore } from '@/stores/style.store';
 import { computeChmodOctalRepresentation, computeChmodSymbolicRepresentation } from './chmod-calculator.service';
 
-const scopes: { scope: Scope, title: string, bit: number }[] = [
-  { scope: 'read', title: 'Read', bit: 4 },
-  { scope: 'write', title: 'Write', bit: 2 },
-  { scope: 'execute', title: 'Execute', bit: 1 },
-];
+const { t } = useI18n();
 
-const groups: { key: Group, label: string, short: string }[] = [
-  { key: 'owner', label: 'Owner', short: 'u' },
-  { key: 'group', label: 'Group', short: 'g' },
-  { key: 'public', label: 'Public', short: 'o' },
-];
+const scopes = computed<{ scope: Scope, title: string, bit: number }[]>(() => [
+  { scope: 'read', title: t('tools.chmod-calculator.ui.read'), bit: 4 },
+  { scope: 'write', title: t('tools.chmod-calculator.ui.write'), bit: 2 },
+  { scope: 'execute', title: t('tools.chmod-calculator.ui.execute'), bit: 1 },
+]);
+
+const groups = computed<{ key: Group, label: string, short: string }[]>(() => [
+  { key: 'owner', label: t('tools.chmod-calculator.ui.owner'), short: 'u' },
+  { key: 'group', label: t('tools.chmod-calculator.ui.group'), short: 'g' },
+  { key: 'public', label: t('tools.chmod-calculator.ui.public'), short: 'o' },
+]);
 
 const permissions = ref({
   owner: { read: false, write: false, execute: false },
@@ -100,7 +102,7 @@ function digitColor(n: number) {
         <div class="ch-input-row">
           <span class="ch-prompt">&gt;_</span>
           <span class="ch-cmd-text">{{ command }}</span>
-          <button class="ch-copy-btn" title="Copy command" @click="copy()">
+          <button class="ch-copy-btn" :title="t('tools.chmod-calculator.ui.copyCommand')" @click="copy(undefined, { notificationMessage: t('tools.chmod-calculator.ui.commandCopied') })">
             <icon-mdi-content-copy />
           </button>
         </div>

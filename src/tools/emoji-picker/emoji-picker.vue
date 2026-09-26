@@ -24,6 +24,8 @@ const emojisGroups: { emojiInfos: EmojiInfo[], group: string }[] = _
   .map((emojiInfos, group) => ({ group, emojiInfos }))
   .value();
 
+const { t } = useI18n();
+
 const searchQuery = useDebouncedRef('', 500);
 
 const { searchResult } = useFuzzySearch({
@@ -43,7 +45,7 @@ const { searchResult } = useFuzzySearch({
     <div flex items-center gap-3>
       <c-input-text
         v-model:value="searchQuery"
-        placeholder="Search emojis (e.g. 'smile')..."
+        :placeholder="t('tools.emoji-picker.ui.searchPlaceholder')"
         mx-auto max-w-600px
       >
         <template #prefix>
@@ -59,12 +61,12 @@ const { searchResult } = useFuzzySearch({
         text-20px
         font-bold
       >
-        No results
+        {{ t('tools.emoji-picker.ui.noResults') }}
       </div>
 
       <div v-else>
         <div mt-4 text-20px font-bold>
-          Search result
+          {{ t('tools.emoji-picker.ui.searchResult') }}
         </div>
 
         <emoji-grid :emoji-infos="searchResult" />

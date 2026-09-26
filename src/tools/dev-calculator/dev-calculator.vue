@@ -15,6 +15,8 @@ import {
   tempMin,
 } from './dev-calculator.data';
 
+const { t } = useI18n();
+
 // ---- State ----
 const selectedDevId = ref<string>(developers[0].id);
 const selectedDilutionIdx = ref<number>(developers[0].defaultDilution);
@@ -136,10 +138,10 @@ const filmOptions = computed(() => {
     .map(f => ({ label: f.name, value: f.name }));
   const groups: { type: 'group', label: string, key: string, children: typeof withData }[] = [];
   if (withData.length) {
-    groups.push({ type: 'group', label: 'Has data', key: 'has-data', children: withData });
+    groups.push({ type: 'group', label: t('tools.dev-calculator.ui.hasData'), key: 'has-data', children: withData });
   }
   if (withoutData.length) {
-    groups.push({ type: 'group', label: 'No data — enter base time manually', key: 'no-data', children: withoutData });
+    groups.push({ type: 'group', label: t('tools.dev-calculator.ui.noDataGroup'), key: 'no-data', children: withoutData });
   }
   return groups;
 });
@@ -158,18 +160,18 @@ function sliderStyle(val: number, min: number, max: number) {
 const tempWarning = computed<string | null>(() => {
   if (isColorProcess.value) {
     if (tempC.value < 36) {
-      return `${film.value.process} below 36°C - color shifts and incomplete development likely`;
+      return t('tools.dev-calculator.ui.colorBelow', { process: film.value.process });
     }
     if (tempC.value > 40) {
-      return `${film.value.process} above 40°C - risk of fogging and color crossover`;
+      return t('tools.dev-calculator.ui.colorAbove', { process: film.value.process });
     }
     return null;
   }
   if (tempC.value < 18) {
-    return 'Below 18°C - development will be very slow';
+    return t('tools.dev-calculator.ui.bwBelow');
   }
   if (tempC.value > 24) {
-    return 'Above 24°C - risk of reticulation and fogging';
+    return t('tools.dev-calculator.ui.bwAbove');
   }
   return null;
 });
@@ -193,33 +195,33 @@ const processStages = computed<TimerStage[]>(() => {
   const proc = film.value?.process;
   if (proc === 'C41') {
     return [
-      { name: 'Developer', seconds: devTime, agitation: 'Continuous first 30s, then 10s every 30s' },
-      { name: 'Bleach', seconds: 390, agitation: 'Continuous first 30s, then 10s every 30s' },
-      { name: 'Wash', seconds: 195, agitation: 'Running water or 3 full changes' },
-      { name: 'Fixer', seconds: 390, agitation: 'Continuous first 30s, then 10s every 30s' },
-      { name: 'Wash 2', seconds: 195, agitation: 'Running water or 3 full changes' },
-      { name: 'Stabilizer', seconds: 90, agitation: 'Gentle swirl only — do not rinse after' },
+      { name: t('tools.dev-calculator.ui.stDeveloper'), seconds: devTime, agitation: t('tools.dev-calculator.ui.agC30s10') },
+      { name: t('tools.dev-calculator.ui.stBleach'), seconds: 390, agitation: t('tools.dev-calculator.ui.agC30s10') },
+      { name: t('tools.dev-calculator.ui.stWash'), seconds: 195, agitation: t('tools.dev-calculator.ui.agRun3Full') },
+      { name: t('tools.dev-calculator.ui.stFixer'), seconds: 390, agitation: t('tools.dev-calculator.ui.agC30s10') },
+      { name: t('tools.dev-calculator.ui.stWash2'), seconds: 195, agitation: t('tools.dev-calculator.ui.agRun3Full') },
+      { name: t('tools.dev-calculator.ui.stStabilizer'), seconds: 90, agitation: t('tools.dev-calculator.ui.agGentle') },
     ];
   }
   if (proc === 'E6') {
     return [
-      { name: 'First Developer', seconds: devTime, agitation: 'Continuous first 30s, then 5s every 30s' },
-      { name: 'Wash', seconds: 90, agitation: 'Running water or 3 changes' },
-      { name: 'Reversal Bath', seconds: 120, agitation: 'Continuous' },
-      { name: 'Color Developer', seconds: 360, agitation: 'Continuous first 30s, then 5s every 30s' },
-      { name: 'Pre-bleach', seconds: 120, agitation: 'Continuous' },
-      { name: 'Bleach', seconds: 360, agitation: '10s every 30s' },
-      { name: 'Fixer', seconds: 240, agitation: '10s every 30s' },
-      { name: 'Final Wash', seconds: 240, agitation: 'Running water or 5 changes' },
-      { name: 'Stabilizer', seconds: 60, agitation: 'Gentle swirl only — do not rinse after' },
+      { name: t('tools.dev-calculator.ui.stFirstDeveloper'), seconds: devTime, agitation: t('tools.dev-calculator.ui.agC30s5') },
+      { name: t('tools.dev-calculator.ui.stWash'), seconds: 90, agitation: t('tools.dev-calculator.ui.agRun3') },
+      { name: t('tools.dev-calculator.ui.stReversalBath'), seconds: 120, agitation: t('tools.dev-calculator.ui.agContinuous') },
+      { name: t('tools.dev-calculator.ui.stColorDeveloper'), seconds: 360, agitation: t('tools.dev-calculator.ui.agC30s5') },
+      { name: t('tools.dev-calculator.ui.stPreBleach'), seconds: 120, agitation: t('tools.dev-calculator.ui.agContinuous') },
+      { name: t('tools.dev-calculator.ui.stBleach'), seconds: 360, agitation: t('tools.dev-calculator.ui.ag10per30') },
+      { name: t('tools.dev-calculator.ui.stFixer'), seconds: 240, agitation: t('tools.dev-calculator.ui.ag10per30') },
+      { name: t('tools.dev-calculator.ui.stFinalWash'), seconds: 240, agitation: t('tools.dev-calculator.ui.agRun5') },
+      { name: t('tools.dev-calculator.ui.stStabilizer'), seconds: 60, agitation: t('tools.dev-calculator.ui.agGentle') },
     ];
   }
   // B&W
   return [
-    { name: 'Developer', seconds: devTime, agitation: 'Continuous first 30s, then 10s every 60s' },
-    { name: 'Stop Bath', seconds: 60, agitation: 'Continuous for 60s' },
-    { name: 'Fixer', seconds: 300, agitation: '10s every 60s' },
-    { name: 'Wash', seconds: 300, agitation: 'Running water or 5 full changes' },
+    { name: t('tools.dev-calculator.ui.stDeveloper'), seconds: devTime, agitation: t('tools.dev-calculator.ui.agC60s10') },
+    { name: t('tools.dev-calculator.ui.stStopBath'), seconds: 60, agitation: t('tools.dev-calculator.ui.agCont60') },
+    { name: t('tools.dev-calculator.ui.stFixer'), seconds: 300, agitation: t('tools.dev-calculator.ui.ag10per60') },
+    { name: t('tools.dev-calculator.ui.stWash'), seconds: 300, agitation: t('tools.dev-calculator.ui.agRun5Full') },
   ];
 });
 
@@ -235,9 +237,9 @@ const countdownDisplay = computed(() => formatTime(stageSecondsLeft.value));
 
 const timerBtnLabel = computed(() => {
   if (!timerStarted.value) {
-    return '▶ Start';
+    return `▶ ${t('tools.dev-calculator.ui.start')}`;
   }
-  return timerRunning.value ? '⏸ Pause' : '▶ Resume';
+  return timerRunning.value ? `⏸ ${t('tools.dev-calculator.ui.pause')}` : `▶ ${t('tools.dev-calculator.ui.resume')}`;
 });
 
 function beep(freq = 880, dur = 0.3) {
@@ -344,12 +346,12 @@ onUnmounted(() => {
     <!-- LEFT PANEL: inputs -->
     <div class="dc-panel kt-terminal">
       <div class="dc-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">FILM DEVELOPMENT CALCULATOR</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.dev-calculator.ui.calculatorTitle') }}</span>
       </div>
       <div class="dc-body">
         <!-- Developer -->
         <div class="dc-field-label">
-          Developer
+          {{ t('tools.dev-calculator.ui.developer') }}
         </div>
         <div class="dc-btn-grid">
           <button
@@ -367,7 +369,7 @@ onUnmounted(() => {
 
         <!-- Dilution -->
         <div class="dc-field-label">
-          Dilution
+          {{ t('tools.dev-calculator.ui.dilution') }}
         </div>
         <div class="dc-btn-row">
           <button
@@ -385,7 +387,7 @@ onUnmounted(() => {
 
         <!-- Film stock -->
         <div class="dc-field-label">
-          Film stock
+          {{ t('tools.dev-calculator.ui.filmStock') }}
         </div>
         <KtSelect
           v-model:value="selectedFilmName"
@@ -396,30 +398,30 @@ onUnmounted(() => {
 
         <!-- Base time -->
         <div class="dc-field-label">
-          Base time at {{ filmBaseTemp }}°C
+          {{ t('tools.dev-calculator.ui.baseTimeAt', { temp: filmBaseTemp }) }}
         </div>
         <div class="dc-base-row">
           <span class="dc-base-db" :class="{ 'dc-base-none': !hasData }">
-            {{ hasData ? formatTime(dbBaseSeconds!) : 'no data' }}
+            {{ hasData ? formatTime(dbBaseSeconds!) : t('tools.dev-calculator.ui.noData') }}
           </span>
           <span class="dc-base-sep">|</span>
           <input
             v-model.number="customBaseSeconds"
             type="number"
             class="dc-num dc-num-sm"
-            placeholder="override (s)"
+            :placeholder="t('tools.dev-calculator.ui.overridePlaceholder')"
             min="1"
           >
         </div>
         <div v-if="isCustomBase" class="dc-hint">
-          Custom base time active
+          {{ t('tools.dev-calculator.ui.customBaseActive') }}
         </div>
 
         <div class="dc-divider" />
 
         <!-- Temperature -->
         <div class="dc-field-label dc-field-label-row">
-          <span>Temperature: <strong class="dc-val">{{ showTemp(tempC) }}</strong></span>
+          <span>{{ t('tools.dev-calculator.ui.temperature') }} <strong class="dc-val">{{ showTemp(tempC) }}</strong></span>
           <div class="dc-unit-toggle">
             <button class="dc-unit-btn" :class="{ 'dc-unit-active': tempUnit === 'C' }" @click="tempUnit = 'C'">
               °C
@@ -447,7 +449,7 @@ onUnmounted(() => {
 
         <!-- Push / Pull -->
         <div class="dc-field-label">
-          Push / Pull
+          {{ t('tools.dev-calculator.ui.pushPull') }}
         </div>
         <div class="dc-btn-row dc-pp-row">
           <button
@@ -466,7 +468,7 @@ onUnmounted(() => {
 
         <!-- Tank volume -->
         <div class="dc-field-label">
-          Tank volume
+          {{ t('tools.dev-calculator.ui.tankVolume') }}
         </div>
         <div class="dc-btn-row">
           <button
@@ -482,7 +484,7 @@ onUnmounted(() => {
             v-model.number="customTankVolume"
             type="number"
             class="dc-num dc-num-sm"
-            placeholder="custom ml"
+            :placeholder="t('tools.dev-calculator.ui.customMlPlaceholder')"
             min="1"
           >
         </div>
@@ -493,7 +495,7 @@ onUnmounted(() => {
     <div class="dc-right-col">
       <div class="dc-panel kt-terminal dc-panel-result">
         <div class="dc-panel-bar kt-terminal-bar">
-          <span class="kt-terminal-bar-title">ADJUSTED TIME</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.dev-calculator.ui.adjustedTime') }}</span>
         </div>
         <div class="dc-body">
           <!-- Big time -->
@@ -506,15 +508,15 @@ onUnmounted(() => {
           <!-- Breakdown -->
           <div class="dc-breakdown">
             <div class="dc-breakdown-row">
-              <span class="dc-breakdown-label">Base time ({{ filmBaseTemp }}°C)</span>
+              <span class="dc-breakdown-label">{{ t('tools.dev-calculator.ui.baseTimeTemp', { temp: filmBaseTemp }) }}</span>
               <span class="dc-breakdown-val">{{ baseSeconds !== null ? formatTime(baseSeconds) : '—' }}</span>
             </div>
             <div v-if="tempC !== filmBaseTemp" class="dc-breakdown-row">
-              <span class="dc-breakdown-label">Temp adj. ({{ showTemp(tempC) }})</span>
+              <span class="dc-breakdown-label">{{ t('tools.dev-calculator.ui.tempAdj', { temp: showTemp(tempC) }) }}</span>
               <span class="dc-breakdown-val">{{ tempAdjustedSeconds !== null ? formatTime(tempAdjustedSeconds) : '—' }}</span>
             </div>
             <div v-if="pushPull !== 0" class="dc-breakdown-row">
-              <span class="dc-breakdown-label">{{ pushPull > 0 ? 'Push' : 'Pull' }} {{ Math.abs(pushPull) }} stop{{ Math.abs(pushPull) !== 1 ? 's' : '' }}</span>
+              <span class="dc-breakdown-label">{{ t(`tools.dev-calculator.ui.${pushPull > 0 ? 'push' : 'pull'}${Math.abs(pushPull) === 1 ? 'Stop' : 'Stops'}`, { n: Math.abs(pushPull) }) }}</span>
               <span class="dc-breakdown-val">{{ finalSeconds !== null ? formatTime(finalSeconds) : '—' }}</span>
             </div>
           </div>
@@ -523,7 +525,7 @@ onUnmounted(() => {
 
           <!-- Dilution mix -->
           <div class="dc-field-label">
-            Mix for {{ effectiveTankVol }}ml &mdash; {{ developer.name }} {{ dilution.label }}
+            {{ t('tools.dev-calculator.ui.mixFor', { volume: effectiveTankVol }) }} &mdash; {{ developer.name }} {{ dilution.label }}
           </div>
           <div class="dc-mix-row">
             <div class="dc-mix-col">
@@ -531,7 +533,7 @@ onUnmounted(() => {
                 {{ dilutionVolumes.devMl }}ml
               </div>
               <div class="dc-mix-sub">
-                developer
+                {{ t('tools.dev-calculator.ui.mixDeveloper') }}
               </div>
             </div>
             <template v-if="dilutionVolumes.waterMl > 0">
@@ -543,7 +545,7 @@ onUnmounted(() => {
                   {{ dilutionVolumes.waterMl }}ml
                 </div>
                 <div class="dc-mix-sub">
-                  water
+                  {{ t('tools.dev-calculator.ui.mixWater') }}
                 </div>
               </div>
             </template>
@@ -551,17 +553,17 @@ onUnmounted(() => {
 
           <!-- Warnings -->
           <div v-if="!hasData && !isCustomBase" class="dc-alert dc-alert-warn">
-            No data for {{ film.name }} + {{ developer.name }}. Enter a base time manually.
+            {{ t('tools.dev-calculator.ui.noDataWarning', { film: film.name, developer: developer.name }) }}
           </div>
           <div v-if="tempWarning" class="dc-alert dc-alert-warn">
             {{ tempWarning }}
           </div>
           <div v-if="pushPull !== 0" class="dc-alert">
-            Push/pull times are estimates. Test roll recommended.
+            {{ t('tools.dev-calculator.ui.pushPullEstimate') }}
           </div>
 
           <div class="dc-source-note">
-            Base times sourced from Massive Dev Chart and manufacturer datasheets.
+            {{ t('tools.dev-calculator.ui.sourceNote') }}
           </div>
         </div>
       </div>
@@ -569,7 +571,7 @@ onUnmounted(() => {
       <!-- TIMER PANEL: full width -->
       <div class="dc-panel dc-timer-panel kt-terminal">
         <div class="dc-panel-bar kt-terminal-bar">
-          <span class="kt-terminal-bar-title">PROCESS TIMER</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.dev-calculator.ui.processTimer') }}</span>
           <span class="dc-timer-proc-badge">{{ film.process ?? 'B&W' }}</span>
         </div>
 
@@ -594,14 +596,14 @@ onUnmounted(() => {
           <!-- Finished state -->
           <div v-if="timerFinished" class="dc-timer-done">
             <span class="dc-timer-done-check">✓</span>
-            <span class="dc-timer-done-label">Development complete</span>
-            <span class="dc-timer-done-hint">Hang to dry and enjoy your negatives.</span>
+            <span class="dc-timer-done-label">{{ t('tools.dev-calculator.ui.devComplete') }}</span>
+            <span class="dc-timer-done-hint">{{ t('tools.dev-calculator.ui.devCompleteHint') }}</span>
           </div>
 
           <!-- Active / idle state -->
           <template v-else>
             <div class="dc-timer-stage-name">
-              Stage {{ currentStageIdx + 1 }} / {{ processStages.length }}
+              {{ t('tools.dev-calculator.ui.stageOf', { current: currentStageIdx + 1, total: processStages.length }) }}
               <span class="dc-timer-stage-label">{{ currentStage?.name }}</span>
             </div>
             <div class="dc-timer-prog-track">
@@ -617,13 +619,13 @@ onUnmounted(() => {
               {{ countdownDisplay }}
             </div>
             <div class="dc-timer-agitation">
-              <span class="dc-timer-ag-key">AGITATION</span> {{ currentStage?.agitation }}
+              <span class="dc-timer-ag-key">{{ t('tools.dev-calculator.ui.agitation') }}</span> {{ currentStage?.agitation }}
             </div>
           </template>
 
           <div class="dc-timer-controls">
             <button class="dc-choice-btn" @click="timerReset">
-              ↺ Reset
+              ↺ {{ t('tools.dev-calculator.ui.reset') }}
             </button>
             <button
               class="dc-choice-btn dc-timer-main-btn"
@@ -637,7 +639,7 @@ onUnmounted(() => {
               :disabled="!timerStarted || timerFinished"
               @click="timerSkip"
             >
-              Skip ▶▶
+              {{ t('tools.dev-calculator.ui.skip') }} ▶▶
             </button>
           </div>
         </div>

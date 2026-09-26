@@ -17,6 +17,7 @@ const results = ref<GifResult[]>([]);
 const copiedId = ref<string | null>(null);
 const hoveredId = ref<string | null>(null);
 const searched = ref(false);
+const { t } = useI18n();
 
 async function search() {
   const q = query.value.trim();
@@ -30,7 +31,7 @@ async function search() {
   try {
     const res = await fetch(`${PROXY}?q=${encodeURIComponent(q)}&limit=36`);
     if (!res.ok) {
-      throw new Error(`Error ${res.status}`);
+      throw new Error(t('tools.gif-search.ui.errorStatus', { status: res.status }));
     }
     const data = await res.json();
     results.value = (data.data ?? []).map((r: any) => ({
@@ -42,7 +43,7 @@ async function search() {
     searched.value = true;
   }
   catch (e: any) {
-    error.value = e.message ?? 'Failed to fetch GIFs.';
+    error.value = e.message ?? t('tools.gif-search.ui.fetchFailed');
   }
   finally {
     loading.value = false;
@@ -63,7 +64,7 @@ async function copyGif(gif: GifResult) {
     <div mb-4 flex flex-wrap items-center gap-3>
       <c-input-text
         v-model:value="query"
-        placeholder="Search GIFs (e.g. facepalm, nice work, this is fine)"
+        :placeholder="t('tools.gif-search.ui.searchPlaceholder')"
         style="flex: 1 1 260px; min-width: 0;"
         raw-text
         autofocus
@@ -81,7 +82,7 @@ async function copyGif(gif: GifResult) {
         @click="search"
       >
         <n-icon v-if="!loading" :component="Search" />
-        {{ loading ? 'Searching...' : 'Search' }}
+        {{ loading ? t('tools.gif-search.ui.searching') : t('tools.gif-search.ui.search') }}
       </button>
     </div>
 
@@ -93,7 +94,7 @@ async function copyGif(gif: GifResult) {
     </div>
 
     <div v-if="searched && results.length === 0 && !loading" py-10 text-center op-50>
-      No GIFs found for "{{ query }}".
+      {{ t('tools.gif-search.ui.noResults', { query }) }}
     </div>
 
     <div v-if="loading" class="gif-grid">
@@ -118,17 +119,17 @@ async function copyGif(gif: GifResult) {
         >
         <div v-if="copiedId === gif.id" class="gif-overlay-copied">
           <n-icon :component="Check" size="26" />
-          <span>Copied!</span>
+          <span>{{ t('tools.gif-search.ui.copied') }}</span>
         </div>
         <div v-else-if="hoveredId === gif.id" class="gif-overlay-hover">
           <n-icon :component="Copy" size="18" />
-          <span>Copy URL</span>
+          <span>{{ t('tools.gif-search.ui.copyUrl') }}</span>
         </div>
       </div>
     </div>
 
     <div v-if="results.length > 0" mt-3 style="font-size: 0.75rem;" op-40>
-      {{ results.length }} results — click to copy URL — paste in Teams, Telegram, Slack
+      {{ t('tools.gif-search.ui.resultsHint', { count: results.length }) }}
     </div>
   </div>
 </template>

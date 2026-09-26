@@ -1,69 +1,61 @@
 home:
   categories:
     newestTools: Nyeste verktøy
-    favoriteTools: 'Dine favoritt verktøy'
-    allTools: 'Alle verktøyene'
-    favoritesDndToolTip: 'Dra og slipp for å omordne favoritter'
-  subtitle: 'Nyttige verktøy for utviklere'
-  toggleMenu: 'Vekslemenmy'
+    favoriteTools: Dine favoritt verktøy
+    allTools: Alle verktøyene
+    favoritesDndToolTip: Dra og slipp for å omordne favoritter
+  subtitle: Nyttige verktøy for utviklere
+  toggleMenu: Vekslemenmy
   home: Hjem
-  uiLib: 'UI Bib'
-  support: 'Støtt utviklingen av IT-Tools'
-  buyMeACoffee: 'Kjøp en kaffe til meg'
+  uiLib: UI Bib
+  support: Støtt utviklingen av IT-Tools
+  buyMeACoffee: Kjøp en kaffe til meg
   follow:
-    title: 'Liker du it-tools?'
-    p1: 'Gi oss en stjerne på'
-    githubRepository: 'IT-Tools GitHub-depotet'
-    p2: 'eller følg oss på'
-    twitterXAccount: 'IT-Tools sin X konto'
-    thankYou: 'Tusen takk!'
+    title: Liker du it-tools?
+    p1: Gi oss en stjerne på
+    githubRepository: IT-Tools GitHub-depotet
+    p2: eller følg oss på
+    twitterXAccount: IT-Tools sin X konto
+    thankYou: Tusen takk!
   nav:
-    github: 'GitHub-depot'
-    githubRepository: 'IT-Tools GitHub-depot'
-    twitterX: 'X konto'
-    twitterXAccount: 'IT Tools X konto'
-    about: 'Om  IT-Tools'
-    aboutLabel: 'Om'
-    darkMode: 'Mørk modus'
-    lightMode: 'Lys modus'
-    mode: 'Veksle mørk/lys modus'
+    github: GitHub-depot
+    githubRepository: IT-Tools GitHub-depot
+    twitterX: X konto
+    twitterXAccount: IT Tools X konto
+    about: Om  IT-Tools
+    aboutLabel: Om
+    darkMode: Mørk modus
+    lightMode: Lys modus
+    mode: Veksle mørk/lys modus
 about:
-  content: >
+  content: |
     # Om killer-tools
-
     Denne vidunderlige nettsiden, laget med ❤ av [Steve the Killer](https://thekiller.net) , sammenstiller nyttige verktøy for utviklere og folk som jobber innen IT. Hvis du finner dette nyttig, Del det gjerne med andre som du tror kan få nytte av dette, og ikke glem å lage et bokmerke!
-
     killer-tools er åpen kildekode (under GPL-3.0 lisensen) og gratis, og det vil det alltid være, men det koster å drifte og å fornye domenet. Hvis du ønsker å støtte arbeidet mitt, og motivere meg til å legge til flere verktøy, gjerne støtt meg ved å [sponse meg](https://www.buymeacoffee.com/StevetheKiller).
-
     ## Teknologier
-
     killer-tools er laget i Vue.js (Vue 3) med Naive UI komponent bibliotektet og er hosted og kontinuerlig deployet av GitHub. Tredjeparts åpen-kildekode biblioteker er brukt i noen verktøy, du kan finne den komplette listen i [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) filen i depoet.
-
     ## Funnet en feil? Et verktøy som mangler?
-
     Hvis du trenger et verktøy som foreløpig ikke er tilgjengelig her, og du tenker det kan være nyttig for andre, så er du velkommen til å legge til en funksjonsforespørsel i [problem seksjonen](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) i github-depotet.
-
     Og hvis du har funnet en feil, eller noe ikke oppfører seg som forventet, vennligst send inn en feilrapport i [problem seksjonen](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) i github-depotet.
-
 404:
-  notFound: '404 ikke funnet'
-  sorry: 'Beklager, denne siden ser ikke ut til å eksistere'
-  maybe: 'Kanskje informasjonskapslene oppfører seg rart, prøvd en tvungen oppfriskning?'
-  backHome: 'Tilbake til start'
+  notFound: 404 ikke funnet
+  sorry: Beklager, denne siden ser ikke ut til å eksistere
+  maybe: Kanskje informasjonskapslene oppfører seg rart, prøvd en tvungen oppfriskning?
+  backHome: Tilbake til start
 favoriteButton:
-  remove: 'Fjern fra favoritter'
-  add: 'Legg til favoritter'
+  remove: Fjern fra favoritter
+  add: Legg til favoritter
 toolCard:
   new: Ny
 search:
   label: Søk
 tools:
   categories:
-    favorite-tools: 'Dine favoritt verktøy'
+    favorite-tools: Dine favoritt verktøy
     crypto: Krypto
     conversion: Konvertering
     web: Web
-    images and videos: 'Bilder & Videoer'
+    images and videos: Bilder & Videoer
     development: Utvikling
     network: Nettverk
     math: Matte
@@ -71,309 +63,1724 @@ tools:
     text: Tekst
     data: Data
     windows: Windows
-    killer apps: 'Killer Apps'
-
+    killer apps: Killer Apps
+    photography: Fotografi
   password-strength-analyser:
     title: Analyseverktøy for passordstyrke
     description: Oppdag styrken av passordet ditt med dette kun-klient-maskin passordstyrke analyse verktøyet og se den estimerte knekketiden.
-
-
   percentage-calculator:
     title: Prosent kalkulator
     description: Beregn enkelt prosenter fra en verdi til en annen, eller fra en prosent til en verdi.
-
+    ui:
+      whatIsXPercentOfYTitle: HVA ER X% AV Y
+      whatIsLabel: Hva er
+      percentOfLabel: '% av'
+      resultPlaceholder: Resultat
+      xIsWhatPercentOfYTitle: X ER HVOR MANGE PROSENT AV Y
+      isWhatPercentOfLabel: er hvor mange % av
+      percentageChangeTitle: PROSENTVIS ØKNING / REDUKSJON
+      fromLabel: Fra
+      toLabel: til
   svg-placeholder-generator:
     title: SVG plassholder generator
     description: Generer svg bilder til å bruke som plassholder i applikasjonen din.
-
+    ui:
+      widthLabel: BREDDE (px)
+      backgroundLabel: BAKGRUNN
+      heightLabel: HØYDE (px)
+      textColorLabel: TEKSTFARGE
+      fontSizeLabel: SKRIFTSTØRRELSE
+      customTextLabel: EGENDEFINERT TEKST
+      customTextPlaceholder: Standard er {size}
+      useExactSizeToggle: Bruk nøyaktig størrelse
+      svgHtmlElementLabel: SVG HTML-ELEMENT
+      svgBase64Label: SVG I BASE64
+      copySvgButton: Kopier svg
+      copyBase64Button: Kopier base64
+      downloadSvgButton: Last ned svg
+      previewLabel: FORHÅNDSVISNING
+      svgPreviewAlt: SVG-forhåndsvisning
   json-to-csv:
     title: JSON til CSV
     description: Konverter JSON til CSV med automatisk oppdagelse av headeren.
-
+    ui:
+      invalidJson: Den angitte JSON-en er ikke gyldig.
+      yourRawJson: Din rå JSON
+      pasteRawJsonPlaceholder: Lim inn din rå JSON her...
+      csvOutputLabel: CSV-versjon av din JSON
   camera-recorder:
     title: Kameraopptak
     description: Ta et bilde eller spill inn en video med webkamera eller kameraet ditt.
-
+    ui:
+      selectCamera: Velg kamera
+      selectMicrophone: Velg mikrofon
+      notSupported: Nettleseren din støtter ikke kameraopptak.
+      accessRequired: Tilgang til kamera og mikrofon er påkrevd.
+      permissionBlocked: Tillatelsen ble blokkert. Gi tilgang manuelt via hengelåsikonet i adressefeltet.
+      grantPermission: Gi tillatelse
+      video: VIDEO
+      audio: LYD
+      startWebcam: Start webkamera
+      paused: PAUSET
+      rec: REC
+      screenshot: Skjermbilde
+      record: Ta opp
+      pause: Pause
+      resume: Fortsett
+      stop: Stopp
+      recordingNotSupported: Opptak støttes ikke i denne nettleseren
+      captures: OPPTAK ({count})
+      clearAll: Fjern alle
+      screenshotAlt: skjermbilde
+      download: Last ned
+      delete: Slett
   keycode-info:
     title: Tastekode info
     description: Finn javascript tastekode, kode, plassering og modifikatorer av hvilken som helst tast.
-
   emoji-picker:
     title: Emoji velger
     description: Klipp og lim emojis og få unicode og kode verdien av hver emoji.
-
+    ui:
+      emojiCopied: Emoji {emoji} kopiert til utklippstavlen
+      codePointsCopied: Kodepunkter '{codePoints}' kopiert til utklippstavlen
+      unicodeCopied: Unicode '{unicode}' kopiert til utklippstavlen
+      searchPlaceholder: Søk emojier (f.eks. 'smile')...
+      noResults: Ingen resultater
+      searchResult: Søkeresultat
   color-converter:
     title: Farge konverter
     description: Konverter farger mellom de forskjellige formatene (hex, rgb, hsl og css navn).
-
+    ui:
+      color: Farge
+      formats: FORMATER
   bcrypt:
     title: Bcrypt
     description: Hash og sammenlign tekst ved hjelp av bcrypt. Bcrypt er en passord-hashings funksjon basert på Blowfish cipher.
-
+    ui:
+      copiedToClipboard: Hash-streng kopiert til utklippstavlen
+      hashTitle: HASH
+      compareTitle: SAMMENLIGN
+      stringLabel: Streng
+      stringPlaceholder: Din streng som skal bcryptes...
+      saltRoundsLabel: Salt-runder
+      outputLabel: UTDATA
+      copyHash: Kopier hash
+      compareStringPlaceholder: Din streng som skal sammenlignes...
+      hashLabel: Hash
+      compareHashPlaceholder: Din hash som skal sammenlignes...
+      matchLabel: Treff
+      'yes': Ja
+      'no': Nei
   crontab-generator:
     title: Crontab generator
     description: Verifiser og generer crontab og få den mennesklig leselige beskrivelsen av cron timeplanen.
-
+    ui:
+      symbolAnyValue: Alle verdier
+      symbolEveryMinute: Hvert minutt
+      symbolRange: Verdiområde
+      symbolRangeEquivalent: Minutt 1 til 10
+      symbolList: Liste over verdier
+      symbolListEquivalent: Ved minutt 1 og 10
+      symbolStep: Trinnverdier
+      symbolStepEquivalent: Hvert 10. minutt
+      aliasYearly: En gang i året (1. januar, midnatt)
+      aliasMonthly: Den første i hver måned, ved midnatt
+      aliasWeekly: Søndag, ved midnatt
+      aliasDaily: Hver dag ved midnatt
+      aliasHourly: Hver time, på timen
+      aliasReboot: Kjør én gang ved oppstart
+      aliasRebootEquivalent: (ved oppstart)
+      invalidCron: Denne cronen er ugyldig
+      use24HourTime: 24 timers klokke
+      daysStartAtZero: Dager starter på 0
+      labelSymbol: 'Symbol:'
+      labelMeaning: 'Betydning:'
+      labelExample: 'Eksempel:'
+      labelEquivalent: 'Tilsvarende:'
+      symbols: Symboler
+      aliases: Aliaser
   http-status-codes:
     title: HTTP status koder
     description: Liste over alle HTTP status koder, navnet dems, og betydningen.
-
+    ui:
+      searchResults: Søkeresultater
+      searchPlaceholder: Søk http-status...
+      copiedTooltip: Kopiert!
+      clickToCopy: Klikk for å kopiere statuskode
+      copiedLabel: kopiert
   sql-prettify:
     title: SQL forskjønning and format
     description: Formater og forskjønn SQL spørringene dine (den støtter forskjellige SQL dialekter).
-
-
+    ui:
+      dialectLabel: DIALEKT
+      keywordCaseLabel: STØRRELSE PÅ NØKKELORD
+      indentStyleLabel: INNRYKKSSTIL
+      yourSqlQueryLabel: Din SQL-spørring
+      sqlQueryPlaceholder: Skriv inn SQL-spørringen din her...
+      prettifiedQueryLabel: Formatert versjon av spørringen din
+      keywordCaseUpper: STORE BOKSTAVER
+      keywordCaseLower: små bokstaver
+      keywordCasePreserve: Behold
+      indentStyleStandard: Standard
+      indentStyleTabularLeft: Tabellformet venstre
+      indentStyleTabularRight: Tabellformet høyre
   git-memo:
     title: Git jukselapp
     description: Git er en desentralisert versjons håndterings programvare. Med denne jukselappen vil du få kjapp tilgang til de vanligste kommandoene.
-
   encryption:
     title: Krypter / decrypter tekst
     description: Krypter klartekst og dekrypter ciphertekst ved bruk av krypteringsalgoritmer som AES, TripleDES, Rabbit eller RC4.
-
+    ui:
+      decryptError: Kan ikke dekryptere teksten din
+      encryptTitle: KRYPTER
+      decryptTitle: DEKRYPTER
+      yourText: DIN TEKST
+      yourSecretKey: DIN HEMMELIGE NØKKEL
+      algorithm: ALGORITME
+      encryptedOutput: KRYPTERT UTDATA
+      yourEncryptedText: DIN KRYPTERTE TEKST
+      decryptedOutput: DEKRYPTERT UTDATA
+      encryptPlaceholder: Strengen som skal krypteres
+      decryptPlaceholder: Chifferteksten som skal dekrypteres
+      secretKeyPlaceholder: Hemmelig nøkkel...
   yaml-prettify:
     title: YAML forskjønning og formatering
     description: Forskjønn YAML strengene dine til et lettlest format.
-
-
   roman-numeral-converter:
     title: Romertall konverter
     description: Konverter romertall til tall eller konverter tall til romertall.
-
+    ui:
+      converterTitle: OMREGNER
+      arabicSideLabel: ARABISK
+      romanSideLabel: ROMERTALL
+      arabicRangeError: Må være {min}-{max}
+      invalidRoman: Ikke et gyldig romertall
+      copied: Kopiert
+      copy: Kopier
+      romanCopiedToast: Romertall kopiert
+      arabicCopiedToast: Arabisk tall kopiert
   hmac-generator:
     title: Hmac generator
     description: Beregn en hash-basert meldings authentiserings kode (HMAC) ved bruk av en hemmelig nøkkel og din foretrukne hashings funksjon.
-
+    ui:
+      encodingBinary: Binær (base 2)
+      encodingHex: Heksadesimal (base 16)
+      copied: HMAC kopiert til utklippstavlen
+      plainText: KLARTEKST
+      secretKey: HEMMELIG NØKKEL
+      hashingFunction: HASHFUNKSJON
+      outputEncoding: KODING AV UTDATA
+      hmacOutput: HMAC-UTDATA
+      plainTextPlaceholder: Klartekst for å beregne hashen...
+      secretKeyPlaceholder: Skriv inn den hemmelige nøkkelen...
+      clear: Tøm
+      copyHmac: Kopier HMAC
   bip39-generator:
     title: BIP39 nøkkelords generator
     description: Generer et BIP39 nøkkelord fra en eksisterende eller tilfeldig huskesetning, eller få ut en huskesetning fra nøkkelordet.
-
+    ui:
+      languageEnglish: Engelsk
+      languageChineseSimplified: Forenklet kinesisk
+      languageChineseTraditional: Tradisjonell kinesisk
+      languageCzech: Tsjekkisk
+      languageFrench: Fransk
+      languageItalian: Italiensk
+      languageJapanese: Japansk
+      languageKorean: Koreansk
+      languagePortuguese: Portugisisk
+      languageSpanish: Spansk
+      entropyLengthError: Entropilengden må være >= 16, <= 32 og et multiplum av 4
+      entropyHexError: Entropien må være en heksadesimal streng
+      invalidMnemonic: Ugyldig mnemonic
+      entropyCopied: Entropi kopiert til utklippstavlen
+      passphraseCopied: Passfrase kopiert til utklippstavlen
+      languageLabel: Språk
+      entropyHeading: ENTROPI (SEED)
+      entropyPlaceholder: Heksadesimal entropi...
+      regenerate: Regenerer
+      copyEntropy: Kopier entropi
+      passphraseHeading: PASSFRASE (MNEMONIC)
+      passphrasePlaceholder: Mnemoniske ord...
+      copyPassphrase: Kopier passfrase
   base64-file-converter:
     title: Base64 fil konverter
     description: Konverter en base64 streng til fil eller en fil, bilde til en base64 representasjon.
-
+    ui:
+      copiedToClipboard: Base64-strengen ble kopiert til utklippstavlen
+      base64ToFileTitle: BASE64 TIL FIL
+      fileNameLabel: FILNAVN
+      fileNamePlaceholder: Filnavn for nedlasting
+      extensionLabel: FILENDELSE
+      extensionPlaceholder: filtype
+      base64StringLabel: BASE64-STRENG
+      base64InputPlaceholder: Lim inn base64-strengen for filen her...
+      invalidBase64: Ugyldig base64-streng
+      previewImage: Forhandsvis bilde
+      downloadFile: Last ned fil
+      fileToBase64Title: FIL TIL BASE64
+      dropHint: Dra og slipp en fil her, eller klikk for a velge
+      fileInBase64Label: FIL SOM BASE64
+      fileOutputPlaceholder: Filen i base64 vises her
+      copied: Kopiert!
+      copyBase64: Kopier base64
   base64-string-converter:
     title: Base64 string kode/dekoder
     description: Enkelt kode eller dekode en tekststreng til base64 representasjonen av strengen.
-
+    ui:
+      base64CopiedToClipboard: Base64-strengen ble kopiert til utklippstavlen
+      stringCopiedToClipboard: Strengen ble kopiert til utklippstavlen
+      stringToBase64Title: STRENG TIL BASE64
+      encodingLabel: KODING
+      standard: Standard
+      urlSafe: URL-sikker
+      stringToEncodeLabel: STRENG SOM SKAL KODES
+      stringInputPlaceholder: Lim inn strengen din her...
+      base64OutputLabel: BASE64-UTDATA
+      base64OutputPlaceholder: Base64-kodingen av strengen din vises her
+      copied: Kopiert!
+      copyBase64: Kopier base64
+      base64ToStringTitle: BASE64 TIL STRENG
+      base64ToDecodeLabel: BASE64-STRENG SOM SKAL DEKODES
+      base64InputPlaceholder: Base64-strengen din...
+      invalidBase64: Ugyldig base64-streng
+      decodedStringLabel: DEKODET STRENG
+      decodedOutputPlaceholder: Den dekodede strengen vises her
+      copyDecodedString: Kopier dekodet streng
   math-evaluator:
     title: Matematikkevaluator
     description: En Kalkulator for å evaluere matematiske uttrykk. Du kan bruke funksjoner som sqrt, cos, sin, abs, etc.
-
+    ui:
+      placeholder: 'Ditt matematiske uttrykk (f.eks: 2*sqrt(6) )...'
+      result: Resultat
   url-parser:
     title: URL analyse
     description: Parsere en URL ned til bestanddelene (protokoll, opprinnelse, parametre, port, brukernavn-passord, ...).
-
-
+    ui:
+      sectionHost: Vert
+      protocol: Protokoll
+      hostname: Vertsnavn
+      port: Port
+      sectionAuthentication: Autentisering
+      username: Brukernavn
+      password: Passord
+      sectionPath: Sti
+      pathname: Stinavn
+      search: Sok
+      hash: Hash
+      urlTitle: URL
+      invalidUrl: Ugyldig URL
+      params: PARAMETRE
+      emptyHint: Skriv inn en URL over for a analysere den
   user-agent-parser:
     title: User-agent analysering
     description: Detekter og parser nettleser, motor, OS, CPU, og enhet type/modell fra en user-agent tekst streng.
-
+    ui:
+      sectionBrowser: Nettleser
+      sectionEngine: Motor
+      sectionOs: OS
+      sectionDevice: Enhet
+      sectionCpu: CPU
+      name: Navn
+      version: Versjon
+      model: Modell
+      type: Type
+      vendor: Leverandor
+      architecture: Arkitektur
+      userAgentString: USER AGENT-STRENG
+      placeholder: Lim inn user agent her...
+      unknown: Ukjent
+      error: FEIL
+      parseError: Kunne ikke analysere user agent-strengen
   case-converter:
     title: Bokstavkonvertering
     description: Formater bokstavene med store eller små bokstaver, samt andre format.
-
+    ui:
+      inputPlaceholder: Din streng...
+      output: UTDATA
   html-entities:
     title: HTML streng rensing
     description: Rens bort eller omsvøp HTML entiteter (erstatt tegn som <,>, &, " and \' med deres HTML versjon).
-
+    ui:
+      yourString: DIN STRENG
+      escapePlaceholder: Strengen som skal escapes...
+      escapedOutput: ESCAPET UTDATA
+      copied: Kopiert
+      copy: Kopier
+      yourEscapedString: DIN ESCAPEDE STRENG
+      unescapePlaceholder: Strengen som skal unescapes...
+      unescapedOutput: UNESCAPET UTDATA
   json-prettify:
     title: JSON forskjønning og formatering
     description: Forskjønn JSON strenger til et lettlest format.
-
   docker-run-to-docker-compose-converter:
     title: Docker run til Docker compose konverter
     description: Konverter "docker run" kommandoer til docker-compose filer!
-
   mac-address-lookup:
     title: MAC address oppslagsverk
     description: Finn forhandler og produsent basert på MAC adressen.
-
+    ui:
+      macAddressLabel: MAC-adresse
+      copiedTooltip: Kopiert!
+      copyTooltip: Klikk for å kopiere leverandørinfo
+      copiedTitle: ✓ kopiert
+      vendorInfoTitle: Leverandørinfo
+      unknownVendor: Ukjent leverandør for denne adressen
   lorem-ipsum-generator:
     title: Lorem ipsum generator
     description: Lorem ipsum er brukt som plassholder tekst, vanligvis brukt til å demonstrere den visuelle formen av et dokument eller font-type uten å måtte ha meningsfult innhold.
-
+    ui:
+      copiedMessage: Lorem ipsum kopiert til utklippstavlen
+      paragraphs: Avsnitt
+      sentencesPerParagraph: Setninger per avsnitt
+      wordsPerSentence: Ord per setning
+      startWithLoremIpsum: Start med lorem ipsum
+      asHtml: Som HTML
+      output: RESULTAT
+      wordCount: '{count} ord'
+      charCount: '{count} tegn'
+      copy: Kopier
+      refresh: Oppdater
   qrcode-generator:
     title: QR Kode generator
     description: Generer og last ned en QR kode til en URL (eller ren tekst), og tilpass bakgrunns og forgrunns farger.
-
   xml-formatter:
     title: XML formaterer
     description: Forskjønn en XML streng til et lettlest format.
-
+    ui:
+      invalidXml: Oppgitt XML er ikke gyldig.
+      collapse: Skjul
+      indentSize: Innrykkstørrelse
+      inputLabel: Din XML
+      inputPlaceholder: Lim inn XML-en din her...
+      outputLabel: Formatert XML fra din XML
   temperature-converter:
     title: Temperatur konverter
     description: Temperatur konversjoner mellom Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur, og Rømer.
-
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
   chmod-calculator:
     title: Chmod kalkulator
     description: Beregn chmod tillatelser og kommandoer med denne chmod kalkulatoren.
-
+    ui:
+      read: Lese
+      write: Skrive
+      execute: Kjøre
+      owner: Eier
+      group: Gruppe
+      public: Alle andre
+      commandCopied: chmod-kommando kopiert
+      copyCommand: Kopier kommando
   rsa-key-pair-generator:
     title: RSA nøkkelpar generator
     description: Generer et nytt tilfeldig RSA privat og offentlig pem sertifikat nøkkel par.
-
+    ui:
+      bitsRangeError: Bits må være 256-16384 og et multiplum av 8
+      bitsLabel: Bits
+      refreshButton: Oppdater nøkkelpar
+      publicKeyTitle: Offentlig nøkkel
+      copyPublicKeyTitle: Kopier offentlig nøkkel
+      copy: Kopier
+      generating: Genererer...
+      privateKeyTitle: Privat nøkkel
+      copyPrivateKeyTitle: Kopier privat nøkkel
+      publicKeyCopiedToast: Offentlig nøkkel kopiert
+      privateKeyCopiedToast: Privat nøkkel kopiert
   html-wysiwyg-editor:
     title: HTML WYSIWYG editor
     description: Online, funksjonsrik WYSIWYG HTML editor som genererer kildekoden for innholdet øyeblikkelig.
-
+    ui:
+      bold: Fet
+      italic: Kursiv
+      strike: Gjennomstreking
+      inlineCode: Inline-kode
+      heading1: Overskrift 1
+      heading2: Overskrift 2
+      heading3: Overskrift 3
+      heading4: Overskrift 4
+      bulletList: Punktliste
+      orderedList: Nummerert liste
+      codeBlock: Kodeblokk
+      blockquote: Blokksitat
+      hardBreak: Linjeskift
+      clearFormat: Fjern formatering
+      undo: Angre
+      redo: Gjør om
   json-diff:
     title: JSON diff
     description: Sammenlign to JSON objekter og finn forskjellene mellom dem.
-
+    ui:
+      onlyShowDifferences: Vis kun forskjeller
+      jsonsAreTheSame: De angitte JSON-ene er like
+      firstJsonTitle: DIN FØRSTE JSON
+      firstJsonPlaceholder: Lim inn din første JSON her...
+      invalidJson: Ugyldig JSON-format
+      secondJsonTitle: JSON DU VIL SAMMENLIGNE
+      secondJsonPlaceholder: Lim inn JSON-en du vil sammenligne her...
   jwt-parser:
     title: JWT parser
     description: Parse og dekode et JSON Web Token (jwt) og vis innholdet.
-
+    ui:
+      header: Header
+      payload: Payload
+      jwtToDecodeTitle: JWT SOM SKAL DEKODES
+      tokenPlaceholder: Legg inn tokenet ditt her...
+      invalidJwt: Ugyldig JWT
   date-converter:
     title: Dato-tid konverter
     description: Konverter dato og tid til forskjellige formater.
-
-
   ipv4-subnet-calculator:
     title: IPv4 subnet kalkulator
     description: Parser IPv4 CIDR blokker of åf all info du trenger om subnettet.
-
+    ui:
+      invalidAddress: Kan ikke tolke denne adressen, sjekk formatet
+      netmask: Nettmaske
+      networkAddress: Nettverksadresse
+      networkMask: Nettverksmaske
+      networkMaskBinary: Nettverksmaske i binær
+      cidrNotation: CIDR-notasjon
+      wildcardMask: Wildcard-maske
+      networkSize: Nettverksstørrelse
+      firstAddress: Første adresse
+      lastAddress: Siste adresse
+      broadcastAddress: Kringkastingsadresse
+      noBroadcast: Ingen kringkastingsadresse med denne masken
+      ipClass: IP-klasse
+      unknownClassType: Ukjent klassetype
+      decimal: Desimal
+      hexadecimal: Heksadesimal
+      binary: Binær
+      ipv6Short: IPv6 (kort)
+      inputLabel: En IPv4-adresse med eller uten maske
+      bitMap: BITKART
+      network: Nettverk
+      host: Vert
+      setPrefix: Sett prefiks til /{prefix}
+      networkTag: nettverk
+      broadcastTag: kringkasting
+      hostsCount: '{count} verter'
+      privateIp: Privat IP
+      publicIp: Offentlig IP
+      subnetDetail: SUBNETT-DETALJER
+      subnetInfo: SUBNETT-INFO
+      addressRepresentations: ADRESSEREPRESENTASJONER
+      copy: Kopier
+      enterValidIpv4: Skriv inn en gyldig IPv4-adresse for å se representasjoner
+      previousBlock: Forrige blokk
+      nextBlock: Neste blokk
+      collapseCheatSheet: Skjul jukseark
+      subnetCheatSheet: Jukseark for subnett
   og-meta-generator:
     title: Open graph meta generator
     description: Generer open-graph og SoMe HTML meta tagger til nettsiden din.
-
   ipv6-ula-generator:
     title: IPv6 ULA generator
     description: Generer din egen lokale, ikke-rutbare IP adresse til nettverket ditt i henhold til RFC4193.
-
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Første ruterbare
+      lastRoutable: Siste ruterbare
+      infoAlert: Bruker gjeldende tidsstempel + MAC-adresse, SHA1-hashet. De nedre 40 bitene danner den globale IDen per RFC 4193.
+      macAddress: MAC-adresse
+      output: Utdata
+      copied: Kopiert!
+      copy: Kopier
   hash-text:
     title: Hash tekst
     description: 'Hash en tekst streng med en av algoritmene : MD5, SHA1, SHA256, SHA224, SHA512, SHA384, SHA3 eller RIPEMD160'
-
+    ui:
+      encodingBinary: Binær (base 2)
+      encodingHex: Heksadesimal (base 16)
+      encodingBase64: Base64 (base 64)
+      encodingBase64url: Base64url (URL-sikker base 64)
+      inputPlaceholder: Strengen din som skal hashes...
+      encoding: Koding
+      output: UTDATA
   json-to-toml:
     title: JSON til TOML
     description: Parser og konverter JSON til TOML.
-
   device-information:
     title: Enhets informasjon
     description: Få informasjon om din nåværende enhet (skjermstørrelse, piksel-forhold, user agent, etc.)
-
+    ui:
+      screen: Skjerm
+      hardware: Maskinvare
+      network: Nettverk
+      browser: Nettleser
+      screenSize: Skjermstørrelse
+      windowSize: Vindusstørrelse
+      pixelRatio: Pikselforhold
+      colorDepth: Fargedybde
+      orientation: Retning
+      orientationAngle: Retningsvinkel
+      touchPoints: Berøringspunkter
+      cpuCores: CPU-kjerner
+      deviceMemory: Enhetsminne
+      platform: Plattform
+      online: Tilkoblet
+      connectionType: Tilkoblingstype
+      downlinkSpeed: Nedlastingshastighet
+      roundTripTime: Rundturstid
+      dataSaver: Databesparelse
+      vendor: Leverandør
+      languages: Språk
+      cookiesEnabled: Informasjonskapsler aktivert
+      pdfViewer: PDF-leser
+      doNotTrack: Ikke spor
+      userAgent: Brukeragent
+      maxTouchPoints: '{count} maks'
+      none: Ingen
+      logicalCores: '{count} logiske kjerner'
+      'yes': Ja
+      'no': Nei
+      enabled: Aktivert
+      disabled: Deaktivert
+      supported: Støttet
+      notSupported: Ikke støttet
+      notSet: Ikke angitt
   pdf-signature-checker:
     title: PDF signatur sjekker
     description: Bekreft signaturen til en PDF fil. En signert PDF fil inneholder en eller flere signaturer som kan bli brukt til å bestemme om en fil har blitt endret etter at den var signert.
-
+    ui:
+      tableHeaderValidityPeriod: Gyldighetsperiode
+      tableHeaderIssuedBy: Utstedt av
+      tableHeaderIssuedTo: Utstedt til
+      tableHeaderPemCertificate: PEM-sertifikat
+      notBefore: Ikke gyldig før
+      notAfter: Ikke gyldig etter
+      commonName: Vanlig navn
+      organizationName: Organisasjonsnavn
+      countryName: Landnavn
+      localityName: Stedsnavn
+      organizationalUnitName: Navn på organisasjonsenhet
+      stateOrProvinceName: Navn på delstat eller fylke
+      viewPemCert: Vis PEM-sertifikat
+      uploadPrompt: Dra og slipp en PDF-fil her, eller klikk for å velge en fil
+      noSignaturesFound: Ingen signaturer funnet i den angitte filen.
+      signatureCertificatesLabel: 'Sertifikater for signatur {number}:'
   json-minify:
     title: JSON minifiser
     description: Minifiser og komprimer JSON ved å fjerne unødvendige mellomrom.
-
+    ui:
+      invalidJson: Oppgitt JSON er ikke gyldig.
+      inputLabel: Din rå JSON
+      inputPlaceholder: Lim inn den ra JSON-en her...
+      outputLabel: Minifisert versjon av JSON-en din
   ulid-generator:
     title: ULID generator
     description: Generer tilfeldig Universell Unik Leksikografisk Sorterbar Identifikator (ULID).
-
+    ui:
+      copiedMessage: ULID-er kopiert til utklippstavlen
+      quantity: ANTALL
+      format: FORMAT
+      formatRaw: Rå
+      formatJson: JSON
+      output: UTDATA
+      copy: Kopier
+      refresh: Oppdater
   base-converter:
     title: Heltalls konverter
     description: Konverter et heltall mellom forskjellige baser (desimal, hexadesimal, binær, oktal, base64, etc.)
-
   uuid-generator:
     title: UUIDs generator
     description: En universell Unik Identifikator (UUID) er et 128-bit nummer, brukt til å identifisere informasjon i datasystemer.
-
+    ui:
+      copiedMessage: UUID-er kopiert til utklippstavlen
+      version: VERSJON
+      quantity: ANTALL
+      namespacePreset: NAMESPACE-FORVALG
+      namespaceUuid: NAMESPACE UUID
+      invalidUuid: Ugyldig UUID
+      name: NAVN
+      namePlaceholder: Navn som skal hashes...
+      output: UTDATA
+      copy: Kopier
+      refresh: Oppdater
   ipv4-address-converter:
     title: IPv4 adresse konverter
     description: Konverter en IPv4 adresse til desimal, binær, hexadesimal, eller en IPv6 representasjon.
-
+    ui:
+      decimal: Desimal
+      hexadecimal: Heksadesimal
+      binary: Binaer
+      ipv6Short: IPv6 (kort)
+      invalidIpv4: Ugyldig IPv4-adresse
+      ipv4Address: IPv4-adresse
+      output: Resultat
+      copied: Kopiert!
+      copy: Kopier
   text-statistics:
     title: Tekst statistikk
     description: Få informasjonen om en tekst, antall karakterer, antall ord, størrelsen i bytes, etc.
-
+    ui:
+      textPlaceholder: Teksten din...
+      characterCount: ANTALL TEGN
+      wordCount: ANTALL ORD
+      lineCount: ANTALL LINJER
+      byteSize: BYTESTØRRELSE
   text-to-nato-alphabet:
     title: Tekst til NATO alfabetet
     description: Transformer teksten til det NATO fonetiske alfabetet for muntlig gjengivelse.
-
+    ui:
+      yourText: DIN TEKST
+      inputPlaceholder: f.eks. Hello world
+      natoPhonetic: NATO-ALFABETET
+      copied: Kopiert
+      copyAll: Kopier alt
+      natoStringCopied: NATO-streng kopiert.
   ipv4-range-expander:
     title: IPv4 range utvider
     description: Gitt en start og en slutt IPv4 adresse, kalkulerer dette verktøyet et gyldig IPv4 subnet sammen med sin CIDR notasjon.
-
+    ui:
+      startAddress: Startadresse
+      endAddress: Sluttadresse
+      addressesInRange: Adresser i omradet
+      invalidIpv4: Ugyldig IPv4-adresse
+      invalidCombinationTitle: Ugyldig kombinasjon av start- og sluttadresse for IPv4
+      invalidCombinationDescription: Slutt-IPv4-adressen er lavere enn start-IPv4-adressen. Dette er ikke gyldig, og resultatet kunne ikke beregnes.
+      switchStartEnd: Bytt start- og sluttadresse for IPv4
+      result: Resultat
+      copied: Kopiert!
+      copyResult: Kopier resultat
   text-diff:
     title: Tekst diff
     description: Sammenlign to tekster og vis forskjellen mellom dem.
-
   otp-generator:
     title: OTP kode generator
     description: Generer og valider tidsbasert OTP (one time password) for multi-faktor autentisering.
-
   text-to-binary:
     title: Tekst til ASCII binært
     description: Konverter tekst til sin ASCII binære representasjon og visa-versa.
-
+    ui:
+      textCopied: Tekst kopiert
+      binaryCopied: Binærkode kopiert
+      panelTitle: TEKST ↔ ASCII-BINÆR
+      textLabel: TEKST
+      binaryLabel: BINÆR
+      copied: Kopiert
+      copy: Kopier
+      textPlaceholder: f.eks. Hello world
+      invalidBinary: Må være gyldig ASCII-binær (multipler av 8 bit)
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
-
   group-policy-reference:
     title: Group Policy Reference
     description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
-
+    ui:
+      searchPlaceholder: Søk i policyer, stier, registernøkler...
+      copied: Kopiert!
+      clickToCopyRegistry: Klikk for å kopiere registernøkkel
+      copiedShort: kopiert
+      default: Standard
+      recommended: Anbefalt
   windows-event-lookup:
     title: Windows Event Lookup
     description: Look up common Windows Event IDs with descriptions and severity.
-
+    ui:
+      searchResults: Søkeresultater
+      searchPlaceholder: Søk etter hendelses-ID, navn eller beskrivelse...
+      copied: Kopiert!
+      clickToCopyEventId: Klikk for å kopiere hendelses-ID
+      copiedShort: kopiert
   m365-sku-decoder:
     title: M365 License SKU Decoder
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
-
+    ui:
+      searchPlaceholder: Søk etter SKU-navn, streng-ID eller beskrivelse...
+      copied: Kopiert!
+      clickToCopy: Klikk for å kopiere streng-ID
+      copiedMark: ✓ kopiert
   windows-error-codes:
     title: Windows Error Code Lookup
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
-
+    ui:
+      searchResults: Søkeresultater
+      searchPlaceholder: Søk etter heksadesimal kode, feilnavn eller beskrivelse...
+      copied: Kopiert!
+      clickToCopy: Klikk for å kopiere heksadesimal kode
+      copiedShort: kopiert
+      decimal: desimal {decimal}
   exchange-ndr-lookup:
     title: Exchange NDR Lookup
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
-
+    ui:
+      searchResults: Søkeresultater
+      searchPlaceholder: Søk etter NDR-kode, feilnavn, årsak eller løsning...
+      copied: Kopiert!
+      clickToCopy: Klikk for å kopiere NDR-koden
+      copiedShort: kopiert
+      cause: Årsak
+      fix: Løsning
   safelink-decoder:
     title: Outlook Safelink decoder
     description: Decode Outlook SafeLink links.
-
   port-protocol-reference:
     title: Port & Protocol Reference
     description: Common network ports and protocols with security notes and dangerous port flags.
-
   cve-lookup:
     title: CVE Lookup
     description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
-
+    ui:
+      range6m: 6 måneder
+      range1y: 1 år
+      range2y: 2 år
+      range5y: 5 år
+      rangeAll: All tid
+      noDescription: Ingen beskrivelse tilgjengelig.
+      fetchError: Kunne ikke nå NVD API. Sjekk tilkoblingen din.
+      sortNewest: Nyeste først
+      sortOldest: Eldste først
+      sortSeverity: Høyest alvorlighetsgrad
+      severityCritical: Kritisk
+      severityHigh: Høy
+      severityMedium: Middels
+      severityLow: Lav
+      placeholder: CVE-ID eller søkeord (f.eks. CVE-2021-44228, log4j)
+      searching: Søker...
+      search: Søk
+      hint: Søk etter CVE-ID, delvis nummer (f.eks. 43284), vanlig navn (f.eks. log4shell, dirty frag) eller søkeord. Sanntidsdata fra NVD og GitHub Advisory Database.
+      noResults: Ingen CVE-er funnet for "{query}".
+      noResultsInRange: Ingen CVE-er funnet for "{query}" i det valgte datointervallet.
+      noExactMatch: Ingen eksakt frasetreff funnet i det valgte datointervallet. Vanlige sårbarhetsnavn (som "dirty frag") vises kanskje ikke ordrett i NVD-beskrivelser. Prøv i stedet et delvis CVE-nummer (f.eks. finner "43284" CVE-2026-43284).
+      searchAllTime: Søk i all tid
+      showingResults: Viser {shown} av {total} totale resultater
+      allSeverities: Alle alvorlighetsgrader
+      allYears: Alle år
+      copied: Kopiert!
+      clickToCopyId: Klikk for å kopiere CVE-ID
+      copiedShort: kopiert
+      cveDetail: CVE-DETALJER
+      published: Publisert
+      modified: Endret
+      clickToCopy: Klikk for å kopiere
+      references: Referanser
+      kevActionDue: 'CISA KEV tiltaksfrist:'
+      cvssMetrics: CVSS-metrikker
+      metricAttackVector: Angrepsvektor
+      metricAttackComplexity: Angrepskompleksitet
+      metricPrivilegesRequired: Nødvendige rettigheter
+      metricUserInteraction: Brukerinteraksjon
+      metricScope: Omfang
+      metricConfidentiality: Konfidensialitet
+      metricIntegrity: Integritet
+      metricAvailability: Tilgjengelighet
   email-dns-checker:
     title: Email DNS Checker
     description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
-
   email-header-parser:
     title: Email Header Parser
     description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
-
+    ui:
+      pasteHint: Lim inn rå e-posthoder nedenfor.
+      parseButton: Analyser hoder
+      parseAnother: Analyser en til
+      messageDetails: Meldingsdetaljer
+      senderMismatch: Avsenderdomenet er forskjellig fra From-domenet. Dette kan tyde på spoofing eller delegert sending.
+      deliveryHops: Leveringshopp
+      oldestFirst: eldste først
+      authResults: Autentiseringsresultater
+      spamAnalysis: Spamanalyse
+      spamScore: Spampoeng
+      spamStatus: Spamstatus
   whois-checker:
     title: WHOIS Lookup
     description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
-
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
-
+    ui:
+      yourText: DIN TEKST
+      textPlaceholder: Teksten som skal tegnes
+      options: ALTERNATIVER
+      font: SKRIFT
+      searchFonts: Sok etter skrifter...
+      noFontsMatch: Ingen skrifter samsvarer
+      width: BREDDE
+      output: ASCII ART-RESULTAT
+      loadingFont: Laster skrift...
+      error: Gjeldende innstillinger forte til en feil.
+      copied: Kopiert!
+      copy: Kopier
   regex-tester:
     title: Regex Tester
     description: Test your regular expressions with sample text.
-
+    ui:
+      regexLabel: 'Regex som skal testes:'
+      regexPlaceholder: Skriv inn regex som skal testes
+      globalLabel: Global
+      globalTitle: Globalt søk
+      ignoreCaseLabel: Ignorer store/små bokstaver
+      ignoreCaseTitle: Søk uten hensyn til store og små bokstaver
+      multilineLabel: Flere linjer
+      singlelineLabel: Én linje
+      singlelineTitle: Lar . matche linjeskift-tegn.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; behandler et mønster som en sekvens av Unicode-kodepunkter.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: En oppgradering av u-modusen med flere Unicode-funksjoner.
+      textLabel: 'Tekst som skal matches:'
+      textPlaceholder: Skriv inn teksten som skal matches
+      regexBarTitle: REGEX
+      matchesBarTitle: TREFF
+      matchIndex: Indeks
+      matchValue: Verdi
+      matchCaptures: Fangster
+      matchGroups: Grupper
+      noMatch: Ingen treff
+      sampleBarTitle: EKSEMPEL
+      diagramBarTitle: DIAGRAM
+      quickReference: Hurtigreferanse
   yaml-converter:
     title: YAML converter
     description: Convert YAML to JSON or TOML.
-
+    ui:
+      convertTo: 'Konverter til:'
+      inputLabel: Din YAML
+      inputPlaceholder: Lim inn YAML-en din her...
+      invalidYaml: Oppgitt YAML er ikke gyldig.
+      outputLabel: '{format}-utdata'
   json-converter:
     title: JSON converter
     description: Convert JSON to YAML or TOML.
-
+    ui:
+      convertTo: Konverter til
+      yourJson: Din JSON
+      pasteJsonPlaceholder: Lim inn din JSON her...
+      invalidJson: Ugyldig JSON-format
+      formatOutput: '{format}-utdata'
   toml-converter:
     title: TOML converter
     description: Convert TOML to JSON or YAML.
-
+    ui:
+      convertTo: 'Konverter til:'
+      yourToml: Din TOML
+      pastePlaceholder: Lim inn TOML her...
+      invalidToml: Oppgitt TOML er ikke gyldig.
+      outputLabel: '{format}-utdata'
   xml-json-converter:
     title: XML ↔ JSON converter
     description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
-
+    ui:
+      invalidXml: Ugyldig XML.
+      invalidJson: Ugyldig JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Lim inn XML-en din her...
+      jsonLabel: JSON
+      jsonPlaceholder: Lim inn JSON-en din her...
   markdown-to-html:
     title: Markdown to HTML
     description: Convert Markdown to Html and allow to print (as PDF).
+    ui:
+      copiedSuccess: HTML kopiert til utklippstavlen!
+      copyFailed: Kunne ikke kopiere teksten.
+      inputLabel: 'Din Markdown som skal konverteres:'
+      inputPlaceholder: Ditt Markdown-innhold...
+      outputLabel: 'HTML-resultat:'
+      copyHtmlButton: Kopier HTML
+      printAsPdfButton: Skriv ut som PDF
+  json-viewer:
+    ui:
+      invalidJson: Den angitte JSON-en er ikke gyldig.
+      sortKeys: Sorter nøkler
+      indentSize: Innrykksstørrelse
+      yourRawJson: Din rå JSON
+      pasteRawJsonPlaceholder: Lim inn din rå JSON her...
+      prettifiedVersion: Formatert versjon av din JSON
+  phone-parser-and-formatter:
+    ui:
+      invalidPhoneNumber: Ugyldig telefonnummer
+      sectionLocation: Plassering
+      countryCode: Landkode
+      country: Land
+      callingCode: Retningsnummer
+      sectionValidation: Validering
+      isValid: Er gyldig?
+      'yes': Ja
+      'no': Nei
+      isPossible: Er mulig?
+      type: Type
+      unknown: Ukjent
+      sectionFormats: Formater
+      international: Internasjonalt
+      national: Nasjonalt
+      defaultCountry: Standardland
+      phoneNumber: Telefonnummer
+      emptyStatePrompt: Skriv inn et telefonnummer over for å analysere
+    title: Telefonnummer-parser
+    description: Tolker og formaterer telefonnumre. Oppdager land, validerer og viser internasjonalt, nasjonalt, E.164- og RFC3966-format.
+  signature-creator:
+    ui:
+      drawSignatureTab: Tegn signatur
+      removeBackgroundTab: Fjern bakgrunn
+      inkColorLabel: Blekkfarge
+      strokeWeightLabel: Strektykkelse
+      actionsLabel: Handlinger
+      undoButton: ↩ Angre
+      clearButton: ✕ Tøm
+      downloadTransparentPng: ↓ Last ned gjennomsiktig PNG
+      uploadImageLabel: Last opp bilde
+      dropzoneText: Slipp et bilde her, eller klikk for å bla gjennom
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Bilde lastet inn
+      removeButton: ✕ Fjern
+      removeBackgroundButton: ⚡ Fjern bakgrunn
+      exportLabel: Eksporter
+      downloadNoBgPng: ↓ Last ned PNG (uten bakgrunn)
+      originalLabel: Original
+      resultLabel: Resultat
+      uploadPrompt: Last opp et bilde for å komme i gang
+      originalAlt: original
+      resultAlt: resultat med bakgrunn fjernet
+      loadingModelStatus: Laster AI-modell...
+      removingBackgroundStatus: Fjerner bakgrunn...
+      processingPercentStatus: Behandler... {pct}%
+      downloadingModelPercentStatus: Laster ned modell... {pct}%
+      removeBackgroundFailedStatus: Kunne ikke fjerne bakgrunnen. Prøv et annet bilde.
+    title: Signaturskaper
+    description: Tegn en håndskrevet signatur direkte på lerretet og eksporter som transparent PNG. Eller last opp et hvilket som helst bilde og fjern bakgrunnen med ett klikk ved hjelp av AI på enheten.
+  dev-calculator:
+    ui:
+      hasData: Har data
+      noDataGroup: Ingen data, angi grunntid manuelt
+      colorBelow: '{process} under 36°C: fargeforskyvning og ufullstendig fremkalling er sannsynlig'
+      colorAbove: '{process} over 40°C: risiko for tåke og fargekryssing'
+      bwBelow: 'Under 18°C: fremkalling vil være svært treg'
+      bwAbove: 'Over 24°C: risiko for retikulering og tåke'
+      start: Start
+      pause: Pause
+      resume: Fortsett
+      calculatorTitle: FILMFREMKALLINGSKALKULATOR
+      developer: Fremkaller
+      dilution: Fortynning
+      filmStock: Filmtype
+      baseTimeAt: Grunntid ved {temp}°C
+      noData: ingen data
+      overridePlaceholder: overstyr (s)
+      customBaseActive: Egendefinert grunntid aktiv
+      temperature: 'Temperatur:'
+      pushPull: Push / Pull
+      tankVolume: Tankvolum
+      customMlPlaceholder: egendefinert ml
+      adjustedTime: JUSTERT TID
+      baseTimeTemp: Grunntid ({temp}°C)
+      tempAdj: Temp.-justering ({temp})
+      pushStop: Push {n} stopp
+      pushStops: Push {n} stopp
+      pullStop: Pull {n} stopp
+      pullStops: Pull {n} stopp
+      mixFor: Bland til {volume}ml
+      mixDeveloper: fremkaller
+      mixWater: vann
+      noDataWarning: Ingen data for {film} + {developer}. Angi grunntid manuelt.
+      pushPullEstimate: Push/pull-tider er anslag. Testrull anbefales.
+      sourceNote: Grunntider hentet fra Massive Dev Chart og produsentenes datablader.
+      processTimer: PROSESSTIMER
+      devComplete: Fremkalling fullført
+      devCompleteHint: Heng til tørk og nyt negativene dine.
+      stageOf: Trinn {current} / {total}
+      agitation: AGITASJON
+      reset: Tilbakestill
+      skip: Hopp over
+      stDeveloper: Fremkaller
+      stBleach: Blekemiddel
+      stWash: Vask
+      stFixer: Fikser
+      stWash2: Vask 2
+      stStabilizer: Stabilisator
+      stFirstDeveloper: Første fremkaller
+      stReversalBath: Reverseringsbad
+      stColorDeveloper: Fargefremkaller
+      stPreBleach: Forbleking
+      stFinalWash: Sluttvask
+      stStopBath: Stoppbad
+      agC30s10: Kontinuerlig de første 30s, deretter 10s hvert 30s
+      agRun3Full: Rennende vann eller 3 fulle skift
+      agGentle: Bare forsiktig svirring, ikke skyll etterpå
+      agC30s5: Kontinuerlig de første 30s, deretter 5s hvert 30s
+      agRun3: Rennende vann eller 3 skift
+      agContinuous: Kontinuerlig
+      ag10per30: 10s hvert 30s
+      agRun5: Rennende vann eller 5 skift
+      agC60s10: Kontinuerlig de første 30s, deretter 10s hvert 60s
+      agCont60: Kontinuerlig i 60s
+      ag10per60: 10s hvert 60s
+      agRun5Full: Rennende vann eller 5 fulle skift
+    title: Filmfremkallingskalkulator
+    description: Beregner justerte fremkallingstider med temperaturkompensasjon, push/pull-behandling og fortynningsblanding. Inkluderer en database over vanlige svart-hvitt-fremkallere og filmtyper.
+  email-record-generator:
+    ui:
+      hardFailRecommended: hard fail, anbefalt
+      softFail: soft fail
+      neutralNotRecommended: noytral, ikke anbefalt
+      blockFailingMail: blokker e-post som feiler
+      sendToSpam: send til spam
+      monitorOnly: kun overvaking
+      relaxedDefault: Avslappet (standard)
+      strict: Streng
+      sameAsMainPolicy: Samme som hovedpolicy
+      spfRecordTitle: SPF-POST
+      dmarcRecordTitle: DMARC-POST
+      spfRecordLocation: TXT-post pa rotdomenet
+      dmarcRecordLocation: TXT-post pa
+      copied: kopiert
+      clickToCopy: klikk for a kopiere
+      lookupWarning: '{count} DNS-oppslag valgt; SPF har en grense pa 10 oppslag'
+      mailProviders: E-POSTLEVERANDORER
+      customIps: EGENDEFINERTE IP-ER ELLER OMRADER (VALGFRITT)
+      examplePrefix: f.eks.
+      enforcement: HANDHEVELSE
+      policy: POLICY
+      subdomainPolicy: POLICY FOR SUBDOMENER (VALGFRITT)
+      policyCoverage: 'POLICYDEKNING: {percent}%'
+      coverageHint: '{percent}% av e-post som feiler vil bli handtert. Bruk mindre enn 100% for en gradvis utrulling.'
+      aggregateReportEmail: E-POST FOR SAMLET RAPPORT (rua)
+      forensicReportEmail: E-POST FOR RETTSMEDISINSK RAPPORT (ruf, valgfritt)
+      dkimAlignment: DKIM-JUSTERING
+      spfAlignment: SPF-JUSTERING
+    title: E-postpost-generator
+    description: Genererer SPF- og DMARC-DNS-TXT-poster. Velg e-postleverandører og retningslinjer, og kopier resultatet rett inn i DNS-en din.
+  gif-search:
+    ui:
+      errorStatus: Feil {status}
+      fetchFailed: Kunne ikke hente GIF-er.
+      searchPlaceholder: Søk etter GIF-er (f.eks. facepalm, bra jobbet, dette går fint)
+      searching: Søker...
+      search: Søk
+      noResults: Fant ingen GIF-er for "{query}".
+      copied: Kopiert!
+      copyUrl: Kopier URL
+      resultsHint: '{count} resultater. Klikk for å kopiere URL-en, og lim den inn i Teams, Telegram eller Slack.'
+    title: GIF-søk
+    description: Søk i Giphy etter reaksjons-GIF-er. Klikk på et resultat for å kopiere URL-en.
+  qr-code-generator:
+    ui:
+      tabText: Tekst / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Tekst eller URL
+      placeholderTextOrUrl: Lenke eller tekst...
+      sectionEncryption: Kryptering
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Uten passord
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Nettverksnavn...
+      sectionPassword: Passord
+      placeholderPassword: Nettverkspassord...
+      sectionOptions: Alternativer
+      hiddenSsid: Skjult SSID
+      anonymousIdentity: Anonym identitet
+      sectionEapMethod: EAP-metode
+      sectionEapPhase2: EAP fase 2
+      sectionEapIdentity: EAP-identitet
+      placeholderEapIdentity: Din EAP-identitet...
+      sectionTheme: Tema
+      themeDefault: Standard
+      themeTerminal: Terminal
+      themeClassic: Klassisk
+      themeInverted: Invertert
+      sectionColors: Farger
+      labelForeground: 'Forgrunn:'
+      labelBackground: 'Bakgrunn:'
+      sectionErrorCorrection: Feilretting
+      levelLow: Lav (~7%)
+      levelMedium: Middels (~15%)
+      levelQuartile: Kvartil (~25%)
+      levelHigh: Høy (~30%)
+      emptyHintWifi: Skriv inn en SSID for å generere en Wi-Fi-QR
+      emptyHintText: Skriv inn tekst eller en URL
+      captionJoin: '>_ skann for å koble til'
+      captionOpen: '>_ skann for å åpne'
+      downloadPng: ↓ Last ned PNG
+  reciprocity-calculator:
+    ui:
+      barReciprocity: RESIPROSITETSKALKULATOR
+      barCorrected: KORRIGERT EKSPONERING
+      fieldFilmStock: Filmtype
+      typeBw: B&W
+      typeColorNeg: Fargenegativ
+      typeSlide: Lysbilde / E6
+      noFailureUpTo: Ingen svikt opptil {seconds}s
+      sourceManufacturer: Data fra produsent
+      sourceCommunity: Data fra fellesskapet
+      fieldMeteredExposure: Målt eksponering
+      unitSeconds: sekunder
+      noFailureMessage: 'Ingen korrigering nødvendig: denne filmen har ingen resiprositetssvikt ved denne eksponeringslengden.'
+      copyDone: ✓ kopiert
+      copySeconds: kopier sekunder
+      devReduce10: Vurder å redusere fremkallingen med rundt 10% for å kompensere for økt skyggetetthet.
+      devReduce1015: Redusert fremkalling på 10-15% anbefales.
+      devReduce1520: Redusert fremkalling på 15-20% anbefales.
+      devReduce2030: Redusert fremkalling på 20-30% anbefales for svært lange eksponeringer.
+      colorShiftWarning: 'Fargefilm: forvent en fargeforskyvning ved denne eksponeringslengden.'
+      colorShiftSlide: Lysbildefilm er vanskelig å korrigere i etterkant; CC-filtrering i kameraet anbefales.
+      colorShiftNeg: Fargenegativ har mer spillerom; korrigering er mulig ved fremkalling eller skanning.
+    title: Reciprositetssvikt-kalkulator
+    description: Beregner korrigerte langtidseksponeringer for over 40 analoge filmtyper med Schwarzschilds potenslov. Dekker svart-hvitt, fargenegativ og lysbildefilm.
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS-locale datostreng
+      formatUnixTimestamp: Unix-tidsstempel
+      formatTimestamp: Tidsstempel
+      formatUtc: UTC-format
+      formatExcelDateTime: Excel dato/klokkeslett
+      invalidDateRule: Denne datoen er ugyldig for dette formatet
+      inputPlaceholder: Lim inn en datostreng eller la stå tomt for direkteklokke...
+      invalidDate: Ugyldig dato for dette formatet
+      output: UTDATA
+      live: LIVE
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Tekst til Unicode
+      enterTextLabel: Skriv inn tekst som skal konverteres til Unicode
+      unicodeFromTextLabel: Unicode fra teksten din
+      unicodeOutputPlaceholder: Unicode-representasjonen av teksten din vises her
+      copyUnicode: Kopier Unicode til utklippstavlen
+      unicodeToTextTitle: Unicode til tekst
+      inputUnicodePlaceholder: Skriv inn Unicode
+      enterUnicodeLabel: Skriv inn Unicode som skal konverteres til tekst
+      textFromUnicodeLabel: Tekst fra Unicode-en din
+      textOutputPlaceholder: Tekstrepresentasjonen av Unicode-en din vises her
+      copyText: Kopier tekst til utklippstavlen
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Metatagger kopiert!
+      copiedLabel: ✓ Kopiert
+      copyButton: Kopier
+      outputTitle: DINE METATAGGER
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME-type til filtype
+      mimeToExtensionDescription: Se hvilke filtyper som er knyttet til en MIME-type
+      mimeTypeSelectPlaceholder: 'Velg MIME-typen din her... (f.eks: application/pdf)'
+      extensionsFoundPrefix: Filtyper for filer med
+      extensionsFoundSuffix: 'MIME-typen:'
+      extensionToMimeTitle: Filtype til MIME-type
+      extensionToMimeDescription: Se hvilken MIME-type som er knyttet til en filtype
+      mimeFoundPrefix: MIME-type knyttet til
+      mimeFoundSuffix: 'filtypen:'
+      tableMimeTypesHeader: MIME-typer
+      tableExtensionsHeader: Filtyper
+  domain-lookup:
+    ui:
+      statusDesc:
+        active: Domenet er aktivt og i drift.
+        inactive: Domenet er inaktivt.
+        clientDeleteProhibited: Registraren har last domenet mot sletting.
+        clientTransferProhibited: Registraren har last domenet mot overforing til en annen registrar.
+        clientUpdateProhibited: Registraren har last domenet mot oppdateringer.
+        clientHold: Registraren har satt domenet pa hold, sa DNS kan slutte a fungere.
+        serverDeleteProhibited: Registeret har last domenet mot sletting.
+        serverTransferProhibited: Registeret har last domenet mot overforing.
+        serverUpdateProhibited: Registeret har last domenet mot oppdateringer.
+        serverHold: Registeret har satt domenet pa hold, sa DNS kan slutte a fungere.
+        pendingCreate: Opprettelse av domenet er under behandling.
+        pendingDelete: Domenet venter pa sletting og kan bli frigitt snart.
+        pendingRenew: Fornyelse av domenet er under behandling.
+        pendingRestore: Gjenoppretting av domenet etter sletting er under behandling.
+        pendingTransfer: Overforing av domenet til en annen registrar er under behandling.
+        pendingUpdate: Oppdatering av domenet er under behandling.
+        redemptionPeriod: Domenet har utlopt og er i innlosningsperioden. Registranten kan fortsatt gjenopprette det.
+        renewPeriod: Domenet er i fornyelsesperioden etter registrering.
+        autoRenewPeriod: Domenet er i perioden for automatisk fornyelse.
+        transferPeriod: Domenet er i overforingsperioden.
+      expiredAlert: Dette domenet utlop for {days} dager siden og kan vare tilgjengelig for registrering.
+      expiresAlert: Dette domenet utloper om {days} dager. Fornyelse bor ordnes snarest.
+      expiredTag: Utlop for {days}d siden
+      remainingTag: '{days}d igjen'
+      registrar: Registrar
+      registrarIanaId: Registrarens IANA-ID
+      created: Opprettet
+      updated: Oppdatert
+      expires: Utloper
+      noMx: Ingen MX-oppforinger funnet.
+      dnsFailed: DNS-oppslag mislyktes.
+      noSpf: Ingen SPF-oppforing funnet.
+      noDkim: Ingen DKIM-oppforinger funnet for vanlige selektorer. Egendefinerte selektorer kan fortsatt finnes.
+      noDmarc: Ingen DMARC-oppforing funnet. Domenet er ubeskyttet mot forfalskning.
+      spfPlusAll: 'Advarsel: +all er farlig fordi det tillater enhver server a sende e-post som dette domenet.'
+      spfNeutralAll: 'Advarsel: ?all er noytralt og gir ingen beskyttelse.'
+      dmarcPNone: 'Advarsel: p=none er kun overvakning, uten handheving. E-post vil ikke bli avvist.'
+      dmarcNoRua: 'Advarsel: ingen adresse for samlerapporter (rua=). Du vil ikke motta DMARC-rapporter.'
+      pass: Bestatt
+      fail: Ikke bestatt
+      warning: Advarsel
+      checking: Sjekker...
+      overallPass: Alle e-postsjekker ble bestatt. Dette domenet er godt konfigurert for e-post.
+      overallFail: En eller flere kritiske oppforinger mangler. Dette domenet kan vare sarbart for forfalskning.
+      overallWarn: Noen oppforinger finnes, men har konfigurasjonsproblemer som bor sjekkes.
+      rdapHttpError: 'HTTP {status}: domenet finnes kanskje ikke, eller TLD-en stottes ikke.'
+      lookupFailed: Oppslag mislyktes.
+      domainPlaceholder: Skriv inn et domene (f.eks. killertools.net)
+      searching: Soker...
+      search: Sok
+      signed: Signert
+      unsigned: Usignert
+      delegationSigned: Delegeringen er signert.
+      dsRecord: '{count} DS-oppforing.'
+      dsRecords: '{count} DS-oppforinger.'
+      keyRecord: '{count} nokkeloppforing.'
+      keyRecords: '{count} nokkeloppforinger.'
+      dnssecUnsigned: Dette domenet er ikke beskyttet av DNSSEC. DNS-svar kan ikke verifiseres kryptografisk.
+      status: Status
+      contacts: Kontakter
+      remarks: Merknader
+      nameservers: Navnetjenere
+      mxRecords: MX-oppforinger
+      spfRecord: SPF-oppforing
+      dkimRecords: DKIM-oppforinger
+      dmarcRecord: DMARC-oppforing
+      role:
+        registrant: registrant
+        administrative: administrativ
+        technical: teknisk
+        abuse: misbruk
+      name: Navn
+      organization: Organisasjon
+      email: E-post
+      phone: Telefon
+    title: Domeneoppslag
+    description: WHOIS-registreringsdetaljer og DNS-sjekker for e-post (MX, SPF, DKIM, DMARC) for en hvilken som helst domene i en samlet visning.
+  basic-auth-generator:
+    ui:
+      copied: Header kopiert til utklippstavlen
+      username: Brukernavn
+      usernamePlaceholder: Brukernavnet ditt...
+      password: Passord
+      passwordPlaceholder: Passordet ditt...
+      headerLabel: 'Authorization-header:'
+      copyHeader: Kopier header
+  password-generator:
+    ui:
+      terminal:
+        passwordTitle: PASSORD
+        optionsTitle: ALTERNATIVER
+      meta:
+        entropyLabel: 'Entropi:'
+        bits: bits
+        crackLabel: 'Knekketid:'
+      actions:
+        copy: Kopier
+        refresh: Oppdater
+      section:
+        preset: Forhåndsinnstilling
+        mode: Modus
+        format: Format
+        length: Lengde ({length})
+        wordCount: Antall ord ({count})
+        separator: Skilletegn
+        characterClasses: Tegntyper
+        options: Alternativer
+      charClass:
+        uppercase: Store bokstaver
+        lowercase: Små bokstaver
+        numbers: Tall
+        symbols: Symboler
+      option:
+        excludeAmbiguous: Utelat tvetydige tegn
+        requireOneOfEach: Krev minst ett av hver type
+        capitalizeWords: Stor forbokstav i ord
+        appendNumber: Legg til 2 siffer
+      mode:
+        random: Tilfeldig
+        passphrase: Passordfrase
+        pronounceable: Uttalbart
+        format: Format
+      format:
+        plain: Vanlig
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: ingen
+      qr:
+        caption: skann for å kopiere
+      phonetic:
+        title: FONETISK
+      bulk:
+        generateLabel: Generer
+        single: enkel
+        atOnce: '{n} om gangen'
+        passwordsTitle: '{count} PASSORD'
+        copyAll: Kopier alle
+      toast:
+        passwordCopied: Passord kopiert til utklippstavlen
+        passwordsCopied: Passord kopiert til utklippstavlen
+        phoneticCopied: Fonetisk stavemåte kopiert
+    title: Passordgenerator
+    description: Genererer sterke passord, diceware-passordfraser, uttalbare tekststrenger og hex-/base64-/UUID-tokener. Inkluderer MSP-forhåndsinnstillinger (lokal admin, tjenestekonto, Wi-Fi PSK, PIN), utelukking av tvetydige tegn, entropimåler, QR-kode og NATO-fonetisk opplesning.
+  exposure-equivalence:
+    ui:
+      titleInputs: EKSPONERINGSEKVIVALENS
+      shutterSpeed: Lukkertid
+      dragOrClick: dra eller klikk
+      custom: Egendefinert
+      secPlaceholder: sek
+      aperture: Blender
+      titleResults: TILSVARENDE EKSPONERINGER
+      isoIndependent: ISO-uavhengig ved enhver fast ISO
+      highlightedBase: den uthevede raden er basen din
+      legendT1: grunnleggende lukkertid
+      legendT2: tilsvarende lukkertid
+      legendN1: grunnleggende blender (f-tall)
+      legendN2: mål-blender (f-tall)
+    title: Eksponeringsekvivalens
+    description: Finn ekvivalente lukkertider på tvers av alle blenderåpninger for samme eksponering. Velg din grunnleggende lukkertid og blender for å se hva som trengs ved hver annen f-verdi.
+  nd-filter-calculator:
+    ui:
+      titleInputs: ND-FILTERKALKULATOR
+      baseShutterSpeed: Grunnleggende lukkertid (uten filter)
+      dragOrClick: dra eller klikk
+      custom: Egendefinert
+      secPlaceholder: sek
+      ndFilter: ND-filter
+      stopOne: '{count} trinn'
+      stopMany: '{count} trinn'
+      enterStops: angi trinn
+      stopsPlaceholder: trinn
+      titleResult: KORRIGERT EKSPONERING
+      copied: kopiert
+      copySeconds: kopier sekunder
+      longExposureAlert: Lang eksponering. Vurder å bruke Bulb-modus.
+      stackingFilters: 'stabling av filtre: legg sammen trinnene deres'
+      legendT1: grunnleggende lukkertid (uten filter)
+      legendT2: korrigert lukkertid
+      legendStops: ND-filterets styrke
+    title: ND-filterkalkulator
+    description: Beregner korrigerte lukkertider for gråtonefiltre. Støtter alle vanlige ND-styrker og egendefinerte blenderverdier.
+  yaml-viewer:
+    ui:
+      invalidYaml: Oppgitt YAML er ikke gyldig.
+      sortKeys: Sorter nøkler
+      indentSize: Innrykkstørrelse
+      rawLabel: Din rå YAML
+      rawPlaceholder: Lim inn den rå YAML-en din her...
+      prettifiedLabel: Formatert versjon av YAML-en din
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Hemmelighet (hex)
+      epochLabel: Epoke
+      countLabel: Antall
+      paddedHexLabel: Utfylt hex
+      secretLabel: HEMMELIGHET
+      secretPlaceholder: Lim inn din TOTP-hemmelighet...
+      generateNewSecret: Generer ny hemmelighet
+      tokenLabel: TOKEN
+      copied: ✓ kopiert
+      clickToCopy: klikk for å kopiere
+      nextIn: '>_ neste om {seconds}s'
+      adjacentTokensLabel: NÆRLIGGENDE TOKENER
+      prevLabel: Forrige
+      nextLabel: Neste
+      detailsLabel: DETALJER
+      scanToAuthenticate: '>_ skann for å autentisere'
+      openKeyUriInNewTab: Åpne Key URI i ny fane
+      tokenDisplayPreviousLabel: Forrige
+      tokenDisplayCurrentLabel: Gjeldende OTP
+      tokenDisplayNextLabel: Neste
+      copiedExclaim: Kopiert!
+      copyPreviousOtp: Kopier forrige OTP
+      copyCurrentOtp: Kopier gjeldende OTP
+      copyNextOtp: Kopier neste OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Sterkt
+      moderateLabel: Middels
+      weakLabel: Svakt
+      veryWeakLabel: Svært svakt
+      lengthLabel: Lengde
+      entropyLabel: Entropi
+      charsetSizeLabel: Tegnsettstørrelse
+      scoreDetailLabel: Poengsum
+      passwordPlaceholder: Skriv inn et passord...
+      hideLabel: Skjul
+      showLabel: Vis
+      clearLabel: Tøm
+      crackTimeSublabel: TID FOR BRUTE FORCE-KNEKKING
+      crackTimeNote: Styrken anslås ved hjelp av brute force-tid på 1 milliard forsøk/sek. Ordbokangrep er ikke modellert.
+  depth-of-field-calculator:
+    ui:
+      sensorMedFormat: Mellomformat
+      sensorCustom: Egendefinert
+      sensorEnterCoc: angi CoC
+      infinity: uendelig
+      title: DYBDESKARPHETSKALKULATOR
+      sensorFormat: Sensorformat
+      cocPlaceholder: CoC i mm (f.eks. 0.029)
+      focalLength: Brennvidde (mm)
+      aperture: Blender
+      dragOrClick: dra eller klikk
+      focusDistance: Fokusavstand
+      distancePlaceholder: avstand
+      results: RESULTATER
+      hyperfocalDistance: Hyperfokal avstand
+      hyperfocalHint: Fokuser her for maksimal skarphet fra halvparten av denne avstanden til uendelig
+      nearLimit: Nærgrense
+      farLimit: Fjerngrense
+      totalDof: Total dybdeskarphet
+      beyondHyperfocal: Fokusavstanden er ved eller forbi hyperfokalpunktet, fjerngrensen strekker seg til uendelig.
+      legendHyperfocal: hyperfokal avstand
+      legendFocalLength: brennvidde
+      legendFNumber: f-tall (blender)
+      legendCoc: forvirringssirkel
+      legendFocusDistance: fokusavstand
+    title: Dybdeskarpe-kalkulator
+    description: Beregner nærgrense, fjerngrense og total dybdeskarpe for enhver kombinasjon av objektiv og sensor. Inkluderer hyperfokal avstand.
+  integer-base-converter:
+    ui:
+      binary: Binaer
+      octal: Oktal
+      decimal: Desimal
+      hexadecimal: Heksadesimal
+      base: grunntall
+      output: RESULTAT
+      custom: Egendefinert
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Søk etter port, tjeneste, protokoll eller beskrivelse...
+      allProtocols: Alle
+      dangerousOnly: Kun farlige
+      showingPorts: Viser {count} porter
+      copied: Kopiert!
+      clickToCopy: Klikk for å kopiere portnummer
+      copiedCheck: ✓ kopiert
+      dangerousPill: Farlig
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet-oversikt
+      adminBadge: Admin
+      cmdletSearchPlaceholder: Søk etter navn, beskrivelse eller modul...
+      noCmdletsMatch: Ingen cmdlets samsvarer med "{query}"
+      generatedCommand: Generert kommando
+      copiedCheck: ✓ Kopiert!
+      copyCommand: Kopier kommando
+      commonExamples: Vanlige eksempler
+      selectCmdletPrompt: Velg en cmdlet til venstre for å begynne å bygge kommandoen din.
+      parameters: Parametere
+      noParametersNeeded: Ingen parametere nødvendig - denne cmdleten kjøres som den er.
+      required: påkrevd
+      separateMultipleValues: skill flere verdier med komma
+      showFewerParameters: Vis færre parametere
+      showMoreParameters: '{count} flere parametere'
+      collapseQuickReference: Skjul hurtigreferanse
+      openQuickReference: Åpne hurtigreferanse
+      quickReference: Hurtigreferanse
+      cheatsheetComparisonOperators: Sammenligningsoperatorer
+      cheatsheetEqualTo: Lik
+      cheatsheetNotEqualTo: Ikke lik
+      cheatsheetGreaterLessThan: Større enn / mindre enn
+      cheatsheetGreaterLessEqual: Større eller lik / mindre eller lik
+      cheatsheetStringOperators: Strengoperatorer
+      cheatsheetWildcardMatch: Jokertegn-treff (* og ?)
+      cheatsheetWildcardNonMatch: Ikke jokertegn-treff
+      cheatsheetRegexMatch: Regex-treff
+      cheatsheetRegexNonMatch: Ikke regex-treff
+      cheatsheetCollectionContains: Samlingen inneholder verdi
+      cheatsheetValueInCollection: Verdien finnes i en samling
+      cheatsheetLogicalOperators: Logiske operatorer
+      cheatsheetBothTrue: Begge betingelsene må være sanne
+      cheatsheetEitherTrue: Minst én betingelse er sann
+      cheatsheetNegateCondition: Negere en betingelse
+      cheatsheetAutomaticVariables: Automatiske variabler
+      cheatsheetCurrentPipelineObject: Gjeldende pipeline-objekt
+      cheatsheetNullEmptyValue: Null / tom verdi
+      cheatsheetBooleanTrueFalse: Boolsk sann / usann
+      cheatsheetLocalComputerName: Lokalt datamaskinnavn
+      cheatsheetCurrentUser: Nåværende innloggede bruker
+      cheatsheetPsVersionInfo: PS-versjonsinfo
+      cheatsheetDateHelpers: Datohjelpere
+      cheatsheetCurrentDateTime: Gjeldende dato og klokkeslett
+      cheatsheetThirtyDaysAgo: 30 dager siden
+      cheatsheetThreeMonthsAgo: 3 måneder siden
+      cheatsheetParseDateString: Tolk en datostreng
+      cheatsheetPipelineTricks: Pipeline-triks
+      cheatsheetLimitFirst10: Begrens til de første 10 resultatene
+      cheatsheetCountSumMinMax: Antall / sum / min / maks
+      cheatsheetInteractiveGuiViewer: Interaktiv GUI-viser (lokal)
+      cheatsheetConvertToJson: Konverter output til JSON
+      cheatsheetOutputScreenAndFile: Skriv ut til skjerm og fil
+      cheatsheetSuppressErrors: Undertrykk ikke-kritiske feil
+      cheatsheetRemoteExecution: Ekstern kjøring
+      cheatsheetCmdletsSupportDirectly: Mange cmdlets støtter dette direkte
+      cheatsheetRunViaRemoting: Kjør via PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Interaktiv ekstern PS-økt
+  ascii-word-art:
+    title: ASCII-ordkunst-generator
+    description: Lag ASCII-ordkunst-tekst med mange skrifttyper og stiler.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Velg en cmdlet, fyll ut parameterne og kopier den ferdige PowerShell-kommandoen.
+  killer-pdf:
+    title: KillerPDF
+    description: PDF-redigerer med åpen kildekode for Windows. Vis, kommenter, slå sammen, del opp, flat ut, åpne passordbeskyttede PDF-er, rediger tekst, tegn, uthev, signer og skriv ut.
+  killer-scan:
+    title: KillerScan
+    description: Rask nettverksskanner for feltteknikere. ARP- og ping-oppdagelse, portsondering, leverandøroppslag og automatisk enhetsklassifisering.
+  killer-shell:
+    title: KillerShell
+    description: Gratis skall for avanserte brukere. En filutforsker, en terminal og en tekstredigerer deler ett vindu, en fanelinje og et sett med taster.
+ui:
+  diffEditor:
+    originalLabel: ORIGINAL
+    modifiedLabel: ENDRET
+    originalPlaceholder: Original tekst...
+    modifiedPlaceholder: Endret tekst...
+  fileUpload:
+    defaultTitle: Dra og slipp filer her, eller klikk for å velge filer
+    or: eller
+    browseFiles: Bla gjennom filer
+  inputText:
+    defaultPlaceholder: Inndatatekst
+  keyValueListItem:
+    'yes': Ja
+    'no': Nei
+    notAvailable: Ikke tilgjengelig
+  modalValue:
+    copied: Kopiert!
+    copy: Kopier
+  select:
+    searchPlaceholder: Søk...
+    noResults: Ingen resultater funnet
+    defaultPlaceholder: Velg et alternativ
+  table:
+    defaultDescription: Datatabell
+  textCopyable:
+    copied: Kopiert!
+    copyToClipboard: Kopier til utklippstavlen
+commandPalette:
+  searchAriaLabel: Søk
+  searchPlaceholder: Skriv for å søke etter et verktøy eller en kommando...
+components:
+  androidBetaBanner:
+    announcement: Android-beta-kunngjøring
+    title: Killer Tools kommer til Android
+    subtitle: Betatestere trengs - trykk for å bli med
+    dismiss: Lukk
+  formatTransformer:
+    input: Inndata
+    inputPlaceholder: Inndata...
+    output: Utdata
+  inputCopyable:
+    copied: Kopiert!
+    copy: Kopier til utklippstavlen
+  spanCopyable:
+    copied: Kopiert!
+    copy: Kopier til utklippstavlen
+  textareaCopyable:
+    copy: Kopier til utklippstavlen
+    copied: Kopiert!
+  navbarButtons:
+    androidTooltip: Killer Tools for Android
+    androidAriaLabel: Killer Tools for Android - bli med i betaen
+  themeDots:
+    accentColor: Aksentfarge
+    theme: Tema
+    toggleThemeSwatches: Veksle temafargeprøver
+    accentColorPicker: Aksentfargevelger
+    dragToMove: Dra for å flytte
+    accentLabel: 'aksent:'
+    accentNamed: 'Aksent: {name}'
+    closeAccentPicker: Lukk aksentvelger
+    accents:
+      red: Rød
+      orange: Oransje
+      green: Grønn
+      teal: Turkis
+      blue: Blå
+      purple: Lilla
+layouts:
+  menuLayout:
+    eggMessage: 80 verktøy. Null abonnementer. Én hevngjerrig feltekniker.
+    clickMe: klikk her
+    sourceOnGithub: Kildekode på Github
+  base:
+    collapseMenu: Skjul meny
+    homeLabel: KillerTools-hjem
+pages:
+  notFound:
+    noSuchFile: Ingen slik fil eller mappe
+    exitCode: avslutningskode
+    backToHome: tilbake til hjem
+  privacy:
+    heading: Personvernerklæring
+    lastUpdated: 'Sist oppdatert: 4. april 2026'
+    overviewHeading: Oversikt
+    overviewIntro: Killer Tools
+    overviewBody: er en gratis samling IT-verktøy. Personvernet ditt er viktig for oss, og denne erklæringen forklarer hvordan vi behandler dataene dine.
+    dataCollectionHeading: Datainnsamling
+    dataCollectionBody: Killer Tools samler ikke inn, lagrer eller overfører noen personopplysninger. All verktøybehandling skjer utelukkende i nettleseren din. Ingen data du skriver inn i et verktøy sendes til noen server.
+    cookiesHeading: Informasjonskapsler
+    cookiesBody: Dette nettstedet bruker ikke informasjonskapsler til sporing. Temapreferansene og innstillingene dine lagres lokalt i nettleseren og overføres aldri.
+    analyticsHeading: Analyse
+    analyticsIntro: Dette nettstedet bruker
+    analyticsBody: et personvernvennlig analyseverktøy for å forstå generelle bruksmønstre som sidevisninger og henvisningskilder. Umami bruker ikke informasjonskapsler, sporer ikke brukere på tvers av nettsteder og samler ikke inn personidentifiserbar informasjon. Alle data er aggregert og anonyme.
+    thirdPartyHeading: Tredjepartstjenester
+    thirdPartyBody: Enkelte verktøy kan lenke til eksterne ressurser eller dokumentasjon. Vi er ikke ansvarlige for personvernpraksisen til disse eksterne nettstedene.
+    androidAppHeading: Android-app
+    androidAppBody: Killer Tools-appen for Android er en innpakning rundt webapplikasjonen. Den ber ikke om eller får tilgang til noen enhetstillatelser utover grunnleggende internettilgang. Ingen enhetsdata samles inn eller overføres.
+    contactHeading: Kontakt
+    contactBody: Hvis du har spørsmål om denne personvernerklæringen, kan du kontakte oss på
+  androidApp:
+    robotAttribution: Android-roboten er gjengitt eller endret fra arbeid skapt og delt av Google, og brukt i henhold til vilkårene beskrevet i Creative Commons 3.0 Attribution License.
+    heading: Killer Tools for Android
+    introBody1: 'Hele killertools.net-verktøykassen som en native Android-app: hvert verktøy, Killer Scripts-biblioteket og alle favorittene dine, ett trykk unna fra hjemskjermen.'
+    introBody2: Samme regler som nettstedet. Alt kjører på enheten din. Ingen konto, ingen telemetri, ingen hjemringing. Hvis det sparer deg en billettsyklus i felt, har det gjort jobben sin.
+    betaStatusPrefix: Appen er for øyeblikket i
+    betaStatusStrong: lukket betaversjon på Google Play
+    betaStatusSuffix: ', og her kommer du inn i bildet.'
+    joinBetaHeading: Bli med i betaen
+    joinBetaIntroPrefix: Google krever
+    joinBetaIntroStrong: 12 testere med appen installert i 14 sammenhengende dager
+    joinBetaIntroSuffix: 'før en app fra en uavhengig utvikler kan bli offentlig. Tre trinn, omtrent to minutter, og du er en av de tolv:'
+    step1LinkText: Bli med i testergruppen
+    step1Suffix: på Google Groups (klikk "Join group").
+    step2LinkText: Bli en tester
+    step2Suffix: på Google Plays påmeldingsside.
+    step3LinkText: Installer appen
+    step3Suffix: fra Google Play, og hold den installert i to uker.
+    sameAccountStrong: Bruk samme Google-konto for alle tre trinnene
+    sameAccountSuffix: ' - påmeldingssiden viser "ikke tilgjengelig for denne kontoen" hvis du hopper over gruppen eller bytter konto.'
+    feedbackPrefix: 'Noe som er ødelagt eller mangler? Si fra til meg:'
+  home:
+    sortPopular: Populær
+    sortAZ: A - Å
+    sortZA: Å - A
+  about:
+    heading: Om Killer Tools
+    intro: Feltteknikere har ikke tid til overflødig funksjonalitet. Hvert verktøy her finnes fordi jeg trengte det på jobb og ikke fant noe som bare fungerte uten konto, installasjon eller telemetri.
+    originPrefix: Jeg bygger nå verktøy i det interne AI-ingeniørteamet til en MSP, etter seks år med full-stack-utvikling og åtte år som feltekniker i flere selskaper. KillerTools.net startet som en fork av det utmerkede
+    originMid: prosjektet av
+    originSuffix: og vokste til noe bygget for den typen arbeid jeg faktisk gjør. Jeg bygde det for å slå opp gruppepolicyinnstillinger midt i en sak, skanne en klients subnett, og hente frem portreferanser uten å forlate nettleseren.
+    scriptsLibrary: Killer Scripts-biblioteket dekker oppgavene som dukker opp i hver billettsyklus. Hvert skript kjører i PS 5.1, PS 7 og Kaseya LiveConnect uten avhengigheter.
+    privacyBody: Alt kjører i nettleseren din. Ingenting spores. Ingen konto kreves noensinne. Nettstedet håndhever en streng Content Security Policy for å blokkere angrep gjennom avhengighetskjeden. Hvis en kompromittert npm-pakke havner i pakken, kan den ikke ringe hjem med det du limte inn.
+    maintainedByPrefix: Bygget og vedlikeholdt av
+    maintainedByMid: Hvis dette sparer deg tid på jobben,
+    buyMeCoffee: å kjøpe meg en kaffe
+    maintainedBySuffix: settes pris på, men forventes aldri.
+    missingToolHeading: Mangler et verktøy? Funnet en feil?
+    issuesPrefix: Opprett en funksjonsforespørsel eller feilrapport i
+    issuesLinkText: issues-delen
+    issuesSuffix: på GitHub. Jeg leser dem.
+    alsoTryHeading: Prøv også...
+    tagKillerScan: Nettverksskanner med åpen kildekode for Windows
+    tagKillerPdf: PDF-redigerer med åpen kildekode for Windows
+    tagKillerShell: Windows-skall med åpen kildekode for avanserte brukere
+    tagKillerNotes: Kryptert notatblokk med åpen kildekode for Windows
+    tagKillendar: Kryptert kalender med åpen kildekode for Windows
+    linksHeading: Lenker
+    linkLabelSite: Nettsted
+    linkLabelSource: Kilde
+    linkLabelIssues: Issues
+    reportBug: Rapporter en feil
+    requestFeature: Be om en funksjon
+    linkLabelSupport: Støtte
+    linkLabelBuiltOn: Bygget på
+    itToolsFork: IT-Tools (fork)

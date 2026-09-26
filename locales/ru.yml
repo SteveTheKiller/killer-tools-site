@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: Новые инструменты
+    favoriteTools: Ваши избранные инструменты
+    allTools: Все инструменты
+    favoritesDndToolTip: Перетащите, чтобы изменить порядок избранного
+  subtitle: Полезные инструменты для разработчиков
+  toggleMenu: Показать/скрыть меню
+  home: Главная
+  uiLib: Библиотека UI
+  support: Поддержать разработку killer-tools
+  buyMeACoffee: Угостите меня кофе
+  follow:
+    title: Нравится killer-tools?
+    p1: Поставьте мне звезду в
+    githubRepository: репозитории StevetheKiller на GitHub
+    thankYou: Спасибо!
+  nav:
+    github: Репозиторий GitHub
+    githubRepository: Репозиторий killer-tools на GitHub
+    about: О killer-tools
+    aboutLabel: О проекте
+    darkMode: Тёмная тема
+    lightMode: Светлая тема
+    mode: Переключить тёмную/светлую тему
+about:
+  content: |
+    # killer-tools
+
+    У выездных инженеров нет времени на лишнее. Каждый инструмент здесь появился потому, что он был нужен мне в работе, а я не мог найти ничего, что просто работало бы без учётной записи, установки или телеметрии.
+
+    Я выездной инженер в MSP и занимаюсь сетями, системным администрированием и поддержкой рабочих станций. killer-tools начинался как форк отличного проекта [IT-Tools](https://github.com/CorentinTh/it-tools) и вырос в инструмент для той работы, которую я действительно делаю. Я сделал его, чтобы посреди заявки находить коды NDR, сканировать подсеть клиента и расшифровывать SafeLink, прежде чем по нему кликнуть.
+
+    Всё работает в вашем браузере. Ничего не отслеживается. Учётная запись не нужна, никогда.
+
+    Создано и поддерживается [Steve the Killer](https://thekiller.net). Если это экономит вам время в работе, [угостить меня кофе](https://www.buymeacoffee.com/StevetheKiller) приятно, но никогда не обязательно.
+
+    ## Не хватает инструмента? Нашли ошибку?
+
+    Создайте запрос на функцию или сообщение об ошибке в [разделе issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) на GitHub. Я их читаю.
+404:
+  notFound: 404 Не найдено
+  sorry: Извините, похоже, такой страницы не существует
+  maybe: Возможно, шалит кеш, попробуйте принудительно обновить страницу?
+  backHome: На главную
+favoriteButton:
+  remove: Удалить из избранного
+  add: Добавить в избранное
+toolCard:
+  new: Новое
+search:
+  label: Поиск
+tools:
+  categories:
+    favorite-tools: Ваши избранные инструменты
+    crypto: Криптография
+    conversion: Преобразование
+    web: Веб
+    images and videos: Изображения и видео
+    development: Разработка
+    network: Сеть
+    math: Математика
+    measurement: Измерения
+    text: Текст
+    data: Данные
+    windows: Windows
+    killer apps: Killer Apps
+    photography: Фотография
+  password-strength-analyser:
+    title: Анализатор надёжности пароля
+    description: Узнайте надёжность своего пароля с помощью этого анализатора, работающего только на стороне клиента, с оценкой времени взлома.
+  password-generator:
+    title: Генератор паролей
+    description: Создавайте надёжные пароли, парольные фразы diceware, произносимые строки и токены hex/base64/UUID. Включает пресеты MSP (локальный администратор, служебная учётная запись, Wi-Fi PSK, PIN), исключение неоднозначных символов, измеритель энтропии, QR-код и зачитывание фонетическим алфавитом NATO.
+    ui:
+      terminal:
+        passwordTitle: ПАРОЛЬ
+        optionsTitle: ПАРАМЕТРЫ
+      meta:
+        entropyLabel: 'Энтропия:'
+        bits: бит
+        crackLabel: 'Взлом:'
+      actions:
+        copy: Копировать
+        refresh: Обновить
+      section:
+        preset: Пресет
+        mode: Режим
+        format: Формат
+        length: Длина ({length})
+        wordCount: Количество слов ({count})
+        separator: Разделитель
+        characterClasses: Классы символов
+        options: Параметры
+      charClass:
+        uppercase: Заглавные буквы
+        lowercase: Строчные буквы
+        numbers: Цифры
+        symbols: Символы
+      option:
+        excludeAmbiguous: Исключить похожие символы
+        requireOneOfEach: По одному символу каждого класса
+        capitalizeWords: Слова с заглавной буквы
+        appendNumber: Добавить 2 цифры
+      mode:
+        random: Случайный
+        passphrase: Кодовая фраза
+        pronounceable: Произносимый
+        format: Формат
+      format:
+        plain: Обычный
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: нет
+      qr:
+        caption: сканируйте, чтобы скопировать
+      phonetic:
+        title: ФОНЕТИКА
+      bulk:
+        generateLabel: Сгенерировать
+        single: один
+        atOnce: '{n} за раз'
+        passwordsTitle: 'ПАРОЛИ: {count}'
+        copyAll: Копировать все
+      toast:
+        passwordCopied: Пароль скопирован в буфер обмена
+        passwordsCopied: Пароли скопированы в буфер обмена
+        phoneticCopied: Фонетическая транскрипция скопирована
+  percentage-calculator:
+    title: Калькулятор процентов
+    description: Легко вычисляйте проценты от одного значения к другому или от процента к значению.
+    ui:
+      whatIsXPercentOfYTitle: СКОЛЬКО СОСТАВЛЯЕТ X% ОТ Y
+      whatIsLabel: Чему равно
+      percentOfLabel: '% от'
+      resultPlaceholder: Результат
+      xIsWhatPercentOfYTitle: СКОЛЬКО ПРОЦЕНТОВ X ОТ Y
+      isWhatPercentOfLabel: составляет сколько % от
+      percentageChangeTitle: ПРОЦЕНТНОЕ УВЕЛИЧЕНИЕ / УМЕНЬШЕНИЕ
+      fromLabel: От
+      toLabel: до
+  svg-placeholder-generator:
+    title: Генератор SVG-заглушек
+    description: Создавайте изображения SVG для использования в качестве заглушек в ваших приложениях.
+    ui:
+      widthLabel: ШИРИНА (px)
+      backgroundLabel: ФОН
+      heightLabel: ВЫСОТА (px)
+      textColorLabel: ЦВЕТ ТЕКСТА
+      fontSizeLabel: РАЗМЕР ШРИФТА
+      customTextLabel: ПРОИЗВОЛЬНЫЙ ТЕКСТ
+      customTextPlaceholder: По умолчанию {size}
+      useExactSizeToggle: Использовать точный размер
+      svgHtmlElementLabel: SVG HTML ЭЛЕМЕНТ
+      svgBase64Label: SVG В BASE64
+      copySvgButton: Копировать svg
+      copyBase64Button: Копировать base64
+      downloadSvgButton: Скачать svg
+      previewLabel: ПРЕДПРОСМОТР
+      svgPreviewAlt: предпросмотр SVG
+  json-to-csv:
+    title: JSON в CSV
+    description: Преобразуйте JSON в CSV с автоматическим определением заголовков.
+    ui:
+      invalidJson: Предоставленный JSON недействителен.
+      yourRawJson: Ваш исходный JSON
+      pasteRawJsonPlaceholder: Вставьте сюда исходный JSON...
+      csvOutputLabel: CSV версия вашего JSON
+  camera-recorder:
+    title: Запись с камеры
+    description: Сделайте снимок или запишите видео с веб-камеры или фотоаппарата.
+    ui:
+      selectCamera: Выберите камеру
+      selectMicrophone: Выберите микрофон
+      notSupported: Ваш браузер не поддерживает запись с камеры.
+      accessRequired: Требуется доступ к камере и микрофону.
+      permissionBlocked: Доступ заблокирован. Предоставьте доступ вручную через значок замка в адресной строке браузера.
+      grantPermission: Разрешить доступ
+      video: ВИДЕО
+      audio: АУДИО
+      startWebcam: Запустить веб-камеру
+      paused: ПАУЗА
+      rec: ЗАПИСЬ
+      screenshot: Снимок экрана
+      record: Запись
+      pause: Пауза
+      resume: Продолжить
+      stop: Стоп
+      recordingNotSupported: Запись не поддерживается в этом браузере
+      captures: СНИМКИ ({count})
+      clearAll: Очистить всё
+      screenshotAlt: снимок экрана
+      download: Скачать
+      delete: Удалить
+  reciprocity-calculator:
+    title: Калькулятор невзаимозаместимости
+    description: Рассчитывайте скорректированные длинные выдержки для более чем 40 аналоговых плёнок по степенному закону Шварцшильда. Охватывает чёрно-белые, цветные негативные и слайдовые плёнки.
+    ui:
+      barReciprocity: КАЛЬКУЛЯТОР ОТКАЗА ВЗАИМОЗАМЕНЯЕМОСТИ
+      barCorrected: СКОРРЕКТИРОВАННАЯ ЭКСПОЗИЦИЯ
+      fieldFilmStock: Тип пленки
+      typeBw: Ч/Б
+      typeColorNeg: Цветной негатив
+      typeSlide: Слайд / E6
+      noFailureUpTo: Нет отказа при выдержке до {seconds} с
+      sourceManufacturer: Данные производителя
+      sourceCommunity: Данные сообщества
+      fieldMeteredExposure: Замеренная экспозиция
+      unitSeconds: секунды
+      noFailureMessage: 'Коррекция не требуется: у этой пленки нет отказа взаимозаменяемости при такой выдержке.'
+      copyDone: ✓ скопировано
+      copySeconds: копировать секунды
+      devReduce10: Рекомендуется сократить проявку примерно на 10%, чтобы компенсировать повышенную плотность теней.
+      devReduce1015: Рекомендуется сократить проявку на 10-15%.
+      devReduce1520: Рекомендуется сократить проявку на 15-20%.
+      devReduce2030: При очень длинных выдержках рекомендуется сократить проявку на 20-30%.
+      colorShiftWarning: 'Цветная пленка: при такой выдержке возможен сдвиг цвета.'
+      colorShiftSlide: Слайдовую пленку сложно скорректировать при печати; рекомендуется CC-фильтрация прямо при съемке.
+      colorShiftNeg: Цветной негатив обладает большей широтой; коррекция возможна при печати или сканировании.
+  nd-filter-calculator:
+    title: Калькулятор ND-фильтров
+    description: Рассчитывайте скорректированные выдержки для нейтрально-серых фильтров. Поддерживает все распространённые плотности ND и пользовательские значения ступеней.
+    ui:
+      titleInputs: КАЛЬКУЛЯТОР ND ФИЛЬТРА
+      baseShutterSpeed: Базовая выдержка (без фильтра)
+      dragOrClick: перетащите или нажмите
+      custom: Другое
+      secPlaceholder: сек
+      ndFilter: ND фильтр
+      stopOne: '{count} стоп'
+      stopMany: '{count} стопов'
+      enterStops: введите стопы
+      stopsPlaceholder: стопы
+      titleResult: СКОРРЕКТИРОВАННАЯ ЭКСПОЗИЦИЯ
+      copied: скопировано
+      copySeconds: копировать секунды
+      longExposureAlert: Длинная выдержка. Рекомендуется режим Bulb.
+      stackingFilters: 'при стекинге фильтров: суммируйте их стопы'
+      legendT1: базовая выдержка (без фильтра)
+      legendT2: скорректированная выдержка
+      legendStops: сила ND фильтра
+  depth-of-field-calculator:
+    title: Калькулятор глубины резкости
+    description: Рассчитывайте ближнюю и дальнюю границы и общую глубину резкости для любой комбинации объектива и сенсора. Включает гиперфокальное расстояние.
+    ui:
+      sensorMedFormat: Средний формат
+      sensorCustom: Другой
+      sensorEnterCoc: введите CoC
+      infinity: бесконечность
+      title: КАЛЬКУЛЯТОР ГЛУБИНЫ РЕЗКОСТИ
+      sensorFormat: Формат сенсора
+      cocPlaceholder: CoC в мм (например, 0.029)
+      focalLength: Фокусное расстояние (мм)
+      aperture: Диафрагма
+      dragOrClick: перетащите или щёлкните
+      focusDistance: Расстояние фокусировки
+      distancePlaceholder: расстояние
+      results: РЕЗУЛЬТАТЫ
+      hyperfocalDistance: Гиперфокальное расстояние
+      hyperfocalHint: Фокусируйтесь здесь для максимальной резкости от половины этого расстояния до бесконечности
+      nearLimit: Ближняя граница
+      farLimit: Дальняя граница
+      totalDof: Общая глубина резкости
+      beyondHyperfocal: Расстояние фокусировки равно гиперфокальному или превышает его - дальняя граница уходит в бесконечность.
+      legendHyperfocal: гиперфокальное расстояние
+      legendFocalLength: фокусное расстояние
+      legendFNumber: число диафрагмы (f-число)
+      legendCoc: circle of confusion
+      legendFocusDistance: расстояние фокусировки
+  exposure-equivalence:
+    title: Эквивалентность экспозиции
+    description: Найдите эквивалентные выдержки для всех диафрагм при той же экспозиции. Выберите базовые выдержку и диафрагму, чтобы увидеть нужные значения для любого другого f-stop.
+    ui:
+      titleInputs: ЭКВИВАЛЕНТНАЯ ЭКСПОЗИЦИЯ
+      shutterSpeed: Выдержка
+      dragOrClick: перетащите или нажмите
+      custom: Другое
+      secPlaceholder: сек
+      aperture: Диафрагма
+      titleResults: ЭКВИВАЛЕНТНЫЕ ЭКСПОЗИЦИИ
+      isoIndependent: не зависит от ISO при любом фиксированном ISO
+      highlightedBase: выделенная строка это ваша база
+      legendT1: базовая выдержка
+      legendT2: эквивалентная выдержка
+      legendN1: базовая диафрагма (число f)
+      legendN2: целевая диафрагма (число f)
+  dev-calculator:
+    title: Калькулятор проявки плёнки
+    description: Рассчитывайте скорректированное время проявки с температурной компенсацией, push/pull обработкой и смешиванием разведений. Включает базу распространённых чёрно-белых проявителей и плёнок.
+    ui:
+      hasData: Есть данные
+      noDataGroup: Нет данных, введите базовое время вручную
+      colorBelow: '{process} ниже 36°C: вероятны сдвиг цвета и неполное проявление'
+      colorAbove: '{process} выше 40°C: риск вуали и цветового кроссовера'
+      bwBelow: 'Ниже 18°C: проявление будет очень медленным'
+      bwAbove: 'Выше 24°C: риск ретикуляции и вуали'
+      start: Старт
+      pause: Пауза
+      resume: Продолжить
+      calculatorTitle: КАЛЬКУЛЯТОР ПРОЯВКИ ПЛЁНКИ
+      developer: Проявитель
+      dilution: Разбавление
+      filmStock: Плёнка
+      baseTimeAt: Базовое время при {temp}°C
+      noData: нет данных
+      overridePlaceholder: переопределить (с)
+      customBaseActive: Активно пользовательское базовое время
+      temperature: 'Температура:'
+      pushPull: Push / Pull
+      tankVolume: Объём бачка
+      customMlPlaceholder: свой объём, мл
+      adjustedTime: СКОРРЕКТИРОВАННОЕ ВРЕМЯ
+      baseTimeTemp: Базовое время ({temp}°C)
+      tempAdj: Темп. коррекция ({temp})
+      pushStop: Push {n} стоп
+      pushStops: Push {n} стопа
+      pullStop: Pull {n} стоп
+      pullStops: Pull {n} стопа
+      mixFor: Смешать на {volume} мл
+      mixDeveloper: проявитель
+      mixWater: вода
+      noDataWarning: Нет данных для {film} + {developer}. Введите базовое время вручную.
+      pushPullEstimate: Время push/pull приблизительное. Рекомендуется тестовая плёнка.
+      sourceNote: Базовое время взято из Massive Dev Chart и данных производителей.
+      processTimer: ТАЙМЕР ПРОЦЕССА
+      devComplete: Проявка завершена
+      devCompleteHint: Повесьте сушиться и наслаждайтесь негативами.
+      stageOf: Этап {current} / {total}
+      agitation: АЖИТАЦИЯ
+      reset: Сброс
+      skip: Пропустить
+      stDeveloper: Проявитель
+      stBleach: Отбеливатель
+      stWash: Промывка
+      stFixer: Фиксаж
+      stWash2: Промывка 2
+      stStabilizer: Стабилизатор
+      stFirstDeveloper: Первый проявитель
+      stReversalBath: Обращающая ванна
+      stColorDeveloper: Цветной проявитель
+      stPreBleach: Предотбеливание
+      stFinalWash: Финальная промывка
+      stStopBath: Стоп-ванна
+      agC30s10: Непрерывно первые 30 с, затем 10 с каждые 30 с
+      agRun3Full: Проточная вода или 3 полные смены
+      agGentle: Только лёгкое покачивание, не промывать после
+      agC30s5: Непрерывно первые 30 с, затем 5 с каждые 30 с
+      agRun3: Проточная вода или 3 смены
+      agContinuous: Непрерывно
+      ag10per30: 10 с каждые 30 с
+      agRun5: Проточная вода или 5 смен
+      agC60s10: Непрерывно первые 30 с, затем 10 с каждые 60 с
+      agCont60: Непрерывно 60 с
+      ag10per60: 10 с каждые 60 с
+      agRun5Full: Проточная вода или 5 полных смен
+  keycode-info:
+    title: Информация о keycode
+    description: Узнайте JavaScript keycode, code, location и модификаторы любой нажатой клавиши.
+  emoji-picker:
+    title: Выбор эмодзи
+    description: Легко копируйте и вставляйте эмодзи и получайте значение unicode и code points каждого из них.
+    ui:
+      emojiCopied: Эмодзи {emoji} скопирован в буфер обмена
+      codePointsCopied: Кодовые точки «{codePoints}» скопированы в буфер обмена
+      unicodeCopied: Юникод «{unicode}» скопирован в буфер обмена
+      searchPlaceholder: Поиск эмодзи (например, «smile»)...
+      noResults: Нет результатов
+      searchResult: Результат поиска
+  color-converter:
+    title: Конвертер цветов
+    description: Преобразуйте цвета между различными форматами (hex, rgb, hsl и имя CSS)
+    ui:
+      color: Цвет
+      formats: ФОРМАТЫ
+  bcrypt:
+    title: Bcrypt
+    description: Хешируйте и сравнивайте текстовые строки с помощью bcrypt. Bcrypt является функцией хеширования паролей на основе шифра Blowfish.
+    ui:
+      copiedToClipboard: Хеш скопирован в буфер обмена
+      hashTitle: ХЕШ
+      compareTitle: СРАВНЕНИЕ
+      stringLabel: Строка
+      stringPlaceholder: Строка для хеширования...
+      saltRoundsLabel: Раунды соли
+      outputLabel: РЕЗУЛЬТАТ
+      copyHash: Скопировать хеш
+      compareStringPlaceholder: Строка для сравнения...
+      hashLabel: Хеш
+      compareHashPlaceholder: Хеш для сравнения...
+      matchLabel: Совпадение
+      'yes': Да
+      'no': Нет
+  crontab-generator:
+    title: Генератор crontab
+    description: Проверяйте и создавайте crontab и получайте понятное описание расписания cron.
+    ui:
+      symbolAnyValue: Любое значение
+      symbolEveryMinute: Каждую минуту
+      symbolRange: Диапазон значений
+      symbolRangeEquivalent: Минуты с 1 по 10
+      symbolList: Список значений
+      symbolListEquivalent: В минуты 1 и 10
+      symbolStep: Шаговые значения
+      symbolStepEquivalent: Каждые 10 минут
+      aliasYearly: Раз в год (1 января, полночь)
+      aliasMonthly: Первое число каждого месяца, полночь
+      aliasWeekly: Воскресенье, полночь
+      aliasDaily: Каждый день в полночь
+      aliasHourly: Каждый час, в начале часа
+      aliasReboot: Запуск один раз при загрузке
+      aliasRebootEquivalent: (при загрузке)
+      invalidCron: Этот cron недействителен
+      use24HourTime: 24 часовой формат времени
+      daysStartAtZero: Дни начинаются с 0
+      labelSymbol: 'Символ:'
+      labelMeaning: 'Значение:'
+      labelExample: 'Пример:'
+      labelEquivalent: 'Эквивалент:'
+      symbols: Символы
+      aliases: Псевдонимы
+  http-status-codes:
+    title: Коды состояния HTTP
+    description: Список всех кодов состояния HTTP, их названий и значений.
+    ui:
+      searchResults: Результаты поиска
+      searchPlaceholder: Поиск кода состояния HTTP...
+      copiedTooltip: Скопировано!
+      clickToCopy: Нажмите, чтобы скопировать код состояния
+      copiedLabel: скопировано
+  sql-prettify:
+    title: Форматирование SQL
+    description: Форматируйте и приводите в порядок SQL-запросы онлайн (поддерживаются различные диалекты SQL).
+    ui:
+      dialectLabel: ДИАЛЕКТ
+      keywordCaseLabel: РЕГИСТР КЛЮЧЕВЫХ СЛОВ
+      indentStyleLabel: СТИЛЬ ОТСТУПОВ
+      yourSqlQueryLabel: Ваш SQL запрос
+      sqlQueryPlaceholder: Вставьте сюда ваш SQL запрос...
+      prettifiedQueryLabel: Отформатированная версия вашего запроса
+      keywordCaseUpper: ВЕРХНИЙ РЕГИСТР
+      keywordCaseLower: нижний регистр
+      keywordCasePreserve: Сохранить
+      indentStyleStandard: Стандартный
+      indentStyleTabularLeft: Табличный слева
+      indentStyleTabularRight: Табличный справа
+  git-memo:
+    title: Шпаргалка по Git
+    description: Краткий справочник по самым распространённым командам и процессам Git.
+  encryption:
+    title: Шифрование / расшифровка текста
+    description: Шифруйте открытый текст и расшифровывайте шифротекст с помощью таких алгоритмов, как AES, TripleDES, Rabbit или RC4.
+    ui:
+      decryptError: Не удалось расшифровать текст
+      encryptTitle: ШИФРОВАНИЕ
+      decryptTitle: РАСШИФРОВКА
+      yourText: ВАШ ТЕКСТ
+      yourSecretKey: ВАШ СЕКРЕТНЫЙ КЛЮЧ
+      algorithm: АЛГОРИТМ
+      encryptedOutput: ЗАШИФРОВАННЫЙ РЕЗУЛЬТАТ
+      yourEncryptedText: ВАШ ЗАШИФРОВАННЫЙ ТЕКСТ
+      decryptedOutput: РАСШИФРОВАННЫЙ РЕЗУЛЬТАТ
+      encryptPlaceholder: Строка для шифрования
+      decryptPlaceholder: Шифротекст для расшифровки
+      secretKeyPlaceholder: Секретный ключ...
+  yaml-prettify:
+    title: Форматирование YAML
+    description: Преобразуйте строку YAML в удобный, читаемый формат.
+  roman-numeral-converter:
+    title: Конвертер римских цифр
+    description: Преобразуйте римские цифры в числа и числа в римские цифры.
+    ui:
+      converterTitle: КОНВЕРТЕР
+      arabicSideLabel: АРАБСКИЕ ЦИФРЫ
+      romanSideLabel: РИМСКИЕ ЦИФРЫ
+      arabicRangeError: Должно быть {min}-{max}
+      invalidRoman: Недопустимое римское число
+      copied: Скопировано
+      copy: Копировать
+      romanCopiedToast: Римское число скопировано
+      arabicCopiedToast: Арабское число скопировано
+  hmac-generator:
+    title: Генератор HMAC
+    description: Вычисляет код аутентификации сообщения на основе хеша (HMAC) с помощью секретного ключа и вашей любимой хеш-функции.
+    ui:
+      encodingBinary: Двоичная (основание 2)
+      encodingHex: Шестнадцатеричная (основание 16)
+      copied: HMAC скопирован в буфер обмена
+      plainText: ИСХОДНЫЙ ТЕКСТ
+      secretKey: СЕКРЕТНЫЙ КЛЮЧ
+      hashingFunction: ФУНКЦИЯ ХЕШИРОВАНИЯ
+      outputEncoding: КОДИРОВКА РЕЗУЛЬТАТА
+      hmacOutput: РЕЗУЛЬТАТ HMAC
+      plainTextPlaceholder: Текст для вычисления хеша...
+      secretKeyPlaceholder: Введите секретный ключ...
+      clear: Очистить
+      copyHmac: Копировать HMAC
+  bip39-generator:
+    title: Генератор парольной фразы BIP39
+    description: Создайте парольную фразу BIP39 из существующей или случайной мнемоники либо получите мнемонику из парольной фразы.
+    ui:
+      languageEnglish: Английский
+      languageChineseSimplified: Китайский упрощенный
+      languageChineseTraditional: Китайский традиционный
+      languageCzech: Чешский
+      languageFrench: Французский
+      languageItalian: Итальянский
+      languageJapanese: Японский
+      languageKorean: Корейский
+      languagePortuguese: Португальский
+      languageSpanish: Испанский
+      entropyLengthError: Длина энтропии должна быть >= 16, <= 32 и кратна 4
+      entropyHexError: Энтропия должна быть шестнадцатеричной строкой
+      invalidMnemonic: Недопустимая мнемоническая фраза
+      entropyCopied: Энтропия скопирована в буфер обмена
+      passphraseCopied: Фраза скопирована в буфер обмена
+      languageLabel: Язык
+      entropyHeading: ЭНТРОПИЯ (СИД)
+      entropyPlaceholder: Энтропия в HEX...
+      regenerate: Сгенерировать заново
+      copyEntropy: Скопировать энтропию
+      passphraseHeading: ФРАЗА (МНЕМОНИКА)
+      passphrasePlaceholder: Мнемонические слова...
+      copyPassphrase: Скопировать фразу
+  base64-file-converter:
+    title: Конвертер файлов Base64
+    description: Преобразуйте строку, файл или изображение в представление base64.
+    ui:
+      copiedToClipboard: Строка base64 скопирована в буфер обмена
+      base64ToFileTitle: BASE64 В ФАЙЛ
+      fileNameLabel: ИМЯ ФАЙЛА
+      fileNamePlaceholder: Имя файла для скачивания
+      extensionLabel: РАСШИРЕНИЕ
+      extensionPlaceholder: расш
+      base64StringLabel: СТРОКА BASE64
+      base64InputPlaceholder: Вставьте сюда строку base64 файла...
+      invalidBase64: Недопустимая строка base64
+      previewImage: Предпросмотр изображения
+      downloadFile: Скачать файл
+      fileToBase64Title: ФАЙЛ В BASE64
+      dropHint: Перетащите файл сюда или нажмите, чтобы выбрать
+      fileInBase64Label: ФАЙЛ В BASE64
+      fileOutputPlaceholder: Здесь появится файл в формате base64
+      copied: Скопировано!
+      copyBase64: Копировать base64
+  base64-string-converter:
+    title: Кодировщик/декодировщик строк Base64
+    description: Просто кодируйте и декодируйте строки в представление base64.
+    ui:
+      base64CopiedToClipboard: Строка base64 скопирована в буфер обмена
+      stringCopiedToClipboard: Строка скопирована в буфер обмена
+      stringToBase64Title: СТРОКА В BASE64
+      encodingLabel: КОДИРОВКА
+      standard: Стандартная
+      urlSafe: Безопасная для URL
+      stringToEncodeLabel: СТРОКА ДЛЯ КОДИРОВАНИЯ
+      stringInputPlaceholder: Введите строку здесь...
+      base64OutputLabel: РЕЗУЛЬТАТ BASE64
+      base64OutputPlaceholder: Здесь появится результат кодирования вашей строки в base64
+      copied: Скопировано!
+      copyBase64: Копировать base64
+      base64ToStringTitle: BASE64 В СТРОКУ
+      base64ToDecodeLabel: СТРОКА BASE64 ДЛЯ ДЕКОДИРОВАНИЯ
+      base64InputPlaceholder: Ваша строка base64...
+      invalidBase64: Недопустимая строка base64
+      decodedStringLabel: ДЕКОДИРОВАННАЯ СТРОКА
+      decodedOutputPlaceholder: Здесь появится декодированная строка
+      copyDecodedString: Копировать декодированную строку
+  math-evaluator:
+    title: Вычислитель выражений
+    description: Калькулятор для вычисления математических выражений. Можно использовать функции sqrt, cos, sin, abs и другие.
+    ui:
+      placeholder: 'Ваше математическое выражение (напр.: 2*sqrt(6) )...'
+      result: Результат
+  url-parser:
+    title: Разбор URL
+    description: Разберите URL на составные части (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: Хост
+      protocol: Протокол
+      hostname: Имя хоста
+      port: Порт
+      sectionAuthentication: Аутентификация
+      username: Имя пользователя
+      password: Пароль
+      sectionPath: Путь
+      pathname: Путь
+      search: Параметры запроса
+      hash: Хэш
+      urlTitle: URL
+      invalidUrl: Недействительный URL
+      params: ПАРАМЕТРЫ
+      emptyHint: Введите URL выше для разбора
+  phone-parser-and-formatter:
+    title: Разбор телефонных номеров
+    description: Разбирайте и форматируйте телефонные номера. Определяйте страну, проверяйте номер и отображайте международный, национальный, E.164 и RFC3966 форматы.
+    ui:
+      invalidPhoneNumber: Неверный номер телефона
+      sectionLocation: Местоположение
+      countryCode: Код страны
+      country: Страна
+      callingCode: Телефонный код
+      sectionValidation: Проверка
+      isValid: Действителен?
+      'yes': Да
+      'no': Нет
+      isPossible: Возможен?
+      type: Тип
+      unknown: Неизвестно
+      sectionFormats: Форматы
+      international: Международный
+      national: Национальный
+      defaultCountry: Страна по умолчанию
+      phoneNumber: Номер телефона
+      emptyStatePrompt: Введите номер телефона выше для разбора
+  user-agent-parser:
+    title: Разбор user-agent
+    description: Определяйте браузер, движок, ОС, CPU и тип/модель устройства по строке user-agent.
+    ui:
+      sectionBrowser: Браузер
+      sectionEngine: Движок
+      sectionOs: ОС
+      sectionDevice: Устройство
+      sectionCpu: ЦП
+      name: Название
+      version: Версия
+      model: Модель
+      type: Тип
+      vendor: Производитель
+      architecture: Архитектура
+      userAgentString: СТРОКА USER AGENT
+      placeholder: Введите ваш user-agent здесь...
+      unknown: Неизвестно
+      error: ОШИБКА
+      parseError: Не удалось разобрать строку user agent
+  case-converter:
+    title: Конвертер регистра
+    description: Измените регистр строки, выбрав один из форматов
+    ui:
+      inputPlaceholder: Ваша строка...
+      output: ВЫВОД
+  html-entities:
+    title: Экранирование HTML-сущностей
+    description: Экранируйте или разэкранируйте HTML-сущности (заменяет символы <,>, &, " и \' их HTML-версией)
+    ui:
+      yourString: ВАША СТРОКА
+      escapePlaceholder: Строка для экранирования...
+      escapedOutput: ЭКРАНИРОВАННЫЙ РЕЗУЛЬТАТ
+      copied: Скопировано
+      copy: Копировать
+      yourEscapedString: ВАША ЭКРАНИРОВАННАЯ СТРОКА
+      unescapePlaceholder: Строка для снятия экранирования...
+      unescapedOutput: РЕЗУЛЬТАТ БЕЗ ЭКРАНИРОВАНИЯ
+  json-prettify:
+    title: Форматирование JSON
+    description: Преобразуйте строку JSON в удобный, читаемый формат.
+  docker-run-to-docker-compose-converter:
+    title: Конвертер docker run в Docker compose
+    description: Преобразует команды "docker run" в файлы docker-compose!
+  mac-address-lookup:
+    title: Поиск по MAC-адресу
+    description: Найдите поставщика и производителя устройства по его MAC-адресу.
+    ui:
+      macAddressLabel: MAC адрес
+      copiedTooltip: Скопировано!
+      copyTooltip: Нажмите, чтобы скопировать данные о производителе
+      copiedTitle: ✓ скопировано
+      vendorInfoTitle: Информация о производителе
+      unknownVendor: Производитель для этого адреса неизвестен
+  lorem-ipsum-generator:
+    title: Генератор lorem ipsum
+    description: Создавайте текст-заполнитель lorem ipsum для макетов и дизайна.
+    ui:
+      copiedMessage: Lorem ipsum скопирован в буфер обмена
+      paragraphs: Абзацы
+      sentencesPerParagraph: Предложений на абзац
+      wordsPerSentence: Слов на предложение
+      startWithLoremIpsum: Начинать с lorem ipsum
+      asHtml: Как HTML
+      output: РЕЗУЛЬТАТ
+      wordCount: '{count} слов'
+      charCount: '{count} символов'
+      copy: Копировать
+      refresh: Обновить
+  qrcode-generator:
+    title: Генератор QR-кодов
+    description: Создавайте и скачивайте QR-коды для URL, обычного текста или учётных данных сети Wi-Fi. Терминальная, классическая и пользовательские цветовые темы с настраиваемой коррекцией ошибок.
+  signature-creator:
+    title: Создание подписи
+    description: Нарисуйте рукописную подпись на холсте и экспортируйте её как прозрачный PNG. Или загрузите любое изображение и одним кликом удалите фон с помощью ИИ на устройстве.
+    ui:
+      drawSignatureTab: Нарисовать подпись
+      removeBackgroundTab: Удалить фон
+      inkColorLabel: Цвет чернил
+      strokeWeightLabel: Толщина линии
+      actionsLabel: Действия
+      undoButton: ↩ Отменить
+      clearButton: ✕ Очистить
+      downloadTransparentPng: ↓ Скачать прозрачный PNG
+      uploadImageLabel: Загрузить изображение
+      dropzoneText: Перетащите изображение сюда или нажмите для выбора
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Изображение загружено
+      removeButton: ✕ Удалить
+      removeBackgroundButton: ⚡ Удалить фон
+      exportLabel: Экспорт
+      downloadNoBgPng: ↓ Скачать PNG (без фона)
+      originalLabel: Оригинал
+      resultLabel: Результат
+      uploadPrompt: Загрузите изображение, чтобы начать
+      originalAlt: оригинал
+      resultAlt: результат с удалённым фоном
+      loadingModelStatus: Загрузка модели ИИ...
+      removingBackgroundStatus: Удаление фона...
+      processingPercentStatus: Обработка... {pct}%
+      downloadingModelPercentStatus: Загрузка модели... {pct}%
+      removeBackgroundFailedStatus: Не удалось удалить фон. Попробуйте другое изображение.
+  xml-formatter:
+    title: Форматирование XML
+    description: Преобразуйте строку XML в удобный, читаемый формат.
+    ui:
+      invalidXml: Указанный XML недействителен.
+      collapse: Свернуть
+      indentSize: Размер отступа
+      inputLabel: Ваш XML
+      inputPlaceholder: Вставьте свой XML сюда...
+      outputLabel: Форматированный XML из вашего XML
+  temperature-converter:
+    title: Конвертер температуры
+    description: Преобразование температуры в градусах Кельвина, Цельсия, Фаренгейта, Ранкина, Делиля, Ньютона, Реомюра и Рёмера.
+    ui:
+      kelvin: Кельвин
+      celsius: Цельсий
+      fahrenheit: Фаренгейт
+      rankine: Ранкин
+      delisle: Делиль
+      newton: Ньютон
+      reaumur: Реомюр
+      romer: Рёмер
+  chmod-calculator:
+    title: Калькулятор chmod
+    description: Вычисляйте права и команды chmod с помощью этого онлайн-калькулятора chmod.
+    ui:
+      read: Чтение
+      write: Запись
+      execute: Выполнение
+      owner: Владелец
+      group: Группа
+      public: Остальные
+      commandCopied: Команда chmod скопирована
+      copyCommand: Копировать команду
+  rsa-key-pair-generator:
+    title: Генератор пары ключей RSA
+    description: Создайте новую случайную пару закрытого и открытого ключей RSA в формате PEM.
+    ui:
+      bitsRangeError: Число бит должно быть от 256 до 16384 и кратно 8
+      bitsLabel: Биты
+      refreshButton: Обновить пару ключей
+      publicKeyTitle: Открытый ключ
+      copyPublicKeyTitle: Копировать открытый ключ
+      copy: Копировать
+      generating: Генерация...
+      privateKeyTitle: Закрытый ключ
+      copyPrivateKeyTitle: Копировать закрытый ключ
+      publicKeyCopiedToast: Открытый ключ скопирован
+      privateKeyCopiedToast: Закрытый ключ скопирован
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG редактор
+    description: Многофункциональный онлайн WYSIWYG-редактор HTML, который сразу создаёт исходный код содержимого.
+    ui:
+      bold: Жирный
+      italic: Курсив
+      strike: Зачёркнутый
+      inlineCode: Встроенный код
+      heading1: Заголовок 1
+      heading2: Заголовок 2
+      heading3: Заголовок 3
+      heading4: Заголовок 4
+      bulletList: Маркированный список
+      orderedList: Нумерованный список
+      codeBlock: Блок кода
+      blockquote: Цитата
+      hardBreak: Принудительный перенос строки
+      clearFormat: Очистить форматирование
+      undo: Отменить
+      redo: Повторить
+  json-diff:
+    title: Сравнение JSON
+    description: Сравните два объекта JSON и получите различия между ними.
+    ui:
+      onlyShowDifferences: Показывать только различия
+      jsonsAreTheSame: Предоставленные JSON одинаковы
+      firstJsonTitle: ВАШ ПЕРВЫЙ JSON
+      firstJsonPlaceholder: Вставьте сюда первый JSON...
+      invalidJson: Неверный формат JSON
+      secondJsonTitle: JSON ДЛЯ СРАВНЕНИЯ
+      secondJsonPlaceholder: Вставьте сюда JSON для сравнения...
+  jwt-parser:
+    title: Разбор JWT
+    description: Разберите и декодируйте JSON Web Token (jwt) и покажите его содержимое.
+    ui:
+      header: Заголовок
+      payload: Полезная нагрузка
+      jwtToDecodeTitle: JWT ДЛЯ ДЕКОДИРОВАНИЯ
+      tokenPlaceholder: Вставьте сюда токен...
+      invalidJwt: Неверный JWT
+  date-converter:
+    title: Конвертер даты и времени
+    description: Преобразуйте дату и время в различные форматы
+  ipv4-subnet-calculator:
+    title: Калькулятор подсетей IPv4
+    description: Разберите блоки CIDR IPv4 и получите всю нужную информацию о подсети.
+    ui:
+      invalidAddress: Не удаётся распознать этот адрес, проверьте формат
+      netmask: Маска сети
+      networkAddress: Адрес сети
+      networkMask: Маска сети
+      networkMaskBinary: Маска сети в двоичном виде
+      cidrNotation: Запись CIDR
+      wildcardMask: Инверсная маска
+      networkSize: Размер сети
+      firstAddress: Первый адрес
+      lastAddress: Последний адрес
+      broadcastAddress: Широковещательный адрес
+      noBroadcast: У этой маски нет широковещательного адреса
+      ipClass: Класс IP
+      unknownClassType: Неизвестный класс
+      decimal: Десятичный
+      hexadecimal: Шестнадцатеричный
+      binary: Двоичный
+      ipv6Short: IPv6 (сокращённый)
+      inputLabel: Адрес IPv4 с маской или без неё
+      bitMap: БИТОВАЯ КАРТА
+      network: Сеть
+      host: Узел
+      setPrefix: Установить префикс /{prefix}
+      networkTag: сеть
+      broadcastTag: широковещательный
+      hostsCount: 'Узлов: {count}'
+      privateIp: Частный IP
+      publicIp: Публичный IP
+      subnetDetail: ДЕТАЛИ ПОДСЕТИ
+      subnetInfo: ИНФОРМАЦИЯ О ПОДСЕТИ
+      addressRepresentations: ПРЕДСТАВЛЕНИЯ АДРЕСА
+      copy: Копировать
+      enterValidIpv4: Введите корректный адрес IPv4, чтобы увидеть представления
+      previousBlock: Предыдущий блок
+      nextBlock: Следующий блок
+      collapseCheatSheet: Свернуть шпаргалку
+      subnetCheatSheet: Шпаргалка по подсетям
+  og-meta-generator:
+    title: Генератор мета-тегов Open Graph
+    description: Создавайте мета-теги HTML Open Graph и для соцсетей для своего сайта.
+  ipv6-ula-generator:
+    title: Генератор ULA IPv6
+    description: Создайте собственные локальные, немаршрутизируемые IP-адреса для своей сети согласно RFC4193.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Первый маршрутизируемый
+      lastRoutable: Последний маршрутизируемый
+      infoAlert: Используется текущая метка времени и MAC-адрес, хешированные через SHA1. Младшие 40 бит формируют глобальный ID согласно RFC 4193.
+      macAddress: MAC-адрес
+      output: Результат
+      copied: Скопировано!
+      copy: Копировать
+  hash-text:
+    title: Хеширование текста
+    description: Хешируйте текст с помощью MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 и других.
+    ui:
+      encodingBinary: Двоичная (основание 2)
+      encodingHex: Шестнадцатеричная (основание 16)
+      encodingBase64: Base64 (основание 64)
+      encodingBase64url: Base64url (URL-безопасный base 64)
+      inputPlaceholder: Строка для хеширования...
+      encoding: Кодировка
+      output: РЕЗУЛЬТАТ
+  json-to-toml:
+    title: JSON в TOML
+    description: Разберите и преобразуйте JSON в TOML.
+  device-information:
+    title: Информация об устройстве
+    description: Получите информацию о текущем устройстве (размер экрана, соотношение пикселей, user agent, ...)
+    ui:
+      screen: Экран
+      hardware: Оборудование
+      network: Сеть
+      browser: Браузер
+      screenSize: Размер экрана
+      windowSize: Размер окна
+      pixelRatio: Плотность пикселей
+      colorDepth: Глубина цвета
+      orientation: Ориентация
+      orientationAngle: Угол ориентации
+      touchPoints: Точки касания
+      cpuCores: Ядра CPU
+      deviceMemory: Память устройства
+      platform: Платформа
+      online: В сети
+      connectionType: Тип соединения
+      downlinkSpeed: Скорость скачивания
+      roundTripTime: Время отклика
+      dataSaver: Экономия трафика
+      vendor: Производитель
+      languages: Языки
+      cookiesEnabled: Файлы cookie включены
+      pdfViewer: Просмотр PDF
+      doNotTrack: Не отслеживать
+      userAgent: Агент пользователя
+      maxTouchPoints: '{count} макс.'
+      none: Нет
+      logicalCores: '{count} логических ядер'
+      'yes': Да
+      'no': Нет
+      enabled: Включено
+      disabled: Отключено
+      supported: Поддерживается
+      notSupported: Не поддерживается
+      notSet: Не задано
+  pdf-signature-checker:
+    title: Проверка подписей PDF
+    description: Проверьте подписи PDF-файла. Подписанный PDF содержит одну или несколько подписей, по которым можно определить, изменялось ли содержимое файла после подписания.
+    ui:
+      tableHeaderValidityPeriod: Срок действия
+      tableHeaderIssuedBy: Кем выдан
+      tableHeaderIssuedTo: Кому выдан
+      tableHeaderPemCertificate: Сертификат PEM
+      notBefore: Действителен с
+      notAfter: Действителен до
+      commonName: Общее имя
+      organizationName: Название организации
+      countryName: Страна
+      localityName: Населённый пункт
+      organizationalUnitName: Подразделение
+      stateOrProvinceName: Регион или область
+      viewPemCert: Просмотреть сертификат PEM
+      uploadPrompt: Перетащите файл PDF сюда или нажмите, чтобы выбрать файл
+      noSignaturesFound: В указанном файле подписи не найдены.
+      signatureCertificatesLabel: 'Сертификаты подписи {number}:'
+  json-minify:
+    title: Минификация JSON
+    description: Минифицируйте и сожмите JSON, удалив лишние пробелы.
+    ui:
+      invalidJson: Указанный JSON недействителен.
+      inputLabel: Ваш исходный JSON
+      inputPlaceholder: Вставьте сюда исходный JSON...
+      outputLabel: Минифицированная версия вашего JSON
+  ulid-generator:
+    title: Генератор ULID
+    description: Создавайте случайные Universally Unique Lexicographically Sortable Identifier (ULID).
+    ui:
+      copiedMessage: ULID скопированы в буфер обмена
+      quantity: КОЛИЧЕСТВО
+      format: ФОРМАТ
+      formatRaw: Необработанный
+      formatJson: JSON
+      output: ВЫВОД
+      copy: Копировать
+      refresh: Обновить
+  base-converter:
+    title: Конвертер систем счисления
+    description: Преобразуйте число между различными системами счисления (десятичная, шестнадцатеричная, двоичная, восьмеричная, base64, ...)
+  uuid-generator:
+    title: Генератор UUID
+    description: Создавайте случайные UUID (v1 и v4) и изучайте их структуру.
+    ui:
+      copiedMessage: UUID скопированы в буфер обмена
+      version: ВЕРСИЯ
+      quantity: КОЛИЧЕСТВО
+      namespacePreset: ПРЕСЕТ ПРОСТРАНСТВА ИМЁН
+      namespaceUuid: UUID ПРОСТРАНСТВА ИМЁН
+      invalidUuid: Недействительный UUID
+      name: ИМЯ
+      namePlaceholder: Имя для хеширования...
+      output: ВЫВОД
+      copy: Копировать
+      refresh: Обновить
+  ipv4-address-converter:
+    title: Конвертер адресов IPv4
+    description: Преобразуйте IP-адрес в десятичный, двоичный, шестнадцатеричный вид или даже в представление IPv6.
+    ui:
+      decimal: Десятичный
+      hexadecimal: Шестнадцатеричный
+      binary: Двоичный
+      ipv6Short: IPv6 (короткий)
+      invalidIpv4: Неверный адрес IPv4
+      ipv4Address: Адрес IPv4
+      output: Результат
+      copied: Скопировано!
+      copy: Копировать
+  text-statistics:
+    title: Статистика текста
+    description: 'Получите информацию о тексте: количество символов, количество слов, размер в байтах, ...'
+    ui:
+      textPlaceholder: Ваш текст...
+      characterCount: КОЛИЧЕСТВО СИМВОЛОВ
+      wordCount: КОЛИЧЕСТВО СЛОВ
+      lineCount: КОЛИЧЕСТВО СТРОК
+      byteSize: РАЗМЕР В БАЙТАХ
+  text-to-nato-alphabet:
+    title: Текст в алфавит NATO
+    description: Преобразуйте текст в фонетический алфавит NATO для устной передачи.
+    ui:
+      yourText: ВАШ ТЕКСТ
+      inputPlaceholder: например, Hello world
+      natoPhonetic: ФОНЕТИЧЕСКИЙ АЛФАВИТ NATO
+      copied: Скопировано
+      copyAll: Копировать всё
+      natoStringCopied: Строка NATO скопирована.
+  ipv4-range-expander:
+    title: Расширитель диапазона IPv4
+    description: По начальному и конечному адресу IPv4 этот инструмент вычисляет корректную подсеть IPv4 с её нотацией CIDR.
+    ui:
+      startAddress: Начальный адрес
+      endAddress: Конечный адрес
+      addressesInRange: Адресов в диапазоне
+      invalidIpv4: Неверный адрес IPv4
+      invalidCombinationTitle: Недопустимое сочетание начального и конечного адресов IPv4
+      invalidCombinationDescription: Конечный адрес IPv4 меньше начального адреса. Это недопустимо, и результат не может быть вычислен.
+      switchStartEnd: Поменять местами начальный и конечный адрес IPv4
+      result: Результат
+      copied: Скопировано!
+      copyResult: Копировать результат
+  text-diff:
+    title: Сравнение текста
+    description: Сравните два текста и посмотрите различия между ними.
+  otp-generator:
+    title: Генератор кодов OTP
+    description: Создавайте и проверяйте основанные на времени OTP (одноразовые пароли) для многофакторной аутентификации.
+  text-to-binary:
+    title: Текст в двоичный ASCII
+    description: Преобразуйте текст в двоичное представление ASCII и обратно.
+    ui:
+      textCopied: Текст скопирован
+      binaryCopied: Двоичный код скопирован
+      panelTitle: ТЕКСТ ↔ ASCII BINARY
+      textLabel: ТЕКСТ
+      binaryLabel: ДВОИЧНЫЙ КОД
+      copied: Скопировано
+      copy: Копировать
+      textPlaceholder: например, Hello world
+      invalidBinary: Должен быть корректный ASCII binary (кратно 8 битам)
+  ascii-word-art:
+    title: Генератор ASCII-арта
+    description: Создавайте текст в стиле ASCII-арт с множеством шрифтов и стилей.
+  killer-scripts:
+    title: Killer Scripts
+    description: Скрипты PowerShell для администрирования Windows и выездной работы MSP.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Выберите командлет, заполните параметры и скопируйте готовую команду PowerShell.
+  group-policy-reference:
+    title: Справочник групповых политик
+    description: Ищите распространённые параметры групповой политики Windows по названию, пути GPO, разделу реестра или описанию.
+    ui:
+      searchPlaceholder: Поиск политик, путей, ключей реестра...
+      copied: Скопировано!
+      clickToCopyRegistry: Нажмите, чтобы скопировать ключ реестра
+      copiedShort: скопировано
+      default: По умолчанию
+      recommended: Рекомендуется
+  windows-event-lookup:
+    title: Поиск событий Windows
+    description: Ищите коды событий Windows с описаниями, уровнями важности и типичными причинами.
+    ui:
+      searchResults: Результаты поиска
+      searchPlaceholder: Поиск по ID события, названию или описанию...
+      copied: Скопировано!
+      clickToCopyEventId: Нажмите, чтобы скопировать ID события
+      copiedShort: скопировано
+  m365-sku-decoder:
+    title: Декодер SKU лицензий M365
+    description: Расшифровывайте строки SKU и GUID лицензий Microsoft 365 в названия продуктов.
+    ui:
+      searchPlaceholder: Поиск по названию SKU, строковому ID или описанию...
+      copied: Скопировано!
+      clickToCopy: Нажмите, чтобы скопировать строковый ID
+      copiedMark: ✓ скопировано
+  windows-error-codes:
+    title: Поиск кодов ошибок Windows
+    description: Ищите коды ошибок Windows в шестнадцатеричном или десятичном виде, включая системные ошибки, стоп-коды BSOD, ошибки WMI, RPC, установщика MSI и другие.
+    ui:
+      searchResults: Результаты поиска
+      searchPlaceholder: Поиск по шестнадцатеричному коду, названию ошибки или описанию...
+      copied: Скопировано!
+      clickToCopy: Нажмите, чтобы скопировать код
+      copiedShort: скопировано
+      decimal: десятичное {decimal}
+  exchange-ndr-lookup:
+    title: Поиск NDR Exchange
+    description: Ищите коды возврата писем Exchange и M365 с понятным описанием причины и способа исправления.
+    ui:
+      searchResults: Результаты поиска
+      searchPlaceholder: Поиск по коду NDR, названию ошибки, причине или решению...
+      copied: Скопировано!
+      clickToCopy: Нажмите, чтобы скопировать код NDR
+      copiedShort: скопировано
+      cause: Причина
+      fix: Решение
+  safelink-decoder:
+    title: Декодер Safelink Outlook
+    description: Раскройте SafeLinks Microsoft Defender и узнайте исходный URL назначения.
+  port-protocol-reference:
+    title: Справочник портов и протоколов
+    description: Распространённые сетевые порты и протоколы с заметками о безопасности и пометками опасных портов.
+  cve-lookup:
+    title: Поиск CVE
+    description: Ищите CVE в NIST NVD по ID или ключевому слову. Актуальные данные из API NVD.
+    ui:
+      range6m: 6 месяцев
+      range1y: 1 год
+      range2y: 2 года
+      range5y: 5 лет
+      rangeAll: Все время
+      noDescription: Описание недоступно.
+      fetchError: Не удалось подключиться к NVD API. Проверьте подключение.
+      sortNewest: Сначала новые
+      sortOldest: Сначала старые
+      sortSeverity: По уровню опасности
+      severityCritical: Критический
+      severityHigh: Высокий
+      severityMedium: Средний
+      severityLow: Низкий
+      placeholder: Идентификатор CVE или ключевое слово (например, CVE-2021-44228, log4j)
+      searching: Поиск...
+      search: Поиск
+      hint: Ищите по идентификатору CVE, частичному номеру (например, 43284), распространенному названию (например, log4shell, dirty frag) или ключевому слову. Актуальные данные из NVD и GitHub Advisory Database.
+      noResults: По запросу "{query}" ничего не найдено.
+      noResultsInRange: По запросу "{query}" ничего не найдено в выбранном диапазоне дат.
+      noExactMatch: Точное совпадение фразы не найдено в выбранном диапазоне дат. Распространенные названия уязвимостей (например, "dirty frag") могут не встречаться дословно в описаниях NVD. Попробуйте частичный номер CVE (например, "43284" находит CVE-2026-43284).
+      searchAllTime: Искать за все время
+      showingResults: Показано {shown} из {total} результатов
+      allSeverities: Все уровни опасности
+      allYears: Все годы
+      copied: Скопировано!
+      clickToCopyId: Нажмите, чтобы скопировать идентификатор CVE
+      copiedShort: скопировано
+      cveDetail: ДЕТАЛИ CVE
+      published: Опубликовано
+      modified: Изменено
+      clickToCopy: Нажмите, чтобы скопировать
+      references: Ссылки
+      kevActionDue: 'Срок действия по CISA KEV:'
+      cvssMetrics: Метрики CVSS
+      metricAttackVector: Вектор атаки
+      metricAttackComplexity: Сложность атаки
+      metricPrivilegesRequired: Требуемые привилегии
+      metricUserInteraction: Взаимодействие с пользователем
+      metricScope: Область действия
+      metricConfidentiality: Конфиденциальность
+      metricIntegrity: Целостность
+      metricAvailability: Доступность
+  email-dns-checker:
+    title: Проверка DNS почты
+    description: Проверьте записи MX, SPF, DKIM и DMARC любого домена. Проверяет настройку аутентификации почты и отмечает типичные ошибки конфигурации.
+  email-header-parser:
+    title: Разбор заголовков письма
+    description: Вставьте необработанные заголовки письма, чтобы получить данные об отправителе, проследить цепочку узлов доставки и увидеть результаты аутентификации SPF, DKIM и DMARC.
+    ui:
+      pasteHint: Вставьте необработанные заголовки письма ниже.
+      parseButton: Разобрать заголовки
+      parseAnother: Разобрать другое
+      messageDetails: Детали сообщения
+      senderMismatch: Домен отправителя отличается от домена From. Это может указывать на подделку адреса или делегированную отправку.
+      deliveryHops: Переходы доставки
+      oldestFirst: сначала старые
+      authResults: Результаты аутентификации
+      spamAnalysis: Анализ спама
+      spamScore: Оценка спама
+      spamStatus: Статус спама
+  whois-checker:
+    title: Поиск WHOIS
+    description: Узнайте регистрационные данные любого домена, включая регистратора, даты создания и окончания, серверы имён и флаги статуса.
+  ascii-text-drawer:
+    title: Генератор ASCII-арта
+    description: Создавайте текст в стиле ASCII-арт с множеством шрифтов и стилей.
+    ui:
+      yourText: ВАШ ТЕКСТ
+      textPlaceholder: Текст для отрисовки
+      options: ПАРАМЕТРЫ
+      font: ШРИФТ
+      searchFonts: Поиск шрифтов...
+      noFontsMatch: Шрифты не найдены
+      width: ШИРИНА
+      output: РЕЗУЛЬТАТ ASCII ART
+      loadingFont: Загрузка шрифта...
+      error: Текущие настройки привели к ошибке.
+      copied: Скопировано!
+      copy: Копировать
+  regex-tester:
+    title: Тестер регулярных выражений
+    description: Проверяйте регулярные выражения на примере текста.
+    ui:
+      regexLabel: 'Регулярное выражение для проверки:'
+      regexPlaceholder: Введите regex для проверки
+      globalLabel: Глобальный
+      globalTitle: Глобальный поиск
+      ignoreCaseLabel: Игнорировать регистр
+      ignoreCaseTitle: Поиск без учета регистра
+      multilineLabel: Многострочный
+      singlelineLabel: Однострочный
+      singlelineTitle: Позволяет точке соответствовать символам новой строки.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; рассматривать шаблон как последовательность кодовых точек Unicode.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: Улучшенная версия режима u с расширенными возможностями Unicode.
+      textLabel: 'Текст для сопоставления:'
+      textPlaceholder: Введите текст для сопоставления
+      regexBarTitle: REGEX
+      matchesBarTitle: СОВПАДЕНИЯ
+      matchIndex: Индекс
+      matchValue: Значение
+      matchCaptures: Захваты
+      matchGroups: Группы
+      noMatch: Нет совпадений
+      sampleBarTitle: ПРИМЕР
+      diagramBarTitle: ДИАГРАММА
+      quickReference: Краткий справочник
+  yaml-converter:
+    title: Конвертер YAML
+    description: Преобразуйте YAML в JSON или TOML.
+    ui:
+      convertTo: 'Конвертировать в:'
+      inputLabel: Ваш YAML
+      inputPlaceholder: Вставьте свой YAML сюда...
+      invalidYaml: Указанный YAML недействителен.
+      outputLabel: Результат в формате {format}
+  json-converter:
+    title: Конвертер JSON
+    description: Преобразуйте JSON в YAML или TOML.
+    ui:
+      convertTo: Преобразовать в
+      yourJson: Ваш JSON
+      pasteJsonPlaceholder: Вставьте сюда JSON...
+      invalidJson: Неверный формат JSON
+      formatOutput: Вывод в формате {format}
+  toml-converter:
+    title: Конвертер TOML
+    description: Преобразуйте TOML в JSON или YAML.
+    ui:
+      convertTo: 'Конвертировать в:'
+      yourToml: Ваш TOML
+      pastePlaceholder: Вставьте ваш TOML сюда...
+      invalidToml: Указанный TOML недействителен.
+      outputLabel: Вывод {format}
+  xml-json-converter:
+    title: Конвертер XML ↔ JSON
+    description: Двусторонний конвертер XML и JSON. Редактируйте любую сторону, и другая обновится автоматически.
+    ui:
+      invalidXml: Недействительный XML.
+      invalidJson: Недействительный JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Вставьте свой XML сюда...
+      jsonLabel: JSON
+      jsonPlaceholder: Вставьте свой JSON сюда...
+  markdown-to-html:
+    title: Markdown в HTML
+    description: Преобразуйте Markdown в HTML и экспортируйте или печатайте в PDF.
+    ui:
+      copiedSuccess: HTML скопирован в буфер обмена!
+      copyFailed: Не удалось скопировать текст.
+      inputLabel: 'Ваш Markdown для конвертации:'
+      inputPlaceholder: Ваш Markdown контент...
+      outputLabel: 'Результат HTML:'
+      copyHtmlButton: Копировать HTML
+      printAsPdfButton: Печать в PDF
+  killer-pdf:
+    title: KillerPDF
+    description: PDF-редактор с открытым исходным кодом для Windows. Просмотр, аннотации, объединение, разделение, сведение, открытие защищённых паролем PDF, редактирование текста, рисование, выделение, подпись и печать.
+  killer-scan:
+    title: KillerScan
+    description: Быстрый сетевой сканер для выездных инженеров. Обнаружение через ARP + ping, проверка портов, определение производителя и автоматическая классификация устройств.
+  gif-search:
+    title: Поиск GIF
+    description: Ищите GIF-реакции в Giphy. Нажмите на любой результат, чтобы скопировать URL.
+    ui:
+      errorStatus: Ошибка {status}
+      fetchFailed: Не удалось загрузить GIF.
+      searchPlaceholder: Поиск GIF (например, facepalm, nice work, this is fine)
+      searching: Поиск...
+      search: Поиск
+      noResults: GIF не найдены для "{query}".
+      copied: Скопировано!
+      copyUrl: Скопировать URL
+      resultsHint: '{count} результатов. Нажмите, чтобы скопировать URL, затем вставьте в Teams, Telegram или Slack.'
+  killer-shell:
+    title: KillerShell
+    description: Бесплатная оболочка для опытных пользователей. Файловый менеджер, терминал и текстовый редактор делят одно окно, одну панель вкладок и один набор клавиш.
+  domain-lookup:
+    title: Поиск домена
+    description: Регистрационные данные WHOIS и проверки DNS почты (MX, SPF, DKIM, DMARC) для любого домена в одном окне.
+    ui:
+      statusDesc:
+        active: Домен активен и работает.
+        inactive: Домен неактивен.
+        clientDeleteProhibited: Регистратор заблокировал удаление домена.
+        clientTransferProhibited: Регистратор заблокировал передачу домена другому регистратору.
+        clientUpdateProhibited: Регистратор заблокировал обновление домена.
+        clientHold: Регистратор приостановил домен, поэтому DNS может не разрешаться.
+        serverDeleteProhibited: Реестр заблокировал удаление домена.
+        serverTransferProhibited: Реестр заблокировал передачу домена.
+        serverUpdateProhibited: Реестр заблокировал обновление домена.
+        serverHold: Реестр приостановил домен, поэтому DNS может не разрешаться.
+        pendingCreate: Создание домена ожидает выполнения.
+        pendingDelete: Домен ожидает удаления и может скоро освободиться.
+        pendingRenew: Продление домена ожидает выполнения.
+        pendingRestore: Восстановление домена после удаления ожидает выполнения.
+        pendingTransfer: Передача домена другому регистратору ожидает выполнения.
+        pendingUpdate: Обновление домена ожидает выполнения.
+        redemptionPeriod: Срок действия домена истек, он находится в периоде выкупа. Владелец еще может его восстановить.
+        renewPeriod: Домен находится в льготном периоде продления после регистрации.
+        autoRenewPeriod: Домен находится в льготном периоде автопродления.
+        transferPeriod: Домен находится в льготном периоде передачи.
+      expiredAlert: Срок действия этого домена истек {days} дн. назад, он может быть доступен для регистрации.
+      expiresAlert: Срок действия этого домена истекает через {days} дн. Продление следует оформить как можно скорее.
+      expiredTag: Истек {days} дн. назад
+      remainingTag: Осталось {days} дн.
+      registrar: Регистратор
+      registrarIanaId: IANA ID регистратора
+      created: Создан
+      updated: Обновлен
+      expires: Истекает
+      noMx: MX-записи не найдены.
+      dnsFailed: Ошибка DNS-запроса.
+      noSpf: SPF-запись не найдена.
+      noDkim: DKIM-записи для распространенных селекторов не найдены. Пользовательские селекторы могут существовать.
+      noDmarc: DMARC-запись не найдена. Домен не защищен от спуфинга.
+      spfPlusAll: 'Внимание: +all опасен, так как позволяет любому серверу отправлять почту от имени этого домена.'
+      spfNeutralAll: 'Внимание: ?all нейтрален и не дает никакой защиты.'
+      dmarcPNone: 'Внимание: p=none означает только мониторинг, без принудительного применения. Письма не будут отклоняться.'
+      dmarcNoRua: 'Внимание: нет адреса для сводных отчетов (rua=). Вы не будете получать отчеты DMARC.'
+      pass: Пройдено
+      fail: Не пройдено
+      warning: Предупреждение
+      checking: Проверка...
+      overallPass: Все проверки почты пройдены. Домен настроен корректно для почты.
+      overallFail: Отсутствует одна или несколько критических записей. Домен может быть уязвим для спуфинга.
+      overallWarn: Некоторые записи существуют, но имеют проблемы конфигурации, которые стоит проверить.
+      rdapHttpError: 'HTTP {status}: домен может не существовать, либо TLD не поддерживается.'
+      lookupFailed: Ошибка поиска.
+      domainPlaceholder: Введите домен (например, killertools.net)
+      searching: Поиск...
+      search: Поиск
+      signed: Подписан
+      unsigned: Не подписан
+      delegationSigned: Делегирование подписано.
+      dsRecord: '{count} запись DS.'
+      dsRecords: '{count} записей DS.'
+      keyRecord: '{count} запись ключа.'
+      keyRecords: '{count} записей ключей.'
+      dnssecUnsigned: Этот домен не защищен DNSSEC. Ответы DNS невозможно криптографически проверить.
+      status: Статус
+      contacts: Контакты
+      remarks: Примечания
+      nameservers: Серверы имен
+      mxRecords: MX-записи
+      spfRecord: SPF-запись
+      dkimRecords: DKIM-записи
+      dmarcRecord: DMARC-запись
+      role:
+        registrant: владелец
+        administrative: административный
+        technical: технический
+        abuse: злоупотребления
+      name: Имя
+      organization: Организация
+      email: Email
+      phone: Телефон
+  email-record-generator:
+    title: Генератор почтовых записей
+    description: Создавайте DNS TXT записи SPF и DMARC. Выберите почтовых провайдеров и политики, затем скопируйте результат прямо в DNS.
+    ui:
+      hardFailRecommended: жёсткий отказ, рекомендуется
+      softFail: мягкий отказ
+      neutralNotRecommended: нейтрально, не рекомендуется
+      blockFailingMail: блокировать не прошедшую проверку почту
+      sendToSpam: отправлять в спам
+      monitorOnly: только мониторинг
+      relaxedDefault: Мягкий (по умолчанию)
+      strict: Строгий
+      sameAsMainPolicy: Как основная политика
+      spfRecordTitle: ЗАПИСЬ SPF
+      dmarcRecordTitle: ЗАПИСЬ DMARC
+      spfRecordLocation: TXT-запись в корневом домене
+      dmarcRecordLocation: TXT-запись в
+      copied: скопировано
+      clickToCopy: нажмите, чтобы скопировать
+      lookupWarning: Выбрано {count} DNS-запросов; лимит SPF составляет 10 запросов
+      mailProviders: ПОЧТОВЫЕ ПРОВАЙДЕРЫ
+      customIps: ПОЛЬЗОВАТЕЛЬСКИЕ IP ИЛИ ДИАПАЗОНЫ (НЕОБЯЗАТЕЛЬНО)
+      examplePrefix: напр.
+      enforcement: ПРИМЕНЕНИЕ
+      policy: ПОЛИТИКА
+      subdomainPolicy: ПОЛИТИКА ДЛЯ ПОДДОМЕНОВ (НЕОБЯЗАТЕЛЬНО)
+      policyCoverage: 'ОХВАТ ПОЛИТИКИ: {percent}%'
+      coverageHint: К действию будет применено {percent}% не прошедшей проверку почты. Используйте значение меньше 100% для постепенного внедрения.
+      aggregateReportEmail: ПОЧТА ДЛЯ СВОДНЫХ ОТЧЁТОВ (rua)
+      forensicReportEmail: ПОЧТА ДЛЯ ДЕТАЛЬНЫХ ОТЧЁТОВ (ruf, необязательно)
+      dkimAlignment: СООТВЕТСТВИЕ DKIM
+      spfAlignment: СООТВЕТСТВИЕ SPF
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Текст в Unicode
+      enterTextLabel: Введите текст для преобразования в Unicode
+      unicodeFromTextLabel: Unicode из вашего текста
+      unicodeOutputPlaceholder: Здесь появится представление вашего текста в Unicode
+      copyUnicode: Скопировать Unicode в буфер обмена
+      unicodeToTextTitle: Unicode в текст
+      inputUnicodePlaceholder: Введите Unicode
+      enterUnicodeLabel: Введите Unicode для преобразования в текст
+      textFromUnicodeLabel: Текст из вашего Unicode
+      textOutputPlaceholder: Здесь появится текстовое представление вашего Unicode
+      copyText: Скопировать текст в буфер обмена
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Поиск по порту, службе, протоколу или описанию...
+      allProtocols: Все
+      dangerousOnly: Только опасные
+      showingPorts: 'Показано портов: {count}'
+      copied: Скопировано!
+      clickToCopy: Нажмите, чтобы скопировать номер порта
+      copiedCheck: ✓ скопировано
+      dangerousPill: Опасно
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Обозреватель командлетов
+      adminBadge: Админ
+      cmdletSearchPlaceholder: Поиск по имени, описанию или модулю...
+      noCmdletsMatch: Нет командлетов, соответствующих "{query}"
+      generatedCommand: Сформированная команда
+      copiedCheck: ✓ Скопировано!
+      copyCommand: Скопировать команду
+      commonExamples: Частые примеры
+      selectCmdletPrompt: Выберите командлет слева, чтобы начать сборку команды.
+      parameters: Параметры
+      noParametersNeeded: Параметры не требуются; этот командлет выполняется как есть.
+      required: обязательный
+      separateMultipleValues: разделяйте несколько значений запятыми
+      showFewerParameters: Показать меньше параметров
+      showMoreParameters: 'Ещё параметров: {count}'
+      collapseQuickReference: Свернуть краткий справочник
+      openQuickReference: Открыть краткий справочник
+      quickReference: Краткий справочник
+      cheatsheetComparisonOperators: Операторы сравнения
+      cheatsheetEqualTo: Равно
+      cheatsheetNotEqualTo: Не равно
+      cheatsheetGreaterLessThan: Больше чем / меньше чем
+      cheatsheetGreaterLessEqual: Больше или равно / меньше или равно
+      cheatsheetStringOperators: Строковые операторы
+      cheatsheetWildcardMatch: Совпадение по маске (* и ?)
+      cheatsheetWildcardNonMatch: Несовпадение по маске
+      cheatsheetRegexMatch: Совпадение по регулярному выражению
+      cheatsheetRegexNonMatch: Несовпадение по регулярному выражению
+      cheatsheetCollectionContains: Коллекция содержит значение
+      cheatsheetValueInCollection: Значение входит в коллекцию
+      cheatsheetLogicalOperators: Логические операторы
+      cheatsheetBothTrue: Оба условия должны быть истинны
+      cheatsheetEitherTrue: Хотя бы одно условие истинно
+      cheatsheetNegateCondition: Отрицание условия
+      cheatsheetAutomaticVariables: Автоматические переменные
+      cheatsheetCurrentPipelineObject: Текущий объект конвейера
+      cheatsheetNullEmptyValue: Пустое значение / null
+      cheatsheetBooleanTrueFalse: Логическое true / false
+      cheatsheetLocalComputerName: Имя локального компьютера
+      cheatsheetCurrentUser: Текущий вошедший пользователь
+      cheatsheetPsVersionInfo: Сведения о версии PS
+      cheatsheetDateHelpers: Помощники для дат
+      cheatsheetCurrentDateTime: Текущая дата и время
+      cheatsheetThirtyDaysAgo: 30 дней назад
+      cheatsheetThreeMonthsAgo: 3 месяца назад
+      cheatsheetParseDateString: Разбор строки даты
+      cheatsheetPipelineTricks: Приёмы работы с конвейером
+      cheatsheetLimitFirst10: Ограничить первыми 10 результатами
+      cheatsheetCountSumMinMax: Количество / сумма / мин / макс
+      cheatsheetInteractiveGuiViewer: Интерактивный GUI-просмотрщик (локально)
+      cheatsheetConvertToJson: Преобразовать вывод в JSON
+      cheatsheetOutputScreenAndFile: Вывод на экран и в файл
+      cheatsheetSuppressErrors: Подавлять некритичные ошибки
+      cheatsheetRemoteExecution: Удалённое выполнение
+      cheatsheetCmdletsSupportDirectly: Многие командлеты поддерживают это напрямую
+      cheatsheetRunViaRemoting: Запуск через PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Интерактивный удалённый сеанс PS
+  basic-auth-generator:
+    ui:
+      copied: Заголовок скопирован в буфер обмена
+      username: Имя пользователя
+      usernamePlaceholder: Ваше имя пользователя...
+      password: Пароль
+      passwordPlaceholder: Ваш пароль...
+      headerLabel: 'Заголовок Authorization:'
+      copyHeader: Копировать заголовок
+  yaml-viewer:
+    ui:
+      invalidYaml: Указанный YAML недействителен.
+      sortKeys: Сортировать ключи
+      indentSize: Размер отступа
+      rawLabel: Ваш исходный YAML
+      rawPlaceholder: Вставьте свой исходный YAML сюда...
+      prettifiedLabel: Отформатированная версия вашего YAML
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Мета теги скопированы!
+      copiedLabel: ✓ Скопировано
+      copyButton: Копировать
+      outputTitle: ВАШИ МЕТА ТЕГИ
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME тип в расширение
+      mimeToExtensionDescription: Узнайте, какие расширения файлов связаны с MIME типом
+      mimeTypeSelectPlaceholder: 'Выберите ваш MIME тип здесь... (напр.: application/pdf)'
+      extensionsFoundPrefix: Расширения файлов с
+      extensionsFoundSuffix: 'MIME типом:'
+      extensionToMimeTitle: Расширение файла в MIME тип
+      extensionToMimeDescription: Узнайте, какой MIME тип связан с расширением файла
+      mimeFoundPrefix: MIME тип, связанный с расширением
+      mimeFoundSuffix: 'файла:'
+      tableMimeTypesHeader: MIME типы
+      tableExtensionsHeader: Расширения
+  json-viewer:
+    ui:
+      invalidJson: Предоставленный JSON недействителен.
+      sortKeys: Сортировать ключи
+      indentSize: Размер отступа
+      yourRawJson: Ваш исходный JSON
+      pasteRawJsonPlaceholder: Вставьте сюда исходный JSON...
+      prettifiedVersion: Отформатированная версия вашего JSON
+  qr-code-generator:
+    ui:
+      tabText: Текст / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Текст или URL
+      placeholderTextOrUrl: Ваша ссылка или текст...
+      sectionEncryption: Шифрование
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Без пароля
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Имя сети...
+      sectionPassword: Пароль
+      placeholderPassword: Пароль сети...
+      sectionOptions: Параметры
+      hiddenSsid: Скрытый SSID
+      anonymousIdentity: Анонимная идентификация
+      sectionEapMethod: Метод EAP
+      sectionEapPhase2: EAP фаза 2
+      sectionEapIdentity: Идентификация EAP
+      placeholderEapIdentity: Ваша идентификация EAP...
+      sectionTheme: Тема
+      themeDefault: По умолчанию
+      themeTerminal: Terminal
+      themeClassic: Classic
+      themeInverted: Инвертированная
+      sectionColors: Цвета
+      labelForeground: 'Цвет переднего плана:'
+      labelBackground: 'Цвет фона:'
+      sectionErrorCorrection: Коррекция ошибок
+      levelLow: Низкая (~7%)
+      levelMedium: Средняя (~15%)
+      levelQuartile: Квартильная (~25%)
+      levelHigh: Высокая (~30%)
+      emptyHintWifi: Введите SSID, чтобы создать QR-код Wi-Fi
+      emptyHintText: Введите текст или URL
+      captionJoin: '>_ отсканируйте, чтобы подключиться'
+      captionOpen: '>_ отсканируйте, чтобы открыть'
+      downloadPng: ↓ Скачать PNG
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: Строка даты в локали JS
+      formatUnixTimestamp: Unix-время
+      formatTimestamp: Отметка времени
+      formatUtc: Формат UTC
+      formatExcelDateTime: Дата/время Excel
+      invalidDateRule: Эта дата недопустима для этого формата
+      inputPlaceholder: Вставьте строку даты или оставьте поле пустым для живых часов...
+      invalidDate: Недопустимая дата для этого формата
+      output: ВЫВОД
+      live: ЖИВОЕ
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Секрет (hex)
+      epochLabel: Epoch
+      countLabel: Счётчик
+      paddedHexLabel: Hex с дополнением
+      secretLabel: СЕКРЕТ
+      secretPlaceholder: Вставьте секрет TOTP...
+      generateNewSecret: Создать новый секрет
+      tokenLabel: ТОКЕН
+      copied: ✓ скопировано
+      clickToCopy: нажмите, чтобы скопировать
+      nextIn: '>_ следующий через {seconds} с'
+      adjacentTokensLabel: СОСЕДНИЕ ТОКЕНЫ
+      prevLabel: Пред.
+      nextLabel: След.
+      detailsLabel: ДЕТАЛИ
+      scanToAuthenticate: '>_ сканируйте для аутентификации'
+      openKeyUriInNewTab: Открыть Key URI в новой вкладке
+      tokenDisplayPreviousLabel: Предыдущий
+      tokenDisplayCurrentLabel: Текущий OTP
+      tokenDisplayNextLabel: Следующий
+      copiedExclaim: Скопировано!
+      copyPreviousOtp: Скопировать предыдущий OTP
+      copyCurrentOtp: Скопировать текущий OTP
+      copyNextOtp: Скопировать следующий OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Надёжный
+      moderateLabel: Средний
+      weakLabel: Слабый
+      veryWeakLabel: Очень слабый
+      lengthLabel: Длина
+      entropyLabel: Энтропия
+      charsetSizeLabel: Размер набора символов
+      scoreDetailLabel: Оценка
+      passwordPlaceholder: Введите пароль...
+      hideLabel: Скрыть
+      showLabel: Показать
+      clearLabel: Очистить
+      crackTimeSublabel: ВРЕМЯ ВЗЛОМА ПОДБОРОМ
+      crackTimeNote: Стойкость оценивается по времени подбора при 1 млрд попыток в секунду. Атаки по словарю не учитываются.
+  integer-base-converter:
+    ui:
+      binary: Двоичное
+      octal: Восьмеричное
+      decimal: Десятичное
+      hexadecimal: Шестнадцатеричное
+      base: основание
+      output: РЕЗУЛЬТАТ
+      custom: Другое
+ui:
+  diffEditor:
+    originalLabel: ОРИГИНАЛ
+    modifiedLabel: ИЗМЕНЕНО
+    originalPlaceholder: Исходный текст...
+    modifiedPlaceholder: Изменённый текст...
+  fileUpload:
+    defaultTitle: Перетащите файлы сюда или нажмите, чтобы выбрать файлы
+    or: или
+    browseFiles: Выбрать файлы
+  inputText:
+    defaultPlaceholder: Введите текст
+  keyValueListItem:
+    'yes': Да
+    'no': Нет
+    notAvailable: Н/Д
+  modalValue:
+    copied: Скопировано!
+    copy: Копировать
+  select:
+    searchPlaceholder: Поиск...
+    noResults: Ничего не найдено
+    defaultPlaceholder: Выберите вариант
+  table:
+    defaultDescription: Таблица данных
+  textCopyable:
+    copied: Скопировано!
+    copyToClipboard: Копировать в буфер обмена
+commandPalette:
+  searchAriaLabel: Поиск
+  searchPlaceholder: Введите название инструмента или команды...
+components:
+  androidBetaBanner:
+    announcement: Анонс бета-версии для Android
+    title: Killer Tools скоро на Android
+    subtitle: Нужны бета-тестеры - нажмите, чтобы присоединиться
+    dismiss: Закрыть
+  formatTransformer:
+    input: Ввод
+    inputPlaceholder: Ввод...
+    output: Вывод
+  inputCopyable:
+    copied: Скопировано!
+    copy: Копировать в буфер обмена
+  spanCopyable:
+    copied: Скопировано!
+    copy: Копировать в буфер обмена
+  textareaCopyable:
+    copy: Копировать в буфер обмена
+    copied: Скопировано!
+  navbarButtons:
+    androidTooltip: Killer Tools для Android
+    androidAriaLabel: Killer Tools для Android - присоединиться к бета-тестированию
+  themeDots:
+    accentColor: Акцентный цвет
+    theme: Тема
+    toggleThemeSwatches: Переключить образцы темы
+    accentColorPicker: Выбор акцентного цвета
+    dragToMove: Перетащите, чтобы переместить
+    accentLabel: 'акцент:'
+    accentNamed: 'Акцент: {name}'
+    closeAccentPicker: Закрыть выбор акцентного цвета
+    accents:
+      red: Красный
+      orange: Оранжевый
+      green: Зелёный
+      teal: Бирюзовый
+      blue: Синий
+      purple: Фиолетовый
+layouts:
+  menuLayout:
+    eggMessage: 80 инструментов. Ноль подписок. Один злопамятный полевой техник.
+    clickMe: нажмите сюда
+    sourceOnGithub: Исходный код на Github
+  base:
+    collapseMenu: Свернуть меню
+    homeLabel: Главная KillerTools
+pages:
+  notFound:
+    noSuchFile: Нет такого файла или каталога
+    exitCode: код выхода
+    backToHome: на главную
+  privacy:
+    heading: Политика конфиденциальности
+    lastUpdated: 'Последнее обновление: 4 апреля 2026 г.'
+    overviewHeading: Обзор
+    overviewIntro: Killer Tools
+    overviewBody: '- это бесплатный набор ИТ-утилит. Ваша конфиденциальность важна для нас, и эта политика объясняет, как мы обрабатываем ваши данные.'
+    dataCollectionHeading: Сбор данных
+    dataCollectionBody: Killer Tools не собирает, не хранит и не передает никаких персональных данных. Вся обработка происходит полностью в вашем браузере. Данные, введенные в любой инструмент, не отправляются на сервер.
+    cookiesHeading: Файлы cookie
+    cookiesBody: Этот сайт не использует файлы cookie для отслеживания. Настройки темы и параметры хранятся локально в вашем браузере и никогда не передаются.
+    analyticsHeading: Аналитика
+    analyticsIntro: Этот сайт использует
+    analyticsBody: инструмент аналитики, ориентированный на конфиденциальность, чтобы понимать общие тенденции использования, такие как просмотры страниц и источники переходов. Umami не использует файлы cookie, не отслеживает пользователей на разных сайтах и не собирает никаких персональных данных. Все данные агрегированы и анонимны.
+    thirdPartyHeading: Сторонние сервисы
+    thirdPartyBody: Некоторые инструменты могут ссылаться на внешние ресурсы или документацию. Мы не несем ответственности за политику конфиденциальности этих внешних сайтов.
+    androidAppHeading: Приложение для Android
+    androidAppBody: Приложение Killer Tools для Android представляет собой оболочку веб-приложения. Оно не запрашивает и не использует никаких разрешений устройства, кроме базового доступа в интернет. Данные устройства не собираются и не передаются.
+    contactHeading: Контакты
+    contactBody: Если у вас есть вопросы об этой политике конфиденциальности, вы можете связаться с нами по адресу
+  androidApp:
+    robotAttribution: Робот Android воспроизведен или изменен на основе работы, созданной и опубликованной Google, и используется в соответствии с условиями лицензии Creative Commons 3.0 Attribution.
+    heading: Killer Tools для Android
+    introBody1: 'Весь набор инструментов killertools.net в виде нативного приложения для Android: каждый инструмент, библиотека Killer Scripts и все избранное - в одно касание с главного экрана.'
+    introBody2: Те же правила, что и на сайте. Все выполняется на вашем устройстве. Никаких аккаунтов, никакой телеметрии, никакой связи с домом. Если это экономит вам цикл заявки в поле, значит, оно выполнило свою задачу.
+    betaStatusPrefix: Приложение сейчас находится в
+    betaStatusStrong: закрытом бета-тестировании в Google Play
+    betaStatusSuffix: ', и здесь нужна ваша помощь.'
+    joinBetaHeading: Присоединиться к бета-тесту
+    joinBetaIntroPrefix: Google требует
+    joinBetaIntroStrong: 12 тестировщиков с установленным приложением в течение 14 дней подряд
+    joinBetaIntroSuffix: 'прежде чем приложение независимого разработчика сможет стать публичным. Три шага, около двух минут, и вы - один из двенадцати:'
+    step1LinkText: Присоединиться к группе тестировщиков
+    step1Suffix: в Google Groups (нажмите «Join group»).
+    step2LinkText: Стать тестировщиком
+    step2Suffix: на странице подключения Google Play.
+    step3LinkText: Установить приложение
+    step3Suffix: из Google Play и оставить его установленным на две недели.
+    sameAccountStrong: Используйте один и тот же аккаунт Google для всех трех шагов
+    sameAccountSuffix: ' - страница подключения покажет «недоступно для этого аккаунта», если вы пропустите группу или смените аккаунт.'
+    feedbackPrefix: 'Что-то сломано или отсутствует? Напишите мне:'
+  home:
+    sortPopular: Популярные
+    sortAZ: А - Я
+    sortZA: Я - А
+  about:
+    heading: О Killer Tools
+    intro: У полевых техников нет времени на лишнее. Каждый инструмент здесь существует, потому что он понадобился мне на работе, а готового решения без аккаунта, установки или телеметрии я не нашел.
+    originPrefix: Сейчас я разрабатываю инструменты во внутренней команде ИИ-инженеринга MSP, после шести лет full-stack разработки и восьми лет работы выездным техником в нескольких компаниях. KillerTools.net начался как форк отличного
+    originMid: проекта от
+    originSuffix: и превратился в нечто, созданное именно для той работы, которой я занимаюсь. Я сделал его, чтобы смотреть настройки групповой политики прямо во время заявки, сканировать подсеть клиента и искать справочник по портам, не покидая браузер.
+    scriptsLibrary: Библиотека Killer Scripts закрывает задачи, которые встречаются в каждом цикле заявок. Каждый скрипт работает в PS 5.1, PS 7 и Kaseya LiveConnect без каких-либо зависимостей.
+    privacyBody: Все работает в вашем браузере. Ничего не отслеживается. Аккаунт не требуется никогда. Сайт применяет строгую политику безопасности контента (CSP), блокирующую атаки через цепочку зависимостей. Если скомпрометированный npm-пакет когда-нибудь попадет в сборку, он не сможет отправить домой то, что вы вставили.
+    maintainedByPrefix: Создано и поддерживается
+    maintainedByMid: Если это экономит вам время на работе,
+    buyMeCoffee: угостить меня кофе
+    maintainedBySuffix: приветствуется, но никогда не ожидается.
+    missingToolHeading: Не хватает инструмента? Нашли баг?
+    issuesPrefix: Откройте запрос функции или отчет об ошибке в
+    issuesLinkText: разделе issues
+    issuesSuffix: на GitHub. Я их читаю.
+    alsoTryHeading: Также попробуйте...
+    tagKillerScan: Сканер сети с открытым исходным кодом для Windows
+    tagKillerPdf: Редактор PDF с открытым исходным кодом для Windows
+    tagKillerShell: Оболочка Windows с открытым исходным кодом для опытных пользователей
+    tagKillerNotes: Зашифрованный блокнот с открытым исходным кодом для Windows
+    tagKillendar: Зашифрованный календарь с открытым исходным кодом для Windows
+    linksHeading: Ссылки
+    linkLabelSite: Сайт
+    linkLabelSource: Исходный код
+    linkLabelIssues: Issues
+    reportBug: Сообщить об ошибке
+    requestFeature: Запросить функцию
+    linkLabelSupport: Поддержка
+    linkLabelBuiltOn: Основано на
+    itToolsFork: IT-Tools (форк)

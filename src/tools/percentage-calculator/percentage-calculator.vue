@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { percentageChange, percentageOf, percentageRatio } from './percentage-calculator.service';
 
+const { t } = useI18n();
+
 // What is X% of Y
 const pctX = ref('');
 const pctY = ref('');
@@ -36,12 +38,12 @@ async function copyResult(key: string, val: string) {
     <!-- What is X% of Y -->
     <div class="pc-panel kt-terminal">
       <div class="pc-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">WHAT IS X% OF Y</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.percentage-calculator.ui.whatIsXPercentOfYTitle') }}</span>
       </div>
       <div class="pc-row pc-body">
-        <span class="pc-text">What is</span>
+        <span class="pc-text">{{ t('tools.percentage-calculator.ui.whatIsLabel') }}</span>
         <input v-model="pctX" class="pc-num" type="number" placeholder="X" data-test-id="percentageX">
-        <span class="pc-text">% of</span>
+        <span class="pc-text">{{ t('tools.percentage-calculator.ui.percentOfLabel') }}</span>
         <input v-model="pctY" class="pc-num" type="number" placeholder="Y" data-test-id="percentageY">
         <span class="pc-eq">=</span>
         <div
@@ -51,7 +53,7 @@ async function copyResult(key: string, val: string) {
           @click="copyResult('pct', pctResult)"
         >
           <span v-if="pctResult" class="pc-result-val">{{ pctResult }}</span>
-          <span v-else class="pc-result-empty">Result</span>
+          <span v-else class="pc-result-empty">{{ t('tools.percentage-calculator.ui.resultPlaceholder') }}</span>
           <span v-if="pctResult" class="pc-result-copy">
             <span v-if="copiedKey === 'pct'">✓</span>
             <icon-mdi-content-copy v-else />
@@ -63,11 +65,11 @@ async function copyResult(key: string, val: string) {
     <!-- X is what percent of Y -->
     <div class="pc-panel kt-terminal">
       <div class="pc-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">X IS WHAT PERCENT OF Y</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.percentage-calculator.ui.xIsWhatPercentOfYTitle') }}</span>
       </div>
       <div class="pc-row pc-body">
         <input v-model="numX" class="pc-num" type="number" placeholder="X" data-test-id="numberX">
-        <span class="pc-text">is what % of</span>
+        <span class="pc-text">{{ t('tools.percentage-calculator.ui.isWhatPercentOfLabel') }}</span>
         <input v-model="numY" class="pc-num" type="number" placeholder="Y" data-test-id="numberY">
         <span class="pc-eq">=</span>
         <div
@@ -77,7 +79,7 @@ async function copyResult(key: string, val: string) {
           @click="copyResult('num', numResult)"
         >
           <span v-if="numResult" class="pc-result-val">{{ numResult }}</span>
-          <span v-else class="pc-result-empty">Result</span>
+          <span v-else class="pc-result-empty">{{ t('tools.percentage-calculator.ui.resultPlaceholder') }}</span>
           <span v-if="numResult" class="pc-result-copy">
             <span v-if="copiedKey === 'num'">✓</span>
             <icon-mdi-content-copy v-else />
@@ -89,12 +91,12 @@ async function copyResult(key: string, val: string) {
     <!-- Percentage increase/decrease -->
     <div class="pc-panel kt-terminal">
       <div class="pc-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">PERCENTAGE INCREASE / DECREASE</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.percentage-calculator.ui.percentageChangeTitle') }}</span>
       </div>
       <div class="pc-row pc-body">
-        <span class="pc-text">From</span>
+        <span class="pc-text">{{ t('tools.percentage-calculator.ui.fromLabel') }}</span>
         <input v-model="fromVal" class="pc-num" type="number" placeholder="0" data-test-id="numberFrom">
-        <span class="pc-text">to</span>
+        <span class="pc-text">{{ t('tools.percentage-calculator.ui.toLabel') }}</span>
         <input v-model="toVal" class="pc-num" type="number" placeholder="0" data-test-id="numberTo">
         <span class="pc-eq">=</span>
         <div
@@ -104,7 +106,7 @@ async function copyResult(key: string, val: string) {
           @click="copyResult('chg', changeResult)"
         >
           <span v-if="changeResult" class="pc-result-val">{{ changeResult }}</span>
-          <span v-else class="pc-result-empty">Result</span>
+          <span v-else class="pc-result-empty">{{ t('tools.percentage-calculator.ui.resultPlaceholder') }}</span>
           <span v-if="changeResult" class="pc-result-copy">
             <span v-if="copiedKey === 'chg'">✓</span>
             <icon-mdi-content-copy v-else />

@@ -5,6 +5,7 @@ import { computed, ref } from 'vue';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
 
 const message = useMessage();
+const { t } = useI18n();
 const inputMarkdown = ref('');
 
 const outputHtml = computed(() => {
@@ -24,10 +25,10 @@ function printHtml() {
 async function copyToClipboard(text: string) {
   try {
     await navigator.clipboard.writeText(text);
-    message?.success('HTML copied to clipboard!');
+    message?.success(t('tools.markdown-to-html.ui.copiedSuccess'));
   }
   catch {
-    message?.error('Failed to copy text.');
+    message?.error(t('tools.markdown-to-html.ui.copyFailed'));
   }
 }
 </script>
@@ -37,13 +38,13 @@ async function copyToClipboard(text: string) {
     <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
       <div class="min-w-0">
         <div class="mb-1 text-xs opacity-60">
-          Your Markdown to convert:
+          {{ t('tools.markdown-to-html.ui.inputLabel') }}
         </div>
         <c-input-text
           v-model:value="inputMarkdown"
           multiline
           raw-text
-          placeholder="Your Markdown content..."
+          :placeholder="t('tools.markdown-to-html.ui.inputPlaceholder')"
           :rows="24"
           autofocus
         />
@@ -52,11 +53,11 @@ async function copyToClipboard(text: string) {
       <div class="min-w-0 flex flex-col">
         <div class="mb-1 flex items-center justify-between">
           <div class="text-xs opacity-60">
-            Output HTML:
+            {{ t('tools.markdown-to-html.ui.outputLabel') }}
           </div>
           <button type="button" class="kt-pill" @click="copyToClipboard(outputHtml)">
             <span class="i-carbon-copy mr-1 inline-block h-3 w-3" />
-            Copy HTML
+            {{ t('tools.markdown-to-html.ui.copyHtmlButton') }}
           </button>
         </div>
 
@@ -75,7 +76,7 @@ async function copyToClipboard(text: string) {
 
     <div class="mt-4 flex justify-center">
       <button type="button" class="kt-pill kt-pill-active" @click="printHtml">
-        Print as PDF
+        {{ t('tools.markdown-to-html.ui.printAsPdfButton') }}
       </button>
     </div>
   </div>

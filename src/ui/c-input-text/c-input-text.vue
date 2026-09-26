@@ -37,7 +37,7 @@ const props = withDefaults(
   {
     value: '',
     id: generateRandomId,
-    placeholder: 'Input text',
+    placeholder: undefined,
     label: undefined,
     readonly: false,
     disabled: false,
@@ -66,7 +66,10 @@ const emit = defineEmits(['update:value']);
 const value = useVModel(props, 'value', emit);
 const showPassword = ref(false);
 
-const { id, placeholder, label, validationRules, labelPosition, labelWidth, labelAlign, autosize, readonly, disabled, clearable, type, multiline, rows, rawText, autofocus, monospace } = toRefs(props);
+const { id, placeholder: rawPlaceholder, label, validationRules, labelPosition, labelWidth, labelAlign, autosize, readonly, disabled, clearable, type, multiline, rows, rawText, autofocus, monospace } = toRefs(props);
+
+const { t } = useI18n();
+const placeholder = computed(() => rawPlaceholder.value ?? t('ui.inputText.defaultPlaceholder'));
 
 const validation
   = props.validation

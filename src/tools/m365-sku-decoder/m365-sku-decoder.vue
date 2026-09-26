@@ -2,6 +2,8 @@
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { skusByCategory } from './m365-sku-decoder.constants';
 
+const { t } = useI18n();
+
 const search = ref('');
 const copiedId = ref<string | null>(null);
 
@@ -52,7 +54,7 @@ function copyValue(value: string) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search by SKU name, string ID, or description..."
+      :placeholder="t('tools.m365-sku-decoder.ui.searchPlaceholder')"
       autofocus
       raw-text
       mb-4
@@ -78,7 +80,7 @@ function copyValue(value: string) {
                card's overflow: hidden -->
           <div
             class="kt-terminal-bar sku-bar"
-            :title="copiedId === stringId ? 'Copied!' : 'Click to copy string ID'"
+            :title="copiedId === stringId ? t('tools.m365-sku-decoder.ui.copied') : t('tools.m365-sku-decoder.ui.clickToCopy')"
           >
             <span class="sku-tier" :class="`sku-tier-${tierColor[tier]}`">{{ tier }}</span>
           </div>
@@ -90,7 +92,7 @@ function copyValue(value: string) {
             <div class="sku-name">
               {{ name }}
             </div>
-            <code class="sku-string-id">{{ copiedId === stringId ? '✓ copied' : stringId }}</code>
+            <code class="sku-string-id">{{ copiedId === stringId ? t('tools.m365-sku-decoder.ui.copiedMark') : stringId }}</code>
             <div class="sku-desc">
               {{ description }}
             </div>

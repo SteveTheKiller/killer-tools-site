@@ -8,6 +8,8 @@ import { useQRCode } from '@/tools/qr-code-generator/useQRCode';
 import { defaultOptions, estimateCrackTime, generatePassword, getEntropyBits, toPhonetic } from './password-generator.service';
 import { presets } from './presets';
 
+const { t } = useI18n();
+
 const styleStore = useStyleStore();
 
 // QR foreground follows the active theme accent (kt-theme/kt-accent touched
@@ -102,35 +104,35 @@ const { qrcode } = useQRCode({
   options: { width: 512, margin: 2 },
 });
 
-const { copy } = useCopy({ source: password, text: 'Password copied to the clipboard' });
+const { copy } = useCopy({ source: password, text: t('toast.passwordCopied') });
 const { copy: copyBulk } = useCopy({
   source: computed(() => bulkPasswords.value.join('\n')),
-  text: 'Passwords copied to the clipboard',
+  text: t('toast.passwordsCopied'),
 });
-const { copy: copyPhonetic } = useCopy({ source: phonetic, text: 'Phonetic spelling copied' });
+const { copy: copyPhonetic } = useCopy({ source: phonetic, text: t('toast.phoneticCopied') });
 
-const modeOptions: Array<{ label: string, value: PasswordMode }> = [
-  { label: 'Random', value: 'random' },
-  { label: 'Passphrase', value: 'passphrase' },
-  { label: 'Pronounceable', value: 'pronounceable' },
-  { label: 'Format', value: 'format' },
-];
+const modeOptions = computed<Array<{ label: string, value: PasswordMode }>>(() => [
+  { label: t('mode.random'), value: 'random' },
+  { label: t('mode.passphrase'), value: 'passphrase' },
+  { label: t('mode.pronounceable'), value: 'pronounceable' },
+  { label: t('mode.format'), value: 'format' },
+]);
 
-const formatOptions: Array<{ label: string, value: OutputFormat }> = [
-  { label: 'Plain', value: 'plain' },
-  { label: 'Hex', value: 'hex' },
-  { label: 'Base64', value: 'base64' },
-  { label: 'Base64-URL', value: 'base64url' },
-  { label: 'UUID v4', value: 'uuid' },
-];
+const formatOptions = computed<Array<{ label: string, value: OutputFormat }>>(() => [
+  { label: t('format.plain'), value: 'plain' },
+  { label: t('format.hex'), value: 'hex' },
+  { label: t('format.base64'), value: 'base64' },
+  { label: t('format.base64url'), value: 'base64url' },
+  { label: t('format.uuid'), value: 'uuid' },
+]);
 
-const separatorOptions = [
+const separatorOptions = computed(() => [
   { label: '-', value: '-' },
   { label: '.', value: '.' },
   { label: '_', value: '_' },
   { label: '␣', value: ' ' },
-  { label: 'none', value: '' },
-];
+  { label: t('separator.none'), value: '' },
+]);
 
 const showLengthSlider = computed(() => {
   if (opts.value.mode === 'passphrase') {
@@ -165,7 +167,7 @@ function selectBulkCount(n: number) {
         <!-- Password display -->
         <div class="kt-terminal">
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">PASSWORD</span>
+            <span class="kt-terminal-bar-title">{{ t('terminal.passwordTitle') }}</span>
           </div>
           <div class="pg-pw-body">
             <div class="terminal-prompt">
@@ -174,8 +176,8 @@ function selectBulkCount(n: number) {
             </div>
             <div class="terminal-meta">
               <div class="entropy-row">
-                <span><span class="meta-label">Entropy:</span> <strong>{{ Math.round(entropy) }}</strong> bits</span>
-                <span><span class="meta-label">Crack:</span> {{ crackTime }}</span>
+                <span><span class="meta-label">{{ t('meta.entropyLabel') }}</span> <strong>{{ Math.round(entropy) }}</strong> {{ t('meta.bits') }}</span>
+                <span><span class="meta-label">{{ t('meta.crackLabel') }}</span> {{ crackTime }}</span>
               </div>
               <div class="entropy-bar">
                 <div class="entropy-fill" :style="{ width: `${entropyPercent}%`, background: entropyColor }" />
@@ -184,11 +186,11 @@ function selectBulkCount(n: number) {
             <div class="terminal-actions">
               <button type="button" class="pg-btn pg-btn-primary" @click="copy()">
                 <icon-mdi-content-copy />
-                Copy
+                {{ t('actions.copy') }}
               </button>
               <button type="button" class="pg-btn" @click="regenerate">
                 <icon-mdi-refresh />
-                Refresh
+                {{ t('actions.refresh') }}
               </button>
             </div>
           </div>
@@ -197,12 +199,12 @@ function selectBulkCount(n: number) {
         <!-- Options / controls -->
         <div class="kt-terminal">
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">OPTIONS</span>
+            <span class="kt-terminal-bar-title">{{ t('terminal.optionsTitle') }}</span>
           </div>
           <div class="pg-controls-body">
             <!-- Presets -->
             <div class="pg-section-label">
-              Preset
+              {{ t('section.preset') }}
             </div>
             <div class="pg-pill-row">
               <button
@@ -220,7 +222,7 @@ function selectBulkCount(n: number) {
 
             <!-- Mode -->
             <div class="pg-section-label">
-              Mode
+              {{ t('section.mode') }}
             </div>
             <div class="pg-pill-row">
               <button
@@ -238,7 +240,7 @@ function selectBulkCount(n: number) {
             <!-- Format (only in format mode) -->
             <template v-if="opts.mode === 'format'">
               <div class="pg-section-label">
-                Format
+                {{ t('section.format') }}
               </div>
               <div class="pg-pill-row">
                 <button
@@ -257,7 +259,7 @@ function selectBulkCount(n: number) {
             <!-- Length (random / pronounceable / non-UUID format) -->
             <template v-if="showLengthSlider">
               <div class="pg-section-label">
-                Length ({{ opts.length }})
+                {{ t('section.length', { length: opts.length }) }}
               </div>
               <input
                 v-model.number="opts.length"
@@ -272,7 +274,7 @@ function selectBulkCount(n: number) {
             <!-- Passphrase word count -->
             <template v-if="opts.mode === 'passphrase'">
               <div class="pg-section-label">
-                Word count ({{ opts.wordCount }})
+                {{ t('section.wordCount', { count: opts.wordCount }) }}
               </div>
               <input
                 v-model.number="opts.wordCount"
@@ -284,7 +286,7 @@ function selectBulkCount(n: number) {
               >
 
               <div class="pg-section-label">
-                Separator
+                {{ t('section.separator') }}
               </div>
               <div class="pg-pill-row">
                 <button
@@ -303,7 +305,7 @@ function selectBulkCount(n: number) {
             <!-- Character classes (random only) -->
             <template v-if="opts.mode === 'random'">
               <div class="pg-section-label">
-                Character classes
+                {{ t('section.characterClasses') }}
               </div>
               <div class="pg-pill-row">
                 <button
@@ -312,7 +314,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withUppercase }"
                   @click="opts.withUppercase = !opts.withUppercase"
                 >
-                  Uppercase
+                  {{ t('charClass.uppercase') }}
                 </button>
                 <button
                   type="button"
@@ -320,7 +322,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withLowercase }"
                   @click="opts.withLowercase = !opts.withLowercase"
                 >
-                  Lowercase
+                  {{ t('charClass.lowercase') }}
                 </button>
                 <button
                   type="button"
@@ -328,7 +330,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withNumbers }"
                   @click="opts.withNumbers = !opts.withNumbers"
                 >
-                  Numbers
+                  {{ t('charClass.numbers') }}
                 </button>
                 <button
                   type="button"
@@ -336,7 +338,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withSymbols }"
                   @click="opts.withSymbols = !opts.withSymbols"
                 >
-                  Symbols
+                  {{ t('charClass.symbols') }}
                 </button>
               </div>
             </template>

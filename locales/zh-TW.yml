@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: 最新工具
+    favoriteTools: 你的最愛工具
+    allTools: 所有工具
+    favoritesDndToolTip: 拖放以重新排列最愛
+  subtitle: 為開發者打造的實用工具
+  toggleMenu: 切換選單
+  home: 首頁
+  uiLib: UI 元件庫
+  support: 支持 killer-tools 的開發
+  buyMeACoffee: 請我喝杯咖啡
+  follow:
+    title: 喜歡 killer-tools 嗎？
+    p1: 在這裡給我一顆星：
+    githubRepository: StevetheKiller GitHub 儲存庫
+    thankYou: 謝謝！
+  nav:
+    github: GitHub 儲存庫
+    githubRepository: killer-tools GitHub 儲存庫
+    about: 關於 killer-tools
+    aboutLabel: 關於
+    darkMode: 深色模式
+    lightMode: 淺色模式
+    mode: 切換深色/淺色模式
+about:
+  content: |
+    # killer-tools
+
+    現場技術人員沒時間處理多餘的東西。這裡的每個工具之所以存在，都是因為我在工作上需要它，卻找不到不用帳號、不用安裝、也沒有遙測就能直接用的東西。
+
+    我是一家 MSP 的現場技術人員，負責網路、系統管理和端點支援。killer-tools 最初是優秀的 [IT-Tools](https://github.com/CorentinTh/it-tools) 專案的分支，後來發展成專為我實際工作而打造的工具。我做它是為了在處理工單時查詢 NDR 代碼、掃描客戶的子網路，以及在點擊之前解碼 SafeLink。
+
+    一切都在你的瀏覽器中執行。不追蹤任何東西。永遠不需要帳號。
+
+    由 [Steve the Killer](https://thekiller.net) 打造與維護。如果它幫你在工作上省下時間，[請我喝杯咖啡](https://www.buymeacoffee.com/StevetheKiller)我會很感謝，但絕不強求。
+
+    ## 缺少某個工具？發現錯誤？
+
+    請到 GitHub 的 [issues 區](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose)提出功能請求或錯誤回報。我都會看。
+404:
+  notFound: 404 找不到頁面
+  sorry: 抱歉，這個頁面似乎不存在
+  maybe: 可能是快取在作怪，試試強制重新整理？
+  backHome: 回到首頁
+favoriteButton:
+  remove: 從最愛中移除
+  add: 加入最愛
+toolCard:
+  new: 新
+search:
+  label: 搜尋
+tools:
+  categories:
+    favorite-tools: 你的最愛工具
+    crypto: 加密
+    conversion: 轉換
+    web: 網頁
+    images and videos: 圖片與影片
+    development: 開發
+    network: 網路
+    math: 數學
+    measurement: 測量
+    text: 文字
+    data: 資料
+    windows: Windows
+    killer apps: Killer Apps
+    photography: 攝影
+  password-strength-analyser:
+    title: 密碼強度分析器
+    description: 使用這個僅在用戶端執行的密碼強度分析器與破解時間估算工具，了解你的密碼有多強。
+  password-generator:
+    title: 密碼產生器
+    description: 產生強密碼、diceware 密語、可發音字串，以及 hex/base64/UUID 權杖。包含 MSP 預設組合（本機管理員、服務帳戶、Wi-Fi PSK、PIN）、排除易混淆字元、熵值計、QR 碼與 NATO 音標朗讀。
+    ui:
+      terminal:
+        passwordTitle: 密碼
+        optionsTitle: 選項
+      meta:
+        entropyLabel: '熵值:'
+        bits: 位元
+        crackLabel: '破解時間:'
+      actions:
+        copy: 複製
+        refresh: 重新整理
+      section:
+        preset: 預設
+        mode: 模式
+        format: 格式
+        length: 長度 ({length})
+        wordCount: 字數 ({count})
+        separator: 分隔符號
+        characterClasses: 字元類型
+        options: 選項
+      charClass:
+        uppercase: 大寫字母
+        lowercase: 小寫字母
+        numbers: 數字
+        symbols: 符號
+      option:
+        excludeAmbiguous: 排除易混淆字元
+        requireOneOfEach: 每種類型至少一個字元
+        capitalizeWords: 單字首字母大寫
+        appendNumber: 附加2位數字
+      mode:
+        random: 隨機
+        passphrase: 密碼短語
+        pronounceable: 易讀發音
+        format: 格式
+      format:
+        plain: 純文字
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: 無
+      qr:
+        caption: 掃描以複製
+      phonetic:
+        title: 拼讀
+      bulk:
+        generateLabel: 產生
+        single: 單個
+        atOnce: 一次產生{n}個
+        passwordsTitle: '{count}組密碼'
+        copyAll: 全部複製
+      toast:
+        passwordCopied: 密碼已複製到剪貼簿
+        passwordsCopied: 密碼已全部複製到剪貼簿
+        phoneticCopied: 拼讀已複製
+  percentage-calculator:
+    title: 百分比計算機
+    description: 輕鬆計算一個值相對另一個值的百分比，或由百分比算出數值。
+    ui:
+      whatIsXPercentOfYTitle: Y 的 X% 是多少
+      whatIsLabel: 計算
+      percentOfLabel: '% 是多少'
+      resultPlaceholder: 結果
+      xIsWhatPercentOfYTitle: X 是 Y 的百分之幾
+      isWhatPercentOfLabel: 是多少% 的
+      percentageChangeTitle: 百分比增加/減少
+      fromLabel: 從
+      toLabel: 到
+  svg-placeholder-generator:
+    title: SVG 預留位置產生器
+    description: 產生 SVG 圖片，作為應用程式中的預留位置。
+    ui:
+      widthLabel: 寬度(px)
+      backgroundLabel: 背景
+      heightLabel: 高度(px)
+      textColorLabel: 文字顏色
+      fontSizeLabel: 字型大小
+      customTextLabel: 自訂文字
+      customTextPlaceholder: 預設值為 {size}
+      useExactSizeToggle: 使用精確尺寸
+      svgHtmlElementLabel: SVG HTML 元素
+      svgBase64Label: BASE64 格式的 SVG
+      copySvgButton: 複製 svg
+      copyBase64Button: 複製 base64
+      downloadSvgButton: 下載 svg
+      previewLabel: 預覽
+      svgPreviewAlt: SVG 預覽
+  json-to-csv:
+    title: JSON 轉 CSV
+    description: 將 JSON 轉換為 CSV，並自動偵測標頭。
+    ui:
+      invalidJson: 提供的 JSON 無效。
+      yourRawJson: 您的原始 JSON
+      pasteRawJsonPlaceholder: 在此貼上您的原始 JSON...
+      csvOutputLabel: 您的 JSON 的 CSV 版本
+  camera-recorder:
+    title: 相機錄影
+    description: 從網路攝影機或相機拍照或錄影。
+    ui:
+      selectCamera: 選擇攝影機
+      selectMicrophone: 選擇麥克風
+      notSupported: 您的瀏覽器不支援攝影機錄製功能。
+      accessRequired: 需要攝影機和麥克風存取權限。
+      permissionBlocked: 權限已被封鎖。請透過瀏覽器網址列的鎖頭圖示手動授予權限。
+      grantPermission: 授予權限
+      video: 視訊
+      audio: 音訊
+      startWebcam: 啟動網路攝影機
+      paused: 已暫停
+      rec: 錄製中
+      screenshot: 截圖
+      record: 錄製
+      pause: 暫停
+      resume: 繼續
+      stop: 停止
+      recordingNotSupported: 此瀏覽器不支援錄製功能
+      captures: 截圖 ({count})
+      clearAll: 全部清除
+      screenshotAlt: 截圖
+      download: 下載
+      delete: 刪除
+  reciprocity-calculator:
+    title: 倒易律失效計算機
+    description: 使用 Schwarzschild 冪次定律，為 40 多種類比底片計算修正後的長時間曝光。涵蓋黑白、彩色負片與正片。
+    ui:
+      barReciprocity: 倒易律失效計算機
+      barCorrected: 校正後曝光時間
+      fieldFilmStock: 底片類型
+      typeBw: 黑白
+      typeColorNeg: 彩色負片
+      typeSlide: 正片 / E6
+      noFailureUpTo: 曝光時間在 {seconds} 秒以內無需校正
+      sourceManufacturer: 廠商數據
+      sourceCommunity: 社群數據
+      fieldMeteredExposure: 測光曝光時間
+      unitSeconds: 秒
+      noFailureMessage: '無需校正: 這款底片在此曝光時長下沒有倒易律失效。'
+      copyDone: ✓ 已複製
+      copySeconds: 複製秒數
+      devReduce10: 建議將沖片時間減少約 10%,以補償增加的陰影密度。
+      devReduce1015: 建議將沖片時間減少 10% 至 15%。
+      devReduce1520: 建議將沖片時間減少 15% 至 20%。
+      devReduce2030: 曝光時間非常長時,建議將沖片時間減少 20% 至 30%。
+      colorShiftWarning: '彩色底片: 此曝光時長下可能出現色偏。'
+      colorShiftSlide: 正片後製難以校正色偏,建議拍攝時使用 CC 濾鏡。
+      colorShiftNeg: 彩色負片的寬容度較高,沖印或掃描時可進行校正。
+  nd-filter-calculator:
+    title: ND 濾鏡計算機
+    description: 計算使用減光濾鏡時修正後的快門速度。支援所有常見 ND 強度與自訂檔數。
+    ui:
+      titleInputs: ND 減光鏡計算機
+      baseShutterSpeed: 基準快門速度（未加濾鏡）
+      dragOrClick: 拖曳或點擊
+      custom: 自訂
+      secPlaceholder: 秒
+      ndFilter: ND 減光鏡
+      stopOne: '{count} 檔'
+      stopMany: '{count} 檔'
+      enterStops: 輸入檔數
+      stopsPlaceholder: 檔
+      titleResult: 校正後曝光
+      copied: 已複製
+      copySeconds: 複製秒數
+      longExposureAlert: 長時間曝光，建議使用 Bulb 模式。
+      stackingFilters: 疊加濾鏡時，將檔數相加
+      legendT1: 基準快門速度（未加濾鏡）
+      legendT2: 校正後快門速度
+      legendStops: ND 減光鏡檔數
+  depth-of-field-calculator:
+    title: 景深計算機
+    description: 計算任何鏡頭與感光元件組合的近點、遠點與總景深。也提供超焦距。
+    ui:
+      sensorMedFormat: 中片幅
+      sensorCustom: 自訂
+      sensorEnterCoc: 輸入 CoC
+      infinity: 無限遠
+      title: 景深計算機
+      sensorFormat: 感光元件片幅
+      cocPlaceholder: CoC，單位毫米（例如 0.029）
+      focalLength: 焦距（毫米）
+      aperture: 光圈
+      dragOrClick: 拖曳或點擊
+      focusDistance: 對焦距離
+      distancePlaceholder: 距離
+      results: 結果
+      hyperfocalDistance: 超焦距
+      hyperfocalHint: 對焦於此處，可從該距離的一半到無限遠都維持最大清晰度
+      nearLimit: 近點
+      farLimit: 遠點
+      totalDof: 總景深
+      beyondHyperfocal: 對焦距離已達到或超過超焦距，遠點延伸至無限遠。
+      legendHyperfocal: 超焦距
+      legendFocalLength: 焦距
+      legendFNumber: 光圈值（f 值）
+      legendCoc: circle of confusion
+      legendFocusDistance: 對焦距離
+  exposure-equivalence:
+    title: 等效曝光
+    description: 找出相同曝光下所有光圈對應的等效快門速度。選擇基準快門與光圈，即可看到其他每個 f-stop 所需的設定。
+    ui:
+      titleInputs: 等效曝光
+      shutterSpeed: 快門速度
+      dragOrClick: 拖曳或點擊
+      custom: 自訂
+      secPlaceholder: 秒
+      aperture: 光圈
+      titleResults: 等效曝光組合
+      isoIndependent: 在任何固定 ISO 下皆與 ISO 無關
+      highlightedBase: 反白列為您的基準值
+      legendT1: 基準快門速度
+      legendT2: 等效快門速度
+      legendN1: 基準光圈（f 值）
+      legendN2: 目標光圈（f 值）
+  dev-calculator:
+    title: 底片沖洗計算機
+    description: 計算含溫度補償、push/pull 沖洗與稀釋調配的修正沖洗時間。內建常見黑白顯影劑與底片資料庫。
+    ui:
+      hasData: 有數據
+      noDataGroup: 無數據,請手動輸入基準時間
+      colorBelow: '{process}低於36°C:可能出現偏色與顯影不足'
+      colorAbove: '{process}高於40°C:有霧化與偏色交叉的風險'
+      bwBelow: 低於18°C:顯影會非常緩慢
+      bwAbove: 高於24°C:有網紋與霧化的風險
+      start: 開始
+      pause: 暫停
+      resume: 繼續
+      calculatorTitle: 軟片顯影計算器
+      developer: 顯影液
+      dilution: 稀釋比例
+      filmStock: 軟片型號
+      baseTimeAt: '{temp}°C下的基準時間'
+      noData: 無數據
+      overridePlaceholder: 覆寫(秒)
+      customBaseActive: 已啟用自訂基準時間
+      temperature: '溫度:'
+      pushPull: 增感/減感
+      tankVolume: 顯影罐容量
+      customMlPlaceholder: 自訂毫升數
+      adjustedTime: 調整後時間
+      baseTimeTemp: 基準時間({temp}°C)
+      tempAdj: 溫度調整({temp})
+      pushStop: 增感{n}檔
+      pushStops: 增感{n}檔
+      pullStop: 減感{n}檔
+      pullStops: 減感{n}檔
+      mixFor: 調配{volume}毫升
+      mixDeveloper: 顯影液
+      mixWater: 水
+      noDataWarning: 沒有{film} + {developer}的數據,請手動輸入基準時間。
+      pushPullEstimate: 增感/減感時間為估算值,建議先試沖一卷。
+      sourceNote: 基準時間來自Massive Dev Chart與廠商數據表。
+      processTimer: 沖洗計時器
+      devComplete: 顯影完成
+      devCompleteHint: 掛起晾乾,享受你的底片吧。
+      stageOf: 階段 {current} / {total}
+      agitation: 攪動
+      reset: 重設
+      skip: 跳過
+      stDeveloper: 顯影液
+      stBleach: 漂白液
+      stWash: 水洗
+      stFixer: 定影液
+      stWash2: 水洗2
+      stStabilizer: 穩定液
+      stFirstDeveloper: 第一顯影液
+      stReversalBath: 反轉液
+      stColorDeveloper: 彩色顯影液
+      stPreBleach: 預漂白
+      stFinalWash: 最終水洗
+      stStopBath: 停顯液
+      agC30s10: 前30秒連續攪動,之後每30秒攪動10秒
+      agRun3Full: 流水沖洗或完整換水3次
+      agGentle: 僅輕輕晃動,之後不要沖洗
+      agC30s5: 前30秒連續攪動,之後每30秒攪動5秒
+      agRun3: 流水沖洗或換水3次
+      agContinuous: 連續攪動
+      ag10per30: 每30秒攪動10秒
+      agRun5: 流水沖洗或換水5次
+      agC60s10: 前30秒連續攪動,之後每60秒攪動10秒
+      agCont60: 連續攪動60秒
+      ag10per60: 每60秒攪動10秒
+      agRun5Full: 流水沖洗或完整換水5次
+  keycode-info:
+    title: Keycode 資訊
+    description: 查詢任何按下按鍵的 JavaScript keycode、code、location 與修飾鍵。
+  emoji-picker:
+    title: 表情符號選擇器
+    description: 輕鬆複製貼上表情符號，並取得每個表情符號的 unicode 與 code point 值。
+    ui:
+      emojiCopied: 表情符號 {emoji} 已複製到剪貼簿
+      codePointsCopied: 碼位「{codePoints}」已複製到剪貼簿
+      unicodeCopied: Unicode「{unicode}」已複製到剪貼簿
+      searchPlaceholder: 搜尋表情符號（例如「smile」）...
+      noResults: 沒有結果
+      searchResult: 搜尋結果
+  color-converter:
+    title: 色彩轉換器
+    description: 在不同格式之間轉換色彩（hex、rgb、hsl 與 CSS 名稱）
+    ui:
+      color: 顏色
+      formats: 格式
+  bcrypt:
+    title: Bcrypt
+    description: 使用 bcrypt 雜湊並比對文字字串。Bcrypt 是以 Blowfish 加密演算法為基礎的密碼雜湊函式。
+    ui:
+      copiedToClipboard: 雜湊字串已複製到剪貼簿
+      hashTitle: 雜湊
+      compareTitle: 比對
+      stringLabel: 字串
+      stringPlaceholder: 要雜湊的字串...
+      saltRoundsLabel: 鹽值輪數
+      outputLabel: 輸出
+      copyHash: 複製雜湊值
+      compareStringPlaceholder: 要比對的字串...
+      hashLabel: 雜湊值
+      compareHashPlaceholder: 要比對的雜湊值...
+      matchLabel: 相符
+      'yes': 是
+      'no': 否
+  crontab-generator:
+    title: Crontab 產生器
+    description: 驗證並產生 crontab，並取得 cron 排程的易讀說明。
+    ui:
+      symbolAnyValue: 任意值
+      symbolEveryMinute: 每分鐘
+      symbolRange: 數值範圍
+      symbolRangeEquivalent: 第1到10分鐘
+      symbolList: 數值清單
+      symbolListEquivalent: 在第1和第10分鐘
+      symbolStep: 間隔值
+      symbolStepEquivalent: 每10分鐘
+      aliasYearly: 每年一次(1月1日,午夜)
+      aliasMonthly: 每月第一天,午夜
+      aliasWeekly: 週日,午夜
+      aliasDaily: 每天午夜
+      aliasHourly: 每小時整點
+      aliasReboot: 開機時執行一次
+      aliasRebootEquivalent: (開機時)
+      invalidCron: 這個cron無效
+      use24HourTime: 24小時制
+      daysStartAtZero: 天數從0開始
+      labelSymbol: '符號:'
+      labelMeaning: '意義:'
+      labelExample: '範例:'
+      labelEquivalent: '相當於:'
+      symbols: 符號
+      aliases: 別名
+  http-status-codes:
+    title: HTTP 狀態碼
+    description: 所有 HTTP 狀態碼的清單、名稱與意義。
+    ui:
+      searchResults: 搜尋結果
+      searchPlaceholder: 搜尋 HTTP 狀態碼...
+      copiedTooltip: 已複製！
+      clickToCopy: 點擊以複製狀態碼
+      copiedLabel: 已複製
+  sql-prettify:
+    title: SQL 格式化
+    description: 線上格式化並美化你的 SQL 查詢（支援多種 SQL 方言）。
+    ui:
+      dialectLabel: 方言
+      keywordCaseLabel: 關鍵字大小寫
+      indentStyleLabel: 縮排樣式
+      yourSqlQueryLabel: 你的 SQL 查詢
+      sqlQueryPlaceholder: 在此貼上你的 SQL 查詢...
+      prettifiedQueryLabel: 查詢的美化版本
+      keywordCaseUpper: 大寫
+      keywordCaseLower: 小寫
+      keywordCasePreserve: 保留
+      indentStyleStandard: 標準
+      indentStyleTabularLeft: 表格靠左
+      indentStyleTabularRight: 表格靠右
+  git-memo:
+    title: Git 速查表
+    description: 最常用 Git 指令與工作流程的快速參考。
+  encryption:
+    title: 文字加密 / 解密
+    description: 使用 AES、TripleDES、Rabbit 或 RC4 等演算法加密明文與解密密文。
+    ui:
+      decryptError: 無法解密您的文字
+      encryptTitle: 加密
+      decryptTitle: 解密
+      yourText: 您的文字
+      yourSecretKey: 您的密鑰
+      algorithm: 演算法
+      encryptedOutput: 加密輸出
+      yourEncryptedText: 您的加密文字
+      decryptedOutput: 解密輸出
+      encryptPlaceholder: 要加密的字串
+      decryptPlaceholder: 要解密的密文
+      secretKeyPlaceholder: 密鑰...
+  yaml-prettify:
+    title: YAML 格式化
+    description: 將你的 YAML 字串整理成易讀的格式。
+  roman-numeral-converter:
+    title: 羅馬數字轉換器
+    description: 將羅馬數字轉換為數字，或將數字轉換為羅馬數字。
+    ui:
+      converterTitle: 轉換器
+      arabicSideLabel: 阿拉伯數字
+      romanSideLabel: 羅馬數字
+      arabicRangeError: 必須介於 {min}-{max} 之間
+      invalidRoman: 不是有效的羅馬數字
+      copied: 已複製
+      copy: 複製
+      romanCopiedToast: 羅馬數字已複製
+      arabicCopiedToast: 阿拉伯數字已複製
+  hmac-generator:
+    title: HMAC 產生器
+    description: 使用祕密金鑰與你偏好的雜湊函式，計算以雜湊為基礎的訊息鑑別碼（HMAC）。
+    ui:
+      encodingBinary: 二進位（2 進位）
+      encodingHex: 十六進位（16 進位）
+      copied: HMAC 已複製到剪貼簿
+      plainText: 明文
+      secretKey: 密鑰
+      hashingFunction: 雜湊函數
+      outputEncoding: 輸出編碼
+      hmacOutput: HMAC 輸出
+      plainTextPlaceholder: 要計算雜湊的明文...
+      secretKeyPlaceholder: 輸入密鑰...
+      clear: 清除
+      copyHmac: 複製 HMAC
+  bip39-generator:
+    title: BIP39 密語產生器
+    description: 從現有或隨機助記詞產生 BIP39 密語，或從密語取得助記詞。
+    ui:
+      languageEnglish: 英文
+      languageChineseSimplified: 簡體中文
+      languageChineseTraditional: 繁體中文
+      languageCzech: 捷克文
+      languageFrench: 法文
+      languageItalian: 義大利文
+      languageJapanese: 日文
+      languageKorean: 韓文
+      languagePortuguese: 葡萄牙文
+      languageSpanish: 西班牙文
+      entropyLengthError: 熵長度應大於等於16、小於等於32且為4的倍數
+      entropyHexError: 熵值應為十六進位字串
+      invalidMnemonic: 助記詞無效
+      entropyCopied: 熵已複製到剪貼簿
+      passphraseCopied: 助記詞已複製到剪貼簿
+      languageLabel: 語言
+      entropyHeading: 熵（種子）
+      entropyPlaceholder: 十六進位熵值...
+      regenerate: 重新產生
+      copyEntropy: 複製熵值
+      passphraseHeading: 助記詞
+      passphrasePlaceholder: 助記詞...
+      copyPassphrase: 複製助記詞
+  base64-file-converter:
+    title: Base64 檔案轉換器
+    description: 將字串、檔案或圖片轉換為 base64 表示法。
+    ui:
+      copiedToClipboard: Base64 字串已複製到剪貼簿
+      base64ToFileTitle: BASE64 轉檔案
+      fileNameLabel: 檔案名稱
+      fileNamePlaceholder: 下載檔案名稱
+      extensionLabel: 副檔名
+      extensionPlaceholder: 副檔名
+      base64StringLabel: BASE64 字串
+      base64InputPlaceholder: 在此貼上檔案的 base64 字串...
+      invalidBase64: 無效的 base64 字串
+      previewImage: 預覽圖片
+      downloadFile: 下載檔案
+      fileToBase64Title: 檔案轉 BASE64
+      dropHint: 將檔案拖放到此處,或點擊選取
+      fileInBase64Label: BASE64 格式檔案
+      fileOutputPlaceholder: 檔案的 base64 編碼將顯示於此
+      copied: 已複製!
+      copyBase64: 複製 base64
+  base64-string-converter:
+    title: Base64 字串編碼/解碼
+    description: 輕鬆將字串編碼與解碼為 base64 表示法。
+    ui:
+      base64CopiedToClipboard: Base64 字串已複製到剪貼簿
+      stringCopiedToClipboard: 字串已複製到剪貼簿
+      stringToBase64Title: 字串轉 BASE64
+      encodingLabel: 編碼方式
+      standard: 標準
+      urlSafe: URL 安全
+      stringToEncodeLabel: 待編碼字串
+      stringInputPlaceholder: 在此輸入字串...
+      base64OutputLabel: BASE64 輸出
+      base64OutputPlaceholder: 您字串的 base64 編碼將顯示於此
+      copied: 已複製!
+      copyBase64: 複製 base64
+      base64ToStringTitle: BASE64 轉字串
+      base64ToDecodeLabel: 待解碼的 BASE64 字串
+      base64InputPlaceholder: 您的 base64 字串...
+      invalidBase64: 無效的 base64 字串
+      decodedStringLabel: 解碼後的字串
+      decodedOutputPlaceholder: 解碼後的字串將顯示於此
+      copyDecodedString: 複製解碼後的字串
+  math-evaluator:
+    title: 數學運算式計算
+    description: 用來計算數學運算式的計算機。可以使用 sqrt、cos、sin、abs 等函式。
+    ui:
+      placeholder: 您的數學運算式(例如:2*sqrt(6) )...
+      result: 結果
+  url-parser:
+    title: URL 剖析器
+    description: 將 URL 拆解為各個組成部分（protocol、origin、params、port、username-password……）
+    ui:
+      sectionHost: 主機
+      protocol: 通訊協定
+      hostname: 主機名稱
+      port: 連接埠
+      sectionAuthentication: 身分驗證
+      username: 使用者名稱
+      password: 密碼
+      sectionPath: 路徑
+      pathname: 路徑名稱
+      search: 查詢參數
+      hash: 雜湊
+      urlTitle: URL
+      invalidUrl: 無效的 URL
+      params: 參數
+      emptyHint: 在上方輸入 URL 以進行解析
+  phone-parser-and-formatter:
+    title: 電話號碼剖析器
+    description: 剖析並格式化電話號碼。偵測國家、驗證號碼，並顯示國際、國內、E.164 與 RFC3966 格式。
+    ui:
+      invalidPhoneNumber: 無效的電話號碼
+      sectionLocation: 位置
+      countryCode: 國家代碼
+      country: 國家
+      callingCode: 撥號代碼
+      sectionValidation: 驗證
+      isValid: 是否有效？
+      'yes': 是
+      'no': 否
+      isPossible: 是否可能？
+      type: 類型
+      unknown: 未知
+      sectionFormats: 格式
+      international: 國際格式
+      national: 國內格式
+      defaultCountry: 預設國家
+      phoneNumber: 電話號碼
+      emptyStatePrompt: 請在上方輸入電話號碼以進行解析
+  user-agent-parser:
+    title: User-agent 剖析器
+    description: 從 user-agent 字串偵測並剖析瀏覽器、引擎、作業系統、CPU 與裝置類型/型號。
+    ui:
+      sectionBrowser: 瀏覽器
+      sectionEngine: 引擎
+      sectionOs: 作業系統
+      sectionDevice: 裝置
+      sectionCpu: CPU
+      name: 名稱
+      version: 版本
+      model: 型號
+      type: 類型
+      vendor: 廠商
+      architecture: 架構
+      userAgentString: USER AGENT 字串
+      placeholder: 在此輸入你的 user-agent...
+      unknown: 未知
+      error: 錯誤
+      parseError: 無法解析 user agent 字串
+  case-converter:
+    title: 大小寫轉換器
+    description: 在多種格式之間選擇，轉換字串的大小寫
+    ui:
+      inputPlaceholder: 您的字串...
+      output: 輸出
+  html-entities:
+    title: HTML 實體跳脫
+    description: 跳脫或還原 HTML 實體（將 <,>, &, " 和 \' 等字元替換為 HTML 版本）
+    ui:
+      yourString: 您的字串
+      escapePlaceholder: 要轉義的字串...
+      escapedOutput: 轉義後的輸出
+      copied: 已複製
+      copy: 複製
+      yourEscapedString: 您的轉義字串
+      unescapePlaceholder: 要還原轉義的字串...
+      unescapedOutput: 還原轉義後的輸出
+  json-prettify:
+    title: JSON 格式化
+    description: 將你的 JSON 字串整理成易讀的格式。
+  docker-run-to-docker-compose-converter:
+    title: Docker run 轉 Docker compose
+    description: 將 "docker run" 指令轉換為 docker-compose 檔案！
+  mac-address-lookup:
+    title: MAC 位址查詢
+    description: 依 MAC 位址查詢裝置的供應商與製造商。
+    ui:
+      macAddressLabel: MAC 位址
+      copiedTooltip: 已複製！
+      copyTooltip: 點擊複製廠商資訊
+      copiedTitle: ✓ 已複製
+      vendorInfoTitle: 廠商資訊
+      unknownVendor: 此位址的廠商未知
+  lorem-ipsum-generator:
+    title: Lorem ipsum 產生器
+    description: 為模型稿與設計工作產生 lorem ipsum 假文。
+    ui:
+      copiedMessage: Lorem ipsum 已複製到剪貼簿
+      paragraphs: 段落數
+      sentencesPerParagraph: 每段句數
+      wordsPerSentence: 每句詞數
+      startWithLoremIpsum: 以 lorem ipsum 開頭
+      asHtml: 以 HTML 格式
+      output: 輸出
+      wordCount: '{count} 個字'
+      charCount: '{count} 個字元'
+      copy: 複製
+      refresh: 重新整理
+  qrcode-generator:
+    title: QR 碼產生器
+    description: 為 URL、純文字或 Wi-Fi 網路憑證產生並下載 QR 碼。提供終端機、經典與自訂色彩主題，並可設定錯誤修正等級。
+  signature-creator:
+    title: 簽名產生器
+    description: 在畫布上手寫簽名並匯出為透明 PNG。或上傳任何圖片，使用裝置端 AI 一鍵去除背景。
+    ui:
+      drawSignatureTab: 繪製簽名
+      removeBackgroundTab: 移除背景
+      inkColorLabel: 墨水顏色
+      strokeWeightLabel: 筆畫粗細
+      actionsLabel: 操作
+      undoButton: ↩ 復原
+      clearButton: ✕ 清除
+      downloadTransparentPng: ↓ 下載透明 PNG
+      uploadImageLabel: 上傳圖片
+      dropzoneText: 將圖片拖曳至此或點擊瀏覽
+      dropzoneHint: PNG、JPG、WEBP
+      imageLoadedLabel: 圖片已載入
+      removeButton: ✕ 移除
+      removeBackgroundButton: ⚡ 移除背景
+      exportLabel: 匯出
+      downloadNoBgPng: ↓ 下載 PNG(無背景)
+      originalLabel: 原圖
+      resultLabel: 結果
+      uploadPrompt: 上傳圖片以開始
+      originalAlt: 原圖
+      resultAlt: 已移除背景的結果
+      loadingModelStatus: 正在載入 AI 模型...
+      removingBackgroundStatus: 正在移除背景...
+      processingPercentStatus: 處理中... {pct}%
+      downloadingModelPercentStatus: 正在下載模型... {pct}%
+      removeBackgroundFailedStatus: 移除背景失敗,請嘗試其他圖片。
+  xml-formatter:
+    title: XML 格式化
+    description: 將你的 XML 字串整理成易讀的格式。
+    ui:
+      invalidXml: 提供的 XML 無效。
+      collapse: 摺疊
+      indentSize: 縮排大小
+      inputLabel: 您的 XML
+      inputPlaceholder: 請在此貼上您的 XML...
+      outputLabel: 由您的 XML 產生的格式化 XML
+  temperature-converter:
+    title: 溫度轉換器
+    description: Kelvin、Celsius、Fahrenheit、Rankine、Delisle、Newton、Réaumur 與 Rømer 溫標之間的溫度換算。
+    ui:
+      kelvin: 克耳文
+      celsius: 攝氏度
+      fahrenheit: 華氏度
+      rankine: 蘭氏度
+      delisle: 德利爾度
+      newton: 牛頓度
+      reaumur: 列氏度
+      romer: 羅默度
+  chmod-calculator:
+    title: Chmod 計算機
+    description: 使用這個線上 chmod 計算機計算 chmod 權限與指令。
+    ui:
+      read: 讀取
+      write: 寫入
+      execute: 執行
+      owner: 擁有者
+      group: 群組
+      public: 公開
+      commandCopied: chmod 指令已複製
+      copyCommand: 複製指令
+  rsa-key-pair-generator:
+    title: RSA 金鑰對產生器
+    description: 產生新的隨機 RSA 私密與公開 PEM 金鑰對。
+    ui:
+      bitsRangeError: 位元數必須介於 256 到 16384 之間,且為 8 的倍數
+      bitsLabel: 位元數
+      refreshButton: 重新整理金鑰對
+      publicKeyTitle: 公開金鑰
+      copyPublicKeyTitle: 複製公開金鑰
+      copy: 複製
+      generating: 產生中...
+      privateKeyTitle: 私密金鑰
+      copyPrivateKeyTitle: 複製私密金鑰
+      publicKeyCopiedToast: 公開金鑰已複製
+      privateKeyCopiedToast: 私密金鑰已複製
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG 編輯器
+    description: 功能豐富的線上 WYSIWYG HTML 編輯器，可立即產生內容的原始碼。
+    ui:
+      bold: 粗體
+      italic: 斜體
+      strike: 刪除線
+      inlineCode: 行內程式碼
+      heading1: 標題 1
+      heading2: 標題 2
+      heading3: 標題 3
+      heading4: 標題 4
+      bulletList: 項目符號清單
+      orderedList: 編號清單
+      codeBlock: 程式碼區塊
+      blockquote: 引言
+      hardBreak: 強制換行
+      clearFormat: 清除格式
+      undo: 復原
+      redo: 重做
+  json-diff:
+    title: JSON 比對
+    description: 比較兩個 JSON 物件並找出它們之間的差異。
+    ui:
+      onlyShowDifferences: 僅顯示差異
+      jsonsAreTheSame: 提供的兩個 JSON 相同
+      firstJsonTitle: 您的第一個 JSON
+      firstJsonPlaceholder: 在此貼上您的第一個 JSON...
+      invalidJson: JSON 格式無效
+      secondJsonTitle: 用於比較的 JSON
+      secondJsonPlaceholder: 在此貼上要比較的 JSON...
+  jwt-parser:
+    title: JWT 剖析器
+    description: 剖析並解碼你的 JSON Web Token（jwt），顯示其內容。
+    ui:
+      header: Header
+      payload: Payload
+      jwtToDecodeTitle: 待解碼的 JWT
+      tokenPlaceholder: 在此輸入您的權杖...
+      invalidJwt: 無效的 JWT
+  date-converter:
+    title: 日期時間轉換器
+    description: 將日期與時間轉換為各種格式
+  ipv4-subnet-calculator:
+    title: IPv4 子網路計算機
+    description: 剖析你的 IPv4 CIDR 區塊，取得子網路所需的所有資訊。
+    ui:
+      invalidAddress: 無法解析此位址，請檢查格式
+      netmask: 子網路遮罩
+      networkAddress: 網路位址
+      networkMask: 網路遮罩
+      networkMaskBinary: 網路遮罩的二進位形式
+      cidrNotation: CIDR 表示法
+      wildcardMask: 萬用字元遮罩
+      networkSize: 網路大小
+      firstAddress: 起始位址
+      lastAddress: 結束位址
+      broadcastAddress: 廣播位址
+      noBroadcast: 此遮罩沒有廣播位址
+      ipClass: IP 類別
+      unknownClassType: 未知類別
+      decimal: 十進位
+      hexadecimal: 十六進位
+      binary: 二進位
+      ipv6Short: IPv6（簡寫）
+      inputLabel: 帶或不帶遮罩的 IPv4 位址
+      bitMap: 位元圖
+      network: 網路
+      host: 主機
+      setPrefix: 將前綴設為 /{prefix}
+      networkTag: 網路
+      broadcastTag: 廣播
+      hostsCount: '{count} 台主機'
+      privateIp: 私人 IP
+      publicIp: 公用 IP
+      subnetDetail: 子網路詳細資料
+      subnetInfo: 子網路資訊
+      addressRepresentations: 位址表示形式
+      copy: 複製
+      enterValidIpv4: 輸入有效的 IPv4 位址以檢視各種表示形式
+      previousBlock: 上一個區塊
+      nextBlock: 下一個區塊
+      collapseCheatSheet: 收合速查表
+      subnetCheatSheet: 子網路速查表
+  og-meta-generator:
+    title: Open Graph meta 產生器
+    description: 為你的網站產生 Open Graph 與社群媒體 HTML meta 標籤。
+  ipv6-ula-generator:
+    title: IPv6 ULA 產生器
+    description: 依據 RFC4193 為你的網路產生專屬的本機、不可路由 IP 位址。
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: 第一個可路由位址
+      lastRoutable: 最後一個可路由位址
+      infoAlert: 使用目前時間戳記與 MAC 位址，經 SHA1 雜湊處理。低 40 位元依 RFC 4193 組成全域 ID。
+      macAddress: MAC 位址
+      output: 輸出結果
+      copied: 已複製！
+      copy: 複製
+  hash-text:
+    title: 文字雜湊
+    description: 使用 MD5、SHA1、SHA256、SHA512、SHA3、RIPEMD160 等演算法雜湊文字。
+    ui:
+      encodingBinary: 二進位（2 進位）
+      encodingHex: 十六進位（16 進位）
+      encodingBase64: Base64（64 進位）
+      encodingBase64url: Base64url（URL 安全的 64 進位）
+      inputPlaceholder: 要雜湊的字串...
+      encoding: 編碼
+      output: 輸出
+  json-to-toml:
+    title: JSON 轉 TOML
+    description: 剖析 JSON 並轉換為 TOML。
+  device-information:
+    title: 裝置資訊
+    description: 取得目前裝置的資訊（螢幕大小、像素比例、user agent……）
+    ui:
+      screen: 螢幕
+      hardware: 硬體
+      network: 網路
+      browser: 瀏覽器
+      screenSize: 螢幕尺寸
+      windowSize: 視窗大小
+      pixelRatio: 像素比
+      colorDepth: 色彩深度
+      orientation: 方向
+      orientationAngle: 方向角度
+      touchPoints: 觸控點
+      cpuCores: CPU核心數
+      deviceMemory: 裝置記憶體
+      platform: 平台
+      online: 線上
+      connectionType: 連線類型
+      downlinkSpeed: 下載速度
+      roundTripTime: 往返時間
+      dataSaver: 省流量模式
+      vendor: 製造商
+      languages: 語言
+      cookiesEnabled: Cookie已啟用
+      pdfViewer: PDF檢視器
+      doNotTrack: 請勿追蹤
+      userAgent: 使用者代理
+      maxTouchPoints: 最多{count}個
+      none: 無
+      logicalCores: '{count}個邏輯核心'
+      'yes': 是
+      'no': 否
+      enabled: 已啟用
+      disabled: 已停用
+      supported: 支援
+      notSupported: 不支援
+      notSet: 未設定
+  pdf-signature-checker:
+    title: PDF 簽章檢查器
+    description: 驗證 PDF 檔案的簽章。已簽署的 PDF 含有一或多個簽章，可用來判斷檔案內容在簽署後是否遭到修改。
+    ui:
+      tableHeaderValidityPeriod: 有效期限
+      tableHeaderIssuedBy: 簽發者
+      tableHeaderIssuedTo: 簽發對象
+      tableHeaderPemCertificate: PEM 憑證
+      notBefore: 生效日期
+      notAfter: 失效日期
+      commonName: 通用名稱
+      organizationName: 組織名稱
+      countryName: 國家名稱
+      localityName: 城市名稱
+      organizationalUnitName: 組織單位名稱
+      stateOrProvinceName: 省/州名稱
+      viewPemCert: 檢視 PEM 憑證
+      uploadPrompt: 將 PDF 檔案拖放到此處，或點擊以選擇檔案
+      noSignaturesFound: 在提供的檔案中找不到簽章。
+      signatureCertificatesLabel: 簽章 {number} 憑證：
+  json-minify:
+    title: JSON 壓縮
+    description: 移除多餘的空白字元，壓縮你的 JSON。
+    ui:
+      invalidJson: 提供的 JSON 無效。
+      inputLabel: 您的原始 JSON
+      inputPlaceholder: 在此貼上您的原始 JSON...
+      outputLabel: 您的 JSON 的精簡版本
+  ulid-generator:
+    title: ULID 產生器
+    description: 產生隨機的 Universally Unique Lexicographically Sortable Identifier（ULID）。
+    ui:
+      copiedMessage: ULID 已複製到剪貼簿
+      quantity: 數量
+      format: 格式
+      formatRaw: 原始
+      formatJson: JSON
+      output: 輸出
+      copy: 複製
+      refresh: 重新整理
+  base-converter:
+    title: 整數進位轉換器
+    description: 在不同進位之間轉換數字（十進位、十六進位、二進位、八進位、base64……）
+  uuid-generator:
+    title: UUID 產生器
+    description: 產生隨機 UUID（v1 與 v4）並檢視其結構。
+    ui:
+      copiedMessage: UUID 已複製到剪貼簿
+      version: 版本
+      quantity: 數量
+      namespacePreset: 命名空間預設
+      namespaceUuid: 命名空間 UUID
+      invalidUuid: 無效的 UUID
+      name: 名稱
+      namePlaceholder: 要雜湊的名稱...
+      output: 輸出
+      copy: 複製
+      refresh: 重新整理
+  ipv4-address-converter:
+    title: IPv4 位址轉換器
+    description: 將 IP 位址轉換為十進位、二進位、十六進位，甚至 IPv6 表示法。
+    ui:
+      decimal: 十進位
+      hexadecimal: 十六進位
+      binary: 二進位
+      ipv6Short: IPv6(簡短)
+      invalidIpv4: 無效的 IPv4 位址
+      ipv4Address: IPv4 位址
+      output: 輸出
+      copied: 已複製!
+      copy: 複製
+  text-statistics:
+    title: 文字統計
+    description: 取得文字的相關資訊：字元數、字數、位元組大小……
+    ui:
+      textPlaceholder: 輸入文字...
+      characterCount: 字元數
+      wordCount: 單字數
+      lineCount: 行數
+      byteSize: 位元組大小
+  text-to-nato-alphabet:
+    title: 文字轉 NATO 字母
+    description: 將文字轉換為 NATO 音標字母，方便口頭傳達。
+    ui:
+      yourText: 您的文字
+      inputPlaceholder: 例如 Hello world
+      natoPhonetic: NATO 音標字母
+      copied: 已複製
+      copyAll: 全部複製
+      natoStringCopied: NATO 字串已複製。
+  ipv4-range-expander:
+    title: IPv4 範圍展開器
+    description: 給定起始與結束 IPv4 位址，此工具會計算有效的 IPv4 子網路及其 CIDR 表示法。
+    ui:
+      startAddress: 起始位址
+      endAddress: 結束位址
+      addressesInRange: 範圍內的位址數
+      invalidIpv4: 無效的 IPv4 位址
+      invalidCombinationTitle: 起始與結束 IPv4 位址組合無效
+      invalidCombinationDescription: 結束 IPv4 位址小於起始位址,此設定無效,無法計算結果。
+      switchStartEnd: 交換起始與結束 IPv4 位址
+      result: 結果
+      copied: 已複製!
+      copyResult: 複製結果
+  text-diff:
+    title: 文字比對
+    description: 比較兩段文字並查看它們之間的差異。
+  otp-generator:
+    title: OTP 驗證碼產生器
+    description: 產生並驗證以時間為基礎的 OTP（一次性密碼），用於多重要素驗證。
+  text-to-binary:
+    title: 文字轉 ASCII 二進位
+    description: 將文字轉換為 ASCII 二進位表示法，反之亦然。
+    ui:
+      textCopied: 文字已複製
+      binaryCopied: 二進位已複製
+      panelTitle: 文字 ↔ ASCII BINARY
+      textLabel: 文字
+      binaryLabel: 二進位
+      copied: 已複製
+      copy: 複製
+      textPlaceholder: 例如 Hello world
+      invalidBinary: 必須是有效的 ASCII binary(8 位元的倍數)
+  ascii-word-art:
+    title: ASCII 文字藝術產生器
+    description: 使用多種字型與樣式建立 ASCII 文字藝術。
+  killer-scripts:
+    title: Killer Scripts
+    description: 用於 Windows 管理與 MSP 現場工作的 PowerShell 指令碼。
+  powershell-builder:
+    title: PowerShell Builder
+    description: 選擇 cmdlet、填入參數，然後複製完成的 PowerShell 指令。
+  group-policy-reference:
+    title: 群組原則參考
+    description: 依名稱、GPO 路徑、登錄機碼或說明搜尋常見的 Windows 群組原則設定。
+    ui:
+      searchPlaceholder: 搜尋原則、路徑、登錄檔機碼...
+      copied: 已複製!
+      clickToCopyRegistry: 點擊複製登錄檔機碼
+      copiedShort: 已複製
+      default: 預設
+      recommended: 建議
+  windows-event-lookup:
+    title: Windows 事件查詢
+    description: 查詢 Windows 事件識別碼及其說明、嚴重性層級與常見原因。
+    ui:
+      searchResults: 搜尋結果
+      searchPlaceholder: 依事件識別碼、名稱或描述搜尋...
+      copied: 已複製!
+      clickToCopyEventId: 點擊複製事件識別碼
+      copiedShort: 已複製
+  m365-sku-decoder:
+    title: M365 授權 SKU 解碼器
+    description: 將 Microsoft 365 授權 SKU 字串與 GUID 解碼為產品名稱。
+    ui:
+      searchPlaceholder: 依 SKU 名稱、字串 ID 或描述搜尋...
+      copied: 已複製！
+      clickToCopy: 點擊以複製字串 ID
+      copiedMark: ✓ 已複製
+  windows-error-codes:
+    title: Windows 錯誤碼查詢
+    description: 以十六進位或十進位查詢 Windows 錯誤碼，包括系統錯誤、BSOD 停止碼、WMI、RPC、MSI 安裝程式錯誤等。
+    ui:
+      searchResults: 搜尋結果
+      searchPlaceholder: 依十六進位代碼、錯誤名稱或描述搜尋...
+      copied: 已複製！
+      clickToCopy: 點擊複製代碼
+      copiedShort: 已複製
+      decimal: 十進位 {decimal}
+  exchange-ndr-lookup:
+    title: Exchange NDR 查詢
+    description: 查詢 Exchange 與 M365 退信代碼，並以淺白文字說明原因與修正方式。
+    ui:
+      searchResults: 搜尋結果
+      searchPlaceholder: 依 NDR 代碼、錯誤名稱、原因或解決方法搜尋...
+      copied: 已複製！
+      clickToCopy: 點擊複製 NDR 代碼
+      copiedShort: 已複製
+      cause: 原因
+      fix: 解決方法
+  safelink-decoder:
+    title: Outlook Safelink 解碼器
+    description: 解開 Microsoft Defender SafeLinks，顯示原始目的地 URL。
+  port-protocol-reference:
+    title: 連接埠與通訊協定參考
+    description: 常見網路連接埠與通訊協定，附安全性說明與危險連接埠標示。
+  cve-lookup:
+    title: CVE 查詢
+    description: 依 ID 或關鍵字在 NIST NVD 搜尋 CVE。資料即時取自 NVD API。
+    ui:
+      range6m: 6 個月
+      range1y: 1 年
+      range2y: 2 年
+      range5y: 5 年
+      rangeAll: 所有時間
+      noDescription: 尚無描述。
+      fetchError: 無法連接至 NVD API。請檢查您的網路連線。
+      sortNewest: 最新在前
+      sortOldest: 最舊在前
+      sortSeverity: 嚴重程度最高
+      severityCritical: 嚴重
+      severityHigh: 高
+      severityMedium: 中
+      severityLow: 低
+      placeholder: CVE 編號或關鍵字(例如 CVE-2021-44228、log4j)
+      searching: 搜尋中...
+      search: 搜尋
+      hint: 依 CVE 編號、部分數字(例如 43284)、常見名稱(例如 log4shell、dirty frag)或關鍵字搜尋。資料即時來自 NVD 與 GitHub Advisory Database。
+      noResults: 找不到符合「{query}」的 CVE。
+      noResultsInRange: 在所選日期範圍內找不到符合「{query}」的 CVE。
+      noExactMatch: 在所選日期範圍內找不到完全相符的詞組。常見弱點名稱(如「dirty frag」)可能不會在 NVD 描述中逐字出現。請改用部分 CVE 編號嘗試(例如「43284」可找到 CVE-2026-43284)。
+      searchAllTime: 搜尋所有時間
+      showingResults: 顯示 {total} 筆結果中的 {shown} 筆
+      allSeverities: 所有嚴重程度
+      allYears: 所有年份
+      copied: 已複製!
+      clickToCopyId: 點擊複製 CVE 編號
+      copiedShort: 已複製
+      cveDetail: CVE 詳細資訊
+      published: 發布日期
+      modified: 修改日期
+      clickToCopy: 點擊複製
+      references: 參考資料
+      kevActionDue: 'CISA KEV 處理期限:'
+      cvssMetrics: CVSS 指標
+      metricAttackVector: 攻擊向量
+      metricAttackComplexity: 攻擊複雜度
+      metricPrivilegesRequired: 所需權限
+      metricUserInteraction: 使用者互動
+      metricScope: 範圍
+      metricConfidentiality: 機密性
+      metricIntegrity: 完整性
+      metricAvailability: 可用性
+  email-dns-checker:
+    title: 電子郵件 DNS 檢查
+    description: 檢查任何網域的 MX、SPF、DKIM 與 DMARC 記錄。驗證電子郵件驗證設定並標示常見的設定錯誤。
+  email-header-parser:
+    title: 電子郵件標頭剖析器
+    description: 貼上原始電子郵件標頭，擷取寄件者資訊、追蹤傳遞躍點鏈，並查看 SPF、DKIM 與 DMARC 驗證結果。
+    ui:
+      pasteHint: 在下方貼上原始郵件標頭。
+      parseButton: 解析標頭
+      parseAnother: 解析下一筆
+      messageDetails: 郵件詳細資料
+      senderMismatch: 寄件者網域與 From 網域不同,這可能代表偽造寄件人或委派寄送。
+      deliveryHops: 傳遞節點
+      oldestFirst: 最舊的優先
+      authResults: 驗證結果
+      spamAnalysis: 垃圾郵件分析
+      spamScore: 垃圾郵件評分
+      spamStatus: 垃圾郵件狀態
+  whois-checker:
+    title: WHOIS 查詢
+    description: 查詢任何網域的註冊資訊，包括註冊商、建立與到期日期、名稱伺服器與狀態旗標。
+  ascii-text-drawer:
+    title: ASCII 文字藝術產生器
+    description: 使用多種字型與樣式建立 ASCII 文字藝術。
+    ui:
+      yourText: 您的文字
+      textPlaceholder: 要繪製的文字
+      options: 選項
+      font: 字型
+      searchFonts: 搜尋字型...
+      noFontsMatch: 沒有符合的字型
+      width: 寬度
+      output: ASCII ART 輸出
+      loadingFont: 正在載入字型...
+      error: 目前的設定導致了錯誤。
+      copied: 已複製!
+      copy: 複製
+  regex-tester:
+    title: 規則運算式測試器
+    description: 使用範例文字測試你的規則運算式。
+    ui:
+      regexLabel: '待測試的正則表達式:'
+      regexPlaceholder: 輸入要測試的正則表達式
+      globalLabel: 全域
+      globalTitle: 全域搜尋
+      ignoreCaseLabel: 忽略大小寫
+      ignoreCaseTitle: 不區分大小寫搜尋
+      multilineLabel: 多行
+      singlelineLabel: 單行
+      singlelineTitle: 允許句點符合換行字元。
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode;將模式視為一連串 Unicode 碼點。
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: u 模式的升級版,提供更多 Unicode 功能。
+      textLabel: '待比對文字:'
+      textPlaceholder: 輸入要比對的文字
+      regexBarTitle: REGEX
+      matchesBarTitle: 比對結果
+      matchIndex: 索引
+      matchValue: 值
+      matchCaptures: 捕獲群組
+      matchGroups: 群組
+      noMatch: 無比對結果
+      sampleBarTitle: 範例
+      diagramBarTitle: 圖示
+      quickReference: 快速參考
+  yaml-converter:
+    title: YAML 轉換器
+    description: 將 YAML 轉換為 JSON 或 TOML。
+    ui:
+      convertTo: 轉換為：
+      inputLabel: 您的 YAML
+      inputPlaceholder: 請在此貼上您的 YAML...
+      invalidYaml: 提供的 YAML 無效。
+      outputLabel: '{format} 格式輸出'
+  json-converter:
+    title: JSON 轉換器
+    description: 將 JSON 轉換為 YAML 或 TOML。
+    ui:
+      convertTo: 轉換為
+      yourJson: 您的 JSON
+      pasteJsonPlaceholder: 在此貼上您的 JSON...
+      invalidJson: JSON 格式無效
+      formatOutput: '{format} 輸出'
+  toml-converter:
+    title: TOML 轉換器
+    description: 將 TOML 轉換為 JSON 或 YAML。
+    ui:
+      convertTo: '轉換為:'
+      yourToml: 你的 TOML
+      pastePlaceholder: 在此貼上你的 TOML...
+      invalidToml: 提供的 TOML 無效。
+      outputLabel: '{format} 輸出'
+  xml-json-converter:
+    title: XML ↔ JSON 轉換器
+    description: 雙向 XML 與 JSON 轉換器。編輯任一側，另一側會自動更新。
+    ui:
+      invalidXml: 無效的 XML。
+      invalidJson: 無效的 JSON。
+      xmlLabel: XML
+      xmlPlaceholder: 請在此貼上您的 XML...
+      jsonLabel: JSON
+      jsonPlaceholder: 請在此貼上您的 JSON...
+  markdown-to-html:
+    title: Markdown 轉 HTML
+    description: 將 Markdown 轉換為 HTML，並匯出或列印為 PDF。
+    ui:
+      copiedSuccess: HTML 已複製到剪貼簿！
+      copyFailed: 複製文字失敗。
+      inputLabel: 要轉換的 Markdown 內容：
+      inputPlaceholder: 您的 Markdown 內容...
+      outputLabel: 輸出 HTML：
+      copyHtmlButton: 複製 HTML
+      printAsPdfButton: 列印為 PDF
+  killer-pdf:
+    title: KillerPDF
+    description: 適用於 Windows 的開放原始碼 PDF 編輯器。檢視、註解、合併、分割、平面化、開啟受密碼保護的 PDF、編輯文字、繪圖、醒目提示、簽署與列印。
+  killer-scan:
+    title: KillerScan
+    description: 為現場技術人員打造的快速網路掃描器。ARP + ping 探索、連接埠探測、供應商查詢與自動裝置分類。
+  gif-search:
+    title: GIF 搜尋
+    description: 在 Giphy 搜尋反應 GIF。點擊任一結果即可複製 URL。
+    ui:
+      errorStatus: 錯誤{status}
+      fetchFailed: 擷取GIF失敗。
+      searchPlaceholder: 搜尋GIF(例如facepalm、nice work、this is fine)
+      searching: 搜尋中...
+      search: 搜尋
+      noResults: 找不到符合"{query}"的GIF。
+      copied: 已複製!
+      copyUrl: 複製URL
+      resultsHint: '{count}個結果。點擊複製URL,然後貼到Teams、Telegram或Slack中。'
+  killer-shell:
+    title: KillerShell
+    description: 為進階使用者打造的免費 shell。檔案瀏覽器、終端機與文字編輯器共用同一個視窗、同一列分頁與同一組按鍵。
+  domain-lookup:
+    title: 網域查詢
+    description: 在同一個畫面中查看任何網域的 WHOIS 註冊資訊與電子郵件 DNS 檢查（MX、SPF、DKIM、DMARC）。
+    ui:
+      statusDesc:
+        active: 網域處於運作狀態,一切正常。
+        inactive: 網域未啟用。
+        clientDeleteProhibited: 註冊商已鎖定此網域,禁止刪除。
+        clientTransferProhibited: 註冊商已鎖定此網域,禁止轉移至其他註冊商。
+        clientUpdateProhibited: 註冊商已鎖定此網域,禁止更新。
+        clientHold: 註冊商已將此網域暫停,DNS 可能無法解析。
+        serverDeleteProhibited: 註冊局已鎖定此網域,禁止刪除。
+        serverTransferProhibited: 註冊局已鎖定此網域,禁止轉移。
+        serverUpdateProhibited: 註冊局已鎖定此網域,禁止更新。
+        serverHold: 註冊局已將此網域暫停,DNS 可能無法解析。
+        pendingCreate: 網域建立作業正在等待處理。
+        pendingDelete: 網域正在等待刪除,可能很快會被釋出。
+        pendingRenew: 網域續約作業正在等待處理。
+        pendingRestore: 網域刪除後的復原作業正在等待處理。
+        pendingTransfer: 網域轉移至其他註冊商的作業正在等待處理。
+        pendingUpdate: 網域更新作業正在等待處理。
+        redemptionPeriod: 此網域已過期,目前處於贖回期。擁有者仍可將其取回。
+        renewPeriod: 此網域處於註冊後的續約寬限期。
+        autoRenewPeriod: 此網域處於自動續約寬限期。
+        transferPeriod: 此網域處於轉移寬限期。
+      expiredAlert: 此網域已於 {days} 天前過期,可能已可供註冊。
+      expiresAlert: 此網域將於 {days} 天後過期,應盡快安排續約。
+      expiredTag: 已過期 {days} 天
+      remainingTag: 剩餘 {days} 天
+      registrar: 註冊商
+      registrarIanaId: 註冊商 IANA ID
+      created: 建立時間
+      updated: 更新時間
+      expires: 到期時間
+      noMx: 找不到 MX 記錄。
+      dnsFailed: DNS 查詢失敗。
+      noSpf: 找不到 SPF 記錄。
+      noDkim: 在常見選擇器中找不到 DKIM 記錄。仍可能存在自訂選擇器。
+      noDmarc: 找不到 DMARC 記錄。此網域未受到防偽造保護。
+      spfPlusAll: 警告:+all 相當危險,因為它允許任何伺服器以此網域名義寄送郵件。
+      spfNeutralAll: 警告:?all 為中立設定,不提供任何保護。
+      dmarcPNone: 警告:p=none 僅供監控之用,不具強制效力,郵件不會被拒收。
+      dmarcNoRua: 警告:未設定彙總報告位址(rua=),您將無法收到 DMARC 報告。
+      pass: 通過
+      fail: 未通過
+      warning: 警告
+      checking: 檢查中...
+      overallPass: 所有郵件檢查皆已通過。此網域的郵件設定良好。
+      overallFail: 缺少一項或多項關鍵記錄。此網域可能容易遭到偽造攻擊。
+      overallWarn: 部分記錄存在,但有設定問題值得檢查。
+      rdapHttpError: HTTP {status}:此網域可能不存在,或該 TLD 不受支援。
+      lookupFailed: 查詢失敗。
+      domainPlaceholder: 請輸入網域(例如 killertools.net)
+      searching: 搜尋中...
+      search: 搜尋
+      signed: 已簽署
+      unsigned: 未簽署
+      delegationSigned: 委派已簽署。
+      dsRecord: '{count} 筆 DS 記錄。'
+      dsRecords: '{count} 筆 DS 記錄。'
+      keyRecord: '{count} 筆金鑰記錄。'
+      keyRecords: '{count} 筆金鑰記錄。'
+      dnssecUnsigned: 此網域未受 DNSSEC 保護,DNS 回應無法進行加密驗證。
+      status: 狀態
+      contacts: 聯絡人
+      remarks: 備註
+      nameservers: 名稱伺服器
+      mxRecords: MX 記錄
+      spfRecord: SPF 記錄
+      dkimRecords: DKIM 記錄
+      dmarcRecord: DMARC 記錄
+      role:
+        registrant: 註冊人
+        administrative: 管理聯絡人
+        technical: 技術聯絡人
+        abuse: 濫用回報聯絡人
+      name: 名稱
+      organization: 組織
+      email: 電子郵件
+      phone: 電話
+  email-record-generator:
+    title: 電子郵件記錄產生器
+    description: 產生 SPF 與 DMARC DNS TXT 記錄。選擇你的郵件服務供應商與原則，將結果直接複製到 DNS。
+    ui:
+      hardFailRecommended: 嚴格拒絕，建議使用
+      softFail: 寬鬆拒絕
+      neutralNotRecommended: 中立，不建議
+      blockFailingMail: 封鎖未通過驗證的郵件
+      sendToSpam: 傳送至垃圾郵件
+      monitorOnly: 僅監控
+      relaxedDefault: 寬鬆（預設）
+      strict: 嚴格
+      sameAsMainPolicy: 與主要政策相同
+      spfRecordTitle: SPF 記錄
+      dmarcRecordTitle: DMARC 記錄
+      spfRecordLocation: 根網域上的 TXT 記錄
+      dmarcRecordLocation: TXT 記錄位置
+      copied: 已複製
+      clickToCopy: 點擊複製
+      lookupWarning: 已選擇 {count} 次 DNS 查詢；SPF 限制為 10 次查詢
+      mailProviders: 郵件服務商
+      customIps: 自訂 IP 或範圍（選填）
+      examplePrefix: 例如
+      enforcement: 執行方式
+      policy: 政策
+      subdomainPolicy: 子網域政策（選填）
+      policyCoverage: 政策涵蓋率：{percent}%
+      coverageHint: 將對 {percent}% 的未通過郵件採取行動。逐步導入時可使用低於 100% 的值。
+      aggregateReportEmail: 彙總報告信箱（rua）
+      forensicReportEmail: 詳細報告信箱（ruf，選填）
+      dkimAlignment: DKIM 對齊
+      spfAlignment: SPF 對齊
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: 文字轉 Unicode
+      enterTextLabel: 輸入要轉換為 Unicode 的文字
+      unicodeFromTextLabel: 來自您文字的 Unicode
+      unicodeOutputPlaceholder: 您文字的 Unicode 表示將顯示於此
+      copyUnicode: 複製 Unicode 到剪貼簿
+      unicodeToTextTitle: Unicode 轉文字
+      inputUnicodePlaceholder: 輸入 Unicode
+      enterUnicodeLabel: 輸入要轉換為文字的 Unicode
+      textFromUnicodeLabel: 來自您 Unicode 的文字
+      textOutputPlaceholder: 您 Unicode 的文字表示將顯示於此
+      copyText: 複製文字到剪貼簿
+  portProtocolReference:
+    ui:
+      searchPlaceholder: 依連接埠、服務、協定或描述搜尋...
+      allProtocols: 全部
+      dangerousOnly: 僅顯示危險項目
+      showingPorts: 顯示 {count} 個連接埠
+      copied: 已複製！
+      clickToCopy: 點擊以複製連接埠號碼
+      copiedCheck: ✓ 已複製
+      dangerousPill: 危險
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet 瀏覽器
+      adminBadge: 管理員
+      cmdletSearchPlaceholder: 依名稱、描述或模組搜尋...
+      noCmdletsMatch: 沒有符合「{query}」的 cmdlet
+      generatedCommand: 產生的命令
+      copiedCheck: ✓ 已複製！
+      copyCommand: 複製命令
+      commonExamples: 常見範例
+      selectCmdletPrompt: 在左側選擇一個 cmdlet 以開始建立命令。
+      parameters: 參數
+      noParametersNeeded: 不需要參數，此 cmdlet 會直接執行。
+      required: 必填
+      separateMultipleValues: 多個值請以逗號分隔
+      showFewerParameters: 顯示較少參數
+      showMoreParameters: 還有 {count} 個參數
+      collapseQuickReference: 收合快速參考
+      openQuickReference: 開啟快速參考
+      quickReference: 快速參考
+      cheatsheetComparisonOperators: 比較運算子
+      cheatsheetEqualTo: 等於
+      cheatsheetNotEqualTo: 不等於
+      cheatsheetGreaterLessThan: 大於 / 小於
+      cheatsheetGreaterLessEqual: 大於等於 / 小於等於
+      cheatsheetStringOperators: 字串運算子
+      cheatsheetWildcardMatch: 萬用字元比對（* 和 ?）
+      cheatsheetWildcardNonMatch: 萬用字元不比對
+      cheatsheetRegexMatch: 正規表示式比對
+      cheatsheetRegexNonMatch: 正規表示式不比對
+      cheatsheetCollectionContains: 集合包含該值
+      cheatsheetValueInCollection: 值屬於某個集合
+      cheatsheetLogicalOperators: 邏輯運算子
+      cheatsheetBothTrue: 兩個條件都必須為真
+      cheatsheetEitherTrue: 任一條件為真
+      cheatsheetNegateCondition: 反轉某個條件
+      cheatsheetAutomaticVariables: 自動變數
+      cheatsheetCurrentPipelineObject: 目前的管線物件
+      cheatsheetNullEmptyValue: 空值 / null
+      cheatsheetBooleanTrueFalse: 布林值 true / false
+      cheatsheetLocalComputerName: 本機電腦名稱
+      cheatsheetCurrentUser: 目前登入的使用者
+      cheatsheetPsVersionInfo: PS 版本資訊
+      cheatsheetDateHelpers: 日期輔助功能
+      cheatsheetCurrentDateTime: 目前日期與時間
+      cheatsheetThirtyDaysAgo: 30 天前
+      cheatsheetThreeMonthsAgo: 3 個月前
+      cheatsheetParseDateString: 解析日期字串
+      cheatsheetPipelineTricks: 管線技巧
+      cheatsheetLimitFirst10: 僅限前 10 筆結果
+      cheatsheetCountSumMinMax: 計數 / 加總 / 最小值 / 最大值
+      cheatsheetInteractiveGuiViewer: 互動式 GUI 檢視器（本機）
+      cheatsheetConvertToJson: 將輸出轉換為 JSON
+      cheatsheetOutputScreenAndFile: 同時輸出至畫面與檔案
+      cheatsheetSuppressErrors: 抑制非嚴重錯誤
+      cheatsheetRemoteExecution: 遠端執行
+      cheatsheetCmdletsSupportDirectly: 許多 cmdlet 都直接支援此功能
+      cheatsheetRunViaRemoting: 透過 PS Remoting（WinRM）執行
+      cheatsheetInteractiveRemoteSession: 互動式遠端 PS 工作階段
+  basic-auth-generator:
+    ui:
+      copied: 標頭已複製到剪貼簿
+      username: 使用者名稱
+      usernamePlaceholder: 您的使用者名稱...
+      password: 密碼
+      passwordPlaceholder: 您的密碼...
+      headerLabel: 'Authorization 標頭:'
+      copyHeader: 複製標頭
+  yaml-viewer:
+    ui:
+      invalidYaml: 提供的 YAML 無效。
+      sortKeys: 排序鍵值
+      indentSize: 縮排大小
+      rawLabel: 您的原始 YAML
+      rawPlaceholder: 請在此貼上您的原始 YAML...
+      prettifiedLabel: 您的 YAML 美化版本
+  meta-tag-generator:
+    ui:
+      copiedSuccess: 已複製中繼標籤！
+      copiedLabel: ✓ 已複製
+      copyButton: 複製
+      outputTitle: 您的中繼標籤
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME 類型轉副檔名
+      mimeToExtensionDescription: 查看與某個 MIME 類型關聯的檔案副檔名
+      mimeTypeSelectPlaceholder: 在此選擇您的 MIME 類型...（例如：application/pdf）
+      extensionsFoundPrefix: 該類型檔案的副檔名
+      extensionsFoundSuffix: MIME 類型：
+      extensionToMimeTitle: 副檔名轉 MIME 類型
+      extensionToMimeDescription: 查看與某個副檔名關聯的 MIME 類型
+      mimeFoundPrefix: 與該副檔名關聯的 MIME 類型
+      mimeFoundSuffix: 副檔名：
+      tableMimeTypesHeader: MIME 類型
+      tableExtensionsHeader: 副檔名
+  json-viewer:
+    ui:
+      invalidJson: 提供的 JSON 無效。
+      sortKeys: 排序鍵
+      indentSize: 縮排大小
+      yourRawJson: 您的原始 JSON
+      pasteRawJsonPlaceholder: 在此貼上您的原始 JSON...
+      prettifiedVersion: 您的 JSON 的格式化版本
+  qr-code-generator:
+    ui:
+      tabText: 文字 / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: 文字或 URL
+      placeholderTextOrUrl: 輸入連結或文字...
+      sectionEncryption: 加密方式
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: 無密碼
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: 網路名稱...
+      sectionPassword: 密碼
+      placeholderPassword: 網路密碼...
+      sectionOptions: 選項
+      hiddenSsid: 隱藏 SSID
+      anonymousIdentity: 匿名身分
+      sectionEapMethod: EAP 方法
+      sectionEapPhase2: EAP 第二階段
+      sectionEapIdentity: EAP 身分
+      placeholderEapIdentity: 輸入你的 EAP 身分...
+      sectionTheme: 主題
+      themeDefault: 預設
+      themeTerminal: Terminal
+      themeClassic: Classic
+      themeInverted: 反色
+      sectionColors: 顏色
+      labelForeground: '前景色:'
+      labelBackground: '背景色:'
+      sectionErrorCorrection: 容錯等級
+      levelLow: 低 (約 7%)
+      levelMedium: 中 (約 15%)
+      levelQuartile: 較高 (約 25%)
+      levelHigh: 高 (約 30%)
+      emptyHintWifi: 輸入 SSID 以產生 Wi-Fi QR 碼
+      emptyHintText: 輸入文字或 URL
+      captionJoin: '>_ 掃描以加入'
+      captionOpen: '>_ 掃描以開啟'
+      downloadPng: ↓ 下載 PNG
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS 本地化日期字串
+      formatUnixTimestamp: Unix 時間戳記
+      formatTimestamp: 時間戳記
+      formatUtc: UTC 格式
+      formatExcelDateTime: Excel 日期時間
+      invalidDateRule: 此日期對此格式無效
+      inputPlaceholder: 貼上日期字串，或留空以顯示即時時鐘...
+      invalidDate: 此格式的日期無效
+      output: 輸出
+      live: 即時
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: 密鑰（十六進位）
+      epochLabel: Epoch
+      countLabel: 計數
+      paddedHexLabel: 填補後的十六進位
+      secretLabel: 密鑰
+      secretPlaceholder: 貼上你的 TOTP 密鑰...
+      generateNewSecret: 產生新密鑰
+      tokenLabel: TOKEN
+      copied: ✓ 已複製
+      clickToCopy: 點擊複製
+      nextIn: '>_ {seconds} 秒後更新'
+      adjacentTokensLabel: 相鄰權杖
+      prevLabel: 上一個
+      nextLabel: 下一個
+      detailsLabel: 詳細資訊
+      scanToAuthenticate: '>_ 掃描以進行驗證'
+      openKeyUriInNewTab: 在新分頁開啟 Key URI
+      tokenDisplayPreviousLabel: 上一個
+      tokenDisplayCurrentLabel: 目前 OTP
+      tokenDisplayNextLabel: 下一個
+      copiedExclaim: 已複製！
+      copyPreviousOtp: 複製上一個 OTP
+      copyCurrentOtp: 複製目前 OTP
+      copyNextOtp: 複製下一個 OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: 強
+      moderateLabel: 中等
+      weakLabel: 弱
+      veryWeakLabel: 非常弱
+      lengthLabel: 長度
+      entropyLabel: 熵
+      charsetSizeLabel: 字元集大小
+      scoreDetailLabel: 分數
+      passwordPlaceholder: 輸入密碼...
+      hideLabel: 隱藏
+      showLabel: 顯示
+      clearLabel: 清除
+      crackTimeSublabel: 暴力破解所需時間
+      crackTimeNote: 強度是以每秒 10 億次嘗試的暴力破解速度估算，未考慮字典攻擊。
+  integer-base-converter:
+    ui:
+      binary: 二進位
+      octal: 八進位
+      decimal: 十進位
+      hexadecimal: 十六進位
+      base: 進位制
+      output: 輸出
+      custom: 自訂
+ui:
+  diffEditor:
+    originalLabel: 原始
+    modifiedLabel: 修改後
+    originalPlaceholder: 原始文字...
+    modifiedPlaceholder: 修改後的文字...
+  fileUpload:
+    defaultTitle: 將檔案拖放到此處,或點擊選擇檔案
+    or: 或
+    browseFiles: 瀏覽檔案
+  inputText:
+    defaultPlaceholder: 輸入文字
+  keyValueListItem:
+    'yes': 是
+    'no': 否
+    notAvailable: 不適用
+  modalValue:
+    copied: 已複製!
+    copy: 複製
+  select:
+    searchPlaceholder: 搜尋...
+    noResults: 找不到結果
+    defaultPlaceholder: 選擇一個選項
+  table:
+    defaultDescription: 資料表
+  textCopyable:
+    copied: 已複製!
+    copyToClipboard: 複製到剪貼簿
+commandPalette:
+  searchAriaLabel: 搜尋
+  searchPlaceholder: 輸入以搜尋工具或命令...
+components:
+  androidBetaBanner:
+    announcement: Android 測試版公告
+    title: Killer Tools 即將登陸 Android
+    subtitle: 招募測試用戶 - 點擊加入
+    dismiss: 關閉
+  formatTransformer:
+    input: 輸入
+    inputPlaceholder: 輸入...
+    output: 輸出
+  inputCopyable:
+    copied: 已複製!
+    copy: 複製到剪貼簿
+  spanCopyable:
+    copied: 已複製!
+    copy: 複製到剪貼簿
+  textareaCopyable:
+    copy: 複製到剪貼簿
+    copied: 已複製!
+  navbarButtons:
+    androidTooltip: Killer Tools 安卓版
+    androidAriaLabel: Killer Tools 安卓版 - 加入測試版
+  themeDots:
+    accentColor: 強調色
+    theme: 主題
+    toggleThemeSwatches: 切換主題色板
+    accentColorPicker: 強調色選擇器
+    dragToMove: 拖曳以移動
+    accentLabel: '強調色:'
+    accentNamed: '強調色: {name}'
+    closeAccentPicker: 關閉強調色選擇器
+    accents:
+      red: 紅色
+      orange: 橙色
+      green: 綠色
+      teal: 青色
+      blue: 藍色
+      purple: 紫色
+layouts:
+  menuLayout:
+    eggMessage: 80 款工具。零訂閱。一位滿腹牢騷的現場技術員。
+    clickMe: 點我
+    sourceOnGithub: 在 Github 上查看原始碼
+  base:
+    collapseMenu: 收合選單
+    homeLabel: KillerTools 首頁
+pages:
+  notFound:
+    noSuchFile: 沒有此檔案或目錄
+    exitCode: 結束代碼
+    backToHome: 返回首頁
+  privacy:
+    heading: 隱私政策
+    lastUpdated: 最後更新：2026年4月4日
+    overviewHeading: 總覽
+    overviewIntro: Killer Tools
+    overviewBody: 是一套免費的IT實用工具集合。您的隱私對我們很重要，本政策說明我們如何處理您的資料。
+    dataCollectionHeading: 資料收集
+    dataCollectionBody: Killer Tools 不會收集、儲存或傳輸任何個人資料。所有工具處理都完全在您的瀏覽器中進行。您在任何工具中輸入的資料都不會傳送到任何伺服器。
+    cookiesHeading: Cookie
+    cookiesBody: 本網站不使用 Cookie 進行追蹤。您的主題偏好與設定儲存在瀏覽器本機，且從不傳輸。
+    analyticsHeading: 分析統計
+    analyticsIntro: 本網站使用
+    analyticsBody: 一款注重隱私的分析工具，用於了解頁面瀏覽量與參照來源等整體使用趨勢。Umami 不使用 Cookie，不會跨網站追蹤使用者，也不收集任何可識別個人身分的資訊。所有資料皆為彙總且匿名。
+    thirdPartyHeading: 第三方服務
+    thirdPartyBody: 部分工具可能連結到外部資源或文件。對於這些外部網站的隱私做法，我們不承擔責任。
+    androidAppHeading: Android 應用程式
+    androidAppBody: Killer Tools 的 Android 應用程式是網頁應用程式的封裝版本。除基本的網路存取權限外，它不會要求或使用任何裝置權限。不會收集或傳輸任何裝置資料。
+    contactHeading: 聯絡方式
+    contactBody: 如果您對本隱私政策有任何疑問，可透過以下方式與我們聯絡：
+  androidApp:
+    robotAttribution: Android 機器人圖案改編或重製自 Google 創作並分享的作品，依照 Creative Commons 3.0 姓名標示授權條款使用。
+    heading: Android 版 Killer Tools
+    introBody1: killertools.net 的完整工具箱現已推出原生 Android 應用程式：每個工具、Killer Scripts 指令碼庫，以及您所有的收藏，主畫面輕點即可開啟。
+    introBody2: 規則與網站相同。一切都在您的裝置上執行。無需帳號、無遙測、不回傳資料。如果它能在現場為您省下一個工單週期，那它就完成了使命。
+    betaStatusPrefix: 該應用程式目前處於
+    betaStatusStrong: Google Play 上的封閉測試階段
+    betaStatusSuffix: ，而這正是需要您參與的地方。
+    joinBetaHeading: 加入測試
+    joinBetaIntroPrefix: Google 要求
+    joinBetaIntroStrong: 12 名測試者連續安裝該應用程式 14 天
+    joinBetaIntroSuffix: ，獨立開發者的應用程式才能公開發布。三個步驟，大約兩分鐘，您就能成為這十二人之一：
+    step1LinkText: 加入測試群組
+    step1Suffix: 在 Google Groups 上（點選「Join group」）。
+    step2LinkText: 成為測試者
+    step2Suffix: 在 Google Play 的加入頁面上。
+    step3LinkText: 安裝應用程式
+    step3Suffix: 從 Google Play 安裝，並保持安裝狀態兩週。
+    sameAccountStrong: 三個步驟都使用同一個 Google 帳號
+    sameAccountSuffix: ' ，如果您跳過群組或更換帳號，加入頁面會顯示「該帳號無法使用」。'
+    feedbackPrefix: 有東西壞了或缺少什麼？告訴我：
+  home:
+    sortPopular: 熱門
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: 關於 Killer Tools
+    intro: 現場技術人員沒有時間浪費在冗餘功能上。這裡的每個工具都源於我在工作中確實需要它，卻找不到無需帳號、安裝或遙測就能直接使用的方案。
+    originPrefix: 我現在在一家 MSP 的內部 AI 工程團隊打造工具，先前有六年全端開發經驗和八年在多家公司擔任現場技術人員的經歷。KillerTools.net 最初只是優秀的
+    originMid: 專案的一個分支，作者是
+    originSuffix: ，後來發展成專為我實際所做的工作而打造的產品。我做它是為了在處理工單時查閱群組原則設定、掃描客戶子網路，以及在不離開瀏覽器的情況下查詢連接埠參考資料。
+    scriptsLibrary: Killer Scripts 指令碼庫涵蓋了每個工單週期都會遇到的任務。每個指令碼都可在 PS 5.1、PS 7 和 Kaseya LiveConnect 中執行，無需任何相依套件。
+    privacyBody: 一切都在您的瀏覽器中執行。不會進行任何追蹤。永遠不需要帳號。網站強制執行嚴格的內容安全政策（CSP），以阻止相依鏈攻擊。即使某個遭竄改的 npm 套件混入了建置包，它也無法把您貼上的內容傳回外部。
+    maintainedByPrefix: 打造與維護者：
+    maintainedByMid: 如果這為您節省了工作時間，
+    buyMeCoffee: 請我喝杯咖啡
+    maintainedBySuffix: 會讓人感激，但從不強求。
+    missingToolHeading: 缺少某個工具？發現了錯誤？
+    issuesPrefix: 請在 GitHub 的
+    issuesLinkText: issues 區塊
+    issuesSuffix: 中提交功能請求或錯誤回報。我會閱讀它們。
+    alsoTryHeading: 也可以試試看...
+    tagKillerScan: Windows 開源網路掃描工具
+    tagKillerPdf: Windows 開源 PDF 編輯器
+    tagKillerShell: 面向進階使用者的 Windows 開源終端機
+    tagKillerNotes: Windows 開源加密記事本
+    tagKillendar: Windows 開源加密行事曆
+    linksHeading: 連結
+    linkLabelSite: 網站
+    linkLabelSource: 原始碼
+    linkLabelIssues: Issues
+    reportBug: 回報錯誤
+    requestFeature: 請求功能
+    linkLabelSupport: 支援
+    linkLabelBuiltOn: 基於
+    itToolsFork: IT-Tools（分支）

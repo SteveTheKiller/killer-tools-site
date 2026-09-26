@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
+const { t } = useI18n();
+
 const pageTitle = 'Android App - Killer Tools';
 const pageDescription = 'Killer Tools for Android: the whole killertools.net toolbox as a native app. Currently in closed beta on Google Play - testers needed.';
 const pageUrl = 'https://killertools.net/android';
@@ -29,8 +31,7 @@ useHead({
       <img class="hero-img" src="/android-feature.png" alt="Killer Tools for Android - IT Utility Tools for Field Techs">
     </div>
     <p class="robot-attrib">
-      The Android robot is reproduced or modified from work created and shared by Google and used
-      according to terms described in the Creative Commons 3.0 Attribution License.
+      {{ t('pages.androidApp.robotAttribution') }}
     </p>
 
     <div class="android-main">
@@ -40,51 +41,45 @@ useHead({
         <div class="card-body">
           <div class="prompt-line">
             <img class="site-icon" src="/android-chrome-192x192.png" alt="">
-            <h1 class="site-title killer-font">Killer Tools for Android</h1>
+            <h1 class="site-title killer-font">{{ t('pages.androidApp.heading') }}</h1>
           </div>
           <p>
-            The whole killertools.net toolbox as a native Android app: every tool, the Killer Scripts
-            library, and all your favorites, one tap from your home screen.
+            {{ t('pages.androidApp.introBody1') }}
           </p>
           <p>
-            Same rules as the site. Everything runs on your device. No account, no telemetry,
-            no phone-home. If it saves you a ticket cycle in the field, it did its job.
+            {{ t('pages.androidApp.introBody2') }}
           </p>
           <p class="last">
-            The app is currently in <strong>closed beta on Google Play</strong>, and this is where
-            you come in.
+            {{ t('pages.androidApp.betaStatusPrefix') }} <strong>{{ t('pages.androidApp.betaStatusStrong') }}</strong>{{ t('pages.androidApp.betaStatusSuffix') }}
           </p>
         </div>
       </div>
 
       <!-- Right: how to join the beta -->
       <div class="g-card">
-        <h2 class="also-heading killer-font">Join the beta</h2>
+        <h2 class="also-heading killer-font">{{ t('pages.androidApp.joinBetaHeading') }}</h2>
         <p class="steps-intro">
-          Google requires <strong>12 testers with the app installed for 14 continuous days</strong>
-          before an app from an independent developer can go public. Three steps, about two minutes,
-          and you are one of the twelve:
+          {{ t('pages.androidApp.joinBetaIntroPrefix') }} <strong>{{ t('pages.androidApp.joinBetaIntroStrong') }}</strong> {{ t('pages.androidApp.joinBetaIntroSuffix') }}
         </p>
         <ol class="steps">
           <li>
-            <a href="https://groups.google.com/g/killer-tools-beta-testers" target="_blank" rel="noopener">Join the tester group</a>
-            on Google Groups (hit "Join group").
+            <a href="https://groups.google.com/g/killer-tools-beta-testers" target="_blank" rel="noopener">{{ t('pages.androidApp.step1LinkText') }}</a>
+            {{ t('pages.androidApp.step1Suffix') }}
           </li>
           <li>
-            <a href="https://play.google.com/apps/testing/net.killertools.paid" target="_blank" rel="noopener">Become a tester</a>
-            on the Google Play opt-in page.
+            <a href="https://play.google.com/apps/testing/net.killertools.paid" target="_blank" rel="noopener">{{ t('pages.androidApp.step2LinkText') }}</a>
+            {{ t('pages.androidApp.step2Suffix') }}
           </li>
           <li>
-            <a href="https://play.google.com/store/apps/details?id=net.killertools.paid" target="_blank" rel="noopener">Install the app</a>
-            from Google Play, and keep it installed for two weeks.
+            <a href="https://play.google.com/store/apps/details?id=net.killertools.paid" target="_blank" rel="noopener">{{ t('pages.androidApp.step3LinkText') }}</a>
+            {{ t('pages.androidApp.step3Suffix') }}
           </li>
         </ol>
         <p class="steps-note">
-          <strong>Use the same Google account for all three steps</strong> - the opt-in page says
-          "not available for this account" if you skip the group or switch accounts.
+          <strong>{{ t('pages.androidApp.sameAccountStrong') }}</strong>{{ t('pages.androidApp.sameAccountSuffix') }}
         </p>
         <p class="last">
-          Something broken or missing? Tell me:
+          {{ t('pages.androidApp.feedbackPrefix') }}
           <a href="mailto:feedback@killertools.net">feedback@killertools.net</a>
         </p>
       </div>

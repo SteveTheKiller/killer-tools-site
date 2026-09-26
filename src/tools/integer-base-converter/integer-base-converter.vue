@@ -2,6 +2,8 @@
 import { getErrorMessageIfThrows } from '@/utils/error';
 import { convertBase } from './integer-base-converter.model';
 
+const { t } = useI18n();
+
 const input = ref('42');
 const inputBase = ref(10);
 const outputBase = ref(42);
@@ -19,13 +21,13 @@ const error = computed(() =>
   ),
 );
 
-const fixedBases = [
-  { label: 'Binary', base: 2 },
-  { label: 'Octal', base: 8 },
-  { label: 'Decimal', base: 10 },
-  { label: 'Hexadecimal', base: 16 },
+const fixedBases = computed(() => [
+  { label: t('tools.integer-base-converter.ui.binary'), base: 2 },
+  { label: t('tools.integer-base-converter.ui.octal'), base: 8 },
+  { label: t('tools.integer-base-converter.ui.decimal'), base: 10 },
+  { label: t('tools.integer-base-converter.ui.hexadecimal'), base: 16 },
   { label: 'Base64', base: 64 },
-];
+]);
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(label: string, value: string) {
@@ -56,7 +58,7 @@ async function copyValue(label: string, value: string) {
         >
         <div class="base-input-divider" />
         <div class="base-stepper">
-          <span class="base-stepper-label">base</span>
+          <span class="base-stepper-label">{{ t('tools.integer-base-converter.ui.base') }}</span>
           <button class="base-step-btn" :disabled="inputBase <= 2" @click="inputBase = Math.max(2, inputBase - 1)">
             −
           </button>
@@ -74,7 +76,7 @@ async function copyValue(label: string, value: string) {
     <div class="base-terminal">
       <!-- Output rows -->
       <div class="base-section-header">
-        OUTPUT
+        {{ t('tools.integer-base-converter.ui.output') }}
       </div>
 
       <div
@@ -100,7 +102,7 @@ async function copyValue(label: string, value: string) {
       >
         <span class="base-prompt">&gt;_</span>
         <div class="base-custom-label" @click.stop>
-          <span class="base-label">Custom</span>
+          <span class="base-label">{{ t('tools.integer-base-converter.ui.custom') }}</span>
           <div class="base-mini-stepper">
             <button class="base-mini-btn" :disabled="outputBase <= 2" @click="outputBase = Math.max(2, outputBase - 1)">
               −

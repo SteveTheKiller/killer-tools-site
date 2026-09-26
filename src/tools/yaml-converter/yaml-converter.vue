@@ -5,6 +5,8 @@ import { parse as parseYaml } from 'yaml';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 
+const { t } = useI18n();
+
 const input = ref('');
 const outputFormat = ref<'json' | 'toml'>('json');
 const copied = ref(false);
@@ -50,7 +52,7 @@ function copyOutput() {
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <div mb-4 flex items-center gap-3>
-      <span class="text-sm op-60">Convert to:</span>
+      <span class="text-sm op-60">{{ t('tools.yaml-converter.ui.convertTo') }}</span>
       <div class="kt-pill-row">
         <button type="button" class="kt-pill" :class="{ 'kt-pill-active': outputFormat === 'json' }" @click="outputFormat = 'json'">
           JSON
@@ -64,25 +66,25 @@ function copyOutput() {
     <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
       <div>
         <div class="mb-1 text-xs op-60">
-          Your YAML
+          {{ t('tools.yaml-converter.ui.inputLabel') }}
         </div>
         <c-input-text
           v-model:value="input"
           multiline
           :rows="20"
           autofocus
-          placeholder="Paste your YAML here..."
+          :placeholder="t('tools.yaml-converter.ui.inputPlaceholder')"
           raw-text
           font-mono
         />
         <div v-if="!isValid" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
-          Provided YAML is not valid.
+          {{ t('tools.yaml-converter.ui.invalidYaml') }}
         </div>
       </div>
 
       <div>
         <div mb-1 flex items-center justify-between>
-          <span class="text-xs op-60">{{ outputFormat.toUpperCase() }} output</span>
+          <span class="text-xs op-60">{{ t('tools.yaml-converter.ui.outputLabel', { format: outputFormat.toUpperCase() }) }}</span>
           <c-button
             v-if="output"
             circle

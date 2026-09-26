@@ -6,10 +6,11 @@ const props = (defineProps<{ emojiInfo: EmojiInfo }>());
 const { emojiInfo } = toRefs(props);
 
 const { copy } = useCopy();
+const { t } = useI18n();
 </script>
 
 <template>
-  <div class="ec-card" @click="copy(emojiInfo.emoji, { notificationMessage: `Emoji ${emojiInfo.emoji} copied to the clipboard` })">
+  <div class="ec-card" @click="copy(emojiInfo.emoji, { notificationMessage: t('tools.emoji-picker.ui.emojiCopied', { emoji: emojiInfo.emoji }) })">
     <div class="ec-emoji">
       {{ emojiInfo.emoji }}
     </div>
@@ -19,10 +20,10 @@ const { copy } = useCopy();
         {{ emojiInfo.title }}
       </div>
       <div class="ec-meta">
-        <span class="ec-code" @click.stop="copy(emojiInfo.codePoints, { notificationMessage: `Code points '${emojiInfo.codePoints}' copied to the clipboard` })">
+        <span class="ec-code" @click.stop="copy(emojiInfo.codePoints, { notificationMessage: t('tools.emoji-picker.ui.codePointsCopied', { codePoints: emojiInfo.codePoints }) })">
           {{ emojiInfo.codePoints }}
         </span>
-        <span class="ec-code ec-unicode" @click.stop="copy(emojiInfo.unicode, { notificationMessage: `Unicode '${emojiInfo.unicode}' copied to the clipboard` })">
+        <span class="ec-code ec-unicode" @click.stop="copy(emojiInfo.unicode, { notificationMessage: t('tools.emoji-picker.ui.unicodeCopied', { unicode: emojiInfo.unicode }) })">
           {{ emojiInfo.unicode }}
         </span>
       </div>

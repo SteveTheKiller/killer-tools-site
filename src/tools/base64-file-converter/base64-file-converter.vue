@@ -5,6 +5,8 @@ import { useCopy } from '@/composable/copy';
 import { getExtensionFromMimeType, getMimeTypeFromBase64, previewImageFromBase64, useDownloadFileFromBase64Refs } from '@/composable/downloadBase64';
 import { isValidBase64 } from '@/utils/base64';
 
+const { t } = useI18n();
+
 const fileName = ref('file');
 const fileExtension = ref('');
 const base64Input = ref('');
@@ -51,7 +53,7 @@ function downloadFile() {
 // File to base64
 const fileInput = ref() as Ref<File>;
 const { base64: fileBase64 } = useBase64(fileInput);
-const { copy: copyFileBase64, isJustCopied: copiedFile } = useCopy({ source: fileBase64, text: 'Base64 string copied to the clipboard' });
+const { copy: copyFileBase64, isJustCopied: copiedFile } = useCopy({ source: fileBase64, text: t('tools.base64-file-converter.ui.copiedToClipboard') });
 
 const nativeFileInput = ref<HTMLInputElement>();
 const isDragging = ref(false);
@@ -83,31 +85,31 @@ function onDrop(e: DragEvent) {
     <!-- Base64 to file -->
     <div class="bf-panel kt-terminal">
       <div class="bf-panel-header kt-terminal-bar">
-        <span class="bf-panel-title kt-terminal-bar-title">BASE64 TO FILE</span>
+        <span class="bf-panel-title kt-terminal-bar-title">{{ t('tools.base64-file-converter.ui.base64ToFileTitle') }}</span>
       </div>
       <div class="bf-body">
         <div class="bf-row">
           <div class="bf-field bf-field-grow">
-            <span class="bf-label">FILE NAME</span>
-            <input v-model="fileName" class="bf-input" type="text" placeholder="Download filename" spellcheck="false">
+            <span class="bf-label">{{ t('tools.base64-file-converter.ui.fileNameLabel') }}</span>
+            <input v-model="fileName" class="bf-input" type="text" :placeholder="t('tools.base64-file-converter.ui.fileNamePlaceholder')" spellcheck="false">
           </div>
           <div class="bf-field">
-            <span class="bf-label">EXTENSION</span>
-            <input v-model="fileExtension" class="bf-input" type="text" placeholder="ext" spellcheck="false">
+            <span class="bf-label">{{ t('tools.base64-file-converter.ui.extensionLabel') }}</span>
+            <input v-model="fileExtension" class="bf-input" type="text" :placeholder="t('tools.base64-file-converter.ui.extensionPlaceholder')" spellcheck="false">
           </div>
         </div>
 
         <div class="bf-field">
-          <span class="bf-label">BASE64 STRING</span>
+          <span class="bf-label">{{ t('tools.base64-file-converter.ui.base64StringLabel') }}</span>
           <textarea
             v-model="base64Input"
             class="bf-textarea"
             :class="{ 'bf-textarea-error': !b64IsValid }"
-            placeholder="Put your base64 file string here..."
+            :placeholder="t('tools.base64-file-converter.ui.base64InputPlaceholder')"
             rows="6"
             spellcheck="false"
           />
-          <span v-if="!b64IsValid" class="bf-error-msg">Invalid base64 string</span>
+          <span v-if="!b64IsValid" class="bf-error-msg">{{ t('tools.base64-file-converter.ui.invalidBase64') }}</span>
         </div>
 
         <div id="bf-preview" class="bf-preview-container" />
@@ -119,7 +121,7 @@ function onDrop(e: DragEvent) {
             @click="previewImage()"
           >
             <icon-mdi-image-outline />
-            Preview image
+            {{ t('tools.base64-file-converter.ui.previewImage') }}
           </button>
           <button
             class="bf-btn bf-btn-accent"
@@ -127,7 +129,7 @@ function onDrop(e: DragEvent) {
             @click="downloadFile()"
           >
             <icon-mdi-download />
-            Download file
+            {{ t('tools.base64-file-converter.ui.downloadFile') }}
           </button>
         </div>
       </div>
@@ -136,7 +138,7 @@ function onDrop(e: DragEvent) {
     <!-- File to base64 -->
     <div class="bf-panel kt-terminal">
       <div class="bf-panel-header kt-terminal-bar">
-        <span class="bf-panel-title kt-terminal-bar-title">FILE TO BASE64</span>
+        <span class="bf-panel-title kt-terminal-bar-title">{{ t('tools.base64-file-converter.ui.fileToBase64Title') }}</span>
       </div>
       <div class="bf-body">
         <!-- Drop zone -->
@@ -156,15 +158,15 @@ function onDrop(e: DragEvent) {
           >
           <icon-mdi-upload class="bf-drop-icon" />
           <span v-if="uploadedFileName" class="bf-drop-filename">{{ uploadedFileName }}</span>
-          <span v-else class="bf-drop-hint">Drag and drop a file here, or click to select</span>
+          <span v-else class="bf-drop-hint">{{ t('tools.base64-file-converter.ui.dropHint') }}</span>
         </div>
 
         <div class="bf-field">
-          <span class="bf-label">FILE IN BASE64</span>
+          <span class="bf-label">{{ t('tools.base64-file-converter.ui.fileInBase64Label') }}</span>
           <textarea
             class="bf-textarea bf-textarea-output"
             :value="fileBase64"
-            placeholder="File in base64 will be here"
+            :placeholder="t('tools.base64-file-converter.ui.fileOutputPlaceholder')"
             rows="6"
             readonly
             spellcheck="false"
@@ -175,7 +177,7 @@ function onDrop(e: DragEvent) {
           <button class="bf-btn bf-btn-accent" @click="copyFileBase64()">
             <icon-mdi-check v-if="copiedFile" />
             <icon-mdi-content-copy v-else />
-            {{ copiedFile ? 'Copied!' : 'Copy base64' }}
+            {{ copiedFile ? t('tools.base64-file-converter.ui.copied') : t('tools.base64-file-converter.ui.copyBase64') }}
           </button>
         </div>
       </div>

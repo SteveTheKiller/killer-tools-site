@@ -65,11 +65,13 @@ const _secretValidationRules = [
   },
 ];
 
+const { t } = useI18n();
+
 const details = computed(() => [
-  { label: 'Secret (hex)', value: base32toHex(secret.value) },
-  { label: 'Epoch', value: String(Math.floor(now.value / 1000)) },
-  { label: 'Count', value: String(getCounterFromTime({ now: now.value, timeStep: 30 })) },
-  { label: 'Padded hex', value: getCounterFromTime({ now: now.value, timeStep: 30 }).toString(16).padStart(16, '0') },
+  { label: t('tools.otpCodeGeneratorAndValidator.ui.secretHexLabel'), value: base32toHex(secret.value) },
+  { label: t('tools.otpCodeGeneratorAndValidator.ui.epochLabel'), value: String(Math.floor(now.value / 1000)) },
+  { label: t('tools.otpCodeGeneratorAndValidator.ui.countLabel'), value: String(getCounterFromTime({ now: now.value, timeStep: 30 })) },
+  { label: t('tools.otpCodeGeneratorAndValidator.ui.paddedHexLabel'), value: getCounterFromTime({ now: now.value, timeStep: 30 }).toString(16).padStart(16, '0') },
 ]);
 </script>
 
@@ -81,7 +83,7 @@ const details = computed(() => [
         <div class="otp-terminal kt-terminal">
           <!-- SECRET bar -->
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">SECRET</span>
+            <span class="kt-terminal-bar-title">{{ t('tools.otpCodeGeneratorAndValidator.ui.secretLabel') }}</span>
           </div>
           <div class="otp-input-area">
             <div class="otp-input-row">
@@ -90,9 +92,9 @@ const details = computed(() => [
                 class="otp-input"
                 spellcheck="false"
                 autocomplete="off"
-                placeholder="Paste your TOTP secret..."
+                :placeholder="t('tools.otpCodeGeneratorAndValidator.ui.secretPlaceholder')"
               >
-              <button class="otp-refresh-btn" title="Generate new secret" @click="refreshSecret">
+              <button class="otp-refresh-btn" :title="t('tools.otpCodeGeneratorAndValidator.ui.generateNewSecret')" @click="refreshSecret">
                 <icon-mdi-refresh />
               </button>
             </div>
@@ -100,7 +102,7 @@ const details = computed(() => [
 
           <!-- TOKEN section header -->
           <div class="otp-section-header">
-            TOKEN
+            {{ t('tools.otpCodeGeneratorAndValidator.ui.tokenLabel') }}
           </div>
 
           <!-- Big token display -->
@@ -109,7 +111,7 @@ const details = computed(() => [
               {{ tokens.current }}
             </div>
             <div class="otp-token-hint">
-              {{ currentCopied ? '✓ copied' : 'click to copy' }}
+              {{ currentCopied ? t('tools.otpCodeGeneratorAndValidator.ui.copied') : t('tools.otpCodeGeneratorAndValidator.ui.clickToCopy') }}
             </div>
           </div>
 
@@ -118,17 +120,17 @@ const details = computed(() => [
             <div class="otp-progress-bar" :style="{ width: `${progressPercent}%` }" />
           </div>
           <div class="otp-countdown">
-            >_ next in {{ String(secondsRemaining).padStart(2, '0') }}s
+            {{ t('tools.otpCodeGeneratorAndValidator.ui.nextIn', { seconds: String(secondsRemaining).padStart(2, '0') }) }}
           </div>
 
           <!-- ADJACENT TOKENS -->
           <div class="otp-section-header">
-            ADJACENT TOKENS
+            {{ t('tools.otpCodeGeneratorAndValidator.ui.adjacentTokensLabel') }}
           </div>
 
           <div class="otp-row" @click="copyPrevious(tokens.previous)">
             <span class="otp-prompt">>_</span>
-            <span class="otp-label">Prev</span>
+            <span class="otp-label">{{ t('tools.otpCodeGeneratorAndValidator.ui.prevLabel') }}</span>
             <span class="otp-value">{{ tokens.previous }}</span>
             <span class="otp-copy" :class="{ 'otp-copy-done': previousCopied }">
               <span v-if="previousCopied">✓</span>
@@ -137,7 +139,7 @@ const details = computed(() => [
           </div>
           <div class="otp-row" @click="copyNext(tokens.next)">
             <span class="otp-prompt">>_</span>
-            <span class="otp-label">Next</span>
+            <span class="otp-label">{{ t('tools.otpCodeGeneratorAndValidator.ui.nextLabel') }}</span>
             <span class="otp-value">{{ tokens.next }}</span>
             <span class="otp-copy" :class="{ 'otp-copy-done': nextCopied }">
               <span v-if="nextCopied">✓</span>
@@ -147,7 +149,7 @@ const details = computed(() => [
 
           <!-- DETAILS -->
           <div class="otp-section-header">
-            DETAILS
+            {{ t('tools.otpCodeGeneratorAndValidator.ui.detailsLabel') }}
           </div>
 
           <div v-for="detail in details" :key="detail.label" class="otp-row otp-row-detail">
@@ -164,10 +166,10 @@ const details = computed(() => [
           <n-image :src="qrcode" class="qr-image" preview-disabled />
         </div>
         <div class="qr-caption">
-          >_ scan to authenticate
+          {{ t('tools.otpCodeGeneratorAndValidator.ui.scanToAuthenticate') }}
         </div>
         <c-button :href="keyUri" target="_blank" class="qr-open-btn">
-          Open Key URI in new tab
+          {{ t('tools.otpCodeGeneratorAndValidator.ui.openKeyUriInNewTab') }}
         </c-button>
       </div>
     </div>

@@ -16,6 +16,8 @@ const {
   onUpdated() { refreshCurrentDevices(); },
 });
 
+const { t } = useI18n();
+
 const video = ref<HTMLVideoElement>();
 const medias = ref<Media[]>([]);
 const currentCamera = ref(cameras.value[0]?.deviceId);
@@ -112,8 +114,8 @@ const recordingTime = computed(() => {
 const cameraOpen = ref(false);
 const micOpen = ref(false);
 
-const cameraLabel = computed(() => cameras.value.find(c => c.deviceId === currentCamera.value)?.label ?? 'Select camera');
-const micLabel = computed(() => microphones.value.find(m => m.deviceId === currentMicrophone.value)?.label ?? 'Select microphone');
+const cameraLabel = computed(() => cameras.value.find(c => c.deviceId === currentCamera.value)?.label ?? t('tools.camera-recorder.ui.selectCamera'));
+const micLabel = computed(() => microphones.value.find(m => m.deviceId === currentMicrophone.value)?.label ?? t('tools.camera-recorder.ui.selectMicrophone'));
 
 function closeOnBlur(set: (val: boolean) => void) {
   return (e: FocusEvent) => {
@@ -134,19 +136,19 @@ function formatDate(d: Date) {
     <!-- Not supported -->
     <div v-if="!isSupported" class="cr-panel cr-message">
       <icon-mdi-camera-off class="cr-message-icon" />
-      <span>Your browser does not support camera recording.</span>
+      <span>{{ t('tools.camera-recorder.ui.notSupported') }}</span>
     </div>
 
     <!-- Permission needed -->
     <div v-else-if="!permissionGranted" class="cr-panel cr-message">
       <icon-mdi-lock class="cr-message-icon" />
-      <p>Camera and microphone access required.</p>
+      <p>{{ t('tools.camera-recorder.ui.accessRequired') }}</p>
       <div v-if="permissionCannotBePrompted" class="cr-alert">
-        Permission was blocked. Grant access manually via your browser's address bar lock icon.
+        {{ t('tools.camera-recorder.ui.permissionBlocked') }}
       </div>
       <button v-else class="cr-btn cr-btn-primary" @click="requestPermissions()">
         <icon-mdi-lock-open />
-        Grant permission
+        {{ t('tools.camera-recorder.ui.grantPermission') }}
       </button>
     </div>
 
@@ -156,7 +158,7 @@ function formatDate(d: Date) {
       <div class="cr-device-row">
         <!-- Camera dropdown -->
         <div class="cr-device-field">
-          <span class="cr-sublabel">VIDEO</span>
+          <span class="cr-sublabel">{{ t('tools.camera-recorder.ui.video') }}</span>
           <div class="cr-dropdown" tabindex="0" @blur="closeOnBlur(v => cameraOpen = v)($event)">
             <button type="button" class="cr-dropdown-trigger" @click="cameraOpen = !cameraOpen">
               <icon-mdi-camera class="cr-device-icon" />
@@ -177,7 +179,7 @@ function formatDate(d: Date) {
 
         <!-- Mic dropdown -->
         <div v-if="microphones.length > 0" class="cr-device-field">
-          <span class="cr-sublabel">AUDIO</span>
+          <span class="cr-sublabel">{{ t('tools.camera-recorder.ui.audio') }}</span>
           <div class="cr-dropdown" tabindex="0" @blur="closeOnBlur(v => micOpen = v)($event)">
             <button type="button" class="cr-dropdown-trigger" @click="micOpen = !micOpen">
               <icon-mdi-microphone class="cr-device-icon" />
@@ -201,7 +203,7 @@ function formatDate(d: Date) {
       <div v-if="!isMediaStreamAvailable" class="cr-start-wrap">
         <button class="cr-btn cr-btn-primary cr-btn-lg" @click="start()">
           <icon-mdi-camera />
-          Start webcam
+          {{ t('tools.camera-recorder.ui.startWebcam') }}
         </button>
       </div>
 
@@ -210,7 +212,7 @@ function formatDate(d: Date) {
         <!-- Recording indicator -->
         <div v-if="recordingState !== 'stopped'" class="cr-rec-badge" :class="{ 'cr-rec-paused': recordingState === 'paused' }">
           <span class="cr-rec-dot" />
-          {{ recordingState === 'paused' ? 'PAUSED' : 'REC' }}
+          {{ recordingState === 'paused' ? t('tools.camera-recorder.ui.paused') : t('tools.camera-recorder.ui.rec') }}
           <span class="cr-rec-time">{{ recordingTime }}</span>
         </div>
 
@@ -220,29 +222,29 @@ function formatDate(d: Date) {
         <div class="cr-controls-bar">
           <button class="cr-btn" @click="takeScreenshot()">
             <icon-mdi-camera />
-            Screenshot
+            {{ t('tools.camera-recorder.ui.screenshot') }}
           </button>
 
           <div class="cr-rec-controls">
             <template v-if="isRecordingSupported">
               <button v-if="recordingState === 'stopped'" class="cr-btn cr-btn-rec" @click="startRecording()">
                 <icon-mdi-record />
-                Record
+                {{ t('tools.camera-recorder.ui.record') }}
               </button>
               <button v-if="recordingState === 'recording'" class="cr-btn" @click="pauseRecording()">
                 <icon-mdi-pause />
-                Pause
+                {{ t('tools.camera-recorder.ui.pause') }}
               </button>
               <button v-if="recordingState === 'paused'" class="cr-btn cr-btn-primary" @click="resumeRecording()">
                 <icon-mdi-play />
-                Resume
+                {{ t('tools.camera-recorder.ui.resume') }}
               </button>
               <button v-if="recordingState !== 'stopped'" class="cr-btn cr-btn-stop" @click="stopRecording()">
                 <icon-mdi-stop />
-                Stop
+                {{ t('tools.camera-recorder.ui.stop') }}
               </button>
             </template>
-            <span v-else class="cr-unsupported">Recording not supported in this browser</span>
+            <span v-else class="cr-unsupported">{{ t('tools.camera-recorder.ui.recordingNotSupported') }}</span>
           </div>
         </div>
       </div>
@@ -251,9 +253,9 @@ function formatDate(d: Date) {
     <!-- Media gallery -->
     <div v-if="medias.length > 0" class="cr-gallery">
       <div class="cr-gallery-header">
-        <span class="cr-sublabel">CAPTURES ({{ medias.length }})</span>
+        <span class="cr-sublabel">{{ t('tools.camera-recorder.ui.captures', { count: medias.length }) }}</span>
         <button class="cr-clear-btn" @click="medias = []">
-          Clear all
+          {{ t('tools.camera-recorder.ui.clearAll') }}
         </button>
       </div>
       <div class="cr-gallery-grid">
@@ -261,15 +263,15 @@ function formatDate(d: Date) {
           <div class="cr-media-badge">
             {{ media.type === 'image' ? 'PNG' : 'WEBM' }}
           </div>
-          <img v-if="media.type === 'image'" :src="media.value" class="cr-media-preview" alt="screenshot">
+          <img v-if="media.type === 'image'" :src="media.value" class="cr-media-preview" :alt="t('tools.camera-recorder.ui.screenshotAlt')">
           <video v-else :src="media.value" controls class="cr-media-preview" />
           <div class="cr-media-footer">
             <span class="cr-media-time">{{ formatDate(media.createdAt) }}</span>
             <div class="cr-media-actions">
-              <button class="cr-icon-btn" title="Download" @click="downloadMedia(media)">
+              <button class="cr-icon-btn" :title="t('tools.camera-recorder.ui.download')" @click="downloadMedia(media)">
                 <icon-mdi-download />
               </button>
-              <button class="cr-icon-btn cr-icon-btn-danger" title="Delete" @click="medias = medias.filter((_, i) => i !== index)">
+              <button class="cr-icon-btn cr-icon-btn-danger" :title="t('tools.camera-recorder.ui.delete')" @click="medias = medias.filter((_, i) => i !== index)">
                 <icon-mdi-delete-outline />
               </button>
             </div>

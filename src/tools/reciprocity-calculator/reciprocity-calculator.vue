@@ -3,6 +3,8 @@ import type { FilmStock } from './reciprocity.data';
 import KtSelect from '@/components/KtSelect.vue';
 import { filmStocks } from './reciprocity.data';
 
+const { t } = useI18n();
+
 // ── State ──────────────────────────────────────────────────────────────────────
 
 const selectedId = ref('ilford-hp5');
@@ -57,20 +59,20 @@ const devRecommendation = computed(() => {
   if (!stock || !r || stock.type !== 'bw' || r.noFailure) {
     return null;
   }
-  const t = r.adjusted;
-  if (t < 10) {
+  const adjustedSeconds = r.adjusted;
+  if (adjustedSeconds < 10) {
     return null;
   }
-  if (t < 30) {
-    return 'Consider reducing development ~10% to compensate for increased shadow density.';
+  if (adjustedSeconds < 30) {
+    return t('tools.reciprocity-calculator.ui.devReduce10');
   }
-  if (t < 120) {
-    return 'Reduce development 10–15% recommended.';
+  if (adjustedSeconds < 120) {
+    return t('tools.reciprocity-calculator.ui.devReduce1015');
   }
-  if (t < 300) {
-    return 'Reduce development 15–20% recommended.';
+  if (adjustedSeconds < 300) {
+    return t('tools.reciprocity-calculator.ui.devReduce1520');
   }
-  return 'Reduce development 20–30% recommended for very long exposures.';
+  return t('tools.reciprocity-calculator.ui.devReduce2030');
 });
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
@@ -88,7 +90,11 @@ function formatTime(seconds: number): string {
 }
 
 function typeLabel(type: FilmStock['type']): string {
-  return { 'bw': 'B&W', 'color-neg': 'Color Negative', 'slide': 'Slide / E6' }[type];
+  return {
+    'bw': t('tools.reciprocity-calculator.ui.typeBw'),
+    'color-neg': t('tools.reciprocity-calculator.ui.typeColorNeg'),
+    'slide': t('tools.reciprocity-calculator.ui.typeSlide'),
+  }[type];
 }
 
 async function copy(val: string) {
@@ -105,12 +111,12 @@ async function copy(val: string) {
     <!-- Film stock + exposure input -->
     <div class="rc-panel kt-terminal">
       <div class="rc-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">RECIPROCITY CALCULATOR</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.reciprocity-calculator.ui.barReciprocity') }}</span>
       </div>
       <div class="rc-body">
         <!-- Stock selector -->
         <div class="rc-field-label">
-          Film stock
+          {{ t('tools.reciprocity-calculator.ui.fieldFilmStock') }}
         </div>
         <KtSelect v-model:value="selectedId" :options="selectOptions" />
         <div v-if="selected" class="rc-meta-row">
@@ -118,10 +124,10 @@ async function copy(val: string) {
             {{ typeLabel(selected.type) }}
           </span>
           <span v-if="selected.noFailureUpTo" class="rc-meta-tag">
-            No failure up to {{ selected.noFailureUpTo }}s
+            {{ t('tools.reciprocity-calculator.ui.noFailureUpTo', { seconds: selected.noFailureUpTo }) }}
           </span>
           <span class="rc-source">
-            {{ selected.sourceReliability === 'manufacturer' ? 'Manufacturer data' : 'Community data' }}
+            {{ selected.sourceReliability === 'manufacturer' ? t('tools.reciprocity-calculator.ui.sourceManufacturer') : t('tools.reciprocity-calculator.ui.sourceCommunity') }}
           </span>
         </div>
 
@@ -129,7 +135,7 @@ async function copy(val: string) {
 
         <!-- Exposure input -->
         <div class="rc-field-label">
-          Metered exposure
+          {{ t('tools.reciprocity-calculator.ui.fieldMeteredExposure') }}
         </div>
         <div class="rc-row">
           <input
@@ -140,7 +146,7 @@ async function copy(val: string) {
             min="0.1"
             step="0.1"
           >
-          <span class="rc-unit">seconds</span>
+          <span class="rc-unit">{{ t('tools.reciprocity-calculator.ui.unitSeconds') }}</span>
           <span v-if="meteredSeconds && meteredSeconds >= 60" class="rc-formatted">
             ({{ formatTime(meteredSeconds) }})
           </span>
@@ -151,12 +157,12 @@ async function copy(val: string) {
     <!-- Result -->
     <div class="rc-panel kt-terminal">
       <div class="rc-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">CORRECTED EXPOSURE</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.reciprocity-calculator.ui.barCorrected') }}</span>
       </div>
       <div class="rc-body">
         <template v-if="result">
           <div v-if="result.noFailure" class="rc-no-failure">
-            No correction needed — this stock has no reciprocity failure at this exposure length.
+            {{ t('tools.reciprocity-calculator.ui.noFailureMessage') }}
           </div>
           <template v-else>
             <div class="rc-result-row">
@@ -171,8 +177,8 @@ async function copy(val: string) {
                 :class="{ 'rc-copy-done': copied }"
                 @click="copy(result.adjusted.toFixed(1))"
               >
-                <span v-if="copied">✓ copied</span>
-                <span v-else>copy seconds</span>
+                <span v-if="copied">{{ t('tools.reciprocity-calculator.ui.copyDone') }}</span>
+                <span v-else>{{ t('tools.reciprocity-calculator.ui.copySeconds') }}</span>
               </button>
             </div>
           </template>
@@ -192,12 +198,12 @@ async function copy(val: string) {
         >
           <span class="rc-alert-icon">⚠</span>
           <span>
-            Color film: expect a color shift at this exposure length.
+            {{ t('tools.reciprocity-calculator.ui.colorShiftWarning') }}
             <template v-if="selected.type === 'slide'">
-              Slide film is difficult to correct in post — CC filtration in-camera is recommended.
+              {{ t('tools.reciprocity-calculator.ui.colorShiftSlide') }}
             </template>
             <template v-else>
-              Color negative has more latitude; correction is possible in printing or scanning.
+              {{ t('tools.reciprocity-calculator.ui.colorShiftNeg') }}
             </template>
           </span>
         </div>

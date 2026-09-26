@@ -3,12 +3,14 @@ import { useCopy } from '@/composable/copy';
 import { base64ToText, isValidBase64, textToBase64 } from '@/utils/base64';
 import { withDefaultOnError } from '@/utils/defaults';
 
+const { t } = useI18n();
+
 const encodeUrlSafe = useStorage('base64-string-converter--encode-url-safe', false);
 const decodeUrlSafe = useStorage('base64-string-converter--decode-url-safe', false);
 
 const textInput = ref('');
 const base64Output = computed(() => textToBase64(textInput.value, { makeUrlSafe: encodeUrlSafe.value }));
-const { copy: copyTextBase64, isJustCopied: copiedEncode } = useCopy({ source: base64Output, text: 'Base64 string copied to the clipboard' });
+const { copy: copyTextBase64, isJustCopied: copiedEncode } = useCopy({ source: base64Output, text: t('tools.base64-string-converter.ui.base64CopiedToClipboard') });
 
 const base64Input = ref('');
 const b64IsValid = computed(() =>
@@ -17,7 +19,7 @@ const b64IsValid = computed(() =>
 const textOutput = computed(() =>
   withDefaultOnError(() => base64ToText(base64Input.value.trim(), { makeUrlSafe: decodeUrlSafe.value }), ''),
 );
-const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOutput, text: 'String copied to the clipboard' });
+const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOutput, text: t('tools.base64-string-converter.ui.stringCopiedToClipboard') });
 </script>
 
 <template>
@@ -25,38 +27,38 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
     <!-- Encode panel -->
     <div class="b6-panel kt-terminal">
       <div class="b6-panel-header kt-terminal-bar">
-        <span class="b6-panel-title kt-terminal-bar-title">STRING TO BASE64</span>
+        <span class="b6-panel-title kt-terminal-bar-title">{{ t('tools.base64-string-converter.ui.stringToBase64Title') }}</span>
       </div>
       <div class="b6-body">
         <div class="b6-pill-row">
-          <span class="b6-label">ENCODING</span>
+          <span class="b6-label">{{ t('tools.base64-string-converter.ui.encodingLabel') }}</span>
           <div class="b6-pills">
             <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !encodeUrlSafe }" @click="encodeUrlSafe = false">
-              Standard
+              {{ t('tools.base64-string-converter.ui.standard') }}
             </button>
             <button type="button" class="b6-pill" :class="{ 'b6-pill-active': encodeUrlSafe }" @click="encodeUrlSafe = true">
-              URL Safe
+              {{ t('tools.base64-string-converter.ui.urlSafe') }}
             </button>
           </div>
         </div>
 
         <div class="b6-field">
-          <span class="b6-label">STRING TO ENCODE</span>
+          <span class="b6-label">{{ t('tools.base64-string-converter.ui.stringToEncodeLabel') }}</span>
           <textarea
             v-model="textInput"
             class="b6-textarea"
-            placeholder="Put your string here..."
+            :placeholder="t('tools.base64-string-converter.ui.stringInputPlaceholder')"
             rows="5"
             spellcheck="false"
           />
         </div>
 
         <div class="b6-field">
-          <span class="b6-label">BASE64 OUTPUT</span>
+          <span class="b6-label">{{ t('tools.base64-string-converter.ui.base64OutputLabel') }}</span>
           <textarea
             class="b6-textarea b6-textarea-output"
             :value="base64Output"
-            placeholder="The base64 encoding of your string will be here"
+            :placeholder="t('tools.base64-string-converter.ui.base64OutputPlaceholder')"
             rows="5"
             readonly
             spellcheck="false"
@@ -67,7 +69,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
           <button class="b6-btn b6-btn-accent" @click="copyTextBase64()">
             <icon-mdi-check v-if="copiedEncode" />
             <icon-mdi-content-copy v-else />
-            {{ copiedEncode ? 'Copied!' : 'Copy base64' }}
+            {{ copiedEncode ? t('tools.base64-string-converter.ui.copied') : t('tools.base64-string-converter.ui.copyBase64') }}
           </button>
         </div>
       </div>
@@ -76,40 +78,40 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
     <!-- Decode panel -->
     <div class="b6-panel kt-terminal">
       <div class="b6-panel-header kt-terminal-bar">
-        <span class="b6-panel-title kt-terminal-bar-title">BASE64 TO STRING</span>
+        <span class="b6-panel-title kt-terminal-bar-title">{{ t('tools.base64-string-converter.ui.base64ToStringTitle') }}</span>
       </div>
       <div class="b6-body">
         <div class="b6-pill-row">
-          <span class="b6-label">ENCODING</span>
+          <span class="b6-label">{{ t('tools.base64-string-converter.ui.encodingLabel') }}</span>
           <div class="b6-pills">
             <button type="button" class="b6-pill" :class="{ 'b6-pill-active': !decodeUrlSafe }" @click="decodeUrlSafe = false">
-              Standard
+              {{ t('tools.base64-string-converter.ui.standard') }}
             </button>
             <button type="button" class="b6-pill" :class="{ 'b6-pill-active': decodeUrlSafe }" @click="decodeUrlSafe = true">
-              URL Safe
+              {{ t('tools.base64-string-converter.ui.urlSafe') }}
             </button>
           </div>
         </div>
 
         <div class="b6-field">
-          <span class="b6-label">BASE64 STRING TO DECODE</span>
+          <span class="b6-label">{{ t('tools.base64-string-converter.ui.base64ToDecodeLabel') }}</span>
           <textarea
             v-model="base64Input"
             class="b6-textarea"
             :class="{ 'b6-textarea-error': !b64IsValid }"
-            placeholder="Your base64 string..."
+            :placeholder="t('tools.base64-string-converter.ui.base64InputPlaceholder')"
             rows="5"
             spellcheck="false"
           />
-          <span v-if="!b64IsValid" class="b6-error-msg">Invalid base64 string</span>
+          <span v-if="!b64IsValid" class="b6-error-msg">{{ t('tools.base64-string-converter.ui.invalidBase64') }}</span>
         </div>
 
         <div class="b6-field">
-          <span class="b6-label">DECODED STRING</span>
+          <span class="b6-label">{{ t('tools.base64-string-converter.ui.decodedStringLabel') }}</span>
           <textarea
             class="b6-textarea b6-textarea-output"
             :value="textOutput"
-            placeholder="The decoded string will be here"
+            :placeholder="t('tools.base64-string-converter.ui.decodedOutputPlaceholder')"
             rows="5"
             readonly
             spellcheck="false"
@@ -120,7 +122,7 @@ const { copy: copyText, isJustCopied: copiedDecode } = useCopy({ source: textOut
           <button class="b6-btn b6-btn-accent" @click="copyText()">
             <icon-mdi-check v-if="copiedDecode" />
             <icon-mdi-content-copy v-else />
-            {{ copiedDecode ? 'Copied!' : 'Copy decoded string' }}
+            {{ copiedDecode ? t('tools.base64-string-converter.ui.copied') : t('tools.base64-string-converter.ui.copyDecodedString') }}
           </button>
         </div>
       </div>

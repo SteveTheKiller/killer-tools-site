@@ -2,6 +2,8 @@
 import { UAParser } from 'ua-parser-js';
 import { withDefaultOnError } from '@/utils/defaults';
 
+const { t } = useI18n();
+
 const ua = ref(navigator.userAgent as string);
 
 function getUserAgentInfo(userAgent: string) {
@@ -18,16 +20,16 @@ const rows = computed(() => {
     return [];
   }
   return [
-    { section: 'Browser', label: 'Name', value: info.browser.name },
-    { section: 'Browser', label: 'Version', value: info.browser.version },
-    { section: 'Engine', label: 'Name', value: info.engine.name },
-    { section: 'Engine', label: 'Version', value: info.engine.version },
-    { section: 'OS', label: 'Name', value: info.os.name },
-    { section: 'OS', label: 'Version', value: info.os.version },
-    { section: 'Device', label: 'Model', value: info.device.model },
-    { section: 'Device', label: 'Type', value: info.device.type },
-    { section: 'Device', label: 'Vendor', value: info.device.vendor },
-    { section: 'CPU', label: 'Architecture', value: info.cpu.architecture },
+    { section: t('tools.user-agent-parser.ui.sectionBrowser'), label: t('tools.user-agent-parser.ui.name'), value: info.browser.name },
+    { section: t('tools.user-agent-parser.ui.sectionBrowser'), label: t('tools.user-agent-parser.ui.version'), value: info.browser.version },
+    { section: t('tools.user-agent-parser.ui.sectionEngine'), label: t('tools.user-agent-parser.ui.name'), value: info.engine.name },
+    { section: t('tools.user-agent-parser.ui.sectionEngine'), label: t('tools.user-agent-parser.ui.version'), value: info.engine.version },
+    { section: t('tools.user-agent-parser.ui.sectionOs'), label: t('tools.user-agent-parser.ui.name'), value: info.os.name },
+    { section: t('tools.user-agent-parser.ui.sectionOs'), label: t('tools.user-agent-parser.ui.version'), value: info.os.version },
+    { section: t('tools.user-agent-parser.ui.sectionDevice'), label: t('tools.user-agent-parser.ui.model'), value: info.device.model },
+    { section: t('tools.user-agent-parser.ui.sectionDevice'), label: t('tools.user-agent-parser.ui.type'), value: info.device.type },
+    { section: t('tools.user-agent-parser.ui.sectionDevice'), label: t('tools.user-agent-parser.ui.vendor'), value: info.device.vendor },
+    { section: t('tools.user-agent-parser.ui.sectionCpu'), label: t('tools.user-agent-parser.ui.architecture'), value: info.cpu.architecture },
   ];
 });
 
@@ -63,13 +65,13 @@ const sections = computed(() => {
     <!-- Input card — full width -->
     <div class="ua-input-card kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">USER AGENT STRING</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.user-agent-parser.ui.userAgentString') }}</span>
       </div>
       <div class="ua-input-area">
         <textarea
           v-model="ua"
           class="ua-input"
-          placeholder="Put your user-agent here..."
+          :placeholder="t('tools.user-agent-parser.ui.placeholder')"
           rows="2"
           spellcheck="false"
           autofocus
@@ -104,7 +106,7 @@ const sections = computed(() => {
           <div v-else class="ua-row ua-row-empty">
             <span class="ua-prompt">&gt;_</span>
             <span class="ua-label">{{ row.label }}</span>
-            <span class="ua-fallback">Unknown</span>
+            <span class="ua-fallback">{{ t('tools.user-agent-parser.ui.unknown') }}</span>
             <span class="ua-copy-placeholder" />
           </div>
         </template>
@@ -113,10 +115,10 @@ const sections = computed(() => {
 
     <div v-else-if="ua.trim()" class="ua-empty-state kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">ERROR</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.user-agent-parser.ui.error') }}</span>
       </div>
       <div style="padding: 12px 16px;">
-        <span class="ua-fallback">Could not parse user agent string</span>
+        <span class="ua-fallback">{{ t('tools.user-agent-parser.ui.parseError') }}</span>
       </div>
     </div>
   </div>

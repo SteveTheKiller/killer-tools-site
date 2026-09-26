@@ -2,6 +2,8 @@
 import type { PSCmdlet, PSParameter } from './powershell-builder.data';
 import { categories, cmdlets } from './powershell-builder.data';
 
+const { t } = useI18n();
+
 const selectedCmdletName = ref<string | null>(null);
 const selectedCmdlet = ref<PSCmdlet | null>(null);
 const cmdletSearch = ref('');
@@ -173,75 +175,75 @@ async function copySnippet(enriched: string, originalKey: string) {
   setTimeout(() => (snippetCopied.value = null), 2000);
 }
 
-const cheatsheet = [
+const cheatsheet = computed(() => [
   {
-    title: 'Comparison Operators',
+    title: t('tools.powershellBuilder.ui.cheatsheetComparisonOperators'),
     rows: [
-      { expr: '-eq', desc: 'Equal to' },
-      { expr: '-ne', desc: 'Not equal to' },
-      { expr: '-gt / -lt', desc: 'Greater than / Less than' },
-      { expr: '-ge / -le', desc: 'Greater or equal / Less or equal' },
+      { expr: '-eq', desc: t('tools.powershellBuilder.ui.cheatsheetEqualTo') },
+      { expr: '-ne', desc: t('tools.powershellBuilder.ui.cheatsheetNotEqualTo') },
+      { expr: '-gt / -lt', desc: t('tools.powershellBuilder.ui.cheatsheetGreaterLessThan') },
+      { expr: '-ge / -le', desc: t('tools.powershellBuilder.ui.cheatsheetGreaterLessEqual') },
     ],
   },
   {
-    title: 'String Operators',
+    title: t('tools.powershellBuilder.ui.cheatsheetStringOperators'),
     rows: [
-      { expr: '-like', desc: 'Wildcard match  (* and ?)' },
-      { expr: '-notlike', desc: 'Wildcard non-match' },
-      { expr: '-match', desc: 'Regex match' },
-      { expr: '-notmatch', desc: 'Regex non-match' },
-      { expr: '-contains', desc: 'Collection contains value' },
-      { expr: '-in', desc: 'Value is in a collection' },
+      { expr: '-like', desc: t('tools.powershellBuilder.ui.cheatsheetWildcardMatch') },
+      { expr: '-notlike', desc: t('tools.powershellBuilder.ui.cheatsheetWildcardNonMatch') },
+      { expr: '-match', desc: t('tools.powershellBuilder.ui.cheatsheetRegexMatch') },
+      { expr: '-notmatch', desc: t('tools.powershellBuilder.ui.cheatsheetRegexNonMatch') },
+      { expr: '-contains', desc: t('tools.powershellBuilder.ui.cheatsheetCollectionContains') },
+      { expr: '-in', desc: t('tools.powershellBuilder.ui.cheatsheetValueInCollection') },
     ],
   },
   {
-    title: 'Logical Operators',
+    title: t('tools.powershellBuilder.ui.cheatsheetLogicalOperators'),
     rows: [
-      { expr: '-and', desc: 'Both conditions must be true' },
-      { expr: '-or', desc: 'Either condition is true' },
-      { expr: '-not  or  !', desc: 'Negate a condition' },
+      { expr: '-and', desc: t('tools.powershellBuilder.ui.cheatsheetBothTrue') },
+      { expr: '-or', desc: t('tools.powershellBuilder.ui.cheatsheetEitherTrue') },
+      { expr: '-not  or  !', desc: t('tools.powershellBuilder.ui.cheatsheetNegateCondition') },
     ],
   },
   {
-    title: 'Automatic Variables',
+    title: t('tools.powershellBuilder.ui.cheatsheetAutomaticVariables'),
     rows: [
-      { expr: '$_', desc: 'Current pipeline object' },
-      { expr: '$null', desc: 'Null / empty value' },
-      { expr: '$true / $false', desc: 'Boolean true / false' },
-      { expr: '$env:COMPUTERNAME', desc: 'Local computer name' },
-      { expr: '$env:USERNAME', desc: 'Currently logged-on user' },
-      { expr: '$PSVersionTable', desc: 'PS version info' },
+      { expr: '$_', desc: t('tools.powershellBuilder.ui.cheatsheetCurrentPipelineObject') },
+      { expr: '$null', desc: t('tools.powershellBuilder.ui.cheatsheetNullEmptyValue') },
+      { expr: '$true / $false', desc: t('tools.powershellBuilder.ui.cheatsheetBooleanTrueFalse') },
+      { expr: '$env:COMPUTERNAME', desc: t('tools.powershellBuilder.ui.cheatsheetLocalComputerName') },
+      { expr: '$env:USERNAME', desc: t('tools.powershellBuilder.ui.cheatsheetCurrentUser') },
+      { expr: '$PSVersionTable', desc: t('tools.powershellBuilder.ui.cheatsheetPsVersionInfo') },
     ],
   },
   {
-    title: 'Date Helpers',
+    title: t('tools.powershellBuilder.ui.cheatsheetDateHelpers'),
     rows: [
-      { expr: '(Get-Date)', desc: 'Current date and time' },
-      { expr: '(Get-Date).AddDays(-30)', desc: '30 days ago' },
-      { expr: '(Get-Date).AddMonths(-3)', desc: '3 months ago' },
-      { expr: '[datetime]"2025-01-01"', desc: 'Parse a date string' },
+      { expr: '(Get-Date)', desc: t('tools.powershellBuilder.ui.cheatsheetCurrentDateTime') },
+      { expr: '(Get-Date).AddDays(-30)', desc: t('tools.powershellBuilder.ui.cheatsheetThirtyDaysAgo') },
+      { expr: '(Get-Date).AddMonths(-3)', desc: t('tools.powershellBuilder.ui.cheatsheetThreeMonthsAgo') },
+      { expr: '[datetime]"2025-01-01"', desc: t('tools.powershellBuilder.ui.cheatsheetParseDateString') },
     ],
   },
   {
-    title: 'Pipeline Tricks',
+    title: t('tools.powershellBuilder.ui.cheatsheetPipelineTricks'),
     rows: [
-      { expr: '| Select-Object -First 10', desc: 'Limit to first 10 results' },
-      { expr: '| Measure-Object', desc: 'Count / sum / min / max' },
-      { expr: '| Out-GridView', desc: 'Interactive GUI viewer (local)' },
-      { expr: '| ConvertTo-Json', desc: 'Convert output to JSON' },
-      { expr: '| Tee-Object -FilePath f.txt', desc: 'Output to screen AND file' },
-      { expr: '-ErrorAction SilentlyContinue', desc: 'Suppress non-fatal errors' },
+      { expr: '| Select-Object -First 10', desc: t('tools.powershellBuilder.ui.cheatsheetLimitFirst10') },
+      { expr: '| Measure-Object', desc: t('tools.powershellBuilder.ui.cheatsheetCountSumMinMax') },
+      { expr: '| Out-GridView', desc: t('tools.powershellBuilder.ui.cheatsheetInteractiveGuiViewer') },
+      { expr: '| ConvertTo-Json', desc: t('tools.powershellBuilder.ui.cheatsheetConvertToJson') },
+      { expr: '| Tee-Object -FilePath f.txt', desc: t('tools.powershellBuilder.ui.cheatsheetOutputScreenAndFile') },
+      { expr: '-ErrorAction SilentlyContinue', desc: t('tools.powershellBuilder.ui.cheatsheetSuppressErrors') },
     ],
   },
   {
-    title: 'Remote Execution',
+    title: t('tools.powershellBuilder.ui.cheatsheetRemoteExecution'),
     rows: [
-      { expr: '-ComputerName SERVER01', desc: 'Many cmdlets support this directly' },
-      { expr: 'Invoke-Command -ScriptBlock {}', desc: 'Run via PS Remoting (WinRM)' },
-      { expr: 'Enter-PSSession SERVER01', desc: 'Interactive remote PS session' },
+      { expr: '-ComputerName SERVER01', desc: t('tools.powershellBuilder.ui.cheatsheetCmdletsSupportDirectly') },
+      { expr: 'Invoke-Command -ScriptBlock {}', desc: t('tools.powershellBuilder.ui.cheatsheetRunViaRemoting') },
+      { expr: 'Enter-PSSession SERVER01', desc: t('tools.powershellBuilder.ui.cheatsheetInteractiveRemoteSession') },
     ],
   },
-];
+]);
 </script>
 
 <template>

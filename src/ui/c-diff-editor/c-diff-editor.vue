@@ -6,6 +6,8 @@ import { useStyleStore } from '@/stores/style.store';
 const props = withDefaults(defineProps<{ options?: monaco.editor.IDiffEditorOptions }>(), { options: () => ({}) });
 const { options } = toRefs(props);
 
+const { t } = useI18n();
+
 window.MonacoEnvironment = {
   getWorker() {
     return new EditorWorker();
@@ -100,26 +102,26 @@ onMounted(() => {
     <div v-if="isNarrow" class="cd-narrow">
       <div class="cd-pane kt-terminal">
         <div class="cd-pane-label kt-terminal-bar">
-          ORIGINAL
+          {{ t('ui.diffEditor.originalLabel') }}
         </div>
         <textarea
           v-model="originalText"
           class="cd-textarea"
           rows="10"
           spellcheck="false"
-          placeholder="Original text..."
+          :placeholder="t('ui.diffEditor.originalPlaceholder')"
         />
       </div>
       <div class="cd-pane kt-terminal">
         <div class="cd-pane-label kt-terminal-bar">
-          MODIFIED
+          {{ t('ui.diffEditor.modifiedLabel') }}
         </div>
         <textarea
           v-model="modifiedText"
           class="cd-textarea"
           rows="10"
           spellcheck="false"
-          placeholder="Modified text..."
+          :placeholder="t('ui.diffEditor.modifiedPlaceholder')"
         />
       </div>
     </div>

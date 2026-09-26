@@ -29,6 +29,8 @@ import {
   isUTCDateString,
 } from './date-time-converter.models';
 
+const { t } = useI18n();
+
 const inputDate = ref('');
 const toDate: ToDateMapper = date => new Date(date);
 
@@ -44,6 +46,18 @@ const formats: DateFormat[] = [
   { name: 'Mongo ObjectID', fromDate: date => `${Math.floor(date.getTime() / 1000).toString(16)}0000000000000000`, toDate: objectId => new Date(Number.parseInt(objectId.substring(0, 8), 16) * 1000), formatMatcher: date => isMongoObjectId(date) },
   { name: 'Excel date/time', fromDate: date => dateToExcelFormat(date), toDate: excelFormatToDate, formatMatcher: isExcelFormat },
 ];
+
+const formatLabelKeys: Record<string, string> = {
+  'JS locale date string': 'formatJsLocaleDateString',
+  'Unix timestamp': 'formatUnixTimestamp',
+  'Timestamp': 'formatTimestamp',
+  'UTC format': 'formatUtc',
+  'Excel date/time': 'formatExcelDateTime',
+};
+function formatLabel(name: string) {
+  const key = formatLabelKeys[name];
+  return key ? t(`tools.date-time-converter.ui.${key}`) : name;
+}
 
 const formatIndex = ref(6);
 const now = useNow();
@@ -72,7 +86,7 @@ const validation = useValidation({
   source: inputDate,
   watch: [formatIndex],
   rules: [{
-    message: 'This date is invalid for this format',
+    message: t('tools.date-time-converter.ui.invalidDateRule'),
     validator: (value: string) => withDefaultOnError(() => {
       if (value === '') {
         return true;
@@ -120,7 +134,7 @@ onClickOutside(fmtMenuRef, () => {
         <input
           v-model="inputDate"
           class="dt-input"
-          placeholder="Paste a date string or leave empty for live clock..."
+          :placeholder="t('tools.date-time-converter.ui.inputPlaceholder')"
           spellcheck="false"
           autofocus
           :class="{ 'dt-input-error': inputDate && !validation.isValid }"
@@ -133,7 +147,7 @@ onClickOutside(fmtMenuRef, () => {
             :class="{ 'dt-fmt-btn-open': fmtMenuOpen }"
             @click="fmtMenuOpen = !fmtMenuOpen"
           >
-            <span class="dt-fmt-label">{{ formats[formatIndex].name }}</span>
+            <span class="dt-fmt-label">{{ formatLabel(formats[formatIndex].name) }}</span>
             <span class="dt-fmt-caret">{{ fmtMenuOpen ? '▴' : '▾' }}</span>
           </button>
           <div v-if="fmtMenuOpen" class="dt-fmt-menu">
@@ -145,22 +159,22 @@ onClickOutside(fmtMenuRef, () => {
               :class="{ 'dt-fmt-option-active': formatIndex === i }"
               @click="formatIndex = i; fmtMenuOpen = false"
             >
-              {{ fmt.name }}
+              {{ formatLabel(fmt.name) }}
             </button>
           </div>
         </div>
       </div>
       <div v-if="inputDate && !validation.isValid" class="dt-error">
-        Invalid date for this format
+        {{ t('tools.date-time-converter.ui.invalidDate') }}
       </div>
     </div>
 
     <div class="dt-terminal">
       <!-- Output header -->
       <div class="dt-section-header">
-        <span>OUTPUT</span>
+        <span>{{ t('tools.date-time-converter.ui.output') }}</span>
         <span v-if="isLive" class="dt-live">
-          <span class="dt-live-dot" /> LIVE
+          <span class="dt-live-dot" /> {{ t('tools.date-time-converter.ui.live') }}
         </span>
       </div>
       <!-- Output rows -->
@@ -171,7 +185,7 @@ onClickOutside(fmtMenuRef, () => {
         @click="copyValue(name, formatDateUsingFormatter(fromDate, normalizedDate))"
       >
         <span class="dt-prompt">&gt;_</span>
-        <span class="dt-label">{{ name }}</span>
+        <span class="dt-label">{{ formatLabel(name) }}</span>
         <code class="dt-value">{{ formatDateUsingFormatter(fromDate, normalizedDate) }}</code>
         <span class="dt-copy" :class="{ 'dt-copy-done': copiedLabel === name }">
           <span v-if="copiedLabel === name">✓</span>

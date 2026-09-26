@@ -4,6 +4,8 @@ import _ from 'lodash';
 
 const props = defineProps<{ item: CKeyValueListItem }>();
 const { item } = toRefs(props);
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -13,13 +15,13 @@ const { item } = toRefs(props);
     </div>
   </div>
   <div v-else-if="_.isBoolean(item.value)">
-    <c-text-copyable :value="item.value ? 'true' : 'false'" :displayed-value="item.value ? 'Yes' : 'No'" :show-icon="item.showCopyButton ?? true" />
+    <c-text-copyable :value="item.value ? 'true' : 'false'" :displayed-value="item.value ? t('ui.keyValueListItem.yes') : t('ui.keyValueListItem.no')" :show-icon="item.showCopyButton ?? true" />
   </div>
   <div v-else-if="_.isNumber(item.value)" font-mono>
     <c-text-copyable :value="String(item.value)" :show-icon="item.showCopyButton ?? true" />
   </div>
   <div v-else-if="_.isNil(item.value) || item.value === ''" op-70>
-    {{ item.placeholder ?? 'N/A' }}
+    {{ item.placeholder ?? t('ui.keyValueListItem.notAvailable') }}
   </div>
   <div v-else>
     <c-text-copyable :value="item.value" :show-icon="item.showCopyButton ?? true" />

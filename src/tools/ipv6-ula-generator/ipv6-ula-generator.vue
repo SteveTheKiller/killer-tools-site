@@ -2,6 +2,8 @@
 import { SHA1 } from 'crypto-js';
 import { macAddressValidation } from '@/utils/macAddress';
 
+const { t } = useI18n();
+
 const macAddress = ref('20:37:06:12:34:56');
 const calculatedSections = computed(() => {
   const timestamp = Date.now();
@@ -12,9 +14,9 @@ const calculatedSections = computed(() => {
   const ula = `fd${hex40bit.substring(0, 2)}:${hex40bit.substring(2, 6)}:${hex40bit.substring(6)}`;
 
   return [
-    { label: 'IPv6 ULA', value: `${ula}::/48` },
-    { label: 'First routable', value: `${ula}:0::/64` },
-    { label: 'Last routable', value: `${ula}:ffff::/64` },
+    { label: t('tools.ipv6-ula-generator.ui.ipv6Ula'), value: `${ula}::/48` },
+    { label: t('tools.ipv6-ula-generator.ui.firstRoutable'), value: `${ula}:0::/64` },
+    { label: t('tools.ipv6-ula-generator.ui.lastRoutable'), value: `${ula}:ffff::/64` },
   ];
 });
 
@@ -38,12 +40,12 @@ async function copyValue(label: string, value: string) {
 <template>
   <div class="ula-tool">
     <div class="kt-alert kt-alert-info" mb-3>
-      Uses current timestamp + MAC address, SHA1 hashed. Lower 40 bits form the global ID per RFC 4193.
+      {{ t('tools.ipv6-ula-generator.ui.infoAlert') }}
     </div>
 
     <c-input-text
       v-model:value="macAddress"
-      label="MAC Address"
+      :label="t('tools.ipv6-ula-generator.ui.macAddress')"
       placeholder="20:37:06:12:34:56"
       mb-3
       clearable
@@ -55,7 +57,7 @@ async function copyValue(label: string, value: string) {
 
     <div v-if="addressValidation.isValid" class="kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">Output</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.ipv6-ula-generator.ui.output') }}</span>
       </div>
       <div
         v-for="{ label, value } in calculatedSections"
@@ -68,7 +70,7 @@ async function copyValue(label: string, value: string) {
         <button
           type="button"
           class="kt-copy"
-          :title="copiedLabel === label ? 'Copied!' : 'Copy'"
+          :title="copiedLabel === label ? t('tools.ipv6-ula-generator.ui.copied') : t('tools.ipv6-ula-generator.ui.copy')"
           @click="copyValue(label, value)"
         >
           <span v-if="copiedLabel === label" class="kt-copy-check">✓</span>

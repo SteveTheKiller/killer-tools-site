@@ -6,6 +6,7 @@ import { useDownloadFileFromBase64Refs } from '@/composable/downloadBase64';
 import { useStyleStore } from '@/stores/style.store';
 import { buildWifiQRText, EAPMethods, EAPPhase2Methods, useQRCode } from './useQRCode';
 
+const { t } = useI18n();
 const styleStore = useStyleStore();
 
 type Mode = 'text' | 'wifi';
@@ -45,19 +46,19 @@ const foreground = ref(themeDefault.value.fg);
 const background = ref(themeDefault.value.bg);
 const errorCorrectionLevel = ref<QRCodeErrorCorrectionLevel>('medium');
 
-const encryptionOptions: Array<{ label: string, value: WifiEncryption }> = [
-  { label: 'WPA/WPA2', value: 'WPA' },
-  { label: 'WEP', value: 'WEP' },
-  { label: 'No password', value: 'nopass' },
-  { label: 'WPA2-EAP', value: 'WPA2-EAP' },
-];
+const encryptionOptions = computed<Array<{ label: string, value: WifiEncryption }>>(() => [
+  { label: t('tools.qr-code-generator.ui.encWpa'), value: 'WPA' },
+  { label: t('tools.qr-code-generator.ui.encWep'), value: 'WEP' },
+  { label: t('tools.qr-code-generator.ui.encNopass'), value: 'nopass' },
+  { label: t('tools.qr-code-generator.ui.encEap'), value: 'WPA2-EAP' },
+]);
 
-const errorLevels: Array<{ label: string, value: QRCodeErrorCorrectionLevel }> = [
-  { label: 'Low (~7%)', value: 'low' },
-  { label: 'Medium (~15%)', value: 'medium' },
-  { label: 'Quartile (~25%)', value: 'quartile' },
-  { label: 'High (~30%)', value: 'high' },
-];
+const errorLevels = computed<Array<{ label: string, value: QRCodeErrorCorrectionLevel }>>(() => [
+  { label: t('tools.qr-code-generator.ui.levelLow'), value: 'low' },
+  { label: t('tools.qr-code-generator.ui.levelMedium'), value: 'medium' },
+  { label: t('tools.qr-code-generator.ui.levelQuartile'), value: 'quartile' },
+  { label: t('tools.qr-code-generator.ui.levelHigh'), value: 'high' },
+]);
 
 const qrText = computed(() => {
   if (mode.value === 'text') {
@@ -98,9 +99,9 @@ function applyTheme(fg: string, bg: string) {
 
 const caption = computed(() => {
   if (mode.value === 'wifi') {
-    return '>_ scan to join';
+    return t('tools.qr-code-generator.ui.captionJoin');
   }
-  return '>_ scan to open';
+  return t('tools.qr-code-generator.ui.captionOpen');
 });
 </script>
 
@@ -117,7 +118,7 @@ const caption = computed(() => {
               :class="{ 'qrg-tab-active': mode === 'text' }"
               @click="mode = 'text'"
             >
-              Text / URL
+              {{ t('tools.qr-code-generator.ui.tabText') }}
             </button>
             <button
               type="button"
@@ -125,14 +126,14 @@ const caption = computed(() => {
               :class="{ 'qrg-tab-active': mode === 'wifi' }"
               @click="mode = 'wifi'"
             >
-              Wi-Fi
+              {{ t('tools.qr-code-generator.ui.tabWifi') }}
             </button>
           </div>
           <div class="qrg-body">
             <!-- ── Text / URL mode ── -->
             <template v-if="mode === 'text'">
               <div class="qrg-section-label">
-                Text or URL
+                {{ t('tools.qr-code-generator.ui.sectionTextOrUrl') }}
               </div>
               <c-input-text
                 v-model:value="text"
@@ -140,14 +141,14 @@ const caption = computed(() => {
                 rows="2"
                 autosize
                 autofocus
-                placeholder="Your link or text..."
+                :placeholder="t('tools.qr-code-generator.ui.placeholderTextOrUrl')"
               />
             </template>
 
             <!-- ── Wi-Fi mode ── -->
             <template v-if="mode === 'wifi'">
               <div class="qrg-section-label">
-                Encryption
+                {{ t('tools.qr-code-generator.ui.sectionEncryption') }}
               </div>
               <div class="qrg-pill-row">
                 <button
@@ -163,29 +164,29 @@ const caption = computed(() => {
               </div>
 
               <div class="qrg-section-label">
-                SSID
+                {{ t('tools.qr-code-generator.ui.sectionSsid') }}
               </div>
               <c-input-text
                 v-model:value="ssid"
-                placeholder="Network name..."
+                :placeholder="t('tools.qr-code-generator.ui.placeholderSsid')"
                 autosize
                 rows="1"
               />
 
               <div v-if="encryption !== 'nopass'" class="qrg-section-label">
-                Password
+                {{ t('tools.qr-code-generator.ui.sectionPassword') }}
               </div>
               <c-input-text
                 v-if="encryption !== 'nopass'"
                 v-model:value="wifiPassword"
                 type="password"
-                placeholder="Network password..."
+                :placeholder="t('tools.qr-code-generator.ui.placeholderPassword')"
                 autosize
                 rows="1"
               />
 
               <div class="qrg-section-label">
-                Options
+                {{ t('tools.qr-code-generator.ui.sectionOptions') }}
               </div>
               <div class="qrg-pill-row">
                 <button
@@ -194,7 +195,7 @@ const caption = computed(() => {
                   :class="{ 'qrg-pill-active': isHiddenSSID }"
                   @click="isHiddenSSID = !isHiddenSSID"
                 >
-                  Hidden SSID
+                  {{ t('tools.qr-code-generator.ui.hiddenSsid') }}
                 </button>
                 <button
                   v-if="encryption === 'WPA2-EAP'"
@@ -203,14 +204,14 @@ const caption = computed(() => {
                   :class="{ 'qrg-pill-active': eapAnonymous }"
                   @click="eapAnonymous = !eapAnonymous"
                 >
-                  Anonymous identity
+                  {{ t('tools.qr-code-generator.ui.anonymousIdentity') }}
                 </button>
               </div>
 
               <!-- EAP-specific fields -->
               <template v-if="encryption === 'WPA2-EAP'">
                 <div class="qrg-section-label">
-                  EAP method
+                  {{ t('tools.qr-code-generator.ui.sectionEapMethod') }}
                 </div>
                 <c-select
                   v-model:value="eapMethod"
@@ -219,7 +220,7 @@ const caption = computed(() => {
                 />
 
                 <div class="qrg-section-label">
-                  EAP phase 2
+                  {{ t('tools.qr-code-generator.ui.sectionEapPhase2') }}
                 </div>
                 <c-select
                   v-model:value="eapPhase2Method"
@@ -227,12 +228,12 @@ const caption = computed(() => {
                 />
 
                 <div v-if="!eapAnonymous" class="qrg-section-label">
-                  EAP identity
+                  {{ t('tools.qr-code-generator.ui.sectionEapIdentity') }}
                 </div>
                 <c-input-text
                   v-if="!eapAnonymous"
                   v-model:value="eapIdentity"
-                  placeholder="Your EAP identity..."
+                  :placeholder="t('tools.qr-code-generator.ui.placeholderEapIdentity')"
                   autosize
                   rows="1"
                 />
@@ -241,7 +242,7 @@ const caption = computed(() => {
 
             <!-- Shared: theme / colors / error correction -->
             <div class="qrg-section-label">
-              Theme
+              {{ t('tools.qr-code-generator.ui.sectionTheme') }}
             </div>
             <div class="qrg-pill-row">
               <button
@@ -250,7 +251,7 @@ const caption = computed(() => {
                 :class="{ 'qrg-pill-active': foreground === themeDefault.fg && background === themeDefault.bg }"
                 @click="applyTheme(themeDefault.fg, themeDefault.bg)"
               >
-                Default
+                {{ t('tools.qr-code-generator.ui.themeDefault') }}
               </button>
               <button
                 type="button"
@@ -258,7 +259,7 @@ const caption = computed(() => {
                 :class="{ 'qrg-pill-active': foreground === '#1ea54cff' && background === '#0a0a0aff' && (themeDefault.fg !== '#1ea54cff' || themeDefault.bg !== '#0a0a0aff') }"
                 @click="applyTheme('#1ea54cff', '#0a0a0aff')"
               >
-                Terminal
+                {{ t('tools.qr-code-generator.ui.themeTerminal') }}
               </button>
               <button
                 type="button"
@@ -266,7 +267,7 @@ const caption = computed(() => {
                 :class="{ 'qrg-pill-active': foreground === '#000000ff' && background === '#ffffffff' }"
                 @click="applyTheme('#000000ff', '#ffffffff')"
               >
-                Classic
+                {{ t('tools.qr-code-generator.ui.themeClassic') }}
               </button>
               <button
                 type="button"
@@ -274,22 +275,22 @@ const caption = computed(() => {
                 :class="{ 'qrg-pill-active': foreground === '#ffffffff' && background === '#000000ff' }"
                 @click="applyTheme('#ffffffff', '#000000ff')"
               >
-                Inverted
+                {{ t('tools.qr-code-generator.ui.themeInverted') }}
               </button>
             </div>
 
             <div class="qrg-section-label">
-              Colors
+              {{ t('tools.qr-code-generator.ui.sectionColors') }}
             </div>
             <div class="qrg-color-grid">
-              <span class="qrg-color-label">Foreground:</span>
+              <span class="qrg-color-label">{{ t('tools.qr-code-generator.ui.labelForeground') }}</span>
               <n-color-picker v-model:value="foreground" :modes="['hex']" />
-              <span class="qrg-color-label">Background:</span>
+              <span class="qrg-color-label">{{ t('tools.qr-code-generator.ui.labelBackground') }}</span>
               <n-color-picker v-model:value="background" :modes="['hex']" />
             </div>
 
             <div class="qrg-section-label">
-              Error correction
+              {{ t('tools.qr-code-generator.ui.sectionErrorCorrection') }}
             </div>
             <div class="qrg-pill-row">
               <button
@@ -314,14 +315,14 @@ const caption = computed(() => {
         </div>
         <div v-else class="qr-frame qr-frame-empty">
           <span class="qr-empty-hint">
-            {{ mode === 'wifi' ? 'Enter an SSID to generate a Wi-Fi QR' : 'Enter text or a URL' }}
+            {{ mode === 'wifi' ? t('tools.qr-code-generator.ui.emptyHintWifi') : t('tools.qr-code-generator.ui.emptyHintText') }}
           </span>
         </div>
         <div v-if="qrcode" class="qr-caption">
           {{ caption }}
         </div>
         <button v-if="qrcode" type="button" class="qrg-pill qrg-pill-active qr-download" @click="download">
-          ↓ Download PNG
+          {{ t('tools.qr-code-generator.ui.downloadPng') }}
         </button>
       </div>
     </div>

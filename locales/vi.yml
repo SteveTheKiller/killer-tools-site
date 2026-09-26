@@ -1,69 +1,61 @@
 home:
   categories:
     newestTools: Công cụ mới nhất
-    favoriteTools: 'Công cụ yêu thích của bạn'
-    allTools: 'Tất cả công cụ'
-    favoritesDndToolTip: 'Kéo thả để sắp xếp lại yêu thích'
-  subtitle: 'Công cụ cho nhà phát triển.'
-  toggleMenu: 'Chuyển đổi menu'
+    favoriteTools: Công cụ yêu thích của bạn
+    allTools: Tất cả công cụ
+    favoritesDndToolTip: Kéo thả để sắp xếp lại yêu thích
+  subtitle: Công cụ cho nhà phát triển.
+  toggleMenu: Chuyển đổi menu
   home: Trang chủ
-  uiLib: 'Thư viện UI'
-  support: 'Hỗ trợ phát triển IT Tools'
-  buyMeACoffee: 'Ủng hộ tác giả'
+  uiLib: Thư viện UI
+  support: Hỗ trợ phát triển IT Tools
+  buyMeACoffee: Ủng hộ tác giả
   follow:
-    title: 'Bạn thích IT-tools?'
-    p1: 'Hãy cho chúng tôi một ngôi sao trên'
-    githubRepository: 'Kho GitHub IT-Tools'
-    p2: 'hoặc theo dõi chúng tôi trên'
-    twitterXAccount: 'Tài khoản X IT-Tools'
-    thankYou: 'Cảm ơn bạn!'
+    title: Bạn thích IT-tools?
+    p1: Hãy cho chúng tôi một ngôi sao trên
+    githubRepository: Kho GitHub IT-Tools
+    p2: hoặc theo dõi chúng tôi trên
+    twitterXAccount: Tài khoản X IT-Tools
+    thankYou: Cảm ơn bạn!
   nav:
-    github: 'Kho GitHub'
-    githubRepository: 'Kho GitHub IT-Tools'
-    twitterX: 'Tài khoản X'
-    twitterXAccount: 'Tài khoản X IT Tools'
-    about: 'Về IT-Tools'
-    aboutLabel: 'Giới thiệu'
-    darkMode: 'Chế độ tối'
-    lightMode: 'Chế độ sáng'
-    mode: 'Chuyển đổi chế độ tối/sáng'
+    github: Kho GitHub
+    githubRepository: Kho GitHub IT-Tools
+    twitterX: Tài khoản X
+    twitterXAccount: Tài khoản X IT Tools
+    about: Về IT-Tools
+    aboutLabel: Giới thiệu
+    darkMode: Chế độ tối
+    lightMode: Chế độ sáng
+    mode: Chuyển đổi chế độ tối/sáng
 about:
-  content: >
+  content: |
     # Về killer-tools
-
     Website tuyệt vời này, được tạo ra bằng ❤ bởi [Steve the Killer](https://thekiller.net), tổng hợp các công cụ hữu ích cho nhà phát triển và những người làm việc trong lĩnh vực IT. Nếu bạn thấy nó hữu ích, xin đừng ngần ngại chia sẻ cho những người mà bạn nghĩ sẽ thấy nó hữu ích và đừng quên đánh dấu nó trong thanh lối tắt của bạn!
-
     killer-tools là mã nguồn mở (dưới giấy phép GPL-3.0) và miễn phí, và sẽ luôn như vậy, nhưng tôi phải trả tiền để lưu trữ và gia hạn tên miền. Nếu bạn muốn hỗ trợ công việc của tôi, và khích lệ tôi thêm nhiều công cụ hơn, hãy xem xét hỗ trợ bằng cách [tài trợ cho tôi](https://www.buymeacoffee.com/StevetheKiller).
-
     ## Công nghệ
-
     killer-tools được tạo ra bằng Vue.js (Vue 3) với thư viện thành phần Naive UI và được lưu trữ và triển khai liên tục bởi GitHub. Các thư viện mã nguồn mở của bên thứ ba được sử dụng trong một số công cụ, bạn có thể tìm danh sách đầy đủ trong file [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) của kho lưu trữ.
-
     ## Phát hiện lỗi? Một công cụ bị thiếu?
-
     Nếu bạn cần một công cụ hiện không có ở đây, và bạn nghĩ rằng nó có thể hữu ích, bạn được chào đón để gửi một yêu cầu tính năng trong [phần vấn đề](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) trong kho GitHub.
-
     Và nếu bạn phát hiện ra một lỗi, hoặc điều gì đó không hoạt động như mong đợi, xin vui lòng gửi báo cáo lỗi trong [phần vấn đề](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) trong kho GitHub.
-
 404:
-  notFound: '404 Không Tìm Thấy'
-  sorry: 'Xin lỗi, trang này dường như không tồn tại'
-  maybe: 'Lỗi xảy ra có thể do bộ nhớ đệm, hãy (CTRL + F5) để tải lại trang?'
-  backHome: 'Quay về trang chủ'
+  notFound: 404 Không Tìm Thấy
+  sorry: Xin lỗi, trang này dường như không tồn tại
+  maybe: Lỗi xảy ra có thể do bộ nhớ đệm, hãy (CTRL + F5) để tải lại trang?
+  backHome: Quay về trang chủ
 favoriteButton:
-  remove: 'Xóa khỏi mục yêu thích'
-  add: 'Thêm vào mục yêu thích'
+  remove: Xóa khỏi mục yêu thích
+  add: Thêm vào mục yêu thích
 toolCard:
   new: Mới
 search:
   label: Tìm kiếm
 tools:
   categories:
-    favorite-tools: 'Công cụ yêu thích của bạn'
+    favorite-tools: Công cụ yêu thích của bạn
     crypto: Mã hóa
     conversion: Chuyển đổi
     web: Web
-    images and videos: 'Hình ảnh & Video'
+    images and videos: Hình ảnh & Video
     development: Phát triển
     network: Mạng
     math: Toán học
@@ -72,363 +64,1723 @@ tools:
     data: Dữ liệu
     photography: Nhiếp ảnh
     windows: Windows
-    killer apps: 'Killer Apps'
-
+    killer apps: Killer Apps
   password-strength-analyser:
     title: Bộ phân tích độ mạnh mật khẩu
     description: Khám phá độ mạnh của mật khẩu của bạn với công cụ phân tích độ mạnh mật khẩu chỉ chạy trên phía máy khách và ước tính thời gian phá mật khẩu.
-
-
   percentage-calculator:
     title: Máy tính phần trăm
     description: Dễ dàng tính toán phần trăm từ một giá trị đến giá trị khác, hoặc từ một phần trăm đến một giá trị.
-
+    ui:
+      whatIsXPercentOfYTitle: X% CỦA Y LÀ BAO NHIÊU
+      whatIsLabel: Bao nhiêu là
+      percentOfLabel: '% của'
+      resultPlaceholder: Kết quả
+      xIsWhatPercentOfYTitle: X LÀ BAO NHIÊU PHẦN TRĂM CỦA Y
+      isWhatPercentOfLabel: là bao nhiêu % của
+      percentageChangeTitle: TĂNG / GIẢM PHẦN TRĂM
+      fromLabel: Từ
+      toLabel: đến
   svg-placeholder-generator:
     title: Trình tạo hình ảnh SVG giả định
     description: Tạo hình ảnh svg để sử dụng làm giả định trong ứng dụng của bạn.
-
+    ui:
+      widthLabel: CHIỀU RỘNG (px)
+      backgroundLabel: NỀN
+      heightLabel: CHIỀU CAO (px)
+      textColorLabel: MÀU CHỮ
+      fontSizeLabel: CỠ CHỮ
+      customTextLabel: VĂN BẢN TÙY CHỈNH
+      customTextPlaceholder: Mặc định là {size}
+      useExactSizeToggle: Dùng kích thước chính xác
+      svgHtmlElementLabel: PHẦN TỬ HTML SVG
+      svgBase64Label: SVG DẠNG BASE64
+      copySvgButton: Sao chép svg
+      copyBase64Button: Sao chép base64
+      downloadSvgButton: Tải svg
+      previewLabel: XEM TRƯỚC
+      svgPreviewAlt: xem trước SVG
   json-to-csv:
     title: Chuyển đổi JSON thành CSV
     description: Chuyển đổi JSON thành CSV với việc tự động phát hiện tiêu đề.
-
+    ui:
+      invalidJson: JSON được cung cấp không hợp lệ.
+      yourRawJson: JSON thô của bạn
+      pasteRawJsonPlaceholder: Dán JSON thô của bạn vào đây...
+      csvOutputLabel: Phiên bản CSV của JSON của bạn
   camera-recorder:
     title: Ghi lại camera
     description: Chụp ảnh hoặc quay video từ webcam hoặc máy ảnh của bạn.
+    ui:
+      selectCamera: Chọn camera
+      selectMicrophone: Chọn micro
+      notSupported: Trình duyệt của bạn không hỗ trợ quay video bằng camera.
+      accessRequired: Cần quyền truy cập camera và micro.
+      permissionBlocked: Quyền truy cập đã bị chặn. Hãy cấp quyền thủ công qua biểu tượng khóa trên thanh địa chỉ của trình duyệt.
+      grantPermission: Cấp quyền
+      video: VIDEO
+      audio: ÂM THANH
+      startWebcam: Bật webcam
+      paused: TẠM DỪNG
+      rec: ĐANG GHI
+      screenshot: Chụp màn hình
+      record: Ghi hình
+      pause: Tạm dừng
+      resume: Tiếp tục
+      stop: Dừng
+      recordingNotSupported: Trình duyệt này không hỗ trợ ghi hình
+      captures: ẢNH CHỤP ({count})
+      clearAll: Xóa tất cả
+      screenshotAlt: ảnh chụp màn hình
+      download: Tải xuống
+      delete: Xóa
   keycode-info:
     title: Thông tin Keycode
     description: Tìm mã keycode, mã, vị trí và các phím điều khiển của bất kỳ phím nào được nhấn.
-
   emoji-picker:
     title: Bộ chọn biểu tượng cảm xúc
     description: Sao chép và dán biểu tượng cảm xúc một cách dễ dàng và nhận giá trị unicode và mã điểm của mỗi biểu tượng cảm xúc.
-
+    ui:
+      emojiCopied: Đã sao chép biểu tượng cảm xúc {emoji} vào bộ nhớ tạm
+      codePointsCopied: Đã sao chép mã điểm '{codePoints}' vào bộ nhớ tạm
+      unicodeCopied: Đã sao chép Unicode '{unicode}' vào bộ nhớ tạm
+      searchPlaceholder: Tìm biểu tượng cảm xúc (ví dụ 'smile')...
+      noResults: Không có kết quả
+      searchResult: Kết quả tìm kiếm
   color-converter:
     title: Trình chuyển đổi màu
     description: Chuyển đổi màu giữa các định dạng khác nhau (hex, rgb, hsl và tên css)
-
+    ui:
+      color: Màu
+      formats: ĐỊNH DẠNG
   bcrypt:
     title: Bcrypt
     description: Mã hóa và so sánh chuỗi văn bản sử dụng bcrypt. Bcrypt là một hàm mã hóa mật khẩu dựa trên thuật toán Blowfish.
+    ui:
+      copiedToClipboard: Đã sao chép chuỗi hash vào clipboard
+      hashTitle: HASH
+      compareTitle: SO SÁNH
+      stringLabel: Chuỗi
+      stringPlaceholder: Chuỗi cần hash...
+      saltRoundsLabel: Số vòng salt
+      outputLabel: KẾT QUẢ
+      copyHash: Sao chép hash
+      compareStringPlaceholder: Chuỗi cần so sánh...
+      hashLabel: Hash
+      compareHashPlaceholder: Hash cần so sánh...
+      matchLabel: Khớp
+      'yes': Có
+      'no': Không
   crontab-generator:
     title: Trình tạo Crontab
     description: Xác thực và tạo crontab và lấy mô tả đọc được của lịch trình cron.
+    ui:
+      symbolAnyValue: Bất kỳ giá trị nào
+      symbolEveryMinute: Mỗi phút
+      symbolRange: Phạm vi giá trị
+      symbolRangeEquivalent: Phút từ 1 đến 10
+      symbolList: Danh sách giá trị
+      symbolListEquivalent: Vào phút 1 và 10
+      symbolStep: Giá trị bước
+      symbolStepEquivalent: Mỗi 10 phút
+      aliasYearly: Một lần mỗi năm (1 tháng 1, nửa đêm)
+      aliasMonthly: Ngày đầu mỗi tháng, nửa đêm
+      aliasWeekly: Chủ nhật, nửa đêm
+      aliasDaily: Mỗi ngày lúc nửa đêm
+      aliasHourly: Mỗi giờ, đúng giờ
+      aliasReboot: Chạy một lần khi khởi động
+      aliasRebootEquivalent: (khi khởi động)
+      invalidCron: Cron này không hợp lệ
+      use24HourTime: Định dạng 24 giờ
+      daysStartAtZero: Ngày bắt đầu từ 0
+      labelSymbol: 'Ký hiệu:'
+      labelMeaning: 'Ý nghĩa:'
+      labelExample: 'Ví dụ:'
+      labelEquivalent: 'Tương đương:'
+      symbols: Ký hiệu
+      aliases: Bí danh
   http-status-codes:
     title: Mã trạng thái HTTP
     description: Danh sách tất cả các mã trạng thái HTTP, tên và ý nghĩa của chúng.
-
+    ui:
+      searchResults: Kết quả tìm kiếm
+      searchPlaceholder: Tìm mã trạng thái HTTP...
+      copiedTooltip: Đã sao chép!
+      clickToCopy: Nhấp để sao chép mã trạng thái
+      copiedLabel: đã sao chép
   sql-prettify:
     title: Định dạng và làm đẹp SQL
     description: Định dạng và làm đẹp các truy vấn SQL của bạn trực tuyến (hỗ trợ nhiều ngôn ngữ SQL khác nhau).
-
+    ui:
+      dialectLabel: PHƯƠNG NGỮ
+      keywordCaseLabel: KIỂU CHỮ TỪ KHÓA
+      indentStyleLabel: KIỂU THỤT LỀ
+      yourSqlQueryLabel: Câu lệnh SQL của bạn
+      sqlQueryPlaceholder: Dán câu lệnh SQL của bạn vào đây...
+      prettifiedQueryLabel: Phiên bản đã định dạng của câu lệnh
+      keywordCaseUpper: CHỮ HOA
+      keywordCaseLower: chữ thường
+      keywordCasePreserve: Giữ nguyên
+      indentStyleStandard: Tiêu chuẩn
+      indentStyleTabularLeft: Canh bảng trái
+      indentStyleTabularRight: Canh bảng phải
   git-memo:
     title: Lệnh Git
     description: Git là một phần mềm quản lý phiên bản phân tán. Với bảng ghi chú này, bạn sẽ có thể truy cập nhanh vào các lệnh Git phổ biến nhất.
-
   encryption:
     title: Mã hóa / giải mã văn bản
     description: Mã hóa và giải mã văn bản rõ bằng cách sử dụng thuật toán mã hóa như AES, TripleDES, Rabbit hoặc RC4.
-
+    ui:
+      decryptError: Khong the giai ma van ban cua ban
+      encryptTitle: MA HOA
+      decryptTitle: GIAI MA
+      yourText: VAN BAN CUA BAN
+      yourSecretKey: KHOA BI MAT CUA BAN
+      algorithm: THUAT TOAN
+      encryptedOutput: KET QUA MA HOA
+      yourEncryptedText: VAN BAN DA MA HOA CUA BAN
+      decryptedOutput: KET QUA GIAI MA
+      encryptPlaceholder: Chuoi can ma hoa
+      decryptPlaceholder: Ban ma can giai ma
+      secretKeyPlaceholder: Khoa bi mat...
   yaml-prettify:
     title: Định dạng và làm đẹp YAML
     description: Định dạng chuỗi YAML của bạn thành một định dạng dễ đọc và thân thiện với con người.
-
-
   roman-numeral-converter:
     title: Bộ chuyển đổi số La Mã
     description: Chuyển đổi số La Mã thành số và chuyển đổi số thành số La Mã.
-
+    ui:
+      converterTitle: BỘ CHUYỂN ĐỔI
+      arabicSideLabel: SỐ Ả RẬP
+      romanSideLabel: SỐ LA MÃ
+      arabicRangeError: Phải nằm trong khoảng {min}-{max}
+      invalidRoman: Không phải số La Mã hợp lệ
+      copied: Đã sao chép
+      copy: Sao chép
+      romanCopiedToast: Đã sao chép số La Mã
+      arabicCopiedToast: Đã sao chép số Ả Rập
   hmac-generator:
     title: Máy tạo HMAC
     description: Tính toán mã xác thực thông điệp dựa trên hash (HMAC) sử dụng một khóa bí mật và hàm băm yêu thích của bạn.
-
+    ui:
+      encodingBinary: Nhi phan (co so 2)
+      encodingHex: Thap luc phan (co so 16)
+      copied: Da sao chep HMAC vao clipboard
+      plainText: VAN BAN GOC
+      secretKey: KHOA BI MAT
+      hashingFunction: HAM BAM
+      outputEncoding: MA HOA DAU RA
+      hmacOutput: KET QUA HMAC
+      plainTextPlaceholder: Van ban thuong de tinh hash...
+      secretKeyPlaceholder: Nhap khoa bi mat...
+      clear: Xoa
+      copyHmac: Sao chep HMAC
   bip39-generator:
     title: Trình tạo BIP39 passphrase
     description: Tạo BIP39 passphrase từ mnemonic hiện có hoặc ngẫu nhiên, hoặc lấy mnemonic từ passphrase.
+    ui:
+      languageEnglish: Tiếng Anh
+      languageChineseSimplified: Tiếng Trung giản thể
+      languageChineseTraditional: Tiếng Trung phồn thể
+      languageCzech: Tiếng Séc
+      languageFrench: Tiếng Pháp
+      languageItalian: Tiếng Ý
+      languageJapanese: Tiếng Nhật
+      languageKorean: Tiếng Hàn
+      languagePortuguese: Tiếng Bồ Đào Nha
+      languageSpanish: Tiếng Tây Ban Nha
+      entropyLengthError: Độ dài entropy phải >= 16, <= 32 và là bội số của 4
+      entropyHexError: Entropy phải là chuỗi thập lục phân
+      invalidMnemonic: Cụm từ ghi nhớ không hợp lệ
+      entropyCopied: Đã sao chép entropy vào clipboard
+      passphraseCopied: Đã sao chép cụm mật khẩu vào clipboard
+      languageLabel: Ngôn ngữ
+      entropyHeading: ENTROPY (SEED)
+      entropyPlaceholder: Entropy dạng hex...
+      regenerate: Tạo lại
+      copyEntropy: Sao chép entropy
+      passphraseHeading: CỤM MẬT KHẨU (MNEMONIC)
+      passphrasePlaceholder: Các từ mnemonic...
+      copyPassphrase: Sao chép cụm mật khẩu
   base64-file-converter:
     title: Trình chuyển đổi tệp Base64
     description: Chuyển đổi chuỗi, tệp hoặc hình ảnh thành mã Base64.
-
+    ui:
+      copiedToClipboard: Đã sao chép chuỗi base64 vào bộ nhớ tạm
+      base64ToFileTitle: BASE64 SANG TỆP
+      fileNameLabel: TÊN TỆP
+      fileNamePlaceholder: Tên tệp tải xuống
+      extensionLabel: PHẦN MỞ RỘNG
+      extensionPlaceholder: đuôi tệp
+      base64StringLabel: CHUỖI BASE64
+      base64InputPlaceholder: Dán chuỗi base64 của tệp vào đây...
+      invalidBase64: Chuỗi base64 không hợp lệ
+      previewImage: Xem trước hình ảnh
+      downloadFile: Tải tệp xuống
+      fileToBase64Title: TỆP SANG BASE64
+      dropHint: Kéo và thả tệp vào đây, hoặc nhấp để chọn
+      fileInBase64Label: TỆP DẠNG BASE64
+      fileOutputPlaceholder: Tệp dạng base64 sẽ hiển thị ở đây
+      copied: Đã sao chép!
+      copyBase64: Sao chép base64
   base64-string-converter:
     title: Trình mã hóa/giải mã chuỗi Base64
     description: Đơn giản mã hóa và giải mã chuỗi thành mã Base64.
+    ui:
+      base64CopiedToClipboard: Đã sao chép chuỗi base64 vào bộ nhớ tạm
+      stringCopiedToClipboard: Đã sao chép chuỗi vào bộ nhớ tạm
+      stringToBase64Title: CHUỖI SANG BASE64
+      encodingLabel: MÃ HÓA
+      standard: Tiêu chuẩn
+      urlSafe: An toàn cho URL
+      stringToEncodeLabel: CHUỖI CẦN MÃ HÓA
+      stringInputPlaceholder: Nhập chuỗi của bạn vào đây...
+      base64OutputLabel: KẾT QUẢ BASE64
+      base64OutputPlaceholder: Kết quả mã hóa base64 của chuỗi sẽ hiển thị ở đây
+      copied: Đã sao chép!
+      copyBase64: Sao chép base64
+      base64ToStringTitle: BASE64 SANG CHUỖI
+      base64ToDecodeLabel: CHUỖI BASE64 CẦN GIẢI MÃ
+      base64InputPlaceholder: Chuỗi base64 của bạn...
+      invalidBase64: Chuỗi base64 không hợp lệ
+      decodedStringLabel: CHUỖI ĐÃ GIẢI MÃ
+      decodedOutputPlaceholder: Chuỗi đã giải mã sẽ hiển thị ở đây
+      copyDecodedString: Sao chép chuỗi đã giải mã
   math-evaluator:
     title: Trình đánh giá toán học
     description: Một máy tính để tính toán biểu thức toán học. Bạn có thể sử dụng các hàm như sqrt, cos, sin, abs, v.v.
-
+    ui:
+      placeholder: 'Biểu thức toán học của bạn (vd: 2*sqrt(6) )...'
+      result: Kết quả
   url-parser:
     title: Trình phân tích URL
     description: Phân tích một chuỗi URL để lấy tất cả các phần khác nhau (giao thức, nguồn gốc, tham số, cổng, tên người dùng-mật khẩu, ...)
-
-
+    ui:
+      sectionHost: Máy chủ
+      protocol: Giao thức
+      hostname: Tên máy chủ
+      port: Cổng
+      sectionAuthentication: Xác thực
+      username: Tên đăng nhập
+      password: Mật khẩu
+      sectionPath: Đường dẫn
+      pathname: Đường dẫn
+      search: Tham số truy vấn
+      hash: Hash
+      urlTitle: URL
+      invalidUrl: URL không hợp lệ
+      params: THAM SỐ
+      emptyHint: Nhập một URL ở trên để phân tích
   user-agent-parser:
     title: Trình phân tích User-agent
     description: Phát hiện và phân tích trình duyệt, engine, hệ điều hành, CPU và kiểu/mô hình thiết bị từ chuỗi user-agent.
-
+    ui:
+      sectionBrowser: Trình duyệt
+      sectionEngine: Công cụ
+      sectionOs: Hệ điều hành
+      sectionDevice: Thiết bị
+      sectionCpu: CPU
+      name: Tên
+      version: Phiên bản
+      model: Kiểu máy
+      type: Loại
+      vendor: Nhà sản xuất
+      architecture: Kiến trúc
+      userAgentString: CHUỖI USER AGENT
+      placeholder: Nhập user-agent của bạn vào đây...
+      unknown: Không xác định
+      error: LỖI
+      parseError: Không thể phân tích chuỗi user agent
   case-converter:
     title: Chuyển đổi chữ hoa/chữ thường
     description: Thay đổi kiểu chữ của một chuỗi và chọn giữa các định dạng khác nhau
+    ui:
+      inputPlaceholder: Chuỗi của bạn...
+      output: KẾT QUẢ
   html-entities:
     title: Thay thế các ký tự HTML
     description: Thay thế hoặc bỏ thẻ các ký tự HTML (thay thế <,>, &, " và \' thành phiên bản HTML tương ứng)
-
+    ui:
+      yourString: CHUỖI CỦA BẠN
+      escapePlaceholder: Chuỗi cần thoát ký tự...
+      escapedOutput: KẾT QUẢ ĐÃ THOÁT KÝ TỰ
+      copied: Đã sao chép
+      copy: Sao chép
+      yourEscapedString: CHUỖI ĐÃ THOÁT KÝ TỰ CỦA BẠN
+      unescapePlaceholder: Chuỗi cần bỏ thoát ký tự...
+      unescapedOutput: KẾT QUẢ ĐÃ BỎ THOÁT KÝ TỰ
   json-prettify:
     title: Định dạng và làm đẹp JSON
     description: Định dạng chuỗi JSON của bạn thành một định dạng dễ đọc và thân thiện với con người.
-
   docker-run-to-docker-compose-converter:
     title: Chuyển đổi lệnh docker run thành tệp docker-compose
     description: Chuyển đổi các lệnh docker run thành tệp docker-compose!
-
   mac-address-lookup:
     title: Tra cứu địa chỉ MAC
     description: Tìm nhà sản xuất và nhà cung cấp của thiết bị dựa trên địa chỉ MAC.
-
+    ui:
+      macAddressLabel: Địa chỉ MAC
+      copiedTooltip: Đã sao chép!
+      copyTooltip: Nhấn để sao chép thông tin nhà sản xuất
+      copiedTitle: ✓ đã sao chép
+      vendorInfoTitle: Thông tin nhà sản xuất
+      unknownVendor: Không rõ nhà sản xuất cho địa chỉ này
   lorem-ipsum-generator:
     title: Máy tạo văn bản Lorem ipsum
     description: Lorem ipsum là một đoạn văn bản giả được sử dụng phổ biến để thể hiện hình thức của một tài liệu hoặc một kiểu chữ mà không cần dựa vào nội dung có ý nghĩa
-
+    ui:
+      copiedMessage: Đã sao chép lorem ipsum vào bộ nhớ tạm
+      paragraphs: Đoạn văn
+      sentencesPerParagraph: Câu / đoạn văn
+      wordsPerSentence: Từ / câu
+      startWithLoremIpsum: Bắt đầu bằng lorem ipsum
+      asHtml: Dạng HTML
+      output: KẾT QUẢ
+      wordCount: '{count} từ'
+      charCount: '{count} ký tự'
+      copy: Sao chép
+      refresh: Làm mới
   qrcode-generator:
     title: Tạo mã QR
     description: Tạo và tải xuống mã QR cho một URL hoặc chỉ một đoạn văn bản và tùy chỉnh màu nền và màu chữ.
-
   xml-formatter:
     title: Định dạng XML
     description: Định dạng chuỗi XML của bạn thành một định dạng dễ đọc và thân thiện với con người.
-
+    ui:
+      invalidXml: XML đã nhập không hợp lệ.
+      collapse: Thu gọn
+      indentSize: Kích thước thụt lề
+      inputLabel: XML của bạn
+      inputPlaceholder: Dán XML của bạn vào đây...
+      outputLabel: XML đã định dạng từ XML của bạn
   temperature-converter:
     title: Bộ chuyển đổi nhiệt độ
     description: Chuyển đổi độ nhiệt độ cho Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur và Rømer.
-
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
   chmod-calculator:
     title: Máy tính Chmod
     description: Tính toán quyền và lệnh chmod của bạn với máy tính Chmod trực tuyến này.
+    ui:
+      read: Đọc
+      write: Ghi
+      execute: Thực thi
+      owner: Chủ sở hữu
+      group: Nhóm
+      public: Công khai
+      commandCopied: Đã sao chép lệnh chmod
+      copyCommand: Sao chép lệnh
   rsa-key-pair-generator:
     title: Trình tạo cặp khóa RSA
     description: Tạo các chứng chỉ pem khóa riêng tư và khóa công khai RSA ngẫu nhiên mới.
-
+    ui:
+      bitsRangeError: Số bit phải từ 256 đến 16384 và là bội số của 8
+      bitsLabel: Số bit
+      refreshButton: Làm mới cặp khóa
+      publicKeyTitle: Khóa công khai
+      copyPublicKeyTitle: Sao chép khóa công khai
+      copy: Sao chép
+      generating: Đang tạo...
+      privateKeyTitle: Khóa riêng tư
+      copyPrivateKeyTitle: Sao chép khóa riêng tư
+      publicKeyCopiedToast: Đã sao chép khóa công khai
+      privateKeyCopiedToast: Đã sao chép khóa riêng tư
   html-wysiwyg-editor:
     title: Trình soạn thảo HTML WYSIWYG
     description: Trình soạn thảo HTML trực tuyến với trình soạn thảo WYSIWYG đa chức năng, lấy mã nguồn của nội dung ngay lập tức.
-
+    ui:
+      bold: In đậm
+      italic: In nghiêng
+      strike: Gạch ngang
+      inlineCode: Mã nội dòng
+      heading1: Tiêu đề 1
+      heading2: Tiêu đề 2
+      heading3: Tiêu đề 3
+      heading4: Tiêu đề 4
+      bulletList: Danh sách dấu đầu dòng
+      orderedList: Danh sách có thứ tự
+      codeBlock: Khối mã
+      blockquote: Trích dẫn
+      hardBreak: Ngắt dòng cứng
+      clearFormat: Xóa định dạng
+      undo: Hoàn tác
+      redo: Làm lại
   json-diff:
     title: So sánh JSON
     description: So sánh hai đối tượng JSON và lấy ra sự khác biệt giữa chúng.
-
+    ui:
+      onlyShowDifferences: Chỉ hiển thị khác biệt
+      jsonsAreTheSame: Các JSON được cung cấp giống nhau
+      firstJsonTitle: JSON ĐẦU TIÊN CỦA BẠN
+      firstJsonPlaceholder: Dán JSON đầu tiên của bạn vào đây...
+      invalidJson: Định dạng JSON không hợp lệ
+      secondJsonTitle: JSON CẦN SO SÁNH
+      secondJsonPlaceholder: Dán JSON cần so sánh vào đây...
   jwt-parser:
     title: Giải mã JWT
     description: Giải mã và hiển thị nội dung của JSON Web Token (jwt).
-
+    ui:
+      header: Header
+      payload: Payload
+      jwtToDecodeTitle: JWT CẦN GIẢI MÃ
+      tokenPlaceholder: Nhập token của bạn vào đây...
+      invalidJwt: JWT không hợp lệ
   date-converter:
     title: Chuyển đổi ngày-tháng
     description: Chuyển đổi ngày và thời gian sang các định dạng khác nhau
-
-
   ipv4-subnet-calculator:
     title: Máy tính mạng con IPv4
     description: Phân tích các khối CIDR IPv4 của bạn và nhận thông tin về mạng con của bạn.
-
+    ui:
+      invalidAddress: Không thể phân tích địa chỉ này, hãy kiểm tra định dạng
+      netmask: Mặt nạ mạng
+      networkAddress: Địa chỉ mạng
+      networkMask: Mặt nạ mạng
+      networkMaskBinary: Mặt nạ mạng dạng nhị phân
+      cidrNotation: Ký hiệu CIDR
+      wildcardMask: Mặt nạ đại diện
+      networkSize: Kích thước mạng
+      firstAddress: Địa chỉ đầu tiên
+      lastAddress: Địa chỉ cuối cùng
+      broadcastAddress: Địa chỉ quảng bá
+      noBroadcast: Không có địa chỉ quảng bá với mặt nạ này
+      ipClass: Lớp IP
+      unknownClassType: Lớp không xác định
+      decimal: Thập phân
+      hexadecimal: Thập lục phân
+      binary: Nhị phân
+      ipv6Short: IPv6 (rút gọn)
+      inputLabel: Một địa chỉ IPv4 có hoặc không có mặt nạ
+      bitMap: SƠ ĐỒ BIT
+      network: Mạng
+      host: Máy chủ
+      setPrefix: Đặt tiền tố thành /{prefix}
+      networkTag: mạng
+      broadcastTag: quảng bá
+      hostsCount: '{count} máy chủ'
+      privateIp: IP riêng
+      publicIp: IP công cộng
+      subnetDetail: CHI TIẾT MẠNG CON
+      subnetInfo: THÔNG TIN MẠNG CON
+      addressRepresentations: CÁC DẠNG BIỂU DIỄN ĐỊA CHỈ
+      copy: Sao chép
+      enterValidIpv4: Nhập một địa chỉ IPv4 hợp lệ để xem các dạng biểu diễn
+      previousBlock: Khối trước
+      nextBlock: Khối tiếp theo
+      collapseCheatSheet: Thu gọn Bảng tra cứu nhanh
+      subnetCheatSheet: Bảng tra cứu nhanh về mạng con
   og-meta-generator:
     title: Trình tạo meta Open Graph
     description: Tạo các thẻ meta HTML Open Graph và mạng xã hội cho trang web của bạn.
-
   ipv6-ula-generator:
     title: Trình tạo địa chỉ IPv6 ULA
     description: Tạo địa chỉ IP cục bộ, không thể định tuyến trên mạng của bạn theo RFC4193.
-
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Địa chỉ định tuyến đầu tiên
+      lastRoutable: Địa chỉ định tuyến cuối cùng
+      infoAlert: Sử dụng dấu thời gian hiện tại cộng địa chỉ MAC, băm bằng SHA1. 40 bit thấp tạo thành ID toàn cục theo RFC 4193.
+      macAddress: Địa chỉ MAC
+      output: Kết quả
+      copied: Đã sao chép!
+      copy: Sao chép
   hash-text:
     title: Mã hóa văn bản
     description: 'Mã hóa một chuỗi văn bản bằng cách sử dụng các hàm bạn cần: MD5, SHA1, SHA256, SHA224, SHA512, SHA384, SHA3 hoặc RIPEMD160'
+    ui:
+      encodingBinary: Nhi phan (co so 2)
+      encodingHex: Thap luc phan (co so 16)
+      encodingBase64: Base64 (co so 64)
+      encodingBase64url: Base64url (base 64 an toan cho URL)
+      inputPlaceholder: Chuoi can bam...
+      encoding: Ma hoa dau ra
+      output: KET QUA
   json-to-toml:
     title: Chuyển đổi JSON sang TOML
     description: Phân tích và chuyển đổi JSON sang TOML.
-
   device-information:
     title: Thông tin thiết bị
     description: Lấy thông tin về thiết bị hiện tại của bạn (kích thước màn hình, tỷ lệ pixel, user agent, ...)
-
+    ui:
+      screen: Màn hình
+      hardware: Phần cứng
+      network: Mạng
+      browser: Trình duyệt
+      screenSize: Kích thước màn hình
+      windowSize: Kích thước cửa sổ
+      pixelRatio: Tỷ lệ pixel
+      colorDepth: Độ sâu màu
+      orientation: Hướng
+      orientationAngle: Góc hướng
+      touchPoints: Điểm chạm
+      cpuCores: Lõi CPU
+      deviceMemory: Bộ nhớ thiết bị
+      platform: Nền tảng
+      online: Trực tuyến
+      connectionType: Loại kết nối
+      downlinkSpeed: Tốc độ tải xuống
+      roundTripTime: Thời gian phản hồi
+      dataSaver: Tiết kiệm dữ liệu
+      vendor: Nhà sản xuất
+      languages: Ngôn ngữ
+      cookiesEnabled: Cookie đã bật
+      pdfViewer: Trình xem PDF
+      doNotTrack: Không theo dõi
+      userAgent: Tác nhân người dùng
+      maxTouchPoints: Tối đa {count}
+      none: Không có
+      logicalCores: '{count} lõi luận lý'
+      'yes': Có
+      'no': Không
+      enabled: Đã bật
+      disabled: Đã tắt
+      supported: Được hỗ trợ
+      notSupported: Không được hỗ trợ
+      notSet: Chưa đặt
   pdf-signature-checker:
     title: Kiểm tra chữ ký PDF
     description: Xác minh chữ ký của một tệp PDF. Một tệp PDF đã được ký có chứa một hoặc nhiều chữ ký có thể được sử dụng để xác định xem nội dung của tệp đã được thay đổi kể từ khi tệp được ký.
-
+    ui:
+      tableHeaderValidityPeriod: Thời hạn hiệu lực
+      tableHeaderIssuedBy: Cấp bởi
+      tableHeaderIssuedTo: Cấp cho
+      tableHeaderPemCertificate: Chứng chỉ PEM
+      notBefore: Có hiệu lực từ
+      notAfter: Có hiệu lực đến
+      commonName: Tên chung
+      organizationName: Tên tổ chức
+      countryName: Tên quốc gia
+      localityName: Tên địa phương
+      organizationalUnitName: Tên đơn vị
+      stateOrProvinceName: Tên tiểu bang hoặc tỉnh
+      viewPemCert: Xem chứng chỉ PEM
+      uploadPrompt: Kéo và thả tệp PDF vào đây, hoặc nhấp để chọn tệp
+      noSignaturesFound: Không tìm thấy chữ ký nào trong tệp đã cung cấp.
+      signatureCertificatesLabel: 'Chứng chỉ chữ ký {number}:'
   json-minify:
     title: Giảm kích thước JSON
     description: Giảm kích thước và nén JSON của bạn bằng cách loại bỏ khoảng trắng không cần thiết.
-
+    ui:
+      invalidJson: JSON đã cung cấp không hợp lệ.
+      inputLabel: JSON gốc của bạn
+      inputPlaceholder: Dán JSON gốc của bạn vào đây...
+      outputLabel: Phiên bản rút gọn của JSON của bạn
   ulid-generator:
     title: Tạo ULID
     description: Tạo ngẫu nhiên mã định danh duy nhất có thể sắp xếp theo thứ tự từ điển (ULID).
+    ui:
+      copiedMessage: Đã sao chép ULID vào bộ nhớ tạm
+      quantity: SỐ LƯỢNG
+      format: ĐỊNH DẠNG
+      formatRaw: Thô
+      formatJson: JSON
+      output: KẾT QUẢ
+      copy: Sao chép
+      refresh: Làm mới
   base-converter:
     title: Chuyển đổi cơ số số nguyên
     description: Chuyển đổi số giữa các cơ số khác nhau (thập phân, thập lục phân, nhị phân, bát phân, base64, ...)
-
   uuid-generator:
     title: Trình tạo UUID
     description: Một UUID (Universally Unique Identifier) là một số 128 bit được sử dụng để xác định thông tin trong hệ thống máy tính. Số lượng UUID có thể có là 16^32, tương đương với 2^128 hoặc khoảng 3.4x10^38 (rất lớn!).
-
+    ui:
+      copiedMessage: Đã sao chép UUID vào bộ nhớ tạm
+      version: PHIÊN BẢN
+      quantity: SỐ LƯỢNG
+      namespacePreset: MẪU NAMESPACE
+      namespaceUuid: UUID NAMESPACE
+      invalidUuid: UUID không hợp lệ
+      name: TÊN
+      namePlaceholder: Tên để băm...
+      output: KẾT QUẢ
+      copy: Sao chép
+      refresh: Làm mới
   ipv4-address-converter:
     title: Chuyển đổi địa chỉ Ipv4
     description: Chuyển đổi địa chỉ ip thành số thập phân, nhị phân, thập lục phân hoặc thậm chí thành ipv6
-
+    ui:
+      decimal: Thập phân
+      hexadecimal: Thập lục phân
+      binary: Nhị phân
+      ipv6Short: IPv6 (rút gọn)
+      invalidIpv4: Địa chỉ IPv4 không hợp lệ
+      ipv4Address: Địa chỉ IPv4
+      output: Kết quả
+      copied: Đã sao chép!
+      copy: Sao chép
   text-statistics:
     title: Thống kê văn bản
     description: Lấy thông tin về một văn bản, số ký tự, số từ, kích thước của nó, ...
-
+    ui:
+      textPlaceholder: Văn bản của bạn...
+      characterCount: SỐ KÝ TỰ
+      wordCount: SỐ TỪ
+      lineCount: SỐ DÒNG
+      byteSize: DUNG LƯỢNG BYTE
   text-to-nato-alphabet:
     title: Chuyển đổi văn bản thành bảng chữ cái NATO
     description: Chuyển đổi văn bản thành bảng chữ cái phiên âm NATO để truyền tải bằng miệng.
-
+    ui:
+      yourText: VĂN BẢN CỦA BẠN
+      inputPlaceholder: vd. Hello world
+      natoPhonetic: BẢNG CHỮ CÁI NGỮ ÂM NATO
+      copied: Đã sao chép
+      copyAll: Sao chép tất cả
+      natoStringCopied: Đã sao chép chuỗi NATO.
   ipv4-range-expander:
     title: Mở rộng dải IPv4
     description: Cho một địa chỉ IPv4 bắt đầu và kết thúc, công cụ này tính toán một mạng IPv4 hợp lệ với ký hiệu CIDR của nó.
-
+    ui:
+      startAddress: Địa chỉ bắt đầu
+      endAddress: Địa chỉ kết thúc
+      addressesInRange: Số địa chỉ trong phạm vi
+      invalidIpv4: Địa chỉ IPv4 không hợp lệ
+      invalidCombinationTitle: Kết hợp địa chỉ IPv4 bắt đầu và kết thúc không hợp lệ
+      invalidCombinationDescription: Địa chỉ IPv4 kết thúc nhỏ hơn địa chỉ bắt đầu. Điều này không hợp lệ và không thể tính được kết quả.
+      switchStartEnd: Hoán đổi địa chỉ IPv4 bắt đầu và kết thúc
+      result: Kết quả
+      copied: Đã sao chép!
+      copyResult: Sao chép kết quả
   text-diff:
     title: So sánh văn bản
     description: So sánh hai văn bản và xem sự khác biệt giữa chúng.
-
   otp-generator:
     title: Tạo mã OTP
     description: Tạo và xác thực mã OTP (mật khẩu một lần) dựa trên thời gian cho xác thực đa yếu tố.
-
   text-to-binary:
     title: Chuyển đổi văn bản thành nhị phân ASCII
     description: Chuyển đổi văn bản thành biểu diễn nhị phân ASCII của nó và ngược lại.
-
+    ui:
+      textCopied: Đã sao chép văn bản
+      binaryCopied: Đã sao chép mã nhị phân
+      panelTitle: VĂN BẢN ↔ ASCII BINARY
+      textLabel: VĂN BẢN
+      binaryLabel: NHỊ PHÂN
+      copied: Đã sao chép
+      copy: Sao chép
+      textPlaceholder: vd. Hello world
+      invalidBinary: Phải là ASCII binary hợp lệ (bội số của 8 bit)
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
-
   group-policy-reference:
     title: Group Policy Reference
     description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
-
+    ui:
+      searchPlaceholder: Tìm kiếm chính sách, đường dẫn, khóa registry...
+      copied: Đã sao chép!
+      clickToCopyRegistry: Nhấp để sao chép khóa registry
+      copiedShort: đã sao chép
+      default: Mặc định
+      recommended: Đề xuất
   windows-event-lookup:
     title: Windows Event Lookup
     description: Look up common Windows Event IDs with descriptions and severity.
-
+    ui:
+      searchResults: Kết quả tìm kiếm
+      searchPlaceholder: Tìm theo ID sự kiện, tên hoặc mô tả...
+      copied: Đã sao chép!
+      clickToCopyEventId: Nhấp để sao chép ID sự kiện
+      copiedShort: đã sao chép
   m365-sku-decoder:
     title: M365 License SKU Decoder
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
-
+    ui:
+      searchPlaceholder: Tìm theo tên SKU, ID chuỗi hoặc mô tả...
+      copied: Đã sao chép!
+      clickToCopy: Nhấp để sao chép ID chuỗi
+      copiedMark: ✓ đã sao chép
   windows-error-codes:
     title: Windows Error Code Lookup
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
-
+    ui:
+      searchResults: Kết quả tìm kiếm
+      searchPlaceholder: Tìm theo mã hex, tên lỗi hoặc mô tả...
+      copied: Đã sao chép!
+      clickToCopy: Nhấp để sao chép mã hex
+      copiedShort: đã sao chép
+      decimal: thập phân {decimal}
   exchange-ndr-lookup:
     title: Exchange NDR Lookup
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
-
+    ui:
+      searchResults: Kết quả tìm kiếm
+      searchPlaceholder: Tìm theo mã NDR, tên lỗi, nguyên nhân hoặc cách khắc phục...
+      copied: Đã sao chép!
+      clickToCopy: Nhấp để sao chép mã NDR
+      copiedShort: đã sao chép
+      cause: Nguyên nhân
+      fix: Cách khắc phục
   safelink-decoder:
     title: Outlook Safelink decoder
     description: Decode Outlook SafeLink links.
-
   port-protocol-reference:
     title: Port & Protocol Reference
     description: Common network ports and protocols with security notes and dangerous port flags.
-
   cve-lookup:
     title: CVE Lookup
     description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
-
+    ui:
+      range6m: 6 tháng
+      range1y: 1 năm
+      range2y: 2 năm
+      range5y: 5 năm
+      rangeAll: Toàn thời gian
+      noDescription: Không có mô tả.
+      fetchError: Không thể kết nối tới NVD API. Vui lòng kiểm tra kết nối của bạn.
+      sortNewest: Mới nhất trước
+      sortOldest: Cũ nhất trước
+      sortSeverity: Mức độ nghiêm trọng cao nhất
+      severityCritical: Nghiêm trọng
+      severityHigh: Cao
+      severityMedium: Trung bình
+      severityLow: Thấp
+      placeholder: 'Mã CVE hoặc từ khóa (ví dụ: CVE-2021-44228, log4j)'
+      searching: Đang tìm kiếm...
+      search: Tìm kiếm
+      hint: 'Tìm theo mã CVE, số một phần (ví dụ: 43284), tên thông dụng (ví dụ: log4shell, dirty frag) hoặc từ khóa. Dữ liệu trực tiếp từ NVD và GitHub Advisory Database.'
+      noResults: Không tìm thấy CVE nào cho "{query}".
+      noResultsInRange: Không tìm thấy CVE nào cho "{query}" trong khoảng thời gian đã chọn.
+      noExactMatch: 'Không tìm thấy cụm từ khớp chính xác trong khoảng thời gian đã chọn. Các tên lỗ hổng thông dụng (như "dirty frag") có thể không xuất hiện nguyên văn trong mô tả của NVD. Hãy thử một số CVE một phần (ví dụ: "43284" sẽ tìm ra CVE-2026-43284).'
+      searchAllTime: Tìm kiếm toàn thời gian
+      showingResults: Hiển thị {shown} trên {total} kết quả
+      allSeverities: Tất cả mức độ nghiêm trọng
+      allYears: Tất cả các năm
+      copied: Đã sao chép!
+      clickToCopyId: Nhấp để sao chép mã CVE
+      copiedShort: đã sao chép
+      cveDetail: CHI TIẾT CVE
+      published: Ngày công bố
+      modified: Ngày sửa đổi
+      clickToCopy: Nhấp để sao chép
+      references: Tài liệu tham khảo
+      kevActionDue: 'Hạn xử lý theo CISA KEV:'
+      cvssMetrics: Chỉ số CVSS
+      metricAttackVector: Vector tấn công
+      metricAttackComplexity: Độ phức tạp tấn công
+      metricPrivilegesRequired: Đặc quyền yêu cầu
+      metricUserInteraction: Tương tác người dùng
+      metricScope: Phạm vi
+      metricConfidentiality: Tính bảo mật
+      metricIntegrity: Tính toàn vẹn
+      metricAvailability: Tính khả dụng
   email-dns-checker:
     title: Email DNS Checker
     description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
-
   email-header-parser:
     title: Email Header Parser
     description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
-
+    ui:
+      pasteHint: Dán tiêu đề email thô vào bên dưới.
+      parseButton: Phân tích tiêu đề
+      parseAnother: Phân tích tiêu đề khác
+      messageDetails: Chi tiết thư
+      senderMismatch: Miền của người gửi khác với miền trong From. Đây có thể là dấu hiệu giả mạo hoặc gửi ủy quyền.
+      deliveryHops: Các chặng gửi thư
+      oldestFirst: cũ nhất trước
+      authResults: Kết quả xác thực
+      spamAnalysis: Phân tích thư rác
+      spamScore: Điểm thư rác
+      spamStatus: Trạng thái thư rác
   whois-checker:
     title: WHOIS Lookup
     description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
-
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
-
+    ui:
+      yourText: VĂN BẢN CỦA BẠN
+      textPlaceholder: Văn bản cần vẽ
+      options: TÙY CHỌN
+      font: PHÔNG CHỮ
+      searchFonts: Tìm phông chữ...
+      noFontsMatch: Không có phông chữ phù hợp
+      width: CHIỀU RỘNG
+      output: KẾT QUẢ ASCII ART
+      loadingFont: Đang tải phông chữ...
+      error: Cài đặt hiện tại đã gây ra lỗi.
+      copied: Đã sao chép!
+      copy: Sao chép
   regex-tester:
     title: Regex Tester
     description: Test your regular expressions with sample text.
-
+    ui:
+      regexLabel: 'Regex cần kiểm tra:'
+      regexPlaceholder: Nhập regex cần kiểm tra
+      globalLabel: Toàn cục
+      globalTitle: Tìm kiếm toàn cục
+      ignoreCaseLabel: Không phân biệt hoa thường
+      ignoreCaseTitle: Tìm kiếm không phân biệt chữ hoa chữ thường
+      multilineLabel: Nhiều dòng
+      singlelineLabel: Một dòng
+      singlelineTitle: Cho phép dấu chấm khớp với ký tự xuống dòng.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; coi mẫu là một chuỗi điểm mã Unicode.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: Phiên bản nâng cấp của chế độ u với nhiều tính năng Unicode hơn.
+      textLabel: 'Văn bản cần khớp:'
+      textPlaceholder: Nhập văn bản cần khớp
+      regexBarTitle: REGEX
+      matchesBarTitle: KẾT QUẢ KHỚP
+      matchIndex: Chỉ số
+      matchValue: Giá trị
+      matchCaptures: Nhóm bắt
+      matchGroups: Nhóm
+      noMatch: Không có kết quả khớp
+      sampleBarTitle: MẪU
+      diagramBarTitle: SƠ ĐỒ
+      quickReference: Tra cứu nhanh
   yaml-converter:
     title: YAML converter
     description: Convert YAML to JSON or TOML.
-
+    ui:
+      convertTo: 'Chuyển đổi sang:'
+      inputLabel: YAML của bạn
+      inputPlaceholder: Dán YAML của bạn vào đây...
+      invalidYaml: YAML đã nhập không hợp lệ.
+      outputLabel: Kết quả định dạng {format}
   json-converter:
     title: JSON converter
     description: Convert JSON to YAML or TOML.
-
+    ui:
+      convertTo: Chuyển đổi sang
+      yourJson: JSON của bạn
+      pasteJsonPlaceholder: Dán JSON của bạn vào đây...
+      invalidJson: Định dạng JSON không hợp lệ
+      formatOutput: Kết quả {format}
   toml-converter:
     title: TOML converter
     description: Convert TOML to JSON or YAML.
-
+    ui:
+      convertTo: 'Chuyển đổi sang:'
+      yourToml: TOML của bạn
+      pastePlaceholder: Dán TOML của bạn vào đây...
+      invalidToml: TOML đã nhập không hợp lệ.
+      outputLabel: Kết quả {format}
   xml-json-converter:
     title: XML ↔ JSON converter
     description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
-
+    ui:
+      invalidXml: XML không hợp lệ.
+      invalidJson: JSON không hợp lệ.
+      xmlLabel: XML
+      xmlPlaceholder: Dán XML của bạn vào đây...
+      jsonLabel: JSON
+      jsonPlaceholder: Dán JSON của bạn vào đây...
   markdown-to-html:
     title: Markdown to HTML
     description: Convert Markdown to Html and allow to print (as PDF).
-
+    ui:
+      copiedSuccess: Đã sao chép HTML vào clipboard!
+      copyFailed: Không thể sao chép văn bản.
+      inputLabel: 'Markdown của bạn cần chuyển đổi:'
+      inputPlaceholder: Nội dung Markdown của bạn...
+      outputLabel: 'HTML đầu ra:'
+      copyHtmlButton: Sao chép HTML
+      printAsPdfButton: In thành PDF
   password-generator:
     title: Trình tạo mật khẩu
     description: Tạo mật khẩu mạnh, cụm mật khẩu Diceware, chuỗi dễ đọc, mã hex, base64 và UUID. Bao gồm các cấu hình sẵn cho MSP, loại bỏ ký tự dễ nhầm, đo độ ngẫu nhiên, mã QR và cách đọc theo bảng chữ cái NATO.
-
+    ui:
+      terminal:
+        passwordTitle: MẬT KHẨU
+        optionsTitle: TÙY CHỌN
+      meta:
+        entropyLabel: 'Entropy:'
+        bits: bit
+        crackLabel: 'Thời gian bẻ khóa:'
+      actions:
+        copy: Sao chép
+        refresh: Làm mới
+      section:
+        preset: Cài đặt sẵn
+        mode: Chế độ
+        format: Định dạng
+        length: Độ dài ({length})
+        wordCount: Số từ ({count})
+        separator: Ký tự phân cách
+        characterClasses: Loại ký tự
+        options: Tùy chọn
+      charClass:
+        uppercase: Chữ hoa
+        lowercase: Chữ thường
+        numbers: Chữ số
+        symbols: Ký hiệu
+      option:
+        excludeAmbiguous: Loại trừ ký tự dễ nhầm
+        requireOneOfEach: Yêu cầu mỗi loại một ký tự
+        capitalizeWords: Viết hoa chữ cái đầu từ
+        appendNumber: Thêm 2 chữ số
+      mode:
+        random: Ngẫu nhiên
+        passphrase: Cụm mật khẩu
+        pronounceable: Dễ đọc
+        format: Định dạng
+      format:
+        plain: Thông thường
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: không
+      qr:
+        caption: quét để sao chép
+      phonetic:
+        title: PHIÊN ÂM
+      bulk:
+        generateLabel: Tạo
+        single: một
+        atOnce: '{n} cùng lúc'
+        passwordsTitle: '{count} MẬT KHẨU'
+        copyAll: Sao chép tất cả
+      toast:
+        passwordCopied: Đã sao chép mật khẩu vào bộ nhớ tạm
+        passwordsCopied: Đã sao chép các mật khẩu vào bộ nhớ tạm
+        phoneticCopied: Đã sao chép phiên âm
   reciprocity-calculator:
     title: Máy tính sai lệch tương hỗ
     description: Tính thời gian phơi sáng dài đã hiệu chỉnh cho hơn 40 loại phim analog bằng định luật lũy thừa Schwarzschild. Hỗ trợ phim đen trắng, âm bản màu và phim slide.
-
+    ui:
+      barReciprocity: MÁY TÍNH RECIPROCITY
+      barCorrected: PHƠI SÁNG ĐÃ HIỆU CHỈNH
+      fieldFilmStock: Loại phim
+      typeBw: Đen trắng
+      typeColorNeg: Phim màu âm bản
+      typeSlide: Phim dương bản / E6
+      noFailureUpTo: Không có sai lệch cho đến {seconds} giây
+      sourceManufacturer: Dữ liệu nhà sản xuất
+      sourceCommunity: Dữ liệu cộng đồng
+      fieldMeteredExposure: Phơi sáng đo được
+      unitSeconds: giây
+      noFailureMessage: 'Không cần hiệu chỉnh: loại phim này không bị sai lệch reciprocity ở thời gian phơi sáng này.'
+      copyDone: ✓ đã sao chép
+      copySeconds: sao chép số giây
+      devReduce10: Nên giảm thời gian tráng phim khoảng 10% để bù cho mật độ vùng tối tăng lên.
+      devReduce1015: Khuyến nghị giảm thời gian tráng phim 10-15%.
+      devReduce1520: Khuyến nghị giảm thời gian tráng phim 15-20%.
+      devReduce2030: Với thời gian phơi sáng rất dài, nên giảm thời gian tráng phim 20-30%.
+      colorShiftWarning: 'Phim màu: có thể xảy ra lệch màu ở thời gian phơi sáng này.'
+      colorShiftSlide: Phim dương bản khó hiệu chỉnh sau khi chụp; nên dùng kính lọc CC ngay khi chụp.
+      colorShiftNeg: Phim âm bản màu có độ dung sai lớn hơn; có thể hiệu chỉnh khi in hoặc quét.
   nd-filter-calculator:
     title: Máy tính kính lọc ND
     description: Tính tốc độ màn trập đã hiệu chỉnh cho kính lọc mật độ trung tính. Hỗ trợ mọi mức ND phổ biến và giá trị stop tùy chỉnh.
-
+    ui:
+      titleInputs: MÁY TÍNH KÍNH LỌC ND
+      baseShutterSpeed: Tốc độ màn trập cơ sở (không có kính lọc)
+      dragOrClick: kéo hoặc nhấp
+      custom: Tùy chỉnh
+      secPlaceholder: giây
+      ndFilter: Kính lọc ND
+      stopOne: '{count} stop'
+      stopMany: '{count} stop'
+      enterStops: nhập số stop
+      stopsPlaceholder: stop
+      titleResult: PHƠI SÁNG ĐÃ HIỆU CHỈNH
+      copied: đã sao chép
+      copySeconds: sao chép số giây
+      longExposureAlert: Phơi sáng dài. Nên cân nhắc dùng chế độ Bulb.
+      stackingFilters: 'khi chồng nhiều kính lọc: cộng số stop của chúng'
+      legendT1: tốc độ màn trập cơ sở (không có kính lọc)
+      legendT2: tốc độ màn trập đã hiệu chỉnh
+      legendStops: cường độ kính lọc ND
   depth-of-field-calculator:
     title: Máy tính độ sâu trường ảnh
     description: Tính giới hạn gần, giới hạn xa và tổng độ sâu trường ảnh cho mọi kết hợp ống kính và cảm biến. Có kết quả khoảng cách siêu tiêu cự.
-
+    ui:
+      sensorMedFormat: Khổ trung bình
+      sensorCustom: Tùy chỉnh
+      sensorEnterCoc: nhập CoC
+      infinity: vô cực
+      title: MÁY TÍNH ĐỘ SÂU TRƯỜNG ẢNH
+      sensorFormat: Khổ cảm biến
+      cocPlaceholder: CoC tính bằng mm (vd. 0.029)
+      focalLength: Tiêu cự (mm)
+      aperture: Khẩu độ
+      dragOrClick: kéo hoặc nhấp
+      focusDistance: Khoảng cách lấy nét
+      distancePlaceholder: khoảng cách
+      results: KẾT QUẢ
+      hyperfocalDistance: Khoảng cách siêu tiêu cự
+      hyperfocalHint: Lấy nét tại đây để đạt độ nét tối đa từ một nửa khoảng cách này đến vô cực
+      nearLimit: Giới hạn gần
+      farLimit: Giới hạn xa
+      totalDof: Tổng độ sâu trường ảnh
+      beyondHyperfocal: Khoảng cách lấy nét bằng hoặc vượt quá khoảng cách siêu tiêu cự - giới hạn xa kéo dài đến vô cực.
+      legendHyperfocal: khoảng cách siêu tiêu cự
+      legendFocalLength: tiêu cự
+      legendFNumber: số f (khẩu độ)
+      legendCoc: circle of confusion
+      legendFocusDistance: khoảng cách lấy nét
   exposure-equivalence:
     title: Phơi sáng tương đương
     description: Tìm tốc độ màn trập tương đương ở mọi khẩu độ cho cùng một mức phơi sáng. Chọn tốc độ màn trập và khẩu độ ban đầu để xem thiết lập cần dùng ở từng f-stop khác.
-
+    ui:
+      titleInputs: PHƠI SÁNG TƯƠNG ĐƯƠNG
+      shutterSpeed: Tốc độ màn trập
+      dragOrClick: kéo hoặc nhấp
+      custom: Tùy chỉnh
+      secPlaceholder: giây
+      aperture: Khẩu độ
+      titleResults: CÁC MỨC PHƠI SÁNG TƯƠNG ĐƯƠNG
+      isoIndependent: không phụ thuộc ISO ở bất kỳ mức ISO cố định nào
+      highlightedBase: hàng được đánh dấu là mức cơ sở của bạn
+      legendT1: tốc độ màn trập cơ sở
+      legendT2: tốc độ màn trập tương đương
+      legendN1: khẩu độ cơ sở (số f)
+      legendN2: khẩu độ mục tiêu (số f)
   dev-calculator:
     title: Máy tính tráng phim
     description: Tính thời gian tráng đã điều chỉnh theo nhiệt độ, xử lý push hoặc pull và tỷ lệ pha loãng. Bao gồm cơ sở dữ liệu các loại thuốc tráng và phim đen trắng phổ biến.
-
+    ui:
+      hasData: Có dữ liệu
+      noDataGroup: Không có dữ liệu, nhập thời gian cơ bản thủ công
+      colorBelow: '{process} dưới 36°C: có thể lệch màu và tráng chưa đủ'
+      colorAbove: '{process} trên 40°C: nguy cơ mờ sương và lệch màu chéo'
+      bwBelow: 'Dưới 18°C: quá trình tráng sẽ rất chậm'
+      bwAbove: 'Trên 24°C: nguy cơ rạn hạt và mờ sương'
+      start: Bắt đầu
+      pause: Tạm dừng
+      resume: Tiếp tục
+      calculatorTitle: MÁY TÍNH TRÁNG PHIM
+      developer: Thuốc hiện hình
+      dilution: Pha loãng
+      filmStock: Loại phim
+      baseTimeAt: Thời gian cơ bản ở {temp}°C
+      noData: không có dữ liệu
+      overridePlaceholder: ghi đè (giây)
+      customBaseActive: Đang dùng thời gian cơ bản tùy chỉnh
+      temperature: 'Nhiệt độ:'
+      pushPull: Push / Pull
+      tankVolume: Dung tích bình
+      customMlPlaceholder: ml tùy chỉnh
+      adjustedTime: THỜI GIAN ĐÃ ĐIỀU CHỈNH
+      baseTimeTemp: Thời gian cơ bản ({temp}°C)
+      tempAdj: Điều chỉnh nhiệt độ ({temp})
+      pushStop: Push {n} stop
+      pushStops: Push {n} stop
+      pullStop: Pull {n} stop
+      pullStops: Pull {n} stop
+      mixFor: Pha cho {volume}ml
+      mixDeveloper: thuốc hiện hình
+      mixWater: nước
+      noDataWarning: Không có dữ liệu cho {film} + {developer}. Hãy nhập thời gian cơ bản thủ công.
+      pushPullEstimate: Thời gian push/pull chỉ là ước tính. Nên thử trên một cuộn phim thử.
+      sourceNote: Thời gian cơ bản lấy từ Massive Dev Chart và tài liệu của nhà sản xuất.
+      processTimer: BỘ ĐẾM GIỜ QUY TRÌNH
+      devComplete: Đã tráng xong
+      devCompleteHint: Treo cho khô và tận hưởng phim âm bản của bạn.
+      stageOf: Giai đoạn {current} / {total}
+      agitation: LẮC ĐẢO
+      reset: Đặt lại
+      skip: Bỏ qua
+      stDeveloper: Thuốc hiện hình
+      stBleach: Thuốc tẩy
+      stWash: Rửa
+      stFixer: Thuốc hãm
+      stWash2: Rửa 2
+      stStabilizer: Chất ổn định
+      stFirstDeveloper: Thuốc hiện hình đầu tiên
+      stReversalBath: Bể đảo ngược
+      stColorDeveloper: Thuốc hiện hình màu
+      stPreBleach: Tiền tẩy
+      stFinalWash: Rửa cuối
+      stStopBath: Bể dừng
+      agC30s10: Liên tục 30 giây đầu, sau đó 10 giây mỗi 30 giây
+      agRun3Full: Nước chảy hoặc thay 3 lần đầy đủ
+      agGentle: Chỉ lắc nhẹ, không tráng lại sau đó
+      agC30s5: Liên tục 30 giây đầu, sau đó 5 giây mỗi 30 giây
+      agRun3: Nước chảy hoặc thay 3 lần
+      agContinuous: Liên tục
+      ag10per30: 10 giây mỗi 30 giây
+      agRun5: Nước chảy hoặc thay 5 lần
+      agC60s10: Liên tục 30 giây đầu, sau đó 10 giây mỗi 60 giây
+      agCont60: Liên tục trong 60 giây
+      ag10per60: 10 giây mỗi 60 giây
+      agRun5Full: Nước chảy hoặc thay 5 lần đầy đủ
   phone-parser-and-formatter:
     title: Trình phân tích số điện thoại
     description: Phân tích và định dạng số điện thoại. Phát hiện quốc gia, xác thực và hiển thị theo định dạng quốc tế, quốc gia, E.164 và RFC3966.
-
+    ui:
+      invalidPhoneNumber: Số điện thoại không hợp lệ
+      sectionLocation: Vị trí
+      countryCode: Mã quốc gia
+      country: Quốc gia
+      callingCode: Mã gọi
+      sectionValidation: Xác thực
+      isValid: Có hợp lệ không?
+      'yes': Có
+      'no': Không
+      isPossible: Có khả thi không?
+      type: Loại
+      unknown: Không xác định
+      sectionFormats: Định dạng
+      international: Quốc tế
+      national: Trong nước
+      defaultCountry: Quốc gia mặc định
+      phoneNumber: Số điện thoại
+      emptyStatePrompt: Nhập số điện thoại ở trên để phân tích
   signature-creator:
     title: Trình tạo chữ ký
     description: Vẽ chữ ký viết tay trên vùng vẽ và xuất thành PNG trong suốt. Hoặc tải lên một hình ảnh và xóa nền bằng AI chạy ngay trên thiết bị.
-
+    ui:
+      drawSignatureTab: Vẽ chữ ký
+      removeBackgroundTab: Xóa nền
+      inkColorLabel: Màu mực
+      strokeWeightLabel: Độ dày nét
+      actionsLabel: Thao tác
+      undoButton: ↩ Hoàn tác
+      clearButton: ✕ Xóa
+      downloadTransparentPng: ↓ Tải PNG trong suốt
+      uploadImageLabel: Tải ảnh lên
+      dropzoneText: Kéo ảnh vào đây hoặc nhấp để chọn
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Đã tải ảnh
+      removeButton: ✕ Xóa
+      removeBackgroundButton: ⚡ Xóa nền
+      exportLabel: Xuất
+      downloadNoBgPng: ↓ Tải PNG (không nền)
+      originalLabel: Gốc
+      resultLabel: Kết quả
+      uploadPrompt: Tải ảnh lên để bắt đầu
+      originalAlt: ảnh gốc
+      resultAlt: kết quả sau khi xóa nền
+      loadingModelStatus: Đang tải mô hình AI...
+      removingBackgroundStatus: Đang xóa nền...
+      processingPercentStatus: Đang xử lý... {pct}%
+      downloadingModelPercentStatus: Đang tải mô hình... {pct}%
+      removeBackgroundFailedStatus: Không thể xóa nền. Hãy thử ảnh khác.
   ascii-word-art:
     title: Trình tạo chữ nghệ thuật ASCII
     description: Tạo chữ nghệ thuật ASCII với nhiều phông chữ và kiểu dáng.
-
   powershell-builder:
     title: Trình tạo lệnh PowerShell
     description: Chọn một cmdlet, điền tham số và sao chép lệnh PowerShell hoàn chỉnh.
-
   killer-pdf:
     title: KillerPDF
     description: Trình chỉnh sửa PDF mã nguồn mở cho Windows. Xem, chú thích, hợp nhất, tách, làm phẳng, mở PDF có mật khẩu, chỉnh sửa văn bản, vẽ, tô sáng, ký và in.
-
   killer-scan:
     title: KillerScan
     description: Trình quét mạng nhanh dành cho kỹ thuật viên hiện trường. Khám phá bằng ARP và ping, dò cổng, tra cứu nhà sản xuất và tự động phân loại thiết bị.
-
   gif-search:
     title: Tìm kiếm GIF
     description: Tìm GIF phản ứng trên Giphy. Nhấp vào kết quả để sao chép URL.
-
+    ui:
+      errorStatus: Lỗi {status}
+      fetchFailed: Không thể tải GIF.
+      searchPlaceholder: Tìm kiếm GIF (ví dụ facepalm, nice work, this is fine)
+      searching: Đang tìm kiếm...
+      search: Tìm kiếm
+      noResults: Không tìm thấy GIF nào cho "{query}".
+      copied: Đã sao chép!
+      copyUrl: Sao chép URL
+      resultsHint: '{count} kết quả. Nhấp để sao chép URL, sau đó dán vào Teams, Telegram hoặc Slack.'
   killer-shell:
     title: KillerShell
     description: Trình shell miễn phí cho người dùng chuyên sâu. Trình duyệt tệp, terminal và trình soạn thảo văn bản dùng chung một cửa sổ, một thanh tab và một bộ phím.
-
   domain-lookup:
     title: Tra cứu tên miền
     description: Xem thông tin đăng ký WHOIS và kiểm tra DNS email gồm MX, SPF, DKIM và DMARC cho một tên miền trong cùng một màn hình.
-
+    ui:
+      statusDesc:
+        active: Ten mien dang hoat dong.
+        inactive: Ten mien khong hoat dong.
+        clientDeleteProhibited: Nha dang ky da khoa ten mien khong cho xoa.
+        clientTransferProhibited: Nha dang ky da khoa ten mien khong cho chuyen sang nha dang ky khac.
+        clientUpdateProhibited: Nha dang ky da khoa ten mien khong cho cap nhat.
+        clientHold: Nha dang ky da tam giu ten mien, do do DNS co the khong phan giai duoc.
+        serverDeleteProhibited: Registry da khoa ten mien khong cho xoa.
+        serverTransferProhibited: Registry da khoa ten mien khong cho chuyen.
+        serverUpdateProhibited: Registry da khoa ten mien khong cho cap nhat.
+        serverHold: Registry da tam giu ten mien, do do DNS co the khong phan giai duoc.
+        pendingCreate: Viec tao ten mien dang cho xu ly.
+        pendingDelete: Ten mien dang cho xoa va co the som duoc giai phong.
+        pendingRenew: Viec gia han ten mien dang cho xu ly.
+        pendingRestore: Viec khoi phuc ten mien sau khi xoa dang cho xu ly.
+        pendingTransfer: Viec chuyen ten mien sang nha dang ky khac dang cho xu ly.
+        pendingUpdate: Viec cap nhat ten mien dang cho xu ly.
+        redemptionPeriod: Ten mien da het han va dang trong thoi gian chuoc lai. Chu so huu van co the khoi phuc.
+        renewPeriod: Ten mien dang trong thoi gian gia han sau khi dang ky.
+        autoRenewPeriod: Ten mien dang trong thoi gian an han tu dong gia han.
+        transferPeriod: Ten mien dang trong thoi gian an han chuyen doi.
+      expiredAlert: Ten mien nay da het han {days} ngay truoc va co the duoc dang ky lai.
+      expiresAlert: Ten mien nay se het han sau {days} ngay. Nen sap xep gia han som.
+      expiredTag: Het han {days} ngay truoc
+      remainingTag: Con lai {days} ngay
+      registrar: Nha dang ky
+      registrarIanaId: IANA ID cua nha dang ky
+      created: Ngay tao
+      updated: Ngay cap nhat
+      expires: Ngay het han
+      noMx: Khong tim thay ban ghi MX.
+      dnsFailed: Tra cuu DNS that bai.
+      noSpf: Khong tim thay ban ghi SPF.
+      noDkim: Khong tim thay ban ghi DKIM cho cac selector pho bien. Selector tuy chinh van co the ton tai.
+      noDmarc: Khong tim thay ban ghi DMARC. Ten mien khong duoc bao ve khoi gia mao.
+      spfPlusAll: 'Canh bao: +all rat nguy hiem vi cho phep bat ky may chu nao gui thu voi danh nghia ten mien nay.'
+      spfNeutralAll: 'Canh bao: ?all la trung lap va khong cung cap bao ve nao.'
+      dmarcPNone: 'Canh bao: p=none chi mang tinh giam sat, khong co che tai. Email se khong bi tu choi.'
+      dmarcNoRua: 'Canh bao: khong co dia chi nhan bao cao tong hop (rua=). Ban se khong nhan duoc bao cao DMARC.'
+      pass: Dat
+      fail: Khong dat
+      warning: Canh bao
+      checking: Dang kiem tra...
+      overallPass: Tat ca kiem tra email deu dat. Ten mien nay duoc cau hinh tot cho email.
+      overallFail: Thieu mot hoac nhieu ban ghi quan trong. Ten mien nay co the de bi gia mao.
+      overallWarn: Mot so ban ghi ton tai nhung co van de cau hinh can xem xet.
+      rdapHttpError: 'HTTP {status}: ten mien co the khong ton tai hoac TLD khong duoc ho tro.'
+      lookupFailed: Tra cuu that bai.
+      domainPlaceholder: 'Nhap mot ten mien (vi du: killertools.net)'
+      searching: Dang tim kiem...
+      search: Tim kiem
+      signed: Da ky
+      unsigned: Chua ky
+      delegationSigned: Uy quyen da duoc ky.
+      dsRecord: '{count} ban ghi DS.'
+      dsRecords: '{count} ban ghi DS.'
+      keyRecord: '{count} ban ghi khoa.'
+      keyRecords: '{count} ban ghi khoa.'
+      dnssecUnsigned: Ten mien nay khong duoc bao ve boi DNSSEC. Phan hoi DNS khong the duoc xac minh bang mat ma.
+      status: Trang thai
+      contacts: Lien he
+      remarks: Ghi chu
+      nameservers: May chu ten
+      mxRecords: Ban ghi MX
+      spfRecord: Ban ghi SPF
+      dkimRecords: Ban ghi DKIM
+      dmarcRecord: Ban ghi DMARC
+      role:
+        registrant: chu the dang ky
+        administrative: quan tri
+        technical: ky thuat
+        abuse: lam dung
+      name: Ten
+      organization: To chuc
+      email: Email
+      phone: Dien thoai
   email-record-generator:
     title: Trình tạo bản ghi email
     description: Tạo bản ghi DNS TXT cho SPF và DMARC. Chọn nhà cung cấp thư và chính sách, rồi sao chép kết quả trực tiếp vào DNS.
+    ui:
+      hardFailRecommended: chặn hoàn toàn, khuyến nghị
+      softFail: chặn một phần
+      neutralNotRecommended: trung lập, không khuyến nghị
+      blockFailingMail: chặn thư không đạt kiểm tra
+      sendToSpam: gửi vào thư rác
+      monitorOnly: chỉ theo dõi
+      relaxedDefault: Nới lỏng (mặc định)
+      strict: Nghiêm ngặt
+      sameAsMainPolicy: Giống chính sách chính
+      spfRecordTitle: BẢN GHI SPF
+      dmarcRecordTitle: BẢN GHI DMARC
+      spfRecordLocation: Bản ghi TXT trên tên miền gốc của bạn
+      dmarcRecordLocation: Bản ghi TXT trên
+      copied: đã sao chép
+      clickToCopy: nhấp để sao chép
+      lookupWarning: Đã chọn {count} lượt tra cứu DNS; SPF giới hạn 10 lượt tra cứu
+      mailProviders: NHÀ CUNG CẤP THƯ
+      customIps: IP HOẶC DẢI TÙY CHỈNH (TÙY CHỌN)
+      examplePrefix: vd.
+      enforcement: MỨC ÁP DỤNG
+      policy: CHÍNH SÁCH
+      subdomainPolicy: CHÍNH SÁCH TÊN MIỀN PHỤ (TÙY CHỌN)
+      policyCoverage: 'PHẠM VI CHÍNH SÁCH: {percent}%'
+      coverageHint: '{percent}% thư không đạt kiểm tra sẽ bị xử lý. Dùng mức dưới 100% để triển khai dần.'
+      aggregateReportEmail: EMAIL BÁO CÁO TỔNG HỢP (rua)
+      forensicReportEmail: EMAIL BÁO CÁO CHI TIẾT (ruf, tùy chọn)
+      dkimAlignment: ĐỐI CHIẾU DKIM
+      spfAlignment: ĐỐI CHIẾU SPF
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Văn bản sang Unicode
+      enterTextLabel: Nhập văn bản để chuyển sang Unicode
+      unicodeFromTextLabel: Unicode từ văn bản của bạn
+      unicodeOutputPlaceholder: Kết quả Unicode của văn bản của bạn sẽ hiện ở đây
+      copyUnicode: Sao chép Unicode vào bộ nhớ tạm
+      unicodeToTextTitle: Unicode sang văn bản
+      inputUnicodePlaceholder: Nhập Unicode
+      enterUnicodeLabel: Nhập Unicode để chuyển sang văn bản
+      textFromUnicodeLabel: Văn bản từ Unicode của bạn
+      textOutputPlaceholder: Kết quả văn bản của Unicode của bạn sẽ hiện ở đây
+      copyText: Sao chép văn bản vào bộ nhớ tạm
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Tìm theo cổng, dịch vụ, giao thức hoặc mô tả...
+      allProtocols: Tất cả
+      dangerousOnly: Chỉ nguy hiểm
+      showingPorts: Đang hiển thị {count} cổng
+      copied: Đã sao chép!
+      clickToCopy: Nhấp để sao chép số cổng
+      copiedCheck: ✓ đã sao chép
+      dangerousPill: Nguy hiểm
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Trình duyệt Cmdlet
+      adminBadge: Quản trị
+      cmdletSearchPlaceholder: Tìm theo tên, mô tả hoặc mô-đun...
+      noCmdletsMatch: Không có cmdlet nào khớp "{query}"
+      generatedCommand: Lệnh đã tạo
+      copiedCheck: ✓ Đã sao chép!
+      copyCommand: Sao chép lệnh
+      commonExamples: Ví dụ thường gặp
+      selectCmdletPrompt: Chọn một cmdlet bên trái để bắt đầu tạo lệnh.
+      parameters: Tham số
+      noParametersNeeded: Không cần tham số; cmdlet này chạy nguyên trạng.
+      required: bắt buộc
+      separateMultipleValues: phân tách nhiều giá trị bằng dấu phẩy
+      showFewerParameters: Ẩn bớt tham số
+      showMoreParameters: Thêm {count} tham số
+      collapseQuickReference: Thu gọn Tra cứu nhanh
+      openQuickReference: Mở Tra cứu nhanh
+      quickReference: Tra cứu nhanh
+      cheatsheetComparisonOperators: Toán tử so sánh
+      cheatsheetEqualTo: Bằng
+      cheatsheetNotEqualTo: Không bằng
+      cheatsheetGreaterLessThan: Lớn hơn / Nhỏ hơn
+      cheatsheetGreaterLessEqual: Lớn hơn hoặc bằng / Nhỏ hơn hoặc bằng
+      cheatsheetStringOperators: Toán tử chuỗi
+      cheatsheetWildcardMatch: Khớp ký tự đại diện (* và ?)
+      cheatsheetWildcardNonMatch: Không khớp ký tự đại diện
+      cheatsheetRegexMatch: Khớp biểu thức chính quy
+      cheatsheetRegexNonMatch: Không khớp biểu thức chính quy
+      cheatsheetCollectionContains: Tập hợp chứa giá trị
+      cheatsheetValueInCollection: Giá trị nằm trong tập hợp
+      cheatsheetLogicalOperators: Toán tử logic
+      cheatsheetBothTrue: Cả hai điều kiện phải đúng
+      cheatsheetEitherTrue: Một trong hai điều kiện đúng
+      cheatsheetNegateCondition: Phủ định một điều kiện
+      cheatsheetAutomaticVariables: Biến tự động
+      cheatsheetCurrentPipelineObject: Đối tượng pipeline hiện tại
+      cheatsheetNullEmptyValue: Giá trị null / rỗng
+      cheatsheetBooleanTrueFalse: Boolean true / false
+      cheatsheetLocalComputerName: Tên máy tính cục bộ
+      cheatsheetCurrentUser: Người dùng đang đăng nhập
+      cheatsheetPsVersionInfo: Thông tin phiên bản PS
+      cheatsheetDateHelpers: Hàm hỗ trợ ngày tháng
+      cheatsheetCurrentDateTime: Ngày và giờ hiện tại
+      cheatsheetThirtyDaysAgo: 30 ngày trước
+      cheatsheetThreeMonthsAgo: 3 tháng trước
+      cheatsheetParseDateString: Phân tích chuỗi ngày tháng
+      cheatsheetPipelineTricks: Mẹo dùng pipeline
+      cheatsheetLimitFirst10: Giới hạn 10 kết quả đầu tiên
+      cheatsheetCountSumMinMax: Đếm / tổng / nhỏ nhất / lớn nhất
+      cheatsheetInteractiveGuiViewer: Trình xem GUI tương tác (cục bộ)
+      cheatsheetConvertToJson: Chuyển đầu ra sang JSON
+      cheatsheetOutputScreenAndFile: Xuất ra màn hình VÀ tệp
+      cheatsheetSuppressErrors: Ẩn lỗi không nghiêm trọng
+      cheatsheetRemoteExecution: Thực thi từ xa
+      cheatsheetCmdletsSupportDirectly: Nhiều cmdlet hỗ trợ trực tiếp điều này
+      cheatsheetRunViaRemoting: Chạy qua PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Phiên PS từ xa tương tác
+  basic-auth-generator:
+    ui:
+      copied: Đã sao chép header vào bộ nhớ tạm
+      username: Tên đăng nhập
+      usernamePlaceholder: Tên đăng nhập của bạn...
+      password: Mật khẩu
+      passwordPlaceholder: Mật khẩu của bạn...
+      headerLabel: 'Header Authorization:'
+      copyHeader: Sao chép header
+  yaml-viewer:
+    ui:
+      invalidYaml: YAML đã nhập không hợp lệ.
+      sortKeys: Sắp xếp khóa
+      indentSize: Kích thước thụt lề
+      rawLabel: YAML gốc của bạn
+      rawPlaceholder: Dán YAML gốc của bạn vào đây...
+      prettifiedLabel: Phiên bản đã định dạng đẹp của YAML của bạn
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Đã sao chép thẻ meta!
+      copiedLabel: ✓ Đã sao chép
+      copyButton: Sao chép
+      outputTitle: THẺ META CỦA BẠN
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Loại mime sang phần mở rộng
+      mimeToExtensionDescription: Xem những phần mở rộng tệp nào liên kết với một loại mime
+      mimeTypeSelectPlaceholder: 'Chọn loại mime của bạn tại đây... (vd: application/pdf)'
+      extensionsFoundPrefix: Phần mở rộng của các tệp có loại
+      extensionsFoundSuffix: 'mime:'
+      extensionToMimeTitle: Phần mở rộng tệp sang loại mime
+      extensionToMimeDescription: Xem loại mime nào liên kết với một phần mở rộng tệp
+      mimeFoundPrefix: Loại mime liên kết với phần mở rộng
+      mimeFoundSuffix: 'tệp:'
+      tableMimeTypesHeader: Loại mime
+      tableExtensionsHeader: Phần mở rộng
+  json-viewer:
+    ui:
+      invalidJson: JSON được cung cấp không hợp lệ.
+      sortKeys: Sắp xếp khóa
+      indentSize: Kích thước thụt lề
+      yourRawJson: JSON thô của bạn
+      pasteRawJsonPlaceholder: Dán JSON thô của bạn vào đây...
+      prettifiedVersion: Phiên bản đã định dạng của JSON của bạn
+  qr-code-generator:
+    ui:
+      tabText: Văn bản / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Văn bản hoặc URL
+      placeholderTextOrUrl: Đường liên kết hoặc văn bản của bạn...
+      sectionEncryption: Mã hóa
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Không mật khẩu
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Tên mạng...
+      sectionPassword: Mật khẩu
+      placeholderPassword: Mật khẩu mạng...
+      sectionOptions: Tùy chọn
+      hiddenSsid: SSID ẩn
+      anonymousIdentity: Danh tính ẩn danh
+      sectionEapMethod: Phương thức EAP
+      sectionEapPhase2: EAP giai đoạn 2
+      sectionEapIdentity: Danh tính EAP
+      placeholderEapIdentity: Danh tính EAP của bạn...
+      sectionTheme: Giao diện
+      themeDefault: Mặc định
+      themeTerminal: Terminal
+      themeClassic: Classic
+      themeInverted: Đảo màu
+      sectionColors: Màu sắc
+      labelForeground: 'Màu chữ:'
+      labelBackground: 'Màu nền:'
+      sectionErrorCorrection: Sửa lỗi
+      levelLow: Thấp (~7%)
+      levelMedium: Trung bình (~15%)
+      levelQuartile: Quartile (~25%)
+      levelHigh: Cao (~30%)
+      emptyHintWifi: Nhập SSID để tạo mã QR Wi-Fi
+      emptyHintText: Nhập văn bản hoặc URL
+      captionJoin: '>_ quét để tham gia'
+      captionOpen: '>_ quét để mở'
+      downloadPng: ↓ Tải PNG
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: Chuỗi ngày theo locale JS
+      formatUnixTimestamp: Dấu thời gian Unix
+      formatTimestamp: Dấu thời gian
+      formatUtc: Định dạng UTC
+      formatExcelDateTime: Ngày/giờ Excel
+      invalidDateRule: Ngày này không hợp lệ với định dạng này
+      inputPlaceholder: Dán chuỗi ngày hoặc để trống để xem đồng hồ trực tiếp...
+      invalidDate: Ngày không hợp lệ với định dạng này
+      output: KẾT QUẢ
+      live: TRỰC TIẾP
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Khoá bí mật (hex)
+      epochLabel: Epoch
+      countLabel: Số đếm
+      paddedHexLabel: Hex đã đệm
+      secretLabel: KHOÁ BÍ MẬT
+      secretPlaceholder: Dán khoá bí mật TOTP của bạn...
+      generateNewSecret: Tạo khoá bí mật mới
+      tokenLabel: TOKEN
+      copied: ✓ đã sao chép
+      clickToCopy: nhấp để sao chép
+      nextIn: '>_ tiếp theo sau {seconds} giây'
+      adjacentTokensLabel: TOKEN LÂN CẬN
+      prevLabel: Trước
+      nextLabel: Tiếp
+      detailsLabel: CHI TIẾT
+      scanToAuthenticate: '>_ quét để xác thực'
+      openKeyUriInNewTab: Mở Key URI trong tab mới
+      tokenDisplayPreviousLabel: Trước
+      tokenDisplayCurrentLabel: OTP hiện tại
+      tokenDisplayNextLabel: Tiếp theo
+      copiedExclaim: Đã sao chép!
+      copyPreviousOtp: Sao chép OTP trước
+      copyCurrentOtp: Sao chép OTP hiện tại
+      copyNextOtp: Sao chép OTP tiếp theo
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Mạnh
+      moderateLabel: Trung bình
+      weakLabel: Yếu
+      veryWeakLabel: Rất yếu
+      lengthLabel: Độ dài
+      entropyLabel: Entropy
+      charsetSizeLabel: Kích thước bộ ký tự
+      scoreDetailLabel: Điểm số
+      passwordPlaceholder: Nhập mật khẩu...
+      hideLabel: Ẩn
+      showLabel: Hiện
+      clearLabel: Xoá
+      crackTimeSublabel: THỜI GIAN DÒ TÌM VÉT CẠN
+      crackTimeNote: Độ mạnh được ước tính theo thời gian dò vét cạn với tốc độ 1 tỷ lượt thử mỗi giây. Không tính đến các cuộc tấn công từ điển.
+  integer-base-converter:
+    ui:
+      binary: Nhị phân
+      octal: Bát phân
+      decimal: Thập phân
+      hexadecimal: Thập lục phân
+      base: cơ số
+      output: KẾT QUẢ
+      custom: Tùy chỉnh
+ui:
+  diffEditor:
+    originalLabel: BẢN GỐC
+    modifiedLabel: ĐÃ SỬA
+    originalPlaceholder: Văn bản gốc...
+    modifiedPlaceholder: Văn bản đã sửa...
+  fileUpload:
+    defaultTitle: Kéo và thả tệp vào đây, hoặc nhấp để chọn tệp
+    or: hoặc
+    browseFiles: Chọn tệp
+  inputText:
+    defaultPlaceholder: Nhập văn bản
+  keyValueListItem:
+    'yes': Có
+    'no': Không
+    notAvailable: Không có
+  modalValue:
+    copied: Đã sao chép!
+    copy: Sao chép
+  select:
+    searchPlaceholder: Tìm kiếm...
+    noResults: Không tìm thấy kết quả
+    defaultPlaceholder: Chọn một tùy chọn
+  table:
+    defaultDescription: Bảng dữ liệu
+  textCopyable:
+    copied: Đã sao chép!
+    copyToClipboard: Sao chép vào bộ nhớ tạm
+commandPalette:
+  searchAriaLabel: Tìm kiếm
+  searchPlaceholder: Nhập để tìm công cụ hoặc lệnh...
+components:
+  androidBetaBanner:
+    announcement: Thông báo bản beta Android
+    title: Killer Tools sắp có mặt trên Android
+    subtitle: Cần người thử nghiệm beta - nhấn để tham gia
+    dismiss: Bỏ qua
+  formatTransformer:
+    input: Đầu vào
+    inputPlaceholder: Đầu vào...
+    output: Đầu ra
+  inputCopyable:
+    copied: Đã sao chép!
+    copy: Sao chép vào clipboard
+  spanCopyable:
+    copied: Đã sao chép!
+    copy: Sao chép vào clipboard
+  textareaCopyable:
+    copy: Sao chép vào clipboard
+    copied: Đã sao chép!
+  navbarButtons:
+    androidTooltip: Killer Tools cho Android
+    androidAriaLabel: Killer Tools cho Android - tham gia bản beta
+  themeDots:
+    accentColor: Màu nhấn
+    theme: Giao diện
+    toggleThemeSwatches: Bật/tắt mẫu giao diện
+    accentColorPicker: Bảng chọn màu nhấn
+    dragToMove: Kéo để di chuyển
+    accentLabel: 'màu nhấn:'
+    accentNamed: 'Màu nhấn: {name}'
+    closeAccentPicker: Đóng bảng chọn màu nhấn
+    accents:
+      red: Đỏ
+      orange: Cam
+      green: Xanh lá
+      teal: Xanh ngọc
+      blue: Xanh dương
+      purple: Tím
+layouts:
+  menuLayout:
+    eggMessage: 80 công cụ. Không cần đăng ký. Một kỹ thuật viên hiện trường cay cú.
+    clickMe: nhấn vào đây
+    sourceOnGithub: Mã nguồn trên Github
+  base:
+    collapseMenu: Thu gọn menu
+    homeLabel: Trang chủ KillerTools
+pages:
+  notFound:
+    noSuchFile: Không có tệp hoặc thư mục như vậy
+    exitCode: mã thoát
+    backToHome: về trang chủ
+  privacy:
+    heading: Chính sách bảo mật
+    lastUpdated: 'Cập nhật lần cuối: 4 tháng 4, 2026'
+    overviewHeading: Tổng quan
+    overviewIntro: Killer Tools
+    overviewBody: là một bộ công cụ IT miễn phí. Quyền riêng tư của bạn rất quan trọng với chúng tôi, và chính sách này giải thích cách chúng tôi xử lý dữ liệu của bạn.
+    dataCollectionHeading: Thu thập dữ liệu
+    dataCollectionBody: Killer Tools không thu thập, lưu trữ hay truyền tải bất kỳ dữ liệu cá nhân nào. Mọi xử lý công cụ đều diễn ra hoàn toàn trong trình duyệt của bạn. Không có dữ liệu nào bạn nhập vào công cụ được gửi đến máy chủ nào.
+    cookiesHeading: Cookie
+    cookiesBody: Trang web này không dùng cookie để theo dõi. Tùy chọn giao diện và cài đặt của bạn được lưu cục bộ trong trình duyệt và không bao giờ được truyền đi.
+    analyticsHeading: Phân tích
+    analyticsIntro: Trang web này sử dụng
+    analyticsBody: một công cụ phân tích chú trọng quyền riêng tư, để hiểu các xu hướng sử dụng chung như lượt xem trang và nguồn giới thiệu. Umami không dùng cookie, không theo dõi người dùng qua các trang web, và không thu thập bất kỳ thông tin nhận dạng cá nhân nào. Mọi dữ liệu đều được tổng hợp và ẩn danh.
+    thirdPartyHeading: Dịch vụ bên thứ ba
+    thirdPartyBody: Một số công cụ có thể liên kết đến tài nguyên hoặc tài liệu bên ngoài. Chúng tôi không chịu trách nhiệm về chính sách bảo mật của các trang web bên ngoài đó.
+    androidAppHeading: Ứng dụng Android
+    androidAppBody: Ứng dụng Android của Killer Tools là một lớp bọc quanh ứng dụng web. Nó không yêu cầu hay truy cập bất kỳ quyền thiết bị nào ngoài quyền truy cập internet cơ bản. Không có dữ liệu thiết bị nào được thu thập hay truyền đi.
+    contactHeading: Liên hệ
+    contactBody: Nếu bạn có thắc mắc về chính sách bảo mật này, bạn có thể liên hệ với chúng tôi tại
+  androidApp:
+    robotAttribution: Robot Android được tái tạo hoặc chỉnh sửa từ tác phẩm do Google tạo ra và chia sẻ, sử dụng theo các điều khoản mô tả trong Giấy phép Creative Commons 3.0 Attribution.
+    heading: Killer Tools cho Android
+    introBody1: 'Toàn bộ bộ công cụ killertools.net dưới dạng ứng dụng Android gốc: mọi công cụ, thư viện Killer Scripts, và tất cả mục yêu thích của bạn, chỉ một chạm từ màn hình chính.'
+    introBody2: Cùng quy tắc như trên trang web. Mọi thứ chạy trên thiết bị của bạn. Không tài khoản, không đo từ xa, không gửi dữ liệu về máy chủ. Nếu nó giúp bạn tiết kiệm một vòng xử lý ticket ngoài hiện trường, thế là nó đã hoàn thành nhiệm vụ.
+    betaStatusPrefix: Ứng dụng hiện đang trong giai đoạn
+    betaStatusStrong: beta kín trên Google Play
+    betaStatusSuffix: ', và đây là lúc bạn tham gia.'
+    joinBetaHeading: Tham gia bản beta
+    joinBetaIntroPrefix: Google yêu cầu
+    joinBetaIntroStrong: 12 người thử nghiệm cài đặt ứng dụng liên tục trong 14 ngày
+    joinBetaIntroSuffix: 'trước khi một ứng dụng từ nhà phát triển độc lập có thể công khai. Ba bước, khoảng hai phút, và bạn sẽ là một trong mười hai người đó:'
+    step1LinkText: Tham gia nhóm thử nghiệm
+    step1Suffix: trên Google Groups (nhấn "Join group").
+    step2LinkText: Trở thành người thử nghiệm
+    step2Suffix: trên trang đăng ký của Google Play.
+    step3LinkText: Cài đặt ứng dụng
+    step3Suffix: từ Google Play, và giữ nó được cài đặt trong hai tuần.
+    sameAccountStrong: Dùng cùng một tài khoản Google cho cả ba bước
+    sameAccountSuffix: ' - trang đăng ký sẽ báo "not available for this account" nếu bạn bỏ qua nhóm hoặc đổi tài khoản.'
+    feedbackPrefix: 'Có gì bị lỗi hoặc thiếu? Hãy cho tôi biết:'
+  home:
+    sortPopular: Phổ biến
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: Giới thiệu về Killer Tools
+    intro: Kỹ thuật viên hiện trường không có thời gian cho những thứ rườm rà. Mỗi công cụ ở đây tồn tại vì tôi cần nó trong công việc và không tìm được thứ gì hoạt động tốt mà không cần tài khoản, cài đặt, hay đo từ xa.
+    originPrefix: Hiện tôi xây dựng công cụ trong đội kỹ thuật AI nội bộ của một MSP, sau sáu năm phát triển full-stack và tám năm làm kỹ thuật viên hiện trường tại nhiều công ty. KillerTools.net khởi đầu là một bản fork của dự án
+    originMid: xuất sắc bởi
+    originSuffix: và phát triển thành thứ được xây dựng cho đúng loại công việc tôi thực sự làm. Tôi tạo ra nó để tra cứu cài đặt Group Policy ngay giữa lúc xử lý ticket, quét subnet của khách hàng, và tra cứu cổng mà không cần rời trình duyệt.
+    scriptsLibrary: Thư viện Killer Scripts bao quát các công việc xuất hiện trong mọi chu kỳ ticket. Mỗi script chạy được trên PS 5.1, PS 7, và Kaseya LiveConnect mà không cần phụ thuộc nào.
+    privacyBody: Mọi thứ chạy trong trình duyệt của bạn. Không gì bị theo dõi. Không bao giờ cần tài khoản. Trang web áp dụng Content Security Policy nghiêm ngặt để chặn các cuộc tấn công qua chuỗi phụ thuộc. Nếu một gói npm bị xâm phạm lọt vào bản build, nó cũng không thể gửi về những gì bạn đã dán vào.
+    maintainedByPrefix: Được xây dựng và duy trì bởi
+    maintainedByMid: Nếu điều này giúp bạn tiết kiệm thời gian trong công việc,
+    buyMeCoffee: mời tôi một tách cà phê
+    maintainedBySuffix: là điều đáng trân trọng nhưng không bao giờ được kỳ vọng.
+    missingToolHeading: Thiếu một công cụ? Tìm thấy lỗi?
+    issuesPrefix: Hãy mở một yêu cầu tính năng hoặc báo cáo lỗi trong
+    issuesLinkText: mục issues
+    issuesSuffix: trên GitHub. Tôi có đọc chúng.
+    alsoTryHeading: Cũng nên thử...
+    tagKillerScan: Trình quét mạng mã nguồn mở cho Windows
+    tagKillerPdf: Trình chỉnh sửa PDF mã nguồn mở cho Windows
+    tagKillerShell: Shell Windows mã nguồn mở cho người dùng nâng cao
+    tagKillerNotes: Sổ ghi chú mã hóa mã nguồn mở cho Windows
+    tagKillendar: Lịch mã hóa mã nguồn mở cho Windows
+    linksHeading: Liên kết
+    linkLabelSite: Trang web
+    linkLabelSource: Mã nguồn
+    linkLabelIssues: Issues
+    reportBug: Báo cáo lỗi
+    requestFeature: Yêu cầu tính năng
+    linkLabelSupport: Hỗ trợ
+    linkLabelBuiltOn: Xây dựng trên nền
+    itToolsFork: IT-Tools (fork)

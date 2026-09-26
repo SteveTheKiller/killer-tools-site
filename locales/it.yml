@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: Strumenti più recenti
+    favoriteTools: I tuoi strumenti preferiti
+    allTools: Tutti gli strumenti
+    favoritesDndToolTip: Trascina per riordinare i preferiti
+  subtitle: Strumenti utili per sviluppatori
+  toggleMenu: Mostra/nascondi menu
+  home: Home
+  uiLib: Libreria UI
+  support: Sostieni lo sviluppo di killer-tools
+  buyMeACoffee: Offrimi un caffè
+  follow:
+    title: Ti piace killer-tools?
+    p1: Lasciami una stella su
+    githubRepository: repository GitHub di StevetheKiller
+    thankYou: Grazie!
+  nav:
+    github: Repository GitHub
+    githubRepository: Repository GitHub di killer-tools
+    about: Informazioni su killer-tools
+    aboutLabel: Informazioni
+    darkMode: Modalità scura
+    lightMode: Modalità chiara
+    mode: Alterna modalità scura/chiara
+about:
+  content: |
+    # killer-tools
+
+    I tecnici sul campo non hanno tempo per il superfluo. Ogni strumento qui esiste perché mi serviva sul lavoro e non trovavo nulla che funzionasse semplicemente, senza account, installazione o telemetria.
+
+    Sono un tecnico sul campo in un MSP e mi occupo di reti, amministrazione di sistema e supporto agli endpoint. killer-tools è nato come fork dell'eccellente progetto [IT-Tools](https://github.com/CorentinTh/it-tools) ed è diventato qualcosa di pensato per il lavoro che faccio davvero. L'ho creato per cercare codici NDR nel mezzo di un ticket, scansionare la subnet di un cliente e decodificare un SafeLink prima di cliccarci sopra.
+
+    Tutto funziona nel tuo browser. Nulla viene tracciato. Nessun account è richiesto, mai.
+
+    Creato e mantenuto da [Steve the Killer](https://thekiller.net). Se ti fa risparmiare tempo sul lavoro, [offrirmi un caffè](https://www.buymeacoffee.com/StevetheKiller) è apprezzato ma mai dovuto.
+
+    ## Manca uno strumento? Hai trovato un bug?
+
+    Apri una richiesta di funzionalità o una segnalazione di bug nella [sezione issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) su GitHub. Le leggo.
+404:
+  notFound: 404 Non trovato
+  sorry: Spiacenti, questa pagina non sembra esistere
+  maybe: Forse la cache sta facendo scherzi, prova un aggiornamento forzato?
+  backHome: Torna alla home
+favoriteButton:
+  remove: Rimuovi dai preferiti
+  add: Aggiungi ai preferiti
+toolCard:
+  new: Nuovo
+search:
+  label: Cerca
+tools:
+  categories:
+    favorite-tools: I tuoi strumenti preferiti
+    crypto: Crittografia
+    conversion: Conversione
+    web: Web
+    images and videos: Immagini e video
+    development: Sviluppo
+    network: Rete
+    math: Matematica
+    measurement: Misure
+    text: Testo
+    data: Dati
+    windows: Windows
+    killer apps: Killer Apps
+    photography: Fotografia
+  password-strength-analyser:
+    title: Analizzatore di robustezza password
+    description: Scopri quanto è robusta la tua password con questo analizzatore eseguito solo lato client, con stima del tempo di violazione.
+  password-generator:
+    title: Generatore di password
+    description: Genera password robuste, passphrase diceware, stringhe pronunciabili e token hex/base64/UUID. Include preset MSP (amministratore locale, account di servizio, PSK Wi-Fi, PIN), esclusione dei caratteri ambigui, misuratore di entropia, codice QR e lettura con alfabeto fonetico NATO.
+    ui:
+      terminal:
+        passwordTitle: PASSWORD
+        optionsTitle: OPZIONI
+      meta:
+        entropyLabel: 'Entropia:'
+        bits: bit
+        crackLabel: 'Tempo di crack:'
+      actions:
+        copy: Copia
+        refresh: Aggiorna
+      section:
+        preset: Preset
+        mode: Modalita
+        format: Formato
+        length: Lunghezza ({length})
+        wordCount: Numero di parole ({count})
+        separator: Separatore
+        characterClasses: Classi di caratteri
+        options: Opzioni
+      charClass:
+        uppercase: Maiuscole
+        lowercase: Minuscole
+        numbers: Numeri
+        symbols: Simboli
+      option:
+        excludeAmbiguous: Escludi caratteri ambigui
+        requireOneOfEach: Richiedi almeno uno per tipo
+        capitalizeWords: Iniziali maiuscole
+        appendNumber: Aggiungi 2 cifre
+      mode:
+        random: Casuale
+        passphrase: Passphrase
+        pronounceable: Pronunciabile
+        format: Formato
+      format:
+        plain: Semplice
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: nessuno
+      qr:
+        caption: scansiona per copiare
+      phonetic:
+        title: FONETICO
+      bulk:
+        generateLabel: Genera
+        single: singola
+        atOnce: '{n} alla volta'
+        passwordsTitle: '{count} PASSWORD'
+        copyAll: Copia tutte
+      toast:
+        passwordCopied: Password copiata negli appunti
+        passwordsCopied: Password copiate negli appunti
+        phoneticCopied: Ortografia fonetica copiata
+  percentage-calculator:
+    title: Calcolatore di percentuali
+    description: Calcola facilmente le percentuali da un valore a un altro, o da una percentuale a un valore.
+    ui:
+      whatIsXPercentOfYTitle: QUANTO È X% DI Y
+      whatIsLabel: Quanto è
+      percentOfLabel: '% di'
+      resultPlaceholder: Risultato
+      xIsWhatPercentOfYTitle: X È CHE PERCENTUALE DI Y
+      isWhatPercentOfLabel: è che % di
+      percentageChangeTitle: AUMENTO / DIMINUZIONE PERCENTUALE
+      fromLabel: Da
+      toLabel: a
+  svg-placeholder-generator:
+    title: Generatore di segnaposto SVG
+    description: Genera immagini SVG da usare come segnaposto nelle tue applicazioni.
+    ui:
+      widthLabel: LARGHEZZA (px)
+      backgroundLabel: SFONDO
+      heightLabel: ALTEZZA (px)
+      textColorLabel: COLORE TESTO
+      fontSizeLabel: DIMENSIONE CARATTERE
+      customTextLabel: TESTO PERSONALIZZATO
+      customTextPlaceholder: 'Predefinito: {size}'
+      useExactSizeToggle: Usa dimensione esatta
+      svgHtmlElementLabel: ELEMENTO HTML SVG
+      svgBase64Label: SVG IN BASE64
+      copySvgButton: Copia svg
+      copyBase64Button: Copia base64
+      downloadSvgButton: Scarica svg
+      previewLabel: ANTEPRIMA
+      svgPreviewAlt: Anteprima SVG
+  json-to-csv:
+    title: Da JSON a CSV
+    description: Converti JSON in CSV con rilevamento automatico delle intestazioni.
+    ui:
+      invalidJson: Il JSON fornito non è valido.
+      yourRawJson: Il tuo JSON grezzo
+      pasteRawJsonPlaceholder: Incolla qui il tuo JSON grezzo...
+      csvOutputLabel: Versione CSV del tuo JSON
+  camera-recorder:
+    title: Registratore fotocamera
+    description: Scatta una foto o registra un video dalla tua webcam o fotocamera.
+    ui:
+      selectCamera: Seleziona fotocamera
+      selectMicrophone: Seleziona microfono
+      notSupported: Il tuo browser non supporta la registrazione video dalla fotocamera.
+      accessRequired: È richiesto l'accesso a fotocamera e microfono.
+      permissionBlocked: Autorizzazione bloccata. Concedi l'accesso manualmente tramite l'icona del lucchetto nella barra degli indirizzi del browser.
+      grantPermission: Concedi autorizzazione
+      video: VIDEO
+      audio: AUDIO
+      startWebcam: Avvia webcam
+      paused: IN PAUSA
+      rec: REC
+      screenshot: Screenshot
+      record: Registra
+      pause: Pausa
+      resume: Riprendi
+      stop: Interrompi
+      recordingNotSupported: Registrazione non supportata in questo browser
+      captures: ACQUISIZIONI ({count})
+      clearAll: Cancella tutto
+      screenshotAlt: screenshot
+      download: Scarica
+      delete: Elimina
+  reciprocity-calculator:
+    title: Calcolatore del difetto di reciprocità
+    description: Calcola le esposizioni lunghe corrette per oltre 40 pellicole analogiche con la legge di potenza di Schwarzschild. Copre pellicole in bianco e nero, negative a colori e diapositive.
+    ui:
+      barReciprocity: CALCOLATORE DI RECIPROCITA
+      barCorrected: ESPOSIZIONE CORRETTA
+      fieldFilmStock: Pellicola
+      typeBw: B&W
+      typeColorNeg: Negativo a colori
+      typeSlide: Diapositiva / E6
+      noFailureUpTo: Nessun fallimento fino a {seconds}s
+      sourceManufacturer: Dati del produttore
+      sourceCommunity: Dati della community
+      fieldMeteredExposure: Esposizione misurata
+      unitSeconds: secondi
+      noFailureMessage: 'Nessuna correzione necessaria: questa pellicola non presenta fallimento di reciprocita a questa durata di esposizione.'
+      copyDone: ✓ copiato
+      copySeconds: copia secondi
+      devReduce10: Valuta di ridurre lo sviluppo di circa il 10% per compensare la maggiore densita nelle ombre.
+      devReduce1015: Si consiglia di ridurre lo sviluppo del 10-15%.
+      devReduce1520: Si consiglia di ridurre lo sviluppo del 15-20%.
+      devReduce2030: Per esposizioni molto lunghe si consiglia di ridurre lo sviluppo del 20-30%.
+      colorShiftWarning: 'Pellicola a colori: previsto uno slittamento cromatico a questa durata di esposizione.'
+      colorShiftSlide: 'La pellicola diapositiva e difficile da correggere in post produzione: si consiglia la filtrazione CC in ripresa.'
+      colorShiftNeg: 'Il negativo a colori ha piu latitudine: la correzione e possibile in stampa o scansione.'
+  nd-filter-calculator:
+    title: Calcolatore filtri ND
+    description: Calcola i tempi di scatto corretti per i filtri a densità neutra. Supporta tutte le intensità ND comuni e valori di stop personalizzati.
+    ui:
+      titleInputs: CALCOLATORE FILTRO ND
+      baseShutterSpeed: Tempo di posa di base (senza filtro)
+      dragOrClick: trascina o clicca
+      custom: Personalizzato
+      secPlaceholder: sec
+      ndFilter: Filtro ND
+      stopOne: '{count} stop'
+      stopMany: '{count} stop'
+      enterStops: inserisci stop
+      stopsPlaceholder: stop
+      titleResult: ESPOSIZIONE CORRETTA
+      copied: copiato
+      copySeconds: copia secondi
+      longExposureAlert: Posa lunga. Valuta l'uso della modalità Bulb.
+      stackingFilters: 'filtri in serie: somma i loro stop'
+      legendT1: tempo di posa di base (senza filtro)
+      legendT2: tempo di posa corretto
+      legendStops: intensità del filtro ND
+  depth-of-field-calculator:
+    title: Calcolatore di profondità di campo
+    description: Calcola il limite vicino, il limite lontano e la profondità di campo totale per qualsiasi combinazione di obiettivo e sensore. Include la distanza iperfocale.
+    ui:
+      sensorMedFormat: Formato medio
+      sensorCustom: Personalizzato
+      sensorEnterCoc: inserisci CoC
+      infinity: infinito
+      title: CALCOLATORE DI PROFONDITÀ DI CAMPO
+      sensorFormat: Formato sensore
+      cocPlaceholder: CoC in mm (es. 0.029)
+      focalLength: Lunghezza focale (mm)
+      aperture: Apertura
+      dragOrClick: trascina o fai clic
+      focusDistance: Distanza di messa a fuoco
+      distancePlaceholder: distanza
+      results: RISULTATI
+      hyperfocalDistance: Distanza iperfocale
+      hyperfocalHint: Metti a fuoco qui per la massima nitidezza da metà di questa distanza all'infinito
+      nearLimit: Limite vicino
+      farLimit: Limite lontano
+      totalDof: Profondità di campo totale
+      beyondHyperfocal: La distanza di messa a fuoco è pari o oltre l'iperfocale, il limite lontano si estende all'infinito.
+      legendHyperfocal: distanza iperfocale
+      legendFocalLength: lunghezza focale
+      legendFNumber: numero f (apertura)
+      legendCoc: circolo di confusione
+      legendFocusDistance: distanza di messa a fuoco
+  exposure-equivalence:
+    title: Equivalenza di esposizione
+    description: Trova i tempi di scatto equivalenti a tutti i diaframmi per la stessa esposizione. Scegli tempo e diaframma di base per vedere cosa serve a ogni altro f-stop.
+    ui:
+      titleInputs: EQUIVALENZA DI ESPOSIZIONE
+      shutterSpeed: Tempo di posa
+      dragOrClick: trascina o clicca
+      custom: Personalizzato
+      secPlaceholder: sec
+      aperture: Apertura
+      titleResults: ESPOSIZIONI EQUIVALENTI
+      isoIndependent: Indipendente dall'ISO a qualsiasi ISO fisso
+      highlightedBase: la riga evidenziata è la tua base
+      legendT1: tempo di posa di base
+      legendT2: tempo di posa equivalente
+      legendN1: apertura di base (numero f)
+      legendN2: apertura target (numero f)
+  dev-calculator:
+    title: Calcolatore di sviluppo pellicola
+    description: Calcola i tempi di sviluppo corretti con compensazione della temperatura, sviluppo push/pull e miscelazione delle diluizioni. Include un database di rivelatori e pellicole in bianco e nero comuni.
+    ui:
+      hasData: Dati disponibili
+      noDataGroup: Nessun dato, inserisci il tempo base manualmente
+      colorBelow: '{process} sotto i 36°C: probabili variazioni di colore e sviluppo incompleto'
+      colorAbove: '{process} sopra i 40°C: rischio di velatura e cross color'
+      bwBelow: 'Sotto i 18°C: lo sviluppo sarà molto lento'
+      bwAbove: 'Sopra i 24°C: rischio di reticolazione e velatura'
+      start: Avvia
+      pause: Pausa
+      resume: Riprendi
+      calculatorTitle: CALCOLATORE DI SVILUPPO FILM
+      developer: Rivelatore
+      dilution: Diluizione
+      filmStock: Tipo di pellicola
+      baseTimeAt: Tempo base a {temp}°C
+      noData: nessun dato
+      overridePlaceholder: sovrascrivi (s)
+      customBaseActive: Tempo base personalizzato attivo
+      temperature: 'Temperatura:'
+      pushPull: Push / Pull
+      tankVolume: Volume tanica
+      customMlPlaceholder: ml personalizzati
+      adjustedTime: TEMPO CORRETTO
+      baseTimeTemp: Tempo base ({temp}°C)
+      tempAdj: Correzione temp. ({temp})
+      pushStop: Push {n} stop
+      pushStops: Push {n} stop
+      pullStop: Pull {n} stop
+      pullStops: Pull {n} stop
+      mixFor: Miscela per {volume}ml
+      mixDeveloper: rivelatore
+      mixWater: acqua
+      noDataWarning: Nessun dato per {film} + {developer}. Inserisci un tempo base manualmente.
+      pushPullEstimate: I tempi di push/pull sono stime. Si consiglia un rullino di prova.
+      sourceNote: Tempi base tratti da Massive Dev Chart e dalle schede tecniche dei produttori.
+      processTimer: TIMER DI PROCESSO
+      devComplete: Sviluppo completato
+      devCompleteHint: Appendi ad asciugare e goditi i tuoi negativi.
+      stageOf: Fase {current} / {total}
+      agitation: AGITAZIONE
+      reset: Reimposta
+      skip: Salta
+      stDeveloper: Rivelatore
+      stBleach: Sbiancante
+      stWash: Lavaggio
+      stFixer: Fissaggio
+      stWash2: Lavaggio 2
+      stStabilizer: Stabilizzante
+      stFirstDeveloper: Primo rivelatore
+      stReversalBath: Bagno di inversione
+      stColorDeveloper: Rivelatore colore
+      stPreBleach: Pre-sbiancante
+      stFinalWash: Lavaggio finale
+      stStopBath: Bagno d'arresto
+      agC30s10: Continuo per i primi 30s, poi 10s ogni 30s
+      agRun3Full: Acqua corrente o 3 cambi completi
+      agGentle: Solo agitazione delicata, non risciacquare dopo
+      agC30s5: Continuo per i primi 30s, poi 5s ogni 30s
+      agRun3: Acqua corrente o 3 cambi
+      agContinuous: Continuo
+      ag10per30: 10s ogni 30s
+      agRun5: Acqua corrente o 5 cambi
+      agC60s10: Continuo per i primi 30s, poi 10s ogni 60s
+      agCont60: Continuo per 60s
+      ag10per60: 10s ogni 60s
+      agRun5Full: Acqua corrente o 5 cambi completi
+  keycode-info:
+    title: Info keycode
+    description: Trova keycode, code, location e modificatori JavaScript di qualsiasi tasto premuto.
+  emoji-picker:
+    title: Selettore emoji
+    description: Copia e incolla facilmente le emoji e ottieni il valore unicode e i code point di ciascuna.
+    ui:
+      emojiCopied: Emoji {emoji} copiata negli appunti
+      codePointsCopied: Punti di codice '{codePoints}' copiati negli appunti
+      unicodeCopied: Unicode '{unicode}' copiato negli appunti
+      searchPlaceholder: Cerca emoji (es. 'smile')...
+      noResults: Nessun risultato
+      searchResult: Risultato di ricerca
+  color-converter:
+    title: Convertitore di colori
+    description: Converti i colori tra i diversi formati (hex, rgb, hsl e nome CSS)
+    ui:
+      color: Colore
+      formats: FORMATI
+  bcrypt:
+    title: Bcrypt
+    description: Calcola e confronta hash di stringhe di testo con bcrypt. Bcrypt è una funzione di hashing delle password basata sul cifrario Blowfish.
+    ui:
+      copiedToClipboard: Stringa hash copiata negli appunti
+      hashTitle: HASH
+      compareTitle: CONFRONTA
+      stringLabel: Stringa
+      stringPlaceholder: La tua stringa da sottoporre a bcrypt...
+      saltRoundsLabel: Round di salt
+      outputLabel: OUTPUT
+      copyHash: Copia hash
+      compareStringPlaceholder: La tua stringa da confrontare...
+      hashLabel: Hash
+      compareHashPlaceholder: Il tuo hash da confrontare...
+      matchLabel: Corrispondenza
+      'yes': Sì
+      'no': 'No'
+  crontab-generator:
+    title: Generatore crontab
+    description: Convalida e genera crontab e ottieni la descrizione leggibile della pianificazione cron.
+    ui:
+      symbolAnyValue: Qualsiasi valore
+      symbolEveryMinute: Ogni minuto
+      symbolRange: Intervallo di valori
+      symbolRangeEquivalent: Minuti da 1 a 10
+      symbolList: Elenco di valori
+      symbolListEquivalent: Ai minuti 1 e 10
+      symbolStep: Valori incrementali
+      symbolStepEquivalent: Ogni 10 minuti
+      aliasYearly: Una volta all'anno (1 gennaio, mezzanotte)
+      aliasMonthly: Il primo di ogni mese, a mezzanotte
+      aliasWeekly: Domenica, a mezzanotte
+      aliasDaily: Ogni giorno a mezzanotte
+      aliasHourly: Ogni ora, in punto
+      aliasReboot: Esegui una volta all'avvio
+      aliasRebootEquivalent: (all'avvio)
+      invalidCron: Questo cron non è valido
+      use24HourTime: Formato 24 ore
+      daysStartAtZero: I giorni iniziano da 0
+      labelSymbol: 'Simbolo:'
+      labelMeaning: 'Significato:'
+      labelExample: 'Esempio:'
+      labelEquivalent: 'Equivalente:'
+      symbols: Simboli
+      aliases: Alias
+  http-status-codes:
+    title: Codici di stato HTTP
+    description: L'elenco di tutti i codici di stato HTTP, il loro nome e il loro significato.
+    ui:
+      searchResults: Risultati di ricerca
+      searchPlaceholder: Cerca codice di stato http...
+      copiedTooltip: Copiato!
+      clickToCopy: Clicca per copiare il codice di stato
+      copiedLabel: copiato
+  sql-prettify:
+    title: Formattatore SQL
+    description: Formatta e abbellisci le tue query SQL online (supporta vari dialetti SQL).
+    ui:
+      dialectLabel: DIALETTO
+      keywordCaseLabel: MAIUSCOLE PAROLE CHIAVE
+      indentStyleLabel: STILE INDENTAZIONE
+      yourSqlQueryLabel: La tua query SQL
+      sqlQueryPlaceholder: Inserisci qui la tua query SQL...
+      prettifiedQueryLabel: Versione formattata della tua query
+      keywordCaseUpper: MAIUSCOLO
+      keywordCaseLower: minuscolo
+      keywordCasePreserve: Mantieni
+      indentStyleStandard: Standard
+      indentStyleTabularLeft: Tabulare a sinistra
+      indentStyleTabularRight: Tabulare a destra
+  git-memo:
+    title: Promemoria Git
+    description: Riferimento rapido per i comandi e i flussi di lavoro Git più comuni.
+  encryption:
+    title: Cifra / decifra testo
+    description: Cifra testo in chiaro e decifra testo cifrato con algoritmi come AES, TripleDES, Rabbit o RC4.
+    ui:
+      decryptError: Impossibile decifrare il testo
+      encryptTitle: CRITTOGRAFA
+      decryptTitle: DECIFRA
+      yourText: IL TUO TESTO
+      yourSecretKey: LA TUA CHIAVE SEGRETA
+      algorithm: ALGORITMO
+      encryptedOutput: OUTPUT CIFRATO
+      yourEncryptedText: IL TUO TESTO CIFRATO
+      decryptedOutput: OUTPUT DECIFRATO
+      encryptPlaceholder: La stringa da crittografare
+      decryptPlaceholder: Il testo cifrato da decifrare
+      secretKeyPlaceholder: Chiave segreta...
+  yaml-prettify:
+    title: Formattatore YAML
+    description: Trasforma la tua stringa YAML in un formato leggibile e ordinato.
+  roman-numeral-converter:
+    title: Convertitore di numeri romani
+    description: Converti numeri romani in numeri e numeri in numeri romani.
+    ui:
+      converterTitle: CONVERTITORE
+      arabicSideLabel: ARABO
+      romanSideLabel: NUMERO ROMANO
+      arabicRangeError: Deve essere {min}-{max}
+      invalidRoman: Non e un numero romano valido
+      copied: Copiato
+      copy: Copia
+      romanCopiedToast: Numero romano copiato
+      arabicCopiedToast: Numero arabo copiato
+  hmac-generator:
+    title: Generatore HMAC
+    description: Calcola un codice di autenticazione del messaggio basato su hash (HMAC) usando una chiave segreta e la tua funzione di hash preferita.
+    ui:
+      encodingBinary: Binario (base 2)
+      encodingHex: Esadecimale (base 16)
+      copied: HMAC copiato negli appunti
+      plainText: TESTO IN CHIARO
+      secretKey: CHIAVE SEGRETA
+      hashingFunction: FUNZIONE DI HASH
+      outputEncoding: CODIFICA OUTPUT
+      hmacOutput: OUTPUT HMAC
+      plainTextPlaceholder: Testo in chiaro per calcolare l'hash...
+      secretKeyPlaceholder: Inserisci la chiave segreta...
+      clear: Cancella
+      copyHmac: Copia HMAC
+  bip39-generator:
+    title: Generatore di passphrase BIP39
+    description: Genera una passphrase BIP39 da un mnemonico esistente o casuale, oppure ottieni il mnemonico dalla passphrase.
+    ui:
+      languageEnglish: Inglese
+      languageChineseSimplified: Cinese semplificato
+      languageChineseTraditional: Cinese tradizionale
+      languageCzech: Ceco
+      languageFrench: Francese
+      languageItalian: Italiano
+      languageJapanese: Giapponese
+      languageKorean: Coreano
+      languagePortuguese: Portoghese
+      languageSpanish: Spagnolo
+      entropyLengthError: La lunghezza dell'entropia deve essere >= 16, <= 32 ed essere un multiplo di 4
+      entropyHexError: L'entropia deve essere una stringa esadecimale
+      invalidMnemonic: Mnemonico non valido
+      entropyCopied: Entropia copiata negli appunti
+      passphraseCopied: Passphrase copiata negli appunti
+      languageLabel: Lingua
+      entropyHeading: ENTROPIA (SEED)
+      entropyPlaceholder: Entropia esadecimale...
+      regenerate: Rigenera
+      copyEntropy: Copia entropia
+      passphraseHeading: PASSPHRASE (MNEMONICO)
+      passphrasePlaceholder: Parole mnemoniche...
+      copyPassphrase: Copia passphrase
+  base64-file-converter:
+    title: Convertitore file Base64
+    description: Converti una stringa, un file o un'immagine nella sua rappresentazione base64.
+    ui:
+      copiedToClipboard: Stringa base64 copiata negli appunti
+      base64ToFileTitle: DA BASE64 A FILE
+      fileNameLabel: NOME FILE
+      fileNamePlaceholder: Nome del file di download
+      extensionLabel: ESTENSIONE
+      extensionPlaceholder: est
+      base64StringLabel: STRINGA BASE64
+      base64InputPlaceholder: Inserisci qui la tua stringa base64 del file...
+      invalidBase64: Stringa base64 non valida
+      previewImage: Anteprima immagine
+      downloadFile: Scarica file
+      fileToBase64Title: DA FILE A BASE64
+      dropHint: Trascina e rilascia un file qui, oppure clicca per selezionarlo
+      fileInBase64Label: FILE IN BASE64
+      fileOutputPlaceholder: Il file in base64 apparira qui
+      copied: Copiato!
+      copyBase64: Copia base64
+  base64-string-converter:
+    title: Codificatore/decodificatore stringhe Base64
+    description: Codifica e decodifica semplicemente stringhe nella loro rappresentazione base64.
+    ui:
+      base64CopiedToClipboard: Stringa base64 copiata negli appunti
+      stringCopiedToClipboard: Stringa copiata negli appunti
+      stringToBase64Title: DA STRINGA A BASE64
+      encodingLabel: CODIFICA
+      standard: Standard
+      urlSafe: Sicuro per URL
+      stringToEncodeLabel: STRINGA DA CODIFICARE
+      stringInputPlaceholder: Inserisci qui la tua stringa...
+      base64OutputLabel: OUTPUT BASE64
+      base64OutputPlaceholder: La codifica base64 della tua stringa apparira qui
+      copied: Copiato!
+      copyBase64: Copia base64
+      base64ToStringTitle: DA BASE64 A STRINGA
+      base64ToDecodeLabel: STRINGA BASE64 DA DECODIFICARE
+      base64InputPlaceholder: La tua stringa base64...
+      invalidBase64: Stringa base64 non valida
+      decodedStringLabel: STRINGA DECODIFICATA
+      decodedOutputPlaceholder: La stringa decodificata apparira qui
+      copyDecodedString: Copia stringa decodificata
+  math-evaluator:
+    title: Valutatore matematico
+    description: Una calcolatrice per valutare espressioni matematiche. Puoi usare funzioni come sqrt, cos, sin, abs, ecc.
+    ui:
+      placeholder: 'La tua espressione matematica (es: 2*sqrt(6) )...'
+      result: Risultato
+  url-parser:
+    title: Parser URL
+    description: Scomponi un URL nelle sue parti costitutive (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: Host
+      protocol: Protocollo
+      hostname: Hostname
+      port: Porta
+      sectionAuthentication: Autenticazione
+      username: Nome utente
+      password: Password
+      sectionPath: Percorso
+      pathname: Percorso
+      search: Ricerca
+      hash: Hash
+      urlTitle: URL
+      invalidUrl: URL non valido
+      params: PARAMETRI
+      emptyHint: Inserisci un URL sopra per analizzarlo
+  phone-parser-and-formatter:
+    title: Parser numeri di telefono
+    description: Analizza e formatta numeri di telefono. Rileva il paese, convalida e mostra i formati internazionale, nazionale, E.164 e RFC3966.
+    ui:
+      invalidPhoneNumber: Numero di telefono non valido
+      sectionLocation: Posizione
+      countryCode: Codice paese
+      country: Paese
+      callingCode: Prefisso internazionale
+      sectionValidation: Convalida
+      isValid: È valido?
+      'yes': Sì
+      'no': 'No'
+      isPossible: È possibile?
+      type: Tipo
+      unknown: Sconosciuto
+      sectionFormats: Formati
+      international: Internazionale
+      national: Nazionale
+      defaultCountry: Paese predefinito
+      phoneNumber: Numero di telefono
+      emptyStatePrompt: Inserisci un numero di telefono sopra per analizzarlo
+  user-agent-parser:
+    title: Parser user-agent
+    description: Rileva e analizza browser, motore, sistema operativo, CPU e tipo/modello di dispositivo da una stringa user-agent.
+    ui:
+      sectionBrowser: Browser
+      sectionEngine: Motore
+      sectionOs: OS
+      sectionDevice: Dispositivo
+      sectionCpu: CPU
+      name: Nome
+      version: Versione
+      model: Modello
+      type: Tipo
+      vendor: Fornitore
+      architecture: Architettura
+      userAgentString: STRINGA USER AGENT
+      placeholder: Inserisci qui il tuo user agent...
+      unknown: Sconosciuto
+      error: ERRORE
+      parseError: Impossibile analizzare la stringa user agent
+  case-converter:
+    title: Convertitore maiuscole/minuscole
+    description: Trasforma le maiuscole/minuscole di una stringa scegliendo tra diversi formati
+    ui:
+      inputPlaceholder: La tua stringa...
+      output: OUTPUT
+  html-entities:
+    title: Escape entità HTML
+    description: Applica o rimuovi l'escape delle entità HTML (sostituisce caratteri come <,>, &, " e \' con la loro versione HTML)
+    ui:
+      yourString: LA TUA STRINGA
+      escapePlaceholder: La stringa da escapare...
+      escapedOutput: OUTPUT ESCAPATO
+      copied: Copiato
+      copy: Copia
+      yourEscapedString: LA TUA STRINGA ESCAPATA
+      unescapePlaceholder: La stringa da deescapare...
+      unescapedOutput: OUTPUT NON ESCAPATO
+  json-prettify:
+    title: Formattatore JSON
+    description: Trasforma la tua stringa JSON in un formato leggibile e ordinato.
+  docker-run-to-docker-compose-converter:
+    title: Convertitore da docker run a Docker compose
+    description: Trasforma i comandi "docker run" in file docker-compose!
+  mac-address-lookup:
+    title: Ricerca indirizzo MAC
+    description: Trova il fornitore e il produttore di un dispositivo dal suo indirizzo MAC.
+    ui:
+      macAddressLabel: Indirizzo MAC
+      copiedTooltip: Copiato!
+      copyTooltip: Clicca per copiare le info del produttore
+      copiedTitle: ✓ copiato
+      vendorInfoTitle: Info produttore
+      unknownVendor: Produttore sconosciuto per questo indirizzo
+  lorem-ipsum-generator:
+    title: Generatore lorem ipsum
+    description: Genera testo segnaposto lorem ipsum per mockup e lavori di design.
+    ui:
+      copiedMessage: Lorem ipsum copiato negli appunti
+      paragraphs: Paragrafi
+      sentencesPerParagraph: Frasi per paragrafo
+      wordsPerSentence: Parole per frase
+      startWithLoremIpsum: Inizia con lorem ipsum
+      asHtml: Come HTML
+      output: OUTPUT
+      wordCount: '{count} parole'
+      charCount: '{count} caratteri'
+      copy: Copia
+      refresh: Aggiorna
+  qrcode-generator:
+    title: Generatore di codici QR
+    description: Genera e scarica codici QR per URL, testo semplice o credenziali di reti Wi-Fi. Temi terminale, classico e a colori personalizzati con correzione degli errori configurabile.
+  signature-creator:
+    title: Creatore di firme
+    description: Disegna una firma a mano sulla tela ed esportala come PNG trasparente. Oppure carica un'immagine e rimuovi lo sfondo con un clic grazie all'IA sul dispositivo.
+    ui:
+      drawSignatureTab: Disegna firma
+      removeBackgroundTab: Rimuovi sfondo
+      inkColorLabel: Colore inchiostro
+      strokeWeightLabel: Spessore tratto
+      actionsLabel: Azioni
+      undoButton: ↩ Annulla
+      clearButton: ✕ Cancella
+      downloadTransparentPng: ↓ Scarica PNG trasparente
+      uploadImageLabel: Carica immagine
+      dropzoneText: Trascina un'immagine qui o fai clic per sfogliare
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Immagine caricata
+      removeButton: ✕ Rimuovi
+      removeBackgroundButton: ⚡ Rimuovi sfondo
+      exportLabel: Esporta
+      downloadNoBgPng: ↓ Scarica PNG (senza sfondo)
+      originalLabel: Originale
+      resultLabel: Risultato
+      uploadPrompt: Carica un'immagine per iniziare
+      originalAlt: originale
+      resultAlt: risultato con sfondo rimosso
+      loadingModelStatus: Caricamento modello IA...
+      removingBackgroundStatus: Rimozione sfondo...
+      processingPercentStatus: Elaborazione... {pct}%
+      downloadingModelPercentStatus: Download modello... {pct}%
+      removeBackgroundFailedStatus: Impossibile rimuovere lo sfondo. Prova un'altra immagine.
+  xml-formatter:
+    title: Formattatore XML
+    description: Trasforma la tua stringa XML in un formato leggibile e ordinato.
+    ui:
+      invalidXml: L'XML fornito non è valido.
+      collapse: Comprimi
+      indentSize: Dimensione rientro
+      inputLabel: Il tuo XML
+      inputPlaceholder: Incolla qui il tuo XML...
+      outputLabel: XML formattato dal tuo XML
+  temperature-converter:
+    title: Convertitore di temperatura
+    description: Conversioni di temperatura in gradi per Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur e Rømer.
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
+  chmod-calculator:
+    title: Calcolatore chmod
+    description: Calcola i permessi e i comandi chmod con questo calcolatore chmod online.
+    ui:
+      read: Lettura
+      write: Scrittura
+      execute: Esecuzione
+      owner: Proprietario
+      group: Gruppo
+      public: Pubblico
+      commandCopied: Comando chmod copiato
+      copyCommand: Copia comando
+  rsa-key-pair-generator:
+    title: Generatore di coppie di chiavi RSA
+    description: Genera una nuova coppia casuale di chiavi RSA privata e pubblica in formato PEM.
+    ui:
+      bitsRangeError: I bit devono essere tra 256 e 16384 e multipli di 8
+      bitsLabel: Bit
+      refreshButton: Aggiorna coppia di chiavi
+      publicKeyTitle: Chiave pubblica
+      copyPublicKeyTitle: Copia chiave pubblica
+      copy: Copia
+      generating: Generazione in corso...
+      privateKeyTitle: Chiave privata
+      copyPrivateKeyTitle: Copia chiave privata
+      publicKeyCopiedToast: Chiave pubblica copiata
+      privateKeyCopiedToast: Chiave privata copiata
+  html-wysiwyg-editor:
+    title: Editor HTML WYSIWYG
+    description: Editor HTML WYSIWYG online e ricco di funzioni che genera subito il codice sorgente del contenuto.
+    ui:
+      bold: Grassetto
+      italic: Corsivo
+      strike: Barrato
+      inlineCode: Codice inline
+      heading1: Titolo 1
+      heading2: Titolo 2
+      heading3: Titolo 3
+      heading4: Titolo 4
+      bulletList: Elenco puntato
+      orderedList: Elenco numerato
+      codeBlock: Blocco di codice
+      blockquote: Citazione
+      hardBreak: Interruzione di riga
+      clearFormat: Cancella formattazione
+      undo: Annulla
+      redo: Ripeti
+  json-diff:
+    title: Diff JSON
+    description: Confronta due oggetti JSON e ottieni le differenze tra loro.
+    ui:
+      onlyShowDifferences: Mostra solo le differenze
+      jsonsAreTheSame: I JSON forniti sono identici
+      firstJsonTitle: IL TUO PRIMO JSON
+      firstJsonPlaceholder: Incolla qui il tuo primo JSON...
+      invalidJson: Formato JSON non valido
+      secondJsonTitle: IL JSON DA CONFRONTARE
+      secondJsonPlaceholder: Incolla qui il JSON da confrontare...
+  jwt-parser:
+    title: Parser JWT
+    description: Analizza e decodifica il tuo JSON Web Token (jwt) e mostrane il contenuto.
+    ui:
+      header: Intestazione
+      payload: Payload
+      jwtToDecodeTitle: JWT DA DECODIFICARE
+      tokenPlaceholder: Inserisci qui il tuo token...
+      invalidJwt: JWT non valido
+  date-converter:
+    title: Convertitore data e ora
+    description: Converti data e ora nei vari formati
+  ipv4-subnet-calculator:
+    title: Calcolatore subnet IPv4
+    description: Analizza i tuoi blocchi CIDR IPv4 e ottieni tutte le informazioni necessarie sulla subnet.
+    ui:
+      invalidAddress: Impossibile analizzare questo indirizzo, controlla il formato
+      netmask: Maschera di rete
+      networkAddress: Indirizzo di rete
+      networkMask: Maschera di rete
+      networkMaskBinary: Maschera di rete in binario
+      cidrNotation: Notazione CIDR
+      wildcardMask: Wildcard mask
+      networkSize: Dimensione della rete
+      firstAddress: Primo indirizzo
+      lastAddress: Ultimo indirizzo
+      broadcastAddress: Indirizzo di broadcast
+      noBroadcast: Nessun indirizzo di broadcast con questa maschera
+      ipClass: Classe IP
+      unknownClassType: Tipo di classe sconosciuto
+      decimal: Decimale
+      hexadecimal: Esadecimale
+      binary: Binario
+      ipv6Short: IPv6 (breve)
+      inputLabel: Un indirizzo IPv4 con o senza maschera
+      bitMap: MAPPA DI BIT
+      network: Rete
+      host: Host
+      setPrefix: Imposta il prefisso su /{prefix}
+      networkTag: rete
+      broadcastTag: broadcast
+      hostsCount: '{count} host'
+      privateIp: IP privato
+      publicIp: IP pubblico
+      subnetDetail: DETTAGLIO SUBNET
+      subnetInfo: INFO SUBNET
+      addressRepresentations: RAPPRESENTAZIONI DELL'INDIRIZZO
+      copy: Copia
+      enterValidIpv4: Inserisci un indirizzo IPv4 valido per vedere le rappresentazioni
+      previousBlock: Blocco precedente
+      nextBlock: Blocco successivo
+      collapseCheatSheet: Comprimi Cheat Sheet
+      subnetCheatSheet: Cheat Sheet delle subnet
+  og-meta-generator:
+    title: Generatore meta Open Graph
+    description: Genera i meta tag HTML Open Graph e social per il tuo sito web.
+  ipv6-ula-generator:
+    title: Generatore ULA IPv6
+    description: Genera indirizzi IP locali e non instradabili per la tua rete secondo RFC4193.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Primo instradabile
+      lastRoutable: Ultimo instradabile
+      infoAlert: Usa il timestamp corrente + indirizzo MAC, con hash SHA1. I 40 bit inferiori formano il global ID secondo RFC 4193.
+      macAddress: Indirizzo MAC
+      output: Output
+      copied: Copiato!
+      copy: Copia
+  hash-text:
+    title: Hash di testo
+    description: Calcola l'hash del testo con MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 e altri.
+    ui:
+      encodingBinary: Binario (base 2)
+      encodingHex: Esadecimale (base 16)
+      encodingBase64: Base64 (base 64)
+      encodingBase64url: Base64url (base 64 compatibile con URL)
+      inputPlaceholder: La tua stringa da sottoporre a hash...
+      encoding: Codifica
+      output: OUTPUT
+  json-to-toml:
+    title: Da JSON a TOML
+    description: Analizza e converti JSON in TOML.
+  device-information:
+    title: Informazioni sul dispositivo
+    description: Ottieni informazioni sul dispositivo in uso (dimensioni dello schermo, pixel ratio, user agent, ...)
+    ui:
+      screen: Schermo
+      hardware: Hardware
+      network: Rete
+      browser: Browser
+      screenSize: Dimensioni schermo
+      windowSize: Dimensioni finestra
+      pixelRatio: Rapporto pixel
+      colorDepth: Profondità colore
+      orientation: Orientamento
+      orientationAngle: Angolo di orientamento
+      touchPoints: Punti tattili
+      cpuCores: Core CPU
+      deviceMemory: Memoria dispositivo
+      platform: Piattaforma
+      online: Online
+      connectionType: Tipo di connessione
+      downlinkSpeed: Velocità downlink
+      roundTripTime: Tempo di andata e ritorno
+      dataSaver: Risparmio dati
+      vendor: Fornitore
+      languages: Lingue
+      cookiesEnabled: Cookie abilitati
+      pdfViewer: Visualizzatore PDF
+      doNotTrack: Non tracciare
+      userAgent: User agent
+      maxTouchPoints: '{count} max'
+      none: Nessuno
+      logicalCores: '{count} core logici'
+      'yes': Sì
+      'no': 'No'
+      enabled: Abilitato
+      disabled: Disabilitato
+      supported: Supportato
+      notSupported: Non supportato
+      notSet: Non impostato
+  pdf-signature-checker:
+    title: Verifica firme PDF
+    description: Verifica le firme di un file PDF. Un PDF firmato contiene una o più firme che possono servire a stabilire se il contenuto del file è stato modificato dopo la firma.
+    ui:
+      tableHeaderValidityPeriod: Periodo di validità
+      tableHeaderIssuedBy: Rilasciato da
+      tableHeaderIssuedTo: Rilasciato a
+      tableHeaderPemCertificate: Certificato PEM
+      notBefore: Non prima di
+      notAfter: Non dopo
+      commonName: Nome comune
+      organizationName: Nome organizzazione
+      countryName: Nome paese
+      localityName: Nome località
+      organizationalUnitName: Nome unità organizzativa
+      stateOrProvinceName: Nome stato o provincia
+      viewPemCert: Visualizza certificato PEM
+      uploadPrompt: Trascina qui un file PDF oppure fai clic per selezionarlo
+      noSignaturesFound: Nessuna firma trovata nel file fornito.
+      signatureCertificatesLabel: 'Certificati della firma {number}:'
+  json-minify:
+    title: Minify JSON
+    description: Minimizza e comprimi il tuo JSON rimuovendo gli spazi superflui.
+    ui:
+      invalidJson: Il JSON fornito non e valido.
+      inputLabel: Il tuo JSON grezzo
+      inputPlaceholder: Incolla qui il tuo JSON grezzo...
+      outputLabel: Versione minificata del tuo JSON
+  ulid-generator:
+    title: Generatore ULID
+    description: Genera Universally Unique Lexicographically Sortable Identifier (ULID) casuali.
+    ui:
+      copiedMessage: ULID copiati negli appunti
+      quantity: QUANTITA
+      format: FORMATO
+      formatRaw: Grezzo
+      formatJson: JSON
+      output: OUTPUT
+      copy: Copia
+      refresh: Aggiorna
+  base-converter:
+    title: Convertitore di basi numeriche
+    description: Converti un numero tra basi diverse (decimale, esadecimale, binaria, ottale, base64, ...)
+  uuid-generator:
+    title: Generatore di UUID
+    description: Genera UUID casuali (v1 e v4) ed esaminane la struttura.
+    ui:
+      copiedMessage: UUID copiati negli appunti
+      version: VERSIONE
+      quantity: QUANTITA
+      namespacePreset: PRESET NAMESPACE
+      namespaceUuid: UUID NAMESPACE
+      invalidUuid: UUID non valido
+      name: NOME
+      namePlaceholder: Nome da sottoporre a hash...
+      output: OUTPUT
+      copy: Copia
+      refresh: Aggiorna
+  ipv4-address-converter:
+    title: Convertitore indirizzi IPv4
+    description: Converti un indirizzo IP in decimale, binario, esadecimale o persino nella sua rappresentazione IPv6.
+    ui:
+      decimal: Decimale
+      hexadecimal: Esadecimale
+      binary: Binario
+      ipv6Short: IPv6 (breve)
+      invalidIpv4: Indirizzo IPv4 non valido
+      ipv4Address: Indirizzo IPv4
+      output: Output
+      copied: Copiato!
+      copy: Copia
+  text-statistics:
+    title: Statistiche del testo
+    description: 'Ottieni informazioni su un testo: numero di caratteri, numero di parole, dimensione in byte, ...'
+    ui:
+      textPlaceholder: Il tuo testo...
+      characterCount: CONTEGGIO CARATTERI
+      wordCount: CONTEGGIO PAROLE
+      lineCount: CONTEGGIO RIGHE
+      byteSize: DIMENSIONE IN BYTE
+  text-to-nato-alphabet:
+    title: Da testo ad alfabeto NATO
+    description: Trasforma il testo nell'alfabeto fonetico NATO per la trasmissione orale.
+    ui:
+      yourText: IL TUO TESTO
+      inputPlaceholder: es. Hello world
+      natoPhonetic: ALFABETO FONETICO NATO
+      copied: Copiato
+      copyAll: Copia tutto
+      natoStringCopied: Stringa NATO copiata.
+  ipv4-range-expander:
+    title: Espansore intervalli IPv4
+    description: Dati un indirizzo IPv4 iniziale e uno finale, questo strumento calcola una subnet IPv4 valida con la sua notazione CIDR.
+    ui:
+      startAddress: Indirizzo iniziale
+      endAddress: Indirizzo finale
+      addressesInRange: Indirizzi nell'intervallo
+      invalidIpv4: Indirizzo IPv4 non valido
+      invalidCombinationTitle: Combinazione non valida di indirizzo IPv4 iniziale e finale
+      invalidCombinationDescription: L'indirizzo IPv4 finale e inferiore a quello iniziale. Questo non e valido e non e stato possibile calcolare un risultato.
+      switchStartEnd: Scambia indirizzo IPv4 iniziale e finale
+      result: Risultato
+      copied: Copiato!
+      copyResult: Copia risultato
+  text-diff:
+    title: Diff di testo
+    description: Confronta due testi e visualizza le differenze.
+  otp-generator:
+    title: Generatore di codici OTP
+    description: Genera e convalida OTP (password monouso) basati sul tempo per l'autenticazione a più fattori.
+  text-to-binary:
+    title: Da testo a binario ASCII
+    description: Converti il testo nella sua rappresentazione binaria ASCII e viceversa.
+    ui:
+      textCopied: Testo copiato
+      binaryCopied: Binario copiato
+      panelTitle: TESTO ↔ BINARIO ASCII
+      textLabel: TESTO
+      binaryLabel: BINARIO
+      copied: Copiato
+      copy: Copia
+      textPlaceholder: es. Hello world
+      invalidBinary: Deve essere binario ASCII valido (multipli di 8 bit)
+  ascii-word-art:
+    title: Generatore di ASCII art
+    description: Crea testo in ASCII art con molti caratteri e stili.
+  killer-scripts:
+    title: Killer Scripts
+    description: Script PowerShell per l'amministrazione Windows e il lavoro sul campo in MSP.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Scegli un cmdlet, compila i parametri e copia il comando PowerShell finito.
+  group-policy-reference:
+    title: Riferimento Criteri di gruppo
+    description: Cerca le impostazioni comuni dei Criteri di gruppo di Windows per nome, percorso GPO, chiave di registro o descrizione.
+    ui:
+      searchPlaceholder: Cerca criteri, percorsi, chiavi di registro...
+      copied: Copiato!
+      clickToCopyRegistry: Clicca per copiare la chiave di registro
+      copiedShort: copiato
+      default: Predefinito
+      recommended: Consigliato
+  windows-event-lookup:
+    title: Ricerca eventi Windows
+    description: Cerca gli ID evento di Windows con descrizioni, livelli di gravità e cause comuni.
+    ui:
+      searchResults: Risultati della ricerca
+      searchPlaceholder: Cerca per ID evento, nome o descrizione...
+      copied: Copiato!
+      clickToCopyEventId: Clicca per copiare l'ID evento
+      copiedShort: copiato
+  m365-sku-decoder:
+    title: Decodificatore SKU licenze M365
+    description: Decodifica stringhe SKU e GUID delle licenze Microsoft 365 nei nomi dei prodotti.
+    ui:
+      searchPlaceholder: Cerca per nome SKU, string ID o descrizione...
+      copied: Copiato!
+      clickToCopy: Fai clic per copiare lo string ID
+      copiedMark: ✓ copiato
+  windows-error-codes:
+    title: Ricerca codici di errore Windows
+    description: Cerca i codici di errore Windows in esadecimale o decimale, inclusi errori di sistema, stop code BSOD, errori WMI, RPC, del programma di installazione MSI e altro.
+    ui:
+      searchResults: Risultati della ricerca
+      searchPlaceholder: Cerca per codice esadecimale, nome errore o descrizione...
+      copied: Copiato!
+      clickToCopy: Clicca per copiare il codice esadecimale
+      copiedShort: copiato
+      decimal: decimale {decimal}
+  exchange-ndr-lookup:
+    title: Ricerca NDR Exchange
+    description: Cerca i codici di rimbalzo di Exchange e M365 con causa e soluzione spiegate in parole semplici.
+    ui:
+      searchResults: Risultati della ricerca
+      searchPlaceholder: Cerca per codice NDR, nome errore, causa o soluzione...
+      copied: Copiato!
+      clickToCopy: Clicca per copiare il codice NDR
+      copiedShort: copiato
+      cause: Causa
+      fix: Soluzione
+  safelink-decoder:
+    title: Decodificatore Safelink di Outlook
+    description: Estrai i SafeLinks di Microsoft Defender per rivelare l'URL di destinazione originale.
+  port-protocol-reference:
+    title: Riferimento porte e protocolli
+    description: Porte e protocolli di rete comuni con note di sicurezza e segnalazione delle porte pericolose.
+  cve-lookup:
+    title: Ricerca CVE
+    description: Cerca CVE nel NIST NVD per ID o parola chiave. Dati in tempo reale dall'API NVD.
+    ui:
+      range6m: 6 mesi
+      range1y: 1 anno
+      range2y: 2 anni
+      range5y: 5 anni
+      rangeAll: Sempre
+      noDescription: Nessuna descrizione disponibile.
+      fetchError: Impossibile raggiungere l'API NVD. Controlla la connessione.
+      sortNewest: Più recenti
+      sortOldest: Meno recenti
+      sortSeverity: Gravità più alta
+      severityCritical: Critica
+      severityHigh: Alta
+      severityMedium: Media
+      severityLow: Bassa
+      placeholder: ID CVE o parola chiave (es. CVE-2021-44228, log4j)
+      searching: Ricerca in corso...
+      search: Cerca
+      hint: Cerca per ID CVE, numero parziale (es. 43284), nome comune (es. log4shell, dirty frag) o parola chiave. Dati in tempo reale da NVD e GitHub Advisory Database.
+      noResults: Nessuna CVE trovata per "{query}".
+      noResultsInRange: Nessuna CVE trovata per "{query}" nell'intervallo di date selezionato.
+      noExactMatch: Nessuna corrispondenza esatta trovata nell'intervallo di date selezionato. I nomi comuni delle vulnerabilità (come "dirty frag") potrebbero non comparire testualmente nelle descrizioni NVD. Prova invece un numero CVE parziale (es. "43284" trova CVE-2026-43284).
+      searchAllTime: Cerca in qualsiasi periodo
+      showingResults: Visualizzati {shown} di {total} risultati totali
+      allSeverities: Tutte le gravità
+      allYears: Tutti gli anni
+      copied: Copiato!
+      clickToCopyId: Clicca per copiare l'ID CVE
+      copiedShort: copiato
+      cveDetail: DETTAGLI CVE
+      published: Pubblicato
+      modified: Modificato
+      clickToCopy: Clicca per copiare
+      references: Riferimenti
+      kevActionDue: 'Scadenza azione CISA KEV:'
+      cvssMetrics: Metriche CVSS
+      metricAttackVector: Vettore di attacco
+      metricAttackComplexity: Complessità dell'attacco
+      metricPrivilegesRequired: Privilegi richiesti
+      metricUserInteraction: Interazione utente
+      metricScope: Ambito
+      metricConfidentiality: Riservatezza
+      metricIntegrity: Integrità
+      metricAvailability: Disponibilità
+  email-dns-checker:
+    title: Verifica DNS email
+    description: Controlla i record MX, SPF, DKIM e DMARC di qualsiasi dominio. Convalida la configurazione di autenticazione email e segnala gli errori di configurazione comuni.
+  email-header-parser:
+    title: Parser intestazioni email
+    description: Incolla le intestazioni email grezze per estrarre le informazioni sul mittente, tracciare la catena di hop di consegna e visualizzare i risultati di autenticazione SPF, DKIM e DMARC.
+    ui:
+      pasteHint: Incolla di seguito le intestazioni email grezze.
+      parseButton: Analizza intestazioni
+      parseAnother: Analizza un'altra
+      messageDetails: Dettagli messaggio
+      senderMismatch: Il dominio del mittente differisce dal dominio From. Questo potrebbe indicare spoofing o invio delegato.
+      deliveryHops: Passaggi di consegna
+      oldestFirst: dal più vecchio
+      authResults: Risultati autenticazione
+      spamAnalysis: Analisi spam
+      spamScore: Punteggio spam
+      spamStatus: Stato spam
+  whois-checker:
+    title: Ricerca WHOIS
+    description: Cerca i dettagli di registrazione di qualsiasi dominio, inclusi registrar, date di creazione e scadenza, nameserver e flag di stato.
+  ascii-text-drawer:
+    title: Generatore di ASCII art
+    description: Crea testo in ASCII art con molti caratteri e stili.
+    ui:
+      yourText: IL TUO TESTO
+      textPlaceholder: Testo da disegnare
+      options: OPZIONI
+      font: FONT
+      searchFonts: Cerca font...
+      noFontsMatch: Nessun font corrisponde
+      width: LARGHEZZA
+      output: OUTPUT ASCII ART
+      loadingFont: Caricamento font...
+      error: Le impostazioni attuali hanno generato un errore.
+      copied: Copiato!
+      copy: Copia
+  regex-tester:
+    title: Tester regex
+    description: Prova le tue espressioni regolari su un testo di esempio.
+    ui:
+      regexLabel: 'Regex da testare:'
+      regexPlaceholder: Inserisci la regex da testare
+      globalLabel: Globale
+      globalTitle: Ricerca globale
+      ignoreCaseLabel: Ignora maiuscole/minuscole
+      ignoreCaseTitle: Ricerca senza distinzione tra maiuscole e minuscole
+      multilineLabel: Multilinea
+      singlelineLabel: Riga singola
+      singlelineTitle: Permette a . di corrispondere ai caratteri di ritorno a capo.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; tratta un pattern come una sequenza di code point Unicode.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: Un miglioramento della modalita u con piu funzionalita Unicode.
+      textLabel: 'Testo da confrontare:'
+      textPlaceholder: Inserisci il testo da confrontare
+      regexBarTitle: REGEX
+      matchesBarTitle: CORRISPONDENZE
+      matchIndex: Indice
+      matchValue: Valore
+      matchCaptures: Catture
+      matchGroups: Gruppi
+      noMatch: Nessuna corrispondenza
+      sampleBarTitle: ESEMPIO
+      diagramBarTitle: DIAGRAMMA
+      quickReference: Riferimento rapido
+  yaml-converter:
+    title: Convertitore YAML
+    description: Converti YAML in JSON o TOML.
+    ui:
+      convertTo: 'Converti in:'
+      inputLabel: Il tuo YAML
+      inputPlaceholder: Incolla qui il tuo YAML...
+      invalidYaml: Lo YAML fornito non è valido.
+      outputLabel: Output {format}
+  json-converter:
+    title: Convertitore JSON
+    description: Converti JSON in YAML o TOML.
+    ui:
+      convertTo: Converti in
+      yourJson: Il tuo JSON
+      pasteJsonPlaceholder: Incolla qui il tuo JSON...
+      invalidJson: Formato JSON non valido
+      formatOutput: Output {format}
+  toml-converter:
+    title: Convertitore TOML
+    description: Converti TOML in JSON o YAML.
+    ui:
+      convertTo: 'Converti in:'
+      yourToml: Il tuo TOML
+      pastePlaceholder: Incolla qui il tuo TOML...
+      invalidToml: Il TOML fornito non e valido.
+      outputLabel: Output {format}
+  xml-json-converter:
+    title: Convertitore XML ↔ JSON
+    description: Convertitore bidirezionale XML e JSON. Modifica un lato e l'altro si aggiorna automaticamente.
+    ui:
+      invalidXml: XML non valido.
+      invalidJson: JSON non valido.
+      xmlLabel: XML
+      xmlPlaceholder: Incolla qui il tuo XML...
+      jsonLabel: JSON
+      jsonPlaceholder: Incolla qui il tuo JSON...
+  markdown-to-html:
+    title: Da Markdown a HTML
+    description: Converti Markdown in HTML ed esporta o stampa in PDF.
+    ui:
+      copiedSuccess: HTML copiato negli appunti!
+      copyFailed: Copia del testo non riuscita.
+      inputLabel: 'Il tuo Markdown da convertire:'
+      inputPlaceholder: Il tuo contenuto Markdown...
+      outputLabel: 'HTML generato:'
+      copyHtmlButton: Copia HTML
+      printAsPdfButton: Stampa come PDF
+  killer-pdf:
+    title: KillerPDF
+    description: Editor PDF open source per Windows. Visualizza, annota, unisci, dividi, appiattisci, apri PDF protetti da password, modifica testo, disegna, evidenzia, firma e stampa.
+  killer-scan:
+    title: KillerScan
+    description: Scanner di rete veloce per tecnici sul campo. Rilevamento ARP + ping, sondaggio delle porte, ricerca del fornitore e classificazione automatica dei dispositivi.
+  gif-search:
+    title: Ricerca GIF
+    description: Cerca GIF di reazione su Giphy. Clicca su un risultato per copiarne l'URL.
+    ui:
+      errorStatus: Errore {status}
+      fetchFailed: Impossibile recuperare le GIF.
+      searchPlaceholder: Cerca GIF (ad es. facepalm, ottimo lavoro, va tutto bene)
+      searching: Ricerca in corso...
+      search: Cerca
+      noResults: Nessuna GIF trovata per "{query}".
+      copied: Copiato!
+      copyUrl: Copia URL
+      resultsHint: '{count} risultati. Fai clic per copiare l''URL, poi incollalo in Teams, Telegram o Slack.'
+  killer-shell:
+    title: KillerShell
+    description: Shell gratuita per utenti esperti. Un file browser, un terminale e un editor di testo condividono una finestra, una barra delle schede e un set di tasti.
+  domain-lookup:
+    title: Ricerca dominio
+    description: Dettagli di registrazione WHOIS e controlli DNS email (MX, SPF, DKIM, DMARC) per qualsiasi dominio in un'unica vista.
+    ui:
+      statusDesc:
+        active: Il dominio e attivo e operativo.
+        inactive: Il dominio non e attivo.
+        clientDeleteProhibited: Il registrar ha bloccato il dominio contro la cancellazione.
+        clientTransferProhibited: Il registrar ha bloccato il dominio contro il trasferimento a un altro registrar.
+        clientUpdateProhibited: Il registrar ha bloccato il dominio contro gli aggiornamenti.
+        clientHold: Il registrar ha messo il dominio in hold, quindi il DNS potrebbe non risolvere.
+        serverDeleteProhibited: Il registry ha bloccato il dominio contro la cancellazione.
+        serverTransferProhibited: Il registry ha bloccato il dominio contro il trasferimento.
+        serverUpdateProhibited: Il registry ha bloccato il dominio contro gli aggiornamenti.
+        serverHold: Il registry ha messo il dominio in hold, quindi il DNS potrebbe non risolvere.
+        pendingCreate: La creazione del dominio e in sospeso.
+        pendingDelete: Il dominio e in attesa di cancellazione e potrebbe essere rilasciato a breve.
+        pendingRenew: Il rinnovo del dominio e in sospeso.
+        pendingRestore: Il ripristino del dominio dopo la cancellazione e in sospeso.
+        pendingTransfer: Il trasferimento del dominio a un altro registrar e in sospeso.
+        pendingUpdate: L'aggiornamento del dominio e in sospeso.
+        redemptionPeriod: Il dominio e scaduto ed e in redemption. Il titolare puo ancora recuperarlo.
+        renewPeriod: Il dominio e nel periodo di grazia per il rinnovo dopo la registrazione.
+        autoRenewPeriod: Il dominio e nel periodo di grazia del rinnovo automatico.
+        transferPeriod: Il dominio e nel periodo di grazia per il trasferimento.
+      expiredAlert: Questo dominio e scaduto {days} giorni fa e potrebbe essere disponibile per la registrazione.
+      expiresAlert: Questo dominio scade tra {days} giorni. Il rinnovo dovrebbe essere organizzato al piu presto.
+      expiredTag: Scaduto {days}g fa
+      remainingTag: '{days}g rimanenti'
+      registrar: Registrar
+      registrarIanaId: ID IANA del registrar
+      created: Creato
+      updated: Aggiornato
+      expires: Scadenza
+      noMx: Nessun record MX trovato.
+      dnsFailed: Ricerca DNS non riuscita.
+      noSpf: Nessun record SPF trovato.
+      noDkim: Nessun record DKIM trovato per i selettori comuni. Selettori personalizzati potrebbero comunque esistere.
+      noDmarc: Nessun record DMARC trovato. Il dominio non e protetto contro lo spoofing.
+      spfPlusAll: 'Attenzione: +all e pericoloso perche permette a qualsiasi server di inviare posta a nome di questo dominio.'
+      spfNeutralAll: 'Attenzione: ?all e neutro e non offre alcuna protezione.'
+      dmarcPNone: 'Attenzione: p=none e solo monitoraggio, senza applicazione. Le email non verranno rifiutate.'
+      dmarcNoRua: 'Attenzione: nessun indirizzo per i report aggregati (rua=). Non riceverai i report DMARC.'
+      pass: Superato
+      fail: Non superato
+      warning: Attenzione
+      checking: Verifica in corso...
+      overallPass: Tutti i controlli email sono stati superati. Questo dominio e ben configurato per l'email.
+      overallFail: Uno o piu record critici mancano. Questo dominio potrebbe essere vulnerabile allo spoofing.
+      overallWarn: Alcuni record esistono ma presentano problemi di configurazione da rivedere.
+      rdapHttpError: 'HTTP {status}: il dominio potrebbe non esistere oppure il TLD non e supportato.'
+      lookupFailed: Ricerca non riuscita.
+      domainPlaceholder: Inserisci un dominio (es. killertools.net)
+      searching: Ricerca in corso...
+      search: Cerca
+      signed: Firmato
+      unsigned: Non firmato
+      delegationSigned: La delega e firmata.
+      dsRecord: '{count} record DS.'
+      dsRecords: '{count} record DS.'
+      keyRecord: '{count} record chiave.'
+      keyRecords: '{count} record chiave.'
+      dnssecUnsigned: Questo dominio non e protetto da DNSSEC. Le risposte DNS non possono essere verificate crittograficamente.
+      status: Stato
+      contacts: Contatti
+      remarks: Osservazioni
+      nameservers: Nameserver
+      mxRecords: Record MX
+      spfRecord: Record SPF
+      dkimRecords: Record DKIM
+      dmarcRecord: Record DMARC
+      role:
+        registrant: titolare
+        administrative: amministrativo
+        technical: tecnico
+        abuse: abusi
+      name: Nome
+      organization: Organizzazione
+      email: Email
+      phone: Telefono
+  email-record-generator:
+    title: Generatore di record email
+    description: Genera record DNS TXT SPF e DMARC. Scegli i tuoi provider di posta e le policy, poi copia il risultato direttamente nel tuo DNS.
+    ui:
+      hardFailRecommended: hard fail, consigliato
+      softFail: soft fail
+      neutralNotRecommended: neutro, non consigliato
+      blockFailingMail: blocca la posta non conforme
+      sendToSpam: invia allo spam
+      monitorOnly: solo monitoraggio
+      relaxedDefault: Permissiva (predefinita)
+      strict: Rigorosa
+      sameAsMainPolicy: Uguale alla policy principale
+      spfRecordTitle: RECORD SPF
+      dmarcRecordTitle: RECORD DMARC
+      spfRecordLocation: Record TXT sul dominio radice
+      dmarcRecordLocation: Record TXT su
+      copied: copiato
+      clickToCopy: clicca per copiare
+      lookupWarning: '{count} lookup DNS selezionati; SPF ha un limite di 10 lookup'
+      mailProviders: PROVIDER DI POSTA
+      customIps: IP O INTERVALLI PERSONALIZZATI (OPZIONALE)
+      examplePrefix: es.
+      enforcement: APPLICAZIONE
+      policy: POLICY
+      subdomainPolicy: POLICY SOTTODOMINI (OPZIONALE)
+      policyCoverage: 'COPERTURA POLICY: {percent}%'
+      coverageHint: Il {percent}% della posta non conforme verra gestito. Usa un valore inferiore al 100% per un rollout graduale.
+      aggregateReportEmail: EMAIL REPORT AGGREGATI (rua)
+      forensicReportEmail: EMAIL REPORT FORENSI (ruf, opzionale)
+      dkimAlignment: ALLINEAMENTO DKIM
+      spfAlignment: ALLINEAMENTO SPF
+  json-viewer:
+    ui:
+      invalidJson: Il JSON fornito non è valido.
+      sortKeys: Ordina chiavi
+      indentSize: Dimensione rientro
+      yourRawJson: Il tuo JSON grezzo
+      pasteRawJsonPlaceholder: Incolla qui il tuo JSON grezzo...
+      prettifiedVersion: Versione formattata del tuo JSON
+  qr-code-generator:
+    ui:
+      tabText: Testo / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Testo o URL
+      placeholderTextOrUrl: Link o testo...
+      sectionEncryption: Crittografia
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Nessuna password
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Nome rete...
+      sectionPassword: Password
+      placeholderPassword: Password di rete...
+      sectionOptions: Opzioni
+      hiddenSsid: SSID nascosto
+      anonymousIdentity: Identita anonima
+      sectionEapMethod: Metodo EAP
+      sectionEapPhase2: EAP fase 2
+      sectionEapIdentity: Identita EAP
+      placeholderEapIdentity: La tua identita EAP...
+      sectionTheme: Tema
+      themeDefault: Predefinito
+      themeTerminal: Terminale
+      themeClassic: Classico
+      themeInverted: Invertito
+      sectionColors: Colori
+      labelForeground: 'Primo piano:'
+      labelBackground: 'Sfondo:'
+      sectionErrorCorrection: Correzione errori
+      levelLow: Bassa (~7%)
+      levelMedium: Media (~15%)
+      levelQuartile: Quartile (~25%)
+      levelHigh: Alta (~30%)
+      emptyHintWifi: Inserisci un SSID per generare un QR Wi-Fi
+      emptyHintText: Inserisci del testo o un URL
+      captionJoin: '>_ scansiona per connetterti'
+      captionOpen: '>_ scansiona per aprire'
+      downloadPng: ↓ Scarica PNG
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: Stringa data locale JS
+      formatUnixTimestamp: Timestamp Unix
+      formatTimestamp: Timestamp
+      formatUtc: Formato UTC
+      formatExcelDateTime: Data/ora Excel
+      invalidDateRule: Questa data non è valida per questo formato
+      inputPlaceholder: Incolla una stringa di data o lascia vuoto per l'orologio in tempo reale...
+      invalidDate: Data non valida per questo formato
+      output: OUTPUT
+      live: LIVE
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Testo in Unicode
+      enterTextLabel: Inserisci il testo da convertire in Unicode
+      unicodeFromTextLabel: Unicode dal tuo testo
+      unicodeOutputPlaceholder: La rappresentazione Unicode del tuo testo apparirà qui
+      copyUnicode: Copia Unicode negli appunti
+      unicodeToTextTitle: Unicode in testo
+      inputUnicodePlaceholder: Inserisci Unicode
+      enterUnicodeLabel: Inserisci Unicode da convertire in testo
+      textFromUnicodeLabel: Testo dal tuo Unicode
+      textOutputPlaceholder: La rappresentazione testuale del tuo Unicode apparirà qui
+      copyText: Copia il testo negli appunti
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Meta tag copiati!
+      copiedLabel: ✓ Copiato
+      copyButton: Copia
+      outputTitle: I TUOI META TAG
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Da tipo MIME a estensione
+      mimeToExtensionDescription: Scopri quali estensioni di file sono associate a un tipo MIME
+      mimeTypeSelectPlaceholder: 'Seleziona qui il tuo tipo MIME... (es: application/pdf)'
+      extensionsFoundPrefix: Estensioni dei file con il
+      extensionsFoundSuffix: 'tipo MIME:'
+      extensionToMimeTitle: Da estensione a tipo MIME
+      extensionToMimeDescription: Scopri quale tipo MIME è associato a un'estensione di file
+      mimeFoundPrefix: Tipo MIME associato all'estensione
+      mimeFoundSuffix: 'di file:'
+      tableMimeTypesHeader: Tipi MIME
+      tableExtensionsHeader: Estensioni
+  basic-auth-generator:
+    ui:
+      copied: Header copiato negli appunti
+      username: Nome utente
+      usernamePlaceholder: Il tuo nome utente...
+      password: Password
+      passwordPlaceholder: La tua password...
+      headerLabel: 'Header Authorization:'
+      copyHeader: Copia header
+  yaml-viewer:
+    ui:
+      invalidYaml: Lo YAML fornito non è valido.
+      sortKeys: Ordina chiavi
+      indentSize: Dimensione rientro
+      rawLabel: Il tuo YAML grezzo
+      rawPlaceholder: Incolla qui il tuo YAML grezzo...
+      prettifiedLabel: Versione formattata del tuo YAML
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Segreto (hex)
+      epochLabel: Epoch
+      countLabel: Conteggio
+      paddedHexLabel: Hex con padding
+      secretLabel: SEGRETO
+      secretPlaceholder: Incolla il tuo segreto TOTP...
+      generateNewSecret: Genera nuovo segreto
+      tokenLabel: TOKEN
+      copied: ✓ copiato
+      clickToCopy: clicca per copiare
+      nextIn: '>_ prossimo tra {seconds}s'
+      adjacentTokensLabel: TOKEN ADIACENTI
+      prevLabel: Prec
+      nextLabel: Succ
+      detailsLabel: DETTAGLI
+      scanToAuthenticate: '>_ scansiona per autenticarti'
+      openKeyUriInNewTab: Apri Key URI in una nuova scheda
+      tokenDisplayPreviousLabel: Precedente
+      tokenDisplayCurrentLabel: OTP corrente
+      tokenDisplayNextLabel: Successivo
+      copiedExclaim: Copiato!
+      copyPreviousOtp: Copia OTP precedente
+      copyCurrentOtp: Copia OTP corrente
+      copyNextOtp: Copia OTP successivo
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Forte
+      moderateLabel: Moderata
+      weakLabel: Debole
+      veryWeakLabel: Molto debole
+      lengthLabel: Lunghezza
+      entropyLabel: Entropia
+      charsetSizeLabel: Dimensione charset
+      scoreDetailLabel: Punteggio
+      passwordPlaceholder: Inserisci una password...
+      hideLabel: Nascondi
+      showLabel: Mostra
+      clearLabel: Cancella
+      crackTimeSublabel: TEMPO DI CRACK BRUTE FORCE
+      crackTimeNote: La robustezza è stimata usando il tempo di brute force a 1B tentativi/sec. Gli attacchi a dizionario non sono modellati.
+  integer-base-converter:
+    ui:
+      binary: Binario
+      octal: Ottale
+      decimal: Decimale
+      hexadecimal: Esadecimale
+      base: base
+      output: OUTPUT
+      custom: Personalizzata
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Cerca per porta, servizio, protocollo o descrizione...
+      allProtocols: Tutti
+      dangerousOnly: Solo pericolose
+      showingPorts: '{count} porte visualizzate'
+      copied: Copiato!
+      clickToCopy: Clicca per copiare il numero di porta
+      copiedCheck: ✓ copiato
+      dangerousPill: Pericolosa
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Esplora Cmdlet
+      adminBadge: Admin
+      cmdletSearchPlaceholder: Cerca per nome, descrizione o modulo...
+      noCmdletsMatch: Nessun cmdlet corrisponde a "{query}"
+      generatedCommand: Comando Generato
+      copiedCheck: ✓ Copiato!
+      copyCommand: Copia Comando
+      commonExamples: Esempi Comuni
+      selectCmdletPrompt: Seleziona un cmdlet a sinistra per iniziare a costruire il tuo comando.
+      parameters: Parametri
+      noParametersNeeded: Nessun parametro necessario - questo cmdlet viene eseguito così com'è.
+      required: obbligatorio
+      separateMultipleValues: separa più valori con virgole
+      showFewerParameters: Mostra meno parametri
+      showMoreParameters: '{count} altri parametri'
+      collapseQuickReference: Comprimi Riferimento Rapido
+      openQuickReference: Apri Riferimento Rapido
+      quickReference: Riferimento Rapido
+      cheatsheetComparisonOperators: Operatori di Confronto
+      cheatsheetEqualTo: Uguale a
+      cheatsheetNotEqualTo: Diverso da
+      cheatsheetGreaterLessThan: Maggiore di / Minore di
+      cheatsheetGreaterLessEqual: Maggiore o uguale / Minore o uguale
+      cheatsheetStringOperators: Operatori di Stringa
+      cheatsheetWildcardMatch: Corrispondenza con carattere jolly (* e ?)
+      cheatsheetWildcardNonMatch: Non corrispondenza con carattere jolly
+      cheatsheetRegexMatch: Corrispondenza regex
+      cheatsheetRegexNonMatch: Non corrispondenza regex
+      cheatsheetCollectionContains: La raccolta contiene il valore
+      cheatsheetValueInCollection: Il valore è nella raccolta
+      cheatsheetLogicalOperators: Operatori Logici
+      cheatsheetBothTrue: Entrambe le condizioni devono essere vere
+      cheatsheetEitherTrue: Almeno una condizione è vera
+      cheatsheetNegateCondition: Nega una condizione
+      cheatsheetAutomaticVariables: Variabili Automatiche
+      cheatsheetCurrentPipelineObject: Oggetto corrente della pipeline
+      cheatsheetNullEmptyValue: Valore nullo / vuoto
+      cheatsheetBooleanTrueFalse: Booleano vero / falso
+      cheatsheetLocalComputerName: Nome del computer locale
+      cheatsheetCurrentUser: Utente attualmente connesso
+      cheatsheetPsVersionInfo: Info versione PS
+      cheatsheetDateHelpers: Helper per Date
+      cheatsheetCurrentDateTime: Data e ora correnti
+      cheatsheetThirtyDaysAgo: 30 giorni fa
+      cheatsheetThreeMonthsAgo: 3 mesi fa
+      cheatsheetParseDateString: Analizza una stringa di data
+      cheatsheetPipelineTricks: Trucchi per la Pipeline
+      cheatsheetLimitFirst10: Limita ai primi 10 risultati
+      cheatsheetCountSumMinMax: Conta / somma / min / max
+      cheatsheetInteractiveGuiViewer: Visualizzatore GUI interattivo (locale)
+      cheatsheetConvertToJson: Converti l'output in JSON
+      cheatsheetOutputScreenAndFile: Output a schermo e su file
+      cheatsheetSuppressErrors: Sopprimi errori non critici
+      cheatsheetRemoteExecution: Esecuzione Remota
+      cheatsheetCmdletsSupportDirectly: Molti cmdlet lo supportano direttamente
+      cheatsheetRunViaRemoting: Esegui tramite PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Sessione PS remota interattiva
+ui:
+  diffEditor:
+    originalLabel: ORIGINALE
+    modifiedLabel: MODIFICATO
+    originalPlaceholder: Testo originale...
+    modifiedPlaceholder: Testo modificato...
+  fileUpload:
+    defaultTitle: Trascina e rilascia i file qui, oppure fai clic per selezionarli
+    or: oppure
+    browseFiles: Sfoglia file
+  inputText:
+    defaultPlaceholder: Testo di input
+  keyValueListItem:
+    'yes': Sì
+    'no': 'No'
+    notAvailable: N/D
+  modalValue:
+    copied: Copiato!
+    copy: Copia
+  select:
+    searchPlaceholder: Cerca...
+    noResults: Nessun risultato trovato
+    defaultPlaceholder: Seleziona un'opzione
+  table:
+    defaultDescription: Tabella dati
+  textCopyable:
+    copied: Copiato!
+    copyToClipboard: Copia negli appunti
+commandPalette:
+  searchAriaLabel: Cerca
+  searchPlaceholder: Digita per cercare uno strumento o un comando...
+components:
+  androidBetaBanner:
+    announcement: Annuncio beta Android
+    title: Killer Tools sta arrivando su Android
+    subtitle: Cercansi beta tester - tocca per partecipare
+    dismiss: Ignora
+  formatTransformer:
+    input: Input
+    inputPlaceholder: Input...
+    output: Output
+  inputCopyable:
+    copied: Copiato!
+    copy: Copia negli appunti
+  spanCopyable:
+    copied: Copiato!
+    copy: Copia negli appunti
+  textareaCopyable:
+    copy: Copia negli appunti
+    copied: Copiato!
+  navbarButtons:
+    androidTooltip: Killer Tools per Android
+    androidAriaLabel: Killer Tools per Android - unisciti alla beta
+  themeDots:
+    accentColor: Colore accento
+    theme: Tema
+    toggleThemeSwatches: Attiva/disattiva campioni tema
+    accentColorPicker: Selettore colore accento
+    dragToMove: Trascina per spostare
+    accentLabel: 'accento:'
+    accentNamed: 'Accento: {name}'
+    closeAccentPicker: Chiudi selettore accento
+    accents:
+      red: Rosso
+      orange: Arancione
+      green: Verde
+      teal: Verde acqua
+      blue: Blu
+      purple: Viola
+layouts:
+  menuLayout:
+    eggMessage: 80 strumenti. Zero abbonamenti. Un tecnico sul campo vendicativo.
+    clickMe: clicca qui
+    sourceOnGithub: Codice sorgente su Github
+  base:
+    collapseMenu: Comprimi menu
+    homeLabel: Home di KillerTools
+pages:
+  notFound:
+    noSuchFile: Nessun file o directory di questo tipo
+    exitCode: codice di uscita
+    backToHome: torna alla home
+  privacy:
+    heading: Informativa sulla privacy
+    lastUpdated: 'Ultimo aggiornamento: 4 aprile 2026'
+    overviewHeading: Panoramica
+    overviewIntro: Killer Tools
+    overviewBody: è una raccolta gratuita di strumenti IT. La tua privacy è importante per noi, e questa informativa spiega come trattiamo i tuoi dati.
+    dataCollectionHeading: Raccolta dati
+    dataCollectionBody: Killer Tools non raccoglie, non memorizza e non trasmette alcun dato personale. Tutta l'elaborazione degli strumenti avviene interamente nel tuo browser. Nessun dato inserito in uno strumento viene inviato a un server.
+    cookiesHeading: Cookie
+    cookiesBody: Questo sito non utilizza cookie per il tracciamento. Le preferenze del tema e le impostazioni sono memorizzate localmente nel tuo browser e non vengono mai trasmesse.
+    analyticsHeading: Analisi
+    analyticsIntro: Questo sito utilizza
+    analyticsBody: uno strumento di analisi rispettoso della privacy, per comprendere modelli generali di utilizzo come visualizzazioni di pagina e fonti di riferimento. Umami non utilizza cookie, non traccia gli utenti tra siti diversi e non raccoglie informazioni personali identificabili. Tutti i dati sono aggregati e anonimi.
+    thirdPartyHeading: Servizi di terze parti
+    thirdPartyBody: Alcuni strumenti possono rimandare a risorse o documentazione esterne. Non siamo responsabili delle pratiche sulla privacy di quei siti esterni.
+    androidAppHeading: App Android
+    androidAppBody: L'app Android di Killer Tools è un wrapper intorno all'applicazione web. Non richiede né accede ad alcun permesso del dispositivo oltre al normale accesso a internet. Nessun dato del dispositivo viene raccolto o trasmesso.
+    contactHeading: Contatti
+    contactBody: Se hai domande su questa informativa sulla privacy, puoi contattarci a
+  androidApp:
+    robotAttribution: Il robot Android è riprodotto o modificato da un'opera creata e condivisa da Google, utilizzata secondo i termini descritti nella licenza Creative Commons 3.0 Attribution.
+    heading: Killer Tools per Android
+    introBody1: 'L''intero toolbox di killertools.net come app nativa per Android: ogni strumento, la libreria Killer Scripts e tutti i tuoi preferiti, a un tocco dalla schermata home.'
+    introBody2: Le stesse regole del sito. Tutto viene eseguito sul tuo dispositivo. Nessun account, nessuna telemetria, nessuna comunicazione nascosta. Se ti fa risparmiare un ciclo di ticket sul campo, ha fatto il suo lavoro.
+    betaStatusPrefix: L'app è attualmente in
+    betaStatusStrong: beta chiusa su Google Play
+    betaStatusSuffix: ', ed è qui che entri in gioco tu.'
+    joinBetaHeading: Unisciti alla beta
+    joinBetaIntroPrefix: Google richiede
+    joinBetaIntroStrong: 12 tester con l'app installata per 14 giorni consecutivi
+    joinBetaIntroSuffix: 'prima che un''app di uno sviluppatore indipendente possa diventare pubblica. Tre passaggi, circa due minuti, e sarai uno dei dodici:'
+    step1LinkText: Iscriviti al gruppo tester
+    step1Suffix: su Google Gruppi (clicca su "Join group").
+    step2LinkText: Diventa un tester
+    step2Suffix: nella pagina di adesione di Google Play.
+    step3LinkText: Installa l'app
+    step3Suffix: da Google Play, e mantienila installata per due settimane.
+    sameAccountStrong: Usa lo stesso account Google per tutti e tre i passaggi
+    sameAccountSuffix: ' - la pagina di adesione mostra "non disponibile per questo account" se salti il gruppo o cambi account.'
+    feedbackPrefix: 'Qualcosa non funziona o manca? Scrivimi:'
+  home:
+    sortPopular: Popolare
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: Informazioni su Killer Tools
+    intro: I tecnici sul campo non hanno tempo per il superfluo. Ogni strumento qui esiste perché mi serviva sul lavoro e non riuscivo a trovare qualcosa che funzionasse senza un account, un'installazione o la telemetria.
+    originPrefix: Ora costruisco strumenti nel team interno di ingegneria AI di un MSP, dopo sei anni di sviluppo full-stack e otto anni come tecnico sul campo in diverse aziende. KillerTools.net è nato come fork dell'eccellente
+    originMid: progetto di
+    originSuffix: ed è diventato qualcosa costruito per il tipo di lavoro che faccio davvero. L'ho creato per cercare le impostazioni dei Criteri di gruppo a metà ticket, scansionare la subnet di un cliente e recuperare i riferimenti alle porte senza uscire dal browser.
+    scriptsLibrary: La libreria Killer Scripts copre i compiti che ricorrono in ogni ciclo di ticket. Ogni script funziona in PS 5.1, PS 7 e Kaseya LiveConnect senza dipendenze.
+    privacyBody: Tutto viene eseguito nel tuo browser. Niente viene tracciato. Nessun account è mai richiesto. Il sito applica una rigorosa Content Security Policy per bloccare attacchi alla catena delle dipendenze. Se un pacchetto npm compromesso finisse nel bundle, non potrebbe comunicare all'esterno ciò che hai incollato.
+    maintainedByPrefix: Creato e mantenuto da
+    maintainedByMid: Se questo ti fa risparmiare tempo sul lavoro,
+    buyMeCoffee: offrirmi un caffè
+    maintainedBySuffix: è apprezzato ma mai richiesto.
+    missingToolHeading: Manca uno strumento? Hai trovato un bug?
+    issuesPrefix: Apri una richiesta di funzionalità o una segnalazione di bug nella
+    issuesLinkText: sezione issues
+    issuesSuffix: su GitHub. Le leggo.
+    alsoTryHeading: Prova anche...
+    tagKillerScan: Scanner di rete open source per Windows
+    tagKillerPdf: Editor PDF open source per Windows
+    tagKillerShell: Shell Windows open source per utenti avanzati
+    tagKillerNotes: Blocco note crittografato open source per Windows
+    tagKillendar: Calendario crittografato open source per Windows
+    linksHeading: Link
+    linkLabelSite: Sito
+    linkLabelSource: Sorgente
+    linkLabelIssues: Issues
+    reportBug: Segnala un bug
+    requestFeature: Richiedi una funzionalità
+    linkLabelSupport: Supporto
+    linkLabelBuiltOn: Basato su
+    itToolsFork: IT-Tools (fork)

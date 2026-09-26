@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+const { t } = useI18n();
 
 // The Capacitor WebView injects a global bridge object; the banner is for the
 // website only - inside the Android app itself it would be pointless nagging.
@@ -14,15 +15,15 @@ const visible = computed(() => !isNativeApp && !dismissed.value && route.name !=
 </script>
 
 <template>
-  <div v-if="visible" class="beta-banner" role="complementary" aria-label="Android beta announcement">
+  <div v-if="visible" class="beta-banner" role="complementary" :aria-label="t('components.androidBetaBanner.announcement')">
     <RouterLink class="beta-body" to="/android" @click="dismissed = true">
       <img class="beta-icon" src="/android-chrome-192x192.png" alt="">
       <span class="beta-text">
-        <strong class="beta-title killer-font">Killer Tools is coming to Android</strong>
-        <span class="beta-sub">Beta testers needed - tap to join</span>
+        <strong class="beta-title killer-font">{{ t('components.androidBetaBanner.title') }}</strong>
+        <span class="beta-sub">{{ t('components.androidBetaBanner.subtitle') }}</span>
       </span>
     </RouterLink>
-    <button class="beta-close" type="button" aria-label="Dismiss" @click="dismissed = true">&#215;</button>
+    <button class="beta-close" type="button" :aria-label="t('components.androidBetaBanner.dismiss')" @click="dismissed = true">&#215;</button>
   </div>
 </template>
 

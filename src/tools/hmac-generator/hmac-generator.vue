@@ -27,12 +27,14 @@ const algos = {
 
 type Encoding = keyof typeof enc | 'Bin';
 
-const encodingOptions: { label: string, value: Encoding }[] = [
-  { label: 'Binary (base 2)', value: 'Bin' },
-  { label: 'Hexadecimal (base 16)', value: 'Hex' },
+const { t } = useI18n();
+
+const encodingOptions = computed<{ label: string, value: Encoding }[]>(() => [
+  { label: t('tools.hmac-generator.ui.encodingBinary'), value: 'Bin' },
+  { label: t('tools.hmac-generator.ui.encodingHex'), value: 'Hex' },
   { label: 'Base64', value: 'Base64' },
   { label: 'Base64url', value: 'Base64url' },
-];
+]);
 
 function formatWithEncoding(words: lib.WordArray, encoding: Encoding) {
   if (encoding === 'Bin') {
@@ -48,7 +50,7 @@ const encoding = ref<Encoding>('Hex');
 const hmac = computed(() =>
   formatWithEncoding(algos[hashFunction.value](plainText.value, secret.value), encoding.value),
 );
-const { copy } = useCopy({ source: hmac, text: 'HMAC copied to clipboard' });
+const { copy } = useCopy({ source: hmac, text: t('tools.hmac-generator.ui.copied') });
 
 // Custom dropdowns
 const algoOpen = ref(false);
@@ -71,7 +73,7 @@ function closeOnBlur(set: (val: boolean) => void) {
   };
 }
 
-const encodingLabel = computed(() => encodingOptions.find(o => o.value === encoding.value)?.label ?? encoding.value);
+const encodingLabel = computed(() => encodingOptions.value.find(o => o.value === encoding.value)?.label ?? encoding.value);
 </script>
 
 <template>
@@ -79,11 +81,11 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
     <div class="hm-panel">
       <!-- Plain text -->
       <div class="hm-field-col">
-        <span class="hm-sublabel">PLAIN TEXT</span>
+        <span class="hm-sublabel">{{ t('tools.hmac-generator.ui.plainText') }}</span>
         <textarea
           v-model="plainText"
           class="hm-textarea"
-          placeholder="Plain text to compute the hash..."
+          :placeholder="t('tools.hmac-generator.ui.plainTextPlaceholder')"
           rows="4"
           spellcheck="false"
           autofocus
@@ -92,16 +94,16 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 
       <!-- Secret key -->
       <div class="hm-field-col">
-        <span class="hm-sublabel">SECRET KEY</span>
+        <span class="hm-sublabel">{{ t('tools.hmac-generator.ui.secretKey') }}</span>
         <div class="hm-input-row">
           <input
             v-model="secret"
             class="hm-input"
-            placeholder="Enter the secret key..."
+            :placeholder="t('tools.hmac-generator.ui.secretKeyPlaceholder')"
             type="text"
             spellcheck="false"
           >
-          <button v-if="secret" class="hm-icon-btn" title="Clear" @click="secret = ''">
+          <button v-if="secret" class="hm-icon-btn" :title="t('tools.hmac-generator.ui.clear')" @click="secret = ''">
             <icon-mdi-close />
           </button>
         </div>
@@ -111,7 +113,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
       <div class="hm-selects-row">
         <!-- Hashing function -->
         <div class="hm-field-col hm-field-col-half">
-          <span class="hm-sublabel">HASHING FUNCTION</span>
+          <span class="hm-sublabel">{{ t('tools.hmac-generator.ui.hashingFunction') }}</span>
           <div class="hm-dropdown" tabindex="0" @blur="closeOnBlur(v => algoOpen = v)($event)">
             <button type="button" class="hm-dropdown-trigger" @click="algoOpen = !algoOpen">
               <span>{{ hashFunction }}</span>
@@ -134,7 +136,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 
         <!-- Output encoding -->
         <div class="hm-field-col hm-field-col-half">
-          <span class="hm-sublabel">OUTPUT ENCODING</span>
+          <span class="hm-sublabel">{{ t('tools.hmac-generator.ui.outputEncoding') }}</span>
           <div class="hm-dropdown" tabindex="0" @blur="closeOnBlur(v => encodingOpen = v)($event)">
             <button type="button" class="hm-dropdown-trigger" @click="encodingOpen = !encodingOpen">
               <span>{{ encodingLabel }}</span>
@@ -158,7 +160,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
 
       <!-- HMAC output -->
       <div class="hm-field-col">
-        <span class="hm-sublabel">HMAC OUTPUT</span>
+        <span class="hm-sublabel">{{ t('tools.hmac-generator.ui.hmacOutput') }}</span>
         <div class="hm-output">
           <span class="hm-output-text">{{ hmac }}</span>
         </div>
@@ -168,7 +170,7 @@ const encodingLabel = computed(() => encodingOptions.find(o => o.value === encod
       <div class="hm-actions">
         <button type="button" class="hm-btn hm-btn-primary" @click="copy()">
           <icon-mdi-content-copy />
-          Copy HMAC
+          {{ t('tools.hmac-generator.ui.copyHmac') }}
         </button>
       </div>
     </div>

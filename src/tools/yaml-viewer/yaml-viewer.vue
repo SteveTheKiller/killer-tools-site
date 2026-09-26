@@ -6,6 +6,8 @@ import { useValidation } from '@/composable/validation';
 import { withDefaultOnError } from '@/utils/defaults';
 import { formatYaml } from './yaml-models';
 
+const { t } = useI18n();
+
 const inputElement = ref<HTMLElement>();
 
 const rawYaml = useStorage('yaml-prettify:raw-yaml', '');
@@ -19,7 +21,7 @@ const rawYamlValidation = useValidation({
   rules: [
     {
       validator: (v: string) => v === '' || yaml.parse(v),
-      message: 'Provided YAML is not valid.',
+      message: t('tools.yaml-viewer.ui.invalidYaml'),
     },
   ],
 });
@@ -30,10 +32,10 @@ const rawYamlValidation = useValidation({
   <div style="display: contents">
   <div class="yv-controls">
     <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
-      Sort keys
+      {{ t('tools.yaml-viewer.ui.sortKeys') }}
     </button>
     <div class="yv-control">
-      <span class="yv-control-label">Indent size</span>
+      <span class="yv-control-label">{{ t('tools.yaml-viewer.ui.indentSize') }}</span>
       <div class="yv-stepper">
         <button class="yv-step-btn" :disabled="indentSize <= 1" @click="indentSize = Math.max(1, indentSize - 1)">
           −
@@ -48,13 +50,13 @@ const rawYamlValidation = useValidation({
 
   <div style="flex: 1 1 300px; min-width: 0;">
     <div class="kt-section-label">
-      Your raw YAML
+      {{ t('tools.yaml-viewer.ui.rawLabel') }}
     </div>
     <c-input-text
       ref="inputElement"
       v-model:value="rawYaml"
       :validation="rawYamlValidation"
-      placeholder="Paste your raw YAML here..."
+      :placeholder="t('tools.yaml-viewer.ui.rawPlaceholder')"
       rows="20"
       multiline
       autofocus
@@ -67,7 +69,7 @@ const rawYamlValidation = useValidation({
   </div>
   <div style="flex: 1 1 300px; min-width: 0;">
     <div class="kt-section-label">
-      Prettified version of your YAML
+      {{ t('tools.yaml-viewer.ui.prettifiedLabel') }}
     </div>
     <TextareaCopyable :value="cleanYaml" language="yaml" :follow-height-of="inputElement" />
   </div>

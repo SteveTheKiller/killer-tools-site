@@ -8,8 +8,12 @@ const props = withDefaults(defineProps<{
 }>(), {
   multiple: false,
   accept: undefined,
-  title: 'Drag and drop files here, or click to select files',
+  title: undefined,
 });
+
+const { t } = useI18n();
+const { title: rawTitle } = toRefs(props);
+const displayTitle = computed(() => rawTitle.value ?? t('ui.fileUpload.defaultTitle'));
 
 const emit = defineEmits<{
   (event: 'filesUpload', files: File[]): void
@@ -75,20 +79,20 @@ function handleUpload(files: FileList | null | undefined) {
     >
     <slot>
       <span op-70>
-        {{ title }}
+        {{ displayTitle }}
       </span>
 
       <!-- separator -->
       <div my-4 w-full flex items-center justify-center op-70>
         <div class="h-1px max-w-100px flex-1 bg-gray-300 op-50" />
         <div class="mx-2 text-gray-400">
-          or
+          {{ t('ui.fileUpload.or') }}
         </div>
         <div class="h-1px max-w-100px flex-1 bg-gray-300 op-50" />
       </div>
 
       <button type="button" class="fu-browse-btn">
-        Browse files
+        {{ t('ui.fileUpload.browseFiles') }}
       </button>
     </slot>
   </div>

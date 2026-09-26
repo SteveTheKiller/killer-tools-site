@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: Legújabb eszközök
+    favoriteTools: Kedvenc eszközeid
+    allTools: Összes eszköz
+    favoritesDndToolTip: Húzd át a kedvencek átrendezéséhez
+  subtitle: Hasznos eszközök fejlesztőknek
+  toggleMenu: Menü be/ki
+  home: Kezdőlap
+  uiLib: UI könyvtár
+  support: Támogasd a killer-tools fejlesztését
+  buyMeACoffee: Hívj meg egy kávéra
+  follow:
+    title: Tetszik a killer-tools?
+    p1: 'Adj egy csillagot itt:'
+    githubRepository: StevetheKiller GitHub-tárház
+    thankYou: Köszönöm!
+  nav:
+    github: GitHub-tárház
+    githubRepository: A killer-tools GitHub-tárháza
+    about: A killer-tools névjegye
+    aboutLabel: Névjegy
+    darkMode: Sötét mód
+    lightMode: Világos mód
+    mode: Sötét/világos mód váltása
+about:
+  content: |
+    # killer-tools
+
+    A terepen dolgozó technikusoknak nincs idejük a felesleges körítésre. Minden eszköz azért van itt, mert szükségem volt rá munka közben, és nem találtam olyat, ami fiók, telepítés vagy telemetria nélkül egyszerűen működött volna.
+
+    Terepen dolgozó technikus vagyok egy MSP-nél, hálózatokkal, rendszergazdai munkával és végponttámogatással foglalkozom. A killer-tools a kiváló [IT-Tools](https://github.com/CorentinTh/it-tools) projekt forkjaként indult, és olyasmivé nőtte ki magát, ami arra a munkára készült, amit ténylegesen végzek. Azért készítettem, hogy egy jegy közepén kikereshessem az NDR-kódokat, átvizsgálhassam egy ügyfél alhálózatát, és dekódolhassak egy SafeLinket, mielőtt rákattintok.
+
+    Minden a böngésződben fut. Semmit nem követünk nyomon. Fiókra soha nincs szükség.
+
+    Készítette és karbantartja: [Steve the Killer](https://thekiller.net). Ha ez időt spórol neked a munkában, [egy kávé](https://www.buymeacoffee.com/StevetheKiller) jólesik, de soha nem elvárás.
+
+    ## Hiányzik egy eszköz? Hibát találtál?
+
+    Nyiss funkciókérést vagy hibajelentést a GitHub [issues részében](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose). Elolvasom őket.
+404:
+  notFound: 404 Nem található
+  sorry: Sajnáljuk, úgy tűnik, ez az oldal nem létezik
+  maybe: Lehet, hogy a gyorsítótár trükközik, megpróbálod a kényszerített frissítést?
+  backHome: Vissza a kezdőlapra
+favoriteButton:
+  remove: Eltávolítás a kedvencek közül
+  add: Hozzáadás a kedvencekhez
+toolCard:
+  new: Új
+search:
+  label: Keresés
+tools:
+  categories:
+    favorite-tools: Kedvenc eszközeid
+    crypto: Kriptográfia
+    conversion: Átalakítás
+    web: Web
+    images and videos: Képek és videók
+    development: Fejlesztés
+    network: Hálózat
+    math: Matematika
+    measurement: Mértékegységek
+    text: Szöveg
+    data: Adatok
+    windows: Windows
+    killer apps: Killer Apps
+    photography: Fényképezés
+  password-strength-analyser:
+    title: Jelszóerősség-elemző
+    description: Ismerd meg jelszavad erősségét ezzel a csak kliensoldalon futó elemzővel és feltörési idő becslővel.
+  password-generator:
+    title: Jelszógenerátor
+    description: Erős jelszavak, diceware jelmondatok, kiejthető karakterláncok és hex/base64/UUID tokenek generálása. MSP-sablonokat (helyi rendszergazda, szolgáltatásfiók, Wi-Fi PSK, PIN), kétértelmű karakterek kizárását, entrópiamérőt, QR-kódot és NATO fonetikus felolvasást tartalmaz.
+    ui:
+      terminal:
+        passwordTitle: JELSZÓ
+        optionsTitle: BEÁLLÍTÁSOK
+      meta:
+        entropyLabel: 'Entrópia:'
+        bits: bit
+        crackLabel: 'Feltörési idő:'
+      actions:
+        copy: Másolás
+        refresh: Frissítés
+      section:
+        preset: Előre beállított
+        mode: Mód
+        format: Formátum
+        length: Hossz ({length})
+        wordCount: Szavak száma ({count})
+        separator: Elválasztó
+        characterClasses: Karakterosztályok
+        options: Beállítások
+      charClass:
+        uppercase: Nagybetűk
+        lowercase: Kisbetűk
+        numbers: Számok
+        symbols: Szimbólumok
+      option:
+        excludeAmbiguous: Félreérthető karakterek kizárása
+        requireOneOfEach: Mindegyikből legalább egy kötelező
+        capitalizeWords: Szavak nagy kezdőbetűvel
+        appendNumber: 2 számjegy hozzáadása a végéhez
+      mode:
+        random: Véletlenszerű
+        passphrase: Jelmondat
+        pronounceable: Kiejthető
+        format: Formátum
+      format:
+        plain: Egyszerű
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: nincs
+      qr:
+        caption: másoláshoz szkenneld be
+      phonetic:
+        title: FONETIKUS
+      bulk:
+        generateLabel: Generálás
+        single: egy
+        atOnce: '{n} egyszerre'
+        passwordsTitle: '{count} JELSZÓ'
+        copyAll: Összes másolása
+      toast:
+        passwordCopied: A jelszó a vágólapra másolva
+        passwordsCopied: A jelszavak a vágólapra másolva
+        phoneticCopied: A fonetikus átírás másolva
+  percentage-calculator:
+    title: Százalékszámító
+    description: Számíts egyszerűen százalékot egyik értékről a másikra, vagy százalékból értéket.
+    ui:
+      whatIsXPercentOfYTitle: MENNYI X% Y-BÓL
+      whatIsLabel: Mennyi
+      percentOfLabel: '%-a ennek:'
+      resultPlaceholder: Eredmény
+      xIsWhatPercentOfYTitle: X HÁNY SZÁZALÉKA Y-NAK
+      isWhatPercentOfLabel: 'hány %-a ennek:'
+      percentageChangeTitle: SZÁZALÉKOS NÖVEKEDÉS / CSÖKKENÉS
+      fromLabel: Ettől
+      toLabel: eddig
+  svg-placeholder-generator:
+    title: SVG helyőrző generátor
+    description: SVG képek generálása helyőrzőként az alkalmazásaidhoz.
+    ui:
+      widthLabel: SZÉLESSÉG (px)
+      backgroundLabel: HÁTTÉR
+      heightLabel: MAGASSÁG (px)
+      textColorLabel: SZÖVEG SZÍNE
+      fontSizeLabel: BETŰMÉRET
+      customTextLabel: EGYÉNI SZÖVEG
+      customTextPlaceholder: 'Alapértelmezett: {size}'
+      useExactSizeToggle: Pontos méret használata
+      svgHtmlElementLabel: SVG HTML ELEM
+      svgBase64Label: SVG BASE64-BEN
+      copySvgButton: SVG másolása
+      copyBase64Button: Base64 másolása
+      downloadSvgButton: SVG letöltése
+      previewLabel: ELŐNÉZET
+      svgPreviewAlt: SVG előnézet
+  json-to-csv:
+    title: JSON-ból CSV
+    description: JSON átalakítása CSV-vé automatikus fejléc-felismeréssel.
+    ui:
+      invalidJson: A megadott JSON érvénytelen.
+      yourRawJson: Az Ön nyers JSON-ja
+      pasteRawJsonPlaceholder: Illessze be ide a nyers JSON-t...
+      csvOutputLabel: A JSON CSV verziója
+  camera-recorder:
+    title: Kamerafelvevő
+    description: Készíts fényképet vagy videót a webkamerádról vagy kamerádról.
+    ui:
+      selectCamera: Kamera kiválasztása
+      selectMicrophone: Mikrofon kiválasztása
+      notSupported: A böngésző nem támogatja a kamerás felvételt.
+      accessRequired: Kamera és mikrofon hozzáférés szükséges.
+      permissionBlocked: Az engedély blokkolva van. Adja meg a hozzáférést manuálisan a címsor lakat ikonjával.
+      grantPermission: Engedély megadása
+      video: VIDEÓ
+      audio: HANG
+      startWebcam: Webkamera indítása
+      paused: SZÜNETELTETVE
+      rec: REC
+      screenshot: Képernyőkép
+      record: Felvétel
+      pause: Szünet
+      resume: Folytatás
+      stop: Leállítás
+      recordingNotSupported: A felvétel nem támogatott ebben a böngészőben
+      captures: FELVÉTELEK ({count})
+      clearAll: Összes törlése
+      screenshotAlt: képernyőkép
+      download: Letöltés
+      delete: Törlés
+  reciprocity-calculator:
+    title: Reciprocitáshiba-kalkulátor
+    description: Korrigált hosszú expozíciók számítása több mint 40 analóg filmhez a Schwarzschild-féle hatványtörvény alapján. Fekete-fehér, színes negatív és diafilmekhez.
+    ui:
+      barReciprocity: RECIPROCITÁS KALKULÁTOR
+      barCorrected: KORRIGÁLT EXPOZÍCIÓ
+      fieldFilmStock: Filmtípus
+      typeBw: B&W
+      typeColorNeg: Színes negatív
+      typeSlide: Dia / E6
+      noFailureUpTo: Nincs hiba {seconds}s-ig
+      sourceManufacturer: Gyártói adatok
+      sourceCommunity: Közösségi adatok
+      fieldMeteredExposure: Mért expozíció
+      unitSeconds: másodperc
+      noFailureMessage: Nincs szükség korrekcióra, ennél a filmnél ezen az expozíciós hosszon nincs reciprocitási hiba.
+      copyDone: ✓ másolva
+      copySeconds: másodperc másolása
+      devReduce10: Érdemes lehet a hívást ~10%-kal csökkenteni a megnövekedett árnyéksűrűség kompenzálásához.
+      devReduce1015: Javasolt a hívás 10-15%-os csökkentése.
+      devReduce1520: Javasolt a hívás 15-20%-os csökkentése.
+      devReduce2030: Nagyon hosszú expozícióknál javasolt a hívás 20-30%-os csökkentése.
+      colorShiftWarning: 'Színes film: ezen az expozíciós hosszon számítson színeltolódásra.'
+      colorShiftSlide: A diafilmet utólag nehéz korrigálni, javasolt a CC szűrés már felvételkor.
+      colorShiftNeg: A színes negatívnak nagyobb a tűrése; a korrekció nyomtatáskor vagy szkenneléskor is lehetséges.
+  nd-filter-calculator:
+    title: ND-szűrő kalkulátor
+    description: Korrigált záridők számítása szürkeszűrőkhöz. Minden gyakori ND-erősséget és egyéni fényértéket támogat.
+    ui:
+      titleInputs: ND szűrő kalkulátor
+      baseShutterSpeed: Alap zársebesség (szűrő nélkül)
+      dragOrClick: húzd vagy kattints
+      custom: Egyéni
+      secPlaceholder: mp
+      ndFilter: ND szűrő
+      stopOne: '{count} fényrekesz'
+      stopMany: '{count} fényrekesz'
+      enterStops: add meg a fényrekeszeket
+      stopsPlaceholder: fényrekesz
+      titleResult: Korrigált expozíció
+      copied: másolva
+      copySeconds: másodpercek másolása
+      longExposureAlert: Hosszú expozíció, fontold meg a Bulb mód használatát.
+      stackingFilters: 'szűrők halmozása: add össze a fényrekeszeket'
+      legendT1: alap zársebesség (szűrő nélkül)
+      legendT2: korrigált zársebesség
+      legendStops: ND szűrő erőssége
+  depth-of-field-calculator:
+    title: Mélységélesség-kalkulátor
+    description: A közeli határ, a távoli határ és a teljes mélységélesség számítása bármely objektív és érzékelő párosításhoz. Hiperfokális távolságot is ad.
+    ui:
+      sensorMedFormat: Közepes formátum
+      sensorCustom: Egyéni
+      sensorEnterCoc: add meg a CoC-ot
+      infinity: végtelen
+      title: MÉLYSÉGÉLESSÉG SZÁMOLÓ
+      sensorFormat: Érzékelő formátuma
+      cocPlaceholder: CoC mm-ben (pl. 0.029)
+      focalLength: Fókusztávolság (mm)
+      aperture: Rekesz
+      dragOrClick: húzza vagy kattintson
+      focusDistance: Fókuszálási távolság
+      distancePlaceholder: távolság
+      results: EREDMÉNYEK
+      hyperfocalDistance: Hiperfokális távolság
+      hyperfocalHint: Itt fókuszáljon a maximális élességért, e távolság felétől a végtelenig
+      nearLimit: Közeli határ
+      farLimit: Távoli határ
+      totalDof: Teljes mélységélesség
+      beyondHyperfocal: A fókuszálási távolság a hiperfokális távolságon van vagy azon túl, ezért a távoli határ a végtelenig terjed.
+      legendHyperfocal: hiperfokális távolság
+      legendFocalLength: fókusztávolság
+      legendFNumber: f-szám (rekesz)
+      legendCoc: szórási kör
+      legendFocusDistance: fókuszálási távolság
+  exposure-equivalence:
+    title: Expozíciós egyenértékűség
+    description: Egyenértékű záridők keresése minden rekeszértékhez azonos expozíció mellett. Válaszd ki az alap záridőt és rekeszt, és lásd, mi kell minden más f-stop értéknél.
+    ui:
+      titleInputs: Expozíció egyenértékűség
+      shutterSpeed: Zársebesség
+      dragOrClick: húzd vagy kattints
+      custom: Egyéni
+      secPlaceholder: mp
+      aperture: Rekesz
+      titleResults: Egyenértékű expozíciók
+      isoIndependent: ISO-független bármely rögzített ISO mellett
+      highlightedBase: a kiemelt sor az alapérték
+      legendT1: alap zársebesség
+      legendT2: egyenértékű zársebesség
+      legendN1: alap rekeszérték (f-szám)
+      legendN2: cél rekeszérték (f-szám)
+  dev-calculator:
+    title: Filmelőhívás-kalkulátor
+    description: Módosított előhívási idők számítása hőmérséklet-kompenzációval, push/pull előhívással és hígítási keveréssel. Gyakori fekete-fehér előhívók és filmek adatbázisát tartalmazza.
+    ui:
+      hasData: Van adat
+      noDataGroup: Nincs adat, adja meg az alapidőt manuálisan
+      colorBelow: '{process} 36°C alatt: színeltolódás és hiányos hívás valószínű'
+      colorAbove: '{process} 40°C felett: fátyolosodás és színkereszteződés kockázata'
+      bwBelow: '18°C alatt: a hívás nagyon lassú lesz'
+      bwAbove: '24°C felett: retikuláció és fátyolosodás kockázata'
+      start: Indítás
+      pause: Szünet
+      resume: Folytatás
+      calculatorTitle: FILMHÍVÁSI KALKULÁTOR
+      developer: Hívó
+      dilution: Hígítás
+      filmStock: Filmtípus
+      baseTimeAt: Alapidő {temp}°C-on
+      noData: nincs adat
+      overridePlaceholder: felülbírálás (s)
+      customBaseActive: Egyéni alapidő aktív
+      temperature: 'Hőmérséklet:'
+      pushPull: Push / Pull
+      tankVolume: Tartály térfogata
+      customMlPlaceholder: egyéni ml
+      adjustedTime: MÓDOSÍTOTT IDŐ
+      baseTimeTemp: Alapidő ({temp}°C)
+      tempAdj: Hőm. korrekció ({temp})
+      pushStop: Push {n} fokozat
+      pushStops: Push {n} fokozat
+      pullStop: Pull {n} fokozat
+      pullStops: Pull {n} fokozat
+      mixFor: Keverés {volume}ml-hez
+      mixDeveloper: hívó
+      mixWater: víz
+      noDataWarning: 'Nincs adat ehhez: {film} + {developer}. Adja meg az alapidőt manuálisan.'
+      pushPullEstimate: A push/pull idők becslések. Próbatekercs ajánlott.
+      sourceNote: Az alapidők forrása a Massive Dev Chart és a gyártói adatlapok.
+      processTimer: FOLYAMATIDŐZÍTŐ
+      devComplete: A hívás befejeződött
+      devCompleteHint: Akassza fel száradni, és élvezze a negatívjait.
+      stageOf: '{current}. / {total}. szakasz'
+      agitation: MOZGATÁS
+      reset: Visszaállítás
+      skip: Kihagyás
+      stDeveloper: Hívó
+      stBleach: Fehérítő
+      stWash: Mosás
+      stFixer: Fixáló
+      stWash2: Mosás 2
+      stStabilizer: Stabilizáló
+      stFirstDeveloper: Első hívó
+      stReversalBath: Megfordító fürdő
+      stColorDeveloper: Színhívó
+      stPreBleach: Előfehérítés
+      stFinalWash: Végső mosás
+      stStopBath: Stopfürdő
+      agC30s10: Folyamatos az első 30 s-ban, majd 10 s 30 s-onként
+      agRun3Full: Folyó víz vagy 3 teljes csere
+      agGentle: Csak enyhe forgatás, utána ne öblítse
+      agC30s5: Folyamatos az első 30 s-ban, majd 5 s 30 s-onként
+      agRun3: Folyó víz vagy 3 csere
+      agContinuous: Folyamatos
+      ag10per30: 10 s 30 s-onként
+      agRun5: Folyó víz vagy 5 csere
+      agC60s10: Folyamatos az első 30 s-ban, majd 10 s 60 s-onként
+      agCont60: Folyamatos 60 s-ig
+      ag10per60: 10 s 60 s-onként
+      agRun5Full: Folyó víz vagy 5 teljes csere
+  keycode-info:
+    title: Keycode információ
+    description: Bármely lenyomott billentyű JavaScript keycode, code, location és módosító értékeinek megjelenítése.
+  emoji-picker:
+    title: Emojiválasztó
+    description: Emojik egyszerű másolása és beillesztése, valamint az egyes emojik unicode és code point értékei.
+    ui:
+      emojiCopied: Emoji {emoji} vágólapra másolva
+      codePointsCopied: '''{codePoints}'' kódpontok vágólapra másolva'
+      unicodeCopied: '''{unicode}'' unicode vágólapra másolva'
+      searchPlaceholder: Emoji keresése (pl. 'smile')...
+      noResults: Nincs találat
+      searchResult: Keresési találat
+  color-converter:
+    title: Színátalakító
+    description: Színek átalakítása különböző formátumok között (hex, rgb, hsl és CSS név)
+    ui:
+      color: Szín
+      formats: FORMÁTUMOK
+  bcrypt:
+    title: Bcrypt
+    description: Szöveges karakterláncok hash-elése és összehasonlítása bcrypttel. A bcrypt a Blowfish titkosításon alapuló jelszó-hash függvény.
+    ui:
+      copiedToClipboard: A hashelt karakterlánc a vágólapra másolva
+      hashTitle: HASH
+      compareTitle: ÖSSZEHASONLÍTÁS
+      stringLabel: Karakterlánc
+      stringPlaceholder: A bcrypt karakterlánc...
+      saltRoundsLabel: Salt körök
+      outputLabel: KIMENET
+      copyHash: Hash másolása
+      compareStringPlaceholder: Az összehasonlítandó karakterlánc...
+      hashLabel: Hash
+      compareHashPlaceholder: Az összehasonlítandó hash...
+      matchLabel: Egyezés
+      'yes': Igen
+      'no': Nem
+  crontab-generator:
+    title: Crontab generátor
+    description: Crontab ellenőrzése és generálása, valamint a cron ütemezés ember által olvasható leírása.
+    ui:
+      symbolAnyValue: Bármilyen érték
+      symbolEveryMinute: Minden percben
+      symbolRange: Értéktartomány
+      symbolRangeEquivalent: 1 és 10 perc között
+      symbolList: Értéklista
+      symbolListEquivalent: Az 1. és 10. percben
+      symbolStep: Lépésértékek
+      symbolStepEquivalent: Minden 10. percben
+      aliasYearly: Évente egyszer (jan. 1, éjfél)
+      aliasMonthly: Minden hónap elsején, éjfélkor
+      aliasWeekly: Vasárnap, éjfélkor
+      aliasDaily: Minden nap éjfélkor
+      aliasHourly: Minden óra elején
+      aliasReboot: Egyszeri futtatás indításkor
+      aliasRebootEquivalent: (indításkor)
+      invalidCron: Ez a cron érvénytelen
+      use24HourTime: 24 órás formátum
+      daysStartAtZero: A napok 0-tól kezdődnek
+      labelSymbol: 'Szimbólum:'
+      labelMeaning: 'Jelentés:'
+      labelExample: 'Példa:'
+      labelEquivalent: 'Egyenérték:'
+      symbols: Szimbólumok
+      aliases: Aliasok
+  http-status-codes:
+    title: HTTP állapotkódok
+    description: Az összes HTTP állapotkód listája, nevükkel és jelentésükkel.
+    ui:
+      searchResults: Keresési találatok
+      searchPlaceholder: HTTP állapotkód keresése...
+      copiedTooltip: Másolva!
+      clickToCopy: Kattintson az állapotkód másolásához
+      copiedLabel: másolva
+  sql-prettify:
+    title: SQL formázó
+    description: SQL-lekérdezések formázása és szépítése online (különböző SQL-dialektusokat támogat).
+    ui:
+      dialectLabel: DIALEKTUS
+      keywordCaseLabel: KULCSSZÓ KIS-/NAGYBETŰ
+      indentStyleLabel: BEHÚZÁSI STÍLUS
+      yourSqlQueryLabel: Az Ön SQL lekérdezése
+      sqlQueryPlaceholder: Írja ide az SQL lekérdezést...
+      prettifiedQueryLabel: A lekérdezés formázott változata
+      keywordCaseUpper: NAGYBETŰS
+      keywordCaseLower: kisbetűs
+      keywordCasePreserve: Megtartás
+      indentStyleStandard: Alapértelmezett
+      indentStyleTabularLeft: Táblázatos balra
+      indentStyleTabularRight: Táblázatos jobbra
+  git-memo:
+    title: Git puska
+    description: Gyors áttekintés a leggyakoribb Git parancsokról és munkafolyamatokról.
+  encryption:
+    title: Szöveg titkosítása / visszafejtése
+    description: Nyílt szöveg titkosítása és titkosított szöveg visszafejtése olyan algoritmusokkal, mint az AES, TripleDES, Rabbit vagy RC4.
+    ui:
+      decryptError: A szöveg visszafejtése nem sikerült
+      encryptTitle: TITKOSÍTÁS
+      decryptTitle: VISSZAFEJTÉS
+      yourText: AZ ÖN SZÖVEGE
+      yourSecretKey: AZ ÖN TITKOS KULCSA
+      algorithm: ALGORITMUS
+      encryptedOutput: TITKOSÍTOTT KIMENET
+      yourEncryptedText: AZ ÖN TITKOSÍTOTT SZÖVEGE
+      decryptedOutput: VISSZAFEJTETT KIMENET
+      encryptPlaceholder: A titkosítandó karakterlánc
+      decryptPlaceholder: A visszafejtendő rejtjelezett szöveg
+      secretKeyPlaceholder: Titkos kulcs...
+  yaml-prettify:
+    title: YAML formázó
+    description: YAML karakterlánc átalakítása barátságos, olvasható formátumba.
+  roman-numeral-converter:
+    title: Római szám átalakító
+    description: Római számok átalakítása számokká és számok római számokká.
+    ui:
+      converterTitle: ÁTALAKÍTÓ
+      arabicSideLabel: ARAB
+      romanSideLabel: RÓMAI SZÁM
+      arabicRangeError: '{min}-{max} között kell lennie'
+      invalidRoman: Nem érvényes római szám
+      copied: Másolva
+      copy: Másolás
+      romanCopiedToast: Római szám másolva
+      arabicCopiedToast: Arab szám másolva
+  hmac-generator:
+    title: HMAC generátor
+    description: Hash-alapú üzenethitelesítő kódot (HMAC) számít titkos kulccsal és a kedvenc hash függvényeddel.
+    ui:
+      encodingBinary: Bináris (2-es számrendszer)
+      encodingHex: Hexadecimális (16-os számrendszer)
+      copied: A HMAC a vágólapra másolva
+      plainText: NYÍLT SZÖVEG
+      secretKey: TITKOS KULCS
+      hashingFunction: HASÍTÓFÜGGVÉNY
+      outputEncoding: KIMENETI KÓDOLÁS
+      hmacOutput: HMAC KIMENET
+      plainTextPlaceholder: Nyílt szöveg a hash kiszámításához...
+      secretKeyPlaceholder: Adja meg a titkos kulcsot...
+      clear: Törlés
+      copyHmac: HMAC másolása
+  bip39-generator:
+    title: BIP39 jelmondat-generátor
+    description: BIP39 jelmondat generálása meglévő vagy véletlenszerű mnemonikból, vagy a mnemonik visszanyerése a jelmondatból.
+    ui:
+      languageEnglish: Angol
+      languageChineseSimplified: Kínai (egyszerűsített)
+      languageChineseTraditional: Kínai (hagyományos)
+      languageCzech: Cseh
+      languageFrench: Francia
+      languageItalian: Olasz
+      languageJapanese: Japán
+      languageKorean: Koreai
+      languagePortuguese: Portugál
+      languageSpanish: Spanyol
+      entropyLengthError: Az entrópia hosszának >= 16, <= 32 és 4 többszörösének kell lennie
+      entropyHexError: Az entrópiának hexadecimális karakterláncnak kell lennie
+      invalidMnemonic: Érvénytelen mnemonikus kifejezés
+      entropyCopied: Az entrópia a vágólapra másolva
+      passphraseCopied: A jelmondat a vágólapra másolva
+      languageLabel: Nyelv
+      entropyHeading: ENTRÓPIA (SEED)
+      entropyPlaceholder: Hex entrópia...
+      regenerate: Újragenerálás
+      copyEntropy: Entrópia másolása
+      passphraseHeading: JELMONDAT (MNEMONIKUS)
+      passphrasePlaceholder: Mnemonikus szavak...
+      copyPassphrase: Jelmondat másolása
+  base64-file-converter:
+    title: Base64 fájlátalakító
+    description: Karakterlánc, fájl vagy kép átalakítása base64 formára.
+    ui:
+      copiedToClipboard: A Base64 karakterlánc a vágólapra másolva
+      base64ToFileTitle: BASE64 FÁJLBA
+      fileNameLabel: FÁJLNÉV
+      fileNamePlaceholder: Letöltési fájlnév
+      extensionLabel: KITERJESZTÉS
+      extensionPlaceholder: ext
+      base64StringLabel: BASE64 KARAKTERLÁNC
+      base64InputPlaceholder: Illessze be ide a fájl base64 karakterláncát...
+      invalidBase64: Érvénytelen base64 karakterlánc
+      previewImage: Kép előnézete
+      downloadFile: Fájl letöltése
+      fileToBase64Title: FÁJL BASE64-BE
+      dropHint: Húzza ide a fájlt, vagy kattintson a kiválasztáshoz
+      fileInBase64Label: FÁJL BASE64 FORMÁTUMBAN
+      fileOutputPlaceholder: A fájl base64 formátumban itt jelenik meg
+      copied: Másolva!
+      copyBase64: Base64 másolása
+  base64-string-converter:
+    title: Base64 karakterlánc kódoló/dekódoló
+    description: Karakterláncok egyszerű kódolása és dekódolása base64 formába.
+    ui:
+      base64CopiedToClipboard: A Base64 karakterlánc a vágólapra másolva
+      stringCopiedToClipboard: A karakterlánc a vágólapra másolva
+      stringToBase64Title: SZÖVEG BASE64-BE
+      encodingLabel: KÓDOLÁS
+      standard: Standard
+      urlSafe: URL-biztos
+      stringToEncodeLabel: KÓDOLANDÓ SZÖVEG
+      stringInputPlaceholder: Írja ide a szöveget...
+      base64OutputLabel: BASE64 KIMENET
+      base64OutputPlaceholder: A szöveg base64 kódolása itt jelenik meg
+      copied: Másolva!
+      copyBase64: Base64 másolása
+      base64ToStringTitle: BASE64 SZÖVEGGÉ
+      base64ToDecodeLabel: DEKÓDOLANDÓ BASE64 KARAKTERLÁNC
+      base64InputPlaceholder: Az Ön base64 karakterlánca...
+      invalidBase64: Érvénytelen base64 karakterlánc
+      decodedStringLabel: DEKÓDOLT SZÖVEG
+      decodedOutputPlaceholder: A dekódolt szöveg itt jelenik meg
+      copyDecodedString: Dekódolt szöveg másolása
+  math-evaluator:
+    title: Matematikai kiértékelő
+    description: Számológép matematikai kifejezések kiértékeléséhez. Használhatsz olyan függvényeket, mint a sqrt, cos, sin, abs stb.
+    ui:
+      placeholder: Matematikai kifejezésed (pl. 2*sqrt(6) )...
+      result: Eredmény
+  url-parser:
+    title: URL-elemző
+    description: URL felbontása alkotórészeire (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: Host
+      protocol: Protokoll
+      hostname: Hostname
+      port: Port
+      sectionAuthentication: Hitelesítés
+      username: Felhasználónév
+      password: Jelszó
+      sectionPath: Elérési út
+      pathname: Pathname
+      search: Search
+      hash: Hash
+      urlTitle: URL
+      invalidUrl: Érvénytelen URL
+      params: PARAMÉTEREK
+      emptyHint: Adjon meg fent egy elemzendő URL-t
+  phone-parser-and-formatter:
+    title: Telefonszám-elemző
+    description: Telefonszámok elemzése és formázása. Ország felismerése, ellenőrzés, valamint nemzetközi, belföldi, E.164 és RFC3966 formátum megjelenítése.
+    ui:
+      invalidPhoneNumber: Érvénytelen telefonszám
+      sectionLocation: Helyszín
+      countryCode: Országkód
+      country: Ország
+      callingCode: Hívószám
+      sectionValidation: Ellenőrzés
+      isValid: Érvényes?
+      'yes': Igen
+      'no': Nem
+      isPossible: Lehetséges?
+      type: Típus
+      unknown: Ismeretlen
+      sectionFormats: Formátumok
+      international: Nemzetközi
+      national: Belföldi
+      defaultCountry: Alapértelmezett ország
+      phoneNumber: Telefonszám
+      emptyStatePrompt: Adjon meg fent egy telefonszámot az elemzéshez
+  user-agent-parser:
+    title: User-agent elemző
+    description: Böngésző, motor, operációs rendszer, CPU és eszköztípus/-modell felismerése user-agent karakterláncból.
+    ui:
+      sectionBrowser: Böngésző
+      sectionEngine: Motor
+      sectionOs: OS
+      sectionDevice: Eszköz
+      sectionCpu: CPU
+      name: Név
+      version: Verzió
+      model: Modell
+      type: Típus
+      vendor: Gyártó
+      architecture: Architektúra
+      userAgentString: USER AGENT KARAKTERLÁNC
+      placeholder: Írja ide a user-agent karakterláncot...
+      unknown: Ismeretlen
+      error: HIBA
+      parseError: A user agent karakterláncot nem sikerült feldolgozni
+  case-converter:
+    title: Kis- és nagybetű átalakító
+    description: Karakterlánc betűméretének átalakítása különböző formátumok közül választva
+    ui:
+      inputPlaceholder: Szöveg...
+      output: KIMENET
+  html-entities:
+    title: HTML entitások escape-elése
+    description: HTML entitások escape-elése vagy visszaalakítása (a <,>, &, " és \' karaktereket HTML változatukra cseréli)
+    ui:
+      yourString: AZ ÖN SZÖVEGE
+      escapePlaceholder: Az escapelendő szöveg...
+      escapedOutput: ESCAPELT KIMENET
+      copied: Másolva
+      copy: Másolás
+      yourEscapedString: AZ ÖN ESCAPELT SZÖVEGE
+      unescapePlaceholder: A visszaalakítandó szöveg...
+      unescapedOutput: VISSZAALAKÍTOTT KIMENET
+  json-prettify:
+    title: JSON formázó
+    description: JSON karakterlánc átalakítása barátságos, olvasható formátumba.
+  docker-run-to-docker-compose-converter:
+    title: Docker run átalakítása Docker compose formátumra
+    description: '"docker run" parancsok átalakítása docker-compose fájlokká!'
+  mac-address-lookup:
+    title: MAC-cím keresés
+    description: Egy eszköz gyártójának és forgalmazójának megkeresése a MAC-címe alapján.
+    ui:
+      macAddressLabel: MAC-cím
+      copiedTooltip: Másolva!
+      copyTooltip: Kattintson a gyártói adatok másolásához
+      copiedTitle: ✓ másolva
+      vendorInfoTitle: Gyártói adatok
+      unknownVendor: Ismeretlen gyártó ehhez a címhez
+  lorem-ipsum-generator:
+    title: Lorem ipsum generátor
+    description: Lorem ipsum helyőrző szöveg generálása látványtervekhez és grafikai munkához.
+    ui:
+      copiedMessage: A lorem ipsum a vágólapra másolva
+      paragraphs: Bekezdések
+      sentencesPerParagraph: Mondat / bekezdés
+      wordsPerSentence: Szó / mondat
+      startWithLoremIpsum: Kezdés lorem ipsummal
+      asHtml: HTML-ként
+      output: KIMENET
+      wordCount: '{count} szó'
+      charCount: '{count} karakter'
+      copy: Másolás
+      refresh: Frissítés
+  qrcode-generator:
+    title: QR-kód generátor
+    description: QR-kódok generálása és letöltése URL-ekhez, egyszerű szöveghez vagy Wi-Fi hálózati hitelesítő adatokhoz. Terminál, klasszikus és egyéni színtémák állítható hibajavítással.
+  signature-creator:
+    title: Aláírás-készítő
+    description: Rajzolj kézzel írt aláírást a vászonra, és exportáld átlátszó PNG-ként. Vagy tölts fel bármilyen képet, és egy kattintással távolítsd el a hátterét eszközön futó AI-jal.
+    ui:
+      drawSignatureTab: Aláírás rajzolása
+      removeBackgroundTab: Háttér eltávolítása
+      inkColorLabel: Tinta színe
+      strokeWeightLabel: Vonalvastagság
+      actionsLabel: Műveletek
+      undoButton: ↩ Visszavonás
+      clearButton: ✕ Törlés
+      downloadTransparentPng: ↓ Átlátszó PNG letöltése
+      uploadImageLabel: Kép feltöltése
+      dropzoneText: Húzzon ide egy képet, vagy kattintson a tallózáshoz
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Kép betöltve
+      removeButton: ✕ Eltávolítás
+      removeBackgroundButton: ⚡ Háttér eltávolítása
+      exportLabel: Exportálás
+      downloadNoBgPng: ↓ PNG letöltése (háttér nélkül)
+      originalLabel: Eredeti
+      resultLabel: Eredmény
+      uploadPrompt: Töltsön fel egy képet a kezdéshez
+      originalAlt: eredeti
+      resultAlt: eredmény eltávolított háttérrel
+      loadingModelStatus: AI modell betöltése...
+      removingBackgroundStatus: Háttér eltávolítása...
+      processingPercentStatus: Feldolgozás... {pct}%
+      downloadingModelPercentStatus: Modell letöltése... {pct}%
+      removeBackgroundFailedStatus: A háttér eltávolítása sikertelen. Próbáljon másik képet.
+  xml-formatter:
+    title: XML formázó
+    description: XML karakterlánc átalakítása barátságos, olvasható formátumba.
+    ui:
+      invalidXml: A megadott XML nem érvényes.
+      collapse: Összecsukás
+      indentSize: Behúzás mérete
+      inputLabel: Az Ön XML-je
+      inputPlaceholder: Illessze be ide az XML-t...
+      outputLabel: Formázott XML az Ön XML-jéből
+  temperature-converter:
+    title: Hőmérséklet-átalakító
+    description: Hőmérséklet-átváltás Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur és Rømer fokok között.
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
+  chmod-calculator:
+    title: Chmod kalkulátor
+    description: Chmod jogosultságok és parancsok kiszámítása ezzel az online chmod kalkulátorral.
+    ui:
+      read: Olvasás
+      write: Írás
+      execute: Végrehajtás
+      owner: Tulajdonos
+      group: Csoport
+      public: Nyilvános
+      commandCopied: chmod parancs másolva
+      copyCommand: Parancs másolása
+  rsa-key-pair-generator:
+    title: RSA kulcspár-generátor
+    description: Új, véletlenszerű RSA privát és nyilvános PEM kulcspár generálása.
+    ui:
+      bitsRangeError: A biteknek 256-16384 közöttinek és 8 többszörösének kell lennie
+      bitsLabel: Bitek
+      refreshButton: Kulcspár frissítése
+      publicKeyTitle: Nyilvános kulcs
+      copyPublicKeyTitle: Nyilvános kulcs másolása
+      copy: Másolás
+      generating: Generálás...
+      privateKeyTitle: Privát kulcs
+      copyPrivateKeyTitle: Privát kulcs másolása
+      publicKeyCopiedToast: Nyilvános kulcs másolva
+      privateKeyCopiedToast: Privát kulcs másolva
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG szerkesztő
+    description: Online, funkciókban gazdag WYSIWYG HTML szerkesztő, amely azonnal előállítja a tartalom forráskódját.
+    ui:
+      bold: Félkövér
+      italic: Dőlt
+      strike: Áthúzott
+      inlineCode: Soron belüli kód
+      heading1: 1. címsor
+      heading2: 2. címsor
+      heading3: 3. címsor
+      heading4: 4. címsor
+      bulletList: Felsorolás
+      orderedList: Számozott lista
+      codeBlock: Kódblokk
+      blockquote: Idézet
+      hardBreak: Kemény sortörés
+      clearFormat: Formázás törlése
+      undo: Visszavonás
+      redo: Újra
+  json-diff:
+    title: JSON összehasonlítás
+    description: Két JSON objektum összehasonlítása és a különbségek megjelenítése.
+    ui:
+      onlyShowDifferences: Csak a különbségek megjelenítése
+      jsonsAreTheSame: A megadott JSON-ok megegyeznek
+      firstJsonTitle: AZ ELSŐ JSON
+      firstJsonPlaceholder: Illessze be ide az első JSON-t...
+      invalidJson: Érvénytelen JSON formátum
+      secondJsonTitle: ÖSSZEHASONLÍTANDÓ JSON
+      secondJsonPlaceholder: Illessze be ide az összehasonlítandó JSON-t...
+  jwt-parser:
+    title: JWT elemző
+    description: JSON Web Token (jwt) elemzése, dekódolása és tartalmának megjelenítése.
+    ui:
+      header: Fejléc
+      payload: Payload
+      jwtToDecodeTitle: DEKÓDOLANDÓ JWT
+      tokenPlaceholder: Adja meg ide a tokent...
+      invalidJwt: Érvénytelen JWT
+  date-converter:
+    title: Dátum-idő átalakító
+    description: Dátum és idő átalakítása különböző formátumokba
+  ipv4-subnet-calculator:
+    title: IPv4 alhálózat-kalkulátor
+    description: IPv4 CIDR blokkok elemzése és minden szükséges információ az alhálózatról.
+    ui:
+      invalidAddress: Ez a cím nem értelmezhető, ellenőrizze a formátumot
+      netmask: Hálózati maszk
+      networkAddress: Hálózati cím
+      networkMask: Hálózati maszk
+      networkMaskBinary: Hálózati maszk binárisan
+      cidrNotation: CIDR jelölés
+      wildcardMask: Helyettesítő maszk
+      networkSize: Hálózat mérete
+      firstAddress: Első cím
+      lastAddress: Utolsó cím
+      broadcastAddress: Broadcast cím
+      noBroadcast: Ezzel a maszkkal nincs broadcast cím
+      ipClass: IP osztály
+      unknownClassType: Ismeretlen osztálytípus
+      decimal: Decimális
+      hexadecimal: Hexadecimális
+      binary: Bináris
+      ipv6Short: IPv6 (rövid)
+      inputLabel: Egy IPv4 cím maszkkal vagy anélkül
+      bitMap: BITTÉRKÉP
+      network: Hálózat
+      host: Host
+      setPrefix: 'Előtag beállítása erre: /{prefix}'
+      networkTag: hálózat
+      broadcastTag: broadcast
+      hostsCount: '{count} host'
+      privateIp: Privát IP
+      publicIp: Nyilvános IP
+      subnetDetail: ALHÁLÓZAT RÉSZLETEI
+      subnetInfo: ALHÁLÓZAT INFÓ
+      addressRepresentations: CÍM MEGJELENÍTÉSEK
+      copy: Másolás
+      enterValidIpv4: Adjon meg egy érvényes IPv4 címet a megjelenítésekhez
+      previousBlock: Előző blokk
+      nextBlock: Következő blokk
+      collapseCheatSheet: Puska összecsukása
+      subnetCheatSheet: Alhálózati puska
+  og-meta-generator:
+    title: Open Graph meta generátor
+    description: Open Graph és közösségi HTML meta címkék generálása a weboldaladhoz.
+  ipv6-ula-generator:
+    title: IPv6 ULA generátor
+    description: Saját helyi, nem routolható IP-címek generálása a hálózatodhoz az RFC4193 szerint.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Első route-olható
+      lastRoutable: Utolsó route-olható
+      infoAlert: Az aktuális időbélyeget és a MAC-címet használja, SHA1 hasítással. Az alsó 40 bit adja a globális azonosítót az RFC 4193 szerint.
+      macAddress: MAC-cím
+      output: Kimenet
+      copied: Másolva!
+      copy: Másolás
+  hash-text:
+    title: Szöveg hash-elése
+    description: Szöveg hash-elése MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 és más algoritmusokkal.
+    ui:
+      encodingBinary: Bináris (2-es számrendszer)
+      encodingHex: Hexadecimális (16-os számrendszer)
+      encodingBase64: Base64 (64-es számrendszer)
+      encodingBase64url: Base64url (64-es számrendszer, URL-biztos)
+      inputPlaceholder: Az ön karakterlánca a hasításhoz...
+      encoding: Kódolás
+      output: KIMENET
+  json-to-toml:
+    title: JSON-ból TOML
+    description: JSON elemzése és átalakítása TOML-lá.
+  device-information:
+    title: Eszközinformációk
+    description: Információk az aktuális eszközödről (képernyőméret, pixelarány, user agent, ...)
+    ui:
+      screen: Képernyő
+      hardware: Hardver
+      network: Hálózat
+      browser: Böngésző
+      screenSize: Képernyőméret
+      windowSize: Ablakméret
+      pixelRatio: Pixelarány
+      colorDepth: Színmélység
+      orientation: Tájolás
+      orientationAngle: Tájolási szög
+      touchPoints: Érintési pontok
+      cpuCores: CPU magok
+      deviceMemory: Eszközmemória
+      platform: Platform
+      online: Online
+      connectionType: Kapcsolat típusa
+      downlinkSpeed: Letöltési sebesség
+      roundTripTime: Körbefordulási idő
+      dataSaver: Adattakarékos mód
+      vendor: Szolgáltató
+      languages: Nyelvek
+      cookiesEnabled: Sütik engedélyezve
+      pdfViewer: PDF néző
+      doNotTrack: Ne kövessen
+      userAgent: Felhasználói ügynök
+      maxTouchPoints: Legfeljebb {count}
+      none: Nincs
+      logicalCores: '{count} logikai mag'
+      'yes': Igen
+      'no': Nem
+      enabled: Engedélyezve
+      disabled: Letiltva
+      supported: Támogatott
+      notSupported: Nem támogatott
+      notSet: Nincs beállítva
+  pdf-signature-checker:
+    title: PDF-aláírás ellenőrző
+    description: PDF-fájl aláírásainak ellenőrzése. Az aláírt PDF egy vagy több aláírást tartalmaz, amelyekből megállapítható, hogy a fájl tartalma módosult-e az aláírás óta.
+    ui:
+      tableHeaderValidityPeriod: Érvényességi időszak
+      tableHeaderIssuedBy: Kibocsátó
+      tableHeaderIssuedTo: Kibocsátva részére
+      tableHeaderPemCertificate: PEM tanúsítvány
+      notBefore: Nem érvényes előtte
+      notAfter: Nem érvényes utána
+      commonName: Közönséges név
+      organizationName: Szervezet neve
+      countryName: Ország neve
+      localityName: Település neve
+      organizationalUnitName: Szervezeti egység neve
+      stateOrProvinceName: Állam vagy megye
+      viewPemCert: PEM tanúsítvány megtekintése
+      uploadPrompt: Húzzon ide egy PDF fájlt, vagy kattintson egy fájl kiválasztásához
+      noSignaturesFound: A megadott fájlban nem található aláírás.
+      signatureCertificatesLabel: 'A(z) {number}. aláírás tanúsítványai:'
+  json-minify:
+    title: JSON tömörítő
+    description: JSON tömörítése a felesleges szóközök eltávolításával.
+    ui:
+      invalidJson: A megadott JSON nem érvényes.
+      inputLabel: Nyers JSON-od
+      inputPlaceholder: Illeszd be ide a nyers JSON-t...
+      outputLabel: A JSON minifikált verziója
+  ulid-generator:
+    title: ULID generátor
+    description: Véletlenszerű Universally Unique Lexicographically Sortable Identifier (ULID) generálása.
+    ui:
+      copiedMessage: ULID-k a vágólapra másolva
+      quantity: MENNYISÉG
+      format: FORMÁTUM
+      formatRaw: Raw
+      formatJson: JSON
+      output: KIMENET
+      copy: Másolás
+      refresh: Frissítés
+  base-converter:
+    title: Számrendszer-átalakító
+    description: Szám átalakítása különböző számrendszerek között (decimális, hexadecimális, bináris, oktális, base64, ...)
+  uuid-generator:
+    title: UUID generátor
+    description: Véletlenszerű UUID-k (v1 és v4) generálása és szerkezetük vizsgálata.
+    ui:
+      copiedMessage: UUID-k a vágólapra másolva
+      version: VERZIÓ
+      quantity: MENNYISÉG
+      namespacePreset: NAMESPACE ELŐBEÁLLÍTÁS
+      namespaceUuid: NAMESPACE UUID
+      invalidUuid: Érvénytelen UUID
+      name: NÉV
+      namePlaceholder: Hasítandó név...
+      output: KIMENET
+      copy: Másolás
+      refresh: Frissítés
+  ipv4-address-converter:
+    title: IPv4 cím átalakító
+    description: IP-cím átalakítása decimális, bináris, hexadecimális, sőt IPv6 formára.
+    ui:
+      decimal: Decimális
+      hexadecimal: Hexadecimális
+      binary: Bináris
+      ipv6Short: IPv6 (rövid)
+      invalidIpv4: Érvénytelen IPv4-cím
+      ipv4Address: IPv4-cím
+      output: Kimenet
+      copied: Másolva!
+      copy: Másolás
+  text-statistics:
+    title: Szövegstatisztika
+    description: 'Információk egy szövegről: karakterek száma, szavak száma, méret bájtban, ...'
+    ui:
+      textPlaceholder: Az Ön szövege...
+      characterCount: KARAKTEREK SZÁMA
+      wordCount: SZAVAK SZÁMA
+      lineCount: SOROK SZÁMA
+      byteSize: MÉRET BÁJTBAN
+  text-to-nato-alphabet:
+    title: Szöveg NATO ábécére
+    description: Szöveg átalakítása NATO fonetikus ábécére szóbeli továbbításhoz.
+    ui:
+      yourText: AZ ÖN SZÖVEGE
+      inputPlaceholder: pl. Hello world
+      natoPhonetic: NATO BETŰZŐÁBÉCÉ
+      copied: Másolva
+      copyAll: Összes másolása
+      natoStringCopied: NATO karakterlánc másolva.
+  ipv4-range-expander:
+    title: IPv4 tartomány-bővítő
+    description: Egy kezdő és egy záró IPv4 címből ez az eszköz érvényes IPv4 alhálózatot számít a CIDR jelölésével együtt.
+    ui:
+      startAddress: Kezdő cím
+      endAddress: Végcím
+      addressesInRange: Címek a tartományban
+      invalidIpv4: Érvénytelen IPv4-cím
+      invalidCombinationTitle: A kezdő és a végcím érvénytelen kombinációja (IPv4)
+      invalidCombinationDescription: A végcím alacsonyabb, mint a kezdő IPv4-cím. Ez érvénytelen, az eredményt nem lehetett kiszámítani.
+      switchStartEnd: Kezdő és végcím felcserélése (IPv4)
+      result: Eredmény
+      copied: Másolva!
+      copyResult: Eredmény másolása
+  text-diff:
+    title: Szöveg-összehasonlítás
+    description: Két szöveg összehasonlítása és a különbségek megjelenítése.
+  otp-generator:
+    title: OTP kód generátor
+    description: Időalapú OTP (egyszer használatos jelszó) generálása és ellenőrzése többtényezős hitelesítéshez.
+  text-to-binary:
+    title: Szöveg ASCII binárisra
+    description: Szöveg átalakítása ASCII bináris formára és vissza.
+    ui:
+      textCopied: Szöveg másolva
+      binaryCopied: Bináris másolva
+      panelTitle: TEXT ↔ ASCII BINARY
+      textLabel: SZÖVEG
+      binaryLabel: BINÁRIS
+      copied: Másolva
+      copy: Másolás
+      textPlaceholder: pl. Hello world
+      invalidBinary: Érvényes ASCII bináris kódnak kell lennie (8 bit többszöröse)
+  ascii-word-art:
+    title: ASCII art generátor
+    description: ASCII art szöveg készítése számos betűtípussal és stílussal.
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell szkriptek Windows-felügyelethez és MSP terepmunkához.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Válassz egy cmdletet, töltsd ki a paramétereket, és másold ki a kész PowerShell parancsot.
+  group-policy-reference:
+    title: Csoportházirend-referencia
+    description: Gyakori Windows csoportházirend-beállítások keresése név, GPO elérési út, beállításkulcs vagy leírás alapján.
+    ui:
+      searchPlaceholder: Házirendek, útvonalak, rendszerleíró kulcsok keresése...
+      copied: Másolva!
+      clickToCopyRegistry: Kattintson a rendszerleíró kulcs másolásához
+      copiedShort: másolva
+      default: Alapértelmezett
+      recommended: Ajánlott
+  windows-event-lookup:
+    title: Windows eseménykereső
+    description: Windows eseményazonosítók keresése leírással, súlyossági szinttel és gyakori okokkal.
+    ui:
+      searchResults: Keresési találatok
+      searchPlaceholder: Keresés esemény-azonosító, név vagy leírás alapján...
+      copied: Másolva!
+      clickToCopyEventId: Kattintson az esemény-azonosító másolásához
+      copiedShort: másolva
+  m365-sku-decoder:
+    title: M365 licenc SKU dekódoló
+    description: Microsoft 365 licenc SKU karakterláncok és GUID-ok dekódolása termékneveikre.
+    ui:
+      searchPlaceholder: Keresés SKU-név, string azonosító vagy leírás alapján...
+      copied: Másolva!
+      clickToCopy: Kattintson a string azonosító másolásához
+      copiedMark: ✓ másolva
+  windows-error-codes:
+    title: Windows hibakód-kereső
+    description: Windows hibakódok keresése hexadecimális vagy decimális alakban, beleértve a rendszerhibákat, BSOD stop kódokat, WMI, RPC, MSI telepítő hibákat és továbbiakat.
+    ui:
+      searchResults: Keresési találatok
+      searchPlaceholder: Keresés hexakód, hibanév vagy leírás alapján...
+      copied: Másolva!
+      clickToCopy: Kattintson a hexakód másolásához
+      copiedShort: másolva
+      decimal: decimális {decimal}
+  exchange-ndr-lookup:
+    title: Exchange NDR kereső
+    description: Exchange és M365 visszapattanási kódok keresése érthető okkal és javítási útmutatóval.
+    ui:
+      searchResults: Keresési találatok
+      searchPlaceholder: Keresés NDR-kód, hibanév, ok vagy megoldás alapján...
+      copied: Másolva!
+      clickToCopy: Kattintson az NDR-kód másolásához
+      copiedShort: másolva
+      cause: Ok
+      fix: Megoldás
+  safelink-decoder:
+    title: Outlook Safelink dekódoló
+    description: Microsoft Defender SafeLinks kicsomagolása az eredeti cél-URL megjelenítéséhez.
+  port-protocol-reference:
+    title: Port- és protokollreferencia
+    description: Gyakori hálózati portok és protokollok biztonsági megjegyzésekkel és a veszélyes portok jelölésével.
+  cve-lookup:
+    title: CVE kereső
+    description: CVE-k keresése a NIST NVD-ben azonosító vagy kulcsszó alapján. Élő adatok az NVD API-ból.
+    ui:
+      range6m: 6 hónap
+      range1y: 1 év
+      range2y: 2 év
+      range5y: 5 év
+      rangeAll: Teljes időszak
+      noDescription: Nincs elérhető leírás.
+      fetchError: Nem sikerült elérni az NVD API-t. Ellenőrizze a kapcsolatot.
+      sortNewest: Legújabb elöl
+      sortOldest: Legrégebbi elöl
+      sortSeverity: Legmagasabb súlyosság
+      severityCritical: Kritikus
+      severityHigh: Magas
+      severityMedium: Közepes
+      severityLow: Alacsony
+      placeholder: CVE azonosító vagy kulcsszó (pl. CVE-2021-44228, log4j)
+      searching: Keresés...
+      search: Keresés
+      hint: Keressen CVE azonosító, részleges szám (pl. 43284), gyakori név (pl. log4shell, dirty frag) vagy kulcsszó alapján. Élő adatok az NVD-től és a GitHub Advisory Database-től.
+      noResults: 'Nem található CVE erre: "{query}".'
+      noResultsInRange: 'Nem található CVE erre: "{query}" a kiválasztott időszakban.'
+      noExactMatch: Nem található pontos egyezés a kiválasztott időszakban. A gyakori sebezhetőségnevek (mint a "dirty frag") nem biztos, hogy szó szerint szerepelnek az NVD leírásaiban. Próbálkozzon inkább egy részleges CVE számmal (pl. a "43284" megtalálja a CVE-2026-43284 azonosítót).
+      searchAllTime: Keresés a teljes időszakban
+      showingResults: '{shown} / {total} eredmény megjelenítve'
+      allSeverities: Minden súlyossági szint
+      allYears: Minden év
+      copied: Másolva!
+      clickToCopyId: Kattintson a CVE azonosító másolásához
+      copiedShort: másolva
+      cveDetail: CVE RÉSZLETEK
+      published: Közzétéve
+      modified: Módosítva
+      clickToCopy: Kattintson a másoláshoz
+      references: Hivatkozások
+      kevActionDue: 'CISA KEV intézkedési határidő:'
+      cvssMetrics: CVSS metrikák
+      metricAttackVector: Támadási vektor
+      metricAttackComplexity: Támadási összetettség
+      metricPrivilegesRequired: Szükséges jogosultságok
+      metricUserInteraction: Felhasználói interakció
+      metricScope: Hatókör
+      metricConfidentiality: Bizalmasság
+      metricIntegrity: Sértetlenség
+      metricAvailability: Rendelkezésre állás
+  email-dns-checker:
+    title: E-mail DNS ellenőrző
+    description: Bármely domain MX, SPF, DKIM és DMARC rekordjainak ellenőrzése. Ellenőrzi az e-mail-hitelesítés beállítását, és jelzi a gyakori konfigurációs hibákat.
+  email-header-parser:
+    title: E-mail fejléc elemző
+    description: Illeszd be a nyers e-mail fejléceket a feladó adatainak kinyeréséhez, a kézbesítési ugrások láncának követéséhez, valamint az SPF, DKIM és DMARC hitelesítési eredmények megtekintéséhez.
+    ui:
+      pasteHint: Illessze be alább a nyers e-mail fejléceket.
+      parseButton: Fejlécek elemzése
+      parseAnother: Másik elemzése
+      messageDetails: Üzenet részletei
+      senderMismatch: A feladó domainje eltér a From domaintől. Ez hamisításra vagy delegált küldésre utalhat.
+      deliveryHops: Kézbesítési állomások
+      oldestFirst: legrégebbi elöl
+      authResults: Hitelesítési eredmények
+      spamAnalysis: Spamelemzés
+      spamScore: Spampontszám
+      spamStatus: Spamállapot
+  whois-checker:
+    title: WHOIS lekérdezés
+    description: Bármely domain regisztrációs adatainak lekérdezése, beleértve a regisztrátort, a létrehozás és lejárat dátumát, a névszervereket és az állapotjelzőket.
+  ascii-text-drawer:
+    title: ASCII art generátor
+    description: ASCII art szöveg készítése számos betűtípussal és stílussal.
+    ui:
+      yourText: AZ ÖN SZÖVEGE
+      textPlaceholder: A rajzolandó szöveged
+      options: BEÁLLÍTÁSOK
+      font: BETŰTÍPUS
+      searchFonts: Betűtípusok keresése...
+      noFontsMatch: Nincs egyező betűtípus
+      width: SZÉLESSÉG
+      output: ASCII ART KIMENET
+      loadingFont: Betűtípus betöltése...
+      error: A jelenlegi beállítások hibát okoztak.
+      copied: Másolva!
+      copy: Másolás
+  regex-tester:
+    title: Regex tesztelő
+    description: Reguláris kifejezések tesztelése mintaszövegen.
+    ui:
+      regexLabel: 'Tesztelendő regex:'
+      regexPlaceholder: Add meg a tesztelendő regexet
+      globalLabel: Globális
+      globalTitle: Globális keresés
+      ignoreCaseLabel: Kis- és nagybetű mellőzése
+      ignoreCaseTitle: Kis- és nagybetűre nem érzékeny keresés
+      multilineLabel: Többsoros
+      singlelineLabel: Egysoros
+      singlelineTitle: Lehetővé teszi, hogy a . sortörésekre is illeszkedjen.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; a mintát Unicode kódpontok sorozataként kezeli.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: A u mód továbbfejlesztett változata, több Unicode funkcióval.
+      textLabel: 'Illesztendő szöveg:'
+      textPlaceholder: Add meg az illesztendő szöveget
+      regexBarTitle: REGEX
+      matchesBarTitle: MATCHES
+      matchIndex: Index
+      matchValue: Érték
+      matchCaptures: Elfogott csoportok
+      matchGroups: Csoportok
+      noMatch: Nincs találat
+      sampleBarTitle: SAMPLE
+      diagramBarTitle: DIAGRAM
+      quickReference: Gyors referencia
+  yaml-converter:
+    title: YAML átalakító
+    description: YAML átalakítása JSON vagy TOML formátumba.
+    ui:
+      convertTo: 'Átalakítás erre:'
+      inputLabel: Az Ön YAML-je
+      inputPlaceholder: Illessze be ide a YAML-t...
+      invalidYaml: A megadott YAML nem érvényes.
+      outputLabel: '{format} kimenet'
+  json-converter:
+    title: JSON átalakító
+    description: JSON átalakítása YAML vagy TOML formátumba.
+    ui:
+      convertTo: Konvertálás erre
+      yourJson: Az Ön JSON-ja
+      pasteJsonPlaceholder: Illessze be ide a JSON-t...
+      invalidJson: Érvénytelen JSON formátum
+      formatOutput: '{format} kimenet'
+  toml-converter:
+    title: TOML átalakító
+    description: TOML átalakítása JSON vagy YAML formátumba.
+    ui:
+      convertTo: 'Átalakítás erre:'
+      yourToml: Az Ön TOML-ja
+      pastePlaceholder: Illessze be ide a TOML-t...
+      invalidToml: A megadott TOML nem érvényes.
+      outputLabel: '{format} kimenet'
+  xml-json-converter:
+    title: XML ↔ JSON átalakító
+    description: Kétirányú XML és JSON átalakító. Szerkeszd bármelyik oldalt, és a másik automatikusan frissül.
+    ui:
+      invalidXml: Érvénytelen XML.
+      invalidJson: Érvénytelen JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Illessze be ide az XML-t...
+      jsonLabel: JSON
+      jsonPlaceholder: Illessze be ide a JSON-t...
+  markdown-to-html:
+    title: Markdown-ból HTML
+    description: Markdown átalakítása HTML-lé, exportálás vagy nyomtatás PDF-be.
+    ui:
+      copiedSuccess: HTML a vágólapra másolva!
+      copyFailed: A szöveg másolása nem sikerült.
+      inputLabel: 'Az átalakítandó Markdown:'
+      inputPlaceholder: Az Ön Markdown tartalma...
+      outputLabel: 'Kimeneti HTML:'
+      copyHtmlButton: HTML másolása
+      printAsPdfButton: Nyomtatás PDF-ként
+  killer-pdf:
+    title: KillerPDF
+    description: Nyílt forráskódú PDF-szerkesztő Windowsra. Megtekintés, jegyzetelés, egyesítés, felosztás, egyesítés egy rétegbe, jelszóval védett PDF-ek megnyitása, szövegszerkesztés, rajzolás, kiemelés, aláírás és nyomtatás.
+  killer-scan:
+    title: KillerScan
+    description: Gyors hálózati szkenner terepen dolgozó technikusoknak. ARP + ping felderítés, portvizsgálat, gyártókeresés és automatikus eszközosztályozás.
+  gif-search:
+    title: GIF-kereső
+    description: Reakció GIF-ek keresése a Giphyn. Kattints bármelyik találatra az URL másolásához.
+    ui:
+      errorStatus: Hiba {status}
+      fetchFailed: Nem sikerült betölteni a GIFeket.
+      searchPlaceholder: GIFek keresése (pl. facepalm, jó munka, ez rendben van)
+      searching: Keresés...
+      search: Keresés
+      noResults: 'Nem található GIF a következőre: "{query}".'
+      copied: Másolva!
+      copyUrl: URL másolása
+      resultsHint: '{count} találat. Kattints az URL másolásához, majd illeszd be a Teams, Telegram vagy Slack alkalmazásba.'
+  killer-shell:
+    title: KillerShell
+    description: Ingyenes shell haladó felhasználóknak. Egy fájlböngésző, egy terminál és egy szövegszerkesztő osztozik egy ablakon, egy lapsávon és egy billentyűkészleten.
+  domain-lookup:
+    title: Domain lekérdezés
+    description: WHOIS regisztrációs adatok és e-mail DNS ellenőrzések (MX, SPF, DKIM, DMARC) bármely domainhez egyetlen nézetben.
+    ui:
+      statusDesc:
+        active: A domain aktív és működőképes.
+        inactive: A domain inaktív.
+        clientDeleteProhibited: A regisztrátor letiltotta a domain törlését.
+        clientTransferProhibited: A regisztrátor letiltotta a domain átvitelét másik regisztrátorhoz.
+        clientUpdateProhibited: A regisztrátor letiltotta a domain frissítését.
+        clientHold: A regisztrátor felfüggesztette a domaint, ezért előfordulhat, hogy a DNS nem oldódik fel.
+        serverDeleteProhibited: A nyilvántartó letiltotta a domain törlését.
+        serverTransferProhibited: A nyilvántartó letiltotta a domain átvitelét.
+        serverUpdateProhibited: A nyilvántartó letiltotta a domain frissítését.
+        serverHold: A nyilvántartó felfüggesztette a domaint, ezért előfordulhat, hogy a DNS nem oldódik fel.
+        pendingCreate: A domain létrehozása folyamatban van.
+        pendingDelete: A domain törlése folyamatban van, és hamarosan felszabadulhat.
+        pendingRenew: A domain megújítása folyamatban van.
+        pendingRestore: A domain törlés utáni helyreállítása folyamatban van.
+        pendingTransfer: A domain átvitele másik regisztrátorhoz folyamatban van.
+        pendingUpdate: A domain frissítése folyamatban van.
+        redemptionPeriod: A domain lejárt, és megváltási időszakban van. A tulajdonos még visszaszerezheti.
+        renewPeriod: A domain a regisztrációt követő megújítási türelmi időszakban van.
+        autoRenewPeriod: A domain az automatikus megújítási türelmi időszakban van.
+        transferPeriod: A domain az átviteli türelmi időszakban van.
+      expiredAlert: Ez a domain {days} napja lejárt, és újra regisztrálhatóvá válhat.
+      expiresAlert: Ez a domain {days} nap múlva jár le. A megújítást érdemes mielőbb elintézni.
+      expiredTag: Lejárt {days} napja
+      remainingTag: '{days} nap van hátra'
+      registrar: Regisztrátor
+      registrarIanaId: Regisztrátor IANA azonosítója
+      created: Létrehozva
+      updated: Frissítve
+      expires: Lejár
+      noMx: Nem található MX rekord.
+      dnsFailed: A DNS lekérdezés sikertelen.
+      noSpf: Nem található SPF rekord.
+      noDkim: A gyakori szelektorokhoz nem található DKIM rekord. Egyedi szelektorok még létezhetnek.
+      noDmarc: Nem található DMARC rekord. A domain nincs védve a hamisítás ellen.
+      spfPlusAll: 'Figyelmeztetés: a +all veszélyes, mert bármely szerver számára engedélyezi, hogy e domain nevében küldjön levelet.'
+      spfNeutralAll: 'Figyelmeztetés: a ?all semleges, és nem nyújt védelmet.'
+      dmarcPNone: 'Figyelmeztetés: a p=none csak megfigyel, kikényszerítés nélkül. A leveleket nem fogja elutasítani.'
+      dmarcNoRua: 'Figyelmeztetés: nincs összesített jelentési cím (rua=). Nem fog DMARC jelentéseket kapni.'
+      pass: Megfelelt
+      fail: Sikertelen
+      warning: Figyelmeztetés
+      checking: Ellenőrzés...
+      overallPass: Minden e-mail ellenőrzés sikeres volt. Ez a domain jól van beállítva az e-mailhez.
+      overallFail: Egy vagy több kritikus rekord hiányzik. Ez a domain sebezhető lehet a hamisítással szemben.
+      overallWarn: Néhány rekord létezik, de olyan konfigurációs problémákkal, amelyeket érdemes átnézni.
+      rdapHttpError: 'HTTP {status}: lehet, hogy a domain nem létezik, vagy a TLD nem támogatott.'
+      lookupFailed: A keresés sikertelen.
+      domainPlaceholder: Adjon meg egy domaint (pl. killertools.net)
+      searching: Keresés...
+      search: Keresés
+      signed: Aláírva
+      unsigned: Nincs aláírva
+      delegationSigned: A delegálás alá van írva.
+      dsRecord: '{count} DS rekord.'
+      dsRecords: '{count} DS rekord.'
+      keyRecord: '{count} kulcsrekord.'
+      keyRecords: '{count} kulcsrekord.'
+      dnssecUnsigned: Ezt a domaint nem védi a DNSSEC. A DNS válaszok kriptográfiailag nem ellenőrizhetők.
+      status: Állapot
+      contacts: Kapcsolatok
+      remarks: Megjegyzések
+      nameservers: Névszerverek
+      mxRecords: MX rekordok
+      spfRecord: SPF rekord
+      dkimRecords: DKIM rekordok
+      dmarcRecord: DMARC rekord
+      role:
+        registrant: domain igénylő
+        administrative: adminisztratív
+        technical: műszaki
+        abuse: visszaélés
+      name: Név
+      organization: Szervezet
+      email: E-mail
+      phone: Telefon
+  email-record-generator:
+    title: E-mail rekord generátor
+    description: SPF és DMARC DNS TXT rekordok generálása. Válaszd ki a levelezési szolgáltatóidat és a házirendeket, majd másold az eredményt egyenesen a DNS-be.
+    ui:
+      hardFailRecommended: hard fail, ajánlott
+      softFail: soft fail
+      neutralNotRecommended: semleges, nem ajánlott
+      blockFailingMail: hibás levelek blokkolása
+      sendToSpam: spam mappába küldés
+      monitorOnly: csak megfigyelés
+      relaxedDefault: Enyhe (alapértelmezett)
+      strict: Szigorú
+      sameAsMainPolicy: Megegyezik a fő szabállyal
+      spfRecordTitle: SPF REKORD
+      dmarcRecordTitle: DMARC REKORD
+      spfRecordLocation: TXT rekord a gyökérdoménen
+      dmarcRecordLocation: TXT rekord ezen
+      copied: másolva
+      clickToCopy: kattintson a másoláshoz
+      lookupWarning: '{count} DNS lekérdezés kiválasztva; az SPF limitje 10 lekérdezés'
+      mailProviders: LEVELEZŐSZOLGÁLTATÓK
+      customIps: EGYÉNI IP-CÍMEK VAGY TARTOMÁNYOK (OPCIONÁLIS)
+      examplePrefix: pl.
+      enforcement: ÉRVÉNYESÍTÉS
+      policy: SZABÁLY
+      subdomainPolicy: ALDOMÉN SZABÁLY (OPCIONÁLIS)
+      policyCoverage: 'SZABÁLY LEFEDETTSÉGE: {percent}%'
+      coverageHint: A hibás levelek {percent}%-ára lép életbe az intézkedés. Fokozatos bevezetéshez használjon 100% alatti értéket.
+      aggregateReportEmail: ÖSSZESÍTETT JELENTÉS E-MAIL (rua)
+      forensicReportEmail: TÖRVÉNYSZÉKI JELENTÉS E-MAIL (ruf, opcionális)
+      dkimAlignment: DKIM IGAZÍTÁS
+      spfAlignment: SPF IGAZÍTÁS
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS locale dátumsztring
+      formatUnixTimestamp: Unix időbélyeg
+      formatTimestamp: Időbélyeg
+      formatUtc: UTC formátum
+      formatExcelDateTime: Excel dátum/idő
+      invalidDateRule: Ez a dátum érvénytelen ehhez a formátumhoz
+      inputPlaceholder: Illessze be a dátumot, vagy hagyja üresen az élő órához...
+      invalidDate: Érvénytelen dátum ehhez a formátumhoz
+      output: KIMENET
+      live: ÉLŐ
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Titok (hex)
+      epochLabel: Epoch
+      countLabel: Darabszám
+      paddedHexLabel: Kitöltött hex
+      secretLabel: TITOK
+      secretPlaceholder: Illessze be a TOTP titkot...
+      generateNewSecret: Új titok generálása
+      tokenLabel: TOKEN
+      copied: ✓ másolva
+      clickToCopy: kattintson a másoláshoz
+      nextIn: '>_ következő {seconds} mp múlva'
+      adjacentTokensLabel: SZOMSZÉDOS TOKENEK
+      prevLabel: Előző
+      nextLabel: Következő
+      detailsLabel: RÉSZLETEK
+      scanToAuthenticate: '>_ szkennelje be a hitelesítéshez'
+      openKeyUriInNewTab: Key URI megnyitása új lapon
+      tokenDisplayPreviousLabel: Előző
+      tokenDisplayCurrentLabel: Jelenlegi OTP
+      tokenDisplayNextLabel: Következő
+      copiedExclaim: Másolva!
+      copyPreviousOtp: Előző OTP másolása
+      copyCurrentOtp: Jelenlegi OTP másolása
+      copyNextOtp: Következő OTP másolása
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Erős
+      moderateLabel: Közepes
+      weakLabel: Gyenge
+      veryWeakLabel: Nagyon gyenge
+      lengthLabel: Hossz
+      entropyLabel: Entrópia
+      charsetSizeLabel: Karakterkészlet mérete
+      scoreDetailLabel: Pontszám
+      passwordPlaceholder: Adjon meg egy jelszót...
+      hideLabel: Elrejtés
+      showLabel: Megjelenítés
+      clearLabel: Törlés
+      crackTimeSublabel: NYERS ERŐVEL TÖRTÉNŐ FELTÖRÉSI IDŐ
+      crackTimeNote: Az erősség becslése másodpercenkénti 1 milliárd próbálkozással számolt nyers erő idő alapján történik. A szótár alapú támadásokat nem veszi figyelembe.
+  integer-base-converter:
+    ui:
+      binary: Bináris
+      octal: Oktális
+      decimal: Decimális
+      hexadecimal: Hexadecimális
+      base: számrendszer
+      output: KIMENET
+      custom: Egyéni
+  basic-auth-generator:
+    ui:
+      copied: A fejléc a vágólapra másolva
+      username: Felhasználónév
+      usernamePlaceholder: Felhasználóneved...
+      password: Jelszó
+      passwordPlaceholder: Jelszavad...
+      headerLabel: 'Engedélyezési fejléc:'
+      copyHeader: Fejléc másolása
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Meta tagek másolva!
+      copiedLabel: ✓ Másolva
+      copyButton: Másolás
+      outputTitle: AZ ÖN META TAGJEI
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Mime típus kiterjesztésre
+      mimeToExtensionDescription: Tudja meg, mely fájlkiterjesztések tartoznak egy mime típushoz
+      mimeTypeSelectPlaceholder: 'Válassza ki itt a mimetípust... (pl.: application/pdf)'
+      extensionsFoundPrefix: Fájlkiterjesztések a
+      extensionsFoundSuffix: 'mime típussal:'
+      extensionToMimeTitle: Fájlkiterjesztés mime típusra
+      extensionToMimeDescription: Tudja meg, mely mime típus tartozik egy fájlkiterjesztéshez
+      mimeFoundPrefix: A kiterjesztéshez tartozó mime típus
+      mimeFoundSuffix: 'fájlkiterjesztés:'
+      tableMimeTypesHeader: Mime típusok
+      tableExtensionsHeader: Kiterjesztések
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Szöveg Unicode-ra
+      enterTextLabel: Adja meg a Unicode-ra alakítandó szöveget
+      unicodeFromTextLabel: Unicode az Ön szövegéből
+      unicodeOutputPlaceholder: A szöveg Unicode reprezentációja itt jelenik meg
+      copyUnicode: Unicode másolása a vágólapra
+      unicodeToTextTitle: Unicode szövegre
+      inputUnicodePlaceholder: Unicode megadása
+      enterUnicodeLabel: Adja meg a szövegre alakítandó Unicode-ot
+      textFromUnicodeLabel: Szöveg az Ön Unicode-jából
+      textOutputPlaceholder: A Unicode szöveges reprezentációja itt jelenik meg
+      copyText: Szöveg másolása a vágólapra
+  json-viewer:
+    ui:
+      invalidJson: A megadott JSON érvénytelen.
+      sortKeys: Kulcsok rendezése
+      indentSize: Behúzás mérete
+      yourRawJson: Az Ön nyers JSON-ja
+      pasteRawJsonPlaceholder: Illessze be ide a nyers JSON-t...
+      prettifiedVersion: A JSON formázott verziója
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Keresés port, szolgáltatás, protokoll vagy leírás alapján...
+      allProtocols: Összes
+      dangerousOnly: Csak veszélyesek
+      showingPorts: '{count} port megjelenítve'
+      copied: Másolva!
+      clickToCopy: Kattintson a portszám másolásához
+      copiedCheck: ✓ másolva
+      dangerousPill: Veszélyes
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet böngésző
+      adminBadge: Admin
+      cmdletSearchPlaceholder: Keresés név, leírás vagy modul alapján...
+      noCmdletsMatch: 'Egyetlen cmdlet sem egyezik ezzel: "{query}"'
+      generatedCommand: Létrehozott parancs
+      copiedCheck: ✓ Másolva!
+      copyCommand: Parancs másolása
+      commonExamples: Gyakori példák
+      selectCmdletPrompt: Válasszon egy cmdletet balra a parancs összeállításának megkezdéséhez.
+      parameters: Paraméterek
+      noParametersNeeded: Nincs szükség paraméterekre - ez a cmdlet változtatás nélkül fut.
+      required: kötelező
+      separateMultipleValues: több értéket vesszővel válasszon el
+      showFewerParameters: Kevesebb paraméter megjelenítése
+      showMoreParameters: '{count} további paraméter'
+      collapseQuickReference: Gyorsreferencia összecsukása
+      openQuickReference: Gyorsreferencia megnyitása
+      quickReference: Gyorsreferencia
+      cheatsheetComparisonOperators: Összehasonlító operátorok
+      cheatsheetEqualTo: Egyenlő
+      cheatsheetNotEqualTo: Nem egyenlő
+      cheatsheetGreaterLessThan: Nagyobb, mint / Kisebb, mint
+      cheatsheetGreaterLessEqual: Nagyobb vagy egyenlő / Kisebb vagy egyenlő
+      cheatsheetStringOperators: Szöveges operátorok
+      cheatsheetWildcardMatch: Helyettesítő karakteres egyezés (* és ?)
+      cheatsheetWildcardNonMatch: Helyettesítő karakteres nem-egyezés
+      cheatsheetRegexMatch: Regex egyezés
+      cheatsheetRegexNonMatch: Regex nem-egyezés
+      cheatsheetCollectionContains: A gyűjtemény tartalmazza az értéket
+      cheatsheetValueInCollection: Az érték szerepel egy gyűjteményben
+      cheatsheetLogicalOperators: Logikai operátorok
+      cheatsheetBothTrue: Mindkét feltételnek igaznak kell lennie
+      cheatsheetEitherTrue: Legalább az egyik feltétel igaz
+      cheatsheetNegateCondition: Egy feltétel tagadása
+      cheatsheetAutomaticVariables: Automatikus változók
+      cheatsheetCurrentPipelineObject: Aktuális pipeline objektum
+      cheatsheetNullEmptyValue: Null / üres érték
+      cheatsheetBooleanTrueFalse: Logikai true / false érték
+      cheatsheetLocalComputerName: Helyi számítógép neve
+      cheatsheetCurrentUser: Jelenleg bejelentkezett felhasználó
+      cheatsheetPsVersionInfo: PS verzióinformáció
+      cheatsheetDateHelpers: Dátumsegédek
+      cheatsheetCurrentDateTime: Aktuális dátum és idő
+      cheatsheetThirtyDaysAgo: 30 nappal ezelőtt
+      cheatsheetThreeMonthsAgo: 3 hónappal ezelőtt
+      cheatsheetParseDateString: Dátum szöveg feldolgozása
+      cheatsheetPipelineTricks: Pipeline trükkök
+      cheatsheetLimitFirst10: Korlátozás az első 10 találatra
+      cheatsheetCountSumMinMax: Count / sum / min / max
+      cheatsheetInteractiveGuiViewer: Interaktív GUI nézegető (helyi)
+      cheatsheetConvertToJson: Kimenet átalakítása JSON formátumra
+      cheatsheetOutputScreenAndFile: Kimenet képernyőre ÉS fájlba
+      cheatsheetSuppressErrors: Nem végzetes hibák elnyomása
+      cheatsheetRemoteExecution: Távoli végrehajtás
+      cheatsheetCmdletsSupportDirectly: Sok cmdlet közvetlenül támogatja ezt
+      cheatsheetRunViaRemoting: Futtatás PS Remotingon keresztül (WinRM)
+      cheatsheetInteractiveRemoteSession: Interaktív távoli PS munkamenet
+  qr-code-generator:
+    ui:
+      tabText: Szöveg / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Szöveg vagy URL
+      placeholderTextOrUrl: Az Ön linkje vagy szövege...
+      sectionEncryption: Titkosítás
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Nincs jelszó
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Hálózat neve...
+      sectionPassword: Jelszó
+      placeholderPassword: Hálózati jelszó...
+      sectionOptions: Beállítások
+      hiddenSsid: Rejtett SSID
+      anonymousIdentity: Névtelen azonosító
+      sectionEapMethod: EAP módszer
+      sectionEapPhase2: EAP 2. fázis
+      sectionEapIdentity: EAP azonosító
+      placeholderEapIdentity: Az Ön EAP azonosítója...
+      sectionTheme: Téma
+      themeDefault: Alapértelmezett
+      themeTerminal: Terminál
+      themeClassic: Klasszikus
+      themeInverted: Invertált
+      sectionColors: Színek
+      labelForeground: 'Előtér:'
+      labelBackground: 'Háttér:'
+      sectionErrorCorrection: Hibajavítás
+      levelLow: Alacsony (~7%)
+      levelMedium: Közepes (~15%)
+      levelQuartile: Kvartilis (~25%)
+      levelHigh: Magas (~30%)
+      emptyHintWifi: Adjon meg egy SSID-t a Wi-Fi QR-kód létrehozásához
+      emptyHintText: Adjon meg szöveget vagy URL-t
+      captionJoin: '>_ olvassa be a csatlakozáshoz'
+      captionOpen: '>_ olvassa be a megnyitáshoz'
+      downloadPng: ↓ PNG letöltése
+  yaml-viewer:
+    ui:
+      invalidYaml: A megadott YAML nem érvényes.
+      sortKeys: Kulcsok rendezése
+      indentSize: Behúzás mérete
+      rawLabel: Az Ön nyers YAML-je
+      rawPlaceholder: Illessze be ide a nyers YAML-t...
+      prettifiedLabel: Az Ön YAML-jének formázott verziója
+components:
+  androidBetaBanner:
+    announcement: Android beta bejelentes
+    title: A Killer Tools hamarosan Androidon is elerheto
+    subtitle: Beta tesztereket keresunk, koppints a csatlakozashoz
+    dismiss: Bezaras
+  formatTransformer:
+    input: Bemenet
+    inputPlaceholder: Bemenet...
+    output: Kimenet
+  inputCopyable:
+    copied: Masolva!
+    copy: Masolas vagolapra
+  spanCopyable:
+    copied: Masolva!
+    copy: Masolas vagolapra
+  textareaCopyable:
+    copy: Masolas vagolapra
+    copied: Masolva!
+  navbarButtons:
+    androidTooltip: Killer Tools Androidra
+    androidAriaLabel: Killer Tools Androidra, csatlakozz a betahoz
+  themeDots:
+    accentColor: Kiemelo szin
+    theme: Tema
+    toggleThemeSwatches: Tema mintak be- vagy kikapcsolasa
+    accentColorPicker: Kiemelo szin valaszto
+    dragToMove: Huzd a mozgatashoz
+    accentLabel: 'kiemeles:'
+    accentNamed: 'Kiemeles: {name}'
+    closeAccentPicker: Kiemelo szin valaszto bezarasa
+    accents:
+      red: Piros
+      orange: Narancs
+      green: Zold
+      teal: Petrolkek
+      blue: Kek
+      purple: Lila
+layouts:
+  menuLayout:
+    eggMessage: 80 eszkoz. Nulla elofizetes. Egy bosszuszomjas terepszereles.
+    clickMe: kattints ide
+    sourceOnGithub: Forraskod a Githubon
+  base:
+    collapseMenu: Menu osszecsukasa
+    homeLabel: KillerTools kezdolap
+pages:
+  notFound:
+    noSuchFile: Nincs ilyen fajl vagy konyvtar
+    exitCode: kilepesi kod
+    backToHome: vissza a kezdolapra
+  privacy:
+    heading: Adatvedelmi tajekoztato
+    lastUpdated: 'Utolso frissites: 2026. aprilis 4.'
+    overviewHeading: Attekintes
+    overviewIntro: KillerTools
+    overviewBody: egy ingyenes IT eszközgyujtemeny. Az on adatvedelme fontos szamunkra, es ez a tajekoztato elmagyarazza, hogyan kezeljuk az adatait.
+    dataCollectionHeading: Adatgyujtes
+    dataCollectionBody: A KillerTools semmilyen szemelyes adatot nem gyujt, nem tarol es nem tovabbit. Minden eszkoz feldolgozas teljes egeszeben a bongeszojeben tortenik. Semmilyen, egy eszkozbe beirt adat nem kerul elkuldesre semmilyen szerverre.
+    cookiesHeading: Sutik
+    cookiesBody: Ez az oldal nem hasznal sutiket nyomon kovetesre. A tema- es beallitasi preferenciai helyileg, a bongeszojeben taroloak, es soha nem kerulnek tovabbitasra.
+    analyticsHeading: Analitika
+    analyticsIntro: Ez az oldal hasznalja a
+    analyticsBody: egy adatvedelem-kozpontu analitikai eszkozt, hogy megertse az altalanos hasznalati mintakat, mint az oldalmegtekintesek es a hivatkozasi forrasok. Az Umami nem hasznal sutiket, nem koveti a felhasznalokat weboldalak kozott, es nem gyujt semmilyen szemelyazonositasra alkalmas informaciot. Minden adat aggregalt es anonim.
+    thirdPartyHeading: Harmadik feles szolgaltatasok
+    thirdPartyBody: Nehany eszkoz kulso forrasokra vagy dokumentaciora mutathat. Nem vagyunk felelosek ezen kulso oldalak adatvedelmi gyakorlatáert.
+    androidAppHeading: Android alkalmazas
+    androidAppBody: A KillerTools Android alkalmazas a webalkalmazas koreli buroknak. Nem ker es nem er el semmilyen eszkozengedelyt az alapveto internet-hozzaferesen tul. Semmilyen eszkozadat nem kerul gyujtesre vagy tovabbitasra.
+    contactHeading: Kapcsolat
+    contactBody: Ha kerdese van ezzel az adatvedelmi tajekoztatoval kapcsolatban, elerhet minket a
+  androidApp:
+    robotAttribution: Az Android robot a Google altal letrehozott es megosztott munkabol keszult vagy modositott reprodukcio, a Creative Commons 3.0 Attribution License feltetelei szerint hasznalva.
+    heading: KillerTools Androidra
+    introBody1: 'A teljes killertools.net eszkoztar natív Android alkalmazaskent: minden eszkoz, a Killer Scripts konyvtar es az osszes kedvence, egyetlen erintesre a kezdokepernyorol.'
+    introBody2: Ugyanazok a szabalyok, mint az oldalon. Minden az on eszkozen fut. Nincs fiok, nincs telemetria, nincs hazatelefonalas. Ha megsporol egy ticketciklust a terepen, betoltotte a feladatat.
+    betaStatusPrefix: Az alkalmazas jelenleg
+    betaStatusStrong: zart betaban van a Google Play-en
+    betaStatusSuffix: ', es itt jon a kepbe on.'
+    joinBetaHeading: Csatlakozzon a betahoz
+    joinBetaIntroPrefix: A Google megkoveteli, hogy
+    joinBetaIntroStrong: 12 tesztelo 14 egymast koveto napig telepitve tartsa az alkalmazast
+    joinBetaIntroSuffix: 'mielott egy fuggetlen fejleszto alkalmazasa nyilvanossa valhat. Harom lepes, korulbelul ket perc, es on is a tizenketto egyike lesz:'
+    step1LinkText: Csatlakozzon a tesztelo csoporthoz
+    step1Suffix: a Google Groups-on (kattintson a "Join group" gombra).
+    step2LinkText: Valjon teszteloVe
+    step2Suffix: a Google Play jelentkezesi oldalan.
+    step3LinkText: Telepitse az alkalmazast
+    step3Suffix: a Google Play-rol, es tartsa telepitve ket hetig.
+    sameAccountStrong: Hasznalja ugyanazt a Google fiokot mindharom lepeshez
+    sameAccountSuffix: ' - a jelentkezesi oldal "not available for this account" uzenetet jelenit meg, ha kihagyja a csoportot vagy fiokot valt.'
+    feedbackPrefix: 'Valami elromlott vagy hianyzik? Szoljon nekem:'
+  home:
+    sortPopular: Nepszeru
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: A KillerTools-rol
+    intro: A terepi technikusoknak nincs idejuk a felesleges csomagolasra. Minden eszkoz azert letezik itt, mert szuksegem volt ra munka kozben, es nem talaltam olyat, ami egyszeruen mukodott fiok, telepites vagy telemetria nelkul.
+    originPrefix: Jelenleg egy MSP belso AI mernoki csapataban epitek eszkozoket, hat ev full-stack fejlesztes es nyolc ev terepi technikuskent, tobb cegnel szerzett tapasztalat utan. A KillerTools.net a kivalo
+    originMid: projekt forkjakent indult, amelyet
+    originSuffix: keszitett, es olyan valamive novekedett, ami az altalam vegzett munkahoz keszult. Azert epitettem, hogy kozepen egy ticketben Group Policy beallitasokat nezhessek meg, egy ugyfel alhalozatat pasztazzam, es port referenciakat keressek ki a bongeszo elhagyasa nelkul.
+    scriptsLibrary: A Killer Scripts konyvtar lefedi azokat a feladatokat, amelyek minden ticketciklusban felmerulnek. Minden szkript fut PS 5.1, PS 7 es Kaseya LiveConnect alatt, fuggosegek nelkul.
+    privacyBody: Minden a bongeszojeben fut. Semmit nem kovetnek nyomon. Fiokra soha nincs szukseg. Az oldal szigoru Content Security Policy-t kenyszerit ki, hogy blokkolja a fuggosegi lanc menten erkezo tamadasokat. Ha egy kompromittalt npm csomag valaha bekerulne a csomagba, nem tudna hazatelefonalni azzal, amit beillesztett.
+    maintainedByPrefix: Keszitette es karbantartja
+    maintainedByMid: Ha ez idot sporol onnek a munkaban,
+    buyMeCoffee: vegyen nekem egy kavet
+    maintainedBySuffix: orommel fogadott, de soha nem elvart.
+    missingToolHeading: Hianyzik egy eszkoz? Hibat talalt?
+    issuesPrefix: Nyisson egy funkciokerelmet vagy hibajelentest az
+    issuesLinkText: issues szekcioban
+    issuesSuffix: a GitHubon. Elolvasom oket.
+    alsoTryHeading: Probalja ki ezeket is...
+    tagKillerScan: Nyilt forraskodu halozati szkenner Windowsra
+    tagKillerPdf: Nyilt forraskodu PDF szerkeszto Windowsra
+    tagKillerShell: Nyilt forraskodu Windows shell haladó felhasznaloknak
+    tagKillerNotes: Nyilt forraskodu titkositott jegyzetfuzet Windowsra
+    tagKillendar: Nyilt forraskodu titkositott naptar Windowsra
+    linksHeading: Linkek
+    linkLabelSite: Oldal
+    linkLabelSource: Forraskod
+    linkLabelIssues: Issues
+    reportBug: Hiba bejelentese
+    requestFeature: Funkcio kerese
+    linkLabelSupport: Tamogatas
+    linkLabelBuiltOn: Alapja
+    itToolsFork: IT-Tools (fork)
+ui:
+  diffEditor:
+    originalLabel: EREDETI
+    modifiedLabel: MÓDOSÍTOTT
+    originalPlaceholder: Eredeti szöveg...
+    modifiedPlaceholder: Módosított szöveg...
+  fileUpload:
+    defaultTitle: Húzza ide a fájlokat, vagy kattintson a kiválasztáshoz
+    or: vagy
+    browseFiles: Fájlok tallózása
+  inputText:
+    defaultPlaceholder: Szöveg megadása
+  keyValueListItem:
+    'yes': Igen
+    'no': Nem
+    notAvailable: Nem elérhető
+  modalValue:
+    copied: Másolva!
+    copy: Másolás
+  select:
+    searchPlaceholder: Keresés...
+    noResults: Nincs találat
+    defaultPlaceholder: Válasszon egy lehetőséget
+  table:
+    defaultDescription: Adattábla
+  textCopyable:
+    copied: Másolva!
+    copyToClipboard: Másolás vágólapra
+commandPalette:
+  searchAriaLabel: Keresés
+  searchPlaceholder: Gépeljen egy eszköz vagy parancs kereséséhez...

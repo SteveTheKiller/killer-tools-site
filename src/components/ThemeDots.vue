@@ -5,9 +5,23 @@ import { computed, nextTick, ref } from 'vue';
 import { useStyleStore } from '@/stores/style.store';
 import { ktAccents, ktThemes, NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 
+const { t } = useI18n();
 const styleStore = useStyleStore();
 
 const ACCENT_ORDER: KtAccentKey[] = ['red', 'orange', 'green', 'teal', 'blue', 'purple'];
+
+const ACCENT_LABEL_KEYS: Record<KtAccentKey, string> = {
+  red: 'components.themeDots.accents.red',
+  orange: 'components.themeDots.accents.orange',
+  green: 'components.themeDots.accents.green',
+  teal: 'components.themeDots.accents.teal',
+  blue: 'components.themeDots.accents.blue',
+  purple: 'components.themeDots.accents.purple',
+};
+
+function accentLabel(name: KtAccentKey) {
+  return t(ACCENT_LABEL_KEYS[name]);
+}
 
 // Accents apply to the neutral themes only (Dark / Light / Black)
 const accentsVisible = computed(() => NEUTRAL_THEMES.includes(styleStore.ktTheme));
@@ -115,8 +129,8 @@ function startDrag(e: PointerEvent) {
       ref="triggerRef"
       class="acc-trigger"
       :style="{ background: accentColor(effectiveAccent) }"
-      title="Accent color"
-      aria-label="Accent color"
+      :title="t('components.themeDots.accentColor')"
+      :aria-label="t('components.themeDots.accentColor')"
       :aria-expanded="popupOpen"
       @click="togglePopup"
     />
@@ -126,14 +140,14 @@ function startDrag(e: PointerEvent) {
     <button
       class="swatch sm-theme-trigger"
       :style="currentTheme ? { background: currentTheme.swatchBg, '--sw-accent': themeDotAccent(currentTheme) } : undefined"
-      title="Theme"
-      aria-label="Toggle theme swatches"
+      :title="t('components.themeDots.theme')"
+      :aria-label="t('components.themeDots.toggleThemeSwatches')"
       :aria-expanded="swatchesOpen"
       @click="swatchesOpen = !swatchesOpen"
     />
 
     <!-- Theme swatches, ported from the landing-page picker -->
-    <div class="tgrp" :class="{ 'tgrp-open': swatchesOpen }" role="group" aria-label="Theme">
+    <div class="tgrp" :class="{ 'tgrp-open': swatchesOpen }" role="group" :aria-label="t('components.themeDots.theme')">
       <button
         v-for="t in ktThemes"
         :key="t.key"
@@ -155,27 +169,27 @@ function startDrag(e: PointerEvent) {
           class="acc-popup"
           :style="{ left: `${popupX}px`, top: `${popupTop}px` }"
           role="group"
-          aria-label="Accent color picker"
+          :aria-label="t('components.themeDots.accentColorPicker')"
         >
-          <span class="acc-popup-grip" title="Drag to move" @pointerdown="startDrag">
+          <span class="acc-popup-grip" :title="t('components.themeDots.dragToMove')" @pointerdown="startDrag">
             <svg width="10" height="14" viewBox="0 0 10 14" fill="currentColor" aria-hidden="true">
               <circle cx="2.5" cy="2" r="1.3" /><circle cx="7.5" cy="2" r="1.3" />
               <circle cx="2.5" cy="7" r="1.3" /><circle cx="7.5" cy="7" r="1.3" />
               <circle cx="2.5" cy="12" r="1.3" /><circle cx="7.5" cy="12" r="1.3" />
             </svg>
           </span>
-          <span class="acc-popup-label">accent:</span>
+          <span class="acc-popup-label">{{ t('components.themeDots.accentLabel') }}</span>
           <button
             v-for="name in ACCENT_ORDER"
             :key="name"
             class="acc"
             :style="{ background: accentColor(name) }"
-            :title="name.charAt(0).toUpperCase() + name.slice(1)"
-            :aria-label="`Accent: ${name}`"
+            :title="accentLabel(name)"
+            :aria-label="t('components.themeDots.accentNamed', { name: accentLabel(name) })"
             :aria-pressed="effectiveAccent === name"
             @click="styleStore.setAccent(name)"
           />
-          <button class="acc-popup-close" aria-label="Close accent picker" @click="popupOpen = false">
+          <button class="acc-popup-close" :aria-label="t('components.themeDots.closeAccentPicker')" @click="popupOpen = false">
             ×
           </button>
         </div>

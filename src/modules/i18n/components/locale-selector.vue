@@ -1,8 +1,31 @@
 <script setup lang="ts">
 import { NDropdown } from 'naive-ui';
+import { h } from 'vue';
 
 const { availableLocales, locale } = useI18n({ useScope: 'global' });
-const localeOrder = ['en', 'es', 'de', 'fr', 'ja', 'kk', 'ru', 'tr', 'vi', 'zh-TW', 'zh', 'bn', 'cs', 'pl', 'hu', 'it', 'no', 'pt', 'uk'];
+// English pinned on top; the rest alphabetical by ISO locale code.
+const localeOrder = ['en', 'bn', 'cs', 'de', 'es', 'fr', 'hu', 'it', 'ja', 'kk', 'no', 'pl', 'pt', 'ru', 'tr', 'uk', 'vi', 'zh', 'zh-TW'];
+const localeCodes: Record<string, string> = {
+  'en': 'en-US',
+  'bn': 'bn-BD',
+  'cs': 'cs-CZ',
+  'de': 'de-DE',
+  'es': 'es-ES',
+  'fr': 'fr-FR',
+  'hu': 'hu-HU',
+  'it': 'it-IT',
+  'ja': 'ja-JP',
+  'kk': 'kk-KZ',
+  'no': 'nb-NO',
+  'pl': 'pl-PL',
+  'pt': 'pt-BR',
+  'ru': 'ru-RU',
+  'tr': 'tr-TR',
+  'uk': 'uk-UA',
+  'vi': 'vi-VN',
+  'zh': 'zh-CN',
+  'zh-TW': 'zh-TW',
+};
 const localesLong: Record<string, string> = {
   en: 'English',
   de: 'Deutsch',
@@ -58,7 +81,10 @@ function localeRank(code: string) {
 
 const localeOptions = computed(() =>
   [...availableLocales].sort((a, b) => localeRank(a) - localeRank(b)).map(code => ({
-    label: `${localesLong[displayKey(code)] ?? code}${code === locale.value ? ' ✓' : ''}`,
+    label: () => h('span', { style: 'display: flex; justify-content: space-between; gap: 12px; min-width: 138px;' }, [
+      h('span', `${localesLong[displayKey(code)] ?? code}${code === locale.value ? ' ✓' : ''}`),
+      h('span', { style: 'opacity: 0.6;' }, localeCodes[code] ?? code),
+    ]),
     key: code,
   })),
 );

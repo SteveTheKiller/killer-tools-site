@@ -2,6 +2,8 @@
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { eventsByCategory } from './windows-event-lookup.constants';
 
+const { t } = useI18n();
+
 const search = ref('');
 const copiedId = ref<number | null>(null);
 
@@ -28,7 +30,7 @@ const filtered = computed(() => {
   if (!search.value) {
     return eventsByCategory;
   }
-  return [{ category: 'Search results', log: '', events: searchResult.value }];
+  return [{ category: t('tools.windows-event-lookup.ui.searchResults'), log: '', events: searchResult.value }];
 });
 
 function copyId(id: number) {
@@ -44,7 +46,7 @@ function copyId(id: number) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0; min-width: 0; width: 100%;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search by event ID, name, or description..."
+      :placeholder="t('tools.windows-event-lookup.ui.searchPlaceholder')"
       autofocus
       raw-text
       mb-4
@@ -65,10 +67,10 @@ function copyId(id: number) {
           <div
             class="kt-terminal-bar wel-bar"
             :class="{ 'wel-bar-copied': copiedId === id }"
-            :title="copiedId === id ? 'Copied!' : 'Click to copy event ID'"
+            :title="copiedId === id ? t('tools.windows-event-lookup.ui.copied') : t('tools.windows-event-lookup.ui.clickToCopyEventId')"
             @click="copyId(id)"
           >
-            <code class="wel-id">{{ copiedId === id ? '✓ copied' : id }}</code>
+            <code class="wel-id">{{ copiedId === id ? `✓ ${t('tools.windows-event-lookup.ui.copiedShort')}` : id }}</code>
             <span class="wel-severity" :class="`wel-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
 

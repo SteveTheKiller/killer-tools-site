@@ -2,6 +2,8 @@
 import { onClickOutside } from '@vueuse/core';
 import { buildDmarcRecord, buildSpfRecord } from './email-record-generator.service';
 
+const { t } = useI18n();
+
 const activeTab = ref<'spf' | 'dmarc'>('spf');
 const copiedValue = ref<string | null>(null);
 
@@ -36,11 +38,11 @@ const spfProviderOptions = [
   { label: 'Mimecast', value: 'include:_netblocks.mimecast.com' },
 ];
 
-const spfEnforcementOptions = [
-  { label: '-all (hard fail, recommended)', value: '-all' },
-  { label: '~all (soft fail)', value: '~all' },
-  { label: '?all (neutral, not recommended)', value: '?all' },
-];
+const spfEnforcementOptions = computed(() => [
+  { label: `-all (${t('tools.email-record-generator.ui.hardFailRecommended')})`, value: '-all' },
+  { label: `~all (${t('tools.email-record-generator.ui.softFail')})`, value: '~all' },
+  { label: `?all (${t('tools.email-record-generator.ui.neutralNotRecommended')})`, value: '?all' },
+]);
 
 function toggleProvider(val: string) {
   const idx = spfProviders.value.indexOf(val);
@@ -66,7 +68,7 @@ const spfEnfRef = ref<HTMLElement | null>(null);
 onClickOutside(spfEnfRef, () => {
   spfEnfMenu.value = false;
 });
-const spfEnfLabel = computed(() => spfEnforcementOptions.find(o => o.value === spfEnforcement.value)?.label ?? spfEnforcement.value);
+const spfEnfLabel = computed(() => spfEnforcementOptions.value.find(o => o.value === spfEnforcement.value)?.label ?? spfEnforcement.value);
 
 // --- DMARC ---
 const dmarcPolicy = ref('reject');
@@ -77,16 +79,16 @@ const dmarcRufEmail = ref('');
 const dmarcAdkim = ref('');
 const dmarcAspf = ref('');
 
-const dmarcPolicyOptions = [
-  { label: 'reject (block failing mail)', value: 'reject' },
-  { label: 'quarantine (send to spam)', value: 'quarantine' },
-  { label: 'none (monitor only)', value: 'none' },
-];
+const dmarcPolicyOptions = computed(() => [
+  { label: `reject (${t('tools.email-record-generator.ui.blockFailingMail')})`, value: 'reject' },
+  { label: `quarantine (${t('tools.email-record-generator.ui.sendToSpam')})`, value: 'quarantine' },
+  { label: `none (${t('tools.email-record-generator.ui.monitorOnly')})`, value: 'none' },
+]);
 
-const dmarcAlignmentOptions = [
-  { label: 'Relaxed (default)', value: '' },
-  { label: 'Strict', value: 's' },
-];
+const dmarcAlignmentOptions = computed(() => [
+  { label: t('tools.email-record-generator.ui.relaxedDefault'), value: '' },
+  { label: t('tools.email-record-generator.ui.strict'), value: 's' },
+]);
 
 // DMARC policy dropdown
 const dmarcPolMenu = ref(false);
@@ -94,7 +96,7 @@ const dmarcPolRef = ref<HTMLElement | null>(null);
 onClickOutside(dmarcPolRef, () => {
   dmarcPolMenu.value = false;
 });
-const dmarcPolLabel = computed(() => dmarcPolicyOptions.find(o => o.value === dmarcPolicy.value)?.label ?? dmarcPolicy.value);
+const dmarcPolLabel = computed(() => dmarcPolicyOptions.value.find(o => o.value === dmarcPolicy.value)?.label ?? dmarcPolicy.value);
 
 // DMARC subdomain policy dropdown
 const dmarcSpMenu = ref(false);
@@ -102,8 +104,8 @@ const dmarcSpRef = ref<HTMLElement | null>(null);
 onClickOutside(dmarcSpRef, () => {
   dmarcSpMenu.value = false;
 });
-const dmarcSpOptions = computed(() => [{ label: 'Same as main policy', value: '' }, ...dmarcPolicyOptions]);
-const dmarcSpLabel = computed(() => dmarcSpOptions.value.find(o => o.value === dmarcSubdomainPolicy.value)?.label ?? 'Same as main policy');
+const dmarcSpOptions = computed(() => [{ label: t('tools.email-record-generator.ui.sameAsMainPolicy'), value: '' }, ...dmarcPolicyOptions.value]);
+const dmarcSpLabel = computed(() => dmarcSpOptions.value.find(o => o.value === dmarcSubdomainPolicy.value)?.label ?? t('tools.email-record-generator.ui.sameAsMainPolicy'));
 
 const dmarcRecord = computed(() => buildDmarcRecord({
   policy: dmarcPolicy.value,
@@ -141,23 +143,23 @@ const dmarcRecord = computed(() => buildDmarcRecord({
     <!-- ═══ SPF TAB ═══ -->
     <div v-if="activeTab === 'spf'" class="kt-terminal erg-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">SPF RECORD</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.email-record-generator.ui.spfRecordTitle') }}</span>
       </div>
       <!-- Record output -->
       <div class="erg-record-area" @click="copyValue(spfRecord)">
         <div class="erg-record-meta">
-          <span class="erg-record-label">&gt;_ TXT record on your root domain (@)</span>
-          <span class="erg-copy-hint">{{ copiedValue === spfRecord ? '✓ copied' : 'click to copy' }}</span>
+          <span class="erg-record-label">&gt;_ {{ t('tools.email-record-generator.ui.spfRecordLocation') }} (@)</span>
+          <span class="erg-copy-hint">{{ copiedValue === spfRecord ? `✓ ${t('tools.email-record-generator.ui.copied')}` : t('tools.email-record-generator.ui.clickToCopy') }}</span>
         </div>
         <pre class="erg-record-text">{{ spfRecord }}</pre>
         <div v-if="spfLookupCount > 8" class="erg-warn">
-          ⚠ {{ spfLookupCount }} DNS lookups selected — SPF has a 10-lookup limit
+          ⚠ {{ t('tools.email-record-generator.ui.lookupWarning', { count: spfLookupCount }) }}
         </div>
       </div>
 
       <!-- Mail providers -->
       <div class="erg-section-header">
-        MAIL PROVIDERS
+        {{ t('tools.email-record-generator.ui.mailProviders') }}
       </div>
       <div class="erg-pill-grid">
         <button
@@ -174,20 +176,20 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
       <!-- Custom IPs -->
       <div class="erg-section-header">
-        CUSTOM IPs OR RANGES (OPTIONAL)
+        {{ t('tools.email-record-generator.ui.customIps') }}
       </div>
       <div class="erg-input-area">
         <input
           v-model="spfCustomIps"
           class="erg-input"
-          placeholder="e.g. 203.0.113.5, 198.51.100.0/24"
+          :placeholder="`${t('tools.email-record-generator.ui.examplePrefix')} 203.0.113.5, 198.51.100.0/24`"
           spellcheck="false"
         >
       </div>
 
       <!-- Enforcement -->
       <div class="erg-section-header">
-        ENFORCEMENT
+        {{ t('tools.email-record-generator.ui.enforcement') }}
       </div>
       <div ref="spfEnfRef" class="erg-dropdown-area">
         <button
@@ -217,20 +219,20 @@ const dmarcRecord = computed(() => buildDmarcRecord({
     <!-- ═══ DMARC TAB ═══ -->
     <div v-else class="kt-terminal erg-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">DMARC RECORD</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.email-record-generator.ui.dmarcRecordTitle') }}</span>
       </div>
       <!-- Record output -->
       <div class="erg-record-area" @click="copyValue(dmarcRecord)">
         <div class="erg-record-meta">
-          <span class="erg-record-label">&gt;_ TXT record on _dmarc.yourdomain.com</span>
-          <span class="erg-copy-hint">{{ copiedValue === dmarcRecord ? '✓ copied' : 'click to copy' }}</span>
+          <span class="erg-record-label">&gt;_ {{ t('tools.email-record-generator.ui.dmarcRecordLocation') }} _dmarc.yourdomain.com</span>
+          <span class="erg-copy-hint">{{ copiedValue === dmarcRecord ? `✓ ${t('tools.email-record-generator.ui.copied')}` : t('tools.email-record-generator.ui.clickToCopy') }}</span>
         </div>
         <pre class="erg-record-text">{{ dmarcRecord }}</pre>
       </div>
 
       <!-- Policy -->
       <div class="erg-section-header">
-        POLICY
+        {{ t('tools.email-record-generator.ui.policy') }}
       </div>
       <div ref="dmarcPolRef" class="erg-dropdown-area">
         <button
@@ -258,7 +260,7 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
       <!-- Subdomain policy -->
       <div class="erg-section-header">
-        SUBDOMAIN POLICY (OPTIONAL)
+        {{ t('tools.email-record-generator.ui.subdomainPolicy') }}
       </div>
       <div ref="dmarcSpRef" class="erg-dropdown-area">
         <button
@@ -286,7 +288,7 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
       <!-- Percentage -->
       <div class="erg-section-header">
-        POLICY COVERAGE — {{ dmarcPercentage }}%
+        {{ t('tools.email-record-generator.ui.policyCoverage', { percent: dmarcPercentage }) }}
       </div>
       <div class="erg-slider-area">
         <input
@@ -298,13 +300,13 @@ const dmarcRecord = computed(() => buildDmarcRecord({
           class="erg-slider"
         >
         <div class="erg-slider-hint">
-          {{ dmarcPercentage }}% of failing mail will be acted on. Use less than 100% for gradual rollout.
+          {{ t('tools.email-record-generator.ui.coverageHint', { percent: dmarcPercentage }) }}
         </div>
       </div>
 
       <!-- RUA email -->
       <div class="erg-section-header">
-        AGGREGATE REPORT EMAIL (rua)
+        {{ t('tools.email-record-generator.ui.aggregateReportEmail') }}
       </div>
       <div class="erg-input-area">
         <input
@@ -317,7 +319,7 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
       <!-- RUF email -->
       <div class="erg-section-header">
-        FORENSIC REPORT EMAIL (ruf, optional)
+        {{ t('tools.email-record-generator.ui.forensicReportEmail') }}
       </div>
       <div class="erg-input-area">
         <input
@@ -330,7 +332,7 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
       <!-- DKIM alignment -->
       <div class="erg-section-header">
-        DKIM ALIGNMENT
+        {{ t('tools.email-record-generator.ui.dkimAlignment') }}
       </div>
       <div class="erg-pill-row">
         <button
@@ -347,7 +349,7 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
       <!-- SPF alignment -->
       <div class="erg-section-header">
-        SPF ALIGNMENT
+        {{ t('tools.email-record-generator.ui.spfAlignment') }}
       </div>
       <div class="erg-pill-row erg-pill-row-last">
         <button

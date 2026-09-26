@@ -2,6 +2,8 @@
 import { AES, enc, Rabbit, RC4, TripleDES } from 'crypto-js';
 import { computedCatch } from '@/composable/computed/catchedComputed';
 
+const { t } = useI18n();
+
 const algos = { AES, TripleDES, Rabbit, RC4 };
 const algoOptions = Object.keys(algos) as (keyof typeof algos)[];
 
@@ -17,7 +19,7 @@ const decryptAlgo = ref<keyof typeof algos>('AES');
 const decryptSecret = ref('my secret key');
 const [decryptOutput, decryptError] = computedCatch(
   () => algos[decryptAlgo.value].decrypt(decryptInput.value, decryptSecret.value).toString(enc.Utf8),
-  { defaultValue: '', defaultErrorMessage: 'Unable to decrypt your text' },
+  { defaultValue: '', defaultErrorMessage: t('tools.encryption.ui.decryptError') },
 );
 
 const cypherAlgoOpen = ref(false);
@@ -38,33 +40,33 @@ function closeOnBlur(set: (val: boolean) => void) {
     <!-- Encrypt panel -->
     <div class="en-panel kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">ENCRYPT</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.encryption.ui.encryptTitle') }}</span>
       </div>
       <div class="en-body">
         <div class="en-row">
           <div class="en-field en-field-grow">
-            <span class="en-label">YOUR TEXT</span>
+            <span class="en-label">{{ t('tools.encryption.ui.yourText') }}</span>
             <textarea
               v-model="cypherInput"
               class="en-textarea"
               rows="5"
-              placeholder="The string to encrypt"
+              :placeholder="t('tools.encryption.ui.encryptPlaceholder')"
               spellcheck="false"
             />
           </div>
           <div class="en-field-col">
             <div class="en-field">
-              <span class="en-label">YOUR SECRET KEY</span>
+              <span class="en-label">{{ t('tools.encryption.ui.yourSecretKey') }}</span>
               <input
                 v-model="cypherSecret"
                 class="en-input"
                 type="text"
-                placeholder="Secret key..."
+                :placeholder="t('tools.encryption.ui.secretKeyPlaceholder')"
                 spellcheck="false"
               >
             </div>
             <div class="en-field">
-              <span class="en-label">ALGORITHM</span>
+              <span class="en-label">{{ t('tools.encryption.ui.algorithm') }}</span>
               <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => cypherAlgoOpen = v)($event)">
                 <button type="button" class="en-dropdown-trigger" @click="cypherAlgoOpen = !cypherAlgoOpen">
                   <span>{{ cypherAlgo }}</span>
@@ -84,7 +86,7 @@ function closeOnBlur(set: (val: boolean) => void) {
           </div>
         </div>
         <div class="en-field">
-          <span class="en-label">ENCRYPTED OUTPUT</span>
+          <span class="en-label">{{ t('tools.encryption.ui.encryptedOutput') }}</span>
           <textarea class="en-textarea en-textarea-output" :value="cypherOutput" rows="3" readonly spellcheck="false" />
         </div>
       </div>
@@ -93,33 +95,33 @@ function closeOnBlur(set: (val: boolean) => void) {
     <!-- Decrypt panel -->
     <div class="en-panel kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">DECRYPT</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.encryption.ui.decryptTitle') }}</span>
       </div>
       <div class="en-body">
         <div class="en-row">
           <div class="en-field en-field-grow">
-            <span class="en-label">YOUR ENCRYPTED TEXT</span>
+            <span class="en-label">{{ t('tools.encryption.ui.yourEncryptedText') }}</span>
             <textarea
               v-model="decryptInput"
               class="en-textarea"
               rows="5"
-              placeholder="The ciphertext to decrypt"
+              :placeholder="t('tools.encryption.ui.decryptPlaceholder')"
               spellcheck="false"
             />
           </div>
           <div class="en-field-col">
             <div class="en-field">
-              <span class="en-label">YOUR SECRET KEY</span>
+              <span class="en-label">{{ t('tools.encryption.ui.yourSecretKey') }}</span>
               <input
                 v-model="decryptSecret"
                 class="en-input"
                 type="text"
-                placeholder="Secret key..."
+                :placeholder="t('tools.encryption.ui.secretKeyPlaceholder')"
                 spellcheck="false"
               >
             </div>
             <div class="en-field">
-              <span class="en-label">ALGORITHM</span>
+              <span class="en-label">{{ t('tools.encryption.ui.algorithm') }}</span>
               <div class="en-dropdown" tabindex="0" @blur="closeOnBlur(v => decryptAlgoOpen = v)($event)">
                 <button type="button" class="en-dropdown-trigger" @click="decryptAlgoOpen = !decryptAlgoOpen">
                   <span>{{ decryptAlgo }}</span>
@@ -143,7 +145,7 @@ function closeOnBlur(set: (val: boolean) => void) {
           <span>{{ decryptError }}</span>
         </div>
         <div v-else class="en-field">
-          <span class="en-label">DECRYPTED OUTPUT</span>
+          <span class="en-label">{{ t('tools.encryption.ui.decryptedOutput') }}</span>
           <textarea class="en-textarea en-textarea-output" :value="decryptOutput" rows="3" readonly spellcheck="false" />
         </div>
       </div>

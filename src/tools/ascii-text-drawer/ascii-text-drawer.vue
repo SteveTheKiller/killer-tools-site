@@ -2,6 +2,8 @@
 import figlet from 'figlet';
 import { useCopy } from '@/composable/copy';
 
+const { t } = useI18n();
+
 const input = ref('Ascii ART');
 const debouncedInput = refDebounced(input, 400);
 const font = useStorage('ascii-text-drawer:font', 'Standard');
@@ -151,13 +153,13 @@ function onSearchKeydown(e: KeyboardEvent) {
       <!-- Text input -->
       <div class="aa-input-card kt-terminal">
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">YOUR TEXT</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.ascii-text-drawer.ui.yourText') }}</span>
         </div>
         <div class="aa-input-area">
           <textarea
             v-model="input"
             class="aa-textarea"
-            placeholder="Your text to draw"
+            :placeholder="t('tools.ascii-text-drawer.ui.textPlaceholder')"
             rows="6"
             spellcheck="false"
             autofocus
@@ -168,12 +170,12 @@ function onSearchKeydown(e: KeyboardEvent) {
       <!-- Controls -->
       <div class="aa-controls kt-terminal">
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">OPTIONS</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.ascii-text-drawer.ui.options') }}</span>
         </div>
         <div class="aa-controls-body">
           <!-- Font searchable dropdown -->
           <div class="aa-field aa-field-grow">
-            <span class="aa-label">FONT</span>
+            <span class="aa-label">{{ t('tools.ascii-text-drawer.ui.font') }}</span>
             <div class="aa-font-dropdown" tabindex="0" @blur="onFontBlur($event)">
               <button ref="fontTriggerBtn" type="button" class="aa-dropdown-trigger" @click="openFontDropdown()" @keydown="onTriggerKeydown" @wheel.prevent="onTriggerWheel">
                 <span>{{ font }}</span>
@@ -186,7 +188,7 @@ function onSearchKeydown(e: KeyboardEvent) {
                     ref="fontSearchInput"
                     v-model="fontSearch"
                     class="aa-search-input"
-                    placeholder="Search fonts..."
+                    :placeholder="t('tools.ascii-text-drawer.ui.searchFonts')"
                     type="text"
                     spellcheck="false"
                     @keydown="onSearchKeydown"
@@ -202,7 +204,7 @@ function onSearchKeydown(e: KeyboardEvent) {
                     {{ f }}
                   </button>
                   <div v-if="filteredFonts.length === 0" class="aa-no-results">
-                    No fonts match
+                    {{ t('tools.ascii-text-drawer.ui.noFontsMatch') }}
                   </div>
                 </div>
               </div>
@@ -211,7 +213,7 @@ function onSearchKeydown(e: KeyboardEvent) {
 
           <!-- Width stepper -->
           <div class="aa-field">
-            <span class="aa-label">WIDTH</span>
+            <span class="aa-label">{{ t('tools.ascii-text-drawer.ui.width') }}</span>
             <div class="aa-stepper">
               <button class="aa-step-btn" :disabled="width <= 0" @click="width = Math.max(0, width - 5)">
                 −
@@ -231,33 +233,33 @@ function onSearchKeydown(e: KeyboardEvent) {
       <!-- Loading -->
       <div v-if="processing" class="aa-output-wrap kt-terminal">
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">ASCII ART OUTPUT</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.ascii-text-drawer.ui.output') }}</span>
         </div>
         <div class="aa-loading">
           <span class="aa-loading-dot" />
-          Loading font...
+          {{ t('tools.ascii-text-drawer.ui.loadingFont') }}
         </div>
       </div>
 
       <!-- Error -->
       <div v-else-if="errored" class="aa-output-wrap kt-terminal">
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">ASCII ART OUTPUT</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.ascii-text-drawer.ui.output') }}</span>
         </div>
         <div class="aa-error">
           <icon-mdi-alert-circle />
-          Current settings resulted in an error.
+          {{ t('tools.ascii-text-drawer.ui.error') }}
         </div>
       </div>
 
       <!-- Output -->
       <div v-else class="aa-output-wrap kt-terminal">
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">ASCII ART OUTPUT</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.ascii-text-drawer.ui.output') }}</span>
           <button class="aa-copy-btn" @click="copy()">
             <icon-mdi-check v-if="copied" />
             <icon-mdi-content-copy v-else />
-            {{ copied ? 'Copied!' : 'Copy' }}
+            {{ copied ? t('tools.ascii-text-drawer.ui.copied') : t('tools.ascii-text-drawer.ui.copy') }}
           </button>
         </div>
         <div class="aa-pre-scroll">

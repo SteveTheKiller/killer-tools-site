@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useStyleStore } from '@/stores/style.store';
 
+const { t } = useI18n();
 const styleStore = useStyleStore();
 const { isMenuCollapsed, isSmallScreen } = toRefs(styleStore);
 const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static'));
@@ -26,7 +27,7 @@ function popEgg() {
     document.body.appendChild(d);
     setTimeout(() => d.remove(), (dur + 0.8) * 1000);
   }
-  eggMsg.value = '80 tools. Zero subscriptions. One spiteful field tech.';
+  eggMsg.value = t('layouts.menuLayout.eggMessage');
   eggShown.value = true;
   if (eggTimer) clearTimeout(eggTimer);
   eggTimer = setTimeout(() => { eggShown.value = false; }, 2800);
@@ -66,7 +67,7 @@ function popEgg() {
     <!-- Statusbar: offset right by the sider width so the footer never sits
          under the sidebar (the sider runs full height to own the corner) -->
     <div class="kt-statusbar" :style="{ marginLeft: footerLeft }">
-      <span class="sb-right"><span class="sb-site">killertools.net</span><span class="sb-sep">&middot;</span><span class="kt-ver" title="click me" @click="popEgg">v2.0</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">Source on Github</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a></span>
+      <span class="sb-right"><span class="sb-site">killertools.net</span><span class="sb-sep">&middot;</span><span class="kt-ver" :title="t('layouts.menuLayout.clickMe')" @click="popEgg">v2.0</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('layouts.menuLayout.sourceOnGithub') }}</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a></span>
       <div class="kt-grip" aria-hidden="true" />
     </div>
     <Transition name="kt-egg-fade">

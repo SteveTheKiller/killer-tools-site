@@ -5,6 +5,8 @@ import _ from 'lodash';
 import { useCopy } from '@/composable/copy';
 import { image, ogSchemas, twitter, website } from './og-schemas';
 
+const { t } = useI18n();
+
 const metadata = ref<{ type: string, [k: string]: any }>({
   'type': 'website',
   'twitter:card': 'summary_large_image',
@@ -41,7 +43,7 @@ const metaTags = computed(() => {
   return generateMeta({ ...otherMeta, twitter: twitterMeta }, { generateTwitterCompatibleMeta: true });
 });
 
-const { copy, isJustCopied: copied } = useCopy({ source: metaTags, text: 'Meta tags copied!' });
+const { copy, isJustCopied: copied } = useCopy({ source: metaTags, text: t('tools.meta-tag-generator.ui.copiedSuccess') });
 
 // ── HTML syntax highlighter ──
 function escapeHtml(s: string) {
@@ -189,12 +191,12 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
   <!-- Right: output panel -->
   <div class="mg-output-wrap kt-terminal">
     <div class="kt-terminal-bar mg-output-bar">
-      <span class="kt-terminal-bar-title">YOUR META TAGS</span>
+      <span class="kt-terminal-bar-title">{{ t('tools.meta-tag-generator.ui.outputTitle') }}</span>
       <button type="button" class="mg-copy-btn" @click="copy()">
-        <span v-if="copied">✓ Copied</span>
+        <span v-if="copied">{{ t('tools.meta-tag-generator.ui.copiedLabel') }}</span>
         <template v-else>
           <icon-mdi-content-copy />
-          Copy
+          {{ t('tools.meta-tag-generator.ui.copyButton') }}
         </template>
       </button>
     </div>

@@ -9,6 +9,8 @@ import {
   getFullCountryName,
 } from './phone-parser-and-formatter.models';
 
+const { t } = useI18n();
+
 const rawPhone = ref('');
 const defaultCountryCode = ref(getDefaultCountryCode());
 const validation = useValidation({
@@ -16,7 +18,7 @@ const validation = useValidation({
   rules: [
     {
       validator: (value: string) => value === '' || /^[0-9 +\-()]+$/.test(value),
-      message: 'Invalid phone number',
+      message: t('tools.phone-parser-and-formatter.ui.invalidPhoneNumber'),
     },
   ],
 });
@@ -34,26 +36,26 @@ const sections = computed(() => {
 
   return [
     {
-      name: 'Location',
+      name: t('tools.phone-parser-and-formatter.ui.sectionLocation'),
       rows: [
-        { label: 'Country code', value: parsed.country ?? '' },
-        { label: 'Country', value: getFullCountryName(parsed.country) ?? '' },
-        { label: 'Calling code', value: parsed.countryCallingCode ? `+${parsed.countryCallingCode}` : '' },
+        { label: t('tools.phone-parser-and-formatter.ui.countryCode'), value: parsed.country ?? '' },
+        { label: t('tools.phone-parser-and-formatter.ui.country'), value: getFullCountryName(parsed.country) ?? '' },
+        { label: t('tools.phone-parser-and-formatter.ui.callingCode'), value: parsed.countryCallingCode ? `+${parsed.countryCallingCode}` : '' },
       ],
     },
     {
-      name: 'Validation',
+      name: t('tools.phone-parser-and-formatter.ui.sectionValidation'),
       rows: [
-        { label: 'Is valid?', value: parsed.isValid() ? 'Yes' : 'No' },
-        { label: 'Is possible?', value: parsed.isPossible() ? 'Yes' : 'No' },
-        { label: 'Type', value: formatTypeToHumanReadable(parsed.getType()) ?? 'Unknown' },
+        { label: t('tools.phone-parser-and-formatter.ui.isValid'), value: parsed.isValid() ? t('tools.phone-parser-and-formatter.ui.yes') : t('tools.phone-parser-and-formatter.ui.no') },
+        { label: t('tools.phone-parser-and-formatter.ui.isPossible'), value: parsed.isPossible() ? t('tools.phone-parser-and-formatter.ui.yes') : t('tools.phone-parser-and-formatter.ui.no') },
+        { label: t('tools.phone-parser-and-formatter.ui.type'), value: formatTypeToHumanReadable(parsed.getType()) ?? t('tools.phone-parser-and-formatter.ui.unknown') },
       ],
     },
     {
-      name: 'Formats',
+      name: t('tools.phone-parser-and-formatter.ui.sectionFormats'),
       rows: [
-        { label: 'International', value: parsed.formatInternational() },
-        { label: 'National', value: parsed.formatNational() },
+        { label: t('tools.phone-parser-and-formatter.ui.international'), value: parsed.formatInternational() },
+        { label: t('tools.phone-parser-and-formatter.ui.national'), value: parsed.formatNational() },
         { label: 'E.164', value: parsed.format('E.164') },
         { label: 'RFC3966', value: parsed.format('RFC3966') },
       ],
@@ -61,10 +63,10 @@ const sections = computed(() => {
   ];
 });
 
-const countriesOptions = getCountries().map(code => ({
+const countriesOptions = computed(() => getCountries().map(code => ({
   label: `${lookup.byIso(code)?.country || code} (+${getCountryCallingCode(code)})`,
   value: code,
-}));
+})));
 
 const copiedKey = ref<string | null>(null);
 async function copyValue(key: string, value: string) {
@@ -87,14 +89,14 @@ async function copyValue(key: string, value: string) {
       <!-- Country selector + input -->
       <div class="ph-input-area">
         <div class="ph-country-row">
-          <label class="ph-input-label">Default country</label>
+          <label class="ph-input-label">{{ t('tools.phone-parser-and-formatter.ui.defaultCountry') }}</label>
           <c-select
             v-model:value="defaultCountryCode"
             :options="countriesOptions"
             searchable
           />
         </div>
-        <label class="ph-input-label">Phone number</label>
+        <label class="ph-input-label">{{ t('tools.phone-parser-and-formatter.ui.phoneNumber') }}</label>
         <c-input-text
           v-model:value="rawPhone"
           :validation-status="validation.isValid ? undefined : 'error'"
@@ -132,7 +134,7 @@ async function copyValue(key: string, value: string) {
 
       <template v-else-if="validation.isValid && !rawPhone.trim()">
         <div class="ph-empty-state">
-          <span class="ph-fallback">Enter a phone number above to parse</span>
+          <span class="ph-fallback">{{ t('tools.phone-parser-and-formatter.ui.emptyStatePrompt') }}</span>
         </div>
       </template>
     </div>

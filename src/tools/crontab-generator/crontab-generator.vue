@@ -8,6 +8,7 @@ function isCronValid(v: string) {
 }
 
 const styleStore = useStyleStore();
+const { t } = useI18n();
 
 const cron = ref('40 * * * *');
 const cronstrueConfig = reactive({
@@ -17,32 +18,32 @@ const cronstrueConfig = reactive({
   throwExceptionOnParseError: true,
 });
 
-const symbols = [
-  { symbol: '*', meaning: 'Any value', example: '* * * *', equivalent: 'Every minute' },
-  { symbol: '-', meaning: 'Range of values', example: '1-10 * * *', equivalent: 'Minutes 1 through 10' },
-  { symbol: ',', meaning: 'List of values', example: '1,10 * * *', equivalent: 'At minutes 1 and 10' },
-  { symbol: '/', meaning: 'Step values', example: '*/10 * * *', equivalent: 'Every 10 minutes' },
-];
+const symbols = computed(() => [
+  { symbol: '*', meaning: t('tools.crontab-generator.ui.symbolAnyValue'), example: '* * * *', equivalent: t('tools.crontab-generator.ui.symbolEveryMinute') },
+  { symbol: '-', meaning: t('tools.crontab-generator.ui.symbolRange'), example: '1-10 * * *', equivalent: t('tools.crontab-generator.ui.symbolRangeEquivalent') },
+  { symbol: ',', meaning: t('tools.crontab-generator.ui.symbolList'), example: '1,10 * * *', equivalent: t('tools.crontab-generator.ui.symbolListEquivalent') },
+  { symbol: '/', meaning: t('tools.crontab-generator.ui.symbolStep'), example: '*/10 * * *', equivalent: t('tools.crontab-generator.ui.symbolStepEquivalent') },
+]);
 
-const aliases = [
-  { alias: '@yearly / @annually', equivalent: '0 0 1 1 *', meaning: 'Once a year (Jan 1, midnight)' },
-  { alias: '@monthly', equivalent: '0 0 1 * *', meaning: 'First of each month, midnight' },
-  { alias: '@weekly', equivalent: '0 0 * * 0', meaning: 'Sunday, midnight' },
-  { alias: '@daily / @midnight', equivalent: '0 0 * * *', meaning: 'Every day at midnight' },
-  { alias: '@hourly', equivalent: '0 * * * *', meaning: 'Every hour, on the hour' },
-  { alias: '@reboot', equivalent: '(on startup)', meaning: 'Run once at startup' },
-];
+const aliases = computed(() => [
+  { alias: '@yearly / @annually', equivalent: '0 0 1 1 *', meaning: t('tools.crontab-generator.ui.aliasYearly') },
+  { alias: '@monthly', equivalent: '0 0 1 * *', meaning: t('tools.crontab-generator.ui.aliasMonthly') },
+  { alias: '@weekly', equivalent: '0 0 * * 0', meaning: t('tools.crontab-generator.ui.aliasWeekly') },
+  { alias: '@daily / @midnight', equivalent: '0 0 * * *', meaning: t('tools.crontab-generator.ui.aliasDaily') },
+  { alias: '@hourly', equivalent: '0 * * * *', meaning: t('tools.crontab-generator.ui.aliasHourly') },
+  { alias: '@reboot', equivalent: t('tools.crontab-generator.ui.aliasRebootEquivalent'), meaning: t('tools.crontab-generator.ui.aliasReboot') },
+]);
 
 // Mobile-friendly combined list (used when small screen)
-const helpers = [
-  ...symbols,
-  ...aliases.map(a => ({
+const helpers = computed(() => [
+  ...symbols.value,
+  ...aliases.value.map(a => ({
     symbol: a.alias,
     meaning: a.meaning,
     example: a.alias.split(' / ')[0],
     equivalent: a.equivalent,
   })),
-];
+]);
 
 const cronString = computed(() => {
   if (isCronValid(cron.value)) {
@@ -51,12 +52,12 @@ const cronString = computed(() => {
   return ' ';
 });
 
-const cronValidationRules = [
+const cronValidationRules = computed(() => [
   {
     validator: (value: string) => isCronValid(value),
-    message: 'This cron is invalid',
+    message: t('tools.crontab-generator.ui.invalidCron'),
   },
-];
+]);
 </script>
 
 <template>
@@ -88,7 +89,7 @@ const cronValidationRules = [
         :class="{ 'toggle-pill-active': cronstrueConfig.use24HourTimeFormat }"
         @click="cronstrueConfig.use24HourTimeFormat = !cronstrueConfig.use24HourTimeFormat"
       >
-        <span class="toggle-dot" />24-hour time
+        <span class="toggle-dot" />{{ t('tools.crontab-generator.ui.use24HourTime') }}
       </button>
       <button
         type="button"
@@ -96,7 +97,7 @@ const cronValidationRules = [
         :class="{ 'toggle-pill-active': cronstrueConfig.dayOfWeekStartIndexZero }"
         @click="cronstrueConfig.dayOfWeekStartIndexZero = !cronstrueConfig.dayOfWeekStartIndexZero"
       >
-        <span class="toggle-dot" />Days start at 0
+        <span class="toggle-dot" />{{ t('tools.crontab-generator.ui.daysStartAtZero') }}
       </button>
     </div>
   </c-card>
@@ -114,10 +115,10 @@ const cronValidationRules = [
 * * * * * * command</pre>
 
       <c-card v-for="{ symbol, meaning, example, equivalent } in helpers" :key="symbol" mb-3 important:border-none>
-        <div>Symbol: <strong>{{ symbol }}</strong></div>
-        <div>Meaning: <strong>{{ meaning }}</strong></div>
-        <div>Example: <strong><code>{{ example }}</code></strong></div>
-        <div>Equivalent: <strong>{{ equivalent }}</strong></div>
+        <div>{{ t('tools.crontab-generator.ui.labelSymbol') }} <strong>{{ symbol }}</strong></div>
+        <div>{{ t('tools.crontab-generator.ui.labelMeaning') }} <strong>{{ meaning }}</strong></div>
+        <div>{{ t('tools.crontab-generator.ui.labelExample') }} <strong><code>{{ example }}</code></strong></div>
+        <div>{{ t('tools.crontab-generator.ui.labelEquivalent') }} <strong>{{ equivalent }}</strong></div>
       </c-card>
     </div>
 
@@ -135,7 +136,7 @@ const cronValidationRules = [
       <div class="cheatsheet-cols">
         <div class="cheatsheet-section">
           <div class="section-label">
-            Symbols
+            {{ t('tools.crontab-generator.ui.symbols') }}
           </div>
           <table class="ref-table">
             <tr v-for="row in symbols" :key="row.symbol">
@@ -154,7 +155,7 @@ const cronValidationRules = [
 
         <div class="cheatsheet-section">
           <div class="section-label">
-            @ Aliases
+            @ {{ t('tools.crontab-generator.ui.aliases') }}
           </div>
           <table class="ref-table">
             <tr v-for="row in aliases" :key="row.alias">

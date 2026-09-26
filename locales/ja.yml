@@ -1,28 +1,28 @@
 home:
   categories:
     newestTools: 新着ツール
-    favoriteTools: 'お気に入りのツール'
-    allTools: 'すべてのツール'
-    favoritesDndToolTip: 'ドラッグ＆ドロップでお気に入りを並べ替えます'
-  subtitle: '開発者のための便利ツール集'
-  toggleMenu: 'メニューを切り替え'
+    favoriteTools: お気に入りのツール
+    allTools: すべてのツール
+    favoritesDndToolTip: ドラッグ＆ドロップでお気に入りを並べ替えます
+  subtitle: 開発者のための便利ツール集
+  toggleMenu: メニューを切り替え
   home: ホーム
-  uiLib: 'UI Lib'
-  support: 'killer-toolsの開発を支援する'
-  buyMeACoffee: 'コーヒーをおごる'
+  uiLib: UI Lib
+  support: killer-toolsの開発を支援する
+  buyMeACoffee: コーヒーをおごる
   follow:
-    title: 'killer-toolsが気に入りましたか？'
-    p1: 'こちらにスターをお願いします：'
-    githubRepository: 'StevetheKillerのGitHubリポジトリ'
-    thankYou: 'ありがとうございます！'
+    title: killer-toolsが気に入りましたか？
+    p1: こちらにスターをお願いします：
+    githubRepository: StevetheKillerのGitHubリポジトリ
+    thankYou: ありがとうございます！
   nav:
-    github: 'GitHubリポジトリ'
-    githubRepository: 'killer-toolsのGitHubリポジトリ'
-    about: 'killer-toolsについて'
-    aboutLabel: '概要'
-    darkMode: 'ダークモード'
-    lightMode: 'ライトモード'
-    mode: 'ダーク/ライトモードを切り替え'
+    github: GitHubリポジトリ
+    githubRepository: killer-toolsのGitHubリポジトリ
+    about: killer-toolsについて
+    aboutLabel: 概要
+    darkMode: ダークモード
+    lightMode: ライトモード
+    mode: ダーク/ライトモードを切り替え
 about:
   content: |
     # killer-tools
@@ -38,26 +38,25 @@ about:
     ## ほしいツールがない？バグを見つけた？
 
     GitHubの[issuesセクション](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose)から機能リクエストやバグ報告を送ってください。ちゃんと読んでいます。
-
 404:
-  notFound: '404 ページが見つかりません'
-  sorry: '申し訳ありません、このページは存在しないようです'
-  maybe: 'キャッシュが悪さをしているのかもしれません。強制リロードを試してみてください'
-  backHome: 'ホームに戻る'
+  notFound: 404 ページが見つかりません
+  sorry: 申し訳ありません、このページは存在しないようです
+  maybe: キャッシュが悪さをしているのかもしれません。強制リロードを試してみてください
+  backHome: ホームに戻る
 favoriteButton:
-  remove: 'お気に入りから削除'
-  add: 'お気に入りに追加'
+  remove: お気に入りから削除
+  add: お気に入りに追加
 toolCard:
   new: 新着
 search:
   label: 検索
 tools:
   categories:
-    favorite-tools: 'お気に入りのツール'
+    favorite-tools: お気に入りのツール
     crypto: 暗号
     conversion: 変換
     web: Web
-    images and videos: '画像と動画'
+    images and videos: 画像と動画
     development: 開発
     network: ネットワーク
     math: 数学
@@ -65,368 +64,1724 @@ tools:
     text: テキスト
     data: データ
     windows: Windows
-    killer apps: 'Killer Apps'
+    killer apps: Killer Apps
     photography: 写真
-
   password-strength-analyser:
     title: パスワード強度チェッカー
     description: クライアントサイドのみで動作するこのツールで、パスワードの強度を判定し、解読にかかる時間を推定します。
-
   password-generator:
     title: パスワード生成
     description: 強力なパスワード、ダイスウェアのパスフレーズ、発音可能な文字列、hex/Base64/UUIDトークンを生成します。MSP向けプリセット（ローカル管理者、サービスアカウント、Wi-Fi PSK、PIN）、紛らわしい文字の除外、エントロピーメーター、QRコード、NATOフォネティック読みの表示に対応します。
+    ui:
+      terminal:
+        passwordTitle: パスワード
+        optionsTitle: オプション
+      meta:
+        entropyLabel: 'エントロピー:'
+        bits: ビット
+        crackLabel: '解読時間:'
+      actions:
+        copy: コピー
+        refresh: 更新
+      section:
+        preset: プリセット
+        mode: モード
+        format: 形式
+        length: 長さ ({length})
+        wordCount: 単語数 ({count})
+        separator: 区切り文字
+        characterClasses: 文字種
+        options: オプション
+      charClass:
+        uppercase: 大文字
+        lowercase: 小文字
+        numbers: 数字
+        symbols: 記号
+      option:
+        excludeAmbiguous: 紛らわしい文字を除外
+        requireOneOfEach: 各種類を1文字以上含める
+        capitalizeWords: 単語の先頭を大文字にする
+        appendNumber: 2桁の数字を追加
+      mode:
+        random: ランダム
+        passphrase: パスフレーズ
+        pronounceable: 発音しやすい
+        format: 形式
+      format:
+        plain: プレーン
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: なし
+      qr:
+        caption: スキャンしてコピー
+      phonetic:
+        title: フォネティック
+      bulk:
+        generateLabel: 生成
+        single: 単一
+        atOnce: '{n}件まとめて'
+        passwordsTitle: '{count}件のパスワード'
+        copyAll: すべてコピー
+      toast:
+        passwordCopied: パスワードをクリップボードにコピーしました
+        passwordsCopied: パスワードをクリップボードにコピーしました
+        phoneticCopied: フォネティック表記をコピーしました
   percentage-calculator:
     title: パーセント計算ツール
     description: ある値から別の値へのパーセンテージや、パーセンテージから値を簡単に計算します。
-
+    ui:
+      whatIsXPercentOfYTitle: YのX%はいくつ
+      whatIsLabel: いくつが
+      percentOfLabel: '% は'
+      resultPlaceholder: 結果
+      xIsWhatPercentOfYTitle: XはYの何パーセント
+      isWhatPercentOfLabel: は何%か
+      percentageChangeTitle: 増減率
+      fromLabel: 元の値
+      toLabel: から
   svg-placeholder-generator:
     title: SVGプレースホルダー生成
     description: アプリケーションでプレースホルダーとして使えるSVG画像を生成します。
-
+    ui:
+      widthLabel: 幅 (px)
+      backgroundLabel: 背景
+      heightLabel: 高さ (px)
+      textColorLabel: 文字色
+      fontSizeLabel: フォントサイズ
+      customTextLabel: カスタムテキスト
+      customTextPlaceholder: '初期値: {size}'
+      useExactSizeToggle: 正確なサイズを使用
+      svgHtmlElementLabel: SVG HTML要素
+      svgBase64Label: SVG（BASE64）
+      copySvgButton: svgをコピー
+      copyBase64Button: base64をコピー
+      downloadSvgButton: svgをダウンロード
+      previewLabel: プレビュー
+      svgPreviewAlt: SVGプレビュー
   json-to-csv:
     title: JSON→CSV変換
     description: ヘッダーを自動検出してJSONをCSVに変換します。
-
+    ui:
+      invalidJson: 指定されたJSONは無効です。
+      yourRawJson: 元のJSON
+      pasteRawJsonPlaceholder: 元のJSONをここに貼り付けてください...
+      csvOutputLabel: JSONのCSVバージョン
   camera-recorder:
     title: カメラレコーダー
     description: ウェブカメラやカメラで写真の撮影や動画の録画を行います。
-
+    ui:
+      selectCamera: カメラを選択
+      selectMicrophone: マイクを選択
+      notSupported: お使いのブラウザはカメラ録画に対応していません。
+      accessRequired: カメラとマイクへのアクセスが必要です。
+      permissionBlocked: 許可がブロックされました。ブラウザのアドレスバーの鍵アイコンから手動でアクセスを許可してください。
+      grantPermission: 許可する
+      video: VIDEO
+      audio: AUDIO
+      startWebcam: ウェブカメラを開始
+      paused: 一時停止中
+      rec: REC
+      screenshot: スクリーンショット
+      record: 録画
+      pause: 一時停止
+      resume: 再開
+      stop: 停止
+      recordingNotSupported: このブラウザでは録画に対応していません
+      captures: キャプチャ ({count})
+      clearAll: すべて削除
+      screenshotAlt: スクリーンショット
+      download: ダウンロード
+      delete: 削除
   reciprocity-calculator:
     title: 相反則不軌計算ツール
     description: シュワルツシルトのべき乗則を使い、40種類以上の銀塩フィルムについて補正済みの長時間露出を計算します。白黒、カラーネガ、リバーサルフィルムに対応します。
-
+    ui:
+      barReciprocity: 相反則計算機
+      barCorrected: 補正後の露光
+      fieldFilmStock: フィルム
+      typeBw: B&W
+      typeColorNeg: カラーネガ
+      typeSlide: スライド / E6
+      noFailureUpTo: '{seconds}秒までは相反則不軌なし'
+      sourceManufacturer: メーカーデータ
+      sourceCommunity: コミュニティデータ
+      fieldMeteredExposure: 測光露光値
+      unitSeconds: 秒
+      noFailureMessage: 補正は不要です。このフィルムはこの露光時間では相反則不軌が発生しません。
+      copyDone: ✓ コピーしました
+      copySeconds: 秒数をコピー
+      devReduce10: シャドー部の濃度上昇を補うため、現像を約10%減らすことを検討してください。
+      devReduce1015: 現像を10〜15%減らすことをお勧めします。
+      devReduce1520: 現像を15〜20%減らすことをお勧めします。
+      devReduce2030: 非常に長い露光の場合、現像を20〜30%減らすことをお勧めします。
+      colorShiftWarning: 'カラーフィルム: この露光時間では色かぶりが予想されます。'
+      colorShiftSlide: スライドフィルムは現像後の補正が難しいため、撮影時のCCフィルター使用をお勧めします。
+      colorShiftNeg: カラーネガは許容範囲が広く、プリントやスキャン時に補正が可能です。
   nd-filter-calculator:
     title: NDフィルター計算ツール
     description: NDフィルター使用時の補正シャッタースピードを計算します。一般的なND濃度すべてとカスタム段数値に対応します。
-
+    ui:
+      titleInputs: NDフィルター計算
+      baseShutterSpeed: 基準シャッタースピード（フィルターなし）
+      dragOrClick: ドラッグまたはクリック
+      custom: カスタム
+      secPlaceholder: 秒
+      ndFilter: NDフィルター
+      stopOne: '{count}段'
+      stopMany: '{count}段'
+      enterStops: 段数を入力
+      stopsPlaceholder: 段
+      titleResult: 補正後の露出
+      copied: コピーしました
+      copySeconds: 秒数をコピー
+      longExposureAlert: 長時間露光です。バルブモードの使用を検討してください。
+      stackingFilters: フィルターを重ねる場合は段数を合計
+      legendT1: 基準シャッタースピード（フィルターなし）
+      legendT2: 補正後のシャッタースピード
+      legendStops: NDフィルターの強さ
   depth-of-field-calculator:
     title: 被写界深度計算ツール
     description: 任意のレンズとセンサーの組み合わせで、近点、遠点、被写界深度全体を計算します。過焦点距離も表示します。
-
+    ui:
+      sensorMedFormat: 中判
+      sensorCustom: カスタム
+      sensorEnterCoc: CoCを入力
+      infinity: 無限遠
+      title: 被写界深度計算機
+      sensorFormat: センサーサイズ
+      cocPlaceholder: 'CoC(mm) 例: 0.029'
+      focalLength: 焦点距離(mm)
+      aperture: 絞り
+      dragOrClick: ドラッグまたはクリック
+      focusDistance: 撮影距離
+      distancePlaceholder: 距離
+      results: 結果
+      hyperfocalDistance: 過焦点距離
+      hyperfocalHint: この距離の半分から無限遠まで最大のシャープネスを得るにはここにピントを合わせます
+      nearLimit: 近点
+      farLimit: 遠点
+      totalDof: 被写界深度の合計
+      beyondHyperfocal: 撮影距離が過焦点距離以上です。遠点は無限遠まで広がります。
+      legendHyperfocal: 過焦点距離
+      legendFocalLength: 焦点距離
+      legendFNumber: F値(絞り)
+      legendCoc: 錯乱円
+      legendFocusDistance: 撮影距離
   exposure-equivalence:
     title: 露出等価換算
     description: 同じ露出になるシャッタースピードをすべての絞り値で確認します。基準のシャッタースピードと絞りを選ぶと、他のすべてのF値で必要な値が分かります。
-
+    ui:
+      titleInputs: 露出換算
+      shutterSpeed: シャッタースピード
+      dragOrClick: ドラッグまたはクリック
+      custom: カスタム
+      secPlaceholder: 秒
+      aperture: 絞り
+      titleResults: 同等露出
+      isoIndependent: 固定ISOであればISOに依存しない
+      highlightedBase: 強調表示された行が基準です
+      legendT1: 基準シャッタースピード
+      legendT2: 換算後のシャッタースピード
+      legendN1: 基準絞り（F値）
+      legendN2: 目標絞り（F値）
   dev-calculator:
     title: フィルム現像計算ツール
     description: 温度補正、増感・減感処理、希釈液の調合を含めた補正済み現像時間を計算します。一般的な白黒現像液とフィルムのデータベースを収録します。
-
+    ui:
+      hasData: データあり
+      noDataGroup: データなし、基準時間を手動で入力
+      colorBelow: '{process}が36°C未満:色ズレと現像不足のおそれ'
+      colorAbove: '{process}が40°C超:かぶりとカラークロスオーバーのリスク'
+      bwBelow: 18°C未満:現像が非常に遅くなります
+      bwAbove: 24°C超:レティキュレーションとかぶりのリスク
+      start: 開始
+      pause: 一時停止
+      resume: 再開
+      calculatorTitle: フィルム現像計算機
+      developer: 現像液
+      dilution: 希釈
+      filmStock: フィルムストック
+      baseTimeAt: '{temp}°Cでの基準時間'
+      noData: データなし
+      overridePlaceholder: 上書き(秒)
+      customBaseActive: カスタム基準時間が有効
+      temperature: '温度:'
+      pushPull: プッシュ/プル
+      tankVolume: タンク容量
+      customMlPlaceholder: カスタムml
+      adjustedTime: 調整後の時間
+      baseTimeTemp: 基準時間({temp}°C)
+      tempAdj: 温度補正({temp})
+      pushStop: '{n}段プッシュ'
+      pushStops: '{n}段プッシュ'
+      pullStop: '{n}段プル'
+      pullStops: '{n}段プル'
+      mixFor: '{volume}ml分を調合'
+      mixDeveloper: 現像液
+      mixWater: 水
+      noDataWarning: '{film} + {developer}のデータがありません。基準時間を手動で入力してください。'
+      pushPullEstimate: プッシュ/プルの時間は目安です。テスト現像をおすすめします。
+      sourceNote: 基準時間はMassive Dev Chartおよびメーカーのデータシートを参照しています。
+      processTimer: プロセスタイマー
+      devComplete: 現像完了
+      devCompleteHint: 吊るして乾燥させ、ネガを楽しんでください。
+      stageOf: ステージ {current} / {total}
+      agitation: 攪拌
+      reset: リセット
+      skip: スキップ
+      stDeveloper: 現像液
+      stBleach: 漂白液
+      stWash: 水洗
+      stFixer: 定着液
+      stWash2: 水洗2
+      stStabilizer: 安定液
+      stFirstDeveloper: 第一現像液
+      stReversalBath: 反転浴
+      stColorDeveloper: 発色現像液
+      stPreBleach: 前漂白
+      stFinalWash: 最終水洗
+      stStopBath: 停止液
+      agC30s10: 最初の30秒は連続、その後30秒ごとに10秒
+      agRun3Full: 流水または3回の完全な交換
+      agGentle: 軽く攪拌するのみ、後のすすぎは不要
+      agC30s5: 最初の30秒は連続、その後30秒ごとに5秒
+      agRun3: 流水または3回の交換
+      agContinuous: 連続
+      ag10per30: 30秒ごとに10秒
+      agRun5: 流水または5回の交換
+      agC60s10: 最初の30秒は連続、その後60秒ごとに10秒
+      agCont60: 60秒間連続
+      ag10per60: 60秒ごとに10秒
+      agRun5Full: 流水または5回の完全な交換
   keycode-info:
     title: キーコード情報
     description: 押したキーのJavaScriptキーコード、コード、位置、修飾キーを確認します。
-
   emoji-picker:
     title: 絵文字ピッカー
     description: 絵文字を簡単にコピー＆ペーストでき、各絵文字のUnicode値とコードポイントを取得します。
-
+    ui:
+      emojiCopied: 絵文字 {emoji} をクリップボードにコピーしました
+      codePointsCopied: コードポイント '{codePoints}' をクリップボードにコピーしました
+      unicodeCopied: Unicode '{unicode}' をクリップボードにコピーしました
+      searchPlaceholder: 絵文字を検索(例:'smile')...
+      noResults: 結果なし
+      searchResult: 検索結果
   color-converter:
     title: カラーコンバーター
     description: 色をさまざまな形式（hex、rgb、hsl、CSSカラー名）の間で変換します。
-
+    ui:
+      color: カラー
+      formats: 形式
   bcrypt:
     title: Bcrypt
     description: bcryptを使って文字列のハッシュ化と照合を行います。bcryptはBlowfish暗号に基づくパスワードハッシュ関数です。
-
+    ui:
+      copiedToClipboard: ハッシュ文字列をクリップボードにコピーしました
+      hashTitle: ハッシュ
+      compareTitle: 比較
+      stringLabel: 文字列
+      stringPlaceholder: bcrypt化する文字列...
+      saltRoundsLabel: ソルトラウンド数
+      outputLabel: 出力
+      copyHash: ハッシュをコピー
+      compareStringPlaceholder: 比較する文字列...
+      hashLabel: ハッシュ
+      compareHashPlaceholder: 比較するハッシュ...
+      matchLabel: 一致
+      'yes': はい
+      'no': いいえ
   crontab-generator:
     title: crontab生成
     description: crontabの検証と生成を行い、cronスケジュールを人間が読める説明で表示します。
-
+    ui:
+      symbolAnyValue: 任意の値
+      symbolEveryMinute: 毎分
+      symbolRange: 値の範囲
+      symbolRangeEquivalent: 1分から10分まで
+      symbolList: 値のリスト
+      symbolListEquivalent: 1分と10分に
+      symbolStep: ステップ値
+      symbolStepEquivalent: 10分ごと
+      aliasYearly: 年に1回（1月1日、深夜0時）
+      aliasMonthly: 毎月1日の深夜0時
+      aliasWeekly: 日曜日の深夜0時
+      aliasDaily: 毎日深夜0時
+      aliasHourly: 毎時0分
+      aliasReboot: 起動時に一度だけ実行
+      aliasRebootEquivalent: （起動時）
+      invalidCron: このcronは無効です
+      use24HourTime: 24時間表示
+      daysStartAtZero: 日は0から始まります
+      labelSymbol: 記号：
+      labelMeaning: 意味：
+      labelExample: 例：
+      labelEquivalent: 相当：
+      symbols: 記号
+      aliases: エイリアス
   http-status-codes:
     title: HTTPステータスコード
     description: すべてのHTTPステータスコードを、その名前と意味とともに一覧表示します。
-
+    ui:
+      searchResults: 検索結果
+      searchPlaceholder: HTTPステータスを検索...
+      copiedTooltip: コピーしました!
+      clickToCopy: クリックしてステータスコードをコピー
+      copiedLabel: コピー済み
   sql-prettify:
     title: SQL整形・フォーマット
     description: SQLクエリをオンラインで整形します（各種SQL方言に対応します）。
-
+    ui:
+      dialectLabel: 方言
+      keywordCaseLabel: キーワードの大文字・小文字
+      indentStyleLabel: インデントのスタイル
+      yourSqlQueryLabel: SQLクエリ
+      sqlQueryPlaceholder: ここにSQLクエリを入力...
+      prettifiedQueryLabel: 整形されたクエリ
+      keywordCaseUpper: 大文字
+      keywordCaseLower: 小文字
+      keywordCasePreserve: 元のまま
+      indentStyleStandard: 標準
+      indentStyleTabularLeft: 左揃え
+      indentStyleTabularRight: 右揃え
   git-memo:
     title: Gitチートシート
     description: 特によく使うGitコマンドとワークフローのクイックリファレンスです。
-
   encryption:
     title: テキストの暗号化/復号
     description: AES、TripleDES、Rabbit、RC4などの暗号アルゴリズムを使って、平文の暗号化と暗号文の復号を行います。
-
+    ui:
+      decryptError: テキストを復号できません
+      encryptTitle: 暗号化
+      decryptTitle: 復号
+      yourText: テキスト
+      yourSecretKey: 秘密鍵
+      algorithm: アルゴリズム
+      encryptedOutput: 暗号化された出力
+      yourEncryptedText: 暗号化されたテキスト
+      decryptedOutput: 復号された出力
+      encryptPlaceholder: 暗号化する文字列
+      decryptPlaceholder: 復号する暗号文
+      secretKeyPlaceholder: 秘密鍵...
   yaml-prettify:
     title: YAML整形・フォーマット
     description: YAML文字列を人間が読みやすい形式に整形します。
-
-
   roman-numeral-converter:
     title: ローマ数字変換
     description: ローマ数字を数値に、数値をローマ数字に変換します。
-
+    ui:
+      converterTitle: コンバーター
+      arabicSideLabel: アラビア数字
+      romanSideLabel: ローマ数字
+      arabicRangeError: '{min}-{max} の範囲で入力してください'
+      invalidRoman: 有効なローマ数字ではありません
+      copied: コピーしました
+      copy: コピー
+      romanCopiedToast: ローマ数字をコピーしました
+      arabicCopiedToast: アラビア数字をコピーしました
   hmac-generator:
     title: HMAC生成
     description: 秘密鍵とお好みのハッシュ関数を使って、ハッシュベースメッセージ認証コード（HMAC）を計算します。
-
+    ui:
+      encodingBinary: 2進数（基数2）
+      encodingHex: 16進数（基数16）
+      copied: HMACをクリップボードにコピーしました
+      plainText: 平文
+      secretKey: 秘密鍵
+      hashingFunction: ハッシュ関数
+      outputEncoding: 出力エンコーディング
+      hmacOutput: HMAC出力
+      plainTextPlaceholder: ハッシュを計算する平文...
+      secretKeyPlaceholder: 秘密鍵を入力してください...
+      clear: クリア
+      copyHmac: HMACをコピー
   bip39-generator:
     title: BIP39パスフレーズ生成
     description: 既存またはランダムなニーモニックからBIP39パスフレーズを生成したり、パスフレーズからニーモニックを取得したりします。
-
+    ui:
+      languageEnglish: 英語
+      languageChineseSimplified: 簡体字中国語
+      languageChineseTraditional: 繁体字中国語
+      languageCzech: チェコ語
+      languageFrench: フランス語
+      languageItalian: イタリア語
+      languageJapanese: 日本語
+      languageKorean: 韓国語
+      languagePortuguese: ポルトガル語
+      languageSpanish: スペイン語
+      entropyLengthError: エントロピー長は16以上32以下で、4の倍数である必要があります
+      entropyHexError: エントロピーは16進数文字列である必要があります
+      invalidMnemonic: 無効なニーモニックです
+      entropyCopied: エントロピーをクリップボードにコピーしました
+      passphraseCopied: パスフレーズをクリップボードにコピーしました
+      languageLabel: 言語
+      entropyHeading: エントロピー(シード)
+      entropyPlaceholder: 16進数エントロピー...
+      regenerate: 再生成
+      copyEntropy: エントロピーをコピー
+      passphraseHeading: パスフレーズ(ニーモニック)
+      passphrasePlaceholder: ニーモニックワード...
+      copyPassphrase: パスフレーズをコピー
   base64-file-converter:
     title: Base64ファイルコンバーター
     description: 文字列、ファイル、画像をBase64表現に変換します。
-
+    ui:
+      copiedToClipboard: Base64文字列をクリップボードにコピーしました
+      base64ToFileTitle: BASE64からファイルへ
+      fileNameLabel: ファイル名
+      fileNamePlaceholder: ダウンロード時のファイル名
+      extensionLabel: 拡張子
+      extensionPlaceholder: 拡張子
+      base64StringLabel: BASE64文字列
+      base64InputPlaceholder: ここにファイルのbase64文字列を入力してください...
+      invalidBase64: 無効なbase64文字列です
+      previewImage: 画像をプレビュー
+      downloadFile: ファイルをダウンロード
+      fileToBase64Title: ファイルからBASE64へ
+      dropHint: ここにファイルをドラッグ&ドロップ、またはクリックして選択
+      fileInBase64Label: BASE64形式のファイル
+      fileOutputPlaceholder: base64形式のファイルがここに表示されます
+      copied: コピーしました!
+      copyBase64: base64をコピー
   base64-string-converter:
     title: Base64文字列エンコーダー/デコーダー
     description: 文字列をBase64表現に手軽にエンコード・デコードします。
-
+    ui:
+      base64CopiedToClipboard: Base64文字列をクリップボードにコピーしました
+      stringCopiedToClipboard: 文字列をクリップボードにコピーしました
+      stringToBase64Title: 文字列からBASE64へ
+      encodingLabel: エンコード方式
+      standard: 標準
+      urlSafe: URLセーフ
+      stringToEncodeLabel: エンコードする文字列
+      stringInputPlaceholder: ここに文字列を入力してください...
+      base64OutputLabel: BASE64出力
+      base64OutputPlaceholder: 入力した文字列のbase64エンコード結果がここに表示されます
+      copied: コピーしました!
+      copyBase64: base64をコピー
+      base64ToStringTitle: BASE64から文字列へ
+      base64ToDecodeLabel: デコードするBASE64文字列
+      base64InputPlaceholder: base64文字列を入力...
+      invalidBase64: 無効なbase64文字列です
+      decodedStringLabel: デコード結果
+      decodedOutputPlaceholder: デコードされた文字列がここに表示されます
+      copyDecodedString: デコード結果をコピー
   math-evaluator:
     title: 数式評価ツール
     description: 数式を評価する計算機です。sqrt、cos、sin、absなどの関数が使えます。
-
+    ui:
+      placeholder: '数式を入力(例: 2*sqrt(6) )...'
+      result: 結果
   url-parser:
     title: URLパーサー
     description: URLを個々の構成要素（プロトコル、オリジン、パラメータ、ポート、ユーザー名とパスワードなど）に分解します。
-
+    ui:
+      sectionHost: ホスト
+      protocol: プロトコル
+      hostname: ホスト名
+      port: ポート
+      sectionAuthentication: 認証
+      username: ユーザー名
+      password: パスワード
+      sectionPath: パス
+      pathname: パス名
+      search: クエリ文字列
+      hash: ハッシュ
+      urlTitle: URL
+      invalidUrl: 無効なURLです
+      params: パラメータ
+      emptyHint: 上にURLを入力して解析してください
   phone-parser-and-formatter:
     title: 電話番号パーサー
     description: 電話番号の解析とフォーマットを行います。国の判定と検証を行い、国際、国内、E.164、RFC3966の各形式で表示します。
-
+    ui:
+      invalidPhoneNumber: 無効な電話番号です
+      sectionLocation: 所在地
+      countryCode: 国コード
+      country: 国
+      callingCode: 国番号
+      sectionValidation: 検証
+      isValid: 有効ですか？
+      'yes': はい
+      'no': いいえ
+      isPossible: 利用可能な番号ですか？
+      type: 種類
+      unknown: 不明
+      sectionFormats: 表示形式
+      international: 国際表記
+      national: 国内表記
+      defaultCountry: デフォルトの国
+      phoneNumber: 電話番号
+      emptyStatePrompt: 上に電話番号を入力すると解析されます
   user-agent-parser:
     title: ユーザーエージェントパーサー
     description: ユーザーエージェント文字列からブラウザ、エンジン、OS、CPU、デバイスの種類/モデルを検出して解析します。
-
+    ui:
+      sectionBrowser: ブラウザ
+      sectionEngine: エンジン
+      sectionOs: OS
+      sectionDevice: デバイス
+      sectionCpu: CPU
+      name: 名前
+      version: バージョン
+      model: モデル
+      type: タイプ
+      vendor: ベンダー
+      architecture: アーキテクチャ
+      userAgentString: ユーザーエージェント文字列
+      placeholder: ここにユーザーエージェントを入力してください...
+      unknown: 不明
+      error: エラー
+      parseError: ユーザーエージェント文字列を解析できませんでした
   case-converter:
     title: ケースコンバーター
     description: 文字列のケースを変換し、さまざまな形式から選択します。
-
+    ui:
+      inputPlaceholder: 文字列を入力...
+      output: 出力
   html-entities:
     title: HTMLエンティティのエスケープ
     description: HTMLエンティティのエスケープと解除を行います（<、>、&、"、' などの文字をHTML表記に置き換えます）。
-
+    ui:
+      yourString: 文字列
+      escapePlaceholder: エスケープする文字列...
+      escapedOutput: エスケープ結果
+      copied: コピーしました
+      copy: コピー
+      yourEscapedString: エスケープされた文字列
+      unescapePlaceholder: アンエスケープする文字列...
+      unescapedOutput: アンエスケープ結果
   json-prettify:
     title: JSON整形・フォーマット
     description: JSON文字列を人間が読みやすい形式に整形します。
-
   docker-run-to-docker-compose-converter:
     title: docker run→Docker compose変換
     description: 「docker run」コマンドをdocker-composeファイルに変換します。
-
   mac-address-lookup:
     title: MACアドレス検索
     description: MACアドレスからデバイスのベンダーとメーカーを調べます。
-
+    ui:
+      macAddressLabel: MACアドレス
+      copiedTooltip: コピーしました!
+      copyTooltip: クリックしてベンダー情報をコピー
+      copiedTitle: ✓ コピー済み
+      vendorInfoTitle: ベンダー情報
+      unknownVendor: このアドレスのベンダーは不明です
   lorem-ipsum-generator:
     title: Lorem ipsum生成
     description: モックアップやデザイン作業用のプレースホルダーテキスト（lorem ipsum）を生成します。
-
+    ui:
+      copiedMessage: Lorem ipsum をクリップボードにコピーしました
+      paragraphs: 段落数
+      sentencesPerParagraph: 段落あたりの文数
+      wordsPerSentence: 文あたりの単語数
+      startWithLoremIpsum: Lorem ipsum で始める
+      asHtml: HTML として
+      output: 出力
+      wordCount: '{count} 語'
+      charCount: '{count} 文字'
+      copy: コピー
+      refresh: 更新
   qrcode-generator:
     title: QRコード生成
     description: URL、プレーンテキスト、Wi-Fiネットワーク認証情報のQRコードを生成してダウンロードします。ターミナル、クラシック、カスタムのカラーテーマと、誤り訂正レベルの設定に対応します。
-
   signature-creator:
     title: 署名作成ツール
     description: キャンバスに手書きの署名を描いて透過PNGとして書き出します。あるいは任意の画像をアップロードし、オンデバイスAIでワンクリックで背景を除去します。
-
+    ui:
+      drawSignatureTab: 署名を描く
+      removeBackgroundTab: 背景を削除
+      inkColorLabel: インクの色
+      strokeWeightLabel: 線の太さ
+      actionsLabel: 操作
+      undoButton: ↩ 元に戻す
+      clearButton: ✕ クリア
+      downloadTransparentPng: ↓ 透明 PNG をダウンロード
+      uploadImageLabel: 画像をアップロード
+      dropzoneText: ここに画像をドロップするか、クリックして選択
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: 画像を読み込みました
+      removeButton: ✕ 削除
+      removeBackgroundButton: ⚡ 背景を削除
+      exportLabel: エクスポート
+      downloadNoBgPng: ↓ PNGをダウンロード（背景なし）
+      originalLabel: 元画像
+      resultLabel: 結果
+      uploadPrompt: 開始するには画像をアップロードしてください
+      originalAlt: 元画像
+      resultAlt: 背景を削除した結果
+      loadingModelStatus: AIモデルを読み込み中...
+      removingBackgroundStatus: 背景を削除中...
+      processingPercentStatus: 処理中... {pct}%
+      downloadingModelPercentStatus: モデルをダウンロード中... {pct}%
+      removeBackgroundFailedStatus: 背景を削除できませんでした。別の画像をお試しください。
   xml-formatter:
     title: XMLフォーマッター
     description: XML文字列を人間が読みやすい形式に整形します。
-
+    ui:
+      invalidXml: 指定されたXMLは無効です。
+      collapse: 折りたたむ
+      indentSize: インデントサイズ
+      inputLabel: あなたのXML
+      inputPlaceholder: ここにXMLを貼り付けてください...
+      outputLabel: あなたのXMLから整形されたXML
   temperature-converter:
     title: 温度変換
     description: ケルビン、摂氏、華氏、ランキン度、ドリール度、ニュートン度、レオミュール度、レーマー度の温度変換を行います。
-
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
   chmod-calculator:
     title: chmod計算ツール
     description: このオンラインchmod計算ツールでパーミッションとコマンドを求めます。
-
+    ui:
+      read: 読み取り
+      write: 書き込み
+      execute: 実行
+      owner: 所有者
+      group: グループ
+      public: その他
+      commandCopied: chmodコマンドをコピーしました
+      copyCommand: コマンドをコピー
   rsa-key-pair-generator:
     title: RSA鍵ペア生成
     description: 新しいランダムなRSAの秘密鍵と公開鍵のPEM証明書鍵ペアを生成します。
-
+    ui:
+      bitsRangeError: ビット数は256-16384で、8の倍数である必要があります
+      bitsLabel: ビット数
+      refreshButton: 鍵ペアを再生成
+      publicKeyTitle: 公開鍵
+      copyPublicKeyTitle: 公開鍵をコピー
+      copy: コピー
+      generating: 生成中...
+      privateKeyTitle: 秘密鍵
+      copyPrivateKeyTitle: 秘密鍵をコピー
+      publicKeyCopiedToast: 公開鍵をコピーしました
+      privateKeyCopiedToast: 秘密鍵をコピーしました
   html-wysiwyg-editor:
     title: HTML WYSIWYGエディター
     description: コンテンツのソースコードを即座に生成する、多機能なオンラインWYSIWYG HTMLエディターです。
-
+    ui:
+      bold: 太字
+      italic: 斜体
+      strike: 取り消し線
+      inlineCode: インラインコード
+      heading1: 見出し1
+      heading2: 見出し2
+      heading3: 見出し3
+      heading4: 見出し4
+      bulletList: 箇条書きリスト
+      orderedList: 番号付きリスト
+      codeBlock: コードブロック
+      blockquote: 引用
+      hardBreak: 改行
+      clearFormat: 書式をクリア
+      undo: 元に戻す
+      redo: やり直す
   json-diff:
     title: JSON差分比較
     description: 2つのJSONオブジェクトを比較して差分を確認します。
-
+    ui:
+      onlyShowDifferences: 差分のみ表示
+      jsonsAreTheSame: 指定されたJSONは同じです
+      firstJsonTitle: 1つ目のJSON
+      firstJsonPlaceholder: 1つ目のJSONをここに貼り付けてください...
+      invalidJson: 無効なJSON形式です
+      secondJsonTitle: 比較するJSON
+      secondJsonPlaceholder: 比較するJSONをここに貼り付けてください...
   jwt-parser:
     title: JWTパーサー
     description: JSON Web Token（JWT）を解析・デコードして内容を表示します。
-
+    ui:
+      header: ヘッダー
+      payload: ペイロード
+      jwtToDecodeTitle: デコードするJWT
+      tokenPlaceholder: トークンをここに入力してください...
+      invalidJwt: 無効なJWTです
   date-converter:
     title: 日時変換
     description: 日付と時刻をさまざまな形式に変換します。
-
   ipv4-subnet-calculator:
     title: IPv4サブネット計算ツール
     description: IPv4のCIDRブロックを解析し、サブネットに関して必要な情報をすべて取得します。
-
+    ui:
+      invalidAddress: このアドレスを解析できません。形式を確認してください
+      netmask: ネットマスク
+      networkAddress: ネットワークアドレス
+      networkMask: ネットワークマスク
+      networkMaskBinary: 2進数のネットワークマスク
+      cidrNotation: CIDR表記
+      wildcardMask: ワイルドカードマスク
+      networkSize: ネットワークサイズ
+      firstAddress: 先頭アドレス
+      lastAddress: 末尾アドレス
+      broadcastAddress: ブロードキャストアドレス
+      noBroadcast: このマスクではブロードキャストアドレスはありません
+      ipClass: IPクラス
+      unknownClassType: 不明なクラスタイプ
+      decimal: 10進数
+      hexadecimal: 16進数
+      binary: 2進数
+      ipv6Short: IPv6(短縮形)
+      inputLabel: マスクの有無を問わないIPv4アドレス
+      bitMap: ビットマップ
+      network: ネットワーク
+      host: ホスト
+      setPrefix: プレフィックスを/{prefix}に設定
+      networkTag: ネットワーク
+      broadcastTag: ブロードキャスト
+      hostsCount: '{count}台のホスト'
+      privateIp: プライベートIP
+      publicIp: パブリックIP
+      subnetDetail: サブネット詳細
+      subnetInfo: サブネット情報
+      addressRepresentations: アドレスの表現形式
+      copy: コピー
+      enterValidIpv4: 有効なIPv4アドレスを入力すると表現形式が表示されます
+      previousBlock: 前のブロック
+      nextBlock: 次のブロック
+      collapseCheatSheet: チートシートを閉じる
+      subnetCheatSheet: サブネットチートシート
   og-meta-generator:
     title: Open Graphメタタグ生成
     description: ウェブサイト用のOpen GraphおよびSNS向けHTMLメタタグを生成します。
-
   ipv6-ula-generator:
     title: IPv6 ULA生成
     description: RFC4193に従って、自分のネットワーク用のローカルで非ルーティングのIPアドレスを生成します。
-
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: 最初のルーティング可能アドレス
+      lastRoutable: 最後のルーティング可能アドレス
+      infoAlert: 現在のタイムスタンプとMACアドレスをSHA1でハッシュ化して使用します。下位40ビットがRFC 4193に基づくグローバルIDを構成します。
+      macAddress: MACアドレス
+      output: 出力
+      copied: コピーしました!
+      copy: コピー
   hash-text:
     title: テキストハッシュ化
     description: MD5、SHA1、SHA256、SHA512、SHA3、RIPEMD160などを使ってテキストをハッシュ化します。
-
+    ui:
+      encodingBinary: 2進数（基数2）
+      encodingHex: 16進数（基数16）
+      encodingBase64: Base64（基数64）
+      encodingBase64url: Base64url（URLセーフな64）
+      inputPlaceholder: ハッシュ化する文字列...
+      encoding: エンコーディング
+      output: 出力
   json-to-toml:
     title: JSON→TOML変換
     description: JSONを解析してTOMLに変換します。
-
   device-information:
     title: デバイス情報
     description: 現在のデバイスに関する情報（画面サイズ、ピクセル比、ユーザーエージェントなど）を取得します。
-
+    ui:
+      screen: 画面
+      hardware: ハードウェア
+      network: ネットワーク
+      browser: ブラウザ
+      screenSize: 画面サイズ
+      windowSize: ウィンドウサイズ
+      pixelRatio: ピクセル比
+      colorDepth: 色深度
+      orientation: 向き
+      orientationAngle: 画面の回転角度
+      touchPoints: タッチポイント数
+      cpuCores: CPUコア数
+      deviceMemory: デバイスメモリ
+      platform: プラットフォーム
+      online: オンライン
+      connectionType: 接続タイプ
+      downlinkSpeed: ダウンリンク速度
+      roundTripTime: 往復時間
+      dataSaver: データセーバー
+      vendor: ベンダー
+      languages: 言語
+      cookiesEnabled: Cookieが有効
+      pdfViewer: PDFビューア
+      doNotTrack: トラッキング拒否
+      userAgent: ユーザーエージェント
+      maxTouchPoints: 最大{count}
+      none: なし
+      logicalCores: 論理コア{count}個
+      'yes': はい
+      'no': いいえ
+      enabled: 有効
+      disabled: 無効
+      supported: 対応
+      notSupported: 非対応
+      notSet: 未設定
   pdf-signature-checker:
     title: PDF署名チェッカー
     description: PDFファイルの署名を検証します。署名付きPDFファイルには1つ以上の署名が含まれ、署名後にファイルの内容が改変されていないかどうかの判定に使えます。
-
+    ui:
+      tableHeaderValidityPeriod: 有効期間
+      tableHeaderIssuedBy: 発行者
+      tableHeaderIssuedTo: 発行先
+      tableHeaderPemCertificate: PEM証明書
+      notBefore: 有効開始日
+      notAfter: 有効終了日
+      commonName: コモンネーム
+      organizationName: 組織名
+      countryName: 国名
+      localityName: 地域名
+      organizationalUnitName: 組織単位名
+      stateOrProvinceName: 都道府県名
+      viewPemCert: PEM証明書を表示
+      uploadPrompt: ここにPDFファイルをドラッグ＆ドロップするか、クリックして選択してください
+      noSignaturesFound: 指定されたファイルに署名が見つかりませんでした。
+      signatureCertificatesLabel: 署名{number}の証明書：
   json-minify:
     title: JSON圧縮
     description: 不要な空白を取り除いてJSONを圧縮・最小化します。
-
+    ui:
+      invalidJson: 入力されたJSONが無効です。
+      inputLabel: 生のJSON
+      inputPlaceholder: 生のJSONをここに貼り付けてください...
+      outputLabel: JSONの圧縮版
   ulid-generator:
     title: ULID生成
     description: ランダムなULID（辞書順にソート可能な汎用一意識別子）を生成します。
-
+    ui:
+      copiedMessage: ULIDをクリップボードにコピーしました
+      quantity: 数量
+      format: フォーマット
+      formatRaw: Raw
+      formatJson: JSON
+      output: 出力
+      copy: コピー
+      refresh: 更新
   base-converter:
     title: 整数基数変換
     description: 数値を異なる基数（10進、16進、2進、8進、Base64など）の間で変換します。
-
   uuid-generator:
     title: UUID生成
     description: ランダムなUUID（v1およびv4）を生成し、その構造を確認します。
-
+    ui:
+      copiedMessage: UUIDをクリップボードにコピーしました
+      version: バージョン
+      quantity: 数量
+      namespacePreset: ネームスペースプリセット
+      namespaceUuid: ネームスペースUUID
+      invalidUuid: 無効なUUIDです
+      name: 名前
+      namePlaceholder: ハッシュ化する名前...
+      output: 出力
+      copy: コピー
+      refresh: 更新
   ipv4-address-converter:
     title: IPv4アドレス変換
     description: IPアドレスを10進、2進、16進、さらにはIPv6表現にも変換します。
-
+    ui:
+      decimal: 10進数
+      hexadecimal: 16進数
+      binary: 2進数
+      ipv6Short: IPv6(短縮形)
+      invalidIpv4: 無効なIPv4アドレスです
+      ipv4Address: IPv4アドレス
+      output: 出力
+      copied: コピーしました!
+      copy: コピー
   text-statistics:
     title: テキスト統計
     description: テキストに関する情報として、文字数、単語数、バイトサイズなどを取得します。
-
+    ui:
+      textPlaceholder: テキスト...
+      characterCount: 文字数
+      wordCount: 単語数
+      lineCount: 行数
+      byteSize: バイトサイズ
   text-to-nato-alphabet:
     title: テキスト→NATOフォネティックコード
     description: 口頭で伝えるために、テキストをNATOフォネティックアルファベットに変換します。
-
+    ui:
+      yourText: 入力テキスト
+      inputPlaceholder: '例: Hello world'
+      natoPhonetic: NATOフォネティックコード
+      copied: コピーしました
+      copyAll: すべてコピー
+      natoStringCopied: NATO文字列をコピーしました。
   ipv4-range-expander:
     title: IPv4範囲展開
     description: 開始と終了のIPv4アドレスから、有効なIPv4サブネットとそのCIDR表記を計算します。
-
+    ui:
+      startAddress: 開始アドレス
+      endAddress: 終了アドレス
+      addressesInRange: 範囲内のアドレス数
+      invalidIpv4: 無効なIPv4アドレスです
+      invalidCombinationTitle: 開始と終了のIPv4アドレスの組み合わせが無効です
+      invalidCombinationDescription: 終了IPv4アドレスが開始IPv4アドレスより小さくなっています。これは無効なため、結果を計算できませんでした。
+      switchStartEnd: 開始と終了のIPv4アドレスを入れ替え
+      result: 結果
+      copied: コピーしました!
+      copyResult: 結果をコピー
   text-diff:
     title: テキスト差分比較
     description: 2つのテキストを比較して差分を確認します。
-
   otp-generator:
     title: OTPコード生成
     description: 多要素認証用の時間ベースOTP（ワンタイムパスワード）の生成と検証を行います。
-
   text-to-binary:
     title: テキスト→ASCIIバイナリ
     description: テキストをASCIIバイナリ表現に、またその逆方向に変換します。
-
+    ui:
+      textCopied: テキストをコピーしました
+      binaryCopied: バイナリをコピーしました
+      panelTitle: テキスト ↔ ASCIIバイナリ
+      textLabel: テキスト
+      binaryLabel: バイナリ
+      copied: コピーしました
+      copy: コピー
+      textPlaceholder: '例: Hello world'
+      invalidBinary: 有効なASCIIバイナリである必要があります(8ビットの倍数)
   ascii-word-art:
     title: ASCIIワードアート生成
     description: 多彩なフォントとスタイルでASCIIワードアートのテキストを作成します。
-
   killer-scripts:
     title: Killer Scripts
     description: Windows管理とMSP現場作業のためのPowerShellスクリプト集です。
-
   powershell-builder:
     title: PowerShellビルダー
     description: コマンドレットを選び、パラメーターを入力して、完成したPowerShellコマンドをコピーします。
-
   group-policy-reference:
     title: グループポリシーリファレンス
     description: よく使うWindowsグループポリシー設定を、名前、GPOパス、レジストリキー、説明から検索します。
-
+    ui:
+      searchPlaceholder: ポリシー、パス、レジストリキーを検索...
+      copied: コピーしました!
+      clickToCopyRegistry: クリックしてレジストリキーをコピー
+      copiedShort: コピー済み
+      default: 既定値
+      recommended: 推奨
   windows-event-lookup:
     title: Windowsイベント検索
     description: WindowsイベントIDを、説明、重大度、一般的な原因とともに調べます。
-
+    ui:
+      searchResults: 検索結果
+      searchPlaceholder: イベントID、名前、説明で検索...
+      copied: コピーしました!
+      clickToCopyEventId: クリックしてイベントIDをコピー
+      copiedShort: コピー済み
   m365-sku-decoder:
     title: M365ライセンスSKUデコーダー
     description: Microsoft 365ライセンスのSKU文字列とGUIDをデコードして製品名を表示します。
-
+    ui:
+      searchPlaceholder: SKU名、文字列ID、説明で検索...
+      copied: コピーしました!
+      clickToCopy: クリックして文字列IDをコピー
+      copiedMark: ✓ コピー済み
   windows-error-codes:
     title: Windowsエラーコード検索
     description: Windowsエラーコードを16進または10進で検索します。システムエラー、BSOD停止コード、WMI、RPC、MSIインストーラーエラーなどに対応します。
+    ui:
+      searchResults: 検索結果
+      searchPlaceholder: 16進コード、エラー名、説明で検索...
+      copied: コピーしました!
+      clickToCopy: クリックして16進コードをコピー
+      copiedShort: コピー済み
+      decimal: 10進数 {decimal}
   exchange-ndr-lookup:
     title: Exchange NDR検索
     description: ExchangeとM365のバウンスコードを、分かりやすい原因と対処のガイダンスとともに調べます。
-
+    ui:
+      searchResults: 検索結果
+      searchPlaceholder: NDRコード、エラー名、原因、対処法で検索...
+      copied: コピーしました!
+      clickToCopy: クリックしてNDRコードをコピー
+      copiedShort: コピー済み
+      cause: 原因
+      fix: 対処法
   safelink-decoder:
     title: Outlook SafeLinkデコーダー
     description: Microsoft Defender SafeLinksを展開して、元のリンク先URLを表示します。
-
   port-protocol-reference:
     title: ポート＆プロトコルリファレンス
     description: 一般的なネットワークポートとプロトコルを、セキュリティに関する注記と危険ポートのフラグとともに掲載します。
-
   cve-lookup:
     title: CVE検索
     description: NIST NVDからCVEをIDまたはキーワードで検索します。NVD APIのライブデータを使用します。
-
+    ui:
+      range6m: 6か月
+      range1y: 1年
+      range2y: 2年
+      range5y: 5年
+      rangeAll: すべての期間
+      noDescription: 説明はありません。
+      fetchError: NVD APIに接続できませんでした。接続を確認してください。
+      sortNewest: 新しい順
+      sortOldest: 古い順
+      sortSeverity: 深刻度が高い順
+      severityCritical: 緊急
+      severityHigh: 重要
+      severityMedium: 警告
+      severityLow: 注意
+      placeholder: 'CVE IDまたはキーワード（例: CVE-2021-44228, log4j）'
+      searching: 検索中...
+      search: 検索
+      hint: 'CVE ID、部分番号（例: 43284）、通称（例: log4shell, dirty frag）、またはキーワードで検索できます。NVDとGitHub Advisory Databaseのライブデータを使用しています。'
+      noResults: 「{query}」に一致するCVEが見つかりませんでした。
+      noResultsInRange: 選択した期間内で「{query}」に一致するCVEが見つかりませんでした。
+      noExactMatch: 選択した期間内で完全に一致するフレーズが見つかりませんでした。「dirty frag」のような通称は、NVDの説明文にそのまま記載されていない場合があります。代わりに部分的なCVE番号（例:「43284」でCVE-2026-43284が見つかります）をお試しください。
+      searchAllTime: 全期間を検索
+      showingResults: '{total}件中{shown}件を表示'
+      allSeverities: すべての深刻度
+      allYears: すべての年
+      copied: コピーしました！
+      clickToCopyId: クリックしてCVE IDをコピー
+      copiedShort: コピー済み
+      cveDetail: CVE詳細
+      published: 公開日
+      modified: 更新日
+      clickToCopy: クリックしてコピー
+      references: 参考情報
+      kevActionDue: 'CISA KEV対応期限:'
+      cvssMetrics: CVSSメトリクス
+      metricAttackVector: 攻撃元区分
+      metricAttackComplexity: 攻撃条件の複雑さ
+      metricPrivilegesRequired: 必要な権限
+      metricUserInteraction: ユーザー関与レベル
+      metricScope: スコープ
+      metricConfidentiality: 機密性
+      metricIntegrity: 完全性
+      metricAvailability: 可用性
   email-dns-checker:
     title: メールDNSチェッカー
     description: 任意のドメインのMX、SPF、DKIM、DMARCレコードを確認します。メール認証の設定を検証し、よくある設定ミスを警告します。
-
   email-header-parser:
     title: メールヘッダーパーサー
     description: 生のメールヘッダーを貼り付けて、送信者情報の抽出、配送ホップチェーンの追跡、SPF、DKIM、DMARCの認証結果の確認を行います。
-
+    ui:
+      pasteHint: 以下に生のメールヘッダーを貼り付けてください。
+      parseButton: ヘッダーを解析
+      parseAnother: 別のヘッダーを解析
+      messageDetails: メッセージの詳細
+      senderMismatch: 送信者ドメインがFromドメインと異なります。なりすましまたは委任送信の可能性があります。
+      deliveryHops: 配送ホップ
+      oldestFirst: 古い順
+      authResults: 認証結果
+      spamAnalysis: スパム分析
+      spamScore: スパムスコア
+      spamStatus: スパムステータス
   whois-checker:
     title: WHOIS検索
     description: 任意のドメインの登録情報として、レジストラ、作成日と有効期限、ネームサーバー、ステータスフラグなどを調べます。
-
   ascii-text-drawer:
     title: ASCIIワードアート生成
     description: 多彩なフォントとスタイルでASCIIワードアートのテキストを作成します。
-
+    ui:
+      yourText: テキスト
+      textPlaceholder: 描画するテキスト
+      options: オプション
+      font: フォント
+      searchFonts: フォントを検索...
+      noFontsMatch: 一致するフォントがありません
+      width: 幅
+      output: ASCIIアート出力
+      loadingFont: フォントを読み込み中...
+      error: 現在の設定ではエラーが発生しました。
+      copied: コピーしました!
+      copy: コピー
   regex-tester:
     title: 正規表現テスター
     description: サンプルテキストで正規表現をテストします。
-
+    ui:
+      regexLabel: 'テストする正規表現:'
+      regexPlaceholder: テストする正規表現を入力
+      globalLabel: グローバル
+      globalTitle: グローバル検索
+      ignoreCaseLabel: 大文字小文字を無視
+      ignoreCaseTitle: 大文字小文字を区別しない検索
+      multilineLabel: 複数行
+      singlelineLabel: 単一行
+      singlelineTitle: . が改行文字にもマッチするようにします。
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode。パターンをUnicodeコードポイントの並びとして扱います。
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: uモードを拡張し、さらに多くのUnicode機能を追加したものです。
+      textLabel: '照合するテキスト:'
+      textPlaceholder: 照合するテキストを入力
+      regexBarTitle: REGEX
+      matchesBarTitle: マッチ結果
+      matchIndex: インデックス
+      matchValue: 値
+      matchCaptures: キャプチャ
+      matchGroups: グループ
+      noMatch: マッチなし
+      sampleBarTitle: サンプル
+      diagramBarTitle: ダイアグラム
+      quickReference: クイックリファレンス
   yaml-converter:
     title: YAMLコンバーター
     description: YAMLをJSONまたはTOMLに変換します。
-
+    ui:
+      convertTo: '変換先:'
+      inputLabel: あなたのYAML
+      inputPlaceholder: ここにYAMLを貼り付けてください...
+      invalidYaml: 指定されたYAMLは無効です。
+      outputLabel: '{format}出力'
   json-converter:
     title: JSONコンバーター
     description: JSONをYAMLまたはTOMLに変換します。
-
+    ui:
+      convertTo: 変換先
+      yourJson: あなたのJSON
+      pasteJsonPlaceholder: JSONをここに貼り付けてください...
+      invalidJson: 無効なJSON形式です
+      formatOutput: '{format} 出力'
   toml-converter:
     title: TOMLコンバーター
     description: TOMLをJSONまたはYAMLに変換します。
-
+    ui:
+      convertTo: '変換先:'
+      yourToml: あなたのTOML
+      pastePlaceholder: ここにTOMLを貼り付けてください...
+      invalidToml: 入力されたTOMLが無効です。
+      outputLabel: '{format} 出力'
   xml-json-converter:
     title: XML ↔ JSONコンバーター
     description: XMLとJSONの双方向コンバーターです。どちら側を編集しても、もう一方が自動的に更新されます。
-
+    ui:
+      invalidXml: 無効なXMLです。
+      invalidJson: 無効なJSONです。
+      xmlLabel: XML
+      xmlPlaceholder: ここにXMLを貼り付けてください...
+      jsonLabel: JSON
+      jsonPlaceholder: ここにJSONを貼り付けてください...
   markdown-to-html:
     title: Markdown→HTML変換
     description: MarkdownをHTMLに変換し、書き出したりPDFとして印刷したりします。
-
+    ui:
+      copiedSuccess: HTMLをクリップボードにコピーしました!
+      copyFailed: テキストのコピーに失敗しました。
+      inputLabel: '変換するMarkdown:'
+      inputPlaceholder: Markdownの内容を入力...
+      outputLabel: '出力されたHTML:'
+      copyHtmlButton: HTMLをコピー
+      printAsPdfButton: PDFとして印刷
   killer-pdf:
     title: KillerPDF
     description: Windows用のオープンソースPDFエディターです。表示、注釈、結合、分割、フラット化、パスワード保護されたPDFのオープン、テキスト編集、描画、ハイライト、署名、印刷に対応します。
-
   killer-scan:
     title: KillerScan
     description: フィールドテクニシャンのための高速ネットワークスキャナーです。ARP＋pingによる探索、ポートプローブ、ベンダー検索、デバイスの自動分類に対応します。
-
   gif-search:
     title: GIF検索
     description: GiphyでリアクションGIFを検索します。結果をクリックするとURLをコピーします。
-
+    ui:
+      errorStatus: エラー {status}
+      fetchFailed: GIFの取得に失敗しました。
+      searchPlaceholder: GIFを検索（例：facepalm、nice work、this is fine）
+      searching: 検索中...
+      search: 検索
+      noResults: 「{query}」のGIFが見つかりませんでした。
+      copied: コピーしました！
+      copyUrl: URLをコピー
+      resultsHint: '{count}件の結果。クリックしてURLをコピーし、Teams、Telegram、Slackに貼り付けてください。'
   killer-shell:
     title: KillerShell
     description: パワーユーザーのための無料シェルです。ファイルブラウザー、ターミナル、テキストエディターが1つのウィンドウ、1本のタブ列、1組のキー操作を共有します。
-
   domain-lookup:
     title: ドメイン検索
     description: WHOIS登録情報とメールDNSチェック（MX、SPF、DKIM、DMARC）を、任意のドメインについて1つの画面で確認します。
-
+    ui:
+      statusDesc:
+        active: ドメインはアクティブで稼働中です。
+        inactive: ドメインは非アクティブです。
+        clientDeleteProhibited: レジストラがドメインの削除をロックしています。
+        clientTransferProhibited: レジストラが他のレジストラへの移管をロックしています。
+        clientUpdateProhibited: レジストラがドメインの更新をロックしています。
+        clientHold: レジストラがドメインを保留にしたため、DNSが解決しない場合があります。
+        serverDeleteProhibited: レジストリがドメインの削除をロックしています。
+        serverTransferProhibited: レジストリがドメインの移管をロックしています。
+        serverUpdateProhibited: レジストリがドメインの更新をロックしています。
+        serverHold: レジストリがドメインを保留にしたため、DNSが解決しない場合があります。
+        pendingCreate: ドメインの作成が保留中です。
+        pendingDelete: ドメインは削除保留中で、まもなく解放される可能性があります。
+        pendingRenew: ドメインの更新が保留中です。
+        pendingRestore: 削除からのドメイン復元が保留中です。
+        pendingTransfer: 他のレジストラへのドメイン移管が保留中です。
+        pendingUpdate: ドメインの更新処理が保留中です。
+        redemptionPeriod: ドメインは期限切れでリデンプション期間中です。登録者はまだ回復できます。
+        renewPeriod: ドメインは登録後の更新猶予期間中です。
+        autoRenewPeriod: ドメインは自動更新の猶予期間中です。
+        transferPeriod: ドメインは移管の猶予期間中です。
+      expiredAlert: このドメインは{days}日前に期限切れとなり、登録可能になっている可能性があります。
+      expiresAlert: このドメインはあと{days}日で期限切れになります。早めに更新手続きを行ってください。
+      expiredTag: '{days}日前に期限切れ'
+      remainingTag: 残り{days}日
+      registrar: レジストラ
+      registrarIanaId: レジストラのIANA ID
+      created: 作成日
+      updated: 更新日
+      expires: 有効期限
+      noMx: MXレコードが見つかりません。
+      dnsFailed: DNS検索に失敗しました。
+      noSpf: SPFレコードが見つかりません。
+      noDkim: 一般的なセレクタでDKIMレコードが見つかりません。カスタムセレクタが存在する可能性があります。
+      noDmarc: DMARCレコードが見つかりません。ドメインはなりすましから保護されていません。
+      spfPlusAll: '警告: +allは危険です。どのサーバーでもこのドメインを名乗ってメールを送信できてしまいます。'
+      spfNeutralAll: '警告: ?allは中立で、保護効果がありません。'
+      dmarcPNone: '警告: p=noneは監視のみで、強制力はありません。メールは拒否されません。'
+      dmarcNoRua: '警告: 集計レポート送信先(rua=)が設定されていません。DMARCレポートを受け取れません。'
+      pass: 合格
+      fail: 不合格
+      warning: 警告
+      checking: 確認中...
+      overallPass: すべてのメールチェックに合格しました。このドメインはメールに適切に設定されています。
+      overallFail: 1つ以上の重要なレコードが不足しています。このドメインはなりすましに対して脆弱な可能性があります。
+      overallWarn: 一部のレコードは存在しますが、確認すべき設定上の問題があります。
+      rdapHttpError: 'HTTP {status}: ドメインが存在しないか、TLDがサポートされていない可能性があります。'
+      lookupFailed: 検索に失敗しました。
+      domainPlaceholder: 'ドメインを入力してください (例: killertools.net)'
+      searching: 検索中...
+      search: 検索
+      signed: 署名済み
+      unsigned: 未署名
+      delegationSigned: 委任は署名されています。
+      dsRecord: DSレコード{count}件。
+      dsRecords: DSレコード{count}件。
+      keyRecord: 鍵レコード{count}件。
+      keyRecords: 鍵レコード{count}件。
+      dnssecUnsigned: このドメインはDNSSECで保護されていません。DNS応答を暗号学的に検証できません。
+      status: ステータス
+      contacts: 連絡先
+      remarks: 備考
+      nameservers: ネームサーバー
+      mxRecords: MXレコード
+      spfRecord: SPFレコード
+      dkimRecords: DKIMレコード
+      dmarcRecord: DMARCレコード
+      role:
+        registrant: 登録者
+        administrative: 管理担当
+        technical: 技術担当
+        abuse: 不正利用担当
+      name: 名前
+      organization: 組織
+      email: メール
+      phone: 電話
   email-record-generator:
     title: メールレコード生成
     description: SPFとDMARCのDNS TXTレコードを生成します。メールプロバイダーとポリシーを選び、出力をそのままDNSにコピーします。
+    ui:
+      hardFailRecommended: ハードフェイル(推奨)
+      softFail: ソフトフェイル
+      neutralNotRecommended: ニュートラル(非推奨)
+      blockFailingMail: 失敗したメールをブロック
+      sendToSpam: 迷惑メールに送信
+      monitorOnly: 監視のみ
+      relaxedDefault: 緩やか(デフォルト)
+      strict: 厳格
+      sameAsMainPolicy: メインポリシーと同じ
+      spfRecordTitle: SPFレコード
+      dmarcRecordTitle: DMARCレコード
+      spfRecordLocation: ルートドメインのTXTレコード
+      dmarcRecordLocation: TXTレコードの場所
+      copied: コピーしました
+      clickToCopy: クリックしてコピー
+      lookupWarning: '{count}件のDNSルックアップが選択されています。SPFのルックアップ上限は10件です'
+      mailProviders: メールプロバイダー
+      customIps: カスタムIPまたは範囲(任意)
+      examplePrefix: '例:'
+      enforcement: 適用方法
+      policy: ポリシー
+      subdomainPolicy: サブドメインポリシー(任意)
+      policyCoverage: 'ポリシー適用範囲: {percent}%'
+      coverageHint: 失敗したメールの{percent}%が処理対象になります。段階的に導入する場合は100%未満を使用してください。
+      aggregateReportEmail: 集計レポートの送信先(rua)
+      forensicReportEmail: フォレンジックレポートの送信先(ruf、任意)
+      dkimAlignment: DKIMアライメント
+      spfAlignment: SPFアライメント
+  json-viewer:
+    ui:
+      invalidJson: 指定されたJSONは無効です。
+      sortKeys: キーを並べ替え
+      indentSize: インデントサイズ
+      yourRawJson: 元のJSON
+      pasteRawJsonPlaceholder: 元のJSONをここに貼り付けてください...
+      prettifiedVersion: 整形されたJSON
+  qr-code-generator:
+    ui:
+      tabText: テキスト / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: テキストまたはURL
+      placeholderTextOrUrl: リンクまたはテキスト...
+      sectionEncryption: 暗号化
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: パスワードなし
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: ネットワーク名...
+      sectionPassword: パスワード
+      placeholderPassword: ネットワークパスワード...
+      sectionOptions: オプション
+      hiddenSsid: 非表示SSID
+      anonymousIdentity: 匿名アイデンティティ
+      sectionEapMethod: EAP方式
+      sectionEapPhase2: EAPフェーズ2
+      sectionEapIdentity: EAPアイデンティティ
+      placeholderEapIdentity: EAPアイデンティティを入力...
+      sectionTheme: テーマ
+      themeDefault: デフォルト
+      themeTerminal: ターミナル
+      themeClassic: クラシック
+      themeInverted: 反転
+      sectionColors: カラー
+      labelForeground: '前景色:'
+      labelBackground: '背景色:'
+      sectionErrorCorrection: 誤り訂正
+      levelLow: 低 (~7%)
+      levelMedium: 中 (~15%)
+      levelQuartile: 準高 (~25%)
+      levelHigh: 高 (~30%)
+      emptyHintWifi: Wi-Fi QRを生成するにはSSIDを入力してください
+      emptyHintText: テキストまたはURLを入力してください
+      captionJoin: '>_ スキャンして接続'
+      captionOpen: '>_ スキャンして開く'
+      downloadPng: ↓ PNGをダウンロード
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JSロケール日付文字列
+      formatUnixTimestamp: Unixタイムスタンプ
+      formatTimestamp: タイムスタンプ
+      formatUtc: UTC形式
+      formatExcelDateTime: Excel日付/時刻
+      invalidDateRule: この日付はこの形式では無効です
+      inputPlaceholder: 日付文字列を貼り付けるか、空欄のままでライブ時計を表示...
+      invalidDate: この形式では無効な日付です
+      output: 出力
+      live: ライブ
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: テキストからUnicodeへ
+      enterTextLabel: Unicodeに変換するテキストを入力
+      unicodeFromTextLabel: テキストから変換したUnicode
+      unicodeOutputPlaceholder: テキストのUnicode表現がここに表示されます
+      copyUnicode: Unicodeをクリップボードにコピー
+      unicodeToTextTitle: Unicodeからテキストへ
+      inputUnicodePlaceholder: Unicodeを入力
+      enterUnicodeLabel: テキストに変換するUnicodeを入力
+      textFromUnicodeLabel: Unicodeから変換したテキスト
+      textOutputPlaceholder: Unicodeのテキスト表現がここに表示されます
+      copyText: テキストをクリップボードにコピー
+  meta-tag-generator:
+    ui:
+      copiedSuccess: メタタグをコピーしました!
+      copiedLabel: ✓ コピー済み
+      copyButton: コピー
+      outputTitle: 生成されたメタタグ
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIMEタイプから拡張子
+      mimeToExtensionDescription: MIMEタイプに関連付けられているファイル拡張子を確認できます
+      mimeTypeSelectPlaceholder: 'MIMEタイプを選択してください... (例: application/pdf)'
+      extensionsFoundPrefix: 次のMIMEタイプを持つファイルの拡張子
+      extensionsFoundSuffix: ':'
+      extensionToMimeTitle: 拡張子からMIMEタイプ
+      extensionToMimeDescription: ファイル拡張子に関連付けられているMIMEタイプを確認できます
+      mimeFoundPrefix: 次の拡張子に関連付けられたMIMEタイプ
+      mimeFoundSuffix: ':'
+      tableMimeTypesHeader: MIMEタイプ
+      tableExtensionsHeader: 拡張子
+  basic-auth-generator:
+    ui:
+      copied: ヘッダーをクリップボードにコピーしました
+      username: ユーザー名
+      usernamePlaceholder: ユーザー名を入力...
+      password: パスワード
+      passwordPlaceholder: パスワードを入力...
+      headerLabel: 'Authorizationヘッダー:'
+      copyHeader: ヘッダーをコピー
+  yaml-viewer:
+    ui:
+      invalidYaml: 指定されたYAMLは無効です。
+      sortKeys: キーをソート
+      indentSize: インデントサイズ
+      rawLabel: あなたの生のYAML
+      rawPlaceholder: ここに生のYAMLを貼り付けてください...
+      prettifiedLabel: YAMLの整形済みバージョン
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: シークレット (hex)
+      epochLabel: エポック
+      countLabel: カウント
+      paddedHexLabel: パディング済みhex
+      secretLabel: シークレット
+      secretPlaceholder: TOTPシークレットを貼り付け...
+      generateNewSecret: 新しいシークレットを生成
+      tokenLabel: トークン
+      copied: ✓ コピーしました
+      clickToCopy: クリックしてコピー
+      nextIn: '>_ 次まで {seconds}秒'
+      adjacentTokensLabel: 隣接トークン
+      prevLabel: 前へ
+      nextLabel: 次へ
+      detailsLabel: 詳細
+      scanToAuthenticate: '>_ スキャンして認証'
+      openKeyUriInNewTab: Key URIを新しいタブで開く
+      tokenDisplayPreviousLabel: 前
+      tokenDisplayCurrentLabel: 現在のOTP
+      tokenDisplayNextLabel: 次
+      copiedExclaim: コピーしました!
+      copyPreviousOtp: 前のOTPをコピー
+      copyCurrentOtp: 現在のOTPをコピー
+      copyNextOtp: 次のOTPをコピー
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: 強い
+      moderateLabel: 普通
+      weakLabel: 弱い
+      veryWeakLabel: 非常に弱い
+      lengthLabel: 長さ
+      entropyLabel: エントロピー
+      charsetSizeLabel: 文字種の数
+      scoreDetailLabel: スコア
+      passwordPlaceholder: パスワードを入力...
+      hideLabel: 隠す
+      showLabel: 表示
+      clearLabel: クリア
+      crackTimeSublabel: 総当たり解読時間
+      crackTimeNote: 強度は1秒間に10億回の試行によるブルートフォース時間で推定しています。辞書攻撃は考慮していません。
+  integer-base-converter:
+    ui:
+      binary: 2進数
+      octal: 8進数
+      decimal: 10進数
+      hexadecimal: 16進数
+      base: 基数
+      output: 出力
+      custom: カスタム
+  portProtocolReference:
+    ui:
+      searchPlaceholder: ポート、サービス、プロトコル、説明で検索...
+      allProtocols: すべて
+      dangerousOnly: 危険なもののみ
+      showingPorts: '{count} 件のポートを表示中'
+      copied: コピーしました!
+      clickToCopy: クリックしてポート番号をコピー
+      copiedCheck: ✓ コピー済み
+      dangerousPill: 危険
+  powershellBuilder:
+    ui:
+      cmdletBrowser: コマンドレットブラウザ
+      adminBadge: 管理者
+      cmdletSearchPlaceholder: 名前、説明、モジュールで検索...
+      noCmdletsMatch: 「{query}」に一致するコマンドレットがありません
+      generatedCommand: 生成されたコマンド
+      copiedCheck: ✓ コピーしました!
+      copyCommand: コマンドをコピー
+      commonExamples: よく使う例
+      selectCmdletPrompt: 左のコマンドレットを選択してコマンドの作成を始めてください。
+      parameters: パラメーター
+      noParametersNeeded: パラメーターは不要です。このコマンドレットはそのまま実行されます。
+      required: 必須
+      separateMultipleValues: 複数の値はカンマで区切ってください
+      showFewerParameters: パラメーターを少なく表示
+      showMoreParameters: 他{count}件のパラメーター
+      collapseQuickReference: クイックリファレンスを折りたたむ
+      openQuickReference: クイックリファレンスを開く
+      quickReference: クイックリファレンス
+      cheatsheetComparisonOperators: 比較演算子
+      cheatsheetEqualTo: 等しい
+      cheatsheetNotEqualTo: 等しくない
+      cheatsheetGreaterLessThan: より大きい / より小さい
+      cheatsheetGreaterLessEqual: 以上 / 以下
+      cheatsheetStringOperators: 文字列演算子
+      cheatsheetWildcardMatch: ワイルドカード一致 (* と ?)
+      cheatsheetWildcardNonMatch: ワイルドカード不一致
+      cheatsheetRegexMatch: 正規表現一致
+      cheatsheetRegexNonMatch: 正規表現不一致
+      cheatsheetCollectionContains: コレクションに値が含まれる
+      cheatsheetValueInCollection: 値がコレクションに含まれる
+      cheatsheetLogicalOperators: 論理演算子
+      cheatsheetBothTrue: 両方の条件が真である
+      cheatsheetEitherTrue: いずれかの条件が真である
+      cheatsheetNegateCondition: 条件を否定する
+      cheatsheetAutomaticVariables: 自動変数
+      cheatsheetCurrentPipelineObject: 現在のパイプラインオブジェクト
+      cheatsheetNullEmptyValue: Null / 空の値
+      cheatsheetBooleanTrueFalse: 真偽値
+      cheatsheetLocalComputerName: ローカルコンピューター名
+      cheatsheetCurrentUser: 現在ログオン中のユーザー
+      cheatsheetPsVersionInfo: PSバージョン情報
+      cheatsheetDateHelpers: 日付ヘルパー
+      cheatsheetCurrentDateTime: 現在の日時
+      cheatsheetThirtyDaysAgo: 30日前
+      cheatsheetThreeMonthsAgo: 3か月前
+      cheatsheetParseDateString: 日付文字列を解析
+      cheatsheetPipelineTricks: パイプラインのコツ
+      cheatsheetLimitFirst10: 最初の10件に制限
+      cheatsheetCountSumMinMax: 件数 / 合計 / 最小 / 最大
+      cheatsheetInteractiveGuiViewer: 対話型GUIビューア (ローカル)
+      cheatsheetConvertToJson: 出力をJSONに変換
+      cheatsheetOutputScreenAndFile: 画面とファイルの両方に出力
+      cheatsheetSuppressErrors: 致命的でないエラーを抑制
+      cheatsheetRemoteExecution: リモート実行
+      cheatsheetCmdletsSupportDirectly: 多くのコマンドレットが直接サポート
+      cheatsheetRunViaRemoting: PS Remoting (WinRM) 経由で実行
+      cheatsheetInteractiveRemoteSession: 対話型リモートPSセッション
+ui:
+  diffEditor:
+    originalLabel: オリジナル
+    modifiedLabel: 変更後
+    originalPlaceholder: 元のテキスト...
+    modifiedPlaceholder: 変更後のテキスト...
+  fileUpload:
+    defaultTitle: ここにファイルをドラッグ＆ドロップするか、クリックして選択してください
+    or: または
+    browseFiles: ファイルを参照
+  inputText:
+    defaultPlaceholder: テキストを入力
+  keyValueListItem:
+    'yes': はい
+    'no': いいえ
+    notAvailable: 該当なし
+  modalValue:
+    copied: コピーしました！
+    copy: コピー
+  select:
+    searchPlaceholder: 検索...
+    noResults: 結果が見つかりません
+    defaultPlaceholder: オプションを選択
+  table:
+    defaultDescription: データテーブル
+  textCopyable:
+    copied: コピーしました！
+    copyToClipboard: クリップボードにコピー
+commandPalette:
+  searchAriaLabel: 検索
+  searchPlaceholder: ツールやコマンドを検索するには入力してください...
+components:
+  androidBetaBanner:
+    announcement: Androidベータのお知らせ
+    title: Killer ToolsがAndroidに登場
+    subtitle: ベータテスター募集中 - タップして参加
+    dismiss: 閉じる
+  formatTransformer:
+    input: 入力
+    inputPlaceholder: 入力...
+    output: 出力
+  inputCopyable:
+    copied: コピーしました!
+    copy: クリップボードにコピー
+  spanCopyable:
+    copied: コピーしました!
+    copy: クリップボードにコピー
+  textareaCopyable:
+    copy: クリップボードにコピー
+    copied: コピーしました!
+  navbarButtons:
+    androidTooltip: Android版Killer Tools
+    androidAriaLabel: Android版Killer Tools - ベータに参加
+  themeDots:
+    accentColor: アクセントカラー
+    theme: テーマ
+    toggleThemeSwatches: テーマスウォッチの切り替え
+    accentColorPicker: アクセントカラーピッカー
+    dragToMove: ドラッグで移動
+    accentLabel: 'アクセント:'
+    accentNamed: 'アクセント: {name}'
+    closeAccentPicker: アクセントピッカーを閉じる
+    accents:
+      red: 赤
+      orange: オレンジ
+      green: 緑
+      teal: ティール
+      blue: 青
+      purple: 紫
+layouts:
+  menuLayout:
+    eggMessage: 80個のツール。サブスクリプションはゼロ。意地悪なフィールド技術者が1人。
+    clickMe: クリックしてね
+    sourceOnGithub: Githubでソースコードを見る
+  base:
+    collapseMenu: メニューを折りたたむ
+    homeLabel: KillerToolsホーム
+pages:
+  notFound:
+    noSuchFile: 指定されたファイルまたはディレクトリはありません
+    exitCode: 終了コード
+    backToHome: ホームに戻る
+  privacy:
+    heading: プライバシーポリシー
+    lastUpdated: '最終更新日: 2026年4月4日'
+    overviewHeading: 概要
+    overviewIntro: Killer Tools
+    overviewBody: は無料のITユーティリティツール集です。お客様のプライバシーを尊重し、このポリシーではデータの取り扱い方法について説明します。
+    dataCollectionHeading: データ収集
+    dataCollectionBody: Killer Toolsは個人データを収集、保存、送信しません。すべての処理はブラウザ内で完結します。ツールに入力したデータがサーバーに送信されることはありません。
+    cookiesHeading: Cookie
+    cookiesBody: このサイトはトラッキング目的でCookieを使用しません。テーマ設定はブラウザにローカル保存され、外部に送信されることはありません。
+    analyticsHeading: アクセス解析
+    analyticsIntro: このサイトでは
+    analyticsBody: プライバシーに配慮したアクセス解析ツールを使用し、ページビューや参照元などの一般的な利用状況を把握しています。Umamiはcookieを使用せず、サイトをまたいでユーザーを追跡せず、個人を特定できる情報も収集しません。すべてのデータは集計済みで匿名化されています。
+    thirdPartyHeading: 第三者サービス
+    thirdPartyBody: 一部のツールは外部のリソースやドキュメントにリンクしている場合があります。それら外部サイトのプライバシー対応について、当方は責任を負いません。
+    androidAppHeading: Androidアプリ
+    androidAppBody: Killer ToolsのAndroidアプリはWebアプリケーションのラッパーです。基本的なインターネットアクセス以外のデバイス権限を要求またはアクセスすることはありません。デバイスデータの収集や送信も行いません。
+    contactHeading: お問い合わせ
+    contactBody: このプライバシーポリシーについて質問がある場合は、次の連絡先までご連絡ください
+  androidApp:
+    robotAttribution: AndroidロボットはGoogleが作成し公開した作品を複製または改変したもので、Creative Commons 3.0 Attribution Licenseに記載された条件に従って使用しています。
+    heading: Android版Killer Tools
+    introBody1: killertools.netのツールボックスをまるごとネイティブAndroidアプリに。すべてのツール、Killer Scriptsライブラリ、お気に入りすべてに、ホーム画面からワンタップでアクセスできます。
+    introBody2: サイトと同じルールです。すべてデバイス上で動作します。アカウント不要、テレメトリなし、外部への通信もありません。現場でチケット対応の時間を節約できれば、それで役目を果たしたことになります。
+    betaStatusPrefix: 現在アプリは
+    betaStatusStrong: Google Playでクローズドベータ版
+    betaStatusSuffix: です。ここであなたの出番です。
+    joinBetaHeading: ベータ版に参加する
+    joinBetaIntroPrefix: Googleの要件は
+    joinBetaIntroStrong: アプリを14日間連続でインストールしたテスター12人
+    joinBetaIntroSuffix: で、これを満たさないと個人開発者のアプリは公開できません。3つの手順、所要時間は約2分、あなたもその12人の1人になれます。
+    step1LinkText: テスターグループに参加
+    step1Suffix: Google Groupsで「Join group」をクリックします。
+    step2LinkText: テスターになる
+    step2Suffix: Google Playのオプトインページで。
+    step3LinkText: アプリをインストール
+    step3Suffix: Google Playから。2週間インストールしたままにしてください。
+    sameAccountStrong: 3つの手順すべてで同じGoogleアカウントを使用してください
+    sameAccountSuffix: 。スキップしたりアカウントを切り替えたりすると、オプトインページに「このアカウントでは利用できません」と表示されます。
+    feedbackPrefix: '不具合や不足している機能はありますか。ご連絡ください:'
+  home:
+    sortPopular: 人気順
+    sortAZ: A-Z
+    sortZA: Z-A
+  about:
+    heading: Killer Toolsについて
+    intro: 現場の技術者に無駄な機能を使う時間はありません。ここにある各ツールは、私自身が仕事で必要としながら、アカウント登録もインストールもテレメトリも無しでそのまま使えるものが見つからなかったために作られています。
+    originPrefix: 現在はMSPの社内AIエンジニアリングチームでツールを開発しており、フルスタック開発6年、複数企業でのフィールド技術者8年の経験を経ています。KillerTools.netは、優れた
+    originMid: が手がけたプロジェクトの
+    originSuffix: フォークとして始まり、私が実際に行う仕事のために作り上げたものへと成長しました。チケット対応中にグループポリシー設定を調べたり、クライアントのサブネットをスキャンしたり、ブラウザを離れずにポート情報を参照したりするために作りました。
+    scriptsLibrary: Killer Scriptsライブラリは、毎回のチケット対応で発生する作業をカバーしています。すべてのスクリプトはPS 5.1、PS 7、Kaseya LiveConnectで依存関係なしに動作します。
+    privacyBody: すべてブラウザ内で動作します。何も追跡されません。アカウントは一切不要です。このサイトは厳格なContent Security Policyを適用し、依存関係を悪用した攻撃を防いでいます。侵害されたnpmパッケージがバンドルに紛れ込んでも、貼り付けた内容を外部に送信することはできません。
+    maintainedByPrefix: '制作・保守:'
+    maintainedByMid: これで仕事の時間が節約できたなら、
+    buyMeCoffee: コーヒーをおごること
+    maintainedBySuffix: 感謝しますが、期待はしていません。
+    missingToolHeading: ツールが見つかりませんか。バグを見つけましたか。
+    issuesPrefix: 機能リクエストやバグ報告は
+    issuesLinkText: issuesセクション
+    issuesSuffix: でGitHubに投稿してください。必ず目を通します。
+    alsoTryHeading: こちらもどうぞ...
+    tagKillerScan: Windows向けオープンソースネットワークスキャナー
+    tagKillerPdf: Windows向けオープンソースPDFエディター
+    tagKillerShell: パワーユーザー向けWindowsオープンソースシェル
+    tagKillerNotes: Windows向けオープンソース暗号化メモ帳
+    tagKillendar: Windows向けオープンソース暗号化カレンダー
+    linksHeading: リンク
+    linkLabelSite: サイト
+    linkLabelSource: ソース
+    linkLabelIssues: Issues
+    reportBug: バグを報告
+    requestFeature: 機能をリクエスト
+    linkLabelSupport: サポート
+    linkLabelBuiltOn: ベースにしたプロジェクト
+    itToolsFork: IT-Tools(フォーク)

@@ -3,6 +3,8 @@ import JSON5 from 'json5';
 import convert from 'xml-js';
 import { withDefaultOnError } from '@/utils/defaults';
 
+const { t } = useI18n();
+
 const xmlValue = ref('<a x="1.234" y="It\'s"/>');
 const jsonValue = ref('');
 const xmlError = ref('');
@@ -30,7 +32,7 @@ watch(xmlValue, (val) => {
     jsonError.value = '';
   }
   else {
-    xmlError.value = 'Invalid XML.';
+    xmlError.value = t('tools.xml-json-converter.ui.invalidXml');
   }
   updating.value = false;
 });
@@ -50,7 +52,7 @@ watch(jsonValue, (val) => {
     xmlError.value = '';
   }
   else {
-    jsonError.value = 'Invalid JSON.';
+    jsonError.value = t('tools.xml-json-converter.ui.invalidJson');
   }
   updating.value = false;
 });
@@ -61,14 +63,14 @@ watch(jsonValue, (val) => {
     <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
       <div>
         <div class="mb-1 text-xs op-60">
-          XML
+          {{ t('tools.xml-json-converter.ui.xmlLabel') }}
         </div>
         <c-input-text
           v-model:value="xmlValue"
           multiline
           :rows="24"
           autofocus
-          placeholder="Paste your XML here..."
+          :placeholder="t('tools.xml-json-converter.ui.xmlPlaceholder')"
           raw-text
           font-mono
         />
@@ -79,13 +81,13 @@ watch(jsonValue, (val) => {
 
       <div>
         <div class="mb-1 text-xs op-60">
-          JSON
+          {{ t('tools.xml-json-converter.ui.jsonLabel') }}
         </div>
         <c-input-text
           v-model:value="jsonValue"
           multiline
           :rows="24"
-          placeholder="Paste your JSON here..."
+          :placeholder="t('tools.xml-json-converter.ui.jsonPlaceholder')"
           raw-text
           font-mono
         />

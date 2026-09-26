@@ -5,6 +5,8 @@ import { useValidation } from '@/composable/validation';
 import { withDefaultOnErrorAsync } from '@/utils/defaults';
 import { generateKeyPair } from './rsa-key-pair-generator.service';
 
+const { t } = useI18n();
+
 const bits = ref(2048);
 const emptyCerts = { publicKeyPem: '', privateKeyPem: '' };
 
@@ -12,7 +14,7 @@ const bitsValidation = useValidation({
   source: bits,
   rules: [
     {
-      message: 'Bits must be 256–16384 and a multiple of 8',
+      message: t('tools.rsa-key-pair-generator.ui.bitsRangeError'),
       validator: (value: number) => value >= 256 && value <= 16384 && value % 8 === 0,
     },
   ],
@@ -26,8 +28,8 @@ const [certs, refreshCerts] = computedRefreshableAsync(
 const publicKey = computed(() => certs.value?.publicKeyPem ?? '');
 const privateKey = computed(() => certs.value?.privateKeyPem ?? '');
 
-const { copy: copyPublic } = useCopy({ source: publicKey, text: 'Public key copied' });
-const { copy: copyPrivate } = useCopy({ source: privateKey, text: 'Private key copied' });
+const { copy: copyPublic } = useCopy({ source: publicKey, text: t('tools.rsa-key-pair-generator.ui.publicKeyCopiedToast') });
+const { copy: copyPrivate } = useCopy({ source: privateKey, text: t('tools.rsa-key-pair-generator.ui.privateKeyCopiedToast') });
 
 const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.privateKeyPem);
 </script>
@@ -37,7 +39,7 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
     <!-- Controls -->
     <div class="rsa-controls">
       <div class="rsa-bits-field">
-        <span class="rsa-label">Bits</span>
+        <span class="rsa-label">{{ t('tools.rsa-key-pair-generator.ui.bitsLabel') }}</span>
         <div class="rsa-input-row" :class="{ 'rsa-input-error': bitsValidation.status === 'error' }">
           <button class="rsa-step-btn" :disabled="bits <= 256" @click="bits = Math.max(256, bits - 8)">
             −
@@ -59,7 +61,7 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
 
       <button class="rsa-btn rsa-btn-primary" @click="refreshCerts()">
         <icon-mdi-refresh />
-        Refresh key pair
+        {{ t('tools.rsa-key-pair-generator.ui.refreshButton') }}
       </button>
     </div>
 
@@ -68,14 +70,14 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
       <!-- Public key -->
       <div class="rsa-panel kt-terminal">
         <div class="rsa-panel-header kt-terminal-bar">
-          <span class="kt-terminal-bar-title">Public Key</span>
-          <button class="rsa-copy-btn kt-copy" title="Copy public key" @click="copyPublic()">
+          <span class="kt-terminal-bar-title">{{ t('tools.rsa-key-pair-generator.ui.publicKeyTitle') }}</span>
+          <button class="rsa-copy-btn kt-copy" :title="t('tools.rsa-key-pair-generator.ui.copyPublicKeyTitle')" @click="copyPublic()">
             <icon-mdi-content-copy />
-            Copy
+            {{ t('tools.rsa-key-pair-generator.ui.copy') }}
           </button>
         </div>
         <div class="rsa-key-body">
-          <span v-if="loading" class="rsa-generating">Generating...</span>
+          <span v-if="loading" class="rsa-generating">{{ t('tools.rsa-key-pair-generator.ui.generating') }}</span>
           <pre v-else class="rsa-key-text">{{ publicKey }}</pre>
         </div>
       </div>
@@ -83,14 +85,14 @@ const loading = computed(() => !certs.value?.publicKeyPem && !certs.value?.priva
       <!-- Private key -->
       <div class="rsa-panel kt-terminal">
         <div class="rsa-panel-header kt-terminal-bar">
-          <span class="kt-terminal-bar-title">Private Key</span>
-          <button class="rsa-copy-btn kt-copy" title="Copy private key" @click="copyPrivate()">
+          <span class="kt-terminal-bar-title">{{ t('tools.rsa-key-pair-generator.ui.privateKeyTitle') }}</span>
+          <button class="rsa-copy-btn kt-copy" :title="t('tools.rsa-key-pair-generator.ui.copyPrivateKeyTitle')" @click="copyPrivate()">
             <icon-mdi-content-copy />
-            Copy
+            {{ t('tools.rsa-key-pair-generator.ui.copy') }}
           </button>
         </div>
         <div class="rsa-key-body">
-          <span v-if="loading" class="rsa-generating">Generating...</span>
+          <span v-if="loading" class="rsa-generating">{{ t('tools.rsa-key-pair-generator.ui.generating') }}</span>
           <pre v-else class="rsa-key-text">{{ privateKey }}</pre>
         </div>
       </div>

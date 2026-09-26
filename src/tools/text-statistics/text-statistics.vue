@@ -2,6 +2,8 @@
 import { formatBytes } from '@/utils/convert';
 import { getTextStatistics } from './text-statistics.service';
 
+const { t } = useI18n();
+
 const text = ref('');
 
 const stats = computed(() => getTextStatistics(text.value));
@@ -16,29 +18,29 @@ const byteSize = computed(() => formatBytes(stats.value.byteSize));
     <textarea
       v-model="text"
       class="ts-input"
-      placeholder="Your text..."
+      :placeholder="t('tools.text-statistics.ui.textPlaceholder')"
       rows="8"
       spellcheck="false"
     />
 
     <div class="ts-stats">
       <div class="ts-stat">
-        <span class="ts-stat-label">CHARACTER COUNT</span>
+        <span class="ts-stat-label">{{ t('tools.text-statistics.ui.characterCount') }}</span>
         <span class="ts-stat-value">{{ charCount }}</span>
       </div>
       <div class="ts-divider" />
       <div class="ts-stat">
-        <span class="ts-stat-label">WORD COUNT</span>
+        <span class="ts-stat-label">{{ t('tools.text-statistics.ui.wordCount') }}</span>
         <span class="ts-stat-value">{{ wordCount }}</span>
       </div>
       <div class="ts-divider" />
       <div class="ts-stat">
-        <span class="ts-stat-label">LINE COUNT</span>
+        <span class="ts-stat-label">{{ t('tools.text-statistics.ui.lineCount') }}</span>
         <span class="ts-stat-value">{{ lineCount }}</span>
       </div>
       <div class="ts-divider" />
       <div class="ts-stat">
-        <span class="ts-stat-label">BYTE SIZE</span>
+        <span class="ts-stat-label">{{ t('tools.text-statistics.ui.byteSize') }}</span>
         <span class="ts-stat-value">{{ byteSize }}</span>
       </div>
     </div>

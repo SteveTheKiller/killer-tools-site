@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { policyCategories } from './group-policy-reference.constants';
 
+const { t } = useI18n();
+
 const search = ref('');
 const copiedValue = ref<string | null>(null);
 
@@ -62,7 +64,7 @@ function copyValue(value: string) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search policies, paths, registry keys..."
+      :placeholder="t('tools.group-policy-reference.ui.searchPlaceholder')"
       autofocus
       raw-text
       mb-6
@@ -93,20 +95,20 @@ function copyValue(value: string) {
             <div
               v-if="hasRegistry(registry)"
               class="gpr-registry"
-              :title="copiedValue === registry ? 'Copied!' : 'Click to copy registry key'"
+              :title="copiedValue === registry ? t('tools.group-policy-reference.ui.copied') : t('tools.group-policy-reference.ui.clickToCopyRegistry')"
               :class="{ 'gpr-registry-copied': copiedValue === registry }"
               @click="copyValue(registry)"
             >
-              {{ copiedValue === registry ? '✓ copied' : breakRegistry(registry) }}
+              {{ copiedValue === registry ? `✓ ${t('tools.group-policy-reference.ui.copiedShort')}` : breakRegistry(registry) }}
             </div>
 
             <div class="gpr-kv-block">
               <div class="gpr-kv-row">
-                <span class="gpr-kv-label">Default</span>
+                <span class="gpr-kv-label">{{ t('tools.group-policy-reference.ui.default') }}</span>
                 <span class="gpr-kv-value">{{ defaultValue }}</span>
               </div>
               <div class="gpr-kv-row">
-                <span class="gpr-kv-label">Recommended</span>
+                <span class="gpr-kv-label">{{ t('tools.group-policy-reference.ui.recommended') }}</span>
                 <span class="gpr-kv-value gpr-kv-recommended">{{ recommendedValue }}</span>
               </div>
             </div>

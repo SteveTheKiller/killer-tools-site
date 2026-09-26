@@ -1,376 +1,1786 @@
 home:
   categories:
-    newestTools: '最新工具'
-    favoriteTools: '我的收藏'
-    allTools: '全部工具'
-    favoritesDndToolTip: '拖放重新排列收藏夹'
-  subtitle: '助力开发人员和 IT 工作者'
-  toggleMenu: '切换菜单'
-  home: '主页'
-  uiLib: 'UI 库'
-  support: '支持 IT 工具开发'
-  buyMeACoffee: '赞助'
+    newestTools: 最新工具
+    favoriteTools: 我的收藏
+    allTools: 全部工具
+    favoritesDndToolTip: 拖放重新排列收藏夹
+  subtitle: 助力开发人员和 IT 工作者
+  toggleMenu: 切换菜单
+  home: 主页
+  uiLib: UI 库
+  support: 支持 IT 工具开发
+  buyMeACoffee: 赞助
   follow:
-    title: '关注我们'
-    p1: '给我们 Star'
-    githubRepository: 'GitHub 仓库'
-    p2: '关注我们的'
-    twitterXAccount: 'IT-Tools X 账号'
-    thankYou: '感谢您的支持！'
+    title: 关注我们
+    p1: 给我们 Star
+    githubRepository: GitHub 仓库
+    p2: 关注我们的
+    twitterXAccount: IT-Tools X 账号
+    thankYou: 感谢您的支持！
   nav:
-    github: 'GitHub 仓库'
-    githubRepository: 'GitHub 仓库'
-    twitterX: 'Twitter 账号'
-    twitterXAccount: 'IT-Tools X 账号'
-    about: '关于 IT-Tools'
-    aboutLabel: '关于'
-    darkMode: '深色模式'
-    lightMode: '浅色模式'
-    mode: '颜色模式'
+    github: GitHub 仓库
+    githubRepository: GitHub 仓库
+    twitterX: Twitter 账号
+    twitterXAccount: IT-Tools X 账号
+    about: 关于 IT-Tools
+    aboutLabel: 关于
+    darkMode: 深色模式
+    lightMode: 浅色模式
+    mode: 颜色模式
 about:
-  content: >
+  content: |
     # 关于 killer-tools
-
     killer-tools 由 [Steve the Killer](https://thekiller.net) 用 ❤ 开发，汇集了对开发人员和 IT 从业者有用的工具。如果对您有帮助，请将其分享给您的朋友，并且添加到收藏夹中！
-
     killer-tools 永久免费且开源（GPL-3.0 许可证），但需要资金用于托管和续订域名。如果您想支持我的工作，并鼓励我添加更多工具，请考虑通过 [赞助我](https://www.buymeacoffee.com/StevetheKiller) 进行支持。
-
     ## 技术
-
     killer-tools 采用 Vue.js（Vue 3）和 Naive UI 组件库开发，并由 GitHub 托管和持续部署。某些工具使用了第三方开源库，您可以在仓库的 [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) 文件中找到完整的列表。
-
     ## 发现了 Bug？缺少工具？
-
     如果目前这里没有您需要的工具，并且您认为它可能有用，欢迎在 GitHub 仓库的 [issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) 中提交新增功能的请求。
-
     如果您发现了 Bug，或者某些功能未能按预期工作，请在 GitHub 仓库的 [issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) 中提交错误报告。
-
 404:
-  notFound: '404 页面不存在'
-  sorry: '抱歉，该页面似乎不存在'
-  maybe: '也许缓存出现了一些问题，试试强制刷新页面？'
-  backHome: '返回主页'
+  notFound: 404 页面不存在
+  sorry: 抱歉，该页面似乎不存在
+  maybe: 也许缓存出现了一些问题，试试强制刷新页面？
+  backHome: 返回主页
 favoriteButton:
-  remove: '取消收藏'
-  add: '加入收藏'
+  remove: 取消收藏
+  add: 加入收藏
 toolCard:
-  new: '新'
+  new: 新
 search:
-  label: '搜索'
+  label: 搜索
 tools:
   categories:
-    favorite-tools: '我的收藏'
-    crypto: '加密'
-    conversion: '转换器'
+    favorite-tools: 我的收藏
+    crypto: 加密
+    conversion: 转换器
     web: Web
-    images and videos: '图片和视频'
-    development: '开发'
-    network: '网络'
-    math: '数学'
-    measurement: '测量'
-    text: '文本'
-    data: '数据'
+    images and videos: 图片和视频
+    development: 开发
+    network: 网络
+    math: 数学
+    measurement: 测量
+    text: 文本
+    data: 数据
     windows: Windows
-    killer apps: 'Killer Apps'
-
+    killer apps: Killer Apps
+    photography: 摄影
   password-strength-analyser:
     title: 密码强度分析仪
     description: 使用此密码强度分析器和破解时间估计工具来发现密码的强度。
-
   percentage-calculator:
     title: 百分比计算器
     description: 轻松计算从一个值到另一个值的百分比，或从百分比到值的百分比。
-
+    ui:
+      whatIsXPercentOfYTitle: Y 的 X% 是多少
+      whatIsLabel: 计算
+      percentOfLabel: '% 是多少'
+      resultPlaceholder: 结果
+      xIsWhatPercentOfYTitle: X 是 Y 的百分之几
+      isWhatPercentOfLabel: 是多少% 的
+      percentageChangeTitle: 百分比增加/减少
+      fromLabel: 从
+      toLabel: 到
   svg-placeholder-generator:
     title: SVG 占位符生成器
     description: 生成 svg 图像以用作应用程序中的占位符。
-
+    ui:
+      widthLabel: 宽度(px)
+      backgroundLabel: 背景
+      heightLabel: 高度(px)
+      textColorLabel: 文字颜色
+      fontSizeLabel: 字体大小
+      customTextLabel: 自定义文字
+      customTextPlaceholder: 默认值为 {size}
+      useExactSizeToggle: 使用精确尺寸
+      svgHtmlElementLabel: SVG HTML 元素
+      svgBase64Label: BASE64 格式的 SVG
+      copySvgButton: 复制 svg
+      copyBase64Button: 复制 base64
+      downloadSvgButton: 下载 svg
+      previewLabel: 预览
+      svgPreviewAlt: SVG 预览
   json-to-csv:
     title: JSON 转 CSV
     description: 使用自动标头检测将JSON转换为CSV。
-
+    ui:
+      invalidJson: 提供的 JSON 无效。
+      yourRawJson: 您的原始 JSON
+      pasteRawJsonPlaceholder: 在此粘贴您的原始 JSON...
+      csvOutputLabel: 您的 JSON 的 CSV 版本
   camera-recorder:
     title: 摄像机记录器
     description: 从网络摄像头或照相机拍摄照片或录制视频。
-
+    ui:
+      selectCamera: 选择摄像头
+      selectMicrophone: 选择麦克风
+      notSupported: 您的浏览器不支持摄像头录制。
+      accessRequired: 需要摄像头和麦克风权限。
+      permissionBlocked: 权限已被阻止。请通过浏览器地址栏中的锁形图标手动授予访问权限。
+      grantPermission: 授予权限
+      video: 视频
+      audio: 音频
+      startWebcam: 启动摄像头
+      paused: 已暂停
+      rec: 录制中
+      screenshot: 截图
+      record: 录制
+      pause: 暂停
+      resume: 继续
+      stop: 停止
+      recordingNotSupported: 此浏览器不支持录制
+      captures: 截图 ({count})
+      clearAll: 全部清除
+      screenshotAlt: 截图
+      download: 下载
+      delete: 删除
   keycode-info:
     title: Keycode 信息
     description: 查找任何按下的键的javascript键代码、代码、位置和修饰符。
-
   emoji-picker:
     title: Emoji 选择器
     description: 轻松复制和粘贴Emoji表情符号，并获得每个表情符号的unicode和code points值.
-
+    ui:
+      emojiCopied: 表情符号 {emoji} 已复制到剪贴板
+      codePointsCopied: 代码点“{codePoints}”已复制到剪贴板
+      unicodeCopied: Unicode“{unicode}”已复制到剪贴板
+      searchPlaceholder: 搜索表情符号（例如“smile”）...
+      noResults: 无结果
+      searchResult: 搜索结果
   color-converter:
     title: Color 选择器
     description: 在不同格式（十六进制、rgb、hsl和css名称）之间转换颜色
+    ui:
+      color: 颜色
+      formats: 格式
   bcrypt:
     title: 加密
     description: 使用bcrypt对文本字符串进行哈希和比较。Bcrypt是一个基于Blowfish密码的密码哈希函数。
-
+    ui:
+      copiedToClipboard: 哈希字符串已复制到剪贴板
+      hashTitle: 哈希
+      compareTitle: 比较
+      stringLabel: 字符串
+      stringPlaceholder: 要哈希的字符串...
+      saltRoundsLabel: 盐值轮数
+      outputLabel: 输出
+      copyHash: 复制哈希值
+      compareStringPlaceholder: 要比较的字符串...
+      hashLabel: 哈希值
+      compareHashPlaceholder: 要比较的哈希值...
+      matchLabel: 匹配
+      'yes': 是
+      'no': 否
   crontab-generator:
     title: Crontab 表达式生成
     description: 验证并生成crontab，并获取cron调度的可读描述。
-
+    ui:
+      symbolAnyValue: 任意值
+      symbolEveryMinute: 每分钟
+      symbolRange: 值范围
+      symbolRangeEquivalent: 第1到10分钟
+      symbolList: 值列表
+      symbolListEquivalent: 在第1和第10分钟
+      symbolStep: 步长值
+      symbolStepEquivalent: 每10分钟
+      aliasYearly: 每年一次(1月1日,午夜)
+      aliasMonthly: 每月第一天,午夜
+      aliasWeekly: 周日,午夜
+      aliasDaily: 每天午夜
+      aliasHourly: 每小时整点
+      aliasReboot: 启动时运行一次
+      aliasRebootEquivalent: (启动时)
+      invalidCron: 此cron表达式无效
+      use24HourTime: 24小时制
+      daysStartAtZero: 天数从0开始
+      labelSymbol: '符号:'
+      labelMeaning: '含义:'
+      labelExample: '示例:'
+      labelEquivalent: '等效于:'
+      symbols: 符号
+      aliases: 别名
   http-status-codes:
     title: HTTP 状态码
     description: 所有HTTP状态的列表对其名称和含义解释。
-
+    ui:
+      searchResults: 搜索结果
+      searchPlaceholder: 搜索 HTTP 状态码...
+      copiedTooltip: 已复制！
+      clickToCopy: 点击复制状态码
+      copiedLabel: 已复制
   sql-prettify:
     title: SQL 美化和格式化
     description: 在线格式化和美化您的 SQL 查询（它支持各种 SQL 方言）。
-
-
+    ui:
+      dialectLabel: 方言
+      keywordCaseLabel: 关键字大小写
+      indentStyleLabel: 缩进样式
+      yourSqlQueryLabel: 你的 SQL 查询
+      sqlQueryPlaceholder: 在此粘贴你的 SQL 查询...
+      prettifiedQueryLabel: 查询的美化版本
+      keywordCaseUpper: 大写
+      keywordCaseLower: 小写
+      keywordCasePreserve: 保留
+      indentStyleStandard: 标准
+      indentStyleTabularLeft: 表格左对齐
+      indentStyleTabularRight: 表格右对齐
   git-memo:
     title: Git 备忘录
     description: Git是一种去中心化的版本管理软件。使用此备忘单，您可以快速访问最常见的git命令.
-
   encryption:
     title: 加密/解密文本
     description: 使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。
-
+    ui:
+      decryptError: 无法解密您的文本
+      encryptTitle: 加密
+      decryptTitle: 解密
+      yourText: 您的文本
+      yourSecretKey: 您的密钥
+      algorithm: 算法
+      encryptedOutput: 加密输出
+      yourEncryptedText: 您的加密文本
+      decryptedOutput: 解密输出
+      encryptPlaceholder: 要加密的字符串
+      decryptPlaceholder: 要解密的密文
+      secretKeyPlaceholder: 密钥...
   yaml-prettify:
     title: YAML美化和格式化
     description: 将YAML字符串修饰为友好的可读格式。
-
-
   roman-numeral-converter:
     title: 罗马数字转换器
     description: 将罗马数字转换为数字，并将数字转换为罗马数字。
-
+    ui:
+      converterTitle: 转换器
+      arabicSideLabel: 阿拉伯数字
+      romanSideLabel: 罗马数字
+      arabicRangeError: 必须在 {min}-{max} 之间
+      invalidRoman: 不是有效的罗马数字
+      copied: 已复制
+      copy: 复制
+      romanCopiedToast: 罗马数字已复制
+      arabicCopiedToast: 阿拉伯数字已复制
   hmac-generator:
     title: Hmac 生成器
     description: 使用密钥和您喜欢的哈希函数计算基于哈希的消息身份验证代码（HMAC）。
-
+    ui:
+      encodingBinary: 二进制（2 进制）
+      encodingHex: 十六进制（16 进制）
+      copied: HMAC 已复制到剪贴板
+      plainText: 明文
+      secretKey: 密钥
+      hashingFunction: 哈希函数
+      outputEncoding: 输出编码
+      hmacOutput: HMAC 输出
+      plainTextPlaceholder: 要计算哈希的明文...
+      secretKeyPlaceholder: 输入密钥...
+      clear: 清除
+      copyHmac: 复制 HMAC
   bip39-generator:
     title: BIP39密码生成器
     description: 从现有或随机助记符生成BIP39密码短语，或从密码短语获取助记符。
-
+    ui:
+      languageEnglish: 英语
+      languageChineseSimplified: 简体中文
+      languageChineseTraditional: 繁体中文
+      languageCzech: 捷克语
+      languageFrench: 法语
+      languageItalian: 意大利语
+      languageJapanese: 日语
+      languageKorean: 韩语
+      languagePortuguese: 葡萄牙语
+      languageSpanish: 西班牙语
+      entropyLengthError: 熵长度应为大于等于16、小于等于32且为4的倍数
+      entropyHexError: 熵值应为十六进制字符串
+      invalidMnemonic: 助记词无效
+      entropyCopied: 熵已复制到剪贴板
+      passphraseCopied: 助记词已复制到剪贴板
+      languageLabel: 语言
+      entropyHeading: 熵（种子）
+      entropyPlaceholder: 十六进制熵值...
+      regenerate: 重新生成
+      copyEntropy: 复制熵值
+      passphraseHeading: 助记词
+      passphrasePlaceholder: 助记词...
+      copyPassphrase: 复制助记词
   base64-file-converter:
     title: Base64 文件转换器
     description: 将字符串、文件或图像转换为其 Base64 表示形式。
-
+    ui:
+      copiedToClipboard: Base64 字符串已复制到剪贴板
+      base64ToFileTitle: BASE64 转文件
+      fileNameLabel: 文件名
+      fileNamePlaceholder: 下载文件名
+      extensionLabel: 扩展名
+      extensionPlaceholder: 扩展名
+      base64StringLabel: BASE64 字符串
+      base64InputPlaceholder: 在此粘贴文件的 base64 字符串...
+      invalidBase64: 无效的 base64 字符串
+      previewImage: 预览图片
+      downloadFile: 下载文件
+      fileToBase64Title: 文件转 BASE64
+      dropHint: 将文件拖放到此处,或点击选择
+      fileInBase64Label: BASE64 格式文件
+      fileOutputPlaceholder: 文件的 base64 编码将显示在此处
+      copied: 已复制!
+      copyBase64: 复制 base64
   base64-string-converter:
     title: Base64 字符串编码/解码
     description: 将字符串编码和解码为其 Base64 格式表示形式即可。
-
+    ui:
+      base64CopiedToClipboard: Base64 字符串已复制到剪贴板
+      stringCopiedToClipboard: 字符串已复制到剪贴板
+      stringToBase64Title: 字符串转 BASE64
+      encodingLabel: 编码方式
+      standard: 标准
+      urlSafe: URL 安全
+      stringToEncodeLabel: 待编码字符串
+      stringInputPlaceholder: 在此输入字符串...
+      base64OutputLabel: BASE64 输出
+      base64OutputPlaceholder: 您的字符串的 base64 编码将显示在此处
+      copied: 已复制!
+      copyBase64: 复制 base64
+      base64ToStringTitle: BASE64 转字符串
+      base64ToDecodeLabel: 待解码的 BASE64 字符串
+      base64InputPlaceholder: 您的 base64 字符串...
+      invalidBase64: 无效的 base64 字符串
+      decodedStringLabel: 解码后的字符串
+      decodedOutputPlaceholder: 解码后的字符串将显示在此处
+      copyDecodedString: 复制解码后的字符串
   math-evaluator:
     title: 数学计算器
     description: 计算数学表达式的计算器。您可以使用sqrt、cos、sin、abs等函数。
-
+    ui:
+      placeholder: 您的数学表达式(例如:2*sqrt(6) )...
+      result: 结果
   url-parser:
     title: Url分析器
     description: 解析url字符串以获取所有不同的部分（协议、来源、参数、端口、用户名密码…）
-
-
+    ui:
+      sectionHost: 主机
+      protocol: 协议
+      hostname: 主机名
+      port: 端口
+      sectionAuthentication: 身份验证
+      username: 用户名
+      password: 密码
+      sectionPath: 路径
+      pathname: 路径名
+      search: 查询参数
+      hash: 哈希
+      urlTitle: URL
+      invalidUrl: 无效的 URL
+      params: 参数
+      emptyHint: 在上方输入 URL 以进行解析
   user-agent-parser:
     title: 用户代理分析器
     description: 从用户代理字符串中检测和分析浏览器、引擎、操作系统、CPU和设备类型/型号。
-
+    ui:
+      sectionBrowser: 浏览器
+      sectionEngine: 引擎
+      sectionOs: 操作系统
+      sectionDevice: 设备
+      sectionCpu: CPU
+      name: 名称
+      version: 版本
+      model: 型号
+      type: 类型
+      vendor: 厂商
+      architecture: 架构
+      userAgentString: USER AGENT 字符串
+      placeholder: 在此输入你的 user-agent...
+      unknown: 未知
+      error: 错误
+      parseError: 无法解析 user agent 字符串
   case-converter:
     title: 大小写转换
     description: 更改字符串的大小写并在不同格式之间进行选择
-
+    ui:
+      inputPlaceholder: 你的字符串...
+      output: 输出
   html-entities:
     title: 转义html实体
     description: 转义或unescape html实体（将<、>、&、“和\'替换为其html版本）
-
+    ui:
+      yourString: 您的字符串
+      escapePlaceholder: 要转义的字符串...
+      escapedOutput: 转义后的输出
+      copied: 已复制
+      copy: 复制
+      yourEscapedString: 您的转义字符串
+      unescapePlaceholder: 要反转义的字符串...
+      unescapedOutput: 反转义后的输出
   json-prettify:
     title: JSON美化和格式化
     description: 将JSON字符串修饰为友好的可读格式。
-
   docker-run-to-docker-compose-converter:
     title: Docker Run 到 docker-compose 转换器
     description: 将 docker run 命令行转换为 docker-compose 文件!
-
   mac-address-lookup:
     title: MAC地址查找
     description: 通过设备的MAC地址查找设备的供应商和制造商。
-
+    ui:
+      macAddressLabel: MAC 地址
+      copiedTooltip: 已复制！
+      copyTooltip: 点击复制厂商信息
+      copiedTitle: ✓ 已复制
+      vendorInfoTitle: 厂商信息
+      unknownVendor: 此地址的厂商未知
   lorem-ipsum-generator:
     title: Lorem ipsum生成器
     description: Lorem ipsum是一种占位符文本，通常用于演示文档或字体的视觉形式，而不依赖于有意义的内容
-
+    ui:
+      copiedMessage: Lorem ipsum 已复制到剪贴板
+      paragraphs: 段落数
+      sentencesPerParagraph: 每段句数
+      wordsPerSentence: 每句词数
+      startWithLoremIpsum: 以 lorem ipsum 开头
+      asHtml: 以 HTML 格式
+      output: 输出
+      wordCount: '{count} 个词'
+      charCount: '{count} 个字符'
+      copy: 复制
+      refresh: 刷新
   qrcode-generator:
     title: 二维码生成器
     description: 生成并下载url或文本的QR代码，并自定义背景和前景颜色。
-
   xml-formatter:
     title: XML 格式化
     description: 将XML字符串修饰为友好的可读格式。
-
+    ui:
+      invalidXml: 提供的 XML 无效。
+      collapse: 折叠
+      indentSize: 缩进大小
+      inputLabel: 您的 XML
+      inputPlaceholder: 在此粘贴您的 XML...
+      outputLabel: 根据您的 XML 生成的格式化 XML
   temperature-converter:
     title: 温度转换器
     description: 开尔文、摄氏度、华氏度、兰金、德莱尔、牛顿、雷奥穆尔和罗默温度度数转换。
-
+    ui:
+      kelvin: 开尔文
+      celsius: 摄氏度
+      fahrenheit: 华氏度
+      rankine: 兰氏度
+      delisle: 德利尔度
+      newton: 牛顿度
+      reaumur: 列氏度
+      romer: 罗默度
   chmod-calculator:
     title: Chmod 计算器
     description: 使用此在线的chmod计算器计算chmod权限和命令。
-
+    ui:
+      read: 读取
+      write: 写入
+      execute: 执行
+      owner: 所有者
+      group: 组
+      public: 公共
+      commandCopied: chmod 命令已复制
+      copyCommand: 复制命令
   rsa-key-pair-generator:
     title: RSA密钥对生成器
     description: 生成新的随机RSA私钥和公钥pem证书。
-
+    ui:
+      bitsRangeError: 位数必须在 256 到 16384 之间,且为 8 的倍数
+      bitsLabel: 位数
+      refreshButton: 刷新密钥对
+      publicKeyTitle: 公钥
+      copyPublicKeyTitle: 复制公钥
+      copy: 复制
+      generating: 正在生成...
+      privateKeyTitle: 私钥
+      copyPrivateKeyTitle: 复制私钥
+      publicKeyCopiedToast: 公钥已复制
+      privateKeyCopiedToast: 私钥已复制
   html-wysiwyg-editor:
     title: HTML所见即所得编辑器
     description: 在线HTML编辑器具有功能丰富的所见即所得编辑器，立即获得内容的源代码。
-
+    ui:
+      bold: 粗体
+      italic: 斜体
+      strike: 删除线
+      inlineCode: 行内代码
+      heading1: 标题 1
+      heading2: 标题 2
+      heading3: 标题 3
+      heading4: 标题 4
+      bulletList: 项目符号列表
+      orderedList: 编号列表
+      codeBlock: 代码块
+      blockquote: 引用
+      hardBreak: 强制换行
+      clearFormat: 清除格式
+      undo: 撤销
+      redo: 重做
   json-diff:
     title: JSON 差异比较
     description: 比较两个JSON对象并获得它们之间的差异。
+    ui:
+      onlyShowDifferences: 仅显示差异
+      jsonsAreTheSame: 提供的两个 JSON 相同
+      firstJsonTitle: 您的第一个 JSON
+      firstJsonPlaceholder: 在此粘贴您的第一个 JSON...
+      invalidJson: JSON 格式无效
+      secondJsonTitle: 用于比较的 JSON
+      secondJsonPlaceholder: 在此粘贴要比较的 JSON...
   jwt-parser:
     title: JWT 解析器
     description: 解析和解码JSON Web Token（jwt）并显示其内容。
-
+    ui:
+      header: Header
+      payload: Payload
+      jwtToDecodeTitle: 待解码的 JWT
+      tokenPlaceholder: 在此输入您的令牌...
+      invalidJwt: 无效的 JWT
   date-converter:
     title: 日期时间转换器
     description: 将日期和时间转换为各种不同的格式
-
-
   ipv4-subnet-calculator:
     title: IPv4子网计算器
     description: 解析IPv4 CIDR块，并获取有关子网络的所有所需信息。
-
+    ui:
+      invalidAddress: 无法解析该地址，请检查格式
+      netmask: 子网掩码
+      networkAddress: 网络地址
+      networkMask: 网络掩码
+      networkMaskBinary: 网络掩码的二进制形式
+      cidrNotation: CIDR 表示法
+      wildcardMask: 通配符掩码
+      networkSize: 网络大小
+      firstAddress: 起始地址
+      lastAddress: 结束地址
+      broadcastAddress: 广播地址
+      noBroadcast: 此掩码没有广播地址
+      ipClass: IP 类别
+      unknownClassType: 未知类别
+      decimal: 十进制
+      hexadecimal: 十六进制
+      binary: 二进制
+      ipv6Short: IPv6（简写）
+      inputLabel: 带或不带掩码的 IPv4 地址
+      bitMap: 位图
+      network: 网络
+      host: 主机
+      setPrefix: 将前缀设为 /{prefix}
+      networkTag: 网络
+      broadcastTag: 广播
+      hostsCount: '{count} 台主机'
+      privateIp: 私有 IP
+      publicIp: 公共 IP
+      subnetDetail: 子网详情
+      subnetInfo: 子网信息
+      addressRepresentations: 地址表示形式
+      copy: 复制
+      enterValidIpv4: 输入有效的 IPv4 地址以查看各种表示形式
+      previousBlock: 上一个区块
+      nextBlock: 下一个区块
+      collapseCheatSheet: 收起速查表
+      subnetCheatSheet: 子网速查表
   og-meta-generator:
     title: 开放式图形元生成器
     description: 为您的网站生成开放式图形和社交html元标记。
-
   ipv6-ula-generator:
     title: IPv6 ULA生成器
     description: 根据RFC4193在网络上生成您自己的本地不可路由IP地址。
-
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: 第一个可路由地址
+      lastRoutable: 最后一个可路由地址
+      infoAlert: 使用当前时间戳加 MAC 地址，经 SHA1 哈希处理。低 40 位按 RFC 4193 构成全局 ID。
+      macAddress: MAC 地址
+      output: 输出结果
+      copied: 已复制！
+      copy: 复制
   hash-text:
     title: Hash 文本
-    description: '使用所需的函数哈希文本字符串：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160'
-
+    description: 使用所需的函数哈希文本字符串：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160
+    ui:
+      encodingBinary: 二进制（2 进制）
+      encodingHex: 十六进制（16 进制）
+      encodingBase64: Base64（64 进制）
+      encodingBase64url: Base64url（URL 安全的 64 进制）
+      inputPlaceholder: 要哈希的字符串...
+      encoding: 编码
+      output: 输出
   json-to-toml:
     title: JSON 转 TOML
     description: 解析JSON并将其转换为TOML。
-
   device-information:
     title: 设备信息
     description: 获取有关当前设备的信息（屏幕大小、像素比率、用户代理…）
-
+    ui:
+      screen: 屏幕
+      hardware: 硬件
+      network: 网络
+      browser: 浏览器
+      screenSize: 屏幕尺寸
+      windowSize: 窗口大小
+      pixelRatio: 像素比
+      colorDepth: 颜色深度
+      orientation: 方向
+      orientationAngle: 方向角度
+      touchPoints: 触摸点
+      cpuCores: CPU核心数
+      deviceMemory: 设备内存
+      platform: 平台
+      online: 在线
+      connectionType: 连接类型
+      downlinkSpeed: 下行速度
+      roundTripTime: 往返时间
+      dataSaver: 省流量模式
+      vendor: 制造商
+      languages: 语言
+      cookiesEnabled: Cookie已启用
+      pdfViewer: PDF查看器
+      doNotTrack: 请勿跟踪
+      userAgent: 用户代理
+      maxTouchPoints: 最多{count}个
+      none: 无
+      logicalCores: '{count}个逻辑核心'
+      'yes': 是
+      'no': 否
+      enabled: 已启用
+      disabled: 已禁用
+      supported: 支持
+      notSupported: 不支持
+      notSet: 未设置
   pdf-signature-checker:
     title: PDF签名检查器
-    description: '验证PDF文件的签名。签名的PDF文件包含一个或多个签名，可用于确定文件的内容在签名后是否已被更改。'
-
+    description: 验证PDF文件的签名。签名的PDF文件包含一个或多个签名，可用于确定文件的内容在签名后是否已被更改。
+    ui:
+      tableHeaderValidityPeriod: 有效期
+      tableHeaderIssuedBy: 颁发者
+      tableHeaderIssuedTo: 颁发对象
+      tableHeaderPemCertificate: PEM 证书
+      notBefore: 生效日期
+      notAfter: 失效日期
+      commonName: 通用名称
+      organizationName: 组织名称
+      countryName: 国家名称
+      localityName: 城市名称
+      organizationalUnitName: 组织单位名称
+      stateOrProvinceName: 省/州名称
+      viewPemCert: 查看 PEM 证书
+      uploadPrompt: 将 PDF 文件拖放到此处，或点击选择文件
+      noSignaturesFound: 在所提供的文件中未找到签名。
+      signatureCertificatesLabel: 签名 {number} 证书：
   json-minify:
     title: JSON 压缩
     description: 通过删除不必要的空白来缩小和压缩JSON。
-
+    ui:
+      invalidJson: 提供的 JSON 无效。
+      inputLabel: 您的原始 JSON
+      inputPlaceholder: 在此粘贴您的原始 JSON...
+      outputLabel: 您的 JSON 的压缩版本
   ulid-generator:
     title: ULID 生成器
     description: 生成随机的通用唯一词典可排序标识符（ULID）。
-
+    ui:
+      copiedMessage: ULID 已复制到剪贴板
+      quantity: 数量
+      format: 格式
+      formatRaw: 原始
+      formatJson: JSON
+      output: 输出
+      copy: 复制
+      refresh: 刷新
   base-converter:
     title: 整数基转换器
     description: 在不同的基数（十进制、十六进制、二进制、八进制、base64…）之间转换数字
-
   uuid-generator:
     title: UUIDs 生成器
     description: 通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。
-
+    ui:
+      copiedMessage: UUID 已复制到剪贴板
+      version: 版本
+      quantity: 数量
+      namespacePreset: 命名空间预设
+      namespaceUuid: 命名空间 UUID
+      invalidUuid: 无效的 UUID
+      name: 名称
+      namePlaceholder: 要哈希的名称...
+      output: 输出
+      copy: 复制
+      refresh: 刷新
   ipv4-address-converter:
     title: Ipv4地址转换器
     description: 在ipv6中，将ip地址转换为十进制、二进制、十六进制或事件
-
+    ui:
+      decimal: 十进制
+      hexadecimal: 十六进制
+      binary: 二进制
+      ipv6Short: IPv6(缩写)
+      invalidIpv4: 无效的 IPv4 地址
+      ipv4Address: IPv4 地址
+      output: 输出
+      copied: 已复制!
+      copy: 复制
   text-statistics:
     title: 文本统计
     description: 获取有关文本、字符数、字数、大小等的信息
-
+    ui:
+      textPlaceholder: 输入文本...
+      characterCount: 字符数
+      wordCount: 单词数
+      lineCount: 行数
+      byteSize: 字节大小
   text-to-nato-alphabet:
     title: 文本转北约字母表
     description: 将文本转换为北约拼音字母以进行口头传播。
-
+    ui:
+      yourText: 您的文本
+      inputPlaceholder: 例如 Hello world
+      natoPhonetic: NATO 音标字母
+      copied: 已复制
+      copyAll: 全部复制
+      natoStringCopied: NATO 字符串已复制。
   ipv4-range-expander:
     title: IPv4范围扩展器
     description: 给定起始和结束IPv4地址，此工具使用其CIDR表示法计算有效的IPv4网络。
-
+    ui:
+      startAddress: 起始地址
+      endAddress: 结束地址
+      addressesInRange: 范围内的地址数
+      invalidIpv4: 无效的 IPv4 地址
+      invalidCombinationTitle: 起始和结束 IPv4 地址组合无效
+      invalidCombinationDescription: 结束 IPv4 地址小于起始地址,此设置无效,无法计算结果。
+      switchStartEnd: 交换起始和结束 IPv4 地址
+      result: 结果
+      copied: 已复制!
+      copyResult: 复制结果
   text-diff:
     title: 文本比较
     description: 比较两个文本并查看它们之间的差异。
-
   otp-generator:
     title: OTP代码生成器
     description: 为多因素身份验证生成和验证基于时间的OTP（一次性密码）。
-
   text-to-binary:
     title: 文本到 ASCII 二进制
     description: 将文本转换为其 ASCII 二进制表示形式，反之亦然。
-
+    ui:
+      textCopied: 文本已复制
+      binaryCopied: 二进制已复制
+      panelTitle: 文本 ↔ ASCII BINARY
+      textLabel: 文本
+      binaryLabel: 二进制
+      copied: 已复制
+      copy: 复制
+      textPlaceholder: 例如 Hello world
+      invalidBinary: 必须是有效的 ASCII binary(8 位的倍数)
   killer-scripts:
     title: Killer Scripts
     description: PowerShell scripts for Windows administration and MSP field work.
-
   group-policy-reference:
     title: Group Policy Reference
     description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
-
+    ui:
+      searchPlaceholder: 搜索策略、路径、注册表项...
+      copied: 已复制!
+      clickToCopyRegistry: 点击复制注册表项
+      copiedShort: 已复制
+      default: 默认
+      recommended: 推荐
   windows-event-lookup:
     title: Windows Event Lookup
     description: Look up common Windows Event IDs with descriptions and severity.
-
+    ui:
+      searchResults: 搜索结果
+      searchPlaceholder: 按事件 ID、名称或描述搜索...
+      copied: 已复制!
+      clickToCopyEventId: 点击复制事件 ID
+      copiedShort: 已复制
   m365-sku-decoder:
     title: M365 License SKU Decoder
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
-
+    ui:
+      searchPlaceholder: 按 SKU 名称、字符串 ID 或描述搜索...
+      copied: 已复制！
+      clickToCopy: 点击复制字符串 ID
+      copiedMark: ✓ 已复制
   windows-error-codes:
     title: Windows Error Code Lookup
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
-
+    ui:
+      searchResults: 搜索结果
+      searchPlaceholder: 按十六进制代码、错误名称或描述搜索...
+      copied: 已复制！
+      clickToCopy: 点击复制代码
+      copiedShort: 已复制
+      decimal: 十进制 {decimal}
   exchange-ndr-lookup:
     title: Exchange NDR Lookup
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
-
+    ui:
+      searchResults: 搜索结果
+      searchPlaceholder: 按 NDR 代码、错误名称、原因或解决方法搜索...
+      copied: 已复制！
+      clickToCopy: 点击复制 NDR 代码
+      copiedShort: 已复制
+      cause: 原因
+      fix: 解决方法
   safelink-decoder:
     title: Outlook Safelink decoder
     description: Decode Outlook SafeLink links.
-
   port-protocol-reference:
     title: Port & Protocol Reference
     description: Common network ports and protocols with security notes and dangerous port flags.
-
   cve-lookup:
     title: CVE Lookup
     description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
-
+    ui:
+      range6m: 6 个月
+      range1y: 1 年
+      range2y: 2 年
+      range5y: 5 年
+      rangeAll: 所有时间
+      noDescription: 暂无描述。
+      fetchError: 无法连接到 NVD API。请检查您的网络连接。
+      sortNewest: 最新优先
+      sortOldest: 最旧优先
+      sortSeverity: 严重程度最高
+      severityCritical: 严重
+      severityHigh: 高
+      severityMedium: 中
+      severityLow: 低
+      placeholder: CVE 编号或关键词(例如 CVE-2021-44228、log4j)
+      searching: 搜索中...
+      search: 搜索
+      hint: 按 CVE 编号、部分数字(例如 43284)、常见名称(例如 log4shell、dirty frag)或关键词搜索。数据实时来自 NVD 和 GitHub Advisory Database。
+      noResults: 未找到与"{query}"匹配的 CVE。
+      noResultsInRange: 在所选日期范围内未找到与"{query}"匹配的 CVE。
+      noExactMatch: 在所选日期范围内未找到完全匹配的短语。常见漏洞名称(如"dirty frag")可能不会在 NVD 描述中逐字出现。请尝试使用部分 CVE 编号(例如"43284"可找到 CVE-2026-43284)。
+      searchAllTime: 搜索所有时间
+      showingResults: 显示 {total} 条结果中的 {shown} 条
+      allSeverities: 所有严重程度
+      allYears: 所有年份
+      copied: 已复制!
+      clickToCopyId: 点击复制 CVE 编号
+      copiedShort: 已复制
+      cveDetail: CVE 详情
+      published: 发布时间
+      modified: 修改时间
+      clickToCopy: 点击复制
+      references: 参考资料
+      kevActionDue: 'CISA KEV 处理截止日期:'
+      cvssMetrics: CVSS 指标
+      metricAttackVector: 攻击向量
+      metricAttackComplexity: 攻击复杂度
+      metricPrivilegesRequired: 所需权限
+      metricUserInteraction: 用户交互
+      metricScope: 影响范围
+      metricConfidentiality: 机密性
+      metricIntegrity: 完整性
+      metricAvailability: 可用性
   email-dns-checker:
     title: Email DNS Checker
     description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
-
   email-header-parser:
     title: Email Header Parser
     description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
-
+    ui:
+      pasteHint: 在下方粘贴原始邮件头。
+      parseButton: 解析邮件头
+      parseAnother: 解析下一个
+      messageDetails: 邮件详情
+      senderMismatch: 发件人域与 From 域不一致,这可能表示伪造或委托发送。
+      deliveryHops: 传递跳数
+      oldestFirst: 最早的在前
+      authResults: 身份验证结果
+      spamAnalysis: 垃圾邮件分析
+      spamScore: 垃圾邮件评分
+      spamStatus: 垃圾邮件状态
   whois-checker:
     title: WHOIS Lookup
     description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
-
   ascii-text-drawer:
     title: ASCII Word Art Generator
     description: Create ASCII art text with many fonts and styles.
-
+    ui:
+      yourText: 您的文本
+      textPlaceholder: 要绘制的文本
+      options: 选项
+      font: 字体
+      searchFonts: 搜索字体...
+      noFontsMatch: 没有匹配的字体
+      width: 宽度
+      output: ASCII ART 输出
+      loadingFont: 正在加载字体...
+      error: 当前设置导致了错误。
+      copied: 已复制!
+      copy: 复制
   regex-tester:
     title: Regex Tester
     description: Test your regular expressions with sample text.
-
+    ui:
+      regexLabel: '待测试的正则表达式:'
+      regexPlaceholder: 输入要测试的正则表达式
+      globalLabel: 全局
+      globalTitle: 全局搜索
+      ignoreCaseLabel: 忽略大小写
+      ignoreCaseTitle: 不区分大小写搜索
+      multilineLabel: 多行
+      singlelineLabel: 单行
+      singlelineTitle: 允许点号匹配换行符。
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode;将模式视为一系列 Unicode 码点。
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: u 模式的升级版,提供更多 Unicode 功能。
+      textLabel: '待匹配文本:'
+      textPlaceholder: 输入要匹配的文本
+      regexBarTitle: REGEX
+      matchesBarTitle: 匹配结果
+      matchIndex: 索引
+      matchValue: 值
+      matchCaptures: 捕获组
+      matchGroups: 分组
+      noMatch: 无匹配项
+      sampleBarTitle: 示例
+      diagramBarTitle: 图示
+      quickReference: 快速参考
   yaml-converter:
     title: YAML converter
     description: Convert YAML to JSON or TOML.
-
+    ui:
+      convertTo: 转换为：
+      inputLabel: 您的 YAML
+      inputPlaceholder: 在此粘贴您的 YAML...
+      invalidYaml: 提供的 YAML 无效。
+      outputLabel: '{format} 格式输出'
   json-converter:
     title: JSON converter
     description: Convert JSON to YAML or TOML.
-
+    ui:
+      convertTo: 转换为
+      yourJson: 您的 JSON
+      pasteJsonPlaceholder: 在此粘贴您的 JSON...
+      invalidJson: JSON 格式无效
+      formatOutput: '{format} 输出'
   toml-converter:
     title: TOML converter
     description: Convert TOML to JSON or YAML.
-
+    ui:
+      convertTo: '转换为:'
+      yourToml: 你的 TOML
+      pastePlaceholder: 在此粘贴你的 TOML...
+      invalidToml: 提供的 TOML 无效。
+      outputLabel: '{format} 输出'
   xml-json-converter:
     title: XML ↔ JSON converter
     description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
-
+    ui:
+      invalidXml: 无效的 XML。
+      invalidJson: 无效的 JSON。
+      xmlLabel: XML
+      xmlPlaceholder: 在此粘贴您的 XML...
+      jsonLabel: JSON
+      jsonPlaceholder: 在此粘贴您的 JSON...
   markdown-to-html:
     title: Markdown to HTML
     description: Convert Markdown to Html and allow to print (as PDF).
+    ui:
+      copiedSuccess: HTML 已复制到剪贴板！
+      copyFailed: 复制文本失败。
+      inputLabel: 要转换的 Markdown 内容：
+      inputPlaceholder: 您的 Markdown 内容...
+      outputLabel: 输出 HTML：
+      copyHtmlButton: 复制 HTML
+      printAsPdfButton: 打印为 PDF
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: 文本转 Unicode
+      enterTextLabel: 输入要转换为 Unicode 的文本
+      unicodeFromTextLabel: 来自您文本的 Unicode
+      unicodeOutputPlaceholder: 您文本的 Unicode 表示将显示在此处
+      copyUnicode: 复制 Unicode 到剪贴板
+      unicodeToTextTitle: Unicode 转文本
+      inputUnicodePlaceholder: 输入 Unicode
+      enterUnicodeLabel: 输入要转换为文本的 Unicode
+      textFromUnicodeLabel: 来自您 Unicode 的文本
+      textOutputPlaceholder: 您 Unicode 的文本表示将显示在此处
+      copyText: 复制文本到剪贴板
+  email-record-generator:
+    ui:
+      hardFailRecommended: 严格拒绝，推荐
+      softFail: 宽松拒绝
+      neutralNotRecommended: 中立，不推荐
+      blockFailingMail: 拦截未通过验证的邮件
+      sendToSpam: 发送到垃圾邮件
+      monitorOnly: 仅监控
+      relaxedDefault: 宽松（默认）
+      strict: 严格
+      sameAsMainPolicy: 与主策略相同
+      spfRecordTitle: SPF 记录
+      dmarcRecordTitle: DMARC 记录
+      spfRecordLocation: 根域名上的 TXT 记录
+      dmarcRecordLocation: TXT 记录位置
+      copied: 已复制
+      clickToCopy: 点击复制
+      lookupWarning: 已选择 {count} 次 DNS 查询；SPF 限制为 10 次查询
+      mailProviders: 邮件服务商
+      customIps: 自定义 IP 或范围（可选）
+      examplePrefix: 例如
+      enforcement: 执行方式
+      policy: 策略
+      subdomainPolicy: 子域名策略（可选）
+      policyCoverage: 策略覆盖率：{percent}%
+      coverageHint: 将对 {percent}% 的未通过邮件执行操作。逐步上线时可使用低于 100% 的值。
+      aggregateReportEmail: 汇总报告邮箱（rua）
+      forensicReportEmail: 详细报告邮箱（ruf，可选）
+      dkimAlignment: DKIM 对齐
+      spfAlignment: SPF 对齐
+    title: 邮件记录生成器
+    description: 生成 SPF 和 DMARC DNS TXT 记录。选择邮件服务商与策略,将结果直接复制到你的 DNS 中。
+  password-generator:
+    ui:
+      terminal:
+        passwordTitle: 密码
+        optionsTitle: 选项
+      meta:
+        entropyLabel: '熵值:'
+        bits: 位
+        crackLabel: '破解时间:'
+      actions:
+        copy: 复制
+        refresh: 刷新
+      section:
+        preset: 预设
+        mode: 模式
+        format: 格式
+        length: 长度 ({length})
+        wordCount: 单词数 ({count})
+        separator: 分隔符
+        characterClasses: 字符类型
+        options: 选项
+      charClass:
+        uppercase: 大写字母
+        lowercase: 小写字母
+        numbers: 数字
+        symbols: 符号
+      option:
+        excludeAmbiguous: 排除易混淆字符
+        requireOneOfEach: 每种类型至少一个字符
+        capitalizeWords: 单词首字母大写
+        appendNumber: 追加2位数字
+      mode:
+        random: 随机
+        passphrase: 密码短语
+        pronounceable: 易读发音
+        format: 格式
+      format:
+        plain: 纯文本
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: 无
+      qr:
+        caption: 扫码复制
+      phonetic:
+        title: 拼读
+      bulk:
+        generateLabel: 生成
+        single: 单个
+        atOnce: 一次生成{n}个
+        passwordsTitle: '{count}个密码'
+        copyAll: 全部复制
+      toast:
+        passwordCopied: 密码已复制到剪贴板
+        passwordsCopied: 密码已全部复制到剪贴板
+        phoneticCopied: 拼读已复制
+    title: 密码生成器
+    description: 生成强密码、Diceware 密码短语、可读字符串以及十六进制/Base64/UUID 令牌。内置 MSP 预设(本地管理员、服务账户、Wi-Fi 密码、PIN),支持排除易混淆字符、熵值仪表、二维码和 NATO 音标读法。
+  exposure-equivalence:
+    ui:
+      titleInputs: 等效曝光
+      shutterSpeed: 快门速度
+      dragOrClick: 拖动或点击
+      custom: 自定义
+      secPlaceholder: 秒
+      aperture: 光圈
+      titleResults: 等效曝光组合
+      isoIndependent: 在任意固定 ISO 下均与 ISO 无关
+      highlightedBase: 高亮行为您的基准值
+      legendT1: 基准快门速度
+      legendT2: 等效快门速度
+      legendN1: 基准光圈（f 值）
+      legendN2: 目标光圈（f 值）
+    title: 曝光等效换算
+    description: 在相同曝光量下查找各光圈对应的等效快门速度。选择基准快门与光圈,即可查看其他每档光圈所需的数值。
+  nd-filter-calculator:
+    ui:
+      titleInputs: ND 滤镜计算器
+      baseShutterSpeed: 基准快门速度（不加滤镜）
+      dragOrClick: 拖动或点击
+      custom: 自定义
+      secPlaceholder: 秒
+      ndFilter: ND 滤镜
+      stopOne: '{count} 档'
+      stopMany: '{count} 档'
+      enterStops: 输入档数
+      stopsPlaceholder: 档
+      titleResult: 校正后曝光
+      copied: 已复制
+      copySeconds: 复制秒数
+      longExposureAlert: 长时间曝光，建议使用 Bulb 模式。
+      stackingFilters: 叠加滤镜时，将档数相加
+      legendT1: 基准快门速度（不加滤镜）
+      legendT2: 校正后快门速度
+      legendStops: ND 滤镜档数
+    title: ND 滤镜计算器
+    description: 计算使用中灰密度镜后的修正快门速度,支持所有常见 ND 强度及自定义档位。
+  portProtocolReference:
+    ui:
+      searchPlaceholder: 按端口、服务、协议或描述搜索...
+      allProtocols: 全部
+      dangerousOnly: 仅显示危险项
+      showingPorts: 显示 {count} 个端口
+      copied: 已复制！
+      clickToCopy: 点击复制端口号
+      copiedCheck: ✓ 已复制
+      dangerousPill: 危险
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet 浏览器
+      adminBadge: 管理员
+      cmdletSearchPlaceholder: 按名称、描述或模块搜索...
+      noCmdletsMatch: 没有与"{query}"匹配的 cmdlet
+      generatedCommand: 生成的命令
+      copiedCheck: ✓ 已复制！
+      copyCommand: 复制命令
+      commonExamples: 常见示例
+      selectCmdletPrompt: 在左侧选择一个 cmdlet 以开始构建命令。
+      parameters: 参数
+      noParametersNeeded: 无需参数，此 cmdlet 按原样运行。
+      required: 必填
+      separateMultipleValues: 多个值用逗号分隔
+      showFewerParameters: 显示更少参数
+      showMoreParameters: 还有 {count} 个参数
+      collapseQuickReference: 收起速查表
+      openQuickReference: 打开速查表
+      quickReference: 速查表
+      cheatsheetComparisonOperators: 比较运算符
+      cheatsheetEqualTo: 等于
+      cheatsheetNotEqualTo: 不等于
+      cheatsheetGreaterLessThan: 大于 / 小于
+      cheatsheetGreaterLessEqual: 大于等于 / 小于等于
+      cheatsheetStringOperators: 字符串运算符
+      cheatsheetWildcardMatch: 通配符匹配（* 和 ?）
+      cheatsheetWildcardNonMatch: 通配符不匹配
+      cheatsheetRegexMatch: 正则表达式匹配
+      cheatsheetRegexNonMatch: 正则表达式不匹配
+      cheatsheetCollectionContains: 集合包含该值
+      cheatsheetValueInCollection: 值属于某个集合
+      cheatsheetLogicalOperators: 逻辑运算符
+      cheatsheetBothTrue: 两个条件都必须为真
+      cheatsheetEitherTrue: 任一条件为真
+      cheatsheetNegateCondition: 取反某个条件
+      cheatsheetAutomaticVariables: 自动变量
+      cheatsheetCurrentPipelineObject: 当前管道对象
+      cheatsheetNullEmptyValue: 空值 / null
+      cheatsheetBooleanTrueFalse: 布尔值 true / false
+      cheatsheetLocalComputerName: 本地计算机名
+      cheatsheetCurrentUser: 当前登录用户
+      cheatsheetPsVersionInfo: PS 版本信息
+      cheatsheetDateHelpers: 日期辅助函数
+      cheatsheetCurrentDateTime: 当前日期和时间
+      cheatsheetThirtyDaysAgo: 30 天前
+      cheatsheetThreeMonthsAgo: 3 个月前
+      cheatsheetParseDateString: 解析日期字符串
+      cheatsheetPipelineTricks: 管道技巧
+      cheatsheetLimitFirst10: 仅显示前 10 条结果
+      cheatsheetCountSumMinMax: 计数 / 求和 / 最小值 / 最大值
+      cheatsheetInteractiveGuiViewer: 交互式 GUI 查看器（本地）
+      cheatsheetConvertToJson: 将输出转换为 JSON
+      cheatsheetOutputScreenAndFile: 同时输出到屏幕和文件
+      cheatsheetSuppressErrors: 抑制非致命错误
+      cheatsheetRemoteExecution: 远程执行
+      cheatsheetCmdletsSupportDirectly: 许多 cmdlet 直接支持此功能
+      cheatsheetRunViaRemoting: 通过 PS Remoting（WinRM）运行
+      cheatsheetInteractiveRemoteSession: 交互式远程 PS 会话
+  basic-auth-generator:
+    ui:
+      copied: 请求头已复制到剪贴板
+      username: 用户名
+      usernamePlaceholder: 您的用户名...
+      password: 密码
+      passwordPlaceholder: 您的密码...
+      headerLabel: 'Authorization 请求头:'
+      copyHeader: 复制请求头
+  gif-search:
+    ui:
+      errorStatus: 错误{status}
+      fetchFailed: 获取GIF失败。
+      searchPlaceholder: 搜索GIF(例如facepalm、nice work、this is fine)
+      searching: 搜索中...
+      search: 搜索
+      noResults: 未找到与"{query}"匹配的GIF。
+      copied: 已复制!
+      copyUrl: 复制URL
+      resultsHint: '{count}个结果。点击复制URL,然后粘贴到Teams、Telegram或Slack中。'
+    title: GIF 搜索
+    description: 在 Giphy 中搜索表情动图,点击任意结果即可复制链接。
+  yaml-viewer:
+    ui:
+      invalidYaml: 提供的 YAML 无效。
+      sortKeys: 排序键
+      indentSize: 缩进大小
+      rawLabel: 您的原始 YAML
+      rawPlaceholder: 在此粘贴您的原始 YAML...
+      prettifiedLabel: 您的 YAML 的美化版本
+  phone-parser-and-formatter:
+    ui:
+      invalidPhoneNumber: 无效的电话号码
+      sectionLocation: 位置
+      countryCode: 国家代码
+      country: 国家
+      callingCode: 拨号代码
+      sectionValidation: 验证
+      isValid: 是否有效？
+      'yes': 是
+      'no': 否
+      isPossible: 是否可能？
+      type: 类型
+      unknown: 未知
+      sectionFormats: 格式
+      international: 国际格式
+      national: 国内格式
+      defaultCountry: 默认国家
+      phoneNumber: 电话号码
+      emptyStatePrompt: 请在上方输入电话号码以进行解析
+    title: 电话号码解析器
+    description: 解析并格式化电话号码,自动识别国家、验证有效性,并显示国际、国内、E.164 和 RFC3966 格式。
+  meta-tag-generator:
+    ui:
+      copiedSuccess: 已复制元标签！
+      copiedLabel: ✓ 已复制
+      copyButton: 复制
+      outputTitle: 您的元标签
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME 类型转扩展名
+      mimeToExtensionDescription: 查看与某个 MIME 类型关联的文件扩展名
+      mimeTypeSelectPlaceholder: 在此选择您的 MIME 类型...（例如：application/pdf）
+      extensionsFoundPrefix: 该类型文件的扩展名
+      extensionsFoundSuffix: MIME 类型：
+      extensionToMimeTitle: 文件扩展名转 MIME 类型
+      extensionToMimeDescription: 查看与某个文件扩展名关联的 MIME 类型
+      mimeFoundPrefix: 与该扩展名关联的 MIME 类型
+      mimeFoundSuffix: 文件扩展名：
+      tableMimeTypesHeader: MIME 类型
+      tableExtensionsHeader: 扩展名
+  depth-of-field-calculator:
+    ui:
+      sensorMedFormat: 中画幅
+      sensorCustom: 自定义
+      sensorEnterCoc: 输入 CoC
+      infinity: 无穷远
+      title: 景深计算器
+      sensorFormat: 传感器画幅
+      cocPlaceholder: CoC，单位毫米（例如 0.029）
+      focalLength: 焦距（毫米）
+      aperture: 光圈
+      dragOrClick: 拖动或点击
+      focusDistance: 对焦距离
+      distancePlaceholder: 距离
+      results: 结果
+      hyperfocalDistance: 超焦距
+      hyperfocalHint: 在此处对焦，可从该距离的一半到无穷远都保持最大清晰度
+      nearLimit: 近点
+      farLimit: 远点
+      totalDof: 总景深
+      beyondHyperfocal: 对焦距离已达到或超过超焦距，远点延伸至无穷远。
+      legendHyperfocal: 超焦距
+      legendFocalLength: 焦距
+      legendFNumber: 光圈值（f 值）
+      legendCoc: circle of confusion
+      legendFocusDistance: 对焦距离
+    title: 景深计算器
+    description: 计算任意镜头与传感器组合下的近景界限、远景界限及总景深,并给出超焦距。
+  json-viewer:
+    ui:
+      invalidJson: 提供的 JSON 无效。
+      sortKeys: 排序键
+      indentSize: 缩进大小
+      yourRawJson: 您的原始 JSON
+      pasteRawJsonPlaceholder: 在此粘贴您的原始 JSON...
+      prettifiedVersion: 您的 JSON 的格式化版本
+  qr-code-generator:
+    ui:
+      tabText: 文本 / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: 文本或 URL
+      placeholderTextOrUrl: 输入链接或文本...
+      sectionEncryption: 加密方式
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: 无密码
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: 网络名称...
+      sectionPassword: 密码
+      placeholderPassword: 网络密码...
+      sectionOptions: 选项
+      hiddenSsid: 隐藏 SSID
+      anonymousIdentity: 匿名身份
+      sectionEapMethod: EAP 方法
+      sectionEapPhase2: EAP 第二阶段
+      sectionEapIdentity: EAP 身份
+      placeholderEapIdentity: 输入你的 EAP 身份...
+      sectionTheme: 主题
+      themeDefault: 默认
+      themeTerminal: Terminal
+      themeClassic: Classic
+      themeInverted: 反色
+      sectionColors: 颜色
+      labelForeground: '前景色:'
+      labelBackground: '背景色:'
+      sectionErrorCorrection: 容错等级
+      levelLow: 低 (约 7%)
+      levelMedium: 中 (约 15%)
+      levelQuartile: 较高 (约 25%)
+      levelHigh: 高 (约 30%)
+      emptyHintWifi: 输入 SSID 以生成 Wi-Fi 二维码
+      emptyHintText: 输入文本或 URL
+      captionJoin: '>_ 扫码加入'
+      captionOpen: '>_ 扫码打开'
+      downloadPng: ↓ 下载 PNG
+  reciprocity-calculator:
+    ui:
+      barReciprocity: 倒易律失效计算器
+      barCorrected: 校正后曝光时间
+      fieldFilmStock: 胶片类型
+      typeBw: 黑白
+      typeColorNeg: 彩色负片
+      typeSlide: 反转片 / E6
+      noFailureUpTo: 曝光时间在 {seconds} 秒以内无需校正
+      sourceManufacturer: 厂商数据
+      sourceCommunity: 社区数据
+      fieldMeteredExposure: 测光曝光时间
+      unitSeconds: 秒
+      noFailureMessage: '无需校正: 该胶片在此曝光时长下没有倒易律失效。'
+      copyDone: ✓ 已复制
+      copySeconds: 复制秒数
+      devReduce10: 建议将显影时间减少约 10%,以补偿增加的阴影密度。
+      devReduce1015: 建议将显影时间减少 10% 至 15%。
+      devReduce1520: 建议将显影时间减少 15% 至 20%。
+      devReduce2030: 曝光时间很长时,建议将显影时间减少 20% 至 30%。
+      colorShiftWarning: '彩色胶片: 此曝光时长下可能出现色偏。'
+      colorShiftSlide: 反转片后期难以校正色偏,建议在拍摄时使用 CC 滤镜。
+      colorShiftNeg: 彩色负片的宽容度更高,可在冲印或扫描时进行校正。
+    title: 互易律失效计算器
+    description: 使用 Schwarzschild 幂律为 40 多种胶片计算修正后的长时间曝光值,涵盖黑白片、彩色负片和反转片。
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS 本地化日期字符串
+      formatUnixTimestamp: Unix 时间戳
+      formatTimestamp: 时间戳
+      formatUtc: UTC 格式
+      formatExcelDateTime: Excel 日期时间
+      invalidDateRule: 该日期对此格式无效
+      inputPlaceholder: 粘贴日期字符串，或留空以显示实时时钟...
+      invalidDate: 此格式的日期无效
+      output: 输出
+      live: 实时
+  dev-calculator:
+    ui:
+      hasData: 有数据
+      noDataGroup: 无数据,请手动输入基准时间
+      colorBelow: '{process}低于36°C:可能出现色偏和显影不足'
+      colorAbove: '{process}高于40°C:有雾化和串色的风险'
+      bwBelow: 低于18°C:显影会非常缓慢
+      bwAbove: 高于24°C:有网纹和雾化的风险
+      start: 开始
+      pause: 暂停
+      resume: 继续
+      calculatorTitle: 胶片显影计算器
+      developer: 显影液
+      dilution: 稀释比例
+      filmStock: 胶片型号
+      baseTimeAt: '{temp}°C下的基准时间'
+      noData: 无数据
+      overridePlaceholder: 覆盖(秒)
+      customBaseActive: 已启用自定义基准时间
+      temperature: '温度:'
+      pushPull: 增感/减感
+      tankVolume: 显影罐容量
+      customMlPlaceholder: 自定义毫升数
+      adjustedTime: 调整后时间
+      baseTimeTemp: 基准时间({temp}°C)
+      tempAdj: 温度调整({temp})
+      pushStop: 增感{n}档
+      pushStops: 增感{n}档
+      pullStop: 减感{n}档
+      pullStops: 减感{n}档
+      mixFor: 配制{volume}毫升
+      mixDeveloper: 显影液
+      mixWater: 水
+      noDataWarning: 没有{film} + {developer}的数据,请手动输入基准时间。
+      pushPullEstimate: 增感/减感时间为估算值,建议先试冲一卷。
+      sourceNote: 基准时间来自Massive Dev Chart和厂商数据表。
+      processTimer: 冲洗计时器
+      devComplete: 显影完成
+      devCompleteHint: 挂起晾干,享受你的底片吧。
+      stageOf: 阶段 {current} / {total}
+      agitation: 搅动
+      reset: 重置
+      skip: 跳过
+      stDeveloper: 显影液
+      stBleach: 漂白液
+      stWash: 水洗
+      stFixer: 定影液
+      stWash2: 水洗2
+      stStabilizer: 稳定液
+      stFirstDeveloper: 第一显影液
+      stReversalBath: 反转液
+      stColorDeveloper: 彩色显影液
+      stPreBleach: 预漂白
+      stFinalWash: 最终水洗
+      stStopBath: 停显液
+      agC30s10: 前30秒连续搅动,之后每30秒搅动10秒
+      agRun3Full: 流水冲洗或完整换水3次
+      agGentle: 仅轻轻晃动,之后不要冲洗
+      agC30s5: 前30秒连续搅动,之后每30秒搅动5秒
+      agRun3: 流水冲洗或换水3次
+      agContinuous: 连续搅动
+      ag10per30: 每30秒搅动10秒
+      agRun5: 流水冲洗或换水5次
+      agC60s10: 前30秒连续搅动,之后每60秒搅动10秒
+      agCont60: 连续搅动60秒
+      ag10per60: 每60秒搅动10秒
+      agRun5Full: 流水冲洗或完整换水5次
+    title: 胶片冲洗计算器
+    description: 根据温度补偿、增减冲处理和稀释比例计算调整后的冲洗时间,内置常见黑白显影液和胶片数据库。
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: 密钥（十六进制）
+      epochLabel: Epoch
+      countLabel: 计数
+      paddedHexLabel: 填充后的十六进制
+      secretLabel: 密钥
+      secretPlaceholder: 粘贴你的 TOTP 密钥...
+      generateNewSecret: 生成新密钥
+      tokenLabel: TOKEN
+      copied: ✓ 已复制
+      clickToCopy: 点击复制
+      nextIn: '>_ {seconds} 秒后刷新'
+      adjacentTokensLabel: 相邻令牌
+      prevLabel: 上一个
+      nextLabel: 下一个
+      detailsLabel: 详情
+      scanToAuthenticate: '>_ 扫码进行身份验证'
+      openKeyUriInNewTab: 在新标签页中打开 Key URI
+      tokenDisplayPreviousLabel: 上一个
+      tokenDisplayCurrentLabel: 当前 OTP
+      tokenDisplayNextLabel: 下一个
+      copiedExclaim: 已复制！
+      copyPreviousOtp: 复制上一个 OTP
+      copyCurrentOtp: 复制当前 OTP
+      copyNextOtp: 复制下一个 OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: 强
+      moderateLabel: 中等
+      weakLabel: 弱
+      veryWeakLabel: 非常弱
+      lengthLabel: 长度
+      entropyLabel: 熵
+      charsetSizeLabel: 字符集大小
+      scoreDetailLabel: 得分
+      passwordPlaceholder: 输入密码...
+      hideLabel: 隐藏
+      showLabel: 显示
+      clearLabel: 清除
+      crackTimeSublabel: 暴力破解耗时
+      crackTimeNote: 强度按每秒 10 亿次尝试的暴力破解速度估算，未考虑字典攻击。
+  signature-creator:
+    ui:
+      drawSignatureTab: 绘制签名
+      removeBackgroundTab: 去除背景
+      inkColorLabel: 墨水颜色
+      strokeWeightLabel: 笔画粗细
+      actionsLabel: 操作
+      undoButton: ↩ 撤销
+      clearButton: ✕ 清除
+      downloadTransparentPng: ↓ 下载透明 PNG
+      uploadImageLabel: 上传图片
+      dropzoneText: 将图片拖到此处或点击浏览
+      dropzoneHint: PNG、JPG、WEBP
+      imageLoadedLabel: 图片已加载
+      removeButton: ✕ 移除
+      removeBackgroundButton: ⚡ 去除背景
+      exportLabel: 导出
+      downloadNoBgPng: ↓ 下载 PNG(无背景)
+      originalLabel: 原图
+      resultLabel: 结果
+      uploadPrompt: 上传图片以开始
+      originalAlt: 原图
+      resultAlt: 已去除背景的结果
+      loadingModelStatus: 正在加载 AI 模型...
+      removingBackgroundStatus: 正在去除背景...
+      processingPercentStatus: 处理中... {pct}%
+      downloadingModelPercentStatus: 正在下载模型... {pct}%
+      removeBackgroundFailedStatus: 去除背景失败,请尝试其他图片。
+    title: 签名生成器
+    description: 在画布上手写签名并导出为透明 PNG,或上传任意图片,通过设备端 AI 一键去除背景。
+  domain-lookup:
+    ui:
+      statusDesc:
+        active: 域名处于活动状态,运行正常。
+        inactive: 域名未激活。
+        clientDeleteProhibited: 注册商已锁定该域名,禁止删除。
+        clientTransferProhibited: 注册商已锁定该域名,禁止转移至其他注册商。
+        clientUpdateProhibited: 注册商已锁定该域名,禁止更新。
+        clientHold: 注册商已暂停该域名,DNS 可能无法解析。
+        serverDeleteProhibited: 注册局已锁定该域名,禁止删除。
+        serverTransferProhibited: 注册局已锁定该域名,禁止转移。
+        serverUpdateProhibited: 注册局已锁定该域名,禁止更新。
+        serverHold: 注册局已暂停该域名,DNS 可能无法解析。
+        pendingCreate: 域名创建正在等待处理。
+        pendingDelete: 域名正在等待删除,可能很快会被释放。
+        pendingRenew: 域名续费正在等待处理。
+        pendingRestore: 域名删除后的恢复正在等待处理。
+        pendingTransfer: 域名转移至其他注册商正在等待处理。
+        pendingUpdate: 域名更新正在等待处理。
+        redemptionPeriod: 该域名已过期,处于赎回期。所有者仍可将其找回。
+        renewPeriod: 该域名处于注册后的续费宽限期。
+        autoRenewPeriod: 该域名处于自动续费宽限期。
+        transferPeriod: 该域名处于转移宽限期。
+      expiredAlert: 该域名已于 {days} 天前过期,可能已可供注册。
+      expiresAlert: 该域名将在 {days} 天后过期,应尽快安排续费。
+      expiredTag: 已过期 {days} 天
+      remainingTag: 剩余 {days} 天
+      registrar: 注册商
+      registrarIanaId: 注册商 IANA ID
+      created: 创建时间
+      updated: 更新时间
+      expires: 到期时间
+      noMx: 未找到 MX 记录。
+      dnsFailed: DNS 查询失败。
+      noSpf: 未找到 SPF 记录。
+      noDkim: 未在常见选择器中找到 DKIM 记录。仍可能存在自定义选择器。
+      noDmarc: 未找到 DMARC 记录。该域名未受到防伪造保护。
+      spfPlusAll: 警告:+all 很危险,因为它允许任何服务器以此域名的名义发送邮件。
+      spfNeutralAll: 警告:?all 为中立设置,不提供任何保护。
+      dmarcPNone: 警告:p=none 仅用于监控,不做任何强制处理,邮件不会被拒收。
+      dmarcNoRua: 警告:未设置汇总报告地址(rua=),您将无法收到 DMARC 报告。
+      pass: 通过
+      fail: 未通过
+      warning: 警告
+      checking: 检查中...
+      overallPass: 所有邮件检查均已通过。该域名的邮件配置良好。
+      overallFail: 缺少一项或多项关键记录。该域名可能易受伪造攻击。
+      overallWarn: 部分记录存在,但配置存在需要检查的问题。
+      rdapHttpError: HTTP {status}:该域名可能不存在,或该 TLD 不受支持。
+      lookupFailed: 查询失败。
+      domainPlaceholder: 请输入域名(例如 killertools.net)
+      searching: 搜索中...
+      search: 搜索
+      signed: 已签名
+      unsigned: 未签名
+      delegationSigned: 委派已签名。
+      dsRecord: '{count} 条 DS 记录。'
+      dsRecords: '{count} 条 DS 记录。'
+      keyRecord: '{count} 条密钥记录。'
+      keyRecords: '{count} 条密钥记录。'
+      dnssecUnsigned: 该域名未受 DNSSEC 保护,DNS 响应无法进行加密验证。
+      status: 状态
+      contacts: 联系人
+      remarks: 备注
+      nameservers: 域名服务器
+      mxRecords: MX 记录
+      spfRecord: SPF 记录
+      dkimRecords: DKIM 记录
+      dmarcRecord: DMARC 记录
+      role:
+        registrant: 注册人
+        administrative: 管理联系人
+        technical: 技术联系人
+        abuse: 滥用举报联系人
+      name: 姓名
+      organization: 组织
+      email: 电子邮件
+      phone: 电话
+    title: 域名查询
+    description: 在同一视图中查看任意域名的 WHOIS 注册信息及邮件 DNS 检查结果(MX、SPF、DKIM、DMARC)。
+  integer-base-converter:
+    ui:
+      binary: 二进制
+      octal: 八进制
+      decimal: 十进制
+      hexadecimal: 十六进制
+      base: 进制
+      output: 输出
+      custom: 自定义
+  ascii-word-art:
+    title: ASCII 文字艺术生成器
+    description: 使用多种字体和样式生成 ASCII 文字艺术。
+  powershell-builder:
+    title: PowerShell Builder
+    description: 选择一个 cmdlet,填写参数,复制生成的 PowerShell 命令。
+  killer-pdf:
+    title: KillerPDF
+    description: 适用于 Windows 的开源 PDF 编辑器。可查看、批注、合并、拆分、展平、打开受密码保护的 PDF,以及编辑文字、绘图、高亮、签名和打印。
+  killer-scan:
+    title: KillerScan
+    description: 面向现场技术人员的快速网络扫描工具。支持 ARP 与 ping 发现、端口探测、厂商查询以及自动设备分类。
+  killer-shell:
+    title: KillerShell
+    description: 面向高级用户的免费 Shell 工具。文件浏览器、终端和文本编辑器共享同一个窗口、同一组标签页和同一套快捷键。
+ui:
+  diffEditor:
+    originalLabel: 原始
+    modifiedLabel: 修改后
+    originalPlaceholder: 原始文本...
+    modifiedPlaceholder: 修改后的文本...
+  fileUpload:
+    defaultTitle: 将文件拖放到此处,或点击选择文件
+    or: 或
+    browseFiles: 浏览文件
+  inputText:
+    defaultPlaceholder: 输入文本
+  keyValueListItem:
+    'yes': 是
+    'no': 否
+    notAvailable: 不适用
+  modalValue:
+    copied: 已复制!
+    copy: 复制
+  select:
+    searchPlaceholder: 搜索...
+    noResults: 未找到结果
+    defaultPlaceholder: 选择一个选项
+  table:
+    defaultDescription: 数据表
+  textCopyable:
+    copied: 已复制!
+    copyToClipboard: 复制到剪贴板
+commandPalette:
+  searchAriaLabel: 搜索
+  searchPlaceholder: 输入以搜索工具或命令...
+components:
+  androidBetaBanner:
+    announcement: Android 测试版公告
+    title: Killer Tools 即将登陆 Android
+    subtitle: 招募测试用户 - 点击加入
+    dismiss: 关闭
+  formatTransformer:
+    input: 输入
+    inputPlaceholder: 输入...
+    output: 输出
+  inputCopyable:
+    copied: 已复制!
+    copy: 复制到剪贴板
+  spanCopyable:
+    copied: 已复制!
+    copy: 复制到剪贴板
+  textareaCopyable:
+    copy: 复制到剪贴板
+    copied: 已复制!
+  navbarButtons:
+    androidTooltip: Killer Tools 安卓版
+    androidAriaLabel: Killer Tools 安卓版 - 加入测试版
+  themeDots:
+    accentColor: 强调色
+    theme: 主题
+    toggleThemeSwatches: 切换主题色板
+    accentColorPicker: 强调色选择器
+    dragToMove: 拖动以移动
+    accentLabel: '强调色:'
+    accentNamed: '强调色: {name}'
+    closeAccentPicker: 关闭强调色选择器
+    accents:
+      red: 红色
+      orange: 橙色
+      green: 绿色
+      teal: 青色
+      blue: 蓝色
+      purple: 紫色
+layouts:
+  menuLayout:
+    eggMessage: 80 款工具。零订阅。一个满腹牢骚的现场技术员。
+    clickMe: 点我
+    sourceOnGithub: 在 Github 上查看源码
+  base:
+    collapseMenu: 收起菜单
+    homeLabel: KillerTools 主页
+pages:
+  notFound:
+    noSuchFile: 没有此文件或目录
+    exitCode: 退出代码
+    backToHome: 返回首页
+  privacy:
+    heading: 隐私政策
+    lastUpdated: 最后更新：2026年4月4日
+    overviewHeading: 概述
+    overviewIntro: Killer Tools
+    overviewBody: 是一套免费的IT实用工具集合。您的隐私对我们很重要，本政策说明我们如何处理您的数据。
+    dataCollectionHeading: 数据收集
+    dataCollectionBody: Killer Tools 不会收集、存储或传输任何个人数据。所有工具处理都完全在您的浏览器中进行。您在任何工具中输入的数据都不会发送到任何服务器。
+    cookiesHeading: Cookie
+    cookiesBody: 本网站不使用 Cookie 进行跟踪。您的主题偏好和设置存储在浏览器本地，且从不传输。
+    analyticsHeading: 统计分析
+    analyticsIntro: 本网站使用
+    analyticsBody: 一款注重隐私的分析工具，用于了解页面浏览量和引荐来源等总体使用趋势。Umami 不使用 Cookie，不跨网站跟踪用户，也不收集任何可识别个人身份的信息。所有数据都是汇总且匿名的。
+    thirdPartyHeading: 第三方服务
+    thirdPartyBody: 部分工具可能链接到外部资源或文档。对于这些外部网站的隐私做法，我们不承担责任。
+    androidAppHeading: Android 应用
+    androidAppBody: Killer Tools 的 Android 应用是网页应用的封装版本。除基本的网络访问权限外，它不会请求或使用任何设备权限。不会收集或传输任何设备数据。
+    contactHeading: 联系方式
+    contactBody: 如果您对本隐私政策有任何疑问，可通过以下方式联系我们：
+  androidApp:
+    robotAttribution: Android 机器人图案改编或复制自 Google 创作并分享的作品，依照知识共享 3.0 署名许可协议的条款使用。
+    heading: Android 版 Killer Tools
+    introBody1: killertools.net 的完整工具箱现已推出原生 Android 应用：每个工具、Killer Scripts 脚本库以及您所有的收藏，主屏幕轻点即可打开。
+    introBody2: 规则与网站相同。一切都在您的设备上运行。无需账号，无遥测，不联网回传。如果它能在现场为您省下一个工单周期，那它就完成了使命。
+    betaStatusPrefix: 该应用目前处于
+    betaStatusStrong: Google Play 上的封闭测试阶段
+    betaStatusSuffix: ，而这正是需要您参与的地方。
+    joinBetaHeading: 加入测试
+    joinBetaIntroPrefix: Google 要求
+    joinBetaIntroStrong: 12 名测试者连续安装该应用 14 天
+    joinBetaIntroSuffix: ，独立开发者的应用才能公开发布。三个步骤，大约两分钟，您就能成为这十二人之一：
+    step1LinkText: 加入测试组
+    step1Suffix: 在 Google Groups 上（点击“Join group”）。
+    step2LinkText: 成为测试者
+    step2Suffix: 在 Google Play 的加入页面上。
+    step3LinkText: 安装应用
+    step3Suffix: 从 Google Play 安装，并保持安装状态两周。
+    sameAccountStrong: 三个步骤都使用同一个 Google 账号
+    sameAccountSuffix: ' ，如果您跳过测试组或更换账号，加入页面会显示“该账号不可用”。'
+    feedbackPrefix: 有东西出问题或缺失？告诉我：
+  home:
+    sortPopular: 热门
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: 关于 Killer Tools
+    intro: 现场技术人员没有时间浪费在冗余功能上。这里的每个工具都源于我在工作中确实需要它，却找不到无需账号、安装或遥测就能直接使用的方案。
+    originPrefix: 我现在在一家 MSP 的内部 AI 工程团队构建工具，此前有六年全栈开发经验和八年在多家公司担任现场技术人员的经历。KillerTools.net 最初是优秀的
+    originMid: 项目的一个分支，作者是
+    originSuffix: ，后来发展成专为我实际所做的工作而打造的产品。我做它是为了在处理工单时查阅组策略设置、扫描客户子网，以及在不离开浏览器的情况下查询端口参考。
+    scriptsLibrary: Killer Scripts 脚本库涵盖了每个工单周期都会遇到的任务。每个脚本都可在 PS 5.1、PS 7 和 Kaseya LiveConnect 中运行，无需任何依赖。
+    privacyBody: 一切都在您的浏览器中运行。不进行任何跟踪。永远不需要账号。网站强制执行严格的内容安全策略（CSP），以阻止依赖链攻击。即使某个被篡改的 npm 包混入了构建包，它也无法把您粘贴的内容传回外部。
+    maintainedByPrefix: 构建与维护者：
+    maintainedByMid: 如果这为您节省了工作时间，
+    buyMeCoffee: 请我喝杯咖啡
+    maintainedBySuffix: 会让人感激，但从不强求。
+    missingToolHeading: 缺少某个工具？发现了错误？
+    issuesPrefix: 请在 GitHub 的
+    issuesLinkText: issues 板块
+    issuesSuffix: 中提交功能请求或错误报告。我会阅读它们。
+    alsoTryHeading: 也可以试试...
+    tagKillerScan: Windows 开源网络扫描工具
+    tagKillerPdf: Windows 开源 PDF 编辑器
+    tagKillerShell: 面向高级用户的 Windows 开源终端
+    tagKillerNotes: Windows 开源加密记事本
+    tagKillendar: Windows 开源加密日历
+    linksHeading: 链接
+    linkLabelSite: 网站
+    linkLabelSource: 源代码
+    linkLabelIssues: Issues
+    reportBug: 报告错误
+    requestFeature: 请求功能
+    linkLabelSupport: 支持
+    linkLabelBuiltOn: 基于
+    itToolsFork: IT-Tools（分支）

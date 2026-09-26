@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { parseUrl } from './url-parser.service';
 
+const { t } = useI18n();
+
 const urlToParse = ref('https://me:pwd@killertools.net:3000/url-parser?key1=value&key2=value2#the-hash');
 const urlParsed = computed(() => parseUrl(urlToParse.value));
 const isError = computed(() => urlToParse.value.trim().length > 0 && !urlParsed.value);
@@ -9,26 +11,26 @@ const sections = computed(() => {
   const u = urlParsed.value;
   return [
     {
-      name: 'Host',
+      name: t('tools.url-parser.ui.sectionHost'),
       rows: [
-        { label: 'Protocol', value: u?.protocol ?? '' },
-        { label: 'Hostname', value: u?.hostname ?? '' },
-        { label: 'Port', value: u?.port ?? '' },
+        { label: t('tools.url-parser.ui.protocol'), value: u?.protocol ?? '' },
+        { label: t('tools.url-parser.ui.hostname'), value: u?.hostname ?? '' },
+        { label: t('tools.url-parser.ui.port'), value: u?.port ?? '' },
       ],
     },
     {
-      name: 'Authentication',
+      name: t('tools.url-parser.ui.sectionAuthentication'),
       rows: [
-        { label: 'Username', value: u?.username ?? '' },
-        { label: 'Password', value: u?.password ?? '' },
+        { label: t('tools.url-parser.ui.username'), value: u?.username ?? '' },
+        { label: t('tools.url-parser.ui.password'), value: u?.password ?? '' },
       ],
     },
     {
-      name: 'Path',
+      name: t('tools.url-parser.ui.sectionPath'),
       rows: [
-        { label: 'Pathname', value: u?.pathname ?? '' },
-        { label: 'Search', value: u?.search ?? '' },
-        { label: 'Hash', value: u?.hash ?? '' },
+        { label: t('tools.url-parser.ui.pathname'), value: u?.pathname ?? '' },
+        { label: t('tools.url-parser.ui.search'), value: u?.search ?? '' },
+        { label: t('tools.url-parser.ui.hash'), value: u?.hash ?? '' },
       ],
     },
   ];
@@ -61,7 +63,7 @@ async function copyValue(key: string, value: string) {
     <!-- Input card — full width -->
     <div class="url-input-card kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">URL</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.url-parser.ui.urlTitle') }}</span>
       </div>
       <div class="url-input-area">
         <textarea
@@ -73,7 +75,7 @@ async function copyValue(key: string, value: string) {
           spellcheck="false"
           autofocus
         />
-        <span v-if="isError" class="url-error-msg">Invalid URL</span>
+        <span v-if="isError" class="url-error-msg">{{ t('tools.url-parser.ui.invalidUrl') }}</span>
       </div>
     </div>
 
@@ -109,7 +111,7 @@ async function copyValue(key: string, value: string) {
       <!-- Params card -->
       <div v-if="searchParams.length" class="url-card kt-terminal">
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">PARAMS</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.url-parser.ui.params') }}</span>
         </div>
         <div
           v-for="[k, v] in searchParams"
@@ -129,7 +131,7 @@ async function copyValue(key: string, value: string) {
     </div>
 
     <div v-else-if="!isError && !urlToParse.trim()" class="url-empty-hint">
-      Enter a URL above to parse
+      {{ t('tools.url-parser.ui.emptyHint') }}
     </div>
   </div>
 </template>

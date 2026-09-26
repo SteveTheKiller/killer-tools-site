@@ -46,12 +46,14 @@ async function copyHash(algo: AlgoNames) {
   }, 2000);
 }
 
-const encodingOptions = [
-  { label: 'Binary (base 2)', value: 'Bin' },
-  { label: 'Hexadecimal (base 16)', value: 'Hex' },
-  { label: 'Base64 (base 64)', value: 'Base64' },
-  { label: 'Base64url (base 64 url-safe)', value: 'Base64url' },
-];
+const { t } = useI18n();
+
+const encodingOptions = computed(() => [
+  { label: t('tools.hash-text.ui.encodingBinary'), value: 'Bin' },
+  { label: t('tools.hash-text.ui.encodingHex'), value: 'Hex' },
+  { label: t('tools.hash-text.ui.encodingBase64'), value: 'Base64' },
+  { label: t('tools.hash-text.ui.encodingBase64url'), value: 'Base64url' },
+]);
 
 const encodingMenuOpen = ref(false);
 const encodingMenuRef = ref<HTMLElement | null>(null);
@@ -60,7 +62,7 @@ onClickOutside(encodingMenuRef, () => {
 });
 
 const currentEncodingLabel = computed(
-  () => encodingOptions.find(o => o.value === encoding.value)?.label ?? encoding.value,
+  () => encodingOptions.value.find(o => o.value === encoding.value)?.label ?? encoding.value,
 );
 
 function selectEncoding(val: Encoding) {
@@ -74,7 +76,7 @@ function selectEncoding(val: Encoding) {
     <!-- Input -->
     <c-input-text
       v-model:value="clearText"
-      placeholder="Your string to hash..."
+      :placeholder="t('tools.hash-text.ui.inputPlaceholder')"
       :rows="3"
       multiline
       raw-text
@@ -84,7 +86,7 @@ function selectEncoding(val: Encoding) {
 
     <!-- Encoding selector -->
     <div ref="encodingMenuRef" class="hash-encoding-outer" mb-3>
-      <span class="hash-enc-outer-label">Encoding</span>
+      <span class="hash-enc-outer-label">{{ t('tools.hash-text.ui.encoding') }}</span>
       <button
         type="button"
         class="hash-enc-btn"
@@ -111,7 +113,7 @@ function selectEncoding(val: Encoding) {
     <!-- Output terminal -->
     <div class="hash-terminal kt-terminal">
       <div class="hash-section-header kt-terminal-bar">
-        OUTPUT
+        {{ t('tools.hash-text.ui.output') }}
       </div>
       <div
         v-for="algo in algoNames"

@@ -6,6 +6,8 @@ import { useQueryParamOrStorage } from '@/composable/queryParams';
 import { useValidation } from '@/composable/validation';
 import { matchRegex } from './regex-tester.service';
 
+const { t } = useI18n();
+
 const regex = useQueryParamOrStorage({ name: 'regex', storageName: 'regex-tester:regex', defaultValue: '' });
 const text = ref('');
 const global = ref(true);
@@ -183,43 +185,43 @@ const cheatsheet = [
       <!-- Regex input -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="rt-title">REGEX</span>
+          <span class="rt-title">{{ t('tools.regex-tester.ui.regexBarTitle') }}</span>
         </div>
         <div class="rt-body">
           <c-input-text
             v-model:value="regex"
-            label="Regex to test:"
-            placeholder="Put the regex to test"
+            :label="t('tools.regex-tester.ui.regexLabel')"
+            :placeholder="t('tools.regex-tester.ui.regexPlaceholder')"
             multiline
             autofocus
             rows="3"
             :validation="regexValidation"
           />
           <div class="kt-pill-row" style="margin-top: 10px;">
-            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': global }" title="Global search" @click="global = !global">
-              Global
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': global }" :title="t('tools.regex-tester.ui.globalTitle')" @click="global = !global">
+              {{ t('tools.regex-tester.ui.globalLabel') }}
             </button>
-            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': ignoreCase }" title="Case-insensitive search" @click="ignoreCase = !ignoreCase">
-              Ignore case
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': ignoreCase }" :title="t('tools.regex-tester.ui.ignoreCaseTitle')" @click="ignoreCase = !ignoreCase">
+              {{ t('tools.regex-tester.ui.ignoreCaseLabel') }}
             </button>
             <button type="button" class="kt-pill" :class="{ 'kt-pill-active': multiline }" title="Allows ^ and $ to match next to newline characters." @click="multiline = !multiline">
-              Multiline
+              {{ t('tools.regex-tester.ui.multilineLabel') }}
             </button>
-            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': dotAll }" title="Allows . to match newline characters." @click="dotAll = !dotAll">
-              Singleline
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': dotAll }" :title="t('tools.regex-tester.ui.singlelineTitle')" @click="dotAll = !dotAll">
+              {{ t('tools.regex-tester.ui.singlelineLabel') }}
             </button>
-            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicode }" title="Unicode; treat a pattern as a sequence of Unicode code points." @click="unicode = !unicode">
-              Unicode
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicode }" :title="t('tools.regex-tester.ui.unicodeTitle')" @click="unicode = !unicode">
+              {{ t('tools.regex-tester.ui.unicodeLabel') }}
             </button>
-            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicodeSets }" title="An upgrade to the u mode with more Unicode features." @click="unicodeSets = !unicodeSets">
-              Unicode Sets
+            <button type="button" class="kt-pill" :class="{ 'kt-pill-active': unicodeSets }" :title="t('tools.regex-tester.ui.unicodeSetsTitle')" @click="unicodeSets = !unicodeSets">
+              {{ t('tools.regex-tester.ui.unicodeSetsLabel') }}
             </button>
           </div>
           <div class="kt-divider" />
           <c-input-text
             v-model:value="text"
-            label="Text to match:"
-            placeholder="Put the text to match"
+            :label="t('tools.regex-tester.ui.textLabel')"
+            :placeholder="t('tools.regex-tester.ui.textPlaceholder')"
             multiline
             rows="5"
           />
@@ -229,16 +231,16 @@ const cheatsheet = [
       <!-- Matches -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="rt-title">MATCHES</span>
+          <span class="rt-title">{{ t('tools.regex-tester.ui.matchesBarTitle') }}</span>
           <span v-if="results?.length > 0" class="rt-count">{{ results.length }}</span>
         </div>
         <div class="rt-body rt-body-matches">
           <template v-if="results?.length > 0">
             <div class="rt-match-header">
-              <span class="rt-match-col-idx">Index</span>
-              <span class="rt-match-col-val">Value</span>
-              <span class="rt-match-col-cap">Captures</span>
-              <span class="rt-match-col-grp">Groups</span>
+              <span class="rt-match-col-idx">{{ t('tools.regex-tester.ui.matchIndex') }}</span>
+              <span class="rt-match-col-val">{{ t('tools.regex-tester.ui.matchValue') }}</span>
+              <span class="rt-match-col-cap">{{ t('tools.regex-tester.ui.matchCaptures') }}</span>
+              <span class="rt-match-col-grp">{{ t('tools.regex-tester.ui.matchGroups') }}</span>
             </div>
             <div
               v-for="match of results"
@@ -260,7 +262,7 @@ const cheatsheet = [
             </div>
           </template>
           <div v-else class="rt-no-match">
-            <span class="kt-prompt">&gt;_</span> No match
+            <span class="kt-prompt">&gt;_</span> {{ t('tools.regex-tester.ui.noMatch') }}
           </div>
         </div>
       </div>
@@ -268,7 +270,7 @@ const cheatsheet = [
       <!-- Sample -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="rt-title">SAMPLE</span>
+          <span class="rt-title">{{ t('tools.regex-tester.ui.sampleBarTitle') }}</span>
         </div>
         <div class="rt-body">
           <pre class="rt-sample">{{ sample || '—' }}</pre>
@@ -278,7 +280,7 @@ const cheatsheet = [
       <!-- Diagram -->
       <div class="kt-terminal rt-card">
         <div class="kt-terminal-bar rt-bar">
-          <span class="rt-title">DIAGRAM</span>
+          <span class="rt-title">{{ t('tools.regex-tester.ui.diagramBarTitle') }}</span>
         </div>
         <div class="rt-body rt-diagram-body">
           <shadow-root ref="visualizerSVG">
@@ -292,7 +294,7 @@ const cheatsheet = [
     <div class="cheatsheet-panel">
       <div class="rt-cs-panel">
         <div class="rt-cs-panel-bar kt-terminal-bar">
-          <span class="rt-cs-panel-title">Quick Reference</span>
+          <span class="rt-cs-panel-title">{{ t('tools.regex-tester.ui.quickReference') }}</span>
         </div>
         <div class="rt-cheatsheet-body">
           <div

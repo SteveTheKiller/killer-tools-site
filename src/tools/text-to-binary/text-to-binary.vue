@@ -4,6 +4,8 @@ import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 import { convertAsciiBinaryToText, convertTextToAsciiBinary } from './text-to-binary.models';
 
+const { t } = useI18n();
+
 const text = ref('');
 const binary = ref('');
 let updating = false;
@@ -36,33 +38,33 @@ watch(binary, (val) => {
   }
 });
 
-const { copy: copyText, isJustCopied: copiedText } = useCopy({ source: text, text: 'Text copied' });
-const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binary, text: 'Binary copied' });
+const { copy: copyText, isJustCopied: copiedText } = useCopy({ source: text, text: t('tools.text-to-binary.ui.textCopied') });
+const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binary, text: t('tools.text-to-binary.ui.binaryCopied') });
 </script>
 
 <template>
   <div class="tb-wrap">
     <div class="tb-panel kt-terminal">
       <div class="tb-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">TEXT ↔ ASCII BINARY</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.text-to-binary.ui.panelTitle') }}</span>
       </div>
       <div class="tb-body">
         <!-- Text side -->
         <div class="tb-side">
           <div class="tb-side-header">
-            <span class="tb-sublabel">TEXT</span>
+            <span class="tb-sublabel">{{ t('tools.text-to-binary.ui.textLabel') }}</span>
             <button class="tb-copy-btn" :disabled="!text" @click="copyText()">
-              <span v-if="copiedText">✓ Copied</span>
+              <span v-if="copiedText">✓ {{ t('tools.text-to-binary.ui.copied') }}</span>
               <template v-else>
                 <icon-mdi-content-copy />
-                Copy
+                {{ t('tools.text-to-binary.ui.copy') }}
               </template>
             </button>
           </div>
           <textarea
             v-model="text"
             class="tb-textarea"
-            placeholder="e.g. Hello world"
+            :placeholder="t('tools.text-to-binary.ui.textPlaceholder')"
             rows="8"
             spellcheck="false"
             autofocus
@@ -79,12 +81,12 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
         <!-- Binary side -->
         <div class="tb-side">
           <div class="tb-side-header">
-            <span class="tb-sublabel">BINARY</span>
+            <span class="tb-sublabel">{{ t('tools.text-to-binary.ui.binaryLabel') }}</span>
             <button class="tb-copy-btn" :disabled="!binary || !binaryValid" @click="copyBinary()">
-              <span v-if="copiedBinary">✓ Copied</span>
+              <span v-if="copiedBinary">✓ {{ t('tools.text-to-binary.ui.copied') }}</span>
               <template v-else>
                 <icon-mdi-content-copy />
-                Copy
+                {{ t('tools.text-to-binary.ui.copy') }}
               </template>
             </button>
           </div>
@@ -98,7 +100,7 @@ const { copy: copyBinary, isJustCopied: copiedBinary } = useCopy({ source: binar
             data-test-id="binary-to-text-input"
           />
           <span v-if="binary && !binaryValid" class="tb-error-msg">
-            Must be valid ASCII binary (multiples of 8 bits)
+            {{ t('tools.text-to-binary.ui.invalidBinary') }}
           </span>
         </div>
       </div>

@@ -51,12 +51,12 @@ const tools = computed<ToolCategory[]>(() => [
           v-if="styleStore.isSmallScreen"
           type="button"
           class="sider-collapse"
-          aria-label="Collapse menu"
+          :aria-label="t('layouts.base.collapseMenu')"
           @click="styleStore.isMenuCollapsed = true"
         >
           <NIcon size="25" :component="ChevronLeft" />
         </button>
-        <RouterLink to="/" class="sider-logo" aria-label="KillerTools home">
+        <RouterLink to="/" class="sider-logo" :aria-label="t('layouts.base.homeLabel')">
           <!-- Brand icon: large behind the wordmark, fading toward the bottom -->
           <img class="wm-bg" src="/app-icon-512.png" alt="" aria-hidden="true">
           <!-- Generated beveled wordmark art (per-accent files) -->
@@ -73,6 +73,7 @@ const tools = computed<ToolCategory[]>(() => [
     <template #titlebar>
       <div class="tb-row" flex items-center gap-2>
         <c-button
+          class="keep-circle"
           circle
           variant="text"
           :aria-label="$t('home.toggleMenu')"
@@ -89,7 +90,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <!-- Mobile brand: icon + wordmark centered in the bar while the
              sidebar (and its logo) is hidden -->
-        <RouterLink to="/" class="tb-brand" aria-label="KillerTools home">
+        <RouterLink to="/" class="tb-brand" :aria-label="t('layouts.base.homeLabel')">
           <img class="tb-brand-icon" src="/app-icon-512.png" alt="">
           <img class="tb-brand-wm" :src="wmSrc" alt="KillerTOOLS">
         </RouterLink>

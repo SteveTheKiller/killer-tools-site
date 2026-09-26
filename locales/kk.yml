@@ -1,0 +1,1787 @@
+home:
+  categories:
+    newestTools: Ең жаңа құралдар
+    favoriteTools: Таңдаулы құралдарыңыз
+    allTools: Барлық құралдар
+    favoritesDndToolTip: Таңдаулыларды қайта реттеу үшін сүйреп апарыңыз
+  subtitle: Әзірлеушілерге арналған ыңғайлы құралдар
+  toggleMenu: Мәзірді ашу/жабу
+  home: Басты бет
+  uiLib: UI кітапханасы
+  support: killer-tools әзірлеуін қолдау
+  buyMeACoffee: Маған кофе сатып алыңыз
+  follow:
+    title: killer-tools ұнай ма?
+    p1: 'Маған жұлдыз қойыңыз:'
+    githubRepository: StevetheKiller GitHub репозиторийі
+    thankYou: Рахмет!
+  nav:
+    github: GitHub репозиторийі
+    githubRepository: killer-tools GitHub репозиторийі
+    about: killer-tools туралы
+    aboutLabel: Туралы
+    darkMode: Қараңғы режим
+    lightMode: Ашық режим
+    mode: Қараңғы/ашық режимді ауыстыру
+about:
+  content: |
+    # killer-tools
+
+    Далалық техниктердің артық нәрсеге уақыты жоқ. Мұндағы әр құрал маған жұмыста қажет болғандықтан және тіркелгісіз, орнатусыз немесе телеметриясыз жай ғана жұмыс істейтін нәрсе таба алмағандықтан бар.
+
+    Мен MSP компаниясында желілер, жүйелік әкімшілік және соңғы құрылғыларды қолдаумен айналысатын далалық техникпін. killer-tools тамаша [IT-Tools](https://github.com/CorentinTh/it-tools) жобасының форкы ретінде басталып, мен шынымен атқаратын жұмысқа арналған құралға айналды. Мен оны өтінім барысында NDR кодтарын іздеу, клиенттің ішкі желісін сканерлеу және SafeLink сілтемесін баспас бұрын шешу үшін жасадым.
+
+    Барлығы браузеріңізде жұмыс істейді. Ештеңе бақыланбайды. Тіркелгі ешқашан қажет емес.
+
+    [Steve the Killer](https://thekiller.net) жасаған және қолдайды. Егер бұл жұмыста уақытыңызды үнемдесе, [маған кофе сатып алу](https://www.buymeacoffee.com/StevetheKiller) қуантады, бірақ ешқашан міндетті емес.
+
+    ## Құрал жетіспей ме? Қате таптыңыз ба?
+
+    GitHub-тағы [issues бөлімінде](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) мүмкіндік сұрауын немесе қате туралы есепті ашыңыз. Мен оларды оқимын.
+404:
+  notFound: 404 Табылмады
+  sorry: Кешіріңіз, бұл бет жоқ сияқты
+  maybe: Мүмкін кэш бір нәрсені шатастырып жатқан шығар, бетті мәжбүрлеп жаңартып көресіз бе?
+  backHome: Басты бетке оралу
+favoriteButton:
+  remove: Таңдаулылардан алып тастау
+  add: Таңдаулыларға қосу
+toolCard:
+  new: Жаңа
+search:
+  label: Іздеу
+tools:
+  categories:
+    favorite-tools: Таңдаулы құралдарыңыз
+    crypto: Криптография
+    conversion: Түрлендіру
+    web: Веб
+    images and videos: Суреттер мен бейнелер
+    development: Әзірлеу
+    network: Желі
+    math: Математика
+    measurement: Өлшеу
+    text: Мәтін
+    data: Деректер
+    windows: Windows
+    killer apps: Killer Apps
+    photography: Фотография
+  password-strength-analyser:
+    title: Құпиясөз беріктігін талдағыш
+    description: Тек клиент жағында жұмыс істейтін осы талдағыш пен бұзу уақытын бағалау құралы арқылы құпиясөзіңіздің беріктігін біліңіз.
+  password-generator:
+    title: Құпиясөз генераторы
+    description: Берік құпиясөздер, diceware құпия фразалары, айтылатын жолдар және hex/base64/UUID токендерін жасаңыз. MSP алдын ала баптауларын (жергілікті әкімші, қызметтік тіркелгі, Wi-Fi PSK, PIN), екіұшты таңбаларды алып тастауды, энтропия өлшегішін, QR кодын және NATO фонетикалық оқылымын қамтиды.
+    ui:
+      terminal:
+        passwordTitle: ҚҰПИЯСӨЗ
+        optionsTitle: ПАРАМЕТРЛЕР
+      meta:
+        entropyLabel: 'Энтропия:'
+        bits: бит
+        crackLabel: 'Бұзу уақыты:'
+      actions:
+        copy: Көшіру
+        refresh: Жаңарту
+      section:
+        preset: Пресет
+        mode: Режим
+        format: Формат
+        length: Ұзындығы ({length})
+        wordCount: Сөздер саны ({count})
+        separator: Бөлгіш
+        characterClasses: Таңба түрлері
+        options: Параметрлер
+      charClass:
+        uppercase: Бас әріптер
+        lowercase: Кіші әріптер
+        numbers: Сандар
+        symbols: Таңбалар
+      option:
+        excludeAmbiguous: Ұқсас таңбаларды алып тастау
+        requireOneOfEach: Әр түрден кемінде біреу болсын
+        capitalizeWords: Сөздерді бас әріппен бастау
+        appendNumber: 2 сан қосу
+      mode:
+        random: Кездейсоқ
+        passphrase: Кодтық тіркес
+        pronounceable: Айтылуы оңай
+        format: Формат
+      format:
+        plain: Кәдімгі
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: жоқ
+      qr:
+        caption: көшіру үшін сканерлеңіз
+      phonetic:
+        title: ФОНЕТИКАЛЫҚ
+      bulk:
+        generateLabel: Жасау
+        single: жалғыз
+        atOnce: бірден {n}
+        passwordsTitle: '{count} ҚҰПИЯСӨЗ'
+        copyAll: Барлығын көшіру
+      toast:
+        passwordCopied: Құпиясөз буферге көшірілді
+        passwordsCopied: Құпиясөздер буферге көшірілді
+        phoneticCopied: Фонетикалық жазылуы көшірілді
+  percentage-calculator:
+    title: Пайыз калькуляторы
+    description: Бір мәннен екіншісіне немесе пайыздан мәнге пайыздарды оңай есептеңіз.
+    ui:
+      whatIsXPercentOfYTitle: Y-ТІҢ X% НЕШЕ БОЛАДЫ
+      whatIsLabel: Нешеге тең
+      percentOfLabel: '%, мыналардың'
+      resultPlaceholder: Нәтиже
+      xIsWhatPercentOfYTitle: X, Y-ТІҢ НЕШЕ ПАЙЫЗЫ
+      isWhatPercentOfLabel: мыналардың нешесі, %
+      percentageChangeTitle: ПАЙЫЗДЫҚ ӨСУ / КЕМУ
+      fromLabel: Бастапқы мән
+      toLabel: келесіге дейін
+  svg-placeholder-generator:
+    title: SVG толтырғыш генераторы
+    description: Қолданбаларыңызда толтырғыш ретінде пайдалану үшін SVG суреттерін жасаңыз.
+    ui:
+      widthLabel: ЕНІ (px)
+      backgroundLabel: ФОН
+      heightLabel: БИІКТІГІ (px)
+      textColorLabel: МӘТІН ТЙІСІ
+      fontSizeLabel: ҚАРІП ОЛШЕМІ
+      customTextLabel: ЖЕКЕ МӘТІН
+      customTextPlaceholder: 'Әдепкі: {size}'
+      useExactSizeToggle: Дӑл өлшемді пайдалану
+      svgHtmlElementLabel: SVG HTML ЭЛЕМЕНТІ
+      svgBase64Label: SVG BASE64-ТЕ
+      copySvgButton: svg көшіру
+      copyBase64Button: base64 көшіру
+      downloadSvgButton: svg жүктеу
+      previewLabel: АЛДЫН АЛА КӨРУ
+      svgPreviewAlt: SVG алдын ала көру
+  json-to-csv:
+    title: JSON-нан CSV-ге
+    description: JSON-ды тақырыптарды автоматты анықтау арқылы CSV-ге түрлендіріңіз.
+    ui:
+      invalidJson: Берілген JSON жарамсыз.
+      yourRawJson: Сіздің бастапқы JSON
+      pasteRawJsonPlaceholder: Бастапқы JSON файлын осында қойыңыз...
+      csvOutputLabel: JSON файлыңыздың CSV нұсқасы
+  camera-recorder:
+    title: Камера жазғышы
+    description: Веб-камерадан немесе камерадан сурет түсіріңіз не бейне жазыңыз.
+    ui:
+      selectCamera: Камераны таңдау
+      selectMicrophone: Микрофонды таңдау
+      notSupported: Браузеріңіз камерамен жазуды қолдамайды.
+      accessRequired: Камера мен микрофонға қолжетімділік қажет.
+      permissionBlocked: Рұқсат бұғатталды. Браузердің мекенжай жолағындағы құлып белгішесі арқылы қолжетімділікті қолмен беріңіз.
+      grantPermission: Рұқсат беру
+      video: VIDEO
+      audio: AUDIO
+      startWebcam: Веб-камераны іске қосу
+      paused: ТОҚТАТЫЛДЫ
+      rec: REC
+      screenshot: Скриншот
+      record: Жазу
+      pause: Кідірту
+      resume: Жалғастыру
+      stop: Тоқтату
+      recordingNotSupported: Бұл браузерде жазу қолдау таппайды
+      captures: ТҮСІРІЛІМДЕР ({count})
+      clearAll: Барлығын тазарту
+      screenshotAlt: скриншот
+      download: Жүктеп алу
+      delete: Жою
+  reciprocity-calculator:
+    title: Өзара алмасымдылық ақауы калькуляторы
+    description: Шварцшильдтің дәрежелік заңы арқылы 40-тан астам аналогтық пленкаға түзетілген ұзақ экспозицияларды есептеңіз. Ақ-қара, түрлі түсті негатив және слайд пленкаларын қамтиды.
+    ui:
+      barReciprocity: РЕЦИПРОКТЫЛЫҚ КАЛЬКУЛЯТОРЫ
+      barCorrected: ТҮЗЕТІЛГЕН ЭКСПОЗИЦИЯ
+      fieldFilmStock: Фотопленка
+      typeBw: B&W
+      typeColorNeg: Түсті негатив
+      typeSlide: Слайд / E6
+      noFailureUpTo: '{seconds} секундқа дейін ауытқу жоқ'
+      sourceManufacturer: Өндіруші деректері
+      sourceCommunity: Қауымдастық деректері
+      fieldMeteredExposure: Өлшенген экспозиция
+      unitSeconds: секунд
+      noFailureMessage: 'Түзету қажет емес: бұл пленкада осы экспозиция ұзақтығында реципроктылық ауытқуы жоқ.'
+      copyDone: ✓ көшірілді
+      copySeconds: секундты көшіру
+      devReduce10: Көлеңке тығыздығының артуын өтеу үшін дамытуды шамамен 10%-ға азайтуды қарастырыңыз.
+      devReduce1015: Дамытуды 10-15%-ға азайту ұсынылады.
+      devReduce1520: Дамытуды 15-20%-ға азайту ұсынылады.
+      devReduce2030: Өте ұзақ экспозициялар үшін дамытуды 20-30%-ға азайту ұсынылады.
+      colorShiftWarning: 'Түсті пленка: бұл экспозиция ұзақтығында түс ауытқуы күтіледі.'
+      colorShiftSlide: Слайд пленканы кейін түзету қиын, түсіру кезінде CC сүзгісін қолдану ұсынылады.
+      colorShiftNeg: Түсті негативтің диапазоны кеңірек, түзетуді басып шығару немесе сканерлеу кезінде жасауға болады.
+  nd-filter-calculator:
+    title: ND сүзгі калькуляторы
+    description: Бейтарап тығыздық сүзгілері үшін түзетілген ысырма жылдамдықтарын есептеңіз. Барлық кең таралған ND күштерін және өз саты мәндерін қолдайды.
+    ui:
+      titleInputs: ND СҮЗГІ КАЛЬКУЛЯТОРЫ
+      baseShutterSpeed: Негізгі ысырма жылдамдығы (сүзгісіз)
+      dragOrClick: сүйреңіз немесе басыңыз
+      custom: Таңдауыңызша
+      secPlaceholder: сек
+      ndFilter: ND сүзгі
+      stopOne: '{count} қадам'
+      stopMany: '{count} қадам'
+      enterStops: қадам санын енгізіңіз
+      stopsPlaceholder: қадам
+      titleResult: ТҮЗЕТІЛГЕН ЭКСПОЗИЦИЯ
+      copied: көшірілді
+      copySeconds: секундты көшіру
+      longExposureAlert: Ұзақ экспозиция. Bulb режимін пайдалануды қарастырыңыз.
+      stackingFilters: сүзгілерді біріктіргенде қадамдарын қосыңыз
+      legendT1: негізгі ысырма жылдамдығы (сүзгісіз)
+      legendT2: түзетілген ысырма жылдамдығы
+      legendStops: ND сүзгінің күші
+  depth-of-field-calculator:
+    title: Өткірлік тереңдігі калькуляторы
+    description: Кез келген объектив пен сенсор үйлесімі үшін жақын шекті, алыс шекті және жалпы өткірлік тереңдігін есептеңіз. Гиперфокальды қашықтықты да көрсетеді.
+    ui:
+      sensorMedFormat: Орта формат
+      sensorCustom: Өзгертпелі
+      sensorEnterCoc: CoC енгізіңіз
+      infinity: шексіздік
+      title: ӨРІС ТЕРЕҢДІГІН ЕСЕПТЕУІШ
+      sensorFormat: Сенсор форматы
+      cocPlaceholder: CoC, мм (мысалы, 0.029)
+      focalLength: Фокустық қашықтық (мм)
+      aperture: Диафрагма
+      dragOrClick: сүйреңіз немесе басыңыз
+      focusDistance: Фокустау қашықтығы
+      distancePlaceholder: қашықтық
+      results: НӘТИЖЕЛЕР
+      hyperfocalDistance: Гиперфокус қашықтығы
+      hyperfocalHint: Максималды анықтық үшін осы қашықтықтың жартысынан шексіздікке дейін фокустаңыз
+      nearLimit: Жақын шек
+      farLimit: Алыс шек
+      totalDof: Жалпы өріс тереңдігі
+      beyondHyperfocal: Фокустау қашықтығы гиперфокус қашықтығына тең немесе одан асады, алыс шек шексіздікке дейін созылады.
+      legendHyperfocal: гиперфокус қашықтығы
+      legendFocalLength: фокустық қашықтық
+      legendFNumber: f саны (диафрагма)
+      legendCoc: шатасу шеңбері
+      legendFocusDistance: фокустау қашықтығы
+  exposure-equivalence:
+    title: Экспозиция баламалылығы
+    description: Бірдей экспозиция үшін барлық диафрагмалардағы балама ысырма жылдамдықтарын табыңыз. Негізгі ысырма мен диафрагманы таңдап, басқа әр f-stop үшін не қажет екенін көріңіз.
+    ui:
+      titleInputs: ЭКСПОЗИЦИЯ ЭКВИВАЛЕНТТІЛІГІ
+      shutterSpeed: Ысырма жылдамдығы
+      dragOrClick: сүйреңіз немесе басыңыз
+      custom: Таңдауыңызша
+      secPlaceholder: сек
+      aperture: Диафрагма
+      titleResults: ЭКВИВАЛЕНТТІ ЭКСПОЗИЦИЯЛАР
+      isoIndependent: Кез келген тұрақты ISO кезінде ISO-ға тәуелсіз
+      highlightedBase: белгіленген жол сіздің негізіңіз
+      legendT1: негізгі ысырма жылдамдығы
+      legendT2: эквивалентті ысырма жылдамдығы
+      legendN1: негізгі диафрагма (f саны)
+      legendN2: мақсатты диафрагма (f саны)
+  dev-calculator:
+    title: Пленка айқындау калькуляторы
+    description: Температураны өтеу, push/pull өңдеу және сұйылтуды араластыру арқылы түзетілген айқындау уақытын есептеңіз. Кең таралған ақ-қара айқындағыштар мен пленкалардың дерекқорын қамтиды.
+    ui:
+      hasData: Деректер бар
+      noDataGroup: Деректер жоқ, негізгі уақытты қолмен енгізіңіз
+      colorBelow: '{process} 36°C-тан төмен: түс өзгеруі және толық емес байқату мүмкін'
+      colorAbove: '{process} 40°C-тан жоғары: тұмандану және түс ауысу қаупі'
+      bwBelow: '18°C-тан төмен: байқату өте баяу болады'
+      bwAbove: '24°C-тан жоғары: ретикуляция және тұмандану қаупі'
+      start: Бастау
+      pause: Кідірту
+      resume: Жалғастыру
+      calculatorTitle: ПЛЁНКАНЫ БАЙҚАТУ КАЛЬКУЛЯТОРЫ
+      developer: Байқатқыш
+      dilution: Сұйылту
+      filmStock: Пленка түрі
+      baseTimeAt: '{temp}°C кездегі негізгі уақыт'
+      noData: деректер жоқ
+      overridePlaceholder: үстінен жазу (сек)
+      customBaseActive: Таңдаулы негізгі уақыт белсенді
+      temperature: 'Температура:'
+      pushPull: Пуш / Пулл
+      tankVolume: Бак көлемі
+      customMlPlaceholder: таңдаулы мл
+      adjustedTime: ТҮЗЕТІЛГЕН УАҚЫТ
+      baseTimeTemp: Негізгі уақыт ({temp}°C)
+      tempAdj: Темп. түзетуі ({temp})
+      pushStop: '{n} стоп пуш'
+      pushStops: '{n} стоп пуш'
+      pullStop: '{n} стоп пулл'
+      pullStops: '{n} стоп пулл'
+      mixFor: '{volume}мл үшін араластыру'
+      mixDeveloper: байқатқыш
+      mixWater: су
+      noDataWarning: '{film} + {developer} үшін деректер жоқ. Негізгі уақытты қолмен енгізіңіз.'
+      pushPullEstimate: Пуш/пулл уақыттары шамамен алынған. Сынақ пленкасын түсіру ұсынылады.
+      sourceNote: Негізгі уақыттар Massive Dev Chart және өндіруші деректер парақтарынан алынған.
+      processTimer: ПРОЦЕСС ТАЙМЕРІ
+      devComplete: Байқату аяқталды
+      devCompleteHint: Кептіру үшін іліп қойып, негативтеріңізді пайдаланыңыз.
+      stageOf: Кезең {current} / {total}
+      agitation: ШАЙҚАУ
+      reset: Қалпына келтіру
+      skip: Өткізіп жіберу
+      stDeveloper: Байқатқыш
+      stBleach: Ағартқыш
+      stWash: Жуу
+      stFixer: Бекіткіш
+      stWash2: Жуу 2
+      stStabilizer: Тұрақтандырғыш
+      stFirstDeveloper: Бірінші байқатқыш
+      stReversalBath: Реверсті ванна
+      stColorDeveloper: Түсті байқатқыш
+      stPreBleach: Алдын ала ағарту
+      stFinalWash: Соңғы жуу
+      stStopBath: Тоқтату ваннасы
+      agC30s10: Алғашқы 30 секунд үздіксіз, содан кейін әр 30 секунд сайын 10 секунд
+      agRun3Full: Ағын су немесе 3 толық ауыстыру
+      agGentle: Тек жайлап шайқау, содан кейін шаймау
+      agC30s5: Алғашқы 30 секунд үздіксіз, содан кейін әр 30 секунд сайын 5 секунд
+      agRun3: Ағын су немесе 3 ауыстыру
+      agContinuous: Үздіксіз
+      ag10per30: Әр 30 секунд сайын 10 секунд
+      agRun5: Ағын су немесе 5 ауыстыру
+      agC60s10: Алғашқы 30 секунд үздіксіз, содан кейін әр 60 секунд сайын 10 секунд
+      agCont60: 60 секунд үздіксіз
+      ag10per60: Әр 60 секунд сайын 10 секунд
+      agRun5Full: Ағын су немесе 5 толық ауыстыру
+  keycode-info:
+    title: Keycode ақпараты
+    description: Басылған кез келген пернеңің JavaScript keycode, code, location мәндері мен модификаторларын табыңыз.
+  emoji-picker:
+    title: Эмодзи таңдағыш
+    description: Эмодзилерді оңай көшіріп қойыңыз және әрқайсысының unicode мәні мен code point мәндерін алыңыз.
+    ui:
+      emojiCopied: '{emoji} эмодзиі буферге көшірілді'
+      codePointsCopied: '''{codePoints}'' код нүктелері буферге көшірілді'
+      unicodeCopied: '''{unicode}'' Unicode буферге көшірілді'
+      searchPlaceholder: Эмодзилерді іздеу (мысалы, 'smile')...
+      noResults: Нәтиже жоқ
+      searchResult: Іздеу нәтижесі
+  color-converter:
+    title: Түс түрлендіргіш
+    description: Түстерді әртүрлі пішімдер арасында түрлендіріңіз (hex, rgb, hsl және CSS атауы)
+    ui:
+      color: Түс
+      formats: ФОРМАТТАР
+  bcrypt:
+    title: Bcrypt
+    description: Мәтін жолдарын bcrypt арқылы хэштеңіз және салыстырыңыз. Bcrypt Blowfish шифрына негізделген құпиясөз хэштеу функциясы болып табылады.
+    ui:
+      copiedToClipboard: Хэш жолы алмасу буферіне көшірілді
+      hashTitle: ХЭШ
+      compareTitle: САЛЫСТЫРУ
+      stringLabel: Жол
+      stringPlaceholder: Bcrypt үшін жолыңыз...
+      saltRoundsLabel: Тұз раундтары
+      outputLabel: НӘТИЖЕ
+      copyHash: Хэшті көшіру
+      compareStringPlaceholder: Салыстыратын жолыңыз...
+      hashLabel: Хэш
+      compareHashPlaceholder: Салыстыратын хэшіңіз...
+      matchLabel: Сәйкестік
+      'yes': Иә
+      'no': Жоқ
+  crontab-generator:
+    title: Crontab генераторы
+    description: Crontab тексеріп, жасаңыз және cron кестесінің оқуға ыңғайлы сипаттамасын алыңыз.
+    ui:
+      symbolAnyValue: Кез келген мән
+      symbolEveryMinute: Әр минут сайын
+      symbolRange: Мәндер ауқымы
+      symbolRangeEquivalent: 1-ден 10-ға дейінгі минуттар
+      symbolList: Мәндер тізімі
+      symbolListEquivalent: 1 және 10 минутта
+      symbolStep: Қадам мәндері
+      symbolStepEquivalent: Әр 10 минут сайын
+      aliasYearly: Жылына бір рет (1 қаңтар, түн ортасында)
+      aliasMonthly: Әр айдың бірінші күні, түн ортасында
+      aliasWeekly: Жексенбі, түн ортасында
+      aliasDaily: Күн сайын түн ортасында
+      aliasHourly: Әр сағат сайын, дәл уақытында
+      aliasReboot: Іске қосылған кезде бір рет орындау
+      aliasRebootEquivalent: (іске қосылған кезде)
+      invalidCron: Бұл cron жарамсыз
+      use24HourTime: 24 сағаттық уақыт
+      daysStartAtZero: Күндер 0-ден басталады
+      labelSymbol: 'Белгі:'
+      labelMeaning: 'Мағынасы:'
+      labelExample: 'Мысалы:'
+      labelEquivalent: 'Баламасы:'
+      symbols: Белгілер
+      aliases: Балама атаулар
+  http-status-codes:
+    title: HTTP күй кодтары
+    description: Барлық HTTP күй кодтарының тізімі, олардың атаулары мен мағыналары.
+    ui:
+      searchResults: Іздеу нәтижелері
+      searchPlaceholder: HTTP мәртебесін іздеу...
+      copiedTooltip: Көшірілді!
+      clickToCopy: Мәртебе кодын көшіру үшін басыңыз
+      copiedLabel: көшірілді
+  sql-prettify:
+    title: SQL пішімдеу
+    description: SQL сұрауларыңызды онлайн пішімдеңіз және әдемілеңіз (әртүрлі SQL диалектілерін қолдайды).
+    ui:
+      dialectLabel: ДИАЛЕКТ
+      keywordCaseLabel: КІЛТ СӨЗДЕР РЕГІСТРІ
+      indentStyleLabel: ШЕГІНІС СТИЛІ
+      yourSqlQueryLabel: SQL сұрауыңыз
+      sqlQueryPlaceholder: SQL сұрауыңызды осыға енгізіңіз...
+      prettifiedQueryLabel: Сұрауыңыздың реттелген нұсқасы
+      keywordCaseUpper: БАС ӘРІП
+      keywordCaseLower: кіші әріп
+      keywordCasePreserve: Сақтау
+      indentStyleStandard: Стандартты
+      indentStyleTabularLeft: Солға туралау
+      indentStyleTabularRight: Оңға туралау
+  git-memo:
+    title: Git анықтамасы
+    description: Ең жиі қолданылатын Git командалары мен жұмыс процестері бойынша жылдам анықтама.
+  encryption:
+    title: Мәтінді шифрлау / шифрын ашу
+    description: AES, TripleDES, Rabbit немесе RC4 сияқты алгоритмдермен ашық мәтінді шифрлаңыз және шифрмәтінді ашыңыз.
+    ui:
+      decryptError: Мәтінді дешифрлау мүмкін емес
+      encryptTitle: ШИФРЛАУ
+      decryptTitle: ДЕШИФРЛАУ
+      yourText: СІЗДІҢ МӘТІНІҢІЗ
+      yourSecretKey: ҚҰПИЯ КІЛТІҢІЗ
+      algorithm: АЛГОРИТМ
+      encryptedOutput: ШИФРЛАНҒАН НӘТИЖЕ
+      yourEncryptedText: ШИФРЛАНҒАН МӘТІНІҢІЗ
+      decryptedOutput: ДЕШИФРЛАНҒАН НӘТИЖЕ
+      encryptPlaceholder: Шифрланатын жол
+      decryptPlaceholder: Дешифрланатын шифрмәтін
+      secretKeyPlaceholder: Құпия кілт...
+  yaml-prettify:
+    title: YAML пішімдеу
+    description: YAML жолыңызды ыңғайлы, оқылатын пішімге келтіріңіз.
+  roman-numeral-converter:
+    title: Рим цифрларын түрлендіргіш
+    description: Рим цифрларын сандарға және сандарды рим цифрларына түрлендіріңіз.
+    ui:
+      converterTitle: ТҮРЛЕНДІРГІШ
+      arabicSideLabel: АРАБ
+      romanSideLabel: РИМ САНЫ
+      arabicRangeError: '{min}-{max} аралығында болуы керек'
+      invalidRoman: Жарамды рим саны емес
+      copied: Көшірілді
+      copy: Көшіру
+      romanCopiedToast: Рим саны көшірілді
+      arabicCopiedToast: Араб саны көшірілді
+  hmac-generator:
+    title: HMAC генераторы
+    description: Құпия кілт пен таңдаулы хэш функцияңыз арқылы хэшке негізделген хабарлама аутентификациясының кодын (HMAC) есептейді.
+    ui:
+      encodingBinary: Екілік (негіз 2)
+      encodingHex: Он алтылық (негіз 16)
+      copied: HMAC алмасу буферіне көшірілді
+      plainText: АШЫҚ МӘТІН
+      secretKey: ҚҰПИЯ КІЛТ
+      hashingFunction: ХЭШТЕУ ФУНКЦИЯСЫ
+      outputEncoding: НӘТИЖЕ КОДТАУЫ
+      hmacOutput: HMAC НӘТИЖЕСІ
+      plainTextPlaceholder: Хэшті есептеу үшін ашық мәтін...
+      secretKeyPlaceholder: Құпия кілтті енгізіңіз...
+      clear: Тазалау
+      copyHmac: HMAC көшіру
+  bip39-generator:
+    title: BIP39 құпия фраза генераторы
+    description: Бар немесе кездейсоқ мнемоникадан BIP39 құпия фразасын жасаңыз не құпия фразадан мнемониканы алыңыз.
+    ui:
+      languageEnglish: Ағылшын
+      languageChineseSimplified: Қытай (жеңілдетілген)
+      languageChineseTraditional: Қытай (дәстүрлі)
+      languageCzech: Чех
+      languageFrench: Француз
+      languageItalian: Итальян
+      languageJapanese: Жапон
+      languageKorean: Корей
+      languagePortuguese: Португал
+      languageSpanish: Испан
+      entropyLengthError: Энтропия ұзындығы >= 16, <= 32 болуы және 4-ке еселік болуы керек
+      entropyHexError: Энтропия он алтылық жол болуы керек
+      invalidMnemonic: Жарамсыз мнемоника
+      entropyCopied: Энтропия алмасу буферіне көшірілді
+      passphraseCopied: Кілт сөз тіркесі алмасу буферіне көшірілді
+      languageLabel: Тіл
+      entropyHeading: ЭНТРОПИЯ (ТҰҚЫМ)
+      entropyPlaceholder: Он алтылық энтропия...
+      regenerate: Қайта жасау
+      copyEntropy: Энтропияны көшіру
+      passphraseHeading: КІЛТ СӨЗ ТІРКЕСІ (МНЕМОНИКА)
+      passphrasePlaceholder: Мнемоникалық сөздер...
+      copyPassphrase: Кілт сөз тіркесін көшіру
+  base64-file-converter:
+    title: Base64 файл түрлендіргіш
+    description: Жолды, файлды немесе суретті base64 көрінісіне түрлендіріңіз.
+    ui:
+      copiedToClipboard: Base64 жолы алмасу буферіне көшірілді
+      base64ToFileTitle: BASE64-ТЕН ФАЙЛҒА
+      fileNameLabel: ФАЙЛ АТАУЫ
+      fileNamePlaceholder: Жүктеп алу файлының атауы
+      extensionLabel: КЕҢЕЙТІМ
+      extensionPlaceholder: кеңейтім
+      base64StringLabel: BASE64 ЖОЛЫ
+      base64InputPlaceholder: Файлдың base64 жолын осында қойыңыз...
+      invalidBase64: Base64 жолы жарамсыз
+      previewImage: Суретті алдын ала қарау
+      downloadFile: Файлды жүктеп алу
+      fileToBase64Title: ФАЙЛДАН BASE64-ГЕ
+      dropHint: Файлды осында сүйреп апарыңыз немесе таңдау үшін басыңыз
+      fileInBase64Label: BASE64 ФОРМАТЫНДАҒЫ ФАЙЛ
+      fileOutputPlaceholder: Base64 форматындағы файл осында болады
+      copied: Көшірілді!
+      copyBase64: Base64-ті көшіру
+  base64-string-converter:
+    title: Base64 жол кодтағышы/декодтағышы
+    description: Жолдарды base64 көрінісіне оңай кодтаңыз және декодтаңыз.
+    ui:
+      base64CopiedToClipboard: Base64 жолы алмасу буферіне көшірілді
+      stringCopiedToClipboard: Жол алмасу буферіне көшірілді
+      stringToBase64Title: ЖОЛДАН BASE64-ГЕ
+      encodingLabel: КОДТАУ
+      standard: Стандартты
+      urlSafe: URL үшін қауіпсіз
+      stringToEncodeLabel: КОДТАЛАТЫН ЖОЛ
+      stringInputPlaceholder: Жолыңызды осында қойыңыз...
+      base64OutputLabel: BASE64 НӘТИЖЕСІ
+      base64OutputPlaceholder: Жолыңыздың base64 кодтауы осында болады
+      copied: Көшірілді!
+      copyBase64: Base64-ті көшіру
+      base64ToStringTitle: BASE64-ТЕН ЖОЛҒА
+      base64ToDecodeLabel: ДЕКОДТАЛАТЫН BASE64 ЖОЛЫ
+      base64InputPlaceholder: Base64 жолыңыз...
+      invalidBase64: Base64 жолы жарамсыз
+      decodedStringLabel: ДЕКОДТАЛҒАН ЖОЛ
+      decodedOutputPlaceholder: Декодталған жол осында болады
+      copyDecodedString: Декодталған жолды көшіру
+  math-evaluator:
+    title: Математикалық өрнек есептегіш
+    description: Математикалық өрнектерді есептеуге арналған калькулятор. sqrt, cos, sin, abs сияқты функцияларды пайдалана аласыз.
+    ui:
+      placeholder: 'Математикалық өрнегіңіз (мыс: 2*sqrt(6) )...'
+      result: Нәтиже
+  url-parser:
+    title: URL талдағыш
+    description: URL мекенжайын құрамдас бөліктеріне бөліңіз (protocol, origin, params, port, username-password, ...)
+    ui:
+      sectionHost: Хост
+      protocol: Хаттама
+      hostname: Хост атауы
+      port: Порт
+      sectionAuthentication: Аутентификация
+      username: Пайдаланушы аты
+      password: Құпия сөз
+      sectionPath: Жол
+      pathname: Жол атауы
+      search: Іздеу жолы
+      hash: Хэш
+      urlTitle: URL
+      invalidUrl: URL жарамсыз
+      params: ПАРАМЕТРЛЕР
+      emptyHint: Талдау үшін жоғарыда URL енгізіңіз
+  phone-parser-and-formatter:
+    title: Телефон нөмірі талдағышы
+    description: Телефон нөмірлерін талдап, пішімдеңіз. Елді анықтап, тексеріп, халықаралық, ұлттық, E.164 және RFC3966 пішімдерін көрсетіңіз.
+    ui:
+      invalidPhoneNumber: Телефон нөмірі жарамсыз
+      sectionLocation: Орналасқан жері
+      countryCode: Ел коды
+      country: Ел
+      callingCode: Қалалық код
+      sectionValidation: Тексеру
+      isValid: Жарамды ма?
+      'yes': Иә
+      'no': Жоқ
+      isPossible: Мүмкін бе?
+      type: Түрі
+      unknown: Белгісіз
+      sectionFormats: Пішімдер
+      international: Халықаралық
+      national: Ұлттық
+      defaultCountry: Әдепкі ел
+      phoneNumber: Телефон нөмірі
+      emptyStatePrompt: Талдау үшін жоғарыға телефон нөмірін енгізіңіз
+  user-agent-parser:
+    title: User-agent талдағышы
+    description: User-agent жолынан браузерді, қозғалтқышты, ОЖ-ны, CPU-ды және құрылғы түрі/моделін анықтаңыз.
+    ui:
+      sectionBrowser: Браузер
+      sectionEngine: Қозғалтқыш
+      sectionOs: ОЖ
+      sectionDevice: Құрылғы
+      sectionCpu: Процессор
+      name: Атауы
+      version: Нұсқа
+      model: Модель
+      type: Түрі
+      vendor: Өндіруші
+      architecture: Архитектура
+      userAgentString: USER AGENT ЖОЛЫ
+      placeholder: User agent жолын осында енгізіңіз...
+      unknown: Белгісіз
+      error: ҚАТЕ
+      parseError: User agent жолын талдау мүмкін болмады
+  case-converter:
+    title: Регистр түрлендіргіш
+    description: Жолдың регистрін әртүрлі пішімдердің бірін таңдап өзгертіңіз
+    ui:
+      inputPlaceholder: Мәтініңізді енгізіңіз...
+      output: НӘТИЖЕ
+  html-entities:
+    title: HTML нысандарын экрандау
+    description: HTML нысандарын экрандаңыз немесе экрандауды алып тастаңыз (<,>, &, " және \' сияқты таңбаларды HTML нұсқасымен ауыстырады)
+    ui:
+      yourString: СІЗДІҢ ЖОЛЫҢЫЗ
+      escapePlaceholder: Экрандауға арналған жол...
+      escapedOutput: ЭКРАНДАЛҒАН НӘТИЖЕ
+      copied: Көшірілді
+      copy: Көшіру
+      yourEscapedString: СІЗДІҢ ЭКРАНДАЛҒАН ЖОЛЫҢЫЗ
+      unescapePlaceholder: Экрандауды алып тастауға арналған жол...
+      unescapedOutput: ЭКРАНДАЛМАҒАН НӘТИЖЕ
+  json-prettify:
+    title: JSON пішімдеу
+    description: JSON жолыңызды ыңғайлы, оқылатын пішімге келтіріңіз.
+  docker-run-to-docker-compose-converter:
+    title: Docker run командасын Docker compose-ға түрлендіргіш
+    description: '"docker run" командаларын docker-compose файлдарына түрлендіреді!'
+  mac-address-lookup:
+    title: MAC мекенжайын іздеу
+    description: Құрылғының жеткізушісі мен өндірушісін оның MAC мекенжайы бойынша табыңыз.
+    ui:
+      macAddressLabel: MAC мекенжайы
+      copiedTooltip: Көшірілді!
+      copyTooltip: Өндіруші ақпаратын көшіру үшін басыңыз
+      copiedTitle: ✓ көшірілді
+      vendorInfoTitle: Өндіруші туралы ақпарат
+      unknownVendor: Бұл мекенжай үшін өндіруші белгісіз
+  lorem-ipsum-generator:
+    title: Lorem ipsum генераторы
+    description: Макеттер мен дизайн жұмысына арналған lorem ipsum толтырғыш мәтінін жасаңыз.
+    ui:
+      copiedMessage: Lorem ipsum алмасу буферіне көшірілді
+      paragraphs: Абзацтар
+      sentencesPerParagraph: Абзацтағы сөйлемдер
+      wordsPerSentence: Сөйлемдегі сөздер
+      startWithLoremIpsum: Lorem ipsum-нан бастау
+      asHtml: HTML түрінде
+      output: НӘТИЖЕ
+      wordCount: '{count} сөз'
+      charCount: '{count} таңба'
+      copy: Көшіру
+      refresh: Жаңарту
+  qrcode-generator:
+    title: QR код генераторы
+    description: URL, қарапайым мәтін немесе Wi-Fi желісінің тіркелгі деректері үшін QR кодтарын жасап, жүктеп алыңыз. Қатені түзету бапталатын терминал, классикалық және өз түс тақырыптары.
+  signature-creator:
+    title: Қолтаңба жасағыш
+    description: Кенепте қолжазба қолтаңба салып, мөлдір PNG ретінде экспорттаңыз. Немесе кез келген суретті жүктеп, құрылғыдағы ЖИ арқылы оның фонын бір рет басып алып тастаңыз.
+    ui:
+      drawSignatureTab: Қолтаңба салу
+      removeBackgroundTab: Фондты алып тастау
+      inkColorLabel: Сия түсі
+      strokeWeightLabel: Сызық қалыңдығы
+      actionsLabel: Ис-әрекеттер
+      undoButton: ↩ Кері қайтару
+      clearButton: ✕ Тазалау
+      downloadTransparentPng: ↓ Мҩлдір PNG жүктеу
+      uploadImageLabel: Суретті жүктеу
+      dropzoneText: Суретті осы жерге тастаңыз немесе таңдау үшін басыңыз
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Сурет жүктелді
+      removeButton: ✕ Жою
+      removeBackgroundButton: ⚡ Фондты алып тастау
+      exportLabel: Экспорт
+      downloadNoBgPng: ↓ PNG жүктеу (фонсыз)
+      originalLabel: Түпнұсқа
+      resultLabel: Нәтиже
+      uploadPrompt: Бастау үшін сурет жүктеңіз
+      originalAlt: түпнұсқа
+      resultAlt: фоны алынған нәтиже
+      loadingModelStatus: AI моделі жүктелуде...
+      removingBackgroundStatus: Фон алып тасталуда...
+      processingPercentStatus: Өңделуде... {pct}%
+      downloadingModelPercentStatus: Модель жүктелуде... {pct}%
+      removeBackgroundFailedStatus: Фонды алып тастау сәтсіз аяқталды. Басқа суретті көріңіз.
+  xml-formatter:
+    title: XML пішімдеу
+    description: XML жолыңызды ыңғайлы, оқылатын пішімге келтіріңіз.
+    ui:
+      invalidXml: Берілген XML жарамсыз.
+      collapse: Жию
+      indentSize: Шегініс өлшемі
+      inputLabel: Сіздің XML
+      inputPlaceholder: XML осында қойыңыз...
+      outputLabel: XML файлыңыздан пішімделген XML
+  temperature-converter:
+    title: Температура түрлендіргіш
+    description: Кельвин, Цельсий, Фаренгейт, Ранкин, Делиль, Ньютон, Реомюр және Рёмер градустары бойынша температураны түрлендіру.
+    ui:
+      kelvin: Кельвин
+      celsius: Цельсий
+      fahrenheit: Фаренгейт
+      rankine: Ранкин
+      delisle: Делиль
+      newton: Ньютон
+      reaumur: Реомюр
+      romer: Рёмер
+  chmod-calculator:
+    title: Chmod калькуляторы
+    description: Осы онлайн chmod калькуляторымен chmod рұқсаттары мен командаларын есептеңіз.
+    ui:
+      read: Оқу
+      write: Жазу
+      execute: Орындау
+      owner: Иесі
+      group: Топ
+      public: Жалпыға қолжетімді
+      commandCopied: chmod командасы көшірілді
+      copyCommand: Команданы көшіру
+  rsa-key-pair-generator:
+    title: RSA кілт жұбының генераторы
+    description: Жаңа кездейсоқ RSA жабық және ашық PEM кілт жұбын жасаңыз.
+    ui:
+      bitsRangeError: Биттер 256-16384 аралығында және 8-ге еселік болуы керек
+      bitsLabel: Биттер
+      refreshButton: Кілт жұбын жаңарту
+      publicKeyTitle: Ашық кілт
+      copyPublicKeyTitle: Ашық кілтті көшіру
+      copy: Көшіру
+      generating: Жасалуда...
+      privateKeyTitle: Жабық кілт
+      copyPrivateKeyTitle: Жабық кілтті көшіру
+      publicKeyCopiedToast: Ашық кілт көшірілді
+      privateKeyCopiedToast: Жабық кілт көшірілді
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG редакторы
+    description: Мазмұнның бастапқы кодын бірден жасайтын, мүмкіндіктерге бай онлайн WYSIWYG HTML редакторы.
+    ui:
+      bold: Қалың
+      italic: Курсив
+      strike: Сызылған
+      inlineCode: Ішкі код
+      heading1: Тақырып 1
+      heading2: Тақырып 2
+      heading3: Тақырып 3
+      heading4: Тақырып 4
+      bulletList: Таңбаланған тізім
+      orderedList: Нөмірленген тізім
+      codeBlock: Код блогы
+      blockquote: Дәйексөз
+      hardBreak: Жол үзілісі
+      clearFormat: Пішімдеуді тазарту
+      undo: Болдырмау
+      redo: Қайталау
+  json-diff:
+    title: JSON салыстыру
+    description: Екі JSON нысанын салыстырып, олардың арасындағы айырмашылықтарды алыңыз.
+    ui:
+      onlyShowDifferences: Тек айырмашылықтарды көрсету
+      jsonsAreTheSame: Берілген JSON файлдары бірдей
+      firstJsonTitle: БІРІНШІ JSON
+      firstJsonPlaceholder: Бірінші JSON файлын осында қойыңыз...
+      invalidJson: JSON пішімі жарамсыз
+      secondJsonTitle: САЛЫСТЫРАТЫН JSON
+      secondJsonPlaceholder: Салыстыратын JSON файлын осында қойыңыз...
+  jwt-parser:
+    title: JWT талдағыш
+    description: JSON Web Token (jwt) талдап, декодтап, мазмұнын көрсетіңіз.
+    ui:
+      header: Тақырып
+      payload: Пейлоуд
+      jwtToDecodeTitle: ДЕКОДТАЛАТЫН JWT
+      tokenPlaceholder: Токеніңізді осында енгізіңіз...
+      invalidJwt: JWT жарамсыз
+  date-converter:
+    title: Күн мен уақыт түрлендіргіш
+    description: Күн мен уақытты әртүрлі пішімдерге түрлендіріңіз
+  ipv4-subnet-calculator:
+    title: IPv4 ішкі желі калькуляторы
+    description: IPv4 CIDR блоктарын талдап, ішкі желі туралы барлық қажетті ақпаратты алыңыз.
+    ui:
+      invalidAddress: Бұл мекенжайды талдау мүмкін емес, форматын тексеріңіз
+      netmask: Желілік маска
+      networkAddress: Желі мекенжайы
+      networkMask: Желілік маска
+      networkMaskBinary: Екілік жүйедегі желілік маска
+      cidrNotation: CIDR жазуы
+      wildcardMask: Wildcard маскасы
+      networkSize: Желі өлшемі
+      firstAddress: Бірінші мекенжай
+      lastAddress: Соңғы мекенжай
+      broadcastAddress: Broadcast мекенжайы
+      noBroadcast: Бұл маскада broadcast мекенжайы жоқ
+      ipClass: IP класы
+      unknownClassType: Белгісіз класс түрі
+      decimal: Ондық
+      hexadecimal: Он алтылық
+      binary: Екілік
+      ipv6Short: IPv6 (қысқа)
+      inputLabel: Маскасы бар немесе жоқ IPv4 мекенжайы
+      bitMap: БИТ КАРТАСЫ
+      network: Желі
+      host: Хост
+      setPrefix: Префиксті /{prefix} етіп орнату
+      networkTag: желі
+      broadcastTag: broadcast
+      hostsCount: '{count} хост'
+      privateIp: Жеке IP
+      publicIp: Ашық IP
+      subnetDetail: ІШКІ ЖЕЛІ МӘЛІМЕТТЕРІ
+      subnetInfo: ІШКІ ЖЕЛІ АҚПАРАТЫ
+      addressRepresentations: МЕКЕНЖАЙ КӨРІНІСТЕРІ
+      copy: Көшіру
+      enterValidIpv4: Көріністерін көру үшін жарамды IPv4 мекенжайын енгізіңіз
+      previousBlock: Алдыңғы блок
+      nextBlock: Келесі блок
+      collapseCheatSheet: Cheat Sheet жию
+      subnetCheatSheet: Subnet Cheat Sheet
+  og-meta-generator:
+    title: Open Graph мета генераторы
+    description: Веб-сайтыңыз үшін Open Graph және әлеуметтік желі HTML мета тегтерін жасаңыз.
+  ipv6-ula-generator:
+    title: IPv6 ULA генераторы
+    description: RFC4193 бойынша желіңіз үшін өз жергілікті, маршруттталмайтын IP мекенжайларыңызды жасаңыз.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Бірінші бағытталатын мекенжай
+      lastRoutable: Соңғы бағытталатын мекенжай
+      infoAlert: Ағымдағы уақыт белгісі мен MAC мекенжайын SHA1 арқылы хэштейді. Төменгі 40 бит RFC 4193 бойынша глобалды ID құрайды.
+      macAddress: MAC мекенжайы
+      output: Шығыс
+      copied: Көшірілді!
+      copy: Көшіру
+  hash-text:
+    title: Мәтінді хэштеу
+    description: Мәтінді MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 және басқаларымен хэштеңіз.
+    ui:
+      encodingBinary: Екілік (негіз 2)
+      encodingHex: Он алтылық (негіз 16)
+      encodingBase64: Base64 (негіз 64)
+      encodingBase64url: Base64url (URL үшін қауіпсіз 64)
+      inputPlaceholder: Хэштелетін жолыңыз...
+      encoding: Кодтау
+      output: НӘТИЖЕ
+  json-to-toml:
+    title: JSON-нан TOML-ға
+    description: JSON-ды талдап, TOML-ға түрлендіріңіз.
+  device-information:
+    title: Құрылғы ақпараты
+    description: Ағымдағы құрылғыңыз туралы ақпарат алыңыз (экран өлшемі, пиксель қатынасы, user agent, ...)
+    ui:
+      screen: Экран
+      hardware: Жабдық
+      network: Желі
+      browser: Браузер
+      screenSize: Экран өлшемі
+      windowSize: Терезе өлшемі
+      pixelRatio: Пиксель қатынасы
+      colorDepth: Түс тереңдігі
+      orientation: Бағдары
+      orientationAngle: Бағдар бұрышы
+      touchPoints: Түрту нүктелері
+      cpuCores: Процессор өзектері
+      deviceMemory: Құрылғы жады
+      platform: Платформа
+      online: Онлайн
+      connectionType: Байланыс түрі
+      downlinkSpeed: Жүктеу жылдамдығы
+      roundTripTime: Жауап беру уақыты
+      dataSaver: Деректерді үнемдеу
+      vendor: Өндіруші
+      languages: Тілдер
+      cookiesEnabled: Cookie қосулы
+      pdfViewer: PDF көрсеткіші
+      doNotTrack: Бақыламау
+      userAgent: Пайдаланушы агенті
+      maxTouchPoints: ең көбі {count}
+      none: Жоқ
+      logicalCores: '{count} логикалық өзек'
+      'yes': Иә
+      'no': Жоқ
+      enabled: Қосулы
+      disabled: Өшірулі
+      supported: Қолдау бар
+      notSupported: Қолдау жоқ
+      notSet: Орнатылмаған
+  pdf-signature-checker:
+    title: PDF қолтаңбасын тексергіш
+    description: PDF файлының қолтаңбаларын тексеріңіз. Қол қойылған PDF файлында бір немесе бірнеше қолтаңба болады, олар арқылы файл мазмұны қол қойылғаннан кейін өзгертілген-өзгертілмегенін анықтауға болады.
+    ui:
+      tableHeaderValidityPeriod: Жарамдылық мерзімі
+      tableHeaderIssuedBy: Кім берген
+      tableHeaderIssuedTo: Кімге берілген
+      tableHeaderPemCertificate: PEM сертификаты
+      notBefore: Басталу күні
+      notAfter: Аяқталу күні
+      commonName: Жалпы атауы
+      organizationName: Ұйым атауы
+      countryName: Ел атауы
+      localityName: Елді мекен атауы
+      organizationalUnitName: Ұйымдық бөлім атауы
+      stateOrProvinceName: Облыс немесе өңір атауы
+      viewPemCert: PEM сертификатын көру
+      uploadPrompt: PDF файлын осында сүйреп апарыңыз немесе таңдау үшін басыңыз
+      noSignaturesFound: Берілген файлдан қолтаңба табылмады.
+      signatureCertificatesLabel: '{number} қолтаңбасының сертификаттары:'
+  json-minify:
+    title: JSON кішірейту
+    description: Қажетсіз бос орындарды алып тастау арқылы JSON-ды кішірейтіп, сығыңыз.
+    ui:
+      invalidJson: Берілген JSON жарамсыз.
+      inputLabel: Сіздің шикі JSON
+      inputPlaceholder: Шикі JSON осында қойыңыз...
+      outputLabel: JSON-ыңыздың сығылған нұсқасы
+  ulid-generator:
+    title: ULID генераторы
+    description: Кездейсоқ Universally Unique Lexicographically Sortable Identifier (ULID) жасаңыз.
+    ui:
+      copiedMessage: ULID алмасу буферіне көшірілді
+      quantity: САНЫ
+      format: ФОРМАТ
+      formatRaw: Өнделмеген
+      formatJson: JSON
+      output: НӘТИЖЕ
+      copy: Көшіру
+      refresh: Жаңарту
+  base-converter:
+    title: Санау жүйесі түрлендіргіші
+    description: Санды әртүрлі санау жүйелері арасында түрлендіріңіз (ондық, он алтылық, екілік, сегіздік, base64, ...)
+  uuid-generator:
+    title: UUID генераторы
+    description: Кездейсоқ UUID (v1 және v4) жасап, олардың құрылымын зерттеңіз.
+    ui:
+      copiedMessage: UUID алмасу буферіне көшірілді
+      version: НҰСҚА
+      quantity: САНЫ
+      namespacePreset: NAMESPACE ҮЛГІСІ
+      namespaceUuid: NAMESPACE UUID
+      invalidUuid: UUID жарамсыз
+      name: АТАУЫ
+      namePlaceholder: Хэштелетін атау...
+      output: НӘТИЖЕ
+      copy: Көшіру
+      refresh: Жаңарту
+  ipv4-address-converter:
+    title: IPv4 мекенжай түрлендіргіш
+    description: IP мекенжайын ондық, екілік, он алтылық немесе тіпті IPv6 көрінісіне түрлендіріңіз.
+    ui:
+      decimal: Ондық
+      hexadecimal: Он алтылық
+      binary: Екілік
+      ipv6Short: IPv6 (қысқа)
+      invalidIpv4: IPv4 мекенжайы жарамсыз
+      ipv4Address: IPv4 мекенжайы
+      output: Нәтиже
+      copied: Көшірілді!
+      copy: Көшіру
+  text-statistics:
+    title: Мәтін статистикасы
+    description: 'Мәтін туралы ақпарат алыңыз: таңбалар саны, сөздер саны, байттағы өлшемі, ...'
+    ui:
+      textPlaceholder: Мәтініңіз...
+      characterCount: ТАҢБА САНЫ
+      wordCount: СӨЗ САНЫ
+      lineCount: ЖОЛ САНЫ
+      byteSize: БАЙТ ӨЛШЕМІ
+  text-to-nato-alphabet:
+    title: Мәтінді NATO әліпбиіне
+    description: Ауызша беру үшін мәтінді NATO фонетикалық әліпбиіне түрлендіріңіз.
+    ui:
+      yourText: МӘТІНІҢІЗ
+      inputPlaceholder: мыс. Hello world
+      natoPhonetic: NATO ФОНЕТИКАЛЫҚ ӘЛІПБИІ
+      copied: Көшірілді
+      copyAll: Барлығын көшіру
+      natoStringCopied: NATO жолы көшірілді.
+  ipv4-range-expander:
+    title: IPv4 ауқымын кеңейткіш
+    description: Бастапқы және соңғы IPv4 мекенжайлары берілгенде, бұл құрал CIDR жазбасымен бірге жарамды IPv4 ішкі желісін есептейді.
+    ui:
+      startAddress: Бастапқы мекенжай
+      endAddress: Соңғы мекенжай
+      addressesInRange: Ауқымдағы мекенжайлар
+      invalidIpv4: IPv4 мекенжайы жарамсыз
+      invalidCombinationTitle: Бастапқы және соңғы IPv4 мекенжайларының тіркесімі жарамсыз
+      invalidCombinationDescription: Соңғы IPv4 мекенжайы бастапқыдан кіші. Бұл жарамсыз, сондықтан нәтижені есептеу мүмкін болмады.
+      switchStartEnd: Бастапқы және соңғы IPv4 мекенжайларын ауыстыру
+      result: Нәтиже
+      copied: Көшірілді!
+      copyResult: Нәтижені көшіру
+  text-diff:
+    title: Мәтінді салыстыру
+    description: Екі мәтінді салыстырып, олардың арасындағы айырмашылықтарды көріңіз.
+  otp-generator:
+    title: OTP код генераторы
+    description: Көпфакторлы аутентификация үшін уақытқа негізделген OTP (бір реттік құпиясөз) жасаңыз және тексеріңіз.
+  text-to-binary:
+    title: Мәтінді ASCII екілік кодқа
+    description: Мәтінді оның ASCII екілік көрінісіне және керісінше түрлендіріңіз.
+    ui:
+      textCopied: Мәтін көшірілді
+      binaryCopied: Екілік код көшірілді
+      panelTitle: МӘТІН ↔ ASCII ЕКІЛІК КОДЫ
+      textLabel: МӘТІН
+      binaryLabel: ЕКІЛІК КОД
+      copied: Көшірілді
+      copy: Көшіру
+      textPlaceholder: мыс. Hello world
+      invalidBinary: Жарамды ASCII екілік коды болуы керек (8 биттің еселігі)
+  ascii-word-art:
+    title: ASCII арт генераторы
+    description: Көптеген қаріптер мен стильдермен ASCII арт мәтінін жасаңыз.
+  killer-scripts:
+    title: Killer Scripts
+    description: Windows әкімшілігі мен MSP далалық жұмысына арналған PowerShell скрипттері.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Cmdlet таңдаңыз, параметрлерді толтырып, дайын PowerShell командасын көшіріңіз.
+  group-policy-reference:
+    title: Топтық саясат анықтамалығы
+    description: Жиі қолданылатын Windows топтық саясат параметрлерін атауы, GPO жолы, тізілім кілті немесе сипаттамасы бойынша іздеңіз.
+    ui:
+      searchPlaceholder: Саясаттарды, жолдарды, тіркелім кілттерін іздеу...
+      copied: Көшірілді!
+      clickToCopyRegistry: Тіркелім кілтін көшіру үшін басыңыз
+      copiedShort: көшірілді
+      default: Әдепкі
+      recommended: Ұсынылады
+  windows-event-lookup:
+    title: Windows оқиғаларын іздеу
+    description: Windows оқиға идентификаторларын сипаттамалары, маңыздылық деңгейлері және жиі себептерімен іздеңіз.
+    ui:
+      searchResults: Іздеу нәтижелері
+      searchPlaceholder: Оқиға идентификаторы, атауы немесе сипаттамасы бойынша іздеу...
+      copied: Көшірілді!
+      clickToCopyEventId: Оқиға идентификаторын көшіру үшін басыңыз
+      copiedShort: көшірілді
+  m365-sku-decoder:
+    title: M365 лицензия SKU декодері
+    description: Microsoft 365 лицензия SKU жолдары мен GUID мәндерін өнім атауларына декодтаңыз.
+    ui:
+      searchPlaceholder: SKU атауы, string ID немесе сипаттама бойынша іздеу...
+      copied: Көшірілді!
+      clickToCopy: String ID көшіру үшін басыңыз
+      copiedMark: ✓ көшірілді
+  windows-error-codes:
+    title: Windows қате кодтарын іздеу
+    description: Windows қате кодтарын он алтылық немесе ондық түрде іздеңіз, соның ішінде жүйелік қателер, BSOD тоқтату кодтары, WMI, RPC, MSI орнатушы қателері және басқалар.
+    ui:
+      searchResults: Іздеу нәтижелері
+      searchPlaceholder: он алтылық код, қате атауы немесе сипаттамасы бойынша іздеу...
+      copied: Көшірілді!
+      clickToCopy: Он алтылық кодты көшіру үшін басыңыз
+      copiedShort: көшірілді
+      decimal: ондық {decimal}
+  exchange-ndr-lookup:
+    title: Exchange NDR іздеу
+    description: Exchange және M365 қайтару кодтарын түсінікті себебі мен түзету нұсқаулығымен іздеңіз.
+    ui:
+      searchResults: Іздеу нәтижелері
+      searchPlaceholder: NDR коды, қате атауы, себебі немесе шешімі бойынша іздеу...
+      copied: Көшірілді!
+      clickToCopy: NDR кодын көшіру үшін басыңыз
+      copiedShort: көшірілді
+      cause: Себебі
+      fix: Шешімі
+  safelink-decoder:
+    title: Outlook Safelink декодері
+    description: Бастапқы мақсатты URL мекенжайын көру үшін Microsoft Defender SafeLinks сілтемелерін ашыңыз.
+  port-protocol-reference:
+    title: Порттар мен хаттамалар анықтамалығы
+    description: Қауіпсіздік ескертпелері мен қауіпті порт белгілері бар кең таралған желі порттары мен хаттамалары.
+  cve-lookup:
+    title: CVE іздеу
+    description: NIST NVD ішінде CVE-ні ID немесе кілт сөз бойынша іздеңіз. NVD API-дан тікелей деректер.
+    ui:
+      range6m: 6 ай
+      range1y: 1 жыл
+      range2y: 2 жыл
+      range5y: 5 жыл
+      rangeAll: Барлық уақыт
+      noDescription: Сипаттама жоқ.
+      fetchError: NVD API жетпеді. Байланысты тексеріңіз.
+      sortNewest: Ең жаңасынан
+      sortOldest: Ең ескісінен
+      sortSeverity: Ең жоғары қауіптілік
+      severityCritical: Критикалық
+      severityHigh: Жоғары
+      severityMedium: Орташа
+      severityLow: Төмен
+      placeholder: CVE идентификаторы немесе кілт сөз (мысалы, CVE-2021-44228, log4j)
+      searching: Іздеу...
+      search: Іздеу
+      hint: CVE идентификаторы, ішінара нөмір (мысалы, 43284), әйгілі атауы (мысалы, log4shell, dirty frag) немесе кілт сөз бойынша іздеңіз. NVD және GitHub Advisory Database дерекқорынан нақты уақыттағы деректер.
+      noResults: «{query}» бойынша CVE табылмады.
+      noResultsInRange: Таңдалған күн аралығында «{query}» бойынша CVE табылмады.
+      noExactMatch: Таңдалған күн аралығында дәл сәйкестік табылмады. «dirty frag» сияқты танымал осалдық атаулары NVD сипаттамаларында сөзбе-сөз кездеспеуі мүмкін. Оның орнына ішінара CVE нөмірін пайдаланып көріңіз (мысалы, «43284» CVE-2026-43284 нәтижесін табады).
+      searchAllTime: Барлық уақыт бойынша іздеу
+      showingResults: '{total} нәтиженің {shown} көрсетілді'
+      allSeverities: Барлық қауіптілік деңгейлері
+      allYears: Барлық жылдар
+      copied: Көшірілді!
+      clickToCopyId: CVE идентификаторын көшіру үшін басыңыз
+      copiedShort: көшірілді
+      cveDetail: CVE МӘЛІМЕТТЕРІ
+      published: Жарияланды
+      modified: Өзгертілді
+      clickToCopy: Көшіру үшін басыңыз
+      references: Дереккөздер
+      kevActionDue: 'CISA KEV әрекет мерзімі:'
+      cvssMetrics: CVSS метрикалары
+      metricAttackVector: Шабуыл векторы
+      metricAttackComplexity: Шабуыл күрделілігі
+      metricPrivilegesRequired: Қажетті артықшылықтар
+      metricUserInteraction: Пайдаланушы әрекеті
+      metricScope: Ауқым
+      metricConfidentiality: Құпиялылық
+      metricIntegrity: Тұтастық
+      metricAvailability: Қолжетімділік
+  email-dns-checker:
+    title: Пошта DNS тексергіші
+    description: Кез келген доменнің MX, SPF, DKIM және DMARC жазбаларын тексеріңіз. Пошта аутентификациясы конфигурациясын тексеріп, жиі кездесетін қате баптауларды белгілейді.
+  email-header-parser:
+    title: Пошта тақырыптамасын талдағыш
+    description: Жіберуші туралы ақпаратты алу, жеткізу секірістерінің тізбегін бақылау және SPF, DKIM, DMARC аутентификация нәтижелерін көру үшін шикі пошта тақырыптамаларын қойыңыз.
+    ui:
+      pasteHint: Төменге шикі электрондық пошта тақырыптарын қойыңыз.
+      parseButton: Тақырыптарды талдау
+      parseAnother: Тағы бірін талдау
+      messageDetails: Хабарлама мәліметтері
+      senderMismatch: Жіберуші домені From доменінен өзгеше. Бұл спуфинг немесе тапсырылған жіберуді білдіруі мүмкін.
+      deliveryHops: Жеткізу секірістері
+      oldestFirst: ескіден бастап
+      authResults: Аутентификация нәтижелері
+      spamAnalysis: Спам талдауы
+      spamScore: Спам ұпайы
+      spamStatus: Спам мәртебесі
+  whois-checker:
+    title: WHOIS іздеу
+    description: Кез келген доменнің тіркеу мәліметтерін, соның ішінде тіркеушіні, құрылу және аяқталу күндерін, атау серверлерін және күй белгілерін іздеңіз.
+  ascii-text-drawer:
+    title: ASCII арт генераторы
+    description: Көптеген қаріптер мен стильдермен ASCII арт мәтінін жасаңыз.
+    ui:
+      yourText: СІЗДІҢ МӘТІНІҢІЗ
+      textPlaceholder: Салынатын мәтін
+      options: ПАРАМЕТРЛЕР
+      font: ШРИФТ
+      searchFonts: Шрифттерді іздеу...
+      noFontsMatch: Сәйкес шрифт табылмады
+      width: ЕНІ
+      output: ASCII ART НӘТИЖЕСІ
+      loadingFont: Шрифт жүктелуде...
+      error: Ағымдағы параметрлер қатеге әкелді.
+      copied: Көшірілді!
+      copy: Көшіру
+  regex-tester:
+    title: Regex тексергіш
+    description: Тұрақты өрнектеріңізді үлгі мәтінмен тексеріңіз.
+    ui:
+      regexLabel: 'Тексерілетін regex:'
+      regexPlaceholder: Тексерілетін regex енгізіңіз
+      globalLabel: Ғаламдық
+      globalTitle: Ғаламдық іздеу
+      ignoreCaseLabel: Регистрді елемеу
+      ignoreCaseTitle: Регистрге сезімтал емес іздеу
+      multilineLabel: Көп жолды
+      singlelineLabel: Бір жолды
+      singlelineTitle: . таңбасының жол тасымалдау таңбаларына сәйкес келуіне мүмкіндік береді.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; үлгіні Unicode код нүктелерінің тізбегі ретінде қарастырады.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: u режимінің көбірек Unicode мүмкіндіктері бар жаңартылған нұсқасы.
+      textLabel: 'Салыстырылатын мәтін:'
+      textPlaceholder: Салыстырылатын мәтінді енгізіңіз
+      regexBarTitle: REGEX
+      matchesBarTitle: СӘЙКЕСТІКТЕР
+      matchIndex: Индекс
+      matchValue: Мән
+      matchCaptures: Қармаулар
+      matchGroups: Топтар
+      noMatch: Сәйкестік жоқ
+      sampleBarTitle: ҮЛГІ
+      diagramBarTitle: ДИАГРАММА
+      quickReference: Жедел анықтама
+  yaml-converter:
+    title: YAML түрлендіргіш
+    description: YAML-ды JSON немесе TOML-ға түрлендіріңіз.
+    ui:
+      convertTo: 'Мынаған түрлендіру:'
+      inputLabel: Сіздің YAML
+      inputPlaceholder: YAML осында қойыңыз...
+      invalidYaml: Берілген YAML жарамсыз.
+      outputLabel: '{format} нәтижесі'
+  json-converter:
+    title: JSON түрлендіргіш
+    description: JSON-ды YAML немесе TOML-ға түрлендіріңіз.
+    ui:
+      convertTo: Мынаған түрлендіру
+      yourJson: Сіздің JSON
+      pasteJsonPlaceholder: JSON файлын осында қойыңыз...
+      invalidJson: JSON пішімі жарамсыз
+      formatOutput: '{format} шығысы'
+  toml-converter:
+    title: TOML түрлендіргіш
+    description: TOML-ды JSON немесе YAML-ға түрлендіріңіз.
+    ui:
+      convertTo: 'Мынаган түрлендіру:'
+      yourToml: Сіздің TOML файлыңыз
+      pastePlaceholder: TOML мәтінін осында қойыңыз...
+      invalidToml: Берілген TOML жарамсыз.
+      outputLabel: '{format} нәтижесі'
+  xml-json-converter:
+    title: XML ↔ JSON түрлендіргіш
+    description: Екі бағытты XML және JSON түрлендіргіші. Кез келген жағын өңдеңіз, екіншісі автоматты түрде жаңарады.
+    ui:
+      invalidXml: XML жарамсыз.
+      invalidJson: JSON жарамсыз.
+      xmlLabel: XML
+      xmlPlaceholder: XML осында қойыңыз...
+      jsonLabel: JSON
+      jsonPlaceholder: JSON осында қойыңыз...
+  markdown-to-html:
+    title: Markdown-нан HTML-ге
+    description: Markdown-ды HTML-ге түрлендіріп, PDF ретінде экспорттаңыз немесе басып шығарыңыз.
+    ui:
+      copiedSuccess: HTML алмасу буферіне көшірілді!
+      copyFailed: Мәтінді көшіру сәтсіз аяқталды.
+      inputLabel: 'Түрлендірілетін Markdown мәтіні:'
+      inputPlaceholder: Markdown мазмұныңыз...
+      outputLabel: 'Шыққан HTML:'
+      copyHtmlButton: HTML көшіру
+      printAsPdfButton: PDF ретінде басып шығару
+  killer-pdf:
+    title: KillerPDF
+    description: Windows-қа арналған ашық бастапқы кодты PDF редакторы. Қарау, аңдатпа қосу, біріктіру, бөлу, тегістеу, құпиясөзбен қорғалған PDF файлдарын ашу, мәтінді өңдеу, сурет салу, бөлектеу, қол қою және басып шығару.
+  killer-scan:
+    title: KillerScan
+    description: Далалық техниктерге арналған жылдам желі сканері. ARP + ping арқылы табу, порттарды тексеру, жеткізушіні іздеу және құрылғыларды автоматты жіктеу.
+  gif-search:
+    title: GIF іздеу
+    description: Giphy-дан реакция GIF-терін іздеңіз. URL мекенжайын көшіру үшін кез келген нәтижені басыңыз.
+    ui:
+      errorStatus: Қате {status}
+      fetchFailed: GIF файлдарын жүктеу мүмкін болмады.
+      searchPlaceholder: GIF іздеу (мысалы, facepalm, nice work, this is fine)
+      searching: Ізделуде...
+      search: Іздеу
+      noResults: '"{query}" үшін GIF табылмады.'
+      copied: Көшірілді!
+      copyUrl: URL мекенжайын көшіру
+      resultsHint: '{count} нәтиже. URL мекенжайын көшіру үшін басыңыз, содан кейін оны Teams, Telegram немесе Slack ішіне қойыңыз.'
+  killer-shell:
+    title: KillerShell
+    description: Тәжірибелі пайдаланушыларға арналған тегін қабықша. Файл шолғышы, терминал және мәтін редакторы бір терезені, бір қойынды жолағын және бір пернелер жиынын бөліседі.
+  domain-lookup:
+    title: Доменді іздеу
+    description: Кез келген домен үшін WHOIS тіркеу мәліметтері мен пошта DNS тексерулері (MX, SPF, DKIM, DMARC) бір көріністе.
+    ui:
+      statusDesc:
+        active: Домен белсенді және жұмыс істеп тұр.
+        inactive: Домен белсенді емес.
+        clientDeleteProhibited: Тіркеуші домендi жоюдан бұғаттады.
+        clientTransferProhibited: Тіркеуші домендi басқа тіркеушіге ауыстырудан бұғаттады.
+        clientUpdateProhibited: Тіркеуші домендi жаңартудан бұғаттады.
+        clientHold: Тіркеуші доменді ұстауға қойды, сондықтан DNS шешілмеуі мүмкін.
+        serverDeleteProhibited: Тізілім домендi жоюдан бұғаттады.
+        serverTransferProhibited: Тізілім домендi ауыстырудан бұғаттады.
+        serverUpdateProhibited: Тізілім домендi жаңартудан бұғаттады.
+        serverHold: Тізілім доменді ұстауға қойды, сондықтан DNS шешілмеуі мүмкін.
+        pendingCreate: Доменді құру күтілуде.
+        pendingDelete: Домен жоюды күтуде және жақын арада босатылуы мүмкін.
+        pendingRenew: Доменді жаңарту күтілуде.
+        pendingRestore: Доменді жойылғаннан кейін қалпына келтіру күтілуде.
+        pendingTransfer: Домендi басқа тіркеушіге ауыстыру күтілуде.
+        pendingUpdate: Доменді жаңарту күтілуде.
+        redemptionPeriod: Доменнің мерзімі өтіп, ол қалпына келтіру кезеңінде тұр. Тіркеуші оны әлі де қайтара алады.
+        renewPeriod: Домен тіркеуден кейінгі жаңарту жеңілдік кезеңінде тұр.
+        autoRenewPeriod: Домен автоматты жаңарту жеңілдік кезеңінде тұр.
+        transferPeriod: Домен ауыстыру жеңілдік кезеңінде тұр.
+      expiredAlert: Бұл доменнің мерзімі {days} күн бұрын аяқталды және тіркеуге қолжетімді болуы мүмкін.
+      expiresAlert: Бұл доменнің мерзімі {days} күннен кейін аяқталады. Жаңартуды дереу ұйымдастырған жөн.
+      expiredTag: '{days} күн бұрын аяқталған'
+      remainingTag: '{days} күн қалды'
+      registrar: Тіркеуші
+      registrarIanaId: Тіркеушінің IANA ID
+      created: Құрылған күні
+      updated: Жаңартылған күні
+      expires: Мерзімі аяқталады
+      noMx: MX жазбалары табылмады.
+      dnsFailed: DNS іздеуі сәтсіз аяқталды.
+      noSpf: SPF жазбасы табылмады.
+      noDkim: Кең таралған селекторлар үшін DKIM жазбалары табылмады. Арнайы селекторлар әлі де болуы мүмкін.
+      noDmarc: DMARC жазбасы табылмады. Домен алаяқтық жасаудан қорғалмаған.
+      spfPlusAll: 'Ескерту: +all қауіпті, себебі кез келген серверге осы доменнің атынан пошта жіберуге мүмкіндік береді.'
+      spfNeutralAll: 'Ескерту: ?all бейтарап және ешқандай қорғаныс бермейді.'
+      dmarcPNone: 'Ескерту: p=none тек бақылау режимі, күшіне енбейді. Хаттар қабылданбай қалмайды.'
+      dmarcNoRua: 'Ескерту: жиынтық есеп мекенжайы (rua=) жоқ. Сіз DMARC есептерін алмайсыз.'
+      pass: Өтті
+      fail: Өтпеді
+      warning: Ескерту
+      checking: Тексерілуде...
+      overallPass: Барлық пошта тексерулері өтті. Бұл домен пошта үшін дұрыс теңшелген.
+      overallFail: Бір немесе бірнеше маңызды жазба жоқ. Бұл домен алаяқтыққа осал болуы мүмкін.
+      overallWarn: Кейбір жазбалар бар, бірақ қарау қажет теңшеу мәселелері бар.
+      rdapHttpError: 'HTTP {status}: домен жоқ болуы немесе TLD қолдау көрсетілмеуі мүмкін.'
+      lookupFailed: Іздеу сәтсіз аяқталды.
+      domainPlaceholder: Доменді енгізіңіз (мысалы, killertools.net)
+      searching: Ізделуде...
+      search: Іздеу
+      signed: Қол қойылған
+      unsigned: Қол қойылмаған
+      delegationSigned: Делегация қол қойылған.
+      dsRecord: '{count} DS жазбасы.'
+      dsRecords: '{count} DS жазбасы.'
+      keyRecord: '{count} кілт жазбасы.'
+      keyRecords: '{count} кілт жазбасы.'
+      dnssecUnsigned: Бұл домен DNSSEC арқылы қорғалмаған. DNS жауаптарын криптографиялық түрде тексеру мүмкін емес.
+      status: Күйі
+      contacts: Байланыстар
+      remarks: Ескертпелер
+      nameservers: Атау серверлері
+      mxRecords: MX жазбалары
+      spfRecord: SPF жазбасы
+      dkimRecords: DKIM жазбалары
+      dmarcRecord: DMARC жазбасы
+      role:
+        registrant: тіркеуші
+        administrative: әкімшілік
+        technical: техникалық
+        abuse: теріс пайдалану
+      name: Аты
+      organization: Ұйым
+      email: Электрондық пошта
+      phone: Телефон
+  email-record-generator:
+    title: Пошта жазбаларының генераторы
+    description: SPF және DMARC DNS TXT жазбаларын жасаңыз. Пошта провайдерлері мен саясаттарды таңдап, нәтижені тікелей DNS-ке көшіріңіз.
+    ui:
+      hardFailRecommended: қатаң сәтсіздік, ұсынылады
+      softFail: жұмсақ сәтсіздік
+      neutralNotRecommended: бейтарап, ұсынылмайды
+      blockFailingMail: сәтсіз хаттарды бұғаттау
+      sendToSpam: спамға жіберу
+      monitorOnly: тек бақылау
+      relaxedDefault: Босаңсытылған (әдепкі)
+      strict: Қатаң
+      sameAsMainPolicy: Негізгі саясатпен бірдей
+      spfRecordTitle: SPF ЖАЗБАСЫ
+      dmarcRecordTitle: DMARC ЖАЗБАСЫ
+      spfRecordLocation: Түбірлік домендегі TXT жазбасы
+      dmarcRecordLocation: Мына жердегі TXT жазбасы
+      copied: көшірілді
+      clickToCopy: көшіру үшін басыңыз
+      lookupWarning: '{count} DNS іздеу таңдалды; SPF үшін 10 іздеу шегі бар'
+      mailProviders: ПОШТА ПРОВАЙДЕРЛЕРІ
+      customIps: ЖЕКЕ IP НЕМЕСЕ ДИАПАЗОНДАР (МІНДЕТТІ ЕМЕС)
+      examplePrefix: мыс.
+      enforcement: ІСКЕ АСЫРУ
+      policy: САЯСАТ
+      subdomainPolicy: ІШКІ ДОМЕН САЯСАТЫ (МІНДЕТТІ ЕМЕС)
+      policyCoverage: 'САЯСАТ ҚАМТУЫ: {percent}%'
+      coverageHint: Сәтсіз хаттардың {percent}% бойынша әрекет қолданылады. Бірте-бірте енгізу үшін 100%-дан төмен мәнді пайдаланыңыз.
+      aggregateReportEmail: ЖИНАҚТАЛҒАН ЕСЕП ЭЛЕКТРОНДЫҚ ПОШТАСЫ (rua)
+      forensicReportEmail: СОТ САРАПТАМА ЕСЕБІНІҢ ЭЛЕКТРОНДЫҚ ПОШТАСЫ (ruf, міндетті емес)
+      dkimAlignment: DKIM СӘЙКЕСТЕНДІРУ
+      spfAlignment: SPF СӘЙКЕСТЕНДІРУ
+  json-viewer:
+    ui:
+      invalidJson: Берілген JSON жарамсыз.
+      sortKeys: Кілттерді сұрыптау
+      indentSize: Шегініс өлшемі
+      yourRawJson: Сіздің бастапқы JSON
+      pasteRawJsonPlaceholder: Бастапқы JSON файлын осында қойыңыз...
+      prettifiedVersion: JSON файлыңыздың безендірілген нұсқасы
+  qr-code-generator:
+    ui:
+      tabText: Мәтін / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Мәтін немесе URL
+      placeholderTextOrUrl: Сілтеме немесе мәтін...
+      sectionEncryption: Шифрлау
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Құпия сөзсіз
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Желі атауы...
+      sectionPassword: Құпия сөз
+      placeholderPassword: Желінің құпия сөзі...
+      sectionOptions: Параметрлер
+      hiddenSsid: Жасырын SSID
+      anonymousIdentity: Анонимді сәйкестік
+      sectionEapMethod: EAP әдісі
+      sectionEapPhase2: EAP 2-фазасы
+      sectionEapIdentity: EAP сәйкестігі
+      placeholderEapIdentity: EAP сәйкестігіңіз...
+      sectionTheme: Тақырып
+      themeDefault: Әдепкі
+      themeTerminal: Терминал
+      themeClassic: Классикалық
+      themeInverted: Терістелген
+      sectionColors: Түстер
+      labelForeground: 'Алдыңғы жоспар:'
+      labelBackground: 'Фон:'
+      sectionErrorCorrection: Қате түзету
+      levelLow: Төмен (~7%)
+      levelMedium: Орташа (~15%)
+      levelQuartile: Квартиль (~25%)
+      levelHigh: Жоғары (~30%)
+      emptyHintWifi: Wi-Fi QR жасау үшін SSID енгізіңіз
+      emptyHintText: Мәтін немесе URL енгізіңіз
+      captionJoin: '>_ қосылу үшін сканерлеңіз'
+      captionOpen: '>_ ашу үшін сканерлеңіз'
+      downloadPng: ↓ PNG жүктеу
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS локализацияланған күн жолы
+      formatUnixTimestamp: Unix уақыт белгісі
+      formatTimestamp: Уақыт белгісі
+      formatUtc: UTC форматы
+      formatExcelDateTime: Excel күні/уақыты
+      invalidDateRule: Бұл күн осы формат үшін жарамсыз
+      inputPlaceholder: Күн жолын қойыңыз немесе тікелей сағат үшін бос қалдырыңыз...
+      invalidDate: Бұл формат үшін жарамсыз күн
+      output: ШЫҒЫС
+      live: ТІКЕЛЕЙ
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Мәтіннен Unicode-ке
+      enterTextLabel: Unicode-ке түрлендіру үшін мәтінді енгізіңіз
+      unicodeFromTextLabel: Мәтініңізден алынған Unicode
+      unicodeOutputPlaceholder: Мәтініңіздің Unicode көрінісі осында пайда болады
+      copyUnicode: Unicode-ті алмасу буферіне көшіру
+      unicodeToTextTitle: Unicode-тен мәтінге
+      inputUnicodePlaceholder: Unicode енгізу
+      enterUnicodeLabel: Мәтінге түрлендіру үшін Unicode енгізіңіз
+      textFromUnicodeLabel: Unicode-іңізден алынған мәтін
+      textOutputPlaceholder: Unicode-іңіздің мәтіндік көрінісі осында пайда болады
+      copyText: Мәтінді алмасу буферіне көшіру
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Мета тегтер көшірілді!
+      copiedLabel: ✓ Көшірілді
+      copyButton: Көшіру
+      outputTitle: СІЗДІҢ МЕТА ТЕГТЕРІҢІЗ
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME түрінен кеңейтімге
+      mimeToExtensionDescription: MIME түріне қандай файл кеңейтімдері сәйкес келетінін біліңіз
+      mimeTypeSelectPlaceholder: 'MIME түрін осы жерден таңдаңыз... (мысалы: application/pdf)'
+      extensionsFoundPrefix: Мына түрдегі файлдардың кеңейтімдері
+      extensionsFoundSuffix: 'MIME түрі:'
+      extensionToMimeTitle: Кеңейтімнен MIME түріне
+      extensionToMimeDescription: Файл кеңейтіміне қандай MIME түрі сәйкес келетінін біліңіз
+      mimeFoundPrefix: Мына кеңейтімге сәйкес келетін MIME түрі
+      mimeFoundSuffix: 'файл кеңейтімі:'
+      tableMimeTypesHeader: MIME түрлері
+      tableExtensionsHeader: Кеңейтімдер
+  basic-auth-generator:
+    ui:
+      copied: Тақырып алмасу буферіне көшірілді
+      username: Пайдаланушы аты
+      usernamePlaceholder: Пайдаланушы атыңыз...
+      password: Құпия сөз
+      passwordPlaceholder: Құпия сөзіңіз...
+      headerLabel: 'Authorization тақырыбы:'
+      copyHeader: Тақырыпты көшіру
+  yaml-viewer:
+    ui:
+      invalidYaml: Берілген YAML жарамсыз.
+      sortKeys: Кілттерді сұрыптау
+      indentSize: Шегініс өлшемі
+      rawLabel: Сіздің шикі YAML
+      rawPlaceholder: Шикі YAML осында қойыңыз...
+      prettifiedLabel: YAML файлыңыздың пішімделген нұсқасы
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Құпия (hex)
+      epochLabel: Эпоха
+      countLabel: Саны
+      paddedHexLabel: Толтырылған hex
+      secretLabel: ҚҰПИЯ
+      secretPlaceholder: TOTP құпия сөзін қойыңыз...
+      generateNewSecret: Жаңа құпия сөз жасау
+      tokenLabel: ТОКЕН
+      copied: ✓ көшірілді
+      clickToCopy: көшіру үшін басыңыз
+      nextIn: '>_ {seconds}с кейін келесі'
+      adjacentTokensLabel: КӨРШІ ТОКЕНДЕР
+      prevLabel: Алдыңғы
+      nextLabel: Келесі
+      detailsLabel: МӘЛІМЕТТЕР
+      scanToAuthenticate: '>_ аутентификациялау үшін сканерлеңіз'
+      openKeyUriInNewTab: Key URI сілтемесін жаңа қойындыда ашу
+      tokenDisplayPreviousLabel: Алдыңғы
+      tokenDisplayCurrentLabel: Ағымдағы OTP
+      tokenDisplayNextLabel: Келесі
+      copiedExclaim: Көшірілді!
+      copyPreviousOtp: Алдыңғы OTP көшіру
+      copyCurrentOtp: Ағымдағы OTP көшіру
+      copyNextOtp: Келесі OTP көшіру
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Күшті
+      moderateLabel: Орташа
+      weakLabel: Әлсіз
+      veryWeakLabel: Өте әлсіз
+      lengthLabel: Ұзындық
+      entropyLabel: Энтропия
+      charsetSizeLabel: Таңбалар жиынының өлшемі
+      scoreDetailLabel: Балл
+      passwordPlaceholder: Құпия сөзді енгізіңіз...
+      hideLabel: Жасыру
+      showLabel: Көрсету
+      clearLabel: Тазалау
+      crackTimeSublabel: ТОЛЫҚ ІЗДЕУ АРҚЫЛЫ АШУ УАҚЫТЫ
+      crackTimeNote: Күш секундына 1 миллиард болжам жылдамдығымен толық іздеу уақыты арқылы бағаланады. Сөздік шабуылдары ескерілмейді.
+  integer-base-converter:
+    ui:
+      binary: Екілік
+      octal: Сегіздік
+      decimal: Ондық
+      hexadecimal: Он алтылық
+      base: негіз
+      output: НӘТИЖЕ
+      custom: Таңдауыңызша
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Порт, қызмет, хаттама немесе сипаттама бойынша іздеу...
+      allProtocols: Барлығы
+      dangerousOnly: Тек қауіптілер
+      showingPorts: '{count} порт көрсетілуде'
+      copied: Көшірілді!
+      clickToCopy: Порт нөмірін көшіру үшін басыңыз
+      copiedCheck: ✓ көшірілді
+      dangerousPill: Қауіпті
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet шолғышы
+      adminBadge: Әкімші
+      cmdletSearchPlaceholder: Атауы, сипаттамасы немесе модулі бойынша іздеу...
+      noCmdletsMatch: '"{query}" сәйкес cmdlet табылмады'
+      generatedCommand: Жасалған команда
+      copiedCheck: ✓ Көшірілді!
+      copyCommand: Команданы көшіру
+      commonExamples: Кең тараған мысалдар
+      selectCmdletPrompt: Команданы құрастыруды бастау үшін сол жақтан cmdlet таңдаңыз.
+      parameters: Параметрлер
+      noParametersNeeded: Параметр қажет емес - бұл cmdlet өзгеріссіз орындалады.
+      required: міндетті
+      separateMultipleValues: бірнеше мәнді үтірмен бөліңіз
+      showFewerParameters: Азырақ параметр көрсету
+      showMoreParameters: тағы {count} параметр
+      collapseQuickReference: Жылдам анықтаманы жию
+      openQuickReference: Жылдам анықтаманы ашу
+      quickReference: Жылдам анықтама
+      cheatsheetComparisonOperators: Салыстыру операторлары
+      cheatsheetEqualTo: Тең
+      cheatsheetNotEqualTo: Тең емес
+      cheatsheetGreaterLessThan: Үлкен / кіші
+      cheatsheetGreaterLessEqual: Үлкен немесе тең / кіші немесе тең
+      cheatsheetStringOperators: Жол операторлары
+      cheatsheetWildcardMatch: Үлгі бойынша сәйкестік (* және ?)
+      cheatsheetWildcardNonMatch: Үлгі бойынша сәйкессіздік
+      cheatsheetRegexMatch: Regex сәйкестігі
+      cheatsheetRegexNonMatch: Regex сәйкессіздігі
+      cheatsheetCollectionContains: Жиында мән бар
+      cheatsheetValueInCollection: Мән жиында бар
+      cheatsheetLogicalOperators: Логикалық операторлар
+      cheatsheetBothTrue: Екі шарт та ақиқат болуы керек
+      cheatsheetEitherTrue: Шарттардың біреуі ақиқат
+      cheatsheetNegateCondition: Шартты теріске шығару
+      cheatsheetAutomaticVariables: Автоматты айнымалылар
+      cheatsheetCurrentPipelineObject: Ағымдағы pipeline нысаны
+      cheatsheetNullEmptyValue: Null / бос мән
+      cheatsheetBooleanTrueFalse: Логикалық ақиқат / жалған
+      cheatsheetLocalComputerName: Жергілікті компьютер атауы
+      cheatsheetCurrentUser: Қазіргі жүйеге кірген пайдаланушы
+      cheatsheetPsVersionInfo: PS нұсқасы туралы ақпарат
+      cheatsheetDateHelpers: Күн көмекшілері
+      cheatsheetCurrentDateTime: Ағымдағы күн мен уақыт
+      cheatsheetThirtyDaysAgo: 30 күн бұрын
+      cheatsheetThreeMonthsAgo: 3 ай бұрын
+      cheatsheetParseDateString: Күн жолын талдау
+      cheatsheetPipelineTricks: Pipeline тәсілдері
+      cheatsheetLimitFirst10: Алғашқы 10 нәтижемен шектеу
+      cheatsheetCountSumMinMax: Саны / қосындысы / мин / макс
+      cheatsheetInteractiveGuiViewer: Интерактивті GUI көрсеткіші (жергілікті)
+      cheatsheetConvertToJson: Шығысты JSON форматына түрлендіру
+      cheatsheetOutputScreenAndFile: Экранға және файлға шығару
+      cheatsheetSuppressErrors: Түбегейлі емес қателерді басу
+      cheatsheetRemoteExecution: Қашықтан орындау
+      cheatsheetCmdletsSupportDirectly: Көптеген cmdlet мұны тікелей қолдайды
+      cheatsheetRunViaRemoting: PS Remoting (WinRM) арқылы орындау
+      cheatsheetInteractiveRemoteSession: Интерактивті қашықтағы PS сеансы
+ui:
+  diffEditor:
+    originalLabel: ТҮПНҰСҚА
+    modifiedLabel: ӨЗГЕРТІЛГЕН
+    originalPlaceholder: Түпнұсқа мәтін...
+    modifiedPlaceholder: Өзгертілген мәтін...
+  fileUpload:
+    defaultTitle: Файлдарды осында сүйреп апарыңыз немесе таңдау үшін басыңыз
+    or: немесе
+    browseFiles: Файлдарды шолу
+  inputText:
+    defaultPlaceholder: Мәтінді енгізу
+  keyValueListItem:
+    'yes': Иә
+    'no': Жоқ
+    notAvailable: Қолжетімсіз
+  modalValue:
+    copied: Көшірілді!
+    copy: Көшіру
+  select:
+    searchPlaceholder: Іздеу...
+    noResults: Нәтиже табылмады
+    defaultPlaceholder: Опцияны таңдаңыз
+  table:
+    defaultDescription: Деректер кестесі
+  textCopyable:
+    copied: Көшірілді!
+    copyToClipboard: Аралық сақтағышқа көшіру
+commandPalette:
+  searchAriaLabel: Іздеу
+  searchPlaceholder: Құрал немесе команданы іздеу үшін теріңіз...
+components:
+  androidBetaBanner:
+    announcement: Android бета хабарламасы
+    title: Killer Tools Android-ке келеді
+    subtitle: Бета тестерлер қажет - қосылу үшін түртіңіз
+    dismiss: Жабу
+  formatTransformer:
+    input: Кіріс
+    inputPlaceholder: Кіріс...
+    output: Шығыс
+  inputCopyable:
+    copied: Көшірілді!
+    copy: Буферге көшіру
+  spanCopyable:
+    copied: Көшірілді!
+    copy: Буферге көшіру
+  textareaCopyable:
+    copy: Буферге көшіру
+    copied: Көшірілді!
+  navbarButtons:
+    androidTooltip: Android үшін Killer Tools
+    androidAriaLabel: Android үшін Killer Tools - бетаға қосылу
+  themeDots:
+    accentColor: Екпін түсі
+    theme: Тема
+    toggleThemeSwatches: Тема үлгілерін ауыстыру
+    accentColorPicker: Екпін түсін таңдағыш
+    dragToMove: Жылжыту үшін сүйреңіз
+    accentLabel: 'екпін:'
+    accentNamed: 'Екпін: {name}'
+    closeAccentPicker: Екпін таңдағышын жабу
+    accents:
+      red: Қызыл
+      orange: Қызғылт сары
+      green: Жасыл
+      teal: Көгілдір жасыл
+      blue: Көк
+      purple: Күлгін
+layouts:
+  menuLayout:
+    eggMessage: 80 құрал. Нөлдік жазылым. Бір өшпенді далалық техник.
+    clickMe: мұнда басыңыз
+    sourceOnGithub: Github-тағы бастапқы код
+  base:
+    collapseMenu: Мәзірді жию
+    homeLabel: KillerTools басты беті
+pages:
+  notFound:
+    noSuchFile: Мұндай файл немесе каталог жоқ
+    exitCode: шығу коды
+    backToHome: басты бетке оралу
+  privacy:
+    heading: Құпиялылық саясаты
+    lastUpdated: 'Соңғы жаңарту: 2026 жылғы 4 сәуір'
+    overviewHeading: Шолу
+    overviewIntro: Killer Tools
+    overviewBody: IT утилиталарының тегін жинағы болып табылады. Сіздің құпиялылығыңыз біз үшін маңызды, осы саясат деректеріңізді қалай өңдейтінімізді түсіндіреді.
+    dataCollectionHeading: Деректерді жинау
+    dataCollectionBody: Killer Tools ешқандай жеке деректерді жинамайды, сақтамайды немесе жібермейді. Барлық өңдеу толығымен сіздің браузеріңізде орындалады. Кез келген құралға енгізілген деректер серверге жіберілмейді.
+    cookiesHeading: Cookie файлдары
+    cookiesBody: Бұл сайт бақылау үшін cookie файлдарын пайдаланбайды. Тақырып параметрлеріңіз бен баптауларыңыз браузеріңізде жергілікті түрде сақталады және ешқашан жіберілмейді.
+    analyticsHeading: Аналитика
+    analyticsIntro: Бұл сайт
+    analyticsBody: бет қаралымдары мен сілтеме көздері сияқты жалпы пайдалану үлгілерін түсіну үшін құпиялылыққа бағытталған аналитика құралын пайдаланады. Umami cookie файлдарын пайдаланбайды, пайдаланушыларды сайттар арасында бақыламайды және жеке басты анықтайтын ешқандай ақпаратты жинамайды. Барлық деректер жинақталған және анонимді.
+    thirdPartyHeading: Үшінші тарап қызметтері
+    thirdPartyBody: Кейбір құралдар сыртқы ресурстарға немесе құжаттамаға сілтеме бере алады. Біз сол сыртқы сайттардың құпиялылық тәжірибесіне жауап бермейміз.
+    androidAppHeading: Android қосымшасы
+    androidAppBody: Killer Tools Android қосымшасы веб-қолданбаны орайтын қабық болып табылады. Ол негізгі интернетке қол жеткізуден басқа құрылғы рұқсаттарын сұрамайды және пайдаланбайды. Ешқандай құрылғы деректері жиналмайды немесе жіберілмейді.
+    contactHeading: Байланыс
+    contactBody: 'Осы құпиялылық саясаты бойынша сұрақтарыңыз болса, бізге мына жерден хабарласа аласыз:'
+  androidApp:
+    robotAttribution: Android роботы Google жасаған және таратқан жұмыстан көшірілген немесе өзгертілген, Creative Commons 3.0 Attribution License шарттарына сәйкес пайдаланылады.
+    heading: Android үшін Killer Tools
+    introBody1: 'killertools.net құралдар жинағының толығы жергілікті Android қосымшасы түрінде: барлық құралдар, Killer Scripts кітапханасы және барлық таңдаулыларыңыз, басты экраннан бір түймемен қолжетімді.'
+    introBody2: Сайтпен бірдей ережелер. Барлығы құрылғыңызда орындалады. Тіркелгі жоқ, телеметрия жоқ, жасырын байланыс жоқ. Егер ол далада бір тапсырма циклін үнемдесе, өз міндетін орындағаны.
+    betaStatusPrefix: Қосымша қазір
+    betaStatusStrong: Google Play-де жабық бета нұсқасында
+    betaStatusSuffix: ', және міне осында сіз көмектесе аласыз.'
+    joinBetaHeading: Бетаға қосылу
+    joinBetaIntroPrefix: 'Google талап етеді:'
+    joinBetaIntroStrong: қосымшаны 14 күн үздіксіз орнатқан 12 тестер
+    joinBetaIntroSuffix: 'тәуелсіз әзірлеушінің қосымшасы жарияланғанға дейін. Үш қадам, шамамен екі минут, және сіз сол он екінің біреуі боласыз:'
+    step1LinkText: Тестер тобына қосылу
+    step1Suffix: Google Groups арқылы ("Join group" түймесін басыңыз).
+    step2LinkText: Тестер болу
+    step2Suffix: Google Play келісім бетінде.
+    step3LinkText: Қосымшаны орнату
+    step3Suffix: Google Play-ден, және оны екі апта бойы орнатылған күйде қалдырыңыз.
+    sameAccountStrong: Барлық үш қадам үшін бір Google тіркелгісін пайдаланыңыз
+    sameAccountSuffix: ' - келісім беті тобын өткізіп жіберсеңіз немесе тіркелгіні ауыстырсаңыз, "бұл тіркелгі үшін қолжетімді емес" деп көрсетеді.'
+    feedbackPrefix: 'Бір нәрсе бұзылған немесе жетіспей ме? Маған хабарлаңыз:'
+  home:
+    sortPopular: Танымал
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: Killer Tools туралы
+    intro: Далалық техниктердің артық нәрсеге уақыты жоқ. Мұндағы әрбір құрал жұмыста маған қажет болғандықтан және тіркелгісіз, орнатусыз немесе телеметриясыз жай ғана жұмыс істейтін нәрсе таба алмағандықтан бар болды.
+    originPrefix: Қазір мен MSP-тің ішкі AI инженерия тобында құралдар жасаймын, алты жыл full-stack әзірлеу мен бірнеше компанияда сегіз жыл далалық техник болғаннан кейін. KillerTools.net тамаша
+    originMid: жобасының форкы ретінде басталды, авторы
+    originSuffix: және мен нақты атқаратын жұмыс түріне арналған нәрсеге айналды. Мен оны тапсырма үстінде Топтық саясат параметрлерін іздеу, клиенттің ішкі желісін сканерлеу және браузерден шықпай порт анықтамаларын алу үшін жасадым.
+    scriptsLibrary: Killer Scripts кітапханасы әр тапсырма циклінде туындайтын жұмыстарды қамтиды. Әрбір скрипт PS 5.1, PS 7 және Kaseya LiveConnect ортасында тәуелділіксіз жұмыс істейді.
+    privacyBody: Барлығы браузеріңізде орындалады. Ешнәрсе бақыланбайды. Тіркелгі ешқашан талап етілмейді. Сайт тәуелділік тізбегі шабуылдарын бөгеу үшін қатаң Content Security Policy қолданады. Егер бүлінген npm пакеті бумаға еніп кетсе, ол сіз қойған нәрсені сыртқа жібере алмайды.
+    maintainedByPrefix: 'Жасаған және қолдау көрсетуші:'
+    maintainedByMid: Егер бұл сізге жұмыста уақыт үнемдесе,
+    buyMeCoffee: маған кофе сатып алу
+    maintainedBySuffix: бағаланады, бірақ ешқашан талап етілмейді.
+    missingToolHeading: Құрал жетіспей ме? Қате таптыңыз ба?
+    issuesPrefix: 'Мүмкіндік сұрауын немесе қате туралы хабарламаны мына жерде ашыңыз:'
+    issuesLinkText: issues бөлімі
+    issuesSuffix: GitHub-та. Мен оларды оқимын.
+    alsoTryHeading: Мынаны да көріңіз...
+    tagKillerScan: Windows үшін ашық бастапқы кодты желі сканері
+    tagKillerPdf: Windows үшін ашық бастапқы кодты PDF өңдегіші
+    tagKillerShell: Тәжірибелі пайдаланушыларға арналған Windows ашық бастапқы кодты қабығы
+    tagKillerNotes: Windows үшін ашық бастапқы кодты шифрланған блокнот
+    tagKillendar: Windows үшін ашық бастапқы кодты шифрланған күнтізбе
+    linksHeading: Сілтемелер
+    linkLabelSite: Сайт
+    linkLabelSource: Бастапқы код
+    linkLabelIssues: Issues
+    reportBug: Қате туралы хабарлау
+    requestFeature: Мүмкіндік сұрау
+    linkLabelSupport: Қолдау
+    linkLabelBuiltOn: Негізделген
+    itToolsFork: IT-Tools (форк)

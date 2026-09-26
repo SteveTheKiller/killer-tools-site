@@ -2,6 +2,8 @@
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { errorsByCategory } from './windows-error-codes.constants';
 
+const { t } = useI18n();
+
 const search = ref('');
 const copiedValue = ref<string | null>(null);
 
@@ -34,7 +36,7 @@ const filtered = computed(() => {
   if (!search.value) {
     return errorsByCategory;
   }
-  return [{ category: 'Search results', errors: searchResult.value }];
+  return [{ category: t('tools.windows-error-codes.ui.searchResults'), errors: searchResult.value }];
 });
 
 function copyValue(value: string) {
@@ -50,7 +52,7 @@ function copyValue(value: string) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search by hex code, error name, or description..."
+      :placeholder="t('tools.windows-error-codes.ui.searchPlaceholder')"
       autofocus
       raw-text
       mb-4
@@ -70,10 +72,10 @@ function copyValue(value: string) {
           <div
             class="kt-terminal-bar wec-bar"
             :class="{ 'wec-bar-copied': copiedValue === hex }"
-            :title="copiedValue === hex ? 'Copied!' : 'Click to copy hex code'"
+            :title="copiedValue === hex ? t('tools.windows-error-codes.ui.copied') : t('tools.windows-error-codes.ui.clickToCopy')"
             @click="copyValue(hex)"
           >
-            <code class="wec-hex">{{ copiedValue === hex ? '✓ copied' : hex }}</code>
+            <code class="wec-hex">{{ copiedValue === hex ? `✓ ${t('tools.windows-error-codes.ui.copiedShort')}` : hex }}</code>
             <span class="wec-severity" :class="`wec-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
 
@@ -82,7 +84,7 @@ function copyValue(value: string) {
               {{ name }}
             </div>
             <div class="wec-decimal">
-              decimal {{ decimal }}
+              {{ t('tools.windows-error-codes.ui.decimal', { decimal }) }}
             </div>
             <div class="wec-desc">
               {{ description }}

@@ -10,6 +10,8 @@ import xmlHljs from 'highlight.js/lib/languages/xml';
 import yamlHljs from 'highlight.js/lib/languages/yaml';
 import { useCopy } from '@/composable/copy';
 
+const { t } = useI18n();
+
 const props = withDefaults(
   defineProps<{
     value: string
@@ -22,7 +24,7 @@ const props = withDefaults(
     followHeightOf: null,
     language: 'txt',
     copyPlacement: 'top-right',
-    copyMessage: 'Copy to clipboard',
+    copyMessage: undefined,
   },
 );
 hljs.registerLanguage('sql', sqlHljs);
@@ -37,7 +39,7 @@ const { value, language, followHeightOf, copyPlacement, copyMessage } = toRefs(p
 const { height } = followHeightOf.value ? useElementSize(followHeightOf) : { height: ref(null) };
 
 const { copy, isJustCopied } = useCopy({ source: value, createToast: false });
-const tooltipText = computed(() => isJustCopied.value ? 'Copied!' : copyMessage.value);
+const tooltipText = computed(() => isJustCopied.value ? t('components.textareaCopyable.copied') : (copyMessage.value ?? t('components.textareaCopyable.copy')));
 </script>
 
 <template>

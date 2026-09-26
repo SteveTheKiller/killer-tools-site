@@ -2,6 +2,8 @@
 import type { FormatOptionsWithLanguage } from 'sql-formatter';
 import { format as formatSQL } from 'sql-formatter';
 
+const { t } = useI18n();
+
 const inputElement = ref<HTMLElement>();
 const config = reactive<FormatOptionsWithLanguage>({
   keywordCase: 'upper',
@@ -28,16 +30,16 @@ const dialectOptions = [
   { label: 'SQLite', value: 'sqlite' },
   { label: 'SQL Server T-SQL', value: 'tsql' },
 ];
-const keywordOptions = [
-  { label: 'UPPERCASE', value: 'upper' },
-  { label: 'lowercase', value: 'lower' },
-  { label: 'Preserve', value: 'preserve' },
-];
-const indentOptions = [
-  { label: 'Standard', value: 'standard' },
-  { label: 'Tabular left', value: 'tabularLeft' },
-  { label: 'Tabular right', value: 'tabularRight' },
-];
+const keywordOptions = computed(() => [
+  { label: t('tools.sql-prettify.ui.keywordCaseUpper'), value: 'upper' },
+  { label: t('tools.sql-prettify.ui.keywordCaseLower'), value: 'lower' },
+  { label: t('tools.sql-prettify.ui.keywordCasePreserve'), value: 'preserve' },
+]);
+const indentOptions = computed(() => [
+  { label: t('tools.sql-prettify.ui.indentStyleStandard'), value: 'standard' },
+  { label: t('tools.sql-prettify.ui.indentStyleTabularLeft'), value: 'tabularLeft' },
+  { label: t('tools.sql-prettify.ui.indentStyleTabularRight'), value: 'tabularRight' },
+]);
 
 const dialectOpen = ref(false);
 const keywordOpen = ref(false);
@@ -57,8 +59,8 @@ const onKeywordBlur = closeOnBlur(keywordOpen);
 const onIndentBlur = closeOnBlur(indentOpen);
 
 const dialectLabel = computed(() => dialectOptions.find(o => o.value === config.language)?.label ?? config.language);
-const keywordLabel = computed(() => keywordOptions.find(o => o.value === config.keywordCase)?.label ?? config.keywordCase);
-const indentLabel = computed(() => indentOptions.find(o => o.value === config.indentStyle)?.label ?? config.indentStyle);
+const keywordLabel = computed(() => keywordOptions.value.find(o => o.value === config.keywordCase)?.label ?? config.keywordCase);
+const indentLabel = computed(() => indentOptions.value.find(o => o.value === config.indentStyle)?.label ?? config.indentStyle);
 </script>
 
 <template>
@@ -67,7 +69,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
   <div class="sq-controls">
     <!-- Dialect -->
     <div class="sq-field">
-      <span class="sq-sublabel">DIALECT</span>
+      <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.dialectLabel') }}</span>
       <div class="sq-dropdown" tabindex="0" @blur="onDialectBlur($event)">
         <button type="button" class="sq-dropdown-trigger" @click="dialectOpen = !dialectOpen">
           <span>{{ dialectLabel }}</span>
@@ -87,7 +89,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
 
     <!-- Keyword case -->
     <div class="sq-field">
-      <span class="sq-sublabel">KEYWORD CASE</span>
+      <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.keywordCaseLabel') }}</span>
       <div class="sq-dropdown" tabindex="0" @blur="onKeywordBlur($event)">
         <button type="button" class="sq-dropdown-trigger" @click="keywordOpen = !keywordOpen">
           <span>{{ keywordLabel }}</span>
@@ -107,7 +109,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
 
     <!-- Indent style -->
     <div class="sq-field">
-      <span class="sq-sublabel">INDENT STYLE</span>
+      <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.indentStyleLabel') }}</span>
       <div class="sq-dropdown" tabindex="0" @blur="onIndentBlur($event)">
         <button type="button" class="sq-dropdown-trigger" @click="indentOpen = !indentOpen">
           <span>{{ indentLabel }}</span>
@@ -128,12 +130,12 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
 
   <div style="flex: 1 1 300px; min-width: 0;">
     <div class="kt-section-label">
-      Your SQL query
+      {{ t('tools.sql-prettify.ui.yourSqlQueryLabel') }}
     </div>
     <c-input-text
       ref="inputElement"
       v-model:value="rawSQL"
-      placeholder="Put your SQL query here..."
+      :placeholder="t('tools.sql-prettify.ui.sqlQueryPlaceholder')"
       rows="20"
       multiline
       autofocus
@@ -146,7 +148,7 @@ const indentLabel = computed(() => indentOptions.find(o => o.value === config.in
   </div>
   <div style="flex: 1 1 300px; min-width: 0;">
     <div class="kt-section-label">
-      Prettified version of your query
+      {{ t('tools.sql-prettify.ui.prettifiedQueryLabel') }}
     </div>
     <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
   </div>

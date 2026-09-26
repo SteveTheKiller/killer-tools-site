@@ -25,7 +25,10 @@ const props = withDefaults(
 
 const emits = defineEmits(['update:value']);
 
-const { options: rawOptions, placeholder, size: sizeName, searchable } = toRefs(props);
+const { options: rawOptions, placeholder: rawPlaceholder, size: sizeName, searchable } = toRefs(props);
+
+const { t } = useI18n();
+const placeholder = computed(() => rawPlaceholder.value ?? t('ui.select.defaultPlaceholder'));
 
 const options = computed(() => {
   return rawOptions.value.map((option: string | CSelectOption<T>) => {
@@ -151,12 +154,12 @@ function onSearchInput() {
       >
         <div flex-1 truncate>
           <slot name="displayed-value">
-            <input v-if="searchable && isOpen" ref="searchInputRef" v-model="searchQuery" type="text" placeholder="Search..." class="search-input" w-full color-current lh-normal @input="onSearchInput">
+            <input v-if="searchable && isOpen" ref="searchInputRef" v-model="searchQuery" type="text" :placeholder="t('ui.select.searchPlaceholder')" class="search-input" w-full color-current lh-normal @input="onSearchInput">
             <span v-else-if="selectedOption" lh-normal>
               {{ selectedOption.label }}
             </span>
             <span v-else class="placeholder" lh-normal>
-              {{ placeholder ?? 'Select an option' }}
+              {{ placeholder }}
             </span>
           </slot>
         </div>
@@ -169,7 +172,7 @@ function onSearchInput() {
           <template v-if="!filteredOptions.length">
             <slot name="empty">
               <div px-4 py-1 opacity-70>
-                No results found
+                {{ t('ui.select.noResults') }}
               </div>
             </slot>
           </template>

@@ -6,6 +6,8 @@ const { value, label } = toRefs(props);
 
 const { copy, isJustCopied } = useCopy({ source: value });
 
+const { t } = useI18n();
+
 const isModalOpen = ref(false);
 const toggleModal = useToggle(isModalOpen);
 </script>
@@ -24,7 +26,7 @@ const toggleModal = useToggle(isModalOpen);
 
     <div mt-4 flex justify-center>
       <c-button class="w-full" @click="copy">
-        {{ isJustCopied ? 'Copied!' : 'Copy' }}
+        {{ isJustCopied ? t('ui.modalValue.copied') : t('ui.modalValue.copy') }}
       </c-button>
     </div>
   </c-modal>

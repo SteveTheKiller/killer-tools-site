@@ -4,45 +4,47 @@ import { useValidation } from '@/composable/validation';
 import { isValidIpv4 } from '../ipv4-address-converter/ipv4-address-converter.service';
 import { calculateCidr } from './ipv4-range-expander.service';
 
+const { t } = useI18n();
+
 const rawStartAddress = useStorage('ipv4-range-expander:startAddress', '192.168.1.1');
 const rawEndAddress = useStorage('ipv4-range-expander:endAddress', '192.168.6.255');
 
 const result = computed(() => calculateCidr({ startIp: rawStartAddress.value, endIp: rawEndAddress.value }));
 
-const calculatedValues: {
+const calculatedValues = computed<{
   label: string
   getOldValue: (result: Ipv4RangeExpanderResult | undefined) => string | undefined
   getNewValue: (result: Ipv4RangeExpanderResult | undefined) => string | undefined
-}[] = [
+}[]>(() => [
   {
     label: 'CIDR',
     getOldValue: () => '',
     getNewValue: result => result?.newCidr,
   },
   {
-    label: 'Start address',
+    label: t('tools.ipv4-range-expander.ui.startAddress'),
     getOldValue: () => rawStartAddress.value,
     getNewValue: result => result?.newStart,
   },
   {
-    label: 'End address',
+    label: t('tools.ipv4-range-expander.ui.endAddress'),
     getOldValue: () => rawEndAddress.value,
     getNewValue: result => result?.newEnd,
   },
   {
-    label: 'Addresses in range',
+    label: t('tools.ipv4-range-expander.ui.addressesInRange'),
     getOldValue: result => result?.oldSize?.toLocaleString(),
     getNewValue: result => result?.newSize?.toLocaleString(),
   },
-];
+]);
 
 const startIpValidation = useValidation({
   source: rawStartAddress,
-  rules: [{ message: 'Invalid ipv4 address', validator: (ip: string) => isValidIpv4({ ip }) }],
+  rules: [{ message: t('tools.ipv4-range-expander.ui.invalidIpv4'), validator: (ip: string) => isValidIpv4({ ip }) }],
 });
 const endIpValidation = useValidation({
   source: rawEndAddress,
-  rules: [{ message: 'Invalid ipv4 address', validator: (ip: string) => isValidIpv4({ ip }) }],
+  rules: [{ message: t('tools.ipv4-range-expander.ui.invalidIpv4'), validator: (ip: string) => isValidIpv4({ ip }) }],
 });
 
 const showResult = computed(() => endIpValidation.isValid && startIpValidation.isValid && result.value !== undefined);
@@ -78,7 +80,7 @@ async function copyValue(label: string, value: string | undefined) {
     <div class="range-fields" mb-3>
       <c-input-text
         v-model:value="rawStartAddress"
-        label="Start address"
+        :label="t('tools.ipv4-range-expander.ui.startAddress')"
         placeholder="192.168.1.1"
         :validation="startIpValidation"
         clearable
@@ -87,7 +89,7 @@ async function copyValue(label: string, value: string | undefined) {
       />
       <c-input-text
         v-model:value="rawEndAddress"
-        label="End address"
+        :label="t('tools.ipv4-range-expander.ui.endAddress')"
         placeholder="192.168.6.255"
         :validation="endIpValidation"
         clearable
@@ -97,19 +99,19 @@ async function copyValue(label: string, value: string | undefined) {
 
     <div v-if="invalidCombination" class="kt-alert kt-alert-error" mb-3>
       <div class="kt-alert-title">
-        Invalid combination of start and end IPv4 address
+        {{ t('tools.ipv4-range-expander.ui.invalidCombinationTitle') }}
       </div>
       <div style="opacity: 0.8; margin-bottom: 12px;">
-        The end IPv4 address is lower than the start IPv4 address. This is not valid and no result could be calculated.
+        {{ t('tools.ipv4-range-expander.ui.invalidCombinationDescription') }}
       </div>
       <button type="button" class="kt-pill" style="color: inherit; border-color: currentColor;" @click="onSwitchStartEndClicked">
-        Switch start and end IPv4 address
+        {{ t('tools.ipv4-range-expander.ui.switchStartEnd') }}
       </button>
     </div>
 
     <div v-if="showResult" class="kt-terminal">
       <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">Result</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.ipv4-range-expander.ui.result') }}</span>
       </div>
       <div
         v-for="{ label, getOldValue, getNewValue } in calculatedValues"
@@ -123,7 +125,7 @@ async function copyValue(label: string, value: string | undefined) {
         <button
           type="button"
           class="kt-copy"
-          :title="copiedLabel === label ? 'Copied!' : 'Copy result'"
+          :title="copiedLabel === label ? t('tools.ipv4-range-expander.ui.copied') : t('tools.ipv4-range-expander.ui.copyResult')"
           @click="copyValue(label, getNewValue(result))"
         >
           <span v-if="copiedLabel === label" class="kt-copy-check">✓</span>

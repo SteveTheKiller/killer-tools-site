@@ -10,6 +10,8 @@ import { buildColorFormat } from './color-converter.models';
 
 extend([cmykPlugin, hwbPlugin, namesPlugin, lchPlugin]);
 
+const { t } = useI18n();
+
 const formats = {
   picker: buildColorFormat({
     label: 'color picker',
@@ -61,7 +63,7 @@ async function copyValue(key: string, value: string) {
   <div class="color-tool">
     <!-- Color picker area — above the terminal -->
     <div class="color-input-area" mb-3>
-      <label class="color-field-label">Color</label>
+      <label class="color-field-label">{{ t('tools.color-converter.ui.color') }}</label>
       <div class="color-picker-row">
         <div class="color-swatch" :style="{ background: currentHex }" />
         <div class="color-picker">
@@ -77,7 +79,7 @@ async function copyValue(key: string, value: string) {
     <div class="kt-terminal color-terminal">
       <!-- Format rows -->
       <div class="kt-terminal-bar color-section-header">
-        FORMATS
+        {{ t('tools.color-converter.ui.formats') }}
       </div>
 
       <div

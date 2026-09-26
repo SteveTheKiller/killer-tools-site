@@ -1,69 +1,61 @@
 home:
   categories:
     newestTools: Найновіші інструменти
-    favoriteTools: 'Ваші улюблені інструменти'
-    allTools: 'Усі інструменти'
-    favoritesDndToolTip: 'Перетягніть і відпустіть, щоб змінити порядок улюблених'
-  subtitle: 'Зручні інструменти для розробників'
-  toggleMenu: 'Перемикання меню'
+    favoriteTools: Ваші улюблені інструменти
+    allTools: Усі інструменти
+    favoritesDndToolTip: Перетягніть і відпустіть, щоб змінити порядок улюблених
+  subtitle: Зручні інструменти для розробників
+  toggleMenu: Перемикання меню
   home: Головна
-  uiLib: 'UI Бібліотека'
-  support: 'Підтримка розробки IT Tools'
-  buyMeACoffee: 'Купи мені каву'
+  uiLib: UI Бібліотека
+  support: Підтримка розробки IT Tools
+  buyMeACoffee: Купи мені каву
   follow:
-    title: 'Вам подобаються інструменти IT?'
-    p1: 'Додайте нам зірку на'
-    githubRepository: 'GitHub-репозиторій IT-Tools'
-    p2: 'або слідкуйте за нами на'
-    twitterXAccount: 'X-акаунт IT-Tools'
-    thankYou: 'Дякуємо!'
+    title: Вам подобаються інструменти IT?
+    p1: Додайте нам зірку на
+    githubRepository: GitHub-репозиторій IT-Tools
+    p2: або слідкуйте за нами на
+    twitterXAccount: X-акаунт IT-Tools
+    thankYou: Дякуємо!
   nav:
-    github: 'GitHub-репозиторій'
-    githubRepository: 'GitHub-репозиторій IT-Tools'
-    twitterX: 'X'
-    twitterXAccount: 'X-акаунт IT-Tools'
-    about: 'Про IT-Tools'
-    aboutLabel: 'Про нас'
-    darkMode: 'Темний режим'
-    lightMode: 'Світлий режим'
-    mode: 'Перемикання темного/світлого режиму'
+    github: GitHub-репозиторій
+    githubRepository: GitHub-репозиторій IT-Tools
+    twitterX: X
+    twitterXAccount: X-акаунт IT-Tools
+    about: Про IT-Tools
+    aboutLabel: Про нас
+    darkMode: Темний режим
+    lightMode: Світлий режим
+    mode: Перемикання темного/світлого режиму
 about:
-  content: >
+  content: |
     # Про killer-tools
-
     Цей чудовий вебсайт, створений з ❤ [Steve the Killer](https://thekiller.net), агрегує корисні інструменти для розробників і людей, які працюють в сфері IT. Якщо вам це корисно, будь ласка, поділіться цим з людьми, які, на вашу думку, також можуть знайти його корисним, і не забудьте додати його до закладок у вашій панелі швидкого доступу!
-
     killer-tools є відкритим програмним забезпеченням (під ліцензією GPL-3.0) і безкоштовним, і завжди буде таким, але мені коштує гроші для хостингу і продовження доменного імені. Якщо ви хочете підтримати мою роботу і підтримати мене у додаванні нових інструментів, розгляньте можливість підтримки, [спонсоруючи мене](https://www.buymeacoffee.com/StevetheKiller).
-
     ## Технології
-
     killer-tools виконаний на Vue.js (Vue 3) з використанням бібліотеки компонентів Naive UI і розгортаний за допомогою GitHub. У деяких інструментах використовуються сторонні відкриті бібліотеки, повний список яких ви можете знайти в файлі [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) репозиторію.
-
     ## Знайшли баг? Відсутній інструмент?
-
     Якщо вам потрібен інструмент, якого наразі немає тут, і ви вважаєте, що він може бути корисним, ви можете подати запит на додавання функції в [розділі проблем](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) у репозиторії GitHub.
-
     А якщо ви знайшли баг або щось не працює, як очікувалося, будь ласка, подайте звіт про баг в [розділі проблем](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) у репозиторії GitHub.
-
 404:
-  notFound: '404 Сторінка не знайдена'
-  sorry: 'Вибачте, ця сторінка, схоже, не існує'
-  maybe: 'Можливо, кеш робить хитрощі, спробуйте примусово оновити сторінку?'
-  backHome: 'Повернутися на головну'
+  notFound: 404 Сторінка не знайдена
+  sorry: Вибачте, ця сторінка, схоже, не існує
+  maybe: Можливо, кеш робить хитрощі, спробуйте примусово оновити сторінку?
+  backHome: Повернутися на головну
 favoriteButton:
-  remove: 'Вилучити з обраних'
-  add: 'Додати до обраних'
+  remove: Вилучити з обраних
+  add: Додати до обраних
 toolCard:
   new: Новий
 search:
   label: Пошук
 tools:
   categories:
-    favorite-tools: 'Ваші улюблені інструменти'
+    favorite-tools: Ваші улюблені інструменти
     crypto: Крипта
     conversion: Конвертер
     web: Веб
-    images and videos: 'Зображення та відео'
+    images and videos: Зображення та відео
     development: Розробка
     network: Мережа
     math: Математика
@@ -71,4 +63,1724 @@ tools:
     text: Текст
     data: Дані
     windows: Windows
-    killer apps: 'Killer Apps'
+    killer apps: Killer Apps
+    photography: Фотографія
+  temperature-converter:
+    ui:
+      kelvin: Кельвін
+      celsius: Цельсій
+      fahrenheit: Фаренгейт
+      rankine: Ренкін
+      delisle: Деліль
+      newton: Ньютон
+      reaumur: Реомюр
+      romer: Ремер
+    title: Конвертер температури
+    description: Перетворення градусів температури для Кельвіна, Цельсія, Фаренгейта, Ренкіна, Делісля, Ньютона, Реомюра та Ремера.
+  text-statistics:
+    ui:
+      textPlaceholder: Ваш текст...
+      characterCount: КІЛЬКІСТЬ СИМВОЛІВ
+      wordCount: КІЛЬКІСТЬ СЛІВ
+      lineCount: КІЛЬКІСТЬ РЯДКІВ
+      byteSize: РОЗМІР У БАЙТАХ
+    title: Статистика тексту
+    description: 'Отримайте інформацію про текст: кількість символів, кількість слів, розмір у байтах тощо.'
+  text-to-binary:
+    ui:
+      textCopied: Текст скопійовано
+      binaryCopied: Двійковий код скопійовано
+      panelTitle: ТЕКСТ ↔ ASCII BINARY
+      textLabel: ТЕКСТ
+      binaryLabel: ДВІЙКОВИЙ КОД
+      copied: Скопійовано
+      copy: Копіювати
+      textPlaceholder: напр. Hello world
+      invalidBinary: Має бути коректний ASCII binary (кратно 8 бітам)
+    title: Текст у ASCII двійковий код
+    description: Перетворюйте текст на його представлення в ASCII двійковому коді і навпаки.
+  text-to-nato-alphabet:
+    ui:
+      yourText: ВАШ ТЕКСТ
+      inputPlaceholder: напр. Hello world
+      natoPhonetic: ФОНЕТИЧНИЙ АЛФАВІТ NATO
+      copied: Скопійовано
+      copyAll: Копіювати все
+      natoStringCopied: Рядок NATO скопійовано.
+    title: Текст у фонетичний алфавіт NATO
+    description: Перетворюйте текст на фонетичний алфавіт NATO для усної передачі.
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Текст у Unicode
+      enterTextLabel: Введіть текст для перетворення на Unicode
+      unicodeFromTextLabel: Unicode з вашого тексту
+      unicodeOutputPlaceholder: Тут з'явиться подання вашого тексту в Unicode
+      copyUnicode: Скопіювати Unicode в буфер обміну
+      unicodeToTextTitle: Unicode в текст
+      inputUnicodePlaceholder: Введіть Unicode
+      enterUnicodeLabel: Введіть Unicode для перетворення на текст
+      textFromUnicodeLabel: Текст з вашого Unicode
+      textOutputPlaceholder: Тут з'явиться текстове подання вашого Unicode
+      copyText: Скопіювати текст у буфер обміну
+  email-record-generator:
+    ui:
+      hardFailRecommended: жорстка відмова, рекомендовано
+      softFail: м'яка відмова
+      neutralNotRecommended: нейтрально, не рекомендовано
+      blockFailingMail: блокувати пошту, що не пройшла перевірку
+      sendToSpam: надсилати в спам
+      monitorOnly: лише моніторинг
+      relaxedDefault: М'який (за замовчуванням)
+      strict: Суворий
+      sameAsMainPolicy: Як основна політика
+      spfRecordTitle: ЗАПИС SPF
+      dmarcRecordTitle: ЗАПИС DMARC
+      spfRecordLocation: TXT-запис у кореневому домені
+      dmarcRecordLocation: TXT-запис у
+      copied: скопійовано
+      clickToCopy: натисніть, щоб скопіювати
+      lookupWarning: Вибрано {count} DNS-запитів; ліміт SPF становить 10 запитів
+      mailProviders: ПОШТОВІ ПРОВАЙДЕРИ
+      customIps: ВЛАСНІ IP АБО ДІАПАЗОНИ (НЕОБОВ'ЯЗКОВО)
+      examplePrefix: напр.
+      enforcement: ЗАСТОСУВАННЯ
+      policy: ПОЛІТИКА
+      subdomainPolicy: ПОЛІТИКА ДЛЯ ПІДДОМЕНІВ (НЕОБОВ'ЯЗКОВО)
+      policyCoverage: 'ОХОПЛЕННЯ ПОЛІТИКИ: {percent}%'
+      coverageHint: До дії буде застосовано {percent}% пошти, що не пройшла перевірку. Використовуйте значення менше 100% для поступового впровадження.
+      aggregateReportEmail: ПОШТА ДЛЯ ЗВЕДЕНИХ ЗВІТІВ (rua)
+      forensicReportEmail: ПОШТА ДЛЯ ДЕТАЛЬНИХ ЗВІТІВ (ruf, необов'язково)
+      dkimAlignment: ВІДПОВІДНІСТЬ DKIM
+      spfAlignment: ВІДПОВІДНІСТЬ SPF
+    title: Генератор записів електронної пошти
+    description: Генеруйте DNS TXT записи SPF і DMARC. Оберіть своїх поштових провайдерів і політики, скопіюйте результат прямо у свій DNS.
+  email-header-parser:
+    ui:
+      pasteHint: Вставте необроблені заголовки листа нижче.
+      parseButton: Розібрати заголовки
+      parseAnother: Розібрати інший
+      messageDetails: Деталі повідомлення
+      senderMismatch: Домен відправника відрізняється від домену From. Це може вказувати на підробку або делеговане надсилання.
+      deliveryHops: Етапи доставки
+      oldestFirst: спочатку найстаріші
+      authResults: Результати автентифікації
+      spamAnalysis: Аналіз спаму
+      spamScore: Оцінка спаму
+      spamStatus: Статус спаму
+    title: Парсер заголовків електронної пошти
+    description: Вставте сирі заголовки листа, щоб отримати інформацію про відправника, простежити ланцюг доставки та переглянути результати автентифікації SPF, DKIM і DMARC.
+  case-converter:
+    ui:
+      inputPlaceholder: Ваш рядок...
+      output: ВИВІД
+    title: Конвертер регістру
+    description: Змінюйте регістр рядка та обирайте між різними форматами
+  chmod-calculator:
+    ui:
+      read: Читання
+      write: Запис
+      execute: Виконання
+      owner: Власник
+      group: Група
+      public: Інші
+      commandCopied: Команду chmod скопійовано
+      copyCommand: Копіювати команду
+    title: Калькулятор chmod
+    description: Обчислюйте права доступу chmod і команди за допомогою цього онлайн калькулятора chmod.
+  color-converter:
+    ui:
+      color: Колір
+      formats: ФОРМАТИ
+    title: Конвертер кольорів
+    description: Перетворюйте колір між різними форматами (hex, rgb, hsl та назва CSS)
+  camera-recorder:
+    ui:
+      selectCamera: Виберіть камеру
+      selectMicrophone: Виберіть мікрофон
+      notSupported: Ваш браузер не підтримує запис із камери.
+      accessRequired: Потрібен доступ до камери й мікрофона.
+      permissionBlocked: Доступ заблоковано. Надайте доступ вручну через значок замка в адресному рядку браузера.
+      grantPermission: Надати дозвіл
+      video: ВІДЕО
+      audio: АУДІО
+      startWebcam: Запустити вебкамеру
+      paused: ПАУЗА
+      rec: ЗАПИС
+      screenshot: Знімок екрана
+      record: Записати
+      pause: Пауза
+      resume: Продовжити
+      stop: Зупинити
+      recordingNotSupported: Запис не підтримується в цьому браузері
+      captures: ЗНІМКИ ({count})
+      clearAll: Очистити все
+      screenshotAlt: знімок екрана
+      download: Завантажити
+      delete: Видалити
+    title: Запис з камери
+    description: Зробіть фото або запишіть відео з вебкамери чи камери.
+  password-generator:
+    ui:
+      terminal:
+        passwordTitle: ПАРОЛЬ
+        optionsTitle: ПАРАМЕТРИ
+      meta:
+        entropyLabel: 'Ентропія:'
+        bits: біт
+        crackLabel: 'Злам:'
+      actions:
+        copy: Копіювати
+        refresh: Оновити
+      section:
+        preset: Пресет
+        mode: Режим
+        format: Формат
+        length: Довжина ({length})
+        wordCount: Кількість слів ({count})
+        separator: Роздільник
+        characterClasses: Класи символів
+        options: Параметри
+      charClass:
+        uppercase: Великі літери
+        lowercase: Малі літери
+        numbers: Цифри
+        symbols: Символи
+      option:
+        excludeAmbiguous: Виключити схожі символи
+        requireOneOfEach: По одному символу кожного класу
+        capitalizeWords: Слова з великої літери
+        appendNumber: Додати 2 цифри
+      mode:
+        random: Випадковий
+        passphrase: Кодова фраза
+        pronounceable: Вимовний
+        format: Формат
+      format:
+        plain: Звичайний
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: немає
+      qr:
+        caption: скануйте, щоб скопіювати
+      phonetic:
+        title: ФОНЕТИКА
+      bulk:
+        generateLabel: Згенерувати
+        single: один
+        atOnce: '{n} за раз'
+        passwordsTitle: 'ПАРОЛІ: {count}'
+        copyAll: Копіювати все
+      toast:
+        passwordCopied: Пароль скопійовано в буфер обміну
+        passwordsCopied: Паролі скопійовано в буфер обміну
+        phoneticCopied: Фонетичний запис скопійовано
+    title: Генератор паролів
+    description: Генеруйте надійні паролі, парольні фрази diceware, вимовні рядки, hex/base64/UUID токени. Містить пресети для MSP (локальний адмін, обліковий запис служби, Wi-Fi PSK, PIN), виключення неоднозначних символів, індикатор ентропії, QR код і фонетичне прочитання NATO.
+  exposure-equivalence:
+    ui:
+      titleInputs: ЕКВІВАЛЕНТНА ЕКСПОЗИЦІЯ
+      shutterSpeed: Витримка
+      dragOrClick: перетягніть або натисніть
+      custom: Інше
+      secPlaceholder: сек
+      aperture: Діафрагма
+      titleResults: ЕКВІВАЛЕНТНІ ЕКСПОЗИЦІЇ
+      isoIndependent: не залежить від ISO за будь-якого фіксованого ISO
+      highlightedBase: виділений рядок це ваша база
+      legendT1: базова витримка
+      legendT2: еквівалентна витримка
+      legendN1: базова діафрагма (число f)
+      legendN2: цільова діафрагма (число f)
+    title: Еквівалентна експозиція
+    description: Знаходьте еквівалентні витримки для всіх діафрагм за однакової експозиції. Виберіть базову витримку й діафрагму, щоб побачити значення для кожного іншого f-числа.
+  nd-filter-calculator:
+    ui:
+      titleInputs: КАЛЬКУЛЯТОР ND ФІЛЬТРА
+      baseShutterSpeed: Базова витримка (без фільтра)
+      dragOrClick: перетягніть або натисніть
+      custom: Інше
+      secPlaceholder: сек
+      ndFilter: ND фільтр
+      stopOne: '{count} стоп'
+      stopMany: '{count} стопів'
+      enterStops: введіть стопи
+      stopsPlaceholder: стопи
+      titleResult: СКОРИГОВАНА ЕКСПОЗИЦІЯ
+      copied: скопійовано
+      copySeconds: копіювати секунди
+      longExposureAlert: Довга витримка. Варто використати режим Bulb.
+      stackingFilters: при накладанні фільтрів додавайте їхні стопи
+      legendT1: базова витримка (без фільтра)
+      legendT2: скоригована витримка
+      legendStops: сила ND фільтра
+    title: Калькулятор ND фільтра
+    description: Обчислюйте скориговані витримки для нейтрально-сірих фільтрів. Підтримує всі поширені щільності ND і довільні значення стопів.
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Пошук за портом, службою, протоколом або описом...
+      allProtocols: Усі
+      dangerousOnly: Лише небезпечні
+      showingPorts: 'Показано портів: {count}'
+      copied: Скопійовано!
+      clickToCopy: Натисніть, щоб скопіювати номер порту
+      copiedCheck: ✓ скопійовано
+      dangerousPill: Небезпечно
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Огляд командлетів
+      adminBadge: Адмін
+      cmdletSearchPlaceholder: Пошук за назвою, описом або модулем...
+      noCmdletsMatch: Немає командлетів, що відповідають "{query}"
+      generatedCommand: Сформована команда
+      copiedCheck: ✓ Скопійовано!
+      copyCommand: Скопіювати команду
+      commonExamples: Поширені приклади
+      selectCmdletPrompt: Виберіть командлет зліва, щоб почати створення команди.
+      parameters: Параметри
+      noParametersNeeded: Параметри не потрібні; цей командлет виконується як є.
+      required: обов'язковий
+      separateMultipleValues: розділяйте кілька значень комами
+      showFewerParameters: Показати менше параметрів
+      showMoreParameters: 'Ще параметрів: {count}'
+      collapseQuickReference: Згорнути короткий довідник
+      openQuickReference: Відкрити короткий довідник
+      quickReference: Короткий довідник
+      cheatsheetComparisonOperators: Оператори порівняння
+      cheatsheetEqualTo: Дорівнює
+      cheatsheetNotEqualTo: Не дорівнює
+      cheatsheetGreaterLessThan: Більше ніж / менше ніж
+      cheatsheetGreaterLessEqual: Більше або дорівнює / менше або дорівнює
+      cheatsheetStringOperators: Рядкові оператори
+      cheatsheetWildcardMatch: Збіг за шаблоном (* та ?)
+      cheatsheetWildcardNonMatch: Незбіг за шаблоном
+      cheatsheetRegexMatch: Збіг за регулярним виразом
+      cheatsheetRegexNonMatch: Незбіг за регулярним виразом
+      cheatsheetCollectionContains: Колекція містить значення
+      cheatsheetValueInCollection: Значення входить до колекції
+      cheatsheetLogicalOperators: Логічні оператори
+      cheatsheetBothTrue: Обидві умови мають бути істинними
+      cheatsheetEitherTrue: Хоча б одна умова істинна
+      cheatsheetNegateCondition: Заперечення умови
+      cheatsheetAutomaticVariables: Автоматичні змінні
+      cheatsheetCurrentPipelineObject: Поточний об'єкт конвеєра
+      cheatsheetNullEmptyValue: Порожнє значення / null
+      cheatsheetBooleanTrueFalse: Логічне true / false
+      cheatsheetLocalComputerName: Ім'я локального комп'ютера
+      cheatsheetCurrentUser: Поточний користувач, що увійшов
+      cheatsheetPsVersionInfo: Відомості про версію PS
+      cheatsheetDateHelpers: Допоміжні функції для дат
+      cheatsheetCurrentDateTime: Поточна дата й час
+      cheatsheetThirtyDaysAgo: 30 днів тому
+      cheatsheetThreeMonthsAgo: 3 місяці тому
+      cheatsheetParseDateString: Розбір рядка дати
+      cheatsheetPipelineTricks: Прийоми роботи з конвеєром
+      cheatsheetLimitFirst10: Обмежити першими 10 результатами
+      cheatsheetCountSumMinMax: Кількість / сума / мін / макс
+      cheatsheetInteractiveGuiViewer: Інтерактивний переглядач GUI (локально)
+      cheatsheetConvertToJson: Перетворити вивід на JSON
+      cheatsheetOutputScreenAndFile: Вивід на екран і у файл
+      cheatsheetSuppressErrors: Приховувати некритичні помилки
+      cheatsheetRemoteExecution: Віддалене виконання
+      cheatsheetCmdletsSupportDirectly: Багато командлетів підтримують це напряму
+      cheatsheetRunViaRemoting: Запуск через PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Інтерактивний віддалений сеанс PS
+  toml-converter:
+    ui:
+      convertTo: 'Конвертувати у:'
+      yourToml: Ваш TOML
+      pastePlaceholder: Вставте ваш TOML сюди...
+      invalidToml: Наданий TOML недійсний.
+      outputLabel: Вивід {format}
+    title: Конвертер TOML
+    description: Перетворюйте TOML на JSON або YAML.
+  ulid-generator:
+    ui:
+      copiedMessage: ULID скопійовано в буфер обміну
+      quantity: КІЛЬКІСТЬ
+      format: ФОРМАТ
+      formatRaw: Необроблений
+      formatJson: JSON
+      output: ВИВІД
+      copy: Копіювати
+      refresh: Оновити
+    title: Генератор ULID
+    description: Генеруйте випадкові Universally Unique Lexicographically Sortable Identifier (ULID).
+  url-parser:
+    ui:
+      sectionHost: Хост
+      protocol: Протокол
+      hostname: Ім'я хоста
+      port: Порт
+      sectionAuthentication: Автентифікація
+      username: Ім'я користувача
+      password: Пароль
+      sectionPath: Шлях
+      pathname: Шлях
+      search: Параметри запиту
+      hash: Хеш
+      urlTitle: URL
+      invalidUrl: Недійсний URL
+      params: ПАРАМЕТРИ
+      emptyHint: Введіть URL вище для розбору
+    title: Парсер URL
+    description: Розбирайте URL на окремі складові частини (протокол, origin, параметри, порт, ім'я користувача та пароль тощо)
+  user-agent-parser:
+    ui:
+      sectionBrowser: Браузер
+      sectionEngine: Рушій
+      sectionOs: ОС
+      sectionDevice: Пристрій
+      sectionCpu: ЦП
+      name: Назва
+      version: Версія
+      model: Модель
+      type: Тип
+      vendor: Виробник
+      architecture: Архітектура
+      userAgentString: РЯДОК USER AGENT
+      placeholder: Введіть ваш user-agent тут...
+      unknown: Невідомо
+      error: ПОМИЛКА
+      parseError: Не вдалося розібрати рядок user agent
+    title: Парсер user-agent
+    description: Визначайте й розбирайте браузер, рушій, ОС, процесор і тип/модель пристрою з рядка user-agent.
+  uuid-generator:
+    ui:
+      copiedMessage: UUID скопійовано в буфер обміну
+      version: ВЕРСІЯ
+      quantity: КІЛЬКІСТЬ
+      namespacePreset: ПРЕСЕТ ПРОСТОРУ ІМЕН
+      namespaceUuid: UUID ПРОСТОРУ ІМЕН
+      invalidUuid: Недійсний UUID
+      name: ІМ'Я
+      namePlaceholder: Ім'я для хешування...
+      output: ВИВІД
+      copy: Копіювати
+      refresh: Оновити
+    title: Генератор UUID
+    description: Генеруйте випадкові UUID (v1 і v4) і переглядайте їхню структуру.
+  ipv4-subnet-calculator:
+    ui:
+      invalidAddress: Не вдалося розпізнати цю адресу, перевірте формат
+      netmask: Маска мережі
+      networkAddress: Адреса мережі
+      networkMask: Маска мережі
+      networkMaskBinary: Маска мережі у двійковому вигляді
+      cidrNotation: Запис CIDR
+      wildcardMask: Зворотна маска
+      networkSize: Розмір мережі
+      firstAddress: Перша адреса
+      lastAddress: Остання адреса
+      broadcastAddress: Широкомовна адреса
+      noBroadcast: Для цієї маски немає широкомовної адреси
+      ipClass: Клас IP
+      unknownClassType: Невідомий клас
+      decimal: Десятковий
+      hexadecimal: Шістнадцятковий
+      binary: Двійковий
+      ipv6Short: IPv6 (скорочено)
+      inputLabel: Адреса IPv4 з маскою або без неї
+      bitMap: БІТОВА КАРТА
+      network: Мережа
+      host: Вузол
+      setPrefix: Встановити префікс /{prefix}
+      networkTag: мережа
+      broadcastTag: широкомовна
+      hostsCount: 'Вузлів: {count}'
+      privateIp: Приватна IP
+      publicIp: Публічна IP
+      subnetDetail: ДЕТАЛІ ПІДМЕРЕЖІ
+      subnetInfo: ІНФОРМАЦІЯ ПРО ПІДМЕРЕЖУ
+      addressRepresentations: ПОДАННЯ АДРЕСИ
+      copy: Копіювати
+      enterValidIpv4: Введіть коректну адресу IPv4, щоб побачити подання
+      previousBlock: Попередній блок
+      nextBlock: Наступний блок
+      collapseCheatSheet: Згорнути шпаргалку
+      subnetCheatSheet: Шпаргалка з підмереж
+    title: Калькулятор підмереж IPv4
+    description: Розбирайте ваші блоки IPv4 CIDR і отримуйте всю потрібну інформацію про вашу підмережу.
+  ipv6-ula-generator:
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Перша маршрутизована
+      lastRoutable: Остання маршрутизована
+      infoAlert: Використовується поточна мітка часу та MAC-адреса, хешовані через SHA1. Молодші 40 бітів формують глобальний ID згідно з RFC 4193.
+      macAddress: MAC-адреса
+      output: Результат
+      copied: Скопійовано!
+      copy: Копіювати
+    title: Генератор IPv6 ULA
+    description: Генеруйте власні локальні, немаршрутизовані IP адреси для вашої мережі згідно з RFC4193.
+  base64-file-converter:
+    ui:
+      copiedToClipboard: Рядок base64 скопійовано в буфер обміну
+      base64ToFileTitle: BASE64 У ФАЙЛ
+      fileNameLabel: ІМ'Я ФАЙЛУ
+      fileNamePlaceholder: Ім'я файлу для завантаження
+      extensionLabel: РОЗШИРЕННЯ
+      extensionPlaceholder: розш
+      base64StringLabel: РЯДОК BASE64
+      base64InputPlaceholder: Вставте сюди рядок base64 файлу...
+      invalidBase64: Недійсний рядок base64
+      previewImage: Попередній перегляд зображення
+      downloadFile: Завантажити файл
+      fileToBase64Title: ФАЙЛ У BASE64
+      dropHint: Перетягніть файл сюди або натисніть, щоб вибрати
+      fileInBase64Label: ФАЙЛ У BASE64
+      fileOutputPlaceholder: Тут з'явиться файл у форматі base64
+      copied: Скопійовано!
+      copyBase64: Копіювати base64
+    title: Конвертер файлів у Base64
+    description: Перетворюйте рядок, файл або зображення на його представлення в base64.
+  base64-string-converter:
+    ui:
+      base64CopiedToClipboard: Рядок base64 скопійовано в буфер обміну
+      stringCopiedToClipboard: Рядок скопійовано в буфер обміну
+      stringToBase64Title: РЯДОК У BASE64
+      encodingLabel: КОДУВАННЯ
+      standard: Стандартне
+      urlSafe: Безпечне для URL
+      stringToEncodeLabel: РЯДОК ДЛЯ КОДУВАННЯ
+      stringInputPlaceholder: Введіть рядок тут...
+      base64OutputLabel: РЕЗУЛЬТАТ BASE64
+      base64OutputPlaceholder: Тут з'явиться результат кодування вашого рядка в base64
+      copied: Скопійовано!
+      copyBase64: Копіювати base64
+      base64ToStringTitle: BASE64 У РЯДОК
+      base64ToDecodeLabel: РЯДОК BASE64 ДЛЯ ДЕКОДУВАННЯ
+      base64InputPlaceholder: Ваш рядок base64...
+      invalidBase64: Недійсний рядок base64
+      decodedStringLabel: РОЗКОДОВАНИЙ РЯДОК
+      decodedOutputPlaceholder: Тут з'явиться розкодований рядок
+      copyDecodedString: Копіювати розкодований рядок
+    title: Кодування/декодування рядків Base64
+    description: Просто кодуйте й декодуйте рядки в їхнє представлення в base64.
+  exchange-ndr-lookup:
+    ui:
+      searchResults: Результати пошуку
+      searchPlaceholder: Пошук за кодом NDR, назвою помилки, причиною або рішенням...
+      copied: Скопійовано!
+      clickToCopy: Натисніть, щоб скопіювати код NDR
+      copiedShort: скопійовано
+      cause: Причина
+      fix: Рішення
+    title: Пошук NDR Exchange
+    description: Шукайте коди повернення пошти Exchange і M365 з поясненням причини та способу виправлення простою мовою.
+  windows-error-codes:
+    ui:
+      searchResults: Результати пошуку
+      searchPlaceholder: Пошук за шістнадцятковим кодом, назвою помилки або описом...
+      copied: Скопійовано!
+      clickToCopy: Натисніть, щоб скопіювати код
+      copiedShort: скопійовано
+      decimal: десяткове {decimal}
+    title: Пошук кодів помилок Windows
+    description: Шукайте коди помилок Windows у hex або десятковому форматі, включно з системними помилками, кодами BSOD, WMI, RPC, помилками MSI установника та іншим.
+  regex-tester:
+    ui:
+      regexLabel: 'Регулярний вираз для перевірки:'
+      regexPlaceholder: Введіть regex для перевірки
+      globalLabel: Глобальний
+      globalTitle: Глобальний пошук
+      ignoreCaseLabel: Ігнорувати регістр
+      ignoreCaseTitle: Пошук без урахування регістру
+      multilineLabel: Багаторядковий
+      singlelineLabel: Однорядковий
+      singlelineTitle: Дозволяє крапці відповідати символам нового рядка.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; розглядати шаблон як послідовність кодових точок Unicode.
+      unicodeSetsLabel: Unicode Sets
+      unicodeSetsTitle: Розширена версія режиму u з додатковими можливостями Unicode.
+      textLabel: 'Текст для зіставлення:'
+      textPlaceholder: Введіть текст для зіставлення
+      regexBarTitle: REGEX
+      matchesBarTitle: ЗБІГИ
+      matchIndex: Індекс
+      matchValue: Значення
+      matchCaptures: Захоплення
+      matchGroups: Групи
+      noMatch: Немає збігів
+      sampleBarTitle: ЗРАЗОК
+      diagramBarTitle: ДІАГРАМА
+      quickReference: Короткий довідник
+    title: Тестер регулярних виразів
+    description: Перевіряйте свої регулярні вирази на прикладі тексту.
+  roman-numeral-converter:
+    ui:
+      converterTitle: КОНВЕРТЕР
+      arabicSideLabel: АРАБСЬКІ ЦИФРИ
+      romanSideLabel: РИМСЬКІ ЦИФРИ
+      arabicRangeError: Має бути {min}-{max}
+      invalidRoman: Не є коректним римським числом
+      copied: Скопійовано
+      copy: Копіювати
+      romanCopiedToast: Римське число скопійовано
+      arabicCopiedToast: Арабське число скопійовано
+    title: Конвертер римських цифр
+    description: Перетворюйте римські цифри на числа і числа на римські цифри.
+  rsa-key-pair-generator:
+    ui:
+      bitsRangeError: Кількість бітів має бути від 256 до 16384 і кратною 8
+      bitsLabel: Біти
+      refreshButton: Оновити пару ключів
+      publicKeyTitle: Відкритий ключ
+      copyPublicKeyTitle: Копіювати відкритий ключ
+      copy: Копіювати
+      generating: Генерація...
+      privateKeyTitle: Закритий ключ
+      copyPrivateKeyTitle: Копіювати закритий ключ
+      publicKeyCopiedToast: Відкритий ключ скопійовано
+      privateKeyCopiedToast: Закритий ключ скопійовано
+    title: Генератор пари ключів RSA
+    description: Генеруйте нову випадкову пару приватного й публічного ключів RSA у форматі pem.
+  bcrypt:
+    ui:
+      copiedToClipboard: Хеш скопійовано в буфер обміну
+      hashTitle: ХЕШ
+      compareTitle: ПОРІВНЯННЯ
+      stringLabel: Рядок
+      stringPlaceholder: Рядок для хешування...
+      saltRoundsLabel: Раунди солі
+      outputLabel: РЕЗУЛЬТАТ
+      copyHash: Копіювати хеш
+      compareStringPlaceholder: Рядок для порівняння...
+      hashLabel: Хеш
+      compareHashPlaceholder: Хеш для порівняння...
+      matchLabel: Збіг
+      'yes': Так
+      'no': Ні
+    title: Bcrypt
+    description: Хешуйте та порівнюйте текстовий рядок за допомогою bcrypt. Bcrypt - це функція хешування паролів на основі шифру Blowfish.
+  bip39-generator:
+    ui:
+      languageEnglish: Англійська
+      languageChineseSimplified: Китайська спрощена
+      languageChineseTraditional: Китайська традиційна
+      languageCzech: Чеська
+      languageFrench: Французька
+      languageItalian: Італійська
+      languageJapanese: Японська
+      languageKorean: Корейська
+      languagePortuguese: Португальська
+      languageSpanish: Іспанська
+      entropyLengthError: Довжина ентропії має бути >= 16, <= 32 і кратна 4
+      entropyHexError: Ентропія має бути шістнадцятковим рядком
+      invalidMnemonic: Недійсна мнемонічна фраза
+      entropyCopied: Ентропію скопійовано в буфер обміну
+      passphraseCopied: Фразу скопійовано в буфер обміну
+      languageLabel: Мова
+      entropyHeading: ЕНТРОПІЯ (СІД)
+      entropyPlaceholder: Ентропія у HEX...
+      regenerate: Згенерувати знову
+      copyEntropy: Копіювати ентропію
+      passphraseHeading: ФРАЗА (МНЕМОНІКА)
+      passphrasePlaceholder: Мнемонічні слова...
+      copyPassphrase: Копіювати фразу
+    title: Генератор парольної фрази BIP39
+    description: Генеруйте парольну фразу BIP39 з наявної або випадкової мнемоніки, або отримайте мнемоніку з парольної фрази.
+  ascii-text-drawer:
+    ui:
+      yourText: ВАШ ТЕКСТ
+      textPlaceholder: Текст для малювання
+      options: ПАРАМЕТРИ
+      font: ШРИФТ
+      searchFonts: Пошук шрифтів...
+      noFontsMatch: Шрифтів не знайдено
+      width: ШИРИНА
+      output: РЕЗУЛЬТАТ ASCII ART
+      loadingFont: Завантаження шрифту...
+      error: Поточні налаштування призвели до помилки.
+      copied: Скопійовано!
+      copy: Копіювати
+    title: Генератор ASCII графіті-тексту
+    description: Створюйте ASCII графіті-текст з багатьма шрифтами і стилями.
+  basic-auth-generator:
+    ui:
+      copied: Заголовок скопійовано в буфер обміну
+      username: Ім'я користувача
+      usernamePlaceholder: Ваше ім'я користувача...
+      password: Пароль
+      passwordPlaceholder: Ваш пароль...
+      headerLabel: 'Заголовок Authorization:'
+      copyHeader: Копіювати заголовок
+  json-minify:
+    ui:
+      invalidJson: Наданий JSON недійсний.
+      inputLabel: Ваш вихідний JSON
+      inputPlaceholder: Вставте сюди вихідний JSON...
+      outputLabel: Мінімізована версія вашого JSON
+    title: Мінімізація JSON
+    description: Мінімізуйте й стискайте ваш JSON, видаляючи зайві пробіли.
+  math-evaluator:
+    ui:
+      placeholder: 'Ваш математичний вираз (напр.: 2*sqrt(6) )...'
+      result: Результат
+    title: Обчислювач математичних виразів
+    description: Калькулятор для обчислення математичних виразів. Можна використовувати функції на кшталт sqrt, cos, sin, abs тощо.
+  crontab-generator:
+    ui:
+      symbolAnyValue: Будь-яке значення
+      symbolEveryMinute: Щохвилини
+      symbolRange: Діапазон значень
+      symbolRangeEquivalent: Хвилини з 1 по 10
+      symbolList: Список значень
+      symbolListEquivalent: На 1-й і 10-й хвилинах
+      symbolStep: Крокові значення
+      symbolStepEquivalent: Кожні 10 хвилин
+      aliasYearly: Раз на рік (1 січня, опівночі)
+      aliasMonthly: Перше число кожного місяця, опівночі
+      aliasWeekly: Неділя, опівночі
+      aliasDaily: Щодня опівночі
+      aliasHourly: Щогодини, на початку години
+      aliasReboot: Запустити один раз при старті
+      aliasRebootEquivalent: (при старті)
+      invalidCron: Цей cron недійсний
+      use24HourTime: 24-годинний формат часу
+      daysStartAtZero: Дні починаються з 0
+      labelSymbol: 'Символ:'
+      labelMeaning: 'Значення:'
+      labelExample: 'Приклад:'
+      labelEquivalent: 'Еквівалент:'
+      symbols: Символи
+      aliases: Псевдоніми
+    title: Генератор crontab
+    description: Перевіряйте й генеруйте crontab та отримуйте зрозумілий опис розкладу cron.
+  device-information:
+    ui:
+      screen: Екран
+      hardware: Обладнання
+      network: Мережа
+      browser: Браузер
+      screenSize: Розмір екрана
+      windowSize: Розмір вікна
+      pixelRatio: Щільність пікселів
+      colorDepth: Глибина кольору
+      orientation: Орієнтація
+      orientationAngle: Кут орієнтації
+      touchPoints: Точки дотику
+      cpuCores: Ядра CPU
+      deviceMemory: Пам'ять пристрою
+      platform: Платформа
+      online: Онлайн
+      connectionType: Тип з'єднання
+      downlinkSpeed: Швидкість завантаження
+      roundTripTime: Час відгуку
+      dataSaver: Економія трафіку
+      vendor: Виробник
+      languages: Мови
+      cookiesEnabled: Файли cookie увімкнено
+      pdfViewer: Перегляд PDF
+      doNotTrack: Не відстежувати
+      userAgent: Агент користувача
+      maxTouchPoints: '{count} макс.'
+      none: Немає
+      logicalCores: '{count} логічних ядер'
+      'yes': Так
+      'no': Ні
+      enabled: Увімкнено
+      disabled: Вимкнено
+      supported: Підтримується
+      notSupported: Не підтримується
+      notSet: Не встановлено
+    title: Інформація про пристрій
+    description: Отримайте інформацію про ваш поточний пристрій (розмір екрана, pixel-ratio, user agent тощо)
+  gif-search:
+    ui:
+      errorStatus: Помилка {status}
+      fetchFailed: Не вдалося завантажити GIF.
+      searchPlaceholder: Пошук GIF (наприклад, facepalm, nice work, this is fine)
+      searching: Пошук...
+      search: Пошук
+      noResults: GIF не знайдено для "{query}".
+      copied: Скопійовано!
+      copyUrl: Копіювати URL
+      resultsHint: '{count} результатів. Натисніть, щоб скопіювати URL, потім вставте в Teams, Telegram або Slack.'
+    title: Пошук GIF
+    description: Шукайте реакційні GIF у Giphy. Клацніть на будь-який результат, щоб скопіювати URL.
+  xml-formatter:
+    ui:
+      invalidXml: Вказаний XML недійсний.
+      collapse: Згорнути
+      indentSize: Розмір відступу
+      inputLabel: Ваш XML
+      inputPlaceholder: Вставте свій XML сюди...
+      outputLabel: Форматований XML з вашого XML
+    title: Форматувальник XML
+    description: Форматуйте ваш XML рядок у зручний, зрозумілий вигляд.
+  xml-json-converter:
+    ui:
+      invalidXml: Недійсний XML.
+      invalidJson: Недійсний JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Вставте свій XML сюди...
+      jsonLabel: JSON
+      jsonPlaceholder: Вставте свій JSON сюди...
+    title: Конвертер XML ↔ JSON
+    description: Двосторонній конвертер XML і JSON. Редагуйте будь-яку сторону, і інша оновиться автоматично.
+  yaml-converter:
+    ui:
+      convertTo: 'Перетворити на:'
+      inputLabel: Ваш YAML
+      inputPlaceholder: Вставте свій YAML сюди...
+      invalidYaml: Вказаний YAML недійсний.
+      outputLabel: Результат у форматі {format}
+    title: Конвертер YAML
+    description: Перетворюйте YAML на JSON або TOML.
+  yaml-viewer:
+    ui:
+      invalidYaml: Вказаний YAML недійсний.
+      sortKeys: Сортувати ключі
+      indentSize: Розмір відступу
+      rawLabel: Ваш вихідний YAML
+      rawPlaceholder: Вставте свій вихідний YAML сюди...
+      prettifiedLabel: Відформатована версія вашого YAML
+  pdf-signature-checker:
+    ui:
+      tableHeaderValidityPeriod: Термін дії
+      tableHeaderIssuedBy: Ким видано
+      tableHeaderIssuedTo: Кому видано
+      tableHeaderPemCertificate: Сертифікат PEM
+      notBefore: Дійсний з
+      notAfter: Дійсний до
+      commonName: Загальне ім'я
+      organizationName: Назва організації
+      countryName: Країна
+      localityName: Населений пункт
+      organizationalUnitName: Підрозділ
+      stateOrProvinceName: Область або регіон
+      viewPemCert: Переглянути сертифікат PEM
+      uploadPrompt: Перетягніть файл PDF сюди або натисніть, щоб вибрати файл
+      noSignaturesFound: У вказаному файлі підписів не знайдено.
+      signatureCertificatesLabel: 'Сертифікати підпису {number}:'
+    title: Перевірка підпису PDF
+    description: Перевіряйте підписи PDF файлу. Підписаний PDF файл містить один або кілька підписів, які можуть використовуватися для визначення, чи змінювався вміст файлу після підписання.
+  percentage-calculator:
+    ui:
+      whatIsXPercentOfYTitle: СКІЛЬКИ СТАНОВИТЬ X% ВІД Y
+      whatIsLabel: Чому дорівнює
+      percentOfLabel: '% від'
+      resultPlaceholder: Результат
+      xIsWhatPercentOfYTitle: СКІЛЬКИ ВІДСОТКІВ X ВІД Y
+      isWhatPercentOfLabel: становить скільки % від
+      percentageChangeTitle: ВІДСОТКОВЕ ЗБІЛЬШЕННЯ / ЗМЕНШЕННЯ
+      fromLabel: Від
+      toLabel: до
+    title: Калькулятор відсотків
+    description: Легко обчислюйте відсотки від значення до значення або від відсотка до значення.
+  phone-parser-and-formatter:
+    ui:
+      invalidPhoneNumber: Недійсний номер телефону
+      sectionLocation: Розташування
+      countryCode: Код країни
+      country: Країна
+      callingCode: Телефонний код
+      sectionValidation: Перевірка
+      isValid: Дійсний?
+      'yes': Так
+      'no': Ні
+      isPossible: Можливий?
+      type: Тип
+      unknown: Невідомо
+      sectionFormats: Формати
+      international: Міжнародний
+      national: Національний
+      defaultCountry: Країна за замовчуванням
+      phoneNumber: Номер телефону
+      emptyStatePrompt: Введіть номер телефону вище для розбору
+    title: Парсер номерів телефону
+    description: Розбирайте й форматуйте номери телефонів. Визначайте країну, перевіряйте та відображайте формати international, national, E.164 та RFC3966.
+  mac-address-lookup:
+    ui:
+      macAddressLabel: MAC адреса
+      copiedTooltip: Скопійовано!
+      copyTooltip: Натисніть, щоб скопіювати дані про виробника
+      copiedTitle: ✓ скопійовано
+      vendorInfoTitle: Інформація про виробника
+      unknownVendor: Виробник для цієї адреси невідомий
+    title: Пошук за MAC-адресою
+    description: Знаходьте виробника пристрою за його MAC-адресою.
+  markdown-to-html:
+    ui:
+      copiedSuccess: HTML скопійовано в буфер обміну!
+      copyFailed: Не вдалося скопіювати текст.
+      inputLabel: 'Ваш Markdown для конвертації:'
+      inputPlaceholder: Ваш вміст Markdown...
+      outputLabel: 'Результат HTML:'
+      copyHtmlButton: Копіювати HTML
+      printAsPdfButton: Друк у PDF
+    title: Markdown у HTML
+    description: Перетворюйте Markdown на HTML та експортуйте чи друкуйте як PDF.
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Мета теги скопійовано!
+      copiedLabel: ✓ Скопійовано
+      copyButton: Копіювати
+      outputTitle: ВАШІ МЕТА ТЕГИ
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME тип у розширення
+      mimeToExtensionDescription: Дізнайтесь, які розширення файлів пов'язані з MIME типом
+      mimeTypeSelectPlaceholder: 'Виберіть свій MIME тип тут... (напр.: application/pdf)'
+      extensionsFoundPrefix: Розширення файлів з
+      extensionsFoundSuffix: 'MIME типом:'
+      extensionToMimeTitle: Розширення файлу в MIME тип
+      extensionToMimeDescription: Дізнайтесь, який MIME тип пов'язаний з розширенням файлу
+      mimeFoundPrefix: MIME тип, пов'язаний з розширенням
+      mimeFoundSuffix: 'файлу:'
+      tableMimeTypesHeader: MIME типи
+      tableExtensionsHeader: Розширення
+  html-entities:
+    ui:
+      yourString: ВАШ РЯДОК
+      escapePlaceholder: Рядок для екранування...
+      escapedOutput: ЕКРАНОВАНИЙ РЕЗУЛЬТАТ
+      copied: Скопійовано
+      copy: Копіювати
+      yourEscapedString: ВАШ ЕКРАНОВАНИЙ РЯДОК
+      unescapePlaceholder: Рядок для зняття екранування...
+      unescapedOutput: РЕЗУЛЬТАТ БЕЗ ЕКРАНУВАННЯ
+    title: Екранування HTML сутностей
+    description: Екрануйте або скасовуйте екранування HTML сутностей (замінюйте символи на кшталт <, >, &, " та \' на їхню HTML версію)
+  html-wysiwyg-editor:
+    ui:
+      bold: Жирний
+      italic: Курсив
+      strike: Закреслений
+      inlineCode: Вбудований код
+      heading1: Заголовок 1
+      heading2: Заголовок 2
+      heading3: Заголовок 3
+      heading4: Заголовок 4
+      bulletList: Маркований список
+      orderedList: Нумерований список
+      codeBlock: Блок коду
+      blockquote: Цитата
+      hardBreak: Примусовий перенос рядка
+      clearFormat: Очистити форматування
+      undo: Скасувати
+      redo: Повторити
+    title: WYSIWYG редактор HTML
+    description: Онлайн, багатофункціональний WYSIWYG редактор HTML, що одразу генерує вихідний код вмісту.
+  http-status-codes:
+    ui:
+      searchResults: Результати пошуку
+      searchPlaceholder: Пошук коду стану HTTP...
+      copiedTooltip: Скопійовано!
+      clickToCopy: Натисніть, щоб скопіювати код стану
+      copiedLabel: скопійовано
+    title: Коди статусу HTTP
+    description: Список усіх кодів статусу HTTP, їхні назви та значення.
+  depth-of-field-calculator:
+    ui:
+      sensorMedFormat: Середній формат
+      sensorCustom: Інший
+      sensorEnterCoc: введіть CoC
+      infinity: нескінченність
+      title: КАЛЬКУЛЯТОР ГЛИБИНИ РІЗКОСТІ
+      sensorFormat: Формат сенсора
+      cocPlaceholder: CoC у мм (наприклад, 0.029)
+      focalLength: Фокусна відстань (мм)
+      aperture: Діафрагма
+      dragOrClick: перетягніть або клацніть
+      focusDistance: Відстань фокусування
+      distancePlaceholder: відстань
+      results: РЕЗУЛЬТАТИ
+      hyperfocalDistance: Гіперфокальна відстань
+      hyperfocalHint: Фокусуйтеся тут для максимальної різкості від половини цієї відстані до нескінченності
+      nearLimit: Ближня межа
+      farLimit: Дальня межа
+      totalDof: Загальна глибина різкості
+      beyondHyperfocal: Відстань фокусування дорівнює гіперфокальній або перевищує її - дальня межа сягає нескінченності.
+      legendHyperfocal: гіперфокальна відстань
+      legendFocalLength: фокусна відстань
+      legendFNumber: число діафрагми (f-число)
+      legendCoc: circle of confusion
+      legendFocusDistance: відстань фокусування
+    title: Калькулятор глибини різкості
+    description: Обчислюйте ближню межу, дальню межу та загальну глибину різкості для будь-якого об'єктива й матриці. Включає гіперфокальну відстань.
+  json-diff:
+    ui:
+      onlyShowDifferences: Показувати лише відмінності
+      jsonsAreTheSame: Надані JSON однакові
+      firstJsonTitle: ВАШ ПЕРШИЙ JSON
+      firstJsonPlaceholder: Вставте сюди перший JSON...
+      invalidJson: Невірний формат JSON
+      secondJsonTitle: JSON ДЛЯ ПОРІВНЯННЯ
+      secondJsonPlaceholder: Вставте сюди JSON для порівняння...
+    title: Порівняння JSON
+    description: Порівнюйте два JSON об'єкти й отримуйте відмінності між ними.
+  json-to-csv:
+    ui:
+      invalidJson: Наданий JSON недійсний.
+      yourRawJson: Ваш вихідний JSON
+      pasteRawJsonPlaceholder: Вставте сюди вихідний JSON...
+      csvOutputLabel: CSV версія вашого JSON
+    title: JSON у CSV
+    description: Перетворюйте JSON на CSV з автоматичним визначенням заголовків.
+  json-viewer:
+    ui:
+      invalidJson: Наданий JSON недійсний.
+      sortKeys: Сортувати ключі
+      indentSize: Розмір відступу
+      yourRawJson: Ваш вихідний JSON
+      pasteRawJsonPlaceholder: Вставте сюди вихідний JSON...
+      prettifiedVersion: Відформатована версія вашого JSON
+  jwt-parser:
+    ui:
+      header: Заголовок
+      payload: Корисне навантаження
+      jwtToDecodeTitle: JWT ДЛЯ ДЕКОДУВАННЯ
+      tokenPlaceholder: Введіть токен сюди...
+      invalidJwt: Недійсний JWT
+    title: Парсер JWT
+    description: Розбирайте й декодуйте ваш JSON Web Token (jwt) і переглядайте його вміст.
+  json-converter:
+    ui:
+      convertTo: Перетворити на
+      yourJson: Ваш JSON
+      pasteJsonPlaceholder: Вставте сюди JSON...
+      invalidJson: Невірний формат JSON
+      formatOutput: Вивід у форматі {format}
+    title: Конвертер JSON
+    description: Перетворюйте JSON на YAML або TOML.
+  qr-code-generator:
+    ui:
+      tabText: Текст / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Текст або URL
+      placeholderTextOrUrl: Ваше посилання або текст...
+      sectionEncryption: Шифрування
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Без пароля
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Назва мережі...
+      sectionPassword: Пароль
+      placeholderPassword: Пароль мережі...
+      sectionOptions: Параметри
+      hiddenSsid: Прихований SSID
+      anonymousIdentity: Анонімна ідентифікація
+      sectionEapMethod: Метод EAP
+      sectionEapPhase2: EAP фаза 2
+      sectionEapIdentity: Ідентифікація EAP
+      placeholderEapIdentity: Ваша ідентифікація EAP...
+      sectionTheme: Тема
+      themeDefault: За замовчуванням
+      themeTerminal: Terminal
+      themeClassic: Classic
+      themeInverted: Інвертована
+      sectionColors: Кольори
+      labelForeground: 'Колір переднього плану:'
+      labelBackground: 'Колір фону:'
+      sectionErrorCorrection: Корекція помилок
+      levelLow: Низька (~7%)
+      levelMedium: Середня (~15%)
+      levelQuartile: Квартильна (~25%)
+      levelHigh: Висока (~30%)
+      emptyHintWifi: Введіть SSID, щоб створити QR-код Wi-Fi
+      emptyHintText: Введіть текст або URL
+      captionJoin: '>_ відскануйте, щоб приєднатися'
+      captionOpen: '>_ відскануйте, щоб відкрити'
+      downloadPng: ↓ Завантажити PNG
+  reciprocity-calculator:
+    ui:
+      barReciprocity: КАЛЬКУЛЯТОР ВІДМОВИ ВЗАЄМНОСТІ
+      barCorrected: СКОРИГОВАНА ЕКСПОЗИЦІЯ
+      fieldFilmStock: Тип плівки
+      typeBw: Ч/Б
+      typeColorNeg: Кольоровий негатив
+      typeSlide: Слайд / E6
+      noFailureUpTo: Немає відмови при витримці до {seconds} с
+      sourceManufacturer: Дані виробника
+      sourceCommunity: Дані спільноти
+      fieldMeteredExposure: Виміряна експозиція
+      unitSeconds: секунди
+      noFailureMessage: 'Корекція не потрібна: ця плівка не має відмови взаємності при такій витримці.'
+      copyDone: ✓ скопійовано
+      copySeconds: копіювати секунди
+      devReduce10: Рекомендується скоротити проявлення приблизно на 10%, щоб компенсувати підвищену щільність тіней.
+      devReduce1015: Рекомендується скоротити проявлення на 10-15%.
+      devReduce1520: Рекомендується скоротити проявлення на 15-20%.
+      devReduce2030: Для дуже довгих витримок рекомендується скоротити проявлення на 20-30%.
+      colorShiftWarning: 'Кольорова плівка: при такій витримці можливий зсув кольору.'
+      colorShiftSlide: Слайдову плівку складно скоригувати при друці; рекомендується CC-фільтрація безпосередньо під час зйомки.
+      colorShiftNeg: Кольоровий негатив має більшу широту; корекція можлива при друці або скануванні.
+    title: Калькулятор відхилення взаємності
+    description: Обчислюйте скориговані довгі витримки для понад 40 плівок за допомогою степеневого закону Шварцшильда. Охоплює чорно-білі, кольорові негативні та слайдові плівки.
+  group-policy-reference:
+    ui:
+      searchPlaceholder: Пошук політик, шляхів, ключів реєстру...
+      copied: Скопійовано!
+      clickToCopyRegistry: Натисніть, щоб скопіювати ключ реєстру
+      copiedShort: скопійовано
+      default: За замовчуванням
+      recommended: Рекомендовано
+    title: Довідник Group Policy
+    description: Шукайте поширені параметри Windows Group Policy за назвою, шляхом GPO, ключем реєстру або описом.
+  windows-event-lookup:
+    ui:
+      searchResults: Результати пошуку
+      searchPlaceholder: Пошук за ID події, назвою або описом...
+      copied: Скопійовано!
+      clickToCopyEventId: Натисніть, щоб скопіювати ID події
+      copiedShort: скопійовано
+    title: Пошук подій Windows
+    description: Шукайте ідентифікатори подій Windows з описами, рівнями важливості й поширеними причинами.
+  cve-lookup:
+    ui:
+      range6m: 6 місяців
+      range1y: 1 рік
+      range2y: 2 роки
+      range5y: 5 років
+      rangeAll: Весь час
+      noDescription: Опис відсутній.
+      fetchError: Не вдалося з'єднатися з NVD API. Перевірте підключення.
+      sortNewest: Спочатку новіші
+      sortOldest: Спочатку старіші
+      sortSeverity: За рівнем небезпеки
+      severityCritical: Критичний
+      severityHigh: Високий
+      severityMedium: Середній
+      severityLow: Низький
+      placeholder: Ідентифікатор CVE або ключове слово (наприклад, CVE-2021-44228, log4j)
+      searching: Пошук...
+      search: Пошук
+      hint: Шукайте за ідентифікатором CVE, частковим номером (наприклад, 43284), поширеною назвою (наприклад, log4shell, dirty frag) або ключовим словом. Актуальні дані з NVD і GitHub Advisory Database.
+      noResults: Не знайдено CVE за запитом "{query}".
+      noResultsInRange: Не знайдено CVE за запитом "{query}" у вибраному діапазоні дат.
+      noExactMatch: Точного збігу фрази не знайдено у вибраному діапазоні дат. Поширені назви вразливостей (наприклад, "dirty frag") можуть не збігатися дослівно з описами NVD. Спробуйте частковий номер CVE (наприклад, "43284" знаходить CVE-2026-43284).
+      searchAllTime: Шукати за весь час
+      showingResults: Показано {shown} з {total} результатів
+      allSeverities: Усі рівні небезпеки
+      allYears: Усі роки
+      copied: Скопійовано!
+      clickToCopyId: Натисніть, щоб скопіювати ідентифікатор CVE
+      copiedShort: скопійовано
+      cveDetail: ДЕТАЛІ CVE
+      published: Опубліковано
+      modified: Змінено
+      clickToCopy: Натисніть, щоб скопіювати
+      references: Посилання
+      kevActionDue: 'Термін дії за CISA KEV:'
+      cvssMetrics: Метрики CVSS
+      metricAttackVector: Вектор атаки
+      metricAttackComplexity: Складність атаки
+      metricPrivilegesRequired: Потрібні привілеї
+      metricUserInteraction: Взаємодія з користувачем
+      metricScope: Область дії
+      metricConfidentiality: Конфіденційність
+      metricIntegrity: Цілісність
+      metricAvailability: Доступність
+    title: Пошук CVE
+    description: Шукайте в NIST NVD за CVE за ідентифікатором або ключовим словом. Живі дані з NVD API.
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: Рядок дати локалі JS
+      formatUnixTimestamp: Мітка часу Unix
+      formatTimestamp: Мітка часу
+      formatUtc: Формат UTC
+      formatExcelDateTime: Дата/час Excel
+      invalidDateRule: Ця дата недійсна для цього формату
+      inputPlaceholder: Вставте рядок дати або залиште порожнім для живого годинника...
+      invalidDate: Недійсна дата для цього формату
+      output: ВИВІД
+      live: НАЖИВО
+  emoji-picker:
+    ui:
+      emojiCopied: Емодзі {emoji} скопійовано в буфер обміну
+      codePointsCopied: Кодові точки «{codePoints}» скопійовано в буфер обміну
+      unicodeCopied: Юнікод «{unicode}» скопійовано в буфер обміну
+      searchPlaceholder: Пошук емодзі (наприклад, «smile»)...
+      noResults: Немає результатів
+      searchResult: Результат пошуку
+    title: Вибір емодзі
+    description: Копіюйте й вставляйте емодзі та переглядайте значення unicode і code points кожного емодзі.
+  dev-calculator:
+    ui:
+      hasData: Є дані
+      noDataGroup: Немає даних, введіть базовий час вручну
+      colorBelow: '{process} нижче 36°C: імовірні зсув кольору та неповний проявлення'
+      colorAbove: '{process} вище 40°C: ризик вуалі та кольорового кросоверу'
+      bwBelow: 'Нижче 18°C: проявлення буде дуже повільним'
+      bwAbove: 'Вище 24°C: ризик ретикуляції та вуалі'
+      start: Старт
+      pause: Пауза
+      resume: Продовжити
+      calculatorTitle: КАЛЬКУЛЯТОР ПРОЯВЛЕННЯ ПЛІВКИ
+      developer: Проявник
+      dilution: Розведення
+      filmStock: Плівка
+      baseTimeAt: Базовий час при {temp}°C
+      noData: немає даних
+      overridePlaceholder: перевизначити (с)
+      customBaseActive: Активний власний базовий час
+      temperature: 'Температура:'
+      pushPull: Push / Pull
+      tankVolume: Об'єм бачка
+      customMlPlaceholder: свій об'єм, мл
+      adjustedTime: СКОРИГОВАНИЙ ЧАС
+      baseTimeTemp: Базовий час ({temp}°C)
+      tempAdj: Темп. коригування ({temp})
+      pushStop: Push {n} стоп
+      pushStops: Push {n} стопи
+      pullStop: Pull {n} стоп
+      pullStops: Pull {n} стопи
+      mixFor: Змішати на {volume} мл
+      mixDeveloper: проявник
+      mixWater: вода
+      noDataWarning: Немає даних для {film} + {developer}. Введіть базовий час вручну.
+      pushPullEstimate: Час push/pull є орієнтовним. Рекомендується тестова плівка.
+      sourceNote: Базовий час взято з Massive Dev Chart і даних виробників.
+      processTimer: ТАЙМЕР ПРОЦЕСУ
+      devComplete: Проявлення завершено
+      devCompleteHint: Повісьте сушитися й насолоджуйтесь негативами.
+      stageOf: Етап {current} / {total}
+      agitation: АЖИТАЦІЯ
+      reset: Скинути
+      skip: Пропустити
+      stDeveloper: Проявник
+      stBleach: Відбілювач
+      stWash: Промивання
+      stFixer: Фіксаж
+      stWash2: Промивання 2
+      stStabilizer: Стабілізатор
+      stFirstDeveloper: Перший проявник
+      stReversalBath: Обертальна ванна
+      stColorDeveloper: Кольоровий проявник
+      stPreBleach: Попереднє відбілювання
+      stFinalWash: Фінальне промивання
+      stStopBath: Стоп-ванна
+      agC30s10: Безперервно перші 30 с, потім 10 с кожні 30 с
+      agRun3Full: Проточна вода або 3 повні зміни
+      agGentle: Лише легке погойдування, не промивати після
+      agC30s5: Безперервно перші 30 с, потім 5 с кожні 30 с
+      agRun3: Проточна вода або 3 зміни
+      agContinuous: Безперервно
+      ag10per30: 10 с кожні 30 с
+      agRun5: Проточна вода або 5 змін
+      agC60s10: Безперервно перші 30 с, потім 10 с кожні 60 с
+      agCont60: Безперервно 60 с
+      ag10per60: 10 с кожні 60 с
+      agRun5Full: Проточна вода або 5 повних змін
+    title: Калькулятор проявлення плівки
+    description: Обчислюйте скориговані часи проявлення з урахуванням температури, пуш/пул обробки та розведення. Містить базу поширених чорно-білих проявників і плівок.
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Секрет (hex)
+      epochLabel: Epoch
+      countLabel: Лічильник
+      paddedHexLabel: Hex із доповненням
+      secretLabel: СЕКРЕТ
+      secretPlaceholder: Вставте свій секрет TOTP...
+      generateNewSecret: Створити новий секрет
+      tokenLabel: ТОКЕН
+      copied: ✓ скопійовано
+      clickToCopy: натисніть, щоб скопіювати
+      nextIn: '>_ наступний через {seconds} с'
+      adjacentTokensLabel: СУСІДНІ ТОКЕНИ
+      prevLabel: Попер.
+      nextLabel: Далі
+      detailsLabel: ДЕТАЛІ
+      scanToAuthenticate: '>_ скануйте для автентифікації'
+      openKeyUriInNewTab: Відкрити Key URI в новій вкладці
+      tokenDisplayPreviousLabel: Попередній
+      tokenDisplayCurrentLabel: Поточний OTP
+      tokenDisplayNextLabel: Наступний
+      copiedExclaim: Скопійовано!
+      copyPreviousOtp: Скопіювати попередній OTP
+      copyCurrentOtp: Скопіювати поточний OTP
+      copyNextOtp: Скопіювати наступний OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Надійний
+      moderateLabel: Середній
+      weakLabel: Слабкий
+      veryWeakLabel: Дуже слабкий
+      lengthLabel: Довжина
+      entropyLabel: Ентропія
+      charsetSizeLabel: Розмір набору символів
+      scoreDetailLabel: Оцінка
+      passwordPlaceholder: Введіть пароль...
+      hideLabel: Приховати
+      showLabel: Показати
+      clearLabel: Очистити
+      crackTimeSublabel: ЧАС ЗЛАМУ ПЕРЕБОРОМ
+      crackTimeNote: Стійкість оцінюється за часом перебору зі швидкістю 1 млрд спроб за секунду. Словникові атаки не враховуються.
+  signature-creator:
+    ui:
+      drawSignatureTab: Намалювати підпис
+      removeBackgroundTab: Видалити фон
+      inkColorLabel: Колір чорнила
+      strokeWeightLabel: Товщина лінії
+      actionsLabel: Дії
+      undoButton: ↩ Скасувати
+      clearButton: ✕ Очистити
+      downloadTransparentPng: ↓ Завантажити прозорий PNG
+      uploadImageLabel: Завантажити зображення
+      dropzoneText: Перетягніть зображення сюди або натисніть, щоб вибрати
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Зображення завантажено
+      removeButton: ✕ Видалити
+      removeBackgroundButton: ⚡ Видалити фон
+      exportLabel: Експорт
+      downloadNoBgPng: ↓ Завантажити PNG (без фону)
+      originalLabel: Оригінал
+      resultLabel: Результат
+      uploadPrompt: Завантажте зображення, щоб почати
+      originalAlt: оригінал
+      resultAlt: результат із видаленим фоном
+      loadingModelStatus: Завантаження моделі ШІ...
+      removingBackgroundStatus: Видалення фону...
+      processingPercentStatus: Обробка... {pct}%
+      downloadingModelPercentStatus: Завантаження моделі... {pct}%
+      removeBackgroundFailedStatus: Не вдалося видалити фон. Спробуйте інше зображення.
+    title: Створення підпису
+    description: Намалюйте рукописний підпис на полотні й експортуйте як прозорий PNG. Або завантажте будь-яке зображення і приберіть фон одним кліком за допомогою локального ШІ.
+  sql-prettify:
+    ui:
+      dialectLabel: ДІАЛЕКТ
+      keywordCaseLabel: РЕГІСТР КЛЮЧОВИХ СЛІВ
+      indentStyleLabel: СТИЛЬ ВІДСТУПІВ
+      yourSqlQueryLabel: Ваш SQL запит
+      sqlQueryPlaceholder: Вставте сюди ваш SQL запит...
+      prettifiedQueryLabel: Відформатована версія вашого запиту
+      keywordCaseUpper: ВЕРХНІЙ РЕГІСТР
+      keywordCaseLower: нижній регістр
+      keywordCasePreserve: Зберегти
+      indentStyleStandard: Стандартний
+      indentStyleTabularLeft: Табличний зліва
+      indentStyleTabularRight: Табличний справа
+    title: Форматування SQL
+    description: Форматуйте свої SQL запити онлайн (підтримує різні діалекти SQL).
+  svg-placeholder-generator:
+    ui:
+      widthLabel: ШИРИНА (px)
+      backgroundLabel: ФОН
+      heightLabel: ВИСОТА (px)
+      textColorLabel: КОЛІР ТЕКСТУ
+      fontSizeLabel: РОЗМІР ШРИФТУ
+      customTextLabel: ДОВІЛЬНИЙ ТЕКСТ
+      customTextPlaceholder: За замовчуванням {size}
+      useExactSizeToggle: Використати точний розмір
+      svgHtmlElementLabel: SVG HTML ЕЛЕМЕНТ
+      svgBase64Label: SVG У BASE64
+      copySvgButton: Копіювати svg
+      copyBase64Button: Копіювати base64
+      downloadSvgButton: Завантажити svg
+      previewLabel: ПОПЕРЕДНІЙ ПЕРЕГЛЯД
+      svgPreviewAlt: попередній перегляд SVG
+    title: Генератор SVG заглушок
+    description: Генеруйте SVG зображення для використання як заглушку у ваших застосунках.
+  lorem-ipsum-generator:
+    ui:
+      copiedMessage: Lorem ipsum скопійовано в буфер обміну
+      paragraphs: Абзаци
+      sentencesPerParagraph: Речень на абзац
+      wordsPerSentence: Слів на речення
+      startWithLoremIpsum: Починати з lorem ipsum
+      asHtml: Як HTML
+      output: РЕЗУЛЬТАТ
+      wordCount: '{count} слів'
+      charCount: '{count} символів'
+      copy: Копіювати
+      refresh: Оновити
+    title: Генератор Lorem ipsum
+    description: Генеруйте текст-заповнювач lorem ipsum для макетів і дизайну.
+  m365-sku-decoder:
+    ui:
+      searchPlaceholder: Пошук за назвою SKU, рядковим ID або описом...
+      copied: Скопійовано!
+      clickToCopy: Натисніть, щоб скопіювати рядковий ID
+      copiedMark: ✓ скопійовано
+    title: Декодер SKU ліцензій M365
+    description: Декодуйте рядки й GUID SKU ліцензій Microsoft 365 у назви продуктів.
+  domain-lookup:
+    ui:
+      statusDesc:
+        active: Домен активний і працює.
+        inactive: Домен неактивний.
+        clientDeleteProhibited: Реєстратор заблокував видалення домену.
+        clientTransferProhibited: Реєстратор заблокував передачу домену іншому реєстратору.
+        clientUpdateProhibited: Реєстратор заблокував оновлення домену.
+        clientHold: Реєстратор призупинив домен, тому DNS може не розв'язуватися.
+        serverDeleteProhibited: Реєстр заблокував видалення домену.
+        serverTransferProhibited: Реєстр заблокував передачу домену.
+        serverUpdateProhibited: Реєстр заблокував оновлення домену.
+        serverHold: Реєстр призупинив домен, тому DNS може не розв'язуватися.
+        pendingCreate: Створення домену очікує виконання.
+        pendingDelete: Домен очікує видалення і може незабаром звільнитися.
+        pendingRenew: Продовження домену очікує виконання.
+        pendingRestore: Відновлення домену після видалення очікує виконання.
+        pendingTransfer: Передача домену іншому реєстратору очікує виконання.
+        pendingUpdate: Оновлення домену очікує виконання.
+        redemptionPeriod: Термін дії домену минув, він у періоді викупу. Власник ще може його відновити.
+        renewPeriod: Домен перебуває у пільговому періоді продовження після реєстрації.
+        autoRenewPeriod: Домен перебуває у пільговому періоді автопродовження.
+        transferPeriod: Домен перебуває у пільговому періоді передачі.
+      expiredAlert: Термін дії цього домену минув {days} дн. тому, він може бути доступний для реєстрації.
+      expiresAlert: Термін дії цього домену минає через {days} дн. Продовження варто оформити якнайшвидше.
+      expiredTag: Минув {days} дн. тому
+      remainingTag: Залишилося {days} дн.
+      registrar: Реєстратор
+      registrarIanaId: IANA ID реєстратора
+      created: Створено
+      updated: Оновлено
+      expires: Термін дії
+      noMx: MX-записи не знайдено.
+      dnsFailed: Помилка DNS-запиту.
+      noSpf: SPF-запис не знайдено.
+      noDkim: DKIM-записи для поширених селекторів не знайдено. Власні селектори можуть існувати.
+      noDmarc: DMARC-запис не знайдено. Домен не захищений від спуфінгу.
+      spfPlusAll: 'Увага: +all є небезпечним, оскільки дозволяє будь-якому серверу надсилати пошту від імені цього домену.'
+      spfNeutralAll: 'Увага: ?all є нейтральним і не забезпечує жодного захисту.'
+      dmarcPNone: 'Увага: p=none означає лише моніторинг, без примусового застосування. Листи не відхилятимуться.'
+      dmarcNoRua: 'Увага: немає адреси для зведених звітів (rua=). Ви не отримуватимете звіти DMARC.'
+      pass: Пройдено
+      fail: Не пройдено
+      warning: Попередження
+      checking: Перевірка...
+      overallPass: Усі перевірки пошти пройдено. Домен налаштовано правильно для пошти.
+      overallFail: Відсутній один або декілька критичних записів. Домен може бути вразливим до спуфінгу.
+      overallWarn: Деякі записи існують, але мають проблеми конфігурації, які варто перевірити.
+      rdapHttpError: 'HTTP {status}: домен може не існувати, або TLD не підтримується.'
+      lookupFailed: Помилка пошуку.
+      domainPlaceholder: Введіть домен (наприклад, killertools.net)
+      searching: Пошук...
+      search: Пошук
+      signed: Підписано
+      unsigned: Не підписано
+      delegationSigned: Делегування підписано.
+      dsRecord: '{count} запис DS.'
+      dsRecords: '{count} записів DS.'
+      keyRecord: '{count} запис ключа.'
+      keyRecords: '{count} записів ключів.'
+      dnssecUnsigned: Цей домен не захищений DNSSEC. Відповіді DNS неможливо криптографічно перевірити.
+      status: Статус
+      contacts: Контакти
+      remarks: Примітки
+      nameservers: Сервери імен
+      mxRecords: MX-записи
+      spfRecord: SPF-запис
+      dkimRecords: DKIM-записи
+      dmarcRecord: DMARC-запис
+      role:
+        registrant: власник
+        administrative: адміністративний
+        technical: технічний
+        abuse: зловживання
+      name: Ім'я
+      organization: Організація
+      email: Email
+      phone: Телефон
+    title: Пошук домену
+    description: Дані реєстрації WHOIS та перевірка DNS електронної пошти (MX, SPF, DKIM, DMARC) для будь-якого домену в одному вигляді.
+  integer-base-converter:
+    ui:
+      binary: Двійкове
+      octal: Вісімкове
+      decimal: Десяткове
+      hexadecimal: Шістнадцяткове
+      base: основа
+      output: РЕЗУЛЬТАТ
+      custom: Інше
+  ipv4-address-converter:
+    ui:
+      decimal: Десятковий
+      hexadecimal: Шістнадцятковий
+      binary: Двійковий
+      ipv6Short: IPv6 (короткий)
+      invalidIpv4: Недійсна адреса IPv4
+      ipv4Address: Адреса IPv4
+      output: Результат
+      copied: Скопійовано!
+      copy: Копіювати
+    title: Конвертер адрес IPv4
+    description: Перетворюйте IP адресу на десяткове, двійкове, шістнадцяткове чи навіть представлення у вигляді IPv6.
+  ipv4-range-expander:
+    ui:
+      startAddress: Початкова адреса
+      endAddress: Кінцева адреса
+      addressesInRange: Адрес у діапазоні
+      invalidIpv4: Недійсна адреса IPv4
+      invalidCombinationTitle: Недопустиме поєднання початкової та кінцевої адрес IPv4
+      invalidCombinationDescription: Кінцева адреса IPv4 менша за початкову адресу. Це недопустимо, і результат неможливо обчислити.
+      switchStartEnd: Поміняти місцями початкову та кінцеву адресу IPv4
+      result: Результат
+      copied: Скопійовано!
+      copyResult: Копіювати результат
+    title: Розгортання діапазону IPv4
+    description: За початковою й кінцевою IPv4 адресою цей інструмент обчислює дійсну підмережу IPv4 разом із її нотацією CIDR.
+  encryption:
+    ui:
+      decryptError: Не вдалося розшифрувати текст
+      encryptTitle: ШИФРУВАННЯ
+      decryptTitle: РОЗШИФРУВАННЯ
+      yourText: ВАШ ТЕКСТ
+      yourSecretKey: ВАШ СЕКРЕТНИЙ КЛЮЧ
+      algorithm: АЛГОРИТМ
+      encryptedOutput: ЗАШИФРОВАНИЙ РЕЗУЛЬТАТ
+      yourEncryptedText: ВАШ ЗАШИФРОВАНИЙ ТЕКСТ
+      decryptedOutput: РОЗШИФРОВАНИЙ РЕЗУЛЬТАТ
+      encryptPlaceholder: Рядок для шифрування
+      decryptPlaceholder: Шифротекст для розшифрування
+      secretKeyPlaceholder: Секретний ключ...
+    title: Шифрування / розшифрування тексту
+    description: Шифруйте відкритий текст і розшифровуйте зашифрований текст за допомогою алгоритмів AES, TripleDES, Rabbit або RC4.
+  hash-text:
+    ui:
+      encodingBinary: Двійкова (основа 2)
+      encodingHex: Шістнадцяткова (основа 16)
+      encodingBase64: Base64 (основа 64)
+      encodingBase64url: Base64url (URL-безпечний base 64)
+      inputPlaceholder: Рядок для хешування...
+      encoding: Кодування
+      output: РЕЗУЛЬТАТ
+    title: Хешування тексту
+    description: Хешуйте текст за допомогою MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 та інших.
+  hmac-generator:
+    ui:
+      encodingBinary: Двійкова (основа 2)
+      encodingHex: Шістнадцяткова (основа 16)
+      copied: HMAC скопійовано в буфер обміну
+      plainText: ЗВИЧАЙНИЙ ТЕКСТ
+      secretKey: СЕКРЕТНИЙ КЛЮЧ
+      hashingFunction: ФУНКЦІЯ ХЕШУВАННЯ
+      outputEncoding: КОДУВАННЯ РЕЗУЛЬТАТУ
+      hmacOutput: РЕЗУЛЬТАТ HMAC
+      plainTextPlaceholder: Текст для обчислення хешу...
+      secretKeyPlaceholder: Введіть секретний ключ...
+      clear: Очистити
+      copyHmac: Копіювати HMAC
+    title: Генератор Hmac
+    description: Обчислює код автентифікації повідомлення на основі хешу (HMAC) за допомогою секретного ключа та обраної функції хешування.
+  password-strength-analyser:
+    title: Аналізатор надійності пароля
+    description: Дізнайтеся надійність вашого пароля за допомогою цього клієнтського аналізатора надійності пароля та інструмента оцінки часу зламу.
+  keycode-info:
+    title: Інформація про keycode
+    description: Дізнайтеся javascript keycode, code, розташування і модифікатори будь-якої натиснутої клавіші.
+  git-memo:
+    title: Шпаргалка Git
+    description: Швидкий довідник найпоширеніших команд і робочих процесів Git.
+  yaml-prettify:
+    title: Форматування YAML
+    description: Форматуйте ваш YAML рядок у зручний, зрозумілий вигляд.
+  json-prettify:
+    title: Форматування JSON
+    description: Форматуйте ваш JSON рядок у зручний, зрозумілий вигляд.
+  docker-run-to-docker-compose-converter:
+    title: Конвертер docker run у docker-compose
+    description: Перетворює команди "docker run" на файли docker-compose!
+  qrcode-generator:
+    title: Генератор QR кодів
+    description: Генеруйте і завантажуйте QR коди для URL, простого тексту або облікових даних Wi-Fi мережі. Теми terminal, classic і власні кольори з налаштуванням рівня корекції помилок.
+  date-converter:
+    title: Конвертер дати й часу
+    description: Перетворюйте дату й час у різні формати
+  og-meta-generator:
+    title: Генератор Open Graph мета-тегів
+    description: Генеруйте HTML мета-теги open-graph і соцмереж для вашого сайту.
+  json-to-toml:
+    title: JSON у TOML
+    description: Розбирайте й перетворюйте JSON на TOML.
+  base-converter:
+    title: Конвертер систем числення
+    description: Перетворюйте число між різними системами числення (десяткова, шістнадцяткова, двійкова, вісімкова, base64 тощо)
+  text-diff:
+    title: Порівняння тексту
+    description: Порівнюйте два тексти й переглядайте відмінності між ними.
+  otp-generator:
+    title: Генератор кодів OTP
+    description: Генеруйте й перевіряйте часові OTP (одноразові паролі) для багатофакторної автентифікації.
+  ascii-word-art:
+    title: Генератор ASCII графіті-тексту
+    description: Створюйте ASCII графіті-текст з багатьма шрифтами і стилями.
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell скрипти для адміністрування Windows і польової роботи MSP.
+  powershell-builder:
+    title: PowerShell Builder
+    description: Оберіть cmdlet, заповніть параметри й скопіюйте готову команду PowerShell.
+  safelink-decoder:
+    title: Декодер Outlook Safelink
+    description: Розгортайте посилання Microsoft Defender SafeLinks, щоб побачити справжню URL-адресу призначення.
+  port-protocol-reference:
+    title: Довідник портів і протоколів
+    description: Поширені мережеві порти й протоколи з примітками щодо безпеки та позначками небезпечних портів.
+  email-dns-checker:
+    title: Перевірка DNS електронної пошти
+    description: Перевіряйте записи MX, SPF, DKIM і DMARC для будь-якого домену. Перевіряє конфігурацію автентифікації пошти й позначає поширені помилки налаштування.
+  whois-checker:
+    title: Пошук WHOIS
+    description: Шукайте дані реєстрації будь-якого домену, включно з реєстратором, датами створення й закінчення терміну дії, серверами імен і статусними позначками.
+  killer-pdf:
+    title: KillerPDF
+    description: PDF редактор з відкритим кодом для Windows. Переглядайте, анотуйте, об'єднуйте, розділяйте, сплощуйте, відкривайте захищені паролем PDF, редагуйте текст, малюйте, виділяйте, підписуйте й друкуйте.
+  killer-scan:
+    title: KillerScan
+    description: Швидкий сканер мережі для польових техніків. Виявлення через ARP і ping, зондування портів, пошук виробника та автоматична класифікація пристроїв.
+  killer-shell:
+    title: KillerShell
+    description: Безкоштовна оболонка для досвідчених користувачів. Файловий менеджер, термінал і текстовий редактор в одному вікні, з однією смугою вкладок і одним набором клавіш.
+ui:
+  diffEditor:
+    originalLabel: ОРИГІНАЛ
+    modifiedLabel: ЗМІНЕНО
+    originalPlaceholder: Оригінальний текст...
+    modifiedPlaceholder: Змінений текст...
+  fileUpload:
+    defaultTitle: Перетягніть файли сюди або натисніть, щоб вибрати файли
+    or: або
+    browseFiles: Вибрати файли
+  inputText:
+    defaultPlaceholder: Введіть текст
+  keyValueListItem:
+    'yes': Так
+    'no': Ні
+    notAvailable: Н/Д
+  modalValue:
+    copied: Скопійовано!
+    copy: Копіювати
+  select:
+    searchPlaceholder: Пошук...
+    noResults: Нічого не знайдено
+    defaultPlaceholder: Виберіть варіант
+  table:
+    defaultDescription: Таблиця даних
+  textCopyable:
+    copied: Скопійовано!
+    copyToClipboard: Копіювати в буфер обміну
+commandPalette:
+  searchAriaLabel: Пошук
+  searchPlaceholder: Введіть назву інструмента або команди...
+components:
+  androidBetaBanner:
+    announcement: Анонс бета-версії для Android
+    title: Killer Tools скоро на Android
+    subtitle: Потрібні бета-тестери - натисніть, щоб приєднатися
+    dismiss: Закрити
+  formatTransformer:
+    input: Ввід
+    inputPlaceholder: Ввід...
+    output: Вивід
+  inputCopyable:
+    copied: Скопійовано!
+    copy: Копіювати в буфер обміну
+  spanCopyable:
+    copied: Скопійовано!
+    copy: Копіювати в буфер обміну
+  textareaCopyable:
+    copy: Копіювати в буфер обміну
+    copied: Скопійовано!
+  navbarButtons:
+    androidTooltip: Killer Tools для Android
+    androidAriaLabel: Killer Tools для Android - приєднатися до бета-тестування
+  themeDots:
+    accentColor: Колір акценту
+    theme: Тема
+    toggleThemeSwatches: Перемкнути зразки теми
+    accentColorPicker: Вибір кольору акценту
+    dragToMove: Перетягніть, щоб перемістити
+    accentLabel: 'акцент:'
+    accentNamed: 'Акцент: {name}'
+    closeAccentPicker: Закрити вибір кольору акценту
+    accents:
+      red: Червоний
+      orange: Помаранчевий
+      green: Зелений
+      teal: Бірюзовий
+      blue: Синій
+      purple: Фіолетовий
+layouts:
+  menuLayout:
+    eggMessage: 80 інструментів. Нуль підписок. Один злопам'ятний польовий технік.
+    clickMe: натисни сюди
+    sourceOnGithub: Вихідний код на Github
+  base:
+    collapseMenu: Згорнути меню
+    homeLabel: Головна KillerTools
+pages:
+  notFound:
+    noSuchFile: Такого файлу або каталогу немає
+    exitCode: код виходу
+    backToHome: на головну
+  privacy:
+    heading: Політика конфіденційності
+    lastUpdated: 'Востаннє оновлено: 4 квітня 2026 р.'
+    overviewHeading: Огляд
+    overviewIntro: Killer Tools
+    overviewBody: '- це безкоштовний набір ІТ-утиліт. Ваша конфіденційність важлива для нас, і ця політика пояснює, як ми обробляємо ваші дані.'
+    dataCollectionHeading: Збір даних
+    dataCollectionBody: Killer Tools не збирає, не зберігає і не передає жодних персональних даних. Уся обробка відбувається повністю у вашому браузері. Дані, введені в будь-який інструмент, не надсилаються на жоден сервер.
+    cookiesHeading: Файли cookie
+    cookiesBody: Цей сайт не використовує файли cookie для відстеження. Ваші налаштування теми та параметри зберігаються локально у браузері і ніколи не передаються.
+    analyticsHeading: Аналітика
+    analyticsIntro: Цей сайт використовує
+    analyticsBody: орієнтований на конфіденційність інструмент аналітики, щоб розуміти загальні тенденції використання, як-от перегляди сторінок і джерела переходів. Umami не використовує файли cookie, не відстежує користувачів на різних сайтах і не збирає жодної інформації, що дозволяє встановити особу. Усі дані агреговані та анонімні.
+    thirdPartyHeading: Сторонні сервіси
+    thirdPartyBody: Деякі інструменти можуть посилатися на зовнішні ресурси чи документацію. Ми не несемо відповідальності за політику конфіденційності цих зовнішніх сайтів.
+    androidAppHeading: Застосунок для Android
+    androidAppBody: Застосунок Killer Tools для Android є оболонкою веб-застосунку. Він не запитує і не використовує жодних дозволів пристрою, окрім базового доступу до інтернету. Жодні дані пристрою не збираються і не передаються.
+    contactHeading: Контакти
+    contactBody: Якщо у вас є запитання щодо цієї політики конфіденційності, ви можете звернутися до нас за адресою
+  androidApp:
+    robotAttribution: Робот Android відтворений або змінений на основі роботи, створеної й опублікованої Google, і використовується згідно з умовами ліцензії Creative Commons 3.0 Attribution.
+    heading: Killer Tools для Android
+    introBody1: 'Увесь набір інструментів killertools.net у вигляді нативного застосунку для Android: кожен інструмент, бібліотека Killer Scripts і всі обрані - одним дотиком з головного екрана.'
+    introBody2: Ті самі правила, що й на сайті. Усе виконується на вашому пристрої. Жодного акаунта, жодної телеметрії, жодного зв'язку з домом. Якщо це заощаджує вам цикл заявки в полі, він виконав своє завдання.
+    betaStatusPrefix: Наразі застосунок перебуває в
+    betaStatusStrong: закритому бета-тестуванні в Google Play
+    betaStatusSuffix: ', і тут потрібна ваша допомога.'
+    joinBetaHeading: Приєднатися до бети
+    joinBetaIntroPrefix: Google вимагає
+    joinBetaIntroStrong: 12 тестувальників із встановленим застосунком протягом 14 днів поспіль
+    joinBetaIntroSuffix: 'перш ніж застосунок незалежного розробника зможе стати публічним. Три кроки, близько двох хвилин, і ви - один із дванадцяти:'
+    step1LinkText: Приєднатися до групи тестувальників
+    step1Suffix: у Google Groups (натисніть «Join group»).
+    step2LinkText: Стати тестувальником
+    step2Suffix: на сторінці підключення Google Play.
+    step3LinkText: Встановити застосунок
+    step3Suffix: з Google Play і залишити його встановленим на два тижні.
+    sameAccountStrong: Використовуйте той самий обліковий запис Google для всіх трьох кроків
+    sameAccountSuffix: ' - сторінка підключення покаже «недоступно для цього облікового запису», якщо ви пропустите групу або зміните обліковий запис.'
+    feedbackPrefix: 'Щось зламано або відсутнє? Напишіть мені:'
+  home:
+    sortPopular: Популярні
+    sortAZ: А - Я
+    sortZA: Я - А
+  about:
+    heading: Про Killer Tools
+    intro: У виїзних техніків немає часу на зайве. Кожен інструмент тут існує, бо він був потрібен мені на роботі, а готового рішення без акаунта, встановлення чи телеметрії я не знайшов.
+    originPrefix: Зараз я розробляю інструменти у внутрішній команді ІІ-інжинірингу MSP, після шести років full-stack розробки і восьми років роботи виїзним техніком у кількох компаніях. KillerTools.net почався як форк чудового
+    originMid: проєкту від
+    originSuffix: і перетворився на щось створене саме для тієї роботи, якою я насправді займаюся. Я створив його, щоб переглядати налаштування групової політики просто під час заявки, сканувати підмережу клієнта і шукати довідник портів, не покидаючи браузер.
+    scriptsLibrary: Бібліотека Killer Scripts охоплює завдання, які трапляються в кожному циклі заявок. Кожен скрипт працює в PS 5.1, PS 7 і Kaseya LiveConnect без жодних залежностей.
+    privacyBody: Усе працює у вашому браузері. Ніщо не відстежується. Обліковий запис не потрібен ніколи. Сайт застосовує сувору Політику безпеки вмісту (CSP), яка блокує атаки через ланцюжок залежностей. Якщо скомпрометований npm-пакет колись потрапить у збірку, він не зможе надіслати додому те, що ви вставили.
+    maintainedByPrefix: Створено та підтримується
+    maintainedByMid: Якщо це заощаджує вам час на роботі,
+    buyMeCoffee: почастувати мене кавою
+    maintainedBySuffix: буде приємно, але ніколи не очікується.
+    missingToolHeading: Бракує інструмента? Знайшли баг?
+    issuesPrefix: Відкрийте запит на функцію або звіт про помилку в
+    issuesLinkText: розділі issues
+    issuesSuffix: на GitHub. Я їх читаю.
+    alsoTryHeading: Також спробуйте...
+    tagKillerScan: Мережевий сканер з відкритим кодом для Windows
+    tagKillerPdf: Редактор PDF з відкритим кодом для Windows
+    tagKillerShell: Оболонка Windows з відкритим кодом для досвідчених користувачів
+    tagKillerNotes: Зашифрований блокнот з відкритим кодом для Windows
+    tagKillendar: Зашифрований календар з відкритим кодом для Windows
+    linksHeading: Посилання
+    linkLabelSite: Сайт
+    linkLabelSource: Вихідний код
+    linkLabelIssues: Issues
+    reportBug: Повідомити про помилку
+    requestFeature: Запросити функцію
+    linkLabelSupport: Підтримка
+    linkLabelBuiltOn: Створено на основі
+    itToolsFork: IT-Tools (форк)

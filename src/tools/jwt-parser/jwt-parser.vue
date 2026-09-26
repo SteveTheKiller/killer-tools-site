@@ -4,6 +4,7 @@ import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 import { decodeJwt } from './jwt-parser.service';
 
+const { t } = useI18n();
 const styleStore = useStyleStore();
 const isLight = computed(() => !styleStore.isDarkTheme);
 
@@ -19,10 +20,10 @@ const decodedJWT = computed(() =>
   withDefaultOnError(() => decodeJwt({ jwt: rawJwt.value }), { header: [], payload: [] }),
 );
 
-const sections = [
-  { key: 'header', title: 'Header' },
-  { key: 'payload', title: 'Payload' },
-] as const;
+const sections = computed(() => [
+  { key: 'header', title: t('tools.jwt-parser.ui.header') },
+  { key: 'payload', title: t('tools.jwt-parser.ui.payload') },
+] as const);
 
 const copiedKey = ref<string | null>(null);
 async function copyValue(key: string, value: string) {
@@ -48,19 +49,19 @@ async function copyValue(key: string, value: string) {
         :class="{ 'jwt-textarea-error': rawJwt && !isValid }"
       >
         <div class="kt-terminal-bar">
-          <span class="kt-terminal-bar-title">JWT TO DECODE</span>
+          <span class="kt-terminal-bar-title">{{ t('tools.jwt-parser.ui.jwtToDecodeTitle') }}</span>
         </div>
         <textarea
           v-model="rawJwt"
           class="jwt-textarea"
-          placeholder="Put your token here..."
+          :placeholder="t('tools.jwt-parser.ui.tokenPlaceholder')"
           rows="4"
           spellcheck="false"
           autofocus
           :style="isLight ? 'background: #f0f0f0 !important; color: rgba(0,0,0,0.85) !important' : 'background: #121212 !important; color: rgba(255,255,255,0.85) !important'"
         />
       </div>
-      <span v-if="rawJwt && !isValid" class="jwt-error-msg">Invalid JWT</span>
+      <span v-if="rawJwt && !isValid" class="jwt-error-msg">{{ t('tools.jwt-parser.ui.invalidJwt') }}</span>
     </div>
 
     <!-- Decoded terminal -->

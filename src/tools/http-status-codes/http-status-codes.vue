@@ -2,6 +2,7 @@
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { codesByCategories } from './http-status-codes.constants';
 
+const { t } = useI18n();
 const search = ref('');
 const copiedValue = ref<string | null>(null);
 
@@ -17,7 +18,7 @@ const codesByCategoryFiltered = computed(() => {
   if (!search.value) {
     return codesByCategories;
   }
-  return [{ category: 'Search results', codes: searchResult.value }];
+  return [{ category: t('tools.http-status-codes.ui.searchResults'), codes: searchResult.value }];
 });
 
 function copyValue(value: string) {
@@ -33,7 +34,7 @@ function copyValue(value: string) {
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search http status..."
+      :placeholder="t('tools.http-status-codes.ui.searchPlaceholder')"
       autofocus
       raw-text
       mb-4
@@ -53,10 +54,10 @@ function copyValue(value: string) {
           <div
             class="kt-terminal-bar hsc-bar"
             :class="{ 'hsc-bar-copied': copiedValue === String(code) }"
-            :title="copiedValue === String(code) ? 'Copied!' : 'Click to copy status code'"
+            :title="copiedValue === String(code) ? t('tools.http-status-codes.ui.copiedTooltip') : t('tools.http-status-codes.ui.clickToCopy')"
             @click="copyValue(String(code))"
           >
-            <code class="hsc-code">{{ copiedValue === String(code) ? '✓ copied' : code }}</code>
+            <code class="hsc-code">{{ copiedValue === String(code) ? `✓ ${t('tools.http-status-codes.ui.copiedLabel')}` : code }}</code>
             <span v-if="type !== 'HTTP'" class="hsc-type-pill hsc-type-webdav">{{ type }}</span>
           </div>
 

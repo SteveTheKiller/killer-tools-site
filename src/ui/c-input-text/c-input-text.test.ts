@@ -1,9 +1,12 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { config, mount, shallowMount } from '@vue/test-utils';
 import _ from 'lodash';
 import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it } from 'vitest';
+import { createI18n } from 'vue-i18n';
 import { useValidation } from '@/composable/validation';
 import CInputText from './c-input-text.vue';
+
+config.global.plugins = [createI18n({ legacy: false, locale: 'en', messages: { en: {} } })];
 
 describe('cInputText', () => {
   beforeEach(() => {

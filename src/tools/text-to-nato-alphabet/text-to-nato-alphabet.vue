@@ -3,6 +3,8 @@ import { useCopy } from '@/composable/copy';
 import { natoAlphabet } from './text-to-nato-alphabet.constants';
 import { textToNatoAlphabet } from './text-to-nato-alphabet.service';
 
+const { t } = useI18n();
+
 const input = ref('');
 
 interface NatoRow {
@@ -28,19 +30,19 @@ const rows = computed<NatoRow[]>(() => {
 
 const natoText = computed(() => textToNatoAlphabet({ text: input.value }));
 
-const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO string copied.' });
+const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: t('tools.text-to-nato-alphabet.ui.natoStringCopied') });
 </script>
 
 <template>
   <div class="nato-wrap">
     <!-- Input panel -->
     <div class="nato-input-panel">
-      <span class="nato-sublabel">YOUR TEXT</span>
+      <span class="nato-sublabel">{{ t('tools.text-to-nato-alphabet.ui.yourText') }}</span>
       <div class="nato-input-row">
         <input
           v-model="input"
           class="nato-input"
-          placeholder="e.g. Hello world"
+          :placeholder="t('tools.text-to-nato-alphabet.ui.inputPlaceholder')"
           spellcheck="false"
           autofocus
         >
@@ -53,12 +55,12 @@ const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO s
     <!-- Output terminal -->
     <div v-if="rows.length" class="nato-terminal">
       <div class="nato-terminal-header">
-        <span class="nato-sublabel">NATO PHONETIC</span>
+        <span class="nato-sublabel">{{ t('tools.text-to-nato-alphabet.ui.natoPhonetic') }}</span>
         <button class="nato-copy-btn" @click="copy()">
-          <span v-if="copied">✓ Copied</span>
+          <span v-if="copied">✓ {{ t('tools.text-to-nato-alphabet.ui.copied') }}</span>
           <template v-else>
             <icon-mdi-content-copy />
-            Copy all
+            {{ t('tools.text-to-nato-alphabet.ui.copyAll') }}
           </template>
         </button>
       </div>

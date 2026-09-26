@@ -45,20 +45,22 @@ watch(roman, (val) => {
   }
 });
 
-const { copy: copyRoman, isJustCopied: copiedRoman } = useCopy({ source: roman, text: 'Roman numeral copied' });
-const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabic, text: 'Arabic number copied' });
+const { t } = useI18n();
+
+const { copy: copyRoman, isJustCopied: copiedRoman } = useCopy({ source: roman, text: t('tools.roman-numeral-converter.ui.romanCopiedToast') });
+const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabic, text: t('tools.roman-numeral-converter.ui.arabicCopiedToast') });
 </script>
 
 <template>
   <div class="rn-wrap">
     <div class="rn-panel kt-terminal">
       <div class="rn-panel-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">CONVERTER</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.roman-numeral-converter.ui.converterTitle') }}</span>
       </div>
       <div class="rn-body">
         <!-- Arabic side -->
         <div class="rn-side">
-          <span class="rn-sublabel">ARABIC</span>
+          <span class="rn-sublabel">{{ t('tools.roman-numeral-converter.ui.arabicSideLabel') }}</span>
           <div class="rn-input-wrap" :class="{ 'rn-input-error': arabic && !arabicValid }">
             <input
               v-model="arabic"
@@ -72,13 +74,13 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
             >
           </div>
           <span v-if="arabic && !arabicValid" class="rn-error-msg">
-            Must be {{ MIN_ARABIC_TO_ROMAN }}–{{ MAX_ARABIC_TO_ROMAN.toLocaleString() }}
+            {{ t('tools.roman-numeral-converter.ui.arabicRangeError', { min: MIN_ARABIC_TO_ROMAN, max: MAX_ARABIC_TO_ROMAN.toLocaleString() }) }}
           </span>
           <button class="rn-copy-btn" :disabled="!arabicValid" @click="copyArabic()">
-            <span v-if="copiedArabic">✓ Copied</span>
+            <span v-if="copiedArabic">✓ {{ t('tools.roman-numeral-converter.ui.copied') }}</span>
             <template v-else>
               <icon-mdi-content-copy />
-              Copy
+              {{ t('tools.roman-numeral-converter.ui.copy') }}
             </template>
           </button>
         </div>
@@ -90,7 +92,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
 
         <!-- Roman side -->
         <div class="rn-side">
-          <span class="rn-sublabel">ROMAN NUMERAL</span>
+          <span class="rn-sublabel">{{ t('tools.roman-numeral-converter.ui.romanSideLabel') }}</span>
           <div class="rn-input-wrap" :class="{ 'rn-input-error': roman && !romanValid }">
             <input
               v-model="roman"
@@ -100,13 +102,13 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
             >
           </div>
           <span v-if="roman && !romanValid" class="rn-error-msg">
-            Not a valid Roman numeral
+            {{ t('tools.roman-numeral-converter.ui.invalidRoman') }}
           </span>
           <button class="rn-copy-btn" :disabled="!romanValid" @click="copyRoman()">
-            <span v-if="copiedRoman">✓ Copied</span>
+            <span v-if="copiedRoman">✓ {{ t('tools.roman-numeral-converter.ui.copied') }}</span>
             <template v-else>
               <icon-mdi-content-copy />
-              Copy
+              {{ t('tools.roman-numeral-converter.ui.copy') }}
             </template>
           </button>
         </div>

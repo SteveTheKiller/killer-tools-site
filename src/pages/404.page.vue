@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
+const { t } = useI18n();
+
 useHead({ title: 'Page not found - killer tools' });
 </script>
 
@@ -17,15 +19,15 @@ useHead({ title: 'Page not found - killer tools' });
         <span class="white">cd /{{ $route.path.replace('/', '') }}</span>
       </p>
       <p class="error">
-        bash: cd: /{{ $route.path.replace('/', '') }}: No such file or directory
+        bash: cd: /{{ $route.path.replace('/', '') }}: {{ t('pages.notFound.noSuchFile') }}
       </p>
       <p class="code">
-        <span class="dim">exit code </span><span class="green">404</span>
+        <span class="dim">{{ t('pages.notFound.exitCode') }} </span><span class="green">404</span>
       </p>
     </div>
 
     <RouterLink to="/" class="home-btn">
-      <span class="green">~/</span> back to home
+      <span class="green">~/</span> {{ t('pages.notFound.backToHome') }}
     </RouterLink>
   </div>
 </template>

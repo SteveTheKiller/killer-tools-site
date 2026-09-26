@@ -47,7 +47,9 @@ const [loremIpsumText, refreshLoremIpsum] = computedRefreshable(() =>
 const wordCount = computed(() => loremIpsumText.value.trim().split(/\s+/).filter(Boolean).length);
 const charCount = computed(() => loremIpsumText.value.length);
 
-const { copy } = useCopy({ source: loremIpsumText, text: 'Lorem ipsum copied to the clipboard' });
+const { t } = useI18n();
+
+const { copy } = useCopy({ source: loremIpsumText, text: t('tools.lorem-ipsum-generator.ui.copiedMessage') });
 function sliderStyle(val: number, min: number, max: number) {
   return `--val: ${((val - min) / (max - min)) * 100}`;
 }
@@ -64,7 +66,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
     <div class="li-controls">
       <!-- Paragraphs -->
       <div class="li-row">
-        <span class="li-label">Paragraphs</span>
+        <span class="li-label">{{ t('tools.lorem-ipsum-generator.ui.paragraphs') }}</span>
         <input
           v-model.number="paragraphs"
           type="range"
@@ -78,7 +80,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
       <!-- Sentences per paragraph -->
       <div class="li-row">
-        <span class="li-label">Sentences / paragraph</span>
+        <span class="li-label">{{ t('tools.lorem-ipsum-generator.ui.sentencesPerParagraph') }}</span>
         <div class="li-dual-range" :style="dualRangeStyle(sentencesMin, sentencesMax, 1, 50)">
           <input v-model.number="sentencesMin" type="range" min="1" max="50" class="li-dual-min">
           <input v-model.number="sentencesMax" type="range" min="1" max="50" class="li-dual-max">
@@ -88,7 +90,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
 
       <!-- Words per sentence -->
       <div class="li-row">
-        <span class="li-label">Words / sentence</span>
+        <span class="li-label">{{ t('tools.lorem-ipsum-generator.ui.wordsPerSentence') }}</span>
         <div class="li-dual-range" :style="dualRangeStyle(wordsMin, wordsMax, 1, 50)">
           <input v-model.number="wordsMin" type="range" min="1" max="50" class="li-dual-min">
           <input v-model.number="wordsMax" type="range" min="1" max="50" class="li-dual-max">
@@ -104,7 +106,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
           :class="{ 'li-toggle-on': startWithLoremIpsum }"
           @click="startWithLoremIpsum = !startWithLoremIpsum"
         >
-          Start with lorem ipsum
+          {{ t('tools.lorem-ipsum-generator.ui.startWithLoremIpsum') }}
         </button>
         <button
           type="button"
@@ -112,7 +114,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
           :class="{ 'li-toggle-on': asHTML }"
           @click="asHTML = !asHTML"
         >
-          As HTML
+          {{ t('tools.lorem-ipsum-generator.ui.asHtml') }}
         </button>
       </div>
     </div>
@@ -120,11 +122,11 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
     <!-- Output -->
     <div class="li-output-wrap kt-terminal">
       <div class="kt-terminal-bar li-output-header">
-        <span class="kt-terminal-bar-title">OUTPUT</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.lorem-ipsum-generator.ui.output') }}</span>
         <div class="li-stats">
-          <span class="li-stat">{{ wordCount.toLocaleString() }} words</span>
+          <span class="li-stat">{{ t('tools.lorem-ipsum-generator.ui.wordCount', { count: wordCount.toLocaleString() }) }}</span>
           <span class="li-stat-sep">·</span>
-          <span class="li-stat">{{ charCount.toLocaleString() }} chars</span>
+          <span class="li-stat">{{ t('tools.lorem-ipsum-generator.ui.charCount', { count: charCount.toLocaleString() }) }}</span>
         </div>
       </div>
       <textarea class="li-output" :value="loremIpsumText" readonly />
@@ -132,11 +134,11 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
     <div class="li-actions">
       <button type="button" class="li-btn li-btn-primary" @click="copy()">
         <icon-mdi-content-copy />
-        Copy
+        {{ t('tools.lorem-ipsum-generator.ui.copy') }}
       </button>
       <button type="button" class="li-btn" @click="refreshLoremIpsum()">
         <icon-mdi-refresh />
-        Refresh
+        {{ t('tools.lorem-ipsum-generator.ui.refresh') }}
       </button>
     </div>
   </div>

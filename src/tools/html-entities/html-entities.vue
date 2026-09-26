@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { escape, unescape } from 'lodash';
 
+const { t } = useI18n();
+
 const escapeInput = ref('<a href="https://killertools.net">Killer Tools & Utilities</a>');
 const escapeOutput = computed(() => escape(escapeInput.value));
 
@@ -32,20 +34,20 @@ async function copyUnescape() {
     <!-- ESCAPE panel -->
     <div class="he-terminal kt-terminal">
       <div class="he-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">YOUR STRING</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.html-entities.ui.yourString') }}</span>
       </div>
       <div class="he-body-area">
         <textarea
           v-model="escapeInput"
           class="he-textarea"
-          placeholder="The string to escape..."
+          :placeholder="t('tools.html-entities.ui.escapePlaceholder')"
           rows="4"
           spellcheck="false"
         />
       </div>
 
       <div class="he-section-header">
-        ESCAPED OUTPUT
+        {{ t('tools.html-entities.ui.escapedOutput') }}
       </div>
 
       <div class="he-output-area">
@@ -62,7 +64,7 @@ async function copyUnescape() {
         <button class="he-copy-btn" @click="copyEscape">
           <icon-mdi-content-copy v-if="!copiedEscape" />
           <span v-else>✓</span>
-          {{ copiedEscape ? 'Copied' : 'Copy' }}
+          {{ copiedEscape ? t('tools.html-entities.ui.copied') : t('tools.html-entities.ui.copy') }}
         </button>
       </div>
     </div>
@@ -70,20 +72,20 @@ async function copyUnescape() {
     <!-- UNESCAPE panel -->
     <div class="he-terminal kt-terminal">
       <div class="he-bar kt-terminal-bar">
-        <span class="kt-terminal-bar-title">YOUR ESCAPED STRING</span>
+        <span class="kt-terminal-bar-title">{{ t('tools.html-entities.ui.yourEscapedString') }}</span>
       </div>
       <div class="he-body-area">
         <textarea
           v-model="unescapeInput"
           class="he-textarea"
-          placeholder="The string to unescape..."
+          :placeholder="t('tools.html-entities.ui.unescapePlaceholder')"
           rows="4"
           spellcheck="false"
         />
       </div>
 
       <div class="he-section-header">
-        UNESCAPED OUTPUT
+        {{ t('tools.html-entities.ui.unescapedOutput') }}
       </div>
 
       <div class="he-output-area">
@@ -100,7 +102,7 @@ async function copyUnescape() {
         <button class="he-copy-btn" @click="copyUnescape">
           <icon-mdi-content-copy v-if="!copiedUnescape" />
           <span v-else>✓</span>
-          {{ copiedUnescape ? 'Copied' : 'Copy' }}
+          {{ copiedUnescape ? t('tools.html-entities.ui.copied') : t('tools.html-entities.ui.copy') }}
         </button>
       </div>
     </div>

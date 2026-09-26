@@ -151,7 +151,7 @@ const sortedTools = computed(() => {
             type="button"
             @click="sortMode = 'popular'"
           >
-            Popular
+            {{ t('pages.home.sortPopular') }}
           </button>
           <button
             class="home-sort-btn"
@@ -159,7 +159,7 @@ const sortedTools = computed(() => {
             type="button"
             @click="sortMode = 'az'"
           >
-            A – Z
+            {{ t('pages.home.sortAZ') }}
           </button>
           <button
             class="home-sort-btn"
@@ -167,7 +167,7 @@ const sortedTools = computed(() => {
             type="button"
             @click="sortMode = 'za'"
           >
-            Z – A
+            {{ t('pages.home.sortZA') }}
           </button>
         </div>
       </div>

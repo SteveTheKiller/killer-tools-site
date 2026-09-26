@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { types as extensionToMimeType, extensions as mimeTypeToExtension } from 'mime-types';
 
+const { t } = useI18n();
+
 const mimeInfos = Object.entries(mimeTypeToExtension).map(([mimeType, extensions]) => ({ mimeType, extensions }));
 
 const mimeToExtensionsOptions = Object.keys(mimeTypeToExtension).map(label => ({ label, value: label }));
@@ -25,21 +27,21 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
       <div class="grid grid-cols-1 gap-16px">
         <c-card>
           <n-h2 style="margin-bottom: 0">
-            Mime type to extension
+            {{ t('tools.mime-types.ui.mimeToExtensionTitle') }}
           </n-h2>
           <div style="opacity: 0.8">
-            Know which file extensions are associated to a mime-type
+            {{ t('tools.mime-types.ui.mimeToExtensionDescription') }}
           </div>
           <c-select
             v-model:value="selectedMimeType"
             searchable
             my-4
             :options="mimeToExtensionsOptions"
-            placeholder="Select your mimetype here... (ex: application/pdf)"
+            :placeholder="t('tools.mime-types.ui.mimeTypeSelectPlaceholder')"
           />
 
           <div v-if="extensionsFound.length > 0">
-            Extensions of files with the <span class="kt-tag kt-tag-default">{{ selectedMimeType }}</span> mime-type:
+            {{ t('tools.mime-types.ui.extensionsFoundPrefix') }} <span class="kt-tag kt-tag-default">{{ selectedMimeType }}</span> {{ t('tools.mime-types.ui.extensionsFoundSuffix') }}
             <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;">
               <span v-for="extension of extensionsFound" :key="extension" class="kt-tag kt-tag-primary">.{{ extension }}</span>
             </div>
@@ -48,21 +50,21 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
 
         <c-card>
           <n-h2 style="margin-bottom: 0">
-            File extension to mime type
+            {{ t('tools.mime-types.ui.extensionToMimeTitle') }}
           </n-h2>
           <div style="opacity: 0.8">
-            Know which mime type is associated to a file extension
+            {{ t('tools.mime-types.ui.extensionToMimeDescription') }}
           </div>
           <c-select
             v-model:value="selectedExtension"
             searchable
             my-4
             :options="extensionToMimeTypeOptions"
-            placeholder="Select your mimetype here... (ex: application/pdf)"
+            :placeholder="t('tools.mime-types.ui.mimeTypeSelectPlaceholder')"
           />
 
           <div v-if="selectedExtension">
-            Mime type associated to the extension <span class="kt-tag kt-tag-default">{{ selectedExtension }}</span> file extension:
+            {{ t('tools.mime-types.ui.mimeFoundPrefix') }} <span class="kt-tag kt-tag-default">{{ selectedExtension }}</span> {{ t('tools.mime-types.ui.mimeFoundSuffix') }}
             <div style="margin-top: 10px;">
               <span class="kt-tag kt-tag-primary">{{ mimeTypeFound }}</span>
             </div>
@@ -75,8 +77,8 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
         <n-table style="min-width: 420px;">
           <thead>
             <tr>
-              <th>Mime types</th>
-              <th>Extensions</th>
+              <th>{{ t('tools.mime-types.ui.tableMimeTypesHeader') }}</th>
+              <th>{{ t('tools.mime-types.ui.tableExtensionsHeader') }}</th>
             </tr>
           </thead>
           <tbody>

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { portCategories } from './port-protocol-reference.constants';
 
+const { t } = useI18n();
+
 const search = ref('');
 const copiedValue = ref<string | null>(null);
 const filterDangerous = ref(false);
@@ -50,7 +52,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
     <div mb-4 flex flex-wrap gap-3>
       <c-input-text
         v-model:value="search"
-        placeholder="Search by port, service, protocol, or description..."
+        :placeholder="t('tools.portProtocolReference.ui.searchPlaceholder')"
         autofocus
         raw-text
         style="flex: 1; min-width: 200px;"
@@ -64,7 +66,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
           :class="{ 'ppr-seg-btn-active': filterProtocol === proto }"
           @click="filterProtocol = proto"
         >
-          {{ proto || 'All' }}
+          {{ proto || t('tools.portProtocolReference.ui.allProtocols') }}
         </button>
       </div>
       <button
@@ -73,12 +75,12 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
         :class="{ 'ppr-dangerous-btn-active': filterDangerous }"
         @click="filterDangerous = !filterDangerous"
       >
-        Dangerous only
+        {{ t('tools.portProtocolReference.ui.dangerousOnly') }}
       </button>
     </div>
 
     <div class="mb-4 text-xs op-40">
-      Showing {{ totalVisible }} ports
+      {{ t('tools.portProtocolReference.ui.showingPorts', { count: totalVisible }) }}
     </div>
 
     <div class="ppr-grid">
@@ -92,13 +94,13 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
           <div
             class="kt-terminal-bar ppr-bar"
             :class="{ 'ppr-bar-copied': copiedValue === String(p.port) }"
-            :title="copiedValue === String(p.port) ? 'Copied!' : 'Click to copy port number'"
+            :title="copiedValue === String(p.port) ? t('tools.portProtocolReference.ui.copied') : t('tools.portProtocolReference.ui.clickToCopy')"
             @click="copyValue(String(p.port))"
           >
-            <code class="ppr-port">{{ copiedValue === String(p.port) ? '✓ copied' : p.port }}</code>
+            <code class="ppr-port">{{ copiedValue === String(p.port) ? t('tools.portProtocolReference.ui.copiedCheck') : p.port }}</code>
             <div class="ppr-pills">
               <span class="ppr-proto" :class="`ppr-proto-${p.protocol === 'TCP' ? 'tcp' : p.protocol === 'UDP' ? 'udp' : 'both'}`">{{ p.protocol }}</span>
-              <span v-if="p.dangerous" class="ppr-dangerous-pill">Dangerous</span>
+              <span v-if="p.dangerous" class="ppr-dangerous-pill">{{ t('tools.portProtocolReference.ui.dangerousPill') }}</span>
             </div>
           </div>
 

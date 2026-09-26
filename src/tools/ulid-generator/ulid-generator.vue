@@ -4,6 +4,8 @@ import { ulid } from 'ulid';
 import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
 
+const { t } = useI18n();
+
 const amount = useStorage('ulid-generator-amount', 1);
 const format = useStorage<'raw' | 'json'>('ulid-generator-format', 'raw');
 
@@ -15,7 +17,7 @@ const [ulids, refreshUlids] = computedRefreshable(() => {
   return ids.join('\n');
 });
 
-const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' });
+const { copy } = useCopy({ source: ulids, text: t('tools.ulid-generator.ui.copiedMessage') });
 </script>
 
 <template>
@@ -24,7 +26,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
       <!-- Controls -->
       <div class="ul-controls">
         <div class="ul-field">
-          <span class="ul-sublabel">QUANTITY</span>
+          <span class="ul-sublabel">{{ t('tools.ulid-generator.ui.quantity') }}</span>
           <div class="ul-stepper">
             <button class="ul-step-btn" :disabled="amount <= 1" @click="amount = Math.max(1, amount - 1)">
               −
@@ -37,7 +39,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
         </div>
 
         <div class="ul-field">
-          <span class="ul-sublabel">FORMAT</span>
+          <span class="ul-sublabel">{{ t('tools.ulid-generator.ui.format') }}</span>
           <div class="ul-toggle-group">
             <button
               type="button"
@@ -45,7 +47,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
               :class="{ 'ul-toggle-on': format === 'raw' }"
               @click="format = 'raw'"
             >
-              Raw
+              {{ t('tools.ulid-generator.ui.formatRaw') }}
             </button>
             <button
               type="button"
@@ -53,7 +55,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
               :class="{ 'ul-toggle-on': format === 'json' }"
               @click="format = 'json'"
             >
-              JSON
+              {{ t('tools.ulid-generator.ui.formatJson') }}
             </button>
           </div>
         </div>
@@ -61,7 +63,7 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
 
       <!-- Output -->
       <div class="ul-output-wrap">
-        <span class="ul-sublabel">OUTPUT</span>
+        <span class="ul-sublabel">{{ t('tools.ulid-generator.ui.output') }}</span>
         <div class="ul-output" data-test-id="ulids">
           <pre class="ul-output-text">{{ ulids }}</pre>
         </div>
@@ -71,11 +73,11 @@ const { copy } = useCopy({ source: ulids, text: 'ULIDs copied to the clipboard' 
       <div class="ul-actions">
         <button type="button" class="ul-btn ul-btn-primary" @click="copy()">
           <icon-mdi-content-copy />
-          Copy
+          {{ t('tools.ulid-generator.ui.copy') }}
         </button>
         <button type="button" class="ul-btn" data-test-id="refresh" @click="refreshUlids()">
           <icon-mdi-refresh />
-          Refresh
+          {{ t('tools.ulid-generator.ui.refresh') }}
         </button>
       </div>
     </div>
