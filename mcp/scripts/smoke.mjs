@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import process from 'node:process';
 
 const endpoint = process.env.MCP_URL || 'http://127.0.0.1:8787/mcp';
 let nextId = 1;
@@ -8,7 +9,7 @@ async function request(method, params = {}) {
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
-      accept: 'application/json, text/event-stream',
+      'accept': 'application/json, text/event-stream',
       'content-type': 'application/json',
     },
     body: JSON.stringify({ jsonrpc: '2.0', id, method, params }),
@@ -208,7 +209,7 @@ assert.equal(headers.fields.find(field => field.label === 'Subject').value, 'Tes
 assert.equal(headers.auth[0].result, 'pass');
 assert.ok(JSON.parse((await call('search_powershell_cmdlets', { query: 'Get-ADUser' })).content[0].text).some(item => item.cmdlet === 'Get-ADUser'));
 assert.equal(JSON.parse((await call('get_powershell_cmdlet', { cmdlet: 'Get-ADUser' })).content[0].text).module, 'ActiveDirectory');
-assert.equal(JSON.parse((await call('build_powershell_command', { cmdlet: 'Get-ADUser', parameters: { Identity: 'O\'Brien' } })).content[0].text).command, "Get-ADUser -Identity 'O''Brien'");
+assert.equal(JSON.parse((await call('build_powershell_command', { cmdlet: 'Get-ADUser', parameters: { Identity: 'O\'Brien' } })).content[0].text).command, 'Get-ADUser -Identity \'O\'\'Brien\'');
 assert.equal((await call('build_powershell_command', { cmdlet: 'Get-ADUser', parameters: { Unknown: 'value' } })).isError, true);
 const qr = JSON.parse((await call('generate_qr_code', { mode: 'text', text: 'https://killertools.net' })).content[0].text);
 assert.ok(qr.svg.startsWith('<svg'));

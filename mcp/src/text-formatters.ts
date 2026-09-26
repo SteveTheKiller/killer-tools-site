@@ -28,7 +28,11 @@ export function registerTextFormatters(server: McpServer) {
       useTabs: z.boolean().default(false),
     },
   }, async ({ sql, language, keywordCase, indentStyle, useTabs }) => {
-    try { return output(formatSql(sql, { language, keywordCase, indentStyle, useTabs })); }
-    catch { return { content: [{ type: 'text' as const, text: 'Invalid SQL formatting request' }], isError: true }; }
+    try {
+      return output(formatSql(sql, { language, keywordCase, indentStyle, useTabs }));
+    }
+    catch {
+      return { content: [{ type: 'text' as const, text: 'Invalid SQL formatting request' }], isError: true };
+    }
   });
 }

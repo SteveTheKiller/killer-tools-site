@@ -20,7 +20,9 @@ export function registerFormatParsers(server: McpServer) {
     inputSchema: { color: z.string().trim().min(1).max(128) },
   }, async ({ color }) => {
     const parsed = colord(color);
-    if (!parsed.isValid()) return { content: [{ type: 'text' as const, text: 'Invalid color' }], isError: true };
+    if (!parsed.isValid()) {
+      return { content: [{ type: 'text' as const, text: 'Invalid color' }], isError: true };
+    }
     return result({
       hex: parsed.toHex(),
       rgb: parsed.toRgbString(),

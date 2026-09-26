@@ -65,7 +65,9 @@ export function registerStructuredText(server: McpServer) {
   }, async ({ text, to }) => {
     try {
       const value = parseYaml(text, { merge: true });
-      if (!value) return invalid();
+      if (!value) {
+        return invalid();
+      }
       return output(to === 'json' ? JSON.stringify(value, null, 2) : [stringifyToml(value)].flat().join('\n').trim());
     }
     catch { return invalid(); }
@@ -86,7 +88,11 @@ export function registerStructuredText(server: McpServer) {
     description: 'Minify JSON5-compatible text using KillerTools JSON Minify.',
     inputSchema: { text: inputText },
   }, async ({ text }) => {
-    try { return output(JSON.stringify(JSON5.parse(text))); }
-    catch { return invalid(); }
+    try {
+      return output(JSON.stringify(JSON5.parse(text)));
+    }
+    catch {
+      return invalid();
+    }
   });
 }

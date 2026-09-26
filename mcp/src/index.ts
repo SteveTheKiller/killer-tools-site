@@ -34,13 +34,13 @@ import { textToNatoAlphabet } from '../../src/tools/text-to-nato-alphabet/text-t
 import { parseUrl } from '../../src/tools/url-parser/url-parser.service';
 import { base64ToText, textToBase64 } from '../../src/utils/base64';
 import { formatBytes } from '../../src/utils/convert';
-import { registerCveLookup } from './cve-lookup';
 import { registerAsciiArt } from './ascii-art';
+import { registerCveLookup } from './cve-lookup';
 import { registerDateTime } from './date-time';
-import { registerDomainLookup } from './domain-lookup';
 import { registerDocumentTools } from './document-tools';
-import { registerEmailRecords } from './email-records';
+import { registerDomainLookup } from './domain-lookup';
 import { registerEmailHeaders } from './email-headers';
+import { registerEmailRecords } from './email-records';
 import { registerEmoji } from './emoji';
 import { registerFilmDevelopment } from './film-development';
 import { registerFormatParsers } from './format-parsers';
@@ -48,25 +48,25 @@ import { registerGifSearch } from './gif-search';
 import { registerIpv6Ula } from './ipv6-ula';
 import { registerKillerModules } from './killer-modules';
 import { registerKillerScripts } from './killer-scripts';
-import { registerMetaTags } from './meta-tags';
-import { registerMathEvaluator } from './math-evaluator';
 import { registerMacVendor } from './mac-vendor';
-import { registerPhotoCalculators } from './photo-calculators';
-import { registerQrCode } from './qr-code';
-import { registerPowerShellBuilder } from './powershell-builder';
+import { registerMathEvaluator } from './math-evaluator';
+import { registerMetaTags } from './meta-tags';
 import { registerPhoneTools } from './phone-tools';
+import { registerPhotoCalculators } from './photo-calculators';
+import { registerPowerShellBuilder } from './powershell-builder';
+import { registerQrCode } from './qr-code';
 import { registerReferenceLookups } from './reference-lookups';
 import { registerRegexTester } from './regex-tester';
 import { registerSimpleTools } from './simple-tools';
 import { registerStructuredText } from './structured-text';
-import { registerTextFormatters } from './text-formatters';
 import { registerTextDiff } from './text-diff';
+import { registerTextFormatters } from './text-formatters';
 
 const inputText = z.string().max(4096);
 const maxRequestBytes = 65536;
 const temperatureScales = ['kelvin', 'celsius', 'fahrenheit', 'rankine', 'delisle', 'newton', 'reaumur', 'romer'] as const;
 type TemperatureScale = typeof temperatureScales[number];
-const temperatureConversions: Record<TemperatureScale, { toKelvin: (value: number) => number; fromKelvin: (value: number) => number }> = {
+const temperatureConversions: Record<TemperatureScale, { toKelvin: (value: number) => number, fromKelvin: (value: number) => number }> = {
   kelvin: { toKelvin: value => value, fromKelvin: value => value },
   celsius: { toKelvin: convertCelsiusToKelvin, fromKelvin: convertKelvinToCelsius },
   fahrenheit: { toKelvin: convertFahrenheitToKelvin, fromKelvin: convertKelvinToFahrenheit },
@@ -79,8 +79,8 @@ const temperatureConversions: Record<TemperatureScale, { toKelvin: (value: numbe
 
 interface Env {
   REQUEST_LIMITER: {
-    limit(options: { key: string }): Promise<{ success: boolean }>;
-  };
+    limit: (options: { key: string }) => Promise<{ success: boolean }>
+  }
 }
 
 function result(value: unknown) {

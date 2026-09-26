@@ -24,8 +24,12 @@ export function registerDocumentTools(server: McpServer) {
     description: 'Compare two JSON5-compatible documents using KillerTools JSON Diff.',
     inputSchema: { left: inputText, right: inputText, onlyDifferences: z.boolean().default(true) },
   }, async ({ left, right, onlyDifferences }) => {
-    try { return output(diff(JSON5.parse(left), JSON5.parse(right), { onlyShowDifferences: onlyDifferences })); }
-    catch { return invalid(); }
+    try {
+      return output(diff(JSON5.parse(left), JSON5.parse(right), { onlyShowDifferences: onlyDifferences }));
+    }
+    catch {
+      return invalid();
+    }
   });
 
   server.registerTool('format_xml', {
@@ -36,8 +40,12 @@ export function registerDocumentTools(server: McpServer) {
       collapseContent: z.boolean().default(true),
     },
   }, async ({ text, indentSize, collapseContent }) => {
-    try { return output({ text: xmlFormat(text.trim(), { indentation: ' '.repeat(indentSize), collapseContent, lineSeparator: '\n' }) }); }
-    catch { return invalid(); }
+    try {
+      return output({ text: xmlFormat(text.trim(), { indentation: ' '.repeat(indentSize), collapseContent, lineSeparator: '\n' }) });
+    }
+    catch {
+      return invalid();
+    }
   });
 
   server.registerTool('convert_xml_json', {

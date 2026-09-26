@@ -35,7 +35,9 @@ export function registerPhotoCalculators(server: McpServer) {
     },
   }, async ({ focalLengthMm: f, aperture, focusDistance, focusUnit, circleOfConfusionMm: c }) => {
     const d = focusDistance * (focusUnit === 'ft' ? 0.3048 : 1) * 1000;
-    if (d <= f) return { content: [{ type: 'text' as const, text: 'Focus distance must exceed focal length' }], isError: true };
+    if (d <= f) {
+      return { content: [{ type: 'text' as const, text: 'Focus distance must exceed focal length' }], isError: true };
+    }
     const hyperfocal = (f ** 2) / (aperture * c) + f;
     const near = (d * (hyperfocal - f)) / (hyperfocal + d - 2 * f);
     const far = d >= hyperfocal ? null : (d * (hyperfocal - f)) / (hyperfocal - d);
@@ -57,7 +59,9 @@ export function registerPhotoCalculators(server: McpServer) {
     inputSchema: { filmStockId: z.string().min(1).max(64), meteredSeconds: positive.max(3600) },
   }, async ({ filmStockId, meteredSeconds }) => {
     const stock = filmStocks.find(item => item.id === filmStockId);
-    if (!stock) return { content: [{ type: 'text' as const, text: 'Unknown film stock' }], isError: true };
+    if (!stock) {
+      return { content: [{ type: 'text' as const, text: 'Unknown film stock' }], isError: true };
+    }
     const noFailure = stock.noFailureUpTo != null && meteredSeconds <= stock.noFailureUpTo;
     const adjustedSeconds = noFailure ? meteredSeconds : meteredSeconds ** stock.exponent;
     const extraStops = noFailure ? 0 : Math.log2(adjustedSeconds / meteredSeconds);

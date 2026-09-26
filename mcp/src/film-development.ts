@@ -40,11 +40,17 @@ export function registerFilmDevelopment(server: McpServer) {
   }, async ({ filmName, developerId, dilutionIndex, baseSeconds, temperatureC, pushPullStops, tankMl }) => {
     const film = filmStocks.find(item => item.name === filmName);
     const developer = developers.find(item => item.id === developerId);
-    if (!film || !developer) return invalid('Unknown film or developer');
+    if (!film || !developer) {
+      return invalid('Unknown film or developer');
+    }
     const dilution = developer.dilutions[dilutionIndex ?? developer.defaultDilution];
-    if (!dilution) return invalid('Invalid dilution index');
+    if (!dilution) {
+      return invalid('Invalid dilution index');
+    }
     const base = baseSeconds ?? film.times[developerId];
-    if (base == null) return invalid('A base development time is required for this combination');
+    if (base == null) {
+      return invalid('A base development time is required for this combination');
+    }
     const temperatureAdjustedSeconds = tempAdjust(base, temperatureC ?? film.baseTemp ?? 20, film.baseTemp ?? 20);
     const finalSeconds = pushPullAdjust(temperatureAdjustedSeconds, pushPullStops);
     return result({

@@ -22,12 +22,12 @@ export function registerSimpleTools(server: McpServer) {
       width: z.number().int().min(1).max(4096),
       height: z.number().int().min(1).max(4096),
       fontSize: z.number().int().min(1).max(512).default(26),
-      bgColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#cccccc'),
-      fgColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#333333'),
+      bgColor: z.string().regex(/^#[0-9a-f]{6}$/i).default('#cccccc'),
+      fgColor: z.string().regex(/^#[0-9a-f]{6}$/i).default('#333333'),
       useExactSize: z.boolean().default(true),
       customText: z.string().max(256).default(''),
     },
-  }, async options => {
+  }, async (options) => {
     const svg = buildSvgPlaceholder(options);
     return result({ svg, dataUrl: `data:image/svg+xml;base64,${textToBase64(svg)}` });
   });
