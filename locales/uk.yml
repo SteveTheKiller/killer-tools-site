@@ -674,8 +674,8 @@ tools:
       hashLabel: Хеш
       compareHashPlaceholder: Хеш для порівняння...
       matchLabel: Збіг
-      'yes': Так
-      'no': Ні
+      yes: Так
+      no: Ні
     title: Bcrypt
     description: Хешуйте та порівнюйте текстовий рядок за допомогою bcrypt. Bcrypt - це функція хешування паролів на основі шифру Blowfish.
   bip39-generator:
@@ -802,8 +802,8 @@ tools:
       maxTouchPoints: '{count} макс.'
       none: Немає
       logicalCores: '{count} логічних ядер'
-      'yes': Так
-      'no': Ні
+      yes: Так
+      no: Ні
       enabled: Увімкнено
       disabled: Вимкнено
       supported: Підтримується
@@ -903,8 +903,8 @@ tools:
       callingCode: Телефонний код
       sectionValidation: Перевірка
       isValid: Дійсний?
-      'yes': Так
-      'no': Ні
+      yes: Так
+      no: Ні
       isPossible: Можливий?
       type: Тип
       unknown: Невідомо
@@ -1693,8 +1693,8 @@ ui:
   inputText:
     defaultPlaceholder: Введіть текст
   keyValueListItem:
-    'yes': Так
-    'no': Ні
+    yes: Так
+    no: Ні
     notAvailable: Н/Д
   modalValue:
     copied: Скопійовано!

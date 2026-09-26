@@ -7,7 +7,7 @@ export interface PSParameter {
   placeholder?: string
   common: boolean
   required?: boolean
-  presets?: Array<{ label: string; value: string }>
+  presets?: Array<{ label: string, value: string }>
 }
 
 export interface PSCmdlet {
@@ -21,16 +21,31 @@ export interface PSCmdlet {
   parameters: PSParameter[]
   outputProperties?: string[]
   pipeableTo?: string[]
-  snippets?: Array<{ description: string; command: string }>
+  snippets?: Array<{ description: string, command: string }>
   notes?: string
 }
 
 export const categories = [
-  'All', 'Active Directory', 'M365 / Exchange', 'Networking',
-  'System', 'Services', 'Files & Registry', 'Pipeline',
-  'BitLocker', 'Security & Defender', 'Windows Update', 'Certificates',
-  'Print Management', 'Disk & Storage', 'File Sharing',
-  'Group Policy', 'DNS Server', 'DHCP Server', 'Hyper-V', 'IIS',
+  'All',
+  'Active Directory',
+  'M365 / Exchange',
+  'Networking',
+  'System',
+  'Services',
+  'Files & Registry',
+  'Pipeline',
+  'BitLocker',
+  'Security & Defender',
+  'Windows Update',
+  'Certificates',
+  'Print Management',
+  'Disk & Storage',
+  'File Sharing',
+  'Group Policy',
+  'DNS Server',
+  'DHCP Server',
+  'Hyper-V',
+  'IIS',
   'Windows Server',
 ];
 

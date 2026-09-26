@@ -274,5 +274,4 @@ html:not(.dark) .rn-copy-btn {
 html:not(.dark) .rn-copy-btn:hover:not(:disabled) {
   background: rgba(13, 112, 51, 0.15);
 }
-
 </style>

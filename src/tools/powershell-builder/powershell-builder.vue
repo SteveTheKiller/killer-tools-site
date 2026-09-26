@@ -6,7 +6,7 @@ const { t } = useI18n();
 
 // Pill labels are translated by a camelCase key; the filter value stays English.
 function categoryKey(cat: string) {
-  const words = cat.split(/[^A-Za-z0-9]+/).filter(Boolean);
+  const words = cat.split(/[^A-Z0-9]+/i).filter(Boolean);
   return words.map((w, i) => i === 0 ? w.toLowerCase() : w[0].toUpperCase() + w.slice(1)).join('');
 }
 

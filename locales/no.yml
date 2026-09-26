@@ -176,8 +176,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Din hash som skal sammenlignes...
       matchLabel: Treff
-      'yes': Ja
-      'no': Nei
+      yes: Ja
+      no: Nei
   crontab-generator:
     title: Crontab-generator
     description: Verifiser og generer crontab og få den mennesklig leselige beskrivelsen av cron timeplanen.
@@ -644,8 +644,8 @@ tools:
       maxTouchPoints: '{count} maks'
       none: Ingen
       logicalCores: '{count} logiske kjerner'
-      'yes': Ja
-      'no': Nei
+      yes: Ja
+      no: Nei
       enabled: Aktivert
       disabled: Deaktivert
       supported: Støttet
@@ -1018,8 +1018,8 @@ tools:
       callingCode: Retningsnummer
       sectionValidation: Validering
       isValid: Er gyldig?
-      'yes': Ja
-      'no': Nei
+      yes: Ja
+      no: Nei
       isPossible: Er mulig?
       type: Type
       unknown: Ukjent
@@ -1693,8 +1693,8 @@ ui:
   inputText:
     defaultPlaceholder: Inndatatekst
   keyValueListItem:
-    'yes': Ja
-    'no': Nei
+    yes: Ja
+    no: Nei
     notAvailable: Ikke tilgjengelig
   modalValue:
     copied: Kopiert!

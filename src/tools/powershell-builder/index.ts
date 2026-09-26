@@ -10,4 +10,4 @@ export const tool = defineTool({
   icon: Terminal2,
   createdAt: new Date('2026-04-02'),
   fullscreen: true,
-});
+});

@@ -398,8 +398,8 @@ tools:
       hashLabel: ハッシュ
       compareHashPlaceholder: 比較するハッシュ...
       matchLabel: 一致
-      'yes': はい
-      'no': いいえ
+      yes: はい
+      no: いいえ
   crontab-generator:
     title: crontab生成
     description: crontabの検証と生成を行い、cronスケジュールを人間が読める説明で表示します。
@@ -611,8 +611,8 @@ tools:
       callingCode: 国番号
       sectionValidation: 検証
       isValid: 有効ですか？
-      'yes': はい
-      'no': いいえ
+      yes: はい
+      no: いいえ
       isPossible: 利用可能な番号ですか？
       type: 種類
       unknown: 不明
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: 最大{count}
       none: なし
       logicalCores: 論理コア{count}個
-      'yes': はい
-      'no': いいえ
+      yes: はい
+      no: いいえ
       enabled: 有効
       disabled: 無効
       supported: 対応
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: テキストを入力
   keyValueListItem:
-    'yes': はい
-    'no': いいえ
+    yes: はい
+    no: いいえ
     notAvailable: 該当なし
   modalValue:
     copied: コピーしました！

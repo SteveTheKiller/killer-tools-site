@@ -10,8 +10,6 @@ import xmlHljs from 'highlight.js/lib/languages/xml';
 import yamlHljs from 'highlight.js/lib/languages/yaml';
 import { useCopy } from '@/composable/copy';
 
-const { t } = useI18n();
-
 const props = withDefaults(
   defineProps<{
     value: string
@@ -27,6 +25,9 @@ const props = withDefaults(
     copyMessage: undefined,
   },
 );
+
+const { t } = useI18n();
+
 hljs.registerLanguage('sql', sqlHljs);
 hljs.registerLanguage('json', jsonHljs);
 hljs.registerLanguage('html', xmlHljs);

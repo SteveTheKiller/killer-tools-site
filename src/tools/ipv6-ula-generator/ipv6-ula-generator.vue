@@ -47,11 +47,8 @@ async function copyValue(label: string, value: string) {
       v-model:value="macAddress"
       :label="t('tools.ipv6-ula-generator.ui.macAddress')"
       placeholder="20:37:06:12:34:56"
-      mb-3
-      clearable
-      raw-text
-      autofocus
-      font-mono
+
+      clearable raw-text autofocus mb-3 font-mono
       :validation="addressValidation"
     />
 

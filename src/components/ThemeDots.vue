@@ -139,7 +139,7 @@ function startDrag(e: PointerEvent) {
     <!-- Mobile-only collapse trigger: shows the current theme, expands the row -->
     <button
       class="swatch sm-theme-trigger"
-      :style="currentTheme ? { background: currentTheme.swatchBg, '--sw-accent': themeDotAccent(currentTheme) } : undefined"
+      :style="currentTheme ? { 'background': currentTheme.swatchBg, '--sw-accent': themeDotAccent(currentTheme) } : undefined"
       :title="t('components.themeDots.theme')"
       :aria-label="t('components.themeDots.toggleThemeSwatches')"
       :aria-expanded="swatchesOpen"
@@ -149,14 +149,14 @@ function startDrag(e: PointerEvent) {
     <!-- Theme swatches, ported from the landing-page picker -->
     <div class="tgrp" :class="{ 'tgrp-open': swatchesOpen }" role="group" :aria-label="t('components.themeDots.theme')">
       <button
-        v-for="t in ktThemes"
-        :key="t.key"
+        v-for="theme in ktThemes"
+        :key="theme.key"
         class="swatch"
-        :style="{ background: t.swatchBg, '--sw-accent': themeDotAccent(t) }"
-        :title="t.label"
-        :aria-label="t.label"
-        :aria-pressed="styleStore.ktTheme === t.key"
-        @click="selectTheme(t.key)"
+        :style="{ 'background': theme.swatchBg, '--sw-accent': themeDotAccent(theme) }"
+        :title="theme.label"
+        :aria-label="theme.label"
+        :aria-pressed="styleStore.ktTheme === theme.key"
+        @click="selectTheme(theme.key)"
       />
     </div>
 

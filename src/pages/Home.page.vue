@@ -5,8 +5,8 @@ import { useHead } from '@vueuse/head';
 import { computed, ref } from 'vue';
 import Draggable from 'vuedraggable';
 import { config } from '@/config';
-import { useToolStore } from '@/tools/tools.store';
 import popularity from '@/data/tool-popularity.json';
+import { useToolStore } from '@/tools/tools.store';
 import ColoredCard from '../components/ColoredCard.vue';
 import ToolCard from '../components/ToolCard.vue';
 
@@ -84,7 +84,6 @@ const sortedTools = computed(() => {
     return diff !== 0 ? diff : a.name.localeCompare(b.name);
   });
 });
-
 </script>
 
 <template>

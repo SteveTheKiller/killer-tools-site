@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router';
-import { useHead } from '@vueuse/head';
 import type { HeadObject } from '@vueuse/head';
-
-import BaseLayout from './base.layout.vue';
-import FavoriteButton from '@/components/FavoriteButton.vue';
 import type { Tool } from '@/tools/tools.types';
+import { useHead } from '@vueuse/head';
+
+import { useRoute } from 'vue-router';
+import FavoriteButton from '@/components/FavoriteButton.vue';
+import BaseLayout from './base.layout.vue';
 
 const route = useRoute();
 
@@ -65,8 +65,8 @@ const toolTitle = computed<string>(() => t(`tools.${i18nKey.value}.title`, Strin
 const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.description`, String(route.meta.description)));
 const isFullscreen = computed<boolean>(() => !!route.meta.fullscreen);
 const noHeader = computed<boolean>(() => !!route.meta.noHeader);
-const headerLink = computed<{ label: string; href: string } | undefined>(
-  () => route.meta.headerLink as { label: string; href: string } | undefined,
+const headerLink = computed<{ label: string, href: string } | undefined>(
+  () => route.meta.headerLink as { label: string, href: string } | undefined,
 );
 </script>
 

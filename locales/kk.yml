@@ -398,8 +398,8 @@ tools:
       hashLabel: Хэш
       compareHashPlaceholder: Салыстыратын хэшіңіз...
       matchLabel: Сәйкестік
-      'yes': Иә
-      'no': Жоқ
+      yes: Иә
+      no: Жоқ
   crontab-generator:
     title: Crontab генераторы
     description: Crontab тексеріп, жасаңыз және cron кестесінің оқуға ыңғайлы сипаттамасын алыңыз.
@@ -611,8 +611,8 @@ tools:
       callingCode: Қалалық код
       sectionValidation: Тексеру
       isValid: Жарамды ма?
-      'yes': Иә
-      'no': Жоқ
+      yes: Иә
+      no: Жоқ
       isPossible: Мүмкін бе?
       type: Түрі
       unknown: Белгісіз
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: ең көбі {count}
       none: Жоқ
       logicalCores: '{count} логикалық өзек'
-      'yes': Иә
-      'no': Жоқ
+      yes: Иә
+      no: Жоқ
       enabled: Қосулы
       disabled: Өшірулі
       supported: Қолдау бар
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: Мәтінді енгізу
   keyValueListItem:
-    'yes': Иә
-    'no': Жоқ
+    yes: Иә
+    no: Жоқ
     notAvailable: Қолжетімсіз
   modalValue:
     copied: Көшірілді!

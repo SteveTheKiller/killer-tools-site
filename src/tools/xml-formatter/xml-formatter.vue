@@ -27,33 +27,33 @@ const rules: UseValidationRule<string>[] = [
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <div class="xf-controls">
-    <button type="button" class="kt-pill" :class="{ 'kt-pill-active': collapseContent }" @click="collapseContent = !collapseContent">
-      {{ t('tools.xml-formatter.ui.collapse') }}
-    </button>
-    <div class="xf-control">
-      <span class="xf-control-label">{{ t('tools.xml-formatter.ui.indentSize') }}</span>
-      <div class="xf-stepper">
-        <button class="xf-step-btn" :disabled="indentSize <= 0" @click="indentSize = Math.max(0, indentSize - 1)">
-          −
-        </button>
-        <span class="xf-step-val">{{ indentSize }}</span>
-        <button class="xf-step-btn" :disabled="indentSize >= 10" @click="indentSize = Math.min(10, indentSize + 1)">
-          +
-        </button>
+    <div class="xf-controls">
+      <button type="button" class="kt-pill" :class="{ 'kt-pill-active': collapseContent }" @click="collapseContent = !collapseContent">
+        {{ t('tools.xml-formatter.ui.collapse') }}
+      </button>
+      <div class="xf-control">
+        <span class="xf-control-label">{{ t('tools.xml-formatter.ui.indentSize') }}</span>
+        <div class="xf-stepper">
+          <button class="xf-step-btn" :disabled="indentSize <= 0" @click="indentSize = Math.max(0, indentSize - 1)">
+            −
+          </button>
+          <span class="xf-step-val">{{ indentSize }}</span>
+          <button class="xf-step-btn" :disabled="indentSize >= 10" @click="indentSize = Math.min(10, indentSize + 1)">
+            +
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <format-transformer
-    :input-label="t('tools.xml-formatter.ui.inputLabel')"
-    :input-placeholder="t('tools.xml-formatter.ui.inputPlaceholder')"
-    :output-label="t('tools.xml-formatter.ui.outputLabel')"
-    output-language="xml"
-    :input-validation-rules="rules"
-    :transformer="transformer"
-    :input-default="defaultValue"
-  />
+    <format-transformer
+      :input-label="t('tools.xml-formatter.ui.inputLabel')"
+      :input-placeholder="t('tools.xml-formatter.ui.inputPlaceholder')"
+      :output-label="t('tools.xml-formatter.ui.outputLabel')"
+      output-language="xml"
+      :input-validation-rules="rules"
+      :transformer="transformer"
+      :input-default="defaultValue"
+    />
   </div>
 </template>
 

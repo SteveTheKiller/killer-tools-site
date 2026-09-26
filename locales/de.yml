@@ -176,8 +176,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Ihr Hash zum Vergleichen...
       matchLabel: Übereinstimmung
-      'yes': Ja
-      'no': Nein
+      yes: Ja
+      no: Nein
   crontab-generator:
     title: Crontab-Generator
     description: Überprüfe und generiere Crontab und erhalte die menschenlesbare Beschreibung des Cron-Zeitplans.
@@ -644,8 +644,8 @@ tools:
       maxTouchPoints: '{count} maximal'
       none: Keine
       logicalCores: '{count} logische Kerne'
-      'yes': Ja
-      'no': Nein
+      yes: Ja
+      no: Nein
       enabled: Aktiviert
       disabled: Deaktiviert
       supported: Unterstützt
@@ -1070,8 +1070,8 @@ tools:
       callingCode: Vorwahl
       sectionValidation: Validierung
       isValid: Gültig?
-      'yes': Ja
-      'no': Nein
+      yes: Ja
+      no: Nein
       isPossible: Möglich?
       type: Typ
       unknown: Unbekannt
@@ -1819,8 +1819,8 @@ ui:
   inputText:
     defaultPlaceholder: Text eingeben
   keyValueListItem:
-    'yes': Ja
-    'no': Nein
+    yes: Ja
+    no: Nein
     notAvailable: Nicht verfügbar
   modalValue:
     copied: Kopiert!

@@ -90,10 +90,10 @@ function getFileExtensionFromMimeType({
 }
 
 function downloadFromBase64({ sourceValue, filename, extension, fileMimeType }: {
-  sourceValue: string,
-  filename?: string,
-  extension?: string,
-  fileMimeType?: string,
+  sourceValue: string
+  filename?: string
+  extension?: string
+  fileMimeType?: string
 }) {
   if (sourceValue === '') {
     throw new Error('Base64 string is empty');
@@ -125,10 +125,10 @@ function useDownloadFileFromBase64({
   extension,
   fileMimeType,
 }: {
-  source: Ref<string>,
-  filename?: string,
-  extension?: string,
-  fileMimeType?: string,
+  source: Ref<string>
+  filename?: string
+  extension?: string
+  fileMimeType?: string
 }) {
   return {
     download() {
@@ -142,9 +142,9 @@ function useDownloadFileFromBase64Refs({
   filename,
   extension,
 }: {
-  source: Ref<string>,
-  filename?: Ref<string>,
-  extension?: Ref<string>,
+  source: Ref<string>
+  filename?: Ref<string>
+  extension?: Ref<string>
 }) {
   return {
     download() {

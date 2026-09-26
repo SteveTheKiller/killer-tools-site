@@ -3,9 +3,9 @@
   "compilerOptions": {
     "composite": true,
     "target": "es2022",
+    "jsx": "preserve",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "baseUrl": ".",
-    "jsx": "preserve",
     "module": "es2022",
     "moduleResolution": "Bundler",
     "ignoreDeprecations": "6.0",

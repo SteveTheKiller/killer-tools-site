@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+    "lib": ["ES2022", "WebWorker"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "lib": ["ES2022", "WebWorker"],
+    "types": ["@cloudflare/workers-types"],
     "strict": true,
     "noEmit": true,
-    "skipLibCheck": true,
-    "types": ["@cloudflare/workers-types"]
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts", "../src/tools/case-converter/case-converter.models.ts", "../src/tools/text-to-binary/text-to-binary.models.ts", "../src/utils/base64.ts"]
 }

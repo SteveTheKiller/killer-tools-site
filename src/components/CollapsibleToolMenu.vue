@@ -20,23 +20,27 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
 };
 
-const makeLabel = (tool: Tool) => () => {
-  const brand = APP_BRAND[tool.path];
-  if (brand) {
-    return h(RouterLink, { to: tool.path }, { default: () => [
-      h('img', { class: 'wm-menu wm-menu-dark', src: `/brand/${brand.wm}-wordmark-dark.png`, alt: tool.name }),
-      h('img', { class: 'wm-menu wm-menu-light', src: `/brand/${brand.wm}-wordmark-light.png`, alt: tool.name }),
-    ] });
-  }
-  return h(RouterLink, { to: tool.path }, { default: () => tool.name });
-};
+function makeLabel(tool: Tool) {
+  return () => {
+    const brand = APP_BRAND[tool.path];
+    if (brand) {
+      return h(RouterLink, { to: tool.path }, { default: () => [
+        h('img', { class: 'wm-menu wm-menu-dark', src: `/brand/${brand.wm}-wordmark-dark.png`, alt: tool.name }),
+        h('img', { class: 'wm-menu wm-menu-light', src: `/brand/${brand.wm}-wordmark-light.png`, alt: tool.name }),
+      ] });
+    }
+    return h(RouterLink, { to: tool.path }, { default: () => tool.name });
+  };
+}
 // Both branches go through MenuIconItem. The brand entries used to return a bare <img>,
 // which skipped the isNew dot that component draws - so a new Killer app was the one kind
 // of tool that could never show it.
-const makeIcon = (tool: Tool) => () => {
-  const brand = APP_BRAND[tool.path];
-  return h(MenuIconItem, brand ? { tool, src: brand.icon } : { tool });
-};
+function makeIcon(tool: Tool) {
+  return () => {
+    const brand = APP_BRAND[tool.path];
+    return h(MenuIconItem, brand ? { tool, src: brand.icon } : { tool });
+  };
+}
 
 const collapsedCategories = useStorage<Record<string, boolean>>(
   'menu-tool-option:collapsed-categories',

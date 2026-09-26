@@ -398,8 +398,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Your hash to compare...
       matchLabel: Match
-      'yes': 'Yes'
-      'no': 'No'
+      yes: Yes
+      no: No
   crontab-generator:
     title: Crontab generator
     description: Validate and generate crontab and get the human-readable description of the cron schedule.
@@ -611,8 +611,8 @@ tools:
       callingCode: Calling code
       sectionValidation: Validation
       isValid: Is valid?
-      'yes': 'Yes'
-      'no': 'No'
+      yes: Yes
+      no: No
       isPossible: Is possible?
       type: Type
       unknown: Unknown
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: '{count} max'
       none: None
       logicalCores: '{count} logical cores'
-      'yes': 'Yes'
-      'no': 'No'
+      yes: Yes
+      no: No
       enabled: Enabled
       disabled: Disabled
       supported: Supported
@@ -1740,8 +1740,8 @@ ui:
   inputText:
     defaultPlaceholder: Input text
   keyValueListItem:
-    'yes': 'Yes'
-    'no': 'No'
+    yes: Yes
+    no: No
     notAvailable: N/A
   modalValue:
     copied: Copied!

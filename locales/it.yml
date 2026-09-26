@@ -398,8 +398,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Il tuo hash da confrontare...
       matchLabel: Corrispondenza
-      'yes': Sì
-      'no': 'No'
+      yes: Sì
+      no: No
   crontab-generator:
     title: Generatore crontab
     description: Convalida e genera crontab e ottieni la descrizione leggibile della pianificazione cron.
@@ -611,8 +611,8 @@ tools:
       callingCode: Prefisso internazionale
       sectionValidation: Convalida
       isValid: È valido?
-      'yes': Sì
-      'no': 'No'
+      yes: Sì
+      no: No
       isPossible: È possibile?
       type: Tipo
       unknown: Sconosciuto
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: '{count} max'
       none: Nessuno
       logicalCores: '{count} core logici'
-      'yes': Sì
-      'no': 'No'
+      yes: Sì
+      no: No
       enabled: Abilitato
       disabled: Disabilitato
       supported: Supportato
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: Testo di input
   keyValueListItem:
-    'yes': Sì
-    'no': 'No'
+    yes: Sì
+    no: No
     notAvailable: N/D
   modalValue:
     copied: Copiato!

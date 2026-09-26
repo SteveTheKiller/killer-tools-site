@@ -13,7 +13,7 @@ const formattedHtml = asyncComputed(() => format(html.value, { parser: 'html', p
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <Editor v-model:html="html" />
-  <TextareaCopyable :value="formattedHtml" language="html" />
+    <Editor v-model:html="html" />
+    <TextareaCopyable :value="formattedHtml" language="html" />
   </div>
 </template>

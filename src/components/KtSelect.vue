@@ -5,8 +5,8 @@
 // and there are no native title tooltips to cut across the menu.
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
-interface KtOption { label: string; value: string | number; disabled?: boolean }
-interface KtGroup { type: 'group'; label: string; key?: string; children: KtOption[] }
+interface KtOption { label: string, value: string | number, disabled?: boolean }
+interface KtGroup { type: 'group', label: string, key?: string, children: KtOption[] }
 type KtItem = KtOption | KtGroup;
 
 const props = defineProps<{
@@ -158,38 +158,40 @@ onBeforeUnmount(() => {
     </button>
     <Teleport to="body">
       <div v-if="open" ref="listEl" class="kts-dropdown-menu" :style="menuStyle" role="listbox">
-      <template v-for="(item, gi) in options" :key="isGroup(item) ? (item.key ?? `g${gi}`) : (item as any).value">
-        <template v-if="isGroup(item)">
-          <div class="kts-group">{{ item.label }}</div>
+        <template v-for="(item, gi) in options" :key="isGroup(item) ? (item.key ?? `g${gi}`) : (item as any).value">
+          <template v-if="isGroup(item)">
+            <div class="kts-group">
+              {{ item.label }}
+            </div>
+            <button
+              v-for="o in item.children"
+              :key="o.value"
+              type="button"
+              class="kts-opt"
+              :class="{ 'kts-opt-selected': o.value === value }"
+              role="option"
+              :aria-selected="o.value === value"
+              :disabled="o.disabled"
+              @click="choose(o)"
+            >
+              <span class="kts-opt-label">{{ o.label }}</span>
+              <span v-if="o.value === value" class="kts-check">✓</span>
+            </button>
+          </template>
           <button
-            v-for="o in item.children"
-            :key="o.value"
+            v-else
             type="button"
             class="kts-opt"
-            :class="{ 'kts-opt-selected': o.value === value }"
+            :class="{ 'kts-opt-selected': (item as any).value === value }"
             role="option"
-            :aria-selected="o.value === value"
-            :disabled="o.disabled"
-            @click="choose(o)"
+            :aria-selected="(item as any).value === value"
+            :disabled="(item as any).disabled"
+            @click="choose(item as any)"
           >
-            <span class="kts-opt-label">{{ o.label }}</span>
-            <span v-if="o.value === value" class="kts-check">✓</span>
+            <span class="kts-opt-label">{{ (item as any).label }}</span>
+            <span v-if="(item as any).value === value" class="kts-check">✓</span>
           </button>
         </template>
-        <button
-          v-else
-          type="button"
-          class="kts-opt"
-          :class="{ 'kts-opt-selected': (item as any).value === value }"
-          role="option"
-          :aria-selected="(item as any).value === value"
-          :disabled="(item as any).disabled"
-          @click="choose(item as any)"
-        >
-          <span class="kts-opt-label">{{ (item as any).label }}</span>
-          <span v-if="(item as any).value === value" class="kts-check">✓</span>
-        </button>
-      </template>
       </div>
     </Teleport>
   </div>

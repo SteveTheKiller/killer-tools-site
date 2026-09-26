@@ -398,8 +398,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Váš hash k porovnání...
       matchLabel: Shoda
-      'yes': Ano
-      'no': Ne
+      yes: Ano
+      no: Ne
   crontab-generator:
     title: Generátor crontab
     description: Ověřte a generujte crontab a získejte čitelný popis plánu cron.
@@ -611,8 +611,8 @@ tools:
       callingCode: Volací kód
       sectionValidation: Ověření
       isValid: Je platné?
-      'yes': Ano
-      'no': Ne
+      yes: Ano
+      no: Ne
       isPossible: Je možné?
       type: Typ
       unknown: Neznámý
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: Maximálně {count}
       none: Žádné
       logicalCores: '{count} logických jader'
-      'yes': Ano
-      'no': Ne
+      yes: Ano
+      no: Ne
       enabled: Povoleno
       disabled: Zakázáno
       supported: Podporováno
@@ -1820,8 +1820,8 @@ ui:
   inputText:
     defaultPlaceholder: Vstupní text
   keyValueListItem:
-    'yes': Ano
-    'no': Ne
+    yes: Ano
+    no: Ne
     notAvailable: Nedostupné
   modalValue:
     copied: Zkopírováno!

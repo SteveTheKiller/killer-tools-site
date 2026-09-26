@@ -66,92 +66,92 @@ const indentLabel = computed(() => indentOptions.value.find(o => o.value === con
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <div class="sq-controls">
-    <!-- Dialect -->
-    <div class="sq-field">
-      <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.dialectLabel') }}</span>
-      <div class="sq-dropdown" tabindex="0" @blur="onDialectBlur($event)">
-        <button type="button" class="sq-dropdown-trigger" @click="dialectOpen = !dialectOpen">
-          <span>{{ dialectLabel }}</span>
-          <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': dialectOpen }" />
-        </button>
-        <div v-if="dialectOpen" class="sq-dropdown-menu">
-          <button
-            v-for="opt in dialectOptions" :key="opt.value" type="button"
-            class="sq-dropdown-item" :class="{ 'sq-dropdown-item-active': opt.value === config.language }"
-            @click="config.language = opt.value as any; dialectOpen = false"
-          >
-            {{ opt.label }}
+    <div class="sq-controls">
+      <!-- Dialect -->
+      <div class="sq-field">
+        <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.dialectLabel') }}</span>
+        <div class="sq-dropdown" tabindex="0" @blur="onDialectBlur($event)">
+          <button type="button" class="sq-dropdown-trigger" @click="dialectOpen = !dialectOpen">
+            <span>{{ dialectLabel }}</span>
+            <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': dialectOpen }" />
           </button>
+          <div v-if="dialectOpen" class="sq-dropdown-menu">
+            <button
+              v-for="opt in dialectOptions" :key="opt.value" type="button"
+              class="sq-dropdown-item" :class="{ 'sq-dropdown-item-active': opt.value === config.language }"
+              @click="config.language = opt.value as any; dialectOpen = false"
+            >
+              {{ opt.label }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Keyword case -->
+      <div class="sq-field">
+        <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.keywordCaseLabel') }}</span>
+        <div class="sq-dropdown" tabindex="0" @blur="onKeywordBlur($event)">
+          <button type="button" class="sq-dropdown-trigger" @click="keywordOpen = !keywordOpen">
+            <span>{{ keywordLabel }}</span>
+            <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': keywordOpen }" />
+          </button>
+          <div v-if="keywordOpen" class="sq-dropdown-menu">
+            <button
+              v-for="opt in keywordOptions" :key="opt.value" type="button"
+              class="sq-dropdown-item" :class="{ 'sq-dropdown-item-active': opt.value === config.keywordCase }"
+              @click="config.keywordCase = opt.value as any; keywordOpen = false"
+            >
+              {{ opt.label }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indent style -->
+      <div class="sq-field">
+        <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.indentStyleLabel') }}</span>
+        <div class="sq-dropdown" tabindex="0" @blur="onIndentBlur($event)">
+          <button type="button" class="sq-dropdown-trigger" @click="indentOpen = !indentOpen">
+            <span>{{ indentLabel }}</span>
+            <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': indentOpen }" />
+          </button>
+          <div v-if="indentOpen" class="sq-dropdown-menu">
+            <button
+              v-for="opt in indentOptions" :key="opt.value" type="button"
+              class="sq-dropdown-item" :class="{ 'sq-dropdown-item-active': opt.value === config.indentStyle }"
+              @click="config.indentStyle = opt.value as any; indentOpen = false"
+            >
+              {{ opt.label }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Keyword case -->
-    <div class="sq-field">
-      <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.keywordCaseLabel') }}</span>
-      <div class="sq-dropdown" tabindex="0" @blur="onKeywordBlur($event)">
-        <button type="button" class="sq-dropdown-trigger" @click="keywordOpen = !keywordOpen">
-          <span>{{ keywordLabel }}</span>
-          <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': keywordOpen }" />
-        </button>
-        <div v-if="keywordOpen" class="sq-dropdown-menu">
-          <button
-            v-for="opt in keywordOptions" :key="opt.value" type="button"
-            class="sq-dropdown-item" :class="{ 'sq-dropdown-item-active': opt.value === config.keywordCase }"
-            @click="config.keywordCase = opt.value as any; keywordOpen = false"
-          >
-            {{ opt.label }}
-          </button>
-        </div>
+    <div style="flex: 1 1 300px; min-width: 0;">
+      <div class="kt-section-label">
+        {{ t('tools.sql-prettify.ui.yourSqlQueryLabel') }}
       </div>
+      <c-input-text
+        ref="inputElement"
+        v-model:value="rawSQL"
+        :placeholder="t('tools.sql-prettify.ui.sqlQueryPlaceholder')"
+        rows="20"
+        multiline
+        autofocus
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        monospace
+      />
     </div>
-
-    <!-- Indent style -->
-    <div class="sq-field">
-      <span class="sq-sublabel">{{ t('tools.sql-prettify.ui.indentStyleLabel') }}</span>
-      <div class="sq-dropdown" tabindex="0" @blur="onIndentBlur($event)">
-        <button type="button" class="sq-dropdown-trigger" @click="indentOpen = !indentOpen">
-          <span>{{ indentLabel }}</span>
-          <icon-mdi-chevron-down class="sq-chevron" :class="{ 'sq-chevron-open': indentOpen }" />
-        </button>
-        <div v-if="indentOpen" class="sq-dropdown-menu">
-          <button
-            v-for="opt in indentOptions" :key="opt.value" type="button"
-            class="sq-dropdown-item" :class="{ 'sq-dropdown-item-active': opt.value === config.indentStyle }"
-            @click="config.indentStyle = opt.value as any; indentOpen = false"
-          >
-            {{ opt.label }}
-          </button>
-        </div>
+    <div style="flex: 1 1 300px; min-width: 0;">
+      <div class="kt-section-label">
+        {{ t('tools.sql-prettify.ui.prettifiedQueryLabel') }}
       </div>
+      <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
     </div>
-  </div>
-
-  <div style="flex: 1 1 300px; min-width: 0;">
-    <div class="kt-section-label">
-      {{ t('tools.sql-prettify.ui.yourSqlQueryLabel') }}
-    </div>
-    <c-input-text
-      ref="inputElement"
-      v-model:value="rawSQL"
-      :placeholder="t('tools.sql-prettify.ui.sqlQueryPlaceholder')"
-      rows="20"
-      multiline
-      autofocus
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="false"
-      monospace
-    />
-  </div>
-  <div style="flex: 1 1 300px; min-width: 0;">
-    <div class="kt-section-label">
-      {{ t('tools.sql-prettify.ui.prettifiedQueryLabel') }}
-    </div>
-    <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
-  </div>
   </div>
 </template>
 

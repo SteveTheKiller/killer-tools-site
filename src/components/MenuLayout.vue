@@ -18,19 +18,23 @@ function popEgg() {
   for (let i = 0; i < 18; i++) {
     const d = document.createElement('span');
     d.className = 'kt-drip';
-    d.style.left = Math.random() * 100 + 'vw';
-    d.style.height = 18 + Math.random() * 64 + 'px';
+    d.style.left = `${Math.random() * 100}vw`;
+    d.style.height = `${18 + Math.random() * 64}px`;
     d.style.opacity = (0.6 + Math.random() * 0.4).toFixed(2);
     const dur = 1.1 + Math.random() * 1.6;
-    d.style.animation = 'kt-dripfall ' + dur + 's linear forwards';
-    d.style.animationDelay = Math.random() * 0.5 + 's';
+    d.style.animation = `kt-dripfall ${dur}s linear forwards`;
+    d.style.animationDelay = `${Math.random() * 0.5}s`;
     document.body.appendChild(d);
     setTimeout(() => d.remove(), (dur + 0.8) * 1000);
   }
   eggMsg.value = t('layouts.menuLayout.eggMessage');
   eggShown.value = true;
-  if (eggTimer) clearTimeout(eggTimer);
-  eggTimer = setTimeout(() => { eggShown.value = false; }, 2800);
+  if (eggTimer) {
+    clearTimeout(eggTimer);
+  }
+  eggTimer = setTimeout(() => {
+    eggShown.value = false;
+  }, 2800);
 }
 </script>
 
@@ -38,24 +42,24 @@ function popEgg() {
   <div class="kt-frame">
     <n-layout has-sider class="kt-main-row">
       <n-layout-sider
-      id="kt-sider"
-      collapse-mode="transform"
-      :collapsed-width="0"
-      :width="300"
-      :collapsed="isMenuCollapsed"
-      :show-trigger="false"
-      :native-scrollbar="false"
-      :position="siderPosition"
-      :class="{ 'sider-overlay': isSmallScreen }"
-    >
-      <slot name="sider" />
-    </n-layout-sider>
-    <n-layout class="content-col">
-      <!-- Frame titlebar: chrome, OUTSIDE the scroll container, so the content pane
+        id="kt-sider"
+        collapse-mode="transform"
+        :collapsed-width="0"
+        :width="300"
+        :collapsed="isMenuCollapsed"
+        :show-trigger="false"
+        :native-scrollbar="false"
+        :position="siderPosition"
+        :class="{ 'sider-overlay': isSmallScreen }"
+      >
+        <slot name="sider" />
+      </n-layout-sider>
+      <n-layout class="content-col">
+        <!-- Frame titlebar: chrome, OUTSIDE the scroll container, so the content pane
            scrolls beneath a fixed frame (sticky dies inside Naive's nested scrollers). -->
-      <div v-if="$slots.titlebar" class="kt-titlebar-shell">
-        <slot name="titlebar" />
-      </div>
+        <div v-if="$slots.titlebar" class="kt-titlebar-shell">
+          <slot name="titlebar" />
+        </div>
         <n-layout class="content" :class="{ 'has-titlebar': $slots.titlebar, 'no-sider': isMenuCollapsed || isSmallScreen }">
           <slot name="content" />
           <transition name="fade">
@@ -71,7 +75,9 @@ function popEgg() {
       <div class="kt-grip" aria-hidden="true" />
     </div>
     <Transition name="kt-egg-fade">
-      <div v-if="eggShown" class="kt-egg-toast">{{ eggMsg }}</div>
+      <div v-if="eggShown" class="kt-egg-toast">
+        {{ eggMsg }}
+      </div>
     </Transition>
   </div>
 </template>
@@ -247,7 +253,6 @@ html:not(.dark) .content {
     padding: 0 10px;
   }
 }
-
 
 /* Titlebar (57px) + inset gutters + content fill the column exactly, so
    nothing outside the content pane ever scrolls and both rails stay fixed. */

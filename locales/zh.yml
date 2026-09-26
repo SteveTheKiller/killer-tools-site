@@ -176,8 +176,8 @@ tools:
       hashLabel: 哈希值
       compareHashPlaceholder: 要比较的哈希值...
       matchLabel: 匹配
-      'yes': 是
-      'no': 否
+      yes: 是
+      no: 否
   crontab-generator:
     title: Crontab 表达式生成
     description: 验证并生成crontab，并获取cron调度的可读描述。
@@ -644,8 +644,8 @@ tools:
       maxTouchPoints: 最多{count}个
       none: 无
       logicalCores: '{count}个逻辑核心'
-      'yes': 是
-      'no': 否
+      yes: 是
+      no: 否
       enabled: 已启用
       disabled: 已禁用
       supported: 支持
@@ -1276,8 +1276,8 @@ tools:
       callingCode: 拨号代码
       sectionValidation: 验证
       isValid: 是否有效？
-      'yes': 是
-      'no': 否
+      yes: 是
+      no: 否
       isPossible: 是否可能？
       type: 类型
       unknown: 未知
@@ -1693,8 +1693,8 @@ ui:
   inputText:
     defaultPlaceholder: 输入文本
   keyValueListItem:
-    'yes': 是
-    'no': 否
+    yes: 是
+    no: 否
     notAvailable: 不适用
   modalValue:
     copied: 已复制!

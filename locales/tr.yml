@@ -398,8 +398,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Karşılaştırılacak hash...
       matchLabel: Eşleşme
-      'yes': Evet
-      'no': Hayır
+      yes: Evet
+      no: Hayır
   crontab-generator:
     title: Crontab oluşturucu
     description: Crontab doğrula ve oluştur, cron zamanlamasının okunabilir açıklamasını al.
@@ -611,8 +611,8 @@ tools:
       callingCode: Çağrı kodu
       sectionValidation: Doğrulama
       isValid: Geçerli mi?
-      'yes': Evet
-      'no': Hayır
+      yes: Evet
+      no: Hayır
       isPossible: Mümkün mü?
       type: Tür
       unknown: Bilinmiyor
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: '{count} maksimum'
       none: Yok
       logicalCores: '{count} mantıksal çekirdek'
-      'yes': Evet
-      'no': Hayır
+      yes: Evet
+      no: Hayır
       enabled: Etkin
       disabled: Devre dışı
       supported: Destekleniyor
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: Metin girin
   keyValueListItem:
-    'yes': Evet
-    'no': Hayır
+    yes: Evet
+    no: Hayır
     notAvailable: Yok
   modalValue:
     copied: Kopyalandı!

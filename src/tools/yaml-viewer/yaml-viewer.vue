@@ -30,49 +30,49 @@ const rawYamlValidation = useValidation({
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <div class="yv-controls">
-    <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
-      {{ t('tools.yaml-viewer.ui.sortKeys') }}
-    </button>
-    <div class="yv-control">
-      <span class="yv-control-label">{{ t('tools.yaml-viewer.ui.indentSize') }}</span>
-      <div class="yv-stepper">
-        <button class="yv-step-btn" :disabled="indentSize <= 1" @click="indentSize = Math.max(1, indentSize - 1)">
-          −
-        </button>
-        <span class="yv-step-val">{{ indentSize }}</span>
-        <button class="yv-step-btn" :disabled="indentSize >= 10" @click="indentSize = Math.min(10, indentSize + 1)">
-          +
-        </button>
+    <div class="yv-controls">
+      <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
+        {{ t('tools.yaml-viewer.ui.sortKeys') }}
+      </button>
+      <div class="yv-control">
+        <span class="yv-control-label">{{ t('tools.yaml-viewer.ui.indentSize') }}</span>
+        <div class="yv-stepper">
+          <button class="yv-step-btn" :disabled="indentSize <= 1" @click="indentSize = Math.max(1, indentSize - 1)">
+            −
+          </button>
+          <span class="yv-step-val">{{ indentSize }}</span>
+          <button class="yv-step-btn" :disabled="indentSize >= 10" @click="indentSize = Math.min(10, indentSize + 1)">
+            +
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div style="flex: 1 1 300px; min-width: 0;">
-    <div class="kt-section-label">
-      {{ t('tools.yaml-viewer.ui.rawLabel') }}
+    <div style="flex: 1 1 300px; min-width: 0;">
+      <div class="kt-section-label">
+        {{ t('tools.yaml-viewer.ui.rawLabel') }}
+      </div>
+      <c-input-text
+        ref="inputElement"
+        v-model:value="rawYaml"
+        :validation="rawYamlValidation"
+        :placeholder="t('tools.yaml-viewer.ui.rawPlaceholder')"
+        rows="20"
+        multiline
+        autofocus
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        monospace
+      />
     </div>
-    <c-input-text
-      ref="inputElement"
-      v-model:value="rawYaml"
-      :validation="rawYamlValidation"
-      :placeholder="t('tools.yaml-viewer.ui.rawPlaceholder')"
-      rows="20"
-      multiline
-      autofocus
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="false"
-      monospace
-    />
-  </div>
-  <div style="flex: 1 1 300px; min-width: 0;">
-    <div class="kt-section-label">
-      {{ t('tools.yaml-viewer.ui.prettifiedLabel') }}
+    <div style="flex: 1 1 300px; min-width: 0;">
+      <div class="kt-section-label">
+        {{ t('tools.yaml-viewer.ui.prettifiedLabel') }}
+      </div>
+      <TextareaCopyable :value="cleanYaml" language="yaml" :follow-height-of="inputElement" />
     </div>
-    <TextareaCopyable :value="cleanYaml" language="yaml" :follow-height-of="inputElement" />
-  </div>
   </div>
 </template>
 

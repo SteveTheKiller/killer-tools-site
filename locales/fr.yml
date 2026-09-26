@@ -282,8 +282,8 @@ tools:
       callingCode: Indicatif téléphonique
       sectionValidation: Validation
       isValid: Est valide ?
-      'yes': Oui
-      'no': Non
+      yes: Oui
+      no: Non
       isPossible: Est possible ?
       type: Type
       unknown: Inconnu
@@ -872,8 +872,8 @@ tools:
       maxTouchPoints: '{count} maximum'
       none: Aucun
       logicalCores: '{count} cœurs logiques'
-      'yes': Oui
-      'no': Non
+      yes: Oui
+      no: Non
       enabled: Activé
       disabled: Désactivé
       supported: Pris en charge
@@ -1022,8 +1022,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Votre hash à comparer...
       matchLabel: Correspondance
-      'yes': Oui
-      'no': Non
+      yes: Oui
+      no: Non
     title: Bcrypt
     description: Hachez et comparez une chaîne de texte avec bcrypt. Bcrypt est une fonction de hachage de mot de passe basée sur le chiffrement Blowfish.
   bip39-generator:
@@ -1815,8 +1815,8 @@ ui:
   inputText:
     defaultPlaceholder: Texte à saisir
   keyValueListItem:
-    'yes': Oui
-    'no': Non
+    yes: Oui
+    no: Non
     notAvailable: N/D
   modalValue:
     copied: Copié !

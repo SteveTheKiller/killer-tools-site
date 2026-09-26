@@ -286,8 +286,8 @@ tools:
       callingCode: Prefijo telefónico
       sectionValidation: Validación
       isValid: ¿Es válido?
-      'yes': Sí
-      'no': 'No'
+      yes: Sí
+      no: No
       isPossible: ¿Es posible?
       type: Tipo
       unknown: Desconocido
@@ -876,8 +876,8 @@ tools:
       maxTouchPoints: '{count} máximo'
       none: Ninguno
       logicalCores: '{count} núcleos lógicos'
-      'yes': Sí
-      'no': 'No'
+      yes: Sí
+      no: No
       enabled: Habilitado
       disabled: Deshabilitado
       supported: Compatible
@@ -1026,8 +1026,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Tu hash para comparar...
       matchLabel: Coincidencia
-      'yes': Sí
-      'no': 'No'
+      yes: Sí
+      no: No
     title: Bcrypt
     description: Genera y compara cadenas de texto con bcrypt. Bcrypt es una función de hash de contraseñas basada en el cifrado Blowfish.
   bip39-generator:
@@ -1819,8 +1819,8 @@ ui:
   inputText:
     defaultPlaceholder: Texto de entrada
   keyValueListItem:
-    'yes': Sí
-    'no': 'No'
+    yes: Sí
+    no: No
     notAvailable: N/D
   modalValue:
     copied: ¡Copiado!

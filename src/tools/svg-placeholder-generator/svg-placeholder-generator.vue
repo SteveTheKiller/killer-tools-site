@@ -35,121 +35,121 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <!-- Controls -->
-  <div class="sp-controls">
-    <!-- Width + Background -->
-    <div class="sp-row">
-      <div class="sp-field">
-        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.widthLabel') }}</span>
-        <div class="sp-stepper">
-          <button class="sp-step-btn" :disabled="width <= 1" @click="width = Math.max(1, width - 1)">
-            −
-          </button>
-          <input v-model.number="width" class="sp-step-input" type="number" min="1">
-          <button class="sp-step-btn" @click="width++">
-            +
-          </button>
+    <!-- Controls -->
+    <div class="sp-controls">
+      <!-- Width + Background -->
+      <div class="sp-row">
+        <div class="sp-field">
+          <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.widthLabel') }}</span>
+          <div class="sp-stepper">
+            <button class="sp-step-btn" :disabled="width <= 1" @click="width = Math.max(1, width - 1)">
+              −
+            </button>
+            <input v-model.number="width" class="sp-step-input" type="number" min="1">
+            <button class="sp-step-btn" @click="width++">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="sp-field">
+          <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.backgroundLabel') }}</span>
+          <div class="sp-color-row">
+            <input v-model="bgColor" class="sp-color-swatch" type="color">
+            <input v-model="bgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
+          </div>
         </div>
       </div>
-      <div class="sp-field">
-        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.backgroundLabel') }}</span>
-        <div class="sp-color-row">
-          <input v-model="bgColor" class="sp-color-swatch" type="color">
-          <input v-model="bgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
+
+      <!-- Height + Text color -->
+      <div class="sp-row">
+        <div class="sp-field">
+          <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.heightLabel') }}</span>
+          <div class="sp-stepper">
+            <button class="sp-step-btn" :disabled="height <= 1" @click="height = Math.max(1, height - 1)">
+              −
+            </button>
+            <input v-model.number="height" class="sp-step-input" type="number" min="1">
+            <button class="sp-step-btn" @click="height++">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="sp-field">
+          <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.textColorLabel') }}</span>
+          <div class="sp-color-row">
+            <input v-model="fgColor" class="sp-color-swatch" type="color">
+            <input v-model="fgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Height + Text color -->
-    <div class="sp-row">
-      <div class="sp-field">
-        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.heightLabel') }}</span>
-        <div class="sp-stepper">
-          <button class="sp-step-btn" :disabled="height <= 1" @click="height = Math.max(1, height - 1)">
-            −
-          </button>
-          <input v-model.number="height" class="sp-step-input" type="number" min="1">
-          <button class="sp-step-btn" @click="height++">
-            +
-          </button>
+      <!-- Font size + Custom text -->
+      <div class="sp-row">
+        <div class="sp-field">
+          <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.fontSizeLabel') }}</span>
+          <div class="sp-stepper">
+            <button class="sp-step-btn" :disabled="fontSize <= 1" @click="fontSize = Math.max(1, fontSize - 1)">
+              −
+            </button>
+            <input v-model.number="fontSize" class="sp-step-input" type="number" min="1">
+            <button class="sp-step-btn" @click="fontSize++">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="sp-field sp-field-grow">
+          <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.customTextLabel') }}</span>
+          <input
+            v-model="customText"
+            class="sp-text-input"
+            type="text"
+            :placeholder="t('tools.svg-placeholder-generator.ui.customTextPlaceholder', { size: `${width}x${height}` })"
+            autocomplete="off"
+            spellcheck="false"
+          >
         </div>
       </div>
-      <div class="sp-field">
-        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.textColorLabel') }}</span>
-        <div class="sp-color-row">
-          <input v-model="fgColor" class="sp-color-swatch" type="color">
-          <input v-model="fgColor" class="sp-color-hex" type="text" maxlength="7" spellcheck="false">
-        </div>
+
+      <!-- Use exact size pill -->
+      <div class="sp-toggle-row">
+        <button type="button" class="kt-pill" :class="{ 'kt-pill-active': useExactSize }" @click="useExactSize = !useExactSize">
+          {{ t('tools.svg-placeholder-generator.ui.useExactSizeToggle') }}
+        </button>
+      </div>
+
+      <!-- SVG HTML element -->
+      <div class="sp-output-block">
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.svgHtmlElementLabel') }}</span>
+        <TextareaCopyable :value="svgString" language="xml" copy-placement="none" />
+      </div>
+
+      <!-- Base64 -->
+      <div class="sp-output-block">
+        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.svgBase64Label') }}</span>
+        <TextareaCopyable :value="base64" copy-placement="none" />
+      </div>
+
+      <!-- Actions -->
+      <div class="sp-actions">
+        <button class="sp-btn" @click="copySVG()">
+          {{ t('tools.svg-placeholder-generator.ui.copySvgButton') }}
+        </button>
+        <button class="sp-btn" @click="copyBase64()">
+          {{ t('tools.svg-placeholder-generator.ui.copyBase64Button') }}
+        </button>
+        <button class="sp-btn sp-btn-accent" @click="download()">
+          {{ t('tools.svg-placeholder-generator.ui.downloadSvgButton') }}
+        </button>
       </div>
     </div>
 
-    <!-- Font size + Custom text -->
-    <div class="sp-row">
-      <div class="sp-field">
-        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.fontSizeLabel') }}</span>
-        <div class="sp-stepper">
-          <button class="sp-step-btn" :disabled="fontSize <= 1" @click="fontSize = Math.max(1, fontSize - 1)">
-            −
-          </button>
-          <input v-model.number="fontSize" class="sp-step-input" type="number" min="1">
-          <button class="sp-step-btn" @click="fontSize++">
-            +
-          </button>
-        </div>
-      </div>
-      <div class="sp-field sp-field-grow">
-        <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.customTextLabel') }}</span>
-        <input
-          v-model="customText"
-          class="sp-text-input"
-          type="text"
-          :placeholder="t('tools.svg-placeholder-generator.ui.customTextPlaceholder', { size: `${width}x${height}` })"
-          autocomplete="off"
-          spellcheck="false"
-        >
+    <!-- Preview — separate root element so the framework layout gives it full remaining space -->
+    <div class="sp-preview-panel">
+      <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.previewLabel') }}</span>
+      <div class="sp-preview-frame">
+        <img :src="base64" :alt="t('tools.svg-placeholder-generator.ui.svgPreviewAlt')" class="sp-preview-img">
       </div>
     </div>
-
-    <!-- Use exact size pill -->
-    <div class="sp-toggle-row">
-      <button type="button" class="kt-pill" :class="{ 'kt-pill-active': useExactSize }" @click="useExactSize = !useExactSize">
-        {{ t('tools.svg-placeholder-generator.ui.useExactSizeToggle') }}
-      </button>
-    </div>
-
-    <!-- SVG HTML element -->
-    <div class="sp-output-block">
-      <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.svgHtmlElementLabel') }}</span>
-      <TextareaCopyable :value="svgString" language="xml" copy-placement="none" />
-    </div>
-
-    <!-- Base64 -->
-    <div class="sp-output-block">
-      <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.svgBase64Label') }}</span>
-      <TextareaCopyable :value="base64" copy-placement="none" />
-    </div>
-
-    <!-- Actions -->
-    <div class="sp-actions">
-      <button class="sp-btn" @click="copySVG()">
-        {{ t('tools.svg-placeholder-generator.ui.copySvgButton') }}
-      </button>
-      <button class="sp-btn" @click="copyBase64()">
-        {{ t('tools.svg-placeholder-generator.ui.copyBase64Button') }}
-      </button>
-      <button class="sp-btn sp-btn-accent" @click="download()">
-        {{ t('tools.svg-placeholder-generator.ui.downloadSvgButton') }}
-      </button>
-    </div>
-  </div>
-
-  <!-- Preview — separate root element so the framework layout gives it full remaining space -->
-  <div class="sp-preview-panel">
-    <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.previewLabel') }}</span>
-    <div class="sp-preview-frame">
-      <img :src="base64" :alt="t('tools.svg-placeholder-generator.ui.svgPreviewAlt')" class="sp-preview-img">
-    </div>
-  </div>
   </div>
 </template>
 

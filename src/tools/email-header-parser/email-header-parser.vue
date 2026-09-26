@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Check, Copy } from '@vicons/tabler';
 import type { ParsedHeaders } from './email-header-parser.service';
+import { Check, Copy } from '@vicons/tabler';
 import { parseRawHeaders } from './email-header-parser.service';
 
 const { t } = useI18n();

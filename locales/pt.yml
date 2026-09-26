@@ -192,8 +192,8 @@ tools:
       callingCode: Código de discagem
       sectionValidation: Validação
       isValid: É válido?
-      'yes': Sim
-      'no': Não
+      yes: Sim
+      no: Não
       isPossible: É possível?
       type: Tipo
       unknown: Desconhecido
@@ -493,8 +493,8 @@ tools:
       maxTouchPoints: '{count} no máximo'
       none: Nenhum
       logicalCores: '{count} núcleos lógicos'
-      'yes': Sim
-      'no': Não
+      yes: Sim
+      no: Não
       enabled: Habilitado
       disabled: Desabilitado
       supported: Compatível
@@ -1093,8 +1093,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Seu hash para comparar...
       matchLabel: Correspondência
-      'yes': Sim
-      'no': Não
+      yes: Sim
+      no: Não
     title: Bcrypt
     description: Faça hash e compare strings de texto usando bcrypt. Bcrypt é uma função de hash de senha baseada na cifra Blowfish.
   bip39-generator:
@@ -1693,8 +1693,8 @@ ui:
   inputText:
     defaultPlaceholder: Texto de entrada
   keyValueListItem:
-    'yes': Sim
-    'no': Não
+    yes: Sim
+    no: Não
     notAvailable: N/D
   modalValue:
     copied: Copiado!

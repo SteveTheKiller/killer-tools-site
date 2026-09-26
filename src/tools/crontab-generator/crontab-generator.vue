@@ -63,48 +63,48 @@ const cronValidationRules = computed(() => [
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <c-card>
-    <div mx-auto max-w-sm>
-      <c-input-text
-        v-model:value="cron"
-        size="large"
-        placeholder="* * * * *"
-        :validation-rules="cronValidationRules"
-        autofocus
-        mb-3
-      />
-    </div>
+    <c-card>
+      <div mx-auto max-w-sm>
+        <c-input-text
+          v-model:value="cron"
+          size="large"
+          placeholder="* * * * *"
+          :validation-rules="cronValidationRules"
+          autofocus
+          mb-3
+        />
+      </div>
 
-    <div class="cron-terminal">
-      <span class="cron-prompt">&gt;_</span>
-      <span class="cron-output">{{ cronString || '...' }}</span>
-    </div>
+      <div class="cron-terminal">
+        <span class="cron-prompt">&gt;_</span>
+        <span class="cron-output">{{ cronString || '...' }}</span>
+      </div>
 
-    <div class="kt-divider" />
+      <div class="kt-divider" />
 
-    <div class="toggle-row">
-      <button
-        type="button"
-        class="toggle-pill"
-        :class="{ 'toggle-pill-active': cronstrueConfig.use24HourTimeFormat }"
-        @click="cronstrueConfig.use24HourTimeFormat = !cronstrueConfig.use24HourTimeFormat"
-      >
-        <span class="toggle-dot" />{{ t('tools.crontab-generator.ui.use24HourTime') }}
-      </button>
-      <button
-        type="button"
-        class="toggle-pill"
-        :class="{ 'toggle-pill-active': cronstrueConfig.dayOfWeekStartIndexZero }"
-        @click="cronstrueConfig.dayOfWeekStartIndexZero = !cronstrueConfig.dayOfWeekStartIndexZero"
-      >
-        <span class="toggle-dot" />{{ t('tools.crontab-generator.ui.daysStartAtZero') }}
-      </button>
-    </div>
-  </c-card>
+      <div class="toggle-row">
+        <button
+          type="button"
+          class="toggle-pill"
+          :class="{ 'toggle-pill-active': cronstrueConfig.use24HourTimeFormat }"
+          @click="cronstrueConfig.use24HourTimeFormat = !cronstrueConfig.use24HourTimeFormat"
+        >
+          <span class="toggle-dot" />{{ t('tools.crontab-generator.ui.use24HourTime') }}
+        </button>
+        <button
+          type="button"
+          class="toggle-pill"
+          :class="{ 'toggle-pill-active': cronstrueConfig.dayOfWeekStartIndexZero }"
+          @click="cronstrueConfig.dayOfWeekStartIndexZero = !cronstrueConfig.dayOfWeekStartIndexZero"
+        >
+          <span class="toggle-dot" />{{ t('tools.crontab-generator.ui.daysStartAtZero') }}
+        </button>
+      </div>
+    </c-card>
 
-  <c-card>
-    <div v-if="styleStore.isSmallScreen">
-      <pre class="field-diagram">
+    <c-card>
+      <div v-if="styleStore.isSmallScreen">
+        <pre class="field-diagram">
 ┌──────────── [optional] seconds (0 - 59)
 | ┌────────── minute (0 - 59)
 | | ┌──────── hour (0 - 23)
@@ -114,16 +114,16 @@ const cronValidationRules = computed(() => [
 | | | | | |
 * * * * * * command</pre>
 
-      <c-card v-for="{ symbol, meaning, example, equivalent } in helpers" :key="symbol" mb-3 important:border-none>
-        <div>{{ t('tools.crontab-generator.ui.labelSymbol') }} <strong>{{ symbol }}</strong></div>
-        <div>{{ t('tools.crontab-generator.ui.labelMeaning') }} <strong>{{ meaning }}</strong></div>
-        <div>{{ t('tools.crontab-generator.ui.labelExample') }} <strong><code>{{ example }}</code></strong></div>
-        <div>{{ t('tools.crontab-generator.ui.labelEquivalent') }} <strong>{{ equivalent }}</strong></div>
-      </c-card>
-    </div>
+        <c-card v-for="{ symbol, meaning, example, equivalent } in helpers" :key="symbol" mb-3 important:border-none>
+          <div>{{ t('tools.crontab-generator.ui.labelSymbol') }} <strong>{{ symbol }}</strong></div>
+          <div>{{ t('tools.crontab-generator.ui.labelMeaning') }} <strong>{{ meaning }}</strong></div>
+          <div>{{ t('tools.crontab-generator.ui.labelExample') }} <strong><code>{{ example }}</code></strong></div>
+          <div>{{ t('tools.crontab-generator.ui.labelEquivalent') }} <strong>{{ equivalent }}</strong></div>
+        </c-card>
+      </div>
 
-    <div v-else class="cheatsheet">
-      <pre class="field-diagram">
+      <div v-else class="cheatsheet">
+        <pre class="field-diagram">
 ┌──────────── [optional] seconds (0 - 59)
 | ┌────────── minute (0 - 59)
 | | ┌──────── hour (0 - 23)
@@ -133,44 +133,44 @@ const cronValidationRules = computed(() => [
 | | | | | |
 * * * * * * command</pre>
 
-      <div class="cheatsheet-cols">
-        <div class="cheatsheet-section">
-          <div class="section-label">
-            {{ t('tools.crontab-generator.ui.symbols') }}
+        <div class="cheatsheet-cols">
+          <div class="cheatsheet-section">
+            <div class="section-label">
+              {{ t('tools.crontab-generator.ui.symbols') }}
+            </div>
+            <table class="ref-table">
+              <tr v-for="row in symbols" :key="row.symbol">
+                <td class="ref-symbol">
+                  <code>{{ row.symbol }}</code>
+                </td>
+                <td class="ref-meaning">
+                  {{ row.meaning }}
+                </td>
+                <td class="ref-example">
+                  <code>{{ row.example }}</code>
+                </td>
+              </tr>
+            </table>
           </div>
-          <table class="ref-table">
-            <tr v-for="row in symbols" :key="row.symbol">
-              <td class="ref-symbol">
-                <code>{{ row.symbol }}</code>
-              </td>
-              <td class="ref-meaning">
-                {{ row.meaning }}
-              </td>
-              <td class="ref-example">
-                <code>{{ row.example }}</code>
-              </td>
-            </tr>
-          </table>
-        </div>
 
-        <div class="cheatsheet-section">
-          <div class="section-label">
-            @ {{ t('tools.crontab-generator.ui.aliases') }}
+          <div class="cheatsheet-section">
+            <div class="section-label">
+              @ {{ t('tools.crontab-generator.ui.aliases') }}
+            </div>
+            <table class="ref-table">
+              <tr v-for="row in aliases" :key="row.alias">
+                <td class="ref-alias">
+                  <code>{{ row.alias }}</code>
+                </td>
+                <td class="ref-equivalent">
+                  <code>{{ row.equivalent }}</code>
+                </td>
+              </tr>
+            </table>
           </div>
-          <table class="ref-table">
-            <tr v-for="row in aliases" :key="row.alias">
-              <td class="ref-alias">
-                <code>{{ row.alias }}</code>
-              </td>
-              <td class="ref-equivalent">
-                <code>{{ row.equivalent }}</code>
-              </td>
-            </tr>
-          </table>
         </div>
       </div>
-    </div>
-  </c-card>
+    </c-card>
   </div>
 </template>
 

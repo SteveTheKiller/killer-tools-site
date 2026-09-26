@@ -28,51 +28,51 @@ const rawJsonValidation = useValidation({
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <div class="jv-controls">
-    <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
-      {{ t('tools.json-viewer.ui.sortKeys') }}
-    </button>
+    <div class="jv-controls">
+      <button type="button" class="kt-pill" :class="{ 'kt-pill-active': sortKeys }" @click="sortKeys = !sortKeys">
+        {{ t('tools.json-viewer.ui.sortKeys') }}
+      </button>
 
-    <!-- Indent size stepper -->
-    <div class="jv-control">
-      <span class="jv-control-label">{{ t('tools.json-viewer.ui.indentSize') }}</span>
-      <div class="jv-stepper">
-        <button class="jv-step-btn" :disabled="indentSize <= 0" @click="indentSize = Math.max(0, indentSize - 1)">
-          −
-        </button>
-        <span class="jv-step-val">{{ indentSize }}</span>
-        <button class="jv-step-btn" :disabled="indentSize >= 10" @click="indentSize = Math.min(10, indentSize + 1)">
-          +
-        </button>
+      <!-- Indent size stepper -->
+      <div class="jv-control">
+        <span class="jv-control-label">{{ t('tools.json-viewer.ui.indentSize') }}</span>
+        <div class="jv-stepper">
+          <button class="jv-step-btn" :disabled="indentSize <= 0" @click="indentSize = Math.max(0, indentSize - 1)">
+            −
+          </button>
+          <span class="jv-step-val">{{ indentSize }}</span>
+          <button class="jv-step-btn" :disabled="indentSize >= 10" @click="indentSize = Math.min(10, indentSize + 1)">
+            +
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="jv-panel">
-    <div class="kt-section-label">
-      {{ t('tools.json-viewer.ui.yourRawJson') }}
+    <div class="jv-panel">
+      <div class="kt-section-label">
+        {{ t('tools.json-viewer.ui.yourRawJson') }}
+      </div>
+      <c-input-text
+        ref="inputElement"
+        v-model:value="rawJson"
+        :validation="rawJsonValidation"
+        :placeholder="t('tools.json-viewer.ui.pasteRawJsonPlaceholder')"
+        rows="20"
+        multiline
+        autofocus
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        monospace
+      />
     </div>
-    <c-input-text
-      ref="inputElement"
-      v-model:value="rawJson"
-      :validation="rawJsonValidation"
-      :placeholder="t('tools.json-viewer.ui.pasteRawJsonPlaceholder')"
-      rows="20"
-      multiline
-      autofocus
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="false"
-      monospace
-    />
-  </div>
-  <div style="flex: 1 1 300px; min-width: 0;">
-    <div class="kt-section-label">
-      {{ t('tools.json-viewer.ui.prettifiedVersion') }}
+    <div style="flex: 1 1 300px; min-width: 0;">
+      <div class="kt-section-label">
+        {{ t('tools.json-viewer.ui.prettifiedVersion') }}
+      </div>
+      <TextareaCopyable :value="cleanJson" language="json" :follow-height-of="inputElement" />
     </div>
-    <TextareaCopyable :value="cleanJson" language="json" :follow-height-of="inputElement" />
-  </div>
   </div>
 </template>
 

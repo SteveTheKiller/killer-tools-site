@@ -398,8 +398,8 @@ tools:
       hashLabel: 雜湊值
       compareHashPlaceholder: 要比對的雜湊值...
       matchLabel: 相符
-      'yes': 是
-      'no': 否
+      yes: 是
+      no: 否
   crontab-generator:
     title: Crontab 產生器
     description: 驗證並產生 crontab，並取得 cron 排程的易讀說明。
@@ -611,8 +611,8 @@ tools:
       callingCode: 撥號代碼
       sectionValidation: 驗證
       isValid: 是否有效？
-      'yes': 是
-      'no': 否
+      yes: 是
+      no: 否
       isPossible: 是否可能？
       type: 類型
       unknown: 未知
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: 最多{count}個
       none: 無
       logicalCores: '{count}個邏輯核心'
-      'yes': 是
-      'no': 否
+      yes: 是
+      no: 否
       enabled: 已啟用
       disabled: 已停用
       supported: 支援
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: 輸入文字
   keyValueListItem:
-    'yes': 是
-    'no': 否
+    yes: 是
+    no: 否
     notAvailable: 不適用
   modalValue:
     copied: 已複製!

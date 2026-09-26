@@ -398,8 +398,8 @@ tools:
       hashLabel: Хеш
       compareHashPlaceholder: Хеш для сравнения...
       matchLabel: Совпадение
-      'yes': Да
-      'no': Нет
+      yes: Да
+      no: Нет
   crontab-generator:
     title: Генератор crontab
     description: Проверяйте и создавайте crontab и получайте понятное описание расписания cron.
@@ -611,8 +611,8 @@ tools:
       callingCode: Телефонный код
       sectionValidation: Проверка
       isValid: Действителен?
-      'yes': Да
-      'no': Нет
+      yes: Да
+      no: Нет
       isPossible: Возможен?
       type: Тип
       unknown: Неизвестно
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: '{count} макс.'
       none: Нет
       logicalCores: '{count} логических ядер'
-      'yes': Да
-      'no': Нет
+      yes: Да
+      no: Нет
       enabled: Включено
       disabled: Отключено
       supported: Поддерживается
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: Введите текст
   keyValueListItem:
-    'yes': Да
-    'no': Нет
+    yes: Да
+    no: Нет
     notAvailable: Н/Д
   modalValue:
     copied: Скопировано!

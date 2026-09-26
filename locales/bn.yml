@@ -398,8 +398,8 @@ tools:
       hashLabel: হ্যাশ
       compareHashPlaceholder: তুলনার জন্য আপনার হ্যাশ...
       matchLabel: মিল
-      'yes': হ্যাঁ
-      'no': না
+      yes: হ্যাঁ
+      no: না
   crontab-generator:
     title: Crontab জেনারেটর
     description: crontab যাচাই ও তৈরি করুন এবং cron সময়সূচির সহজপাঠ্য বিবরণ পান।
@@ -611,8 +611,8 @@ tools:
       callingCode: কলিং কোড
       sectionValidation: যাচাইকরণ
       isValid: বৈধ কি?
-      'yes': হ্যাঁ
-      'no': না
+      yes: হ্যাঁ
+      no: না
       isPossible: সম্ভব কি?
       type: ধরন
       unknown: অজানা
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: সর্বোচ্চ {count}
       none: কোনোটি নয়
       logicalCores: '{count} লজিক্যাল কোর'
-      'yes': হ্যাঁ
-      'no': না
+      yes: হ্যাঁ
+      no: না
       enabled: সক্রিয়
       disabled: নিষ্ক্রিয়
       supported: সমর্থিত
@@ -1820,8 +1820,8 @@ ui:
   inputText:
     defaultPlaceholder: টেক্সট ইনপুট করুন
   keyValueListItem:
-    'yes': হ্যাঁ
-    'no': না
+    yes: হ্যাঁ
+    no: না
     notAvailable: প্রযোজ্য নয়
   modalValue:
     copied: কপি হয়েছে!

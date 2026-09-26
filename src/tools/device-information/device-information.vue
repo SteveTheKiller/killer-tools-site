@@ -243,7 +243,6 @@ const sections = [
   min-width: 0;
 }
 
-
 html:not(.dark) .di-label {
   color: rgba(0, 0, 0, 0.55);
 }

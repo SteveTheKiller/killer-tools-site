@@ -3,8 +3,6 @@ import type { UseValidationRule } from '@/composable/validation';
 import _ from 'lodash';
 import CInputText from '@/ui/c-input-text/c-input-text.vue';
 
-const { t } = useI18n();
-
 const props = withDefaults(
   defineProps<{
     transformer?: (v: string) => string
@@ -25,6 +23,8 @@ const props = withDefaults(
     outputLanguage: '',
   },
 );
+
+const { t } = useI18n();
 
 const { transformer, inputValidationRules, outputLanguage, inputDefault }
   = toRefs(props);

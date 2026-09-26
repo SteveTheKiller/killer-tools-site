@@ -11,14 +11,13 @@ const props = withDefaults(defineProps<{
   title: undefined,
 });
 
-const { t } = useI18n();
-const { title: rawTitle } = toRefs(props);
-const displayTitle = computed(() => rawTitle.value ?? t('ui.fileUpload.defaultTitle'));
-
 const emit = defineEmits<{
   (event: 'filesUpload', files: File[]): void
   (event: 'fileUpload', file: File): void
 }>();
+const { t } = useI18n();
+const { title: rawTitle } = toRefs(props);
+const displayTitle = computed(() => rawTitle.value ?? t('ui.fileUpload.defaultTitle'));
 
 const { multiple } = toRefs(props);
 

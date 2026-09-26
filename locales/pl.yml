@@ -398,8 +398,8 @@ tools:
       hashLabel: Hasz
       compareHashPlaceholder: Twój hasz do porównania...
       matchLabel: Zgodność
-      'yes': Tak
-      'no': Nie
+      yes: Tak
+      no: Nie
   crontab-generator:
     title: Generator crontab
     description: Weryfikuj i generuj crontab oraz uzyskaj czytelny opis harmonogramu cron.
@@ -611,8 +611,8 @@ tools:
       callingCode: Numer kierunkowy
       sectionValidation: Walidacja
       isValid: Czy jest prawidłowy?
-      'yes': Tak
-      'no': Nie
+      yes: Tak
+      no: Nie
       isPossible: Czy jest możliwy?
       type: Typ
       unknown: Nieznany
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: maks. {count}
       none: Brak
       logicalCores: '{count} rdzeni logicznych'
-      'yes': Tak
-      'no': Nie
+      yes: Tak
+      no: Nie
       enabled: Włączone
       disabled: Wyłączone
       supported: Obsługiwane
@@ -1694,8 +1694,8 @@ ui:
   inputText:
     defaultPlaceholder: Tekst wejściowy
   keyValueListItem:
-    'yes': Tak
-    'no': Nie
+    yes: Tak
+    no: Nie
     notAvailable: Nie dotyczy
   modalValue:
     copied: Skopiowano!

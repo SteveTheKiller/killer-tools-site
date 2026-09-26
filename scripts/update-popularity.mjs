@@ -15,9 +15,10 @@
  *   node scripts/update-popularity.mjs
  */
 
-import { writeFileSync, mkdirSync, readFileSync, readdirSync } from 'fs';
-import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, '../src/data/tool-popularity.json');
@@ -96,7 +97,7 @@ const SKIP = new Set(['/', '/about']);
 // Entries stay here once the window has passed. They cost one lookup, and they are the only
 // record of why a number is the size it is.
 const ALIAS = {
-  '/killer-find': '/killer-shell',        // renamed 2026-07-27, KillerFind became KillerShell
+  '/killer-find': '/killer-shell', // renamed 2026-07-27, KillerFind became KillerShell
   // Merged into Domain Lookup - see the comment on the import in src/tools/index.ts. Their
   // traffic is real and belongs to the tool that absorbed them, not in the bin.
   '/whois-checker': '/domain-lookup',
@@ -110,7 +111,7 @@ const ALIAS = {
 // the 2026-07-27 rename. Rate-normalising on a three-day age would multiply inherited history
 // by thirty and shoot it to the top of the site.
 const SINCE = {
-  '/killer-shell': '2026-04-01',   // KillerFind's era, which is where that traffic came from
+  '/killer-shell': '2026-04-01', // KillerFind's era, which is where that traffic came from
 };
 
 // Below this, a tool is treated as this many days old however new it is. Without it a page that
@@ -122,7 +123,7 @@ const MIN_DAYS = 14;
 // traffic arrives. It stops mattering by itself the moment the measured rate passes it - no
 // cleanup, no expiry to forget. Delete an entry once it is moot.
 const SEED = {
-  '/killendar': 85,   // launched 2026-07-30; sits just under KillerNotes' measured rate
+  '/killendar': 85, // launched 2026-07-30; sits just under KillerNotes' measured rate
 };
 
 /** Days each tool's page has been live, capped to the look-back window. */
@@ -131,13 +132,18 @@ function toolAges() {
   const ages = {};
   const now = Date.now();
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (!entry.isDirectory()) { continue; }
+    if (!entry.isDirectory()) {
+      continue;
+    }
     let src;
     try {
       src = readFileSync(resolve(dir, entry.name, 'index.ts'), 'utf8');
-    } catch { continue; }
+    }
+    catch { continue; }
     const p = src.match(/path:\s*'([^']+)'/);
-    if (!p) { continue; }
+    if (!p) {
+      continue;
+    }
     const iso = SINCE[p[1]] ?? src.match(/createdAt:\s*new Date\('([\d-]+)'\)/)?.[1];
     // No createdAt means it predates the field, i.e. it is old - give it the full window.
     const lived = iso ? (now - Date.parse(iso)) / 86400000 : days;
@@ -159,13 +165,18 @@ function knownToolPaths() {
   const dir = resolve(__dirname, '../src/tools');
   const paths = new Set();
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (!entry.isDirectory()) { continue; }
+    if (!entry.isDirectory()) {
+      continue;
+    }
     let src;
     try {
       src = readFileSync(resolve(dir, entry.name, 'index.ts'), 'utf8');
-    } catch { continue; }
+    }
+    catch { continue; }
     const m = src.match(/path:\s*'([^']+)'/);
-    if (m) { paths.add(m[1]); }
+    if (m) {
+      paths.add(m[1]);
+    }
   }
   return paths;
 }
@@ -191,11 +202,18 @@ console.log(`Known tool paths: ${KNOWN.size}`);
 const popularity = {};
 let dropped = 0;
 for (const { x: rawPath, y: views } of metrics) {
-  if (!rawPath.startsWith('/')) { continue; }
+  if (!rawPath.startsWith('/')) {
+    continue;
+  }
   const path = normalise(rawPath);
-  if (SKIP.has(path)) { continue; }
+  if (SKIP.has(path)) {
+    continue;
+  }
   const key = ALIAS[path] ?? path;
-  if (!KNOWN.has(key)) { dropped++; continue; }
+  if (!KNOWN.has(key)) {
+    dropped++;
+    continue;
+  }
   // ADD, never assign - the whole point is that several raw rows fold into one tool.
   popularity[key] = (popularity[key] ?? 0) + views;
 }
@@ -224,7 +242,9 @@ for (const [path, floor] of Object.entries(SEED)) {
     console.warn(`SEED entry ${path} is not a tool path - remove it or fix the path`);
     continue;
   }
-  if ((popularity[path] ?? 0) < floor) { popularity[path] = floor; }
+  if ((popularity[path] ?? 0) < floor) {
+    popularity[path] = floor;
+  }
 }
 
 // Sort descending by views for readability
@@ -233,5 +253,5 @@ const sorted = Object.fromEntries(
 );
 
 mkdirSync(dirname(OUT), { recursive: true });
-writeFileSync(OUT, JSON.stringify(sorted, null, 2) + '\n');
+writeFileSync(OUT, `${JSON.stringify(sorted, null, 2)}\n`);
 console.log(`Wrote ${Object.keys(sorted).length} entries to ${OUT}`);

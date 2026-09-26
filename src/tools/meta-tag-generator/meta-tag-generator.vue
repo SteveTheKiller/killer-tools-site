@@ -106,105 +106,105 @@ function getSelectLabel(element: OGSchemaTypeElementSelect): string {
 <template>
   <!-- single element root: multi-root pages break the route <transition> -->
   <div style="display: contents">
-  <!-- Left: form panel -->
-  <div class="mg-form-wrap">
-    <div
-      v-for="{ name, elements } of sections"
-      :key="name"
-      class="mg-section kt-terminal"
-    >
-      <div class="kt-terminal-bar">
-        <span class="kt-terminal-bar-title">{{ name.toUpperCase() }}</span>
-      </div>
+    <!-- Left: form panel -->
+    <div class="mg-form-wrap">
+      <div
+        v-for="{ name, elements } of sections"
+        :key="name"
+        class="mg-section kt-terminal"
+      >
+        <div class="kt-terminal-bar">
+          <span class="kt-terminal-bar-title">{{ name.toUpperCase() }}</span>
+        </div>
 
-      <div class="mg-fields">
-        <div
-          v-for="{ key, type, label, placeholder, ...element } of elements"
-          :key="key"
-          class="mg-row"
-        >
-          <span class="mg-field-label">{{ label }}</span>
-
-          <!-- Text input -->
-          <input
-            v-if="type === 'input'"
-            v-model="metadata[key]"
-            class="mg-input"
-            :placeholder="placeholder"
-            spellcheck="false"
-          >
-
-          <!-- Select / dropdown -->
+        <div class="mg-fields">
           <div
-            v-else-if="type === 'select'"
-            class="mg-dropdown"
-            :data-dd="key"
-            tabindex="0"
-            @blur="closeOnBlur(key)($event)"
+            v-for="{ key, type, label, placeholder, ...element } of elements"
+            :key="key"
+            class="mg-row"
           >
-            <button
-              type="button"
-              class="mg-dropdown-trigger"
-              @click="toggleDropdown(key)"
+            <span class="mg-field-label">{{ label }}</span>
+
+            <!-- Text input -->
+            <input
+              v-if="type === 'input'"
+              v-model="metadata[key]"
+              class="mg-input"
+              :placeholder="placeholder"
+              spellcheck="false"
             >
-              <span>{{ getSelectLabel(element as OGSchemaTypeElementSelect) || placeholder }}</span>
-              <icon-mdi-chevron-down
-                class="mg-chevron"
-                :class="{ 'mg-chevron-open': openDropdowns[key] }"
-              />
-            </button>
-            <div v-if="openDropdowns[key]" class="mg-dropdown-menu">
-              <template v-for="opt in (element as OGSchemaTypeElementSelect).options" :key="(opt as any).value ?? (opt as any).key">
-                <!-- Group header -->
-                <div v-if="(opt as any).children" class="mg-group-header">
-                  {{ (opt as any).label }}
-                </div>
-                <template v-if="(opt as any).children">
+
+            <!-- Select / dropdown -->
+            <div
+              v-else-if="type === 'select'"
+              class="mg-dropdown"
+              :data-dd="key"
+              tabindex="0"
+              @blur="closeOnBlur(key)($event)"
+            >
+              <button
+                type="button"
+                class="mg-dropdown-trigger"
+                @click="toggleDropdown(key)"
+              >
+                <span>{{ getSelectLabel(element as OGSchemaTypeElementSelect) || placeholder }}</span>
+                <icon-mdi-chevron-down
+                  class="mg-chevron"
+                  :class="{ 'mg-chevron-open': openDropdowns[key] }"
+                />
+              </button>
+              <div v-if="openDropdowns[key]" class="mg-dropdown-menu">
+                <template v-for="opt in (element as OGSchemaTypeElementSelect).options" :key="(opt as any).value ?? (opt as any).key">
+                  <!-- Group header -->
+                  <div v-if="(opt as any).children" class="mg-group-header">
+                    {{ (opt as any).label }}
+                  </div>
+                  <template v-if="(opt as any).children">
+                    <button
+                      v-for="child in (opt as any).children"
+                      :key="child.value"
+                      type="button"
+                      class="mg-dropdown-item mg-dropdown-item-indent"
+                      :class="{ 'mg-item-active': metadata[key] === child.value }"
+                      @click="selectOption(key, child.value)"
+                    >
+                      {{ child.label }}
+                    </button>
+                  </template>
                   <button
-                    v-for="child in (opt as any).children"
-                    :key="child.value"
+                    v-else
                     type="button"
-                    class="mg-dropdown-item mg-dropdown-item-indent"
-                    :class="{ 'mg-item-active': metadata[key] === child.value }"
-                    @click="selectOption(key, child.value)"
+                    class="mg-dropdown-item"
+                    :class="{ 'mg-item-active': metadata[key] === (opt as any).value }"
+                    @click="selectOption(key, (opt as any).value)"
                   >
-                    {{ child.label }}
+                    {{ (opt as any).label }}
                   </button>
                 </template>
-                <button
-                  v-else
-                  type="button"
-                  class="mg-dropdown-item"
-                  :class="{ 'mg-item-active': metadata[key] === (opt as any).value }"
-                  @click="selectOption(key, (opt as any).value)"
-                >
-                  {{ (opt as any).label }}
-                </button>
-              </template>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Right: output panel -->
-  <div class="mg-output-wrap kt-terminal">
-    <div class="kt-terminal-bar mg-output-bar">
-      <span class="kt-terminal-bar-title">{{ t('tools.meta-tag-generator.ui.outputTitle') }}</span>
-      <button type="button" class="mg-copy-btn" @click="copy()">
-        <span v-if="copied">{{ t('tools.meta-tag-generator.ui.copiedLabel') }}</span>
-        <template v-else>
-          <icon-mdi-content-copy />
-          {{ t('tools.meta-tag-generator.ui.copyButton') }}
-        </template>
-      </button>
+    <!-- Right: output panel -->
+    <div class="mg-output-wrap kt-terminal">
+      <div class="kt-terminal-bar mg-output-bar">
+        <span class="kt-terminal-bar-title">{{ t('tools.meta-tag-generator.ui.outputTitle') }}</span>
+        <button type="button" class="mg-copy-btn" @click="copy()">
+          <span v-if="copied">{{ t('tools.meta-tag-generator.ui.copiedLabel') }}</span>
+          <template v-else>
+            <icon-mdi-content-copy />
+            {{ t('tools.meta-tag-generator.ui.copyButton') }}
+          </template>
+        </button>
+      </div>
+      <div class="mg-code-panel">
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <pre class="mg-pre" v-html="highlightedOutput" />
+      </div>
     </div>
-    <div class="mg-code-panel">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <pre class="mg-pre" v-html="highlightedOutput" />
-    </div>
-  </div>
   </div>
 </template>
 

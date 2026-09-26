@@ -398,8 +398,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Az összehasonlítandó hash...
       matchLabel: Egyezés
-      'yes': Igen
-      'no': Nem
+      yes: Igen
+      no: Nem
   crontab-generator:
     title: Crontab generátor
     description: Crontab ellenőrzése és generálása, valamint a cron ütemezés ember által olvasható leírása.
@@ -611,8 +611,8 @@ tools:
       callingCode: Hívószám
       sectionValidation: Ellenőrzés
       isValid: Érvényes?
-      'yes': Igen
-      'no': Nem
+      yes: Igen
+      no: Nem
       isPossible: Lehetséges?
       type: Típus
       unknown: Ismeretlen
@@ -918,8 +918,8 @@ tools:
       maxTouchPoints: Legfeljebb {count}
       none: Nincs
       logicalCores: '{count} logikai mag'
-      'yes': Igen
-      'no': Nem
+      yes: Igen
+      no: Nem
       enabled: Engedélyezve
       disabled: Letiltva
       supported: Támogatott
@@ -1820,8 +1820,8 @@ ui:
   inputText:
     defaultPlaceholder: Szöveg megadása
   keyValueListItem:
-    'yes': Igen
-    'no': Nem
+    yes: Igen
+    no: Nem
     notAvailable: Nem elérhető
   modalValue:
     copied: Másolva!

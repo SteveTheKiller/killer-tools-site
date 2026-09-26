@@ -176,8 +176,8 @@ tools:
       hashLabel: Hash
       compareHashPlaceholder: Hash cần so sánh...
       matchLabel: Khớp
-      'yes': Có
-      'no': Không
+      yes: Có
+      no: Không
   crontab-generator:
     title: Trình tạo Crontab
     description: Xác thực và tạo crontab và lấy mô tả đọc được của lịch trình cron.
@@ -644,8 +644,8 @@ tools:
       maxTouchPoints: Tối đa {count}
       none: Không có
       logicalCores: '{count} lõi luận lý'
-      'yes': Có
-      'no': Không
+      yes: Có
+      no: Không
       enabled: Đã bật
       disabled: Đã tắt
       supported: Được hỗ trợ
@@ -1233,8 +1233,8 @@ tools:
       callingCode: Mã gọi
       sectionValidation: Xác thực
       isValid: Có hợp lệ không?
-      'yes': Có
-      'no': Không
+      yes: Có
+      no: Không
       isPossible: Có khả thi không?
       type: Loại
       unknown: Không xác định
@@ -1693,8 +1693,8 @@ ui:
   inputText:
     defaultPlaceholder: Nhập văn bản
   keyValueListItem:
-    'yes': Có
-    'no': Không
+    yes: Có
+    no: Không
     notAvailable: Không có
   modalValue:
     copied: Đã sao chép!

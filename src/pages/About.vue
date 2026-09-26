@@ -33,49 +33,49 @@ useHead({
            would be laid out as a grid cell of its own and break the columns. -->
       <div class="about-left">
 
-      <!-- Grunge card (family standard): dark grained surface, rounded, replaces the old terminal chrome -->
-      <div class="g-card">
-        <div class="terminal-body">
-          <div class="prompt-line">
-            <img class="site-icon" src="/app-icon-512.png" alt="">
-            <h1 class="site-title killer-font">{{ t('pages.about.heading') }}</h1>
+        <!-- Grunge card (family standard): dark grained surface, rounded, replaces the old terminal chrome -->
+        <div class="g-card">
+          <div class="terminal-body">
+            <div class="prompt-line">
+              <img class="site-icon" src="/app-icon-512.png" alt="">
+              <h1 class="site-title killer-font">{{ t('pages.about.heading') }}</h1>
+            </div>
+            <p>
+              {{ t('pages.about.intro') }}
+            </p>
+            <p>
+              {{ t('pages.about.originPrefix') }}
+              <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools</a>
+              {{ t('pages.about.originMid') }}
+              <a href="https://github.com/CorentinTh" target="_blank" rel="noopener">Corentin Thomasset</a>
+              {{ t('pages.about.originSuffix') }}
+            </p>
+            <p>
+              {{ t('pages.about.scriptsLibrary') }}
+            </p>
+            <p>
+              {{ t('pages.about.privacyBody') }}
+            </p>
+            <p class="last">
+              {{ t('pages.about.maintainedByPrefix') }}
+              <a href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a>.
+              {{ t('pages.about.maintainedByMid') }}
+              <a href="https://www.buymeacoffee.com/StevetheKiller" target="_blank" rel="noopener">{{ t('pages.about.buyMeCoffee') }}</a>
+              {{ t('pages.about.maintainedBySuffix') }}
+            </p>
           </div>
+        </div>
+
+        <!-- Under the About card, not under Also try: the right column is the taller of the two,
+           so hanging this off the left one evens the heights. -->
+        <div class="about-footer g-card">
+          <h2 class="also-heading killer-font">{{ t('pages.about.missingToolHeading') }}</h2>
           <p>
-            {{ t('pages.about.intro') }}
-          </p>
-          <p>
-            {{ t('pages.about.originPrefix') }}
-            <a href="https://github.com/CorentinTh/it-tools" target="_blank" rel="noopener" style="white-space: nowrap">IT-Tools</a>
-            {{ t('pages.about.originMid') }}
-            <a href="https://github.com/CorentinTh" target="_blank" rel="noopener">Corentin Thomasset</a>
-            {{ t('pages.about.originSuffix') }}
-          </p>
-          <p>
-            {{ t('pages.about.scriptsLibrary') }}
-          </p>
-          <p>
-            {{ t('pages.about.privacyBody') }}
-          </p>
-          <p class="last">
-            {{ t('pages.about.maintainedByPrefix') }}
-            <a href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a>.
-            {{ t('pages.about.maintainedByMid') }}
-            <a href="https://www.buymeacoffee.com/StevetheKiller" target="_blank" rel="noopener">{{ t('pages.about.buyMeCoffee') }}</a>
-            {{ t('pages.about.maintainedBySuffix') }}
+            {{ t('pages.about.issuesPrefix') }}
+            <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">{{ t('pages.about.issuesLinkText') }}</a>
+            {{ t('pages.about.issuesSuffix') }}
           </p>
         </div>
-      </div>
-
-      <!-- Under the About card, not under Also try: the right column is the taller of the two,
-           so hanging this off the left one evens the heights. -->
-      <div class="about-footer g-card">
-        <h2 class="also-heading killer-font">{{ t('pages.about.missingToolHeading') }}</h2>
-        <p>
-          {{ t('pages.about.issuesPrefix') }}
-          <a href="https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose" target="_blank" rel="noopener">{{ t('pages.about.issuesLinkText') }}</a>
-          {{ t('pages.about.issuesSuffix') }}
-        </p>
-      </div>
 
       </div><!-- /.about-left -->
 

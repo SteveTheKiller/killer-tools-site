@@ -23,7 +23,9 @@ const visible = computed(() => !isNativeApp && !dismissed.value && route.name !=
         <span class="beta-sub">{{ t('components.androidBetaBanner.subtitle') }}</span>
       </span>
     </RouterLink>
-    <button class="beta-close" type="button" :aria-label="t('components.androidBetaBanner.dismiss')" @click="dismissed = true">&#215;</button>
+    <button class="beta-close" type="button" :aria-label="t('components.androidBetaBanner.dismiss')" @click="dismissed = true">
+      &#215;
+    </button>
   </div>
 </template>
 
