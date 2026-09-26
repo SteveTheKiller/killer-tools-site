@@ -12,6 +12,7 @@ import { ALGORITHM_DESCRIPTIONS, CLAIM_DESCRIPTIONS } from '../../src/tools/jwt-
 import { effLongWordlist } from '../../src/tools/password-generator/eff-long-wordlist.ts';
 import { getPasswordCrackTimeEstimation } from '../../src/tools/password-strength-analyser/password-strength-analyser.service.ts';
 import { registerBrowserCompanion } from './browser-companion.mjs';
+import { registerLocalWorkerTools } from './worker-bridge.mjs';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
 const error = message => ({ content: [{ type: 'text', text: message }], isError: true });
@@ -99,9 +100,10 @@ function randomIndex(max) {
   return value % max;
 }
 
-function createServer() {
+async function createServer() {
   const server = new McpServer({ name: 'KillerTools MCP Local', version: '0.1.0' });
   registerBrowserCompanion(server);
+  await registerLocalWorkerTools(server);
 
   server.registerTool('hash_text_private', {
     description: 'Hash private text locally using the KillerTools hash algorithms.',

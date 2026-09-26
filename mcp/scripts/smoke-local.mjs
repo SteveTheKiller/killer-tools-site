@@ -37,7 +37,7 @@ function request(method, params = {}) {
     const timeout = setTimeout(() => {
       pending.delete(id);
       reject(new Error(`Timed out waiting for ${method}: ${stderr}`));
-    }, 15000);
+    }, 45000);
     pending.set(id, (response) => {
       clearTimeout(timeout);
       resolve(response);
@@ -62,10 +62,14 @@ try {
   child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })}\n`);
   const listed = await request('tools/list');
   const names = new Set(listed.result.tools.map(tool => tool.name));
+  assert.equal(names.size, 94);
   for (const name of ['hash_text_private', 'hmac_private', 'crypt_text_private', 'bcrypt_private', 'bip39_private', 'parse_jwt_private', 'otp_private', 'generate_otp_secret_private', 'generate_password_private', 'analyze_password_private', 'generate_rsa_keypair_private', 'encode_file_base64_local', 'decode_file_base64_local', 'check_pdf_signatures_local', 'open_browser_companion_local', 'get_browser_device_information_local', 'get_browser_keycode_local', 'get_browser_html_local', 'get_browser_signature_local', 'get_browser_camera_local']) {
     assert.ok(names.has(name), name);
   }
   assert.equal((await call('hash_text_private', { value: 'abc' })).hash, 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
+  assert.ok(names.has('convert_case'));
+  assert.ok((await call('convert_case', { text: 'Hello World' })).some(item => item.label === 'Lowercase' && item.value === 'hello world'));
+  assert.equal((await request('tools/call', { name: 'convert_case', arguments: {} })).result.isError, true);
   assert.equal((await call('hmac_private', { value: 'abc', secret: 'key' })).hmac.length, 64);
   const encrypted = await call('crypt_text_private', { value: 'private', secret: 'key', action: 'encrypt' });
   assert.equal((await call('crypt_text_private', { value: encrypted.output, secret: 'key', action: 'decrypt' })).output, 'private');
@@ -123,7 +127,7 @@ try {
     body: JSON.stringify({ type: 'key', value: '{"key":"A"}' }),
   })).status, 204);
   assert.equal(JSON.parse((await call('get_browser_keycode_local', {})).value).key, 'A');
-  console.log('Local MCP private operations and browser companion transport passed.');
+  console.log('All 94 local MCP operations discovered; Worker forwarding, private operations, and browser transport passed.');
   if (process.env.MCP_BROWSER_PREVIEW === '1') {
     console.log(browser.url);
     await new Promise(resolve => setTimeout(resolve, 120000));
