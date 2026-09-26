@@ -135,7 +135,7 @@ const tools = computed<ToolCategory[]>(() => [
   text-decoration: none;
   white-space: nowrap;
   font-family: 'KillerScan', 'Courier New', monospace;
-  font-size: 26px;
+  font-size: 22px;
   margin-right: 12px;
 }
 
@@ -162,8 +162,8 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .tb-mcp-mark {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
 }
 
 /* The topbar row is the positioning ancestor for the brand: when the row
