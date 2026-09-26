@@ -183,6 +183,17 @@ useHead({
   background-size: 256px 256px, auto;
   border: 1px solid var(--kt-chrome-border, #1f1f1f);
   border-radius: 6px;
+  transition: transform 0.12s, box-shadow 0.12s, border-color 0.15s;
+}
+
+.mcp-surface:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--kt-accent-rgb), 0.6);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+html:not(.dark) .mcp-surface:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
 }
 
 .mcp-surface::after {
