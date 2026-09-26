@@ -1,5 +1,5 @@
 import { Buffer } from 'node:buffer';
-import { createHmac, generateKeyPairSync, randomBytes } from 'node:crypto';
+import { createHmac, generateKeyPairSync, randomBytes, randomUUID } from 'node:crypto';
 import { readFile, stat, writeFile } from 'node:fs/promises';
 import bip39 from '@it-tools/bip39';
 import { McpServer } from '@modelcontextprotocol/server';
@@ -8,6 +8,7 @@ import { compare, hash } from 'bcryptjs';
 import cryptoJs from 'crypto-js';
 import verifyPdf from 'pdf-signature-reader';
 import { z } from 'zod';
+import { effLongWordlist } from '../../src/tools/password-generator/eff-long-wordlist.ts';
 import { registerBrowserCompanion } from './browser-companion.mjs';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
@@ -182,8 +183,9 @@ function createServer() {
   });
 
   server.registerTool('generate_password_private', {
-    description: 'Generate a cryptographically random password locally with the KillerTools character pools.',
+    description: 'Generate a password or passphrase locally with the KillerTools modes.',
     inputSchema: {
+      mode: z.enum(['random', 'passphrase', 'pronounceable', 'format']).default('random'),
       length: z.number().int().min(8).max(128).default(20),
       uppercase: z.boolean().default(true),
       lowercase: z.boolean().default(true),
@@ -191,8 +193,53 @@ function createServer() {
       symbols: z.boolean().default(true),
       excludeAmbiguous: z.boolean().default(true),
       requireOneOfEach: z.boolean().default(true),
+      wordCount: z.number().int().min(1).max(16).default(6),
+      wordSeparator: z.string().max(8).default('-'),
+      capitalizeWords: z.boolean().default(true),
+      appendNumber: z.boolean().default(false),
+      format: z.enum(['hex', 'base64', 'base64url', 'uuid']).default('hex'),
     },
-  }, async ({ length, uppercase, lowercase, numbers, symbols, excludeAmbiguous, requireOneOfEach }) => {
+  }, async ({ mode, length, uppercase, lowercase, numbers, symbols, excludeAmbiguous, requireOneOfEach, wordCount, wordSeparator, capitalizeWords, appendNumber, format }) => {
+    if (mode === 'passphrase') {
+      const words = Array.from({ length: wordCount }, () => {
+        const word = effLongWordlist[randomIndex(effLongWordlist.length)];
+        return capitalizeWords ? word.charAt(0).toUpperCase() + word.slice(1) : word;
+      });
+      if (appendNumber) {
+        words.push(String(randomIndex(100)).padStart(2, '0'));
+      }
+      return result({ password: words.join(wordSeparator) });
+    }
+    if (mode === 'pronounceable') {
+      const consonants = 'bcdfghjkmnpqrstvwxz';
+      const vowels = 'aeiouy';
+      let password = Array.from({ length }, (_, index) => {
+        const alphabet = index % 2 === 0 ? consonants : vowels;
+        return alphabet[randomIndex(alphabet.length)];
+      }).join('');
+      if (appendNumber) {
+        password = password.slice(0, -2) + String(randomIndex(100)).padStart(2, '0');
+      }
+      return result({ password });
+    }
+    if (mode === 'format') {
+      if (format === 'uuid') {
+        return result({ password: randomUUID() });
+      }
+      const byteLength = format === 'hex' ? Math.ceil(length / 2) : length;
+      const bytes = randomBytes(byteLength);
+      let password;
+      if (format === 'hex') {
+        password = bytes.toString('hex').slice(0, length);
+      }
+      else if (format === 'base64') {
+        password = bytes.toString('base64').slice(0, length);
+      }
+      else {
+        password = bytes.toString('base64url').slice(0, length);
+      }
+      return result({ password });
+    }
     const ambiguous = /[0O1lI|`'".,;:{}[\]()\\/]/g;
     const pools = [
       uppercase ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : '',

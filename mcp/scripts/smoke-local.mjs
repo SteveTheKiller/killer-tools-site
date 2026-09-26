@@ -79,6 +79,12 @@ try {
   assert.equal((await call('otp_private', { secret: 'JBSWY3DPEHPK3PXP', mode: 'hotp', counter: 0 })).code.length, 6);
   assert.equal((await call('generate_otp_secret_private', { issuer: 'Test', account: 'User' })).secret.length, 16);
   assert.equal((await call('generate_password_private', { length: 24 })).password.length, 24);
+  assert.equal((await call('generate_password_private', { mode: 'passphrase', wordCount: 4, capitalizeWords: false })).password.split('-').length, 4);
+  const pronounceable = (await call('generate_password_private', { mode: 'pronounceable', length: 12 })).password;
+  assert.equal(pronounceable.length, 12);
+  assert.ok([...pronounceable].every((char, index) => (index % 2 === 0 ? 'bcdfghjkmnpqrstvwxz' : 'aeiouy').includes(char)));
+  assert.match((await call('generate_password_private', { mode: 'format', format: 'hex', length: 24 })).password, /^[0-9a-f]{24}$/);
+  assert.match((await call('generate_password_private', { mode: 'format', format: 'uuid' })).password, /^[0-9a-f-]{36}$/);
   assert.ok((await call('analyze_password_private', { password: 'Secret123!' })).entropyBits > 0);
   assert.ok((await call('generate_rsa_keypair_private', { bits: '2048' })).privateKeyPem.includes('BEGIN RSA PRIVATE KEY'));
   const directory = await mkdtemp(join(tmpdir(), 'kt-mcp-'));

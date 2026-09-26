@@ -2,6 +2,7 @@
   "name": "killertools-mcp",
   "private": true,
   "type": "module",
+  "engines": { "node": ">=24" },
   "scripts": {
     "dev": "wrangler dev",
     "local": "node local/server.mjs",
