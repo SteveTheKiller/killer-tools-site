@@ -65,7 +65,10 @@ useHead({
           <li>Base64 string encoding and decoding</li>
           <li>Text and ASCII binary conversion</li>
         </ul>
-        <p>The full set is available through the local connector, including tools that need files, secrets, or a browser.</p>
+        <p>
+          The full set is available through the local connector, including tools that need files,
+          secrets, or a browser. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md">Set up the local connector</a>.
+        </p>
       </section>
 
       <section class="mcp-card mcp-surface">
@@ -129,6 +132,7 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-card ul { margin: 0 0 14px; padding-left: 22px; }
 .mcp-card li { margin-bottom: 4px; }
 code { color: var(--kt-accent); overflow-wrap: anywhere; }
+.mcp-card a { color: var(--kt-accent); }
 
 @media (max-width: 720px) {
   .mcp-grid { grid-template-columns: 1fr; }
