@@ -1,12 +1,11 @@
 import { Buffer } from 'node:buffer';
 import { randomBytes } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
+import pageHtml from './browser-companion.html';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
 const error = message => ({ content: [{ type: 'text', text: message }], isError: true });
 const token = randomBytes(24).toString('hex');
-const page = new URL('./browser-companion.html', import.meta.url);
 const limits = { device: 4096, key: 1024, html: 8192, signature: 1_000_000, camera: 2_000_000 };
 const state = new Map();
 let listenPort = 0;
@@ -28,7 +27,7 @@ async function accept(request, response) {
     return;
   }
   if (request.method === 'GET' && url.pathname === '/') {
-    respond(response, 200, await readFile(page), 'text/html; charset=utf-8');
+    respond(response, 200, pageHtml, 'text/html; charset=utf-8');
     return;
   }
   if (request.method !== 'POST' || url.pathname !== '/state'

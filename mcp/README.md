@@ -27,7 +27,7 @@ The public endpoint has no sign-in. Public tool inputs are sent to Cloudflare, a
 
 The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need this optional server running on your computer. There is no one-click installer yet.
 
-For access to every website tool on your machine, connect an MCP client to the local stdio server. This source-based setup requires Node 24 or later, pnpm, installed dependencies in both the website root and this directory, and a build of the shared tool bundle. Use the Node executable as the command, with the absolute path to `local/server.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. The local server now runs the shared tools directly without starting Wrangler. It exposes all 94 operations through one connection. Run `pnpm smoke:local` to build the bundle and test discovery and calls.
+For access to every website tool on your machine, connect an MCP client to the local stdio server. This developer setup requires Node 24 or later, pnpm, and installed dependencies to build `dist/killermcp.mjs`. The built file contains the shared tools, local tools, and browser companion. It runs without Wrangler, a source checkout, or installed packages, but still needs Node until the installer is ready. Use the Node executable as the command, with the absolute path to `dist/killermcp.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. Run `pnpm smoke:local` to build the bundle and test all 94 operations.
 
 ### Developer setup for Codex on Windows
 
@@ -40,7 +40,7 @@ pnpm install
 pnpm smoke:local
 Pop-Location
 $nodePath = (Get-Command node).Source
-$serverPath = (Resolve-Path .\mcp\local\server.mjs).Path
+$serverPath = (Resolve-Path .\mcp\dist\killermcp.mjs).Path
 codex mcp add killertools_local -- $nodePath $serverPath
 codex mcp get killertools_local
 ```

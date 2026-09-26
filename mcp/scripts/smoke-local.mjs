@@ -7,7 +7,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import process from 'node:process';
 
-const child = spawn(process.execPath, ['local/server.mjs'], { cwd: new URL('..', import.meta.url), stdio: ['pipe', 'pipe', 'pipe'] });
+const child = spawn(process.execPath, [process.argv[2] ?? 'dist/killermcp.mjs'], { cwd: new URL('..', import.meta.url), stdio: ['pipe', 'pipe', 'pipe'] });
 let nextId = 1;
 const pending = new Map();
 let buffer = '';

@@ -10,7 +10,7 @@ import { z } from 'zod';
 import { ALGORITHM_DESCRIPTIONS, CLAIM_DESCRIPTIONS } from '../../src/tools/jwt-parser/jwt-parser.constants.ts';
 import { effLongWordlist } from '../../src/tools/password-generator/eff-long-wordlist.ts';
 import { getPasswordCrackTimeEstimation } from '../../src/tools/password-strength-analyser/password-strength-analyser.service.ts';
-import { createServer as createPublicServer } from '../dist/killertools-tools.mjs';
+import { createServer as createPublicServer } from '../src/index.ts';
 import { registerBrowserCompanion } from './browser-companion.mjs';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
