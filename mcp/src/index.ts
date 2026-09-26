@@ -37,9 +37,13 @@ import { formatBytes } from '../../src/utils/convert';
 import { registerDateTime } from './date-time';
 import { registerDocumentTools } from './document-tools';
 import { registerEmailRecords } from './email-records';
+import { registerEmoji } from './emoji';
 import { registerFilmDevelopment } from './film-development';
 import { registerFormatParsers } from './format-parsers';
 import { registerIpv6Ula } from './ipv6-ula';
+import { registerKillerModules } from './killer-modules';
+import { registerKillerScripts } from './killer-scripts';
+import { registerMetaTags } from './meta-tags';
 import { registerPhotoCalculators } from './photo-calculators';
 import { registerQrCode } from './qr-code';
 import { registerPhoneTools } from './phone-tools';
@@ -47,6 +51,7 @@ import { registerReferenceLookups } from './reference-lookups';
 import { registerSimpleTools } from './simple-tools';
 import { registerStructuredText } from './structured-text';
 import { registerTextFormatters } from './text-formatters';
+import { registerTextDiff } from './text-diff';
 
 const inputText = z.string().max(4096);
 const maxRequestBytes = 65536;
@@ -110,9 +115,13 @@ function createServer() {
   registerDateTime(server);
   registerDocumentTools(server);
   registerEmailRecords(server);
+  registerEmoji(server);
   registerFilmDevelopment(server);
   registerFormatParsers(server);
   registerIpv6Ula(server);
+  registerKillerModules(server);
+  registerKillerScripts(server);
+  registerMetaTags(server);
   registerPhotoCalculators(server);
   registerQrCode(server);
   registerPhoneTools(server);
@@ -120,6 +129,7 @@ function createServer() {
   registerSimpleTools(server);
   registerStructuredText(server);
   registerTextFormatters(server);
+  registerTextDiff(server);
 
   server.registerTool('convert_case', {
     description: 'Return the case conversions shown by the KillerTools Case Converter.',

@@ -4,7 +4,7 @@ The site registers 86 entries from `src/tools/index.ts`: 81 website tools and fi
 
 ## Exposed locally
 
-The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 55 operations across 48 website tools. The forty-five additional website tools are `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-record-generator`, `exchange-ndr-lookup`, `exposure-equivalence`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `markdown-to-html`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `qr-code-generator`, `reciprocity-calculator`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, and `yaml-converter`.
+The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 62 operations across 55 website tools. The fifty-two additional website tools are `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-record-generator`, `emoji-picker`, `exchange-ndr-lookup`, `exposure-equivalence`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-viewer`, `killer-modules`, `killer-scripts`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `meta-tag-generator`, `markdown-to-html`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `qr-code-generator`, `reciprocity-calculator`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, and `yaml-viewer`.
 
 ## Unregistered directories
 
@@ -20,7 +20,7 @@ Review upstream access, freshness, costs, and rate limits before exposing: `cve-
 
 ## Browser, device, file, or interactive surface
 
-These need a different interface or a deliberate file and device policy: `base64-file-converter`, `camera-recorder`, `device-information`, `emoji-picker`, `html-wysiwyg-editor`, `keycode-info`, `pdf-signature-checker`, `signature-creator`.
+These need a different interface or a deliberate file and device policy: `base64-file-converter`, `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, `pdf-signature-checker`, `signature-creator`.
 
 ## Credentials, secrets, or cryptographic material
 
@@ -30,6 +30,6 @@ Do not expose these on the public endpoint until privacy and security behavior i
 
 These have potential server-side use. This list is a candidate queue, not a claim that the current page logic is already portable or that every reference page should become a tool:
 
-`ascii-text-drawer`, `email-header-parser`, `json-viewer`, `killer-modules`, `killer-scripts`, `math-evaluator`, `meta-tag-generator`, `powershell-builder`, `regex-tester`, `text-diff`, `yaml-viewer`.
+`ascii-text-drawer`, `email-header-parser`, `math-evaluator`, `powershell-builder`, `regex-tester`.
 
 The next batch should favor small, deterministic conversions with existing shared service or model functions. Reference pages need useful lookup inputs and bounded answers before they become MCP tools.

@@ -56,23 +56,29 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'convert_yaml',
   'decode_base64',
   'diff_json',
+  'diff_text',
   'describe_cron',
   'encode_base64',
   'escape_html_entities',
   'expand_ipv4_range',
   'format_xml',
   'format_sql',
+  'format_json',
+  'format_yaml',
   'generate_lorem_ipsum',
   'generate_svg_placeholder',
   'generate_ulids',
   'generate_ipv6_ula',
   'generate_spf_record',
   'generate_qr_code',
+  'generate_meta_tags',
   'generate_dmarc_record',
   'generate_uuids',
   'json_to_csv',
   'list_film_stocks',
   'list_film_development_options',
+  'list_killer_modules',
+  'list_killer_scripts',
   'lookup_exchange_ndr',
   'lookup_group_policy',
   'lookup_http_status',
@@ -86,6 +92,7 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'parse_phone_number',
   'parse_user_agent',
   'roman_to_arabic',
+  'search_emoji',
   'text_statistics',
   'text_to_ascii_binary',
   'text_to_nato_alphabet',
@@ -118,6 +125,8 @@ assert.equal(subnet.networkMask, '255.255.255.0');
 assert.equal(subnet.usableHosts, 254);
 assert.equal((await call('calculate_ipv4_subnet', { address: 'bad' })).isError, true);
 assert.equal(JSON.parse((await call('convert_json', { text: '{ a: 1 }', to: 'yaml' })).content[0].text).text, 'a: 1\n');
+assert.equal(JSON.parse((await call('format_json', { text: '{b:2,a:1}' })).content[0].text).text, '{\n   "a": 1,\n   "b": 2\n}');
+assert.equal(JSON.parse((await call('format_yaml', { text: 'b: 2\na: 1', sortKeys: true })).content[0].text).text, 'a: 1\nb: 2\n');
 assert.equal(JSON.parse((await call('convert_yaml', { text: 'a: 1', to: 'json' })).content[0].text).text, '{\n  "a": 1\n}');
 assert.equal(JSON.parse((await call('convert_toml', { text: 'a = 1', to: 'json' })).content[0].text).text, '{\n  "a": 1\n}');
 assert.equal(JSON.parse((await call('minify_json', { text: '{ a: 1 }' })).content[0].text).text, '{"a":1}');
@@ -136,6 +145,9 @@ assert.match(JSON.parse((await call('generate_uuids', { version: 'v4', count: 1 
 assert.equal((await call('generate_uuids', { version: 'v5', namespace: 'bad' })).isError, true);
 const jsonDiff = JSON.parse((await call('diff_json', { left: '{ a: 1 }', right: '{ a: 2 }' })).content[0].text);
 assert.equal(jsonDiff.children[0].status, 'updated');
+const textDiff = JSON.parse((await call('diff_text', { left: 'one\ntwo', right: 'one\nthree' })).content[0].text);
+assert.equal(textDiff.added, 1);
+assert.equal(textDiff.removed, 1);
 assert.equal(JSON.parse((await call('format_xml', { text: '<a><b>text</b></a>' })).content[0].text).text.includes('<b>text</b>'), true);
 assert.equal(JSON.parse((await call('convert_xml_json', { text: '<a x="1"/>', direction: 'xml_to_json' })).content[0].text).text.includes('"a"'), true);
 assert.equal((await call('format_xml', { text: '<a><' })).isError, true);
@@ -163,6 +175,7 @@ const development = JSON.parse((await call('calculate_film_development', { filmN
 assert.equal(development.baseSeconds, 390);
 assert.equal(development.devMl, 500);
 assert.ok(JSON.parse((await call('list_film_development_options', {})).content[0].text).developers.some(dev => dev.id === 'd76'));
+assert.ok(JSON.parse((await call('list_killer_modules', {})).content[0].text).some(module => module.name === 'KillerPivot'));
 assert.equal((await call('calculate_film_development', { filmName: 'unknown', developerId: 'd76' })).isError, true);
 const phone = JSON.parse((await call('parse_phone_number', { phone: '+1 800 555 0199' })).content[0].text);
 assert.equal(phone.e164, '+18005550199');
@@ -181,6 +194,10 @@ assert.equal(dmarc.record, 'v=DMARC1; p=quarantine; rua=mailto:reports@example.c
 const qr = JSON.parse((await call('generate_qr_code', { mode: 'text', text: 'https://killertools.net' })).content[0].text);
 assert.ok(qr.svg.startsWith('<svg'));
 assert.equal((await call('generate_qr_code', { mode: 'wifi', wifi: { ssid: 'Example', password: 'secret', encryption: 'WPA' } })).isError, undefined);
+const meta = JSON.parse((await call('generate_meta_tags', { fields: { title: 'KillerTools', url: 'https://killertools.net' } })).content[0].text);
+assert.ok(meta.html.includes('KillerTools'));
+assert.equal((await call('generate_meta_tags', { fields: { unknown: 'value' } })).isError, true);
+assert.ok(JSON.parse((await call('search_emoji', { query: 'smile' })).content[0].text).some(item => item.emoji));
 assert.equal(JSON.parse((await call('arabic_to_roman', { number: 42 })).content[0].text).roman, 'XLII');
 assert.equal(JSON.parse((await call('roman_to_arabic', { roman: 'XLII' })).content[0].text).number, 42);
 const temperatures = JSON.parse((await call('convert_temperature', { value: 0, scale: 'celsius' })).content[0].text);
@@ -243,5 +260,10 @@ assert.equal((await fetch(endpoint, {
 const concurrent = await Promise.all(Array.from({ length: 8 }, (_, index) =>
   call('encode_base64', { text: `call-${index}` })));
 assert.equal(new Set(concurrent.map(result => result.content[0].text)).size, 8);
+
+if (process.env.MCP_LIVE_NETWORK === '1') {
+  const scripts = JSON.parse((await call('list_killer_scripts', {})).content[0].text);
+  assert.ok(scripts.some(script => script.filename === 'URT.ps1'));
+}
 
 console.log('MCP initialization, discovery, calls, errors, limits, and concurrency passed.');
