@@ -137,6 +137,12 @@ const tools = computed<ToolCategory[]>(() => [
   font-family: 'KillerScan', 'Courier New', monospace;
   font-size: 22px;
   margin-right: 12px;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.tb-mcp:hover {
+  transform: translateY(-2px) scale(1.06);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
 }
 
 .tb-mcp-wordmark {
