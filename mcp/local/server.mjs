@@ -8,6 +8,7 @@ import { compare, hash } from 'bcryptjs';
 import cryptoJs from 'crypto-js';
 import verifyPdf from 'pdf-signature-reader';
 import { z } from 'zod';
+import { ALGORITHM_DESCRIPTIONS, CLAIM_DESCRIPTIONS } from '../../src/tools/jwt-parser/jwt-parser.constants.ts';
 import { effLongWordlist } from '../../src/tools/password-generator/eff-long-wordlist.ts';
 import { getPasswordCrackTimeEstimation } from '../../src/tools/password-strength-analyser/password-strength-analyser.service.ts';
 import { registerBrowserCompanion } from './browser-companion.mjs';
@@ -43,6 +44,21 @@ function decodeJwtPart(part) {
     throw new Error('Invalid JWT part');
   }
   return JSON.parse(Buffer.from(part, 'base64url').toString('utf8'));
+}
+
+function describeClaims(values) {
+  return Object.entries(values).map(([claim, value]) => {
+    const formattedValue = value !== null && typeof value === 'object' ? JSON.stringify(value, null, 3) : String(value);
+    let friendlyValue;
+    if (['exp', 'nbf', 'iat'].includes(claim)) {
+      const date = new Date(Number(value) * 1000);
+      friendlyValue = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+    }
+    else if (claim === 'alg' && typeof value === 'string') {
+      friendlyValue = ALGORITHM_DESCRIPTIONS[value];
+    }
+    return { claim, value: formattedValue, friendlyValue, claimDescription: CLAIM_DESCRIPTIONS[claim] };
+  });
 }
 
 function base32Bytes(value) {
@@ -153,7 +169,9 @@ function createServer() {
       if (parts.length !== 3) {
         return error('Invalid JWT structure');
       }
-      return result({ header: decodeJwtPart(parts[0]), payload: decodeJwtPart(parts[1]), signatureVerified: false });
+      const header = decodeJwtPart(parts[0]);
+      const payload = decodeJwtPart(parts[1]);
+      return result({ header, payload, headerClaims: describeClaims(header), payloadClaims: describeClaims(payload), signatureVerified: false });
     }
     catch { return error('Invalid JWT'); }
   });

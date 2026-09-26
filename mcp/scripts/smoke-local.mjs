@@ -75,7 +75,10 @@ try {
   assert.equal(mnemonic.mnemonic.split(' ').length, 12);
   assert.equal((await call('bip39_private', { mnemonic: mnemonic.mnemonic })).entropy, mnemonic.entropy);
   const jwt = `eyJhbGciOiJub25lIn0.${Buffer.from('{"sub":"local"}').toString('base64url')}.x`;
-  assert.equal((await call('parse_jwt_private', { token: jwt })).payload.sub, 'local');
+  const parsedJwt = await call('parse_jwt_private', { token: jwt });
+  assert.equal(parsedJwt.payload.sub, 'local');
+  assert.equal(parsedJwt.payloadClaims.find(claim => claim.claim === 'sub').claimDescription, 'Subject');
+  assert.equal(parsedJwt.signatureVerified, false);
   assert.equal((await call('otp_private', { secret: 'JBSWY3DPEHPK3PXP', mode: 'hotp', counter: 0 })).code.length, 6);
   assert.equal((await call('generate_otp_secret_private', { issuer: 'Test', account: 'User' })).secret.length, 16);
   assert.equal((await call('generate_password_private', { length: 24 })).password.length, 24);
