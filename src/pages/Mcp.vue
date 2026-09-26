@@ -96,7 +96,7 @@ useHead({
           Copy URL
         </button>
       </div>
-      <p class="mcp-feedback" role="status" aria-live="polite">
+      <p v-if="copyStatus" class="mcp-feedback" role="status" aria-live="polite">
         {{ copyStatus }}
       </p>
     </section>
@@ -215,6 +215,7 @@ html:not(.dark) .mcp-surface:hover {
 }
 
 .mcp-hero, .mcp-card, .mcp-connect { padding: 24px; }
+.mcp-connect { padding-top: 20px; padding-bottom: 20px; }
 .mcp-heading { display: flex; align-items: center; gap: 0; }
 .mcp-mark { width: 90px; height: 90px; flex: none; object-fit: contain; }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
@@ -226,14 +227,15 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 13px; }
 .mcp-connect h2 { margin-bottom: 8px; }
 .mcp-connect p { font-size: 13px; line-height: 1.6; }
-.mcp-install-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
-.mcp-copy-row { display: flex; align-items: stretch; gap: 10px; margin-top: 16px; }
+.mcp-connect p:not(.mcp-eyebrow):not(.mcp-feedback) { margin: 0 0 10px; }
+.mcp-install-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 12px; }
+.mcp-copy-row { display: flex; align-items: stretch; gap: 10px; }
 .mcp-value { display: block; overflow-wrap: anywhere; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); padding: 12px 14px; font-size: 13px; }
 .mcp-value { flex: 1; }
 .mcp-action { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border: 1px solid var(--kt-accent); border-radius: 4px; background: transparent; color: var(--kt-accent); font: inherit; font-size: 13px; cursor: pointer; text-align: center; text-decoration: none; }
 .mcp-action:hover, .mcp-action:focus-visible { background: var(--kt-accent); color: var(--kt-modal, #0a0a0a); }
 .mcp-action:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
-.mcp-feedback { min-height: 1.6em; margin: 7px 0 0; color: var(--kt-accent); }
+.mcp-feedback { margin: 8px 0 0; color: var(--kt-accent); }
 .mcp-client-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .mcp-client-grid .mcp-card { display: flex; flex-direction: column; align-items: flex-start; }
 .mcp-client-grid .mcp-card .mcp-action { margin-top: auto; }
