@@ -148,6 +148,15 @@ useHead({
       <p v-if="copyStatus" class="mcp-feedback" role="status" aria-live="polite">
         {{ copyStatus }}
       </p>
+      <p class="mcp-eyebrow mcp-usage-heading">
+        AFTER CONNECTING
+      </p>
+      <p>
+        In a new chat, type <code>KillerTools: &lt;task&gt;</code>. For example: <code>KillerTools: subnet 192.168.1.0/24</code>.
+      </p>
+      <p>
+        For a specific tool, use its operation name: <code>KillerTools: lookup_windows_event 4625</code>. No slash command is needed.
+      </p>
     </section>
 
     <div class="mcp-grid">
@@ -245,6 +254,7 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-action:hover, .mcp-action:focus-visible { background: var(--kt-accent); color: var(--kt-modal, #0a0a0a); }
 .mcp-action:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
 .mcp-feedback { margin: 8px 0 0; color: var(--kt-accent); }
+.mcp-usage-heading { margin-top: 16px; }
 .mcp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .mcp-card p, .mcp-card li { font-size: 13px; line-height: 1.65; }
 .mcp-card p { margin: 0 0 14px; }
