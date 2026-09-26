@@ -62,7 +62,7 @@ try {
   child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })}\n`);
   const listed = await request('tools/list');
   const names = new Set(listed.result.tools.map(tool => tool.name));
-  for (const name of ['hash_text_private', 'hmac_private', 'crypt_text_private', 'bcrypt_private', 'bip39_private', 'parse_jwt_private', 'otp_private', 'generate_password_private', 'analyze_password_private', 'generate_rsa_keypair_private', 'encode_file_base64_local', 'check_pdf_signatures_local', 'open_browser_companion_local', 'get_browser_device_information_local', 'get_browser_keycode_local', 'get_browser_html_local', 'get_browser_signature_local', 'get_browser_camera_local']) {
+  for (const name of ['hash_text_private', 'hmac_private', 'crypt_text_private', 'bcrypt_private', 'bip39_private', 'parse_jwt_private', 'otp_private', 'generate_otp_secret_private', 'generate_password_private', 'analyze_password_private', 'generate_rsa_keypair_private', 'encode_file_base64_local', 'decode_file_base64_local', 'check_pdf_signatures_local', 'open_browser_companion_local', 'get_browser_device_information_local', 'get_browser_keycode_local', 'get_browser_html_local', 'get_browser_signature_local', 'get_browser_camera_local']) {
     assert.ok(names.has(name), name);
   }
   assert.equal((await call('hash_text_private', { value: 'abc' })).hash, 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
@@ -71,10 +71,13 @@ try {
   assert.equal((await call('crypt_text_private', { value: encrypted.output, secret: 'key', action: 'decrypt' })).output, 'private');
   const bcrypt = await call('bcrypt_private', { value: 'private', action: 'hash', rounds: 4 });
   assert.equal((await call('bcrypt_private', { value: 'private', action: 'compare', hash: bcrypt.hash })).matches, true);
-  assert.equal((await call('bip39_private', { entropy: '00000000000000000000000000000000' })).mnemonic.split(' ').length, 12);
+  const mnemonic = await call('bip39_private', { entropy: '00000000000000000000000000000000' });
+  assert.equal(mnemonic.mnemonic.split(' ').length, 12);
+  assert.equal((await call('bip39_private', { mnemonic: mnemonic.mnemonic })).entropy, mnemonic.entropy);
   const jwt = `eyJhbGciOiJub25lIn0.${Buffer.from('{"sub":"local"}').toString('base64url')}.x`;
   assert.equal((await call('parse_jwt_private', { token: jwt })).payload.sub, 'local');
   assert.equal((await call('otp_private', { secret: 'JBSWY3DPEHPK3PXP', mode: 'hotp', counter: 0 })).code.length, 6);
+  assert.equal((await call('generate_otp_secret_private', { issuer: 'Test', account: 'User' })).secret.length, 16);
   assert.equal((await call('generate_password_private', { length: 24 })).password.length, 24);
   assert.ok((await call('analyze_password_private', { password: 'Secret123!' })).entropyBits > 0);
   assert.ok((await call('generate_rsa_keypair_private', { bits: '2048' })).privateKeyPem.includes('BEGIN RSA PRIVATE KEY'));

@@ -122,14 +122,24 @@ function createServer() {
   });
 
   server.registerTool('bip39_private', {
-    description: 'Generate a mnemonic or convert provided entropy locally using the KillerTools BIP39 library.',
-    inputSchema: { entropy: z.string().regex(/^(?:[0-9a-f]{16}|[0-9a-f]{20}|[0-9a-f]{24}|[0-9a-f]{28}|[0-9a-f]{32})$/i).optional(), language: z.enum(Object.keys(langs)).default('English') },
-  }, async ({ entropy, language }) => {
+    description: 'Generate a mnemonic or convert between entropy and a mnemonic locally using the KillerTools BIP39 library.',
+    inputSchema: {
+      entropy: z.string().regex(/^(?:[0-9a-f]{16}|[0-9a-f]{20}|[0-9a-f]{24}|[0-9a-f]{28}|[0-9a-f]{32})$/i).optional(),
+      mnemonic: z.string().min(1).max(512).optional(),
+      language: z.enum(Object.keys(langs)).default('English'),
+    },
+  }, async ({ entropy, mnemonic, language }) => {
     try {
+      if (entropy && mnemonic) {
+        return error('Provide entropy or a mnemonic, not both');
+      }
+      if (mnemonic) {
+        return result({ entropy: bip39.mnemonicToEntropy(mnemonic, langs[language]), mnemonic });
+      }
       const source = entropy ?? bip39.generateEntropy();
       return result({ entropy: source, mnemonic: bip39.entropyToMnemonic(source, langs[language]) });
     }
-    catch { return error('Invalid BIP39 entropy'); }
+    catch { return error('Invalid BIP39 input'); }
   });
 
   server.registerTool('parse_jwt_private', {
@@ -159,6 +169,16 @@ function createServer() {
       return result(code ? { matches: code === generated } : { code: generated, counter: current });
     }
     catch { return error('Invalid OTP secret'); }
+  });
+
+  server.registerTool('generate_otp_secret_private', {
+    description: 'Generate a random Base32 OTP secret and an otpauth URI locally.',
+    inputSchema: { issuer: z.string().min(1).max(128).default('killer-tools'), account: z.string().min(1).max(128).default('demo-user') },
+  }, async ({ issuer, account }) => {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+    const secret = Array.from({ length: 16 }, () => alphabet[randomIndex(alphabet.length)]).join('');
+    const uri = `otpauth://totp/${encodeURIComponent(issuer)}:${encodeURIComponent(account)}?issuer=${encodeURIComponent(issuer)}&secret=${secret}&algorithm=SHA1&digits=6&period=30`;
+    return result({ secret, uri });
   });
 
   server.registerTool('generate_password_private', {
