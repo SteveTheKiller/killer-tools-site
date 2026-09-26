@@ -2,8 +2,8 @@ import { resolve } from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, URL } from 'node:url';
 
-import * as typescript6 from '@typescript/typescript6';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
+import * as typescript6 from '@typescript/typescript6';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import * as vueCompiler from '@vue/compiler-sfc';
@@ -13,9 +13,9 @@ import IconsResolver from 'unplugin-icons/resolver';
 import Icons from 'unplugin-icons/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
+import markdown from 'unplugin-vue-markdown/vite';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
-import markdown from 'unplugin-vue-markdown/vite';
 import sitemap from 'vite-plugin-sitemap';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
@@ -30,7 +30,7 @@ export default defineConfig({
       runtimeOnly: true,
       strictMessage: false,
       include: [
-        resolve(__dirname, 'locales/**'),
+        resolve(import.meta.dirname, 'locales/**'),
       ],
     }),
     AutoImport({

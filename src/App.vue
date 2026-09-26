@@ -12,14 +12,15 @@ const styleStore = useStyleStore();
 const theme = computed(() => (styleStore.isDarkTheme ? darkTheme : null));
 const themeOverrides = computed(() => buildOverridesFor(styleStore.ktTheme, styleStore.ktAccent));
 
-const { locale } = useI18n({ useScope: 'global' });
-
-syncRef(
-  locale,
-  useStorage('locale', locale),
-  { direction: 'ltr' },
-);
-
+const { availableLocales, locale } = useI18n({ useScope: 'global' });
+const storedLocale = useStorage('locale', 'en');
+if (availableLocales.includes(storedLocale.value)) {
+  locale.value = storedLocale.value;
+}
+watch(locale, (value) => {
+  storedLocale.value = value;
+  document.documentElement.lang = value;
+}, { immediate: true });
 
 // Native title tooltips are unstylable OS chrome (they read as a stray black
 // bar over our dark UI). Convert every title attribute into data-tip, which
@@ -154,7 +155,8 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
 
 /* ── NaiveUI select dropdown menus: family menu chrome (grained modal
    surface, accent border, rounded, drop shadow — the palette/dd-menu rule) ── */
-.n-base-select-menu {
+.n-base-select-menu,
+.n-dropdown-menu {
   background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
   background-size: 256px 256px !important;
   border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
@@ -849,8 +851,8 @@ a[href*="twitter.com"],
 .i-mdi-twitter,
 .i-mdi-information-outline,
 .i-mdi-information,
-a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]):not([aria-label="KillerTools MCP"]),
-.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]):not([aria-label="KillerTools MCP"]) {
+a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]):not([aria-label="KillerTools MCP"]):not(.locale-selector),
+.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]):not([aria-label="KillerTools MCP"]):not(.locale-selector) {
   display: none !important;
 }
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NDropdown } from 'naive-ui';
+
 const { availableLocales, locale } = useI18n({ useScope: 'global' });
 
 const localesLong: Record<string, string> = {
@@ -16,18 +18,25 @@ const localesLong: Record<string, string> = {
 };
 
 const localeOptions = computed(() =>
-  availableLocales.map(locale => ({
-    label: localesLong[locale] ?? locale,
-    value: locale,
+  availableLocales.map(code => ({
+    label: `${localesLong[code] ?? code}${code === locale.value ? ' ✓' : ''}`,
+    key: code,
   })),
 );
+
+function selectLocale(code: string) {
+  locale.value = code;
+}
 </script>
 
 <template>
-  <c-select
-    v-model:value="locale"
+  <NDropdown
+    trigger="click"
     :options="localeOptions"
-    placeholder="Select a language"
-    w-100px
-  />
+    @select="selectLocale"
+  >
+    <c-button class="locale-selector" circle variant="text" :aria-label="`Language: ${localesLong[locale] ?? locale}`">
+      <icon-mdi:translate text-24px />
+    </c-button>
+  </NDropdown>
 </template>
