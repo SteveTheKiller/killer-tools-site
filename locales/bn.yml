@@ -1124,6 +1124,8 @@ tools:
     title: CVE অনুসন্ধান
     description: ID বা কীওয়ার্ড দিয়ে NIST NVD-তে CVE খুঁজুন। NVD API থেকে লাইভ ডেটা।
     ui:
+      chainedWith: এর সাথে যুক্ত
+      searchThisCve: এই CVE খুঁজুন
       range6m: ৬ মাস
       range1y: ১ বছর
       range2y: ২ বছর

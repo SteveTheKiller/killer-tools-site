@@ -1124,6 +1124,8 @@ tools:
     title: CVE 查詢
     description: 依 ID 或關鍵字在 NIST NVD 搜尋 CVE。資料即時取自 NVD API。
     ui:
+      chainedWith: 組合利用
+      searchThisCve: 搜尋此 CVE
       range6m: 6 個月
       range1y: 1 年
       range2y: 2 年

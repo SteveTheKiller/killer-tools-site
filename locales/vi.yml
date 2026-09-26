@@ -844,6 +844,8 @@ tools:
     title: Tra cứu CVE
     description: Tìm kiếm CVE trong NIST NVD theo ID hoặc từ khóa. Dữ liệu trực tiếp từ API của NVD.
     ui:
+      chainedWith: Chuỗi khai thác cùng
+      searchThisCve: Tìm CVE này
       range6m: 6 tháng
       range1y: 1 năm
       range2y: 2 năm

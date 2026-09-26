@@ -844,6 +844,8 @@ tools:
     title: CVE-oppslag
     description: Søk i NIST NVD etter CVE-er med ID eller søkeord. Direkte data fra NVD-API-et.
     ui:
+      chainedWith: Kjedet med
+      searchThisCve: Søk etter denne CVE-en
       range6m: 6 måneder
       range1y: 1 år
       range2y: 2 år

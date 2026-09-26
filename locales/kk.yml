@@ -1124,6 +1124,8 @@ tools:
     title: CVE іздеу
     description: NIST NVD ішінде CVE-ні ID немесе кілт сөз бойынша іздеңіз. NVD API-дан тікелей деректер.
     ui:
+      chainedWith: Тізбектелген
+      searchThisCve: Осы CVE іздеу
       range6m: 6 ай
       range1y: 1 жыл
       range2y: 2 жыл

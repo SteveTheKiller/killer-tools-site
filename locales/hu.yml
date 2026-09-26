@@ -1124,6 +1124,8 @@ tools:
     title: CVE kereső
     description: CVE-k keresése a NIST NVD-ben azonosító vagy kulcsszó alapján. Élő adatok az NVD API-ból.
     ui:
+      chainedWith: Láncolva ezzel
+      searchThisCve: CVE keresése
       range6m: 6 hónap
       range1y: 1 év
       range2y: 2 év

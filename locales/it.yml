@@ -1124,6 +1124,8 @@ tools:
     title: Ricerca CVE
     description: Cerca CVE nel NIST NVD per ID o parola chiave. Dati in tempo reale dall'API NVD.
     ui:
+      chainedWith: Concatenata con
+      searchThisCve: Cerca questa CVE
       range6m: 6 mesi
       range1y: 1 anno
       range2y: 2 anni

@@ -1124,6 +1124,8 @@ tools:
     title: CVE検索
     description: NIST NVDからCVEをIDまたはキーワードで検索します。NVD APIのライブデータを使用します。
     ui:
+      chainedWith: 連鎖するCVE
+      searchThisCve: このCVEを検索
       range6m: 6か月
       range1y: 1年
       range2y: 2年

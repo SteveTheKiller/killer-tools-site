@@ -1124,6 +1124,8 @@ tools:
     title: CVE sorgulama
     description: NIST NVD'de CVE'leri kimliğe veya anahtar kelimeye göre ara. NVD API'sinden canlı veri.
     ui:
+      chainedWith: Zincirlendiği
+      searchThisCve: Bu CVE'yi ara
       range6m: 6 ay
       range1y: 1 yıl
       range2y: 2 yıl

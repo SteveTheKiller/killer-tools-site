@@ -844,6 +844,8 @@ tools:
     title: CVE 查询
     description: 通过 ID 或关键字在 NIST NVD 中搜索 CVE,数据来自 NVD API 实时数据。
     ui:
+      chainedWith: 组合利用
+      searchThisCve: 搜索此 CVE
       range6m: 6 个月
       range1y: 1 年
       range2y: 2 年

@@ -844,6 +844,8 @@ tools:
     title: CVE-Suche
     description: Durchsuchen Sie die NIST NVD nach CVEs anhand von ID oder Stichwort. Live-Daten von der NVD-API.
     ui:
+      chainedWith: Verkettet mit
+      searchThisCve: Diese CVE suchen
       range6m: 6 Monate
       range1y: 1 Jahr
       range2y: 2 Jahre

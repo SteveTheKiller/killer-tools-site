@@ -922,6 +922,8 @@ tools:
     description: Prenez une photo ou enregistrez une vidéo depuis votre webcam ou caméra.
   cve-lookup:
     ui:
+      chainedWith: Enchaînée avec
+      searchThisCve: Rechercher cette CVE
       range6m: 6 mois
       range1y: 1 an
       range2y: 2 ans

@@ -1034,6 +1034,8 @@ tools:
     description: Uma calculadora para avaliar expressões matemáticas. Você pode usar funções como sqrt, cos, sin, abs, etc.
   cve-lookup:
     ui:
+      chainedWith: Encadeada com
+      searchThisCve: Pesquisar esta CVE
       range6m: 6 meses
       range1y: 1 ano
       range2y: 2 anos

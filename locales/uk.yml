@@ -1156,6 +1156,8 @@ tools:
     description: Шукайте ідентифікатори подій Windows з описами, рівнями важливості й поширеними причинами.
   cve-lookup:
     ui:
+      chainedWith: У ланцюжку з
+      searchThisCve: Знайти цю CVE
       range6m: 6 місяців
       range1y: 1 рік
       range2y: 2 роки

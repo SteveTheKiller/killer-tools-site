@@ -1124,6 +1124,8 @@ tools:
     title: CVE Lookup
     description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
     ui:
+      chainedWith: Chained with
+      searchThisCve: Search this CVE
       range6m: 6 months
       range1y: 1 year
       range2y: 2 years
