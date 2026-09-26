@@ -62,7 +62,9 @@ try {
   child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })}\n`);
   const listed = await request('tools/list');
   const names = new Set(listed.result.tools.map(tool => tool.name));
-  assert.equal(names.size, 94);
+  const coverage = JSON.parse(await readFile(new URL('../coverage.json', import.meta.url), 'utf8'));
+  const expected = [...Object.values(coverage).flat(), 'open_browser_companion_local'].sort();
+  assert.deepEqual([...names].sort(), expected);
   for (const name of ['hash_text_private', 'hmac_private', 'crypt_text_private', 'bcrypt_private', 'bip39_private', 'parse_jwt_private', 'otp_private', 'generate_otp_secret_private', 'generate_password_private', 'analyze_password_private', 'generate_rsa_keypair_private', 'encode_file_base64_local', 'decode_file_base64_local', 'check_pdf_signatures_local', 'open_browser_companion_local', 'get_browser_device_information_local', 'get_browser_keycode_local', 'get_browser_html_local', 'get_browser_signature_local', 'get_browser_camera_local']) {
     assert.ok(names.has(name), name);
   }
@@ -106,6 +108,7 @@ try {
     assert.equal(await readFile(decoded, 'utf8'), 'local file');
     const overwrite = await request('tools/call', { name: 'decode_file_base64_local', arguments: { path: decoded, base64: encoded.base64 } });
     assert.equal(overwrite.result.isError, true);
+    assert.equal((await request('tools/call', { name: 'check_pdf_signatures_local', arguments: { path: original } })).result.isError, true);
   }
   finally {
     await unlink(original);
@@ -121,12 +124,20 @@ try {
   assert.equal((await fetch(untrusted)).status, 403);
   const endpoint = new URL('/state', browser.url);
   endpoint.search = new URL(browser.url).search;
-  assert.equal((await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Origin': new URL(browser.url).origin },
-    body: JSON.stringify({ type: 'key', value: '{"key":"A"}' }),
-  })).status, 204);
-  assert.equal(JSON.parse((await call('get_browser_keycode_local', {})).value).key, 'A');
+  for (const [type, name, value] of [
+    ['device', 'get_browser_device_information_local', '{"userAgent":"test"}'],
+    ['key', 'get_browser_keycode_local', '{"key":"A"}'],
+    ['html', 'get_browser_html_local', '<p>test</p>'],
+    ['signature', 'get_browser_signature_local', 'data:image/png;base64,dGVzdA=='],
+    ['camera', 'get_browser_camera_local', 'data:image/png;base64,dGVzdA=='],
+  ]) {
+    assert.equal((await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Origin': new URL(browser.url).origin },
+      body: JSON.stringify({ type, value }),
+    })).status, 204);
+    assert.equal((await call(name, {})).value, value);
+  }
   console.log('All 94 local MCP operations discovered; Worker forwarding, private operations, and browser transport passed.');
   if (process.env.MCP_BROWSER_PREVIEW === '1') {
     console.log(browser.url);
