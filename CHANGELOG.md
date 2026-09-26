@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## Unreleased
 
+### Interface
+
+- Replaced the top bar search field with a compact icon.
+
+### MCP
+
+- Added the MCP page and logo, top bar link, and first local server tools.
+
 ### Localization
 
 - Completed Vietnamese coverage for current tool categories and descriptions. (Thanks @vuanhvu11982)

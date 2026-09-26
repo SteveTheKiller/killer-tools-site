@@ -43,6 +43,7 @@ android/
 capacitor.config.ts
 
 # Build artifacts
+.wrangler/
 build-out.txt
 build-err.txt
 .vite-ssg-temp/

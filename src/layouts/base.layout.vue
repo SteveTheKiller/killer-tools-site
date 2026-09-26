@@ -89,10 +89,10 @@ const tools = computed<ToolCategory[]>(() => [
 
         <!-- Mobile brand: icon + wordmark centered in the bar while the
              sidebar (and its logo) is hidden -->
-        <router-link to="/" class="tb-brand" aria-label="KillerTools home">
+        <RouterLink to="/" class="tb-brand" aria-label="KillerTools home">
           <img class="tb-brand-icon" src="/app-icon-512.png" alt="">
           <img class="tb-brand-wm" :src="wmSrc" alt="KillerTOOLS">
-        </router-link>
+        </RouterLink>
 
         <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
           <c-button v-if="config.app.env === 'development'" to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')">
@@ -100,13 +100,16 @@ const tools = computed<ToolCategory[]>(() => [
           </c-button>
         </c-tooltip>
 
-        <!-- Search stays a comfortable width instead of swallowing the whole bar;
-             the spacer pushes the nav buttons to the right edge. -->
+        <!-- Compact search trigger; the spacer pushes the nav buttons right. -->
         <div class="palette-wrap">
           <command-palette />
         </div>
         <div flex-1 />
 
+        <RouterLink to="/mcp" class="tb-mcp" aria-label="KillerMCP">
+          <img class="tb-mcp-mark" src="/brand/mcp.png" alt="" aria-hidden="true">
+          <span>KillerMCP</span>
+        </RouterLink>
         <ThemeDots />
         <NavbarButtons class="tb-about" />
       </div>
@@ -122,17 +125,28 @@ const tools = computed<ToolCategory[]>(() => [
 /* Titlebar shell (position, chrome color, grain) lives in MenuLayout.vue;
    this only shapes the row's contents. */
 .palette-wrap {
-  flex: 1 1 auto;
-  max-width: 520px;
-  min-width: 0;
+  flex: 0 0 auto;
 }
 
-/* Sidebar-gone widths: the search bar becomes an icon-only button, so the
-   wrap shrinks to content instead of stretching */
-@media (max-width: 700px) {
-  .palette-wrap {
-    flex: 0 0 auto;
-  }
+.tb-mcp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kt-accent);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: 'KillerScan', 'Courier New', monospace;
+  font-size: 26px;
+  margin-right: 12px;
+}
+
+.tb-mcp:hover {
+  color: var(--kt-accent-2);
+}
+
+.tb-mcp-mark {
+  width: 30px;
+  height: 30px;
 }
 
 /* The topbar row is the positioning ancestor for the brand: when the row

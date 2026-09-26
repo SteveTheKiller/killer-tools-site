@@ -1,43 +1,9 @@
 <script setup lang="ts">
-import {
-  camelCase,
-  capitalCase,
-  constantCase,
-  dotCase,
-  trainCase as headerCase,
-  noCase,
-  kebabCase as paramCase,
-  pascalCase,
-  pathCase,
-  sentenceCase,
-  snakeCase,
-} from 'change-case';
-
-const baseConfig = {
-  stripRegexp: /\P{L}+/gu,
-} as any;
+import { convertCase } from './case-converter.models';
 
 const input = ref('lorem ipsum dolor sit amet');
 
-const formats = computed(() => [
-  { label: 'Lowercase', value: input.value.toLocaleLowerCase() },
-  { label: 'Uppercase', value: input.value.toLocaleUpperCase() },
-  { label: 'Camelcase', value: camelCase(input.value, baseConfig) },
-  { label: 'Capitalcase', value: capitalCase(input.value, baseConfig) },
-  { label: 'Constantcase', value: constantCase(input.value, baseConfig) },
-  { label: 'Dotcase', value: dotCase(input.value, baseConfig) },
-  { label: 'Headercase', value: headerCase(input.value, baseConfig) },
-  { label: 'Nocase', value: noCase(input.value, baseConfig) },
-  { label: 'Paramcase', value: paramCase(input.value, baseConfig) },
-  { label: 'Pascalcase', value: pascalCase(input.value, baseConfig) },
-  { label: 'Pathcase', value: pathCase(input.value, baseConfig) },
-  { label: 'Sentencecase', value: sentenceCase(input.value, baseConfig) },
-  { label: 'Snakecase', value: snakeCase(input.value, baseConfig) },
-  {
-    label: 'Mockingcase',
-    value: input.value.split('').map((c, i) => i % 2 === 0 ? c.toUpperCase() : c.toLowerCase()).join(''),
-  },
-]);
+const formats = computed(() => convertCase(input.value));
 
 const copiedLabel = ref<string | null>(null);
 async function copyValue(label: string, value: string) {

@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import { Capacitor } from '@capacitor/core';
 import { IconBrandAndroid, IconInfoCircle } from '@tabler/icons-vue';
 
-// The Capacitor WebView injects a global bridge object; the Android button is
-// for the website only - inside the app itself it links to nothing useful.
-const isNativeApp = typeof window !== 'undefined' && 'Capacitor' in window;
+const isNativeApp = Capacitor.isNativePlatform();
 </script>
 
 <template>

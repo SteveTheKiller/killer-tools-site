@@ -1,0 +1,22 @@
+{
+  "name": "killertools-mcp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "0.24.0",
+    "change-case": "5.4.4",
+    "js-base64": "3.7.8",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260925.2",
+    "typescript": "6.0.3",
+    "wrangler": "4.141.0"
+  }
+}

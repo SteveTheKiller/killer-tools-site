@@ -57,6 +57,7 @@ export default defineConfig({
       dynamicRoutes: [
         '/about',
         '/android',
+        '/mcp',
         '/ascii-word-art',
         '/base64-file-converter',
         '/base64-string-converter',

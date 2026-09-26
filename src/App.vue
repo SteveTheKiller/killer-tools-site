@@ -849,8 +849,8 @@ a[href*="twitter.com"],
 .i-mdi-twitter,
 .i-mdi-information-outline,
 .i-mdi-information,
-a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]),
-.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]) {
+a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]):not([aria-label="KillerTools MCP"]),
+.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/light mode"]):not([aria-label="killer-tools GitHub repository"]):not([aria-label="About"]):not([aria-label="Killer Tools for Android - join the beta"]):not([aria-label="KillerTools MCP"]) {
   display: none !important;
 }
 

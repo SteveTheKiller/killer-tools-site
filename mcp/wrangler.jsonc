@@ -1,0 +1,11 @@
+{
+  "name": "killertools-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-25",
+  "routes": [{ "pattern": "mcp.killertools.net", "custom_domain": true }],
+  "ratelimits": [{
+    "name": "REQUEST_LIMITER",
+    "namespace_id": "26092501",
+    "simple": { "limit": 120, "period": 60 }
+  }]
+}

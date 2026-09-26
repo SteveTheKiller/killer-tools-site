@@ -45,6 +45,11 @@ const router = createRouter({
       name: 'android',
       component: () => import('./pages/AndroidApp.vue'),
     },
+    {
+      path: '/mcp',
+      name: 'mcp',
+      component: () => import('./pages/Mcp.vue'),
+    },
     ...toolsRoutes,
     ...toolsRedirectRoutes,
     ...(config.app.env === 'development' ? demoRoutes : []),
