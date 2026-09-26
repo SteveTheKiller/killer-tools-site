@@ -138,7 +138,7 @@ try {
     })).status, 204);
     assert.equal((await call(name, {})).value, value);
   }
-  console.log('All 94 local MCP operations discovered; Worker forwarding, private operations, and browser transport passed.');
+  console.log('All 94 local MCP operations discovered; shared tools, private operations, and browser transport passed.');
   if (process.env.MCP_BROWSER_PREVIEW === '1') {
     console.log(browser.url);
     await new Promise(resolve => setTimeout(resolve, 120000));

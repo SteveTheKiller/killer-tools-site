@@ -6,11 +6,13 @@
     "node": ">=24"
   },
   "scripts": {
+    "build:local-tools": "pnpm -C .. exec esbuild mcp/src/index.ts --bundle --platform=node --format=esm --banner:js=\"import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);\" --outfile=mcp/dist/killertools-tools.mjs",
     "coverage": "node scripts/check-coverage.mjs",
     "dev": "wrangler dev",
     "local": "node local/server.mjs",
     "typecheck": "tsc --noEmit",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:local": "pnpm build:local-tools && node scripts/smoke-local.mjs"
   },
   "dependencies": {
     "@it-tools/bip39": "0.0.4",

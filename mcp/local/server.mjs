@@ -2,7 +2,6 @@ import { Buffer } from 'node:buffer';
 import { createHmac, generateKeyPairSync, randomBytes, randomUUID } from 'node:crypto';
 import { readFile, stat, writeFile } from 'node:fs/promises';
 import bip39 from '@it-tools/bip39';
-import { McpServer } from '@modelcontextprotocol/server';
 import { serveStdio } from '@modelcontextprotocol/server/stdio';
 import { compare, hash } from 'bcryptjs';
 import cryptoJs from 'crypto-js';
@@ -11,8 +10,8 @@ import { z } from 'zod';
 import { ALGORITHM_DESCRIPTIONS, CLAIM_DESCRIPTIONS } from '../../src/tools/jwt-parser/jwt-parser.constants.ts';
 import { effLongWordlist } from '../../src/tools/password-generator/eff-long-wordlist.ts';
 import { getPasswordCrackTimeEstimation } from '../../src/tools/password-strength-analyser/password-strength-analyser.service.ts';
+import { createServer as createPublicServer } from '../dist/killertools-tools.mjs';
 import { registerBrowserCompanion } from './browser-companion.mjs';
-import { registerLocalWorkerTools } from './worker-bridge.mjs';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
 const error = message => ({ content: [{ type: 'text', text: message }], isError: true });
@@ -101,9 +100,8 @@ function randomIndex(max) {
 }
 
 async function createServer() {
-  const server = new McpServer({ name: 'KillerTools MCP Local', version: '0.1.0' });
+  const server = createPublicServer('KillerMCP');
   registerBrowserCompanion(server);
-  await registerLocalWorkerTools(server);
 
   server.registerTool('hash_text_private', {
     description: 'Hash private text locally using the KillerTools hash algorithms.',

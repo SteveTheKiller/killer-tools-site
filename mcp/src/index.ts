@@ -119,8 +119,8 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
   return new Request(request, { body, headers });
 }
 
-function createServer() {
-  const server = new McpServer({ name: 'KillerTools MCP', version: '0.1.0' });
+export function createServer(name = 'KillerTools MCP') {
+  const server = new McpServer({ name, version: '0.1.0' });
   registerAsciiArt(server);
   registerCveLookup(server);
   registerDateTime(server);
@@ -350,7 +350,7 @@ function createServer() {
   return server;
 }
 
-const handler = createMcpHandler(createServer, {
+const handler = createMcpHandler(() => createServer(), {
   route: '/',
   allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
