@@ -34,9 +34,11 @@ import { textToNatoAlphabet } from '../../src/tools/text-to-nato-alphabet/text-t
 import { parseUrl } from '../../src/tools/url-parser/url-parser.service';
 import { base64ToText, textToBase64 } from '../../src/utils/base64';
 import { formatBytes } from '../../src/utils/convert';
+import { registerAsciiArt } from './ascii-art';
 import { registerDateTime } from './date-time';
 import { registerDocumentTools } from './document-tools';
 import { registerEmailRecords } from './email-records';
+import { registerEmailHeaders } from './email-headers';
 import { registerEmoji } from './emoji';
 import { registerFilmDevelopment } from './film-development';
 import { registerFormatParsers } from './format-parsers';
@@ -44,10 +46,13 @@ import { registerIpv6Ula } from './ipv6-ula';
 import { registerKillerModules } from './killer-modules';
 import { registerKillerScripts } from './killer-scripts';
 import { registerMetaTags } from './meta-tags';
+import { registerMathEvaluator } from './math-evaluator';
 import { registerPhotoCalculators } from './photo-calculators';
 import { registerQrCode } from './qr-code';
+import { registerPowerShellBuilder } from './powershell-builder';
 import { registerPhoneTools } from './phone-tools';
 import { registerReferenceLookups } from './reference-lookups';
+import { registerRegexTester } from './regex-tester';
 import { registerSimpleTools } from './simple-tools';
 import { registerStructuredText } from './structured-text';
 import { registerTextFormatters } from './text-formatters';
@@ -112,9 +117,11 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
 
 function createServer() {
   const server = new McpServer({ name: 'KillerTools MCP', version: '0.1.0' });
+  registerAsciiArt(server);
   registerDateTime(server);
   registerDocumentTools(server);
   registerEmailRecords(server);
+  registerEmailHeaders(server);
   registerEmoji(server);
   registerFilmDevelopment(server);
   registerFormatParsers(server);
@@ -122,10 +129,13 @@ function createServer() {
   registerKillerModules(server);
   registerKillerScripts(server);
   registerMetaTags(server);
+  registerMathEvaluator(server);
   registerPhotoCalculators(server);
   registerQrCode(server);
+  registerPowerShellBuilder(server);
   registerPhoneTools(server);
   registerReferenceLookups(server);
+  registerRegexTester(server);
   registerSimpleTools(server);
   registerStructuredText(server);
   registerTextFormatters(server);

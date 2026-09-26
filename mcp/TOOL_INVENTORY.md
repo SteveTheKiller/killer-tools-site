@@ -4,7 +4,7 @@ The site registers 86 entries from `src/tools/index.ts`: 81 website tools and fi
 
 ## Exposed locally
 
-The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 62 operations across 55 website tools. The fifty-two additional website tools are `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-record-generator`, `emoji-picker`, `exchange-ndr-lookup`, `exposure-equivalence`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-viewer`, `killer-modules`, `killer-scripts`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `meta-tag-generator`, `markdown-to-html`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `qr-code-generator`, `reciprocity-calculator`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, and `yaml-viewer`.
+The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 69 operations across 60 website tools. The fifty-seven additional website tools are `ascii-text-drawer`, `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-header-parser`, `email-record-generator`, `emoji-picker`, `exchange-ndr-lookup`, `exposure-equivalence`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-viewer`, `killer-modules`, `killer-scripts`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `meta-tag-generator`, `markdown-to-html`, `math-evaluator`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `powershell-builder`, `qr-code-generator`, `reciprocity-calculator`, `regex-tester`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, and `yaml-viewer`.
 
 ## Unregistered directories
 
@@ -26,10 +26,6 @@ These need a different interface or a deliberate file and device policy: `base64
 
 Do not expose these on the public endpoint until privacy and security behavior is designed per operation: `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, `rsa-key-pair-generator`.
 
-## Local conversion, calculation, generation, and reference candidates
+## Remaining interface work
 
-These have potential server-side use. This list is a candidate queue, not a claim that the current page logic is already portable or that every reference page should become a tool:
-
-`ascii-text-drawer`, `email-header-parser`, `math-evaluator`, `powershell-builder`, `regex-tester`.
-
-The next batch should favor small, deterministic conversions with existing shared service or model functions. Reference pages need useful lookup inputs and bounded answers before they become MCP tools.
+The remaining website tools need an external data policy, a local file or device interface, or private input handling. Their categories above describe the required interface work, not server deployment status.

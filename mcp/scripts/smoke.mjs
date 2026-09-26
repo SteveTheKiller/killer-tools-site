@@ -58,13 +58,16 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'diff_json',
   'diff_text',
   'describe_cron',
+  'draw_ascii_text',
   'encode_base64',
   'escape_html_entities',
+  'evaluate_math',
   'expand_ipv4_range',
   'format_xml',
   'format_sql',
   'format_json',
   'format_yaml',
+  'get_powershell_cmdlet',
   'generate_lorem_ipsum',
   'generate_svg_placeholder',
   'generate_ulids',
@@ -90,10 +93,14 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'minify_json',
   'parse_url',
   'parse_phone_number',
+  'parse_email_headers',
   'parse_user_agent',
   'roman_to_arabic',
   'search_emoji',
+  'search_powershell_cmdlets',
+  'build_powershell_command',
   'text_statistics',
+  'test_regex',
   'text_to_ascii_binary',
   'text_to_nato_alphabet',
   'unescape_html_entities',
@@ -191,6 +198,13 @@ assert.equal(spf.record, 'v=spf1 include:_spf.google.com ip4:203.0.113.5 -all');
 assert.equal((await call('generate_spf_record', { ipAddresses: ['bad'] })).isError, true);
 const dmarc = JSON.parse((await call('generate_dmarc_record', { policy: 'quarantine', ruaEmails: ['reports@example.com'] })).content[0].text);
 assert.equal(dmarc.record, 'v=DMARC1; p=quarantine; rua=mailto:reports@example.com');
+const headers = JSON.parse((await call('parse_email_headers', { headers: 'From: Alice <alice@example.com>\nSubject: Test\nAuthentication-Results: mx.example.com; spf=pass smtp.mailfrom=example.com' })).content[0].text);
+assert.equal(headers.fields.find(field => field.label === 'Subject').value, 'Test');
+assert.equal(headers.auth[0].result, 'pass');
+assert.ok(JSON.parse((await call('search_powershell_cmdlets', { query: 'Get-ADUser' })).content[0].text).some(item => item.cmdlet === 'Get-ADUser'));
+assert.equal(JSON.parse((await call('get_powershell_cmdlet', { cmdlet: 'Get-ADUser' })).content[0].text).module, 'ActiveDirectory');
+assert.equal(JSON.parse((await call('build_powershell_command', { cmdlet: 'Get-ADUser', parameters: { Identity: 'O\'Brien' } })).content[0].text).command, "Get-ADUser -Identity 'O''Brien'");
+assert.equal((await call('build_powershell_command', { cmdlet: 'Get-ADUser', parameters: { Unknown: 'value' } })).isError, true);
 const qr = JSON.parse((await call('generate_qr_code', { mode: 'text', text: 'https://killertools.net' })).content[0].text);
 assert.ok(qr.svg.startsWith('<svg'));
 assert.equal((await call('generate_qr_code', { mode: 'wifi', wifi: { ssid: 'Example', password: 'secret', encryption: 'WPA' } })).isError, undefined);
@@ -213,6 +227,13 @@ assert.equal(JSON.parse((await call('calculate_percentage', { mode: 'percent_of'
 assert.equal(JSON.parse((await call('calculate_percentage', { mode: 'what_percent', x: 20, y: 80 })).content[0].text).value, '25%');
 assert.equal(JSON.parse((await call('calculate_percentage', { mode: 'change', x: 80, y: 100 })).content[0].text).value, '+25%');
 assert.equal((await call('calculate_percentage', { mode: 'what_percent', x: 2, y: 0 })).isError, true);
+assert.equal(JSON.parse((await call('evaluate_math', { expression: '2*sqrt(9)' })).content[0].text).value, 6);
+assert.equal((await call('evaluate_math', { expression: '2^1000' })).isError, true);
+assert.equal((await call('evaluate_math', { expression: 'import("x")' })).isError, true);
+const regex = JSON.parse((await call('test_regex', { pattern: '(hello)', text: 'hello world' })).content[0].text);
+assert.equal(regex.matches[0].match, 'hello');
+assert.equal(regex.matches[0].groups[0], 'hello');
+assert.equal((await call('test_regex', { pattern: '(a)\\1', text: 'aa' })).isError, true);
 assert.equal(JSON.parse((await call('json_to_csv', { rows: [{ name: 'Ada', age: 37 }] })).content[0].text).csv, 'name,age\nAda,37');
 assert.equal(JSON.parse((await call('generate_lorem_ipsum', { paragraphCount: 1, sentencePerParagraph: 1, wordCount: 4 })).content[0].text).text, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 const urlParts = JSON.parse((await call('parse_url', { url: 'https://example.com:3000/path?x=1#top' })).content[0].text);
@@ -264,6 +285,8 @@ assert.equal(new Set(concurrent.map(result => result.content[0].text)).size, 8);
 if (process.env.MCP_LIVE_NETWORK === '1') {
   const scripts = JSON.parse((await call('list_killer_scripts', {})).content[0].text);
   assert.ok(scripts.some(script => script.filename === 'URT.ps1'));
+  const art = JSON.parse((await call('draw_ascii_text', { text: 'Hi' })).content[0].text);
+  assert.ok(art.art.length > 5 && art.art.includes('\n'));
 }
 
 console.log('MCP initialization, discovery, calls, errors, limits, and concurrency passed.');
