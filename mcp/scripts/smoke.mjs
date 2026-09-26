@@ -83,9 +83,13 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'list_killer_modules',
   'list_killer_scripts',
   'lookup_exchange_ndr',
+  'lookup_cve',
+  'lookup_domain_dns',
+  'lookup_domain_rdap',
   'lookup_group_policy',
   'lookup_http_status',
   'lookup_m365_sku',
+  'lookup_mac_vendor',
   'lookup_port_protocol',
   'lookup_windows_error',
   'lookup_windows_event',
@@ -97,6 +101,7 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'parse_user_agent',
   'roman_to_arabic',
   'search_emoji',
+  'search_gifs',
   'search_powershell_cmdlets',
   'build_powershell_command',
   'text_statistics',
@@ -249,6 +254,7 @@ assert.equal(JSON.parse((await call('lookup_windows_event', { query: '4625' })).
 assert.ok(JSON.parse((await call('lookup_exchange_ndr', { query: '5.7.1' })).content[0].text).length > 0);
 assert.ok(JSON.parse((await call('lookup_group_policy', { query: 'Minimum Password Length' })).content[0].text).length > 0);
 assert.ok(JSON.parse((await call('lookup_m365_sku', { query: 'O365_BUSINESS_ESSENTIALS' })).content[0].text).length > 0);
+assert.ok(JSON.parse((await call('lookup_mac_vendor', { macAddress: '20:37:06:12:34:56' })).content[0].text).details);
 assert.equal(JSON.parse((await call('lookup_port_protocol', { query: '443' })).content[0].text)[0].port, 443);
 assert.equal((await call('lookup_http_status', { query: '404', limit: 0 })).isError, true);
 
@@ -287,6 +293,14 @@ if (process.env.MCP_LIVE_NETWORK === '1') {
   assert.ok(scripts.some(script => script.filename === 'URT.ps1'));
   const art = JSON.parse((await call('draw_ascii_text', { text: 'Hi' })).content[0].text);
   assert.ok(art.art.length > 5 && art.art.includes('\n'));
+  const gifs = JSON.parse((await call('search_gifs', { query: 'cat', limit: 2 })).content[0].text);
+  assert.ok(gifs.length > 0 && gifs.length <= 2);
+  const cve = JSON.parse((await call('lookup_cve', { query: 'CVE-2024-3094' })).content[0].text);
+  assert.equal(cve.results[0].id, 'CVE-2024-3094');
+  const dns = JSON.parse((await call('lookup_domain_dns', { name: 'example.com', type: 'A' })).content[0].text);
+  assert.ok(dns.answers.some(answer => answer.data));
+  const rdap = JSON.parse((await call('lookup_domain_rdap', { domain: 'example.com' })).content[0].text);
+  assert.equal(rdap.domain.toLowerCase(), 'example.com');
 }
 
 console.log('MCP initialization, discovery, calls, errors, limits, and concurrency passed.');

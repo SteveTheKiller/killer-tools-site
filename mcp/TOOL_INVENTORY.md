@@ -4,7 +4,7 @@ The site registers 86 entries from `src/tools/index.ts`: 81 website tools and fi
 
 ## Exposed locally
 
-The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 69 operations across 60 website tools. The fifty-seven additional website tools are `ascii-text-drawer`, `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-header-parser`, `email-record-generator`, `emoji-picker`, `exchange-ndr-lookup`, `exposure-equivalence`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-viewer`, `killer-modules`, `killer-scripts`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `meta-tag-generator`, `markdown-to-html`, `math-evaluator`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `powershell-builder`, `qr-code-generator`, `reciprocity-calculator`, `regex-tester`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, and `yaml-viewer`.
+The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 74 operations across 64 website tools. The sixty-one additional website tools are `ascii-text-drawer`, `chmod-calculator`, `color-converter`, `crontab-generator`, `cve-lookup`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `domain-lookup`, `email-header-parser`, `email-record-generator`, `emoji-picker`, `exchange-ndr-lookup`, `exposure-equivalence`, `gif-search`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-viewer`, `killer-modules`, `killer-scripts`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `mac-address-lookup`, `meta-tag-generator`, `markdown-to-html`, `math-evaluator`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `powershell-builder`, `qr-code-generator`, `reciprocity-calculator`, `regex-tester`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, and `yaml-viewer`.
 
 ## Unregistered directories
 
@@ -16,7 +16,7 @@ These are links to separate apps. They do not belong in the KillerTools website 
 
 ## Network or external data
 
-Review upstream access, freshness, costs, and rate limits before exposing: `cve-lookup`, `domain-lookup`, `gif-search`, `mac-address-lookup`.
+The local source includes `cve-lookup`, `domain-lookup`, and `gif-search`. Their external services need availability and rate-limit review before public deployment. `mac-address-lookup` uses the site's bundled vendor data.
 
 ## Browser, device, file, or interactive surface
 
@@ -28,4 +28,4 @@ Do not expose these on the public endpoint until privacy and security behavior i
 
 ## Remaining interface work
 
-The remaining website tools need an external data policy, a local file or device interface, or private input handling. Their categories above describe the required interface work, not server deployment status.
+The remaining seventeen website tools need a local file or device interface or private input handling. Their categories above describe the required interface work, not server deployment status.
