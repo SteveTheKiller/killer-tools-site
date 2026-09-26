@@ -1,10 +1,14 @@
 # KillerTools MCP tool inventory
 
-The site registers 86 entries from `src/tools/index.ts`: 81 website tools and five links to desktop apps. The repository also has five unregistered tool directories. A website tool is not automatically an MCP operation. Each adapter needs a bounded input and output contract and a check against the page's behavior.
+The site registers 86 entries from `src/tools/index.ts`: 81 website tools and five links to desktop apps. All 81 website tools have an MCP interface. The [coverage map](coverage.json) gives the exact operation names, and `pnpm coverage` checks it against the site registry and server source.
 
-## Exposed locally
+## Public Worker
 
-The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 74 operations across 64 website tools. The sixty-one additional website tools are `ascii-text-drawer`, `chmod-calculator`, `color-converter`, `crontab-generator`, `cve-lookup`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `domain-lookup`, `email-header-parser`, `email-record-generator`, `emoji-picker`, `exchange-ndr-lookup`, `exposure-equivalence`, `gif-search`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-viewer`, `killer-modules`, `killer-scripts`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `mac-address-lookup`, `meta-tag-generator`, `markdown-to-html`, `math-evaluator`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `powershell-builder`, `qr-code-generator`, `reciprocity-calculator`, `regex-tester`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, and `yaml-viewer`.
+The deployed Worker exposes 74 operations across 64 website tools. These cover calculations, text and data conversion, network and reference lookup, catalog search, and formatting. Public operations include case conversion, Base64 text conversion, IP calculations, DNS and registration lookup, CVE lookup, email header parsing, QR generation, and PowerShell command building. Public tool inputs go to Cloudflare. External lookup tools can contact other services. Network results depend on provider availability and may change over time.
+
+## Local server
+
+The local stdio server includes all 74 Worker operations and 20 additional operations for the remaining 17 website tools and browser setup. It provides 94 operations in one connection. The local Worker runs on the user's computer. The MCP client and agent may still receive local tool inputs and outputs.
 
 ## Unregistered directories
 
@@ -16,16 +20,16 @@ These are links to separate apps. They do not belong in the KillerTools website 
 
 ## Network or external data
 
-The local source includes `cve-lookup`, `domain-lookup`, and `gif-search`. Their external services need availability and rate-limit review before public deployment. `mac-address-lookup` uses the site's bundled vendor data.
+The public Worker includes `cve-lookup`, `domain-lookup`, and `gif-search`. Their external services can be unavailable or rate limited. `mac-address-lookup` uses the site's bundled vendor data.
 
 ## Browser, device, file, or interactive surface
 
-The local stdio server covers file conversion from `base64-file-converter` and signature inspection from `pdf-signature-checker`. Their inputs are local paths with size limits. A token-protected page on the user's own computer supplies the five browser interactions: `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, and `signature-creator`. The agent can retrieve the latest result after the user opens the page and interacts with it. Camera permission and actual capture still need a manual browser and hardware check.
+The local stdio server covers file conversion from `base64-file-converter` and signature inspection from `pdf-signature-checker`. Their inputs are local paths with size limits. Base64 decoding creates a new file rather than overwriting an existing one. A token-protected page on the user's own computer supplies the five browser interactions: `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, and `signature-creator`. Call `open_browser_companion_local`, open its URL, provide input in the page, then call the matching `get_browser_*_local` operation. The result includes an update timestamp. Camera permission and actual capture still need a manual browser and hardware check.
 
 ## Credentials, secrets, or cryptographic material
 
-The local stdio server covers `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, and `rsa-key-pair-generator`. It processes inputs on the user's machine. Do not expose these on the public endpoint until privacy and security behavior is designed per operation.
+The local stdio server covers `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, and `rsa-key-pair-generator`. It processes inputs on the user's machine, but the MCP client and agent may receive them. These operations are not on the public endpoint. `parse_jwt_private` decodes a token but does not verify its signature.
 
 ## Coverage and release status
 
-Across the Worker and local stdio source, 94 MCP operations provide interfaces for all 81 website tools. [The coverage map](coverage.json) lists each website tool and its MCP operations, and `pnpm coverage` checks it against the site registry and server source. One operation opens the browser companion; the others process or retrieve tool results. The browser interactions require a live page and user action. The deployed public Worker still has only five operations, and the expanded local source has not been released.
+Across the deployed Worker and local stdio server, 94 MCP operations provide interfaces for all 81 website tools. [The coverage map](coverage.json) lists each website tool and its MCP operations. One operation opens the browser companion; the others process or retrieve tool results. Browser interactions require a live page and user action.
