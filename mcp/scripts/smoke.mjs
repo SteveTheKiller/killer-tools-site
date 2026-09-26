@@ -37,19 +37,33 @@ const listed = await request('tools/list');
 assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'arabic_to_roman',
   'ascii_binary_to_text',
+  'calculate_chmod',
+  'calculate_depth_of_field',
+  'calculate_exposure_equivalence',
   'calculate_ipv4_subnet',
+  'calculate_nd_exposure',
   'calculate_percentage',
+  'calculate_reciprocity',
   'convert_case',
+  'convert_color',
   'convert_integer_base',
   'convert_json',
   'convert_temperature',
   'convert_toml',
+  'convert_xml_json',
   'convert_yaml',
   'decode_base64',
+  'diff_json',
+  'describe_cron',
   'encode_base64',
+  'escape_html_entities',
   'expand_ipv4_range',
+  'format_xml',
   'generate_lorem_ipsum',
+  'generate_ulids',
+  'generate_uuids',
   'json_to_csv',
+  'list_film_stocks',
   'lookup_exchange_ndr',
   'lookup_group_policy',
   'lookup_http_status',
@@ -59,11 +73,13 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'lookup_windows_event',
   'minify_json',
   'parse_url',
+  'parse_user_agent',
   'roman_to_arabic',
   'text_statistics',
   'text_to_ascii_binary',
   'text_to_nato_alphabet',
-]);
+  'unescape_html_entities',
+].sort());
 
 async function call(name, args) {
   return request('tools/call', { name, arguments: args });
@@ -95,6 +111,38 @@ assert.equal(JSON.parse((await call('convert_yaml', { text: 'a: 1', to: 'json' }
 assert.equal(JSON.parse((await call('convert_toml', { text: 'a = 1', to: 'json' })).content[0].text).text, '{\n  "a": 1\n}');
 assert.equal(JSON.parse((await call('minify_json', { text: '{ a: 1 }' })).content[0].text).text, '{"a":1}');
 assert.equal((await call('convert_yaml', { text: 'a: [', to: 'json' })).isError, true);
+const chmod = JSON.parse((await call('calculate_chmod', { permissions: {
+  owner: { read: true, write: true, execute: true },
+  group: { read: true, write: false, execute: true },
+  public: { read: true, write: false, execute: true },
+} })).content[0].text);
+assert.equal(chmod.octal, '755');
+assert.equal(chmod.symbolic, 'rwxr-xr-x');
+assert.equal(JSON.parse((await call('escape_html_entities', { text: '<a&>' })).content[0].text).text, '&lt;a&amp;&gt;');
+assert.equal(JSON.parse((await call('unescape_html_entities', { text: '&lt;a&gt;' })).content[0].text).text, '<a>');
+assert.match(JSON.parse((await call('generate_ulids', { count: 1 })).content[0].text).ids[0], /^[0-9A-HJKMNP-TV-Z]{26}$/);
+assert.match(JSON.parse((await call('generate_uuids', { version: 'v4', count: 1 })).content[0].text).ids[0], /^[0-9a-f-]{36}$/);
+assert.equal((await call('generate_uuids', { version: 'v5', namespace: 'bad' })).isError, true);
+const jsonDiff = JSON.parse((await call('diff_json', { left: '{ a: 1 }', right: '{ a: 2 }' })).content[0].text);
+assert.equal(jsonDiff.children[0].status, 'updated');
+assert.equal(JSON.parse((await call('format_xml', { text: '<a><b>text</b></a>' })).content[0].text).text.includes('<b>text</b>'), true);
+assert.equal(JSON.parse((await call('convert_xml_json', { text: '<a x="1"/>', direction: 'xml_to_json' })).content[0].text).text.includes('"a"'), true);
+assert.equal((await call('format_xml', { text: '<a><' })).isError, true);
+assert.equal(JSON.parse((await call('calculate_nd_exposure', { baseSeconds: 0.008, stops: 10 })).content[0].text).seconds, 8.192);
+assert.equal(JSON.parse((await call('calculate_exposure_equivalence', { shutterSeconds: 1, originalAperture: 8, targetAperture: 16 })).content[0].text).shutterSeconds, 4);
+const depth = JSON.parse((await call('calculate_depth_of_field', { focalLengthMm: 50, aperture: 8, focusDistance: 15, focusUnit: 'ft', circleOfConfusionMm: 0.029 })).content[0].text);
+assert.ok(depth.nearMeters > 0);
+assert.ok(depth.hyperfocalMeters > depth.nearMeters);
+assert.equal((await call('calculate_depth_of_field', { focalLengthMm: 200, aperture: 8, focusDistance: 0.1, focusUnit: 'm', circleOfConfusionMm: 0.029 })).isError, true);
+assert.ok(JSON.parse((await call('list_film_stocks', {})).content[0].text).some(stock => stock.id === 'ilford-hp5'));
+assert.ok(JSON.parse((await call('calculate_reciprocity', { filmStockId: 'ilford-hp5', meteredSeconds: 10 })).content[0].text).adjustedSeconds > 10);
+assert.equal((await call('calculate_reciprocity', { filmStockId: 'unknown', meteredSeconds: 10 })).isError, true);
+const color = JSON.parse((await call('convert_color', { color: '#ff0000' })).content[0].text);
+assert.equal(color.hex, '#ff0000');
+assert.equal(color.name.toLowerCase(), 'red');
+assert.equal((await call('convert_color', { color: 'not a color' })).isError, true);
+assert.ok(JSON.parse((await call('describe_cron', { expression: '40 * * * *' })).content[0].text).description.length > 0);
+assert.equal((await call('describe_cron', { expression: 'bad cron' })).isError, true);
 assert.equal(JSON.parse((await call('arabic_to_roman', { number: 42 })).content[0].text).roman, 'XLII');
 assert.equal(JSON.parse((await call('roman_to_arabic', { roman: 'XLII' })).content[0].text).number, 42);
 const temperatures = JSON.parse((await call('convert_temperature', { value: 0, scale: 'celsius' })).content[0].text);
@@ -117,6 +165,8 @@ assert.equal(urlParts.hostname, 'example.com');
 assert.equal(urlParts.port, '3000');
 assert.deepEqual(urlParts.searchParams, [['x', '1']]);
 assert.equal((await call('parse_url', { url: 'not a url' })).isError, true);
+const userAgent = JSON.parse((await call('parse_user_agent', { userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' })).content[0].text);
+assert.equal(userAgent.browser.name, 'Chrome');
 assert.equal(JSON.parse((await call('lookup_http_status', { query: '404' })).content[0].text)[0].code, 404);
 assert.equal(JSON.parse((await call('lookup_windows_error', { query: 'ERROR_FILE_NOT_FOUND' })).content[0].text)[0].decimal, 2);
 assert.equal(JSON.parse((await call('lookup_windows_event', { query: '4625' })).content[0].text)[0].id, 4625);

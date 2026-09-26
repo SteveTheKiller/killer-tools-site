@@ -1,6 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/server';
 import { createMcpHandler } from 'agents/mcp/server';
 import { Netmask } from 'netmask';
+import { UAParser } from 'ua-parser-js';
 import { z } from 'zod';
 import { convertCase } from '../../src/tools/case-converter/case-converter.models';
 import { convertBase } from '../../src/tools/integer-base-converter/integer-base-converter.model';
@@ -33,7 +34,11 @@ import { textToNatoAlphabet } from '../../src/tools/text-to-nato-alphabet/text-t
 import { parseUrl } from '../../src/tools/url-parser/url-parser.service';
 import { base64ToText, textToBase64 } from '../../src/utils/base64';
 import { formatBytes } from '../../src/utils/convert';
+import { registerDocumentTools } from './document-tools';
+import { registerFormatParsers } from './format-parsers';
+import { registerPhotoCalculators } from './photo-calculators';
 import { registerReferenceLookups } from './reference-lookups';
+import { registerSimpleTools } from './simple-tools';
 import { registerStructuredText } from './structured-text';
 
 const inputText = z.string().max(4096);
@@ -95,13 +100,25 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
 
 function createServer() {
   const server = new McpServer({ name: 'KillerTools MCP', version: '0.1.0' });
+  registerDocumentTools(server);
+  registerFormatParsers(server);
+  registerPhotoCalculators(server);
   registerReferenceLookups(server);
+  registerSimpleTools(server);
   registerStructuredText(server);
 
   server.registerTool('convert_case', {
     description: 'Return the case conversions shown by the KillerTools Case Converter.',
     inputSchema: { text: inputText },
   }, async ({ text }) => result(convertCase(text)));
+
+  server.registerTool('parse_user_agent', {
+    description: 'Parse a user agent string using the KillerTools User Agent Parser.',
+    inputSchema: { userAgent: z.string().trim().min(1).max(1024) },
+  }, async ({ userAgent }) => {
+    const parsed = UAParser(userAgent);
+    return result({ browser: parsed.browser, engine: parsed.engine, os: parsed.os, device: parsed.device, cpu: parsed.cpu });
+  });
 
   server.registerTool('convert_integer_base', {
     description: 'Convert a nonnegative integer between bases 2 and 64 using the KillerTools converter.',
