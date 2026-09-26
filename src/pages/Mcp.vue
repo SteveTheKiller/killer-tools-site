@@ -232,7 +232,8 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
 .mcp-wordmark { display: flex; align-items: center; gap: 8px; margin: 0; }
 .mcp-wordmark img { display: block; width: clamp(210px, 28vw, 350px); height: auto; }
-.mcp-wordmark span { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(32px, 4vw, 52px); color: var(--kt-accent); }
+.mcp-wordmark span { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(32px, 4vw, 52px); color: #fff; }
+html:not(.dark) .mcp-wordmark span { color: #111; }
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Courier New', monospace; font-size: 24px; font-weight: normal; }
 .mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 15px; }
