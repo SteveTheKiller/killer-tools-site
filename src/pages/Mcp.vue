@@ -6,6 +6,8 @@ import { NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 const endpoint = 'https://mcp.killertools.net';
 const codexCommand = `codex mcp add killertools --url ${endpoint}`;
 const claudeCodeCommand = `claude mcp add --transport http killertools ${endpoint}`;
+const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=killertools&config=${encodeURIComponent(btoa(JSON.stringify({ url: endpoint })))}`;
+const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const copyStatus = ref('');
 
 async function copyText(value: string, label: string) {
@@ -15,7 +17,7 @@ async function copyText(value: string, label: string) {
     copyStatus.value = `${label} copied`;
   }
   catch {
-    copyStatus.value = 'Copy failed. Select and copy the text instead.';
+    copyStatus.value = `Copy failed. Copy this instead: ${value}`;
   }
 }
 
@@ -75,10 +77,17 @@ useHead({
         ONE URL / ANY MCP CLIENT
       </p>
       <h2 id="mcp-connect-title">
-        Connect the public server
+        Add KillerTools to your agent
       </h2>
       <p>
-        Add this Streamable HTTP URL to your agent's MCP settings. There is no account or download.
+        Choose your app. Cursor and VS Code can open their install prompts directly.
+      </p>
+      <div class="mcp-install-actions">
+        <a class="mcp-action" :href="cursorInstallUrl">Add to Cursor</a>
+        <a class="mcp-action" :href="vscodeInstallUrl">Add to VS Code</a>
+      </div>
+      <p>
+        Using another MCP client? Copy the server URL.
       </p>
       <div class="mcp-copy-row">
         <code class="mcp-value">{{ endpoint }}</code>
@@ -93,49 +102,38 @@ useHead({
 
     <div class="mcp-client-grid">
       <section class="mcp-card mcp-surface">
-        <p class="mcp-step">
-          01 / CLAUDE
-        </p>
         <h2>
           Claude
         </h2>
         <p>
-          Open Customize, then Connectors. Choose Add custom connector, name it KillerTools, and paste the URL above. Enable it in your chat's Connectors menu.
+          Open your connectors and add the copied server URL as a custom connector.
         </p>
-        <a class="mcp-action mcp-link-action" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener noreferrer">
-          Open Claude connectors
+        <a class="mcp-action mcp-link-action" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener noreferrer" @click="copyText(endpoint, 'Server URL')">
+          Copy URL and open Claude
         </a>
       </section>
 
       <section class="mcp-card mcp-surface">
-        <p class="mcp-step">
-          02 / CODEX
-        </p>
         <h2>
           Codex
         </h2>
         <p>
-          Run this command in a terminal, then open a new Codex chat.
+          Copy one command to add KillerTools in Codex.
         </p>
-        <code class="mcp-command">{{ codexCommand }}</code>
         <button type="button" class="mcp-action" @click="copyText(codexCommand, 'Codex command')">
-          Copy command
+          Copy Codex setup command
         </button>
       </section>
 
       <section class="mcp-card mcp-surface">
-        <p class="mcp-step">
-          03 / CLAUDE CODE
-        </p>
         <h2>
           Claude Code
         </h2>
         <p>
-          Run this command in a terminal. Check the connection with <code>/mcp</code> in Claude Code.
+          Copy one command to add KillerTools in Claude Code.
         </p>
-        <code class="mcp-command">{{ claudeCodeCommand }}</code>
         <button type="button" class="mcp-action" @click="copyText(claudeCodeCommand, 'Claude Code command')">
-          Copy command
+          Copy Claude Code setup command
         </button>
       </section>
     </div>
@@ -207,17 +205,16 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 13px; }
 .mcp-connect h2 { margin-bottom: 8px; }
 .mcp-connect p { font-size: 13px; line-height: 1.6; }
+.mcp-install-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
 .mcp-copy-row { display: flex; align-items: stretch; gap: 10px; margin-top: 16px; }
-.mcp-value, .mcp-command { display: block; overflow-wrap: anywhere; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); padding: 12px 14px; font-size: 13px; }
+.mcp-value { display: block; overflow-wrap: anywhere; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); padding: 12px 14px; font-size: 13px; }
 .mcp-value { flex: 1; }
-.mcp-command { min-height: 74px; margin: auto 0 14px; }
 .mcp-action { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border: 1px solid var(--kt-accent); border-radius: 4px; background: transparent; color: var(--kt-accent); font: inherit; font-size: 13px; cursor: pointer; text-align: center; text-decoration: none; }
 .mcp-action:hover, .mcp-action:focus-visible { background: var(--kt-accent); color: var(--kt-modal, #0a0a0a); }
 .mcp-action:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
 .mcp-feedback { min-height: 1.6em; margin: 7px 0 0; color: var(--kt-accent); }
 .mcp-client-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .mcp-client-grid .mcp-card { display: flex; flex-direction: column; align-items: flex-start; }
-.mcp-step { margin: 0 0 12px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.12em; }
 .mcp-client-grid .mcp-card .mcp-action { margin-top: auto; }
 .mcp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .mcp-card p, .mcp-card li { font-size: 13px; line-height: 1.65; }
