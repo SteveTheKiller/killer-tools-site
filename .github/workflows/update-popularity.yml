@@ -2,8 +2,8 @@ name: Update tool popularity
 
 on:
   schedule:
-    # Every day at 04:00 UTC
-    - cron: '0 4 * * *'
+    - cron: '15 2 * * *'
+      timezone: America/Los_Angeles
   workflow_dispatch:
 
 jobs:
