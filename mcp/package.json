@@ -2,7 +2,9 @@
   "name": "killertools-mcp",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "coverage": "node scripts/check-coverage.mjs",
     "dev": "wrangler dev",
@@ -12,19 +14,19 @@
   },
   "dependencies": {
     "@it-tools/bip39": "0.0.4",
-    "@modelcontextprotocol/server": "2.0.0",
+    "@modelcontextprotocol/server": "2.1.0",
     "agents": "0.24.0",
     "bcryptjs": "3.0.3",
     "change-case": "5.4.4",
     "crypto-js": "4.2.0",
-    "js-base64": "3.7.8",
+    "js-base64": "3.9.4",
     "pdf-signature-reader": "1.4.3",
     "re2js": "2.8.6",
     "zod": "4.6.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "5.20260925.2",
-    "typescript": "6.0.3",
+    "@cloudflare/workers-types": "5.20260926.1",
+    "typescript": "7.0.2",
     "wrangler": "4.141.0"
   }
 }
