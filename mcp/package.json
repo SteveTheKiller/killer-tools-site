@@ -4,6 +4,7 @@
   "type": "module",
   "engines": { "node": ">=24" },
   "scripts": {
+    "coverage": "node scripts/check-coverage.mjs",
     "dev": "wrangler dev",
     "local": "node local/server.mjs",
     "typecheck": "tsc --noEmit",

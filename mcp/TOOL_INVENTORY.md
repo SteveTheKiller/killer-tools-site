@@ -28,4 +28,4 @@ The local stdio server covers `bcrypt`, `bip39-generator`, `encryption`, `hash-t
 
 ## Coverage and release status
 
-Across the Worker and local stdio source, 94 MCP operations provide interfaces for all 81 website tools. One operation opens the browser companion; the others process or retrieve tool results. The browser interactions require a live page and user action. The deployed public Worker still has only five operations, and the expanded local source has not been released.
+Across the Worker and local stdio source, 94 MCP operations provide interfaces for all 81 website tools. [The coverage map](coverage.json) lists each website tool and its MCP operations, and `pnpm coverage` checks it against the site registry and server source. One operation opens the browser companion; the others process or retrieve tool results. The browser interactions require a live page and user action. The deployed public Worker still has only five operations, and the expanded local source has not been released.

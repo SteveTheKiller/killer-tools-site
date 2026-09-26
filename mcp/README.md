@@ -8,7 +8,7 @@ This server is for KillerTools website utilities. Desktop apps can have separate
 
 From the repository root, install the website dependencies with `pnpm install`. Then run `pnpm install` in this directory and `pnpm dev`. Connect an MCP client to `http://127.0.0.1:8787/mcp` (use the port printed by Wrangler).
 
-With the local Worker running on port 8787, run `pnpm smoke` from this directory to verify MCP initialization, discovery, calls, validation, and concurrent requests. Set `MCP_URL` to test a different endpoint.
+Run `pnpm coverage` to compare every registered website tool with the [MCP operation map](coverage.json). With the local Worker running on port 8787, run `pnpm smoke` from this directory to verify MCP initialization, discovery, calls, validation, and concurrent requests. Set `MCP_URL` to test a different endpoint.
 
 For private inputs and local files, connect a second MCP client entry to the local stdio server. It requires Node 24 or later to load the site's EFF passphrase wordlist. Use the Node executable as the command, with the absolute path to `local/server.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. Run `node scripts/smoke-local.mjs` to test its MCP connection. It handles secrets on the user's machine and reads only files explicitly named in tool calls. Base64 decoding creates a new file and never overwrites an existing one. The client should ask before granting local file access.
 
