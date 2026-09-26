@@ -638,8 +638,8 @@ export const skusByCategory: {
         tier: 'Add-on',
       },
       {
-        guid: 'VIVA_GOALS',
-        stringId: 'VIVA_GOALS',
+        guid: 'ba929637-f158-4dee-927c-eb7cdefcd955',
+        stringId: 'Microsoft_Viva_Goals',
         name: 'Microsoft Viva Goals',
         description: 'OKR (Objectives and Key Results) management tool integrated with Teams and M365. Aligns team goals with organizational strategy.',
         tier: 'Add-on',
@@ -678,8 +678,8 @@ export const skusByCategory: {
         tier: 'Add-on',
       },
       {
-        guid: 'ONEDRIVE_BASIC',
-        stringId: 'ONEDRIVE_BASIC',
+        guid: 'e6778190-713e-4e4f-9119-8b8238de25df',
+        stringId: 'WACONEDRIVESTANDARD',
         name: 'OneDrive for Business Plan 1',
         description: '1TB OneDrive for Business storage per user. Basic file sync and sharing without advanced compliance.',
         tier: 'Add-on',
@@ -737,8 +737,8 @@ export const skusByCategory: {
         tier: 'Add-on',
       },
       {
-        guid: 'POWER_BI_PREMIUM_PER_USER',
-        stringId: 'POWER_BI_PREMIUM_PER_USER',
+        guid: 'c1d032e0-5619-4761-9b5c-75b6831e1711',
+        stringId: 'PBI_PREMIUM_PER_USER',
         name: 'Power BI Premium Per User',
         description: 'Power BI Premium features per user: paginated reports, AI insights, larger data models, and increased dataset refresh rates.',
         tier: 'Add-on',
@@ -784,8 +784,8 @@ export const skusByCategory: {
     category: 'Visio',
     skus: [
       {
-        guid: 'VISIO_PLAN1_NAT',
-        stringId: 'VISIO_PLAN1_NAT',
+        guid: '4b244418-9658-4451-a2b8-b5e2b364e9bd',
+        stringId: 'VISIOONLINE_PLAN1',
         name: 'Visio Plan 1',
         description: 'Web-based Visio only. Create and edit diagrams in a browser using standard templates.',
         tier: 'Add-on',
@@ -850,8 +850,8 @@ export const skusByCategory: {
         tier: 'Business',
       },
       {
-        guid: 'DYN365_BUSINESS_PREMIUM',
-        stringId: 'DYN365_BUSINESS_PREMIUM',
+        guid: 'f991cecc-3f91-4cd0-a9a8-bf1c8167e029',
+        stringId: 'DYN365_BUSCENTRAL_PREMIUM',
         name: 'Dynamics 365 Business Central Premium',
         description: 'Business Central Essentials plus manufacturing and service order management.',
         tier: 'Business',
