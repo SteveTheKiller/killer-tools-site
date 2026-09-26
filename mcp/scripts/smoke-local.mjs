@@ -85,7 +85,9 @@ try {
   assert.ok([...pronounceable].every((char, index) => (index % 2 === 0 ? 'bcdfghjkmnpqrstvwxz' : 'aeiouy').includes(char)));
   assert.match((await call('generate_password_private', { mode: 'format', format: 'hex', length: 24 })).password, /^[0-9a-f]{24}$/);
   assert.match((await call('generate_password_private', { mode: 'format', format: 'uuid' })).password, /^[0-9a-f-]{36}$/);
-  assert.ok((await call('analyze_password_private', { password: 'Secret123!' })).entropyBits > 0);
+  const strength = await call('analyze_password_private', { password: 'Secret123!' });
+  assert.equal(strength.charsetLength, 94);
+  assert.ok(strength.entropy > 0 && strength.crackDurationFormatted);
   assert.ok((await call('generate_rsa_keypair_private', { bits: '2048' })).privateKeyPem.includes('BEGIN RSA PRIVATE KEY'));
   const directory = await mkdtemp(join(tmpdir(), 'kt-mcp-'));
   const original = join(directory, 'original.txt');

@@ -9,6 +9,7 @@ import cryptoJs from 'crypto-js';
 import verifyPdf from 'pdf-signature-reader';
 import { z } from 'zod';
 import { effLongWordlist } from '../../src/tools/password-generator/eff-long-wordlist.ts';
+import { getPasswordCrackTimeEstimation } from '../../src/tools/password-strength-analyser/password-strength-analyser.service.ts';
 import { registerBrowserCompanion } from './browser-companion.mjs';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
@@ -263,14 +264,9 @@ function createServer() {
   });
 
   server.registerTool('analyze_password_private', {
-    description: 'Estimate password strength locally using the KillerTools character-set formula.',
+    description: 'Estimate password strength and crack time locally using the KillerTools calculation.',
     inputSchema: { password: text },
-  }, async ({ password }) => {
-    const charset = (/[a-z]/.test(password) ? 26 : 0) + (/[A-Z]/.test(password) ? 26 : 0)
-      + (/\d/.test(password) ? 10 : 0) + (/\W|_/.test(password) ? 32 : 0);
-    const entropy = password ? Math.log2(charset) * password.length : 0;
-    return result({ length: password.length, charset, entropyBits: entropy, score: Math.min(entropy / 128, 1) });
-  });
+  }, async ({ password }) => result(getPasswordCrackTimeEstimation({ password })));
 
   server.registerTool('generate_rsa_keypair_private', {
     description: 'Generate an RSA PEM key pair locally.',
