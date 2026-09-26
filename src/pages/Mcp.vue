@@ -69,7 +69,7 @@ useHead({
         convert JSON to CSV, or decode Base64. It can use dozens more utilities as your work calls for them.
       </p>
       <p class="mcp-status">
-        Public server: 64 of 81 website tools. Optional local connector: all 81.
+        Use the link below to give your agent access to 64 KillerTools utilities.
       </p>
     </section>
 
@@ -157,7 +157,7 @@ useHead({
           <li>Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.</li>
         </ul>
         <p>
-          The full local connector adds file, browser, and private operations. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the local setup guide</a>.
+          Need tools that work with files or browser data on your own computer? There is also an optional setup for that. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the setup guide</a>.
         </p>
       </section>
       <section class="mcp-card mcp-surface">
@@ -165,10 +165,10 @@ useHead({
           Where does the data go?
         </h2>
         <p>
-          The website runs most utilities in your browser. Public MCP calls send inputs to the Cloudflare Worker. Some lookups also contact external data sources. Do not send passwords, private files, tokens, or client data to the public server.
+          When your agent uses the link above, it sends tool inputs to KillerTools on Cloudflare for processing. Some lookups also contact external data sources. Do not send passwords, private files, tokens, or client data through this link.
         </p>
         <p>
-          Local file, secret, and browser operations run on your computer through the optional local connector. Your agent client may still receive those inputs and results.
+          With the optional computer setup, file and browser tools run on your computer. Your agent client may still receive their inputs and results.
         </p>
       </section>
     </div>
