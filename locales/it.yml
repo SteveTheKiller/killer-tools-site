@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: salva il file
       infoDownloadSuffix: sul tuo computer per uso manuale.
   powershell-builder:
-    title: PowerShell Builder
+    title: Generatore PowerShell
     description: Scegli un cmdlet, compila i parametri e copia il comando PowerShell finito.
   group-policy-reference:
     title: Riferimento Criteri di gruppo

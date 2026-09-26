@@ -776,7 +776,7 @@ tools:
       invalidBinary: Muss gültiger ASCII-Binärcode sein (Vielfache von 8 Bit)
   killer-scripts:
     title: Killer Scripts
-    description: PowerShell scripts for Windows administration and MSP field work.
+    description: PowerShell-Skripte für die Windows-Administration und den MSP-Außendienst.
     ui:
       loadError: Laden der Skripte von GitHub fehlgeschlagen. Verbindung prüfen oder erneut versuchen.
       retry: Erneut versuchen
@@ -787,8 +787,8 @@ tools:
       infoDownloadMiddle: Button speichert die
       infoDownloadSuffix: Datei zur manuellen Nutzung auf Ihrem Rechner.
   group-policy-reference:
-    title: Group Policy Reference
-    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+    title: Gruppenrichtlinien-Referenz
+    description: Durchsuchen Sie gängige Windows-Gruppenrichtlinieneinstellungen nach Name, GPO-Pfad, Registrierungsschlüssel oder Beschreibung.
     ui:
       searchPlaceholder: Richtlinien, Pfade, Registrierungsschlüssel durchsuchen...
       copied: Kopiert!
@@ -797,7 +797,7 @@ tools:
       default: Standard
       recommended: Empfohlen
   windows-event-lookup:
-    title: Windows Event Lookup
+    title: Windows-Ereignissuche
     description: Look up common Windows Event IDs with descriptions and severity.
     ui:
       searchResults: Suchergebnisse
@@ -806,7 +806,7 @@ tools:
       clickToCopyEventId: Klicken, um Ereignis-ID zu kopieren
       copiedShort: kopiert
   m365-sku-decoder:
-    title: M365 License SKU Decoder
+    title: M365-Lizenz-SKU-Decoder
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
     ui:
       searchPlaceholder: Suche nach SKU-Name, String-ID oder Beschreibung...
@@ -814,7 +814,7 @@ tools:
       clickToCopy: Klicken, um String-ID zu kopieren
       copiedMark: ✓ kopiert
   windows-error-codes:
-    title: Windows Error Code Lookup
+    title: Windows-Fehlercode-Nachschlagewerk
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
     ui:
       searchResults: Suchergebnisse
@@ -824,7 +824,7 @@ tools:
       copiedShort: kopiert
       decimal: dezimal {decimal}
   exchange-ndr-lookup:
-    title: Exchange NDR Lookup
+    title: Exchange-NDR-Suche
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
     ui:
       searchResults: Suchergebnisse
@@ -835,14 +835,14 @@ tools:
       cause: Ursache
       fix: Lösung
   safelink-decoder:
-    title: Outlook Safelink decoder
+    title: Outlook-Safelink-Decoder
     description: Decode Outlook SafeLink links.
   port-protocol-reference:
-    title: Port & Protocol Reference
-    description: Common network ports and protocols with security notes and dangerous port flags.
+    title: Port- und Protokoll-Referenz
+    description: Gängige Netzwerkports und Protokolle mit Sicherheitshinweisen und Kennzeichnung gefährlicher Ports.
   cve-lookup:
-    title: CVE Lookup
-    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+    title: CVE-Suche
+    description: Durchsuchen Sie die NIST NVD nach CVEs anhand von ID oder Stichwort. Live-Daten von der NVD-API.
     ui:
       range6m: 6 Monate
       range1y: 1 Jahr
@@ -888,11 +888,11 @@ tools:
       metricIntegrity: Integrität
       metricAvailability: Verfügbarkeit
   email-dns-checker:
-    title: Email DNS Checker
-    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+    title: E-Mail-DNS-Prüfung
+    description: Prüfen Sie MX-, SPF-, DKIM- und DMARC-Einträge für jede Domain. Validiert die E-Mail-Authentifizierungskonfiguration und meldet häufige Fehlkonfigurationen.
   email-header-parser:
-    title: Email Header Parser
-    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+    title: E-Mail-Header-Parser
+    description: Fügen Sie rohe E-Mail-Header ein, um Absenderinformationen zu extrahieren, die Zustellkette nachzuverfolgen und SPF-, DKIM- und DMARC-Authentifizierungsergebnisse anzuzeigen.
     ui:
       pasteHint: Fügen Sie unten die rohen E-Mail-Header ein.
       parseButton: Header analysieren
@@ -906,10 +906,10 @@ tools:
       spamScore: Spam-Wert
       spamStatus: Spam-Status
   whois-checker:
-    title: WHOIS Lookup
-    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+    title: WHOIS-Abfrage
+    description: Rufen Sie Registrierungsdetails für jede Domain ab, einschließlich Registrar, Erstellungs- und Ablaufdatum, Nameserver und Statuskennzeichen.
   ascii-text-drawer:
-    title: ASCII Word Art Generator
+    title: ASCII-Wortkunst-Generator
     description: Create ASCII art text with many fonts and styles.
     ui:
       yourText: IHR TEXT
@@ -925,8 +925,8 @@ tools:
       copied: Kopiert!
       copy: Kopieren
   regex-tester:
-    title: Regex Tester
-    description: Test your regular expressions with sample text.
+    title: Regex-Tester
+    description: Testen Sie Ihre regulären Ausdrücke mit Beispieltext.
     ui:
       regexLabel: 'Zu testender Regex:'
       regexPlaceholder: Regex zum Testen eingeben
@@ -954,8 +954,8 @@ tools:
       diagramBarTitle: DIAGRAM
       quickReference: Kurzreferenz
   yaml-converter:
-    title: YAML converter
-    description: Convert YAML to JSON or TOML.
+    title: YAML-Konverter
+    description: Konvertieren Sie YAML in JSON oder TOML.
     ui:
       convertTo: 'Umwandeln in:'
       inputLabel: Ihr YAML
@@ -963,8 +963,8 @@ tools:
       invalidYaml: Das angegebene YAML ist ungültig.
       outputLabel: '{format} Ausgabe'
   json-converter:
-    title: JSON converter
-    description: Convert JSON to YAML or TOML.
+    title: JSON-Konverter
+    description: Konvertieren Sie JSON in YAML oder TOML.
     ui:
       convertTo: Konvertieren zu
       yourJson: Ihr JSON
@@ -972,8 +972,8 @@ tools:
       invalidJson: Ungültiges JSON-Format
       formatOutput: '{format}-Ausgabe'
   toml-converter:
-    title: TOML converter
-    description: Convert TOML to JSON or YAML.
+    title: TOML-Konverter
+    description: Konvertieren Sie TOML in JSON oder YAML.
     ui:
       convertTo: 'Konvertieren zu:'
       yourToml: Ihr TOML
@@ -981,8 +981,8 @@ tools:
       invalidToml: Das angegebene TOML ist ungültig.
       outputLabel: '{format}-Ausgabe'
   xml-json-converter:
-    title: XML ↔ JSON converter
-    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+    title: XML ↔ JSON-Konverter
+    description: Bidirektionaler XML- und JSON-Konverter. Bearbeiten Sie eine Seite, und die andere wird automatisch aktualisiert.
     ui:
       invalidXml: Ungültiges XML.
       invalidJson: Ungültiges JSON.
@@ -991,7 +991,7 @@ tools:
       jsonLabel: JSON
       jsonPlaceholder: Fügen Sie hier Ihr JSON ein...
   markdown-to-html:
-    title: Markdown to HTML
+    title: Markdown zu HTML
     description: Convert Markdown to Html and allow to print (as PDF).
     ui:
       copiedSuccess: HTML in die Zwischenablage kopiert!
@@ -1632,7 +1632,7 @@ tools:
     title: ASCII-Wortkunst-Generator
     description: Erstellt ASCII-Wortkunst-Text mit vielen Schriftarten und Stilen.
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell-Generator
     description: Wähle ein Cmdlet, fülle die Parameter aus und kopiere den fertigen PowerShell-Befehl.
   killer-pdf:
     title: KillerPDF

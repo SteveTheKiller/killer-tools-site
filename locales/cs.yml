@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: uloží soubor
       infoDownloadSuffix: na váš počítač pro ruční použití.
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell tvůrce
     description: Vyberte cmdlet, vyplňte parametry a zkopírujte hotový příkaz PowerShellu.
   group-policy-reference:
     title: Přehled zásad skupiny

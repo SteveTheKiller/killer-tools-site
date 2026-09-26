@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: 按鈕即可將
       infoDownloadSuffix: 檔案儲存到本機,供手動使用。
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell 建構器
     description: 選擇 cmdlet、填入參數，然後複製完成的 PowerShell 指令。
   group-policy-reference:
     title: 群組原則參考

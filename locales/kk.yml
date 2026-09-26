@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: түймесі
       infoDownloadSuffix: файлын қолмен пайдалану үшін құрылғыңызға сақтайды.
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell құрастырғышы
     description: Cmdlet таңдаңыз, параметрлерді толтырып, дайын PowerShell командасын көшіріңіз.
   group-policy-reference:
     title: Топтық саясат анықтамалығы

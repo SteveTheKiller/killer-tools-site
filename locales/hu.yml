@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: gomb menti a
       infoDownloadSuffix: fájlt a gépére kézi használatra.
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell-generátor
     description: Válassz egy cmdletet, töltsd ki a paramétereket, és másold ki a kész PowerShell parancsot.
   group-policy-reference:
     title: Csoportházirend-referencia

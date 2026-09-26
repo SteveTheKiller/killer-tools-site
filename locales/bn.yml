@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: বাটন দিয়ে
       infoDownloadSuffix: ফাইলটি ম্যানুয়াল ব্যবহারের জন্য আপনার মেশিনে সংরক্ষণ করা যায়।
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell বিল্ডার
     description: একটি cmdlet বেছে নিন, প্যারামিটার পূরণ করুন এবং তৈরি PowerShell কমান্ড কপি করুন।
   group-policy-reference:
     title: Group Policy রেফারেন্স

@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: düğmesi
       infoDownloadSuffix: dosyasını elle kullanım için bilgisayarınıza kaydeder.
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell Oluşturucu
     description: Bir cmdlet seç, parametreleri doldur ve hazır PowerShell komutunu kopyala.
   group-policy-reference:
     title: Grup İlkesi başvurusu

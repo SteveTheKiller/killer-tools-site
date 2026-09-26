@@ -1064,7 +1064,7 @@ tools:
       infoDownloadMiddle: сохраняет файл
       infoDownloadSuffix: на ваш компьютер для ручного использования.
   powershell-builder:
-    title: PowerShell Builder
+    title: Конструктор PowerShell
     description: Выберите командлет, заполните параметры и скопируйте готовую команду PowerShell.
   group-policy-reference:
     title: Справочник групповых политик

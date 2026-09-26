@@ -1620,7 +1620,7 @@ tools:
       infoDownloadMiddle: зберігає файл
       infoDownloadSuffix: на ваш комп'ютер для ручного використання.
   powershell-builder:
-    title: PowerShell Builder
+    title: Конструктор PowerShell
     description: Оберіть cmdlet, заповніть параметри й скопіюйте готову команду PowerShell.
   safelink-decoder:
     title: Декодер Outlook Safelink

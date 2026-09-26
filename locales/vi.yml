@@ -776,7 +776,7 @@ tools:
       invalidBinary: Phải là ASCII binary hợp lệ (bội số của 8 bit)
   killer-scripts:
     title: Killer Scripts
-    description: PowerShell scripts for Windows administration and MSP field work.
+    description: Các script PowerShell dùng cho quản trị Windows và công việc hiện trường MSP.
     ui:
       loadError: Không tải được script từ GitHub. Hãy kiểm tra kết nối hoặc thử lại.
       retry: Thử lại
@@ -787,8 +787,8 @@ tools:
       infoDownloadMiddle: lưu tệp
       infoDownloadSuffix: vào máy của bạn để dùng thủ công.
   group-policy-reference:
-    title: Group Policy Reference
-    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+    title: Tra cứu Group Policy
+    description: Tìm kiếm các thiết lập Group Policy phổ biến của Windows theo tên, đường dẫn GPO, khóa registry hoặc mô tả.
     ui:
       searchPlaceholder: Tìm kiếm chính sách, đường dẫn, khóa registry...
       copied: Đã sao chép!
@@ -797,7 +797,7 @@ tools:
       default: Mặc định
       recommended: Đề xuất
   windows-event-lookup:
-    title: Windows Event Lookup
+    title: Tra cứu sự kiện Windows
     description: Look up common Windows Event IDs with descriptions and severity.
     ui:
       searchResults: Kết quả tìm kiếm
@@ -806,7 +806,7 @@ tools:
       clickToCopyEventId: Nhấp để sao chép ID sự kiện
       copiedShort: đã sao chép
   m365-sku-decoder:
-    title: M365 License SKU Decoder
+    title: Giải mã SKU giấy phép M365
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
     ui:
       searchPlaceholder: Tìm theo tên SKU, ID chuỗi hoặc mô tả...
@@ -814,7 +814,7 @@ tools:
       clickToCopy: Nhấp để sao chép ID chuỗi
       copiedMark: ✓ đã sao chép
   windows-error-codes:
-    title: Windows Error Code Lookup
+    title: Tra cứu mã lỗi Windows
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
     ui:
       searchResults: Kết quả tìm kiếm
@@ -824,7 +824,7 @@ tools:
       copiedShort: đã sao chép
       decimal: thập phân {decimal}
   exchange-ndr-lookup:
-    title: Exchange NDR Lookup
+    title: Tra cứu NDR của Exchange
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
     ui:
       searchResults: Kết quả tìm kiếm
@@ -835,14 +835,14 @@ tools:
       cause: Nguyên nhân
       fix: Cách khắc phục
   safelink-decoder:
-    title: Outlook Safelink decoder
+    title: Giải mã Safelink của Outlook
     description: Decode Outlook SafeLink links.
   port-protocol-reference:
-    title: Port & Protocol Reference
-    description: Common network ports and protocols with security notes and dangerous port flags.
+    title: Tra cứu cổng và giao thức
+    description: Các cổng mạng và giao thức phổ biến kèm ghi chú bảo mật và cảnh báo cổng nguy hiểm.
   cve-lookup:
-    title: CVE Lookup
-    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+    title: Tra cứu CVE
+    description: Tìm kiếm CVE trong NIST NVD theo ID hoặc từ khóa. Dữ liệu trực tiếp từ API của NVD.
     ui:
       range6m: 6 tháng
       range1y: 1 năm
@@ -888,11 +888,11 @@ tools:
       metricIntegrity: Tính toàn vẹn
       metricAvailability: Tính khả dụng
   email-dns-checker:
-    title: Email DNS Checker
-    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+    title: Kiểm tra DNS email
+    description: Kiểm tra bản ghi MX, SPF, DKIM và DMARC cho bất kỳ tên miền nào. Xác thực cấu hình xác thực email và cảnh báo các lỗi cấu hình thường gặp.
   email-header-parser:
-    title: Email Header Parser
-    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+    title: Phân tích tiêu đề email
+    description: Dán tiêu đề email thô để trích xuất thông tin người gửi, theo dõi chuỗi chặng gửi và xem kết quả xác thực SPF, DKIM và DMARC.
     ui:
       pasteHint: Dán tiêu đề email thô vào bên dưới.
       parseButton: Phân tích tiêu đề
@@ -906,10 +906,10 @@ tools:
       spamScore: Điểm thư rác
       spamStatus: Trạng thái thư rác
   whois-checker:
-    title: WHOIS Lookup
-    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+    title: Tra cứu WHOIS
+    description: Tra cứu thông tin đăng ký của bất kỳ tên miền nào, bao gồm nhà đăng ký, ngày tạo và ngày hết hạn, máy chủ tên miền và cờ trạng thái.
   ascii-text-drawer:
-    title: ASCII Word Art Generator
+    title: Tạo hình chữ ASCII
     description: Create ASCII art text with many fonts and styles.
     ui:
       yourText: VĂN BẢN CỦA BẠN
@@ -925,8 +925,8 @@ tools:
       copied: Đã sao chép!
       copy: Sao chép
   regex-tester:
-    title: Regex Tester
-    description: Test your regular expressions with sample text.
+    title: Kiểm tra Regex
+    description: Kiểm tra biểu thức chính quy của bạn với văn bản mẫu.
     ui:
       regexLabel: 'Regex cần kiểm tra:'
       regexPlaceholder: Nhập regex cần kiểm tra
@@ -954,8 +954,8 @@ tools:
       diagramBarTitle: SƠ ĐỒ
       quickReference: Tra cứu nhanh
   yaml-converter:
-    title: YAML converter
-    description: Convert YAML to JSON or TOML.
+    title: Chuyển đổi YAML
+    description: Chuyển đổi YAML sang JSON hoặc TOML.
     ui:
       convertTo: 'Chuyển đổi sang:'
       inputLabel: YAML của bạn
@@ -963,8 +963,8 @@ tools:
       invalidYaml: YAML đã nhập không hợp lệ.
       outputLabel: Kết quả định dạng {format}
   json-converter:
-    title: JSON converter
-    description: Convert JSON to YAML or TOML.
+    title: Chuyển đổi JSON
+    description: Chuyển đổi JSON sang YAML hoặc TOML.
     ui:
       convertTo: Chuyển đổi sang
       yourJson: JSON của bạn
@@ -972,8 +972,8 @@ tools:
       invalidJson: Định dạng JSON không hợp lệ
       formatOutput: Kết quả {format}
   toml-converter:
-    title: TOML converter
-    description: Convert TOML to JSON or YAML.
+    title: Chuyển đổi TOML
+    description: Chuyển đổi TOML sang JSON hoặc YAML.
     ui:
       convertTo: 'Chuyển đổi sang:'
       yourToml: TOML của bạn
@@ -981,8 +981,8 @@ tools:
       invalidToml: TOML đã nhập không hợp lệ.
       outputLabel: Kết quả {format}
   xml-json-converter:
-    title: XML ↔ JSON converter
-    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+    title: Chuyển đổi XML ↔ JSON
+    description: Bộ chuyển đổi XML và JSON hai chiều. Chỉnh sửa một bên, bên còn lại tự động cập nhật.
     ui:
       invalidXml: XML không hợp lệ.
       invalidJson: JSON không hợp lệ.
@@ -991,7 +991,7 @@ tools:
       jsonLabel: JSON
       jsonPlaceholder: Dán JSON của bạn vào đây...
   markdown-to-html:
-    title: Markdown to HTML
+    title: Markdown sang HTML
     description: Convert Markdown to Html and allow to print (as PDF).
     ui:
       copiedSuccess: Đã sao chép HTML vào clipboard!

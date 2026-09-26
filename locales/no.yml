@@ -179,7 +179,7 @@ tools:
       'yes': Ja
       'no': Nei
   crontab-generator:
-    title: Crontab generator
+    title: Crontab-generator
     description: Verifiser og generer crontab og få den mennesklig leselige beskrivelsen av cron timeplanen.
     ui:
       symbolAnyValue: Alle verdier
@@ -267,7 +267,7 @@ tools:
       romanCopiedToast: Romertall kopiert
       arabicCopiedToast: Arabisk tall kopiert
   hmac-generator:
-    title: Hmac generator
+    title: HMAC-generator
     description: Beregn en hash-basert meldings authentiserings kode (HMAC) ved bruk av en hemmelig nøkkel og din foretrukne hashings funksjon.
     ui:
       encodingBinary: Binær (base 2)
@@ -433,7 +433,7 @@ tools:
       vendorInfoTitle: Leverandørinfo
       unknownVendor: Ukjent leverandør for denne adressen
   lorem-ipsum-generator:
-    title: Lorem ipsum generator
+    title: Lorem ipsum-generator
     description: Lorem ipsum er brukt som plassholder tekst, vanligvis brukt til å demonstrere den visuelle formen av et dokument eller font-type uten å måtte ha meningsfult innhold.
     ui:
       copiedMessage: Lorem ipsum kopiert til utklippstavlen
@@ -500,7 +500,7 @@ tools:
       publicKeyCopiedToast: Offentlig nøkkel kopiert
       privateKeyCopiedToast: Privat nøkkel kopiert
   html-wysiwyg-editor:
-    title: HTML WYSIWYG editor
+    title: HTML WYSIWYG-editor
     description: Online, funksjonsrik WYSIWYG HTML editor som genererer kildekoden for innholdet øyeblikkelig.
     ui:
       bold: Fet
@@ -520,7 +520,7 @@ tools:
       undo: Angre
       redo: Gjør om
   json-diff:
-    title: JSON diff
+    title: JSON-diff
     description: Sammenlign to JSON objekter og finn forskjellene mellom dem.
     ui:
       onlyShowDifferences: Vis kun forskjeller
@@ -531,7 +531,7 @@ tools:
       secondJsonTitle: JSON DU VIL SAMMENLIGNE
       secondJsonPlaceholder: Lim inn JSON-en du vil sammenligne her...
   jwt-parser:
-    title: JWT parser
+    title: JWT-parser
     description: Parse og dekode et JSON Web Token (jwt) og vis innholdet.
     ui:
       header: Header
@@ -584,10 +584,10 @@ tools:
       collapseCheatSheet: Skjul jukseark
       subnetCheatSheet: Jukseark for subnett
   og-meta-generator:
-    title: Open graph meta generator
+    title: Open Graph meta-generator
     description: Generer open-graph og SoMe HTML meta tagger til nettsiden din.
   ipv6-ula-generator:
-    title: IPv6 ULA generator
+    title: IPv6 ULA-generator
     description: Generer din egen lokale, ikke-rutbare IP adresse til nettverket ditt i henhold til RFC4193.
     ui:
       ipv6Ula: IPv6 ULA
@@ -680,7 +680,7 @@ tools:
       inputPlaceholder: Lim inn den ra JSON-en her...
       outputLabel: Minifisert versjon av JSON-en din
   ulid-generator:
-    title: ULID generator
+    title: ULID-generator
     description: Generer tilfeldig Universell Unik Leksikografisk Sorterbar Identifikator (ULID).
     ui:
       copiedMessage: ULID-er kopiert til utklippstavlen
@@ -695,7 +695,7 @@ tools:
     title: Heltalls konverter
     description: Konverter et heltall mellom forskjellige baser (desimal, hexadesimal, binær, oktal, base64, etc.)
   uuid-generator:
-    title: UUIDs generator
+    title: UUID-generator
     description: En universell Unik Identifikator (UUID) er et 128-bit nummer, brukt til å identifisere informasjon i datasystemer.
     ui:
       copiedMessage: UUID-er kopiert til utklippstavlen
@@ -776,7 +776,7 @@ tools:
       invalidBinary: Må være gyldig ASCII-binær (multipler av 8 bit)
   killer-scripts:
     title: Killer Scripts
-    description: PowerShell scripts for Windows administration and MSP field work.
+    description: PowerShell-skript for Windows-administrasjon og MSP-feltarbeid.
     ui:
       loadError: Klarte ikke å laste skript fra GitHub. Sjekk tilkoblingen eller prøv igjen.
       retry: Prøv igjen
@@ -787,8 +787,8 @@ tools:
       infoDownloadMiddle: lagrer
       infoDownloadSuffix: filen på maskinen din for manuell bruk.
   group-policy-reference:
-    title: Group Policy Reference
-    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+    title: Referanse for gruppepolicy
+    description: Søk i vanlige innstillinger for Windows-gruppepolicy etter navn, GPO-sti, registernøkkel eller beskrivelse.
     ui:
       searchPlaceholder: Søk i policyer, stier, registernøkler...
       copied: Kopiert!
@@ -797,7 +797,7 @@ tools:
       default: Standard
       recommended: Anbefalt
   windows-event-lookup:
-    title: Windows Event Lookup
+    title: Oppslag for Windows-hendelser
     description: Look up common Windows Event IDs with descriptions and severity.
     ui:
       searchResults: Søkeresultater
@@ -806,7 +806,7 @@ tools:
       clickToCopyEventId: Klikk for å kopiere hendelses-ID
       copiedShort: kopiert
   m365-sku-decoder:
-    title: M365 License SKU Decoder
+    title: Dekoder for M365-lisens-SKU
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
     ui:
       searchPlaceholder: Søk etter SKU-navn, streng-ID eller beskrivelse...
@@ -814,7 +814,7 @@ tools:
       clickToCopy: Klikk for å kopiere streng-ID
       copiedMark: ✓ kopiert
   windows-error-codes:
-    title: Windows Error Code Lookup
+    title: Oppslag for Windows-feilkoder
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
     ui:
       searchResults: Søkeresultater
@@ -824,7 +824,7 @@ tools:
       copiedShort: kopiert
       decimal: desimal {decimal}
   exchange-ndr-lookup:
-    title: Exchange NDR Lookup
+    title: Oppslag for Exchange NDR
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
     ui:
       searchResults: Søkeresultater
@@ -835,14 +835,14 @@ tools:
       cause: Årsak
       fix: Løsning
   safelink-decoder:
-    title: Outlook Safelink decoder
+    title: Dekoder for Outlook Safelink
     description: Decode Outlook SafeLink links.
   port-protocol-reference:
-    title: Port & Protocol Reference
-    description: Common network ports and protocols with security notes and dangerous port flags.
+    title: Referanse for port og protokoll
+    description: Vanlige nettverksporter og protokoller med sikkerhetsmerknader og merking av farlige porter.
   cve-lookup:
-    title: CVE Lookup
-    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+    title: CVE-oppslag
+    description: Søk i NIST NVD etter CVE-er med ID eller søkeord. Direkte data fra NVD-API-et.
     ui:
       range6m: 6 måneder
       range1y: 1 år
@@ -888,11 +888,11 @@ tools:
       metricIntegrity: Integritet
       metricAvailability: Tilgjengelighet
   email-dns-checker:
-    title: Email DNS Checker
-    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+    title: Kontroll av e-post-DNS
+    description: Kontroller MX-, SPF-, DKIM- og DMARC-oppføringer for en hvilken som helst domene. Validerer konfigurasjonen av e-postautentisering og flagger vanlige feilkonfigurasjoner.
   email-header-parser:
-    title: Email Header Parser
-    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+    title: Parser for e-posthoder
+    description: Lim inn rå e-posthoder for å hente ut avsenderinformasjon, spore leveringskjeden og se resultater for SPF-, DKIM- og DMARC-autentisering.
     ui:
       pasteHint: Lim inn rå e-posthoder nedenfor.
       parseButton: Analyser hoder
@@ -906,10 +906,10 @@ tools:
       spamScore: Spampoeng
       spamStatus: Spamstatus
   whois-checker:
-    title: WHOIS Lookup
-    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+    title: WHOIS-oppslag
+    description: Slå opp registreringsdetaljer for en hvilken som helst domene, inkludert registrar, opprettelses- og utløpsdato, navnetjenere og statusmerker.
   ascii-text-drawer:
-    title: ASCII Word Art Generator
+    title: Generator for ASCII-tekstkunst
     description: Create ASCII art text with many fonts and styles.
     ui:
       yourText: DIN TEKST
@@ -925,8 +925,8 @@ tools:
       copied: Kopiert!
       copy: Kopier
   regex-tester:
-    title: Regex Tester
-    description: Test your regular expressions with sample text.
+    title: Regex-tester
+    description: Test dine regulære uttrykk med eksempeltekst.
     ui:
       regexLabel: 'Regex som skal testes:'
       regexPlaceholder: Skriv inn regex som skal testes
@@ -954,8 +954,8 @@ tools:
       diagramBarTitle: DIAGRAM
       quickReference: Hurtigreferanse
   yaml-converter:
-    title: YAML converter
-    description: Convert YAML to JSON or TOML.
+    title: YAML-konverter
+    description: Konverter YAML til JSON eller TOML.
     ui:
       convertTo: 'Konverter til:'
       inputLabel: Din YAML
@@ -963,8 +963,8 @@ tools:
       invalidYaml: Oppgitt YAML er ikke gyldig.
       outputLabel: '{format}-utdata'
   json-converter:
-    title: JSON converter
-    description: Convert JSON to YAML or TOML.
+    title: JSON-konverter
+    description: Konverter JSON til YAML eller TOML.
     ui:
       convertTo: Konverter til
       yourJson: Din JSON
@@ -972,8 +972,8 @@ tools:
       invalidJson: Ugyldig JSON-format
       formatOutput: '{format}-utdata'
   toml-converter:
-    title: TOML converter
-    description: Convert TOML to JSON or YAML.
+    title: TOML-konverter
+    description: Konverter TOML til JSON eller YAML.
     ui:
       convertTo: 'Konverter til:'
       yourToml: Din TOML
@@ -981,8 +981,8 @@ tools:
       invalidToml: Oppgitt TOML er ikke gyldig.
       outputLabel: '{format}-utdata'
   xml-json-converter:
-    title: XML ↔ JSON converter
-    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+    title: XML ↔ JSON-konverter
+    description: Toveis XML- og JSON-konverter. Rediger den ene siden, og den andre oppdateres automatisk.
     ui:
       invalidXml: Ugyldig XML.
       invalidJson: Ugyldig JSON.
@@ -991,7 +991,7 @@ tools:
       jsonLabel: JSON
       jsonPlaceholder: Lim inn JSON-en din her...
   markdown-to-html:
-    title: Markdown to HTML
+    title: Markdown til HTML
     description: Convert Markdown to Html and allow to print (as PDF).
     ui:
       copiedSuccess: HTML kopiert til utklippstavlen!
@@ -1632,7 +1632,7 @@ tools:
     title: ASCII-ordkunst-generator
     description: Lag ASCII-ordkunst-tekst med mange skrifttyper og stiler.
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell-bygger
     description: Velg en cmdlet, fyll ut parameterne og kopier den ferdige PowerShell-kommandoen.
   killer-pdf:
     title: KillerPDF

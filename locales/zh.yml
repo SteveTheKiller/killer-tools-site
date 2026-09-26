@@ -776,7 +776,7 @@ tools:
       invalidBinary: 必须是有效的 ASCII binary(8 位的倍数)
   killer-scripts:
     title: Killer Scripts
-    description: PowerShell scripts for Windows administration and MSP field work.
+    description: 用于 Windows 管理和 MSP 现场工作的 PowerShell 脚本。
     ui:
       loadError: 从 GitHub 加载脚本失败,请检查网络连接或重试。
       retry: 重试
@@ -787,8 +787,8 @@ tools:
       infoDownloadMiddle: 按钮可将
       infoDownloadSuffix: 文件保存到本机,供手动使用。
   group-policy-reference:
-    title: Group Policy Reference
-    description: Search common Windows Group Policy settings by name, GPO path, registry key, or description.
+    title: 组策略参考
+    description: 按名称、GPO 路径、注册表键或描述搜索常见的 Windows 组策略设置。
     ui:
       searchPlaceholder: 搜索策略、路径、注册表项...
       copied: 已复制!
@@ -797,7 +797,7 @@ tools:
       default: 默认
       recommended: 推荐
   windows-event-lookup:
-    title: Windows Event Lookup
+    title: Windows 事件查询
     description: Look up common Windows Event IDs with descriptions and severity.
     ui:
       searchResults: 搜索结果
@@ -806,7 +806,7 @@ tools:
       clickToCopyEventId: 点击复制事件 ID
       copiedShort: 已复制
   m365-sku-decoder:
-    title: M365 License SKU Decoder
+    title: M365 许可证 SKU 解码器
     description: Look up Microsoft 365 license SKU string IDs and GUIDs.
     ui:
       searchPlaceholder: 按 SKU 名称、字符串 ID 或描述搜索...
@@ -814,7 +814,7 @@ tools:
       clickToCopy: 点击复制字符串 ID
       copiedMark: ✓ 已复制
   windows-error-codes:
-    title: Windows Error Code Lookup
+    title: Windows 错误代码查询
     description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
     ui:
       searchResults: 搜索结果
@@ -824,7 +824,7 @@ tools:
       copiedShort: 已复制
       decimal: 十进制 {decimal}
   exchange-ndr-lookup:
-    title: Exchange NDR Lookup
+    title: Exchange NDR 查询
     description: Look up Exchange and M365 non-delivery report codes with cause and fix.
     ui:
       searchResults: 搜索结果
@@ -835,14 +835,14 @@ tools:
       cause: 原因
       fix: 解决方法
   safelink-decoder:
-    title: Outlook Safelink decoder
+    title: Outlook Safelink 解码器
     description: Decode Outlook SafeLink links.
   port-protocol-reference:
-    title: Port & Protocol Reference
-    description: Common network ports and protocols with security notes and dangerous port flags.
+    title: 端口与协议参考
+    description: 常见网络端口和协议,附带安全说明及危险端口标记。
   cve-lookup:
-    title: CVE Lookup
-    description: Search the NIST NVD for CVEs by ID or keyword. Live data from NVD API.
+    title: CVE 查询
+    description: 通过 ID 或关键字在 NIST NVD 中搜索 CVE,数据来自 NVD API 实时数据。
     ui:
       range6m: 6 个月
       range1y: 1 年
@@ -888,11 +888,11 @@ tools:
       metricIntegrity: 完整性
       metricAvailability: 可用性
   email-dns-checker:
-    title: Email DNS Checker
-    description: Check MX, SPF, DKIM, and DMARC records for any domain. Validates email authentication configuration and flags common misconfigurations.
+    title: 邮件 DNS 检查
+    description: 检查任意域名的 MX、SPF、DKIM 和 DMARC 记录,验证邮件身份验证配置并标记常见配置错误。
   email-header-parser:
-    title: Email Header Parser
-    description: Paste raw email headers to extract sender info, trace the delivery hop chain, and view SPF, DKIM, and DMARC authentication results.
+    title: 邮件头解析器
+    description: 粘贴原始邮件头以提取发件人信息,追踪投递跳转链,并查看 SPF、DKIM 和 DMARC 身份验证结果。
     ui:
       pasteHint: 在下方粘贴原始邮件头。
       parseButton: 解析邮件头
@@ -906,10 +906,10 @@ tools:
       spamScore: 垃圾邮件评分
       spamStatus: 垃圾邮件状态
   whois-checker:
-    title: WHOIS Lookup
-    description: Look up registration details for any domain including registrar, creation and expiry dates, nameservers, and status flags.
+    title: WHOIS 查询
+    description: 查询任意域名的注册信息,包括注册商、创建和到期日期、域名服务器及状态标记。
   ascii-text-drawer:
-    title: ASCII Word Art Generator
+    title: ASCII 文字画生成器
     description: Create ASCII art text with many fonts and styles.
     ui:
       yourText: 您的文本
@@ -925,8 +925,8 @@ tools:
       copied: 已复制!
       copy: 复制
   regex-tester:
-    title: Regex Tester
-    description: Test your regular expressions with sample text.
+    title: 正则表达式测试
+    description: 使用示例文本测试你的正则表达式。
     ui:
       regexLabel: '待测试的正则表达式:'
       regexPlaceholder: 输入要测试的正则表达式
@@ -954,8 +954,8 @@ tools:
       diagramBarTitle: 图示
       quickReference: 快速参考
   yaml-converter:
-    title: YAML converter
-    description: Convert YAML to JSON or TOML.
+    title: YAML 转换器
+    description: 将 YAML 转换为 JSON 或 TOML。
     ui:
       convertTo: 转换为：
       inputLabel: 您的 YAML
@@ -963,8 +963,8 @@ tools:
       invalidYaml: 提供的 YAML 无效。
       outputLabel: '{format} 格式输出'
   json-converter:
-    title: JSON converter
-    description: Convert JSON to YAML or TOML.
+    title: JSON 转换器
+    description: 将 JSON 转换为 YAML 或 TOML。
     ui:
       convertTo: 转换为
       yourJson: 您的 JSON
@@ -972,8 +972,8 @@ tools:
       invalidJson: JSON 格式无效
       formatOutput: '{format} 输出'
   toml-converter:
-    title: TOML converter
-    description: Convert TOML to JSON or YAML.
+    title: TOML 转换器
+    description: 将 TOML 转换为 JSON 或 YAML。
     ui:
       convertTo: '转换为:'
       yourToml: 你的 TOML
@@ -981,8 +981,8 @@ tools:
       invalidToml: 提供的 TOML 无效。
       outputLabel: '{format} 输出'
   xml-json-converter:
-    title: XML ↔ JSON converter
-    description: Bidirectional XML and JSON converter. Edit either side and the other updates automatically.
+    title: XML ↔ JSON 转换器
+    description: 双向 XML 与 JSON 转换器,编辑任意一侧,另一侧自动更新。
     ui:
       invalidXml: 无效的 XML。
       invalidJson: 无效的 JSON。
@@ -991,7 +991,7 @@ tools:
       jsonLabel: JSON
       jsonPlaceholder: 在此粘贴您的 JSON...
   markdown-to-html:
-    title: Markdown to HTML
+    title: Markdown 转 HTML
     description: Convert Markdown to Html and allow to print (as PDF).
     ui:
       copiedSuccess: HTML 已复制到剪贴板！
@@ -1632,7 +1632,7 @@ tools:
     title: ASCII 文字艺术生成器
     description: 使用多种字体和样式生成 ASCII 文字艺术。
   powershell-builder:
-    title: PowerShell Builder
+    title: PowerShell 构建器
     description: 选择一个 cmdlet,填写参数,复制生成的 PowerShell 命令。
   killer-pdf:
     title: KillerPDF
