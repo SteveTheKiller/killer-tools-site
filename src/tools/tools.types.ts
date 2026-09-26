@@ -17,7 +17,9 @@ export interface Tool {
 
 export interface ToolCategory {
   name: string
+  // Untranslated category name, stable across languages
+  key?: string
   components: Tool[]
 }
 
-export type ToolWithCategory = Tool & { category: string };
+export type ToolWithCategory = Tool & { category: string, categoryKey: string };

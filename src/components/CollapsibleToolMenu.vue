@@ -8,6 +8,7 @@ import MenuIconItem from './MenuIconItem.vue';
 
 const props = withDefaults(defineProps<{ toolsByCategory?: ToolCategory[] }>(), { toolsByCategory: () => [] });
 const { toolsByCategory } = toRefs(props);
+const { locale } = useI18n();
 const route = useRoute();
 
 // Killer app entries carry their own brand icon + wordmark in the menu
@@ -54,15 +55,18 @@ const collapsedCategories = useStorage<Record<string, boolean>>(
 // opens/closes are stored per category and win from then on.
 const DEFAULT_OPEN = ['Windows', 'Network'];
 
-function toggleCategoryCollapse({ name }: { name: string }) {
-  const current = collapsedCategories.value[name] === undefined ? !DEFAULT_OPEN.includes(name) : collapsedCategories.value[name];
-  collapsedCategories.value[name] = !current;
+// Collapse state and defaults use the untranslated category key, so they
+// survive a language switch.
+function toggleCategoryCollapse({ key }: { key: string }) {
+  const current = collapsedCategories.value[key] === undefined ? !DEFAULT_OPEN.includes(key) : collapsedCategories.value[key];
+  collapsedCategories.value[key] = !current;
 }
 
 const menuOptions = computed(() =>
-  toolsByCategory.value.map(({ name, components }) => ({
+  toolsByCategory.value.map(({ name, key = name, components }) => ({
     name,
-    isCollapsed: collapsedCategories.value[name] === undefined ? !DEFAULT_OPEN.includes(name) : collapsedCategories.value[name],
+    key,
+    isCollapsed: collapsedCategories.value[key] === undefined ? !DEFAULT_OPEN.includes(key) : collapsedCategories.value[key],
     tools: components.map(tool => ({
       label: makeLabel(tool),
       icon: makeIcon(tool),
@@ -82,8 +86,8 @@ function onMenuSelect() {
 </script>
 
 <template>
-  <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name" class="cat-block">
-    <div v-if="tools.length > 1" class="cat-header" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
+  <div v-for="{ name, key, tools, isCollapsed } of menuOptions" :key="`${key}:${locale}`" class="cat-block">
+    <div v-if="tools.length > 1" class="cat-header" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ key })">
       <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
         <icon-mdi-chevron-right />
       </span>
@@ -93,7 +97,7 @@ function onMenuSelect() {
     </div>
     <n-collapse-transition :show="tools.length === 1 || !isCollapsed">
       <div class="menu-wrapper">
-        <div v-if="tools.length > 1" class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
+        <div v-if="tools.length > 1" class="toggle-bar" @click="toggleCategoryCollapse({ key })" />
         <n-menu
           class="menu"
           :value="route.path"
