@@ -14,7 +14,7 @@ const wordmarkSrc = computed(() => {
 });
 
 const pageTitle = 'KillerMCP';
-const pageDescription = 'Use KillerTools utilities from an AI agent through the upcoming KillerTools MCP server.';
+const pageDescription = 'Use KillerTools utilities from an AI agent through KillerTools MCP.';
 const pageUrl = 'https://killertools.net/mcp';
 
 useHead({
@@ -50,33 +50,34 @@ useHead({
         returns the result from the same utility code used by this site.
       </p>
       <p class="mcp-status">
-        In development: the local server works, but the public endpoint is not live yet.
+        Live now: the public endpoint has five text operations. The local connector covers all 81 website tools.
       </p>
     </section>
 
     <div class="mcp-grid">
       <section class="mcp-card mcp-surface">
-        <h2>First tools</h2>
+        <h2>Public tools</h2>
         <p>
-          The local version currently exposes these read-only operations:
+          Connect to the public server for these five operations:
         </p>
         <ul>
           <li>Case conversion</li>
           <li>Base64 string encoding and decoding</li>
           <li>Text and ASCII binary conversion</li>
         </ul>
-        <p>More website tools will follow as their logic is made available to both the page and the server.</p>
+        <p>The full set is available through the local connector, including tools that need files, secrets, or a browser.</p>
       </section>
 
       <section class="mcp-card mcp-surface">
         <h2>What changes with MCP</h2>
         <p>
-          The website runs these utilities in your browser. A hosted MCP call sends its input to
-          the MCP server for processing. The first public release will focus on bounded text utilities.
+          The website runs most utilities in your browser. Public MCP calls send their input to
+          Cloudflare for processing. The local connector runs on your machine and keeps private
+          operations there. Some tools still need you to interact with a browser page.
         </p>
         <p>
-          The MCP endpoint will be <code>mcp.killertools.net/mcp</code>. Connection steps will appear
-          here after the public server is deployed and tested.
+          Add <code>https://mcp.killertools.net/mcp</code> as a remote MCP server in a compatible
+          agent client. The public server currently offers the five operations listed here.
         </p>
       </section>
     </div>
