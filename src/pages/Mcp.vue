@@ -64,8 +64,9 @@ useHead({
         </div>
       </div>
       <p class="mcp-lead">
-        Put KillerTools in your agent's toolkit. Connect once, then ask for a subnet calculation,
-        a domain lookup, a text conversion, or any of the other public utilities.
+        Put KillerTools in your agent's toolkit. Connect once, then ask it to calculate a subnet,
+        check DNS records, research a CVE, parse email headers, build a PowerShell command,
+        convert JSON to CSV, or decode Base64. It can use dozens more utilities as your work calls for them.
       </p>
       <p class="mcp-status">
         Public server: 64 of 81 website tools. Optional local connector: all 81.
@@ -144,8 +145,17 @@ useHead({
           What can it do?
         </h2>
         <p>
-          Ask your agent to use KillerTools for IP calculations, DNS and domain lookups, CVE searches, email header analysis, data conversion, PowerShell command building, and more. The agent discovers each tool's description and inputs automatically.
+          Ask in plain language. Your agent discovers the available tools and their inputs, then calls the ones it needs. For example, it can:
         </p>
+        <ul>
+          <li>Calculate IPv4 subnets, expand address ranges, generate IPv6 ULA prefixes, and look up MAC vendors.</li>
+          <li>Check DNS records and domain registration, search CVEs, and identify ports and protocols.</li>
+          <li>Parse email headers, generate SPF or DMARC records, and look up Exchange NDR messages.</li>
+          <li>Find Windows error and event IDs, Group Policy settings, and M365 license SKUs.</li>
+          <li>Search PowerShell cmdlets and assemble commands for you to review before running.</li>
+          <li>Format JSON and XML, convert JSON to CSV or among JSON, YAML, and TOML, decode Base64, compare documents, and test regular expressions.</li>
+          <li>Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.</li>
+        </ul>
         <p>
           The full local connector adds file, browser, and private operations. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the local setup guide</a>.
         </p>
