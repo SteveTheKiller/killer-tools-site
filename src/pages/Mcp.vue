@@ -3,6 +3,22 @@ import { useHead } from '@vueuse/head';
 import { useStyleStore } from '@/stores/style.store';
 import { NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 
+const endpoint = 'https://mcp.killertools.net/mcp';
+const codexCommand = `codex mcp add killertools --url ${endpoint}`;
+const claudeCodeCommand = `claude mcp add --transport http killertools ${endpoint}`;
+const copyStatus = ref('');
+
+async function copyText(value: string, label: string) {
+  copyStatus.value = 'Copying...';
+  try {
+    await navigator.clipboard.writeText(value);
+    copyStatus.value = `${label} copied`;
+  }
+  catch {
+    copyStatus.value = 'Copy failed. Select and copy the text instead.';
+  }
+}
+
 const styleStore = useStyleStore();
 const wordmarkSrc = computed(() => {
   const theme = styleStore.ktTheme;
@@ -46,41 +62,105 @@ useHead({
         </div>
       </div>
       <p class="mcp-lead">
-        Bring KillerTools into your agent's workflow. Ask it to use a tool, and the MCP server
-        returns the result from the same utility code used by this site.
+        Put KillerTools in your agent's toolkit. Connect once, then ask for a subnet calculation,
+        a domain lookup, a text conversion, or any of the other public utilities.
       </p>
       <p class="mcp-status">
-        Live now: the public endpoint has five text operations. The local connector covers all 81 website tools.
+        Live now: 74 public operations across 64 tools. The local connector covers all 81 website tools.
       </p>
     </section>
 
-    <div class="mcp-grid">
+    <section class="mcp-connect mcp-surface" aria-labelledby="mcp-connect-title">
+      <p class="mcp-eyebrow">
+        ONE URL / ANY MCP CLIENT
+      </p>
+      <h2 id="mcp-connect-title">
+        Connect the public server
+      </h2>
+      <p>
+        Add this Streamable HTTP URL to your agent's MCP settings. There is no account or download.
+      </p>
+      <div class="mcp-copy-row">
+        <code class="mcp-value">{{ endpoint }}</code>
+        <button type="button" class="mcp-action" @click="copyText(endpoint, 'Server URL')">
+          Copy URL
+        </button>
+      </div>
+      <p class="mcp-feedback" role="status" aria-live="polite">
+        {{ copyStatus }}
+      </p>
+    </section>
+
+    <div class="mcp-client-grid">
       <section class="mcp-card mcp-surface">
-        <h2>Public tools</h2>
-        <p>
-          Connect to the public server for these five operations:
+        <p class="mcp-step">
+          01 / CLAUDE
         </p>
-        <ul>
-          <li>Case conversion</li>
-          <li>Base64 string encoding and decoding</li>
-          <li>Text and ASCII binary conversion</li>
-        </ul>
+        <h2>
+          Claude
+        </h2>
         <p>
-          The full set is available through the local connector, including tools that need files,
-          secrets, or a browser. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md">Set up the local connector</a>.
+          Open Customize, then Connectors. Choose Add custom connector, name it KillerTools, and paste the URL above. Enable it in your chat's Connectors menu.
         </p>
+        <a class="mcp-action mcp-link-action" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener noreferrer">
+          Open Claude connectors
+        </a>
       </section>
 
       <section class="mcp-card mcp-surface">
-        <h2>What changes with MCP</h2>
+        <p class="mcp-step">
+          02 / CODEX
+        </p>
+        <h2>
+          Codex
+        </h2>
         <p>
-          The website runs most utilities in your browser. Public MCP calls send their input to
-          Cloudflare for processing. The local connector runs on your machine and keeps private
-          operations there. Some tools still need you to interact with a browser page.
+          Run this command in a terminal, then open a new Codex chat.
+        </p>
+        <code class="mcp-command">{{ codexCommand }}</code>
+        <button type="button" class="mcp-action" @click="copyText(codexCommand, 'Codex command')">
+          Copy command
+        </button>
+      </section>
+
+      <section class="mcp-card mcp-surface">
+        <p class="mcp-step">
+          03 / CLAUDE CODE
+        </p>
+        <h2>
+          Claude Code
+        </h2>
+        <p>
+          Run this command in a terminal. Check the connection with <code>/mcp</code> in Claude Code.
+        </p>
+        <code class="mcp-command">{{ claudeCodeCommand }}</code>
+        <button type="button" class="mcp-action" @click="copyText(claudeCodeCommand, 'Claude Code command')">
+          Copy command
+        </button>
+      </section>
+    </div>
+
+    <div class="mcp-grid">
+      <section class="mcp-card mcp-surface">
+        <h2>
+          What can it do?
+        </h2>
+        <p>
+          Ask your agent to use KillerTools for IP calculations, DNS and domain lookups, CVE searches, email header analysis, data conversion, PowerShell command building, and more. The agent discovers each tool's description and inputs automatically.
         </p>
         <p>
-          Add <code>https://mcp.killertools.net/mcp</code> as a remote MCP server in a compatible
-          agent client. The public server currently offers the five operations listed here.
+          The full local connector adds file, browser, and private operations. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the local setup guide</a>.
+        </p>
+      </section>
+      <section class="mcp-card mcp-surface">
+        <h2>
+          Where does the data go?
+        </h2>
+        <p>
+          The website runs most utilities in your browser. Public MCP calls send inputs to the Cloudflare Worker. Some lookups also contact external data sources. Do not send passwords, private files, tokens, or client data to the public server.
+        </p>
+        <p>
+          Local file, secret, and browser operations run on your computer through the optional local connector. Your agent client may still receive those inputs and results.
         </p>
       </section>
     </div>
@@ -115,7 +195,7 @@ useHead({
   background: var(--kt-accent-sel, var(--kt-accent));
 }
 
-.mcp-hero, .mcp-card { padding: 24px; }
+.mcp-hero, .mcp-card, .mcp-connect { padding: 24px; }
 .mcp-heading { display: flex; align-items: center; gap: 18px; }
 .mcp-mark { width: 90px; height: 90px; flex: none; object-fit: contain; }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
@@ -125,6 +205,20 @@ useHead({
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Courier New', monospace; font-size: 24px; font-weight: normal; }
 .mcp-lead { max-width: 760px; font-size: 16px; line-height: 1.6; margin: 18px 0; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 13px; }
+.mcp-connect h2 { margin-bottom: 8px; }
+.mcp-connect p { font-size: 13px; line-height: 1.6; }
+.mcp-copy-row { display: flex; align-items: stretch; gap: 10px; margin-top: 16px; }
+.mcp-value, .mcp-command { display: block; overflow-wrap: anywhere; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); padding: 12px 14px; font-size: 13px; }
+.mcp-value { flex: 1; }
+.mcp-command { min-height: 74px; margin: auto 0 14px; }
+.mcp-action { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border: 1px solid var(--kt-accent); border-radius: 4px; background: transparent; color: var(--kt-accent); font: inherit; font-size: 13px; cursor: pointer; text-align: center; text-decoration: none; }
+.mcp-action:hover, .mcp-action:focus-visible { background: var(--kt-accent); color: var(--kt-modal, #0a0a0a); }
+.mcp-action:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
+.mcp-feedback { min-height: 1.6em; margin: 7px 0 0; color: var(--kt-accent); }
+.mcp-client-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mcp-client-grid .mcp-card { display: flex; flex-direction: column; align-items: flex-start; }
+.mcp-step { margin: 0 0 12px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.12em; }
+.mcp-client-grid .mcp-card .mcp-action { margin-top: auto; }
 .mcp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .mcp-card p, .mcp-card li { font-size: 13px; line-height: 1.65; }
 .mcp-card p { margin: 0 0 14px; }
@@ -135,8 +229,9 @@ code { color: var(--kt-accent); overflow-wrap: anywhere; }
 .mcp-card a { color: var(--kt-accent); }
 
 @media (max-width: 720px) {
-  .mcp-grid { grid-template-columns: 1fr; }
-  .mcp-hero, .mcp-card { padding: 20px; }
+  .mcp-grid, .mcp-client-grid { grid-template-columns: 1fr; }
+  .mcp-hero, .mcp-card, .mcp-connect { padding: 20px; }
+  .mcp-copy-row { flex-direction: column; }
   .mcp-heading { gap: 10px; }
   .mcp-mark { width: 48px; height: 48px; }
   .mcp-wordmark img { width: clamp(150px, 46vw, 250px); }
@@ -144,9 +239,11 @@ code { color: var(--kt-accent); overflow-wrap: anywhere; }
 }
 
 .mcp-page .mcp-lead,
+.mcp-page .mcp-connect p:not(.mcp-eyebrow):not(.mcp-feedback),
 .mcp-page .mcp-card p,
 .mcp-page .mcp-card li { color: rgba(255, 255, 255, 0.85); }
 html:not(.dark) .mcp-page .mcp-lead,
+html:not(.dark) .mcp-page .mcp-connect p:not(.mcp-eyebrow):not(.mcp-feedback),
 html:not(.dark) .mcp-page .mcp-card p,
 html:not(.dark) .mcp-page .mcp-card li { color: rgba(0, 0, 0, 0.82); }
 </style>
