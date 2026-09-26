@@ -23,7 +23,9 @@ Open a new agent chat after adding the server so it discovers the tools. You can
 
 The public endpoint has no sign-in. Public tool inputs are sent to Cloudflare, and some lookup tools contact external data providers. Avoid sending passwords, private files, tokens, or client data to the public endpoint. Requests are limited to 64 KiB, and the Worker has a rate limit binding of 120 requests per minute per connecting IP. Shared IPs share that limit.
 
-## Connect to the complete local server
+## Optional local setup for the remaining 17 tools
+
+The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need this optional server running on your computer. There is no one-click installer yet.
 
 For access to every website tool on your machine, connect an MCP client to the local stdio server. It requires Node 24 or later and installed dependencies in both the website root and this directory. Use the Node executable as the command, with the absolute path to `local/server.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. On startup, the stdio server launches a private Wrangler Worker on a random loopback port. It exposes all 94 operations through one connection. Run `node scripts/smoke-local.mjs` to test discovery and calls.
 

@@ -109,7 +109,7 @@ useHead({
         convert JSON to CSV, or decode Base64.
       </p>
       <p class="mcp-status">
-        KillerTools MCP supports all 81 website tools.
+        All 81 website tools are supported: 64 at this URL, 17 with optional local setup.
       </p>
     </section>
 
@@ -121,7 +121,7 @@ useHead({
         Add KillerTools to your agent
       </h2>
       <p>
-        Choose your app.
+        Choose your app to connect to the 64 tools available at this URL. No download is needed.
       </p>
       <div class="mcp-install-actions">
         <a class="mcp-action" :href="cursorInstallUrl">Add to Cursor</a>
@@ -167,9 +167,6 @@ useHead({
           <li>Format JSON and XML, convert JSON to CSV or among JSON, YAML, and TOML, decode Base64, compare documents, and test regular expressions.</li>
           <li>Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.</li>
         </ul>
-        <p>
-          For tools that use your files or browser, set up the local part of KillerTools MCP on your computer. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md" target="_blank" rel="noopener noreferrer">Read the setup guide</a>.
-        </p>
       </section>
       <section class="mcp-card mcp-surface">
         <h2>
@@ -179,7 +176,7 @@ useHead({
           When your agent uses the link above, it sends tool inputs to KillerTools on Cloudflare for processing. Some lookups also contact external data sources. Do not send passwords, private files, tokens, or client data through this link.
         </p>
         <p>
-          With the local setup, file and browser tools run on your computer. Your agent client may still receive their inputs and results.
+          File, secret, and browser tools require optional setup on your computer. They run locally, but your agent may still receive their inputs and results. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md#optional-local-setup-for-the-remaining-17-tools" target="_blank" rel="noopener noreferrer">See the local setup steps</a>.
         </p>
       </section>
     </div>
