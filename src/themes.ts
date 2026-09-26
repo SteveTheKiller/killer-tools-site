@@ -169,8 +169,8 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
     },
 
     Layout: {
-      color: p.bg,             // content pane
-      siderColor: p.chrome,    // chrome: matches the titlebar/statusbar rails
+      color: p.bg, // content pane
+      siderColor: p.chrome, // chrome: matches the titlebar/statusbar rails
       siderBorderColor: p.chromeBorder,
     },
 
@@ -280,7 +280,7 @@ function buildLightOverrides(t: AccentTriple): GlobalThemeOverrides {
 }
 
 // Surface palettes for the dark-family themes (accent fields injected per call)
-const SURFACES: Record<Exclude<KtThemeKey, 'light'>, Omit<DarkPalette, 'accent' | 'accentHex' | 'accentHover' | 'accentPressed'>> = {
+const SURFACES: Record<Exclude<KtThemeKey, 'light'>, Omit<DarkPalette, 'accent' | 'accentHex' | 'accentHover' | 'accentPressed' | 'accentSel'>> = {
   black: { bg: '#0d0d0d', chrome: '#000000', chromeBorder: '#1f1f1f', panel: '#141414', panelBorder: '#2a2a2a', input: '#101010', popup: '#0f0f0f', tableTd: '#121212', tableTh: '#1a1a1a', notif: '#161616' },
   dark: { bg: '#333333', chrome: '#1c1c1c', chromeBorder: '#2e2e2e', panel: '#3a3a3a', panelBorder: '#2e2e2e', input: '#2b2b2b', popup: '#262626', tableTd: '#2f2f2f', tableTh: '#262626', notif: '#262626' },
   blood: { bg: '#4a1f20', chrome: '#1e0a0b', chromeBorder: '#3a1a1d', panel: '#321416', panelBorder: '#3a1a1d', input: '#2a1012', popup: '#1e0a0b', tableTd: '#321416', tableTh: '#3a1a1d', notif: '#1e0a0b', text: '#fffde8', text2: '#b09e9c', textAccent: '#f8c99e' },

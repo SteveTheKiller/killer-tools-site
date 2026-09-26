@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FilmStock } from './reciprocity.data';
-import { filmStocks } from './reciprocity.data';
 import KtSelect from '@/components/KtSelect.vue';
+import { filmStocks } from './reciprocity.data';
 
 // ── State ──────────────────────────────────────────────────────────────────────
 
@@ -29,7 +29,7 @@ const selectOptions = computed(() => {
     map.get(s.manufacturer)!.push(s);
   }
   return Array.from(map.entries()).map(([manufacturer, stocks]) => ({
-    type: 'group',
+    type: 'group' as const,
     label: manufacturer,
     key: manufacturer,
     children: stocks.map(s => ({ label: `${s.name} (ISO ${s.iso})`, value: s.id })),

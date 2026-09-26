@@ -20,7 +20,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
 };
 
-const brand = computed(() => (option.value.to ? APP_BRAND[option.value.to] : undefined));
+const brand = computed(() => (typeof option.value.to === 'string' ? APP_BRAND[option.value.to] : undefined));
 </script>
 
 <template>

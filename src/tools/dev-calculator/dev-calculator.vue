@@ -134,7 +134,7 @@ const filmOptions = computed(() => {
   const withoutData = filmStocks
     .filter(f => f.times[selectedDevId.value] === undefined)
     .map(f => ({ label: f.name, value: f.name }));
-  const groups = [];
+  const groups: { type: 'group', label: string, key: string, children: typeof withData }[] = [];
   if (withData.length) {
     groups.push({ type: 'group', label: 'Has data', key: 'has-data', children: withData });
   }

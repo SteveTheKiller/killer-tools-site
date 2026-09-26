@@ -22,6 +22,7 @@ declare module '@vicons/tabler' {
   export const Alarm: Component;
   export const AlignJustified: Component;
   export const AlertTriangle: Component;
+  export const Aperture: Component;
   export const ArrowBack: Component;
   export const ArrowForwardUp: Component;
   export const ArrowLeft: Component;
@@ -44,8 +45,10 @@ declare module '@vicons/tabler' {
   export const Camera: Component;
   export const Certificate: Component;
   export const Check: Component;
+  export const ChevronLeft: Component;
   export const ClearFormatting: Component;
   export const ClipboardList: Component;
+  export const Clock: Component;
   export const Code: Component;
   export const CodePlus: Component;
   export const Copy: Component;
@@ -65,6 +68,7 @@ declare module '@vicons/tabler' {
   export const FileInvoice: Component;
   export const FileText: Component;
   export const Fingerprint: Component;
+  export const Flask: Component;
   export const H1: Component;
   export const H2: Component;
   export const H3: Component;
@@ -90,10 +94,13 @@ declare module '@vicons/tabler' {
   export const Math: Component;
   export const Menu2: Component;
   export const MoodSmile: Component;
+  export const Notes: Component;
   export const Palette: Component;
   export const Percentage: Component;
   export const Phone: Component;
+  export const Photo: Component;
   export const Plus: Component;
+  export const Puzzle: Component;
   export const Qrcode: Component;
   export const Refresh: Component;
   export const Router: Component;

@@ -122,6 +122,7 @@ declare module 'naive-ui' {
 declare module '@tabler/icons-vue' {
   import type { Component } from 'vue';
 
+  export const IconBrandAndroid: Component;
   export const IconBrandGithub: Component;
   export const IconBrandX: Component;
   export const IconInfoCircle: Component;
