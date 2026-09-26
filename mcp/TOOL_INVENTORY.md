@@ -20,12 +20,12 @@ The local source includes `cve-lookup`, `domain-lookup`, and `gif-search`. Their
 
 ## Browser, device, file, or interactive surface
 
-These need a different interface or a deliberate file and device policy: `base64-file-converter`, `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, `pdf-signature-checker`, `signature-creator`.
+The local stdio server covers file-to-Base64 conversion from `base64-file-converter` and signature inspection from `pdf-signature-checker`. Their inputs are local paths with size limits. The five remaining interactive tools are `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, and `signature-creator`. Their defining behaviors depend on a live browser, a camera permission, keyboard events, or a drawing canvas.
 
 ## Credentials, secrets, or cryptographic material
 
-Do not expose these on the public endpoint until privacy and security behavior is designed per operation: `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, `rsa-key-pair-generator`.
+The local stdio server covers `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, and `rsa-key-pair-generator`. It processes inputs on the user's machine. Do not expose these on the public endpoint until privacy and security behavior is designed per operation.
 
 ## Remaining interface work
 
-The remaining seventeen website tools need a local file or device interface or private input handling. Their categories above describe the required interface work, not server deployment status.
+Across both local source servers, 86 MCP operations cover 76 of the 81 website tools. The five browser interactions above still need a browser companion or a redesigned agent interface. The deployed public Worker still has only five operations.
