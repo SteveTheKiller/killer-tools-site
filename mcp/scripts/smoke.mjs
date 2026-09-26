@@ -46,6 +46,7 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'calculate_percentage',
   'calculate_reciprocity',
   'convert_case',
+  'convert_date_time',
   'convert_color',
   'convert_integer_base',
   'convert_json',
@@ -64,6 +65,10 @@ assert.deepEqual(listed.tools.map(tool => tool.name).sort(), [
   'generate_lorem_ipsum',
   'generate_svg_placeholder',
   'generate_ulids',
+  'generate_ipv6_ula',
+  'generate_spf_record',
+  'generate_qr_code',
+  'generate_dmarc_record',
   'generate_uuids',
   'json_to_csv',
   'list_film_stocks',
@@ -162,6 +167,20 @@ assert.equal((await call('calculate_film_development', { filmName: 'unknown', de
 const phone = JSON.parse((await call('parse_phone_number', { phone: '+1 800 555 0199' })).content[0].text);
 assert.equal(phone.e164, '+18005550199');
 assert.equal((await call('parse_phone_number', { phone: 'bad' })).isError, true);
+const date = JSON.parse((await call('convert_date_time', { value: '1700000000', inputFormat: 'unix_seconds' })).content[0].text);
+assert.equal(date.timestampMs, '1700000000000');
+assert.equal((await call('convert_date_time', { value: 'bad', inputFormat: 'mongo_object_id' })).isError, true);
+const ula = JSON.parse((await call('generate_ipv6_ula', { macAddress: '20:37:06:12:34:56', timestampMs: 1700000000000 })).content[0].text);
+assert.match(ula.ula48, /^fd[0-9a-f]{2}:[0-9a-f]{4}:[0-9a-f]{4}::\/48$/);
+assert.equal((await call('generate_ipv6_ula', { macAddress: 'invalid' })).isError, true);
+const spf = JSON.parse((await call('generate_spf_record', { providers: ['include:_spf.google.com'], ipAddresses: ['203.0.113.5'] })).content[0].text);
+assert.equal(spf.record, 'v=spf1 include:_spf.google.com ip4:203.0.113.5 -all');
+assert.equal((await call('generate_spf_record', { ipAddresses: ['bad'] })).isError, true);
+const dmarc = JSON.parse((await call('generate_dmarc_record', { policy: 'quarantine', ruaEmails: ['reports@example.com'] })).content[0].text);
+assert.equal(dmarc.record, 'v=DMARC1; p=quarantine; rua=mailto:reports@example.com');
+const qr = JSON.parse((await call('generate_qr_code', { mode: 'text', text: 'https://killertools.net' })).content[0].text);
+assert.ok(qr.svg.startsWith('<svg'));
+assert.equal((await call('generate_qr_code', { mode: 'wifi', wifi: { ssid: 'Example', password: 'secret', encryption: 'WPA' } })).isError, undefined);
 assert.equal(JSON.parse((await call('arabic_to_roman', { number: 42 })).content[0].text).roman, 'XLII');
 assert.equal(JSON.parse((await call('roman_to_arabic', { roman: 'XLII' })).content[0].text).number, 42);
 const temperatures = JSON.parse((await call('convert_temperature', { value: 0, scale: 'celsius' })).content[0].text);

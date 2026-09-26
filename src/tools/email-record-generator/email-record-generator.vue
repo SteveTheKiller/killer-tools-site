@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core';
+import { buildDmarcRecord, buildSpfRecord } from './email-record-generator.service';
 
 const activeTab = ref<'spf' | 'dmarc'>('spf');
 const copiedValue = ref<string | null>(null);
@@ -51,26 +52,11 @@ function toggleProvider(val: string) {
   }
 }
 
-const spfRecord = computed(() => {
-  const parts = ['v=spf1'];
-  for (const p of spfProviders.value) {
-    parts.push(p);
-  }
-  const ips = spfCustomIps.value.split(/[\s,;]+/).map(ip => ip.trim()).filter(Boolean);
-  for (const ip of ips) {
-    if (ip.includes('/')) {
-      parts.push(ip.includes(':') ? `ip6:${ip}` : `ip4:${ip}`);
-    }
-    else if (ip.includes(':')) {
-      parts.push(`ip6:${ip}`);
-    }
-    else {
-      parts.push(`ip4:${ip}`);
-    }
-  }
-  parts.push(spfEnforcement.value);
-  return parts.join(' ');
-});
+const spfRecord = computed(() => buildSpfRecord({
+  providers: spfProviders.value,
+  customIps: spfCustomIps.value,
+  enforcement: spfEnforcement.value,
+}));
 
 const spfLookupCount = computed(() => spfProviders.value.length);
 
@@ -119,30 +105,15 @@ onClickOutside(dmarcSpRef, () => {
 const dmarcSpOptions = computed(() => [{ label: 'Same as main policy', value: '' }, ...dmarcPolicyOptions]);
 const dmarcSpLabel = computed(() => dmarcSpOptions.value.find(o => o.value === dmarcSubdomainPolicy.value)?.label ?? 'Same as main policy');
 
-const dmarcRecord = computed(() => {
-  const parts = [`v=DMARC1; p=${dmarcPolicy.value}`];
-  if (dmarcSubdomainPolicy.value) {
-    parts.push(`sp=${dmarcSubdomainPolicy.value}`);
-  }
-  if (dmarcPercentage.value < 100) {
-    parts.push(`pct=${dmarcPercentage.value}`);
-  }
-  if (dmarcRuaEmail.value.trim()) {
-    const emails = dmarcRuaEmail.value.split(/[\s,;]+/).filter(Boolean).map(e => `mailto:${e.replace(/^mailto:/, '')}`).join(',');
-    parts.push(`rua=${emails}`);
-  }
-  if (dmarcRufEmail.value.trim()) {
-    const emails = dmarcRufEmail.value.split(/[\s,;]+/).filter(Boolean).map(e => `mailto:${e.replace(/^mailto:/, '')}`).join(',');
-    parts.push(`ruf=${emails}`);
-  }
-  if (dmarcAdkim.value) {
-    parts.push(`adkim=${dmarcAdkim.value}`);
-  }
-  if (dmarcAspf.value) {
-    parts.push(`aspf=${dmarcAspf.value}`);
-  }
-  return parts.join('; ');
-});
+const dmarcRecord = computed(() => buildDmarcRecord({
+  policy: dmarcPolicy.value,
+  subdomainPolicy: dmarcSubdomainPolicy.value,
+  percentage: dmarcPercentage.value,
+  ruaEmail: dmarcRuaEmail.value,
+  rufEmail: dmarcRufEmail.value,
+  adkim: dmarcAdkim.value,
+  aspf: dmarcAspf.value,
+}));
 </script>
 
 <template>

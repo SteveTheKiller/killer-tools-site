@@ -34,10 +34,14 @@ import { textToNatoAlphabet } from '../../src/tools/text-to-nato-alphabet/text-t
 import { parseUrl } from '../../src/tools/url-parser/url-parser.service';
 import { base64ToText, textToBase64 } from '../../src/utils/base64';
 import { formatBytes } from '../../src/utils/convert';
+import { registerDateTime } from './date-time';
 import { registerDocumentTools } from './document-tools';
+import { registerEmailRecords } from './email-records';
 import { registerFilmDevelopment } from './film-development';
 import { registerFormatParsers } from './format-parsers';
+import { registerIpv6Ula } from './ipv6-ula';
 import { registerPhotoCalculators } from './photo-calculators';
+import { registerQrCode } from './qr-code';
 import { registerPhoneTools } from './phone-tools';
 import { registerReferenceLookups } from './reference-lookups';
 import { registerSimpleTools } from './simple-tools';
@@ -103,10 +107,14 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
 
 function createServer() {
   const server = new McpServer({ name: 'KillerTools MCP', version: '0.1.0' });
+  registerDateTime(server);
   registerDocumentTools(server);
+  registerEmailRecords(server);
   registerFilmDevelopment(server);
   registerFormatParsers(server);
+  registerIpv6Ula(server);
   registerPhotoCalculators(server);
+  registerQrCode(server);
   registerPhoneTools(server);
   registerReferenceLookups(server);
   registerSimpleTools(server);
