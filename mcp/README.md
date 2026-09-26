@@ -2,7 +2,7 @@
 
 KillerTools MCP lets an MCP capable agent call the utilities from [KillerTools](https://killertools.net). The public Cloudflare Worker exposes 74 operations across 64 website tools. The optional local server exposes those operations plus 20 file, secret, and browser operations, covering all 81 active website tools. Each MCP tool supplies a description and bounded input schema to the agent when it connects. The [operation map](coverage.json) lists every website tool and its MCP operations.
 
-KillerTools MCP gives agents access to KillerTools website utilities.
+This repository owns the KillerTools utility implementations, the public MCP Worker, and the local KillerTools bundle. [KillerMCP](https://github.com/SteveTheKiller/KillerMCP) owns the shared family runtime, desktop app adapters, and Windows installer. Its build includes this local bundle so one connection can offer KillerTools alongside installed Killer apps.
 
 ## Connect to the public server
 
@@ -25,9 +25,9 @@ The public endpoint has no sign-in. Public tool inputs are sent to Cloudflare, a
 
 ## Optional local setup for the remaining 17 tools
 
-The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need this optional server running on your computer. There is no one-click installer yet.
+The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need a server running on your computer. A development KillerMCP installer now bundles this server, but it is not ready for public download. The steps below are for developers working on the KillerTools bundle.
 
-For access to every website tool on your machine, connect an MCP client to the local stdio server. This developer setup requires Node 24 or later, pnpm, and installed dependencies to build `dist/killermcp.mjs`. The built file contains the shared tools, local tools, and browser companion. It runs without Wrangler, a source checkout, or installed packages, but still needs Node until the installer is ready. Use the Node executable as the command, with the absolute path to `dist/killermcp.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. Run `pnpm smoke:local` to build the bundle and test all 94 operations.
+For access to every website tool on your machine, connect an MCP client to the local stdio server. This developer setup requires Node 24 or later, pnpm, and installed dependencies to build `dist/killermcp.mjs`. The built file contains the shared tools, local tools, and browser companion. It runs without Wrangler, a source checkout, or installed packages, but still needs Node when used directly. Use the Node executable as the command, with the absolute path to `dist/killermcp.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. Run `pnpm smoke:local` to build the bundle and test all 94 operations.
 
 ### Developer setup for Codex on Windows
 
