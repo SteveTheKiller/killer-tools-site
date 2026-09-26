@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build:local": "pnpm -C .. exec esbuild mcp/local/server.mjs --bundle --platform=node --format=esm --loader:.html=text --banner:js=\"import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);\" --outfile=mcp/dist/killermcp.mjs",
+    "build:portable": "pnpm build:local && node scripts/build-portable.mjs",
     "coverage": "node scripts/check-coverage.mjs",
     "dev": "wrangler dev",
     "local": "node dist/killermcp.mjs",
