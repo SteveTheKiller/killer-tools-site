@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import process from 'node:process';
 
-const endpoint = process.env.MCP_URL || 'http://127.0.0.1:8787/mcp';
+const endpoint = process.env.MCP_URL || 'http://127.0.0.1:8787/';
 let nextId = 1;
 
 async function request(method, params = {}) {
@@ -267,7 +267,7 @@ const largest = await call('text_to_ascii_binary', { text: 'a'.repeat(4096) });
 assert.ok(largest.content[0].text.length < 40000);
 
 const wrongPath = new URL(endpoint);
-wrongPath.pathname = '/not-mcp';
+wrongPath.pathname = '/mcp';
 assert.equal((await fetch(wrongPath)).status, 404);
 assert.equal((await fetch(endpoint, {
   method: 'POST',

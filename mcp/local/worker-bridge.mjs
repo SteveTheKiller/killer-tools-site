@@ -38,7 +38,7 @@ function startWorker() {
       const match = output.match(/http:\/\/127\.0\.0\.1:(\d+)/);
       if (match) {
         clearTimeout(timeout);
-        resolve(`http://127.0.0.1:${match[1]}/mcp`);
+        resolve(`http://127.0.0.1:${match[1]}/`);
       }
     }
     workerProcess.stdout.on('data', inspect);
