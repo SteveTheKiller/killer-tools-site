@@ -2,7 +2,7 @@
 
 KillerTools MCP lets an MCP capable agent call the utilities from [KillerTools](https://killertools.net). The public Cloudflare Worker exposes 74 operations across 64 website tools. The optional local server exposes those operations plus 20 file, secret, and browser operations, covering all 81 active website tools. Each MCP tool supplies a description and bounded input schema to the agent when it connects. The [operation map](coverage.json) lists every website tool and its MCP operations.
 
-This server is for KillerTools website utilities. Desktop apps can have separate MCP servers in their own repositories. Links to those apps on the website do not expose their features through this endpoint.
+KillerTools MCP gives agents access to KillerTools website utilities.
 
 ## Connect to the public server
 
