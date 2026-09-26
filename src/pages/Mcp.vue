@@ -152,10 +152,10 @@ useHead({
         AFTER CONNECTING
       </p>
       <p>
-        In a new chat, type <code>KillerTools: &lt;task&gt;</code>. For example: <code>KillerTools: subnet 192.168.1.0/24</code>.
+        In a new chat, type <code>KillerTools &lt;task&gt;</code>. For example: <code>KillerTools subnet 192.168.1.0/24</code>.
       </p>
       <p>
-        Ask for a specific lookup in plain language, too: <code>KillerTools: look up Windows event 4625</code>. You do not need to type underscores, an operation name, or a slash command.
+        Ask for a specific lookup in plain language, too: <code>KillerTools look up Windows event 4625</code>. You do not need to type underscores, an operation name, or a slash command.
       </p>
     </section>
 
