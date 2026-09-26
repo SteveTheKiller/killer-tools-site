@@ -1,44 +1,20 @@
 <script setup lang="ts">
-function fmt(n: number) {
-  return Number(n.toFixed(8)).toString();
-}
+import { percentageChange, percentageOf, percentageRatio } from './percentage-calculator.service';
 
 // What is X% of Y
 const pctX = ref('');
 const pctY = ref('');
-const pctResult = computed(() => {
-  const x = Number.parseFloat(pctX.value);
-  const y = Number.parseFloat(pctY.value);
-  if (Number.isNaN(x) || Number.isNaN(y)) {
-    return '';
-  }
-  return fmt(x / 100 * y);
-});
+const pctResult = computed(() => percentageOf(Number.parseFloat(pctX.value), Number.parseFloat(pctY.value)));
 
 // X is what percent of Y
 const numX = ref('');
 const numY = ref('');
-const numResult = computed(() => {
-  const x = Number.parseFloat(numX.value);
-  const y = Number.parseFloat(numY.value);
-  if (Number.isNaN(x) || Number.isNaN(y) || y === 0) {
-    return '';
-  }
-  return `${fmt(100 * x / y)}%`;
-});
+const numResult = computed(() => percentageRatio(Number.parseFloat(numX.value), Number.parseFloat(numY.value)));
 
 // Percentage increase/decrease
 const fromVal = ref('');
 const toVal = ref('');
-const changeResult = computed(() => {
-  const from = Number.parseFloat(fromVal.value);
-  const to = Number.parseFloat(toVal.value);
-  if (Number.isNaN(from) || Number.isNaN(to) || from === 0) {
-    return '';
-  }
-  const pct = (to - from) / from * 100;
-  return `${pct >= 0 ? '+' : ''}${fmt(pct)}%`;
-});
+const changeResult = computed(() => percentageChange(Number.parseFloat(fromVal.value), Number.parseFloat(toVal.value)));
 
 const copiedKey = ref<string | null>(null);
 async function copyResult(key: string, val: string) {

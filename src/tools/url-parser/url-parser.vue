@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { withDefaultOnError } from '@/utils/defaults';
+import { parseUrl } from './url-parser.service';
 
 const urlToParse = ref('https://me:pwd@killertools.net:3000/url-parser?key1=value&key2=value2#the-hash');
-const urlParsed = computed(() => withDefaultOnError(() => new URL(urlToParse.value), undefined));
+const urlParsed = computed(() => parseUrl(urlToParse.value));
 const isError = computed(() => urlToParse.value.trim().length > 0 && !urlParsed.value);
 
 const sections = computed(() => {

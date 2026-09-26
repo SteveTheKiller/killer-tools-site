@@ -1,4 +1,4 @@
-import { randFromArray } from '@/utils/random';
+import { randFromArray } from '../../utils/random';
 
 const vocabulary = [
   'a',

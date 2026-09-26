@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCopy } from '@/composable/copy';
 import { natoAlphabet } from './text-to-nato-alphabet.constants';
+import { textToNatoAlphabet } from './text-to-nato-alphabet.service';
 
 const input = ref('');
 
@@ -25,12 +26,7 @@ const rows = computed<NatoRow[]>(() => {
   });
 });
 
-const natoText = computed(() =>
-  rows.value
-    .filter(r => r.nato)
-    .map(r => r.nato)
-    .join(' '),
-);
+const natoText = computed(() => textToNatoAlphabet({ text: input.value }));
 
 const { copy, isJustCopied: copied } = useCopy({ source: natoText, text: 'NATO string copied.' });
 </script>

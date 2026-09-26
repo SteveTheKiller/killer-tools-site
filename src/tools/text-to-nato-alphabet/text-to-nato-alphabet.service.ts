@@ -13,7 +13,8 @@ function textToNatoAlphabet({ text }: { text: string }) {
       const alphabetIndex = getLetterPositionInAlphabet({ letter: character });
       const natoWord = natoAlphabet[alphabetIndex];
 
-      return natoWord ?? character;
+      return natoWord ?? (character === ' ' ? '' : character);
     })
+    .filter(Boolean)
     .join(' ');
 }

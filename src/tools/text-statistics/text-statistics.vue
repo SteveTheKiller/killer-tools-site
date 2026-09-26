@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { formatBytes } from '@/utils/convert';
-import { getStringSizeInBytes } from './text-statistics.service';
+import { getTextStatistics } from './text-statistics.service';
 
 const text = ref('');
 
-const charCount = computed(() => text.value.length);
-const wordCount = computed(() => text.value === '' ? 0 : text.value.split(/\s+/).length);
-const lineCount = computed(() => text.value === '' ? 0 : text.value.split(/\r\n|\r|\n/).length);
-const byteSize = computed(() => formatBytes(getStringSizeInBytes(text.value)));
+const stats = computed(() => getTextStatistics(text.value));
+const charCount = computed(() => stats.value.charCount);
+const wordCount = computed(() => stats.value.wordCount);
+const lineCount = computed(() => stats.value.lineCount);
+const byteSize = computed(() => formatBytes(stats.value.byteSize));
 </script>
 
 <template>

@@ -1,10 +1,14 @@
 # KillerTools MCP tool inventory
 
-This is an initial routing inventory of the 91 directories under `src/tools`. A directory is a website feature, not automatically an MCP operation. Each proposed operation still needs an input and output contract, bounded execution, and a check that the Worker produces the same result as the page.
+The site registers 86 entries from `src/tools/index.ts`: 81 website tools and five links to desktop apps. The repository also has five unregistered tool directories. A website tool is not automatically an MCP operation. Each adapter needs a bounded input and output contract and a check against the page's behavior.
 
 ## Exposed locally
 
-These three website tools currently account for five MCP operations: `base64-string-converter`, `case-converter`, `text-to-binary`.
+The public deployment exposes five MCP operations from `base64-string-converter`, `case-converter`, and `text-to-binary`. The local source has 28 operations across 25 website tools. The twenty-two additional website tools are `exchange-ndr-lookup`, `group-policy-reference`, `http-status-codes`, `integer-base-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `json-converter`, `json-minify`, `json-to-csv`, `lorem-ipsum-generator`, `m365-sku-decoder`, `percentage-calculator`, `port-protocol-reference`, `roman-numeral-converter`, `temperature-converter`, `text-statistics`, `text-to-nato-alphabet`, `toml-converter`, `url-parser`, `windows-error-codes`, `windows-event-lookup`, and `yaml-converter`.
+
+## Unregistered directories
+
+These directories are not listed on the live site's tool menu and are outside the 81-tool target: `basic-auth-generator`, `ipv4-address-converter`, `mime-types`, `service-tag-lookup`, `text-to-unicode`.
 
 ## Desktop product links
 
@@ -12,7 +16,7 @@ These are links to separate apps. They do not belong in the KillerTools website 
 
 ## Network or external data
 
-Review upstream access, freshness, costs, and rate limits before exposing: `cve-lookup`, `domain-lookup`, `gif-search`, `mac-address-lookup`, `service-tag-lookup`.
+Review upstream access, freshness, costs, and rate limits before exposing: `cve-lookup`, `domain-lookup`, `gif-search`, `mac-address-lookup`.
 
 ## Browser, device, file, or interactive surface
 
@@ -20,12 +24,12 @@ These need a different interface or a deliberate file and device policy: `base64
 
 ## Credentials, secrets, or cryptographic material
 
-Do not expose these on the public endpoint until privacy and security behavior is designed per operation: `basic-auth-generator`, `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, `rsa-key-pair-generator`.
+Do not expose these on the public endpoint until privacy and security behavior is designed per operation: `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, `rsa-key-pair-generator`.
 
 ## Local conversion, calculation, generation, and reference candidates
 
 These have potential server-side use. This list is a candidate queue, not a claim that the current page logic is already portable or that every reference page should become a tool:
 
-`ascii-text-drawer`, `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-header-parser`, `email-record-generator`, `exchange-ndr-lookup`, `exposure-equivalence`, `group-policy-reference`, `html-entities`, `http-status-codes`, `integer-base-converter`, `ipv4-address-converter`, `ipv4-range-expander`, `ipv4-subnet-calculator`, `ipv6-ula-generator`, `json-converter`, `json-diff`, `json-minify`, `json-to-csv`, `json-viewer`, `killer-modules`, `killer-scripts`, `lorem-ipsum-generator`, `m365-sku-decoder`, `markdown-to-html`, `math-evaluator`, `meta-tag-generator`, `mime-types`, `nd-filter-calculator`, `percentage-calculator`, `phone-parser-and-formatter`, `port-protocol-reference`, `powershell-builder`, `qr-code-generator`, `reciprocity-calculator`, `regex-tester`, `roman-numeral-converter`, `sql-prettify`, `svg-placeholder-generator`, `temperature-converter`, `text-diff`, `text-statistics`, `text-to-nato-alphabet`, `text-to-unicode`, `toml-converter`, `ulid-generator`, `url-parser`, `user-agent-parser`, `uuid-generator`, `windows-error-codes`, `windows-event-lookup`, `xml-formatter`, `xml-json-converter`, `yaml-converter`, `yaml-viewer`.
+`ascii-text-drawer`, `chmod-calculator`, `color-converter`, `crontab-generator`, `date-time-converter`, `depth-of-field-calculator`, `dev-calculator`, `email-header-parser`, `email-record-generator`, `exposure-equivalence`, `html-entities`, `ipv6-ula-generator`, `json-diff`, `json-viewer`, `killer-modules`, `killer-scripts`, `markdown-to-html`, `math-evaluator`, `meta-tag-generator`, `nd-filter-calculator`, `phone-parser-and-formatter`, `powershell-builder`, `qr-code-generator`, `reciprocity-calculator`, `regex-tester`, `sql-prettify`, `svg-placeholder-generator`, `text-diff`, `ulid-generator`, `user-agent-parser`, `uuid-generator`, `xml-formatter`, `xml-json-converter`, `yaml-viewer`.
 
 The next batch should favor small, deterministic conversions with existing shared service or model functions. Reference pages need useful lookup inputs and bounded answers before they become MCP tools.
