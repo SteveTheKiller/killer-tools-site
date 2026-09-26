@@ -106,7 +106,7 @@ useHead({
       <p class="mcp-lead">
         Put KillerTools in your agent's toolkit. Connect once, then ask it to calculate a subnet,
         check DNS records, research a CVE, parse email headers, build a PowerShell command,
-        convert JSON to CSV, or decode Base64. It can use dozens more utilities as your work calls for them.
+        convert JSON to CSV, or decode Base64.
       </p>
       <p class="mcp-status">
         KillerTools MCP supports all 81 website tools.
@@ -235,7 +235,7 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-wordmark span { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(32px, 4vw, 52px); color: var(--kt-accent); }
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Courier New', monospace; font-size: 24px; font-weight: normal; }
 .mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
-.mcp-status { color: var(--kt-accent); margin: 0; font-size: 13px; }
+.mcp-status { color: var(--kt-accent); margin: 0; font-size: 15px; }
 .mcp-connect h2 { margin-bottom: 8px; }
 .mcp-connect p { font-size: 13px; line-height: 1.6; }
 .mcp-connect p:not(.mcp-eyebrow):not(.mcp-feedback) { margin: 0 0 10px; }
