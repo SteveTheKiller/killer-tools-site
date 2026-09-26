@@ -68,7 +68,7 @@ useHead({
         a domain lookup, a text conversion, or any of the other public utilities.
       </p>
       <p class="mcp-status">
-        Live now: 74 public operations across 64 tools. The local connector covers all 81 website tools.
+        Public server: 64 of 81 website tools. Optional local connector: all 81.
       </p>
     </section>
 
@@ -194,14 +194,14 @@ useHead({
 }
 
 .mcp-hero, .mcp-card, .mcp-connect { padding: 24px; }
-.mcp-heading { display: flex; align-items: center; gap: 18px; }
+.mcp-heading { display: flex; align-items: center; gap: 0; }
 .mcp-mark { width: 90px; height: 90px; flex: none; object-fit: contain; }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
 .mcp-wordmark { display: flex; align-items: center; gap: 8px; margin: 0; }
 .mcp-wordmark img { display: block; width: clamp(210px, 28vw, 350px); height: auto; }
 .mcp-wordmark span { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(32px, 4vw, 52px); color: var(--kt-accent); }
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Courier New', monospace; font-size: 24px; font-weight: normal; }
-.mcp-lead { max-width: 760px; font-size: 16px; line-height: 1.6; margin: 18px 0; }
+.mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 13px; }
 .mcp-connect h2 { margin-bottom: 8px; }
 .mcp-connect p { font-size: 13px; line-height: 1.6; }
@@ -229,7 +229,7 @@ code { color: var(--kt-accent); overflow-wrap: anywhere; }
   .mcp-grid, .mcp-client-grid { grid-template-columns: 1fr; }
   .mcp-hero, .mcp-card, .mcp-connect { padding: 20px; }
   .mcp-copy-row { flex-direction: column; }
-  .mcp-heading { gap: 10px; }
+  .mcp-heading { gap: 0; }
   .mcp-mark { width: 48px; height: 48px; }
   .mcp-wordmark img { width: clamp(150px, 46vw, 250px); }
   .mcp-wordmark span { font-size: clamp(26px, 7vw, 40px); }
