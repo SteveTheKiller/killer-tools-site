@@ -10,14 +10,54 @@ const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=ki
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const copyStatus = ref('');
 
+function copyWithSelection(value: string) {
+  const input = document.createElement('textarea');
+  input.value = value;
+  input.style.position = 'fixed';
+  input.style.opacity = '0';
+  document.body.appendChild(input);
+  input.select();
+  try {
+    return document.execCommand('copy');
+  }
+  catch {
+    return false;
+  }
+  finally {
+    input.remove();
+  }
+}
+
 async function copyText(value: string, label: string) {
   copyStatus.value = 'Copying...';
   try {
     await navigator.clipboard.writeText(value);
     copyStatus.value = `${label} copied`;
+    return true;
   }
   catch {
-    copyStatus.value = `Copy failed. Copy this instead: ${value}`;
+    const copied = copyWithSelection(value);
+    copyStatus.value = copied ? `${label} copied` : `Copy failed. Copy this instead: ${value}`;
+    return copied;
+  }
+}
+
+async function copyAndOpenClaude() {
+  const copiedNow = copyWithSelection(endpoint);
+  const copyPromise = copiedNow ? Promise.resolve(true) : copyText(endpoint, 'Server URL');
+  const claudeTab = window.open('about:blank', '_blank');
+  if (await copyPromise) {
+    copyStatus.value = 'Server URL copied';
+    if (claudeTab) {
+      claudeTab.opener = null;
+      claudeTab.location.replace('https://claude.ai/customize/connectors');
+    }
+    else {
+      copyStatus.value = 'Server URL copied. Allow pop-ups to open Claude.';
+    }
+  }
+  else {
+    claudeTab?.close();
   }
 }
 
@@ -86,7 +126,9 @@ useHead({
       <div class="mcp-install-actions">
         <a class="mcp-action" :href="cursorInstallUrl">Add to Cursor</a>
         <a class="mcp-action" :href="vscodeInstallUrl">Add to VS Code</a>
-        <a class="mcp-action" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener noreferrer" @click="copyText(endpoint, 'Server URL')">Copy URL and open Claude</a>
+        <button type="button" class="mcp-action" @click="copyAndOpenClaude">
+          Copy URL and open Claude
+        </button>
         <button type="button" class="mcp-action" @click="copyText(codexCommand, 'Codex command')">
           Copy Codex setup command
         </button>
