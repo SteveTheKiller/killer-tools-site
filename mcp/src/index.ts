@@ -351,13 +351,14 @@ function createServer() {
 }
 
 const handler = createMcpHandler(createServer, {
+  route: '/',
   allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
 });
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
-    if (new URL(request.url).pathname !== '/mcp') {
+    if (new URL(request.url).pathname !== '/') {
       return new Response('Not found', { status: 404 });
     }
     if (Number(request.headers.get('content-length')) > maxRequestBytes) {

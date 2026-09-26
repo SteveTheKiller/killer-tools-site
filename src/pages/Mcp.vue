@@ -3,7 +3,7 @@ import { useHead } from '@vueuse/head';
 import { useStyleStore } from '@/stores/style.store';
 import { NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 
-const endpoint = 'https://mcp.killertools.net/mcp';
+const endpoint = 'https://mcp.killertools.net';
 const codexCommand = `codex mcp add killertools --url ${endpoint}`;
 const claudeCodeCommand = `claude mcp add --transport http killertools ${endpoint}`;
 const copyStatus = ref('');

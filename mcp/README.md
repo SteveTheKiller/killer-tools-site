@@ -9,13 +9,13 @@ This server is for KillerTools website utilities. Desktop apps can have separate
 Add this streamable HTTP endpoint to an MCP client:
 
 ```text
-https://mcp.killertools.net/mcp
+https://mcp.killertools.net
 ```
 
 For Codex, run:
 
 ```powershell
-codex mcp add killertools --url https://mcp.killertools.net/mcp
+codex mcp add killertools --url https://mcp.killertools.net
 codex mcp get killertools
 ```
 
@@ -49,16 +49,16 @@ The stdio server also provides `open_browser_companion_local`. Open its private 
 
 The public Worker covers calculations, data conversion, network and reference lookup, catalog search, text processing, and formatting. The local server adds file, secret, and browser operations. The full split is in [TOOL_INVENTORY.md](TOOL_INVENTORY.md). The local tools run on the user's machine, but the MCP client and agent may still receive their inputs and outputs. Use the client's normal data handling rules for secrets. Local file tools read only the paths supplied in a tool call. Base64 decoding creates a new file and never overwrites an existing one. Review file paths before allowing an agent to use them.
 
-The Worker accepts requests only at `/mcp`, rejects request bodies over 64 KiB, and applies per-operation input bounds. Network and reference lookup results depend on their data sources being available. The local source also includes QR output that can encode Wi-Fi credentials. KillerScripts catalog lookup reads a fixed GitHub URL and caches the result in each Worker instance for ten minutes. Domain registration lookup uses the IANA RDAP bootstrap directory.
+The Worker accepts requests only at `/`, rejects request bodies over 64 KiB, and applies per-operation input bounds. Network and reference lookup results depend on their data sources being available. The local source also includes QR output that can encode Wi-Fi credentials. KillerScripts catalog lookup reads a fixed GitHub URL and caches the result in each Worker instance for ten minutes. Domain registration lookup uses the IANA RDAP bootstrap directory.
 
 ## Local development
 
-From the repository root, install the website dependencies with `pnpm install`. Then run `pnpm install` in this directory and `pnpm dev`. Connect an MCP client to `http://127.0.0.1:8787/mcp` (use the port printed by Wrangler).
+From the repository root, install the website dependencies with `pnpm install`. Then run `pnpm install` in this directory and `pnpm dev`. Connect an MCP client to `http://127.0.0.1:8787/` (use the port printed by Wrangler).
 
 Run `pnpm coverage` to compare every registered website tool with the [MCP operation map](coverage.json). With the local Worker running, run `pnpm smoke` from this directory to verify MCP initialization, discovery, calls, validation, and concurrent requests. Set `MCP_URL` to test a different endpoint.
 
 ## Public deployment
 
-The Worker is separate from the website's GitHub Pages workflow. It is live at `https://mcp.killertools.net/mcp`. Before deploying a new version, confirm the signed-in Cloudflare account owns the active `killertools.net` zone and rate limit namespace `26092501` is not shared with another Worker.
+The Worker is separate from the website's GitHub Pages workflow. It is live at `https://mcp.killertools.net`. Before deploying a new version, confirm the signed-in Cloudflare account owns the active `killertools.net` zone and rate limit namespace `26092501` is not shared with another Worker.
 
-Run `pnpm typecheck`, `pnpm smoke` against the local Worker, and `pnpm exec wrangler deploy --dry-run` before an authorized deployment. After deployment, run `pnpm smoke` with `MCP_URL=https://mcp.killertools.net/mcp` and check a second MCP client. The website connection page is still pending publication.
+Run `pnpm typecheck`, `pnpm smoke` against the local Worker, and `pnpm exec wrangler deploy --dry-run` before an authorized deployment. After deployment, run `pnpm smoke` with `MCP_URL=https://mcp.killertools.net` and check a second MCP client. The website connection page is still pending publication.
