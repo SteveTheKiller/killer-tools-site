@@ -1558,6 +1558,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Muitos cmdlets suportam isso diretamente
       cheatsheetRunViaRemoting: Executar via PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Sessão PS remota interativa
+      categories:
+        all: Todos
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Rede
+        system: Sistema
+        services: Serviços
+        filesRegistry: Arquivos e Registro
+        pipeline: Pipeline
+        bitlocker: BitLocker
+        securityDefender: Segurança e Defender
+        windowsUpdate: Windows Update
+        certificates: Certificados
+        printManagement: Gerenciamento de impressão
+        diskStorage: Disco e armazenamento
+        fileSharing: Compartilhamento de arquivos
+        groupPolicy: Diretiva de Grupo
+        dnsServer: Servidor DNS
+        dhcpServer: Servidor DHCP
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: será encapsulado em um bloco de script
   password-strength-analyser:
     title: Analisador de força de senha
     description: Descubra a força da sua senha com esta ferramenta de análise de força e estimativa de tempo de quebra, totalmente client-side.

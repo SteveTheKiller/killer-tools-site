@@ -387,6 +387,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Багато командлетів підтримують це напряму
       cheatsheetRunViaRemoting: Запуск через PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Інтерактивний віддалений сеанс PS
+      categories:
+        all: Усі
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Мережа
+        system: Система
+        services: Служби
+        filesRegistry: Файли та реєстр
+        pipeline: Конвеєр
+        bitlocker: BitLocker
+        securityDefender: Безпека та Defender
+        windowsUpdate: Windows Update
+        certificates: Сертифікати
+        printManagement: Керування друком
+        diskStorage: Диск і сховище
+        fileSharing: Спільний доступ до файлів
+        groupPolicy: Групова політика
+        dnsServer: DNS-сервер
+        dhcpServer: DHCP-сервер
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: буде обгорнуто в блок сценарію
   toml-converter:
     ui:
       convertTo: 'Конвертувати у:'

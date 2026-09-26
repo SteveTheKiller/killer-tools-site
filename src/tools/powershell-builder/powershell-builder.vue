@@ -4,6 +4,12 @@ import { categories, cmdlets } from './powershell-builder.data';
 
 const { t } = useI18n();
 
+// Pill labels are translated by a camelCase key; the filter value stays English.
+function categoryKey(cat: string) {
+  const words = cat.split(/[^A-Za-z0-9]+/).filter(Boolean);
+  return words.map((w, i) => i === 0 ? w.toLowerCase() : w[0].toUpperCase() + w.slice(1)).join('');
+}
+
 const selectedCmdletName = ref<string | null>(null);
 const selectedCmdlet = ref<PSCmdlet | null>(null);
 const cmdletSearch = ref('');
@@ -254,18 +260,18 @@ const cheatsheet = computed(() => [
       <div class="ps-left">
         <div class="kt-terminal ps-panel">
           <div class="kt-terminal-bar ps-panel-bar">
-            <span class="kt-terminal-bar-title ps-panel-title">Cmdlet Browser</span>
+            <span class="kt-terminal-bar-title ps-panel-title">{{ t('tools.powershellBuilder.ui.cmdletBrowser') }}</span>
             <span v-if="selectedCmdlet" class="ps-panel-bar-right">
               <span class="badge" :class="selectedCmdlet.ps51 ? 'ps-yes' : 'ps-no'">PS 5.1</span>
               <span class="badge" :class="selectedCmdlet.ps7 ? 'ps-yes' : 'ps-no'">PS 7</span>
-              <span v-if="selectedCmdlet.requiresAdmin" class="badge admin">⚠ Admin</span>
+              <span v-if="selectedCmdlet.requiresAdmin" class="badge admin">⚠ {{ t('tools.powershellBuilder.ui.adminBadge') }}</span>
             </span>
           </div>
           <div class="ps-panel-body">
             <!-- Search -->
             <c-input-text
               v-model:value="cmdletSearch"
-              placeholder="Search by name, description, or module..."
+              :placeholder="t('tools.powershellBuilder.ui.cmdletSearchPlaceholder')"
               clearable
               style="margin-bottom: 8px;"
             />
@@ -279,7 +285,7 @@ const cheatsheet = computed(() => [
                 :class="{ 'cat-pill-active': categoryFilter === cat }"
                 @click="categoryFilter = cat; cmdletSearch = ''"
               >
-                {{ cat }}
+                {{ t(`tools.powershellBuilder.ui.categories.${categoryKey(cat)}`, cat) }}
               </button>
             </div>
             <!-- Scrollable cmdlet list -->
@@ -300,7 +306,7 @@ const cheatsheet = computed(() => [
                 </div>
               </div>
               <div v-if="filteredCmdlets.length === 0" class="cmdlet-empty">
-                No cmdlets match "{{ cmdletSearch }}"
+                {{ t('tools.powershellBuilder.ui.noCmdletsMatch', { query: cmdletSearch }) }}
               </div>
             </div>
             <!-- Selected cmdlet name footer -->
@@ -316,7 +322,7 @@ const cheatsheet = computed(() => [
         <!-- Generated Command -->
         <div class="kt-terminal ps-panel" style="margin-bottom: 12px;">
           <div class="kt-terminal-bar ps-panel-bar">
-            <span class="kt-terminal-bar-title ps-panel-title">Generated Command</span>
+            <span class="kt-terminal-bar-title ps-panel-title">{{ t('tools.powershellBuilder.ui.generatedCommand') }}</span>
             <span v-if="selectedCmdlet" class="ps-panel-bar-right">
               <span class="ps-panel-bar-cmd">{{ selectedCmdlet.cmdlet }}</span>
             </span>
@@ -328,13 +334,13 @@ const cheatsheet = computed(() => [
               </div>
               <div style="margin-top: 10px;">
                 <button type="button" class="kt-pill kt-pill-active" @click="copyCommand">
-                  {{ copied ? '✓ Copied!' : 'Copy Command' }}
+                  {{ copied ? t('tools.powershellBuilder.ui.copiedCheck') : t('tools.powershellBuilder.ui.copyCommand') }}
                 </button>
               </div>
               <template v-if="selectedCmdlet.snippets?.length">
                 <div class="kt-divider" style="margin: 16px 0 10px;" />
                 <div class="ps-section-label" style="font-size: 0.72rem; font-weight: 700; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;">
-                  Common Examples
+                  {{ t('tools.powershellBuilder.ui.commonExamples') }}
                 </div>
                 <div
                   v-for="snippet in selectedCmdlet.snippets"
@@ -350,13 +356,13 @@ const cheatsheet = computed(() => [
                     v-if="snippetCopied === snippet.command"
                     style="font-size: 0.7rem; color: var(--kt-accent); margin-top: 3px; opacity: 0.8;"
                   >
-                    ✓ Copied!
+                    {{ t('tools.powershellBuilder.ui.copiedCheck') }}
                   </div>
                 </div>
               </template>
             </template>
             <div v-else class="ps-muted" style="font-size: 0.85rem; opacity: 0.35; font-style: italic; padding: 4px 0;">
-              Select a cmdlet on the left to start building your command.
+              {{ t('tools.powershellBuilder.ui.selectCmdletPrompt') }}
             </div>
           </div>
         </div>
@@ -364,14 +370,14 @@ const cheatsheet = computed(() => [
         <!-- Parameters -->
         <div v-if="selectedCmdlet" class="kt-terminal ps-panel">
           <div class="kt-terminal-bar ps-panel-bar">
-            <span class="kt-terminal-bar-title ps-panel-title">Parameters</span>
+            <span class="kt-terminal-bar-title ps-panel-title">{{ t('tools.powershellBuilder.ui.parameters') }}</span>
           </div>
           <div class="ps-panel-body">
             <div v-if="selectedCmdlet.notes" class="notes-strip">
               {{ selectedCmdlet.notes }}
             </div>
             <div v-if="selectedCmdlet.parameters.length === 0" class="ps-muted" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
-              No parameters needed — this cmdlet runs as-is.
+              {{ t('tools.powershellBuilder.ui.noParametersNeeded') }}
             </div>
             <div v-if="visibleParams.length > 0" class="kt-divider" style="margin: 10px 0 14px;" />
 
@@ -384,7 +390,7 @@ const cheatsheet = computed(() => [
                 </n-checkbox>
                 <span class="ps-muted" style="font-size: 0.77rem; opacity: 0.6; padding-top: 2px;">
                   {{ param.description }}
-                  <span v-if="param.required" style="color: #e87040; margin-left: 4px;">required</span>
+                  <span v-if="param.required" style="color: #e87040; margin-left: 4px;">{{ t('tools.powershellBuilder.ui.required') }}</span>
                 </span>
               </div>
 
@@ -412,8 +418,8 @@ const cheatsheet = computed(() => [
                 </div>
                 <div class="ps-muted" style="font-size: 0.71rem; opacity: 0.5; margin-top: 2px; padding-left: 2px;">
                   {{ param.description }}
-                  <span v-if="param.type === 'string[]'"> — separate multiple values with commas</span>
-                  <span v-if="param.type === 'scriptblock'"> — will be wrapped in { }</span>
+                  <span v-if="param.type === 'string[]'">. {{ t('tools.powershellBuilder.ui.separateMultipleValues') }}</span>
+                  <span v-if="param.type === 'scriptblock'">. {{ t('tools.powershellBuilder.ui.wrappedInScriptBlock') }}</span>
                 </div>
               </template>
             </div>
@@ -424,7 +430,7 @@ const cheatsheet = computed(() => [
               class="toggle-link"
               @click="showAllParams = !showAllParams"
             >
-              {{ showAllParams ? '▲ Show fewer parameters' : `▼ Show ${hiddenParamCount} more parameter${hiddenParamCount !== 1 ? 's' : ''}` }}
+              {{ showAllParams ? `▲ ${t('tools.powershellBuilder.ui.showFewerParameters')}` : `▼ ${t('tools.powershellBuilder.ui.showMoreParameters', { count: hiddenParamCount })}` }}
             </div>
           </div>
         </div>
@@ -437,7 +443,7 @@ const cheatsheet = computed(() => [
         type="button"
         class="cs-toggle"
         :class="{ 'cs-toggle-open': showCheatsheet }"
-        :title="showCheatsheet ? 'Collapse Quick Reference' : 'Open Quick Reference'"
+        :title="showCheatsheet ? t('tools.powershellBuilder.ui.collapseQuickReference') : t('tools.powershellBuilder.ui.openQuickReference')"
         @click="showCheatsheet = !showCheatsheet"
       >
         <template v-if="showCheatsheet">
@@ -445,13 +451,13 @@ const cheatsheet = computed(() => [
         </template>
         <template v-else>
           <span class="cs-toggle-chev">‹</span>
-          <span class="cs-toggle-label">Quick Reference</span>
+          <span class="cs-toggle-label">{{ t('tools.powershellBuilder.ui.quickReference') }}</span>
         </template>
       </button>
       <div v-show="showCheatsheet" class="cheatsheet-panel">
         <div class="kt-terminal ps-panel">
           <div class="kt-terminal-bar ps-panel-bar">
-            <span class="kt-terminal-bar-title ps-panel-title">Quick Reference</span>
+            <span class="kt-terminal-bar-title ps-panel-title">{{ t('tools.powershellBuilder.ui.quickReference') }}</span>
           </div>
           <div class="ps-panel-body">
             <div

@@ -1583,6 +1583,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Many cmdlets support this directly
       cheatsheetRunViaRemoting: Run via PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Interactive remote PS session
+      categories:
+        all: All
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Networking
+        system: System
+        services: Services
+        filesRegistry: Files & Registry
+        pipeline: Pipeline
+        bitlocker: BitLocker
+        securityDefender: Security & Defender
+        windowsUpdate: Windows Update
+        certificates: Certificates
+        printManagement: Print Management
+        diskStorage: Disk & Storage
+        fileSharing: File Sharing
+        groupPolicy: Group Policy
+        dnsServer: DNS Server
+        dhcpServer: DHCP Server
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: will be wrapped in a script block
   qr-code-generator:
     ui:
       tabText: Text / URL

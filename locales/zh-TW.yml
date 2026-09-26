@@ -1497,6 +1497,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: 許多 cmdlet 都直接支援此功能
       cheatsheetRunViaRemoting: 透過 PS Remoting（WinRM）執行
       cheatsheetInteractiveRemoteSession: 互動式遠端 PS 工作階段
+      categories:
+        all: 全部
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: 網路
+        system: 系統
+        services: 服務
+        filesRegistry: 檔案與登錄檔
+        pipeline: 管線
+        bitlocker: BitLocker
+        securityDefender: 安全性與 Defender
+        windowsUpdate: Windows Update
+        certificates: 憑證
+        printManagement: 列印管理
+        diskStorage: 磁碟與儲存體
+        fileSharing: 檔案共用
+        groupPolicy: 群組原則
+        dnsServer: DNS 伺服器
+        dhcpServer: DHCP 伺服器
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: 將包裝在指令碼區塊中
   basic-auth-generator:
     ui:
       copied: 標頭已複製到剪貼簿

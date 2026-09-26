@@ -1596,6 +1596,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Sok cmdlet közvetlenül támogatja ezt
       cheatsheetRunViaRemoting: Futtatás PS Remotingon keresztül (WinRM)
       cheatsheetInteractiveRemoteSession: Interaktív távoli PS munkamenet
+      categories:
+        all: Összes
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Hálózat
+        system: Rendszer
+        services: Szolgáltatások
+        filesRegistry: Fájlok és beállításjegyzék
+        pipeline: Folyamat
+        bitlocker: BitLocker
+        securityDefender: Biztonság és Defender
+        windowsUpdate: Windows Update
+        certificates: Tanúsítványok
+        printManagement: Nyomtatáskezelés
+        diskStorage: Lemez és tárhely
+        fileSharing: Fájlmegosztás
+        groupPolicy: Csoportházirend
+        dnsServer: DNS-kiszolgáló
+        dhcpServer: DHCP-kiszolgáló
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: egy szkriptblokkba lesz csomagolva
   qr-code-generator:
     ui:
       tabText: Szöveg / URL

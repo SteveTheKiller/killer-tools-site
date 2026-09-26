@@ -1496,6 +1496,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Nhiều cmdlet hỗ trợ trực tiếp điều này
       cheatsheetRunViaRemoting: Chạy qua PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Phiên PS từ xa tương tác
+      categories:
+        all: Tất cả
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Mạng
+        system: Hệ thống
+        services: Dịch vụ
+        filesRegistry: Tệp & Registry
+        pipeline: Pipeline
+        bitlocker: BitLocker
+        securityDefender: Bảo mật & Defender
+        windowsUpdate: Windows Update
+        certificates: Chứng chỉ
+        printManagement: Quản lý in
+        diskStorage: Đĩa & Lưu trữ
+        fileSharing: Chia sẻ tệp
+        groupPolicy: Chính sách nhóm
+        dnsServer: Máy chủ DNS
+        dhcpServer: Máy chủ DHCP
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: sẽ được bọc trong một khối tập lệnh
   basic-auth-generator:
     ui:
       copied: Đã sao chép header vào bộ nhớ tạm

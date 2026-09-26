@@ -1596,6 +1596,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: অনেক cmdlet সরাসরি এটি সাপোর্ট করে
       cheatsheetRunViaRemoting: PS রিমোটিং (WinRM) এর মাধ্যমে চালান
       cheatsheetInteractiveRemoteSession: ইন্টারঅ্যাক্টিভ রিমোট PS সেশন
+      categories:
+        all: সব
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: নেটওয়ার্কিং
+        system: সিস্টেম
+        services: পরিষেবা
+        filesRegistry: ফাইল ও রেজিস্ট্রি
+        pipeline: পাইপলাইন
+        bitlocker: BitLocker
+        securityDefender: নিরাপত্তা ও Defender
+        windowsUpdate: Windows Update
+        certificates: সার্টিফিকেট
+        printManagement: প্রিন্ট ম্যানেজমেন্ট
+        diskStorage: ডিস্ক ও স্টোরেজ
+        fileSharing: ফাইল শেয়ারিং
+        groupPolicy: গ্রুপ নীতি
+        dnsServer: DNS সার্ভার
+        dhcpServer: DHCP সার্ভার
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: একটি স্ক্রিপ্ট ব্লকে মোড়ানো হবে
   qr-code-generator:
     ui:
       tabText: টেক্সট / URL

@@ -1497,6 +1497,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Многие командлеты поддерживают это напрямую
       cheatsheetRunViaRemoting: Запуск через PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Интерактивный удалённый сеанс PS
+      categories:
+        all: Все
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Сеть
+        system: Система
+        services: Службы
+        filesRegistry: Файлы и реестр
+        pipeline: Конвейер
+        bitlocker: BitLocker
+        securityDefender: Безопасность и Defender
+        windowsUpdate: Windows Update
+        certificates: Сертификаты
+        printManagement: Управление печатью
+        diskStorage: Диск и хранилище
+        fileSharing: Общий доступ к файлам
+        groupPolicy: Групповая политика
+        dnsServer: DNS-сервер
+        dhcpServer: DHCP-сервер
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: будет обёрнут в блок сценария
   basic-auth-generator:
     ui:
       copied: Заголовок скопирован в буфер обмена

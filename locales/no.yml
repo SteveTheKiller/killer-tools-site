@@ -1628,6 +1628,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Mange cmdlets støtter dette direkte
       cheatsheetRunViaRemoting: Kjør via PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Interaktiv ekstern PS-økt
+      categories:
+        all: Alle
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Nettverk
+        system: System
+        services: Tjenester
+        filesRegistry: Filer og register
+        pipeline: Pipeline
+        bitlocker: BitLocker
+        securityDefender: Sikkerhet og Defender
+        windowsUpdate: Windows Update
+        certificates: Sertifikater
+        printManagement: Utskriftsbehandling
+        diskStorage: Disk og lagring
+        fileSharing: Fildeling
+        groupPolicy: Gruppepolicy
+        dnsServer: DNS-server
+        dhcpServer: DHCP-server
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: blir pakket inn i en skriptblokk
   ascii-word-art:
     title: ASCII-ordkunst-generator
     description: Lag ASCII-ordkunst-tekst med mange skrifttyper og stiler.

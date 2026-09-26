@@ -1644,6 +1644,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: 多くのコマンドレットが直接サポート
       cheatsheetRunViaRemoting: PS Remoting (WinRM) 経由で実行
       cheatsheetInteractiveRemoteSession: 対話型リモートPSセッション
+      categories:
+        all: すべて
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: ネットワーク
+        system: システム
+        services: サービス
+        filesRegistry: ファイルとレジストリ
+        pipeline: パイプライン
+        bitlocker: BitLocker
+        securityDefender: セキュリティと Defender
+        windowsUpdate: Windows Update
+        certificates: 証明書
+        printManagement: 印刷管理
+        diskStorage: ディスクとストレージ
+        fileSharing: ファイル共有
+        groupPolicy: グループ ポリシー
+        dnsServer: DNS サーバー
+        dhcpServer: DHCP サーバー
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: スクリプト ブロックにラップされます
   killer-modules:
     ui:
       repo: Repo

@@ -1390,6 +1390,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: De nombreux cmdlets le prennent en charge directement
       cheatsheetRunViaRemoting: Exécuter via PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Session PS distante interactive
+      categories:
+        all: Tous
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Réseau
+        system: Système
+        services: Services
+        filesRegistry: Fichiers & registre
+        pipeline: Pipeline
+        bitlocker: BitLocker
+        securityDefender: Sécurité & Defender
+        windowsUpdate: Windows Update
+        certificates: Certificats
+        printManagement: Gestion de l'impression
+        diskStorage: Disque & stockage
+        fileSharing: Partage de fichiers
+        groupPolicy: Stratégie de groupe
+        dnsServer: Serveur DNS
+        dhcpServer: Serveur DHCP
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: sera encapsulé dans un bloc de script
   encryption:
     ui:
       decryptError: Impossible de déchiffrer votre texte

@@ -1596,6 +1596,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Mnoho cmdletů to podporuje přímo
       cheatsheetRunViaRemoting: Spustit přes PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Interaktivní vzdálená PS relace
+      categories:
+        all: Vše
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Sítě
+        system: Systém
+        services: Služby
+        filesRegistry: Soubory a registr
+        pipeline: Kanál
+        bitlocker: BitLocker
+        securityDefender: Zabezpečení a Defender
+        windowsUpdate: Windows Update
+        certificates: Certifikáty
+        printManagement: Správa tisku
+        diskStorage: Disk a úložiště
+        fileSharing: Sdílení souborů
+        groupPolicy: Zásady skupiny
+        dnsServer: DNS server
+        dhcpServer: DHCP server
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: bude zabaleno do skriptovacího bloku
   qr-code-generator:
     ui:
       tabText: Text / URL

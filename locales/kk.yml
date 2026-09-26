@@ -1644,6 +1644,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Көптеген cmdlet мұны тікелей қолдайды
       cheatsheetRunViaRemoting: PS Remoting (WinRM) арқылы орындау
       cheatsheetInteractiveRemoteSession: Интерактивті қашықтағы PS сеансы
+      categories:
+        all: Барлығы
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Желі
+        system: Жүйе
+        services: Қызметтер
+        filesRegistry: Файлдар және тізілім
+        pipeline: Конвейер
+        bitlocker: BitLocker
+        securityDefender: Қауіпсіздік және Defender
+        windowsUpdate: Windows Update
+        certificates: Сертификаттар
+        printManagement: Баспаны басқару
+        diskStorage: Диск және сақтау орны
+        fileSharing: Файлдармен бөлісу
+        groupPolicy: Топтық саясат
+        dnsServer: DNS сервері
+        dhcpServer: DHCP сервері
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: скрипт блогына оралады
   killer-modules:
     ui:
       repo: Repo

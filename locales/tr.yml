@@ -1497,6 +1497,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Birçok cmdlet bunu doğrudan destekler
       cheatsheetRunViaRemoting: PS Remoting (WinRM) ile çalıştır
       cheatsheetInteractiveRemoteSession: Etkileşimli uzak PS oturumu
+      categories:
+        all: Tümü
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Ağ
+        system: Sistem
+        services: Hizmetler
+        filesRegistry: Dosyalar ve Kayıt Defteri
+        pipeline: Ardışık Düzen
+        bitlocker: BitLocker
+        securityDefender: Güvenlik ve Defender
+        windowsUpdate: Windows Update
+        certificates: Sertifikalar
+        printManagement: Yazdırma Yönetimi
+        diskStorage: Disk ve Depolama
+        fileSharing: Dosya Paylaşımı
+        groupPolicy: Grup İlkesi
+        dnsServer: DNS Sunucusu
+        dhcpServer: DHCP Sunucusu
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: bir betik bloğuna sarılacak
   basic-auth-generator:
     ui:
       copied: Başlık panoya kopyalandı

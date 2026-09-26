@@ -1644,6 +1644,29 @@ tools:
       cheatsheetCmdletsSupportDirectly: Wiele cmdletów obsługuje to bezpośrednio
       cheatsheetRunViaRemoting: Uruchom przez PS Remoting (WinRM)
       cheatsheetInteractiveRemoteSession: Interaktywna zdalna sesja PS
+      categories:
+        all: Wszystkie
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Sieć
+        system: System
+        services: Usługi
+        filesRegistry: Pliki i rejestr
+        pipeline: Potok
+        bitlocker: BitLocker
+        securityDefender: Zabezpieczenia i Defender
+        windowsUpdate: Windows Update
+        certificates: Certyfikaty
+        printManagement: Zarządzanie drukowaniem
+        diskStorage: Dysk i magazyn
+        fileSharing: Udostępnianie plików
+        groupPolicy: Zasady grupy
+        dnsServer: Serwer DNS
+        dhcpServer: Serwer DHCP
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: zostanie ujęty w blok skryptu
   killer-modules:
     ui:
       repo: Repo
