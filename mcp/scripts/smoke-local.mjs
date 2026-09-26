@@ -2,6 +2,9 @@ import assert from 'node:assert/strict';
 import { Buffer } from 'node:buffer';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
+import { mkdtemp, readFile, rmdir, unlink, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import process from 'node:process';
 
 const child = spawn(process.execPath, ['local/server.mjs'], { cwd: new URL('..', import.meta.url), stdio: ['pipe', 'pipe', 'pipe'] });
@@ -59,7 +62,7 @@ try {
   child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })}\n`);
   const listed = await request('tools/list');
   const names = new Set(listed.result.tools.map(tool => tool.name));
-  for (const name of ['hash_text_private', 'hmac_private', 'crypt_text_private', 'bcrypt_private', 'bip39_private', 'parse_jwt_private', 'otp_private', 'generate_password_private', 'analyze_password_private', 'generate_rsa_keypair_private', 'encode_file_base64_local', 'check_pdf_signatures_local']) {
+  for (const name of ['hash_text_private', 'hmac_private', 'crypt_text_private', 'bcrypt_private', 'bip39_private', 'parse_jwt_private', 'otp_private', 'generate_password_private', 'analyze_password_private', 'generate_rsa_keypair_private', 'encode_file_base64_local', 'check_pdf_signatures_local', 'open_browser_companion_local', 'get_browser_device_information_local', 'get_browser_keycode_local', 'get_browser_html_local', 'get_browser_signature_local', 'get_browser_camera_local']) {
     assert.ok(names.has(name), name);
   }
   assert.equal((await call('hash_text_private', { value: 'abc' })).hash, 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
@@ -75,7 +78,42 @@ try {
   assert.equal((await call('generate_password_private', { length: 24 })).password.length, 24);
   assert.ok((await call('analyze_password_private', { password: 'Secret123!' })).entropyBits > 0);
   assert.ok((await call('generate_rsa_keypair_private', { bits: '2048' })).privateKeyPem.includes('BEGIN RSA PRIVATE KEY'));
-  console.log('Local MCP initialization, discovery, and private operation checks passed.');
+  const directory = await mkdtemp(join(tmpdir(), 'kt-mcp-'));
+  const original = join(directory, 'original.txt');
+  const decoded = join(directory, 'decoded.txt');
+  try {
+    await writeFile(original, 'local file');
+    const encoded = await call('encode_file_base64_local', { path: original });
+    assert.equal((await call('decode_file_base64_local', { path: decoded, base64: encoded.base64 })).byteLength, 10);
+    assert.equal(await readFile(decoded, 'utf8'), 'local file');
+    const overwrite = await request('tools/call', { name: 'decode_file_base64_local', arguments: { path: decoded, base64: encoded.base64 } });
+    assert.equal(overwrite.result.isError, true);
+  }
+  finally {
+    await unlink(original);
+    await unlink(decoded);
+    await rmdir(directory);
+  }
+  const browser = await call('open_browser_companion_local', {});
+  const page = await fetch(browser.url);
+  assert.equal(page.status, 200);
+  assert.ok((await page.text()).includes('Camera recorder'));
+  const untrusted = new URL(browser.url);
+  untrusted.searchParams.set('token', 'wrong');
+  assert.equal((await fetch(untrusted)).status, 403);
+  const endpoint = new URL('/state', browser.url);
+  endpoint.search = new URL(browser.url).search;
+  assert.equal((await fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Origin': new URL(browser.url).origin },
+    body: JSON.stringify({ type: 'key', value: '{"key":"A"}' }),
+  })).status, 204);
+  assert.equal(JSON.parse((await call('get_browser_keycode_local', {})).value).key, 'A');
+  console.log('Local MCP private operations and browser companion transport passed.');
+  if (process.env.MCP_BROWSER_PREVIEW === '1') {
+    console.log(browser.url);
+    await new Promise(resolve => setTimeout(resolve, 120000));
+  }
 }
 finally {
   child.stdin.end();

@@ -20,12 +20,12 @@ The local source includes `cve-lookup`, `domain-lookup`, and `gif-search`. Their
 
 ## Browser, device, file, or interactive surface
 
-The local stdio server covers file-to-Base64 conversion from `base64-file-converter` and signature inspection from `pdf-signature-checker`. Their inputs are local paths with size limits. The five remaining interactive tools are `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, and `signature-creator`. Their defining behaviors depend on a live browser, a camera permission, keyboard events, or a drawing canvas.
+The local stdio server covers file conversion from `base64-file-converter` and signature inspection from `pdf-signature-checker`. Their inputs are local paths with size limits. A token-protected page on the user's own computer supplies the five browser interactions: `camera-recorder`, `device-information`, `html-wysiwyg-editor`, `keycode-info`, and `signature-creator`. The agent can retrieve the latest result after the user opens the page and interacts with it. Camera permission and actual capture still need a manual browser and hardware check.
 
 ## Credentials, secrets, or cryptographic material
 
 The local stdio server covers `bcrypt`, `bip39-generator`, `encryption`, `hash-text`, `hmac-generator`, `jwt-parser`, `otp-code-generator-and-validator`, `password-generator`, `password-strength-analyser`, and `rsa-key-pair-generator`. It processes inputs on the user's machine. Do not expose these on the public endpoint until privacy and security behavior is designed per operation.
 
-## Remaining interface work
+## Coverage and release status
 
-Across both local source servers, 86 MCP operations cover 76 of the 81 website tools. The five browser interactions above still need a browser companion or a redesigned agent interface. The deployed public Worker still has only five operations.
+Across the Worker and local stdio source, 93 MCP operations provide interfaces for all 81 website tools. One operation opens the browser companion; the others process or retrieve tool results. The browser interactions require a live page and user action. The deployed public Worker still has only five operations, and the expanded local source has not been released.

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data: blob:; media-src blob:">
+  <title>KillerTools MCP Browser Companion</title>
+  <style>
+    :root { color-scheme: dark; font: 16px system-ui, sans-serif; background: #161b1d; color: #f1f5f4; }
+    body { max-width: 920px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { color: #34d4c4; }
+    section { border: 1px solid #377a76; border-radius: 8px; padding: 1rem; margin: 1rem 0; background: #202729; }
+    button { color: #101719; background: #34d4c4; border: 0; border-radius: 5px; padding: .55rem .8rem; margin: .25rem; cursor: pointer; }
+    button:disabled { opacity: .5; cursor: default; }
+    #editor { min-height: 8rem; border: 1px solid #789; border-radius: 5px; padding: .75rem; background: #14191a; }
+    #signature { width: 100%; height: 180px; border: 1px solid #789; background: #fff; touch-action: none; }
+    video { width: min(100%, 480px); max-height: 300px; background: #111; }
+    output { display: block; margin-top: .5rem; color: #b8d5d1; }
+  </style>
+</head>
+<body>
+  <h1>KillerTools MCP Browser Companion</h1>
+  <p>Keep this page open while using the five browser tools through your local MCP server. Camera access begins only when you click Enable camera. Captured information stays on this computer.</p>
+
+  <section>
+    <h2>Device information</h2>
+    <p>The page sends its screen, browser, and device details when opened or resized.</p>
+    <button id="refreshDevice">Refresh device information</button>
+    <output id="deviceStatus"></output>
+  </section>
+
+  <section>
+    <h2>Keycode information</h2>
+    <p>Press a key while this page is focused.</p>
+    <output id="keyStatus">Waiting for a key.</output>
+  </section>
+
+  <section>
+    <h2>HTML editor</h2>
+    <div id="editor" contenteditable="true" aria-label="HTML editor"><p>Type and format content here.</p></div>
+    <output id="editorStatus"></output>
+  </section>
+
+  <section>
+    <h2>Signature creator</h2>
+    <canvas id="signature" width="880" height="180" aria-label="Draw a signature"></canvas>
+    <button id="clearSignature">Clear signature</button>
+    <output id="signatureStatus">Draw in the white area.</output>
+  </section>
+
+  <section>
+    <h2>Camera recorder</h2>
+    <button id="enableCamera">Enable camera</button>
+    <button id="capturePhoto" disabled>Capture photo</button>
+    <button id="startRecording" disabled>Start recording</button>
+    <button id="stopRecording" disabled>Stop recording</button>
+    <video id="preview" autoplay playsinline muted></video>
+    <output id="cameraStatus">Camera is off.</output>
+  </section>
+
+  <script>
+    const token = new URL(location.href).searchParams.get('token');
+    const endpoint = `/state?token=${encodeURIComponent(token)}`;
+    async function send(type, value) {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, value }),
+      });
+      if (!response.ok) throw new Error('Local MCP transfer failed');
+    }
+
+    async function deviceInfo() {
+      const data = {
+        screen: { width: screen.availWidth, height: screen.availHeight, colorDepth: screen.colorDepth,
+          orientation: screen.orientation?.type, angle: screen.orientation?.angle },
+        window: { width: innerWidth, height: innerHeight, pixelRatio: devicePixelRatio },
+        hardware: { cores: navigator.hardwareConcurrency, memoryGB: navigator.deviceMemory,
+          touchPoints: navigator.maxTouchPoints, platform: navigator.platform },
+        network: { online: navigator.onLine, effectiveType: navigator.connection?.effectiveType,
+          downlink: navigator.connection?.downlink, rtt: navigator.connection?.rtt },
+        browser: { userAgent: navigator.userAgent, language: navigator.language },
+      };
+      await send('device', JSON.stringify(data));
+      document.querySelector('#deviceStatus').textContent = 'Current device information is available to the local MCP server.';
+    }
+    deviceInfo().catch(error => document.querySelector('#deviceStatus').textContent = error.message);
+    document.querySelector('#refreshDevice').onclick = () => deviceInfo();
+    addEventListener('resize', () => deviceInfo());
+
+    addEventListener('keydown', async (event) => {
+      const data = { key: event.key, keyCode: event.keyCode, code: event.code, location: event.location,
+        modifiers: ['Meta', 'Shift', 'Ctrl', 'Alt'].filter((name, index) =>
+          [event.metaKey, event.shiftKey, event.ctrlKey, event.altKey][index]) };
+      await send('key', JSON.stringify(data));
+      document.querySelector('#keyStatus').textContent = `${data.key} (${data.code}, ${data.keyCode})`;
+    });
+
+    const editor = document.querySelector('#editor');
+    async function sendHtml() {
+      await send('html', editor.innerHTML);
+      document.querySelector('#editorStatus').textContent = 'HTML is available to the local MCP server.';
+    }
+    editor.addEventListener('input', () => sendHtml());
+    sendHtml();
+
+    const signature = document.querySelector('#signature');
+    const ink = signature.getContext('2d');
+    ink.strokeStyle = '#111';
+    ink.lineWidth = 3;
+    ink.lineCap = 'round';
+    let drawing = false;
+    function point(event) {
+      const rect = signature.getBoundingClientRect();
+      return { x: (event.clientX - rect.left) * signature.width / rect.width,
+        y: (event.clientY - rect.top) * signature.height / rect.height };
+    }
+    signature.addEventListener('pointerdown', (event) => {
+      drawing = true;
+      signature.setPointerCapture(event.pointerId);
+      const pos = point(event);
+      ink.beginPath();
+      ink.moveTo(pos.x, pos.y);
+    });
+    signature.addEventListener('pointermove', (event) => {
+      if (!drawing) return;
+      const pos = point(event);
+      ink.lineTo(pos.x, pos.y);
+      ink.stroke();
+    });
+    signature.addEventListener('pointerup', async () => {
+      drawing = false;
+      await send('signature', signature.toDataURL('image/png'));
+      document.querySelector('#signatureStatus').textContent = 'Signature is available to the local MCP server.';
+    });
+    document.querySelector('#clearSignature').onclick = () => {
+      ink.clearRect(0, 0, signature.width, signature.height);
+      send('signature', '');
+      document.querySelector('#signatureStatus').textContent = 'Signature cleared.';
+    };
+
+    const preview = document.querySelector('#preview');
+    let stream;
+    let recorder;
+    document.querySelector('#enableCamera').onclick = async () => {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        preview.srcObject = stream;
+        document.querySelector('#capturePhoto').disabled = false;
+        document.querySelector('#startRecording').disabled = !window.MediaRecorder;
+        document.querySelector('#cameraStatus').textContent = 'Camera enabled.';
+      }
+      catch (error) { document.querySelector('#cameraStatus').textContent = error.message; }
+    };
+    document.querySelector('#capturePhoto').onclick = async () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = preview.videoWidth;
+      canvas.height = preview.videoHeight;
+      canvas.getContext('2d').drawImage(preview, 0, 0);
+      await send('camera', canvas.toDataURL('image/jpeg', .8));
+      document.querySelector('#cameraStatus').textContent = 'Photo is available to the local MCP server.';
+    };
+    document.querySelector('#startRecording').onclick = () => {
+      const chunks = [];
+      recorder = new MediaRecorder(stream);
+      recorder.ondataavailable = event => chunks.push(event.data);
+      recorder.onstop = async () => {
+        const blob = new Blob(chunks, { type: recorder.mimeType });
+        const reader = new FileReader();
+        reader.onload = async () => {
+          try {
+            await send('camera', reader.result);
+            document.querySelector('#cameraStatus').textContent = 'Video is available to the local MCP server.';
+          }
+          catch (error) { document.querySelector('#cameraStatus').textContent = error.message; }
+        };
+        reader.readAsDataURL(blob);
+      };
+      recorder.start();
+      document.querySelector('#startRecording').disabled = true;
+      document.querySelector('#stopRecording').disabled = false;
+      document.querySelector('#cameraStatus').textContent = 'Recording. Keep the clip short.';
+    };
+    document.querySelector('#stopRecording').onclick = () => {
+      recorder.stop();
+      document.querySelector('#startRecording').disabled = false;
+      document.querySelector('#stopRecording').disabled = true;
+    };
+    addEventListener('pagehide', () => stream?.getTracks().forEach(track => track.stop()));
+  </script>
+</body>
+</html>

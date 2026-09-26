@@ -1,6 +1,6 @@
 import { Buffer } from 'node:buffer';
 import { createHmac, generateKeyPairSync, randomBytes } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { readFile, stat, writeFile } from 'node:fs/promises';
 import bip39 from '@it-tools/bip39';
 import { McpServer } from '@modelcontextprotocol/server';
 import { serveStdio } from '@modelcontextprotocol/server/stdio';
@@ -8,6 +8,7 @@ import { compare, hash } from 'bcryptjs';
 import cryptoJs from 'crypto-js';
 import verifyPdf from 'pdf-signature-reader';
 import { z } from 'zod';
+import { registerBrowserCompanion } from './browser-companion.mjs';
 
 const result = value => ({ content: [{ type: 'text', text: JSON.stringify(value) }] });
 const error = message => ({ content: [{ type: 'text', text: message }], isError: true });
@@ -82,6 +83,7 @@ function randomIndex(max) {
 
 function createServer() {
   const server = new McpServer({ name: 'KillerTools MCP Local', version: '0.1.0' });
+  registerBrowserCompanion(server);
 
   server.registerTool('hash_text_private', {
     description: 'Hash private text locally using the KillerTools hash algorithms.',
@@ -220,6 +222,10 @@ function createServer() {
     inputSchema: { path: z.string().min(1).max(1024) },
   }, async ({ path }) => {
     try {
+      const details = await stat(path);
+      if (!details.isFile() || details.size > 32768) {
+        return error('File exceeds 32 KiB limit');
+      }
       const bytes = await readFile(path);
       if (bytes.length > 32768) {
         return error('File exceeds 32 KiB limit');
@@ -229,11 +235,33 @@ function createServer() {
     catch { return error('Unable to read file'); }
   });
 
+  server.registerTool('decode_file_base64_local', {
+    description: 'Decode Base64 to a new local file. Existing files are never overwritten.',
+    inputSchema: { path: z.string().min(1).max(1024), base64: z.string().min(1).max(43692) },
+  }, async ({ path, base64 }) => {
+    if (!/^(?:[a-z0-9+/]{4})*(?:[a-z0-9+/]{2}==|[a-z0-9+/]{3}=)?$/i.test(base64)) {
+      return error('Invalid Base64');
+    }
+    const bytes = Buffer.from(base64, 'base64');
+    if (bytes.length > 32768) {
+      return error('Decoded file exceeds 32 KiB limit');
+    }
+    try {
+      await writeFile(path, bytes, { flag: 'wx' });
+      return result({ path, byteLength: bytes.length });
+    }
+    catch { return error('Unable to create file at the requested path'); }
+  });
+
   server.registerTool('check_pdf_signatures_local', {
     description: 'Read a local PDF and return signatures found by the KillerTools PDF signature reader.',
     inputSchema: { path: z.string().min(1).max(1024) },
   }, async ({ path }) => {
     try {
+      const details = await stat(path);
+      if (!details.isFile() || details.size > 8_000_000) {
+        return error('PDF exceeds 8 MB limit');
+      }
       const bytes = await readFile(path);
       if (bytes.length > 8_000_000) {
         return error('PDF exceeds 8 MB limit');
