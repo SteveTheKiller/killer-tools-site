@@ -274,7 +274,7 @@ function createServer() {
   server.registerTool('text_to_nato_alphabet', {
     description: 'Convert text to NATO phonetic words using the KillerTools converter.',
     inputSchema: { text: inputText },
-  }, async ({ text }) => result({ nato: textToNatoAlphabet({ text }) }));
+  }, async ({ text }) => result({ nato: textToNatoAlphabet({ text }).split(' ').filter(Boolean).join(' ') }));
 
   server.registerTool('convert_temperature', {
     description: 'Convert a temperature among the eight scales shown by the KillerTools converter.',
