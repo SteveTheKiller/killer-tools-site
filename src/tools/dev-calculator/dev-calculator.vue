@@ -2,6 +2,7 @@
 import type { DeveloperEntry, FilmEntry } from './dev-calculator.data';
 import { computed, onUnmounted, ref, watch } from 'vue';
 import KtSelect from '@/components/KtSelect.vue';
+import { useDataI18n } from '@/composable/dataI18n';
 import {
   calcDilutionVolumes,
   developers,
@@ -16,6 +17,7 @@ import {
 } from './dev-calculator.data';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 // ---- State ----
 const selectedDevId = ref<string>(developers[0].id);
@@ -361,7 +363,7 @@ onUnmounted(() => {
             :class="{ 'dc-choice-active': selectedDevId === dev.id }"
             @click="selectedDevId = dev.id"
           >
-            {{ dev.name }}
+            {{ tr(dev.name) }}
           </button>
         </div>
 
@@ -379,7 +381,7 @@ onUnmounted(() => {
             :class="{ 'dc-choice-active': selectedDilutionIdx === idx }"
             @click="selectedDilutionIdx = idx"
           >
-            {{ dil.label }}
+            {{ tr(dil.label) }}
           </button>
         </div>
 

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import type { PSCmdlet, PSParameter } from './powershell-builder.data';
+import { useDataI18n } from '@/composable/dataI18n';
 import { categories, cmdlets } from './powershell-builder.data';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 // Pill labels are translated by a camelCase key; the filter value stays English.
 function categoryKey(cat: string) {
@@ -302,7 +304,7 @@ const cheatsheet = computed(() => [
                   <span class="cmdlet-row-badge">{{ c.module }}</span>
                 </div>
                 <div class="cmdlet-row-desc">
-                  {{ c.description }}
+                  {{ tr(c.description) }}
                 </div>
               </div>
               <div v-if="filteredCmdlets.length === 0" class="cmdlet-empty">
@@ -349,7 +351,7 @@ const cheatsheet = computed(() => [
                   @click="copySnippet(enrichSnippet(snippet.command), snippet.command)"
                 >
                   <div class="ps-muted" style="font-size: 0.74rem; opacity: 0.6; margin-bottom: 3px;">
-                    {{ snippet.description }}
+                    {{ tr(snippet.description) }}
                   </div>
                   <code style="font-size: 0.74rem; color: var(--kt-accent); word-break: break-all; font-family: monospace;">{{ enrichSnippet(snippet.command) }}</code>
                   <div
@@ -374,7 +376,7 @@ const cheatsheet = computed(() => [
           </div>
           <div class="ps-panel-body">
             <div v-if="selectedCmdlet.notes" class="notes-strip">
-              {{ selectedCmdlet.notes }}
+              {{ tr(selectedCmdlet.notes) }}
             </div>
             <div v-if="selectedCmdlet.parameters.length === 0" class="ps-muted" style="font-size: 0.82rem; opacity: 0.55; font-style: italic;">
               {{ t('tools.powershellBuilder.ui.noParametersNeeded') }}
@@ -389,7 +391,7 @@ const cheatsheet = computed(() => [
                   <code class="param-code">-{{ param.name }}</code>
                 </n-checkbox>
                 <span class="ps-muted" style="font-size: 0.77rem; opacity: 0.6; padding-top: 2px;">
-                  {{ param.description }}
+                  {{ tr(param.description) }}
                   <span v-if="param.required" style="color: #e87040; margin-left: 4px;">{{ t('tools.powershellBuilder.ui.required') }}</span>
                 </span>
               </div>
@@ -399,7 +401,7 @@ const cheatsheet = computed(() => [
                 <c-input-text
                   v-model:value="textValues[param.name]"
                   :label="`-${param.name}${param.required ? ' *' : ''}`"
-                  :placeholder="param.placeholder ?? param.description"
+                  :placeholder="param.placeholder ?? tr(param.description)"
                   :multiline="param.type === 'scriptblock'"
                   :rows="param.type === 'scriptblock' ? 2 : undefined"
                 />
@@ -413,11 +415,11 @@ const cheatsheet = computed(() => [
                     :class="{ 'preset-chip-active': isPresetActive(param.name, preset.value, param.type) }"
                     @click="applyPreset(param.name, preset.value, param.type)"
                   >
-                    {{ preset.label }}
+                    {{ tr(preset.label) }}
                   </button>
                 </div>
                 <div class="ps-muted" style="font-size: 0.71rem; opacity: 0.5; margin-top: 2px; padding-left: 2px;">
-                  {{ param.description }}
+                  {{ tr(param.description) }}
                   <span v-if="param.type === 'string[]'">. {{ t('tools.powershellBuilder.ui.separateMultipleValues') }}</span>
                   <span v-if="param.type === 'scriptblock'">. {{ t('tools.powershellBuilder.ui.wrappedInScriptBlock') }}</span>
                 </div>

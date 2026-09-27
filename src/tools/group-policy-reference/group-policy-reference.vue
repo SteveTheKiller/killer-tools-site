@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { policyCategories } from './group-policy-reference.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 const search = ref('');
 const copiedValue = ref<string | null>(null);
@@ -79,14 +81,14 @@ function copyValue(value: string) {
         >
           <!-- Titlebar: category + severity pill -->
           <div class="kt-terminal-bar gpr-bar">
-            <span class="gpr-category">{{ category }}</span>
+            <span class="gpr-category">{{ tr(category) }}</span>
             <span class="gpr-severity" :class="`gpr-sev-${severityColor[severity]}`">{{ severity }}</span>
           </div>
 
           <!-- Body -->
           <div class="gpr-body">
             <div class="gpr-name">
-              {{ name }}
+              {{ tr(name) }}
             </div>
             <div class="gpr-path">
               {{ path }}
@@ -105,16 +107,16 @@ function copyValue(value: string) {
             <div class="gpr-kv-block">
               <div class="gpr-kv-row">
                 <span class="gpr-kv-label">{{ t('tools.group-policy-reference.ui.default') }}</span>
-                <span class="gpr-kv-value">{{ defaultValue }}</span>
+                <span class="gpr-kv-value">{{ tr(defaultValue) }}</span>
               </div>
               <div class="gpr-kv-row">
                 <span class="gpr-kv-label">{{ t('tools.group-policy-reference.ui.recommended') }}</span>
-                <span class="gpr-kv-value gpr-kv-recommended">{{ recommendedValue }}</span>
+                <span class="gpr-kv-value gpr-kv-recommended">{{ tr(recommendedValue) }}</span>
               </div>
             </div>
 
             <div class="gpr-desc">
-              {{ description }}
+              {{ tr(description) }}
             </div>
           </div>
         </div>

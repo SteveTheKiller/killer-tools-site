@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { errorsByCategory } from './windows-error-codes.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 const search = ref('');
 const copiedValue = ref<string | null>(null);
@@ -60,7 +62,7 @@ function copyValue(value: string) {
 
     <div v-for="{ errors, category } of filtered" :key="category" class="wec-section">
       <div class="wec-category-header">
-        {{ category }}
+        {{ tr(category) }}
       </div>
 
       <div class="wec-grid">
@@ -87,7 +89,7 @@ function copyValue(value: string) {
               {{ t('tools.windows-error-codes.ui.decimal', { decimal }) }}
             </div>
             <div class="wec-desc">
-              {{ description }}
+              {{ tr(description) }}
             </div>
           </div>
         </div>

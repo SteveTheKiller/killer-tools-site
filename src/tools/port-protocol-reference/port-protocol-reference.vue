@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { portCategories } from './port-protocol-reference.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 const search = ref('');
 const copiedValue = ref<string | null>(null);
@@ -106,16 +108,16 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
 
           <div class="ppr-body">
             <div class="ppr-category">
-              {{ category }}
+              {{ tr(category) }}
             </div>
             <div class="ppr-service">
               {{ p.service }}
             </div>
             <div class="ppr-desc">
-              {{ p.description }}
+              {{ tr(p.description) }}
             </div>
             <div v-if="p.notes" class="ppr-notes">
-              {{ p.notes }}
+              {{ tr(p.notes) }}
             </div>
           </div>
         </div>

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { FilmStock } from './reciprocity.data';
 import KtSelect from '@/components/KtSelect.vue';
+import { useDataI18n } from '@/composable/dataI18n';
 import { filmStocks } from './reciprocity.data';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 // ── State ──────────────────────────────────────────────────────────────────────
 
@@ -216,7 +218,7 @@ async function copy(val: string) {
 
         <!-- Stock notes -->
         <div v-if="selected?.notes" class="rc-notes">
-          {{ selected.notes }}
+          {{ tr(selected.notes) }}
         </div>
       </div>
     </div>

@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { eventsByCategory } from './windows-event-lookup.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 const search = ref('');
 const copiedId = ref<number | null>(null);
@@ -54,7 +56,7 @@ function copyId(id: number) {
 
     <div v-for="{ events, category, log } of filtered" :key="category" class="wel-section">
       <div class="wel-category-header">
-        {{ category }}
+        {{ tr(category) }}
         <span v-if="log" class="wel-log-badge">{{ log }}</span>
       </div>
 
@@ -76,10 +78,10 @@ function copyId(id: number) {
 
           <div class="wel-body">
             <div class="wel-name">
-              {{ name }}
+              {{ tr(name) }}
             </div>
             <div class="wel-desc">
-              {{ description }}
+              {{ tr(description) }}
             </div>
           </div>
         </div>

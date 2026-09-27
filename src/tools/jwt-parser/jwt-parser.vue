@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { useStyleStore } from '@/stores/style.store';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 import { decodeJwt } from './jwt-parser.service';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 const styleStore = useStyleStore();
 const isLight = computed(() => !styleStore.isDarkTheme);
 
@@ -79,11 +81,11 @@ async function copyValue(key: string, value: string) {
           <span class="jwt-prompt">&gt;_</span>
           <span class="jwt-claim">
             <span class="jwt-claim-key">{{ claim }}</span>
-            <span v-if="claimDescription" class="jwt-claim-desc">({{ claimDescription }})</span>
+            <span v-if="claimDescription" class="jwt-claim-desc">({{ tr(claimDescription) }})</span>
           </span>
           <span class="jwt-value-cell">
             <span class="jwt-value">{{ value }}</span>
-            <span v-if="friendlyValue" class="jwt-friendly">({{ friendlyValue }})</span>
+            <span v-if="friendlyValue" class="jwt-friendly">({{ tr(friendlyValue) }})</span>
           </span>
           <span class="jwt-copy-icon" :class="{ 'jwt-copy-done': copiedKey === `${section.key}-${claim}` }">
             <span v-if="copiedKey === `${section.key}-${claim}`">✓</span>

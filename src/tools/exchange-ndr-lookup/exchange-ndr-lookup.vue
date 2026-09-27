@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { ndrCategories } from './exchange-ndr-lookup.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 const search = ref('');
 const copiedValue = ref<string | null>(null);
@@ -61,7 +63,7 @@ function copyValue(value: string) {
 
     <div v-for="{ codes, category } of filtered" :key="category" class="ndr-section">
       <div class="ndr-category-header">
-        {{ category }}
+        {{ tr(category) }}
       </div>
 
       <div class="ndr-grid">
@@ -82,19 +84,19 @@ function copyValue(value: string) {
 
           <div class="ndr-body">
             <div class="ndr-name">
-              {{ name }}
+              {{ tr(name) }}
             </div>
             <div class="ndr-description">
-              {{ description }}
+              {{ tr(description) }}
             </div>
             <div class="ndr-kv-block">
               <div class="ndr-kv-row">
                 <span class="ndr-kv-label">{{ t('tools.exchange-ndr-lookup.ui.cause') }}</span>
-                <span class="ndr-kv-value">{{ cause }}</span>
+                <span class="ndr-kv-value">{{ tr(cause) }}</span>
               </div>
               <div class="ndr-kv-row">
                 <span class="ndr-kv-label">{{ t('tools.exchange-ndr-lookup.ui.fix') }}</span>
-                <span class="ndr-kv-value ndr-kv-fix">{{ fix }}</span>
+                <span class="ndr-kv-value ndr-kv-fix">{{ tr(fix) }}</span>
               </div>
             </div>
           </div>

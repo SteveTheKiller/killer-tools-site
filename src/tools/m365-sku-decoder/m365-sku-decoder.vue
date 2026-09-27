@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { skusByCategory } from './m365-sku-decoder.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
 
 const search = ref('');
 const copiedId = ref<string | null>(null);
@@ -66,7 +68,7 @@ function copyValue(value: string) {
 
     <div v-for="{ skus, category } of filtered" :key="category" class="sku-section">
       <div class="sku-category-header">
-        {{ category }}
+        {{ tr(category) }}
       </div>
 
       <div class="sku-grid">
@@ -94,7 +96,7 @@ function copyValue(value: string) {
             </div>
             <code class="sku-string-id">{{ copiedId === stringId ? t('tools.m365-sku-decoder.ui.copiedMark') : stringId }}</code>
             <div class="sku-desc">
-              {{ description }}
+              {{ tr(description) }}
             </div>
           </div>
         </div>
