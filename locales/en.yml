@@ -1868,7 +1868,7 @@ pages:
       hosted: Hosted on GitHub Releases
     steps:
       s1Title: Download and run KillerMCP Setup.
-      s1Body: The installer is signed by Open Source Developer Stephen Riley and published through GitHub Releases.
+      s1Body: Setup checks for the .NET 10 runtime and opens Microsoft's download page if it is missing. The installer is signed by Open Source Developer Stephen Riley and published through GitHub Releases.
       s2Title: Let setup connect your agent.
       s2Body: It installs the shared runtime and registers KillerMCP with Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, and Windsurf when found.
       s3Title: Open a new agent chat and ask.
@@ -1934,4 +1934,4 @@ pages:
       p1: The {kt} contains the public Worker, local KillerTools bundle, operation map, validation schemas, and coverage checks. The {km} contains the shared local host, desktop app adapters, installer, and integration checks.
       ktLink: KillerTools source
       kmLink: KillerMCP source
-      p2: External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. KillerMCP v0.1.1 is signed, timestamped, and published through GitHub Releases.
+      p2: External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. The current KillerMCP installer is signed, timestamped, and published through GitHub Releases.

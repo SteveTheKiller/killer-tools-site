@@ -11,6 +11,28 @@ const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=ki
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const { t } = useI18n();
 const copyStatus = ref('');
+const installerVersion = ref('0.2.0');
+const installerSize = ref('9.7 MiB');
+const installerReleaseUrl = ref('https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.2.0');
+
+onMounted(async () => {
+  try {
+    const response = await fetch(`https://api.github.com/repos/SteveTheKiller/KillerMCP/releases/latest?cache=${Date.now()}`, {
+      cache: 'no-store',
+      headers: { Accept: 'application/vnd.github+json' },
+    });
+    if (!response.ok) return;
+    const release = await response.json();
+    const asset = release.assets?.find((item: { name?: string }) => item.name === 'KillerMCP-Setup.exe');
+    if (!asset) return;
+    installerVersion.value = String(release.tag_name || '').replace(/^v/, '') || installerVersion.value;
+    installerSize.value = `${(asset.size / 1048576).toFixed(1)} MiB`;
+    installerReleaseUrl.value = release.html_url || installerReleaseUrl.value;
+  }
+  catch {
+    // Keep the packaged release metadata when GitHub is unavailable.
+  }
+});
 
 function copyWithSelection(value: string) {
   const input = document.createElement('textarea');
@@ -138,7 +160,7 @@ useHead({
             <span>{{ t('pages.mcp.download') }}</span>
           </a>
           <div class="mcp-installer-meta">
-            <span>{{ t('pages.mcp.meta.version', { version: '0.1.1' }) }}</span><span>36.7 MiB</span><span>{{ t('pages.mcp.meta.signed') }}</span><a href="https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.1.1" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
+            <span>{{ t('pages.mcp.meta.version', { version: installerVersion }) }}</span><span>{{ installerSize }}</span><span>.NET 10</span><span>{{ t('pages.mcp.meta.signed') }}</span><a :href="installerReleaseUrl" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
           </div>
           <ol class="mcp-install-steps">
             <li><strong>{{ t('pages.mcp.steps.s1Title') }}</strong> {{ t('pages.mcp.steps.s1Body') }}</li>
@@ -274,7 +296,7 @@ useHead({
               </template>
             </i18n-t>
             <p>
-              {{ t('pages.mcp.oss.p2') }}
+              {{ t('pages.mcp.oss.p2').replace('v0.1.1', `v${installerVersion}`) }}
             </p>
           </section>
         </div>
