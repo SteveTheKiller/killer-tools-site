@@ -133,9 +133,9 @@ useHead({
       <p>
         KillerMCP includes all 81 KillerTools utilities plus tools from supported Killer apps in one local connection. You will not need a separate KillerTools installer, a source checkout, Node, or a list of commands.
       </p>
-      <span class="mcp-installer-state" aria-disabled="true">Windows installer v0.1.0 coming soon</span>
+      <a class="mcp-installer-state" href="https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe">Download KillerMCP v0.1.0</a>
       <ol class="mcp-install-steps">
-        <li><strong>Download and run KillerMCP Setup.</strong> The download button will appear here as soon as the signed public installer is released.</li>
+        <li><strong>Download and run KillerMCP Setup.</strong> The installer is signed by Open Source Developer Stephen Riley and published through GitHub Releases.</li>
         <li><strong>Let setup connect your agent.</strong> It installs the shared runtime and registers KillerMCP with Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, and Windsurf when found.</li>
         <li><strong>Open a new agent chat and ask.</strong> KillerMCP makes all 81 KillerTools utilities available through the same connection.</li>
       </ol>
@@ -263,7 +263,7 @@ useHead({
         The <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">KillerTools source</a> contains the public Worker, local KillerTools bundle, operation map, validation schemas, and coverage checks. The <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">KillerMCP source</a> contains the shared local host, desktop app adapters, installer, and integration checks.
       </p>
       <p>
-        External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. The signed public KillerMCP installer has not been released yet.
+        External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. KillerMCP v0.1.0 is signed, timestamped, and published through GitHub Releases.
       </p>
     </section>
       </div>

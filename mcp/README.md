@@ -25,7 +25,7 @@ The public endpoint has no sign-in. Public tool inputs are sent to Cloudflare, a
 
 ## Optional local setup for the remaining 17 tools
 
-The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need a server running on your computer. A development KillerMCP installer now bundles this server, but it is not ready for public download. The steps below are for developers working on the KillerTools bundle.
+The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need a server running on your computer. The signed [KillerMCP installer](https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe) bundles this server and registers one local connection with supported agent clients. The steps below are for developers working directly on the KillerTools bundle.
 
 For access to every website tool on your machine, connect an MCP client to the local stdio server. This developer setup requires Node 24 or later, pnpm, and installed dependencies to build `dist/killermcp.mjs`. The built file contains the shared tools, local tools, and browser companion. It runs without Wrangler, a source checkout, or installed packages, but still needs Node when used directly. Use the Node executable as the command, with the absolute path to `dist/killermcp.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. Run `pnpm smoke:local` to build the bundle and test all 94 operations.
 
@@ -63,4 +63,4 @@ Run `pnpm coverage` to compare every registered website tool with the [MCP opera
 
 The Worker is separate from the website's GitHub Pages workflow. It is live at `https://mcp.killertools.net`. Before deploying a new version, confirm the signed-in Cloudflare account owns the active `killertools.net` zone and rate limit namespace `26092501` is not shared with another Worker.
 
-Run `pnpm typecheck`, `pnpm smoke` against the local Worker, and `pnpm exec wrangler deploy --dry-run` before an authorized deployment. After deployment, run `pnpm smoke` with `MCP_URL=https://mcp.killertools.net` and check a second MCP client. The website connection page is still pending publication.
+Run `pnpm typecheck`, `pnpm smoke` against the local Worker, and `pnpm exec wrangler deploy --dry-run` before an authorized deployment. After deployment, run `pnpm smoke` with `MCP_URL=https://mcp.killertools.net` and check a second MCP client. The public connection and installer page is available at [killertools.net/mcp](https://killertools.net/mcp).
