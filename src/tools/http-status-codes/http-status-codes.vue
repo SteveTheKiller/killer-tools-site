@@ -1,22 +1,30 @@
 <script setup lang="ts">
+import { useDataI18n } from '@/composable/dataI18n';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 import { codesByCategories } from './http-status-codes.constants';
 
 const { t } = useI18n();
+const tr = useDataI18n(import.meta.glob('./locales/*.json'));
+
+// Reference data in the active language; English names stay searchable
+const localizedCategories = computed(() => codesByCategories.map(({ category, codes }) => ({
+  category: tr(category),
+  codes: codes.map(code => ({ ...code, name: tr(code.name), description: tr(code.description), nameEn: code.name })),
+})));
 const search = ref('');
 const copiedValue = ref<string | null>(null);
 
 const { searchResult } = useFuzzySearch({
   search,
-  data: codesByCategories.flatMap(({ codes, category }) => codes.map(code => ({ ...code, category }))),
+  data: computed(() => localizedCategories.value.flatMap(({ codes, category }) => codes.map(code => ({ ...code, category })))),
   options: {
-    keys: [{ name: 'code', weight: 3 }, { name: 'name', weight: 2 }, 'description', 'category'],
+    keys: [{ name: 'code', weight: 3 }, { name: 'name', weight: 2 }, { name: 'nameEn', weight: 2 }, 'description', 'category'],
   },
 });
 
 const codesByCategoryFiltered = computed(() => {
   if (!search.value) {
-    return codesByCategories;
+    return localizedCategories.value;
   }
   return [{ category: t('tools.http-status-codes.ui.searchResults'), codes: searchResult.value }];
 });
