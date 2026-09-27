@@ -105,12 +105,12 @@ const tools = computed<ToolCategory[]>(() => [
         <div class="palette-wrap">
           <command-palette />
         </div>
-        <div flex-1 />
 
         <RouterLink to="/mcp" class="tb-mcp" aria-label="KillerMCP">
           <img class="tb-mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
           <span class="tb-mcp-wordmark"><span class="tb-mcp-killer">Killer</span><span class="tb-mcp-accent">MCP</span></span>
         </RouterLink>
+        <div flex-1 />
         <ThemeDots />
         <NavbarButtons class="tb-about" />
       </div>
@@ -129,21 +129,33 @@ const tools = computed<ToolCategory[]>(() => [
   flex: 0 0 auto;
 }
 
+.tb-row > .keep-circle:first-child {
+  margin-left: -42px;
+}
+
 .tb-mcp {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  min-height: 36px;
+  padding: 3px 10px;
+  border: 1px solid var(--kt-accent);
+  border-radius: 6px;
+  background: transparent;
   text-decoration: none;
   white-space: nowrap;
   font-family: 'KillerScan', 'Courier New', monospace;
-  font-size: 22px;
-  margin-right: 12px;
-  transition: transform 0.12s ease, filter 0.12s ease;
+  font-size: 18px;
+  margin-left: 2px;
+  margin-right: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
 }
 
 .tb-mcp:hover {
-  transform: translateY(-2px) scale(1.06);
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
+  transform: translateY(-2px);
+  border-color: var(--kt-accent-2);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.4);
 }
 
 .tb-mcp-wordmark {
@@ -153,7 +165,7 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .tb-mcp-killer {
-  color: #fff;
+  color: var(--n-text-color);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
 }
 
@@ -169,8 +181,8 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .tb-mcp-mark {
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
 }
 
 /* The topbar row is the positioning ancestor for the brand: when the row
@@ -185,6 +197,10 @@ const tools = computed<ToolCategory[]>(() => [
      +4px here = 7/7. This is the ONLY vertical adjustment in the mobile bar. */
   .tb-row {
     top: 4px;
+  }
+
+  .tb-row > .keep-circle:first-child {
+    margin-left: 0;
   }
 }
 

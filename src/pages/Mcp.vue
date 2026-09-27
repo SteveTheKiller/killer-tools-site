@@ -92,7 +92,10 @@ useHead({
   <main class="mcp-page">
     <section class="mcp-hero mcp-surface">
       <div class="mcp-heading">
-        <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
+        <span class="mcp-icon-pair" aria-hidden="true">
+          <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="">
+          <img class="mcp-app-mark" src="/app-icon-512.png" alt="">
+        </span>
         <div>
           <p class="mcp-eyebrow">
             KILLERTOOLS / AGENTS
@@ -109,19 +112,38 @@ useHead({
         convert JSON to CSV, or decode Base64.
       </p>
       <p class="mcp-status">
-        All 81 website tools are supported: 64 at this URL, 17 with optional local setup.
+        KillerMCP supports all 81 KillerTools website tools.
       </p>
     </section>
 
+    <div class="mcp-workspace">
+      <div class="mcp-setup-column">
     <section class="mcp-connect mcp-surface" aria-labelledby="mcp-connect-title">
       <p class="mcp-eyebrow">
-        ONE URL / ANY MCP CLIENT
+        ONE INSTALLER / ONE CONNECTION
       </p>
-      <h2 id="mcp-connect-title">
-        Add KillerTools to your agent
-      </h2>
+      <div class="mcp-title-row">
+        <h2 id="mcp-connect-title">
+          <span class="mcp-install-label">Install</span> <span class="killermcp-wordmark">Killer<span>MCP</span></span>
+        </h2>
+        <a class="mcp-github" href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener" aria-label="KillerMCP on GitHub" title="KillerMCP on GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.44 9.77 8.2 11.36.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0024 12.5C24 5.87 18.63.5 12 .5z" /></svg>
+        </a>
+      </div>
       <p>
-        Choose your app to connect to the 64 tools available at this URL. No download is needed.
+        KillerMCP includes all 81 KillerTools utilities plus tools from supported Killer apps in one local connection. You will not need a separate KillerTools installer, a source checkout, Node, or a list of commands.
+      </p>
+      <span class="mcp-installer-state" aria-disabled="true">Windows installer v0.1.0 coming soon</span>
+      <ol class="mcp-install-steps">
+        <li><strong>Download and run KillerMCP Setup.</strong> The download button will appear here as soon as the signed public installer is released.</li>
+        <li><strong>Let setup connect your agent.</strong> It installs the shared runtime and registers KillerMCP with Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, and Windsurf when found.</li>
+        <li><strong>Open a new agent chat and ask.</strong> KillerMCP makes all 81 KillerTools utilities available through the same connection.</li>
+      </ol>
+      <p class="mcp-eyebrow mcp-hosted-heading">
+        OPTIONAL HOSTED CONNECTION
+      </p>
+      <p>
+        Do not want to install anything? Connect directly to the hosted KillerTools server for 64 web based utilities. The remaining 17 KillerTools utilities and all desktop app tools require the installed KillerMCP runtime.
       </p>
       <div class="mcp-install-actions">
         <a class="mcp-action" :href="cursorInstallUrl">Add to Cursor</a>
@@ -149,14 +171,39 @@ useHead({
         {{ copyStatus }}
       </p>
       <p class="mcp-eyebrow mcp-usage-heading">
-        AFTER CONNECTING
+        AFTER INSTALLING OR CONNECTING
       </p>
       <p>
-        In a new chat, type <code>KillerTools &lt;task&gt;</code>. For example: <code>KillerTools subnet 192.168.1.0/24</code>.
+        The shortest useful prompt is <code>killer &lt;task&gt;</code>. For example: <code>killer domain search thekiller.net</code>.
       </p>
       <p>
-        Ask for a specific lookup in plain language, too: <code>KillerTools look up Windows event 4625</code>. You do not need to type underscores, an operation name, or a slash command.
+        Your agent can infer the matching KillerTools or Killer app tool from the task and available context. Use <code>KillerTools</code>, <code>killerpdf</code>, <code>killerscan</code>, or another app name only when you want to make the target explicit. You do not need underscores, an operation name, or a slash command.
       </p>
+    </section>
+      </div>
+      <div class="mcp-detail-column">
+
+    <section class="mcp-card mcp-surface" aria-labelledby="mcp-examples-title">
+      <h2 id="mcp-examples-title">
+        Try asking
+      </h2>
+      <p>
+        Start with <code>killer</code> and describe the result you want. The app or tool name is optional when the task is clear.
+      </p>
+      <div class="mcp-example-grid">
+        <code>killer domain search thekiller.net</code>
+        <code>killer calculate 192.168.10.0/24</code>
+        <code>killer look up Windows event 4625</code>
+        <code>killer research CVE-2025-53770</code>
+        <code>killer parse these email headers</code>
+        <code>killer build a PowerShell command to list stopped services</code>
+        <code>killer convert this JSON to CSV</code>
+        <code>killer compare these two JSON documents</code>
+        <code>killer generate an SPF record for example.com</code>
+        <code>killer decode this Base64 text</code>
+        <code>killer identify this M365 SKU</code>
+        <code>killer calculate a 30 second exposure with this ND filter</code>
+      </div>
     </section>
 
     <div class="mcp-grid">
@@ -175,6 +222,9 @@ useHead({
           <li>Search PowerShell cmdlets and assemble commands for you to review before running.</li>
           <li>Format JSON and XML, convert JSON to CSV or among JSON, YAML, and TOML, decode Base64, compare documents, and test regular expressions.</li>
           <li>Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.</li>
+          <li>Convert case, dates, times, temperatures, colors, number bases, Roman numerals, binary text, NATO spelling, and phone formats.</li>
+          <li>Format SQL, YAML, TOML, Markdown, HTML entities, and structured data, or calculate percentages, cron schedules, and chmod values.</li>
+          <li>Search emoji, GIFs, KillerScripts, and Killer modules, or inspect URLs, user agents, HTTP status codes, and text statistics.</li>
         </ul>
       </section>
       <section class="mcp-card mcp-surface">
@@ -182,19 +232,48 @@ useHead({
           Where does the data go?
         </h2>
         <p>
-          When your agent uses the link above, it sends tool inputs to KillerTools on Cloudflare for processing. Some lookups also contact external data sources. Do not send passwords, private files, tokens, or client data through this link.
+          The installed KillerMCP runtime runs on your computer. Some network and reference lookups still contact their public data sources. Your agent receives the inputs and results needed to complete the request.
         </p>
         <p>
-          File, secret, and browser tools require optional setup on your computer. They run locally, but your agent may still receive their inputs and results. <a href="https://github.com/SteveTheKiller/killer-tools-site/blob/main/mcp/README.md#optional-local-setup-for-the-remaining-17-tools" target="_blank" rel="noopener noreferrer">See the local setup steps</a>.
+          The optional hosted connection sends tool inputs to the KillerTools Cloudflare Worker. It has no sign-in, limits request bodies to 64 KiB, applies bounded schemas, and rate limits each connecting IP. Do not send passwords, private files, tokens, or client data through the hosted connection.
+        </p>
+        <p>
+          Local file, browser, password, token, encryption, hashing, OTP, BIP39, and key generation tools stay off the public Worker. They run through installed KillerMCP, but the MCP client and model provider may still receive the inputs and results.
         </p>
       </section>
+    </div>
+
+    <div class="mcp-grid">
+      <section class="mcp-card mcp-surface">
+        <h2>Hosted and local coverage</h2>
+        <p><strong>Hosted Worker:</strong> 74 operations cover 64 KillerTools utilities for calculations, conversions, formatting, catalogs, and public lookups.</p>
+        <p><strong>Installed KillerMCP:</strong> 94 KillerTools operations cover all 81 website utilities, including local files, browser input, secrets, and cryptographic material. The same connection also adds tools from detected Killer apps.</p>
+        <p>Browser companion tools use a private localhost page for camera, device information, key events, HTML editing, and signature drawing. They require user interaction in that page.</p>
+      </section>
+      <section class="mcp-card mcp-surface">
+        <h2>How the Cloudflare Worker works</h2>
+        <p>The public endpoint is an open-source streamable HTTP MCP server deployed separately from the website. Your MCP client sends a tool name and bounded arguments to <code>https://mcp.killertools.net</code>. The Worker validates the request, runs the selected utility, and returns the result.</p>
+        <p>Most calculations and conversions run directly in the Worker. DNS queries use Cloudflare DNS over HTTPS. Domain registration follows the IANA RDAP directory. CVE, GIF, and catalog searches contact their public providers and can fail when those providers are unavailable or rate limited.</p>
+      </section>
+    </div>
+
+    <section class="mcp-card mcp-surface">
+      <h2>Open source and current limits</h2>
+      <p>
+        The <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">KillerTools source</a> contains the public Worker, local KillerTools bundle, operation map, validation schemas, and coverage checks. The <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">KillerMCP source</a> contains the shared local host, desktop app adapters, installer, and integration checks.
+      </p>
+      <p>
+        External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. The signed public KillerMCP installer has not been released yet.
+      </p>
+    </section>
+      </div>
     </div>
   </main>
 </template>
 
 <style scoped>
 .mcp-page {
-  width: min(100%, 1120px);
+  width: min(100%, 1360px);
   margin: 0 auto;
   padding: 14px 0 32px;
   display: flex;
@@ -215,12 +294,12 @@ useHead({
 
 .mcp-surface:hover {
   transform: translateY(-3px);
-  border-color: rgba(var(--kt-accent-rgb), 0.6);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+  border-color: rgba(var(--kt-accent-rgb), 0.75);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
 html:not(.dark) .mcp-surface:hover {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
 }
 
 .mcp-surface::after {
@@ -231,10 +310,19 @@ html:not(.dark) .mcp-surface:hover {
   background: var(--kt-accent-sel, var(--kt-accent));
 }
 
-.mcp-hero, .mcp-card, .mcp-connect { padding: 24px; }
-.mcp-connect { padding-top: 20px; padding-bottom: 20px; }
+.mcp-hero { padding: 22px; }
+.mcp-card, .mcp-connect { padding: 18px 20px; }
+.mcp-workspace { display: grid; grid-template-columns: minmax(300px, .72fr) minmax(0, 1.55fr); gap: 16px; align-items: start; }
+.mcp-setup-column, .mcp-detail-column { display: grid; gap: 16px; }
+.mcp-title-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.mcp-title-row h2 { margin: 0; }
+.mcp-github { display: grid; place-items: center; flex: 0 0 48px; width: 48px; height: 48px; margin: -4px 0; color: inherit; border-radius: 50%; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .42)); transition: transform .12s, color .12s, filter .12s; }
+.mcp-github svg { width: 30px; height: 30px; fill: currentColor; }
+.mcp-github:hover, .mcp-github:focus-visible { color: var(--kt-accent); transform: translateY(-2px) scale(1.08); filter: drop-shadow(0 7px 8px rgba(0, 0, 0, .48)); }
 .mcp-heading { display: flex; align-items: center; gap: 0; }
-.mcp-mark { width: 90px; height: 90px; flex: none; object-fit: contain; }
+.mcp-icon-pair { position: relative; flex: 0 0 106px; width: 106px; height: 94px; }
+.mcp-mark { position: absolute; left: 0; top: 0; width: 90px; height: 90px; object-fit: contain; }
+.mcp-app-mark { position: absolute; right: 14px; bottom: 14px; width: 46px; height: 46px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.45)); }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
 .mcp-wordmark { display: flex; align-items: center; gap: 8px; margin: 0; }
 .mcp-wordmark img { display: block; width: clamp(210px, 28vw, 350px); height: auto; }
@@ -244,6 +332,11 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 15px; }
 .mcp-connect h2 { margin-bottom: 8px; }
+.mcp-install-label { color: var(--kt-text, #fff); }
+.killermcp-wordmark { display: inline-block; white-space: nowrap; color: var(--kt-text, #fff); font-weight: normal; }
+.killermcp-wordmark span { display: inline-block; color: var(--kt-accent); font-size: 1.3em; line-height: 1; vertical-align: -.03em; -webkit-text-stroke: .012em rgba(0, 0, 0, .7); text-shadow: 0 .08em 0 rgba(0, 0, 0, .5), 0 .16em .24em rgba(0, 0, 0, .35); }
+html:not(.dark) .killermcp-wordmark { color: var(--kt-text, #111); }
+html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-connect p { font-size: 13px; line-height: 1.6; }
 .mcp-connect p:not(.mcp-eyebrow):not(.mcp-feedback) { margin: 0 0 10px; }
 .mcp-install-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 12px; }
@@ -254,6 +347,11 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-action:hover, .mcp-action:focus-visible { background: var(--kt-accent); color: var(--kt-modal, #0a0a0a); }
 .mcp-action:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
 .mcp-feedback { margin: 8px 0 0; color: var(--kt-accent); }
+.mcp-installer-state { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; margin: 2px 0 14px; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); color: inherit; font-size: 13px; font-weight: 700; }
+.mcp-install-steps { margin: 0; padding: 0; list-style: none; counter-reset: install; display: grid; gap: 10px; }
+.mcp-install-steps li { position: relative; min-height: 40px; padding: 7px 10px 7px 50px; font-size: 13px; line-height: 1.6; }
+.mcp-install-steps li::before { counter-increment: install; content: counter(install); position: absolute; left: 0; top: 3px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--kt-accent); border-radius: 50%; color: var(--kt-accent); font-size: 18px; }
+.mcp-hosted-heading { margin-top: 18px; }
 .mcp-usage-heading { margin-top: 16px; }
 .mcp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .mcp-card p, .mcp-card li { font-size: 13px; line-height: 1.65; }
@@ -261,15 +359,21 @@ h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Cour
 .mcp-card p:last-child { margin-bottom: 0; }
 .mcp-card ul { margin: 0 0 14px; padding-left: 22px; }
 .mcp-card li { margin-bottom: 4px; }
+.mcp-example-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.mcp-example-grid code { display: block; padding: 12px 14px; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); color: inherit; line-height: 1.5; }
 code { color: var(--kt-accent); overflow-wrap: anywhere; }
 .mcp-card a { color: var(--kt-accent); }
 
 @media (max-width: 720px) {
+  .mcp-workspace { grid-template-columns: 1fr; }
   .mcp-grid { grid-template-columns: 1fr; }
+  .mcp-example-grid { grid-template-columns: 1fr; }
   .mcp-hero, .mcp-card, .mcp-connect { padding: 20px; }
   .mcp-copy-row { flex-direction: column; }
   .mcp-heading { gap: 0; }
-  .mcp-mark { width: 48px; height: 48px; }
+  .mcp-icon-pair { flex-basis: 62px; width: 62px; height: 56px; }
+  .mcp-mark { width: 52px; height: 52px; }
+  .mcp-app-mark { right: 8px; bottom: 8px; width: 27px; height: 27px; }
   .mcp-wordmark img { width: clamp(150px, 46vw, 250px); }
   .mcp-wordmark span { font-size: clamp(26px, 7vw, 40px); }
 }
