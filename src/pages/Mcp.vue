@@ -138,7 +138,7 @@ useHead({
         <span>Download for Windows</span>
       </a>
       <div class="mcp-installer-meta">
-        <span>Version 0.1.0</span><span>36.6 MiB</span><span>Digitally signed</span><a href="https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.1.0" target="_blank" rel="noopener">Hosted on GitHub Releases</a>
+        <span>Version 0.1.1</span><span>36.7 MiB</span><span>Digitally signed</span><a href="https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.1.1" target="_blank" rel="noopener">Hosted on GitHub Releases</a>
       </div>
       <ol class="mcp-install-steps">
         <li><strong>Download and run KillerMCP Setup.</strong> The installer is signed by Open Source Developer Stephen Riley and published through GitHub Releases.</li>
@@ -269,7 +269,7 @@ useHead({
           The <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">KillerTools source</a> contains the public Worker, local KillerTools bundle, operation map, validation schemas, and coverage checks. The <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">KillerMCP source</a> contains the shared local host, desktop app adapters, installer, and integration checks.
         </p>
         <p>
-          External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. KillerMCP v0.1.0 is signed, timestamped, and published through GitHub Releases.
+          External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. KillerMCP v0.1.1 is signed, timestamped, and published through GitHub Releases.
         </p>
       </section>
     </div>
