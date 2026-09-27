@@ -91,6 +91,9 @@ useHead({
 <template>
   <main class="mcp-page">
     <section class="mcp-hero mcp-surface">
+      <a class="mcp-github" href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener" aria-label="KillerMCP on GitHub" title="KillerMCP on GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.44 9.77 8.2 11.36.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0024 12.5C24 5.87 18.63.5 12 .5z" /></svg>
+      </a>
       <div class="mcp-heading">
         <span class="mcp-icon-pair" aria-hidden="true">
           <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="">
@@ -126,9 +129,6 @@ useHead({
         <h2 id="mcp-connect-title">
           <span class="mcp-install-label">Install</span> <span class="killermcp-wordmark">Killer<span>MCP</span></span>
         </h2>
-        <a class="mcp-github" href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener" aria-label="KillerMCP on GitHub" title="KillerMCP on GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.44 9.77 8.2 11.36.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0024 12.5C24 5.87 18.63.5 12 .5z" /></svg>
-        </a>
       </div>
       <p>
         KillerMCP includes all 81 KillerTools utilities plus tools from supported Killer apps in one local connection. You will not need a separate KillerTools installer, a source checkout, Node, or a list of commands.
@@ -324,8 +324,8 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-setup-column, .mcp-detail-column { display: grid; gap: 16px; }
 .mcp-title-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .mcp-title-row h2 { margin: 0; }
-.mcp-github { display: grid; place-items: center; flex: 0 0 48px; width: 48px; height: 48px; margin: -4px 0; color: inherit; border-radius: 50%; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .42)); transition: transform .12s, color .12s, filter .12s; }
-.mcp-github svg { width: 30px; height: 30px; fill: currentColor; }
+.mcp-github { position: absolute; top: 18px; right: 20px; z-index: 1; display: grid; place-items: center; width: 64px; height: 64px; color: inherit; border-radius: 50%; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .42)); transition: transform .12s, color .12s, filter .12s; }
+.mcp-github svg { width: 42px; height: 42px; fill: currentColor; }
 .mcp-github:hover, .mcp-github:focus-visible { color: var(--kt-accent); transform: translateY(-2px) scale(1.08); filter: drop-shadow(0 7px 8px rgba(0, 0, 0, .48)); }
 .mcp-heading { display: flex; align-items: center; gap: 0; }
 .mcp-icon-pair { position: relative; flex: 0 0 106px; width: 106px; height: 94px; }
