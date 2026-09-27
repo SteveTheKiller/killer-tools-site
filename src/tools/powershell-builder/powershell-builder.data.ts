@@ -608,7 +608,7 @@ export const cmdlets: PSCmdlet[] = [
     ps51: true,
     ps7: true,
     parameters: [
-      { name: 'ComputerName', type: 'string', description: 'Target computer(s) — comma-separate for multiple', placeholder: 'SERVER01', common: true },
+      { name: 'ComputerName', type: 'string', description: 'Target computer(s). Separate multiple names with commas', placeholder: 'SERVER01', common: true },
       { name: 'ScriptBlock', type: 'scriptblock', description: 'Commands to run on the remote machine', placeholder: 'Get-Service spooler', common: true, required: true },
       { name: 'ThrottleLimit', type: 'int', description: 'Max concurrent connections', placeholder: '10', common: false },
     ],
@@ -730,7 +730,7 @@ export const cmdlets: PSCmdlet[] = [
     cmdlet: 'Get-ItemProperty',
     module: 'Microsoft.PowerShell.Management',
     category: 'Files & Registry',
-    description: 'Gets properties of an item — most commonly used to read registry values.',
+    description: 'Gets properties of an item, most commonly to read registry values.',
     requiresAdmin: false,
     ps51: true,
     ps7: true,
@@ -747,7 +747,7 @@ export const cmdlets: PSCmdlet[] = [
     cmdlet: 'Set-ItemProperty',
     module: 'Microsoft.PowerShell.Management',
     category: 'Files & Registry',
-    description: 'Sets the value of a property — most commonly used to write registry values.',
+    description: 'Sets the value of a property, most commonly to write registry values.',
     requiresAdmin: false,
     ps51: true,
     ps7: true,
@@ -789,7 +789,7 @@ export const cmdlets: PSCmdlet[] = [
       {
         name: 'ResultSize',
         type: 'string',
-        description: 'Max results — use Unlimited for all',
+        description: 'Max results. Use Unlimited for all',
         placeholder: 'Unlimited',
         common: true,
         presets: [
@@ -865,7 +865,7 @@ export const cmdlets: PSCmdlet[] = [
     ps51: true,
     ps7: true,
     parameters: [
-      { name: 'FilterScript', type: 'scriptblock', description: 'Filter condition — use $_ to reference the current object', placeholder: '$_.Status -eq "Running"', common: true, required: true },
+      { name: 'FilterScript', type: 'scriptblock', description: 'Filter condition. Use $_ to reference the current object', placeholder: '$_.Status -eq "Running"', common: true, required: true },
     ],
     notes: 'Alias: where, ?\nUse $_ to access the current pipeline object.',
     snippets: [
@@ -1307,7 +1307,7 @@ export const cmdlets: PSCmdlet[] = [
       {
         name: 'Identity',
         type: 'string',
-        description: 'The object\'s distinguishedName — use $user.DistinguishedName from Get-ADUser rather than typing this manually',
+        description: 'The object\'s distinguishedName. Use $user.DistinguishedName from Get-ADUser rather than typing this manually',
         placeholder: '$user.DistinguishedName',
         common: true,
         required: true,
@@ -1329,7 +1329,7 @@ export const cmdlets: PSCmdlet[] = [
       {
         name: 'WhatIf',
         type: 'switch',
-        description: 'Preview the move without making any changes — always test first',
+        description: 'Preview the move without making any changes. Always test first',
         common: true,
       },
     ],
@@ -5568,7 +5568,7 @@ export const cmdlets: PSCmdlet[] = [
     snippets: [
       { description: 'Clear all jobs from a printer queue', command: 'Get-PrintJob -PrinterName "HP LaserJet 4" | Remove-PrintJob' },
       { description: 'Clear queues on all printers', command: 'Get-Printer | ForEach-Object { Get-PrintJob -PrinterName $_.Name | Remove-PrintJob }' },
-      { description: 'Nuclear option — restart spooler to clear everything', command: 'Stop-Service -Name Spooler -Force\nRemove-Item -Path "$env:SystemRoot\\System32\\spool\\PRINTERS\\*" -Force -ErrorAction SilentlyContinue\nStart-Service -Name Spooler' },
+      { description: 'Nuclear option: restart spooler to clear everything', command: 'Stop-Service -Name Spooler -Force\nRemove-Item -Path "$env:SystemRoot\\System32\\spool\\PRINTERS\\*" -Force -ErrorAction SilentlyContinue\nStart-Service -Name Spooler' },
     ],
   },
 
@@ -5659,7 +5659,7 @@ export const cmdlets: PSCmdlet[] = [
     notes: 'DESTRUCTIVE. Only run on disks showing PartitionStyle "RAW" (uninitialized).\nAfter initializing, use New-Partition and Format-Volume to create and format a volume.',
     snippets: [
       { description: 'Initialize as GPT and format in one pipeline', command: 'Initialize-Disk -Number 1 -PartitionStyle GPT -PassThru | New-Partition -AssignDriveLetter -UseMaximumSize | Format-Volume -FileSystem NTFS -NewFileSystemLabel "Data" -Confirm:$false' },
-      { description: 'Preview — check which disks are RAW first', command: 'Get-Disk | Where-Object PartitionStyle -eq RAW | Select-Object Number, FriendlyName, @{N="Size(GB)";E={[math]::Round($_.Size/1GB,1)}}' },
+      { description: 'Preview: check which disks are RAW first', command: 'Get-Disk | Where-Object PartitionStyle -eq RAW | Select-Object Number, FriendlyName, @{N="Size(GB)";E={[math]::Round($_.Size/1GB,1)}}' },
     ],
   },
 
@@ -5813,7 +5813,7 @@ export const cmdlets: PSCmdlet[] = [
     snippets: [
       { description: 'Test if a URL is reachable and get status code', command: 'try { $r = Invoke-WebRequest -Uri "https://example.com" -UseBasicParsing; "Status: $($r.StatusCode)" } catch { "Failed: $_" }' },
       { description: 'Download a file', command: 'Invoke-WebRequest -Uri "https://example.com/file.zip" -OutFile "C:\\Temp\\file.zip" -UseBasicParsing' },
-      { description: 'Test internal web app connectivity', command: '$r = Invoke-WebRequest -Uri "http://intranet.local" -UseBasicParsing -ErrorAction Stop; "HTTP $($r.StatusCode) — OK"' },
+      { description: 'Test internal web app connectivity', command: '$r = Invoke-WebRequest -Uri "http://intranet.local" -UseBasicParsing -ErrorAction Stop; "HTTP $($r.StatusCode): OK"' },
     ],
   },
 
@@ -5859,7 +5859,7 @@ export const cmdlets: PSCmdlet[] = [
     ],
     notes: 'RemoteSigned is the standard MSP choice: local scripts run freely, remote scripts must be signed.\nUse -Scope Process for a temporary change that only lasts the session, leaving the machine policy untouched.',
     snippets: [
-      { description: 'Standard MSP setup — RemoteSigned for all users', command: 'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force' },
+      { description: 'Standard MSP setup: RemoteSigned for all users', command: 'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force' },
       { description: 'Temporary bypass for this session only', command: 'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force' },
       { description: 'Check current policy', command: 'Get-ExecutionPolicy -List' },
     ],
@@ -5868,7 +5868,7 @@ export const cmdlets: PSCmdlet[] = [
     cmdlet: 'Get-EventLog',
     module: 'Microsoft.PowerShell.Management',
     category: 'System',
-    description: 'Gets events from classic Windows event logs (Application, System, Security). PS5.1 only — use Get-WinEvent in PS7.',
+    description: 'Gets events from classic Windows event logs (Application, System, Security). PS5.1 only. Use Get-WinEvent in PS7.',
     requiresAdmin: false,
     ps51: true,
     ps7: false,
@@ -5989,7 +5989,7 @@ export const cmdlets: PSCmdlet[] = [
       { name: 'OfficeLocation', type: 'string', description: 'Office location', placeholder: 'Building A - Floor 2', common: false },
       { name: 'UsageLocation', type: 'string', description: '2-letter country code (required before assigning licenses)', placeholder: 'US', common: false },
     ],
-    notes: 'Requires: Connect-MgGraph -Scopes "User.ReadWrite.All".\nSet-MgUser does not return output by default — use Get-MgUser afterward to confirm changes.\nUsageLocation must be set before a license can be assigned to a user.',
+    notes: 'Requires: Connect-MgGraph -Scopes "User.ReadWrite.All".\nSet-MgUser does not return output by default. Use Get-MgUser afterward to confirm changes.\nUsageLocation must be set before a license can be assigned to a user.',
     snippets: [
       { description: 'Update department and job title', command: 'Set-MgUser -UserId "jsmith@domain.com" -Department "IT" -JobTitle "Senior Systems Engineer"' },
       { description: 'Set usage location (required before license assignment)', command: 'Set-MgUser -UserId "jsmith@domain.com" -UsageLocation "US"' },
@@ -6376,7 +6376,7 @@ export const cmdlets: PSCmdlet[] = [
       { name: 'SnapshotName', type: 'string', description: 'Name for the checkpoint', placeholder: 'Pre-Patch 2025-01-15', common: true },
       { name: 'ComputerName', type: 'string', description: 'Hyper-V host', placeholder: 'HYPERV01', common: false },
     ],
-    notes: 'Always create a checkpoint before patching or making major changes to a VM.\nCheckpoints consume disk space and can impact VM performance if left long-term — delete them after confirming changes are stable.',
+    notes: 'Always create a checkpoint before patching or making major changes to a VM.\nCheckpoints consume disk space and can impact VM performance if left long-term. Delete them after confirming changes are stable.',
     snippets: [
       { description: 'Create a named checkpoint before patching', command: 'Checkpoint-VM -Name "WEBSERVER01" -SnapshotName "Pre-Patch $(Get-Date -Format yyyy-MM-dd)"' },
       { description: 'List all checkpoints for a VM', command: 'Get-VMSnapshot -VMName "WEBSERVER01" | Select-Object Name, CreationTime, SnapshotType' },
@@ -6499,7 +6499,7 @@ export const cmdlets: PSCmdlet[] = [
       { name: 'Restart', type: 'switch', description: 'Auto-restart if required', common: false },
       { name: 'ComputerName', type: 'string', description: 'Remote server to install on', placeholder: 'SERVER01', common: false },
     ],
-    notes: 'Only available on Windows Server.\nSome features require a restart — use -Restart to handle this automatically in scripts, or check the RestartNeeded property of the result.',
+    notes: 'Only available on Windows Server.\nSome features require a restart. Use -Restart to handle this automatically in scripts, or check the RestartNeeded property of the result.',
     snippets: [
       { description: 'Install RSAT Active Directory tools', command: 'Install-WindowsFeature -Name RSAT-AD-Tools -IncludeAllSubFeature -IncludeManagementTools' },
       { description: 'Install IIS with management console', command: 'Install-WindowsFeature -Name Web-Server -IncludeManagementTools' },
@@ -6540,9 +6540,9 @@ export const cmdlets: PSCmdlet[] = [
       { name: 'EncryptData', type: 'switch', description: 'Require SMB encryption for all connections', common: false },
       { name: 'Force', type: 'switch', description: 'Skip confirmation prompts', common: true },
     ],
-    notes: 'DESTRUCTIVE if misconfigured. Disabling SMBv2 will break modern Windows file sharing.\nDisabling SMBv1 is a security best practice and should be done on all servers — it is the protocol exploited by EternalBlue/WannaCry.\nA restart may be required for changes to fully take effect.',
+    notes: 'DESTRUCTIVE if misconfigured. Disabling SMBv2 will break modern Windows file sharing.\nDisabling SMBv1 is a security best practice and should be done on all servers. It is the protocol exploited by EternalBlue/WannaCry.\nA restart may be required for changes to fully take effect.',
     snippets: [
-      { description: 'Disable SMBv1 (security hardening — do this everywhere)', command: 'Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force' },
+      { description: 'Disable SMBv1 (security hardening for every server)', command: 'Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force' },
       { description: 'Enable SMB signing requirement', command: 'Set-SmbServerConfiguration -RequireSecuritySignature $true -Force' },
       { description: 'Full security hardening in one command', command: 'Set-SmbServerConfiguration -EnableSMB1Protocol $false -RequireSecuritySignature $true -Force' },
     ],
@@ -6649,7 +6649,7 @@ export const cmdlets: PSCmdlet[] = [
         ],
       },
     ],
-    notes: 'PS5.1 and Windows only — not available in PS7 (use -PassThru with an alternative on Linux/Mac).\nCombine with -PassThru to create interactive selection scripts: the selected rows are returned to the pipeline when the window is closed.',
+    notes: 'PS5.1 and Windows only. It is unavailable in PS7 (use -PassThru with an alternative on Linux/Mac).\nCombine with -PassThru to create interactive selection scripts: the selected rows are returned to the pipeline when the window is closed.',
     snippets: [
       { description: 'Browse AD users in a searchable grid', command: 'Get-ADUser -Filter * -Properties EmailAddress, Department | Select-Object Name, SamAccountName, EmailAddress, Department | Out-GridView -Title "AD Users"' },
       { description: 'Interactively select computers to restart', command: 'Get-ADComputer -Filter * | Select-Object Name, DNSHostName | Out-GridView -Title "Select computers to restart" -PassThru | ForEach-Object { Restart-Computer -ComputerName $_.Name -Force }' },
@@ -6710,12 +6710,12 @@ export const cmdlets: PSCmdlet[] = [
       { name: 'ComputerName', type: 'string', description: 'Remote computer to query', placeholder: 'SERVER01', common: false },
       { name: 'Property', type: 'string[]', description: 'Specific properties to return', placeholder: 'Name,Caption,Version', common: false },
     ],
-    notes: 'PS5.1 only — use Get-CimInstance in PS7 (same WMI data, modern protocol).\nGet-WmiObject is still found everywhere in legacy scripts and KnowledgeBase articles — knowing it is essential.\nWin32_Product is very slow as it triggers Windows Installer reconfiguration for all software.',
+    notes: 'PS5.1 only. Use Get-CimInstance in PS7 (same WMI data, modern protocol).\nGet-WmiObject is still found everywhere in legacy scripts and KnowledgeBase articles, so knowing it is essential.\nWin32_Product is very slow as it triggers Windows Installer reconfiguration for all software.',
     snippets: [
       { description: 'Get OS version and last boot time', command: 'Get-WmiObject -Class Win32_OperatingSystem | Select-Object Caption, Version, @{N="LastBoot";E={$_.ConvertToDateTime($_.LastBootUpTime)}}' },
       { description: 'Get disk space on all drives', command: 'Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" | Select-Object DeviceID, @{N="Size(GB)";E={[math]::Round($_.Size/1GB,1)}}, @{N="Free(GB)";E={[math]::Round($_.FreeSpace/1GB,1)}}' },
       { description: 'Get system serial number (for warranty lookup)', command: 'Get-WmiObject -Class Win32_BIOS | Select-Object SerialNumber, Manufacturer, Version' },
-      { description: 'Remote query — get OS info from another machine', command: 'Get-WmiObject -Class Win32_OperatingSystem -ComputerName SERVER01 | Select-Object Caption, Version, @{N="LastBoot";E={$_.ConvertToDateTime($_.LastBootUpTime)}}' },
+      { description: 'Remote query: get OS info from another machine', command: 'Get-WmiObject -Class Win32_OperatingSystem -ComputerName SERVER01 | Select-Object Caption, Version, @{N="LastBoot";E={$_.ConvertToDateTime($_.LastBootUpTime)}}' },
     ],
   },
   {
@@ -6934,7 +6934,7 @@ export const cmdlets: PSCmdlet[] = [
       },
       { name: 'SendNotificationToUser', type: 'switch', description: 'Email the user about the new permission', common: false },
     ],
-    notes: 'Connect-ExchangeOnline first.\nFor calendar sharing, the folder is :\\Calendar (US English) — use the localized name for non-English mailboxes (e.g. :\\Kalender, :\\Calendrier).',
+    notes: 'Connect-ExchangeOnline first.\nFor calendar sharing, the folder is :\\Calendar (US English). Use the localized name for non-English mailboxes (e.g. :\\Kalender, :\\Calendrier).',
     snippets: [
       { description: 'Give Editor on a calendar', command: 'Add-MailboxFolderPermission -Identity jsmith@contoso.com:\\Calendar -User asmith@contoso.com -AccessRights Editor' },
       { description: 'Give free/busy only', command: 'Add-MailboxFolderPermission -Identity jsmith@contoso.com:\\Calendar -User asmith@contoso.com -AccessRights AvailabilityOnly' },
@@ -7106,7 +7106,7 @@ export const cmdlets: PSCmdlet[] = [
       { name: 'ResultSize', type: 'int', description: 'Max records to return (max 5000)', placeholder: '5000', common: true },
       { name: 'Formatted', type: 'switch', description: 'Pretty-print AuditData JSON', common: false },
     ],
-    notes: 'Connect-ExchangeOnline first. Audit log retention varies by license (90d to 1y+).\nResults are limited to 5000 per call — page with -SessionId/-SessionCommand for larger pulls.',
+    notes: 'Connect-ExchangeOnline first. Audit log retention varies by license (90d to 1y+).\nResults are limited to 5000 per call. Page with -SessionId/-SessionCommand for larger pulls.',
     snippets: [
       { description: 'All sign-ins for a user, last 7 days', command: 'Search-UnifiedAuditLog -StartDate (Get-Date).AddDays(-7) -EndDate (Get-Date) -UserIds jsmith@contoso.com -Operations UserLoggedIn,UserLoginFailed -ResultSize 5000' },
       { description: 'Find new inbox rules created (BEC indicator)', command: 'Search-UnifiedAuditLog -StartDate (Get-Date).AddDays(-30) -EndDate (Get-Date) -Operations New-InboxRule,Set-InboxRule -ResultSize 5000' },
@@ -7172,7 +7172,7 @@ export const cmdlets: PSCmdlet[] = [
         ],
       },
     ],
-    notes: 'You cannot set DomainAuthenticated manually — Windows assigns it automatically when a DC is reachable.',
+    notes: 'You cannot set DomainAuthenticated manually. Windows assigns it automatically when a DC is reachable.',
     snippets: [
       { description: 'Flip Ethernet to Private', command: 'Set-NetConnectionProfile -InterfaceAlias Ethernet -NetworkCategory Private' },
       { description: 'Set all profiles to Private', command: 'Get-NetConnectionProfile | Set-NetConnectionProfile -NetworkCategory Private' },
