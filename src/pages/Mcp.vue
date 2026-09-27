@@ -387,8 +387,11 @@ html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 code { color: var(--kt-accent); overflow-wrap: anywhere; }
 .mcp-card a { color: var(--kt-accent); }
 
-@media (max-width: 720px) {
+@media (max-width: 1050px) {
   .mcp-workspace { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
   .mcp-grid { grid-template-columns: 1fr; }
   .mcp-coverage-grid { grid-template-columns: 1fr; }
   .mcp-example-grid { grid-template-columns: 1fr; }
