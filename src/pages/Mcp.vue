@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
+import { useI18n } from 'vue-i18n';
 import { useStyleStore } from '@/stores/style.store';
 import { NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 
@@ -8,6 +9,7 @@ const codexCommand = `codex mcp add killertools --url ${endpoint}`;
 const claudeCodeCommand = `claude mcp add --transport http killertools ${endpoint}`;
 const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=killertools&config=${encodeURIComponent(btoa(JSON.stringify({ url: endpoint })))}`;
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
+const { t } = useI18n();
 const copyStatus = ref('');
 
 function copyWithSelection(value: string) {
@@ -29,31 +31,31 @@ function copyWithSelection(value: string) {
 }
 
 async function copyText(value: string, label: string) {
-  copyStatus.value = 'Copying...';
+  copyStatus.value = t('pages.mcp.copy.copying');
   try {
     await navigator.clipboard.writeText(value);
-    copyStatus.value = `${label} copied`;
+    copyStatus.value = t('pages.mcp.copy.copied', { label });
     return true;
   }
   catch {
     const copied = copyWithSelection(value);
-    copyStatus.value = copied ? `${label} copied` : `Copy failed. Copy this instead: ${value}`;
+    copyStatus.value = copied ? t('pages.mcp.copy.copied', { label }) : t('pages.mcp.copy.failed', { value });
     return copied;
   }
 }
 
 async function copyAndOpenClaude() {
   const copiedNow = copyWithSelection(endpoint);
-  const copyPromise = copiedNow ? Promise.resolve(true) : copyText(endpoint, 'Server URL');
+  const copyPromise = copiedNow ? Promise.resolve(true) : copyText(endpoint, t('pages.mcp.labels.serverUrl'));
   const claudeTab = window.open('about:blank', '_blank');
   if (await copyPromise) {
-    copyStatus.value = 'Server URL copied';
+    copyStatus.value = t('pages.mcp.copy.copied', { label: t('pages.mcp.labels.serverUrl') });
     if (claudeTab) {
       claudeTab.opener = null;
       claudeTab.location.replace('https://claude.ai/customize/connectors');
     }
     else {
-      copyStatus.value = 'Server URL copied. Allow pop-ups to open Claude.';
+      copyStatus.value = t('pages.mcp.copy.popups');
     }
   }
   else {
@@ -72,7 +74,7 @@ const wordmarkSrc = computed(() => {
 });
 
 const pageTitle = 'KillerMCP';
-const pageDescription = 'Use KillerTools utilities from an AI agent through KillerTools MCP.';
+const pageDescription = computed(() => t('pages.mcp.description'));
 const pageUrl = 'https://killertools.net/mcp';
 
 useHead({
@@ -91,7 +93,7 @@ useHead({
 <template>
   <main class="mcp-page">
     <section class="mcp-hero mcp-surface">
-      <a class="mcp-github" href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener" aria-label="KillerMCP on GitHub" title="KillerMCP on GitHub">
+      <a class="mcp-github" href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener" :aria-label="t('pages.mcp.github')" :title="t('pages.mcp.github')">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.44 9.77 8.2 11.36.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0024 12.5C24 5.87 18.63.5 12 .5z" /></svg>
       </a>
       <div class="mcp-heading">
@@ -101,7 +103,7 @@ useHead({
         </span>
         <div>
           <p class="mcp-eyebrow">
-            KILLERTOOLS / AGENTS
+            {{ t('pages.mcp.eyebrow.agents') }}
           </p>
           <h1 class="mcp-wordmark" aria-label="KillerTools MCP">
             <img :src="wordmarkSrc" alt="" aria-hidden="true">
@@ -110,170 +112,172 @@ useHead({
         </div>
       </div>
       <p class="mcp-lead">
-        Put KillerTools in your agent's toolkit. Connect once, then ask it to calculate a subnet,
-        check DNS records, research a CVE, parse email headers, build a PowerShell command,
-        convert JSON to CSV, or decode Base64.
+        {{ t('pages.mcp.lead') }}
       </p>
       <p class="mcp-status">
-        KillerMCP supports all 81 KillerTools website tools.
+        {{ t('pages.mcp.status') }}
       </p>
     </section>
 
     <div class="mcp-workspace">
       <div class="mcp-setup-column">
-    <section class="mcp-connect mcp-surface" aria-labelledby="mcp-connect-title">
-      <p class="mcp-eyebrow">
-        ONE INSTALLER / ONE CONNECTION
-      </p>
-      <div class="mcp-title-row">
-        <h2 id="mcp-connect-title">
-          <span class="mcp-install-label">Install</span> <span class="killermcp-wordmark">Killer<span>MCP</span></span>
-        </h2>
-      </div>
-      <p>
-        KillerMCP includes all 81 KillerTools utilities plus tools from supported Killer apps in one local connection. You will not need a separate KillerTools installer, a source checkout, Node, or a list of commands.
-      </p>
-      <a class="mcp-download" href="https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" /></svg>
-        <span>Download for Windows</span>
-      </a>
-      <div class="mcp-installer-meta">
-        <span>Version 0.1.1</span><span>36.7 MiB</span><span>Digitally signed</span><a href="https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.1.1" target="_blank" rel="noopener">Hosted on GitHub Releases</a>
-      </div>
-      <ol class="mcp-install-steps">
-        <li><strong>Download and run KillerMCP Setup.</strong> The installer is signed by Open Source Developer Stephen Riley and published through GitHub Releases.</li>
-        <li><strong>Let setup connect your agent.</strong> It installs the shared runtime and registers KillerMCP with Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, and Windsurf when found.</li>
-        <li><strong>Open a new agent chat and ask.</strong> KillerMCP makes all 81 KillerTools utilities available through the same connection.</li>
-      </ol>
-      <p class="mcp-eyebrow mcp-hosted-heading">
-        OPTIONAL HOSTED CONNECTION
-      </p>
-      <p>
-        Do not want to install anything? Connect directly to the hosted KillerTools server for 64 web based utilities. The remaining 17 KillerTools utilities and all desktop app tools require the installed KillerMCP runtime.
-      </p>
-      <div class="mcp-install-actions">
-        <a class="mcp-action" :href="cursorInstallUrl">Add to Cursor</a>
-        <a class="mcp-action" :href="vscodeInstallUrl">Add to VS Code</a>
-        <button type="button" class="mcp-action" @click="copyAndOpenClaude">
-          Copy URL and open Claude
-        </button>
-        <button type="button" class="mcp-action" @click="copyText(codexCommand, 'Codex command')">
-          Copy Codex setup command
-        </button>
-        <button type="button" class="mcp-action" @click="copyText(claudeCodeCommand, 'Claude Code command')">
-          Copy Claude Code setup command
-        </button>
-      </div>
-      <p>
-        Using another MCP client? Copy the server URL.
-      </p>
-      <div class="mcp-copy-row">
-        <code class="mcp-value">{{ endpoint }}</code>
-        <button type="button" class="mcp-action" @click="copyText(endpoint, 'Server URL')">
-          Copy URL
-        </button>
-      </div>
-      <p v-if="copyStatus" class="mcp-feedback" role="status" aria-live="polite">
-        {{ copyStatus }}
-      </p>
-      <p class="mcp-eyebrow mcp-usage-heading">
-        AFTER INSTALLING OR CONNECTING
-      </p>
-      <p>
-        The shortest useful prompt is <code>killer &lt;task&gt;</code>. For example: <code>killer domain search thekiller.net</code>.
-      </p>
-      <p>
-        Your agent can infer the matching KillerTools or Killer app tool from the task and available context. Use <code>KillerTools</code>, <code>killerpdf</code>, <code>killerscan</code>, or another app name only when you want to make the target explicit. You do not need underscores, an operation name, or a slash command.
-      </p>
-    </section>
-    <section class="mcp-card mcp-surface">
-      <h2>How the Cloudflare Worker works</h2>
-      <p>The public endpoint is an open-source streamable HTTP MCP server deployed separately from the website. Your MCP client sends a tool name and bounded arguments to <code>https://mcp.killertools.net</code>. The Worker validates the request, runs the selected utility, and returns the result.</p>
-      <p>Most calculations and conversions run directly in the Worker. DNS queries use Cloudflare DNS over HTTPS. Domain registration follows the IANA RDAP directory. CVE, GIF, and catalog searches contact their public providers and can fail when those providers are unavailable or rate limited.</p>
-    </section>
+        <section class="mcp-connect mcp-surface" aria-labelledby="mcp-connect-title">
+          <p class="mcp-eyebrow">
+            {{ t('pages.mcp.eyebrow.oneInstaller') }}
+          </p>
+          <div class="mcp-title-row">
+            <h2 id="mcp-connect-title">
+              <span class="mcp-install-label">{{ t('pages.mcp.install') }}</span> <span class="killermcp-wordmark">Killer<span>MCP</span></span>
+            </h2>
+          </div>
+          <p>
+            {{ t('pages.mcp.intro') }}
+          </p>
+          <a class="mcp-download" href="https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" /></svg>
+            <span>{{ t('pages.mcp.download') }}</span>
+          </a>
+          <div class="mcp-installer-meta">
+            <span>{{ t('pages.mcp.meta.version', { version: '0.1.1' }) }}</span><span>36.7 MiB</span><span>{{ t('pages.mcp.meta.signed') }}</span><a href="https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.1.1" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
+          </div>
+          <ol class="mcp-install-steps">
+            <li><strong>{{ t('pages.mcp.steps.s1Title') }}</strong> {{ t('pages.mcp.steps.s1Body') }}</li>
+            <li><strong>{{ t('pages.mcp.steps.s2Title') }}</strong> {{ t('pages.mcp.steps.s2Body') }}</li>
+            <li><strong>{{ t('pages.mcp.steps.s3Title') }}</strong> {{ t('pages.mcp.steps.s3Body') }}</li>
+          </ol>
+          <p class="mcp-eyebrow mcp-hosted-heading">
+            {{ t('pages.mcp.eyebrow.hosted') }}
+          </p>
+          <p>
+            {{ t('pages.mcp.hostedBody') }}
+          </p>
+          <div class="mcp-install-actions">
+            <a class="mcp-action" :href="cursorInstallUrl">{{ t('pages.mcp.actions.cursor') }}</a>
+            <a class="mcp-action" :href="vscodeInstallUrl">{{ t('pages.mcp.actions.vscode') }}</a>
+            <button type="button" class="mcp-action" @click="copyAndOpenClaude">
+              {{ t('pages.mcp.actions.claude') }}
+            </button>
+            <button type="button" class="mcp-action" @click="copyText(codexCommand, t('pages.mcp.labels.codex'))">
+              {{ t('pages.mcp.actions.codex') }}
+            </button>
+            <button type="button" class="mcp-action" @click="copyText(claudeCodeCommand, t('pages.mcp.labels.claudeCode'))">
+              {{ t('pages.mcp.actions.claudeCode') }}
+            </button>
+          </div>
+          <p>
+            {{ t('pages.mcp.otherClient') }}
+          </p>
+          <div class="mcp-copy-row">
+            <code class="mcp-value">{{ endpoint }}</code>
+            <button type="button" class="mcp-action" @click="copyText(endpoint, t('pages.mcp.labels.serverUrl'))">
+              {{ t('pages.mcp.actions.copyUrl') }}
+            </button>
+          </div>
+          <p v-if="copyStatus" class="mcp-feedback" role="status" aria-live="polite">
+            {{ copyStatus }}
+          </p>
+          <p class="mcp-eyebrow mcp-usage-heading">
+            {{ t('pages.mcp.eyebrow.after') }}
+          </p>
+          <i18n-t keypath="pages.mcp.shortest" tag="p">
+            <template #prompt>
+              <code>killer &lt;task&gt;</code>
+            </template>
+            <template #example>
+              <code>killer domain search thekiller.net</code>
+            </template>
+          </i18n-t>
+          <i18n-t keypath="pages.mcp.infer" tag="p">
+            <template #a>
+              <code>KillerTools</code>
+            </template>
+            <template #b>
+              <code>killerpdf</code>
+            </template>
+            <template #c>
+              <code>killerscan</code>
+            </template>
+          </i18n-t>
+        </section>
+        <section class="mcp-card mcp-surface">
+          <h2>{{ t('pages.mcp.worker.title') }}</h2>
+          <i18n-t keypath="pages.mcp.worker.p1" tag="p">
+            <template #url>
+              <code>https://mcp.killertools.net</code>
+            </template>
+          </i18n-t>
+          <p>{{ t('pages.mcp.worker.p2') }}</p>
+        </section>
       </div>
       <div class="mcp-detail-column">
+        <section class="mcp-card mcp-surface" aria-labelledby="mcp-examples-title">
+          <h2 id="mcp-examples-title">
+            {{ t('pages.mcp.examples.title') }}
+          </h2>
+          <i18n-t keypath="pages.mcp.examples.intro" tag="p">
+            <template #killer>
+              <code>killer</code>
+            </template>
+          </i18n-t>
+          <div class="mcp-example-grid">
+            <code v-for="n in 12" :key="n">killer {{ t(`pages.mcp.examples.e${n}`) }}</code>
+          </div>
+        </section>
 
-    <section class="mcp-card mcp-surface" aria-labelledby="mcp-examples-title">
-      <h2 id="mcp-examples-title">
-        Try asking
-      </h2>
-      <p>
-        Start with <code>killer</code> and describe the result you want. The app or tool name is optional when the task is clear.
-      </p>
-      <div class="mcp-example-grid">
-        <code>killer domain search thekiller.net</code>
-        <code>killer calculate 192.168.10.0/24</code>
-        <code>killer look up Windows event 4625</code>
-        <code>killer research CVE-2025-53770</code>
-        <code>killer parse these email headers</code>
-        <code>killer build a PowerShell command to list stopped services</code>
-        <code>killer convert this JSON to CSV</code>
-        <code>killer compare these two JSON documents</code>
-        <code>killer generate an SPF record for example.com</code>
-        <code>killer decode this Base64 text</code>
-        <code>killer identify this M365 SKU</code>
-        <code>killer calculate a 30 second exposure with this ND filter</code>
-      </div>
-    </section>
-
-    <div class="mcp-grid">
-      <section class="mcp-card mcp-surface mcp-card-wide">
-        <h2>
-          What can it do?
-        </h2>
-        <p>
-          Ask in plain language. Your agent discovers the available tools and their inputs, then calls the ones it needs. For example, it can:
-        </p>
-        <ul>
-          <li>Calculate IPv4 subnets, expand address ranges, generate IPv6 ULA prefixes, and look up MAC vendors.</li>
-          <li>Check DNS records and domain registration, search CVEs, and identify ports and protocols.</li>
-          <li>Parse email headers, generate SPF or DMARC records, and look up Exchange NDR messages.</li>
-          <li>Find Windows error and event IDs, Group Policy settings, and M365 license SKUs.</li>
-          <li>Search PowerShell cmdlets and assemble commands for you to review before running.</li>
-          <li>Format JSON and XML, convert JSON to CSV or among JSON, YAML, and TOML, decode Base64, compare documents, and test regular expressions.</li>
-          <li>Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.</li>
-          <li>Convert case, dates, times, temperatures, colors, number bases, Roman numerals, binary text, NATO spelling, and phone formats.</li>
-          <li>Format SQL, YAML, TOML, Markdown, HTML entities, and structured data, or calculate percentages, cron schedules, and chmod values.</li>
-          <li>Search emoji, GIFs, KillerScripts, and Killer modules, or inspect URLs, user agents, HTTP status codes, and text statistics.</li>
-        </ul>
-      </section>
-      <section class="mcp-card mcp-surface mcp-card-wide">
-        <h2>Hosted and local coverage</h2>
-        <div class="mcp-coverage-grid">
-          <p><strong>Hosted Worker</strong><span>64 browser safe utilities with 74 operations. No installation.</span></p>
-          <p><strong>Installed KillerMCP</strong><span>All 81 KillerTools utilities with 94 operations, plus detected Killer apps.</span></p>
-          <p><strong>Browser companions</strong><span>Camera, device, editor, and signature tools open a private localhost page.</span></p>
+        <div class="mcp-grid">
+          <section class="mcp-card mcp-surface mcp-card-wide">
+            <h2>
+              {{ t('pages.mcp.can.title') }}
+            </h2>
+            <p>
+              {{ t('pages.mcp.can.intro') }}
+            </p>
+            <ul>
+              <li v-for="n in 10" :key="n">
+                {{ t(`pages.mcp.can.i${n}`) }}
+              </li>
+            </ul>
+          </section>
+          <section class="mcp-card mcp-surface mcp-card-wide">
+            <h2>{{ t('pages.mcp.cov.title') }}</h2>
+            <div class="mcp-coverage-grid">
+              <p><strong>{{ t('pages.mcp.cov.hostedTitle') }}</strong><span>{{ t('pages.mcp.cov.hostedBody') }}</span></p>
+              <p><strong>{{ t('pages.mcp.cov.installedTitle') }}</strong><span>{{ t('pages.mcp.cov.installedBody') }}</span></p>
+              <p><strong>{{ t('pages.mcp.cov.browserTitle') }}</strong><span>{{ t('pages.mcp.cov.browserBody') }}</span></p>
+            </div>
+          </section>
         </div>
-      </section>
-    </div>
 
-    <div class="mcp-grid">
-      <section class="mcp-card mcp-surface">
-        <h2>
-          Where does the data go?
-        </h2>
-        <p>
-          The installed KillerMCP runtime runs on your computer. Some network and reference lookups still contact their public data sources. Your agent receives the inputs and results needed to complete the request.
-        </p>
-        <p>
-          The optional hosted connection sends tool inputs to the KillerTools Cloudflare Worker. It has no sign-in, limits request bodies to 64 KiB, applies bounded schemas, and rate limits each connecting IP. Do not send passwords, private files, tokens, or client data through the hosted connection.
-        </p>
-        <p>
-          Local file, browser, password, token, encryption, hashing, OTP, BIP39, and key generation tools stay off the public Worker. They run through installed KillerMCP, but the MCP client and model provider may still receive the inputs and results.
-        </p>
-      </section>
-      <section class="mcp-card mcp-surface">
-        <h2>Open source and current limits</h2>
-        <p>
-          The <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">KillerTools source</a> contains the public Worker, local KillerTools bundle, operation map, validation schemas, and coverage checks. The <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">KillerMCP source</a> contains the shared local host, desktop app adapters, installer, and integration checks.
-        </p>
-        <p>
-          External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. KillerMCP v0.1.1 is signed, timestamped, and published through GitHub Releases.
-        </p>
-      </section>
-    </div>
-
+        <div class="mcp-grid">
+          <section class="mcp-card mcp-surface">
+            <h2>
+              {{ t('pages.mcp.data.title') }}
+            </h2>
+            <p>
+              {{ t('pages.mcp.data.p1') }}
+            </p>
+            <p>
+              {{ t('pages.mcp.data.p2') }}
+            </p>
+            <p>
+              {{ t('pages.mcp.data.p3') }}
+            </p>
+          </section>
+          <section class="mcp-card mcp-surface">
+            <h2>{{ t('pages.mcp.oss.title') }}</h2>
+            <i18n-t keypath="pages.mcp.oss.p1" tag="p">
+              <template #kt>
+                <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('pages.mcp.oss.ktLink') }}</a>
+              </template>
+              <template #km>
+                <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">{{ t('pages.mcp.oss.kmLink') }}</a>
+              </template>
+            </i18n-t>
+            <p>
+              {{ t('pages.mcp.oss.p2') }}
+            </p>
+          </section>
+        </div>
       </div>
     </div>
   </main>
