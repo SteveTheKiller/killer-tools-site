@@ -101,7 +101,7 @@ const tools = computed<ToolCategory[]>(() => [
           </c-button>
         </c-tooltip>
 
-        <!-- Compact search trigger; the spacer pushes the nav buttons right. -->
+        <!-- Search stays a comfortable width instead of swallowing the whole bar. -->
         <div class="palette-wrap">
           <command-palette />
         </div>
@@ -126,7 +126,15 @@ const tools = computed<ToolCategory[]>(() => [
 /* Titlebar shell (position, chrome color, grain) lives in MenuLayout.vue;
    this only shapes the row's contents. */
 .palette-wrap {
-  flex: 0 0 auto;
+  flex: 1 1 auto;
+  max-width: 520px;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .palette-wrap {
+    flex: 0 0 auto;
+  }
 }
 
 .tb-row > .keep-circle:first-child {

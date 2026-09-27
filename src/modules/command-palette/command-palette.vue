@@ -2,11 +2,14 @@
 import type { PaletteOption } from './command-palette.types';
 import _ from 'lodash';
 import { storeToRefs } from 'pinia';
+import { useStyleStore } from '@/stores/style.store';
 import { useCommandPaletteStore } from './command-palette.store';
 
+const styleStore = useStyleStore();
 const isModalOpen = ref(false);
 const inputRef = ref();
 const router = useRouter();
+const isMac = computed(() => window.navigator.userAgent.toLowerCase().includes('mac'));
 
 const commandPaletteStore = useCommandPaletteStore();
 const { searchPrompt, filteredSearchResult } = storeToRefs(commandPaletteStore);
@@ -113,7 +116,23 @@ function activateOption(option: PaletteOption) {
 
 <template>
   <div flex-1 class="palette-root">
-    <button type="button" class="search-icon-trigger" :aria-label="t('commandPalette.searchAriaLabel')" @click="isModalOpen = true">
+    <c-button
+      v-if="!styleStore.isSmallScreen"
+      class="palette-btn"
+      w-full important:justify-start
+      :aria-label="t('commandPalette.searchAriaLabel')"
+      @click="isModalOpen = true"
+    >
+      <span flex items-center gap-3 op-40>
+        <icon-mdi-search />
+        {{ $t('search.label') }}
+        <span hidden flex-1 border border-current border-op-40 rounded border-solid px-5px py-3px sm:inline>
+          {{ isMac ? 'Cmd' : 'Ctrl' }}&nbsp;+&nbsp;K
+        </span>
+      </span>
+    </c-button>
+
+    <button v-else type="button" class="search-icon-trigger" :aria-label="t('commandPalette.searchAriaLabel')" @click="isModalOpen = true">
       <icon-mdi-search />
     </button>
 
