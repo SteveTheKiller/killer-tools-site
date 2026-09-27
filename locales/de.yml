@@ -798,7 +798,7 @@ tools:
       recommended: Empfohlen
   windows-event-lookup:
     title: Windows-Ereignissuche
-    description: Look up common Windows Event IDs with descriptions and severity.
+    description: Schlagen Sie Windows-Ereignis-IDs mit Beschreibungen, Schweregraden und häufigen Ursachen nach.
     ui:
       searchResults: Suchergebnisse
       searchPlaceholder: Nach Ereignis-ID, Name oder Beschreibung suchen...
@@ -807,7 +807,7 @@ tools:
       copiedShort: kopiert
   m365-sku-decoder:
     title: M365-Lizenz-SKU-Decoder
-    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+    description: Decodiert Microsoft 365-Lizenz-SKU-Strings und GUIDs zu ihren Produktnamen.
     ui:
       searchPlaceholder: Suche nach SKU-Name, String-ID oder Beschreibung...
       copied: Kopiert!
@@ -825,7 +825,7 @@ tools:
       decimal: dezimal {decimal}
   exchange-ndr-lookup:
     title: Exchange-NDR-Suche
-    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+    description: Schlagen Sie Exchange- und M365-Bounce-Codes mit leicht verständlichen Hinweisen zu Ursache und Behebung nach.
     ui:
       searchResults: Suchergebnisse
       searchPlaceholder: Suche nach NDR-Code, Fehlername, Ursache oder Lösung...
@@ -912,7 +912,7 @@ tools:
     description: Rufen Sie Registrierungsdetails für jede Domain ab, einschließlich Registrar, Erstellungs- und Ablaufdatum, Nameserver und Statuskennzeichen.
   ascii-text-drawer:
     title: ASCII-Wortkunst-Generator
-    description: Create ASCII art text with many fonts and styles.
+    description: Erstellt ASCII-Wortkunst-Text mit vielen Schriftarten und Stilen.
     ui:
       yourText: IHR TEXT
       textPlaceholder: Ihr Text zum Zeichnen
@@ -994,7 +994,7 @@ tools:
       jsonPlaceholder: Fügen Sie hier Ihr JSON ein...
   markdown-to-html:
     title: Markdown zu HTML
-    description: Convert Markdown to Html and allow to print (as PDF).
+    description: Konvertiere Markdown in HTML und exportiere oder drucke es als PDF.
     ui:
       copiedSuccess: HTML in die Zwischenablage kopiert!
       copyFailed: Text konnte nicht kopiert werden.
@@ -1738,40 +1738,40 @@ pages:
     lastUpdated: 'Zuletzt aktualisiert: 4. April 2026'
     overviewHeading: Uberblick
     overviewIntro: KillerTools
-    overviewBody: ist eine kostenlose Sammlung von IT-Werkzeugen. Ihre Privatsphare ist uns wichtig, und diese Richtlinie erklart, wie wir mit Ihren Daten umgehen.
+    overviewBody: ist eine kostenlose Sammlung von IT-Werkzeugen. Ihre Privatsphäre ist uns wichtig, und diese Richtlinie erklärt, wie wir mit Ihren Daten umgehen.
     dataCollectionHeading: Datenerfassung
-    dataCollectionBody: KillerTools erfasst, speichert oder ubertragt keine personenbezogenen Daten. Die gesamte Verarbeitung erfolgt vollstandig in Ihrem Browser. Keine Daten, die Sie in ein Werkzeug eingeben, werden an einen Server gesendet.
+    dataCollectionBody: KillerTools erfasst, speichert oder überträgt keine personenbezogenen Daten. Die gesamte Verarbeitung erfolgt vollständig in Ihrem Browser. Keine Daten, die Sie in ein Werkzeug eingeben, werden an einen Server gesendet.
     cookiesHeading: Cookies
-    cookiesBody: Diese Website verwendet keine Cookies zu Tracking-Zwecken. Ihre Design- und Einstellungspraferenzen werden lokal in Ihrem Browser gespeichert und niemals ubertragen.
+    cookiesBody: Diese Website verwendet keine Cookies zu Tracking-Zwecken. Ihre Design- und Einstellungspräferenzen werden lokal in Ihrem Browser gespeichert und niemals übertragen.
     analyticsHeading: Analytik
     analyticsIntro: Diese Website verwendet
-    analyticsBody: ein datenschutzfreundliches Analysetool, um allgemeine Nutzungsmuster wie Seitenaufrufe und Verweisquellen zu verstehen. Umami verwendet keine Cookies, verfolgt Nutzer nicht seitenubergreifend und erfasst keine personenbezogenen Informationen. Alle Daten sind aggregiert und anonym.
+    analyticsBody: ein datenschutzfreundliches Analysetool, um allgemeine Nutzungsmuster wie Seitenaufrufe und Verweisquellen zu verstehen. Umami verwendet keine Cookies, verfolgt Nutzer nicht seitenübergreifend und erfasst keine personenbezogenen Informationen. Alle Daten sind aggregiert und anonym.
     thirdPartyHeading: Dienste von Drittanbietern
-    thirdPartyBody: Manche Werkzeuge konnen auf externe Ressourcen oder Dokumentationen verweisen. Wir sind nicht fur die Datenschutzpraktiken dieser externen Seiten verantwortlich.
+    thirdPartyBody: Manche Werkzeuge können auf externe Ressourcen oder Dokumentationen verweisen. Wir sind nicht für die Datenschutzpraktiken dieser externen Seiten verantwortlich.
     androidAppHeading: Android-App
-    androidAppBody: Die KillerTools-Android-App ist eine Huelle um die Webanwendung. Sie fordert oder nutzt keine Geraeteberechtigungen ausser dem grundlegenden Internetzugriff. Es werden keine Geraetedaten erfasst oder ubertragen.
+    androidAppBody: Die KillerTools-Android-App ist eine Hülle um die Webanwendung. Sie fordert oder nutzt keine Geräteberechtigungen außer dem grundlegenden Internetzugriff. Es werden keine Gerätedaten erfasst oder übertragen.
     contactHeading: Kontakt
-    contactBody: Wenn Sie Fragen zu dieser Datenschutzerklarung haben, erreichen Sie uns unter
+    contactBody: Wenn Sie Fragen zu dieser Datenschutzerklärung haben, erreichen Sie uns unter
   androidApp:
-    robotAttribution: Der Android-Roboter wird aus Arbeiten reproduziert oder verandert, die von Google erstellt und geteilt wurden, gemass den Bedingungen der Creative Commons 3.0 Attribution License.
+    robotAttribution: Der Android-Roboter wird aus Arbeiten reproduziert oder verändert, die von Google erstellt und geteilt wurden, gemäß den Bedingungen der Creative Commons 3.0 Attribution License.
     heading: KillerTools fur Android
     introBody1: 'Die gesamte killertools.net-Werkzeugkiste als native Android-App: jedes Werkzeug, die Killer Scripts Bibliothek und alle Ihre Favoriten, einen Tipp vom Startbildschirm entfernt.'
-    introBody2: Gleiche Regeln wie auf der Website. Alles lauft auf Ihrem Geraet. Kein Konto, kein Tracking, kein Phone-Home. Wenn es Ihnen einen Ticketzyklus im Einsatz spart, hat es seinen Zweck erfullt.
+    introBody2: Gleiche Regeln wie auf der Website. Alles läuft auf Ihrem Gerät. Kein Konto, kein Tracking, kein Phone-Home. Wenn es Ihnen einen Ticketzyklus im Einsatz spart, hat es seinen Zweck erfüllt.
     betaStatusPrefix: Die App befindet sich derzeit in einer
     betaStatusStrong: geschlossenen Beta auf Google Play
     betaStatusSuffix: ', und hier kommen Sie ins Spiel.'
     joinBetaHeading: Der Beta beitreten
     joinBetaIntroPrefix: Google verlangt
-    joinBetaIntroStrong: 12 Tester mit der App installiert fur 14 aufeinanderfolgende Tage
-    joinBetaIntroSuffix: 'bevor eine App eines unabhangigen Entwicklers offentlich verfugbar sein kann. Drei Schritte, etwa zwei Minuten, und Sie sind einer der zwolf:'
+    joinBetaIntroStrong: 12 Tester mit der App installiert für 14 aufeinanderfolgende Tage
+    joinBetaIntroSuffix: 'bevor eine App eines unabhängigen Entwicklers öffentlich verfügbar sein kann. Drei Schritte, etwa zwei Minuten, und Sie sind einer der zwölf:'
     step1LinkText: Der Testergruppe beitreten
     step1Suffix: in Google Groups (auf "Join group" klicken).
     step2LinkText: Tester werden
     step2Suffix: auf der Google Play Opt-in-Seite.
     step3LinkText: Die App installieren
     step3Suffix: aus Google Play und zwei Wochen installiert lassen.
-    sameAccountStrong: Verwenden Sie fur alle drei Schritte das gleiche Google-Konto
-    sameAccountSuffix: ' - die Opt-in-Seite zeigt "not available for this account" an, wenn Sie die Gruppe uberspringen oder das Konto wechseln.'
+    sameAccountStrong: Verwenden Sie für alle drei Schritte das gleiche Google-Konto
+    sameAccountSuffix: ' - die Opt-in-Seite zeigt "not available for this account" an, wenn Sie die Gruppe überspringen oder das Konto wechseln.'
     feedbackPrefix: 'Etwas kaputt oder fehlt? Sagen Sie es mir:'
   home:
     sortPopular: Beliebt
@@ -1779,18 +1779,18 @@ pages:
     sortZA: Z - A
   about:
     heading: Uber KillerTools
-    intro: Vor-Ort-Techniker haben keine Zeit fur Ballast. Jedes Werkzeug hier existiert, weil ich es bei der Arbeit brauchte und nichts fand, das einfach funktionierte, ohne Konto, Installation oder Tracking.
+    intro: Vor-Ort-Techniker haben keine Zeit für Ballast. Jedes Werkzeug hier existiert, weil ich es bei der Arbeit brauchte und nichts fand, das einfach funktionierte, ohne Konto, Installation oder Tracking.
     originPrefix: Ich baue jetzt Werkzeuge im internen KI-Engineering-Team eines MSP, nach sechs Jahren Full-Stack-Entwicklung und acht Jahren als Vor-Ort-Techniker bei mehreren Unternehmen. KillerTools.net begann als Fork des ausgezeichneten
     originMid: Projekts von
-    originSuffix: und wuchs zu etwas, das fur die Art von Arbeit gebaut wurde, die ich tatsachlich mache. Ich habe es gebaut, um mitten im Ticket Gruppenrichtlinieneinstellungen nachzuschlagen, das Subnetz eines Kunden zu scannen und Portreferenzen abzurufen, ohne den Browser zu verlassen.
-    scriptsLibrary: Die Killer Scripts Bibliothek deckt die Aufgaben ab, die in jedem Ticketzyklus vorkommen. Jedes Skript lauft in PS 5.1, PS 7 und Kaseya LiveConnect ohne Abhangigkeiten.
-    privacyBody: Alles lauft in Ihrem Browser. Nichts wird verfolgt. Es ist nie ein Konto erforderlich. Die Website erzwingt eine strenge Content Security Policy, um Angriffe uber die Abhangigkeitskette zu blockieren. Sollte ein kompromittiertes npm-Paket jemals ins Bundle gelangen, kann es nicht nach Hause telefonieren mit dem, was Sie eingefugt haben.
+    originSuffix: und wuchs zu etwas, das für die Art von Arbeit gebaut wurde, die ich tatsächlich mache. Ich habe es gebaut, um mitten im Ticket Gruppenrichtlinieneinstellungen nachzuschlagen, das Subnetz eines Kunden zu scannen und Portreferenzen abzurufen, ohne den Browser zu verlassen.
+    scriptsLibrary: Die Killer Scripts Bibliothek deckt die Aufgaben ab, die in jedem Ticketzyklus vorkommen. Jedes Skript läuft in PS 5.1, PS 7 und Kaseya LiveConnect ohne Abhängigkeiten.
+    privacyBody: Alles läuft in Ihrem Browser. Nichts wird verfolgt. Es ist nie ein Konto erforderlich. Die Website erzwingt eine strenge Content Security Policy, um Angriffe über die Abhängigkeitskette zu blockieren. Sollte ein kompromittiertes npm-Paket jemals ins Bundle gelangen, kann es nicht nach Hause telefonieren mit dem, was Sie eingefügt haben.
     maintainedByPrefix: Erstellt und gepflegt von
     maintainedByMid: Wenn dies Ihnen Zeit bei der Arbeit spart,
     buyMeCoffee: mir einen Kaffee spendieren
-    maintainedBySuffix: wird geschatzt, aber nie erwartet.
+    maintainedBySuffix: wird geschätzt, aber nie erwartet.
     missingToolHeading: Fehlt ein Werkzeug? Einen Fehler gefunden?
-    issuesPrefix: Eroffnen Sie eine Funktionsanfrage oder einen Fehlerbericht im
+    issuesPrefix: Eröffnen Sie eine Funktionsanfrage oder einen Fehlerbericht im
     issuesLinkText: Issues-Bereich
     issuesSuffix: auf GitHub. Ich lese sie.
     alsoTryHeading: Probieren Sie auch...

@@ -210,16 +210,16 @@ tools:
       sourceCommunity: Dati della community
       fieldMeteredExposure: Esposizione misurata
       unitSeconds: secondi
-      noFailureMessage: 'Nessuna correzione necessaria: questa pellicola non presenta fallimento di reciprocita a questa durata di esposizione.'
+      noFailureMessage: 'Nessuna correzione necessaria: questa pellicola non presenta fallimento di reciprocità a questa durata di esposizione.'
       copyDone: ✓ copiato
       copySeconds: copia secondi
-      devReduce10: Valuta di ridurre lo sviluppo di circa il 10% per compensare la maggiore densita nelle ombre.
+      devReduce10: Valuta di ridurre lo sviluppo di circa il 10% per compensare la maggiore densità nelle ombre.
       devReduce1015: Si consiglia di ridurre lo sviluppo del 10-15%.
       devReduce1520: Si consiglia di ridurre lo sviluppo del 15-20%.
       devReduce2030: Per esposizioni molto lunghe si consiglia di ridurre lo sviluppo del 20-30%.
       colorShiftWarning: 'Pellicola a colori: previsto uno slittamento cromatico a questa durata di esposizione.'
-      colorShiftSlide: 'La pellicola diapositiva e difficile da correggere in post produzione: si consiglia la filtrazione CC in ripresa.'
-      colorShiftNeg: 'Il negativo a colori ha piu latitudine: la correzione e possibile in stampa o scansione.'
+      colorShiftSlide: 'La pellicola diapositiva è difficile da correggere in post produzione: si consiglia la filtrazione CC in ripresa.'
+      colorShiftNeg: 'Il negativo a colori ha più latitudine: la correzione è possibile in stampa o scansione.'
   nd-filter-calculator:
     title: Calcolatore filtri ND
     description: Calcola i tempi di scatto corretti per i filtri a densità neutra. Supporta tutte le intensità ND comuni e valori di stop personalizzati.
@@ -483,7 +483,7 @@ tools:
       arabicSideLabel: ARABO
       romanSideLabel: NUMERO ROMANO
       arabicRangeError: Deve essere {min}-{max}
-      invalidRoman: Non e un numero romano valido
+      invalidRoman: Non è un numero romano valido
       copied: Copiato
       copy: Copia
       romanCopiedToast: Numero romano copiato
@@ -549,7 +549,7 @@ tools:
       fileToBase64Title: DA FILE A BASE64
       dropHint: Trascina e rilascia un file qui, oppure clicca per selezionarlo
       fileInBase64Label: FILE IN BASE64
-      fileOutputPlaceholder: Il file in base64 apparira qui
+      fileOutputPlaceholder: Il file in base64 apparirà qui
       copied: Copiato!
       copyBase64: Copia base64
   base64-string-converter:
@@ -565,7 +565,7 @@ tools:
       stringToEncodeLabel: STRINGA DA CODIFICARE
       stringInputPlaceholder: Inserisci qui la tua stringa...
       base64OutputLabel: OUTPUT BASE64
-      base64OutputPlaceholder: La codifica base64 della tua stringa apparira qui
+      base64OutputPlaceholder: La codifica base64 della tua stringa apparirà qui
       copied: Copiato!
       copyBase64: Copia base64
       base64ToStringTitle: DA BASE64 A STRINGA
@@ -573,7 +573,7 @@ tools:
       base64InputPlaceholder: La tua stringa base64...
       invalidBase64: Stringa base64 non valida
       decodedStringLabel: STRINGA DECODIFICATA
-      decodedOutputPlaceholder: La stringa decodificata apparira qui
+      decodedOutputPlaceholder: La stringa decodificata apparirà qui
       copyDecodedString: Copia stringa decodificata
   math-evaluator:
     title: Valutatore matematico
@@ -949,7 +949,7 @@ tools:
     title: Minify JSON
     description: Minimizza e comprimi il tuo JSON rimuovendo gli spazi superflui.
     ui:
-      invalidJson: Il JSON fornito non e valido.
+      invalidJson: Il JSON fornito non è valido.
       inputLabel: Il tuo JSON grezzo
       inputPlaceholder: Incolla qui il tuo JSON grezzo...
       outputLabel: Versione minificata del tuo JSON
@@ -1024,7 +1024,7 @@ tools:
       addressesInRange: Indirizzi nell'intervallo
       invalidIpv4: Indirizzo IPv4 non valido
       invalidCombinationTitle: Combinazione non valida di indirizzo IPv4 iniziale e finale
-      invalidCombinationDescription: L'indirizzo IPv4 finale e inferiore a quello iniziale. Questo non e valido e non e stato possibile calcolare un risultato.
+      invalidCombinationDescription: L'indirizzo IPv4 finale è inferiore a quello iniziale. Questo non è valido e non è stato possibile calcolare un risultato.
       switchStartEnd: Scambia indirizzo IPv4 iniziale e finale
       result: Risultato
       copied: Copiato!
@@ -1222,7 +1222,7 @@ tools:
       unicodeLabel: Unicode
       unicodeTitle: Unicode; tratta un pattern come una sequenza di code point Unicode.
       unicodeSetsLabel: Unicode Sets
-      unicodeSetsTitle: Un miglioramento della modalita u con piu funzionalita Unicode.
+      unicodeSetsTitle: Un miglioramento della modalità u con più funzionalità Unicode.
       textLabel: 'Testo da confrontare:'
       textPlaceholder: Inserisci il testo da confrontare
       regexBarTitle: REGEX
@@ -1310,8 +1310,8 @@ tools:
     description: Dettagli di registrazione WHOIS e controlli DNS email (MX, SPF, DKIM, DMARC) per qualsiasi dominio in un'unica vista.
     ui:
       statusDesc:
-        active: Il dominio e attivo e operativo.
-        inactive: Il dominio non e attivo.
+        active: Il dominio è attivo e operativo.
+        inactive: Il dominio non è attivo.
         clientDeleteProhibited: Il registrar ha bloccato il dominio contro la cancellazione.
         clientTransferProhibited: Il registrar ha bloccato il dominio contro il trasferimento a un altro registrar.
         clientUpdateProhibited: Il registrar ha bloccato il dominio contro gli aggiornamenti.
@@ -1320,18 +1320,18 @@ tools:
         serverTransferProhibited: Il registry ha bloccato il dominio contro il trasferimento.
         serverUpdateProhibited: Il registry ha bloccato il dominio contro gli aggiornamenti.
         serverHold: Il registry ha messo il dominio in hold, quindi il DNS potrebbe non risolvere.
-        pendingCreate: La creazione del dominio e in sospeso.
-        pendingDelete: Il dominio e in attesa di cancellazione e potrebbe essere rilasciato a breve.
-        pendingRenew: Il rinnovo del dominio e in sospeso.
-        pendingRestore: Il ripristino del dominio dopo la cancellazione e in sospeso.
-        pendingTransfer: Il trasferimento del dominio a un altro registrar e in sospeso.
-        pendingUpdate: L'aggiornamento del dominio e in sospeso.
-        redemptionPeriod: Il dominio e scaduto ed e in redemption. Il titolare puo ancora recuperarlo.
-        renewPeriod: Il dominio e nel periodo di grazia per il rinnovo dopo la registrazione.
-        autoRenewPeriod: Il dominio e nel periodo di grazia del rinnovo automatico.
-        transferPeriod: Il dominio e nel periodo di grazia per il trasferimento.
-      expiredAlert: Questo dominio e scaduto {days} giorni fa e potrebbe essere disponibile per la registrazione.
-      expiresAlert: Questo dominio scade tra {days} giorni. Il rinnovo dovrebbe essere organizzato al piu presto.
+        pendingCreate: La creazione del dominio è in sospeso.
+        pendingDelete: Il dominio è in attesa di cancellazione e potrebbe essere rilasciato a breve.
+        pendingRenew: Il rinnovo del dominio è in sospeso.
+        pendingRestore: Il ripristino del dominio dopo la cancellazione è in sospeso.
+        pendingTransfer: Il trasferimento del dominio a un altro registrar è in sospeso.
+        pendingUpdate: L'aggiornamento del dominio è in sospeso.
+        redemptionPeriod: Il dominio è scaduto ed è in redemption. Il titolare può ancora recuperarlo.
+        renewPeriod: Il dominio è nel periodo di grazia per il rinnovo dopo la registrazione.
+        autoRenewPeriod: Il dominio è nel periodo di grazia del rinnovo automatico.
+        transferPeriod: Il dominio è nel periodo di grazia per il trasferimento.
+      expiredAlert: Questo dominio è scaduto {days} giorni fa e potrebbe essere disponibile per la registrazione.
+      expiresAlert: Questo dominio scade tra {days} giorni. Il rinnovo dovrebbe essere organizzato al più presto.
       expiredTag: Scaduto {days}g fa
       remainingTag: '{days}g rimanenti'
       registrar: Registrar
@@ -1343,19 +1343,19 @@ tools:
       dnsFailed: Ricerca DNS non riuscita.
       noSpf: Nessun record SPF trovato.
       noDkim: Nessun record DKIM trovato per i selettori comuni. Selettori personalizzati potrebbero comunque esistere.
-      noDmarc: Nessun record DMARC trovato. Il dominio non e protetto contro lo spoofing.
-      spfPlusAll: 'Attenzione: +all e pericoloso perche permette a qualsiasi server di inviare posta a nome di questo dominio.'
-      spfNeutralAll: 'Attenzione: ?all e neutro e non offre alcuna protezione.'
-      dmarcPNone: 'Attenzione: p=none e solo monitoraggio, senza applicazione. Le email non verranno rifiutate.'
+      noDmarc: Nessun record DMARC trovato. Il dominio non è protetto contro lo spoofing.
+      spfPlusAll: 'Attenzione: +all è pericoloso perché permette a qualsiasi server di inviare posta a nome di questo dominio.'
+      spfNeutralAll: 'Attenzione: ?all è neutro e non offre alcuna protezione.'
+      dmarcPNone: 'Attenzione: p=none è solo monitoraggio, senza applicazione. Le email non verranno rifiutate.'
       dmarcNoRua: 'Attenzione: nessun indirizzo per i report aggregati (rua=). Non riceverai i report DMARC.'
       pass: Superato
       fail: Non superato
       warning: Attenzione
       checking: Verifica in corso...
-      overallPass: Tutti i controlli email sono stati superati. Questo dominio e ben configurato per l'email.
-      overallFail: Uno o piu record critici mancano. Questo dominio potrebbe essere vulnerabile allo spoofing.
+      overallPass: Tutti i controlli email sono stati superati. Questo dominio è ben configurato per l'email.
+      overallFail: Uno o più record critici mancano. Questo dominio potrebbe essere vulnerabile allo spoofing.
       overallWarn: Alcuni record esistono ma presentano problemi di configurazione da rivedere.
-      rdapHttpError: 'HTTP {status}: il dominio potrebbe non esistere oppure il TLD non e supportato.'
+      rdapHttpError: 'HTTP {status}: il dominio potrebbe non esistere oppure il TLD non è supportato.'
       lookupFailed: Ricerca non riuscita.
       domainPlaceholder: Inserisci un dominio (es. killertools.net)
       searching: Ricerca in corso...
@@ -1367,7 +1367,7 @@ tools:
       dsRecords: '{count} record DS.'
       keyRecord: '{count} record chiave.'
       keyRecords: '{count} record chiave.'
-      dnssecUnsigned: Questo dominio non e protetto da DNSSEC. Le risposte DNS non possono essere verificate crittograficamente.
+      dnssecUnsigned: Questo dominio non è protetto da DNSSEC. Le risposte DNS non possono essere verificate crittograficamente.
       status: Stato
       contacts: Contatti
       remarks: Osservazioni
@@ -1412,7 +1412,7 @@ tools:
       policy: POLICY
       subdomainPolicy: POLICY SOTTODOMINI (OPZIONALE)
       policyCoverage: 'COPERTURA POLICY: {percent}%'
-      coverageHint: Il {percent}% della posta non conforme verra gestito. Usa un valore inferiore al 100% per un rollout graduale.
+      coverageHint: Il {percent}% della posta non conforme verrà gestito. Usa un valore inferiore al 100% per un rollout graduale.
       aggregateReportEmail: EMAIL REPORT AGGREGATI (rua)
       forensicReportEmail: EMAIL REPORT FORENSI (ruf, opzionale)
       dkimAlignment: ALLINEAMENTO DKIM

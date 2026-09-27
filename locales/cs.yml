@@ -1685,9 +1685,9 @@ tools:
           requirements: PowerShell 5.1 & 7 · Přístup k internetu pro stažení aktuálního skriptu (uložené kopie fungují offline)
 components:
   androidBetaBanner:
-    announcement: Oznameni o beta verzi pro Android
-    title: Killer Tools miri na Android
-    subtitle: Hledame beta testery, klepnutim se pridate
+    announcement: Oznámení o beta verzi pro Android
+    title: Killer Tools míří na Android
+    subtitle: Hledáme beta testery, klepnutím se přidáte
     dismiss: Zavrit
   formatTransformer:
     input: Vstup
@@ -1704,7 +1704,7 @@ components:
     copied: Zkopirovano!
   navbarButtons:
     androidTooltip: Killer Tools pro Android
-    androidAriaLabel: Killer Tools pro Android, pridejte se do beta programu
+    androidAriaLabel: Killer Tools pro Android, přidejte se do beta programu
   themeDots:
     accentColor: Zvyrazneni barva
     theme: Motiv
@@ -1723,7 +1723,7 @@ components:
       purple: Fialova
 layouts:
   menuLayout:
-    eggMessage: 80 nastroju. Zadna predplatna. Jeden zatrpkly terenni technik.
+    eggMessage: 80 nástrojů. Žádná předplatná. Jeden zatrpklý terénní technik.
     clickMe: klikni na me
     sourceOnGithub: Zdrojovy kod na Githubu
   base:
@@ -1736,70 +1736,70 @@ pages:
     backToHome: zpet na uvod
   privacy:
     heading: Zasady ochrany osobnich udaju
-    lastUpdated: 'Naposledy aktualizovano: 4. dubna 2026'
+    lastUpdated: 'Naposledy aktualizováno: 4. dubna 2026'
     overviewHeading: Prehled
     overviewIntro: KillerTools
-    overviewBody: je bezplatna sbirka IT nastroju. Vase soukromi je pro nas dulezite a tyto zasady vysvetluji, jak nakladame s vasimi udaji.
+    overviewBody: je bezplatná sbírka IT nástrojů. Vaše soukromí je pro nás důležité a tyto zásady vysvětlují, jak nakládáme s vašimi údaji.
     dataCollectionHeading: Sber udaju
-    dataCollectionBody: KillerTools neshromazduje, neuklada ani nepredava zadne osobni udaje. Vsechno zpracovani probiha zcela ve vasem prohlizeci. Zadne udaje, ktere zadate do nektereho nastroje, se neodesilaji na server.
+    dataCollectionBody: KillerTools neshromažďuje, neukládá ani nepředává žádné osobní údaje. Veškeré zpracování probíhá zcela ve vašem prohlížeči. Žádné údaje, které zadáte do některého nástroje, se neodesílají na server.
     cookiesHeading: Cookies
-    cookiesBody: Tento web nepouziva cookies pro sledovani. Vase preference vzhledu a nastaveni se ukladaji lokalne ve vasem prohlizeci a nikdy se neprenaseji.
+    cookiesBody: Tento web nepoužívá cookies pro sledování. Vaše preference vzhledu a nastavení se ukládají lokálně ve vašem prohlížeči a nikdy se nepřenášejí.
     analyticsHeading: Analytika
     analyticsIntro: Tento web pouziva
-    analyticsBody: nastroj analytiky zamereny na soukromi, k pochopeni obecnych vzorcu pouzivani, jako jsou zobrazeni stranek a zdroje odkazu. Umami nepouziva cookies, nesleduje uzivatele napric weby a neshromazduje zadne osobne identifikovatelne informace. Vsechna data jsou agregovana a anonymni.
+    analyticsBody: nástroj analytiky zaměřený na soukromí, k pochopení obecných vzorců používání, jako jsou zobrazení stránek a zdroje odkazů. Umami nepoužívá cookies, nesleduje uživatele napříč weby a neshromažďuje žádné osobně identifikovatelné informace. Všechna data jsou agregovaná a anonymní.
     thirdPartyHeading: Sluzby tretich stran
-    thirdPartyBody: Nektere nastroje mohou odkazovat na externi zdroje nebo dokumentaci. Nejsme odpovedni za postupy ochrany soukromi tech externich stranek.
+    thirdPartyBody: Některé nástroje mohou odkazovat na externí zdroje nebo dokumentaci. Nejsme odpovědní za postupy ochrany soukromí těch externích stránek.
     androidAppHeading: Aplikace pro Android
-    androidAppBody: Android aplikace KillerTools je obal kolem webove aplikace. Nepozaduje ani nevyuziva zadna opravneni zarizeni nad ramec zakladniho pristupu k internetu. Zadna data zarizeni nejsou shromazdovana ani predavana.
+    androidAppBody: Android aplikace KillerTools je obal kolem webové aplikace. Nepožaduje ani nevyužívá žádná oprávnění zařízení nad rámec základního přístupu k internetu. Žádná data zařízení nejsou shromažďována ani předávána.
     contactHeading: Kontakt
-    contactBody: Pokud mate dotazy ohledne techto zasad ochrany osobnich udaju, muzete nas kontaktovat na
+    contactBody: Pokud máte dotazy ohledně těchto zásad ochrany osobních údajů, můžete nás kontaktovat na
   androidApp:
-    robotAttribution: Android robot je reprodukovan nebo upraven z dila vytvoreneho a sdileneho spolecnosti Google a pouzivan podle podminek licence Creative Commons 3.0 Attribution.
+    robotAttribution: Android robot je reprodukován nebo upraven z díla vytvořeného a sdíleného společností Google a používán podle podmínek licence Creative Commons 3.0 Attribution.
     heading: KillerTools pro Android
-    introBody1: 'Cela sada nastroju killertools.net jako nativni Android aplikace: kazdy nastroj, knihovna Killer Scripts a vsechny vase oblibene, jedno klepnuti od plochy.'
-    introBody2: Stejna pravidla jako na webu. Vse bezi na vasem zarizeni. Zadny ucet, zadna telemetrie, zadne volani domu. Pokud vam usetri jeden cyklus tiketu v terenu, splnila svuj ucel.
+    introBody1: 'Celá sada nástrojů killertools.net jako nativní Android aplikace: každý nástroj, knihovna Killer Scripts a všechny vaše oblíbené, jedno klepnutí od plochy.'
+    introBody2: Stejná pravidla jako na webu. Vše běží na vašem zařízení. Žádný účet, žádná telemetrie, žádné volání domů. Pokud vám ušetří jeden cyklus tiketu v terénu, splnila svůj účel.
     betaStatusPrefix: Aplikace je momentalne v
-    betaStatusStrong: uzavrene beta verzi na Google Play
-    betaStatusSuffix: ', a tady prichazite na radu vy.'
-    joinBetaHeading: Pridat se do beta verze
+    betaStatusStrong: uzavřené beta verzi na Google Play
+    betaStatusSuffix: ', a tady přicházíte na řadu vy.'
+    joinBetaHeading: Přidat se do beta verze
     joinBetaIntroPrefix: Google vyzaduje
-    joinBetaIntroStrong: 12 testeru s nainstalovanou aplikaci po dobu 14 po sobe jdoucich dni
-    joinBetaIntroSuffix: 'nez muze aplikace nezavisleho vyvojare jit na verejnost. Tri kroky, asi dve minuty, a jste jednim z dvanacti:'
-    step1LinkText: Pridejte se do skupiny testeru
-    step1Suffix: na Google Groups (kliknete na "Join group").
+    joinBetaIntroStrong: 12 testerů s nainstalovanou aplikací po dobu 14 po sobě jdoucích dní
+    joinBetaIntroSuffix: 'než může aplikace nezávislého vývojáře jít na veřejnost. Tři kroky, asi dvě minuty, a jste jedním z dvanácti:'
+    step1LinkText: Přidejte se do skupiny testerů
+    step1Suffix: na Google Groups (klikněte na "Join group").
     step2LinkText: Staňte se testerem
     step2Suffix: na stránce Google Play pro prihlaseni.
     step3LinkText: Nainstalujte aplikaci
-    step3Suffix: z Google Play a nechte ji nainstalovanou dva tydny.
-    sameAccountStrong: Pro vsechny tri kroky pouzijte stejny ucet Google
-    sameAccountSuffix: ' - prihlasovaci stranka zobrazi "not available for this account", pokud vynechate skupinu nebo prepnete ucet.'
-    feedbackPrefix: 'Neco je rozbite nebo chybi? Napiste mi:'
+    step3Suffix: z Google Play a nechte ji nainstalovanou dva týdny.
+    sameAccountStrong: Pro všechny tři kroky použijte stejný účet Google
+    sameAccountSuffix: ' - přihlašovací stránka zobrazí "not available for this account", pokud vynecháte skupinu nebo přepnete účet.'
+    feedbackPrefix: 'Něco je rozbité nebo chybí? Napište mi:'
   home:
     sortPopular: Oblibene
     sortAZ: A - Z
     sortZA: Z - A
   about:
     heading: O KillerTools
-    intro: Terenni technici nemaji cas na balast. Kazdy nastroj tady existuje proto, ze jsem ho potreboval pri praci a nenasel jsem nic, co by proste fungovalo bez uctu, instalace nebo telemetrie.
-    originPrefix: Nyni tvorim nastroje v internim AI inzenyrskem tymu MSP, po sesti letech full-stack vyvoje a osmi letech jako terenni technik u nekolika firem. KillerTools.net zacal jako fork vyborneho
+    intro: Terénní technici nemají čas na balast. Každý nástroj tady existuje proto, že jsem ho potřeboval při práci a nenašel jsem nic, co by prostě fungovalo bez účtu, instalace nebo telemetrie.
+    originPrefix: Nyní tvořím nástroje v interním AI inženýrském týmu MSP, po šesti letech full-stack vývoje a osmi letech jako terénní technik u několika firem. KillerTools.net začal jako fork vynikajícího
     originMid: projektu od
-    originSuffix: a vyrostl v neco, co je postavene pro druh prace, kterou skutecne delam. Postavil jsem ho, abych mohl uprostred tiketu vyhledavat nastaveni Group Policy, skenovat podsit klienta a hledat reference portu, aniz bych opustil prohlizec.
-    scriptsLibrary: Knihovna Killer Scripts pokryva ukoly, ktere se objevuji v kazdem cyklu tiketu. Kazdy skript bezi v PS 5.1, PS 7 a Kaseya LiveConnect bez zavislosti.
-    privacyBody: Vse bezi ve vasem prohlizeci. Nic se nesleduje. Ucet neni nikdy vyzadovan. Web vynucuje prisnou Content Security Policy, aby blokoval utoky pres retezec zavislosti. Pokud by se kompromitovany npm balicek nekdy dostal do bundlu, nemuze poslat domu to, co jste vlozili.
+    originSuffix: a vyrostl v něco, co je postavené pro druh práce, kterou skutečně dělám. Postavil jsem ho, abych mohl uprostřed tiketu vyhledávat nastavení Group Policy, skenovat podsíť klienta a hledat reference portů, aniž bych opustil prohlížeč.
+    scriptsLibrary: Knihovna Killer Scripts pokrývá úkoly, které se objevují v každém cyklu tiketu. Každý skript běží v PS 5.1, PS 7 a Kaseya LiveConnect bez závislostí.
+    privacyBody: Vše běží ve vašem prohlížeči. Nic se nesleduje. Účet není nikdy vyžadován. Web vynucuje přísnou Content Security Policy, aby blokoval útoky přes řetězec závislostí. Pokud by se kompromitovaný npm balíček někdy dostal do bundlu, nemůže poslat domů to, co jste vložili.
     maintainedByPrefix: Vytvoril a udrzuje
-    maintainedByMid: Pokud vam to setri cas v praci,
+    maintainedByMid: Pokud vám to šetří čas v práci,
     buyMeCoffee: koupit mi kavu
-    maintainedBySuffix: je vitano, ale nikdy se necekava.
-    missingToolHeading: Chybi nastroj? Nasli jste chybu?
-    issuesPrefix: Otevrete pozadavek na funkci nebo hlaseni chyby v
+    maintainedBySuffix: je vítáno, ale nikdy se nečekává.
+    missingToolHeading: Chybí nástroj? Našli jste chybu?
+    issuesPrefix: Otevřete požadavek na funkci nebo hlášení chyby v
     issuesLinkText: sekci issues
     issuesSuffix: na GitHubu. Cetu je.
     alsoTryHeading: Vyzkousejte take...
-    tagKillerScan: Open-source sitovy skener pro Windows
+    tagKillerScan: Open-source síťový skener pro Windows
     tagKillerPdf: Open-source editor PDF pro Windows
-    tagKillerShell: Open-source Windows shell pro pokrocile uzivatele
-    tagKillerNotes: Open-source sifrovany poznamkovy blok pro Windows
-    tagKillendar: Open-source sifrovany kalendar pro Windows
+    tagKillerShell: Open-source Windows shell pro pokročilé uživatele
+    tagKillerNotes: Open-source šifrovaný poznámkový blok pro Windows
+    tagKillendar: Open-source šifrovaný kalendář pro Windows
     linksHeading: Odkazy
     linkLabelSite: Web
     linkLabelSource: Zdrojovy kod

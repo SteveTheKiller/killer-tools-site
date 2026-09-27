@@ -520,7 +520,7 @@ tools:
       noResults: Aucun résultat
       searchResult: Résultat de recherche
     title: Sélecteur d'emojis
-    description: Copiez et collez des emojis facilement et obtenez la valeur unicode et les points de code de chaque emoji.
+    description: Copiez et collez des emojis facilement et obtenez la valeur Unicode et les points de code de chaque emoji.
   lorem-ipsum-generator:
     ui:
       copiedMessage: Lorem ipsum copié dans le presse-papiers
@@ -669,7 +669,7 @@ tools:
       inputPlaceholder: Collez votre JSON brut ici...
       outputLabel: Version minifiée de votre JSON
     title: Minification JSON
-    description: Minifiez et compressez votre JSON en supprimant les espaces inutiles.
+    description: Réduisez et compressez votre JSON en supprimant les espaces inutiles.
   math-evaluator:
     ui:
       placeholder: 'Votre expression mathématique (ex : 2*sqrt(6) )...'
@@ -680,10 +680,10 @@ tools:
     ui:
       macAddressLabel: Adresse MAC
       copiedTooltip: Copié !
-      copyTooltip: Cliquez pour copier les infos du fabricant
+      copyTooltip: Cliquez pour copier les détails du fabricant
       copiedTitle: ✓ copié
       vendorInfoTitle: Infos du fabricant
-      unknownVendor: Fabricant inconnu pour cette adresse
+      unknownVendor: Fabricant non répertorié pour cette adresse
     title: Recherche d'adresse MAC
     description: Trouvez le fournisseur et le fabricant d'un appareil à partir de son adresse MAC.
   markdown-to-html:
@@ -710,7 +710,7 @@ tools:
       mimeTypeSelectPlaceholder: 'Sélectionnez votre mimetype ici... (ex : application/pdf)'
       extensionsFoundPrefix: Extensions des fichiers avec le
       extensionsFoundSuffix: 'type mime :'
-      extensionToMimeTitle: Extension de fichier vers type mime
+      extensionToMimeTitle: Extension de fichier vers type MIME
       extensionToMimeDescription: Découvrez quel type mime est associé à une extension de fichier
       mimeFoundPrefix: Type mime associé à l'extension
       mimeFoundSuffix: 'extension de fichier :'
@@ -719,14 +719,14 @@ tools:
   exchange-ndr-lookup:
     ui:
       searchResults: Résultats de recherche
-      searchPlaceholder: Rechercher par code NDR, nom d'erreur, cause ou solution...
+      searchPlaceholder: Rechercher par code NDR, nom d'erreur, cause ou remède...
       copied: Copié !
       clickToCopy: Cliquez pour copier le code NDR
       copiedShort: copié
       cause: Cause
       fix: Solution
     title: Recherche NDR Exchange
-    description: Recherchez les codes de rejet Exchange et M365 avec des explications claires des causes et des solutions.
+    description: Recherchez les codes de rejet Exchange et M365 avec des explications claires des causes et des remèdes.
   windows-error-codes:
     ui:
       searchResults: Résultats de recherche
@@ -807,7 +807,7 @@ tools:
       commandCopied: Commande chmod copiée
       copyCommand: Copier la commande
     title: Calculateur chmod
-    description: Calculez vos permissions et commandes chmod avec ce calculateur chmod en ligne.
+    description: Calculez vos permissions et commandes chmod grâce à ce calculateur chmod en ligne.
   color-converter:
     ui:
       color: Couleur
@@ -1009,7 +1009,7 @@ tools:
       clickToCopy: Cliquez pour copier le code de statut
       copiedLabel: copié
     title: Codes de statut HTTP
-    description: La liste de tous les codes de statut HTTP, leur nom et leur signification.
+    description: La liste complète de tous les codes de statut HTTP, avec leur nom et leur signification.
   bcrypt:
     ui:
       copiedToClipboard: Chaîne hachée copiée dans le presse-papiers
@@ -1132,7 +1132,7 @@ tools:
       downloadNoBgPng: ↓ Télécharger le PNG (sans arrière-plan)
       originalLabel: Original
       resultLabel: Résultat
-      uploadPrompt: Importez une image pour commencer
+      uploadPrompt: Téléversez une image pour commencer
       originalAlt: original
       resultAlt: résultat avec arrière-plan supprimé
       loadingModelStatus: Chargement du modèle IA...
@@ -1246,7 +1246,7 @@ tools:
       enforcement: APPLICATION
       policy: POLITIQUE
       subdomainPolicy: POLITIQUE DE SOUS-DOMAINE (FACULTATIF)
-      policyCoverage: 'COUVERTURE DE LA POLITIQUE: {percent}%'
+      policyCoverage: 'COUVERTURE DE LA POLITIQUE : {percent}%'
       coverageHint: '{percent}% des e-mails en échec seront traités. Utilisez moins de 100% pour un déploiement progressif.'
       aggregateReportEmail: E-MAIL DE RAPPORT AGRÉGÉ (rua)
       forensicReportEmail: E-MAIL DE RAPPORT FORENSIQUE (ruf, facultatif)
@@ -1289,7 +1289,7 @@ tools:
       mixWater: eau
       noDataWarning: Aucune donnée pour {film} + {developer}. Saisissez le temps de base manuellement.
       pushPullEstimate: Les temps push/pull sont des estimations. Un film test est recommandé.
-      sourceNote: Temps de base issus de Massive Dev Chart et des fiches techniques des fabricants.
+      sourceNote: Temps de base tirés de Massive Dev Chart et des fiches techniques des fabricants.
       processTimer: MINUTEUR DE PROCESSUS
       devComplete: Développement terminé
       devCompleteHint: Suspendez pour sécher et profitez de vos négatifs.
@@ -1441,7 +1441,7 @@ tools:
       encoding: Encodage
       output: SORTIE
     title: Hacher du texte
-    description: Hachez du texte avec MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 et plus encore.
+    description: Hachez du texte grâce à MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 et plus encore.
   hmac-generator:
     ui:
       encodingBinary: Binaire (base 2)
@@ -1452,7 +1452,7 @@ tools:
       hashingFunction: FONCTION DE HACHAGE
       outputEncoding: ENCODAGE DE SORTIE
       hmacOutput: SORTIE HMAC
-      plainTextPlaceholder: Texte brut pour calculer le hachage...
+      plainTextPlaceholder: Texte brut destiné au calcul du hachage...
       secretKeyPlaceholder: Saisissez la clé secrète...
       clear: Effacer
       copyHmac: Copier le HMAC
@@ -1580,13 +1580,13 @@ tools:
       rawPlaceholder: Collez votre YAML brut ici...
       prettifiedLabel: Version mise en forme de votre YAML
   password-strength-analyser:
-    title: Analyseur de force de mot de passe
+    title: Évaluateur de force du mot de passe
     description: Découvrez la force de votre mot de passe avec cet analyseur fonctionnant entièrement côté client et son estimation du temps de cassage.
   keycode-info:
     title: Info keycode
     description: Trouvez le keycode javascript, le code, l'emplacement et les modificateurs de n'importe quelle touche pressée.
     ui:
-      pressAnyKey: Appuyez sur une touche pour voir les infos
+      pressAnyKey: Appuyez sur une touche pour voir les détails
       key: Touche
       keycode: Keycode
       code: Code
@@ -1603,7 +1603,7 @@ tools:
     description: Embellissez votre chaîne JSON dans un format lisible et convivial.
   docker-run-to-docker-compose-converter:
     title: Convertisseur docker run vers docker compose
-    description: Transforme les commandes "docker run" en fichiers docker-compose !
+    description: Transforme les commandes "docker run" en fichiers docker-compose générés !
   qrcode-generator:
     title: Générateur de QR Code
     description: Générez et téléchargez des QR codes pour des URL, du texte brut ou des identifiants de réseau Wi-Fi. Thèmes terminal, classique et couleurs personnalisées avec correction d'erreur configurable.
@@ -1630,7 +1630,7 @@ tools:
     description: Créez du texte en art ASCII avec de nombreuses polices et styles.
   killer-scripts:
     title: Killer Scripts
-    description: Scripts PowerShell pour l'administration Windows et le travail de terrain MSP.
+    description: Scripts PowerShell prêts à l'emploi pour l'administration Windows et le travail de terrain MSP.
     ui:
       loadError: Échec du chargement des scripts depuis GitHub. Vérifiez votre connexion ou réessayez.
       retry: Réessayer
@@ -1718,7 +1718,7 @@ components:
       purple: Violet
 layouts:
   menuLayout:
-    eggMessage: 80 outils. Zero abonnement. Un technicien terrain rancunier.
+    eggMessage: 80 outils. Zéro abonnement. Un technicien terrain rancunier.
     clickMe: cliquez ici
     sourceOnGithub: Code source sur Github
   base:
@@ -1731,70 +1731,70 @@ pages:
     backToHome: retour a l'accueil
   privacy:
     heading: Politique de confidentialite
-    lastUpdated: 'Derniere mise a jour : 4 avril 2026'
+    lastUpdated: 'Dernière mise à jour : 4 avril 2026'
     overviewHeading: Apercu
     overviewIntro: KillerTools
-    overviewBody: est une collection gratuite d'outils informatiques. Votre vie privee compte pour nous, et cette politique explique comment nous traitons vos donnees.
+    overviewBody: est une collection gratuite d'outils informatiques. Votre vie privée compte pour nous, et cette politique explique comment nous traitons vos données.
     dataCollectionHeading: Collecte de donnees
-    dataCollectionBody: KillerTools ne collecte, ne stocke ni ne transmet aucune donnee personnelle. Tout le traitement des outils se fait entierement dans votre navigateur. Aucune donnee que vous saisissez dans un outil n'est envoyee a un serveur.
+    dataCollectionBody: KillerTools ne collecte, ne stocke ni ne transmet aucune donnée personnelle. Tout le traitement des outils se fait entièrement dans votre navigateur. Aucune donnée que vous saisissez dans un outil n'est envoyée à un serveur.
     cookiesHeading: Cookies
-    cookiesBody: Ce site n'utilise pas de cookies de suivi. Vos preferences de theme et vos parametres sont stockes localement dans votre navigateur et ne sont jamais transmis.
+    cookiesBody: Ce site n'utilise pas de cookies de suivi. Vos préférences de thème et vos paramètres sont stockés localement dans votre navigateur et ne sont jamais transmis.
     analyticsHeading: Statistiques
     analyticsIntro: Ce site utilise
-    analyticsBody: un outil d'analyse respectueux de la vie privee, pour comprendre les tendances generales d'utilisation telles que les pages vues et les sources de reference. Umami n'utilise pas de cookies, ne suit pas les utilisateurs d'un site a l'autre et ne collecte aucune information personnelle identifiable. Toutes les donnees sont agregees et anonymes.
+    analyticsBody: un outil d'analyse respectueux de la vie privée, pour comprendre les tendances générales d'utilisation telles que les pages vues et les sources de référence. Umami n'utilise pas de cookies, ne suit pas les utilisateurs d'un site à l'autre et ne collecte aucune information personnelle identifiable. Toutes les données sont agrégées et anonymes.
     thirdPartyHeading: Services tiers
-    thirdPartyBody: Certains outils peuvent renvoyer vers des ressources ou de la documentation externes. Nous ne sommes pas responsables des pratiques de confidentialite de ces sites externes.
+    thirdPartyBody: Certains outils peuvent renvoyer vers des ressources ou de la documentation externes. Nous ne sommes pas responsables des pratiques de confidentialité de ces sites externes.
     androidAppHeading: Application Android
-    androidAppBody: L'application Android KillerTools est une enveloppe autour de l'application web. Elle ne demande ni n'accede a aucune permission de l'appareil au-dela de l'acces internet de base. Aucune donnee de l'appareil n'est collectee ni transmise.
+    androidAppBody: L'application Android KillerTools est une enveloppe autour de l'application web. Elle ne demande ni n'accède à aucune permission de l'appareil au-delà de l'accès internet de base. Aucune donnée de l'appareil n'est collectée ni transmise.
     contactHeading: Contact
-    contactBody: Si vous avez des questions sur cette politique de confidentialite, vous pouvez nous contacter a
+    contactBody: Si vous avez des questions sur cette politique de confidentialité, vous pouvez nous contacter à
   androidApp:
-    robotAttribution: Le robot Android est reproduit ou modifie a partir d'un travail cree et partage par Google, utilise selon les termes de la licence Creative Commons 3.0 Attribution.
+    robotAttribution: Le robot Android est reproduit ou modifié à partir d'un travail créé et partagé par Google, utilisé selon les termes de la licence Creative Commons 3.0 Attribution.
     heading: KillerTools pour Android
-    introBody1: 'Toute la boite a outils killertools.net en application Android native : chaque outil, la bibliotheque Killer Scripts et tous vos favoris, a un doigt de votre ecran d''accueil.'
-    introBody2: Memes regles que sur le site. Tout s'execute sur votre appareil. Pas de compte, pas de telemetrie, pas d'envoi de donnees a distance. Si cela vous fait gagner un cycle de ticket sur le terrain, l'objectif est atteint.
+    introBody1: 'Toute la boîte à outils killertools.net en application Android native : chaque outil, la bibliothèque Killer Scripts et tous vos favoris, à un doigt de votre écran d''accueil.'
+    introBody2: Mêmes règles que sur le site. Tout s'exécute sur votre appareil. Pas de compte, pas de télémétrie, pas d'envoi de données à distance. Si cela vous fait gagner un cycle de ticket sur le terrain, l'objectif est atteint.
     betaStatusPrefix: L'application est actuellement en
-    betaStatusStrong: beta fermee sur Google Play
-    betaStatusSuffix: ', et c''est la que vous intervenez.'
+    betaStatusStrong: bêta fermée sur Google Play
+    betaStatusSuffix: ', et c''est là que vous intervenez.'
     joinBetaHeading: Rejoindre la beta
     joinBetaIntroPrefix: Google exige
-    joinBetaIntroStrong: 12 testeurs ayant l'application installee pendant 14 jours consecutifs
-    joinBetaIntroSuffix: 'avant qu''une application d''un developpeur independant puisse devenir publique. Trois etapes, environ deux minutes, et vous ferez partie des douze :'
+    joinBetaIntroStrong: 12 testeurs ayant l'application installée pendant 14 jours consécutifs
+    joinBetaIntroSuffix: 'avant qu''une application d''un développeur indépendant puisse devenir publique. Trois étapes, environ deux minutes, et vous ferez partie des douze :'
     step1LinkText: Rejoindre le groupe de testeurs
     step1Suffix: sur Google Groups (cliquez sur "Join group").
     step2LinkText: Devenir testeur
     step2Suffix: sur la page d'inscription Google Play.
     step3LinkText: Installer l'application
-    step3Suffix: depuis Google Play, et la garder installee pendant deux semaines.
-    sameAccountStrong: Utilisez le meme compte Google pour les trois etapes
+    step3Suffix: depuis Google Play, et la garder installée pendant deux semaines.
+    sameAccountStrong: Utilisez le même compte Google pour les trois étapes
     sameAccountSuffix: ' - la page d''inscription affiche "not available for this account" si vous sautez le groupe ou changez de compte.'
-    feedbackPrefix: 'Quelque chose de casse ou manquant ? Dites-le-moi :'
+    feedbackPrefix: 'Quelque chose de cassé ou manquant ? Dites-le-moi :'
   home:
     sortPopular: Populaire
     sortAZ: A - Z
     sortZA: Z - A
   about:
     heading: A propos de KillerTools
-    intro: Les techniciens de terrain n'ont pas de temps a perdre avec du superflu. Chaque outil ici existe parce que j'en avais besoin sur le terrain et que je ne trouvais rien qui fonctionne simplement, sans compte, sans installation ni telemetrie.
-    originPrefix: Je construis maintenant des outils au sein de l'equipe d'ingenierie IA interne d'un MSP, apres six ans de developpement full-stack et huit ans comme technicien de terrain dans plusieurs entreprises. KillerTools.net a commence comme un fork de l'excellent
+    intro: Les techniciens de terrain n'ont pas de temps à perdre avec du superflu. Chaque outil ici existe parce que j'en avais besoin sur le terrain et que je ne trouvais rien qui fonctionne simplement, sans compte, sans installation ni télémétrie.
+    originPrefix: Je construis maintenant des outils au sein de l'équipe d'ingénierie IA interne d'un MSP, après six ans de développement full-stack et huit ans comme technicien de terrain dans plusieurs entreprises. KillerTools.net a commencé comme un fork de l'excellent
     originMid: projet de
-    originSuffix: et est devenu quelque chose de concu pour le type de travail que je fais reellement. Je l'ai construit pour consulter des parametres de Group Policy en plein ticket, scanner le sous-reseau d'un client et rechercher des references de ports sans quitter le navigateur.
-    scriptsLibrary: La bibliotheque Killer Scripts couvre les taches qui reviennent a chaque cycle de ticket. Chaque script fonctionne sous PS 5.1, PS 7 et Kaseya LiveConnect sans dependances.
-    privacyBody: Tout s'execute dans votre navigateur. Rien n'est suivi. Aucun compte n'est jamais requis. Le site applique une Content Security Policy stricte pour bloquer les attaques par chaine de dependances. Si un paquet npm compromis venait a se retrouver dans le bundle, il ne pourrait pas renvoyer ce que vous avez colle.
+    originSuffix: et est devenu quelque chose de conçu pour le type de travail que je fais réellement. Je l'ai construit pour consulter des paramètres de Group Policy en plein ticket, scanner le sous-réseau d'un client et rechercher des références de ports sans quitter le navigateur.
+    scriptsLibrary: La bibliothèque Killer Scripts couvre les tâches qui reviennent à chaque cycle de ticket. Chaque script fonctionne sous PS 5.1, PS 7 et Kaseya LiveConnect sans dépendances.
+    privacyBody: Tout s'exécute dans votre navigateur. Rien n'est suivi. Aucun compte n'est jamais requis. Le site applique une Content Security Policy stricte pour bloquer les attaques par chaîne de dépendances. Si un paquet npm compromis venait à se retrouver dans le bundle, il ne pourrait pas renvoyer ce que vous avez collé.
     maintainedByPrefix: Cree et maintenu par
     maintainedByMid: Si cela vous fait gagner du temps au travail,
     buyMeCoffee: m'offrir un cafe
-    maintainedBySuffix: est apprecie mais jamais attendu.
-    missingToolHeading: Un outil manquant ? Un bug trouve ?
-    issuesPrefix: Ouvrez une demande de fonctionnalite ou un rapport de bug dans la
+    maintainedBySuffix: est apprécié mais jamais attendu.
+    missingToolHeading: Un outil manquant ? Un bug trouvé ?
+    issuesPrefix: Ouvrez une demande de fonctionnalité ou un rapport de bug dans la
     issuesLinkText: section issues
     issuesSuffix: sur GitHub. Je les lis.
     alsoTryHeading: A essayer aussi...
-    tagKillerScan: Scanner reseau open source pour Windows
-    tagKillerPdf: Editeur PDF open source pour Windows
-    tagKillerShell: Shell Windows open source pour utilisateurs avances
-    tagKillerNotes: Bloc-notes chiffre open source pour Windows
-    tagKillendar: Calendrier chiffre open source pour Windows
+    tagKillerScan: Scanner réseau open source pour Windows
+    tagKillerPdf: Éditeur PDF open source pour Windows
+    tagKillerShell: Shell Windows open source pour utilisateurs avancés
+    tagKillerNotes: Bloc-notes chiffré open source pour Windows
+    tagKillendar: Calendrier chiffré open source pour Windows
     linksHeading: Liens
     linkLabelSite: Site
     linkLabelSource: Code source

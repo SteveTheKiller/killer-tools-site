@@ -238,17 +238,17 @@ tools:
     title: Mã hóa / giải mã văn bản
     description: Mã hóa và giải mã văn bản rõ bằng cách sử dụng thuật toán mã hóa như AES, TripleDES, Rabbit hoặc RC4.
     ui:
-      decryptError: Khong the giai ma van ban cua ban
+      decryptError: Không thể giải mã văn bản của bạn
       encryptTitle: MA HOA
       decryptTitle: GIAI MA
       yourText: VAN BAN CUA BAN
-      yourSecretKey: KHOA BI MAT CUA BAN
+      yourSecretKey: KHÓA BÍ MẬT CỦA BẠN
       algorithm: THUAT TOAN
       encryptedOutput: KET QUA MA HOA
-      yourEncryptedText: VAN BAN DA MA HOA CUA BAN
+      yourEncryptedText: VĂN BẢN ĐÃ MÃ HÓA CỦA BẠN
       decryptedOutput: KET QUA GIAI MA
       encryptPlaceholder: Chuoi can ma hoa
-      decryptPlaceholder: Ban ma can giai ma
+      decryptPlaceholder: Bản mã cần giải mã
       secretKeyPlaceholder: Khoa bi mat...
   yaml-prettify:
     title: Định dạng và làm đẹp YAML
@@ -270,15 +270,15 @@ tools:
     title: Máy tạo HMAC
     description: Tính toán mã xác thực thông điệp dựa trên hash (HMAC) sử dụng một khóa bí mật và hàm băm yêu thích của bạn.
     ui:
-      encodingBinary: Nhi phan (co so 2)
-      encodingHex: Thap luc phan (co so 16)
-      copied: Da sao chep HMAC vao clipboard
+      encodingBinary: Nhị phân (cơ số 2)
+      encodingHex: Thập lục phân (cơ số 16)
+      copied: Đã sao chép HMAC vào clipboard
       plainText: VAN BAN GOC
       secretKey: KHOA BI MAT
       hashingFunction: HAM BAM
       outputEncoding: MA HOA DAU RA
       hmacOutput: KET QUA HMAC
-      plainTextPlaceholder: Van ban thuong de tinh hash...
+      plainTextPlaceholder: Văn bản thường để tính hash...
       secretKeyPlaceholder: Nhap khoa bi mat...
       clear: Xoa
       copyHmac: Sao chep HMAC
@@ -602,10 +602,10 @@ tools:
     title: Mã hóa văn bản
     description: 'Mã hóa một chuỗi văn bản bằng cách sử dụng các hàm bạn cần: MD5, SHA1, SHA256, SHA224, SHA512, SHA384, SHA3 hoặc RIPEMD160'
     ui:
-      encodingBinary: Nhi phan (co so 2)
-      encodingHex: Thap luc phan (co so 16)
+      encodingBinary: Nhị phân (cơ số 2)
+      encodingHex: Thập lục phân (cơ số 16)
       encodingBase64: Base64 (co so 64)
-      encodingBase64url: Base64url (base 64 an toan cho URL)
+      encodingBase64url: Base64url (base 64 an toàn cho URL)
       inputPlaceholder: Chuoi can bam...
       encoding: Ma hoa dau ra
       output: KET QUA
@@ -798,7 +798,7 @@ tools:
       recommended: Đề xuất
   windows-event-lookup:
     title: Tra cứu sự kiện Windows
-    description: Look up common Windows Event IDs with descriptions and severity.
+    description: Tra cứu Windows Event ID với mô tả, mức độ nghiêm trọng và nguyên nhân thường gặp.
     ui:
       searchResults: Kết quả tìm kiếm
       searchPlaceholder: Tìm theo ID sự kiện, tên hoặc mô tả...
@@ -807,7 +807,7 @@ tools:
       copiedShort: đã sao chép
   m365-sku-decoder:
     title: Giải mã SKU giấy phép M365
-    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+    description: Giải mã chuỗi SKU giấy phép Microsoft 365 và GUID thành tên sản phẩm tương ứng.
     ui:
       searchPlaceholder: Tìm theo tên SKU, ID chuỗi hoặc mô tả...
       copied: Đã sao chép!
@@ -825,7 +825,7 @@ tools:
       decimal: thập phân {decimal}
   exchange-ndr-lookup:
     title: Tra cứu NDR của Exchange
-    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+    description: Tra cứu mã báo lỗi gửi thư (bounce code) của Exchange và M365 kèm nguyên nhân và cách khắc phục dễ hiểu.
     ui:
       searchResults: Kết quả tìm kiếm
       searchPlaceholder: Tìm theo mã NDR, tên lỗi, nguyên nhân hoặc cách khắc phục...
@@ -912,7 +912,7 @@ tools:
     description: Tra cứu thông tin đăng ký của bất kỳ tên miền nào, bao gồm nhà đăng ký, ngày tạo và ngày hết hạn, máy chủ tên miền và cờ trạng thái.
   ascii-text-drawer:
     title: Tạo hình chữ ASCII
-    description: Create ASCII art text with many fonts and styles.
+    description: Tạo chữ nghệ thuật ASCII với nhiều phông chữ và kiểu dáng.
     ui:
       yourText: VĂN BẢN CỦA BẠN
       textPlaceholder: Văn bản cần vẽ
@@ -994,7 +994,7 @@ tools:
       jsonPlaceholder: Dán JSON của bạn vào đây...
   markdown-to-html:
     title: Markdown sang HTML
-    description: Convert Markdown to Html and allow to print (as PDF).
+    description: Chuyển đổi Markdown sang HTML và xuất hoặc in dưới dạng PDF.
     ui:
       copiedSuccess: Đã sao chép HTML vào clipboard!
       copyFailed: Không thể sao chép văn bản.
@@ -1309,64 +1309,64 @@ tools:
     description: Xem thông tin đăng ký WHOIS và kiểm tra DNS email gồm MX, SPF, DKIM và DMARC cho một tên miền trong cùng một màn hình.
     ui:
       statusDesc:
-        active: Ten mien dang hoat dong.
-        inactive: Ten mien khong hoat dong.
-        clientDeleteProhibited: Nha dang ky da khoa ten mien khong cho xoa.
-        clientTransferProhibited: Nha dang ky da khoa ten mien khong cho chuyen sang nha dang ky khac.
-        clientUpdateProhibited: Nha dang ky da khoa ten mien khong cho cap nhat.
-        clientHold: Nha dang ky da tam giu ten mien, do do DNS co the khong phan giai duoc.
-        serverDeleteProhibited: Registry da khoa ten mien khong cho xoa.
-        serverTransferProhibited: Registry da khoa ten mien khong cho chuyen.
-        serverUpdateProhibited: Registry da khoa ten mien khong cho cap nhat.
-        serverHold: Registry da tam giu ten mien, do do DNS co the khong phan giai duoc.
-        pendingCreate: Viec tao ten mien dang cho xu ly.
-        pendingDelete: Ten mien dang cho xoa va co the som duoc giai phong.
-        pendingRenew: Viec gia han ten mien dang cho xu ly.
-        pendingRestore: Viec khoi phuc ten mien sau khi xoa dang cho xu ly.
-        pendingTransfer: Viec chuyen ten mien sang nha dang ky khac dang cho xu ly.
-        pendingUpdate: Viec cap nhat ten mien dang cho xu ly.
-        redemptionPeriod: Ten mien da het han va dang trong thoi gian chuoc lai. Chu so huu van co the khoi phuc.
-        renewPeriod: Ten mien dang trong thoi gian gia han sau khi dang ky.
-        autoRenewPeriod: Ten mien dang trong thoi gian an han tu dong gia han.
-        transferPeriod: Ten mien dang trong thoi gian an han chuyen doi.
-      expiredAlert: Ten mien nay da het han {days} ngay truoc va co the duoc dang ky lai.
-      expiresAlert: Ten mien nay se het han sau {days} ngay. Nen sap xep gia han som.
-      expiredTag: Het han {days} ngay truoc
+        active: Tên miền đang hoạt động.
+        inactive: Tên miền không hoạt động.
+        clientDeleteProhibited: Nhà đăng ký đã khóa tên miền không cho xóa.
+        clientTransferProhibited: Nhà đăng ký đã khóa tên miền không cho chuyển sang nhà đăng ký khác.
+        clientUpdateProhibited: Nhà đăng ký đã khóa tên miền không cho cập nhật.
+        clientHold: Nhà đăng ký đã tạm giữ tên miền, do đó DNS có thể không phân giải được.
+        serverDeleteProhibited: Registry đã khóa tên miền không cho xóa.
+        serverTransferProhibited: Registry đã khóa tên miền không cho chuyển.
+        serverUpdateProhibited: Registry đã khóa tên miền không cho cập nhật.
+        serverHold: Registry đã tạm giữ tên miền, do đó DNS có thể không phân giải được.
+        pendingCreate: Việc tạo tên miền đang chờ xử lý.
+        pendingDelete: Tên miền đang chờ xóa và có thể sớm được giải phóng.
+        pendingRenew: Việc gia hạn tên miền đang chờ xử lý.
+        pendingRestore: Việc khôi phục tên miền sau khi xóa đang chờ xử lý.
+        pendingTransfer: Việc chuyển tên miền sang nhà đăng ký khác đang chờ xử lý.
+        pendingUpdate: Việc cập nhật tên miền đang chờ xử lý.
+        redemptionPeriod: Tên miền đã hết hạn và đang trong thời gian chuộc lại. Chủ sở hữu vẫn có thể khôi phục.
+        renewPeriod: Tên miền đang trong thời gian gia hạn sau khi đăng ký.
+        autoRenewPeriod: Tên miền đang trong thời gian ân hạn tự động gia hạn.
+        transferPeriod: Tên miền đang trong thời gian ân hạn chuyển đổi.
+      expiredAlert: Tên miền này đã hết hạn {days} ngày trước và có thể được đăng ký lại.
+      expiresAlert: Tên miền này sẽ hết hạn sau {days} ngày. Nên sắp xếp gia hạn sớm.
+      expiredTag: Hết hạn {days} ngày trước
       remainingTag: Con lai {days} ngay
       registrar: Nha dang ky
-      registrarIanaId: IANA ID cua nha dang ky
+      registrarIanaId: IANA ID của nhà đăng ký
       created: Ngay tao
       updated: Ngay cap nhat
       expires: Ngay het han
-      noMx: Khong tim thay ban ghi MX.
-      dnsFailed: Tra cuu DNS that bai.
-      noSpf: Khong tim thay ban ghi SPF.
-      noDkim: Khong tim thay ban ghi DKIM cho cac selector pho bien. Selector tuy chinh van co the ton tai.
-      noDmarc: Khong tim thay ban ghi DMARC. Ten mien khong duoc bao ve khoi gia mao.
-      spfPlusAll: 'Canh bao: +all rat nguy hiem vi cho phep bat ky may chu nao gui thu voi danh nghia ten mien nay.'
-      spfNeutralAll: 'Canh bao: ?all la trung lap va khong cung cap bao ve nao.'
-      dmarcPNone: 'Canh bao: p=none chi mang tinh giam sat, khong co che tai. Email se khong bi tu choi.'
-      dmarcNoRua: 'Canh bao: khong co dia chi nhan bao cao tong hop (rua=). Ban se khong nhan duoc bao cao DMARC.'
+      noMx: Không tìm thấy bản ghi MX.
+      dnsFailed: Tra cứu DNS thất bại.
+      noSpf: Không tìm thấy bản ghi SPF.
+      noDkim: Không tìm thấy bản ghi DKIM cho các selector phổ biến. Selector tùy chỉnh vẫn có thể tồn tại.
+      noDmarc: Không tìm thấy bản ghi DMARC. Tên miền không được bảo vệ khỏi giả mạo.
+      spfPlusAll: 'Cảnh báo: +all rất nguy hiểm vì cho phép bất kỳ máy chủ nào gửi thư với danh nghĩa tên miền này.'
+      spfNeutralAll: 'Cảnh báo: ?all là trung lập và không cung cấp bảo vệ nào.'
+      dmarcPNone: 'Cảnh báo: p=none chỉ mang tính giám sát, không có chế tài. Email sẽ không bị từ chối.'
+      dmarcNoRua: 'Cảnh báo: không có địa chỉ nhận báo cáo tổng hợp (rua=). Bạn sẽ không nhận được báo cáo DMARC.'
       pass: Dat
       fail: Khong dat
       warning: Canh bao
       checking: Dang kiem tra...
-      overallPass: Tat ca kiem tra email deu dat. Ten mien nay duoc cau hinh tot cho email.
-      overallFail: Thieu mot hoac nhieu ban ghi quan trong. Ten mien nay co the de bi gia mao.
-      overallWarn: Mot so ban ghi ton tai nhung co van de cau hinh can xem xet.
-      rdapHttpError: 'HTTP {status}: ten mien co the khong ton tai hoac TLD khong duoc ho tro.'
+      overallPass: Tất cả kiểm tra email đều đạt. Tên miền này được cấu hình tốt cho email.
+      overallFail: Thiếu một hoặc nhiều bản ghi quan trọng. Tên miền này có thể dễ bị giả mạo.
+      overallWarn: Một số bản ghi tồn tại nhưng có vấn đề cấu hình cần xem xét.
+      rdapHttpError: 'HTTP {status}: tên miền có thể không tồn tại hoặc TLD không được hỗ trợ.'
       lookupFailed: Tra cuu that bai.
-      domainPlaceholder: 'Nhap mot ten mien (vi du: killertools.net)'
+      domainPlaceholder: 'Nhập một tên miền (ví dụ: killertools.net)'
       searching: Dang tim kiem...
       search: Tim kiem
       signed: Da ky
       unsigned: Chua ky
-      delegationSigned: Uy quyen da duoc ky.
+      delegationSigned: Ủy quyền đã được ký.
       dsRecord: '{count} ban ghi DS.'
       dsRecords: '{count} ban ghi DS.'
       keyRecord: '{count} ban ghi khoa.'
       keyRecords: '{count} ban ghi khoa.'
-      dnssecUnsigned: Ten mien nay khong duoc bao ve boi DNSSEC. Phan hoi DNS khong the duoc xac minh bang mat ma.
+      dnssecUnsigned: Tên miền này không được bảo vệ bởi DNSSEC. Phản hồi DNS không thể được xác minh bằng mật mã.
       status: Trang thai
       contacts: Lien he
       remarks: Ghi chu

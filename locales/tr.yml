@@ -1310,29 +1310,29 @@ tools:
     description: Herhangi bir alan adı için WHOIS kayıt ayrıntıları ve e-posta DNS denetimleri (MX, SPF, DKIM, DMARC) tek görünümde.
     ui:
       statusDesc:
-        active: Alan adi etkin ve calisiyor.
+        active: Alan adı etkin ve çalışıyor.
         inactive: Alan adi etkin degil.
-        clientDeleteProhibited: Kayit kurulusu, alan adinin silinmesini kilitledi.
-        clientTransferProhibited: Kayit kurulusu, alan adinin baska bir kayit kurulusuna aktarilmasini kilitledi.
-        clientUpdateProhibited: Kayit kurulusu, alan adinin guncellenmesini kilitledi.
-        clientHold: Kayit kurulusu alan adini beklemeye aldi, bu nedenle DNS cozumlenemeyebilir.
-        serverDeleteProhibited: Kayit otoritesi, alan adinin silinmesini kilitledi.
-        serverTransferProhibited: Kayit otoritesi, alan adinin aktarilmasini kilitledi.
-        serverUpdateProhibited: Kayit otoritesi, alan adinin guncellenmesini kilitledi.
-        serverHold: Kayit otoritesi alan adini beklemeye aldi, bu nedenle DNS cozumlenemeyebilir.
-        pendingCreate: Alan adi olusturma islemi bekliyor.
-        pendingDelete: Alan adi silinmeyi bekliyor ve yakinda serbest kalabilir.
-        pendingRenew: Alan adi yenileme islemi bekliyor.
-        pendingRestore: Alan adinin silme sonrasi geri yuklenmesi bekliyor.
-        pendingTransfer: Alan adinin baska bir kayit kurulusuna aktarilmasi bekliyor.
-        pendingUpdate: Alan adi guncelleme islemi bekliyor.
-        redemptionPeriod: Alan adinin suresi doldu ve kurtarma doneminde. Sahibi hala geri alabilir.
-        renewPeriod: Alan adi, kayittan sonraki yenileme surecinde.
-        autoRenewPeriod: Alan adi, otomatik yenileme surecinde.
+        clientDeleteProhibited: Kayıt kuruluşu, alan adının silinmesini kilitledi.
+        clientTransferProhibited: Kayıt kuruluşu, alan adının başka bir kayıt kuruluşuna aktarılmasını kilitledi.
+        clientUpdateProhibited: Kayıt kuruluşu, alan adının güncellenmesini kilitledi.
+        clientHold: Kayıt kuruluşu alan adını beklemeye aldı, bu nedenle DNS çözümlenemeyebilir.
+        serverDeleteProhibited: Kayıt otoritesi, alan adının silinmesini kilitledi.
+        serverTransferProhibited: Kayıt otoritesi, alan adının aktarılmasını kilitledi.
+        serverUpdateProhibited: Kayıt otoritesi, alan adının güncellenmesini kilitledi.
+        serverHold: Kayıt otoritesi alan adını beklemeye aldı, bu nedenle DNS çözümlenemeyebilir.
+        pendingCreate: Alan adı oluşturma işlemi bekliyor.
+        pendingDelete: Alan adı silinmeyi bekliyor ve yakında serbest kalabilir.
+        pendingRenew: Alan adı yenileme işlemi bekliyor.
+        pendingRestore: Alan adının silme sonrası geri yüklenmesi bekliyor.
+        pendingTransfer: Alan adının başka bir kayıt kuruluşuna aktarılması bekliyor.
+        pendingUpdate: Alan adı güncelleme işlemi bekliyor.
+        redemptionPeriod: Alan adının süresi doldu ve kurtarma döneminde. Sahibi hâlâ geri alabilir.
+        renewPeriod: Alan adı, kayıttan sonraki yenileme sürecinde.
+        autoRenewPeriod: Alan adı, otomatik yenileme sürecinde.
         transferPeriod: Alan adi, transfer surecinde.
-      expiredAlert: Bu alan adinin suresi {days} gun once doldu ve yeniden kayda acik olabilir.
-      expiresAlert: Bu alan adinin suresi {days} gun icinde doluyor. Yenileme zamaninda yapilmalidir.
-      expiredTag: '{days} gun once suresi doldu'
+      expiredAlert: Bu alan adının süresi {days} gün önce doldu ve yeniden kayda açık olabilir.
+      expiresAlert: Bu alan adının süresi {days} gün içinde doluyor. Yenileme zamanında yapılmalıdır.
+      expiredTag: '{days} gün önce süresi doldu'
       remainingTag: '{days} gun kaldi'
       registrar: Kayit Kurulusu
       registrarIanaId: Kayit Kurulusu IANA Kimligi
@@ -1342,22 +1342,22 @@ tools:
       noMx: MX kaydi bulunamadi.
       dnsFailed: DNS sorgusu basarisiz oldu.
       noSpf: SPF kaydi bulunamadi.
-      noDkim: Yaygin secicilerde DKIM kaydi bulunamadi. Ozel seciciler yine de mevcut olabilir.
-      noDmarc: DMARC kaydi bulunamadi. Alan adi sahtecilige karsi korumasiz.
-      spfPlusAll: 'Uyari: +all tehlikelidir, cunku herhangi bir sunucunun bu alan adi adina posta gondermesine izin verir.'
-      spfNeutralAll: 'Uyari: ?all notrdur ve hicbir koruma saglamaz.'
-      dmarcPNone: 'Uyari: p=none yalnizca izleme amaclidir, zorlama yoktur. E-postalar reddedilmeyecek.'
-      dmarcNoRua: 'Uyari: toplu rapor adresi yok (rua=). DMARC raporlari almayacaksiniz.'
+      noDkim: Yaygın seçicilerde DKIM kaydı bulunamadı. Özel seçiciler yine de mevcut olabilir.
+      noDmarc: DMARC kaydı bulunamadı. Alan adı sahteciliğe karşı korumasız.
+      spfPlusAll: 'Uyarı: +all tehlikelidir, çünkü herhangi bir sunucunun bu alan adı adına posta göndermesine izin verir.'
+      spfNeutralAll: 'Uyarı: ?all nötrdür ve hiçbir koruma sağlamaz.'
+      dmarcPNone: 'Uyarı: p=none yalnızca izleme amaçlıdır, zorlama yoktur. E-postalar reddedilmeyecek.'
+      dmarcNoRua: 'Uyarı: toplu rapor adresi yok (rua=). DMARC raporları almayacaksınız.'
       pass: Basarili
       fail: Basarisiz
       warning: Uyari
       checking: Kontrol ediliyor...
-      overallPass: Tum e-posta kontrolleri basarili. Bu alan adi e-posta icin dogru yapilandirilmis.
-      overallFail: Bir veya daha fazla kritik kayit eksik. Bu alan adi sahtecilige acik olabilir.
-      overallWarn: Bazi kayitlar mevcut ancak incelenmesi gereken yapilandirma sorunlari var.
-      rdapHttpError: 'HTTP {status}: alan adi mevcut olmayabilir veya TLD desteklenmiyor olabilir.'
+      overallPass: Tüm e-posta kontrolleri başarılı. Bu alan adı e-posta için doğru yapılandırılmış.
+      overallFail: Bir veya daha fazla kritik kayıt eksik. Bu alan adı sahteciliğe açık olabilir.
+      overallWarn: Bazı kayıtlar mevcut ancak incelenmesi gereken yapılandırma sorunları var.
+      rdapHttpError: 'HTTP {status}: alan adı mevcut olmayabilir veya TLD desteklenmiyor olabilir.'
       lookupFailed: Sorgu basarisiz oldu.
-      domainPlaceholder: Bir alan adi girin (orn. killertools.net)
+      domainPlaceholder: Bir alan adı girin (örn. killertools.net)
       searching: Araniyor...
       search: Ara
       signed: Imzali
@@ -1367,7 +1367,7 @@ tools:
       dsRecords: '{count} DS kaydi.'
       keyRecord: '{count} anahtar kaydi.'
       keyRecords: '{count} anahtar kaydi.'
-      dnssecUnsigned: Bu alan adi DNSSEC ile korunmuyor. DNS yanitlari kriptografik olarak dogrulanamaz.
+      dnssecUnsigned: Bu alan adı DNSSEC ile korunmuyor. DNS yanıtları kriptografik olarak doğrulanamaz.
       status: Durum
       contacts: Kisiler
       remarks: Notlar

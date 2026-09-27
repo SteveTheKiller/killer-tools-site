@@ -951,7 +951,7 @@ tools:
     ui:
       invalidJson: A megadott JSON nem érvényes.
       inputLabel: Nyers JSON-od
-      inputPlaceholder: Illeszd be ide a nyers JSON-t...
+      inputPlaceholder: Illessze be ide a nyers JSON-t...
       outputLabel: A JSON minifikált verziója
   ulid-generator:
     title: ULID generátor
@@ -1686,8 +1686,8 @@ tools:
 components:
   androidBetaBanner:
     announcement: Android beta bejelentes
-    title: A Killer Tools hamarosan Androidon is elerheto
-    subtitle: Beta tesztereket keresunk, koppints a csatlakozashoz
+    title: A Killer Tools hamarosan Androidon is elérhető
+    subtitle: Beta tesztereket keresünk, koppints a csatlakozáshoz
     dismiss: Bezaras
   formatTransformer:
     input: Bemenet
@@ -1704,11 +1704,11 @@ components:
     copied: Masolva!
   navbarButtons:
     androidTooltip: Killer Tools Androidra
-    androidAriaLabel: Killer Tools Androidra, csatlakozz a betahoz
+    androidAriaLabel: Killer Tools Androidra, csatlakozz a bétához
   themeDots:
     accentColor: Kiemelo szin
     theme: Tema
-    toggleThemeSwatches: Tema mintak be- vagy kikapcsolasa
+    toggleThemeSwatches: Téma minták be- vagy kikapcsolása
     accentColorPicker: Kiemelo szin valaszto
     dragToMove: Huzd a mozgatashoz
     accentLabel: 'kiemeles:'
@@ -1723,7 +1723,7 @@ components:
       purple: Lila
 layouts:
   menuLayout:
-    eggMessage: 80 eszkoz. Nulla elofizetes. Egy bosszuszomjas terepszereles.
+    eggMessage: 80 eszköz. Nulla előfizetés. Egy bosszúszomjas terepszerelő.
     clickMe: kattints ide
     sourceOnGithub: Forraskod a Githubon
   base:
@@ -1731,75 +1731,75 @@ layouts:
     homeLabel: KillerTools kezdolap
 pages:
   notFound:
-    noSuchFile: Nincs ilyen fajl vagy konyvtar
+    noSuchFile: Nincs ilyen fájl vagy könyvtár
     exitCode: kilepesi kod
     backToHome: vissza a kezdolapra
   privacy:
     heading: Adatvedelmi tajekoztato
-    lastUpdated: 'Utolso frissites: 2026. aprilis 4.'
+    lastUpdated: 'Utolsó frissítés: 2026. április 4.'
     overviewHeading: Attekintes
     overviewIntro: KillerTools
     overviewBody: egy ingyenes IT eszközgyujtemeny. Az on adatvedelme fontos szamunkra, es ez a tajekoztato elmagyarazza, hogyan kezeljuk az adatait.
     dataCollectionHeading: Adatgyujtes
-    dataCollectionBody: A KillerTools semmilyen szemelyes adatot nem gyujt, nem tarol es nem tovabbit. Minden eszkoz feldolgozas teljes egeszeben a bongeszojeben tortenik. Semmilyen, egy eszkozbe beirt adat nem kerul elkuldesre semmilyen szerverre.
+    dataCollectionBody: A KillerTools semmilyen személyes adatot nem gyűjt, nem tárol és nem továbbít. Minden eszköz feldolgozás teljes egészében a böngészőjében történik. Semmilyen, egy eszközbe beírt adat nem kerül elküldésre semmilyen szerverre.
     cookiesHeading: Sutik
-    cookiesBody: Ez az oldal nem hasznal sutiket nyomon kovetesre. A tema- es beallitasi preferenciai helyileg, a bongeszojeben taroloak, es soha nem kerulnek tovabbitasra.
+    cookiesBody: Ez az oldal nem használ sütiket nyomon követésre. A téma- és beállítási preferenciái helyileg, a böngészőjében tárolódnak, és soha nem kerülnek továbbításra.
     analyticsHeading: Analitika
-    analyticsIntro: Ez az oldal hasznalja a
-    analyticsBody: egy adatvedelem-kozpontu analitikai eszkozt, hogy megertse az altalanos hasznalati mintakat, mint az oldalmegtekintesek es a hivatkozasi forrasok. Az Umami nem hasznal sutiket, nem koveti a felhasznalokat weboldalak kozott, es nem gyujt semmilyen szemelyazonositasra alkalmas informaciot. Minden adat aggregalt es anonim.
+    analyticsIntro: Ez az oldal használja a
+    analyticsBody: egy adatvédelem-központú analitikai eszközt, hogy megértse az általános használati mintákat, mint az oldalmegtekintések és a hivatkozási források. Az Umami nem használ sütiket, nem követi a felhasználókat weboldalak között, és nem gyűjt semmilyen személyazonosításra alkalmas információt. Minden adat aggregált és anonim.
     thirdPartyHeading: Harmadik feles szolgaltatasok
     thirdPartyBody: Nehany eszkoz kulso forrasokra vagy dokumentaciora mutathat. Nem vagyunk felelosek ezen kulso oldalak adatvedelmi gyakorlatáert.
     androidAppHeading: Android alkalmazas
-    androidAppBody: A KillerTools Android alkalmazas a webalkalmazas koreli buroknak. Nem ker es nem er el semmilyen eszkozengedelyt az alapveto internet-hozzaferesen tul. Semmilyen eszkozadat nem kerul gyujtesre vagy tovabbitasra.
+    androidAppBody: A KillerTools Android alkalmazás a webalkalmazás köréli burkolat. Nem kér és nem ér el semmilyen eszközengedélyt az alapvető internet-hozzáférésen túl. Semmilyen eszközadat nem kerül gyűjtésre vagy továbbításra.
     contactHeading: Kapcsolat
-    contactBody: Ha kerdese van ezzel az adatvedelmi tajekoztatoval kapcsolatban, elerhet minket a
+    contactBody: Ha kérdése van ezzel az adatvédelmi tájékoztatóval kapcsolatban, elérhet minket a
   androidApp:
-    robotAttribution: Az Android robot a Google altal letrehozott es megosztott munkabol keszult vagy modositott reprodukcio, a Creative Commons 3.0 Attribution License feltetelei szerint hasznalva.
+    robotAttribution: Az Android robot a Google által létrehozott és megosztott munkából készült vagy módosított reprodukció, a Creative Commons 3.0 Attribution License feltételei szerint használva.
     heading: KillerTools Androidra
     introBody1: 'A teljes killertools.net eszkoztar natív Android alkalmazaskent: minden eszkoz, a Killer Scripts konyvtar es az osszes kedvence, egyetlen erintesre a kezdokepernyorol.'
-    introBody2: Ugyanazok a szabalyok, mint az oldalon. Minden az on eszkozen fut. Nincs fiok, nincs telemetria, nincs hazatelefonalas. Ha megsporol egy ticketciklust a terepen, betoltotte a feladatat.
+    introBody2: Ugyanazok a szabályok, mint az oldalon. Minden az ön eszközén fut. Nincs fiók, nincs telemetria, nincs hazatelefonálás. Ha megspórol egy ticketciklust a terepen, betöltötte a feladatát.
     betaStatusPrefix: Az alkalmazas jelenleg
-    betaStatusStrong: zart betaban van a Google Play-en
-    betaStatusSuffix: ', es itt jon a kepbe on.'
+    betaStatusStrong: zárt bétában van a Google Play-en
+    betaStatusSuffix: ', és itt jön a képbe ön.'
     joinBetaHeading: Csatlakozzon a betahoz
     joinBetaIntroPrefix: A Google megkoveteli, hogy
-    joinBetaIntroStrong: 12 tesztelo 14 egymast koveto napig telepitve tartsa az alkalmazast
-    joinBetaIntroSuffix: 'mielott egy fuggetlen fejleszto alkalmazasa nyilvanossa valhat. Harom lepes, korulbelul ket perc, es on is a tizenketto egyike lesz:'
+    joinBetaIntroStrong: 12 tesztelő 14 egymást követő napig telepítve tartja az alkalmazást
+    joinBetaIntroSuffix: 'mielőtt egy független fejlesztő alkalmazása nyilvánossá válhat. Három lépés, körülbelül két perc, és ön is a tizenkettő egyike lesz:'
     step1LinkText: Csatlakozzon a tesztelo csoporthoz
     step1Suffix: a Google Groups-on (kattintson a "Join group" gombra).
     step2LinkText: Valjon teszteloVe
-    step2Suffix: a Google Play jelentkezesi oldalan.
+    step2Suffix: a Google Play jelentkezési oldalán.
     step3LinkText: Telepitse az alkalmazast
-    step3Suffix: a Google Play-rol, es tartsa telepitve ket hetig.
-    sameAccountStrong: Hasznalja ugyanazt a Google fiokot mindharom lepeshez
-    sameAccountSuffix: ' - a jelentkezesi oldal "not available for this account" uzenetet jelenit meg, ha kihagyja a csoportot vagy fiokot valt.'
-    feedbackPrefix: 'Valami elromlott vagy hianyzik? Szoljon nekem:'
+    step3Suffix: a Google Play-ről, és tartsa telepítve két hétig.
+    sameAccountStrong: Használja ugyanazt a Google fiókot mindhárom lépéshez
+    sameAccountSuffix: ' - a jelentkezési oldal "not available for this account" üzenetet jelenít meg, ha kihagyja a csoportot vagy fiókot vált.'
+    feedbackPrefix: 'Valami elromlott vagy hiányzik? Szóljon nekem:'
   home:
     sortPopular: Nepszeru
     sortAZ: A - Z
     sortZA: Z - A
   about:
     heading: A KillerTools-rol
-    intro: A terepi technikusoknak nincs idejuk a felesleges csomagolasra. Minden eszkoz azert letezik itt, mert szuksegem volt ra munka kozben, es nem talaltam olyat, ami egyszeruen mukodott fiok, telepites vagy telemetria nelkul.
-    originPrefix: Jelenleg egy MSP belso AI mernoki csapataban epitek eszkozoket, hat ev full-stack fejlesztes es nyolc ev terepi technikuskent, tobb cegnel szerzett tapasztalat utan. A KillerTools.net a kivalo
+    intro: A terepi technikusoknak nincs idejük a felesleges csomagolásra. Minden eszköz azért létezik itt, mert szükségem volt rá munka közben, és nem találtam olyat, ami egyszerűen működött fiók, telepítés vagy telemetria nélkül.
+    originPrefix: Jelenleg egy MSP belső AI mérnöki csapatában építek eszközöket, hat év full-stack fejlesztés és nyolc év terepi technikusként, több cégnél szerzett tapasztalat után. A KillerTools.net a kiváló
     originMid: projekt forkjakent indult, amelyet
-    originSuffix: keszitett, es olyan valamive novekedett, ami az altalam vegzett munkahoz keszult. Azert epitettem, hogy kozepen egy ticketben Group Policy beallitasokat nezhessek meg, egy ugyfel alhalozatat pasztazzam, es port referenciakat keressek ki a bongeszo elhagyasa nelkul.
-    scriptsLibrary: A Killer Scripts konyvtar lefedi azokat a feladatokat, amelyek minden ticketciklusban felmerulnek. Minden szkript fut PS 5.1, PS 7 es Kaseya LiveConnect alatt, fuggosegek nelkul.
-    privacyBody: Minden a bongeszojeben fut. Semmit nem kovetnek nyomon. Fiokra soha nincs szukseg. Az oldal szigoru Content Security Policy-t kenyszerit ki, hogy blokkolja a fuggosegi lanc menten erkezo tamadasokat. Ha egy kompromittalt npm csomag valaha bekerulne a csomagba, nem tudna hazatelefonalni azzal, amit beillesztett.
+    originSuffix: készített, és olyan valamivé növekedett, ami az általam végzett munkához készült. Azért építettem, hogy közepén egy ticketben Group Policy beállításokat nézhessek meg, egy ügyfél alhálózatát pásztázzam, és port referenciákat kereshessek ki a böngésző elhagyása nélkül.
+    scriptsLibrary: A Killer Scripts könyvtár lefedi azokat a feladatokat, amelyek minden ticketciklusban felmerülnek. Minden szkript fut PS 5.1, PS 7 és Kaseya LiveConnect alatt, függőségek nélkül.
+    privacyBody: Minden a böngészőjében fut. Semmit nem követnek nyomon. Fiókra soha nincs szükség. Az oldal szigorú Content Security Policy-t kényszerít ki, hogy blokkolja a függőségi lánc mentén érkező támadásokat. Ha egy kompromittált npm csomag valaha bekerülne a csomagba, nem tudna hazatelefonálni azzal, amit beillesztett.
     maintainedByPrefix: Keszitette es karbantartja
-    maintainedByMid: Ha ez idot sporol onnek a munkaban,
+    maintainedByMid: Ha ez időt spórol önnek a munkában,
     buyMeCoffee: vegyen nekem egy kavet
-    maintainedBySuffix: orommel fogadott, de soha nem elvart.
-    missingToolHeading: Hianyzik egy eszkoz? Hibat talalt?
-    issuesPrefix: Nyisson egy funkciokerelmet vagy hibajelentest az
+    maintainedBySuffix: örömmel fogadott, de soha nem elvárt.
+    missingToolHeading: Hiányzik egy eszköz? Hibát talált?
+    issuesPrefix: Nyisson egy funkciókérelmet vagy hibajelentést az
     issuesLinkText: issues szekcioban
     issuesSuffix: a GitHubon. Elolvasom oket.
     alsoTryHeading: Probalja ki ezeket is...
-    tagKillerScan: Nyilt forraskodu halozati szkenner Windowsra
-    tagKillerPdf: Nyilt forraskodu PDF szerkeszto Windowsra
+    tagKillerScan: Nyílt forráskódú hálózati szkenner Windowsra
+    tagKillerPdf: Nyílt forráskódú PDF szerkesztő Windowsra
     tagKillerShell: Nyilt forraskodu Windows shell haladó felhasznaloknak
-    tagKillerNotes: Nyilt forraskodu titkositott jegyzetfuzet Windowsra
-    tagKillendar: Nyilt forraskodu titkositott naptar Windowsra
+    tagKillerNotes: Nyílt forráskódú titkosított jegyzetfüzet Windowsra
+    tagKillendar: Nyílt forráskódú titkosított naptár Windowsra
     linksHeading: Linkek
     linkLabelSite: Oldal
     linkLabelSource: Forraskod

@@ -416,7 +416,7 @@ tools:
       sameAsMainPolicy: Igual a politica principal
       spfRecordTitle: REGISTRO SPF
       dmarcRecordTitle: REGISTRO DMARC
-      spfRecordLocation: Registro TXT no dominio raiz
+      spfRecordLocation: Registro TXT no domínio raiz
       dmarcRecordLocation: Registro TXT em
       copied: copiado
       clickToCopy: clique para copiar
@@ -428,9 +428,9 @@ tools:
       policy: POLITICA
       subdomainPolicy: POLITICA DE SUBDOMINIO (OPCIONAL)
       policyCoverage: 'COBERTURA DA POLITICA: {percent}%'
-      coverageHint: '{percent}% dos e-mails que falharem serao tratados. Use menos de 100% para uma implantacao gradual.'
-      aggregateReportEmail: E-MAIL DE RELATORIO AGREGADO (rua)
-      forensicReportEmail: E-MAIL DE RELATORIO FORENSE (ruf, opcional)
+      coverageHint: '{percent}% dos e-mails que falharem serão tratados. Use menos de 100% para uma implantação gradual.'
+      aggregateReportEmail: E-MAIL DE RELATÓRIO AGREGADO (rua)
+      forensicReportEmail: E-MAIL DE RELATÓRIO FORENSE (ruf, opcional)
       dkimAlignment: ALINHAMENTO DKIM
       spfAlignment: ALINHAMENTO SPF
     title: Gerador de registros de e-mail
@@ -440,12 +440,12 @@ tools:
       symbolAnyValue: Qualquer valor
       symbolEveryMinute: A cada minuto
       symbolRange: Intervalo de valores
-      symbolRangeEquivalent: Minutos de 1 a 10
+      symbolRangeEquivalent: Minutos 1 a 10
       symbolList: Lista de valores
       symbolListEquivalent: Nos minutos 1 e 10
       symbolStep: Valores em etapas
       symbolStepEquivalent: A cada 10 minutos
-      aliasYearly: Uma vez por ano (1 de janeiro, meia noite)
+      aliasYearly: Uma vez por ano (1 de janeiro, meia-noite)
       aliasMonthly: No primeiro dia de cada mês, à meia noite
       aliasWeekly: Domingo, à meia noite
       aliasDaily: Todos os dias à meia noite
@@ -601,13 +601,13 @@ tools:
       convertTo: 'Converter para:'
       yourToml: Seu TOML
       pastePlaceholder: Cole seu TOML aqui...
-      invalidToml: O TOML fornecido nao e valido.
+      invalidToml: O TOML fornecido não é válido.
       outputLabel: Saida {format}
     title: Conversor de TOML
     description: Converta TOML para JSON ou YAML.
   ulid-generator:
     ui:
-      copiedMessage: ULIDs copiados para a area de transferencia
+      copiedMessage: ULIDs copiados para a área de transferência
       quantity: QUANTIDADE
       format: FORMATO
       formatRaw: Bruto
@@ -653,12 +653,12 @@ tools:
       placeholder: Cole seu user agent aqui...
       unknown: Desconhecido
       error: ERRO
-      parseError: Nao foi possivel analisar a string de user agent
+      parseError: Não foi possível analisar a string de user agent
     title: Analisador de user-agent
     description: Detecte e extraia navegador, engine, sistema operacional, CPU e tipo/modelo de dispositivo a partir de uma string user-agent.
   uuid-generator:
     ui:
-      copiedMessage: UUIDs copiados para a area de transferencia
+      copiedMessage: UUIDs copiados para a área de transferência
       version: VERSAO
       quantity: QUANTIDADE
       namespacePreset: PREDEFINICAO DE NAMESPACE
@@ -901,28 +901,28 @@ tools:
   domain-lookup:
     ui:
       statusDesc:
-        active: O dominio esta ativo e operacional.
+        active: O domínio está ativo e operacional.
         inactive: O dominio esta inativo.
-        clientDeleteProhibited: O registrador bloqueou o dominio contra exclusao.
-        clientTransferProhibited: O registrador bloqueou o dominio contra transferencia para outro registrador.
-        clientUpdateProhibited: O registrador bloqueou o dominio contra atualizacoes.
-        clientHold: O registrador colocou o dominio em espera, entao o DNS pode nao resolver.
-        serverDeleteProhibited: O registro bloqueou o dominio contra exclusao.
-        serverTransferProhibited: O registro bloqueou o dominio contra transferencia.
-        serverUpdateProhibited: O registro bloqueou o dominio contra atualizacoes.
-        serverHold: O registro colocou o dominio em espera, entao o DNS pode nao resolver.
-        pendingCreate: A criacao do dominio esta pendente.
-        pendingDelete: O dominio esta pendente de exclusao e pode ser liberado em breve.
-        pendingRenew: A renovacao do dominio esta pendente.
-        pendingRestore: A restauracao do dominio apos a exclusao esta pendente.
-        pendingTransfer: A transferencia do dominio para outro registrador esta pendente.
-        pendingUpdate: A atualizacao do dominio esta pendente.
-        redemptionPeriod: O dominio expirou e esta em periodo de resgate. O titular ainda pode recupera-lo.
-        renewPeriod: O dominio esta no periodo de carencia de renovacao apos o registro.
-        autoRenewPeriod: O dominio esta no periodo de carencia de renovacao automatica.
-        transferPeriod: O dominio esta no periodo de carencia de transferencia.
-      expiredAlert: Este dominio expirou ha {days} dias e pode estar disponivel para registro.
-      expiresAlert: Este dominio expira em {days} dias. A renovacao deve ser providenciada o quanto antes.
+        clientDeleteProhibited: O registrador bloqueou o domínio contra exclusão.
+        clientTransferProhibited: O registrador bloqueou o domínio contra transferência para outro registrador.
+        clientUpdateProhibited: O registrador bloqueou o domínio contra atualizações.
+        clientHold: O registrador colocou o domínio em espera, então o DNS pode não resolver.
+        serverDeleteProhibited: O registro bloqueou o domínio contra exclusão.
+        serverTransferProhibited: O registro bloqueou o domínio contra transferência.
+        serverUpdateProhibited: O registro bloqueou o domínio contra atualizações.
+        serverHold: O registro colocou o domínio em espera, então o DNS pode não resolver.
+        pendingCreate: A criação do domínio está pendente.
+        pendingDelete: O domínio está pendente de exclusão e pode ser liberado em breve.
+        pendingRenew: A renovação do domínio está pendente.
+        pendingRestore: A restauração do domínio após a exclusão está pendente.
+        pendingTransfer: A transferência do domínio para outro registrador está pendente.
+        pendingUpdate: A atualização do domínio está pendente.
+        redemptionPeriod: O domínio expirou e está em período de resgate. O titular ainda pode recuperá-lo.
+        renewPeriod: O domínio está no período de carência de renovação após o registro.
+        autoRenewPeriod: O domínio está no período de carência de renovação automática.
+        transferPeriod: O domínio está no período de carência de transferência.
+      expiredAlert: Este domínio expirou há {days} dias e pode estar disponível para registro.
+      expiresAlert: Este domínio expira em {days} dias. A renovação deve ser providenciada o quanto antes.
       expiredTag: Expirou ha {days}d
       remainingTag: '{days}d restantes'
       registrar: Registrador
@@ -934,21 +934,21 @@ tools:
       dnsFailed: Falha na consulta DNS.
       noSpf: Nenhum registro SPF encontrado.
       noDkim: Nenhum registro DKIM encontrado para os seletores comuns. Seletores personalizados ainda podem existir.
-      noDmarc: Nenhum registro DMARC encontrado. O dominio esta desprotegido contra spoofing.
-      spfPlusAll: 'Aviso: +all e perigoso porque permite que qualquer servidor envie e-mails em nome deste dominio.'
-      spfNeutralAll: 'Aviso: ?all e neutro e nao oferece nenhuma protecao.'
-      dmarcPNone: 'Aviso: p=none e apenas monitoramento, sem aplicacao. Os e-mails nao serao rejeitados.'
-      dmarcNoRua: 'Aviso: nenhum endereco de relatorio agregado (rua=). Voce nao recebera relatorios DMARC.'
+      noDmarc: Nenhum registro DMARC encontrado. O domínio está desprotegido contra spoofing.
+      spfPlusAll: 'Aviso: +all é perigoso porque permite que qualquer servidor envie e-mails em nome deste domínio.'
+      spfNeutralAll: 'Aviso: ?all é neutro e não oferece nenhuma proteção.'
+      dmarcPNone: 'Aviso: p=none é apenas monitoramento, sem aplicação. Os e-mails não serão rejeitados.'
+      dmarcNoRua: 'Aviso: nenhum endereço de relatório agregado (rua=). Você não receberá relatórios DMARC.'
       pass: Aprovado
       fail: Reprovado
       warning: Aviso
       checking: Verificando...
-      overallPass: Todas as verificacoes de e-mail foram aprovadas. Este dominio esta bem configurado para e-mail.
-      overallFail: Um ou mais registros criticos estao ausentes. Este dominio pode estar vulneravel a spoofing.
-      overallWarn: Alguns registros existem, mas apresentam problemas de configuracao que merecem revisao.
-      rdapHttpError: 'HTTP {status}: o dominio pode nao existir ou o TLD nao e suportado.'
+      overallPass: Todas as verificações de e-mail foram aprovadas. Este domínio está bem configurado para e-mail.
+      overallFail: Um ou mais registros críticos estão ausentes. Este domínio pode estar vulnerável a spoofing.
+      overallWarn: Alguns registros existem, mas apresentam problemas de configuração que merecem revisão.
+      rdapHttpError: 'HTTP {status}: o domínio pode não existir ou o TLD não é suportado.'
       lookupFailed: Falha na consulta.
-      domainPlaceholder: 'Digite um dominio (ex.: killertools.net)'
+      domainPlaceholder: 'Digite um domínio (ex.: killertools.net)'
       searching: Pesquisando...
       search: Pesquisar
       signed: Assinado
@@ -958,7 +958,7 @@ tools:
       dsRecords: '{count} registros DS.'
       keyRecord: '{count} registro de chave.'
       keyRecords: '{count} registros de chave.'
-      dnssecUnsigned: Este dominio nao esta protegido por DNSSEC. As respostas DNS nao podem ser verificadas criptograficamente.
+      dnssecUnsigned: Este domínio não está protegido por DNSSEC. As respostas DNS não podem ser verificadas criptograficamente.
       status: Status
       contacts: Contatos
       remarks: Observacoes
@@ -1004,14 +1004,14 @@ tools:
       width: LARGURA
       output: SAIDA DA ASCII ART
       loadingFont: Carregando fonte...
-      error: As configuracoes atuais resultaram em um erro.
+      error: As configurações atuais resultaram em um erro.
       copied: Copiado!
       copy: Copiar
     title: Gerador de arte de texto ASCII
     description: Crie arte de texto ASCII com várias fontes e estilos.
   basic-auth-generator:
     ui:
-      copied: Cabecalho copiado para a area de transferencia
+      copied: Cabeçalho copiado para a área de transferência
       username: Usuario
       usernamePlaceholder: Seu usuario...
       password: Senha
@@ -1020,15 +1020,15 @@ tools:
       copyHeader: Copiar cabecalho
   json-minify:
     ui:
-      invalidJson: O JSON fornecido nao e valido.
+      invalidJson: O JSON fornecido não é válido.
       inputLabel: Seu JSON bruto
       inputPlaceholder: Cole aqui o seu JSON bruto...
-      outputLabel: Versao minificada do seu JSON
+      outputLabel: Versão minificada do seu JSON
     title: Minificação de JSON
     description: Minifique e comprima seu JSON removendo espaços em branco desnecessários.
   math-evaluator:
     ui:
-      placeholder: 'Sua expressao matematica (ex: 2*sqrt(6) )...'
+      placeholder: 'Sua expressão matemática (ex: 2*sqrt(6) )...'
       result: Resultado
     title: Avaliador de expressões matemáticas
     description: Uma calculadora para avaliar expressões matemáticas. Você pode usar funções como sqrt, cos, sin, abs, etc.
@@ -1413,7 +1413,7 @@ tools:
     description: Gere seus próprios endereços IP locais e não roteáveis para sua rede de acordo com a RFC4193.
   base64-file-converter:
     ui:
-      copiedToClipboard: String base64 copiada para a area de transferencia
+      copiedToClipboard: String base64 copiada para a área de transferência
       base64ToFileTitle: BASE64 PARA ARQUIVO
       fileNameLabel: NOME DO ARQUIVO
       fileNamePlaceholder: Nome do arquivo para download
@@ -1427,15 +1427,15 @@ tools:
       fileToBase64Title: ARQUIVO PARA BASE64
       dropHint: Arraste e solte um arquivo aqui, ou clique para selecionar
       fileInBase64Label: ARQUIVO EM BASE64
-      fileOutputPlaceholder: O arquivo em base64 aparecera aqui
+      fileOutputPlaceholder: O arquivo em base64 aparecerá aqui
       copied: Copiado!
       copyBase64: Copiar base64
     title: Conversor de arquivo Base64
     description: Converta uma string, arquivo ou imagem em sua representação base64.
   base64-string-converter:
     ui:
-      base64CopiedToClipboard: String base64 copiada para a area de transferencia
-      stringCopiedToClipboard: String copiada para a area de transferencia
+      base64CopiedToClipboard: String base64 copiada para a área de transferência
+      stringCopiedToClipboard: String copiada para a área de transferência
       stringToBase64Title: STRING PARA BASE64
       encodingLabel: CODIFICACAO
       standard: Padrao
@@ -1443,7 +1443,7 @@ tools:
       stringToEncodeLabel: STRING A CODIFICAR
       stringInputPlaceholder: Cole aqui a sua string...
       base64OutputLabel: SAIDA BASE64
-      base64OutputPlaceholder: A codificacao base64 da sua string aparecera aqui
+      base64OutputPlaceholder: A codificação base64 da sua string aparecerá aqui
       copied: Copiado!
       copyBase64: Copiar base64
       base64ToStringTitle: BASE64 PARA STRING
@@ -1451,7 +1451,7 @@ tools:
       base64InputPlaceholder: Sua string base64...
       invalidBase64: String base64 invalida
       decodedStringLabel: STRING DECODIFICADA
-      decodedOutputPlaceholder: A string decodificada aparecera aqui
+      decodedOutputPlaceholder: A string decodificada aparecerá aqui
       copyDecodedString: Copiar string decodificada
     title: Codificador/decodificador de string Base64
     description: Codifique e decodifique strings em sua representação base64 de forma simples.
@@ -1483,9 +1483,9 @@ tools:
       endAddress: Endereco final
       addressesInRange: Enderecos no intervalo
       invalidIpv4: Endereco IPv4 invalido
-      invalidCombinationTitle: Combinacao invalida de enderecos IPv4 inicial e final
-      invalidCombinationDescription: O endereco IPv4 final e menor que o inicial. Isso nao e valido e nao foi possivel calcular um resultado.
-      switchStartEnd: Trocar enderecos IPv4 inicial e final
+      invalidCombinationTitle: Combinação inválida de endereços IPv4 inicial e final
+      invalidCombinationDescription: O endereço IPv4 final é menor que o inicial. Isso não é válido e não foi possível calcular um resultado.
+      switchStartEnd: Trocar endereços IPv4 inicial e final
       result: Resultado
       copied: Copiado!
       copyResult: Copiar resultado

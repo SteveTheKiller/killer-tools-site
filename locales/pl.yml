@@ -535,28 +535,28 @@ tools:
     title: Konwerter plików Base64
     description: Konwertuj ciąg, plik lub obraz na jego reprezentację base64.
     ui:
-      copiedToClipboard: Ciag base64 skopiowany do schowka
+      copiedToClipboard: Ciąg base64 skopiowany do schowka
       base64ToFileTitle: BASE64 NA PLIK
       fileNameLabel: NAZWA PLIKU
       fileNamePlaceholder: Nazwa pliku do pobrania
       extensionLabel: ROZSZERZENIE
       extensionPlaceholder: rozsz
       base64StringLabel: CIAG BASE64
-      base64InputPlaceholder: Wklej tutaj ciag base64 pliku...
+      base64InputPlaceholder: Wklej tutaj ciąg base64 pliku...
       invalidBase64: Nieprawidlowy ciag base64
       previewImage: Podglad obrazu
       downloadFile: Pobierz plik
       fileToBase64Title: PLIK NA BASE64
-      dropHint: Przeciagnij i upusc plik tutaj lub kliknij, aby wybrac
+      dropHint: Przeciągnij i upuść plik tutaj lub kliknij, aby wybrać
       fileInBase64Label: PLIK W BASE64
-      fileOutputPlaceholder: Plik w base64 pojawi sie tutaj
+      fileOutputPlaceholder: Plik w base64 pojawi się tutaj
       copied: Skopiowano!
       copyBase64: Kopiuj base64
   base64-string-converter:
     title: Koder/dekoder ciągów Base64
     description: Po prostu koduj i dekoduj ciągi do ich reprezentacji base64.
     ui:
-      base64CopiedToClipboard: Ciag base64 skopiowany do schowka
+      base64CopiedToClipboard: Ciąg base64 skopiowany do schowka
       stringCopiedToClipboard: Ciag skopiowany do schowka
       stringToBase64Title: CIAG NA BASE64
       encodingLabel: KODOWANIE
@@ -565,7 +565,7 @@ tools:
       stringToEncodeLabel: CIAG DO ZAKODOWANIA
       stringInputPlaceholder: Wklej tutaj swoj ciag...
       base64OutputLabel: WYNIK BASE64
-      base64OutputPlaceholder: Kodowanie base64 twojego ciagu pojawi sie tutaj
+      base64OutputPlaceholder: Kodowanie base64 twojego ciągu pojawi się tutaj
       copied: Skopiowano!
       copyBase64: Kopiuj base64
       base64ToStringTitle: BASE64 NA CIAG
@@ -573,13 +573,13 @@ tools:
       base64InputPlaceholder: Twoj ciag base64...
       invalidBase64: Nieprawidlowy ciag base64
       decodedStringLabel: ZDEKODOWANY CIAG
-      decodedOutputPlaceholder: Zdekodowany ciag pojawi sie tutaj
+      decodedOutputPlaceholder: Zdekodowany ciąg pojawi się tutaj
       copyDecodedString: Kopiuj zdekodowany ciag
   math-evaluator:
     title: Kalkulator wyrażeń
     description: Kalkulator do obliczania wyrażeń matematycznych. Możesz używać funkcji takich jak sqrt, cos, sin, abs itp.
     ui:
-      placeholder: 'Twoje wyrazenie matematyczne (np: 2*sqrt(6) )...'
+      placeholder: 'Twoje wyrażenie matematyczne (np: 2*sqrt(6) )...'
       result: Wynik
   url-parser:
     title: Parser URL
@@ -599,7 +599,7 @@ tools:
       urlTitle: URL
       invalidUrl: Nieprawidlowy URL
       params: PARAMETRY
-      emptyHint: Wpisz powyzej adres URL, aby go przeanalizowac
+      emptyHint: Wpisz powyżej adres URL, aby go przeanalizować
   phone-parser-and-formatter:
     title: Parser numerów telefonów
     description: Analizuj i formatuj numery telefonów. Wykrywaj kraj, weryfikuj i wyświetlaj formaty międzynarodowy, krajowy, E.164 i RFC3966.
@@ -638,10 +638,10 @@ tools:
       vendor: Producent
       architecture: Architektura
       userAgentString: CIAG USER AGENT
-      placeholder: Wklej tutaj swoj user agent...
+      placeholder: Wklej tutaj swój user agent...
       unknown: Nieznany
       error: BLAD
-      parseError: Nie mozna przeanalizowac ciagu user agent
+      parseError: Nie można przeanalizować ciągu user agent
   case-converter:
     title: Konwerter wielkości liter
     description: Zmień wielkość liter w ciągu, wybierając spośród różnych formatów
@@ -951,7 +951,7 @@ tools:
     ui:
       invalidJson: Podany JSON jest nieprawidlowy.
       inputLabel: Twoj surowy JSON
-      inputPlaceholder: Wklej tutaj swoj surowy JSON...
+      inputPlaceholder: Wklej tutaj swój surowy JSON...
       outputLabel: Zminifikowana wersja Twojego JSON
   ulid-generator:
     title: Generator ULID
@@ -1023,9 +1023,9 @@ tools:
       endAddress: Adres koncowy
       addressesInRange: Adresy w zakresie
       invalidIpv4: Nieprawidlowy adres IPv4
-      invalidCombinationTitle: Nieprawidlowa kombinacja adresow IPv4 poczatkowego i koncowego
-      invalidCombinationDescription: Koncowy adres IPv4 jest nizszy niz poczatkowy. Jest to nieprawidlowe i wyniku nie mozna bylo obliczyc.
-      switchStartEnd: Zamien adresy IPv4 poczatkowy i koncowy
+      invalidCombinationTitle: Nieprawidłowa kombinacja adresów IPv4 początkowego i końcowego
+      invalidCombinationDescription: Końcowy adres IPv4 jest niższy niż początkowy. Jest to nieprawidłowe i wyniku nie można było obliczyć.
+      switchStartEnd: Zamień adresy IPv4 początkowy i końcowy
       result: Wynik
       copied: Skopiowano!
       copyResult: Kopiuj wynik
@@ -1310,28 +1310,28 @@ tools:
     description: Dane rejestracyjne WHOIS i kontrole DNS poczty (MX, SPF, DKIM, DMARC) dla dowolnej domeny w jednym widoku.
     ui:
       statusDesc:
-        active: Domena jest aktywna i dziala poprawnie.
+        active: Domena jest aktywna i działa poprawnie.
         inactive: Domena jest nieaktywna.
-        clientDeleteProhibited: Rejestrator zablokowal domene przed usunieciem.
-        clientTransferProhibited: Rejestrator zablokowal domene przed przeniesieniem do innego rejestratora.
-        clientUpdateProhibited: Rejestrator zablokowal domene przed aktualizacjami.
-        clientHold: Rejestrator wstrzymal domene, wiec DNS moze nie dzialac.
-        serverDeleteProhibited: Rejestr zablokowal domene przed usunieciem.
-        serverTransferProhibited: Rejestr zablokowal domene przed przeniesieniem.
-        serverUpdateProhibited: Rejestr zablokowal domene przed aktualizacjami.
-        serverHold: Rejestr wstrzymal domene, wiec DNS moze nie dzialac.
+        clientDeleteProhibited: Rejestrator zablokował domenę przed usunięciem.
+        clientTransferProhibited: Rejestrator zablokował domenę przed przeniesieniem do innego rejestratora.
+        clientUpdateProhibited: Rejestrator zablokował domenę przed aktualizacjami.
+        clientHold: Rejestrator wstrzymał domenę, więc DNS może nie działać.
+        serverDeleteProhibited: Rejestr zablokował domenę przed usunięciem.
+        serverTransferProhibited: Rejestr zablokował domenę przed przeniesieniem.
+        serverUpdateProhibited: Rejestr zablokował domenę przed aktualizacjami.
+        serverHold: Rejestr wstrzymał domenę, więc DNS może nie działać.
         pendingCreate: Tworzenie domeny jest w toku.
-        pendingDelete: Domena oczekuje na usuniecie i moze zostac wkrotce zwolniona.
+        pendingDelete: Domena oczekuje na usunięcie i może zostać wkrótce zwolniona.
         pendingRenew: Odnowienie domeny jest w toku.
-        pendingRestore: Przywracanie domeny po usunieciu jest w toku.
+        pendingRestore: Przywracanie domeny po usunięciu jest w toku.
         pendingTransfer: Przeniesienie domeny do innego rejestratora jest w toku.
         pendingUpdate: Aktualizacja domeny jest w toku.
-        redemptionPeriod: Domena wygasla i znajduje sie w okresie odzyskania. Rejestrujacy nadal moze ja odzyskac.
-        renewPeriod: Domena znajduje sie w okresie karencji po rejestracji.
-        autoRenewPeriod: Domena znajduje sie w okresie karencji automatycznego odnowienia.
-        transferPeriod: Domena znajduje sie w okresie karencji przeniesienia.
-      expiredAlert: Ta domena wygasla {days} dni temu i moze byc dostepna do rejestracji.
-      expiresAlert: Ta domena wygasa za {days} dni. Odnowienie nalezy zorganizowac jak najszybciej.
+        redemptionPeriod: Domena wygasła i znajduje się w okresie odzyskania. Rejestrujący nadal może ją odzyskać.
+        renewPeriod: Domena znajduje się w okresie karencji po rejestracji.
+        autoRenewPeriod: Domena znajduje się w okresie karencji automatycznego odnowienia.
+        transferPeriod: Domena znajduje się w okresie karencji przeniesienia.
+      expiredAlert: Ta domena wygasła {days} dni temu i może być dostępna do rejestracji.
+      expiresAlert: Ta domena wygasa za {days} dni. Odnowienie należy zorganizować jak najszybciej.
       expiredTag: Wygasla {days} dni temu
       remainingTag: Pozostalo {days} dni
       registrar: Rejestrator
@@ -1340,22 +1340,22 @@ tools:
       updated: Zaktualizowano
       expires: Wygasa
       noMx: Nie znaleziono rekordow MX.
-      dnsFailed: Wyszukiwanie DNS nie powiodlo sie.
+      dnsFailed: Wyszukiwanie DNS nie powiodło się.
       noSpf: Nie znaleziono rekordu SPF.
-      noDkim: Nie znaleziono rekordow DKIM dla typowych selektorow. Niestandardowe selektory moga nadal istniec.
-      noDmarc: Nie znaleziono rekordu DMARC. Domena nie jest chroniona przed podszywaniem sie.
-      spfPlusAll: 'Ostrzezenie: +all jest niebezpieczne, poniewaz pozwala kazdemu serwerowi wysylac poczte w imieniu tej domeny.'
-      spfNeutralAll: 'Ostrzezenie: ?all jest neutralne i nie zapewnia ochrony.'
-      dmarcPNone: 'Ostrzezenie: p=none oznacza tylko monitorowanie, bez wymuszania. Wiadomosci nie beda odrzucane.'
-      dmarcNoRua: 'Ostrzezenie: brak adresu raportow zbiorczych (rua=). Nie beda otrzymywane raporty DMARC.'
+      noDkim: Nie znaleziono rekordów DKIM dla typowych selektorów. Niestandardowe selektory mogą nadal istnieć.
+      noDmarc: Nie znaleziono rekordu DMARC. Domena nie jest chroniona przed podszywaniem się.
+      spfPlusAll: 'Ostrzeżenie: +all jest niebezpieczne, ponieważ pozwala każdemu serwerowi wysyłać pocztę w imieniu tej domeny.'
+      spfNeutralAll: 'Ostrzeżenie: ?all jest neutralne i nie zapewnia ochrony.'
+      dmarcPNone: 'Ostrzeżenie: p=none oznacza tylko monitorowanie, bez wymuszania. Wiadomości nie będą odrzucane.'
+      dmarcNoRua: 'Ostrzeżenie: brak adresu raportów zbiorczych (rua=). Nie będą otrzymywane raporty DMARC.'
       pass: Zaliczono
       fail: Niezaliczono
       warning: Ostrzezenie
       checking: Sprawdzanie...
-      overallPass: Wszystkie kontrole poczty zostaly zaliczone. Ta domena jest dobrze skonfigurowana do poczty.
-      overallFail: Brakuje co najmniej jednego krytycznego rekordu. Ta domena moze byc podatna na podszywanie sie.
-      overallWarn: Niektore rekordy istnieja, ale maja problemy z konfiguracja warte sprawdzenia.
-      rdapHttpError: 'HTTP {status}: domena moze nie istniec lub TLD nie jest obslugiwana.'
+      overallPass: Wszystkie kontrole poczty zostały zaliczone. Ta domena jest dobrze skonfigurowana do poczty.
+      overallFail: Brakuje co najmniej jednego krytycznego rekordu. Ta domena może być podatna na podszywanie się.
+      overallWarn: Niektóre rekordy istnieją, ale mają problemy z konfiguracją warte sprawdzenia.
+      rdapHttpError: 'HTTP {status}: domena może nie istnieć lub TLD nie jest obsługiwana.'
       lookupFailed: Wyszukiwanie nie powiodlo sie.
       domainPlaceholder: Wpisz domene (np. killertools.net)
       searching: Wyszukiwanie...
@@ -1367,7 +1367,7 @@ tools:
       dsRecords: '{count} rekordow DS.'
       keyRecord: '{count} rekord klucza.'
       keyRecords: '{count} rekordow klucza.'
-      dnssecUnsigned: Ta domena nie jest chroniona przez DNSSEC. Odpowiedzi DNS nie moga byc zweryfikowane kryptograficznie.
+      dnssecUnsigned: Ta domena nie jest chroniona przez DNSSEC. Odpowiedzi DNS nie mogą być zweryfikowane kryptograficznie.
       status: Status
       contacts: Kontakty
       remarks: Uwagi
@@ -1397,24 +1397,24 @@ tools:
       monitorOnly: tylko monitorowanie
       relaxedDefault: Lagodna (domyslna)
       strict: Rygorystyczna
-      sameAsMainPolicy: Taka sama jak zasada glowna
+      sameAsMainPolicy: Taka sama jak zasada główna
       spfRecordTitle: REKORD SPF
       dmarcRecordTitle: REKORD DMARC
-      spfRecordLocation: Rekord TXT w domenie glownej
+      spfRecordLocation: Rekord TXT w domenie głównej
       dmarcRecordLocation: Rekord TXT w
       copied: skopiowano
       clickToCopy: kliknij, aby skopiowac
-      lookupWarning: Wybrano {count} zapytan DNS; SPF ma limit 10 zapytan
+      lookupWarning: Wybrano {count} zapytań DNS; SPF ma limit 10 zapytań
       mailProviders: DOSTAWCY POCZTY
-      customIps: WLASNE ADRESY IP LUB ZAKRESY (OPCJONALNE)
+      customIps: WŁASNE ADRESY IP LUB ZAKRESY (OPCJONALNE)
       examplePrefix: np.
       enforcement: EGZEKWOWANIE
       policy: ZASADA
       subdomainPolicy: ZASADA DLA SUBDOMEN (OPCJONALNE)
       policyCoverage: 'POKRYCIE ZASADY: {percent}%'
-      coverageHint: '{percent}% niezgodnej poczty zostanie objete dzialaniem. Uzyj wartosci ponizej 100%, aby wdrazac stopniowo.'
-      aggregateReportEmail: E-MAIL DO RAPORTOW ZBIORCZYCH (rua)
-      forensicReportEmail: E-MAIL DO RAPORTOW KRYMINALISTYCZNYCH (ruf, opcjonalnie)
+      coverageHint: '{percent}% niezgodnej poczty zostanie objęte działaniem. Użyj wartości poniżej 100%, aby wdrażać stopniowo.'
+      aggregateReportEmail: E-MAIL DO RAPORTÓW ZBIORCZYCH (rua)
+      forensicReportEmail: E-MAIL DO RAPORTÓW KRYMINALISTYCZNYCH (ruf, opcjonalnie)
       dkimAlignment: DOPASOWANIE DKIM
       spfAlignment: DOPASOWANIE SPF
   json-viewer:

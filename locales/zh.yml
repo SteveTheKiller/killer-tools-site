@@ -798,7 +798,7 @@ tools:
       recommended: 推荐
   windows-event-lookup:
     title: Windows 事件查询
-    description: Look up common Windows Event IDs with descriptions and severity.
+    description: 查询 Windows 事件 ID,包含说明、严重级别和常见原因。
     ui:
       searchResults: 搜索结果
       searchPlaceholder: 按事件 ID、名称或描述搜索...
@@ -807,7 +807,7 @@ tools:
       copiedShort: 已复制
   m365-sku-decoder:
     title: M365 许可证 SKU 解码器
-    description: Look up Microsoft 365 license SKU string IDs and GUIDs.
+    description: 将 Microsoft 365 许可证 SKU 字符串和 GUID 解码为对应的产品名称。
     ui:
       searchPlaceholder: 按 SKU 名称、字符串 ID 或描述搜索...
       copied: 已复制！
@@ -825,7 +825,7 @@ tools:
       decimal: 十进制 {decimal}
   exchange-ndr-lookup:
     title: Exchange NDR 查询
-    description: Look up Exchange and M365 non-delivery report codes with cause and fix.
+    description: 查询 Exchange 和 M365 退信代码,提供通俗易懂的原因和修复指导。
     ui:
       searchResults: 搜索结果
       searchPlaceholder: 按 NDR 代码、错误名称、原因或解决方法搜索...
@@ -912,7 +912,7 @@ tools:
     description: 查询任意域名的注册信息,包括注册商、创建和到期日期、域名服务器及状态标记。
   ascii-text-drawer:
     title: ASCII 文字画生成器
-    description: Create ASCII art text with many fonts and styles.
+    description: 使用多种字体和样式创建 ASCII 艺术字。
     ui:
       yourText: 您的文本
       textPlaceholder: 要绘制的文本
@@ -994,7 +994,7 @@ tools:
       jsonPlaceholder: 在此粘贴您的 JSON...
   markdown-to-html:
     title: Markdown 转 HTML
-    description: Convert Markdown to Html and allow to print (as PDF).
+    description: 将 Markdown 转换为 HTML,并导出或打印为 PDF。
     ui:
       copiedSuccess: HTML 已复制到剪贴板！
       copyFailed: 复制文本失败。

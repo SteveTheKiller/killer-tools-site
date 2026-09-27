@@ -8,12 +8,12 @@ home:
   toggleMenu: Toggle menu
   home: Home
   uiLib: UI Lib
-  support: Apoyar el desarrollo de IT-Tools
+  support: Apoyar el desarrollo de killer-tools
   buyMeACoffee: Buy me a coffee
   follow:
     title: Te gustan las it-tools?
     p1: Danos una estrella en
-    githubRepository: Repositorio de IT-Tools en GitHub
+    githubRepository: Repositorio de StevetheKiller en GitHub
     p2: o síguenos en
     twitterXAccount: Cuenta de X de IT-Tools
     thankYou: Muchas gracias!
@@ -130,7 +130,7 @@ tools:
       copiedToClipboard: Cadena Base64 copiada al portapapeles
       base64ToFileTitle: BASE64 A ARCHIVO
       fileNameLabel: NOMBRE DE ARCHIVO
-      fileNamePlaceholder: Nombre del archivo de descarga
+      fileNamePlaceholder: Nombre del archivo que se descargará
       extensionLabel: EXTENSIÓN
       extensionPlaceholder: ext
       base64StringLabel: CADENA BASE64
@@ -228,7 +228,7 @@ tools:
       error: ERROR
       parseError: No se pudo analizar la cadena de user agent
     title: Analizador de user-agent
-    description: Detecta y analiza el navegador, motor, sistema operativo, CPU y tipo/modelo de dispositivo a partir de una cadena user-agent.
+    description: Detecta y analiza el navegador, el motor, el sistema operativo, la CPU y el tipo o modelo de dispositivo según la cadena de user-agent.
   uuid-generator:
     ui:
       copiedMessage: UUID copiados al portapapeles
@@ -302,7 +302,7 @@ tools:
   regex-tester:
     ui:
       regexLabel: 'Regex a probar:'
-      regexPlaceholder: Introduce el regex a probar
+      regexPlaceholder: Introduce aquí el regex a probar
       globalLabel: Global
       globalTitle: Búsqueda global
       ignoreCaseLabel: Ignorar mayúsculas
@@ -315,7 +315,7 @@ tools:
       unicodeSetsLabel: Unicode Sets
       unicodeSetsTitle: Una mejora del modo u con más funciones Unicode.
       textLabel: 'Texto a comparar:'
-      textPlaceholder: Introduce el texto a comparar
+      textPlaceholder: Introduce aquí el texto a comparar
       regexBarTitle: REGEX
       matchesBarTitle: MATCHES
       matchIndex: Índice
@@ -473,7 +473,7 @@ tools:
       overallWarn: Algunos registros existen pero tienen problemas de configuración que conviene revisar.
       rdapHttpError: 'HTTP {status}: es posible que el dominio no exista o que el TLD no sea compatible.'
       lookupFailed: Error en la consulta.
-      domainPlaceholder: Introduce un dominio (p. ej. killertools.net)
+      domainPlaceholder: Introduce aquí un dominio (p. ej. killertools.net)
       searching: Buscando...
       search: Buscar
       signed: Firmado
@@ -502,7 +502,7 @@ tools:
       email: Correo electrónico
       phone: Teléfono
     title: Búsqueda de dominio
-    description: Datos de registro WHOIS y comprobaciones de DNS de correo (MX, SPF, DKIM, DMARC) de cualquier dominio en una sola vista.
+    description: Datos de registro WHOIS y comprobaciones de DNS de correo electrónico (MX, SPF, DKIM, DMARC) de cualquier dominio en una sola vista.
   date-time-converter:
     ui:
       formatJsLocaleDateString: Cadena de fecha de configuración regional JS
@@ -547,7 +547,7 @@ tools:
       clickToCopy: Haz clic para copiar el ID de cadena
       copiedMark: ✓ copiado
     title: Decodificador de SKU de licencias M365
-    description: Decodifica cadenas y GUID de SKU de licencias de Microsoft 365 a sus nombres de producto.
+    description: Decodifica cadenas y GUID de SKU de licencias de Microsoft 365 según sus nombres de producto.
   email-header-parser:
     ui:
       pasteHint: Pegue los encabezados de correo sin procesar a continuación.
@@ -561,7 +561,7 @@ tools:
       spamAnalysis: Análisis de spam
       spamScore: Puntuación de spam
       spamStatus: Estado de spam
-    title: Analizador de cabeceras de correo
+    title: Analizador de cabeceras de correo electrónico
     description: Pega las cabeceras de correo en bruto para extraer la información del remitente, rastrear la cadena de saltos de entrega y ver los resultados de autenticación SPF, DKIM y DMARC.
   otpCodeGeneratorAndValidator:
     ui:
@@ -811,13 +811,13 @@ tools:
       commandCopied: Comando chmod copiado
       copyCommand: Copiar comando
     title: Calculadora de chmod
-    description: Calcula tus permisos y comandos chmod con esta calculadora de chmod online.
+    description: Calcula tus permisos y comandos chmod con esta calculadora de chmod en línea.
   color-converter:
     ui:
       color: Color
       formats: FORMATOS
     title: Conversor de colores
-    description: Convierte colores entre distintos formatos (hex, rgb, hsl y nombre css)
+    description: Convierte colores entre distintos formatos (hex, rgb, hsl y nombre css) según lo que necesites
   crontab-generator:
     ui:
       symbolAnyValue: Cualquier valor
@@ -829,7 +829,7 @@ tools:
       symbolStep: Valores de paso
       symbolStepEquivalent: Cada 10 minutos
       aliasYearly: Una vez al año (1 de enero, medianoche)
-      aliasMonthly: El primero de cada mes, medianoche
+      aliasMonthly: El primer día de cada mes, a medianoche
       aliasWeekly: Domingo, medianoche
       aliasDaily: Todos los días a medianoche
       aliasHourly: Cada hora, en punto
@@ -972,7 +972,7 @@ tools:
       metricIntegrity: Integridad
       metricAvailability: Disponibilidad
     title: Búsqueda de CVE
-    description: Busca en el NIST NVD CVE por ID o palabra clave. Datos en vivo de la API de NVD.
+    description: Busca en el NIST NVD CVE según su ID o palabra clave. Datos en vivo de la API de NVD.
   html-entities:
     ui:
       yourString: TU CADENA
@@ -1160,8 +1160,8 @@ tools:
       indentStyleStandard: Estándar
       indentStyleTabularLeft: Tabular izquierda
       indentStyleTabularRight: Tabular derecha
-    title: Formateo y embellecido de SQL
-    description: Formatea y embellece tus consultas SQL online (admite varios dialectos SQL).
+    title: Formateo y embellecido de código SQL
+    description: Formatea y embellece tus consultas SQL en línea (admite varios dialectos SQL).
   svg-placeholder-generator:
     ui:
       widthLabel: ANCHO (px)
@@ -1184,7 +1184,7 @@ tools:
   json-diff:
     ui:
       onlyShowDifferences: Mostrar solo las diferencias
-      jsonsAreTheSame: Los JSON proporcionados son iguales
+      jsonsAreTheSame: Los JSON proporcionados son idénticos
       firstJsonTitle: TU PRIMER JSON
       firstJsonPlaceholder: Pega aquí tu primer JSON...
       invalidJson: Formato JSON no válido
@@ -1216,7 +1216,7 @@ tools:
       tokenPlaceholder: Introduce aquí tu token...
       invalidJwt: JWT no válido
     title: Analizador de JWT
-    description: Analiza y decodifica tu JSON Web Token (jwt) y muestra su contenido.
+    description: Analiza y decodifica tu JSON Web Token (jwt) y muestra su información.
   json-converter:
     ui:
       convertTo: Convertir a
@@ -1256,7 +1256,7 @@ tools:
       forensicReportEmail: CORREO DE INFORME FORENSE (ruf, opcional)
       dkimAlignment: ALINEACIÓN DKIM
       spfAlignment: ALINEACIÓN SPF
-    title: Generador de registros de correo
+    title: Generador de registros de correo electrónico
     description: Genera registros TXT de DNS SPF y DMARC. Elige tus proveedores de correo y políticas, y copia el resultado directamente en tu DNS.
   dev-calculator:
     ui:
@@ -1430,8 +1430,8 @@ tools:
       encryptedOutput: SALIDA CIFRADA
       yourEncryptedText: TU TEXTO CIFRADO
       decryptedOutput: SALIDA DESCIFRADA
-      encryptPlaceholder: El texto que quieres cifrar
-      decryptPlaceholder: El texto cifrado que quieres descifrar
+      encryptPlaceholder: Escribe aquí el texto que quieres cifrar
+      decryptPlaceholder: Escribe aquí el texto cifrado que quieres descifrar
       secretKeyPlaceholder: Clave secreta...
     title: Cifrar / descifrar texto
     description: Cifra texto en claro y descifra texto cifrado usando algoritmos como AES, TripleDES, Rabbit o RC4.
@@ -1441,7 +1441,7 @@ tools:
       encodingHex: Hexadecimal (base 16)
       encodingBase64: Base64 (base 64)
       encodingBase64url: Base64url (base 64, apto para URL)
-      inputPlaceholder: Tu texto para calcular el hash...
+      inputPlaceholder: Escribe aquí tu texto para calcular el hash...
       encoding: Codificación
       output: SALIDA
     title: Hash de texto
@@ -1456,7 +1456,7 @@ tools:
       hashingFunction: FUNCIÓN HASH
       outputEncoding: CODIFICACIÓN DE SALIDA
       hmacOutput: SALIDA HMAC
-      plainTextPlaceholder: Texto plano para calcular el hash...
+      plainTextPlaceholder: Escribe aquí el texto plano para calcular el hash...
       secretKeyPlaceholder: Introduce la clave secreta...
       clear: Borrar
       copyHmac: Copiar HMAC
@@ -1497,8 +1497,8 @@ tools:
       levelMedium: Media (~15 %)
       levelQuartile: Cuartil (~25 %)
       levelHigh: Alta (~30 %)
-      emptyHintWifi: Introduce un SSID para generar un QR de Wi-Fi
-      emptyHintText: Introduce texto o una URL
+      emptyHintWifi: Introduce un SSID para generar un código QR de Wi-Fi
+      emptyHintText: Introduce un texto o una URL para generar un código QR
       captionJoin: '>_ escanea para unirte'
       captionOpen: '>_ escanea para abrir'
       downloadPng: ↓ Descargar PNG
@@ -1529,7 +1529,7 @@ tools:
     description: Calcula exposiciones largas corregidas para más de 40 películas analógicas usando la ley de potencia de Schwarzschild. Cubre B&N, negativo color y diapositiva.
   group-policy-reference:
     ui:
-      searchPlaceholder: Buscar directivas, rutas, claves del registro...
+      searchPlaceholder: Busca aquí directivas, rutas o claves del registro...
       copied: ¡Copiado!
       clickToCopyRegistry: Haz clic para copiar la clave del registro
       copiedShort: copiado
@@ -1545,7 +1545,7 @@ tools:
       clickToCopyEventId: Haz clic para copiar el ID de evento
       copiedShort: copiado
     title: Búsqueda de eventos de Windows
-    description: Busca ID de eventos de Windows con descripciones, niveles de gravedad y causas comunes.
+    description: Busca ID de eventos de Windows con sus descripciones, niveles de gravedad y causas más comunes.
   xml-formatter:
     ui:
       invalidXml: El XML proporcionado no es válido.
@@ -1588,7 +1588,7 @@ tools:
     description: Descubre la fortaleza de tu contraseña con este analizador de fortaleza de contraseñas que funciona solo en el cliente, con estimación del tiempo de crackeo.
   keycode-info:
     title: Información de códigos de tecla
-    description: Encuentra el keycode, code, location y modificadores de JavaScript de cualquier tecla pulsada.
+    description: Encuentra el keycode, code, location y modificadores de JavaScript según la tecla que pulses.
     ui:
       pressAnyKey: Presiona cualquier tecla para ver la información
       key: Tecla
@@ -1600,10 +1600,10 @@ tools:
     title: Chuleta de Git
     description: Referencia rápida de los comandos y flujos de trabajo más comunes de Git.
   yaml-prettify:
-    title: Formateo y embellecido de YAML
+    title: Formateo y embellecido de código YAML
     description: Embellece tu cadena YAML en un formato legible y fácil de entender.
   json-prettify:
-    title: Formateo y embellecido de JSON
+    title: Formateo y embellecido de código JSON
     description: Embellece tu cadena JSON en un formato legible y fácil de entender.
   docker-run-to-docker-compose-converter:
     title: Conversor de Docker run a Docker compose
@@ -1613,7 +1613,7 @@ tools:
     description: Genera y descarga códigos QR para URLs, texto plano o credenciales de red Wi-Fi. Temas de color terminal, clásico y personalizado con corrección de errores configurable.
   date-converter:
     title: Conversor de fecha y hora
-    description: Convierte fecha y hora a los distintos formatos disponibles
+    description: Convierte fecha y hora a los distintos formatos disponibles según tus necesidades
   og-meta-generator:
     title: Generador de meta Open Graph
     description: Genera etiquetas meta HTML de Open Graph y redes sociales para tu sitio web.
@@ -1621,11 +1621,11 @@ tools:
     title: JSON a TOML
     description: Analiza y convierte JSON a TOML.
   base-converter:
-    title: Conversor de base de enteros
+    title: Conversor de base numérica de enteros
     description: Convierte un número entre distintas bases (decimal, hexadecimal, binaria, octal, base64, ...)
   text-diff:
     title: Diferencias de texto
-    description: Compara dos textos y observa las diferencias entre ellos.
+    description: Compara dos textos y observa fácilmente las diferencias entre ellos.
   otp-generator:
     title: Generador de códigos OTP
     description: Genera y valida OTP basados en tiempo (contraseña de un solo uso) para la autenticación multifactor.
@@ -1652,9 +1652,9 @@ tools:
     description: Descubre la URL de destino original detrás de los SafeLinks de Microsoft Defender.
   port-protocol-reference:
     title: Referencia de puertos y protocolos
-    description: Puertos y protocolos de red comunes con notas de seguridad y marcadores de puertos peligrosos.
+    description: Puertos y protocolos de red más comunes, con notas de seguridad y marcadores de puertos peligrosos.
   email-dns-checker:
-    title: Comprobador de DNS de correo
+    title: Comprobador de DNS de correo electrónico
     description: Comprueba registros MX, SPF, DKIM y DMARC de cualquier dominio. Valida la configuración de autenticación de correo y señala configuraciones erróneas comunes.
   whois-checker:
     title: Búsqueda WHOIS
@@ -1722,7 +1722,7 @@ components:
       purple: Morado
 layouts:
   menuLayout:
-    eggMessage: 80 herramientas. Cero suscripciones. Un tecnico de campo rencoroso.
+    eggMessage: 80 herramientas. Cero suscripciones. Un técnico de campo rencoroso.
     clickMe: haz clic aqui
     sourceOnGithub: Codigo fuente en Github
   base:
@@ -1735,43 +1735,43 @@ pages:
     backToHome: volver al inicio
   privacy:
     heading: Politica de privacidad
-    lastUpdated: 'Ultima actualizacion: 4 de abril de 2026'
+    lastUpdated: 'Última actualización: 4 de abril de 2026'
     overviewHeading: Resumen
     overviewIntro: KillerTools
-    overviewBody: es una coleccion gratuita de herramientas de TI. Tu privacidad es importante para nosotros, y esta politica explica como tratamos tus datos.
+    overviewBody: es una colección gratuita de herramientas de TI. Tu privacidad es importante para nosotros, y esta política explica cómo tratamos tus datos.
     dataCollectionHeading: Recopilacion de datos
-    dataCollectionBody: KillerTools no recopila, almacena ni transmite ningun dato personal. Todo el procesamiento de las herramientas ocurre por completo en tu navegador. Ningun dato que introduzcas en una herramienta se envia a ningun servidor.
+    dataCollectionBody: KillerTools no recopila, almacena ni transmite ningún dato personal. Todo el procesamiento de las herramientas ocurre por completo en tu navegador. Ningún dato que introduzcas en una herramienta se envía a ningún servidor.
     cookiesHeading: Cookies
     cookiesBody: Este sitio no utiliza cookies de seguimiento. Tus preferencias de tema y ajustes se guardan localmente en tu navegador y nunca se transmiten.
     analyticsHeading: Analitica
     analyticsIntro: Este sitio utiliza
-    analyticsBody: una herramienta de analitica centrada en la privacidad, para entender patrones generales de uso como visitas a paginas y fuentes de referencia. Umami no utiliza cookies, no rastrea usuarios entre sitios y no recopila ninguna informacion identificable. Todos los datos estan agregados y son anonimos.
+    analyticsBody: una herramienta de analítica centrada en la privacidad, para entender patrones generales de uso como visitas a páginas y fuentes de referencia. Umami no utiliza cookies, no rastrea usuarios entre sitios y no recopila ninguna información identificable. Todos los datos están agregados y son anónimos.
     thirdPartyHeading: Servicios de terceros
-    thirdPartyBody: Algunas herramientas pueden enlazar a recursos o documentacion externa. No somos responsables de las practicas de privacidad de esos sitios externos.
+    thirdPartyBody: Algunas herramientas pueden enlazar a recursos o documentación externa. No somos responsables de las prácticas de privacidad de esos sitios externos.
     androidAppHeading: Aplicacion Android
-    androidAppBody: La aplicacion Android de KillerTools es un envoltorio de la aplicacion web. No solicita ni accede a ningun permiso del dispositivo mas alla del acceso basico a internet. No se recopila ni transmite ningun dato del dispositivo.
+    androidAppBody: La aplicación Android de KillerTools es un envoltorio de la aplicación web. No solicita ni accede a ningún permiso del dispositivo más allá del acceso básico a internet. No se recopila ni transmite ningún dato del dispositivo.
     contactHeading: Contacto
-    contactBody: Si tienes preguntas sobre esta politica de privacidad, puedes contactarnos en
+    contactBody: Si tienes preguntas sobre esta política de privacidad, puedes contactarnos en
   androidApp:
-    robotAttribution: El robot de Android se reproduce o modifica a partir de un trabajo creado y compartido por Google, y se usa segun los terminos descritos en la Creative Commons 3.0 Attribution License.
+    robotAttribution: El robot de Android se reproduce o modifica a partir de un trabajo creado y compartido por Google, y se usa según los términos descritos en la Creative Commons 3.0 Attribution License.
     heading: KillerTools para Android
-    introBody1: 'Toda la caja de herramientas de killertools.net como aplicacion nativa de Android: cada herramienta, la biblioteca Killer Scripts y todos tus favoritos, a un toque desde tu pantalla de inicio.'
-    introBody2: Las mismas reglas que en el sitio. Todo se ejecuta en tu dispositivo. Sin cuenta, sin telemetria, sin llamadas a casa. Si te ahorra un ciclo de ticket en el campo, ha cumplido su proposito.
-    betaStatusPrefix: La aplicacion esta actualmente en
+    introBody1: 'Toda la caja de herramientas de killertools.net como aplicación nativa de Android: cada herramienta, la biblioteca Killer Scripts y todos tus favoritos, a un toque desde tu pantalla de inicio.'
+    introBody2: Las mismas reglas que en el sitio. Todo se ejecuta en tu dispositivo. Sin cuenta, sin telemetría, sin llamadas a casa. Si te ahorra un ciclo de ticket en el campo, ha cumplido su propósito.
+    betaStatusPrefix: La aplicación está actualmente en
     betaStatusStrong: beta cerrada en Google Play
-    betaStatusSuffix: ', y aqui es donde entras tu.'
+    betaStatusSuffix: ', y aquí es donde entras tú.'
     joinBetaHeading: Unete a la beta
     joinBetaIntroPrefix: Google exige
-    joinBetaIntroStrong: 12 probadores con la aplicacion instalada durante 14 dias continuos
-    joinBetaIntroSuffix: 'antes de que una aplicacion de un desarrollador independiente pueda publicarse. Tres pasos, unos dos minutos, y seras uno de los doce:'
-    step1LinkText: Unete al grupo de probadores
+    joinBetaIntroStrong: 12 probadores con la aplicación instalada durante 14 días continuos
+    joinBetaIntroSuffix: 'antes de que una aplicación de un desarrollador independiente pueda publicarse. Tres pasos, unos dos minutos, y serás uno de los doce:'
+    step1LinkText: Únete al grupo de probadores
     step1Suffix: en Google Groups (pulsa "Join group").
     step2LinkText: Conviertete en probador
-    step2Suffix: en la pagina de inscripcion de Google Play.
+    step2Suffix: en la página de inscripción de Google Play.
     step3LinkText: Instala la aplicacion
     step3Suffix: desde Google Play y mantenla instalada durante dos semanas.
     sameAccountStrong: Usa la misma cuenta de Google para los tres pasos
-    sameAccountSuffix: ' - la pagina de inscripcion muestra "not available for this account" si te saltas el grupo o cambias de cuenta.'
+    sameAccountSuffix: ' - la página de inscripción muestra "not available for this account" si te saltas el grupo o cambias de cuenta.'
     feedbackPrefix: '¿Algo roto o falta algo? Dimelo:'
   home:
     sortPopular: Popular
@@ -1779,26 +1779,26 @@ pages:
     sortZA: Z - A
   about:
     heading: Acerca de KillerTools
-    intro: Los tecnicos de campo no tienen tiempo para sobrecarga. Cada herramienta aqui existe porque la necesite en el trabajo y no encontre algo que simplemente funcionara sin cuenta, instalacion ni telemetria.
+    intro: Los técnicos de campo no tienen tiempo para sobrecarga. Cada herramienta aquí existe porque la necesité en el trabajo y no encontré algo que simplemente funcionara sin cuenta, instalación ni telemetría.
     originPrefix: Ahora construyo herramientas en el equipo interno de ingenieria de IA de un MSP, tras seis años de desarrollo full-stack y ocho años como tecnico de campo en varias empresas. KillerTools.net empezo como un fork del excelente
     originMid: proyecto de
-    originSuffix: y crecio hasta convertirse en algo pensado para el tipo de trabajo que realmente hago. Lo construi para consultar ajustes de Group Policy en mitad de un ticket, escanear la subred de un cliente y buscar referencias de puertos sin salir del navegador.
-    scriptsLibrary: La biblioteca Killer Scripts cubre las tareas que aparecen en cada ciclo de ticket. Cada script funciona en PS 5.1, PS 7 y Kaseya LiveConnect sin dependencias.
-    privacyBody: Todo se ejecuta en tu navegador. Nada se rastrea. Nunca se requiere una cuenta. El sitio aplica una Content Security Policy estricta para bloquear ataques en la cadena de dependencias. Si un paquete npm comprometido llegara a colarse en el paquete final, no podria enviar a casa lo que hayas pegado.
+    originSuffix: y creció hasta convertirse en algo pensado para el tipo de trabajo que realmente hago. Lo construí para consultar ajustes de Group Policy en mitad de un ticket, escanear la subred de un cliente y buscar referencias de puertos sin salir del navegador.
+    scriptsLibrary: La biblioteca Killer Scripts cubre las tareas que aparecen en cada ciclo de ticket. Cada script funciona desde la línea de comandos en PS 5.1, PS 7 y Kaseya LiveConnect, sin dependencias.
+    privacyBody: Todo se ejecuta en tu navegador. Nada se rastrea. Nunca se requiere una cuenta. El sitio aplica una Content Security Policy estricta para bloquear ataques en la cadena de dependencias. Si un paquete npm comprometido llegara a colarse en el paquete final, no podría enviar a casa lo que hayas pegado.
     maintainedByPrefix: Creado y mantenido por
     maintainedByMid: Si esto te ahorra tiempo en el trabajo,
     buyMeCoffee: invitarme a un cafe
     maintainedBySuffix: se agradece pero nunca se espera.
     missingToolHeading: ¿Falta una herramienta? ¿Encontraste un error?
-    issuesPrefix: Abre una solicitud de funcion o un informe de error en la
+    issuesPrefix: Abre una solicitud de función o un informe de error en la
     issuesLinkText: seccion de issues
     issuesSuffix: en GitHub. Los leo.
     alsoTryHeading: Prueba tambien...
-    tagKillerScan: Escaner de red de codigo abierto para Windows
-    tagKillerPdf: Editor de PDF de codigo abierto para Windows
-    tagKillerShell: Shell de Windows de codigo abierto para usuarios avanzados
-    tagKillerNotes: Bloc de notas cifrado de codigo abierto para Windows
-    tagKillendar: Calendario cifrado de codigo abierto para Windows
+    tagKillerScan: Escáner de red de código abierto para Windows
+    tagKillerPdf: Editor de PDF de código abierto para Windows
+    tagKillerShell: Shell de Windows de código abierto para usuarios avanzados
+    tagKillerNotes: Bloc de notas cifrado de código abierto para Windows
+    tagKillendar: Calendario cifrado de código abierto para Windows
     linksHeading: Enlaces
     linkLabelSite: Sitio
     linkLabelSource: Codigo fuente
