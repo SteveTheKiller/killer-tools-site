@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { KtAccentKey, KtThemeKey } from '@/themes';
 import { useStorage } from '@vueuse/core';
-import { computed, nextTick, ref } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useStyleStore } from '@/stores/style.store';
 import { ktAccents, ktThemes, NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 
@@ -36,6 +36,16 @@ const effectiveAccent = computed(() =>
 // to make room for the centered brand; tapping it expands the row.
 const swatchesOpen = ref(false);
 const currentTheme = computed(() => ktThemes.find(t => t.key === styleStore.ktTheme));
+const pickerRef = ref<HTMLElement>();
+
+function closeSwatchesOnOutsideClick(event: MouseEvent) {
+  if (swatchesOpen.value && !pickerRef.value?.contains(event.target as Node)) {
+    swatchesOpen.value = false;
+  }
+}
+
+onMounted(() => document.addEventListener('click', closeSwatchesOnOutsideClick));
+onBeforeUnmount(() => document.removeEventListener('click', closeSwatchesOnOutsideClick));
 
 function selectTheme(key: KtThemeKey) {
   styleStore.setTheme(key);
@@ -54,9 +64,9 @@ function themeDotAccent(theme: typeof ktThemes[number]) {
   return ktAccents[family][effectiveAccent.value];
 }
 
-// ── Accent popup (KillerScan style): opened from a single trigger circle.
+// Accent popup (KillerScan style): opened from a single trigger circle.
 //    Docks to the top rail (KillerPDF annotation-bar behavior): fixed y,
-//    drags left/right along that row only, x position persisted ──
+//    drags left/right along that row only, x position persisted.
 const popupOpen = ref(false);
 // Rail height: top of the bar flush with the top of the content pane
 const popupTop = ref(72);
@@ -64,7 +74,7 @@ const popupX = useStorage('kt-accent-popup-x', -1);
 const triggerRef = ref<HTMLElement>();
 const popupRef = ref<HTMLElement>();
 
-// Drag range: contained within the content pane — a few px inside the left
+// Drag range: contained within the content pane, a few px inside the left
 // border, and never past the pane scrollbar on the right
 const railMinX = ref(8);
 const railMaxX = ref(1000);
@@ -121,7 +131,7 @@ function startDrag(e: PointerEvent) {
 </script>
 
 <template>
-  <div class="chrome-pickers">
+  <div ref="pickerRef" class="chrome-pickers">
     <!-- Accent trigger (app style): one slightly larger circle in the current
          accent; clicking opens the draggable accent popup -->
     <button
@@ -300,12 +310,37 @@ html:not(.dark) .acc-trigger {
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-/* Desktop: no collapse trigger, full swatch row */
+/* Use the compact theme picker at every width. */
 .sm-theme-trigger {
-  display: none;
+  display: block;
+  width: 26px;
+  height: 26px;
 }
 
-/* Narrow headers: keep one current-theme trigger and open the full set as a flyout. */
+.tgrp {
+  display: none;
+  gap: 5px;
+}
+
+.tgrp.tgrp-open {
+  display: flex;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 4000;
+  width: 170px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--kt-chrome-border);
+  border-radius: 9px;
+  background: var(--kt-modal) var(--kt-grain-img) repeat;
+  background-size: 256px 256px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.48);
+}
+
+/* Tighten the surrounding controls on narrow headers. */
 @media (max-width: 1120px) {
   .chrome-pickers {
     margin-right: 6px;
@@ -317,8 +352,8 @@ html:not(.dark) .acc-trigger {
 
   .sm-theme-trigger {
     display: block;
-    width: 17px;
-    height: 17px;
+    width: 26px;
+    height: 26px;
   }
 
   .tgrp {
