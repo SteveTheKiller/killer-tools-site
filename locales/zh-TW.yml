@@ -1840,3 +1840,98 @@ pages:
     linkLabelSupport: 支援
     linkLabelBuiltOn: 基於
     itToolsFork: IT-Tools（分支）
+  mcp:
+    copy:
+      copying: 正在複製...
+      copied: 已複製{label}
+      failed: 複製失敗,請改為手動複製:{value}
+      popups: 已複製伺服器網址。請允許彈出視窗以開啟 Claude。
+    labels:
+      serverUrl: 伺服器網址
+      codex: Codex 命令
+      claudeCode: Claude Code 命令
+    description: 透過 KillerTools MCP 在 AI 代理中使用 KillerTools 工具。
+    github: GitHub 上的 KillerMCP
+    eyebrow:
+      agents: KILLERTOOLS / 代理
+      oneInstaller: 一個安裝程式 / 一個連線
+      hosted: 選用的託管連線
+      after: 安裝或連接完成後
+    lead: 把 KillerTools 加入你的代理工具箱。只需連接一次,之後就能請它計算子網路、檢查 DNS 記錄、查詢 CVE、解析郵件標頭、產生 PowerShell 命令、把 JSON 轉換成 CSV,或解碼 Base64。
+    status: KillerMCP 支援 KillerTools 網站上全部 81 款工具。
+    install: 安裝
+    intro: KillerMCP 在單一本機連線中整合了全部 81 款 KillerTools 工具,以及所支援的 Killer 應用程式中的工具。你不需要另外安裝 KillerTools、取得原始碼、安裝 Node,也不需要一堆命令。
+    download: 下載 Windows 版
+    meta:
+      version: 版本 {version}
+      signed: 已進行數位簽章
+      hosted: 託管於 GitHub Releases
+    steps:
+      s1Title: 下載並執行 KillerMCP 安裝程式。
+      s1Body: 此安裝程式由開放原始碼開發者 Stephen Riley 簽署,並透過 GitHub Releases 發布。
+      s2Title: 讓安裝程式為你連接代理。
+      s2Body: 它會安裝共用執行環境,並在偵測到 Codex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf 時,將 KillerMCP 註冊到其中。
+      s3Title: 開啟一個新的代理對話並直接提問。
+      s3Body: KillerMCP 透過同一個連線提供全部 81 款 KillerTools 工具。
+    hostedBody: 不想安裝任何東西?可以直接連接託管的 KillerTools 伺服器,使用其中 64 款以網頁為基礎的工具。其餘 17 款 KillerTools 工具以及所有桌面應用程式工具,都需要安裝 KillerMCP 執行環境。
+    actions:
+      cursor: 新增到 Cursor
+      vscode: 新增到 VS Code
+      claude: 複製網址並開啟 Claude
+      codex: 複製 Codex 設定命令
+      claudeCode: 複製 Claude Code 設定命令
+      copyUrl: 複製網址
+    otherClient: 使用其他 MCP 用戶端?請複製伺服器網址。
+    shortest: 最簡短的有效提示詞是{prompt}。例如:{example}。
+    infer: 你的代理可以根據任務與現有的上下文,自行推斷應使用的 KillerTools 或 Killer 應用程式工具。只有當你想明確指定目標時,才需要使用 {a}、{b}、{c} 或其他應用程式名稱。你不需要底線、操作名稱,也不需要斜線命令。
+    worker:
+      title: Cloudflare Worker 的運作方式
+      p1: 公開端點是一個開放原始碼、可串流傳輸的 HTTP MCP 伺服器,與網站分開部署。你的 MCP 用戶端會將工具名稱與受限參數傳送到 {url}。Worker 會驗證請求、執行所選工具並回傳結果。
+      p2: 大多數計算與轉換都直接在 Worker 中完成。DNS 查詢透過 HTTPS 使用 Cloudflare DNS。網域註冊資訊來自 IANA RDAP 目錄。CVE、GIF 與目錄搜尋會連線至各自的公開提供者,若這些提供者無法使用或受到速率限制,查詢就可能失敗。
+    examples:
+      title: 試著這樣問
+      intro: 以 {killer} 開頭,描述你想要的結果。如果任務本身已經很清楚,應用程式或工具名稱可以省略。
+      e1: 查詢網域 thekiller.net
+      e2: 計算 192.168.10.0/24
+      e3: 查詢 Windows 事件 4625
+      e4: 查詢 CVE-2025-53770
+      e5: 解析這些郵件標頭
+      e6: 產生一條列出已停止服務的 PowerShell 命令
+      e7: 把這段 JSON 轉換成 CSV
+      e8: 比較這兩份 JSON 文件
+      e9: 為 example.com 產生一條 SPF 記錄
+      e10: 解碼這段 Base64 文字
+      e11: 識別這個 M365 SKU
+      e12: 用這個 ND 濾鏡計算 30 秒曝光
+    can:
+      title: 它能做什麼?
+      intro: '用自然語言提問即可。你的代理會自動找出可用的工具及其輸入參數,並呼叫所需的工具。舉例來說,它可以:'
+      i1: 計算 IPv4 子網路、展開位址範圍、產生 IPv6 ULA 前綴,並查詢 MAC 位址廠商。
+      i2: 檢查 DNS 記錄與網域註冊資訊、搜尋 CVE,並識別連接埠與通訊協定。
+      i3: 解析郵件標頭、產生 SPF 或 DMARC 記錄,並查詢 Exchange NDR 訊息。
+      i4: 查詢 Windows 錯誤代碼與事件識別碼、群組原則設定,以及 M365 授權 SKU。
+      i5: 搜尋 PowerShell Cmdlet,並產生命令供你在執行前檢視。
+      i6: 格式化 JSON 與 XML,在 JSON、CSV、YAML 與 TOML 之間互相轉換,解碼 Base64,比較文件,並測試正規表示式。
+      i7: 產生 QR Code、UUID、中繼標籤與佔位圖,或進行攝影曝光與底片相關計算。
+      i8: 轉換大小寫、日期時間、溫度、顏色、進位制、羅馬數字、二進位文字、北約字母拼讀,以及電話號碼格式。
+      i9: 格式化 SQL、YAML、TOML、Markdown、HTML 實體與結構化資料,或計算百分比、cron 排程,以及 chmod 權限值。
+      i10: 搜尋表情符號、GIF、KillerScripts 與 Killer 模組,或檢查網址、使用者代理、HTTP 狀態碼與文字統計資訊。
+    cov:
+      title: 託管與本機涵蓋範圍
+      hostedTitle: 託管 Worker
+      hostedBody: 64 款瀏覽器安全工具,共 74 項操作。無需安裝。
+      installedTitle: 已安裝的 KillerMCP
+      installedBody: 全部 81 款 KillerTools 工具,共 94 項操作,外加偵測到的 Killer 應用程式。
+      browserTitle: 瀏覽器輔助功能
+      browserBody: 相機、裝置、編輯器與簽名工具會開啟一個私人的 localhost 頁面。
+    data:
+      title: 資料會流向哪裡?
+      p1: 已安裝的 KillerMCP 執行環境在你的電腦上執行。部分網路查詢與參考資料查詢仍會連線至其公開資料來源。你的代理會收到完成請求所需的輸入與結果。
+      p2: 選用的託管連線會將工具輸入傳送到 KillerTools Cloudflare Worker。它不需要登入,將請求內容限制在 64 KiB 以內,採用受限的結構描述驗證,並針對每個連線的 IP 進行速率限制。請勿透過託管連線傳送密碼、私人檔案、權杖或客戶資料。
+      p3: 本機檔案、瀏覽器、密碼、權杖、加密、雜湊、OTP、BIP39 以及金鑰產生相關工具,不會經過公開 Worker。它們透過已安裝的 KillerMCP 執行,但 MCP 用戶端與模型提供者仍可能收到輸入與結果。
+    oss:
+      title: 開放原始碼與目前限制
+      p1: '{kt} 包含公開 Worker、本機 KillerTools 套件、操作對應表、驗證結構描述,以及涵蓋率檢查。{km} 包含共用本機主機、桌面應用程式轉接器、安裝程式,以及整合檢查。'
+      ktLink: KillerTools 原始碼
+      kmLink: KillerMCP 原始碼
+      p2: 外部查詢結果取決於其資料來源。本機工具只會接收工具呼叫中提供的路徑或數值。Base64 檔案解碼會建立新檔案,並拒絕覆寫既有檔案。相機擷取仍需要在瀏覽器中手動授權並進行硬體驗證。KillerMCP v0.1.1 已簽署、加上時間戳記,並透過 GitHub Releases 發布。

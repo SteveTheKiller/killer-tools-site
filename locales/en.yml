@@ -1840,3 +1840,98 @@ pages:
     linkLabelSupport: Support
     linkLabelBuiltOn: Built on
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Copying...
+      copied: '{label} copied'
+      failed: 'Copy failed. Copy this instead: {value}'
+      popups: Server URL copied. Allow pop-ups to open Claude.
+    labels:
+      serverUrl: Server URL
+      codex: Codex command
+      claudeCode: Claude Code command
+    description: Use KillerTools utilities from an AI agent through KillerTools MCP.
+    github: KillerMCP on GitHub
+    eyebrow:
+      agents: KILLERTOOLS / AGENTS
+      oneInstaller: ONE INSTALLER / ONE CONNECTION
+      hosted: OPTIONAL HOSTED CONNECTION
+      after: AFTER INSTALLING OR CONNECTING
+    lead: Put KillerTools in your agent's toolkit. Connect once, then ask it to calculate a subnet, check DNS records, research a CVE, parse email headers, build a PowerShell command, convert JSON to CSV, or decode Base64.
+    status: KillerMCP supports all 81 KillerTools website tools.
+    install: Install
+    intro: KillerMCP includes all 81 KillerTools utilities plus tools from supported Killer apps in one local connection. You will not need a separate KillerTools installer, a source checkout, Node, or a list of commands.
+    download: Download for Windows
+    meta:
+      version: Version {version}
+      signed: Digitally signed
+      hosted: Hosted on GitHub Releases
+    steps:
+      s1Title: Download and run KillerMCP Setup.
+      s1Body: The installer is signed by Open Source Developer Stephen Riley and published through GitHub Releases.
+      s2Title: Let setup connect your agent.
+      s2Body: It installs the shared runtime and registers KillerMCP with Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, and Windsurf when found.
+      s3Title: Open a new agent chat and ask.
+      s3Body: KillerMCP makes all 81 KillerTools utilities available through the same connection.
+    hostedBody: Do not want to install anything? Connect directly to the hosted KillerTools server for 64 web based utilities. The remaining 17 KillerTools utilities and all desktop app tools require the installed KillerMCP runtime.
+    actions:
+      cursor: Add to Cursor
+      vscode: Add to VS Code
+      claude: Copy URL and open Claude
+      codex: Copy Codex setup command
+      claudeCode: Copy Claude Code setup command
+      copyUrl: Copy URL
+    otherClient: Using another MCP client? Copy the server URL.
+    shortest: 'The shortest useful prompt is {prompt}. For example: {example}.'
+    infer: Your agent can infer the matching KillerTools or Killer app tool from the task and available context. Use {a}, {b}, {c}, or another app name only when you want to make the target explicit. You do not need underscores, an operation name, or a slash command.
+    worker:
+      title: How the Cloudflare Worker works
+      p1: The public endpoint is an open-source streamable HTTP MCP server deployed separately from the website. Your MCP client sends a tool name and bounded arguments to {url}. The Worker validates the request, runs the selected utility, and returns the result.
+      p2: Most calculations and conversions run directly in the Worker. DNS queries use Cloudflare DNS over HTTPS. Domain registration follows the IANA RDAP directory. CVE, GIF, and catalog searches contact their public providers and can fail when those providers are unavailable or rate limited.
+    examples:
+      title: Try asking
+      intro: Start with {killer} and describe the result you want. The app or tool name is optional when the task is clear.
+      e1: domain search thekiller.net
+      e2: calculate 192.168.10.0/24
+      e3: look up Windows event 4625
+      e4: research CVE-2025-53770
+      e5: parse these email headers
+      e6: build a PowerShell command to list stopped services
+      e7: convert this JSON to CSV
+      e8: compare these two JSON documents
+      e9: generate an SPF record for example.com
+      e10: decode this Base64 text
+      e11: identify this M365 SKU
+      e12: calculate a 30 second exposure with this ND filter
+    can:
+      title: What can it do?
+      intro: 'Ask in plain language. Your agent discovers the available tools and their inputs, then calls the ones it needs. For example, it can:'
+      i1: Calculate IPv4 subnets, expand address ranges, generate IPv6 ULA prefixes, and look up MAC vendors.
+      i2: Check DNS records and domain registration, search CVEs, and identify ports and protocols.
+      i3: Parse email headers, generate SPF or DMARC records, and look up Exchange NDR messages.
+      i4: Find Windows error and event IDs, Group Policy settings, and M365 license SKUs.
+      i5: Search PowerShell cmdlets and assemble commands for you to review before running.
+      i6: Format JSON and XML, convert JSON to CSV or among JSON, YAML, and TOML, decode Base64, compare documents, and test regular expressions.
+      i7: Generate QR codes, UUIDs, meta tags, and placeholders, or work through photo exposure and film calculations.
+      i8: Convert case, dates, times, temperatures, colors, number bases, Roman numerals, binary text, NATO spelling, and phone formats.
+      i9: Format SQL, YAML, TOML, Markdown, HTML entities, and structured data, or calculate percentages, cron schedules, and chmod values.
+      i10: Search emoji, GIFs, KillerScripts, and Killer modules, or inspect URLs, user agents, HTTP status codes, and text statistics.
+    cov:
+      title: Hosted and local coverage
+      hostedTitle: Hosted Worker
+      hostedBody: 64 browser safe utilities with 74 operations. No installation.
+      installedTitle: Installed KillerMCP
+      installedBody: All 81 KillerTools utilities with 94 operations, plus detected Killer apps.
+      browserTitle: Browser companions
+      browserBody: Camera, device, editor, and signature tools open a private localhost page.
+    data:
+      title: Where does the data go?
+      p1: The installed KillerMCP runtime runs on your computer. Some network and reference lookups still contact their public data sources. Your agent receives the inputs and results needed to complete the request.
+      p2: The optional hosted connection sends tool inputs to the KillerTools Cloudflare Worker. It has no sign-in, limits request bodies to 64 KiB, applies bounded schemas, and rate limits each connecting IP. Do not send passwords, private files, tokens, or client data through the hosted connection.
+      p3: Local file, browser, password, token, encryption, hashing, OTP, BIP39, and key generation tools stay off the public Worker. They run through installed KillerMCP, but the MCP client and model provider may still receive the inputs and results.
+    oss:
+      title: Open source and current limits
+      p1: The {kt} contains the public Worker, local KillerTools bundle, operation map, validation schemas, and coverage checks. The {km} contains the shared local host, desktop app adapters, installer, and integration checks.
+      ktLink: KillerTools source
+      kmLink: KillerMCP source
+      p2: External lookup results depend on their sources. Local tools only receive paths or values supplied in a tool call. Base64 file decoding creates a new file and refuses to overwrite an existing one. Camera capture still requires a manual browser permission and hardware verification. KillerMCP v0.1.1 is signed, timestamped, and published through GitHub Releases.

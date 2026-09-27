@@ -1840,3 +1840,98 @@ pages:
     linkLabelSupport: Supporto
     linkLabelBuiltOn: Basato su
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Copia in corso...
+      copied: '{label} copiato'
+      failed: 'Copia non riuscita. Copia invece questo: {value}'
+      popups: URL del server copiato. Consenti i popup per aprire Claude.
+    labels:
+      serverUrl: URL del server
+      codex: Comando Codex
+      claudeCode: Comando Claude Code
+    description: Usa le utilità di KillerTools da un agente IA tramite KillerTools MCP.
+    github: KillerMCP su GitHub
+    eyebrow:
+      agents: KILLERTOOLS / AGENTI
+      oneInstaller: UN INSTALLER / UNA CONNESSIONE
+      hosted: CONNESSIONE OSPITATA OPZIONALE
+      after: DOPO L'INSTALLAZIONE O LA CONNESSIONE
+    lead: Aggiungi KillerTools al kit di strumenti del tuo agente. Connettiti una volta sola, poi chiedigli di calcolare una subnet, controllare i record DNS, cercare una CVE, analizzare le intestazioni email, creare un comando PowerShell, convertire JSON in CSV o decodificare Base64.
+    status: KillerMCP supporta tutti gli 81 strumenti del sito KillerTools.
+    install: Installa
+    intro: KillerMCP include tutte le 81 utilità di KillerTools più gli strumenti delle app Killer supportate in un'unica connessione locale. Non ti serviranno un installer KillerTools separato, un checkout del codice sorgente, Node o un elenco di comandi.
+    download: Scarica per Windows
+    meta:
+      version: Versione {version}
+      signed: Firmato digitalmente
+      hosted: Ospitato su GitHub Releases
+    steps:
+      s1Title: Scarica ed esegui il programma di installazione di KillerMCP.
+      s1Body: L'installer è firmato da Open Source Developer Stephen Riley e pubblicato tramite GitHub Releases.
+      s2Title: Lascia che il programma di installazione connetta il tuo agente.
+      s2Body: Installa il runtime condiviso e registra KillerMCP con Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI e Windsurf, se trovati.
+      s3Title: Apri una nuova chat dell'agente e chiedi.
+      s3Body: KillerMCP rende disponibili tutte le 81 utilità di KillerTools tramite la stessa connessione.
+    hostedBody: Non vuoi installare nulla? Connettiti direttamente al server KillerTools ospitato per 64 utilità basate sul web. Le restanti 17 utilità di KillerTools e tutti gli strumenti delle app desktop richiedono il runtime KillerMCP installato.
+    actions:
+      cursor: Aggiungi a Cursor
+      vscode: Aggiungi a VS Code
+      claude: Copia URL e apri Claude
+      codex: Copia il comando di configurazione di Codex
+      claudeCode: Copia il comando di configurazione di Claude Code
+      copyUrl: Copia URL
+    otherClient: Usi un altro client MCP? Copia l'URL del server.
+    shortest: 'Il prompt utile più breve è {prompt}. Per esempio: {example}.'
+    infer: Il tuo agente può dedurre lo strumento KillerTools o dell'app Killer corrispondente dal compito e dal contesto disponibile. Usa {a}, {b}, {c} o un altro nome di app solo quando vuoi rendere esplicito il target. Non servono trattini bassi, un nome di operazione o un comando slash.
+    worker:
+      title: Come funziona il Cloudflare Worker
+      p1: L'endpoint pubblico è un server MCP HTTP streamable open source, distribuito separatamente dal sito. Il tuo client MCP invia un nome di strumento e argomenti limitati a {url}. Il Worker convalida la richiesta, esegue l'utilità selezionata e restituisce il risultato.
+      p2: La maggior parte dei calcoli e delle conversioni viene eseguita direttamente nel Worker. Le query DNS usano Cloudflare DNS over HTTPS. La registrazione dei domini segue la directory IANA RDAP. Le ricerche di CVE, GIF e cataloghi contattano i loro provider pubblici e possono fallire quando quei provider non sono disponibili o applicano limiti di frequenza.
+    examples:
+      title: Prova a chiedere
+      intro: Inizia con {killer} e descrivi il risultato che vuoi. Il nome dell'app o dello strumento è opzionale quando il compito è chiaro.
+      e1: cerca il dominio thekiller.net
+      e2: calcola 192.168.10.0/24
+      e3: cerca l'evento di Windows 4625
+      e4: cerca la CVE-2025-53770
+      e5: analizza queste intestazioni email
+      e6: crea un comando PowerShell per elencare i servizi arrestati
+      e7: converti questo JSON in CSV
+      e8: confronta questi due documenti JSON
+      e9: genera un record SPF per example.com
+      e10: decodifica questo testo Base64
+      e11: identifica questo SKU di M365
+      e12: calcola un'esposizione di 30 secondi con questo filtro ND
+    can:
+      title: Cosa può fare?
+      intro: 'Chiedi in linguaggio semplice. Il tuo agente scopre gli strumenti disponibili e i loro input, poi richiama quelli di cui ha bisogno. Ad esempio, può:'
+      i1: Calcolare subnet IPv4, espandere intervalli di indirizzi, generare prefissi ULA IPv6 e cercare i produttori dai MAC.
+      i2: Controllare i record DNS e la registrazione dei domini, cercare CVE e identificare porte e protocolli.
+      i3: Analizzare le intestazioni email, generare record SPF o DMARC e cercare i messaggi NDR di Exchange.
+      i4: Trovare codici di errore ed eventi di Windows, impostazioni di Group Policy e SKU delle licenze M365.
+      i5: Cercare i cmdlet di PowerShell e assemblare comandi da rivedere prima dell'esecuzione.
+      i6: Formattare JSON e XML, convertire JSON in CSV o tra JSON, YAML e TOML, decodificare Base64, confrontare documenti e testare espressioni regolari.
+      i7: Generare codici QR, UUID, meta tag e placeholder, oppure eseguire calcoli di esposizione fotografica e di pellicola.
+      i8: Convertire maiuscole/minuscole, date, orari, temperature, colori, basi numeriche, numeri romani, testo binario, alfabeto NATO e formati telefonici.
+      i9: Formattare SQL, YAML, TOML, Markdown, entità HTML e dati strutturati, oppure calcolare percentuali, pianificazioni cron e valori chmod.
+      i10: Cercare emoji, GIF, KillerScripts e moduli Killer, oppure ispezionare URL, user agent, codici di stato HTTP e statistiche del testo.
+    cov:
+      title: Copertura ospitata e locale
+      hostedTitle: Worker ospitato
+      hostedBody: 64 utilità sicure per il browser con 74 operazioni. Nessuna installazione.
+      installedTitle: KillerMCP installato
+      installedBody: Tutte le 81 utilità di KillerTools con 94 operazioni, più le app Killer rilevate.
+      browserTitle: Compagni del browser
+      browserBody: Gli strumenti per fotocamera, dispositivo, editor e firma aprono una pagina localhost privata.
+    data:
+      title: Dove vanno i dati?
+      p1: Il runtime KillerMCP installato viene eseguito sul tuo computer. Alcune ricerche di rete e di riferimento contattano comunque le loro fonti dati pubbliche. Il tuo agente riceve gli input e i risultati necessari per completare la richiesta.
+      p2: La connessione ospitata opzionale invia gli input degli strumenti al Cloudflare Worker di KillerTools. Non richiede accesso, limita i corpi delle richieste a 64 KiB, applica schemi limitati e applica limiti di frequenza per ogni IP connesso. Non inviare password, file privati, token o dati dei clienti tramite la connessione ospitata.
+      p3: Gli strumenti per file locali, browser, password, token, crittografia, hashing, OTP, BIP39 e generazione di chiavi restano fuori dal Worker pubblico. Vengono eseguiti tramite KillerMCP installato, ma il client MCP e il provider del modello possono comunque ricevere gli input e i risultati.
+    oss:
+      title: Open source e limiti attuali
+      p1: Il {kt} contiene il Worker pubblico, il bundle locale di KillerTools, la mappa delle operazioni, gli schemi di convalida e i controlli di copertura. Il {km} contiene l'host locale condiviso, gli adattatori per le app desktop, l'installer e i controlli di integrazione.
+      ktLink: Codice sorgente di KillerTools
+      kmLink: Codice sorgente di KillerMCP
+      p2: I risultati delle ricerche esterne dipendono dalle loro fonti. Gli strumenti locali ricevono solo percorsi o valori forniti in una chiamata dello strumento. La decodifica di file Base64 crea un nuovo file e rifiuta di sovrascriverne uno esistente. La cattura da fotocamera richiede ancora un permesso manuale del browser e la verifica dell'hardware. KillerMCP v0.1.1 è firmato, con timestamp e pubblicato tramite GitHub Releases.

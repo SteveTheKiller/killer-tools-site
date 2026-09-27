@@ -1809,6 +1809,101 @@ pages:
     linkLabelSupport: Tamogatas
     linkLabelBuiltOn: Alapja
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Másolás...
+      copied: '{label} másolva'
+      failed: 'A másolás sikertelen. Másolja ezt helyette: {value}'
+      popups: Szerver URL másolva. Engedélyezze a felugró ablakokat a Claude megnyitásához.
+    labels:
+      serverUrl: Szerver URL
+      codex: Codex parancs
+      claudeCode: Claude Code parancs
+    description: Használja a KillerTools segédprogramokat egy AI ügynökből a KillerTools MCP-n keresztül.
+    github: KillerMCP a GitHubon
+    eyebrow:
+      agents: KILLERTOOLS / ÜGYNÖKÖK
+      oneInstaller: EGY TELEPÍTŐ / EGY KAPCSOLAT
+      hosted: OPCIONÁLIS TÁROLT KAPCSOLAT
+      after: A TELEPÍTÉS VAGY CSATLAKOZÁS UTÁN
+    lead: Illessze be a KillerTools-t az ügynöke eszközkészletébe. Csatlakozzon egyszer, majd kérje meg, hogy számítson ki egy alhálózatot, ellenőrizzen DNS-rekordokat, nézzen utána egy CVE-nek, elemezzen e-mail fejléceket, állítson össze egy PowerShell parancsot, alakítson JSON-t CSV-vé, vagy fejtsen vissza Base64-et.
+    status: A KillerMCP mind a 81 KillerTools weboldali eszközt támogatja.
+    install: Telepítés
+    intro: A KillerMCP mind a 81 KillerTools segédprogramot tartalmazza, a támogatott Killer alkalmazások eszközeivel együtt, egyetlen helyi kapcsolatban. Nem lesz szüksége külön KillerTools telepítőre, forráskód-letöltésre, Node-ra vagy parancslistára.
+    download: Letöltés Windowsra
+    meta:
+      version: '{version} verzió'
+      signed: Digitálisan aláírva
+      hosted: GitHub Releases-en tárolva
+    steps:
+      s1Title: Töltse le és futtassa a KillerMCP telepítőt.
+      s1Body: A telepítőt Stephen Riley nyílt forráskódú fejlesztő írta alá, és a GitHub Releases-en keresztül kerül közzétételre.
+      s2Title: Hagyja, hogy a telepítő csatlakoztassa az ügynökét.
+      s2Body: Telepíti a megosztott futtatókörnyezetet, és regisztrálja a KillerMCP-t a Codexnél, Claude Code-nál, Claude Desktopnál, Cursornál, GitHub Copilotnál, Gemini CLI-nél és Windsurfnál, ha megtalálja őket.
+      s3Title: Nyisson egy új ügynöki csevegést, és kérdezzen.
+      s3Body: A KillerMCP mind a 81 KillerTools segédprogramot elérhetővé teszi ugyanazon a kapcsolaton keresztül.
+    hostedBody: Nem szeretne semmit telepíteni? Csatlakozzon közvetlenül a tárolt KillerTools szerverhez 64 webalapú segédprogramért. A fennmaradó 17 KillerTools segédprogramhoz és minden asztali alkalmazás eszközhöz telepített KillerMCP futtatókörnyezet szükséges.
+    actions:
+      cursor: Hozzáadás a Cursorhoz
+      vscode: Hozzáadás a VS Code-hoz
+      claude: URL másolása és Claude megnyitása
+      codex: Codex telepítési parancs másolása
+      claudeCode: Claude Code telepítési parancs másolása
+      copyUrl: URL másolása
+    otherClient: Másik MCP klienst használ? Másolja ki a szerver URL-jét.
+    shortest: 'A legrövidebb hasznos utasítás: {prompt}. Például: {example}.'
+    infer: Az ügynöke a feladat és a rendelkezésre álló kontextus alapján ki tudja következtetni a megfelelő KillerTools vagy Killer alkalmazás eszközt. Az {a}, {b}, {c} vagy más alkalmazásnév használata csak akkor szükséges, ha kifejezetten meg akarja adni a célt. Nincs szükség aláhúzásjelre, művelet névre vagy perjeles parancsra.
+    worker:
+      title: Hogyan működik a Cloudflare Worker
+      p1: A nyilvános végpont egy nyílt forráskódú, streamelhető HTTP MCP szerver, amelyet a weboldaltól függetlenül telepítenek. Az MCP kliense egy eszköznevet és korlátozott argumentumokat küld a {url} címre. A Worker érvényesíti a kérést, futtatja a kiválasztott segédprogramot, és visszaadja az eredményt.
+      p2: A legtöbb számítás és konverzió közvetlenül a Workerben fut. A DNS-lekérdezések a Cloudflare DNS over HTTPS-t használják. A domainregisztráció az IANA RDAP könyvtárát követi. A CVE-, GIF- és katalóguskeresések a nyilvános szolgáltatóikat érik el, és sikertelenek lehetnek, ha ezek a szolgáltatók nem elérhetők, vagy korlátozzák a kérések számát.
+    examples:
+      title: Próbálja meg ezt kérdezni
+      intro: Kezdje a {killer} szóval, és írja le a kívánt eredményt. Az alkalmazás vagy eszköz neve opcionális, ha a feladat egyértelmű.
+      e1: keress rá a thekiller.net domainre
+      e2: számítsd ki a 192.168.10.0/24 hálózatot
+      e3: nézz utána a 4625-ös Windows eseménynek
+      e4: nézz utána a CVE-2025-53770-nek
+      e5: elemezd ezeket az e-mail fejléceket
+      e6: állíts össze egy PowerShell parancsot a leállított szolgáltatások listázásához
+      e7: alakítsd át ezt a JSON-t CSV-vé
+      e8: hasonlítsd össze ezt a két JSON dokumentumot
+      e9: generálj SPF rekordot az example.com számára
+      e10: fejtsd vissza ezt a Base64 szöveget
+      e11: azonosítsd ezt az M365 SKU-t
+      e12: számíts ki egy 30 másodperces expozíciót ezzel az ND szűrővel
+    can:
+      title: Mit tud csinálni?
+      intro: 'Kérdezzen köznyelven. Az ügynöke felfedezi az elérhető eszközöket és bemeneteiket, majd meghívja azokat, amelyekre szüksége van. Például képes:'
+      i1: IPv4 alhálózatok kiszámítására, címtartományok kibontására, IPv6 ULA előtagok generálására és MAC-gyártók keresésére.
+      i2: DNS-rekordok és domainregisztráció ellenőrzésére, CVE-k keresésére, valamint portok és protokollok azonosítására.
+      i3: E-mail fejlécek elemzésére, SPF vagy DMARC rekordok generálására, valamint Exchange NDR üzenetek felkeresésére.
+      i4: Windows hiba- és eseményazonosítók, csoportházirend-beállítások és M365 licenc SKU-k megtalálására.
+      i5: PowerShell cmdletek keresésére és olyan parancsok összeállítására, amelyeket futtatás előtt átnézhet.
+      i6: JSON és XML formázására, JSON CSV-vé vagy JSON, YAML és TOML közötti átalakítására, Base64 visszafejtésére, dokumentumok összehasonlítására és reguláris kifejezések tesztelésére.
+      i7: QR-kódok, UUID-k, meta tagek és helykitöltők generálására, illetve fotó-expozíciós és filmes számítások elvégzésére.
+      i8: Kis- és nagybetűk, dátumok, időpontok, hőmérsékletek, színek, számrendszerek, római számok, bináris szöveg, NATO betűzés és telefonformátumok átalakítására.
+      i9: SQL, YAML, TOML, Markdown, HTML entitások és strukturált adatok formázására, valamint százalékok, cron ütemezések és chmod értékek kiszámítására.
+      i10: Emojik, GIF-ek, KillerScriptek és Killer modulok keresésére, valamint URL-ek, user agentek, HTTP állapotkódok és szövegstatisztikák vizsgálatára.
+    cov:
+      title: Tárolt és helyi lefedettség
+      hostedTitle: Tárolt Worker
+      hostedBody: 64 böngészőbiztos segédprogram 74 művelettel. Telepítés nélkül.
+      installedTitle: Telepített KillerMCP
+      installedBody: Mind a 81 KillerTools segédprogram 94 művelettel, plusz a felismert Killer alkalmazások.
+      browserTitle: Böngészőkiegészítők
+      browserBody: A kamera-, eszköz-, szerkesztő- és aláírás-eszközök egy privát localhost oldalt nyitnak meg.
+    data:
+      title: Hová kerülnek az adatok?
+      p1: A telepített KillerMCP futtatókörnyezet az Ön számítógépén fut. Egyes hálózati és referencia-lekérdezések továbbra is elérik nyilvános adatforrásaikat. Az ügynöke megkapja a kérés teljesítéséhez szükséges bemeneteket és eredményeket.
+      p2: Az opcionális tárolt kapcsolat elküldi az eszközbemeneteket a KillerTools Cloudflare Workerének. Nincs bejelentkezés, a kéréstörzseket 64 KiB-ra korlátozza, korlátozott sémákat alkalmaz, és korlátozza az egyes csatlakozó IP-címek kérésszámát. Ne küldjön jelszavakat, privát fájlokat, tokeneket vagy ügyféladatokat a tárolt kapcsolaton keresztül.
+      p3: A helyi fájl-, böngésző-, jelszó-, token-, titkosítási, hash-, OTP-, BIP39- és kulcsgeneráló eszközök nem érintik a nyilvános Workert. A telepített KillerMCP-n keresztül futnak, de az MCP kliens és a modellszolgáltató továbbra is megkaphatja a bemeneteket és eredményeket.
+    oss:
+      title: Nyílt forráskód és jelenlegi korlátok
+      p1: A {kt} tartalmazza a nyilvános Workert, a helyi KillerTools csomagot, a művelettérképet, az érvényesítési sémákat és a lefedettségi ellenőrzéseket. A {km} tartalmazza a megosztott helyi hostot, az asztali alkalmazás adaptereit, a telepítőt és az integrációs ellenőrzéseket.
+      ktLink: KillerTools forráskód
+      kmLink: KillerMCP forráskód
+      p2: A külső lekérdezések eredményei a forrásaiktól függenek. A helyi eszközök csak az eszközhíváskor megadott elérési utakat vagy értékeket kapják meg. A Base64 fájl visszafejtése új fájlt hoz létre, és megtagadja egy meglévő felülírását. A kamerás rögzítéshez továbbra is kézi böngészőengedély és hardveres ellenőrzés szükséges. A KillerMCP v0.1.1 aláírt, időbélyeggel ellátott, és a GitHub Releases-en keresztül kerül közzétételre.
 ui:
   diffEditor:
     originalLabel: EREDETI

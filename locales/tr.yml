@@ -1840,3 +1840,98 @@ pages:
     linkLabelSupport: Destek
     linkLabelBuiltOn: 'Şunun üzerine kuruldu:'
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Kopyalanıyor...
+      copied: '{label} kopyalandı'
+      failed: 'Kopyalama başarısız oldu. Bunun yerine şunu kopyalayın: {value}'
+      popups: Sunucu URL'si kopyalandı. Claude'u açmak için açılır pencerelere izin verin.
+    labels:
+      serverUrl: Sunucu URL'si
+      codex: Codex komutu
+      claudeCode: Claude Code komutu
+    description: KillerTools araçlarını KillerTools MCP üzerinden bir yapay zeka ajanından kullanın.
+    github: GitHub'da KillerMCP
+    eyebrow:
+      agents: KILLERTOOLS / AJANLAR
+      oneInstaller: TEK YÜKLEYİCİ / TEK BAĞLANTI
+      hosted: İSTEĞE BAĞLI BARINDIRILAN BAĞLANTI
+      after: YÜKLEDİKTEN VEYA BAĞLANDIKTAN SONRA
+    lead: KillerTools'u ajanınızın araç setine ekleyin. Bir kez bağlanın, ardından bir alt ağ hesaplamasını, DNS kayıtlarını kontrol etmesini, bir CVE araştırmasını, e-posta başlıklarını ayrıştırmasını, bir PowerShell komutu oluşturmasını, JSON'u CSV'ye dönüştürmesini veya Base64 çözmesini isteyin.
+    status: KillerMCP, KillerTools web sitesindeki 81 aracın tamamını destekler.
+    install: Yükle
+    intro: KillerMCP, 81 KillerTools aracının tamamını ve desteklenen Killer uygulamalarındaki araçları tek bir yerel bağlantıda sunar. Ayrı bir KillerTools yükleyicisine, kaynak kodu kopyasına, Node'a veya komut listesine ihtiyacınız olmaz.
+    download: Windows için indir
+    meta:
+      version: Sürüm {version}
+      signed: Dijital olarak imzalı
+      hosted: GitHub Releases üzerinde barındırılıyor
+    steps:
+      s1Title: KillerMCP Setup'ı indirip çalıştırın.
+      s1Body: Yükleyici, açık kaynak geliştiricisi Stephen Riley tarafından imzalanmış ve GitHub Releases üzerinden yayınlanmıştır.
+      s2Title: Kurulumun ajanınızı bağlamasına izin verin.
+      s2Body: Ortak çalışma zamanını yükler ve bulunduğunda KillerMCP'yi Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI ve Windsurf ile kaydeder.
+      s3Title: Yeni bir ajan sohbeti açın ve isteyin.
+      s3Body: KillerMCP, 81 KillerTools aracının tamamını aynı bağlantı üzerinden kullanılabilir hale getirir.
+    hostedBody: Hiçbir şey yüklemek istemiyor musunuz? 64 web tabanlı araç için doğrudan barındırılan KillerTools sunucusuna bağlanın. Kalan 17 KillerTools aracı ve tüm masaüstü uygulama araçları, yüklenmiş KillerMCP çalışma zamanını gerektirir.
+    actions:
+      cursor: Cursor'a ekle
+      vscode: VS Code'a ekle
+      claude: URL'yi kopyala ve Claude'u aç
+      codex: Codex kurulum komutunu kopyala
+      claudeCode: Claude Code kurulum komutunu kopyala
+      copyUrl: URL'yi kopyala
+    otherClient: Başka bir MCP istemcisi mi kullanıyorsunuz? Sunucu URL'sini kopyalayın.
+    shortest: 'En kısa kullanışlı istek {prompt}. Örneğin: {example}.'
+    infer: Ajanınız görevden ve mevcut bağlamdan uygun KillerTools veya Killer uygulama aracını çıkarabilir. Hedefi açıkça belirtmek istediğinizde {a}, {b}, {c} veya başka bir uygulama adını kullanın. Alt çizgiye, bir işlem adına veya eğik çizgi komutuna ihtiyacınız yoktur.
+    worker:
+      title: Cloudflare Worker nasıl çalışır
+      p1: Genel uç nokta, web sitesinden ayrı olarak dağıtılan, akış destekli HTTP tabanlı açık kaynaklı bir MCP sunucusudur. MCP istemciniz {url} adresine bir araç adı ve sınırlı bağımsız değişkenler gönderir. Worker isteği doğrular, seçilen aracı çalıştırır ve sonucu döndürür.
+      p2: Çoğu hesaplama ve dönüştürme doğrudan Worker içinde çalışır. DNS sorguları HTTPS üzerinden Cloudflare DNS kullanır. Alan adı kaydı IANA RDAP dizinini takip eder. CVE, GIF ve katalog aramaları kendi genel sağlayıcılarına bağlanır ve bu sağlayıcılar kullanılamadığında veya hız sınırına takıldığında başarısız olabilir.
+    examples:
+      title: Şunu sormayı deneyin
+      intro: '{killer} ile başlayın ve istediğiniz sonucu tarif edin. Görev açık olduğunda uygulama veya araç adı isteğe bağlıdır.'
+      e1: thekiller.net alan adını araştır
+      e2: 192.168.10.0/24 hesapla
+      e3: Windows olayı 4625'i ara
+      e4: CVE-2025-53770'i araştır
+      e5: bu e-posta başlıklarını ayrıştır
+      e6: durdurulmuş hizmetleri listelemek için bir PowerShell komutu oluştur
+      e7: bu JSON'u CSV'ye dönüştür
+      e8: bu iki JSON belgesini karşılaştır
+      e9: example.com için bir SPF kaydı oluştur
+      e10: bu Base64 metnini çöz
+      e11: bu M365 SKU'sunu tanımla
+      e12: bu ND filtresiyle 30 saniyelik pozlamayı hesapla
+    can:
+      title: Neler yapabilir?
+      intro: 'Sade bir dille sorun. Ajanınız mevcut araçları ve girdilerini keşfeder, ardından ihtiyaç duyduklarını çağırır. Örneğin şunları yapabilir:'
+      i1: IPv4 alt ağlarını hesaplamak, adres aralıklarını genişletmek, IPv6 ULA önekleri oluşturmak ve MAC üreticilerini aramak.
+      i2: DNS kayıtlarını ve alan adı kaydını kontrol etmek, CVE aramak ve portları ile protokolleri tanımlamak.
+      i3: E-posta başlıklarını ayrıştırmak, SPF veya DMARC kayıtları oluşturmak ve Exchange NDR mesajlarını aramak.
+      i4: Windows hata ve olay kimliklerini, Grup İlkesi ayarlarını ve M365 lisans SKU'larını bulmak.
+      i5: PowerShell komutlarını aramak ve çalıştırmadan önce incelemeniz için komutlar oluşturmak.
+      i6: JSON ve XML'i biçimlendirmek, JSON'u CSV'ye veya JSON, YAML ve TOML arasında dönüştürmek, Base64 çözmek, belgeleri karşılaştırmak ve düzenli ifadeleri test etmek.
+      i7: QR kodları, UUID'ler, meta etiketler ve yer tutucular oluşturmak veya fotoğraf pozlama ve film hesaplamalarını yapmak.
+      i8: Büyük/küçük harf, tarih, saat, sıcaklık, renk, sayı tabanı, Roma rakamı, ikili metin, NATO alfabesi ve telefon biçimlerini dönüştürmek.
+      i9: SQL, YAML, TOML, Markdown, HTML varlıklarını ve yapılandırılmış verileri biçimlendirmek veya yüzdeleri, cron zamanlamalarını ve chmod değerlerini hesaplamak.
+      i10: Emoji, GIF, KillerScripts ve Killer modüllerini aramak veya URL'leri, user agent'ları, HTTP durum kodlarını ve metin istatistiklerini incelemek.
+    cov:
+      title: Barındırılan ve yerel kapsam
+      hostedTitle: Barındırılan Worker
+      hostedBody: 74 işlemle 64 tarayıcı için güvenli araç. Yükleme gerektirmez.
+      installedTitle: Yüklenmiş KillerMCP
+      installedBody: 94 işlemle 81 KillerTools aracının tamamı, ayrıca tespit edilen Killer uygulamaları.
+      browserTitle: Tarayıcı yardımcıları
+      browserBody: Kamera, cihaz, düzenleyici ve imza araçları özel bir localhost sayfası açar.
+    data:
+      title: Veriler nereye gidiyor?
+      p1: Yüklenmiş KillerMCP çalışma zamanı bilgisayarınızda çalışır. Bazı ağ ve referans sorguları yine de genel veri kaynaklarına bağlanır. Ajanınız isteği tamamlamak için gereken girdileri ve sonuçları alır.
+      p2: İsteğe bağlı barındırılan bağlantı, araç girdilerini KillerTools Cloudflare Worker'a gönderir. Oturum açma gerektirmez, istek gövdelerini 64 KiB ile sınırlar, sınırlı şemalar uygular ve bağlanan her IP için hız sınırı koyar. Barındırılan bağlantı üzerinden parola, özel dosya, jeton veya müşteri verisi göndermeyin.
+      p3: Yerel dosya, tarayıcı, parola, jeton, şifreleme, karma (hash), OTP, BIP39 ve anahtar oluşturma araçları genel Worker üzerinden çalışmaz. Bunlar yüklenmiş KillerMCP üzerinden çalışır, ancak MCP istemcisi ve model sağlayıcısı yine de girdileri ve sonuçları alabilir.
+    oss:
+      title: Açık kaynak ve mevcut sınırlamalar
+      p1: "{kt}, genel Worker'ı, yerel KillerTools paketini, işlem haritasını, doğrulama şemalarını ve kapsam kontrollerini içerir. {km} ise ortak yerel sunucuyu, masaüstü uygulama bağdaştırıcılarını, yükleyiciyi ve entegrasyon kontrollerini içerir."
+      ktLink: KillerTools kaynak kodu
+      kmLink: KillerMCP kaynak kodu
+      p2: Harici arama sonuçları kaynaklarına bağlıdır. Yerel araçlar yalnızca bir araç çağrısında verilen yolları veya değerleri alır. Base64 dosya çözme işlemi yeni bir dosya oluşturur ve mevcut bir dosyanın üzerine yazmaz. Kamera yakalama işlemi hâlâ manuel tarayıcı izni ve donanım doğrulaması gerektirir. KillerMCP v0.1.1 imzalanmış, zaman damgalanmış ve GitHub Releases üzerinden yayınlanmıştır.

@@ -1839,3 +1839,98 @@ pages:
     linkLabelSupport: Hỗ trợ
     linkLabelBuiltOn: Xây dựng trên nền
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Đang sao chép...
+      copied: Đã sao chép {label}
+      failed: 'Sao chép thất bại. Hãy sao chép thủ công: {value}'
+      popups: Đã sao chép URL máy chủ. Hãy cho phép cửa sổ bật lên để mở Claude.
+    labels:
+      serverUrl: URL máy chủ
+      codex: Lệnh Codex
+      claudeCode: Lệnh Claude Code
+    description: Sử dụng các tiện ích KillerTools từ một AI agent thông qua KillerTools MCP.
+    github: KillerMCP trên GitHub
+    eyebrow:
+      agents: KILLERTOOLS / AGENT
+      oneInstaller: MỘT TRÌNH CÀI ĐẶT / MỘT KẾT NỐI
+      hosted: KẾT NỐI LƯU TRỮ TÙY CHỌN
+      after: SAU KHI CÀI ĐẶT HOẶC KẾT NỐI
+    lead: Đưa KillerTools vào bộ công cụ của agent. Kết nối một lần, sau đó yêu cầu nó tính toán một subnet, kiểm tra bản ghi DNS, tra cứu một CVE, phân tích tiêu đề email, xây dựng lệnh PowerShell, chuyển đổi JSON sang CSV, hoặc giải mã Base64.
+    status: KillerMCP hỗ trợ toàn bộ 81 công cụ trên trang KillerTools.
+    install: Cài đặt
+    intro: KillerMCP bao gồm toàn bộ 81 tiện ích KillerTools cùng với các công cụ từ các ứng dụng Killer được hỗ trợ, trong một kết nối cục bộ duy nhất. Bạn sẽ không cần trình cài đặt KillerTools riêng, bản sao mã nguồn, Node, hay danh sách lệnh.
+    download: Tải xuống cho Windows
+    meta:
+      version: Phiên bản {version}
+      signed: Có chữ ký số
+      hosted: Được lưu trữ trên GitHub Releases
+    steps:
+      s1Title: Tải xuống và chạy trình cài đặt KillerMCP Setup.
+      s1Body: Trình cài đặt được ký bởi nhà phát triển mã nguồn mở Stephen Riley và phát hành qua GitHub Releases.
+      s2Title: Để trình cài đặt kết nối agent của bạn.
+      s2Body: Nó cài đặt runtime dùng chung và đăng ký KillerMCP với Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI và Windsurf khi tìm thấy.
+      s3Title: Mở một cuộc trò chuyện agent mới và hỏi.
+      s3Body: KillerMCP cung cấp toàn bộ 81 tiện ích KillerTools thông qua cùng một kết nối.
+    hostedBody: Không muốn cài đặt gì cả? Hãy kết nối trực tiếp đến máy chủ KillerTools được lưu trữ để dùng 64 tiện ích dựa trên web. 17 tiện ích KillerTools còn lại và tất cả công cụ của ứng dụng desktop yêu cầu runtime KillerMCP đã cài đặt.
+    actions:
+      cursor: Thêm vào Cursor
+      vscode: Thêm vào VS Code
+      claude: Sao chép URL và mở Claude
+      codex: Sao chép lệnh thiết lập Codex
+      claudeCode: Sao chép lệnh thiết lập Claude Code
+      copyUrl: Sao chép URL
+    otherClient: Đang dùng một MCP client khác? Hãy sao chép URL máy chủ.
+    shortest: 'Câu lệnh hữu ích ngắn nhất là {prompt}. Ví dụ: {example}.'
+    infer: Agent của bạn có thể tự suy ra công cụ KillerTools hoặc ứng dụng Killer phù hợp từ tác vụ và ngữ cảnh hiện có. Chỉ dùng {a}, {b}, {c}, hoặc tên ứng dụng khác khi bạn muốn chỉ rõ mục tiêu. Bạn không cần dấu gạch dưới, tên thao tác, hay lệnh dấu gạch chéo.
+    worker:
+      title: Cách Cloudflare Worker hoạt động
+      p1: Điểm cuối công khai là một máy chủ MCP mã nguồn mở dạng HTTP có thể truyền trực tuyến, được triển khai riêng biệt với trang web. MCP client của bạn gửi tên công cụ và các tham số giới hạn đến {url}. Worker xác thực yêu cầu, chạy tiện ích được chọn, và trả về kết quả.
+      p2: Hầu hết các phép tính và chuyển đổi chạy trực tiếp trong Worker. Các truy vấn DNS sử dụng Cloudflare DNS qua HTTPS. Thông tin đăng ký tên miền theo danh mục IANA RDAP. Tra cứu CVE, GIF và danh mục liên hệ với các nhà cung cấp công khai của họ và có thể thất bại khi các nhà cung cấp đó không khả dụng hoặc bị giới hạn tốc độ.
+    examples:
+      title: Hãy thử hỏi
+      intro: Bắt đầu bằng {killer} và mô tả kết quả bạn muốn. Tên ứng dụng hoặc công cụ là tùy chọn khi tác vụ đã rõ ràng.
+      e1: tra cứu tên miền thekiller.net
+      e2: tính toán 192.168.10.0/24
+      e3: tra cứu sự kiện Windows 4625
+      e4: tra cứu CVE-2025-53770
+      e5: phân tích các tiêu đề email này
+      e6: xây dựng một lệnh PowerShell để liệt kê các dịch vụ đã dừng
+      e7: chuyển đổi JSON này sang CSV
+      e8: so sánh hai tài liệu JSON này
+      e9: tạo một bản ghi SPF cho example.com
+      e10: giải mã đoạn văn bản Base64 này
+      e11: xác định SKU M365 này
+      e12: tính toán thời gian phơi sáng 30 giây với kính lọc ND này
+    can:
+      title: Nó có thể làm gì?
+      intro: 'Hãy hỏi bằng ngôn ngữ tự nhiên. Agent của bạn sẽ tự khám phá các công cụ sẵn có và đầu vào của chúng, rồi gọi những công cụ cần thiết. Ví dụ, nó có thể:'
+      i1: Tính toán subnet IPv4, mở rộng dải địa chỉ, tạo tiền tố IPv6 ULA, và tra cứu nhà sản xuất theo địa chỉ MAC.
+      i2: Kiểm tra bản ghi DNS và thông tin đăng ký tên miền, tìm kiếm CVE, và xác định cổng cùng giao thức.
+      i3: Phân tích tiêu đề email, tạo bản ghi SPF hoặc DMARC, và tra cứu thông báo NDR của Exchange.
+      i4: Tìm mã lỗi và mã sự kiện Windows, thiết lập Group Policy, và SKU giấy phép M365.
+      i5: Tìm kiếm cmdlet PowerShell và soạn sẵn lệnh để bạn xem lại trước khi chạy.
+      i6: Định dạng JSON và XML, chuyển đổi JSON sang CSV hoặc giữa JSON, YAML và TOML, giải mã Base64, so sánh tài liệu, và kiểm tra biểu thức chính quy.
+      i7: Tạo mã QR, UUID, thẻ meta và ảnh giữ chỗ, hoặc thực hiện các phép tính phơi sáng ảnh và phim.
+      i8: Chuyển đổi kiểu chữ, ngày giờ, nhiệt độ, màu sắc, hệ cơ số, chữ số La Mã, văn bản nhị phân, bảng chữ cái NATO, và định dạng số điện thoại.
+      i9: Định dạng SQL, YAML, TOML, Markdown, thực thể HTML và dữ liệu có cấu trúc, hoặc tính toán phần trăm, lịch cron, và giá trị chmod.
+      i10: Tìm kiếm emoji, GIF, KillerScripts, và mô-đun Killer, hoặc kiểm tra URL, user agent, mã trạng thái HTTP, và thống kê văn bản.
+    cov:
+      title: Phạm vi hỗ trợ trên máy chủ và cục bộ
+      hostedTitle: Worker lưu trữ
+      hostedBody: 64 tiện ích an toàn cho trình duyệt với 74 thao tác. Không cần cài đặt.
+      installedTitle: KillerMCP đã cài đặt
+      installedBody: Toàn bộ 81 tiện ích KillerTools với 94 thao tác, cùng các ứng dụng Killer được phát hiện.
+      browserTitle: Công cụ hỗ trợ trình duyệt
+      browserBody: Các công cụ camera, thiết bị, trình chỉnh sửa, và chữ ký sẽ mở một trang localhost riêng tư.
+    data:
+      title: Dữ liệu đi đâu?
+      p1: Runtime KillerMCP đã cài đặt chạy trên máy tính của bạn. Một số tra cứu mạng và tra cứu tham chiếu vẫn liên hệ với các nguồn dữ liệu công khai của chúng. Agent của bạn nhận được đầu vào và kết quả cần thiết để hoàn thành yêu cầu.
+      p2: Kết nối lưu trữ tùy chọn gửi đầu vào của công cụ đến KillerTools Cloudflare Worker. Nó không yêu cầu đăng nhập, giới hạn nội dung yêu cầu ở mức 64 KiB, áp dụng lược đồ giới hạn, và giới hạn tốc độ theo từng IP kết nối. Không gửi mật khẩu, tệp riêng tư, token, hoặc dữ liệu khách hàng qua kết nối lưu trữ này.
+      p3: Các công cụ tệp cục bộ, trình duyệt, mật khẩu, token, mã hóa, băm, OTP, BIP39, và tạo khóa không sử dụng Worker công khai. Chúng chạy thông qua KillerMCP đã cài đặt, nhưng MCP client và nhà cung cấp mô hình vẫn có thể nhận được đầu vào và kết quả.
+    oss:
+      title: Mã nguồn mở và giới hạn hiện tại
+      p1: '{kt} chứa Worker công khai, gói KillerTools cục bộ, bản đồ thao tác, lược đồ xác thực, và kiểm tra độ phủ. {km} chứa host cục bộ dùng chung, các bộ chuyển đổi ứng dụng desktop, trình cài đặt, và kiểm tra tích hợp.'
+      ktLink: Mã nguồn KillerTools
+      kmLink: Mã nguồn KillerMCP
+      p2: Kết quả tra cứu bên ngoài phụ thuộc vào nguồn của chúng. Các công cụ cục bộ chỉ nhận đường dẫn hoặc giá trị được cung cấp trong một lệnh gọi công cụ. Giải mã tệp Base64 tạo ra một tệp mới và từ chối ghi đè lên tệp đã tồn tại. Chụp ảnh bằng camera vẫn yêu cầu cấp quyền thủ công trên trình duyệt và xác minh phần cứng. KillerMCP v0.1.1 được ký, đóng dấu thời gian, và phát hành qua GitHub Releases.

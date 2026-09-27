@@ -1809,6 +1809,101 @@ pages:
     linkLabelSupport: Podpora
     linkLabelBuiltOn: Postaveno na
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Kopíruje se...
+      copied: '{label} zkopírováno'
+      failed: 'Kopírování se nezdařilo. Zkopírujte místo toho toto: {value}'
+      popups: URL serveru zkopírována. Povolte vyskakovací okna, aby se otevřel Claude.
+    labels:
+      serverUrl: URL serveru
+      codex: Příkaz Codexu
+      claudeCode: Příkaz Claude Code
+    description: Používejte nástroje KillerTools z AI agenta pomocí KillerTools MCP.
+    github: KillerMCP na GitHubu
+    eyebrow:
+      agents: KILLERTOOLS / AGENTI
+      oneInstaller: JEDEN INSTALÁTOR / JEDNO PŘIPOJENÍ
+      hosted: VOLITELNÉ HOSTOVANÉ PŘIPOJENÍ
+      after: PO INSTALACI NEBO PŘIPOJENÍ
+    lead: Přidejte KillerTools do sady nástrojů svého agenta. Připojte se jednou a pak ho požádejte, aby vypočítal podsíť, zkontroloval DNS záznamy, vyhledal CVE, rozebral hlavičky e-mailu, sestavil příkaz PowerShellu, převedl JSON na CSV nebo dekódoval Base64.
+    status: KillerMCP podporuje všech 81 nástrojů webu KillerTools.
+    install: Nainstalovat
+    intro: KillerMCP zahrnuje všech 81 nástrojů KillerTools spolu s nástroji z podporovaných aplikací Killer v jednom místním připojení. Nebudete potřebovat samostatný instalátor KillerTools, stažení zdrojového kódu, Node ani seznam příkazů.
+    download: Stáhnout pro Windows
+    meta:
+      version: Verze {version}
+      signed: Digitálně podepsáno
+      hosted: Hostováno na GitHub Releases
+    steps:
+      s1Title: Stáhněte a spusťte instalátor KillerMCP Setup.
+      s1Body: Instalátor je podepsán vývojářem open source Stephenem Rileym a publikován prostřednictvím GitHub Releases.
+      s2Title: Nechte instalátor připojit vašeho agenta.
+      s2Body: Nainstaluje sdílené běhové prostředí a zaregistruje KillerMCP u Codexu, Claude Code, Claude Desktop, Cursoru, GitHub Copilotu, Gemini CLI a Windsurfu, pokud jsou nalezeny.
+      s3Title: Otevřete nový chat s agentem a zeptejte se.
+      s3Body: KillerMCP zpřístupní všech 81 nástrojů KillerTools přes stejné připojení.
+    hostedBody: Nechcete nic instalovat? Připojte se přímo k hostovanému serveru KillerTools a získáte 64 webových nástrojů. Zbývajících 17 nástrojů KillerTools a všechny nástroje desktopových aplikací vyžadují nainstalované běhové prostředí KillerMCP.
+    actions:
+      cursor: Přidat do Cursoru
+      vscode: Přidat do VS Code
+      claude: Kopírovat URL a otevřít Claude
+      codex: Kopírovat instalační příkaz Codexu
+      claudeCode: Kopírovat instalační příkaz Claude Code
+      copyUrl: Kopírovat URL
+    otherClient: Používáte jiného MCP klienta? Zkopírujte URL serveru.
+    shortest: 'Nejkratší užitečný pokyn je {prompt}. Například: {example}.'
+    infer: Váš agent umí odvodit odpovídající nástroj KillerTools nebo aplikace Killer z úkolu a dostupného kontextu. Použijte {a}, {b}, {c} nebo jiný název aplikace jen tehdy, když chcete cíl výslovně upřesnit. Nepotřebujete podtržítka, název operace ani lomítkový příkaz.
+    worker:
+      title: Jak funguje Cloudflare Worker
+      p1: Veřejný koncový bod je open source streamovaný HTTP MCP server nasazený odděleně od webu. Váš MCP klient odešle název nástroje a omezené argumenty na {url}. Worker požadavek ověří, spustí zvolený nástroj a vrátí výsledek.
+      p2: Většina výpočtů a převodů probíhá přímo ve Workeru. DNS dotazy používají Cloudflare DNS over HTTPS. Registrace domény vychází z adresáře RDAP organizace IANA. Vyhledávání CVE, GIF a katalogů kontaktuje své veřejné poskytovatele a může selhat, pokud jsou tito poskytovatelé nedostupní nebo omezují počet požadavků.
+    examples:
+      title: Zkuste se zeptat
+      intro: Začněte slovem {killer} a popište požadovaný výsledek. Název aplikace nebo nástroje je volitelný, pokud je úkol jasný.
+      e1: vyhledat doménu thekiller.net
+      e2: vypočítat 192.168.10.0/24
+      e3: vyhledat událost systému Windows 4625
+      e4: vyhledat CVE-2025-53770
+      e5: rozebrat tyto hlavičky e-mailu
+      e6: sestavit příkaz PowerShellu pro výpis zastavených služeb
+      e7: převést tento JSON na CSV
+      e8: porovnat tyto dva JSON dokumenty
+      e9: vygenerovat SPF záznam pro example.com
+      e10: dekódovat tento text v Base64
+      e11: identifikovat toto SKU M365
+      e12: vypočítat 30sekundovou expozici s tímto ND filtrem
+    can:
+      title: Co dokáže?
+      intro: 'Zeptejte se běžným jazykem. Váš agent zjistí dostupné nástroje a jejich vstupy a poté zavolá ty, které potřebuje. Může například:'
+      i1: Vypočítat podsítě IPv4, rozšířit rozsahy adres, vygenerovat prefixy ULA IPv6 a vyhledat výrobce podle MAC adresy.
+      i2: Zkontrolovat DNS záznamy a registraci domény, vyhledat CVE a identifikovat porty a protokoly.
+      i3: Rozebrat hlavičky e-mailu, vygenerovat SPF nebo DMARC záznamy a vyhledat zprávy NDR Exchange.
+      i4: Najít ID chyb a událostí Windows, nastavení zásad skupiny a SKU licencí M365.
+      i5: Vyhledat cmdlety PowerShellu a sestavit příkazy, které si před spuštěním zkontrolujete.
+      i6: Formátovat JSON a XML, převádět JSON na CSV nebo mezi JSON, YAML a TOML, dekódovat Base64, porovnávat dokumenty a testovat regulární výrazy.
+      i7: Generovat QR kódy, UUID, meta tagy a zástupné obsahy nebo provádět výpočty expozice fotografií a filmů.
+      i8: Převádět velikost písmen, data, časy, teploty, barvy, číselné soustavy, římské číslice, binární text, hláskování NATO a formáty telefonních čísel.
+      i9: Formátovat SQL, YAML, TOML, Markdown, HTML entity a strukturovaná data nebo počítat procenta, plány cron a hodnoty chmod.
+      i10: Vyhledat emoji, GIFy, KillerScripts a moduly Killer nebo prozkoumat URL, user agenty, stavové kódy HTTP a textové statistiky.
+    cov:
+      title: Hostované a místní pokrytí
+      hostedTitle: Hostovaný Worker
+      hostedBody: 64 nástrojů bezpečných pro prohlížeč se 74 operacemi. Bez instalace.
+      installedTitle: Nainstalovaný KillerMCP
+      installedBody: Všech 81 nástrojů KillerTools s 94 operacemi, plus zjištěné aplikace Killer.
+      browserTitle: Doplňky prohlížeče
+      browserBody: Nástroje pro kameru, zařízení, editor a podpis otevírají soukromou stránku localhost.
+    data:
+      title: Kam jdou data?
+      p1: Nainstalované běhové prostředí KillerMCP běží na vašem počítači. Některá síťová a referenční vyhledávání přesto kontaktují své veřejné zdroje dat. Váš agent obdrží vstupy a výsledky potřebné k dokončení požadavku.
+      p2: Volitelné hostované připojení odesílá vstupy nástrojů na Cloudflare Worker KillerTools. Nevyžaduje přihlášení, omezuje tělo požadavku na 64 KiB, používá omezená schémata a omezuje počet požadavků pro každou připojující se IP adresu. Neposílejte přes hostované připojení hesla, soukromé soubory, tokeny ani data klientů.
+      p3: Nástroje pro místní soubory, prohlížeč, hesla, tokeny, šifrování, hashování, OTP, BIP39 a generování klíčů se veřejnému Workeru vyhýbají. Běží přes nainstalovaný KillerMCP, ale MCP klient a poskytovatel modelu mohou přesto obdržet vstupy a výsledky.
+    oss:
+      title: Open source a aktuální omezení
+      p1: '{kt} obsahuje veřejný Worker, místní balíček KillerTools, mapu operací, validační schémata a kontroly pokrytí. {km} obsahuje sdílený místní hostitel, adaptéry desktopových aplikací, instalátor a integrační kontroly.'
+      ktLink: Zdrojový kód KillerTools
+      kmLink: Zdrojový kód KillerMCP
+      p2: Výsledky externího vyhledávání závisí na jejich zdrojích. Místní nástroje dostávají pouze cesty nebo hodnoty zadané ve volání nástroje. Dekódování souboru Base64 vytvoří nový soubor a odmítne přepsat existující. Zachycení kamerou stále vyžaduje ruční povolení v prohlížeči a ověření hardwaru. KillerMCP v0.1.1 je podepsán, opatřen časovým razítkem a publikován prostřednictvím GitHub Releases.
 ui:
   diffEditor:
     originalLabel: PŮVODNÍ

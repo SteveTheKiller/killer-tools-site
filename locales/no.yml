@@ -1839,3 +1839,98 @@ pages:
     linkLabelSupport: Støtte
     linkLabelBuiltOn: Bygget på
     itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Kopierer...
+      copied: '{label} kopiert'
+      failed: 'Kopiering mislyktes. Kopier dette i stedet: {value}'
+      popups: Server-URL kopiert. Tillat sprettoppvinduer for å åpne Claude.
+    labels:
+      serverUrl: Server-URL
+      codex: Codex-kommando
+      claudeCode: Claude Code-kommando
+    description: Bruk KillerTools-verktøy fra en AI-agent via KillerTools MCP.
+    github: KillerMCP på GitHub
+    eyebrow:
+      agents: KILLERTOOLS / AGENTER
+      oneInstaller: ÉN INSTALLASJONSFIL / ÉN TILKOBLING
+      hosted: VALGFRI HOSTET TILKOBLING
+      after: ETTER INSTALLASJON ELLER TILKOBLING
+    lead: Legg KillerTools i agentens verktøykasse. Koble til én gang, og be den deretter beregne et subnett, sjekke DNS-poster, undersøke en CVE, tolke e-posthoder, bygge en PowerShell-kommando, konvertere JSON til CSV eller dekode Base64.
+    status: KillerMCP støtter alle de 81 verktøyene på KillerTools-nettstedet.
+    install: Installer
+    intro: KillerMCP samler alle 81 KillerTools-verktøy, pluss verktøy fra støttede Killer-apper, i én lokal tilkobling. Du trenger ikke en egen KillerTools-installasjonsfil, en kildekodeutsjekking, Node eller en liste med kommandoer.
+    download: Last ned for Windows
+    meta:
+      version: Versjon {version}
+      signed: Digitalt signert
+      hosted: Hostet på GitHub Releases
+    steps:
+      s1Title: Last ned og kjør KillerMCP Setup.
+      s1Body: Installasjonsfilen er signert av Open Source Developer Stephen Riley og publisert via GitHub Releases.
+      s2Title: La installasjonsprogrammet koble til agenten din.
+      s2Body: Det installerer den delte kjøretiden og registrerer KillerMCP hos Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI og Windsurf når disse finnes.
+      s3Title: Åpne en ny agentsamtale og spør.
+      s3Body: KillerMCP gjør alle de 81 KillerTools-verktøyene tilgjengelige gjennom samme tilkobling.
+    hostedBody: Vil du ikke installere noe? Koble deg direkte til den hostede KillerTools-serveren for 64 nettbaserte verktøy. De resterende 17 KillerTools-verktøyene og alle skrivebordsapp-verktøyene krever den installerte KillerMCP-kjøretiden.
+    actions:
+      cursor: Legg til i Cursor
+      vscode: Legg til i VS Code
+      claude: Kopier URL og åpne Claude
+      codex: Kopier Codex-oppsettkommando
+      claudeCode: Kopier Claude Code-oppsettkommando
+      copyUrl: Kopier URL
+    otherClient: Bruker du en annen MCP-klient? Kopier server-URL-en.
+    shortest: 'Den korteste nyttige forespørselen er {prompt}. For eksempel: {example}.'
+    infer: Agenten din kan utlede det tilsvarende KillerTools- eller Killer-app-verktøyet fra oppgaven og tilgjengelig kontekst. Bruk {a}, {b}, {c} eller et annet appnavn bare når du vil gjøre målet eksplisitt. Du trenger ikke understreker, et operasjonsnavn eller en skråstrek-kommando.
+    worker:
+      title: Slik fungerer Cloudflare Worker
+      p1: Det offentlige endepunktet er en åpen kildekode-strømbar HTTP MCP-server som er distribuert separat fra nettstedet. MCP-klienten din sender et verktøynavn og avgrensede argumenter til {url}. Worker validerer forespørselen, kjører det valgte verktøyet og returnerer resultatet.
+      p2: De fleste beregninger og konverteringer kjøres direkte i Worker. DNS-spørringer bruker Cloudflare DNS over HTTPS. Domeneregistrering følger IANAs RDAP-katalog. CVE-, GIF- og katalogsøk kontakter sine offentlige leverandører og kan mislykkes når disse leverandørene er utilgjengelige eller har hastighetsbegrensninger.
+    examples:
+      title: Prøv å spørre
+      intro: Start med {killer} og beskriv resultatet du ønsker. App- eller verktøynavnet er valgfritt når oppgaven er tydelig.
+      e1: søk opp domenet thekiller.net
+      e2: beregn 192.168.10.0/24
+      e3: slå opp Windows-hendelse 4625
+      e4: undersøk CVE-2025-53770
+      e5: tolk disse e-posthodene
+      e6: bygg en PowerShell-kommando for å liste stoppede tjenester
+      e7: konverter denne JSON-en til CSV
+      e8: sammenlign disse to JSON-dokumentene
+      e9: generer en SPF-post for example.com
+      e10: dekod denne Base64-teksten
+      e11: identifiser denne M365-SKU-en
+      e12: beregn en 30 sekunders eksponering med dette ND-filteret
+    can:
+      title: Hva kan den gjøre?
+      intro: 'Spør i vanlig språk. Agenten din finner de tilgjengelige verktøyene og deres inndata, og kaller deretter dem den trenger. Den kan for eksempel:'
+      i1: Beregne IPv4-subnett, utvide adresseområder, generere IPv6 ULA-prefikser og slå opp MAC-leverandører.
+      i2: Sjekke DNS-poster og domeneregistrering, søke i CVE-er og identifisere porter og protokoller.
+      i3: Tolke e-posthoder, generere SPF- eller DMARC-poster og slå opp Exchange NDR-meldinger.
+      i4: Finne Windows-feil- og hendelses-ID-er, Group Policy-innstillinger og M365-lisens-SKU-er.
+      i5: Søke i PowerShell-cmdleter og sette sammen kommandoer du kan se gjennom før de kjøres.
+      i6: Formatere JSON og XML, konvertere JSON til CSV eller mellom JSON, YAML og TOML, dekode Base64, sammenligne dokumenter og teste regulære uttrykk.
+      i7: Generere QR-koder, UUID-er, meta-tagger og plassholdere, eller regne på fotoeksponering og filmberegninger.
+      i8: Konvertere store/små bokstaver, datoer, tider, temperaturer, farger, tallbaser, romertall, binærtekst, NATO-alfabetet og telefonformater.
+      i9: Formatere SQL, YAML, TOML, Markdown, HTML-entiteter og strukturerte data, eller beregne prosenter, cron-tidsplaner og chmod-verdier.
+      i10: Søke i emoji, GIF-er, KillerScripts og Killer-moduler, eller undersøke URL-er, brukeragenter, HTTP-statuskoder og tekststatistikk.
+    cov:
+      title: Hostet og lokal dekning
+      hostedTitle: Hostet Worker
+      hostedBody: 64 nettleser-trygge verktøy med 74 operasjoner. Ingen installasjon.
+      installedTitle: Installert KillerMCP
+      installedBody: Alle 81 KillerTools-verktøy med 94 operasjoner, pluss oppdagede Killer-apper.
+      browserTitle: Nettleserledsagere
+      browserBody: Kamera-, enhets-, editor- og signaturverktøy åpner en privat localhost-side.
+    data:
+      title: Hvor går dataene?
+      p1: Den installerte KillerMCP-kjøretiden kjører på datamaskinen din. Enkelte nettverks- og oppslagssøk kontakter fortsatt sine offentlige datakilder. Agenten din mottar inndataene og resultatene som trengs for å fullføre forespørselen.
+      p2: Den valgfrie hostede tilkoblingen sender verktøyinndata til KillerTools' Cloudflare Worker. Den krever ingen innlogging, begrenser forespørselskropper til 64 KiB, bruker avgrensede skjemaer og hastighetsbegrenser hver tilkoblende IP. Ikke send passord, private filer, tokener eller klientdata gjennom den hostede tilkoblingen.
+      p3: Verktøy for lokale filer, nettleser, passord, token, kryptering, hashing, OTP, BIP39 og nøkkelgenerering holdes utenfor den offentlige Worker. De kjøres via installert KillerMCP, men MCP-klienten og modelleverandøren kan likevel motta inndataene og resultatene.
+    oss:
+      title: Åpen kildekode og gjeldende begrensninger
+      p1: '{kt} inneholder den offentlige Worker, den lokale KillerTools-pakken, operasjonskartet, valideringsskjemaene og dekningssjekkene. {km} inneholder den delte lokale verten, skrivebordsapp-adapterne, installasjonsfilen og integrasjonssjekkene.'
+      ktLink: KillerTools-kildekode
+      kmLink: KillerMCP-kildekode
+      p2: Eksterne oppslagsresultater avhenger av kildene sine. Lokale verktøy mottar bare stier eller verdier som gis i et verktøykall. Base64-fildekoding oppretter en ny fil og nekter å overskrive en eksisterende. Kamerainnfanging krever fortsatt manuell nettlesertillatelse og maskinvareverifisering. KillerMCP v0.1.1 er signert, tidsstemplet og publisert via GitHub Releases.

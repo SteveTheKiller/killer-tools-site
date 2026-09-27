@@ -1840,3 +1840,98 @@ pages:
     linkLabelSupport: サポート
     linkLabelBuiltOn: ベースにしたプロジェクト
     itToolsFork: IT-Tools(フォーク)
+  mcp:
+    copy:
+      copying: コピー中...
+      copied: '{label}をコピーしました'
+      failed: 'コピーに失敗しました。代わりにこれをコピーしてください: {value}'
+      popups: サーバーURLをコピーしました。Claudeを開くにはポップアップを許可してください。
+    labels:
+      serverUrl: サーバーURL
+      codex: Codexコマンド
+      claudeCode: Claude Codeコマンド
+    description: KillerTools MCPを通じて、AIエージェントからKillerToolsのユーティリティを利用できます。
+    github: GitHub上のKillerMCP
+    eyebrow:
+      agents: KILLERTOOLS / エージェント
+      oneInstaller: 1つのインストーラー / 1つの接続
+      hosted: 任意のホスト接続
+      after: インストールまたは接続の後
+    lead: KillerToolsをエージェントのツールキットに追加しましょう。一度接続すれば、サブネットの計算、DNSレコードの確認、CVEの調査、メールヘッダーの解析、PowerShellコマンドの作成、JSONからCSVへの変換、Base64のデコードなどを依頼できます。
+    status: KillerMCPはKillerToolsウェブサイトの81個すべてのツールに対応しています。
+    install: インストール
+    intro: KillerMCPは81個すべてのKillerToolsユーティリティに加え、対応するKillerアプリのツールを1つのローカル接続にまとめています。別途KillerToolsのインストーラー、ソースのチェックアウト、Node、コマンドの一覧は不要です。
+    download: Windows版をダウンロード
+    meta:
+      version: バージョン{version}
+      signed: デジタル署名済み
+      hosted: GitHub Releasesでホスト
+    steps:
+      s1Title: KillerMCP Setupをダウンロードして実行します。
+      s1Body: インストーラーはOpen Source Developer Stephen Rileyによって署名され、GitHub Releasesを通じて公開されています。
+      s2Title: セットアップにエージェントを接続させます。
+      s2Body: 共有ランタイムをインストールし、見つかった場合はCodex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI、WindsurfにKillerMCPを登録します。
+      s3Title: 新しいエージェントのチャットを開いて依頼します。
+      s3Body: KillerMCPは同じ接続を通じて81個すべてのKillerToolsユーティリティを利用可能にします。
+    hostedBody: 何もインストールしたくない場合は、ホストされているKillerToolsサーバーに直接接続すれば64個のウェブベースのユーティリティを利用できます。残りの17個のKillerToolsユーティリティとすべてのデスクトップアプリのツールには、インストール済みのKillerMCPランタイムが必要です。
+    actions:
+      cursor: Cursorに追加
+      vscode: VS Codeに追加
+      claude: URLをコピーしてClaudeを開く
+      codex: Codexのセットアップコマンドをコピー
+      claudeCode: Claude Codeのセットアップコマンドをコピー
+      copyUrl: URLをコピー
+    otherClient: 別のMCPクライアントを使っていますか?サーバーURLをコピーしてください。
+    shortest: '最も短くて役立つプロンプトは{prompt}です。例: {example}。'
+    infer: エージェントはタスクと利用可能なコンテキストから、対応するKillerToolsやKillerアプリのツールを推測できます。{a}、{b}、{c}などのアプリ名は、対象を明示したい場合にのみ使用してください。アンダースコア、操作名、スラッシュコマンドは不要です。
+    worker:
+      title: Cloudflare Workerの仕組み
+      p1: 公開エンドポイントは、ウェブサイトとは別にデプロイされたオープンソースのstreamable HTTP MCPサーバーです。MCPクライアントはツール名と制限された引数を{url}に送信します。Workerはリクエストを検証し、選択したユーティリティを実行して結果を返します。
+      p2: ほとんどの計算や変換はWorker内で直接実行されます。DNSクエリはCloudflare DNS over HTTPSを使用します。ドメイン登録情報はIANAのRDAPディレクトリに従います。CVE、GIF、カタログの検索は公開プロバイダーに問い合わせるため、それらのプロバイダーが利用できない場合やレート制限がかかっている場合は失敗することがあります。
+    examples:
+      title: こう聞いてみましょう
+      intro: '{killer}で始めて、欲しい結果を説明してください。タスクが明確であれば、アプリ名やツール名は省略できます。'
+      e1: thekiller.netのドメインを検索して
+      e2: 192.168.10.0/24を計算して
+      e3: Windowsのイベント4625を調べて
+      e4: CVE-2025-53770を調べて
+      e5: このメールヘッダーを解析して
+      e6: 停止しているサービスを一覧表示するPowerShellコマンドを作って
+      e7: このJSONをCSVに変換して
+      e8: この2つのJSONドキュメントを比較して
+      e9: example.com用のSPFレコードを生成して
+      e10: このBase64テキストをデコードして
+      e11: このM365 SKUを特定して
+      e12: このNDフィルターで30秒露光を計算して
+    can:
+      title: 何ができますか?
+      intro: 普段の言葉で聞いてください。エージェントは利用可能なツールとその入力を検出し、必要なものを呼び出します。たとえば次のようなことができます。
+      i1: IPv4サブネットの計算、アドレス範囲の展開、IPv6 ULAプレフィックスの生成、MACベンダーの検索。
+      i2: DNSレコードとドメイン登録情報の確認、CVEの検索、ポートとプロトコルの特定。
+      i3: メールヘッダーの解析、SPFまたはDMARCレコードの生成、Exchange NDRメッセージの検索。
+      i4: WindowsのエラーコードとイベントID、グループポリシー設定、M365ライセンスSKUの検索。
+      i5: PowerShellコマンドレットの検索、実行前に確認できるコマンドの組み立て。
+      i6: JSONとXMLの整形、JSONとCSVの相互変換やJSON・YAML・TOML間の変換、Base64のデコード、ドキュメントの比較、正規表現のテスト。
+      i7: QRコード、UUID、メタタグ、プレースホルダーの生成、写真の露出やフィルムの計算。
+      i8: 大文字小文字、日付、時刻、温度、色、進数、ローマ数字、バイナリテキスト、NATOフォネティックコード、電話番号形式の変換。
+      i9: SQL、YAML、TOML、Markdown、HTMLエンティティ、構造化データの整形、パーセンテージ、cronスケジュール、chmod値の計算。
+      i10: 絵文字、GIF、KillerScripts、Killerモジュールの検索、URL、ユーザーエージェント、HTTPステータスコード、テキスト統計の確認。
+    cov:
+      title: ホスト版とローカル版の対応範囲
+      hostedTitle: ホストされたWorker
+      hostedBody: 74個の操作を持つ、ブラウザで安全な64個のユーティリティ。インストール不要。
+      installedTitle: インストール済みのKillerMCP
+      installedBody: 94個の操作を持つ81個すべてのKillerToolsユーティリティに加え、検出されたKillerアプリ。
+      browserTitle: ブラウザ連携機能
+      browserBody: カメラ、デバイス、エディター、署名の各ツールはプライベートなlocalhostページを開きます。
+    data:
+      title: データはどこに送られますか?
+      p1: インストールされたKillerMCPランタイムはお使いのコンピューター上で動作します。一部のネットワークおよびリファレンス検索は、公開されているデータソースに引き続きアクセスします。エージェントはリクエストを完了するために必要な入力と結果を受け取ります。
+      p2: 任意のホスト接続は、ツールの入力をKillerToolsのCloudflare Workerに送信します。サインインは不要で、リクエストボディは64 KiBに制限され、制限付きスキーマが適用され、接続するIPごとにレート制限がかかります。ホスト接続を通じてパスワード、プライベートファイル、トークン、クライアントデータを送信しないでください。
+      p3: ローカルファイル、ブラウザ、パスワード、トークン、暗号化、ハッシュ化、OTP、BIP39、鍵生成の各ツールは公開Workerを使用しません。これらはインストールされたKillerMCPを通じて実行されますが、MCPクライアントとモデルプロバイダーは引き続き入力と結果を受け取る場合があります。
+    oss:
+      title: オープンソースと現在の制限
+      p1: '{kt}には公開Worker、ローカルKillerToolsバンドル、操作マップ、検証スキーマ、カバレッジチェックが含まれています。{km}には共有ローカルホスト、デスクトップアプリのアダプター、インストーラー、統合チェックが含まれています。'
+      ktLink: KillerToolsのソースコード
+      kmLink: KillerMCPのソースコード
+      p2: 外部検索の結果はその情報源に依存します。ローカルツールはツール呼び出しで指定されたパスや値のみを受け取ります。Base64ファイルのデコードは新しいファイルを作成し、既存のファイルの上書きは拒否されます。カメラでの撮影には、引き続きブラウザの手動での許可とハードウェアの確認が必要です。KillerMCP v0.1.1は署名とタイムスタンプが付与され、GitHub Releasesを通じて公開されています。
