@@ -92,7 +92,7 @@ html.dark body {
 /* ── Theme engine CSS variables (six families, ported from the landing pages).
    The chrome vars drive the frame rails (titlebar, sidebar, statusbar); bg
    drives the content pane. data-kt-theme is set by the style store. ── */
-html[data-kt-theme='black']    { --kt-bg: #0d0d0d; --kt-chrome: #000000; --kt-chrome-border: #2a2a2a; --kt-panel: #141414; --kt-modal: #000000; --kt-accent: #0AFFE7; --kt-accent-2: #08CCB9; --kt-accent-sel: #003832; --kt-accent-rgb: 10, 255, 231; --kt-rail-text: #888888; --kt-grain-img: url('/grain-a24.png'); }
+html[data-kt-theme='black']    { --kt-bg: #0d0d0d; --kt-chrome: #000000; --kt-chrome-border: #2a2a2a; --kt-panel: #000000; --kt-modal: #050505; --kt-accent: #0AFFE7; --kt-accent-2: #08CCB9; --kt-accent-sel: #003832; --kt-accent-rgb: 10, 255, 231; --kt-rail-text: #888888; --kt-grain-img: url('/grain-a24.png'); }
 html[data-kt-theme='dark']     { --kt-bg: #333333; --kt-chrome: #1c1c1c; --kt-chrome-border: #2e2e2e; --kt-panel: #3a3a3a; --kt-modal: #1e1e1e; --kt-accent: #50AEE8; --kt-accent-2: #3E93C9; --kt-accent-sel: #1C3B5E; --kt-accent-rgb: 80, 174, 232; --kt-rail-text: #9a9a9a; --kt-grain-img: url('/grain-a24.png'); }
 html[data-kt-theme='light']    { --kt-bg: #b8b8b8; --kt-chrome: #c8c8c8; --kt-chrome-border: #b0b0b0; --kt-panel: #d8d8d8; --kt-modal: #ffffff; --kt-accent: #18608E; --kt-accent-2: #124C73; --kt-accent-sel: #18608E; --kt-accent-rgb: 24, 96, 142; --kt-rail-text: #555555; --kt-grain-img: url('/grain-a34.png'); }
 /* Colored themes: accent = the warm family cream (KillerPDF voice), off-white
