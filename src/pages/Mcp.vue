@@ -9,9 +9,40 @@ const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=ki
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const { t } = useI18n();
 const copyStatus = ref('');
-const installerVersion = '0.3.1';
-const installerSize = '10.1 MiB';
-const installerReleaseUrl = 'https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.3.1';
+const installerRelease = ref<{
+  version: string
+  size: string
+  downloadUrl: string
+  releaseUrl: string
+} | null>(null);
+const installerDownloadUrl = computed(() => installerRelease.value?.downloadUrl ?? 'https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe');
+const installerReleaseUrl = computed(() => installerRelease.value?.releaseUrl ?? 'https://github.com/SteveTheKiller/KillerMCP/releases/latest');
+const installerOpenSourceText = computed(() => t('pages.mcp.oss.p2').replace(/\s?v0\.1\.1/, installerRelease.value ? ` v${installerRelease.value.version}` : ''));
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/killermcp-release');
+    if (!response.ok) {
+      return;
+    }
+
+    const release = await response.json();
+    const asset = release.assets?.find((item: { name: string }) => item.name === 'KillerMCP-Setup.exe');
+    if (!/^v\d+\.\d+\.\d+$/.test(release.tag_name) || !asset || !Number.isFinite(asset.size) || asset.size <= 0) {
+      return;
+    }
+
+    installerRelease.value = {
+      version: release.tag_name.slice(1),
+      size: `${(asset.size / 1024 / 1024).toFixed(1)} MiB`,
+      downloadUrl: asset.browser_download_url,
+      releaseUrl: `https://github.com/SteveTheKiller/KillerMCP/releases/tag/${release.tag_name}`,
+    };
+  }
+  catch {
+    // The latest download remains available when GitHub's API is unavailable.
+  }
+});
 
 function copyWithSelection(value: string) {
   const input = document.createElement('textarea');
@@ -122,12 +153,12 @@ useHead({
           <p>
             {{ t('pages.mcp.intro') }}
           </p>
-          <a class="mcp-download" href="https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe">
+          <a class="mcp-download" :href="installerDownloadUrl">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" /></svg>
             <span>{{ t('pages.mcp.download') }}</span>
           </a>
           <div class="mcp-installer-meta">
-            <span>{{ t('pages.mcp.meta.version', { version: installerVersion }) }}</span><span>{{ installerSize }}</span><span>.NET 10</span><span>{{ t('pages.mcp.meta.signed') }}</span><a :href="installerReleaseUrl" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
+            <span v-if="installerRelease">{{ t('pages.mcp.meta.version', { version: installerRelease.version }) }}</span><span v-if="installerRelease">{{ installerRelease.size }}</span><span>.NET 10</span><span>{{ t('pages.mcp.meta.signed') }}</span><a :href="installerReleaseUrl" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
           </div>
           <ol class="mcp-install-steps">
             <li><strong>{{ t('pages.mcp.steps.s1Title') }}</strong> {{ t('pages.mcp.steps.s1Body') }}</li>
@@ -211,7 +242,7 @@ useHead({
             </template>
           </i18n-t>
           <p>
-            {{ t('pages.mcp.oss.p2').replace('v0.1.1', `v${installerVersion}`) }}
+            {{ installerOpenSourceText }}
           </p>
         </section>
       </div>
