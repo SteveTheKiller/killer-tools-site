@@ -1850,17 +1850,17 @@ pages:
       serverUrl: サーバーURL
       codex: Codexコマンド
       claudeCode: Claude Codeコマンド
-    description: KillerTools MCPを通じて、AIエージェントからKillerToolsのユーティリティを利用できます。
+    description: KillerMCPはAIエージェントをKillerToolsのユーティリティや対応するKillerアプリに接続します。CloudflareサーバーかWindowsにインストールする版を選べます。
     github: GitHub上のKillerMCP
     eyebrow:
-      agents: KILLERTOOLS / エージェント
-      oneInstaller: 1つのインストーラー / 1つの接続
-      hosted: 任意のホスト接続
-      after: インストールまたは接続の後
-    lead: KillerToolsをエージェントのツールキットに追加しましょう。一度接続すれば、サブネットの計算、DNSレコードの確認、CVEの調査、メールヘッダーの解析、PowerShellコマンドの作成、JSONからCSVへの変換、Base64のデコードなどを依頼できます。
-    status: KillerMCPはKillerToolsウェブサイトの81個すべてのツールに対応しています。
+      agents: 1つの名前 / 2つの接続方法
+      oneInstaller: WINDOWSにインストール
+      hosted: CLOUDFLAREでホスト
+      after: 接続した後
+    lead: Webで安全に使えるユーティリティには公開Cloudflareサーバーに接続します。ローカルツールや対応するKillerアプリにはWindows版KillerMCPをインストールします。
+    status: 使いたいデータやアプリに合った接続方法を選んでください。
     install: インストール
-    intro: KillerMCPは81個すべてのKillerToolsユーティリティに加え、対応するKillerアプリのツールを1つのローカル接続にまとめています。別途KillerToolsのインストーラー、ソースのチェックアウト、Node、コマンドの一覧は不要です。
+    intro: Windowsインストーラーは、81個すべてのKillerToolsユーティリティと、このコンピューターにインストールされた対応Killerアプリのコマンドを1つのローカル接続で提供します。アプリのコマンドはバージョンと利用可能な状態によって異なります。Nodeやソースのチェックアウトは不要です。
     download: Windows版をダウンロード
     meta:
       version: バージョン{version}
@@ -1872,8 +1872,9 @@ pages:
       s2Title: セットアップにエージェントを接続させます。
       s2Body: 共有ランタイムをインストールし、見つかった場合はCodex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI、WindsurfにKillerMCPを登録します。
       s3Title: 新しいエージェントのチャットを開いて依頼します。
-      s3Body: KillerMCPは同じ接続を通じて81個すべてのKillerToolsユーティリティを利用可能にします。
-    hostedBody: 何もインストールしたくない場合は、ホストされているKillerToolsサーバーに直接接続すれば64個のウェブベースのユーティリティを利用できます。残りの17個のKillerToolsユーティリティとすべてのデスクトップアプリのツールには、インストール済みのKillerMCPランタイムが必要です。
+      s3Body: KillerMCPは1つの接続から利用可能なKillerToolsとインストール済みアプリのコマンドを検出します。
+    hostedTitle: インストールせずに接続
+    hostedBody: 公開CloudflareサーバーではHTTP経由で64個のWebで安全に使えるKillerToolsユーティリティを利用できます。Windowsのファイルやインストール済みKillerアプリにはアクセスできません。残りの17個のユーティリティとすべてのデスクトップアプリのコマンドには、インストール済みのKillerMCPが必要です。
     actions:
       cursor: Cursorに追加
       vscode: VS Codeに追加
@@ -1917,11 +1918,11 @@ pages:
       i9: SQL、YAML、TOML、Markdown、HTMLエンティティ、構造化データの整形、パーセンテージ、cronスケジュール、chmod値の計算。
       i10: 絵文字、GIF、KillerScripts、Killerモジュールの検索、URL、ユーザーエージェント、HTTPステータスコード、テキスト統計の確認。
     cov:
-      title: ホスト版とローカル版の対応範囲
-      hostedTitle: ホストされたWorker
-      hostedBody: 74個の操作を持つ、ブラウザで安全な64個のユーティリティ。インストール不要。
-      installedTitle: インストール済みのKillerMCP
-      installedBody: 94個の操作を持つ81個すべてのKillerToolsユーティリティに加え、検出されたKillerアプリ。
+      title: 接続方法ごとにできること
+      hostedTitle: Cloudflareサーバー
+      hostedBody: 74個の操作を持つ64個のWebで安全に使えるユーティリティ。HTTP経由でリモート実行され、インストールは不要です。ローカルのアプリやファイルにはアクセスできません。
+      installedTitle: Windows版
+      installedBody: 94個の操作を持つ81個すべてのKillerToolsユーティリティと、インストールされた対応Killerアプリのコマンド。ローカルMCP接続として動作します。
       browserTitle: ブラウザ連携機能
       browserBody: カメラ、デバイス、エディター、署名の各ツールはプライベートなlocalhostページを開きます。
     data:

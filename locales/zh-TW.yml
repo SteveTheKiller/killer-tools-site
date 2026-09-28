@@ -1850,17 +1850,17 @@ pages:
       serverUrl: 伺服器網址
       codex: Codex 命令
       claudeCode: Claude Code 命令
-    description: 透過 KillerTools MCP 在 AI 代理中使用 KillerTools 工具。
+    description: KillerMCP 讓 AI 代理連接 KillerTools 工具與支援的 Killer 應用程式。你可以選擇 Cloudflare 託管伺服器，或安裝在 Windows 上的版本。
     github: GitHub 上的 KillerMCP
     eyebrow:
-      agents: KILLERTOOLS / 代理
-      oneInstaller: 一個安裝程式 / 一個連線
-      hosted: 選用的託管連線
-      after: 安裝或連接完成後
-    lead: 把 KillerTools 加入你的代理工具箱。只需連接一次,之後就能請它計算子網路、檢查 DNS 記錄、查詢 CVE、解析郵件標頭、產生 PowerShell 命令、把 JSON 轉換成 CSV,或解碼 Base64。
-    status: KillerMCP 支援 KillerTools 網站上全部 81 款工具。
+      agents: 一個名稱 / 兩種連線方式
+      oneInstaller: 安裝在 WINDOWS 上
+      hosted: 由 CLOUDFLARE 託管
+      after: 連線之後
+    lead: 連接公開的 Cloudflare 伺服器，即可使用適合在網頁端執行的工具；在 Windows 上安裝 KillerMCP，則可使用本機工具和支援的 Killer 應用程式。
+    status: 依照想使用的資料和應用程式選擇合適的連線方式。
     install: 安裝
-    intro: KillerMCP 在單一本機連線中整合了全部 81 款 KillerTools 工具,以及所支援的 Killer 應用程式中的工具。你不需要另外安裝 KillerTools、取得原始碼、安裝 Node,也不需要一堆命令。
+    intro: Windows 安裝程式提供單一本機連線，涵蓋全部 81 款 KillerTools 工具，以及這台電腦上已安裝的支援 Killer 應用程式的命令。應用程式命令取決於其版本和可用狀態。無須另外安裝 Node 或取得原始碼。
     download: 下載 Windows 版
     meta:
       version: 版本 {version}
@@ -1872,8 +1872,9 @@ pages:
       s2Title: 讓安裝程式為你連接代理。
       s2Body: 它會安裝共用執行環境,並在偵測到 Codex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf 時,將 KillerMCP 註冊到其中。
       s3Title: 開啟一個新的代理對話並直接提問。
-      s3Body: KillerMCP 透過同一個連線提供全部 81 款 KillerTools 工具。
-    hostedBody: 不想安裝任何東西?可以直接連接託管的 KillerTools 伺服器,使用其中 64 款以網頁為基礎的工具。其餘 17 款 KillerTools 工具以及所有桌面應用程式工具,都需要安裝 KillerMCP 執行環境。
+      s3Body: KillerMCP 透過單一連線找出可用的 KillerTools 命令和已安裝應用程式的命令。
+    hostedTitle: 無須安裝即可連線
+    hostedBody: 公開的 Cloudflare 伺服器透過 HTTP 提供 64 款適合在網頁端執行的 KillerTools 工具。它無法存取你的 Windows 檔案或已安裝的 Killer 應用程式。其餘 17 款工具和所有桌面應用程式命令都需要安裝 KillerMCP。
     actions:
       cursor: 新增到 Cursor
       vscode: 新增到 VS Code
@@ -1917,11 +1918,11 @@ pages:
       i9: 格式化 SQL、YAML、TOML、Markdown、HTML 實體與結構化資料,或計算百分比、cron 排程,以及 chmod 權限值。
       i10: 搜尋表情符號、GIF、KillerScripts 與 Killer 模組,或檢查網址、使用者代理、HTTP 狀態碼與文字統計資訊。
     cov:
-      title: 託管與本機涵蓋範圍
-      hostedTitle: 託管 Worker
-      hostedBody: 64 款瀏覽器安全工具,共 74 項操作。無需安裝。
-      installedTitle: 已安裝的 KillerMCP
-      installedBody: 全部 81 款 KillerTools 工具,共 94 項操作,外加偵測到的 Killer 應用程式。
+      title: 兩種連線方式各能做什麼？
+      hostedTitle: Cloudflare 伺服器
+      hostedBody: 64 款適合在網頁端執行的工具，共 74 項操作。透過 HTTP 遠端執行，無須安裝。無法存取本機應用程式或檔案。
+      installedTitle: Windows 安裝版
+      installedBody: 全部 81 款 KillerTools 工具，共 94 項操作，另有已安裝的支援 Killer 應用程式的命令。以本機 MCP 連線方式執行。
       browserTitle: 瀏覽器輔助功能
       browserBody: 相機、裝置、編輯器與簽名工具會開啟一個私人的 localhost 頁面。
     data:

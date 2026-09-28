@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Localization
 
+- Updated the KillerMCP page in all 19 languages to distinguish the hosted and installed connections.
 - Completed Vietnamese coverage for current tool categories and descriptions. (Thanks @vuanhvu11982)
 
 ## 2026-07-04

@@ -1849,17 +1849,17 @@ pages:
       serverUrl: URL máy chủ
       codex: Lệnh Codex
       claudeCode: Lệnh Claude Code
-    description: Sử dụng các tiện ích KillerTools từ một AI agent thông qua KillerTools MCP.
+    description: KillerMCP kết nối AI agent với các tiện ích KillerTools và những ứng dụng Killer được hỗ trợ. Chọn máy chủ Cloudflare hoặc phiên bản cài đặt trên Windows.
     github: KillerMCP trên GitHub
     eyebrow:
-      agents: KILLERTOOLS / AGENT
-      oneInstaller: MỘT TRÌNH CÀI ĐẶT / MỘT KẾT NỐI
-      hosted: KẾT NỐI LƯU TRỮ TÙY CHỌN
-      after: SAU KHI CÀI ĐẶT HOẶC KẾT NỐI
-    lead: Đưa KillerTools vào bộ công cụ của agent. Kết nối một lần, sau đó yêu cầu nó tính toán một subnet, kiểm tra bản ghi DNS, tra cứu một CVE, phân tích tiêu đề email, xây dựng lệnh PowerShell, chuyển đổi JSON sang CSV, hoặc giải mã Base64.
-    status: KillerMCP hỗ trợ toàn bộ 81 công cụ trên trang KillerTools.
+      agents: MỘT TÊN / HAI CÁCH KẾT NỐI
+      oneInstaller: CÀI ĐẶT TRÊN WINDOWS
+      hosted: ĐƯỢC LƯU TRỮ TRÊN CLOUDFLARE
+      after: SAU KHI KẾT NỐI
+    lead: Kết nối với máy chủ Cloudflare công khai để dùng các tiện ích an toàn trên web, hoặc cài KillerMCP trên Windows để dùng công cụ cục bộ và các ứng dụng Killer được hỗ trợ.
+    status: Chọn kết nối phù hợp với dữ liệu và ứng dụng bạn muốn dùng.
     install: Cài đặt
-    intro: KillerMCP bao gồm toàn bộ 81 tiện ích KillerTools cùng với các công cụ từ các ứng dụng Killer được hỗ trợ, trong một kết nối cục bộ duy nhất. Bạn sẽ không cần trình cài đặt KillerTools riêng, bản sao mã nguồn, Node, hay danh sách lệnh.
+    intro: Trình cài đặt Windows cung cấp một kết nối cục bộ tới toàn bộ 81 tiện ích KillerTools và các lệnh từ ứng dụng Killer được hỗ trợ trên máy tính này. Lệnh tùy thuộc vào phiên bản và trạng thái sẵn có của ứng dụng. Không cần cài Node riêng hoặc lấy mã nguồn.
     download: Tải xuống cho Windows
     meta:
       version: Phiên bản {version}
@@ -1871,8 +1871,9 @@ pages:
       s2Title: Để trình cài đặt kết nối agent của bạn.
       s2Body: Nó cài đặt runtime dùng chung và đăng ký KillerMCP với Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI và Windsurf khi tìm thấy.
       s3Title: Mở một cuộc trò chuyện agent mới và hỏi.
-      s3Body: KillerMCP cung cấp toàn bộ 81 tiện ích KillerTools thông qua cùng một kết nối.
-    hostedBody: Không muốn cài đặt gì cả? Hãy kết nối trực tiếp đến máy chủ KillerTools được lưu trữ để dùng 64 tiện ích dựa trên web. 17 tiện ích KillerTools còn lại và tất cả công cụ của ứng dụng desktop yêu cầu runtime KillerMCP đã cài đặt.
+      s3Body: KillerMCP tìm các lệnh KillerTools và ứng dụng đã cài đặt đang có sẵn qua một kết nối duy nhất.
+    hostedTitle: Kết nối mà không cần cài đặt
+    hostedBody: Máy chủ Cloudflare công khai cung cấp 64 tiện ích KillerTools an toàn trên web qua HTTP. Máy chủ không thể truy cập tệp Windows hoặc ứng dụng Killer đã cài đặt của bạn. 17 tiện ích còn lại và mọi lệnh của ứng dụng desktop đều cần cài KillerMCP.
     actions:
       cursor: Thêm vào Cursor
       vscode: Thêm vào VS Code
@@ -1916,11 +1917,11 @@ pages:
       i9: Định dạng SQL, YAML, TOML, Markdown, thực thể HTML và dữ liệu có cấu trúc, hoặc tính toán phần trăm, lịch cron, và giá trị chmod.
       i10: Tìm kiếm emoji, GIF, KillerScripts, và mô-đun Killer, hoặc kiểm tra URL, user agent, mã trạng thái HTTP, và thống kê văn bản.
     cov:
-      title: Phạm vi hỗ trợ trên máy chủ và cục bộ
-      hostedTitle: Worker lưu trữ
-      hostedBody: 64 tiện ích an toàn cho trình duyệt với 74 thao tác. Không cần cài đặt.
-      installedTitle: KillerMCP đã cài đặt
-      installedBody: Toàn bộ 81 tiện ích KillerTools với 94 thao tác, cùng các ứng dụng Killer được phát hiện.
+      title: Mỗi cách kết nối làm được gì?
+      hostedTitle: Máy chủ Cloudflare
+      hostedBody: 64 tiện ích an toàn trên web với 74 thao tác. Chạy từ xa qua HTTP và không cần cài đặt. Không thể truy cập ứng dụng hoặc tệp cục bộ.
+      installedTitle: Bản cài đặt Windows
+      installedBody: Toàn bộ 81 tiện ích KillerTools với 94 thao tác, cộng thêm các lệnh từ ứng dụng Killer được hỗ trợ đã cài đặt. Chạy dưới dạng kết nối MCP cục bộ.
       browserTitle: Công cụ hỗ trợ trình duyệt
       browserBody: Các công cụ camera, thiết bị, trình chỉnh sửa, và chữ ký sẽ mở một trang localhost riêng tư.
     data:

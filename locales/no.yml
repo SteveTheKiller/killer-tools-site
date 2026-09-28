@@ -1849,17 +1849,17 @@ pages:
       serverUrl: Server-URL
       codex: Codex-kommando
       claudeCode: Claude Code-kommando
-    description: Bruk KillerTools-verktøy fra en AI-agent via KillerTools MCP.
+    description: KillerMCP kobler AI-agenter til KillerTools-verktøy og støttede Killer-apper. Velg den hostede Cloudflare-serveren eller versjonen som installeres på Windows.
     github: KillerMCP på GitHub
     eyebrow:
-      agents: KILLERTOOLS / AGENTER
-      oneInstaller: ÉN INSTALLASJONSFIL / ÉN TILKOBLING
-      hosted: VALGFRI HOSTET TILKOBLING
-      after: ETTER INSTALLASJON ELLER TILKOBLING
-    lead: Legg KillerTools i agentens verktøykasse. Koble til én gang, og be den deretter beregne et subnett, sjekke DNS-poster, undersøke en CVE, tolke e-posthoder, bygge en PowerShell-kommando, konvertere JSON til CSV eller dekode Base64.
-    status: KillerMCP støtter alle de 81 verktøyene på KillerTools-nettstedet.
+      agents: ETT NAVN / TO MÅTER Å KOBLE TIL
+      oneInstaller: INSTALLERT PÅ WINDOWS
+      hosted: HOSTET PÅ CLOUDFLARE
+      after: ETTER TILKOBLING
+    lead: Gi agenten din nyttige KillerTools-kommandoer. Koble til den offentlige Cloudflare-serveren for nettbaserte verktøy, eller installer KillerMCP på Windows for lokale verktøy og støttede Killer-apper.
+    status: Velg tilkoblingen som passer dataene og appene du vil bruke.
     install: Installer
-    intro: KillerMCP samler alle 81 KillerTools-verktøy, pluss verktøy fra støttede Killer-apper, i én lokal tilkobling. Du trenger ikke en egen KillerTools-installasjonsfil, en kildekodeutsjekking, Node eller en liste med kommandoer.
+    intro: Windows-installasjonen gir agenten din én lokal tilkobling til alle de 81 KillerTools-verktøyene og kommandoene som støttede Killer-apper installert på denne datamaskinen tilbyr. Appkommandoene avhenger av appens versjon og tilgjengelighet. Du trenger ikke installere Node separat eller hente kildekoden.
     download: Last ned for Windows
     meta:
       version: Versjon {version}
@@ -1871,8 +1871,9 @@ pages:
       s2Title: La installasjonsprogrammet koble til agenten din.
       s2Body: Det installerer den delte kjøretiden og registrerer KillerMCP hos Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI og Windsurf når disse finnes.
       s3Title: Åpne en ny agentsamtale og spør.
-      s3Body: KillerMCP gjør alle de 81 KillerTools-verktøyene tilgjengelige gjennom samme tilkobling.
-    hostedBody: Vil du ikke installere noe? Koble deg direkte til den hostede KillerTools-serveren for 64 nettbaserte verktøy. De resterende 17 KillerTools-verktøyene og alle skrivebordsapp-verktøyene krever den installerte KillerMCP-kjøretiden.
+      s3Body: KillerMCP finner tilgjengelige KillerTools-verktøy og kommandoer fra installerte apper gjennom én tilkobling.
+    hostedTitle: Koble til uten å installere
+    hostedBody: Den offentlige Cloudflare-serveren tilbyr 64 nettbaserte KillerTools-verktøy via en HTTP-tilkobling. Den har ikke tilgang til Windows-filene dine eller installerte Killer-apper. De andre 17 KillerTools-verktøyene og alle skrivebordsappkommandoer krever installert KillerMCP.
     actions:
       cursor: Legg til i Cursor
       vscode: Legg til i VS Code
@@ -1916,11 +1917,11 @@ pages:
       i9: Formatere SQL, YAML, TOML, Markdown, HTML-entiteter og strukturerte data, eller beregne prosenter, cron-tidsplaner og chmod-verdier.
       i10: Søke i emoji, GIF-er, KillerScripts og Killer-moduler, eller undersøke URL-er, brukeragenter, HTTP-statuskoder og tekststatistikk.
     cov:
-      title: Hostet og lokal dekning
-      hostedTitle: Hostet Worker
-      hostedBody: 64 nettleser-trygge verktøy med 74 operasjoner. Ingen installasjon.
-      installedTitle: Installert KillerMCP
-      installedBody: Alle 81 KillerTools-verktøy med 94 operasjoner, pluss oppdagede Killer-apper.
+      title: Hva kan hver tilkobling gjøre?
+      hostedTitle: Cloudflare-server
+      hostedBody: 64 nettbaserte verktøy med 74 operasjoner. Kjører eksternt over HTTP uten installasjon. Har ikke tilgang til lokale apper eller filer.
+      installedTitle: Windows-installasjon
+      installedBody: Alle de 81 KillerTools-verktøyene med 94 operasjoner, pluss kommandoer fra støttede installerte Killer-apper. Kjører som en lokal MCP-tilkobling.
       browserTitle: Nettleserledsagere
       browserBody: Kamera-, enhets-, editor- og signaturverktøy åpner en privat localhost-side.
     data:

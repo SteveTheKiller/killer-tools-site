@@ -1819,17 +1819,17 @@ pages:
       serverUrl: URL serveru
       codex: Příkaz Codexu
       claudeCode: Příkaz Claude Code
-    description: Používejte nástroje KillerTools z AI agenta pomocí KillerTools MCP.
+    description: KillerMCP propojuje AI agenty s nástroji KillerTools a podporovanými aplikacemi Killer. Vyberte si hostovaný server Cloudflare nebo verzi nainstalovanou ve Windows.
     github: KillerMCP na GitHubu
     eyebrow:
-      agents: KILLERTOOLS / AGENTI
-      oneInstaller: JEDEN INSTALÁTOR / JEDNO PŘIPOJENÍ
-      hosted: VOLITELNÉ HOSTOVANÉ PŘIPOJENÍ
-      after: PO INSTALACI NEBO PŘIPOJENÍ
-    lead: Přidejte KillerTools do sady nástrojů svého agenta. Připojte se jednou a pak ho požádejte, aby vypočítal podsíť, zkontroloval DNS záznamy, vyhledal CVE, rozebral hlavičky e-mailu, sestavil příkaz PowerShellu, převedl JSON na CSV nebo dekódoval Base64.
-    status: KillerMCP podporuje všech 81 nástrojů webu KillerTools.
+      agents: JEDEN NÁZEV / DVA ZPŮSOBY PŘIPOJENÍ
+      oneInstaller: NAINSTALOVÁNO VE WINDOWS
+      hosted: HOSTOVÁNO NA CLOUDFLARE
+      after: PO PŘIPOJENÍ
+    lead: Dejte svému agentovi užitečné příkazy KillerTools. Připojte se k veřejnému serveru Cloudflare pro nástroje použitelné na webu, nebo nainstalujte KillerMCP ve Windows pro místní nástroje a podporované aplikace Killer.
+    status: Vyberte připojení podle dat a aplikací, které chcete používat.
     install: Nainstalovat
-    intro: KillerMCP zahrnuje všech 81 nástrojů KillerTools spolu s nástroji z podporovaných aplikací Killer v jednom místním připojení. Nebudete potřebovat samostatný instalátor KillerTools, stažení zdrojového kódu, Node ani seznam příkazů.
+    intro: Instalátor pro Windows poskytne agentovi jedno místní připojení ke všem 81 nástrojům KillerTools a příkazům, které nabízejí podporované aplikace Killer nainstalované v tomto počítači. Příkazy aplikací závisejí na jejich verzi a dostupnosti. Není třeba samostatně instalovat Node ani stahovat zdrojový kód.
     download: Stáhnout pro Windows
     meta:
       version: Verze {version}
@@ -1841,8 +1841,9 @@ pages:
       s2Title: Nechte instalátor připojit vašeho agenta.
       s2Body: Nainstaluje sdílené běhové prostředí a zaregistruje KillerMCP u Codexu, Claude Code, Claude Desktop, Cursoru, GitHub Copilotu, Gemini CLI a Windsurfu, pokud jsou nalezeny.
       s3Title: Otevřete nový chat s agentem a zeptejte se.
-      s3Body: KillerMCP zpřístupní všech 81 nástrojů KillerTools přes stejné připojení.
-    hostedBody: Nechcete nic instalovat? Připojte se přímo k hostovanému serveru KillerTools a získáte 64 webových nástrojů. Zbývajících 17 nástrojů KillerTools a všechny nástroje desktopových aplikací vyžadují nainstalované běhové prostředí KillerMCP.
+      s3Body: KillerMCP zpřístupní dostupné nástroje KillerTools a příkazy nainstalovaných aplikací přes jedno připojení.
+    hostedTitle: Připojte se bez instalace
+    hostedBody: Veřejný server Cloudflare nabízí 64 nástrojů KillerTools použitelných na webu přes připojení HTTP. Nemá přístup k souborům ve Windows ani k nainstalovaným aplikacím Killer. Dalších 17 nástrojů KillerTools a všechny příkazy desktopových aplikací vyžadují nainstalovaný KillerMCP.
     actions:
       cursor: Přidat do Cursoru
       vscode: Přidat do VS Code
@@ -1886,11 +1887,11 @@ pages:
       i9: Formátovat SQL, YAML, TOML, Markdown, HTML entity a strukturovaná data nebo počítat procenta, plány cron a hodnoty chmod.
       i10: Vyhledat emoji, GIFy, KillerScripts a moduly Killer nebo prozkoumat URL, user agenty, stavové kódy HTTP a textové statistiky.
     cov:
-      title: Hostované a místní pokrytí
-      hostedTitle: Hostovaný Worker
-      hostedBody: 64 nástrojů bezpečných pro prohlížeč se 74 operacemi. Bez instalace.
-      installedTitle: Nainstalovaný KillerMCP
-      installedBody: Všech 81 nástrojů KillerTools s 94 operacemi, plus zjištěné aplikace Killer.
+      title: Co umí jednotlivá připojení?
+      hostedTitle: Server Cloudflare
+      hostedBody: 64 nástrojů použitelných na webu se 74 operacemi. Funguje vzdáleně přes HTTP bez instalace. Nemá přístup k místním aplikacím ani souborům.
+      installedTitle: Instalace pro Windows
+      installedBody: Všech 81 nástrojů KillerTools s 94 operacemi a příkazy podporovaných nainstalovaných aplikací Killer. Funguje jako místní připojení MCP.
       browserTitle: Doplňky prohlížeče
       browserBody: Nástroje pro kameru, zařízení, editor a podpis otevírají soukromou stránku localhost.
     data:

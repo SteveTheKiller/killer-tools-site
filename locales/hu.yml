@@ -1819,17 +1819,17 @@ pages:
       serverUrl: Szerver URL
       codex: Codex parancs
       claudeCode: Claude Code parancs
-    description: Használja a KillerTools segédprogramokat egy AI ügynökből a KillerTools MCP-n keresztül.
+    description: A KillerMCP összekapcsolja az AI ügynököket a KillerTools segédprogramjaival és a támogatott Killer alkalmazásokkal. Válassza a Cloudflare-en futó kiszolgálót vagy a Windowsra telepített változatot.
     github: KillerMCP a GitHubon
     eyebrow:
-      agents: KILLERTOOLS / ÜGYNÖKÖK
-      oneInstaller: EGY TELEPÍTŐ / EGY KAPCSOLAT
-      hosted: OPCIONÁLIS TÁROLT KAPCSOLAT
-      after: A TELEPÍTÉS VAGY CSATLAKOZÁS UTÁN
-    lead: Illessze be a KillerTools-t az ügynöke eszközkészletébe. Csatlakozzon egyszer, majd kérje meg, hogy számítson ki egy alhálózatot, ellenőrizzen DNS-rekordokat, nézzen utána egy CVE-nek, elemezzen e-mail fejléceket, állítson össze egy PowerShell parancsot, alakítson JSON-t CSV-vé, vagy fejtsen vissza Base64-et.
-    status: A KillerMCP mind a 81 KillerTools weboldali eszközt támogatja.
+      agents: EGY NÉV / KÉT CSATLAKOZÁSI MÓD
+      oneInstaller: WINDOWSRA TELEPÍTVE
+      hosted: CLOUDFLARE-EN FUT
+      after: CSATLAKOZÁS UTÁN
+    lead: Adjon hasznos KillerTools parancsokat az ügynökének. Csatlakozzon a nyilvános Cloudflare-kiszolgálóhoz a weben használható segédprogramokért, vagy telepítse a KillerMCP-t Windowsra a helyi eszközök és a támogatott Killer alkalmazások eléréséhez.
+    status: A használni kívánt adatok és alkalmazások alapján válasszon csatlakozási módot.
     install: Telepítés
-    intro: A KillerMCP mind a 81 KillerTools segédprogramot tartalmazza, a támogatott Killer alkalmazások eszközeivel együtt, egyetlen helyi kapcsolatban. Nem lesz szüksége külön KillerTools telepítőre, forráskód-letöltésre, Node-ra vagy parancslistára.
+    intro: A Windows-telepítő egyetlen helyi kapcsolatot biztosít az ügynöknek mind a 81 KillerTools segédprogramhoz, valamint a számítógépre telepített, támogatott Killer alkalmazások parancsaihoz. Az alkalmazásparancsok az alkalmazás verziójától és elérhetőségétől függenek. Nincs szükség külön Node-telepítésre vagy a forráskód letöltésére.
     download: Letöltés Windowsra
     meta:
       version: '{version} verzió'
@@ -1841,8 +1841,9 @@ pages:
       s2Title: Hagyja, hogy a telepítő csatlakoztassa az ügynökét.
       s2Body: Telepíti a megosztott futtatókörnyezetet, és regisztrálja a KillerMCP-t a Codexnél, Claude Code-nál, Claude Desktopnál, Cursornál, GitHub Copilotnál, Gemini CLI-nél és Windsurfnál, ha megtalálja őket.
       s3Title: Nyisson egy új ügynöki csevegést, és kérdezzen.
-      s3Body: A KillerMCP mind a 81 KillerTools segédprogramot elérhetővé teszi ugyanazon a kapcsolaton keresztül.
-    hostedBody: Nem szeretne semmit telepíteni? Csatlakozzon közvetlenül a tárolt KillerTools szerverhez 64 webalapú segédprogramért. A fennmaradó 17 KillerTools segédprogramhoz és minden asztali alkalmazás eszközhöz telepített KillerMCP futtatókörnyezet szükséges.
+      s3Body: A KillerMCP egy kapcsolaton keresztül felismeri az elérhető KillerTools segédprogramokat és a telepített alkalmazások parancsait.
+    hostedTitle: Csatlakozás telepítés nélkül
+    hostedBody: A nyilvános Cloudflare-kiszolgáló 64 weben használható KillerTools segédprogramot kínál HTTP-kapcsolaton keresztül. Nem fér hozzá a Windows-fájlokhoz vagy a telepített Killer alkalmazásokhoz. A másik 17 KillerTools segédprogramhoz és az asztali alkalmazások minden parancsához telepített KillerMCP szükséges.
     actions:
       cursor: Hozzáadás a Cursorhoz
       vscode: Hozzáadás a VS Code-hoz
@@ -1886,11 +1887,11 @@ pages:
       i9: SQL, YAML, TOML, Markdown, HTML entitások és strukturált adatok formázására, valamint százalékok, cron ütemezések és chmod értékek kiszámítására.
       i10: Emojik, GIF-ek, KillerScriptek és Killer modulok keresésére, valamint URL-ek, user agentek, HTTP állapotkódok és szövegstatisztikák vizsgálatára.
     cov:
-      title: Tárolt és helyi lefedettség
-      hostedTitle: Tárolt Worker
-      hostedBody: 64 böngészőbiztos segédprogram 74 művelettel. Telepítés nélkül.
-      installedTitle: Telepített KillerMCP
-      installedBody: Mind a 81 KillerTools segédprogram 94 művelettel, plusz a felismert Killer alkalmazások.
+      title: Melyik kapcsolat mire képes?
+      hostedTitle: Cloudflare-kiszolgáló
+      hostedBody: 64 weben használható segédprogram 74 művelettel. Távolról, HTTP-n keresztül működik, telepítés nélkül. Nem fér hozzá helyi alkalmazásokhoz vagy fájlokhoz.
+      installedTitle: Windows-telepítés
+      installedBody: Mind a 81 KillerTools segédprogram 94 művelettel, valamint a támogatott, telepített Killer alkalmazások parancsai. Helyi MCP-kapcsolatként működik.
       browserTitle: Böngészőkiegészítők
       browserBody: A kamera-, eszköz-, szerkesztő- és aláírás-eszközök egy privát localhost oldalt nyitnak meg.
     data:

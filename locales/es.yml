@@ -1818,17 +1818,17 @@ pages:
       serverUrl: URL del servidor
       codex: Comando de Codex
       claudeCode: Comando de Claude Code
-    description: Use las utilidades de KillerTools desde un agente de IA a través de KillerTools MCP.
+    description: KillerMCP conecta los agentes de IA con las utilidades de KillerTools y las aplicaciones Killer compatibles. Elija el servidor alojado en Cloudflare o la versión instalada en Windows.
     github: KillerMCP en GitHub
     eyebrow:
-      agents: KILLERTOOLS / AGENTES
-      oneInstaller: UN INSTALADOR / UNA CONEXIÓN
-      hosted: CONEXIÓN ALOJADA OPCIONAL
-      after: DESPUÉS DE INSTALAR O CONECTAR
-    lead: Incorpore KillerTools al kit de herramientas de su agente. Conéctese una vez y luego pídale que calcule una subred, revise registros DNS, investigue una CVE, analice encabezados de correo, cree un comando de PowerShell, convierta JSON a CSV o decodifique Base64.
-    status: KillerMCP admite las 81 herramientas del sitio web de KillerTools.
+      agents: UN NOMBRE / DOS FORMAS DE CONECTARSE
+      oneInstaller: INSTALADO EN WINDOWS
+      hosted: ALOJADO EN CLOUDFLARE
+      after: DESPUÉS DE CONECTARSE
+    lead: Dé a su agente comandos útiles de KillerTools. Conéctese al servidor público de Cloudflare para usar utilidades web, o instale KillerMCP en Windows para acceder a herramientas locales y aplicaciones Killer compatibles.
+    status: Elija la conexión según los datos y las aplicaciones que quiera usar.
     install: Instalar
-    intro: KillerMCP incluye las 81 utilidades de KillerTools además de herramientas de las aplicaciones Killer compatibles en una sola conexión local. No necesitará un instalador de KillerTools independiente, una copia del código fuente, Node ni una lista de comandos.
+    intro: El instalador de Windows proporciona a su agente una conexión local para las 81 utilidades de KillerTools y los comandos que ofrecen las aplicaciones Killer compatibles instaladas en este equipo. Los comandos de cada aplicación dependen de su versión y disponibilidad. No necesita instalar Node por separado ni descargar el código fuente.
     download: Descargar para Windows
     meta:
       version: Versión {version}
@@ -1840,8 +1840,9 @@ pages:
       s2Title: Deje que el instalador conecte a su agente.
       s2Body: Instala el entorno de ejecución compartido y registra KillerMCP con Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI y Windsurf cuando se detectan.
       s3Title: Abra un chat nuevo con su agente y pregunte.
-      s3Body: KillerMCP pone a disposición las 81 utilidades de KillerTools a través de la misma conexión.
-    hostedBody: ¿No quiere instalar nada? Conéctese directamente al servidor alojado de KillerTools para acceder a 64 utilidades basadas en la web. Las 17 utilidades de KillerTools restantes y todas las herramientas de aplicaciones de escritorio requieren el entorno de ejecución instalado de KillerMCP.
+      s3Body: KillerMCP detecta las utilidades de KillerTools y los comandos de aplicaciones instaladas disponibles a través de una sola conexión.
+    hostedTitle: Conéctese sin instalar nada
+    hostedBody: El servidor público de Cloudflare ofrece 64 utilidades web de KillerTools mediante una conexión HTTP. No puede acceder a sus archivos de Windows ni a las aplicaciones Killer instaladas. Las otras 17 utilidades de KillerTools y todos los comandos de aplicaciones de escritorio requieren KillerMCP instalado.
     actions:
       cursor: Agregar a Cursor
       vscode: Agregar a VS Code
@@ -1885,11 +1886,11 @@ pages:
       i9: Formatear SQL, YAML, TOML, Markdown, entidades HTML y datos estructurados, o calcular porcentajes, programaciones cron y valores chmod.
       i10: Buscar emojis, GIF, KillerScripts y módulos Killer, o inspeccionar URLs, user agents, códigos de estado HTTP y estadísticas de texto.
     cov:
-      title: Cobertura alojada y local
-      hostedTitle: Worker alojado
-      hostedBody: 64 utilidades seguras para el navegador con 74 operaciones. Sin instalación.
-      installedTitle: KillerMCP instalado
-      installedBody: Las 81 utilidades de KillerTools con 94 operaciones, además de las aplicaciones Killer detectadas.
+      title: ¿Qué ofrece cada conexión?
+      hostedTitle: Servidor de Cloudflare
+      hostedBody: 64 utilidades web con 74 operaciones. Funciona de forma remota por HTTP y no requiere instalación. No puede acceder a aplicaciones ni archivos locales.
+      installedTitle: Instalación de Windows
+      installedBody: Las 81 utilidades de KillerTools con 94 operaciones, además de comandos de las aplicaciones Killer compatibles instaladas. Funciona como conexión MCP local.
       browserTitle: Complementos del navegador
       browserBody: Las herramientas de cámara, dispositivo, editor y firma abren una página privada en localhost.
     data:

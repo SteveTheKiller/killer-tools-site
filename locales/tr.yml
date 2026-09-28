@@ -1850,17 +1850,17 @@ pages:
       serverUrl: Sunucu URL'si
       codex: Codex komutu
       claudeCode: Claude Code komutu
-    description: KillerTools araçlarını KillerTools MCP üzerinden bir yapay zeka ajanından kullanın.
+    description: KillerMCP, yapay zeka ajanlarını KillerTools araçlarına ve desteklenen Killer uygulamalarına bağlar. Cloudflare sunucusunu veya Windows'a yüklenen sürümü seçin.
     github: GitHub'da KillerMCP
     eyebrow:
-      agents: KILLERTOOLS / AJANLAR
-      oneInstaller: TEK YÜKLEYİCİ / TEK BAĞLANTI
-      hosted: İSTEĞE BAĞLI BARINDIRILAN BAĞLANTI
-      after: YÜKLEDİKTEN VEYA BAĞLANDIKTAN SONRA
-    lead: KillerTools'u ajanınızın araç setine ekleyin. Bir kez bağlanın, ardından bir alt ağ hesaplamasını, DNS kayıtlarını kontrol etmesini, bir CVE araştırmasını, e-posta başlıklarını ayrıştırmasını, bir PowerShell komutu oluşturmasını, JSON'u CSV'ye dönüştürmesini veya Base64 çözmesini isteyin.
-    status: KillerMCP, KillerTools web sitesindeki 81 aracın tamamını destekler.
+      agents: TEK AD / İKİ BAĞLANTI YOLU
+      oneInstaller: WINDOWS'A YÜKLENİR
+      hosted: CLOUDFLARE ÜZERİNDE BARINDIRILIR
+      after: BAĞLANDIKTAN SONRA
+    lead: Web üzerinde güvenle çalışan araçlar için herkese açık Cloudflare sunucusuna bağlanın. Yerel araçlar ve desteklenen Killer uygulamaları için KillerMCP'yi Windows'a yükleyin.
+    status: Verilerinize ve uygulamalarınıza uygun bağlantıyı seçin.
     install: Yükle
-    intro: KillerMCP, 81 KillerTools aracının tamamını ve desteklenen Killer uygulamalarındaki araçları tek bir yerel bağlantıda sunar. Ayrı bir KillerTools yükleyicisine, kaynak kodu kopyasına, Node'a veya komut listesine ihtiyacınız olmaz.
+    intro: Windows yükleyicisi, 81 KillerTools aracının tamamı ve bu bilgisayarda yüklü desteklenen Killer uygulamalarının komutları için tek bir yerel bağlantı sağlar. Uygulama komutları sürüme ve kullanılabilirliğe bağlıdır. Ayrı bir Node kurulumu veya kaynak kodu kopyası gerekmez.
     download: Windows için indir
     meta:
       version: Sürüm {version}
@@ -1872,8 +1872,9 @@ pages:
       s2Title: Kurulumun ajanınızı bağlamasına izin verin.
       s2Body: Ortak çalışma zamanını yükler ve bulunduğunda KillerMCP'yi Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI ve Windsurf ile kaydeder.
       s3Title: Yeni bir ajan sohbeti açın ve isteyin.
-      s3Body: KillerMCP, 81 KillerTools aracının tamamını aynı bağlantı üzerinden kullanılabilir hale getirir.
-    hostedBody: Hiçbir şey yüklemek istemiyor musunuz? 64 web tabanlı araç için doğrudan barındırılan KillerTools sunucusuna bağlanın. Kalan 17 KillerTools aracı ve tüm masaüstü uygulama araçları, yüklenmiş KillerMCP çalışma zamanını gerektirir.
+      s3Body: KillerMCP, kullanılabilir KillerTools ve yüklü uygulama komutlarını tek bir bağlantı üzerinden keşfeder.
+    hostedTitle: Yüklemeden bağlanın
+    hostedBody: Herkese açık Cloudflare sunucusu, HTTP üzerinden web üzerinde güvenle çalışan 64 KillerTools aracı sunar. Windows dosyalarınızı veya yüklü Killer uygulamalarını göremez. Diğer 17 araç ve tüm masaüstü uygulama komutları için KillerMCP'nin yüklü olması gerekir.
     actions:
       cursor: Cursor'a ekle
       vscode: VS Code'a ekle
@@ -1917,11 +1918,11 @@ pages:
       i9: SQL, YAML, TOML, Markdown, HTML varlıklarını ve yapılandırılmış verileri biçimlendirmek veya yüzdeleri, cron zamanlamalarını ve chmod değerlerini hesaplamak.
       i10: Emoji, GIF, KillerScripts ve Killer modüllerini aramak veya URL'leri, user agent'ları, HTTP durum kodlarını ve metin istatistiklerini incelemek.
     cov:
-      title: Barındırılan ve yerel kapsam
-      hostedTitle: Barındırılan Worker
-      hostedBody: 74 işlemle 64 tarayıcı için güvenli araç. Yükleme gerektirmez.
-      installedTitle: Yüklenmiş KillerMCP
-      installedBody: 94 işlemle 81 KillerTools aracının tamamı, ayrıca tespit edilen Killer uygulamaları.
+      title: Hangi bağlantı neler sunar?
+      hostedTitle: Cloudflare sunucusu
+      hostedBody: 74 işlem sunan, web üzerinde güvenle çalışan 64 araç. HTTP üzerinden uzaktan çalışır ve yükleme gerektirmez. Yerel uygulamalara veya dosyalara erişemez.
+      installedTitle: Windows kurulumu
+      installedBody: 94 işlem sunan 81 KillerTools aracının tamamı ve yüklü desteklenen Killer uygulamalarının komutları. Yerel bir MCP bağlantısı olarak çalışır.
       browserTitle: Tarayıcı yardımcıları
       browserBody: Kamera, cihaz, düzenleyici ve imza araçları özel bir localhost sayfası açar.
     data:
