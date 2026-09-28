@@ -9,32 +9,9 @@ const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=ki
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const { t } = useI18n();
 const copyStatus = ref('');
-const installerVersion = ref('0.2.1');
-const installerSize = ref('9.7 MiB');
-const installerReleaseUrl = ref('https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.2.1');
-
-onMounted(async () => {
-  try {
-    const response = await fetch(`https://api.github.com/repos/SteveTheKiller/KillerMCP/releases/latest?cache=${Date.now()}`, {
-      cache: 'no-store',
-      headers: { Accept: 'application/vnd.github+json' },
-    });
-    if (!response.ok) {
-      return;
-    }
-    const release = await response.json();
-    const asset = release.assets?.find((item: { name?: string }) => item.name === 'KillerMCP-Setup.exe');
-    if (!asset) {
-      return;
-    }
-    installerVersion.value = String(release.tag_name || '').replace(/^v/, '') || installerVersion.value;
-    installerSize.value = `${(asset.size / 1048576).toFixed(1)} MiB`;
-    installerReleaseUrl.value = release.html_url || installerReleaseUrl.value;
-  }
-  catch {
-    // Keep the packaged release metadata when GitHub is unavailable.
-  }
-});
+const installerVersion = '0.3.1';
+const installerSize = '10.1 MiB';
+const installerReleaseUrl = 'https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.3.1';
 
 function copyWithSelection(value: string) {
   const input = document.createElement('textarea');
