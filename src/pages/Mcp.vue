@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 import { useI18n } from 'vue-i18n';
-import { useStyleStore } from '@/stores/style.store';
-import { NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
 
 const endpoint = 'https://mcp.killertools.net';
 const codexCommand = `codex mcp add killertools --url ${endpoint}`;
@@ -11,9 +9,9 @@ const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=ki
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const { t } = useI18n();
 const copyStatus = ref('');
-const installerVersion = ref('0.2.0');
+const installerVersion = ref('0.2.1');
 const installerSize = ref('9.7 MiB');
-const installerReleaseUrl = ref('https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.2.0');
+const installerReleaseUrl = ref('https://github.com/SteveTheKiller/KillerMCP/releases/tag/v0.2.1');
 
 onMounted(async () => {
   try {
@@ -21,10 +19,14 @@ onMounted(async () => {
       cache: 'no-store',
       headers: { Accept: 'application/vnd.github+json' },
     });
-    if (!response.ok) return;
+    if (!response.ok) {
+      return;
+    }
     const release = await response.json();
     const asset = release.assets?.find((item: { name?: string }) => item.name === 'KillerMCP-Setup.exe');
-    if (!asset) return;
+    if (!asset) {
+      return;
+    }
     installerVersion.value = String(release.tag_name || '').replace(/^v/, '') || installerVersion.value;
     installerSize.value = `${(asset.size / 1048576).toFixed(1)} MiB`;
     installerReleaseUrl.value = release.html_url || installerReleaseUrl.value;
@@ -85,16 +87,6 @@ async function copyAndOpenClaude() {
   }
 }
 
-const styleStore = useStyleStore();
-const wordmarkSrc = computed(() => {
-  const theme = styleStore.ktTheme;
-  if (!NEUTRAL_THEMES.includes(theme)) {
-    return `/brand/killertools-wordmark-${theme}.png`;
-  }
-  const accent = styleStore.ktAccent || THEME_DEFAULT_ACCENT[theme] || 'teal';
-  return `/brand/killertools-wordmark-${accent}-${theme}.png`;
-});
-
 const pageTitle = 'KillerMCP';
 const pageDescription = computed(() => t('pages.mcp.description'));
 const pageUrl = 'https://killertools.net/mcp';
@@ -121,15 +113,13 @@ useHead({
       <div class="mcp-heading">
         <span class="mcp-icon-pair" aria-hidden="true">
           <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="">
-          <img class="mcp-app-mark" src="/app-icon-512.png" alt="">
         </span>
         <div>
           <p class="mcp-eyebrow">
             {{ t('pages.mcp.eyebrow.agents') }}
           </p>
-          <h1 class="mcp-wordmark" aria-label="KillerTools MCP">
-            <img :src="wordmarkSrc" alt="" aria-hidden="true">
-            <span>MCP</span>
+          <h1 class="mcp-wordmark">
+            Killer<span>MCP</span>
           </h1>
         </div>
       </div>
@@ -167,12 +157,15 @@ useHead({
             <li><strong>{{ t('pages.mcp.steps.s2Title') }}</strong> {{ t('pages.mcp.steps.s2Body') }}</li>
             <li><strong>{{ t('pages.mcp.steps.s3Title') }}</strong> {{ t('pages.mcp.steps.s3Body') }}</li>
           </ol>
-          <p class="mcp-eyebrow mcp-hosted-heading">
+        </section>
+        <section class="mcp-connect mcp-surface" aria-labelledby="mcp-hosted-title">
+          <p class="mcp-eyebrow">
             {{ t('pages.mcp.eyebrow.hosted') }}
           </p>
-          <p>
-            {{ t('pages.mcp.hostedBody') }}
-          </p>
+          <h2 id="mcp-hosted-title">
+            {{ t('pages.mcp.hostedTitle', 'Connect without installing') }}
+          </h2>
+          <p>{{ t('pages.mcp.hostedBody') }}</p>
           <div class="mcp-install-actions">
             <a class="mcp-action" :href="cursorInstallUrl">{{ t('pages.mcp.actions.cursor') }}</a>
             <a class="mcp-action" :href="vscodeInstallUrl">{{ t('pages.mcp.actions.vscode') }}</a>
@@ -346,7 +339,7 @@ html:not(.dark) .mcp-surface:hover {
 
 .mcp-hero { padding: 22px; }
 .mcp-card, .mcp-connect { padding: 18px 20px; }
-.mcp-workspace { display: grid; grid-template-columns: minmax(300px, .72fr) minmax(0, 1.55fr); gap: 16px; align-items: start; }
+.mcp-workspace { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 .mcp-setup-column, .mcp-detail-column { display: grid; gap: 16px; }
 .mcp-title-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .mcp-title-row h2 { margin: 0; }
@@ -356,12 +349,10 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-heading { display: flex; align-items: center; gap: 0; }
 .mcp-icon-pair { position: relative; flex: 0 0 106px; width: 106px; height: 94px; }
 .mcp-mark { position: absolute; left: 0; top: 0; width: 90px; height: 90px; object-fit: contain; }
-.mcp-app-mark { position: absolute; right: 14px; bottom: 14px; width: 46px; height: 46px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.45)); }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
 .mcp-wordmark { display: flex; align-items: center; gap: 8px; margin: 0; }
-.mcp-wordmark img { display: block; width: clamp(210px, 28vw, 350px); height: auto; }
-.mcp-wordmark span { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(32px, 4vw, 52px); color: #fff; }
-html:not(.dark) .mcp-wordmark span { color: #111; }
+.mcp-wordmark { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(34px, 5vw, 58px); font-weight: normal; color: var(--kt-text, #fff); }
+.mcp-wordmark span { color: var(--kt-accent); }
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Courier New', monospace; font-size: 24px; font-weight: normal; }
 .mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 15px; }
@@ -391,7 +382,6 @@ html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-install-steps { margin: 0; padding: 0; list-style: none; counter-reset: install; display: grid; gap: 10px; }
 .mcp-install-steps li { position: relative; min-height: 40px; padding: 7px 10px 7px 50px; font-size: 13px; line-height: 1.6; }
 .mcp-install-steps li::before { counter-increment: install; content: counter(install); position: absolute; left: 0; top: 3px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--kt-accent); border-radius: 50%; color: var(--kt-accent); font-size: 18px; }
-.mcp-hosted-heading { margin-top: 18px; }
 .mcp-usage-heading { margin-top: 16px; }
 .mcp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
 .mcp-card-wide { grid-column: 1 / -1; }
@@ -422,9 +412,7 @@ code { color: var(--kt-accent); overflow-wrap: anywhere; }
   .mcp-heading { gap: 0; }
   .mcp-icon-pair { flex-basis: 62px; width: 62px; height: 56px; }
   .mcp-mark { width: 52px; height: 52px; }
-  .mcp-app-mark { right: 8px; bottom: 8px; width: 27px; height: 27px; }
-  .mcp-wordmark img { width: clamp(150px, 46vw, 250px); }
-  .mcp-wordmark span { font-size: clamp(26px, 7vw, 40px); }
+  .mcp-wordmark { font-size: clamp(30px, 8vw, 44px); }
 }
 
 .mcp-page .mcp-lead,

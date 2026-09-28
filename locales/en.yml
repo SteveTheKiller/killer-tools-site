@@ -1850,17 +1850,17 @@ pages:
       serverUrl: Server URL
       codex: Codex command
       claudeCode: Claude Code command
-    description: Use KillerTools utilities from an AI agent through KillerTools MCP.
+    description: KillerMCP connects AI agents to KillerTools utilities and supported Killer apps. Choose the hosted Cloudflare server or the installed Windows version.
     github: KillerMCP on GitHub
     eyebrow:
-      agents: KILLERTOOLS / AGENTS
-      oneInstaller: ONE INSTALLER / ONE CONNECTION
-      hosted: OPTIONAL HOSTED CONNECTION
-      after: AFTER INSTALLING OR CONNECTING
-    lead: Put KillerTools in your agent's toolkit. Connect once, then ask it to calculate a subnet, check DNS records, research a CVE, parse email headers, build a PowerShell command, convert JSON to CSV, or decode Base64.
-    status: KillerMCP supports all 81 KillerTools website tools.
+      agents: ONE NAME / TWO WAYS TO CONNECT
+      oneInstaller: INSTALLED ON WINDOWS
+      hosted: HOSTED ON CLOUDFLARE
+      after: AFTER CONNECTING
+    lead: Give your agent useful KillerTools commands. Connect to the public Cloudflare server for web safe utilities, or install KillerMCP on Windows for local tools and supported Killer apps.
+    status: Choose the connection that matches the data and apps you want to use.
     install: Install
-    intro: KillerMCP includes all 81 KillerTools utilities plus tools from supported Killer apps in one local connection. You will not need a separate KillerTools installer, a source checkout, Node, or a list of commands.
+    intro: The Windows installer gives your agent one local connection for all 81 KillerTools utilities and commands advertised by supported Killer apps installed on this computer. App commands depend on the app version and availability. No separate Node or source checkout is needed.
     download: Download for Windows
     meta:
       version: Version {version}
@@ -1872,8 +1872,9 @@ pages:
       s2Title: Let setup connect your agent.
       s2Body: It installs the shared runtime and registers KillerMCP with Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, and Windsurf when found.
       s3Title: Open a new agent chat and ask.
-      s3Body: KillerMCP makes all 81 KillerTools utilities available through the same connection.
-    hostedBody: Do not want to install anything? Connect directly to the hosted KillerTools server for 64 web based utilities. The remaining 17 KillerTools utilities and all desktop app tools require the installed KillerMCP runtime.
+      s3Body: KillerMCP discovers the available KillerTools and installed app commands through one connection.
+    hostedTitle: Connect without installing
+    hostedBody: The public Cloudflare server offers 64 web safe KillerTools utilities through an HTTP connection. It cannot see your Windows files or installed Killer apps. The other 17 KillerTools utilities and every desktop app command require installed KillerMCP.
     actions:
       cursor: Add to Cursor
       vscode: Add to VS Code
@@ -1917,11 +1918,11 @@ pages:
       i9: Format SQL, YAML, TOML, Markdown, HTML entities, and structured data, or calculate percentages, cron schedules, and chmod values.
       i10: Search emoji, GIFs, KillerScripts, and Killer modules, or inspect URLs, user agents, HTTP status codes, and text statistics.
     cov:
-      title: Hosted and local coverage
-      hostedTitle: Hosted Worker
-      hostedBody: 64 browser safe utilities with 74 operations. No installation.
-      installedTitle: Installed KillerMCP
-      installedBody: All 81 KillerTools utilities with 94 operations, plus detected Killer apps.
+      title: Which connection does what?
+      hostedTitle: Cloudflare server
+      hostedBody: 64 web safe utilities with 74 operations. Runs remotely over HTTP and needs no installation. Cannot access local apps or files.
+      installedTitle: Windows installation
+      installedBody: All 81 KillerTools utilities with 94 operations, plus commands from supported installed Killer apps. Runs as a local MCP connection.
       browserTitle: Browser companions
       browserBody: Camera, device, editor, and signature tools open a private localhost page.
     data:
