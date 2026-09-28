@@ -1903,6 +1903,11 @@ pages:
       e10: giải mã đoạn văn bản Base64 này
       e11: xác định SKU M365 này
       e12: tính toán thời gian phơi sáng 30 giây với kính lọc ND này
+    apps:
+      title: 'Tích hợp ứng dụng Killer'
+      intro: 'Các ví dụ này yêu cầu cài KillerMCP và ứng dụng Killer được hỗ trợ trên máy Windows. Hãy mô tả yêu cầu bằng ngôn ngữ tự nhiên; tác nhân sẽ chọn lệnh hiện có.'
+      killendarNote: 'Để tạo lịch hẹn, Killendar phải đang mở và được mở khóa.'
+      shortcut: 'Bạn có thể bắt đầu bất kỳ yêu cầu nào trong số này bằng {killer} thay cho tên ứng dụng. Chỉ nêu tên ứng dụng khi bạn muốn chỉ định rõ ứng dụng đó.'
     can:
       title: Nó có thể làm gì?
       intro: 'Hãy hỏi bằng ngôn ngữ tự nhiên. Agent của bạn sẽ tự khám phá các công cụ sẵn có và đầu vào của chúng, rồi gọi những công cụ cần thiết. Ví dụ, nó có thể:'

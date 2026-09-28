@@ -1873,6 +1873,11 @@ pages:
       e10: fejtsd vissza ezt a Base64 szöveget
       e11: azonosítsd ezt az M365 SKU-t
       e12: számíts ki egy 30 másodperces expozíciót ezzel az ND szűrővel
+    apps:
+      title: 'Killer alkalmazásintegrációk'
+      intro: 'Ezekhez a példákhoz a KillerMCP és a támogatott Killer alkalmazás telepítése szükséges a Windows számítógépen. Írja le a feladatot természetes nyelven; az ügynök kiválasztja az elérhető parancsot.'
+      killendarNote: 'Időpont létrehozásához a Killendarnak nyitva és feloldva kell lennie.'
+      shortcut: 'Bármelyik kérést kezdheted a {killer} szóval az alkalmazás neve helyett. Csak akkor nevezd meg az alkalmazást, ha kifejezetten azt szeretnéd használni.'
     can:
       title: Mit tud csinálni?
       intro: 'Kérdezzen köznyelven. Az ügynöke felfedezi az elérhető eszközöket és bemeneteiket, majd meghívja azokat, amelyekre szüksége van. Például képes:'

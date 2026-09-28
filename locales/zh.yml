@@ -1903,6 +1903,11 @@ pages:
       e10: 解码这段 Base64 文本
       e11: 识别这个 M365 SKU
       e12: 用这个 ND 滤镜计算 30 秒曝光
+    apps:
+      title: 'Killer 应用集成'
+      intro: '这些示例需要在 Windows 电脑上安装 KillerMCP 和受支持的 Killer 应用。用自然语言描述任务，代理会选择可用命令。'
+      killendarNote: '创建日程时，Killendar 必须处于打开且已解锁状态。'
+      shortcut: '这些提示词都可以用 {killer} 开头，不必写应用名称。只有想明确指定某个应用时，才需要写出它的名称。'
     can:
       title: 它能做什么?
       intro: '用自然语言提问即可。你的代理会自动发现可用工具及其输入参数,并调用所需的工具。例如,它可以:'

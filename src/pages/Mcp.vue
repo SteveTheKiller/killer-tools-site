@@ -270,6 +270,55 @@ useHead({
         </section>
       </div>
     </div>
+    <section class="mcp-card mcp-surface" aria-labelledby="mcp-apps-title">
+      <h2 id="mcp-apps-title">
+        {{ t('pages.mcp.apps.title') }}
+      </h2>
+      <p>{{ t('pages.mcp.apps.intro') }}</p>
+      <i18n-t keypath="pages.mcp.apps.shortcut" tag="p">
+        <template #killer>
+          <code>killer</code>
+        </template>
+      </i18n-t>
+      <div class="mcp-app-grid">
+        <div class="mcp-app-item">
+          <h3>KillerPDF</h3>
+          <code>killerpdf merge these PDFs in this order</code>
+          <code>killerpdf search this PDF for invoice number</code>
+          <code>killer add a searchable OCR layer to this PDF</code>
+          <code>killer turn this KillerNotes note into a PDF</code>
+        </div>
+        <div class="mcp-app-item">
+          <h3>KillerNotes</h3>
+          <code>killernotes find my notes about the office network</code>
+          <code>killernotes create a note with this meeting summary</code>
+          <code>killer list my notes tagged projects</code>
+          <code>killer save this KillerScan report as a note</code>
+        </div>
+        <div class="mcp-app-item">
+          <h3>KillerScan</h3>
+          <code>killerscan show my local network details</code>
+          <code>killerscan scan 192.168.1.0/24 for devices</code>
+          <code>killer ping example.com and show packet loss</code>
+          <code>killer make a PDF report from this network scan</code>
+        </div>
+        <div class="mcp-app-item">
+          <h3>KillerShell</h3>
+          <code>killershell list the services running on this computer</code>
+          <code>killershell search C:\Docs for files named invoice</code>
+          <code>killer show the latest Application log entries</code>
+          <code>killer save this directory listing as a PDF</code>
+        </div>
+        <div class="mcp-app-item">
+          <h3>The Killendar</h3>
+          <code>killendar show my appointments for tomorrow</code>
+          <code>killendar create an appointment tomorrow at 9 AM called Morning standup</code>
+          <code>killer show my agenda for the next seven days</code>
+          <code>killer save next week's agenda as a note</code>
+          <p>{{ t('pages.mcp.apps.killendarNote') }}</p>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -371,17 +420,24 @@ html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-card li { margin-bottom: 4px; }
 .mcp-example-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .mcp-example-grid code { display: block; padding: 12px 14px; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); color: inherit; line-height: 1.5; }
+.mcp-app-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mcp-app-item { display: grid; align-content: start; gap: 8px; }
+.mcp-app-item h3 { margin: 0; color: var(--kt-text, #fff); font-size: 15px; }
+.mcp-app-item code { display: block; padding: 12px 14px; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); color: inherit; font-size: 12px; line-height: 1.5; }
+.mcp-app-item p { margin: 0; }
 code { color: var(--kt-accent); overflow-wrap: anywhere; }
 .mcp-card a { color: var(--kt-accent); }
 
 @media (max-width: 1050px) {
   .mcp-workspace { grid-template-columns: 1fr; }
+  .mcp-app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 720px) {
   .mcp-grid { grid-template-columns: 1fr; }
   .mcp-coverage-grid { grid-template-columns: 1fr; }
   .mcp-example-grid { grid-template-columns: 1fr; }
+  .mcp-app-grid { grid-template-columns: 1fr; }
   .mcp-hero, .mcp-card, .mcp-connect { padding: 20px; }
   .mcp-copy-row { flex-direction: column; }
   .mcp-heading { gap: 0; }

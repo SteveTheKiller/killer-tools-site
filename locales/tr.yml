@@ -1904,6 +1904,11 @@ pages:
       e10: bu Base64 metnini çöz
       e11: bu M365 SKU'sunu tanımla
       e12: bu ND filtresiyle 30 saniyelik pozlamayı hesapla
+    apps:
+      title: 'Killer uygulama entegrasyonları'
+      intro: 'Bu örnekler için Windows bilgisayarınızda KillerMCP ve desteklenen Killer uygulaması yüklü olmalıdır. İsteğinizi doğal bir dille yazın; ajanınız kullanılabilir komutu seçer.'
+      killendarNote: 'Randevu oluşturmak için Killendar açık ve kilidi kaldırılmış olmalıdır.'
+      shortcut: 'Bu istemlerden herhangi birine uygulama adı yerine {killer} ile başlayabilirsiniz. Uygulamayı yalnızca özellikle belirtmek istediğinizde adıyla anın.'
     can:
       title: Neler yapabilir?
       intro: 'Sade bir dille sorun. Ajanınız mevcut araçları ve girdilerini keşfeder, ardından ihtiyaç duyduklarını çağırır. Örneğin şunları yapabilir:'

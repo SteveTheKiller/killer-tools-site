@@ -1873,6 +1873,11 @@ pages:
       e10: dekódovat tento text v Base64
       e11: identifikovat toto SKU M365
       e12: vypočítat 30sekundovou expozici s tímto ND filtrem
+    apps:
+      title: 'Integrace aplikací Killer'
+      intro: 'Tyto příklady vyžadují nainstalovaný KillerMCP a podporovanou aplikaci Killer v počítači se systémem Windows. Požadavek popište běžným jazykem; agent vybere dostupný příkaz.'
+      killendarNote: 'Při vytváření událostí musí být Killendar otevřený a odemčený.'
+      shortcut: 'Kterýkoli z těchto požadavků můžete začít slovem {killer} místo názvu aplikace. Název aplikace uveďte jen tehdy, když ji chcete výslovně vybrat.'
     can:
       title: Co dokáže?
       intro: 'Zeptejte se běžným jazykem. Váš agent zjistí dostupné nástroje a jejich vstupy a poté zavolá ty, které potřebuje. Může například:'

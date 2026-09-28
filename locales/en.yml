@@ -1904,6 +1904,11 @@ pages:
       e10: decode this Base64 text
       e11: identify this M365 SKU
       e12: calculate a 30 second exposure with this ND filter
+    apps:
+      title: 'Killer app integrations'
+      intro: 'These examples use installed KillerMCP and the supported Killer app on your Windows computer. Ask in plain language; your agent selects the available command.'
+      killendarNote: 'Creating appointments requires Killendar to be open and unlocked.'
+      shortcut: 'You can start any of these prompts with {killer} instead of the app name. Name the app only when you want to target it explicitly.'
     can:
       title: What can it do?
       intro: 'Ask in plain language. Your agent discovers the available tools and their inputs, then calls the ones it needs. For example, it can:'

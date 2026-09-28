@@ -1903,6 +1903,11 @@ pages:
       e10: dekod denne Base64-teksten
       e11: identifiser denne M365-SKU-en
       e12: beregn en 30 sekunders eksponering med dette ND-filteret
+    apps:
+      title: 'Integrasjoner med Killer-apper'
+      intro: 'Disse eksemplene krever at KillerMCP og den støttede Killer-appen er installert på Windows-maskinen. Beskriv oppgaven med vanlige ord; agenten velger en tilgjengelig kommando.'
+      killendarNote: 'For å opprette avtaler må Killendar være åpen og låst opp.'
+      shortcut: 'Du kan starte hvilken som helst av disse forespørslene med {killer} i stedet for appnavnet. Nevn appen bare når du vil angi den uttrykkelig.'
     can:
       title: Hva kan den gjøre?
       intro: 'Spør i vanlig språk. Agenten din finner de tilgjengelige verktøyene og deres inndata, og kaller deretter dem den trenger. Den kan for eksempel:'
