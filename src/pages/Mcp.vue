@@ -223,6 +223,20 @@ useHead({
           </i18n-t>
           <p>{{ t('pages.mcp.worker.p2') }}</p>
         </section>
+        <section class="mcp-card mcp-surface">
+          <h2>{{ t('pages.mcp.oss.title') }}</h2>
+          <i18n-t keypath="pages.mcp.oss.p1" tag="p">
+            <template #kt>
+              <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('pages.mcp.oss.ktLink') }}</a>
+            </template>
+            <template #km>
+              <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">{{ t('pages.mcp.oss.kmLink') }}</a>
+            </template>
+          </i18n-t>
+          <p>
+            {{ t('pages.mcp.oss.p2').replace('v0.1.1', `v${installerVersion}`) }}
+          </p>
+        </section>
       </div>
       <div class="mcp-detail-column">
         <section class="mcp-card mcp-surface" aria-labelledby="mcp-examples-title">
@@ -263,36 +277,20 @@ useHead({
           </section>
         </div>
 
-        <div class="mcp-grid">
-          <section class="mcp-card mcp-surface">
-            <h2>
-              {{ t('pages.mcp.data.title') }}
-            </h2>
-            <p>
-              {{ t('pages.mcp.data.p1') }}
-            </p>
-            <p>
-              {{ t('pages.mcp.data.p2') }}
-            </p>
-            <p>
-              {{ t('pages.mcp.data.p3') }}
-            </p>
-          </section>
-          <section class="mcp-card mcp-surface">
-            <h2>{{ t('pages.mcp.oss.title') }}</h2>
-            <i18n-t keypath="pages.mcp.oss.p1" tag="p">
-              <template #kt>
-                <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('pages.mcp.oss.ktLink') }}</a>
-              </template>
-              <template #km>
-                <a href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener">{{ t('pages.mcp.oss.kmLink') }}</a>
-              </template>
-            </i18n-t>
-            <p>
-              {{ t('pages.mcp.oss.p2').replace('v0.1.1', `v${installerVersion}`) }}
-            </p>
-          </section>
-        </div>
+        <section class="mcp-card mcp-surface">
+          <h2>
+            {{ t('pages.mcp.data.title') }}
+          </h2>
+          <p>
+            {{ t('pages.mcp.data.p1') }}
+          </p>
+          <p>
+            {{ t('pages.mcp.data.p2') }}
+          </p>
+          <p>
+            {{ t('pages.mcp.data.p3') }}
+          </p>
+        </section>
       </div>
     </div>
   </main>
