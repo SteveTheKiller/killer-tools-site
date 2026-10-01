@@ -1721,6 +1721,8 @@ components:
       teal: টিল
       blue: নীল
       purple: বেগুনি
+      yellow: হলুদ
+      magenta: ম্যাজেন্টা
 layouts:
   menuLayout:
     eggMessage: ৮০টি টুল। কোনো সাবস্ক্রিপশন নেই। একজন বদমেজাজি ফিল্ড টেক।

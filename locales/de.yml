@@ -1720,6 +1720,8 @@ components:
       teal: Petrol
       blue: Blau
       purple: Lila
+      yellow: Gelb
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 Tools. Keine Abos. Ein zorniger Field Tech.

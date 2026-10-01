@@ -1752,6 +1752,8 @@ components:
       teal: Verde acqua
       blue: Blu
       purple: Viola
+      yellow: Giallo
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 strumenti. Zero abbonamenti. Un tecnico sul campo vendicativo.

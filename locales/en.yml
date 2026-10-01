@@ -1721,6 +1721,8 @@ components:
       teal: Teal
       blue: Blue
       purple: Purple
+      yellow: Yellow
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 tools. Zero subscriptions. One spiteful field tech.

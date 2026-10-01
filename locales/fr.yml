@@ -1716,6 +1716,8 @@ components:
       teal: Sarcelle
       blue: Bleu
       purple: Violet
+      yellow: Jaune
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 outils. Zéro abonnement. Un technicien terrain rancunier.

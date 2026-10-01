@@ -1751,6 +1751,8 @@ components:
       teal: Бірюзовий
       blue: Синій
       purple: Фіолетовий
+      yellow: Жовтий
+      magenta: Маджента
 layouts:
   menuLayout:
     eggMessage: 80 інструментів. Нуль підписок. Один злопам'ятний польовий технік.

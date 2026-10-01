@@ -2,20 +2,20 @@ import type { GlobalThemeOverrides } from 'naive-ui';
 
 // ── KillerTools Grunge theme engine: six family themes + per-theme accents,
 // ported from the apps/landing pages. Default = Black(Teal), the site identity.
-// Neutral themes (Dark, Light, Black) support the six accent colors; the
+// Neutral themes (Dark, Light, Black) support eight accent colors; the
 // colored themes (Blood, Greed, Cyanotic) have fixed palettes.
 
 export type KtThemeKey = 'dark' | 'light' | 'black' | 'blood' | 'greed' | 'cyanotic'
   | 'ectoplasm' | 'decay' | 'malaise' | 'sepulchre' | 'delirium' | 'mourning';
-export type KtAccentKey = 'red' | 'orange' | 'green' | 'teal' | 'blue' | 'purple';
+export type KtAccentKey = 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'purple' | 'magenta';
 
 export const NEUTRAL_THEMES: KtThemeKey[] = ['dark', 'light', 'black'];
 
 // Per-family accent palette, copied from the app (kf.js ACCENTS)
 export const ktAccents: Record<'dark' | 'light' | 'black', Record<KtAccentKey, string>> = {
-  dark: { red: '#DD504B', orange: '#E8962C', green: '#1EA54C', teal: '#1FB8A8', blue: '#50AEE8', purple: '#B982E3' },
-  light: { red: '#931A1A', orange: '#C7710F', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690' },
-  black: { red: '#FF2929', orange: '#FF910A', green: '#00FF66', teal: '#0AFFE7', blue: '#298DFF', purple: '#B829FF' },
+  dark: { red: '#DD504B', orange: '#E8962C', yellow: '#EAD900', green: '#1EA54C', teal: '#1FB8A8', blue: '#50AEE8', purple: '#B982E3', magenta: '#FF52C9' },
+  light: { red: '#931A1A', orange: '#C7710F', yellow: '#766600', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
+  black: { red: '#FF2929', orange: '#FF910A', yellow: '#FFEB00', green: '#00FF66', teal: '#0AFFE7', blue: '#298DFF', purple: '#B829FF', magenta: '#FF2BBD' },
 };
 
 // Theme default accents (used when the user has not picked one)
@@ -31,9 +31,9 @@ export const THEME_DEFAULT_ACCENT: Partial<Record<KtThemeKey, KtAccentKey>> = {
 // here we give Orange a proper muted selection (#4E2900 black / #5E3B16 dark)
 // so every accent follows the two-color rule on the site.
 const ktAccentSel: Record<'dark' | 'light' | 'black', Record<KtAccentKey, string>> = {
-  dark: { red: '#5E1C1C', orange: '#5E3B16', green: '#1C5E38', teal: '#1C5E5C', blue: '#1C3B5E', purple: '#411C5E' },
-  black: { red: '#380000', orange: '#4E2900', green: '#003314', teal: '#003832', blue: '#0A2C50', purple: '#250038' },
-  light: { red: '#931A1A', orange: '#C7710F', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690' },
+  dark: { red: '#5E1C1C', orange: '#5E3B16', yellow: '#2A2908', green: '#1C5E38', teal: '#1C5E5C', blue: '#1C3B5E', purple: '#411C5E', magenta: '#2A0D24' },
+  black: { red: '#380000', orange: '#4E2900', yellow: '#2E2B00', green: '#003314', teal: '#003832', blue: '#0A2C50', purple: '#250038', magenta: '#2E0022' },
+  light: { red: '#931A1A', orange: '#C7710F', yellow: '#766600', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
 };
 
 function hexToRgb(hex: string): [number, number, number] {

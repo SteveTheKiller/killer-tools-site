@@ -1721,6 +1721,8 @@ components:
       teal: Petrolejova
       blue: Modra
       purple: Fialova
+      yellow: Žlutá
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 nástrojů. Žádná předplatná. Jeden zatrpklý terénní technik.

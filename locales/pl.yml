@@ -1752,6 +1752,8 @@ components:
       teal: Turkusowy
       blue: Niebieski
       purple: Fioletowy
+      yellow: Żółty
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 narzędzi. Zero subskrypcji. Jeden mściwy technik terenowy.

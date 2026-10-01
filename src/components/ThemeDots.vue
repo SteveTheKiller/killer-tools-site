@@ -8,15 +8,17 @@ import { ktAccents, ktThemes, NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/the
 const { t } = useI18n();
 const styleStore = useStyleStore();
 
-const ACCENT_ORDER: KtAccentKey[] = ['red', 'orange', 'green', 'teal', 'blue', 'purple'];
+const ACCENT_ORDER: KtAccentKey[] = ['red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'magenta'];
 
 const ACCENT_LABEL_KEYS: Record<KtAccentKey, string> = {
   red: 'components.themeDots.accents.red',
   orange: 'components.themeDots.accents.orange',
+  yellow: 'components.themeDots.accents.yellow',
   green: 'components.themeDots.accents.green',
   teal: 'components.themeDots.accents.teal',
   blue: 'components.themeDots.accents.blue',
   purple: 'components.themeDots.accents.purple',
+  magenta: 'components.themeDots.accents.magenta',
 };
 
 function accentLabel(name: KtAccentKey) {
@@ -53,6 +55,7 @@ function selectTheme(key: KtThemeKey) {
 }
 
 function accentColor(name: KtAccentKey) {
+  if (name === 'yellow' && accentFamily.value === 'light') return '#EAD900';
   return ktAccents[accentFamily.value][name];
 }
 
@@ -193,6 +196,7 @@ function startDrag(e: PointerEvent) {
             v-for="name in ACCENT_ORDER"
             :key="name"
             class="acc"
+            :class="{ 'acc-yellow': name === 'yellow' }"
             :style="{ background: accentColor(name) }"
             :title="accentLabel(name)"
             :aria-label="t('components.themeDots.accentNamed', { name: accentLabel(name) })"
@@ -302,6 +306,10 @@ html:not(.dark) .pick-divider {
   &[aria-pressed='true'] {
     box-shadow: 0 0 0 2px var(--kt-accent);
   }
+}
+
+html:not(.dark) .acc-yellow {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
 }
 
 html:not(.dark) .swatch,

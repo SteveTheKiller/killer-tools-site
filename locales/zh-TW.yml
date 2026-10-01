@@ -1752,6 +1752,8 @@ components:
       teal: 青色
       blue: 藍色
       purple: 紫色
+      yellow: 黃色
+      magenta: 洋紅色
 layouts:
   menuLayout:
     eggMessage: 80 款工具。零訂閱。一位滿腹牢騷的現場技術員。

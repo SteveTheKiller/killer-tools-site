@@ -6,7 +6,7 @@ import { computed, nextTick, watch, watchEffect } from 'vue';
 import { accentTriple } from '@/themes';
 
 const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic', 'ectoplasm', 'decay', 'malaise', 'sepulchre', 'delirium', 'mourning'];
-const VALID_ACCENTS: (KtAccentKey | '')[] = ['', 'red', 'orange', 'green', 'teal', 'blue', 'purple'];
+const VALID_ACCENTS: (KtAccentKey | '')[] = ['', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'magenta'];
 
 export const useStyleStore = defineStore('style', {
   state: () => {

@@ -1752,6 +1752,8 @@ components:
       teal: Turkuaz
       blue: Mavi
       purple: Mor
+      yellow: Sarı
+      magenta: Macenta
 layouts:
   menuLayout:
     eggMessage: 80 araç. Sıfır abonelik. Bir kinci saha teknisyeni.

@@ -1751,6 +1751,8 @@ components:
       teal: Turkis
       blue: Blå
       purple: Lilla
+      yellow: Gul
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 verktøy. Null abonnementer. Én hevngjerrig feltekniker.

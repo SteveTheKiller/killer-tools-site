@@ -1752,6 +1752,8 @@ components:
       teal: Бирюзовый
       blue: Синий
       purple: Фиолетовый
+      yellow: Желтый
+      magenta: Маджента
 layouts:
   menuLayout:
     eggMessage: 80 инструментов. Ноль подписок. Один злопамятный полевой техник.

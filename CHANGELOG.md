@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Interface
 
+- Added yellow and magenta neutral theme accents.
 - Replaced the top bar search field with a compact icon.
 
 ### MCP

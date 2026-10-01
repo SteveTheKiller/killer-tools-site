@@ -1721,6 +1721,8 @@ components:
       teal: Petrolkek
       blue: Kek
       purple: Lila
+      yellow: Sárga
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 eszköz. Nulla előfizetés. Egy bosszúszomjas terepszerelő.

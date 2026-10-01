@@ -1752,6 +1752,8 @@ components:
       teal: Көгілдір жасыл
       blue: Көк
       purple: Күлгін
+      yellow: Сары
+      magenta: Маджента
 layouts:
   menuLayout:
     eggMessage: 80 құрал. Нөлдік жазылым. Бір өшпенді далалық техник.

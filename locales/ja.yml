@@ -1752,6 +1752,8 @@ components:
       teal: ティール
       blue: 青
       purple: 紫
+      yellow: 黄色
+      magenta: マゼンタ
 layouts:
   menuLayout:
     eggMessage: 80個のツール。サブスクリプションはゼロ。意地悪なフィールド技術者が1人。

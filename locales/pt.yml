@@ -1751,6 +1751,8 @@ components:
       teal: Verde-azulado
       blue: Azul
       purple: Roxo
+      yellow: Amarelo
+      magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 ferramentas. Zero assinaturas. Um técnico de campo rancoroso.

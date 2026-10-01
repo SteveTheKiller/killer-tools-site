@@ -1751,6 +1751,8 @@ components:
       teal: Xanh ngọc
       blue: Xanh dương
       purple: Tím
+      yellow: Vàng
+      magenta: Hồng cánh sen
 layouts:
   menuLayout:
     eggMessage: 80 công cụ. Không cần đăng ký. Một kỹ thuật viên hiện trường cay cú.
