@@ -1,4 +1,6 @@
-# KillerTools MCP plan
+# KillerTools MCP plan (historical)
+
+This is the original implementation plan. For the current public endpoint, local JavaScript server, and repository roles, see [mcp/README.md](mcp/README.md). The installed native host and app adapters now live in [KillerMCP](https://github.com/SteveTheKiller/KillerMCP), with the shared .NET utility engine in [KillerTools](https://github.com/SteveTheKiller/KillerTools). The plan below is preserved as history and is not current setup guidance.
 
 ## Goal
 

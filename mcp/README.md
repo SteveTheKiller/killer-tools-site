@@ -2,7 +2,7 @@
 
 KillerTools MCP lets an MCP capable agent call the utilities from [KillerTools](https://killertools.net). The public Cloudflare Worker exposes 74 operations across 64 website tools. The optional local server exposes those operations plus 20 file, secret, and browser operations, covering all 81 active website tools. Each MCP tool supplies a description and bounded input schema to the agent when it connects. The [operation map](coverage.json) lists every website tool and its MCP operations.
 
-This repository owns the KillerTools utility implementations, the public MCP Worker, and the local KillerTools bundle. [KillerMCP](https://github.com/SteveTheKiller/KillerMCP) owns the shared family runtime, desktop app adapters, and Windows installer. Its build includes this local bundle so one connection can offer KillerTools alongside installed Killer apps.
+This repository owns the website's TypeScript utilities, the public MCP Worker, and an optional local JavaScript server. [KillerMCP](https://github.com/SteveTheKiller/KillerMCP) owns the native MCP host, desktop app adapters, and Windows installer. It uses the separate [KillerTools](https://github.com/SteveTheKiller/KillerTools) .NET engine to offer the website utilities alongside installed Killer apps.
 
 ## Connect to the public server
 
@@ -23,9 +23,9 @@ Open a new agent chat after adding the server so it discovers the tools. You can
 
 The public endpoint has no sign-in. Public tool inputs are sent to Cloudflare, and some lookup tools contact external data providers. Avoid sending passwords, private files, tokens, or client data to the public endpoint. Requests are limited to 64 KiB, and the Worker has a rate limit binding of 120 requests per minute per connecting IP. Shared IPs share that limit.
 
-## Optional local setup for the remaining 17 tools
+## Optional local JavaScript server
 
-The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need a server running on your computer. The signed [KillerMCP installer](https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe) bundles this server and registers one local connection with supported agent clients. The steps below are for developers working directly on the KillerTools bundle.
+The public URL above needs no installation and provides 64 website tools. The other 17 handle local files, secrets, or browser input, so they need a server running on your computer. The signed [KillerMCP installer](https://github.com/SteveTheKiller/KillerMCP/releases/latest/download/KillerMCP-Setup.exe) provides all 81 website tools through the native KillerTools engine and registers one local connection with supported agent clients. The steps below are for developers working directly with the separate JavaScript server.
 
 For access to every website tool on your machine, connect an MCP client to the local stdio server. This developer setup requires Node 24 or later, pnpm, and installed dependencies to build `dist/killermcp.mjs`. The built file contains the shared tools, local tools, and browser companion. It runs without Wrangler, a source checkout, or installed packages, but still needs Node when used directly. Use the Node executable as the command, with the absolute path to `dist/killermcp.mjs` as its argument. A package-manager script prints status text to standard output and cannot be used as the MCP stdio command. Run `pnpm smoke:local` to build the bundle and test all 94 operations.
 
