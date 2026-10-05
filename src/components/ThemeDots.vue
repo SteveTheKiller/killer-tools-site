@@ -55,7 +55,7 @@ function selectTheme(key: KtThemeKey) {
 }
 
 function accentColor(name: KtAccentKey) {
-  if (name === 'yellow' && accentFamily.value === 'light') return '#EAD900';
+  if (name === 'yellow' && accentFamily.value === 'light') return '#FFD94D';
   return ktAccents[accentFamily.value][name];
 }
 
@@ -64,6 +64,7 @@ function themeDotAccent(theme: typeof ktThemes[number]) {
     return theme.swatchAccent;
   }
   const family = theme.key === 'light' ? 'light' : theme.key === 'black' ? 'black' : 'dark';
+  if (family === 'light' && effectiveAccent.value === 'yellow') return '#FFD94D';
   return ktAccents[family][effectiveAccent.value];
 }
 

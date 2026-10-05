@@ -207,6 +207,13 @@ html:not(.dark) body {
   width: calc(100% - 16px) !important;
 }
 
+html[data-kt-theme='light'][data-kt-accent='yellow'] .n-menu-item-content--selected,
+html[data-kt-theme='light'][data-kt-accent='yellow'] .n-menu-item-content--selected:hover,
+html[data-kt-theme='light'][data-kt-accent='yellow'] .kts-opt-selected {
+  background-image: linear-gradient(180deg, #FFF5A3, #FFD43B) !important;
+  color: #24231C !important;
+}
+
 /* ── Global pill button ─────────────────────────────────────────────── */
 .kt-pill-row {
   display: flex;

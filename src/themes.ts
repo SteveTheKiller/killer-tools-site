@@ -14,7 +14,7 @@ export const NEUTRAL_THEMES: KtThemeKey[] = ['dark', 'light', 'black'];
 // Per-family accent palette, copied from the app (kf.js ACCENTS)
 export const ktAccents: Record<'dark' | 'light' | 'black', Record<KtAccentKey, string>> = {
   dark: { red: '#DD504B', orange: '#E8962C', yellow: '#EAD900', green: '#1EA54C', teal: '#1FB8A8', blue: '#50AEE8', purple: '#B982E3', magenta: '#FF52C9' },
-  light: { red: '#931A1A', orange: '#C7710F', yellow: '#766600', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
+  light: { red: '#931A1A', orange: '#C7710F', yellow: '#2B2A24', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
   black: { red: '#FF2929', orange: '#FF910A', yellow: '#FFEB00', green: '#00FF66', teal: '#0AFFE7', blue: '#298DFF', purple: '#B829FF', magenta: '#FF2BBD' },
 };
 
@@ -33,7 +33,7 @@ export const THEME_DEFAULT_ACCENT: Partial<Record<KtThemeKey, KtAccentKey>> = {
 const ktAccentSel: Record<'dark' | 'light' | 'black', Record<KtAccentKey, string>> = {
   dark: { red: '#5E1C1C', orange: '#5E3B16', yellow: '#2A2908', green: '#1C5E38', teal: '#1C5E5C', blue: '#1C3B5E', purple: '#411C5E', magenta: '#2A0D24' },
   black: { red: '#380000', orange: '#4E2900', yellow: '#2E2B00', green: '#003314', teal: '#003832', blue: '#0A2C50', purple: '#250038', magenta: '#2E0022' },
-  light: { red: '#931A1A', orange: '#C7710F', yellow: '#766600', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
+  light: { red: '#931A1A', orange: '#C7710F', yellow: '#FFD94D', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
 };
 
 function hexToRgb(hex: string): [number, number, number] {
@@ -221,6 +221,7 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
 }
 
 function buildLightOverrides(t: AccentTriple): GlobalThemeOverrides {
+  const selectedText = t.sel === '#FFD94D' ? '#24231C' : '#ffffff';
   return {
     common: {
       primaryColor: `${t.base}FF`,
@@ -239,13 +240,13 @@ function buildLightOverrides(t: AccentTriple): GlobalThemeOverrides {
       itemHeight: '32px',
       color: 'transparent',
       itemTextColor: '#1e2022',
-      /* App selection model: solid SelectionBg bar, white SelectionFg */
+      /* App selection model: SelectionBg fill with matching SelectionFg */
       itemColorActive: t.sel,
       itemColorActiveHover: t.sel,
-      itemTextColorActive: '#ffffff',
-      itemIconColorActive: '#ffffff',
-      itemTextColorActiveHover: '#ffffff',
-      itemIconColorActiveHover: '#ffffff',
+      itemTextColorActive: selectedText,
+      itemIconColorActive: selectedText,
+      itemTextColorActiveHover: selectedText,
+      itemIconColorActiveHover: selectedText,
       itemTextColorHover: t.base,
     },
 

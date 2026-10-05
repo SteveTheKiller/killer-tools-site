@@ -37,6 +37,7 @@ export const useStyleStore = defineStore('style', {
       d.classList.toggle('dark', ktTheme.value !== 'light');
       d.classList.toggle('light', ktTheme.value === 'light');
       d.setAttribute('data-kt-theme', ktTheme.value);
+      d.setAttribute('data-kt-accent', ktAccent.value);
 
       const t = accentTriple(ktTheme.value, ktAccent.value);
       if (t) {
