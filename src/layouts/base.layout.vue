@@ -147,7 +147,12 @@ const tools = computed<ToolCategory[]>(() => [
 .tb-mcp {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 3px;
+  /* Whole-pixel box: a fractional width or height blurs one side of the 1px border */
+  width: 146px;
+  height: 36px;
+  box-sizing: border-box;
   min-height: 36px;
   padding: 3px 10px;
   border: 1px solid var(--kt-accent);
@@ -196,8 +201,8 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .tb-mcp-mark {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
 }
 
 /* Keep controls together until their contents need another line. */

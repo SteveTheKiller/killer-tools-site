@@ -8,7 +8,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div flex items-center gap-5>
+  <div class="navbar-buttons" flex items-center gap-5>
     <LocaleSelector />
     <c-tooltip v-if="!isNativeApp" :tooltip="t('components.navbarButtons.androidTooltip')" position="bottom">
       <c-button class="keep-circle" circle variant="text" to="/android" :aria-label="t('components.navbarButtons.androidAriaLabel')">
@@ -25,6 +25,14 @@ const { t } = useI18n();
 </template>
 
 <style lang="less" scoped>
+/* The tooltip wrappers are inline blocks, so the text line box made them taller than the
+   34px buttons and pushed the whole titlebar row onto a fractional pixel, which blurred
+   the bottom edge of every 1px border in it. Flex wrappers size to the button exactly. */
+.navbar-buttons > div,
+.navbar-buttons > div > :deep(div:first-child) {
+  display: flex;
+}
+
 .n-button {
   &:not(:last-child) {
     margin-right: 5px;
