@@ -511,7 +511,7 @@ html .kt-terminal[class] {
   background: var(--kt-term-bar-hover-bg) !important;
 }
 
-/* Card heading voice (UNIVERSAL): the family typewriter font, white and
+/* Card heading voice (UNIVERSAL): the family card-title face, white and
    sized up (ks-acronym cousin), with the family text stroke on dark.
    The [class] bump gives (0,2,1) specificity so scoped per-tool title rules
    ([data-v-x].xxx-terminal-title at (0,2,0)) are overridden without hunting
@@ -520,7 +520,7 @@ html .kt-terminal[class] {
 html .kt-terminal-bar-title[class],
 html [class*="-terminal-bar-title"][class],
 html [class*="-terminal-title"][class]:not([class*="-sub"]) {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-size: 1.05rem;
   font-weight: normal;
   letter-spacing: 0.5px;
@@ -548,13 +548,13 @@ html:not(.dark) [class*="-terminal-title"][class]:not([class*="-sub"]) {
 }
 
 /* Subheader voice (UNIVERSAL): section labels inside tool cards (OUTPUT,
-   FORMATS, SUBNET INFO, ...) get the family typewriter face. Same [class]
+   FORMATS, SUBNET INFO, ...) get the family section face. Same [class]
    specificity bump as the title rule so scoped per-tool rules are beaten. */
 html .kt-section-row[class],
 html [class*="-section-header"][class],
 html [class*="-section-row"][class],
 html [class*="-section-label"][class] {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-section);
   font-size: 0.85rem;
   font-weight: normal;
   letter-spacing: 0.08em;
@@ -565,7 +565,7 @@ html [class*="-section-label"][class] {
    Catches wel-category-header, ndr-category-header, and future
    *-category-header classes. */
 html [class*="-category-header"][class] {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-section);
   font-size: 1rem;
   font-weight: normal;
   letter-spacing: 0.08em;

@@ -114,7 +114,7 @@ function openRepo(mod: KillerModule) {
   font-weight: normal;
   color: rgba(255, 255, 255, 0.94);
   letter-spacing: 0.5px;
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-code);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 

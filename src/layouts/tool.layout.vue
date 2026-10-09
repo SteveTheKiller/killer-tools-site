@@ -158,10 +158,10 @@ const headerLink = computed<{ label: string, href: string } | undefined>(
   }
 }
 
-/* Page title: big killer-font heading in the accent color (landing style),
+/* Page title: big page-title-face heading in the accent color (landing style),
    sized above the card titles so the hierarchy reads right */
 .tool-title-compact {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-page-title);
   font-size: 2rem;
   font-weight: normal;
   line-height: 1.15;

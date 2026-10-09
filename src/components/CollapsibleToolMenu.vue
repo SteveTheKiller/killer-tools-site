@@ -154,7 +154,7 @@ function onMenuSelect() {
   }
 }
 .cat-name {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-section);
   font-size: 15.5px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -180,7 +180,7 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
     margin-bottom: -10px;
     /* Family voice: menu items in the killer font */
     ::v-deep(.n-menu-item-content-header) {
-      font-family: 'KillerScan', 'Courier New', monospace;
+      font-family: var(--kt-font-section);
       font-size: 16px;
       letter-spacing: 0.4px;
     }

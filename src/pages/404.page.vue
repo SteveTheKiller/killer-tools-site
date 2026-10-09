@@ -68,10 +68,10 @@ useHead({ title: 'Page not found - killer tools' });
 .white { color: rgba(255, 255, 255, 0.9); }
 .dim   { color: rgba(255, 255, 255, 0.45); }
 
-/* Card heading voice: family typewriter face, white with the text stroke */
+/* Card heading voice: family card-title face, white with the text stroke */
 .prompt {
   margin-bottom: 12px !important;
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-size: 1.15rem !important;
   letter-spacing: 0.5px;
 }

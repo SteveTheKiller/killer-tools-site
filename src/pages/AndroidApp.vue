@@ -135,19 +135,15 @@ html:not(.dark) .robot-attrib { color: rgba(0, 0, 0, 0.4); }
   .android-main { grid-template-columns: 1fr; }
 }
 
-/* ── Grunge (family) pieces: typewriter face + grained card surface ── */
-@font-face {
-  font-family: 'KillerScan';
-  src: url('/brand/KillerScan.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
+/* ── Grunge (family) pieces: header faces + grained card surface ── */
 .killer-font {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-weight: normal;
   letter-spacing: 0.5px;
+}
+
+.site-title.killer-font {
+  font-family: var(--kt-font-page-title);
 }
 
 /* Family card recipe (kt-terminal language), same as About.vue */

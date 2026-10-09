@@ -30,16 +30,8 @@ const visible = computed(() => !isNativeApp && !dismissed.value && route.name !=
 </template>
 
 <style scoped>
-@font-face {
-  font-family: 'KillerScan';
-  src: url('/brand/KillerScan.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 .killer-font {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-weight: normal;
   letter-spacing: 0.5px;
 }

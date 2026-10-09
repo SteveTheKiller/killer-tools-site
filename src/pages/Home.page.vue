@@ -181,7 +181,7 @@ const sortedTools = computed(() => {
 /* Section headings share the family voice ("All the tools" / "Newest tools") */
 .home-newest {
   margin: 0 0 10px;
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-size: 1.3rem;
   font-weight: normal;
   letter-spacing: 0.5px;
@@ -204,7 +204,7 @@ const sortedTools = computed(() => {
 }
 
 .home-all-tools {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-size: 1.3rem;
   font-weight: normal;
   letter-spacing: 0.5px;

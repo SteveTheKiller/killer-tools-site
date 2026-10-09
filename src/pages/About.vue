@@ -81,12 +81,12 @@ useHead({
 
       <div class="killer-apps">
         <!-- Same cross-promo card as the app landing pages: "Also try..." in the
-             family typewriter face, cards on a grained Grunge surface -->
+             family card-title face, cards on a grained Grunge surface -->
         <div class="g-card">
           <h2 class="also-heading killer-font">{{ t('pages.about.alsoTryHeading') }}</h2>
           <div class="app-cards">
             <a class="app-card" href="https://killerscan.net" target="_blank" rel="noopener">
-              <img class="app-icon" src="/brand/ks-icon.png" alt="KillerScan" width="46" height="46">
+              <img class="app-icon" src="/brand/ks-icon.png" alt="KillerScan" width="66" height="66">
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killerscan-wordmark-dark.png" alt="KillerScan">
                 <img class="app-wm wm-light" src="/brand/killerscan-wordmark-light.png" alt="KillerScan">
@@ -94,7 +94,7 @@ useHead({
               </span>
             </a>
             <a class="app-card" href="https://killerpdf.net" target="_blank" rel="noopener">
-              <img class="app-icon" src="/brand/kp-icon.png" alt="KillerPDF" width="46" height="46">
+              <img class="app-icon" src="/brand/kp-icon.png" alt="KillerPDF" width="66" height="66">
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killerpdf-wordmark-dark.png" alt="KillerPDF">
                 <img class="app-wm wm-light" src="/brand/killerpdf-wordmark-light.png" alt="KillerPDF">
@@ -102,7 +102,7 @@ useHead({
               </span>
             </a>
             <a class="app-card" href="https://killershell.net" target="_blank" rel="noopener">
-              <img class="app-icon" src="/brand/ksh-icon.png" alt="KillerShell" width="46" height="46">
+              <img class="app-icon" src="/brand/ksh-icon.png" alt="KillerShell" width="66" height="66">
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killershell-wordmark-dark.png" alt="KillerShell">
                 <img class="app-wm wm-light" src="/brand/killershell-wordmark-light.png" alt="KillerShell">
@@ -110,7 +110,7 @@ useHead({
               </span>
             </a>
             <a class="app-card" href="https://killernotes.net" target="_blank" rel="noopener">
-              <img class="app-icon" src="/brand/kn-icon.png" alt="KillerNotes" width="46" height="46">
+              <img class="app-icon" src="/brand/kn-icon.png" alt="KillerNotes" width="66" height="66">
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killernotes-wordmark-dark.png" alt="KillerNotes">
                 <img class="app-wm wm-light" src="/brand/killernotes-wordmark-light.png" alt="KillerNotes">
@@ -118,7 +118,7 @@ useHead({
               </span>
             </a>
             <a class="app-card" href="https://killendar.net" target="_blank" rel="noopener">
-              <img class="app-icon" src="/brand/kd-icon.png" alt="The Killendar" width="46" height="46">
+              <img class="app-icon" src="/brand/kd-icon.png" alt="The Killendar" width="66" height="66">
               <span class="app-body">
                 <img class="app-wm wm-dark" src="/brand/killendar-wordmark-dark.png" alt="The Killendar">
                 <img class="app-wm wm-light" src="/brand/killendar-wordmark-light.png" alt="The Killendar">
@@ -195,19 +195,15 @@ useHead({
   .about-main { grid-template-columns: 1fr; }
 }
 
-/* ── Grunge (family) pieces: typewriter face + grained card surface ── */
-@font-face {
-  font-family: 'KillerScan';
-  src: url('/brand/KillerScan.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
+/* ── Grunge (family) pieces: header faces + grained card surface ── */
 .killer-font {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-weight: normal;
   letter-spacing: 0.5px;
+}
+
+.site-title.killer-font {
+  font-family: var(--kt-font-page-title);
 }
 
 /* Family card recipe (kt-terminal language): near-black grained surface on
@@ -309,13 +305,15 @@ a:hover { color: var(--kt-accent-2); text-decoration: underline; }
 .app-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   padding: 10px 12px;
   border-radius: 10px;
   transition: background 0.15s;
 }
 .app-card:hover { background: color-mix(in srgb, var(--kt-accent) 10%, transparent); text-decoration: none; }
-.app-icon { width: 46px; height: 46px; border-radius: 9px; flex-shrink: 0; }
+/* Family icon rule: the icon is a little taller than the wordmark and tagline block it
+   sits beside, centered on it, with a gap of about a sixth of its height. */
+.app-icon { width: 66px; height: 66px; border-radius: 9px; flex-shrink: 0; }
 .app-body { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; min-width: 0; }
 /* Family standard wordmark height (30px), dark/light swap follows the site theme */
 /* 37, not 30: the shared-window wordmarks (make-card-wordmarks.py) carry more vertical

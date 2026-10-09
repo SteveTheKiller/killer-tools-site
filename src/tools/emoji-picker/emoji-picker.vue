@@ -88,9 +88,9 @@ const { searchResult } = useFuzzySearch({
 </template>
 
 <style scoped>
-/* Category headers: family typewriter voice (KillerScan) with text stroke */
+/* Category headers: family card-title face with text stroke */
 .emoji-group-title {
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   font-size: 1.25rem;
   font-weight: normal;
   letter-spacing: 0.5px;

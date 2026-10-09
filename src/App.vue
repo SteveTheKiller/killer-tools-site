@@ -82,11 +82,36 @@ html.dark body {
   background: var(--kt-bg, #1c1c1c);
 }
 
-/* Family typewriter font, global (card headings, killer-font accents) */
+/* Family header faces: Iceland and Freckle Face, both OFL, with their licenses
+   beside the files in public/brand. KtKiller is the "Killer" half of the
+   wordmarks, KtAccent the app-name half. Iceland draws small for its em, so
+   size-adjust brings its line widths back to what the old typewriter face
+   set and existing font sizes keep their layout. */
 @font-face {
-  font-family: 'KillerScan';
-  src: url('/brand/KillerScan.ttf') format('truetype');
+  font-family: 'KtKiller';
+  src: url('/brand/Iceland-Regular.ttf') format('truetype');
   font-display: swap;
+  size-adjust: 110%;
+}
+@font-face {
+  font-family: 'KtAccent';
+  src: url('/brand/FreckleFace-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Header font roles. Each role points at one of the two faces; swap a role
+   between var(--kt-font-killer) and var(--kt-font-accent) to try it site-wide.
+   Wordmark spans use the two faces directly, never a role. In a wordmark the
+   accent half is set at 1.55em with a 0.01em lift, which makes its capitals
+   2.0x the height of the "Killer" capitals with no gap between them. */
+:root {
+  --kt-font-killer: 'KtKiller', 'Courier New', monospace;
+  --kt-font-accent: 'KtAccent', 'Courier New', monospace;
+  --kt-font-page-title: var(--kt-font-accent);   /* tool page titles, About and Android h1, MCP h2 */
+  --kt-font-card-title: var(--kt-font-killer);   /* card and terminal titles, home and About section heads */
+  --kt-font-section: var(--kt-font-killer);      /* section rows, category headers, tabs, sidebar menu */
+  --kt-font-code: var(--kt-font-killer);         /* large ids: error hex, ports, event ids, NDR codes, acronyms */
+  --kt-font-ui: var(--kt-font-killer);           /* small chrome such as the titlebar KillerMCP button */
 }
 
 /* ── Theme engine CSS variables (six families, ported from the landing pages).

@@ -405,16 +405,16 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-icon-pair { position: relative; flex: 0 0 106px; width: 106px; height: 94px; }
 .mcp-mark { position: absolute; left: 0; top: 0; width: 90px; height: 90px; object-fit: contain; }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
-.mcp-wordmark { display: flex; align-items: center; gap: 8px; margin: 0; }
-.mcp-wordmark { font-family: 'KillerScan', 'Courier New', monospace; font-size: clamp(34px, 5vw, 58px); font-weight: normal; color: var(--kt-text, #fff); }
-.mcp-wordmark span { color: var(--kt-accent); }
-h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: 'KillerScan', 'Courier New', monospace; font-size: 24px; font-weight: normal; }
+.mcp-wordmark { display: flex; align-items: baseline; gap: 0; margin: 0; }
+.mcp-wordmark { font-family: var(--kt-font-killer); font-size: clamp(34px, 5vw, 58px); font-weight: normal; color: var(--kt-text, #fff); }
+.mcp-wordmark span { position: relative; top: -0.01em; color: var(--kt-accent); font-family: var(--kt-font-accent); font-size: 1.55em; line-height: 1; }
+h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: var(--kt-font-page-title); font-size: 24px; font-weight: normal; }
 .mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 15px; }
 .mcp-connect h2 { margin-bottom: 8px; }
-.mcp-install-label { color: var(--kt-text, #fff); }
-.killermcp-wordmark { display: inline-block; white-space: nowrap; color: var(--kt-text, #fff); font-weight: normal; }
-.killermcp-wordmark span { display: inline-block; color: var(--kt-accent); font-size: 1.3em; line-height: 1; vertical-align: -.03em; -webkit-text-stroke: .012em rgba(0, 0, 0, .7); text-shadow: 0 .08em 0 rgba(0, 0, 0, .5), 0 .16em .24em rgba(0, 0, 0, .35); }
+.mcp-install-label { color: var(--kt-text, #fff); font-family: var(--kt-font-card-title); }
+.killermcp-wordmark { display: inline-block; white-space: nowrap; color: var(--kt-text, #fff); font-family: var(--kt-font-killer); font-weight: normal; }
+.killermcp-wordmark span { display: inline-block; color: var(--kt-accent); font-family: var(--kt-font-accent); font-size: 1.55em; line-height: 1; vertical-align: .01em; -webkit-text-stroke: .012em rgba(0, 0, 0, .7); text-shadow: 0 .08em 0 rgba(0, 0, 0, .5), 0 .16em .24em rgba(0, 0, 0, .35); }
 html:not(.dark) .killermcp-wordmark { color: var(--kt-text, #111); }
 html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-connect p { font-size: 13px; line-height: 1.6; }

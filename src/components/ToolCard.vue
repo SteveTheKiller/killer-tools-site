@@ -130,7 +130,7 @@ html:not(.dark) .tc-wm-light {
   color: rgba(255, 255, 255, 0.94);
   letter-spacing: 0.5px;
   line-height: 1.25;
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-card-title);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 

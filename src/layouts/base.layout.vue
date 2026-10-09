@@ -155,7 +155,7 @@ const tools = computed<ToolCategory[]>(() => [
   background: transparent;
   text-decoration: none;
   white-space: nowrap;
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-ui);
   font-size: 18px;
   margin-left: 2px;
   margin-right: 0;
@@ -176,13 +176,17 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .tb-mcp-killer {
+  font-family: var(--kt-font-killer);
   color: var(--n-text-color);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
 }
 
 .tb-mcp-accent {
+  font-family: var(--kt-font-accent);
   color: var(--kt-accent);
-  font-size: 1.3em;
+  font-size: 1.55em;
+  position: relative;
+  top: -0.01em;
   -webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.6);
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
 }

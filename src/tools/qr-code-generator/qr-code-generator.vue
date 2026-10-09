@@ -408,7 +408,7 @@ const caption = computed(() => {
   font-weight: normal;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-family: 'KillerScan', 'Courier New', monospace;
+  font-family: var(--kt-font-section);
   padding: 0 12px;
   border: none;
   /* Muted family stripe at rest (accent-sel), full accent when active */
