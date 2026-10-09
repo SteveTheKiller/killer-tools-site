@@ -118,18 +118,14 @@ useHead({
       <a class="mcp-github" href="https://github.com/SteveTheKiller/KillerMCP" target="_blank" rel="noopener" :aria-label="t('pages.mcp.github')" :title="t('pages.mcp.github')">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.44 9.77 8.2 11.36.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0024 12.5C24 5.87 18.63.5 12 .5z" /></svg>
       </a>
+      <p class="mcp-eyebrow mcp-hero-eyebrow">
+        {{ t('pages.mcp.eyebrow.agents') }}
+      </p>
       <div class="mcp-heading">
-        <span class="mcp-icon-pair" aria-hidden="true">
-          <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="">
-        </span>
-        <div>
-          <p class="mcp-eyebrow">
-            {{ t('pages.mcp.eyebrow.agents') }}
-          </p>
-          <h1 class="mcp-wordmark">
-            Killer<span>MCP</span>
-          </h1>
-        </div>
+        <img class="mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
+        <h1 class="mcp-wordmark">
+          Killer<span>MCP</span>
+        </h1>
       </div>
       <p class="mcp-lead">
         {{ t('pages.mcp.lead') }}
@@ -401,12 +397,14 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-github { position: absolute; top: 18px; right: 20px; z-index: 1; display: grid; place-items: center; width: 64px; height: 64px; color: inherit; border-radius: 50%; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .42)); transition: transform .12s, color .12s, filter .12s; }
 .mcp-github svg { width: 42px; height: 42px; fill: currentColor; }
 .mcp-github:hover, .mcp-github:focus-visible { color: var(--kt-accent); transform: translateY(-2px) scale(1.08); filter: drop-shadow(0 7px 8px rgba(0, 0, 0, .48)); }
-.mcp-heading { display: flex; align-items: center; gap: 0; }
-.mcp-icon-pair { position: relative; flex: 0 0 106px; width: 106px; height: 94px; }
-.mcp-mark { position: absolute; left: 0; top: 0; width: 90px; height: 90px; object-fit: contain; }
+.mcp-hero { --mcp-heading-size: clamp(34px, 5vw, 58px); }
+.mcp-heading { display: flex; align-items: center; gap: 0.04em; font-size: var(--mcp-heading-size); }
+/* Family icon rule: a little taller than the wordmark beside it, centered on it, close to it */
+.mcp-mark { position: relative; top: -0.06em; flex: 0 0 auto; width: 1.62em; height: 1.62em; margin-right: -0.14em; object-fit: contain; }
+.mcp-hero-eyebrow { padding-left: calc(var(--mcp-heading-size) * 1.52); }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
 .mcp-wordmark { display: flex; align-items: baseline; gap: 0; margin: 0; }
-.mcp-wordmark { font-family: var(--kt-font-killer); font-size: clamp(34px, 5vw, 58px); font-weight: normal; color: var(--kt-text, #fff); }
+.mcp-wordmark { font-family: var(--kt-font-killer); font-size: 1em; font-weight: normal; color: var(--kt-text, #fff); }
 .mcp-wordmark span { position: relative; top: -0.01em; color: var(--kt-accent); font-family: var(--kt-font-accent); font-size: 1.55em; line-height: 1; }
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: var(--kt-font-page-title); font-size: 24px; font-weight: normal; }
 .mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
@@ -471,10 +469,7 @@ code { color: var(--kt-accent); overflow-wrap: anywhere; }
   .mcp-app-grid { grid-template-columns: 1fr; }
   .mcp-hero, .mcp-card, .mcp-connect { padding: 20px; }
   .mcp-copy-row { flex-direction: column; }
-  .mcp-heading { gap: 0; }
-  .mcp-icon-pair { flex-basis: 62px; width: 62px; height: 56px; }
-  .mcp-mark { width: 52px; height: 52px; }
-  .mcp-wordmark { font-size: clamp(30px, 8vw, 44px); }
+  .mcp-hero { --mcp-heading-size: clamp(30px, 8vw, 44px); }
 }
 
 .mcp-page .mcp-lead,
