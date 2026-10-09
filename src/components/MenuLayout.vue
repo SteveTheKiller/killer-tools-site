@@ -173,6 +173,8 @@ function popEgg() {
 
   ::v-deep(> .n-layout-scroll-container) {
     overflow: visible !important;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -211,24 +213,21 @@ html:not(.dark) .content {
 .kt-titlebar-shell {
   /* Skinny band: search bar keeps 8px of air above and below (was 19/19 at
      64px; centered contents lose 11px per side) */
-  height: 42px;
+  height: auto;
+  min-height: 42px;
   display: flex;
   align-items: center;
   /* 8px top offset: the search button's visual field is top-aligned in its
      34px box, so box gaps 8/0 read as an even 8px above and below */
   padding: 8px 26px 0;
 
-  /* Phones: shorter bar (no full search field to house), tighter gutters.
-     4px top offset re-centers the row optically (was 9 above / 17 below);
-     bar height itself never changes */
+  /* Phones keep tighter gutters and the same control sizes. */
   @media (max-width: 700px) {
-    /* Bar hugs the 36px row exactly (per Steve's measurement); the pane's
-       top margin supplies the space below. No vertical padding. */
-    /* ONE RULE: everything centers on the bar's horizontal centerline.
-       No vertical padding anywhere — nothing can be pushed off-axis. */
+    /* The pane's top margin supplies the space below the header. */
     align-items: center;
     box-sizing: border-box;
-    height: 36px; /* pane sits at 36+8=44 and never moves */
+    height: auto;
+    min-height: 36px;
     padding: 0 10px;
   }
   /* IDENTICAL background construction to #kt-sider so the rails and the
@@ -254,17 +253,11 @@ html:not(.dark) .content {
   }
 }
 
-/* Titlebar (57px) + inset gutters + content fill the column exactly, so
-   nothing outside the content pane ever scrolls and both rails stay fixed. */
+/* The pane fills the space left by the header, including wrapped rows. */
 .content.has-titlebar {
-  height: calc(100% - 42px - 8px) !important;
-}
-
-/* Matches the phone titlebar height above */
-@media (max-width: 700px) {
-  .content.has-titlebar {
-    height: calc(100% - 36px - 8px) !important;
-  }
+  flex: 1 1 0;
+  min-height: 0;
+  height: auto !important;
 }
 
 /* ── Statusbar: black grained chrome rail with the frame line on top ── */

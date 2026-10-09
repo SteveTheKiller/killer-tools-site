@@ -71,7 +71,7 @@ const tools = computed<ToolCategory[]>(() => [
          fixed shell - present on every page, sidebar-toned, with the content pane
          recessed and scrolling beneath it, exactly like the app windows. -->
     <template #titlebar>
-      <div class="tb-row" flex items-center gap-2>
+      <div class="tb-row" :class="{ 'sider-collapsed': styleStore.isMenuCollapsed || styleStore.isSmallScreen }" flex items-center gap-2>
         <c-button
           class="keep-circle"
           circle
@@ -88,8 +88,7 @@ const tools = computed<ToolCategory[]>(() => [
           </c-button>
         </c-tooltip>
 
-        <!-- Mobile brand: icon + wordmark centered in the bar while the
-             sidebar (and its logo) is hidden -->
+        <!-- Mobile home link while the sidebar logo is hidden. -->
         <RouterLink to="/" class="tb-brand" :aria-label="t('layouts.base.homeLabel')">
           <img class="tb-brand-icon" src="/app-icon-512.png" alt="">
           <img class="tb-brand-wm" :src="wmSrc" alt="KillerTOOLS">
@@ -110,7 +109,7 @@ const tools = computed<ToolCategory[]>(() => [
           <img class="tb-mcp-mark" src="/brand/mcp.png?v=ac7ee189" alt="" aria-hidden="true">
           <span class="tb-mcp-wordmark"><span class="tb-mcp-killer">Killer</span><span class="tb-mcp-accent">MCP</span></span>
         </RouterLink>
-        <div flex-1 />
+        <div class="tb-spacer" flex-1 />
         <ThemeDots />
         <NavbarButtons class="tb-about" />
       </div>
@@ -139,6 +138,10 @@ const tools = computed<ToolCategory[]>(() => [
 
 .tb-row > .keep-circle:first-child {
   margin-left: -42px;
+}
+
+.tb-row.sider-collapsed > .keep-circle:first-child {
+  margin-left: 0;
 }
 
 .tb-mcp {
@@ -193,18 +196,33 @@ const tools = computed<ToolCategory[]>(() => [
   height: 25px;
 }
 
-/* The topbar row is the positioning ancestor for the brand: when the row
-   moves, the brand moves with it — they can never drift apart again */
+/* Keep controls together until their contents need another line. */
 .tb-row {
   position: relative;
   width: 100%;
+  flex-wrap: wrap;
+}
+
+.tb-row > :not(.palette-wrap) {
+  flex-shrink: 0;
+}
+
+.tb-row > .tb-spacer {
+  display: none;
+}
+
+.tb-row > .chrome-pickers {
+  margin-left: auto;
+}
+
+.tb-about {
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 700px) {
-  /* Steve's measurement: logo was 3px from the top, 11px from the content.
-     +4px here = 7/7. This is the ONLY vertical adjustment in the mobile bar. */
   .tb-row {
-    top: 4px;
+    top: 0;
   }
 
   .tb-row > .keep-circle:first-child {
@@ -226,12 +244,7 @@ const tools = computed<ToolCategory[]>(() => [
     display: flex;
     align-items: center;
     gap: 7px;
-    position: absolute;
-    left: 50%;
-    /* The brand is absolutely positioned so bar padding does NOT move it —
-       +2px re-centers it on the row, which sits 4px down in the 40px bar */
-    top: 50%; /* same centerline as every other bar element */
-    transform: translate(-50%, -50%);
+    position: static;
     pointer-events: auto;
   }
 
