@@ -254,35 +254,63 @@ html:not(.dark) .home-all-tools {
 
 .home-sort-group {
   display: inline-flex;
-  border: 1px solid color-mix(in srgb, var(--kt-accent) 25%, transparent);
-  border-radius: 5px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.35);
+  /* No base of its own: the systemic *-sort-group base in kt-terminal.css would show
+     past the rounded outer corners of the buttons */
+  background: transparent;
 }
 
+/* Joined family buttons: each one is a full button (the site button fill and accent
+   outline), they just touch. The active one takes the family selection fill, the same
+   SelectionBg and SelectionFg the sidebar uses for the current tool. */
 .home-sort-btn {
+  position: relative;
   padding: 3px 12px;
-  background: transparent;
-  border: none;
-  border-right: 1px solid color-mix(in srgb, var(--kt-accent) 15%, transparent);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border-radius: 0;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.75rem;
-  color: var(--n-text-color, rgba(128, 128, 128, 0.8));
+  color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
-  transition: background 0.12s, color 0.12s;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+
+  & + & {
+    margin-left: -1px;
+  }
+
+  &:first-child {
+    border-radius: 5px 0 0 5px;
+  }
 
   &:last-child {
-    border-right: none;
+    border-radius: 0 5px 5px 0;
   }
 
   &:hover {
-    background: color-mix(in srgb, var(--kt-accent) 8%, transparent);
+    z-index: 1;
+    border-color: rgba(var(--kt-accent-rgb), 0.75);
     color: var(--kt-accent);
   }
 }
 
-.home-sort-btn-active {
-  background: color-mix(in srgb, var(--kt-accent) 12%, transparent);
-  color: var(--kt-accent);
+.home-sort-btn.home-sort-btn-active {
+  z-index: 2;
+  background: var(--kt-accent-sel);
+  border-color: var(--kt-accent);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Light: the inactive look comes from the systemic light *-btn rule in kt-terminal.css,
+   which is !important, so the selection fill has to be too. */
+html:not(.dark) .home-sort-btn.home-sort-btn-active {
+  background: var(--kt-accent-sel) !important;
+  border-color: var(--kt-accent-sel) !important;
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+html[data-kt-theme='light'][data-kt-accent='yellow'] .home-sort-btn.home-sort-btn-active {
+  color: #24231C !important;
 }
 </style>
