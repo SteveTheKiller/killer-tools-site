@@ -453,6 +453,9 @@ html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-app-item { display: grid; align-content: start; gap: 8px; }
 .mcp-app-item h3 { margin: 0; color: var(--kt-text, #fff); font-size: 15px; }
 .mcp-app-item code { display: block; padding: 12px 14px; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); color: inherit; font-size: 12px; line-height: 1.5; }
+:global(html[data-kt-theme='black'] .mcp-value),
+:global(html[data-kt-theme='black'] .mcp-example-grid code),
+:global(html[data-kt-theme='black'] .mcp-app-item code) { background: #000; }
 .mcp-app-item p { margin: 0; }
 code { color: var(--kt-accent); overflow-wrap: anywhere; }
 .mcp-card a { color: var(--kt-accent); }
