@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 - Added yellow and magenta neutral theme accents.
 - Replaced the top bar search field with a compact icon.
-- Replaced the typewriter heading font with Iceland and Freckle Face, set per heading type from one list of font roles.
+- Replaced the typewriter heading font with Killer Sans and Freckle Face, set per heading type from one list of font roles.
 - Redrew the KillerTools and app wordmarks in the new fonts, including the yellow and magenta accents.
 
 ### MCP

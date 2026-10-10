@@ -82,14 +82,14 @@ html.dark body {
   background: var(--kt-bg, #1c1c1c);
 }
 
-/* Family header faces: Iceland and Freckle Face, both OFL, with their licenses
+/* Family header faces: Killer Sans and Freckle Face, both OFL, with their licenses
    beside the files in public/brand. KtKiller is the "Killer" half of the
-   wordmarks, KtAccent the app-name half. Iceland draws small for its em, so
+   wordmarks, KtAccent the app-name half. Killer Sans draws small for its em, so
    size-adjust brings its line widths back to what the old typewriter face
    set and existing font sizes keep their layout. */
 @font-face {
   font-family: 'KtKiller';
-  src: url('/brand/Iceland-Regular.ttf') format('truetype');
+  src: url('/brand/KillerSans-Regular.ttf') format('truetype');
   font-display: swap;
   size-adjust: 110%;
 }
