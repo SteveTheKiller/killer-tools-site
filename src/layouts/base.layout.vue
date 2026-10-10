@@ -189,7 +189,7 @@ const tools = computed<ToolCategory[]>(() => [
 .tb-mcp-accent {
   font-family: var(--kt-font-accent);
   color: var(--kt-accent);
-  font-size: 1.55em;
+  font-size: 1.201em;
   position: relative;
   top: -0.01em;
   -webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.6);

@@ -102,8 +102,8 @@ html.dark body {
 /* Header font roles. Each role points at one of the two faces; swap a role
    between var(--kt-font-killer) and var(--kt-font-accent) to try it site-wide.
    Wordmark spans use the two faces directly, never a role. In a wordmark the
-   accent half is set at 1.55em with a 0.01em lift, which makes its capitals
-   2.0x the height of the "Killer" capitals with no gap between them. */
+   accent half is set at 1.201em with a 0.01em lift, which makes its capitals
+   1.55x the height of the "Killer" capitals with no gap between them. */
 :root {
   --kt-font-killer: 'KtKiller', 'Courier New', monospace;
   --kt-font-accent: 'KtAccent', 'Courier New', monospace;
