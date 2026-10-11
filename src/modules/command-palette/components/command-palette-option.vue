@@ -76,9 +76,9 @@ const brand = computed(() => (typeof option.value.to === 'string' ? APP_BRAND[op
 
 /* Brand wordmarks sized to sit like the option title, dark/light swap */
 .cp-wm {
-  /* 21, not 17 - the shared-window wordmarks are taller for the same text size.
+  /* 23.5, not 17 - the shared-window wordmarks are taller for the same text size.
      See Killer Branding/make-card-wordmarks.py. */
-  height: 21px;
+  height: 23.5px;
   width: auto;
   display: block;
   margin-bottom: 3px;

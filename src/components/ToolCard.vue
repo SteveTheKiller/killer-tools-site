@@ -100,12 +100,13 @@ const brand = computed(() => APP_BRAND[tool.value.path]);
 }
 
 .tc-wm {
-  /* 22, not 18. The wordmark PNGs are generated on ONE shared vertical window
+  /* 24.5, not 18. The wordmark PNGs are generated on ONE shared vertical window
      (Killer Branding/make-card-wordmarks.py) so every app's "Killer" is the same size at a
      given height - they used to be cropped to their own ink, which made a lockup with tall
-     ascenders render smaller. A shared window is as tall as the tallest lockup, so the height
-     goes up to keep the rendered text the size it already was. */
-  height: 22px;
+     ascenders render smaller. A shared window is as tall as the tallest lockup and deep
+     enough for Lacquer's drips, so the height goes up to keep the rendered text the size it
+     already was. */
+  height: 24.5px;
   width: auto;
   display: block;
 }

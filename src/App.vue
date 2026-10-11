@@ -82,11 +82,13 @@ html.dark body {
   background: var(--kt-bg, #1c1c1c);
 }
 
-/* Family header faces: Killer Sans and Freckle Face, both OFL, with their licenses
-   beside the files in public/brand. KtKiller is the "Killer" half of the
-   wordmarks, KtAccent the app-name half. Killer Sans draws small for its em, so
-   size-adjust brings its line widths back to what the old typewriter face
-   set and existing font sizes keep their layout. */
+/* Family faces, with their licenses beside the files in public/brand. Text
+   wordmarks pair Punktype (KtPunk, commercial license) for "Killer" with Lacquer
+   (KtAccent, OFL) for the app name, as the apps do. Headings and chrome use
+   Killer Sans (KtKiller, OFL). Killer Sans draws small for its em, so size-adjust
+   brings its line widths back to what the old typewriter face set and existing
+   font sizes keep their layout; KtPunk is scaled so its "K" matches a KtKiller
+   capital. */
 @font-face {
   font-family: 'KtKiller';
   src: url('/brand/KillerSans-Regular.ttf') format('truetype');
@@ -94,20 +96,27 @@ html.dark body {
   size-adjust: 110%;
 }
 @font-face {
+  font-family: 'KtPunk';
+  src: url('/brand/Punktype.ttf') format('truetype');
+  font-display: swap;
+  size-adjust: 78.2%;
+}
+@font-face {
   font-family: 'KtAccent';
-  src: url('/brand/FreckleFace-Regular.ttf') format('truetype');
+  src: url('/brand/Lacquer-Regular.ttf') format('truetype');
   font-display: swap;
 }
 
-/* Header font roles. Each role points at one of the two faces; swap a role
-   between var(--kt-font-killer) and var(--kt-font-accent) to try it site-wide.
-   Wordmark spans use the two faces directly, never a role. In a wordmark the
-   accent half is set at 1.201em with a 0.01em lift, which makes its capitals
+/* Header font roles. Each heading role points at Killer Sans; swap one to
+   var(--kt-font-accent) to try Lacquer there instead. Wordmark spans use
+   var(--kt-font-wordmark) and var(--kt-font-accent) directly, never a role. In a
+   wordmark the app name is set at 1.28em with no lift, which makes its capitals
    1.55x the height of the "Killer" capitals with no gap between them. */
 :root {
   --kt-font-killer: 'KtKiller', 'Courier New', monospace;
-  --kt-font-accent: 'KtAccent', 'Courier New', monospace;
-  --kt-font-page-title: var(--kt-font-accent);   /* tool page titles, About and Android h1, MCP h2 */
+  --kt-font-wordmark: 'KtPunk', 'KtKiller', 'Courier New', monospace;
+  --kt-font-accent: 'KtAccent', 'KtKiller', 'Courier New', monospace;
+  --kt-font-page-title: var(--kt-font-killer);   /* tool page titles, About and Android h1, MCP h2 */
   --kt-font-card-title: var(--kt-font-killer);   /* card and terminal titles, home and About section heads */
   --kt-font-section: var(--kt-font-killer);      /* section rows, category headers, tabs, sidebar menu */
   --kt-font-code: var(--kt-font-killer);         /* large ids: error hex, ports, event ids, NDR codes, acronyms */
