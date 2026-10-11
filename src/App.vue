@@ -107,8 +107,8 @@ html.dark body {
   font-display: swap;
 }
 
-/* Header font roles. Each heading role points at Killer Sans; swap one to
-   var(--kt-font-accent) to try Lacquer there instead. Wordmark spans use
+/* Header font roles. Lacquer is the primary heading face (page titles) and
+   Killer Sans the secondary one; swap a role between the two to try it. Wordmark spans use
    var(--kt-font-wordmark) and var(--kt-font-accent) directly, never a role. In a
    wordmark the app name is set at 1.28em with no lift, which makes its capitals
    1.55x the height of the "Killer" capitals with no gap between them. */
@@ -116,7 +116,7 @@ html.dark body {
   --kt-font-killer: 'KtKiller', 'Courier New', monospace;
   --kt-font-wordmark: 'KtPunk', 'KtKiller', 'Courier New', monospace;
   --kt-font-accent: 'KtAccent', 'KtKiller', 'Courier New', monospace;
-  --kt-font-page-title: var(--kt-font-killer);   /* tool page titles, About and Android h1, MCP h2 */
+  --kt-font-page-title: var(--kt-font-accent);   /* tool page titles, About and Android h1, MCP h2 */
   --kt-font-card-title: var(--kt-font-killer);   /* card and terminal titles, home and About section heads */
   --kt-font-section: var(--kt-font-killer);      /* section rows, category headers, tabs, sidebar menu */
   --kt-font-code: var(--kt-font-killer);         /* large ids: error hex, ports, event ids, NDR codes, acronyms */
