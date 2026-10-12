@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### MCP
 
-- Added the KillerMCP directory package, tool annotations, hosted privacy and terms pages, domain verification, and a compatible 73-tool directory endpoint.
+- Added the KillerMCP directory package, tool annotations, hosted privacy and terms pages, domain verification, a compatible 73-tool directory endpoint, and support through the KillerMCP repository.
 - Added the MCP page and logo, top bar link, and first local server tools.
 
 ### Localization

@@ -18,7 +18,7 @@
         "category": "Developer Tools",
         "capabilities": ["IT reference lookup", "Network calculations", "Data conversion", "Structured text formatting", "PowerShell command construction"],
         "websiteURL": "https://killertools.net",
-        "supportURL": "https://github.com/SteveTheKiller/killer-tools-site/issues",
+        "supportURL": "https://github.com/SteveTheKiller/KillerMCP/issues",
         "privacyPolicyURL": "https://mcp.killertools.net/privacy",
         "termsOfServiceURL": "https://mcp.killertools.net/terms",
         "defaultPrompt": ["Calculate the network details for 192.168.10.0/24.", "Explain Windows Event ID 4625.", "Build a PowerShell command to inspect the Spooler service."],
