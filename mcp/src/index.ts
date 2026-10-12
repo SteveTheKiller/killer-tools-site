@@ -387,6 +387,16 @@ const directoryHandler = createMcpHandler(() => createServer('KillerMCP', true),
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
+    if (pathname === '/.well-known/openai-apps-challenge') {
+      if (request.method !== 'GET' && request.method !== 'HEAD') {
+        return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
+      }
+      return new Response(request.method === 'HEAD' ? null : '07svdgvwAJD2mFJJ38Ccu5Y-zLdILittvnNduyqR10M', { headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'X-Content-Type-Options': 'nosniff',
+        'Cache-Control': 'no-store',
+      } });
+    }
     const page = pathname === '/privacy' ? privacyPage : pathname === '/terms' ? termsPage : undefined;
     if (page !== undefined) {
       if (request.method !== 'GET' && request.method !== 'HEAD') {
