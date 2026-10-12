@@ -41,11 +41,16 @@ for (const tool of listed.tools) {
   assert.equal(tool.annotations.destructiveHint, false, tool.name);
   assert.equal(tool.annotations.openWorldHint, external.has(tool.name), tool.name);
   assert.equal(tool.inputSchema.type, 'object', tool.name);
+  assert.ok(tool.title && tool.annotations.title === tool.title, `${tool.name} title`);
 }
 evidence.protocolChecks.push('Directory exposes 73 independent tools with explicit annotations and no Wi-Fi credential QR tool.');
 const original = await request('tools/list', {}, new URL('/', endpoint).href);
 assert.equal(original.tools.length, 74);
 assert.ok(original.tools.some(tool => tool.name === 'generate_qr_code'));
+assert.ok(original.tools.every(tool => tool.title && tool.annotations?.title === tool.title), 'every root tool has a title');
+const claude = await request('tools/list', {}, new URL('/claude', endpoint).href);
+assert.deepEqual(claude.tools.map(tool => tool.name).sort(), listed.tools.map(tool => tool.name).sort());
+evidence.protocolChecks.push('Every tool has a title, and the Claude directory route exposes the same 73 tools.');
 evidence.protocolChecks.push('Existing root connection retains all 74 tools.');
 await positive('calculate_ipv4_subnet', { address: '192.168.10.0/24' }, value => {
   assert.equal(value.networkAddress, '192.168.10.0');

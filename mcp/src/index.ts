@@ -121,8 +121,96 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
   return new Request(request, { body, headers });
 }
 
+// Human-readable tool titles for every hosted tool. Directory reviewers and MCP clients show the
+// title instead of the snake_case name. Tools added elsewhere fall back to a title built from the name.
+const toolTitles: Record<string, string> = {
+  arabic_to_roman: 'Convert to Roman Numerals',
+  ascii_binary_to_text: 'Convert Binary to Text',
+  build_powershell_command: 'Build PowerShell Command',
+  calculate_chmod: 'Calculate Chmod',
+  calculate_depth_of_field: 'Calculate Depth of Field',
+  calculate_exposure_equivalence: 'Calculate Equivalent Exposure',
+  calculate_film_development: 'Calculate Film Development',
+  calculate_ipv4_subnet: 'Calculate IPv4 Subnet',
+  calculate_nd_exposure: 'Calculate ND Filter Exposure',
+  calculate_percentage: 'Calculate Percentage',
+  calculate_reciprocity: 'Calculate Reciprocity Failure',
+  convert_case: 'Convert Text Case',
+  convert_color: 'Convert Color',
+  convert_date_time: 'Convert Date and Time',
+  convert_integer_base: 'Convert Number Base',
+  convert_json: 'Convert JSON',
+  convert_temperature: 'Convert Temperature',
+  convert_toml: 'Convert TOML',
+  convert_xml_json: 'Convert XML and JSON',
+  convert_yaml: 'Convert YAML',
+  decode_base64: 'Decode Base64',
+  describe_cron: 'Describe Cron Expression',
+  diff_json: 'Compare JSON',
+  diff_text: 'Compare Text',
+  draw_ascii_text: 'Draw ASCII Text',
+  encode_base64: 'Encode Base64',
+  escape_html_entities: 'Escape HTML Entities',
+  evaluate_math: 'Evaluate Math Expression',
+  expand_ipv4_range: 'Expand IPv4 Range',
+  format_json: 'Format JSON',
+  format_sql: 'Format SQL',
+  format_xml: 'Format XML',
+  format_yaml: 'Format YAML',
+  generate_dmarc_record: 'Generate DMARC Record',
+  generate_ipv6_ula: 'Generate IPv6 ULA',
+  generate_lorem_ipsum: 'Generate Lorem Ipsum',
+  generate_meta_tags: 'Generate Meta Tags',
+  generate_qr_code: 'Generate QR Code',
+  generate_spf_record: 'Generate SPF Record',
+  generate_svg_placeholder: 'Generate SVG Placeholder',
+  generate_ulids: 'Generate ULIDs',
+  generate_uuids: 'Generate UUIDs',
+  get_powershell_cmdlet: 'Get PowerShell Cmdlet',
+  json_to_csv: 'Convert JSON to CSV',
+  list_film_development_options: 'List Film Development Options',
+  list_film_stocks: 'List Film Stocks',
+  list_killer_modules: 'List Killer Modules',
+  list_killer_scripts: 'List Killer Scripts',
+  lookup_cve: 'Look Up CVE',
+  lookup_domain_dns: 'Look Up Domain DNS',
+  lookup_domain_rdap: 'Look Up Domain Registration',
+  lookup_exchange_ndr: 'Look Up Exchange NDR Code',
+  lookup_group_policy: 'Look Up Group Policy',
+  lookup_http_status: 'Look Up HTTP Status',
+  lookup_m365_sku: 'Look Up Microsoft 365 SKU',
+  lookup_mac_vendor: 'Look Up MAC Vendor',
+  lookup_port_protocol: 'Look Up Port or Protocol',
+  lookup_windows_error: 'Look Up Windows Error',
+  lookup_windows_event: 'Look Up Windows Event',
+  markdown_to_html: 'Convert Markdown to HTML',
+  minify_json: 'Minify JSON',
+  parse_email_headers: 'Parse Email Headers',
+  parse_phone_number: 'Parse Phone Number',
+  parse_url: 'Parse URL',
+  parse_user_agent: 'Parse User Agent',
+  roman_to_arabic: 'Convert from Roman Numerals',
+  search_emoji: 'Search Emoji',
+  search_gifs: 'Search GIFs',
+  search_powershell_cmdlets: 'Search PowerShell Cmdlets',
+  test_regex: 'Test Regular Expression',
+  text_statistics: 'Count Text Statistics',
+  text_to_ascii_binary: 'Convert Text to Binary',
+  text_to_nato_alphabet: 'Convert Text to NATO Alphabet',
+  unescape_html_entities: 'Unescape HTML Entities',
+};
+
+function withTitles(server: McpServer) {
+  const register = server.registerTool.bind(server) as (name: string, config: any, callback: any) => unknown;
+  (server as any).registerTool = (name: string, config: any, callback: any) => {
+    const title: string = config.title ?? toolTitles[name] ?? name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return register(name, { ...config, title, annotations: { title, ...config.annotations } }, callback);
+  };
+  return server;
+}
+
 export function createServer(name = 'KillerTools MCP', directory = false) {
-  const server = new McpServer({ name, version: '0.1.0' });
+  const server = withTitles(new McpServer({ name, version: '0.1.0' }));
   registerAsciiArt(server);
   registerCveLookup(server);
   registerDateTime(server);
@@ -384,6 +472,13 @@ const directoryHandler = createMcpHandler(() => createServer('KillerMCP', true),
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
 });
 
+// Same directory tool set for the Claude Connectors Directory listing.
+const claudeHandler = createMcpHandler(() => createServer('KillerMCP', true), {
+  route: '/claude',
+  allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
+  allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
+});
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
@@ -409,7 +504,7 @@ export default {
         'Referrer-Policy': 'strict-origin-when-cross-origin',
       } });
     }
-    if (pathname !== '/' && pathname !== '/openai') {
+    if (pathname !== '/' && pathname !== '/openai' && pathname !== '/claude') {
       return new Response('Not found', { status: 404 });
     }
     if (Number(request.headers.get('content-length')) > maxRequestBytes) {
@@ -424,6 +519,6 @@ export default {
     if (bounded instanceof Response) {
       return bounded;
     }
-    return (pathname === '/openai' ? directoryHandler : handler)(bounded, env, ctx);
+    return (pathname === '/openai' ? directoryHandler : pathname === '/claude' ? claudeHandler : handler)(bounded, env, ctx);
   },
 };
