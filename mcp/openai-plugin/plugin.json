@@ -26,6 +26,7 @@
         "composerIcon": "./assets/mcp.png"
       },
       "review": {
+        "demo_recording_url": "https://mcp.killertools.net/review/",
         "test_cases": {
           "positive": [
             { "description": "Calculate an IPv4 subnet", "prompt": "Use KillerMCP to calculate the network details for 192.168.10.0/24.", "tools_triggered": "calculate_ipv4_subnet", "expected_behavior": "Return network 192.168.10.0, mask 255.255.255.0, prefix length 24, and 254 usable hosts." },

@@ -71,12 +71,16 @@ for (const [pathname, filename] of [['/privacy', 'privacy.html'], ['/terms', 'te
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('content-type'), 'text/html; charset=utf-8');
   assert.ok(response.headers.get('content-security-policy')?.includes("frame-ancestors 'none'"));
-  assert.equal(await response.text(), readFileSync(new URL('../legal/' + filename, import.meta.url), 'utf8'));
+  const html = await response.text();
+  const sourceHtml = response.headers.has('cf-ray')
+    ? html.replace(/(<\/main>)<script>[^<]*window\.__CF\$cv\$params=[^<]*\/cdn-cgi\/challenge-platform\/scripts\/jsd\/main\.js[^<]*<\/script>(<\/body>)/, '$1$2')
+    : html;
+  assert.equal(sourceHtml, readFileSync(new URL('../legal/' + filename, import.meta.url), 'utf8'));
   assert.equal((await fetch(url, { method: 'HEAD' })).status, 200);
   assert.equal((await fetch(url, { method: 'POST' })).status, 405);
 }
 assert.equal((await fetch(new URL('/mcp', endpoint))).status, 404);
-evidence.protocolChecks.push('Legal pages return exact source, HEAD works, POST is rejected, and unsupported /mcp remains 404.');
+evidence.protocolChecks.push('Legal pages match source after accounting for the Cloudflare JavaScript detection injection; HEAD works, POST is rejected, and unsupported /mcp remains 404.');
 if (process.argv[2]) writeFileSync(process.argv[2], JSON.stringify(evidence, null, 2) + '\n');
 console.log('Directory protocol, 73 annotations, root compatibility, five positive calls, three input rejection checks and legal routes passed.');
 console.log('Client prompt behavior and the reviewer video remain separate checks.');

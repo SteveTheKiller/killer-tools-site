@@ -55,9 +55,9 @@ The Worker accepts MCP requests at `/` and `/openai`, rejects request bodies ove
 
 ## OpenAI directory package
 
-The [submission packet](OPENAI-SUBMISSION.md) contains the package build steps, review prompts, brand copy and remaining publication requirements. The proposed directory endpoint at `/openai` exposes 73 operations while the existing root connection retains all 74. Every public operation declares read-only, destructive and open-world annotations. The hosted privacy and service terms are served at `/privacy` and `/terms`.
+The [submission packet](OPENAI-SUBMISSION.md) contains the package build steps, review prompts, brand copy and remaining publication requirements. The live directory endpoint at `/openai` exposes 73 operations while the existing root connection retains all 74. Every public operation declares read-only, destructive and open-world annotations. The hosted privacy and service terms are served at `/privacy` and `/terms`.
 
-The package and new routes are local preparation until the Worker is deployed. Developer verification, domain verification, client review tests and a reviewer-accessible recording are required before review submission. Preparing the package does not publish it.
+The directory endpoint and legal pages are deployed. The OpenAI draft uses the verified business identity Steve the Killer, includes 18 translated descriptions, and has a verified domain and a successful MCP scan. All five positive and three negative prompts passed in ChatGPT using the directory endpoint. The [review walkthrough](https://mcp.killertools.net/review/) uses actual client captures and is served from `review-assets` alongside the Worker. Deploying the service does not publish the directory listing.
 
 ## Local development
 

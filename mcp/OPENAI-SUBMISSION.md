@@ -1,6 +1,8 @@
 # KillerMCP directory package
 
-This package presents the hosted KillerTools utilities under the existing KillerMCP product brand. Its proposed directory endpoint is `https://mcp.killertools.net/openai`. The root endpoint keeps all 74 public operations. The directory endpoint exposes 73 operations and excludes the Wi-Fi credential QR operation because the directory prohibits collecting authentication secrets.
+This package presents the hosted KillerTools utilities under the existing KillerMCP product brand. Its live directory endpoint is `https://mcp.killertools.net/openai`. The root endpoint keeps all 74 public operations. The directory endpoint exposes 73 operations and excludes the Wi-Fi credential QR operation because the directory prohibits collecting authentication secrets.
+
+The draft in the Killer Apps project uses the verified business identity Steve the Killer and includes 18 translated listing descriptions. The Worker, hosted legal pages and domain challenge are deployed. OpenAI confirms the domain is verified and the current MCP scan has no findings. All eight review prompts passed in ChatGPT. The [reviewer walkthrough](https://mcp.killertools.net/review/) uses actual client captures and is declared in the package. Final attestations, review submission and directory publication remain separate steps.
 
 ## Brand and copy
 
