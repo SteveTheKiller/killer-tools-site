@@ -5,6 +5,7 @@ const proxy = 'https://gif-proxy.cst-498.workers.dev/';
 
 export function registerGifSearch(server: McpServer) {
   server.registerTool('search_gifs', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
     description: 'Search GIFs through the same fixed proxy used by the KillerTools GIF page. Returns links and titles, not image bytes.',
     inputSchema: { query: z.string().trim().min(1).max(80), limit: z.number().int().min(1).max(20).default(10) },
   }, async ({ query, limit }) => {

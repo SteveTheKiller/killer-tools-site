@@ -10,11 +10,13 @@ function result(value: unknown) {
 
 export function registerPhotoCalculators(server: McpServer) {
   server.registerTool('calculate_nd_exposure', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate exposure time with an ND filter using KillerTools.',
     inputSchema: { baseSeconds: positive.max(3600), stops: z.number().finite().min(0).max(20) },
   }, async ({ baseSeconds, stops }) => result({ seconds: baseSeconds * (2 ** stops) }));
 
   server.registerTool('calculate_exposure_equivalence', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate equivalent shutter time after an aperture change using KillerTools.',
     inputSchema: {
       shutterSeconds: positive.max(3600),
@@ -25,6 +27,7 @@ export function registerPhotoCalculators(server: McpServer) {
     result({ shutterSeconds: shutterSeconds * (targetAperture ** 2) / (originalAperture ** 2) }));
 
   server.registerTool('calculate_depth_of_field', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate hyperfocal distance, focus limits, and depth of field using KillerTools.',
     inputSchema: {
       focalLengthMm: positive.max(2000),
@@ -50,11 +53,13 @@ export function registerPhotoCalculators(server: McpServer) {
   });
 
   server.registerTool('list_film_stocks', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'List the film stocks available in KillerTools Reciprocity Calculator.',
     inputSchema: {},
   }, async () => result(filmStocks.map(({ id, name, manufacturer, iso, type }) => ({ id, name, manufacturer, iso, type }))));
 
   server.registerTool('calculate_reciprocity', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate reciprocity failure adjustment for a film stock using KillerTools.',
     inputSchema: { filmStockId: z.string().min(1).max(64), meteredSeconds: positive.max(3600) },
   }, async ({ filmStockId, meteredSeconds }) => {

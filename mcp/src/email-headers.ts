@@ -4,6 +4,7 @@ import { parseRawHeaders } from '../../src/tools/email-header-parser/email-heade
 
 export function registerEmailHeaders(server: McpServer) {
   server.registerTool('parse_email_headers', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Parse message headers, delivery hops, authentication results, and spam signals using KillerTools. Input may contain private addresses.',
     inputSchema: { headers: z.string().trim().min(1).max(16_384) },
   }, async ({ headers }) => {

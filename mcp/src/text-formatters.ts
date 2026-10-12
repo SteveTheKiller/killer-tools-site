@@ -14,11 +14,13 @@ function output(text: string) {
 
 export function registerTextFormatters(server: McpServer) {
   server.registerTool('markdown_to_html', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert Markdown to HTML using KillerTools Markdown to HTML.',
     inputSchema: { markdown: inputText },
   }, async ({ markdown }) => output(markdownit().render(markdown)));
 
   server.registerTool('format_sql', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Format SQL with the dialect and style options shown by KillerTools SQL Prettify.',
     inputSchema: {
       sql: inputText,

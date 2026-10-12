@@ -55,6 +55,7 @@ function result(record: string) {
 
 export function registerEmailRecords(server: McpServer) {
   server.registerTool('generate_spf_record', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Build an SPF TXT record using the KillerTools Email Record Generator.',
     inputSchema: {
       providers: z.array(z.enum(providers)).max(15).default([]),
@@ -73,6 +74,7 @@ export function registerEmailRecords(server: McpServer) {
   });
 
   server.registerTool('generate_dmarc_record', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Build a DMARC TXT record using the KillerTools Email Record Generator.',
     inputSchema: {
       policy: z.enum(['reject', 'quarantine', 'none']).default('reject'),

@@ -33,6 +33,7 @@ function lineDiff(left: string[], right: string[]): DiffLine[] {
 
 export function registerTextDiff(server: McpServer) {
   server.registerTool('diff_text', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Compare two bounded text inputs line by line, corresponding to the KillerTools Text Diff page.',
     inputSchema: { left: z.string().max(4096), right: z.string().max(4096) },
   }, async ({ left, right }) => {

@@ -2,6 +2,7 @@
   "name": "killertools-mcp",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-25",
+  "rules": [{ "type": "Text", "globs": ["**/*.html"], "fallthrough": false }],
   "routes": [{ "pattern": "mcp.killertools.net", "custom_domain": true }],
   "ratelimits": [{
     "name": "REQUEST_LIMITER",

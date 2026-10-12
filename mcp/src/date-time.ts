@@ -17,6 +17,7 @@ const formats = ['iso8601', 'iso9075', 'rfc3339', 'rfc7231', 'unix_seconds', 'ti
 
 export function registerDateTime(server: McpServer) {
   server.registerTool('convert_date_time', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert a date among the formats shown by KillerTools Date Time Converter. Worker output uses UTC.',
     inputSchema: {
       value: z.string().trim().min(1).max(128),

@@ -67,6 +67,7 @@ async function loadScripts(): Promise<ScriptEntry[]> {
 
 export function registerKillerScripts(server: McpServer) {
   server.registerTool('list_killer_scripts', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'List KillerScripts names, descriptions, and download links from the same GitHub catalog as the KillerTools page. Does not download or run a script.',
     inputSchema: { query: z.string().trim().max(80).default('') },
   }, async ({ query }) => {

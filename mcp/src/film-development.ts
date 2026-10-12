@@ -19,6 +19,7 @@ function invalid(message: string) {
 
 export function registerFilmDevelopment(server: McpServer) {
   server.registerTool('list_film_development_options', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'List films and developers available in KillerTools Film Development Calculator.',
     inputSchema: {},
   }, async () => result({
@@ -27,6 +28,7 @@ export function registerFilmDevelopment(server: McpServer) {
   }));
 
   server.registerTool('calculate_film_development', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate film development time and dilution volumes using KillerTools.',
     inputSchema: {
       filmName: z.string().min(1).max(128),

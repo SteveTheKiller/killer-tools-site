@@ -21,6 +21,7 @@ function invalid() {
 
 export function registerDocumentTools(server: McpServer) {
   server.registerTool('diff_json', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Compare two JSON5-compatible documents using KillerTools JSON Diff.',
     inputSchema: { left: inputText, right: inputText, onlyDifferences: z.boolean().default(true) },
   }, async ({ left, right, onlyDifferences }) => {
@@ -33,6 +34,7 @@ export function registerDocumentTools(server: McpServer) {
   });
 
   server.registerTool('format_xml', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Format XML using KillerTools XML Formatter.',
     inputSchema: {
       text: inputText,
@@ -49,6 +51,7 @@ export function registerDocumentTools(server: McpServer) {
   });
 
   server.registerTool('convert_xml_json', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert XML to JSON or JSON5-compatible text to XML using KillerTools.',
     inputSchema: { text: inputText, direction: z.enum(['xml_to_json', 'json_to_xml']) },
   }, async ({ text, direction }) => {

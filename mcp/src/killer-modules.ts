@@ -4,6 +4,7 @@ import { modules } from '../../src/tools/killer-modules/killer-modules.data';
 
 export function registerKillerModules(server: McpServer) {
   server.registerTool('list_killer_modules', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'List the KillerTools PowerShell modules, their commands, install text, and repository links. Does not install or run anything.',
     inputSchema: { name: z.string().max(80).optional() },
   }, async ({ name }) => ({

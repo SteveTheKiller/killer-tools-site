@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 export function registerIpv6Ula(server: McpServer) {
   server.registerTool('generate_ipv6_ula', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate the IPv6 unique local address ranges shown by KillerTools using a timestamp and MAC address.',
     inputSchema: {
       macAddress: z.string().regex(/^([0-9a-f]{2}:){5}[0-9a-f]{2}$/i),

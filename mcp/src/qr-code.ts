@@ -7,6 +7,7 @@ const color = z.string().regex(/^#[0-9a-f]{6}$/i);
 
 export function registerQrCode(server: McpServer) {
   server.registerTool('generate_qr_code', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate a QR code as SVG for text or Wi-Fi using KillerTools QR code logic. Wi-Fi credentials are part of the encoded output.',
     inputSchema: {
       mode: z.enum(['text', 'wifi']),

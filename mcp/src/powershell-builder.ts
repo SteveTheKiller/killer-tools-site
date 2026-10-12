@@ -19,6 +19,7 @@ function quoteLiteral(value: string): string {
 
 export function registerPowerShellBuilder(server: McpServer) {
   server.registerTool('search_powershell_cmdlets', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the KillerTools PowerShell Builder catalog. Does not run commands.',
     inputSchema: { query: z.string().trim().min(1).max(80), limit: z.number().int().min(1).max(20).default(10) },
   }, async ({ query, limit }) => output(cmdlets.filter(item => `${item.cmdlet} ${item.description} ${item.module}`.toLowerCase().includes(query.toLowerCase()))
@@ -26,6 +27,7 @@ export function registerPowerShellBuilder(server: McpServer) {
     .map(({ cmdlet, module, category, description, requiresAdmin }) => ({ cmdlet, module, category, description, requiresAdmin }))));
 
   server.registerTool('get_powershell_cmdlet', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Get parameter descriptions and example snippets for an exact KillerTools PowerShell cmdlet. Does not run commands.',
     inputSchema: { cmdlet: z.string().min(1).max(80) },
   }, async ({ cmdlet }) => {
@@ -34,6 +36,7 @@ export function registerPowerShellBuilder(server: McpServer) {
   });
 
   server.registerTool('build_powershell_command', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Assemble a PowerShell command from the KillerTools catalog. Returns text only and never executes it. Review scriptblock parameters before use.',
     inputSchema: {
       cmdlet: z.string().min(1).max(80),

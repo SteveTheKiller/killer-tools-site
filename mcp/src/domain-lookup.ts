@@ -76,6 +76,7 @@ async function fetchRdap(name: string): Promise<unknown> {
 
 export function registerDomainLookup(server: McpServer) {
   server.registerTool('lookup_domain_dns', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
     description: 'Query DNS records through Cloudflare DNS, as used by KillerTools Domain Lookup.',
     inputSchema: {
       name: dnsName,
@@ -104,6 +105,7 @@ export function registerDomainLookup(server: McpServer) {
   });
 
   server.registerTool('lookup_domain_rdap', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
     description: 'Look up public domain registration details through RDAP, as used by KillerTools Domain Lookup.',
     inputSchema: { domain },
   }, async ({ domain }) => {

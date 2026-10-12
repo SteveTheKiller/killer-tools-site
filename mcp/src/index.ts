@@ -61,6 +61,8 @@ import { registerSimpleTools } from './simple-tools';
 import { registerStructuredText } from './structured-text';
 import { registerTextDiff } from './text-diff';
 import { registerTextFormatters } from './text-formatters';
+import privacyPage from '../legal/privacy.html';
+import termsPage from '../legal/terms.html';
 
 const inputText = z.string().max(4096);
 const maxRequestBytes = 65536;
@@ -119,7 +121,7 @@ async function boundedRequest(request: Request): Promise<Request | Response> {
   return new Request(request, { body, headers });
 }
 
-export function createServer(name = 'KillerTools MCP') {
+export function createServer(name = 'KillerTools MCP', directory = false) {
   const server = new McpServer({ name, version: '0.1.0' });
   registerAsciiArt(server);
   registerCveLookup(server);
@@ -139,7 +141,9 @@ export function createServer(name = 'KillerTools MCP') {
   registerMathEvaluator(server);
   registerMacVendor(server);
   registerPhotoCalculators(server);
-  registerQrCode(server);
+  if (!directory) {
+    registerQrCode(server);
+  }
   registerPowerShellBuilder(server);
   registerPhoneTools(server);
   registerReferenceLookups(server);
@@ -150,11 +154,13 @@ export function createServer(name = 'KillerTools MCP') {
   registerTextDiff(server);
 
   server.registerTool('convert_case', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Return the case conversions shown by the KillerTools Case Converter.',
     inputSchema: { text: inputText },
   }, async ({ text }) => result(convertCase(text)));
 
   server.registerTool('parse_user_agent', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Parse a user agent string using the KillerTools User Agent Parser.',
     inputSchema: { userAgent: z.string().trim().min(1).max(1024) },
   }, async ({ userAgent }) => {
@@ -163,6 +169,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('convert_integer_base', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert a nonnegative integer between bases 2 and 64 using the KillerTools converter.',
     inputSchema: {
       value: z.string().min(1).max(128),
@@ -179,6 +186,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('expand_ipv4_range', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Find the smallest covering CIDR block for an IPv4 address range using KillerTools.',
     inputSchema: { startIp: z.string().max(15), endIp: z.string().max(15) },
   }, async ({ startIp, endIp }) => {
@@ -190,6 +198,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('calculate_ipv4_subnet', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate the IPv4 network information shown by KillerTools Subnet Calculator.',
     inputSchema: { address: z.string().min(1).max(32) },
   }, async ({ address }) => {
@@ -215,11 +224,13 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('encode_base64', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Encode text as standard or URL-safe Base64 using the KillerTools converter.',
     inputSchema: { text: inputText, urlSafe: z.boolean().optional() },
   }, async ({ text, urlSafe }) => result({ encoded: textToBase64(text, { makeUrlSafe: urlSafe }) }));
 
   server.registerTool('decode_base64', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Decode a standard or URL-safe Base64 string using the KillerTools converter.',
     inputSchema: { encoded: inputText, urlSafe: z.boolean().optional() },
   }, async ({ encoded, urlSafe }) => {
@@ -232,11 +243,13 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('text_to_ascii_binary', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert text to the binary representation shown by the KillerTools Text to Binary tool.',
     inputSchema: { text: inputText },
   }, async ({ text }) => result({ binary: convertTextToAsciiBinary(text) }));
 
   server.registerTool('ascii_binary_to_text', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert ASCII binary bytes to text using the KillerTools Text to Binary tool.',
     inputSchema: { binary: inputText },
   }, async ({ binary }) => {
@@ -249,11 +262,13 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('arabic_to_roman', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert an integer from 1 to 3999 to a Roman numeral using the KillerTools converter.',
     inputSchema: { number: z.number().int().min(1).max(3999) },
   }, async ({ number }) => result({ roman: arabicToRoman(number) }));
 
   server.registerTool('roman_to_arabic', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert a valid Roman numeral to an integer using the KillerTools converter.',
     inputSchema: { roman: z.string().min(1).max(32) },
   }, async ({ roman }) => {
@@ -264,6 +279,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('text_statistics', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Count characters, words, lines, and UTF-8 bytes as shown by KillerTools Text Statistics.',
     inputSchema: { text: inputText },
   }, async ({ text }) => {
@@ -272,11 +288,13 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('text_to_nato_alphabet', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert text to NATO phonetic words using the KillerTools converter.',
     inputSchema: { text: inputText },
   }, async ({ text }) => result({ nato: textToNatoAlphabet({ text }).split(' ').filter(Boolean).join(' ') }));
 
   server.registerTool('convert_temperature', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert a temperature among the eight scales shown by the KillerTools converter.',
     inputSchema: { value: z.number().finite().min(-1_000_000_000).max(1_000_000_000), scale: z.enum(temperatureScales) },
   }, async ({ value, scale }) => {
@@ -289,6 +307,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('calculate_percentage', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate a percent of a total, a part as a percent of a total, or percentage change using KillerTools.',
     inputSchema: {
       mode: z.enum(['percent_of', 'what_percent', 'change']),
@@ -307,6 +326,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('json_to_csv', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert an array of JSON objects to CSV using the KillerTools converter.',
     inputSchema: { rows: z.array(z.record(z.string(), z.unknown())).min(1).max(100) },
   }, async ({ rows }) => {
@@ -317,6 +337,7 @@ export function createServer(name = 'KillerTools MCP') {
   });
 
   server.registerTool('generate_lorem_ipsum', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate bounded Lorem Ipsum text using the KillerTools generator.',
     inputSchema: {
       paragraphCount: z.number().int().min(1).max(10).default(1),
@@ -328,6 +349,7 @@ export function createServer(name = 'KillerTools MCP') {
   }, async options => result({ text: generateLoremIpsum(options) }));
 
   server.registerTool('parse_url', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Parse a URL into its parts and query parameters using KillerTools URL Parser.',
     inputSchema: { url: inputText },
   }, async ({ url }) => {
@@ -356,9 +378,28 @@ const handler = createMcpHandler(() => createServer(), {
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
 });
 
+const directoryHandler = createMcpHandler(() => createServer('KillerMCP', true), {
+  route: '/openai',
+  allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
+  allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
+});
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
-    if (new URL(request.url).pathname !== '/') {
+    const pathname = new URL(request.url).pathname;
+    const page = pathname === '/privacy' ? privacyPage : pathname === '/terms' ? termsPage : undefined;
+    if (page !== undefined) {
+      if (request.method !== 'GET' && request.method !== 'HEAD') {
+        return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
+      }
+      return new Response(request.method === 'HEAD' ? null : page, { headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; img-src https://killertools.net; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+      } });
+    }
+    if (pathname !== '/' && pathname !== '/openai') {
       return new Response('Not found', { status: 404 });
     }
     if (Number(request.headers.get('content-length')) > maxRequestBytes) {
@@ -373,6 +414,6 @@ export default {
     if (bounded instanceof Response) {
       return bounded;
     }
-    return handler(bounded, env, ctx);
+    return (pathname === '/openai' ? directoryHandler : handler)(bounded, env, ctx);
   },
 };

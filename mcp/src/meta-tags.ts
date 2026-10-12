@@ -7,6 +7,7 @@ const types = ['website', 'article', 'book', 'profile', 'music.song', 'music.alb
 
 export function registerMetaTags(server: McpServer) {
   server.registerTool('generate_meta_tags', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate Open Graph and Twitter meta tags using the KillerTools Meta Tag Generator.',
     inputSchema: {
       type: z.enum(types).default('website'),

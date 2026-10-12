@@ -58,6 +58,7 @@ function validate(node: MathNode, depth: number, state: { count: number }): void
 
 export function registerMathEvaluator(server: McpServer) {
   server.registerTool('evaluate_math', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Evaluate a bounded arithmetic expression using the KillerTools math engine. Allows basic operators and common numeric functions.',
     inputSchema: { expression: z.string().trim().min(1).max(256) },
   }, async ({ expression }) => {

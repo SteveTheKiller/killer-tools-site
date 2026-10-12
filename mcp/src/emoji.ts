@@ -21,6 +21,7 @@ const search = new Fuse(emojis, {
 
 export function registerEmoji(server: McpServer) {
   server.registerTool('search_emoji', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Find emoji characters by name, group, keyword, or Unicode code point using the KillerTools emoji catalog.',
     inputSchema: {
       query: z.string().trim().min(1).max(80),

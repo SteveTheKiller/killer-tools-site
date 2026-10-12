@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 export function registerRegexTester(server: McpServer) {
   server.registerTool('test_regex', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Match text with the KillerTools Regex Tester interface using safe RE2 syntax. Backreferences and some JavaScript features are unsupported.',
     inputSchema: {
       pattern: z.string().min(1).max(256),

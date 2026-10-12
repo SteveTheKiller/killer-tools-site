@@ -16,6 +16,7 @@ function result(value: unknown) {
 
 export function registerFormatParsers(server: McpServer) {
   server.registerTool('convert_color', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert a color into the formats shown by KillerTools Color Converter.',
     inputSchema: { color: z.string().trim().min(1).max(128) },
   }, async ({ color }) => {
@@ -35,6 +36,7 @@ export function registerFormatParsers(server: McpServer) {
   });
 
   server.registerTool('describe_cron', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Validate and describe a cron expression using KillerTools Crontab Generator.',
     inputSchema: {
       expression: z.string().trim().min(1).max(128),

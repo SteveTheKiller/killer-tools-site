@@ -40,6 +40,7 @@ async function loadFont(font: string): Promise<void> {
 
 export function registerAsciiArt(server: McpServer) {
   server.registerTool('draw_ascii_text', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Render text with a KillerTools FIGlet font from the website font collection.',
     inputSchema: {
       text: z.string().min(1).max(128),

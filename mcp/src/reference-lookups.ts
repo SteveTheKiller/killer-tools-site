@@ -21,6 +21,7 @@ function result(value: unknown) {
 
 export function registerReferenceLookups(server: McpServer) {
   server.registerTool('lookup_exchange_ndr', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the Exchange non-delivery report reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(ndrCategories.flatMap(group =>
@@ -28,6 +29,7 @@ export function registerReferenceLookups(server: McpServer) {
       .map(code => ({ category: group.category, ...code }))).slice(0, limit)));
 
   server.registerTool('lookup_group_policy', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the Group Policy reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(policyCategories.flatMap(group =>
@@ -35,6 +37,7 @@ export function registerReferenceLookups(server: McpServer) {
       .map(policy => ({ category: group.category, ...policy }))).slice(0, limit)));
 
   server.registerTool('lookup_http_status', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the HTTP status code reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(codesByCategories.flatMap(group =>
@@ -42,6 +45,7 @@ export function registerReferenceLookups(server: McpServer) {
       .map(code => ({ category: group.category, ...code }))).slice(0, limit)));
 
   server.registerTool('lookup_m365_sku', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the Microsoft 365 SKU reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(skusByCategory.flatMap(group =>
@@ -49,6 +53,7 @@ export function registerReferenceLookups(server: McpServer) {
       .map(sku => ({ category: group.category, ...sku }))).slice(0, limit)));
 
   server.registerTool('lookup_port_protocol', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the port and protocol reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(portCategories.flatMap(group =>
@@ -56,6 +61,7 @@ export function registerReferenceLookups(server: McpServer) {
       .map(port => ({ category: group.category, ...port }))).slice(0, limit)));
 
   server.registerTool('lookup_windows_error', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the Windows error code reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(errorsByCategory.flatMap(group =>
@@ -63,6 +69,7 @@ export function registerReferenceLookups(server: McpServer) {
       .map(error => ({ category: group.category, ...error }))).slice(0, limit)));
 
   server.registerTool('lookup_windows_event', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Search the Windows Event ID reference shown on KillerTools.',
     inputSchema: querySchema,
   }, async ({ query, limit }) => result(eventsByCategory.flatMap(group =>

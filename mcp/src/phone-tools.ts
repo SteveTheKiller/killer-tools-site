@@ -8,6 +8,7 @@ const countries = getCountries();
 
 export function registerPhoneTools(server: McpServer) {
   server.registerTool('parse_phone_number', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Parse and format a phone number as shown by KillerTools Phone Parser.',
     inputSchema: {
       phone: z.string().trim().min(1).max(64).regex(/^[0-9 +\-()]+$/),

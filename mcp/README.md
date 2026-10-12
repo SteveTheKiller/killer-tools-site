@@ -51,7 +51,13 @@ The stdio server also provides `open_browser_companion_local`. Open its private 
 
 The public Worker covers calculations, data conversion, network and reference lookup, catalog search, text processing, and formatting. The local server adds file, secret, and browser operations. The full split is in [TOOL_INVENTORY.md](TOOL_INVENTORY.md). The local tools run on the user's machine, but the MCP client and agent may still receive their inputs and outputs. Use the client's normal data handling rules for secrets. Local file tools read only the paths supplied in a tool call. Base64 decoding creates a new file and never overwrites an existing one. Review file paths before allowing an agent to use them.
 
-The Worker accepts requests only at `/`, rejects request bodies over 64 KiB, and applies per-operation input bounds. Network and reference lookup results depend on their data sources being available. The local source also includes QR output that can encode Wi-Fi credentials. KillerScripts catalog lookup reads a fixed GitHub URL and caches the result in each Worker instance for ten minutes. Domain registration lookup uses the IANA RDAP bootstrap directory.
+The Worker accepts MCP requests at `/` and `/openai`, rejects request bodies over 64 KiB, and applies per-operation input bounds. The directory endpoint excludes the Wi-Fi credential QR operation. Network and reference lookup results depend on their data sources being available. The local source also includes QR output that can encode Wi-Fi credentials. KillerScripts catalog lookup reads a fixed GitHub URL and caches the result in each Worker instance for ten minutes. Domain registration lookup uses the IANA RDAP bootstrap directory.
+
+## OpenAI directory package
+
+The [submission packet](OPENAI-SUBMISSION.md) contains the package build steps, review prompts, brand copy and remaining publication requirements. The proposed directory endpoint at `/openai` exposes 73 operations while the existing root connection retains all 74. Every public operation declares read-only, destructive and open-world annotations. The hosted privacy and service terms are served at `/privacy` and `/terms`.
+
+The package and new routes are local preparation until the Worker is deployed. Developer verification, domain verification, client review tests and a reviewer-accessible recording are required before review submission. Preparing the package does not publish it.
 
 ## Local development
 

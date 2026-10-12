@@ -17,6 +17,7 @@ function result(value: unknown) {
 
 export function registerSimpleTools(server: McpServer) {
   server.registerTool('generate_svg_placeholder', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate an SVG placeholder image using KillerTools.',
     inputSchema: {
       width: z.number().int().min(1).max(4096),
@@ -33,6 +34,7 @@ export function registerSimpleTools(server: McpServer) {
   });
 
   server.registerTool('calculate_chmod', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Calculate octal and symbolic Unix permissions using KillerTools Chmod Calculator.',
     inputSchema: { permissions },
   }, async ({ permissions }) => {
@@ -41,21 +43,25 @@ export function registerSimpleTools(server: McpServer) {
   });
 
   server.registerTool('escape_html_entities', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Escape HTML entities using the KillerTools HTML Entities tool.',
     inputSchema: { text: inputText },
   }, async ({ text }) => result({ text: escape(text) }));
 
   server.registerTool('unescape_html_entities', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Unescape HTML entities using the KillerTools HTML Entities tool.',
     inputSchema: { text: inputText },
   }, async ({ text }) => result({ text: unescape(text) }));
 
   server.registerTool('generate_ulids', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate up to 100 ULIDs using the KillerTools generator.',
     inputSchema: { count: z.number().int().min(1).max(100).default(1) },
   }, async ({ count }) => result({ ids: Array.from({ length: count }, () => ulid()) }));
 
   server.registerTool('generate_uuids', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Generate up to 100 UUIDs using the KillerTools generator.',
     inputSchema: {
       version: z.enum(['NIL', 'v1', 'v3', 'v4', 'v5']).default('v4'),

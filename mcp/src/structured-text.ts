@@ -21,6 +21,7 @@ function invalid() {
 
 export function registerStructuredText(server: McpServer) {
   server.registerTool('format_json', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Prettify JSON5-compatible text with optional key sorting using KillerTools JSON Viewer.',
     inputSchema: {
       text: inputText,
@@ -35,6 +36,7 @@ export function registerStructuredText(server: McpServer) {
   });
 
   server.registerTool('format_yaml', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Prettify YAML with optional key sorting using KillerTools YAML Viewer.',
     inputSchema: {
       text: inputText,
@@ -49,6 +51,7 @@ export function registerStructuredText(server: McpServer) {
   });
 
   server.registerTool('convert_json', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert JSON5-compatible text to YAML or TOML using KillerTools.',
     inputSchema: { text: inputText, to: z.enum(['yaml', 'toml']) },
   }, async ({ text, to }) => {
@@ -60,6 +63,7 @@ export function registerStructuredText(server: McpServer) {
   });
 
   server.registerTool('convert_yaml', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert YAML text to JSON or TOML using KillerTools.',
     inputSchema: { text: inputText, to: z.enum(['json', 'toml']) },
   }, async ({ text, to }) => {
@@ -74,6 +78,7 @@ export function registerStructuredText(server: McpServer) {
   });
 
   server.registerTool('convert_toml', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Convert TOML text to JSON or YAML using KillerTools.',
     inputSchema: { text: inputText, to: z.enum(['json', 'yaml']) },
   }, async ({ text, to }) => {
@@ -85,6 +90,7 @@ export function registerStructuredText(server: McpServer) {
   });
 
   server.registerTool('minify_json', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Minify JSON5-compatible text using KillerTools JSON Minify.',
     inputSchema: { text: inputText },
   }, async ({ text }) => {

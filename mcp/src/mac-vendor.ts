@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 export function registerMacVendor(server: McpServer) {
   server.registerTool('lookup_mac_vendor', {
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
     description: 'Look up a MAC address prefix in the same local OUI catalog used by KillerTools.',
     inputSchema: { macAddress: z.string().min(6).max(24).regex(/^[0-9a-f.:-]+$/i) },
   }, async ({ macAddress }) => {
