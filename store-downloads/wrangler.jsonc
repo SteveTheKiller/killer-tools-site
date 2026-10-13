@@ -1,0 +1,10 @@
+{
+  "name": "killertools-store-downloads",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-10-13",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "killerpdf.net/store/*", "zone_name": "killerpdf.net" },
+    { "pattern": "killertools.net/store/*", "zone_name": "killertools.net" }
+  ]
+}
