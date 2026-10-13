@@ -1883,6 +1883,7 @@ pages:
       codex: Kopier Codex-oppsettkommando
       claudeCode: Kopier Claude Code-oppsettkommando
       copyUrl: Kopier URL
+      copyCommand: Kopier kommando
     otherClient: Bruker du en annen MCP-klient? Kopier server-URL-en.
     shortest: 'Den korteste nyttige forespørselen er {prompt}. For eksempel: {example}.'
     infer: Agenten din kan utlede det tilsvarende KillerTools- eller Killer-app-verktøyet fra oppgaven og tilgjengelig kontekst. Bruk {a}, {b}, {c} eller et annet appnavn bare når du vil gjøre målet eksplisitt. Du trenger ikke understreker, et operasjonsnavn eller en skråstrek-kommando.

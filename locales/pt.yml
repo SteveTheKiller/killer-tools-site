@@ -1883,6 +1883,7 @@ pages:
       codex: Copiar comando de configuração do Codex
       claudeCode: Copiar comando de configuração do Claude Code
       copyUrl: Copiar URL
+      copyCommand: Copiar comando
     otherClient: Está usando outro cliente MCP? Copie a URL do servidor.
     shortest: 'O prompt útil mais curto é {prompt}. Por exemplo: {example}.'
     infer: Seu agente pode inferir a ferramenta correspondente do KillerTools ou de um aplicativo Killer a partir da tarefa e do contexto disponível. Use {a}, {b}, {c} ou outro nome de aplicativo somente quando quiser deixar o alvo explícito. Você não precisa de sublinhados, de um nome de operação nem de um comando de barra.

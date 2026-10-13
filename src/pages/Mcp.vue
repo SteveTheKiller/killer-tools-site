@@ -5,6 +5,8 @@ import { useI18n } from 'vue-i18n';
 const endpoint = 'https://mcp.killertools.net';
 const codexCommand = `codex mcp add killertools --url ${endpoint}`;
 const claudeCodeCommand = `claude mcp add --transport http killertools ${endpoint}`;
+const wingetCommand = 'winget install SteveTheKiller.KillerMCP';
+const chocoCommand = 'choco install killermcp';
 const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=killertools&config=${encodeURIComponent(btoa(JSON.stringify({ url: endpoint })))}`;
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
 const { t } = useI18n();
@@ -155,6 +157,20 @@ useHead({
           </a>
           <div class="mcp-installer-meta">
             <span v-if="installerRelease">{{ t('pages.mcp.meta.version', { version: installerRelease.version }) }}</span><span v-if="installerRelease">{{ installerRelease.size }}</span><span>.NET 10</span><span>{{ t('pages.mcp.meta.signed') }}</span><a :href="installerReleaseUrl" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
+          </div>
+          <div class="mcp-package-commands">
+            <div class="mcp-copy-row">
+              <code class="mcp-value">{{ wingetCommand }}</code>
+              <button type="button" class="mcp-action" @click="copyText(wingetCommand, 'WinGet')">
+                {{ t('pages.mcp.actions.copyCommand') }}
+              </button>
+            </div>
+            <div class="mcp-copy-row">
+              <code class="mcp-value">{{ chocoCommand }}</code>
+              <button type="button" class="mcp-action" @click="copyText(chocoCommand, 'Chocolatey')">
+                {{ t('pages.mcp.actions.copyCommand') }}
+              </button>
+            </div>
           </div>
           <ol class="mcp-install-steps">
             <li><strong>{{ t('pages.mcp.steps.s1Title') }}</strong> {{ t('pages.mcp.steps.s1Body') }}</li>
@@ -419,6 +435,7 @@ html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-connect p:not(.mcp-eyebrow):not(.mcp-feedback) { margin: 0 0 10px; }
 .mcp-install-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 12px; }
 .mcp-copy-row { display: flex; align-items: stretch; gap: 10px; }
+.mcp-package-commands { display: grid; gap: 10px; margin: 0 0 14px; }
 .mcp-value { display: block; overflow-wrap: anywhere; border: 1px solid var(--kt-chrome-border, #1f1f1f); border-radius: 4px; background: var(--kt-bg, transparent); padding: 12px 14px; font-size: 13px; }
 .mcp-value { flex: 1; }
 .mcp-action { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border: 1px solid var(--kt-accent); border-radius: 4px; background: transparent; color: var(--kt-accent); font: inherit; font-size: 13px; cursor: pointer; text-align: center; text-decoration: none; }

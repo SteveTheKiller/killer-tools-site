@@ -1884,6 +1884,7 @@ pages:
       codex: Codex kurulum komutunu kopyala
       claudeCode: Claude Code kurulum komutunu kopyala
       copyUrl: URL'yi kopyala
+      copyCommand: Komutu kopyala
     otherClient: Başka bir MCP istemcisi mi kullanıyorsunuz? Sunucu URL'sini kopyalayın.
     shortest: 'En kısa kullanışlı istek {prompt}. Örneğin: {example}.'
     infer: Ajanınız görevden ve mevcut bağlamdan uygun KillerTools veya Killer uygulama aracını çıkarabilir. Hedefi açıkça belirtmek istediğinizde {a}, {b}, {c} veya başka bir uygulama adını kullanın. Alt çizgiye, bir işlem adına veya eğik çizgi komutuna ihtiyacınız yoktur.

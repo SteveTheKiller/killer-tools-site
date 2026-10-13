@@ -1884,6 +1884,7 @@ pages:
       codex: Skopiuj polecenie konfiguracji Codex
       claudeCode: Skopiuj polecenie konfiguracji Claude Code
       copyUrl: Skopiuj adres URL
+      copyCommand: Skopiuj polecenie
     otherClient: Używasz innego klienta MCP? Skopiuj adres URL serwera.
     shortest: 'Najkrótsze przydatne polecenie to {prompt}. Na przykład: {example}.'
     infer: Twój agent może wywnioskować odpowiednie narzędzie KillerTools lub aplikacji Killer na podstawie zadania i dostępnego kontekstu. Użyj {a}, {b}, {c} lub innej nazwy aplikacji tylko wtedy, gdy chcesz jednoznacznie wskazać cel. Nie potrzebujesz podkreśleń, nazwy operacji ani polecenia ze slashem.

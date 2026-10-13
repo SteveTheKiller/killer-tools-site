@@ -1883,6 +1883,7 @@ pages:
       codex: Sao chép lệnh thiết lập Codex
       claudeCode: Sao chép lệnh thiết lập Claude Code
       copyUrl: Sao chép URL
+      copyCommand: Sao chép lệnh
     otherClient: Đang dùng một MCP client khác? Hãy sao chép URL máy chủ.
     shortest: 'Câu lệnh hữu ích ngắn nhất là {prompt}. Ví dụ: {example}.'
     infer: Agent của bạn có thể tự suy ra công cụ KillerTools hoặc ứng dụng Killer phù hợp từ tác vụ và ngữ cảnh hiện có. Chỉ dùng {a}, {b}, {c}, hoặc tên ứng dụng khác khi bạn muốn chỉ rõ mục tiêu. Bạn không cần dấu gạch dưới, tên thao tác, hay lệnh dấu gạch chéo.

@@ -1884,6 +1884,7 @@ pages:
       codex: Codexのセットアップコマンドをコピー
       claudeCode: Claude Codeのセットアップコマンドをコピー
       copyUrl: URLをコピー
+      copyCommand: コマンドをコピー
     otherClient: 別のMCPクライアントを使っていますか?サーバーURLをコピーしてください。
     shortest: '最も短くて役立つプロンプトは{prompt}です。例: {example}。'
     infer: エージェントはタスクと利用可能なコンテキストから、対応するKillerToolsやKillerアプリのツールを推測できます。{a}、{b}、{c}などのアプリ名は、対象を明示したい場合にのみ使用してください。アンダースコア、操作名、スラッシュコマンドは不要です。

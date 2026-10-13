@@ -1853,6 +1853,7 @@ pages:
       codex: Codex telepítési parancs másolása
       claudeCode: Claude Code telepítési parancs másolása
       copyUrl: URL másolása
+      copyCommand: Parancs másolása
     otherClient: Másik MCP klienst használ? Másolja ki a szerver URL-jét.
     shortest: 'A legrövidebb hasznos utasítás: {prompt}. Például: {example}.'
     infer: Az ügynöke a feladat és a rendelkezésre álló kontextus alapján ki tudja következtetni a megfelelő KillerTools vagy Killer alkalmazás eszközt. Az {a}, {b}, {c} vagy más alkalmazásnév használata csak akkor szükséges, ha kifejezetten meg akarja adni a célt. Nincs szükség aláhúzásjelre, művelet névre vagy perjeles parancsra.

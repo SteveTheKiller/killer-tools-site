@@ -1884,6 +1884,7 @@ pages:
       codex: 複製 Codex 設定命令
       claudeCode: 複製 Claude Code 設定命令
       copyUrl: 複製網址
+      copyCommand: 複製指令
     otherClient: 使用其他 MCP 用戶端?請複製伺服器網址。
     shortest: 最簡短的有效提示詞是{prompt}。例如:{example}。
     infer: 你的代理可以根據任務與現有的上下文,自行推斷應使用的 KillerTools 或 Killer 應用程式工具。只有當你想明確指定目標時,才需要使用 {a}、{b}、{c} 或其他應用程式名稱。你不需要底線、操作名稱,也不需要斜線命令。

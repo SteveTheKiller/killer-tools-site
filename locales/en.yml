@@ -1884,6 +1884,7 @@ pages:
       codex: Copy Codex setup command
       claudeCode: Copy Claude Code setup command
       copyUrl: Copy URL
+      copyCommand: Copy command
     otherClient: Using another MCP client? Copy the server URL.
     shortest: 'The shortest useful prompt is {prompt}. For example: {example}.'
     infer: Your agent can infer the matching KillerTools or Killer app tool from the task and available context. Use {a}, {b}, {c}, or another app name only when you want to make the target explicit. You do not need underscores, an operation name, or a slash command.

@@ -1853,6 +1853,7 @@ pages:
       codex: Kopírovat instalační příkaz Codexu
       claudeCode: Kopírovat instalační příkaz Claude Code
       copyUrl: Kopírovat URL
+      copyCommand: Kopírovat příkaz
     otherClient: Používáte jiného MCP klienta? Zkopírujte URL serveru.
     shortest: 'Nejkratší užitečný pokyn je {prompt}. Například: {example}.'
     infer: Váš agent umí odvodit odpovídající nástroj KillerTools nebo aplikace Killer z úkolu a dostupného kontextu. Použijte {a}, {b}, {c} nebo jiný název aplikace jen tehdy, když chcete cíl výslovně upřesnit. Nepotřebujete podtržítka, název operace ani lomítkový příkaz.

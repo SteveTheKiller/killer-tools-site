@@ -1852,6 +1852,7 @@ pages:
       codex: Codex-Setup-Befehl kopieren
       claudeCode: Claude Code-Setup-Befehl kopieren
       copyUrl: URL kopieren
+      copyCommand: Befehl kopieren
     otherClient: Verwenden Sie einen anderen MCP-Client? Kopieren Sie die Server-URL.
     shortest: 'Der kürzeste sinnvolle Prompt ist {prompt}. Zum Beispiel: {example}.'
     infer: Ihr Agent kann das passende KillerTools- oder Killer-App-Tool anhand der Aufgabe und des verfügbaren Kontexts ableiten. Verwenden Sie {a}, {b}, {c} oder einen anderen App-Namen nur, wenn Sie das Ziel ausdrücklich angeben möchten. Unterstriche, ein Vorgangsname oder ein Slash-Befehl sind nicht nötig.
