@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "killermcp-hosted-tools",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Use the hosted KillerTools utilities through KillerMCP for IT reference lookup, calculations, conversions, formatting, and PowerShell command construction.",
   "author": { "name": "Steve the Killer", "url": "https://thekiller.net" },
   "homepage": "https://killertools.net",

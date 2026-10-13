@@ -2,6 +2,8 @@
 
 This package presents the hosted KillerTools utilities under the existing KillerMCP product brand. Its live directory endpoint is `https://mcp.killertools.net/openai`. The root endpoint keeps all 74 public operations. The directory endpoint exposes 73 operations and excludes the Wi-Fi credential QR operation because the directory prohibits collecting authentication secrets.
 
+The OpenAI package version follows the published Windows KillerMCP release. The current local package is 0.5.0. Changing this source or rebuilding its ZIP does not update the pending OpenAI submission or deploy the hosted server.
+
 The draft in the Killer Apps project uses the verified business identity Steve the Killer and includes 18 translated listing descriptions. The Worker, hosted legal pages and domain challenge are deployed. OpenAI confirms the domain is verified and the current MCP scan has no findings. All eight review prompts passed in ChatGPT. The [reviewer walkthrough](https://mcp.killertools.net/review/) uses actual client captures and is declared in the package. Final attestations, review submission and directory publication remain separate steps.
 
 ## Brand and copy
@@ -18,7 +20,7 @@ From `mcp`, run `pnpm typecheck` and `pnpm coverage`. Start `pnpm exec wrangler 
 
 ```powershell
 node scripts/review-plugin.mjs C:\Users\steve\code\tmp\killermcp-review-local.json
-python scripts/build-openai-plugin.py C:\Users\steve\code\tmp\killermcp-openai-0.1.0.zip
+python scripts/build-openai-plugin.py C:\Users\steve\code\tmp\killermcp-openai-0.5.0.zip
 pnpm exec wrangler deploy --dry-run
 ```
 
