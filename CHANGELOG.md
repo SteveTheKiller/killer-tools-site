@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Interface
 
+- Centered the KillerMCP landing logo within its content column.
 - Headers use Lacquer consistently across the site.
 - Added yellow and magenta neutral theme accents.
 - Replaced the top bar search field with a compact icon.

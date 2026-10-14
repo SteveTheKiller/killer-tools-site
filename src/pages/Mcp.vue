@@ -404,7 +404,7 @@ html:not(.dark) .mcp-surface:hover {
   background: var(--kt-accent-sel, var(--kt-accent));
 }
 
-.mcp-hero { padding: 22px; }
+.mcp-hero { padding: 22px; text-align: center; }
 .mcp-card, .mcp-connect { padding: 18px 20px; }
 .mcp-workspace { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 .mcp-setup-column, .mcp-detail-column { display: grid; gap: 16px; }
@@ -414,16 +414,16 @@ html:not(.dark) .mcp-surface:hover {
 .mcp-github svg { width: 42px; height: 42px; fill: currentColor; }
 .mcp-github:hover, .mcp-github:focus-visible { color: var(--kt-accent); transform: translateY(-2px) scale(1.08); filter: drop-shadow(0 7px 8px rgba(0, 0, 0, .48)); }
 .mcp-hero { --mcp-heading-size: clamp(34px, 5vw, 58px); }
-.mcp-heading { display: flex; align-items: center; gap: 0.04em; font-size: var(--mcp-heading-size); }
+.mcp-heading { display: flex; align-items: center; justify-content: center; gap: 0.04em; font-size: var(--mcp-heading-size); }
 /* Family icon rule: a little taller than the wordmark beside it, centered on it, close to it */
 .mcp-mark { position: relative; top: -0.06em; flex: 0 0 auto; width: 1.62em; height: 1.62em; margin-right: -0.14em; object-fit: contain; }
-.mcp-hero-eyebrow { padding-left: calc(var(--mcp-heading-size) * 1.52); }
+.mcp-hero-eyebrow { padding-left: 0; }
 .mcp-eyebrow { margin: 0 0 6px; color: var(--kt-accent); font-size: 11px; letter-spacing: 0.16em; }
 .mcp-wordmark { display: flex; align-items: baseline; gap: 0; margin: 0; }
 .mcp-wordmark { font-family: var(--kt-font-wordmark); font-size: 1em; font-weight: normal; color: var(--kt-text, #fff); }
 .mcp-wordmark span { position: relative; top: 0; color: var(--kt-accent); font-family: var(--kt-font-accent); font-size: 1.28em; line-height: 1; }
 h2 { margin: 0 0 14px; color: var(--kt-accent); font-family: var(--kt-font-page-title); font-size: 24px; font-weight: normal; }
-.mcp-lead { font-size: 16px; line-height: 1.6; margin: 18px 0; }
+.mcp-lead { max-width: 620px; font-size: 16px; line-height: 1.6; margin: 18px auto; }
 .mcp-status { color: var(--kt-accent); margin: 0; font-size: 15px; }
 .mcp-connect h2 { margin-bottom: 8px; }
 .mcp-install-label { color: var(--kt-text, #fff); font-family: var(--kt-font-card-title); }
