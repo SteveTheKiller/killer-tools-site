@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Interface
 
+- Headers use Lacquer consistently across the site.
 - Added yellow and magenta neutral theme accents.
 - Replaced the top bar search field with a compact icon.
 - Replaced the typewriter heading font with Killer Sans and Freckle Face, set per heading type from one list of font roles.

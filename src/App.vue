@@ -117,8 +117,8 @@ html.dark body {
   --kt-font-wordmark: 'KtPunk', 'KtKiller', 'Courier New', monospace;
   --kt-font-accent: 'KtAccent', 'KtKiller', 'Courier New', monospace;
   --kt-font-page-title: var(--kt-font-accent);   /* tool page titles, About and Android h1, MCP h2 */
-  --kt-font-card-title: var(--kt-font-killer);   /* card and terminal titles, home and About section heads */
-  --kt-font-section: var(--kt-font-killer);      /* section rows, category headers, tabs, sidebar menu */
+  --kt-font-card-title: var(--kt-font-accent);   /* card and terminal titles, home and About section heads */
+  --kt-font-section: var(--kt-font-accent);      /* section rows, category headers, tabs, sidebar menu */
   --kt-font-code: var(--kt-font-killer);         /* large ids: error hex, ports, event ids, NDR codes, acronyms */
   --kt-font-ui: var(--kt-font-killer);           /* small chrome such as the titlebar KillerMCP button */
 }
