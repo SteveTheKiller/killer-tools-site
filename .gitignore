@@ -47,6 +47,7 @@ capacitor.config.ts
 build-out.txt
 build-err.txt
 .vite-ssg-temp/
+*.tsbuildinfo
 
 # Scratch / temp files
 _tmp.js
