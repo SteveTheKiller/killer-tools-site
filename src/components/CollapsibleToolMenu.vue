@@ -224,9 +224,9 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
       display: block;
     }
     ::v-deep(.wm-menu) {
-      /* 20, not 15 - the shared-window wordmarks are taller for the same text size.
-         See Killer Branding/make-card-wordmarks.py. */
-      height: 20px;
+      /* 26: the "Killer" part reads at the menu text size and the app name
+         stands above it. See Killer Branding/make-card-wordmarks.py. */
+      height: 26px;
       width: auto;
       display: block;
     }
