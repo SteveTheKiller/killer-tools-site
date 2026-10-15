@@ -571,6 +571,15 @@ html [class*="-section-label"][class] {
   letter-spacing: 0.08em;
 }
 
+/* Button and tab voice (UNIVERSAL): buttons and tabs are interface text, so
+   they take the family Killer Sans role instead of each tool's monospace. Same
+   [class] specificity bump as the title rule so scoped per-tool rules are
+   beaten. Catches every *-btn class and the tool tab strips. */
+html [class*="-btn"][class],
+html .erg-tab[class] {
+  font-family: var(--kt-font-menu);
+}
+
 /* Colored subsection headers (LOGON & AUTHENTICATION, 5.7.X groups, ...):
    keep each tool's accent color, add the family face and text stroke.
    Catches wel-category-header, ndr-category-header, and future
