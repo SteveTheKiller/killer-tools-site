@@ -91,8 +91,8 @@ function onMenuSelect() {
 
 <template>
   <div v-for="{ name, key, tools, isCollapsed } of menuOptions" :key="`${key}:${locale}`" class="cat-block">
-    <div v-if="tools.length > 1" class="cat-header" ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ key })">
-      <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
+    <div v-if="tools.length > 1" class="cat-header" ml-6px mt-12px flex cursor-pointer items-center @click="toggleCategoryCollapse({ key })">
+      <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-30 transition-transform>
         <icon-mdi-chevron-right />
       </span>
       <span class="cat-name" ml-8px>
@@ -145,20 +145,19 @@ function onMenuSelect() {
 /* NOTE: the first/other category-header top margins are owned by App.vue
    (".sider-content > div..." rules, !important) - adjust them THERE. A rule
    here loses to them silently. */
-/* Category headers: family section-header voice (small caps, spaced), accent on hover */
-.cat-header {
-  transition: opacity 0.15s ease;
-  &:hover {
-    opacity: 1;
-    .cat-name { color: var(--kt-accent); }
-  }
-}
+/* Category headers: family section-header voice (small caps, spaced) in the
+   theme accent, a step larger than the 16px menu items; hover brightens it */
 .cat-name {
   font-family: var(--kt-font-section);
-  font-size: 15.5px;
+  font-size: 19px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  transition: color 0.15s ease;
+  color: var(--kt-accent);
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+.cat-header:hover .cat-name {
+  opacity: 1;
 }
 
 /* Light family nulls text strokes (family rule) + swaps brand wordmarks */
