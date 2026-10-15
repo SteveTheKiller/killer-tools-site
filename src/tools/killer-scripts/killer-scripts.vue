@@ -175,22 +175,20 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
   padding: 16px 16px 0 !important;
 }
 
-/* Card title: killer font, big and neutral - fixed white/near-black per
-   family, deliberately NOT tied to the accent color */
+/* Card title: heading font in the theme heading color, matching the tool cards */
 .ks-acronym {
   line-height: 0.8;
   position: relative;
   top: 1.5px;
   font-size: 1.7rem;
   font-weight: normal;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--kt-heading, var(--kt-accent));
   letter-spacing: 0.5px;
-  font-family: var(--kt-font-code);
+  font-family: var(--kt-font-card-title);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 html:not(.dark) .ks-acronym {
-  color: #1a1a1a;
   text-shadow: none;
 }
 
@@ -209,6 +207,7 @@ html:not(.dark) .ks-acronym {
      (Malaise: peach #ffb199, agreed 2026-08-21); page titles stay on the accent */
   color: var(--kt-heading, var(--kt-accent));
   line-height: 1.3;
+  font-family: var(--kt-font-killer);
 }
 
 .ks-desc {
@@ -238,7 +237,7 @@ html:not(.dark) .ks-acronym {
   color: var(--kt-outline-btn, var(--kt-accent));
   border: 1px solid rgba(var(--kt-outline-btn-rgb, var(--kt-accent-rgb)), 0.5);
   transition: background 0.12s, border-color 0.12s;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: var(--kt-font-menu);
 }
 
 /* Both labels share one grid cell, so the button is always as wide as the
@@ -262,7 +261,7 @@ html:not(.dark) .ks-acronym {
   color: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: background 0.12s, border-color 0.12s, color 0.12s;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: var(--kt-font-menu);
 }
 
 .ks-btn-dl:hover {

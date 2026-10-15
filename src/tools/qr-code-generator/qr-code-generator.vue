@@ -26,7 +26,7 @@ const eapAnonymous = ref(false);
 const eapIdentity = ref('');
 const eapPhase2Method = ref<EAPPhase2Method | null>(null);
 
-// Shared QR options — the "Default" preset follows the active page theme:
+// Shared QR options: the "Default" preset follows the active page theme:
 // current accent on the theme's modal tone. Terminal keeps the classic
 // green-on-black regardless of theme.
 function cssVarHex8(name: string, fallback: string) {
@@ -379,7 +379,7 @@ const caption = computed(() => {
 
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
-/* KillerPDF tab rule: the accent stripe belongs to each TAB, not the card —
+/* KillerPDF tab rule: the accent stripe belongs to each TAB, not the card:
    the full colored line must not run above the inactive tab. The card-wide
    stripe is suppressed and each tab carries its own top edge. */
 .qrg-panel::after {
@@ -394,7 +394,7 @@ const caption = computed(() => {
   min-height: 32px;
 }
 
-/* suppress the single default dot — each tab gets its own */
+/* suppress the single default dot: each tab gets its own */
 .qrg-bar::before {
   display: none !important;
 }
@@ -408,7 +408,7 @@ const caption = computed(() => {
   font-weight: normal;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-family: var(--kt-font-section);
+  font-family: var(--kt-font-menu);
   padding: 0 12px;
   border: none;
   /* Muted family stripe at rest (accent-sel), full accent when active */
@@ -540,7 +540,7 @@ html:not(.dark) .qrg-tab-active {
   position: relative;
   overflow: hidden;
   padding: 18px;
-  /* Normal drop shadow — not the accent glow */
+  /* Normal drop shadow: not the accent glow */
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   width: 100%;
   max-width: 500px;

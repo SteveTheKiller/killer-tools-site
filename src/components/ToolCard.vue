@@ -123,12 +123,12 @@ html:not(.dark) .tc-wm-light {
   display: block;
 }
 
-/* Card title: killer font, big and neutral - fixed white/near-black per
-   family, deliberately NOT tied to the accent color (mirrors ks-acronym) */
+/* Card title: heading font in the theme heading color (the accent unless the
+   theme defines --kt-heading), matching ks-acronym and km-title */
 .tc-title {
   font-size: 1.15rem;
   font-weight: normal;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--kt-heading, var(--kt-accent));
   letter-spacing: 0.5px;
   line-height: 1.25;
   font-family: var(--kt-font-card-title);
@@ -136,7 +136,6 @@ html:not(.dark) .tc-wm-light {
 }
 
 html:not(.dark) .tc-title {
-  color: #1a1a1a;
   text-shadow: none;
 }
 

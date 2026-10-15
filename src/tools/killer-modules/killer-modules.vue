@@ -104,22 +104,20 @@ function openRepo(mod: KillerModule) {
   padding: 16px 16px 0 !important;
 }
 
-/* Card title: killer font, big and neutral - fixed white/near-black,
-   deliberately NOT tied to the accent color (matches Killer Scripts) */
+/* Card title: heading font in the theme heading color (matches Killer Scripts) */
 .km-title {
   line-height: 0.8;
   position: relative;
   top: 1.5px;
   font-size: 1.7rem;
   font-weight: normal;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--kt-heading, var(--kt-accent));
   letter-spacing: 0.5px;
-  font-family: var(--kt-font-code);
+  font-family: var(--kt-font-card-title);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 html:not(.dark) .km-title {
-  color: #1a1a1a;
   text-shadow: none;
 }
 
@@ -137,7 +135,7 @@ html:not(.dark) .km-title {
   letter-spacing: 0.12em;
   font-weight: 600;
   color: rgba(var(--kt-accent-rgb), 0.8);
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: var(--kt-font-killer);
 }
 
 html:not(.dark) .km-expansion { color: rgba(var(--kt-accent-rgb), 0.95); }
@@ -248,7 +246,7 @@ html:not(.dark) .km-cmd {
   color: var(--kt-outline-btn, var(--kt-accent));
   border: 1px solid rgba(var(--kt-outline-btn-rgb, var(--kt-accent-rgb)), 0.5);
   transition: background 0.12s, border-color 0.12s;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: var(--kt-font-menu);
 }
 
 /* Both labels share one grid cell, so the button is always as wide as the
@@ -273,7 +271,7 @@ html:not(.dark) .km-cmd {
   color: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: background 0.12s, border-color 0.12s, color 0.12s;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  font-family: var(--kt-font-menu);
 }
 
 .km-btn-repo:hover {

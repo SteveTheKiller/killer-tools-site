@@ -25,7 +25,7 @@ watch(locale, (value) => {
 // Native title tooltips are unstylable OS chrome (they read as a stray black
 // bar over our dark UI). Convert every title attribute into data-tip, which
 // kt-terminal.css renders as a themed tooltip (pane-border, rounded, grain).
-// NaiveUI select internals get theirs stripped outright — their labels are
+// NaiveUI select internals get theirs stripped outright: their labels are
 // already fully visible and a tooltip there just cuts across the open menu.
 onMounted(() => {
   const convertTitles = () => {
@@ -118,7 +118,8 @@ html.dark body {
   --kt-font-accent: 'KtAccent', 'KtKiller', 'Courier New', monospace;
   --kt-font-page-title: var(--kt-font-accent);   /* tool page titles, About and Android h1, MCP h2 */
   --kt-font-card-title: var(--kt-font-accent);   /* card and terminal titles, home and About section heads */
-  --kt-font-section: var(--kt-font-accent);      /* section rows, category headers, tabs, sidebar menu */
+  --kt-font-section: var(--kt-font-accent);      /* section rows and category headers, including the sidebar's */
+  --kt-font-menu: var(--kt-font-killer);         /* sidebar menu items, tabs and card buttons */
   --kt-font-code: var(--kt-font-killer);         /* large ids: error hex, ports, event ids, NDR codes, acronyms */
   --kt-font-ui: var(--kt-font-killer);           /* small chrome such as the titlebar KillerMCP button */
 }
@@ -152,7 +153,7 @@ html[data-kt-theme='mourning']  { --kt-bg: #554c5d; --kt-chrome: #3b3642; --kt-c
 html[data-kt-grain='off'] { --kt-grain-img: none !important; }
 html[data-kt-grain='off'] body { background-image: none !important; }
 
-/* Grain boost overlay removed — n-layout already carries grain background.
+/* Grain boost overlay removed: n-layout already carries grain background.
    The overlay was at z-index 99999 and rendered over n-select input boxes,
    causing visible stripe artifacts on custom UI components. */
 
@@ -169,7 +170,7 @@ html {
   box-sizing: border-box;
 }
 
-/* ── Tool header: explicit dark colors for light mode — opacity alone is not enough ── */
+/* ── Tool header: explicit dark colors for light mode: opacity alone is not enough ── */
 html:not(.dark) .tool-title-compact  { color: var(--kt-accent) !important; opacity: 1 !important; }
 html:not(.dark) .tool-desc-compact   { color: rgba(0, 0, 0, 0.75) !important; opacity: 1 !important; }
 html:not(.dark) .tool-layout .n-h1   { color: rgba(0, 0, 0, 0.92) !important; opacity: 1 !important; }
@@ -189,11 +190,11 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
   opacity: 0;
 }
 
-/* ── Sidebar: NaiveUI menu injects its own background — force transparent so sider color shows ── */
+/* ── Sidebar: NaiveUI menu injects its own background: force transparent so sider color shows ── */
 .n-menu { background-color: transparent !important; }
 
 /* ── NaiveUI select dropdown menus: family menu chrome (grained modal
-   surface, accent border, rounded, drop shadow — the palette/dd-menu rule) ── */
+   surface, accent border, rounded, drop shadow: the palette/dd-menu rule) ── */
 .n-base-select-menu,
 .n-dropdown-menu {
   background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
@@ -238,7 +239,7 @@ html:not(.dark) body {
   background-color: transparent !important;
 }
 
-/* ── Sidebar: active — inset pill style (selected only, not hover) ── */
+/* ── Sidebar: active: inset pill style (selected only, not hover) ── */
 .dark .n-menu-item-content--selected,
 .dark .n-menu-item-content--selected:hover {
   border-radius: 6px !important;
@@ -457,7 +458,7 @@ html:not(.dark) [class$="-section-label"] {
 
 /* ── General light mode: opacity-based text is unreadable on gray ── */
 
-/* UnoCSS op-* — opacity: N% kills contrast on gray surfaces */
+/* UnoCSS op-*: opacity: N% kills contrast on gray surfaces */
 html:not(.dark) .op-80,
 html:not(.dark) .op-70,
 html:not(.dark) .op-60,
@@ -502,7 +503,7 @@ html:not(.dark) .gpr-registry-key {
   border-color: rgba(var(--kt-accent-rgb),0.3) !important;
 }
 
-/* Terminal row items — force solid dark so green text is always readable */
+/* Terminal row items: force solid dark so green text is always readable */
 .dt-row,
 .hash-row,
 .ip-row,
@@ -536,7 +537,7 @@ html:not(.dark) .dt-fmt-option { color: rgba(0, 0, 0, 0.65) !important; }
 html:not(.dark) .dt-fmt-option:hover { background: rgba(var(--kt-accent-rgb),0.10) !important; color: rgba(0, 0, 0, 0.88) !important; }
 html:not(.dark) .dt-fmt-option-active { color: #0b5c28 !important; background: rgba(var(--kt-accent-rgb),0.12) !important; }
 
-/* Subnet calculator: data table, not a terminal — light mode border fix */
+/* Subnet calculator: data table, not a terminal: light mode border fix */
 html:not(.dark) .subnet-results {
   border-color: rgba(0,0,0,0.15) !important;
 }
@@ -616,7 +617,7 @@ html:not(.dark) .cmdlet-row-badge {
   color: rgba(0,0,0,0.6) !important;
 }
 
-/* Cmdlet description text — opacity:0.5 on dark bg = invisible on light */
+/* Cmdlet description text: opacity:0.5 on dark bg = invisible on light */
 html:not(.dark) .cmdlet-row-desc {
   opacity: 1 !important;
   color: #3a3f45 !important;
@@ -626,14 +627,14 @@ html:not(.dark) .cmdlet-empty {
   color: #666 !important;
 }
 
-/* Notes strip — warm amber is washed out on gray */
+/* Notes strip: warm amber is washed out on gray */
 html:not(.dark) .notes-strip {
   color: #8a5a00 !important;
   border-color: rgba(180, 120, 0, 0.6) !important;
   background: rgba(180,120,0,0.08) !important;
 }
 
-/* Inline-opacity muted text — opacity on dark bg; solid color on light */
+/* Inline-opacity muted text: opacity on dark bg; solid color on light */
 html:not(.dark) .ps-muted {
   opacity: 1 !important;
   color: #4a5058 !important;
@@ -644,7 +645,7 @@ html:not(.dark) .ps-section-label {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   LIGHT MODE — kt-pill, kt-tag, kt-alert, kt-section-label
+   LIGHT MODE: kt-pill, kt-tag, kt-alert, kt-section-label
    ══════════════════════════════════════════════════════════════ */
 
 html:not(.dark) .kt-pill-row {
@@ -662,7 +663,7 @@ html:not(.dark) .kt-pill {
   border-right-color: rgba(0, 0, 0, 0.12) !important;
   color: rgba(0, 0, 0, 0.55) !important;
 }
-/* Standalone pill (not in a row) — needs its own visible border */
+/* Standalone pill (not in a row): needs its own visible border */
 html:not(.dark) .kt-pill:not(.kt-pill-row .kt-pill) {
   border: 1px solid rgba(var(--kt-accent-rgb),0.40) !important;
   border-radius: 5px !important;
@@ -699,7 +700,7 @@ html:not(.dark) .kt-alert-info {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   LIGHT MODE — Tool-specific terminal card text
+   LIGHT MODE: Tool-specific terminal card text
    html:not(.dark) prefix gives (0,2,1) specificity, beating
    scoped [data-v-xxx].class (0,2,0).
    ══════════════════════════════════════════════════════════════ */
@@ -726,7 +727,7 @@ html:not(.dark) .ndr-kv-block       { border-color: rgba(0, 0, 0, 0.10) !importa
 html:not(.dark) .ndr-sev-default    { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
 html:not(.dark) .ndr-sev-error      { color: #b91c1c !important; }
 
-/* ── Category headers (between card groups) — all tools ── */
+/* ── Category headers (between card groups): all tools ── */
 html:not(.dark) .ndr-category-header,
 html:not(.dark) .hsc-category-header,
 html:not(.dark) .wec-category-header,
@@ -765,7 +766,7 @@ html:not(.dark) .ppr-category       { color: rgba(0, 0, 0, 0.38) !important; }
 html:not(.dark) .ppr-service        { color: rgba(0, 0, 0, 0.88) !important; }
 html:not(.dark) .ppr-desc           { color: rgba(0, 0, 0, 0.58) !important; border-top-color: rgba(0,0,0,0.08) !important; }
 html:not(.dark) .ppr-proto-both     { background: rgba(0,0,0,0.05) !important; color: rgba(0,0,0,0.50) !important; border-color: rgba(0,0,0,0.12) !important; }
-/* Dangerous button stays amber in both modes — override the systemic green btn rule */
+/* Dangerous button stays amber in both modes: override the systemic green btn rule */
 html:not(.dark) .ppr-dangerous-btn              { color: rgba(180, 130, 0, 0.75) !important; border-color: rgba(234, 179, 8, 0.35) !important; }
 html:not(.dark) .ppr-dangerous-btn:hover        { color: #b45309 !important; border-color: rgba(234, 179, 8, 0.55) !important; background: rgba(234, 179, 8, 0.08) !important; }
 html:not(.dark) .ppr-dangerous-btn-active       { color: #b45309 !important; border-color: rgba(234, 179, 8, 0.65) !important; background: rgba(234, 179, 8, 0.14) !important; }
@@ -787,7 +788,7 @@ html:not(.dark) .ks-desc            { color: rgba(0, 0, 0, 0.60) !important; }
 html:not(.dark) .ks-btn-dl          { color: rgba(0, 0, 0, 0.45) !important; }
 html:not(.dark) .ks-btn-dl:hover    { background: rgba(0,0,0,0.06) !important; color: rgba(0,0,0,0.70) !important; }
 
-/* ── c-input-text (NaiveUI wrapper) — global light mode fix ── */
+/* ── c-input-text (NaiveUI wrapper): global light mode fix ── */
 html:not(.dark) .c-input-text .input-wrapper         { background-color: #f0f0f0 !important; border-color: rgba(0, 0, 0, 0.20) !important; box-shadow: none !important; }
 html:not(.dark) .c-input-text .input-wrapper:hover   { border-color: rgba(var(--kt-accent-rgb),0.45) !important; }
 html:not(.dark) .c-input-text .input-wrapper:focus-within { border-color: rgba(var(--kt-accent-rgb),0.70) !important; box-shadow: none !important; }
@@ -799,12 +800,12 @@ html:not(.dark) .command-block       { background: #c8c8c8 !important; border-co
 html:not(.dark) .notes-strip         { color: rgba(0, 0, 0, 0.72) !important; }
 html:not(.dark) .badge.module        { color: rgba(0, 0, 0, 0.55) !important; opacity: 1 !important; }
 html:not(.dark) .badge.ps-no         { opacity: 0.5 !important; }
-/* Input inside ps-panel-body — slightly darker bg to distinguish from page */
+/* Input inside ps-panel-body: slightly darker bg to distinguish from page */
 html:not(.dark) .ps-panel-body .c-input-text .input-wrapper         { background-color: #d0d0d0 !important; border-color: rgba(var(--kt-accent-rgb),0.30) !important; }
 html:not(.dark) .ps-panel-body .c-input-text .input-wrapper:hover   { border-color: rgba(var(--kt-accent-rgb),0.55) !important; }
 html:not(.dark) .ps-panel-body .c-input-text .input-wrapper:focus-within { background-color: #cccccc !important; border-color: rgba(var(--kt-accent-rgb),0.70) !important; }
 
-/* ── CVE Lookup — custom dropdowns ── */
+/* ── CVE Lookup: custom dropdowns ── */
 html:not(.dark) .cv-trigger         { background: #c8c8c8 !important; border-color: rgba(var(--kt-accent-rgb),0.30) !important; color: rgba(0, 0, 0, 0.80) !important; }
 html:not(.dark) .cv-trigger:hover,
 html:not(.dark) .cv-dropdown:focus-within .cv-trigger { border-color: rgba(var(--kt-accent-rgb),0.65) !important; }
@@ -830,7 +831,7 @@ html:not(.dark) .cve-score-default  { color: rgba(0,0,0,0.50) !important; border
 html:not(.dark) .cve-dot-default    { background: rgba(0,0,0,0.20) !important; }
 
 /* ══════════════════════════════════════════════════════════════
-   MOBILE — Card grids: minmax(420px) overflows narrow viewports.
+   MOBILE: Card grids: minmax(420px) overflows narrow viewports.
    !important beats non-!important scoped grid-template-columns.
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 520px) {
@@ -855,7 +856,7 @@ html:not(.dark) .erg-tab-active  { background: rgba(var(--kt-accent-rgb),0.18) !
 html:not(.dark) .erg-pill        { border-color: rgba(var(--kt-accent-rgb),0.20) !important; background: rgba(var(--kt-accent-rgb),0.04) !important; }
 html:not(.dark) .erg-pill:hover  { color: #0b5c28 !important; border-color: rgba(var(--kt-accent-rgb),0.45) !important; background: rgba(var(--kt-accent-rgb),0.10) !important; }
 html:not(.dark) .erg-pill-active { background: rgba(var(--kt-accent-rgb),0.16) !important; border-color: rgba(var(--kt-accent-rgb),0.55) !important; }
-/* Record output text — should be dark green, not gray */
+/* Record output text: should be dark green, not gray */
 html:not(.dark) .erg-record-text  { color: #0b5c28 !important; }
 html:not(.dark) .erg-record-label { color: rgba(var(--kt-accent-rgb),0.65) !important; }
 html:not(.dark) .erg-copy-hint    { color: rgba(var(--kt-accent-rgb),0.55) !important; }
@@ -864,15 +865,15 @@ html:not(.dark) .erg-slider-hint  { color: rgba(0, 0, 0, 0.40) !important; }
 html:not(.dark) .erg-input::placeholder { color: rgba(0, 0, 0, 0.28) !important; }
 html:not(.dark) .erg-warn         { color: #92600a !important; }
 
-/* ── Meta Tag Generator — syntax highlight in light mode ── */
+/* ── Meta Tag Generator: syntax highlight in light mode ── */
 html:not(.dark) .mg-pre           { color: rgba(0, 0, 0, 0.75) !important; }
 html:not(.dark) .hl-comment       { color: rgba(0, 0, 0, 0.38) !important; font-style: italic; }
 html:not(.dark) .hl-tag           { color: rgba(0, 0, 0, 0.60) !important; }
 html:not(.dark) .hl-attr          { color: #92600a !important; }
 html:not(.dark) .hl-value         { color: var(--kt-accent) !important; }
 
-/* ── Email Header Parser — classes not caught by the broad *-terminal rule ── */
-/* .ehp-auth-entry has its own #0a0a0c !important bg — needs explicit override */
+/* ── Email Header Parser: classes not caught by the broad *-terminal rule ── */
+/* .ehp-auth-entry has its own #0a0a0c !important bg: needs explicit override */
 html:not(.dark) .ehp-auth-entry     { background: var(--kt-term-bg) !important; }
 html:not(.dark) .ehp-auth-grid      { background: rgba(var(--kt-accent-rgb),0.10) !important; }
 /* Green accent elements inside terminals need !important to survive the broad * rule */

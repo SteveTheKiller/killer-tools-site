@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────
-   Killer Tools — shared terminal output styles
+   Killer Tools: shared terminal output styles
    Used by all tools that render a terminal-style result box.
 
    THEMING: change these variables to restyle every terminal
@@ -47,7 +47,7 @@ html:not(.dark) .cve-card *         { color: rgba(0, 0, 0, 0.80); }
 /* Tool card title names (*-name) → green to match dark mode feel */
 html:not(.dark) .kt-terminal [class*="-name"] { color: var(--kt-accent) !important; }
 
-/* BAR row: titles dark/black — not green */
+/* BAR row: titles dark/black: not green */
 html:not(.dark) .kt-terminal-bar *     { color: rgba(0, 0, 0, 0.70) !important; }
 html:not(.dark) .kt-terminal-bar-title { color: #1a1a1a !important; }
 html:not(.dark) .kt-prompt             { color: rgba(var(--kt-accent-rgb),0.65) !important; }
@@ -62,8 +62,8 @@ html:not(.dark) .kt-row                { border-bottom-color: rgba(0, 0, 0, 0.10
 
 /* ── Light mode hover effects on kt-terminal cards ──────────────────────────
    Two cases:
-   1. Plain kt-terminal (bcrypt, WEL, WEC, etc.) — no systemic panel rule applies.
-   2. *-panel.kt-terminal (RSA) — systemic panel rule has (0,6,1)+!important;
+   1. Plain kt-terminal (bcrypt, WEL, WEC, etc.): no systemic panel rule applies.
+   2. *-panel.kt-terminal (RSA): systemic panel rule has (0,6,1)+!important;
       hover variant must have (0,7,1)+!important to win.                       */
 html:not(.dark) .kt-terminal:hover {
   border-color: rgba(var(--kt-accent-rgb),0.65) !important;
@@ -71,7 +71,7 @@ html:not(.dark) .kt-terminal:hover {
 html:not(.dark) .kt-terminal:hover .kt-terminal-bar {
   background: transparent !important;
 }
-/* Panel variant — mirrors systemic [class*="-panel"] selector exactly + :hover */
+/* Panel variant: mirrors systemic [class*="-panel"] selector exactly + :hover */
 html:not(.dark) [class*="-panel"]:not([class*="-panel-bar"]):not([class*="-panel-title"]):not([class*="-panel-body"]):not([class*="-panel-text"]):hover {
   border-color: rgba(var(--kt-accent-rgb),0.65) !important;
 }
@@ -88,7 +88,7 @@ html:not(.dark) [class*="-terminal"]:not([class*="-bar"]):not([class*="-title"])
 /* Copy button: visible on gray bg */
 html:not(.dark) .kt-copy               { border-color: rgba(var(--kt-accent-rgb),0.45); color: rgba(var(--kt-accent-rgb),0.75); }
 html:not(.dark) .kt-copy:hover         { background: rgba(var(--kt-accent-rgb),0.12); border-color: rgba(var(--kt-accent-rgb),0.75); color: var(--kt-accent); }
-/* ── IPv4 Subnet Calculator uses .k-terminal (no 't') — mirror all light mode overrides ── */
+/* ── IPv4 Subnet Calculator uses .k-terminal (no 't'): mirror all light mode overrides ── */
 html:not(.dark) .k-terminal          { background: var(--kt-term-bg) !important; }
 html:not(.dark) .k-terminal *        { color: rgba(0, 0, 0, 0.80); }
 html:not(.dark) .k-terminal-bar *    { color: var(--kt-accent); }
@@ -117,13 +117,13 @@ html:not(.dark) .terminal-title      { color: var(--kt-accent) !important; }
 html:not(.dark) .t-cmd               { color: rgba(0, 0, 0, 0.85); }
 html:not(.dark) .t-out               { color: rgba(0, 0, 0, 0.60); }
 
-/* Tool-specific green accents — override the broad dark rule above */
+/* Tool-specific green accents: override the broad dark rule above */
 html:not(.dark) .ks-acronym          { color: var(--kt-accent); }
 html:not(.dark) .ks-btn-copy         { color: var(--kt-accent); border-color: rgba(var(--kt-accent-rgb),0.45); }
 html:not(.dark) .ks-btn-copy:hover   { background: rgba(var(--kt-accent-rgb),0.10); border-color: rgba(var(--kt-accent-rgb),0.70); }
 
 /* ── Systemic: every *-btn class → dark green text in light mode ────────────
-   var(--kt-accent) on a light gray background is ~2:1 contrast — unreadable.
+   var(--kt-accent) on a light gray background is ~2:1 contrast: unreadable.
    [0,2,1] beats every scoped [data-v-xxx].classname [0,2,0] without !important.
    App.vue !important overrides (ks-btn-dl etc.) still win over this.
    Catches kt-nav-btn, kt-search-btn, and any future [prefix]-btn button.   ── */
@@ -176,7 +176,7 @@ html:not(.dark) textarea {
 html:not(.dark) textarea::placeholder {
   color: rgba(0, 0, 0, 0.32) !important;
 }
-/* Higher-specificity textarea class override — beats scoped !important at [0,2,0] */
+/* Higher-specificity textarea class override: beats scoped !important at [0,2,0] */
 html:not(.dark) [class*="-textarea"] {
   background: #f0f0f0 !important;
   color: rgba(0, 0, 0, 0.85) !important;
@@ -185,7 +185,7 @@ html:not(.dark) [class*="-textarea"] {
 html:not(.dark) [class*="-textarea"]::placeholder { color: rgba(0, 0, 0, 0.32) !important; }
 html:not(.dark) [class*="-textarea"]:focus        { border-color: rgba(var(--kt-accent-rgb),0.55) !important; }
 
-/* Higher-specificity input class override — beats scoped !important at [0,2,0] */
+/* Higher-specificity input class override: beats scoped !important at [0,2,0] */
 html:not(.dark) [class*="-input"]:not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-panel"]):not([class*="-input-wrap"]) {
   background: #f0f0f0 !important;
   color: rgba(0, 0, 0, 0.85) !important;
@@ -210,7 +210,7 @@ html:not(.dark) [class*="-icon-btn"] {
 }
 html:not(.dark) [class*="-icon-btn"]:hover { color: rgba(0, 0, 0, 0.70) !important; }
 
-/* ── Systemic: active pills/tabs use var(--kt-accent) !important in dark mode —
+/* ── Systemic: active pills/tabs use var(--kt-accent) !important in dark mode:
    override site-wide so every tool's active state is readable in light mode ── */
 html:not(.dark) [class*="-pill-active"] { color: #0b5c28 !important; }
 html:not(.dark) [class*="-tab-active"]  { color: #0b5c28 !important; border-color: rgba(var(--kt-accent-rgb),0.60) !important; }
@@ -247,7 +247,7 @@ html:not(.dark) [class*="-label"]:not(.kt-label):not([class*="-bar"]):not([class
   color: rgba(0, 0, 0, 0.50) !important;
 }
 
-/* panel title/header text — white by default, needs dark override */
+/* panel title/header text: white by default, needs dark override */
 html:not(.dark) [class*="-panel-title"] { color: rgba(0, 0, 0, 0.55) !important; }
 html:not(.dark) [class*="-panel-header"] {
   background: rgba(0, 0, 0, 0.04) !important;
@@ -303,7 +303,7 @@ html:not(.dark) [class*="-step-val"] { color: var(--kt-accent) !important; }
 /* ── Dark mode: tool inputs, textareas, dropdowns → #121212 terminal bg ───────
    Uses class-based selectors (not bare input/textarea) so NaiveUI components
    are unaffected. Specificity [0,2,1] beats scoped [data-v-xxx].class.      ── */
-/* Solid backgrounds — rgba(0,0,0,0.35) on the grain texture created visible stripe
+/* Solid backgrounds: rgba(0,0,0,0.35) on the grain texture created visible stripe
    artifacts. These values are the opaque equivalent on #2b2b2b (n-layout dark bg). */
 html.dark [class*="-input"]:not(.c-input-text):not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
   background: #1a1a1a !important;
@@ -322,7 +322,7 @@ html.dark [class*="-stepper"] {
 }
 
 /* ── Black theme: the #1a1a1a field tone (tuned for Dark's lighter surfaces)
-   reads too gray on Black's pure-black cards — drop fields to near-black.
+   reads too gray on Black's pure-black cards: drop fields to near-black.
    Same specificity as the html.dark rules; later in the file wins. ── */
 html[data-kt-theme='black'] [class*="-input"]:not(.c-input-text):not([class*="-input-text"]):not([class*="-input-row"]):not([class*="-input-box"]):not([class*="-input-error"]):not([class*="-input-area"]):not([class*="-input-card"]):not([class*="-input-panel"]):not([class*="-input-label"]):not([class*="-input-wrap"]) {
   background: #0e0e0e !important;
@@ -430,7 +430,7 @@ html:not(.dark) .kt-copy:hover {
   transition: border-color 0.15s, box-shadow 0.12s, transform 0.12s;
 }
 
-/* REST STATE (universal): chrome-gray frame on all four edges — the only
+/* REST STATE (universal): chrome-gray frame on all four edges: the only
    accent at rest is the ::after top stripe. The [class] bump gives (0,2,1)
    so scoped per-tool `border: 1px solid var(--kt-term-border)` overrides
    at (0,2,0) are beaten; the hover rules below still win via !important. */
@@ -473,7 +473,7 @@ html .kt-terminal[class] {
   transform: none !important;
 }
 
-/* ── IPv4 Subnet Calculator uses .k-terminal — mirror hover effects ── */
+/* ── IPv4 Subnet Calculator uses .k-terminal: mirror hover effects ── */
 .k-terminal {
   transition: border-color 0.15s;
 }
@@ -525,15 +525,26 @@ html [class*="-terminal-title"][class]:not([class*="-sub"]) {
   font-weight: normal;
   letter-spacing: 0.5px;
   text-transform: none;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--kt-heading, var(--kt-accent));
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 html:not(.dark) .kt-terminal-bar-title[class],
 html:not(.dark) [class*="-terminal-bar-title"][class],
 html:not(.dark) [class*="-terminal-title"][class]:not([class*="-sub"]) {
-  color: #1a1a1a;
   text-shadow: none;
+}
+
+/* Light family: card and terminal titles keep the accent. The bar rule above
+   paints everything in a terminal bar near-black with !important, so these
+   need the extra class to win. */
+html:not(.dark) [class*="-terminal-bar"] .tc-title,
+html:not(.dark) [class*="-terminal-bar"] .ks-acronym,
+html:not(.dark) [class*="-terminal-bar"] .km-title,
+html:not(.dark) .kt-terminal-bar-title[class],
+html:not(.dark) [class*="-terminal-bar-title"][class],
+html:not(.dark) [class*="-terminal-title"][class]:not([class*="-sub"]) {
+  color: var(--kt-accent) !important;
 }
 
 .kt-section-row {
@@ -662,7 +673,7 @@ html:not(.dark) [class*="-category-header"][class] {
   font-weight: 700;
 }
 
-/* ── Global search button — fixed width so content changes never shift layout ── */
+/* ── Global search button: fixed width so content changes never shift layout ── */
 .kt-search-btn {
   flex-shrink: 0;
   align-self: flex-start;
@@ -696,7 +707,7 @@ html:not(.dark) [class*="-category-header"][class] {
 }
 
 /* ── Themed tooltips (UNIVERSAL): App.vue converts every title attribute into
-   data-tip, and this renders it — modal tone, pane border, rounded. Native
+   data-tip, and this renders it: modal tone, pane border, rounded. Native
    OS tooltips are unstylable and read as a stray black bar on the dark UI. */
 [data-tip] {
   position: relative;

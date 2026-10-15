@@ -179,7 +179,7 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
     margin-bottom: -10px;
     /* Family voice: menu items in the killer font */
     ::v-deep(.n-menu-item-content-header) {
-      font-family: var(--kt-font-section);
+      font-family: var(--kt-font-menu);
       font-size: 16px;
       letter-spacing: 0.4px;
     }

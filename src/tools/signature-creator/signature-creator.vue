@@ -482,7 +482,7 @@ onUnmounted(() => {
 /* ── Terminal card ── */
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
-/* KillerPDF tab rule: the accent stripe belongs to each TAB, not the card —
+/* KillerPDF tab rule: the accent stripe belongs to each TAB, not the card:
    the card-wide line must not run above the inactive tab. */
 .sig-panel::after {
   display: none;
@@ -507,7 +507,7 @@ onUnmounted(() => {
   font-weight: normal;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-family: var(--kt-font-section);
+  font-family: var(--kt-font-menu);
   padding: 0 12px;
   border: none;
   /* Muted family stripe at rest (accent-sel), full accent when active */
