@@ -104,26 +104,26 @@ const { qrcode } = useQRCode({
   options: { width: 512, margin: 2 },
 });
 
-const { copy } = useCopy({ source: password, text: t('toast.passwordCopied') });
+const { copy } = useCopy({ source: password, text: t('tools.password-generator.ui.toast.passwordCopied') });
 const { copy: copyBulk } = useCopy({
   source: computed(() => bulkPasswords.value.join('\n')),
-  text: t('toast.passwordsCopied'),
+  text: t('tools.password-generator.ui.toast.passwordsCopied'),
 });
-const { copy: copyPhonetic } = useCopy({ source: phonetic, text: t('toast.phoneticCopied') });
+const { copy: copyPhonetic } = useCopy({ source: phonetic, text: t('tools.password-generator.ui.toast.phoneticCopied') });
 
 const modeOptions = computed<Array<{ label: string, value: PasswordMode }>>(() => [
-  { label: t('mode.random'), value: 'random' },
-  { label: t('mode.passphrase'), value: 'passphrase' },
-  { label: t('mode.pronounceable'), value: 'pronounceable' },
-  { label: t('mode.format'), value: 'format' },
+  { label: t('tools.password-generator.ui.mode.random'), value: 'random' },
+  { label: t('tools.password-generator.ui.mode.passphrase'), value: 'passphrase' },
+  { label: t('tools.password-generator.ui.mode.pronounceable'), value: 'pronounceable' },
+  { label: t('tools.password-generator.ui.mode.format'), value: 'format' },
 ]);
 
 const formatOptions = computed<Array<{ label: string, value: OutputFormat }>>(() => [
-  { label: t('format.plain'), value: 'plain' },
-  { label: t('format.hex'), value: 'hex' },
-  { label: t('format.base64'), value: 'base64' },
-  { label: t('format.base64url'), value: 'base64url' },
-  { label: t('format.uuid'), value: 'uuid' },
+  { label: t('tools.password-generator.ui.format.plain'), value: 'plain' },
+  { label: t('tools.password-generator.ui.format.hex'), value: 'hex' },
+  { label: t('tools.password-generator.ui.format.base64'), value: 'base64' },
+  { label: t('tools.password-generator.ui.format.base64url'), value: 'base64url' },
+  { label: t('tools.password-generator.ui.format.uuid'), value: 'uuid' },
 ]);
 
 const separatorOptions = computed(() => [
@@ -131,7 +131,7 @@ const separatorOptions = computed(() => [
   { label: '.', value: '.' },
   { label: '_', value: '_' },
   { label: '␣', value: ' ' },
-  { label: t('separator.none'), value: '' },
+  { label: t('tools.password-generator.ui.separator.none'), value: '' },
 ]);
 
 const showLengthSlider = computed(() => {
@@ -167,7 +167,7 @@ function selectBulkCount(n: number) {
         <!-- Password display -->
         <div class="kt-terminal">
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">{{ t('terminal.passwordTitle') }}</span>
+            <span class="kt-terminal-bar-title">{{ t('tools.password-generator.ui.terminal.passwordTitle') }}</span>
           </div>
           <div class="pg-pw-body">
             <div class="terminal-prompt">
@@ -176,8 +176,8 @@ function selectBulkCount(n: number) {
             </div>
             <div class="terminal-meta">
               <div class="entropy-row">
-                <span><span class="meta-label">{{ t('meta.entropyLabel') }}</span> <strong>{{ Math.round(entropy) }}</strong> {{ t('meta.bits') }}</span>
-                <span><span class="meta-label">{{ t('meta.crackLabel') }}</span> {{ crackTime }}</span>
+                <span><span class="meta-label">{{ t('tools.password-generator.ui.meta.entropyLabel') }}</span> <strong>{{ Math.round(entropy) }}</strong> {{ t('tools.password-generator.ui.meta.bits') }}</span>
+                <span><span class="meta-label">{{ t('tools.password-generator.ui.meta.crackLabel') }}</span> {{ crackTime }}</span>
               </div>
               <div class="entropy-bar">
                 <div class="entropy-fill" :style="{ width: `${entropyPercent}%`, background: entropyColor }" />
@@ -186,11 +186,11 @@ function selectBulkCount(n: number) {
             <div class="terminal-actions">
               <button type="button" class="pg-btn pg-btn-primary" @click="copy()">
                 <icon-mdi-content-copy />
-                {{ t('actions.copy') }}
+                {{ t('tools.password-generator.ui.actions.copy') }}
               </button>
               <button type="button" class="pg-btn" @click="regenerate">
                 <icon-mdi-refresh />
-                {{ t('actions.refresh') }}
+                {{ t('tools.password-generator.ui.actions.refresh') }}
               </button>
             </div>
           </div>
@@ -199,12 +199,12 @@ function selectBulkCount(n: number) {
         <!-- Options / controls -->
         <div class="kt-terminal">
           <div class="kt-terminal-bar">
-            <span class="kt-terminal-bar-title">{{ t('terminal.optionsTitle') }}</span>
+            <span class="kt-terminal-bar-title">{{ t('tools.password-generator.ui.terminal.optionsTitle') }}</span>
           </div>
           <div class="pg-controls-body">
             <!-- Presets -->
             <div class="pg-section-label">
-              {{ t('section.preset') }}
+              {{ t('tools.password-generator.ui.section.preset') }}
             </div>
             <div class="pg-pill-row">
               <button
@@ -222,7 +222,7 @@ function selectBulkCount(n: number) {
 
             <!-- Mode -->
             <div class="pg-section-label">
-              {{ t('section.mode') }}
+              {{ t('tools.password-generator.ui.section.mode') }}
             </div>
             <div class="pg-pill-row">
               <button
@@ -240,7 +240,7 @@ function selectBulkCount(n: number) {
             <!-- Format (only in format mode) -->
             <template v-if="opts.mode === 'format'">
               <div class="pg-section-label">
-                {{ t('section.format') }}
+                {{ t('tools.password-generator.ui.section.format') }}
               </div>
               <div class="pg-pill-row">
                 <button
@@ -259,7 +259,7 @@ function selectBulkCount(n: number) {
             <!-- Length (random / pronounceable / non-UUID format) -->
             <template v-if="showLengthSlider">
               <div class="pg-section-label">
-                {{ t('section.length', { length: opts.length }) }}
+                {{ t('tools.password-generator.ui.section.length', { length: opts.length }) }}
               </div>
               <input
                 v-model.number="opts.length"
@@ -274,7 +274,7 @@ function selectBulkCount(n: number) {
             <!-- Passphrase word count -->
             <template v-if="opts.mode === 'passphrase'">
               <div class="pg-section-label">
-                {{ t('section.wordCount', { count: opts.wordCount }) }}
+                {{ t('tools.password-generator.ui.section.wordCount', { count: opts.wordCount }) }}
               </div>
               <input
                 v-model.number="opts.wordCount"
@@ -286,7 +286,7 @@ function selectBulkCount(n: number) {
               >
 
               <div class="pg-section-label">
-                {{ t('section.separator') }}
+                {{ t('tools.password-generator.ui.section.separator') }}
               </div>
               <div class="pg-pill-row">
                 <button
@@ -305,7 +305,7 @@ function selectBulkCount(n: number) {
             <!-- Character classes (random only) -->
             <template v-if="opts.mode === 'random'">
               <div class="pg-section-label">
-                {{ t('section.characterClasses') }}
+                {{ t('tools.password-generator.ui.section.characterClasses') }}
               </div>
               <div class="pg-pill-row">
                 <button
@@ -314,7 +314,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withUppercase }"
                   @click="opts.withUppercase = !opts.withUppercase"
                 >
-                  {{ t('charClass.uppercase') }}
+                  {{ t('tools.password-generator.ui.charClass.uppercase') }}
                 </button>
                 <button
                   type="button"
@@ -322,7 +322,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withLowercase }"
                   @click="opts.withLowercase = !opts.withLowercase"
                 >
-                  {{ t('charClass.lowercase') }}
+                  {{ t('tools.password-generator.ui.charClass.lowercase') }}
                 </button>
                 <button
                   type="button"
@@ -330,7 +330,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withNumbers }"
                   @click="opts.withNumbers = !opts.withNumbers"
                 >
-                  {{ t('charClass.numbers') }}
+                  {{ t('tools.password-generator.ui.charClass.numbers') }}
                 </button>
                 <button
                   type="button"
@@ -338,7 +338,7 @@ function selectBulkCount(n: number) {
                   :class="{ 'pg-pill-active': opts.withSymbols }"
                   @click="opts.withSymbols = !opts.withSymbols"
                 >
-                  {{ t('charClass.symbols') }}
+                  {{ t('tools.password-generator.ui.charClass.symbols') }}
                 </button>
               </div>
             </template>
