@@ -12,7 +12,30 @@ import router from './router';
 import 'virtual:uno.css';
 import '@/assets/kt-terminal.css';
 
-registerSW();
+// The service worker precaches the app shell, so a returning visitor keeps the
+// previous build until the worker notices a new one. Browsers only look on a
+// full navigation, which a phone resuming a tab never does, so also check when
+// the tab comes back into view and once an hour. autoUpdate then swaps in the
+// new build and reloads.
+registerSW({
+  immediate: true,
+  onRegisteredSW(_url, registration) {
+    if (!registration) {
+      return;
+    }
+    const checkForUpdate = () => {
+      if (!registration.installing && navigator.onLine) {
+        registration.update().catch(() => {});
+      }
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        checkForUpdate();
+      }
+    });
+    setInterval(checkForUpdate, 60 * 60 * 1000);
+  },
+});
 
 // Android hardware/gesture back: go back in history instead of exiting the app.
 // At the history root, minimize like a normal Android app.
