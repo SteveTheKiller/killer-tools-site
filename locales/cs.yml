@@ -1714,6 +1714,7 @@ components:
     accentLabel: 'zvyrazneni:'
     accentNamed: 'Zvyrazneni: {name}'
     closeAccentPicker: Zavrit vyber zvyrazneni barvy
+    filmGrain: Filmové zrno
     accents:
       red: Cervena
       orange: Oranzova

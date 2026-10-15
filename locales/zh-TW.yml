@@ -1745,6 +1745,7 @@ components:
     accentLabel: '強調色:'
     accentNamed: '強調色: {name}'
     closeAccentPicker: 關閉強調色選擇器
+    filmGrain: 底片顆粒
     accents:
       red: 紅色
       orange: 橙色

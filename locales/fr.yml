@@ -1709,6 +1709,7 @@ components:
     accentLabel: 'accent :'
     accentNamed: 'Accent : {name}'
     closeAccentPicker: Fermer le sélecteur de couleur d'accent
+    filmGrain: Grain de film
     accents:
       red: Rouge
       orange: Orange

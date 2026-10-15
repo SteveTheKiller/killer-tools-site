@@ -1745,6 +1745,7 @@ components:
     accentLabel: 'акцент:'
     accentNamed: 'Акцент: {name}'
     closeAccentPicker: Закрыть выбор акцентного цвета
+    filmGrain: Зернистость плёнки
     accents:
       red: Красный
       orange: Оранжевый

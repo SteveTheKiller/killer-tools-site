@@ -54,6 +54,9 @@
       }
       catch (e) {}
       d.setAttribute('data-kt-theme', t);
+      /* Film Grain switch (theme flyout), on unless saved off */
+      try { if (localStorage.getItem('kt-grain') === 'false') { d.setAttribute('data-kt-grain', 'off'); } }
+      catch (e) {}
       if (t !== 'light') { d.classList.add('dark'); }
       d.style.backgroundColor = bg[t];
       /* Saved accent (neutral themes only), cached by the style store */

@@ -1744,6 +1744,7 @@ components:
     accentLabel: 'màu nhấn:'
     accentNamed: 'Màu nhấn: {name}'
     closeAccentPicker: Đóng bảng chọn màu nhấn
+    filmGrain: Hạt phim
     accents:
       red: Đỏ
       orange: Cam

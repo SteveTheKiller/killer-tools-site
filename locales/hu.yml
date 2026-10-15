@@ -1714,6 +1714,7 @@ components:
     accentLabel: 'kiemeles:'
     accentNamed: 'Kiemeles: {name}'
     closeAccentPicker: Kiemelo szin valaszto bezarasa
+    filmGrain: Filmszemcse
     accents:
       red: Piros
       orange: Narancs

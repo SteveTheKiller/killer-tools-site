@@ -23,6 +23,10 @@ export const useStyleStore = defineStore('style', {
       ktAccent.value = '';
     }
 
+    // Film Grain switch from the theme flyout, on by default (family app
+    // behavior). Off clears --kt-grain-img so every grained surface goes flat.
+    const ktGrain = useStorage('kt-grain', true) as Ref<boolean>;
+
     const isDarkTheme = computed(() => ktTheme.value !== 'light');
     const isSmallScreen = useMediaQuery('(max-width: 900px)');
     const isMenuCollapsed = useStorage('isMenuCollapsed', isSmallScreen.value) as Ref<boolean>;
@@ -38,6 +42,7 @@ export const useStyleStore = defineStore('style', {
       d.classList.toggle('light', ktTheme.value === 'light');
       d.setAttribute('data-kt-theme', ktTheme.value);
       d.setAttribute('data-kt-accent', ktAccent.value);
+      d.setAttribute('data-kt-grain', ktGrain.value ? 'on' : 'off');
 
       const t = accentTriple(ktTheme.value, ktAccent.value);
       if (t) {
@@ -116,6 +121,12 @@ export const useStyleStore = defineStore('style', {
       applyThemed(() => (ktAccent.value = name));
     };
 
+    const setGrain = (on: boolean) => {
+      applyThemed(() => (ktGrain.value = on));
+    };
+
+    const toggleGrain = () => setGrain(!ktGrain.value);
+
     // Back-compat: the old sun/moon toggle and command palette action
     const toggleDark = () => {
       applyThemed(() => (ktTheme.value = ktTheme.value === 'light' ? 'dark' : 'light'));
@@ -124,9 +135,12 @@ export const useStyleStore = defineStore('style', {
     return {
       ktTheme,
       ktAccent,
+      ktGrain,
       isDarkTheme,
       setTheme,
       setAccent,
+      setGrain,
+      toggleGrain,
       toggleDark,
       isMenuCollapsed,
       isSmallScreen,

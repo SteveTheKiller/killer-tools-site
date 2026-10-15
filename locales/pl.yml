@@ -1745,6 +1745,7 @@ components:
     accentLabel: 'akcent:'
     accentNamed: 'Akcent: {name}'
     closeAccentPicker: Zamknij wybór akcentu
+    filmGrain: Ziarno filmowe
     accents:
       red: Czerwony
       orange: Pomarańczowy

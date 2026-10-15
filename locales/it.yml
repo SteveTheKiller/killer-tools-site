@@ -1745,6 +1745,7 @@ components:
     accentLabel: 'accento:'
     accentNamed: 'Accento: {name}'
     closeAccentPicker: Chiudi selettore accento
+    filmGrain: Grana pellicola
     accents:
       red: Rosso
       orange: Arancione

@@ -1713,6 +1713,7 @@ components:
     accentLabel: 'Akzent:'
     accentNamed: 'Akzent: {name}'
     closeAccentPicker: Akzentfarbwähler schließen
+    filmGrain: Filmkorn
     accents:
       red: Rot
       orange: Orange

@@ -1713,6 +1713,7 @@ components:
     accentLabel: 'acento:'
     accentNamed: 'Acento: {name}'
     closeAccentPicker: Cerrar selector de color de acento
+    filmGrain: Grano de película
     accents:
       red: Rojo
       orange: Naranja

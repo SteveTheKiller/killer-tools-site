@@ -1745,6 +1745,7 @@ components:
     accentLabel: 'アクセント:'
     accentNamed: 'アクセント: {name}'
     closeAccentPicker: アクセントピッカーを閉じる
+    filmGrain: フィルムグレイン
     accents:
       red: 赤
       orange: オレンジ

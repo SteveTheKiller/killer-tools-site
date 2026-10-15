@@ -147,6 +147,11 @@ html[data-kt-theme='sepulchre'] { --kt-bg: #3a352f; --kt-chrome: #454039; --kt-c
 html[data-kt-theme='delirium']  { --kt-bg: #343344; --kt-chrome: #3e3c50; --kt-chrome-bg: linear-gradient(90deg, #641d25 0%, #2f2853 100%); --kt-chrome-border: #5c527d; --kt-panel: #343344; --kt-modal: #24212b; --kt-accent: #dd8500; --kt-accent-2: #B16A00; --kt-accent-sel: #cf1020; --kt-accent-rgb: 221, 133, 0; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a32.png'); }
 html[data-kt-theme='mourning']  { --kt-bg: #554c5d; --kt-chrome: #3b3642; --kt-chrome-border: #756b79; --kt-panel: #554c5d; --kt-modal: #4f413f; --kt-accent: #ff6f91; --kt-accent-2: #CC5974; --kt-accent-sel: rgba(255, 111, 145, 0.42); --kt-accent-rgb: 255, 111, 145; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a32.png'); }
 
+/* Film Grain switch (theme flyout, family app behavior): off empties the grain
+   layer every surface draws from, whatever theme or accent is active. */
+html[data-kt-grain='off'] { --kt-grain-img: none !important; }
+html[data-kt-grain='off'] body { background-image: none !important; }
+
 /* Grain boost overlay removed — n-layout already carries grain background.
    The overlay was at z-index 99999 and rendered over n-select input boxes,
    causing visible stripe artifacts on custom UI components. */

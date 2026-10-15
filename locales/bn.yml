@@ -1714,6 +1714,7 @@ components:
     accentLabel: 'অ্যাকসেন্ট:'
     accentNamed: 'অ্যাকসেন্ট: {name}'
     closeAccentPicker: অ্যাকসেন্ট পিকার বন্ধ করুন
+    filmGrain: ফিল্ম গ্রেইন
     accents:
       red: লাল
       orange: কমলা

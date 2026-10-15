@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { KtAccentKey, KtThemeKey } from '@/themes';
-import { useStorage } from '@vueuse/core';
+import { useEventListener, useStorage } from '@vueuse/core';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useStyleStore } from '@/stores/style.store';
 import { ktAccents, ktThemes, NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
@@ -53,6 +53,18 @@ function selectTheme(key: KtThemeKey) {
   styleStore.setTheme(key);
   swatchesOpen.value = false;
 }
+
+// Film Grain: same switch and shortcut as the apps' theme menu (Ctrl+Shift+G).
+const grainLabel = computed(() => t('components.themeDots.filmGrain'));
+
+useEventListener(document, 'keydown', (e: KeyboardEvent) => {
+  if (e.ctrlKey && e.shiftKey && !e.altKey && !e.metaKey && e.code === 'KeyG') {
+    e.preventDefault();
+    if (!e.repeat) {
+      styleStore.toggleGrain();
+    }
+  }
+});
 
 function accentColor(name: KtAccentKey) {
   if (name === 'yellow' && accentFamily.value === 'light') return '#FFD94D';
@@ -172,6 +184,16 @@ function startDrag(e: PointerEvent) {
         :aria-pressed="styleStore.ktTheme === theme.key"
         @click="selectTheme(theme.key)"
       />
+      <!-- Film Grain: its own row under the swatches, behind a faded rule (apps' theme menu) -->
+      <div class="tgrp-sep" aria-hidden="true" />
+      <n-checkbox
+        class="tgrp-grain"
+        :checked="styleStore.ktGrain"
+        :title="`${grainLabel} (Ctrl+Shift+G)`"
+        @update:checked="styleStore.setGrain"
+      >
+        {{ grainLabel }}
+      </n-checkbox>
     </div>
 
     <!-- Accent popup: floating, draggable by the grip, position saved -->
@@ -347,6 +369,26 @@ html:not(.dark) .acc-trigger {
   background: var(--kt-modal) var(--kt-grain-img) repeat;
   background-size: 256px 256px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.48);
+}
+
+/* Film Grain row: full width under the swatch grid */
+.tgrp-sep {
+  flex-basis: 100%;
+  height: 1px;
+  margin-top: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.18) 15%, rgba(255, 255, 255, 0.18) 85%, transparent 100%);
+}
+html:not(.dark) .tgrp-sep {
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 15%, rgba(0, 0, 0, 0.18) 85%, transparent 100%);
+}
+
+.tgrp-grain {
+  flex-basis: 100%;
+  justify-content: center;
+
+  :deep(.n-checkbox__label) {
+    font-family: var(--kt-font-ui);
+  }
 }
 
 /* Tighten the surrounding controls on narrow headers. */

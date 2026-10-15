@@ -1714,6 +1714,7 @@ components:
     accentLabel: 'accent:'
     accentNamed: 'Accent: {name}'
     closeAccentPicker: Close accent picker
+    filmGrain: Film Grain
     accents:
       red: Red
       orange: Orange
