@@ -209,7 +209,7 @@ function withTitles(server: McpServer) {
   return server;
 }
 
-export function createServer(name = 'KillerTools MCP', directory = false) {
+export function createServer(name = 'KillerTools MCP') {
   const server = withTitles(new McpServer({ name, version: '0.1.0' }));
   registerAsciiArt(server);
   registerCveLookup(server);
@@ -229,9 +229,7 @@ export function createServer(name = 'KillerTools MCP', directory = false) {
   registerMathEvaluator(server);
   registerMacVendor(server);
   registerPhotoCalculators(server);
-  if (!directory) {
-    registerQrCode(server);
-  }
+  registerQrCode(server);
   registerPowerShellBuilder(server);
   registerPhoneTools(server);
   registerReferenceLookups(server);
@@ -466,14 +464,14 @@ const handler = createMcpHandler(() => createServer(), {
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
 });
 
-const directoryHandler = createMcpHandler(() => createServer('KillerMCP', true), {
+const directoryHandler = createMcpHandler(() => createServer('KillerMCP'), {
   route: '/openai',
   allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
 });
 
 // Same directory tool set for the Claude Connectors Directory listing.
-const claudeHandler = createMcpHandler(() => createServer('KillerMCP', true), {
+const claudeHandler = createMcpHandler(() => createServer('KillerMCP'), {
   route: '/claude',
   allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],

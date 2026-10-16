@@ -33,8 +33,8 @@ async function positive(name, args, verify) {
 const initialized = await request('initialize', { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'killermcp-directory-review', version: '0.1.0' } });
 assert.equal(initialized.serverInfo.name, 'KillerMCP');
 const listed = await request('tools/list');
-assert.equal(listed.tools.length, 73);
-assert.ok(!listed.tools.some(tool => tool.name === 'generate_qr_code'));
+assert.equal(listed.tools.length, 74);
+assert.ok(listed.tools.some(tool => tool.name === 'generate_qr_code'));
 const external = new Set(['lookup_cve', 'lookup_domain_dns', 'lookup_domain_rdap', 'search_gifs']);
 for (const tool of listed.tools) {
   assert.equal(tool.annotations.readOnlyHint, true, tool.name);
@@ -43,15 +43,15 @@ for (const tool of listed.tools) {
   assert.equal(tool.inputSchema.type, 'object', tool.name);
   assert.ok(tool.title && tool.annotations.title === tool.title, `${tool.name} title`);
 }
-evidence.protocolChecks.push('Directory exposes 73 independent tools with explicit annotations and no Wi-Fi credential QR tool.');
+evidence.protocolChecks.push('Directory exposes all 74 independent tools with explicit annotations.');
 const original = await request('tools/list', {}, new URL('/', endpoint).href);
 assert.equal(original.tools.length, 74);
 assert.ok(original.tools.some(tool => tool.name === 'generate_qr_code'));
 assert.ok(original.tools.every(tool => tool.title && tool.annotations?.title === tool.title), 'every root tool has a title');
+assert.deepEqual(original.tools.map(tool => tool.name).sort(), listed.tools.map(tool => tool.name).sort());
 const claude = await request('tools/list', {}, new URL('/claude', endpoint).href);
 assert.deepEqual(claude.tools.map(tool => tool.name).sort(), listed.tools.map(tool => tool.name).sort());
-evidence.protocolChecks.push('Every tool has a title, and the Claude directory route exposes the same 73 tools.');
-evidence.protocolChecks.push('Existing root connection retains all 74 tools.');
+evidence.protocolChecks.push('Every tool has a title, and the root, OpenAI and Claude routes expose the same 74 tools.');
 await positive('calculate_ipv4_subnet', { address: '192.168.10.0/24' }, value => {
   assert.equal(value.networkAddress, '192.168.10.0');
   assert.equal(value.networkMask, '255.255.255.0');
@@ -87,5 +87,5 @@ for (const [pathname, filename] of [['/privacy', 'privacy.html'], ['/terms', 'te
 assert.equal((await fetch(new URL('/mcp', endpoint))).status, 404);
 evidence.protocolChecks.push('Legal pages match source after accounting for the Cloudflare JavaScript detection injection; HEAD works, POST is rejected, and unsupported /mcp remains 404.');
 if (process.argv[2]) writeFileSync(process.argv[2], JSON.stringify(evidence, null, 2) + '\n');
-console.log('Directory protocol, 73 annotations, root compatibility, five positive calls, three input rejection checks and legal routes passed.');
+console.log('Directory protocol, 74 annotations, matching routes, five positive calls, three input rejection checks and legal routes passed.');
 console.log('Client prompt behavior and the reviewer video remain separate checks.');

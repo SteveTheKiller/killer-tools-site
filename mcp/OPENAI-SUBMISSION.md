@@ -1,6 +1,6 @@
 # KillerMCP directory package
 
-This package presents the hosted KillerTools utilities under the existing KillerMCP product brand. Its live directory endpoint is `https://mcp.killertools.net/openai`. The root endpoint keeps all 74 public operations. The directory endpoint exposes 73 operations and excludes the Wi-Fi credential QR operation because the directory prohibits collecting authentication secrets.
+This package presents the hosted KillerTools utilities under the existing KillerMCP product brand. Its live directory endpoint is `https://mcp.killertools.net/openai`. The directory endpoint exposes the same 74 public operations as the root endpoint. The QR operation encodes a Wi-Fi password only when the user supplies one; it never asks for one.
 
 The OpenAI package version follows the published Windows KillerMCP release. The current local package is 0.5.0. Changing this source or rebuilding its ZIP does not update the pending OpenAI submission or deploy the hosted server.
 
@@ -26,7 +26,7 @@ pnpm exec wrangler deploy --dry-run
 
 The builder validates the portable schemas, listing limits, all eight review cases, icon dimensions and ZIP contents. It copies the existing brand icon byte for byte. It never uploads, installs or publishes. Use a new output filename when rebuilding.
 
-The protocol check runs five positive tool calls, checks 73 annotations, confirms the original 74-tool connection remains available, and verifies rejected inputs and legal routes. It does not test a model's selection or refusal behavior. Run the five positive and three negative prompts from `openai-plugin/plugin.json` in a connected ChatGPT or Codex client before submission.
+The protocol check runs five positive tool calls, checks 74 annotations, confirms the root, OpenAI and Claude routes expose the same tools, and verifies rejected inputs and legal routes. It does not test a model's selection or refusal behavior. Run the five positive and three negative prompts from `openai-plugin/plugin.json` in a connected ChatGPT or Codex client before submission.
 
 ## Remaining submission steps
 
@@ -39,7 +39,7 @@ The protocol check runs five positive tool calls, checks 73 annotations, confirm
 
 ## Recording outline
 
-Show the KillerMCP connection and explain that this is its hosted tools edition. Run subnet calculation, Windows Event ID lookup, Base64 conversion, JSON formatting and the PowerShell builder. Keep the built command as text; do not execute it. Then demonstrate all three negative prompts: local PDF editing, restarting a Windows service, and soliciting a Wi-Fi password. Show that those requests do not perform a local action or collect credentials.
+Show the KillerMCP connection and explain that this is its hosted tools edition. Run subnet calculation, Windows Event ID lookup, Base64 conversion, JSON formatting and the PowerShell builder. Keep the built command as text; do not execute it. Then demonstrate all three negative prompts: local PDF editing, restarting a Windows service, and soliciting a Wi-Fi password. Show that those requests do not perform a local action or ask for a password.
 
 Finish by showing the product website and the hosted privacy and terms pages. Explain the installed Windows edition as a separate connection. Do not suggest that the hosted plugin controlled a computer during the recording.
 
