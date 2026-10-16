@@ -26,7 +26,7 @@ pnpm exec wrangler deploy --dry-run
 
 The builder validates the portable schemas, listing limits, all eight review cases, icon dimensions and ZIP contents. It copies the existing brand icon byte for byte. It never uploads, installs or publishes. Use a new output filename when rebuilding.
 
-The protocol check runs five positive tool calls, checks 74 annotations, confirms the root, OpenAI and Claude routes expose the same tools, and verifies rejected inputs and legal routes. It does not test a model's selection or refusal behavior. Run the five positive and three negative prompts from `openai-plugin/plugin.json` in a connected ChatGPT or Codex client before submission.
+The protocol check runs five positive tool calls, checks 74 annotations, confirms the root and OpenAI routes expose the same tools, and verifies rejected inputs and legal routes. It does not test a model's selection or refusal behavior. Run the five positive and three negative prompts from `openai-plugin/plugin.json` in a connected ChatGPT or Codex client before submission.
 
 ## Remaining submission steps
 

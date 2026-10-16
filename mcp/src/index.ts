@@ -470,13 +470,6 @@ const directoryHandler = createMcpHandler(() => createServer('KillerMCP'), {
   allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
 });
 
-// Same directory tool set for the Claude Connectors Directory listing.
-const claudeHandler = createMcpHandler(() => createServer('KillerMCP'), {
-  route: '/claude',
-  allowedHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
-  allowedOriginHostnames: ['localhost', '127.0.0.1', 'mcp.killertools.net'],
-});
-
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
@@ -502,7 +495,7 @@ export default {
         'Referrer-Policy': 'strict-origin-when-cross-origin',
       } });
     }
-    if (pathname !== '/' && pathname !== '/openai' && pathname !== '/claude') {
+    if (pathname !== '/' && pathname !== '/openai') {
       return new Response('Not found', { status: 404 });
     }
     if (Number(request.headers.get('content-length')) > maxRequestBytes) {
@@ -517,6 +510,6 @@ export default {
     if (bounded instanceof Response) {
       return bounded;
     }
-    return (pathname === '/openai' ? directoryHandler : pathname === '/claude' ? claudeHandler : handler)(bounded, env, ctx);
+    return (pathname === '/openai' ? directoryHandler : handler)(bounded, env, ctx);
   },
 };

@@ -49,9 +49,7 @@ assert.equal(original.tools.length, 74);
 assert.ok(original.tools.some(tool => tool.name === 'generate_qr_code'));
 assert.ok(original.tools.every(tool => tool.title && tool.annotations?.title === tool.title), 'every root tool has a title');
 assert.deepEqual(original.tools.map(tool => tool.name).sort(), listed.tools.map(tool => tool.name).sort());
-const claude = await request('tools/list', {}, new URL('/claude', endpoint).href);
-assert.deepEqual(claude.tools.map(tool => tool.name).sort(), listed.tools.map(tool => tool.name).sort());
-evidence.protocolChecks.push('Every tool has a title, and the root, OpenAI and Claude routes expose the same 74 tools.');
+evidence.protocolChecks.push('Every tool has a title, and the root and OpenAI routes expose the same 74 tools.');
 await positive('calculate_ipv4_subnet', { address: '192.168.10.0/24' }, value => {
   assert.equal(value.networkAddress, '192.168.10.0');
   assert.equal(value.networkMask, '255.255.255.0');
@@ -85,6 +83,7 @@ for (const [pathname, filename] of [['/privacy', 'privacy.html'], ['/terms', 'te
   assert.equal((await fetch(url, { method: 'POST' })).status, 405);
 }
 assert.equal((await fetch(new URL('/mcp', endpoint))).status, 404);
+assert.equal((await fetch(new URL('/claude', endpoint))).status, 404);
 evidence.protocolChecks.push('Legal pages match source after accounting for the Cloudflare JavaScript detection injection; HEAD works, POST is rejected, and unsupported /mcp remains 404.');
 if (process.argv[2]) writeFileSync(process.argv[2], JSON.stringify(evidence, null, 2) + '\n');
 console.log('Directory protocol, 74 annotations, matching routes, five positive calls, three input rejection checks and legal routes passed.');
