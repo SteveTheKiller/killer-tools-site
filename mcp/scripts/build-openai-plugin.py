@@ -38,6 +38,8 @@ def build(destination):
         manifests[name] = manifest
     plugin = manifests['plugin.json']['extensions']['com.openai']
     listing = plugin['interface']
+    if manifests['plugin.json']['author']['name'] != 'Steve the Killer' or listing['developerName'] != 'Steve the Killer':
+        raise ValueError('Public author and developer name must be Steve the Killer.')
     for field, limit in {'displayName': 30, 'shortDescription': 30, 'longDescription': 4000, 'developerName': 80}.items():
         if not isinstance(listing[field], str) or not listing[field].strip() or len(listing[field]) > limit:
             raise ValueError('Invalid listing field: ' + field)

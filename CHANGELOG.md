@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### MCP
 
 - Added the KillerMCP directory package, tool annotations, hosted privacy and terms pages, domain verification, directory endpoints that serve the same 74 tools as the main connection, and support through the KillerMCP repository.
-- Aligned the OpenAI package version with the published Windows KillerMCP release.
+- Named the hosted OpenAI listing Killer Tools, retained Steve the Killer as publisher, and separated its version from the installable KillerMCP plugin.
 - Added the MCP page and logo, top bar link, and first local server tools.
 
 ### Localization

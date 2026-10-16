@@ -1,18 +1,18 @@
-# KillerMCP directory package
+# Killer Tools directory package
 
-This package presents the hosted KillerTools utilities under the existing KillerMCP product brand. Its live directory endpoint is `https://mcp.killertools.net/openai`. The directory endpoint exposes the same 74 public operations as the root endpoint. The QR operation encodes a Wi-Fi password only when the user supplies one; it never asks for one.
+This package presents the hosted KillerTools utilities as Killer Tools, published by Steve the Killer. KillerMCP is the separate installable app and local connection. The hosted directory endpoint is `https://mcp.killertools.net/openai`. The directory endpoint exposes the same 74 public operations as the root endpoint. The QR operation encodes a Wi-Fi password only when the user supplies one; it never asks for one.
 
-The OpenAI package version follows the published Windows KillerMCP release. The current local package is 0.5.0. Changing this source or rebuilding its ZIP does not update the pending OpenAI submission or deploy the hosted server.
+The hosted Killer Tools package has its own version, currently 0.5.0. Only the installable KillerMCP plugin follows the KillerMCP app version. Changing this source or rebuilding its ZIP does not update the OpenAI submission or deploy the hosted server.
 
 The draft in the Killer Apps project uses the verified business identity Steve the Killer and includes 18 translated listing descriptions. The Worker, hosted legal pages and domain challenge are deployed. OpenAI confirms the domain is verified and the current MCP scan has no findings. All eight review prompts passed in ChatGPT. The [reviewer walkthrough](https://mcp.killertools.net/review/) uses actual client captures and is declared in the package. Final attestations, review submission and directory publication remain separate steps.
 
 ## Brand and copy
 
-KillerMCP connects your AI assistant to KillerTools and your Killer apps.
+Killer Tools gives your AI assistant hosted IT utilities. KillerMCP connects your AI assistant to local utilities and your installed Killer apps. Both use Steve the Killer as the public author and developer name.
 
 Choose the hosted connection for IT lookups, calculations, data conversion and formatting without a Windows installation. Choose the installed Windows edition for those utilities plus supported local features and installed Killer app integrations. Available app actions depend on the installed app and its supported adapter.
 
-The directory listing describes the hosted connection's actual capabilities. It does not advertise desktop operations as remotely available. KillerMCP is the existing product name, rather than a generic tool name with MCP appended for this listing.
+The Killer Tools directory listing describes the hosted connection's actual capabilities. It does not advertise desktop operations as remotely available. Keep the existing package identifier and MCP server key when updating this listing.
 
 ## Prepare the package
 
@@ -20,11 +20,11 @@ From `mcp`, run `pnpm typecheck` and `pnpm coverage`. Start `pnpm exec wrangler 
 
 ```powershell
 node scripts/review-plugin.mjs C:\Users\steve\code\tmp\killermcp-review-local.json
-python scripts/build-openai-plugin.py C:\Users\steve\code\tmp\killermcp-openai-0.5.0.zip
+python scripts/build-openai-plugin.py C:\Users\steve\scratch\openai-submission\killer-tools-openai-0.5.0.zip
 pnpm exec wrangler deploy --dry-run
 ```
 
-The builder validates the portable schemas, listing limits, all eight review cases, icon dimensions and ZIP contents. It copies the existing brand icon byte for byte. It never uploads, installs or publishes. Use a new output filename when rebuilding.
+The builder validates the portable schemas, listing limits, public author and developer name, all eight review cases, icon dimensions and ZIP contents. It copies the existing brand icon byte for byte. It never uploads, installs or publishes. Use a new output filename when rebuilding.
 
 The protocol check runs five positive tool calls, checks 74 annotations, confirms the root and OpenAI routes expose the same tools, and verifies rejected inputs and legal routes. It does not test a model's selection or refusal behavior. Run the five positive and three negative prompts from `openai-plugin/plugin.json` in a connected ChatGPT or Codex client before submission.
 
@@ -39,7 +39,7 @@ The protocol check runs five positive tool calls, checks 74 annotations, confirm
 
 ## Recording outline
 
-Show the KillerMCP connection and explain that this is its hosted tools edition. Run subnet calculation, Windows Event ID lookup, Base64 conversion, JSON formatting and the PowerShell builder. Keep the built command as text; do not execute it. Then demonstrate all three negative prompts: local PDF editing, restarting a Windows service, and soliciting a Wi-Fi password. Show that those requests do not perform a local action or ask for a password.
+Show the Killer Tools connection and explain that it provides hosted utilities. Run subnet calculation, Windows Event ID lookup, Base64 conversion, JSON formatting and the PowerShell builder. Keep the built command as text; do not execute it. Then demonstrate all three negative prompts: local PDF editing, restarting a Windows service, and soliciting a Wi-Fi password. Show that those requests do not perform a local action or ask for a password.
 
 Finish by showing the product website and the hosted privacy and terms pages. Explain the installed Windows edition as a separate connection. Do not suggest that the hosted plugin controlled a computer during the recording.
 
