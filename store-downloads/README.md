@@ -12,16 +12,21 @@ missing releases, upstream failures, host/path validation, and credential isolat
 
 ## Deployment
 
-Review the two route patterns and use an authenticated Cloudflare account with access to
-both zones. From this directory, run `npx wrangler deploy` only when publication is authorized.
+Review the route patterns and use an authenticated Cloudflare account with access to
+every zone. From this directory, run `npx wrangler deploy` only when publication is authorized.
 A root www redirect, another Worker, or a redirect rule must not intercept /store/*.
 Test the final public route with GET, HEAD, and a byte range before using Partner Center.
 
-For KillerPDF 1.8.90, the route is:
-https://killerpdf.net/store/1.8.90/KillerPDF.exe
+Each app's installer is served from its own site:
+https://killerpdf.net/store/1.8.91/KillerPDF.exe
+https://killernotes.net/store/1.5.0/KillerNotes.exe
+https://killerscan.net/store/1.8.1/KillerScan.exe
+https://killershell.net/store/1.4.0/KillerShell.exe
+https://killendar.net/store/1.3.0/Killendar.exe
+https://killerbench.net/store/0.1.0/KillerBench.exe
 
-For the other installers, use the family host and allowed product name, for example:
-https://killertools.net/store/killernotes/1.5.0/KillerNotes.exe
+KillerMCP has no site of its own and uses the family host and product name:
+https://killertools.net/store/killermcp/0.5.1/KillerMCP-Setup.exe
 
 The release must exist on GitHub before its download works. Published versioned assets must
 never be replaced; publish a new version for changed bytes. The Worker does not store or
@@ -32,7 +37,7 @@ save is the final check that Microsoft accepts this deployment.
 
 https://killertools.net/store/installer-codes
 
-This documentation applies only to releases containing the new shared installer handling.
+The same page is served at /store/installer-codes on every app site. This documentation applies only to releases containing the new shared installer handling.
 Use 1223 for cancelled installation, 1618 for concurrent installation, 112 for disk full,
 1625 for security rejection, and 0 for success. Leave already-exists, reboot-required, and
 network-failure fields blank because those dedicated codes are not emitted. Put 1, 5, and

@@ -42,6 +42,20 @@ test("request credentials and arbitrary headers do not reach GitHub", async () =
     return new Response("MZ");
   });
 });
+test("each app site serves its own installer", async () => {
+  for (const [host, repo, file] of [["killernotes.net", "KillerNotes", "KillerNotes.exe"], ["killerscan.net", "KillerScan", "KillerScan.exe"],
+    ["killershell.net", "KillerShell", "KillerShell.exe"], ["killendar.net", "Killendar", "Killendar.exe"],
+    ["killerbench.net", "KillerBench", "KillerBench.exe"]]) {
+    await handleRequest(new Request(`https://${host}/store/1.2.3/${file}`), async u => {
+      assert.equal(u, `https://github.com/SteveTheKiller/${repo}/releases/download/v1.2.3/${file}`);
+      return new Response("MZ");
+    });
+  }
+});
+test("installer return codes are documented on every app site", async () => {
+  for (const host of ["killerpdf.net", "killerscan.net", "killernotes.net", "killershell.net", "killendar.net", "killerbench.net"])
+    assert.equal((await handleRequest(new Request(`https://${host}/store/installer-codes`))).status, 200);
+});
 test("family paths select only the allowed repository and installer", async () => {
   await handleRequest(new Request("https://killertools.net/store/killermcp/0.5.1/KillerMCP-Setup.exe"), async u => {
     assert.equal(u, "https://github.com/SteveTheKiller/KillerMCP/releases/download/v0.5.1/KillerMCP-Setup.exe");
@@ -53,6 +67,8 @@ for (const bad of [
   "https://killerpdf.net/store/1.8.90/Other.exe", "https://evil.invalid/store/1.8.90/KillerPDF.exe",
   "http://killerpdf.net/store/1.8.90/KillerPDF.exe",
   "https://killertools.net/store/unknown/1.0.0/Unknown.exe",
+  "https://killerscan.net/store/1.8.1/KillerPDF.exe", "https://killerscan.net/store/killerscan/1.8.1/KillerScan.exe",
+  "https://killernotes.net/store/latest/KillerNotes.exe",
   url + "?source=https://evil.invalid",
 ]) test("rejects unapproved path " + bad, async () => {
   const response = await handleRequest(new Request(bad), async () => { throw new Error("Unexpected upstream request"); });

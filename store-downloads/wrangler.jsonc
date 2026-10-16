@@ -5,6 +5,11 @@
   "workers_dev": false,
   "routes": [
     { "pattern": "killerpdf.net/store/*", "zone_name": "killerpdf.net" },
+    { "pattern": "killernotes.net/store/*", "zone_name": "killernotes.net" },
+    { "pattern": "killerscan.net/store/*", "zone_name": "killerscan.net" },
+    { "pattern": "killershell.net/store/*", "zone_name": "killershell.net" },
+    { "pattern": "killendar.net/store/*", "zone_name": "killendar.net" },
+    { "pattern": "killerbench.net/store/*", "zone_name": "killerbench.net" },
     { "pattern": "killertools.net/store/*", "zone_name": "killertools.net" }
   ]
 }

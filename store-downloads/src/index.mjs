@@ -8,6 +8,18 @@ const PACKAGES = Object.freeze({
   killermcp: { repo: "KillerMCP", file: "KillerMCP-Setup.exe" },
 });
 
+// Each app's own site serves its installer at /store/<version>/<file>.
+// killertools.net serves the family path /store/<product>/<version>/<file>.
+const APP_HOSTS = Object.freeze({
+  "killerpdf.net": "killerpdf",
+  "killernotes.net": "killernotes",
+  "killerscan.net": "killerscan",
+  "killershell.net": "killershell",
+  "killendar.net": "killendar",
+  "killerbench.net": "killerbench",
+});
+const FAMILY_HOST = "killertools.net";
+
 const RETURN_CODES = [
   ["Installation cancelled by user", "1223", "The user cancelled setup or declined an elevation request."],
   ["Application already exists", "Leave blank", "Existing installations can be updated or reinstalled; their presence is not an error."],
@@ -56,16 +68,17 @@ export async function handleRequest(request, upstreamFetch = fetch) {
   if (request.method !== "GET" && request.method !== "HEAD")
     return text("Only GET and HEAD are supported.", 405, { allow: "GET, HEAD" });
   const url = new URL(request.url);
-  if (url.protocol !== "https:" || !["killerpdf.net", "killertools.net"].includes(url.hostname))
+  const appProduct = Object.hasOwn(APP_HOSTS, url.hostname) ? APP_HOSTS[url.hostname] : null;
+  if (url.protocol !== "https:" || (!appProduct && url.hostname !== FAMILY_HOST))
     return text("Unknown download host.", 404);
   if (url.search) return text("Use the versioned download URL without query parameters.");
   if (url.pathname === "/store/installer-codes") return documentation(request.method);
 
   let product, version, file;
-  if (url.hostname === "killerpdf.net") {
-    const match = /^\/store\/(\d+\.\d+\.\d+)\/(KillerPDF\.exe)$/.exec(url.pathname);
+  if (appProduct) {
+    const match = /^\/store\/(\d+\.\d+\.\d+)\/([^/]+)$/.exec(url.pathname);
     if (match) [, version, file] = match;
-    product = "killerpdf";
+    product = appProduct;
   } else {
     const match = /^\/store\/([a-z]+)\/(\d+\.\d+\.\d+)\/([^/]+)$/.exec(url.pathname);
     if (match) [, product, version, file] = match;
