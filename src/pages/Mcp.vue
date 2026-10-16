@@ -155,6 +155,10 @@ useHead({
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" /></svg>
             <span>{{ t('pages.mcp.download') }}</span>
           </a>
+          <a class="mcp-store" href="https://apps.microsoft.com/search?query=KillerMCP" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M3 7h18v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7zm5.5 3v3h3v-3h-3zm4 0v3h3v-3h-3zm-4 4v3h3v-3h-3zm4 0v3h3v-3h-3zM8 7V5.5a4 4 0 0 1 8 0V7h-2V5.5a2 2 0 0 0-4 0V7H8z" /></svg>
+            <span>Microsoft Store</span>
+          </a>
           <div class="mcp-installer-meta">
             <span v-if="installerRelease">{{ t('pages.mcp.meta.version', { version: installerRelease.version }) }}</span><span v-if="installerRelease">{{ installerRelease.size }}</span><span>.NET 10</span><span>{{ t('pages.mcp.meta.signed') }}</span><a :href="installerReleaseUrl" target="_blank" rel="noopener">{{ t('pages.mcp.meta.hosted') }}</a>
           </div>
@@ -447,6 +451,10 @@ html:not(.dark) .mcp-install-label { color: var(--kt-text, #111); }
 .mcp-download:active { transform: translateY(1px); }
 .mcp-download:focus-visible { outline: 2px solid var(--kt-text, #fff); outline-offset: 3px; }
 .mcp-download svg { width: 18px; height: 18px; fill: currentColor; }
+.mcp-store { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 8px; padding: 11px 18px; border: 1px solid var(--kt-accent); border-radius: 6px; background: transparent; color: var(--kt-text, #fff) !important; font-size: 15px; font-weight: 700; box-shadow: 0 3px 8px rgba(0, 0, 0, .25); transition: transform .12s, box-shadow .15s, border-color .12s; }
+.mcp-store:hover, .mcp-store:focus-visible { border-color: color-mix(in srgb, var(--kt-accent) 72%, var(--kt-text, #fff)); transform: translateY(-1px); box-shadow: 0 7px 14px rgba(0, 0, 0, .4); }
+.mcp-store:focus-visible { outline: 2px solid var(--kt-accent); outline-offset: 3px; }
+.mcp-store svg { width: 20px; height: 20px; fill: currentColor; flex: 0 0 auto; }
 .mcp-installer-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 8px 0 14px; color: var(--kt-muted, #aaa); font: 11.5px/1.45 Consolas, monospace; }
 .mcp-installer-meta a { color: var(--kt-accent); font-weight: 400; }
 .mcp-install-steps { margin: 0; padding: 0; list-style: none; counter-reset: install; display: grid; gap: 10px; }
