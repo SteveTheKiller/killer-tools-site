@@ -9,7 +9,7 @@ const wingetCommand = 'winget install SteveTheKiller.KillerMCP';
 const chocoCommand = 'choco install killermcp';
 const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=killertools&config=${encodeURIComponent(btoa(JSON.stringify({ url: endpoint })))}`;
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
-const { t } = useI18n();
+const { t, te } = useI18n();
 const copyStatus = ref('');
 const installerRelease = ref<{
   version: string
@@ -314,6 +314,17 @@ useHead({
           <p>
             {{ t('pages.mcp.data.p3') }}
           </p>
+        </section>
+        <section class="mcp-card mcp-surface">
+          <i18n-t v-if="te('pages.mcp.twice.title')" keypath="pages.mcp.twice.title" tag="h2">
+            <template #km>
+              <span class="killermcp-wordmark">Killer<span>MCP</span></span>
+            </template>
+          </i18n-t>
+          <h2 v-else>
+            Why <span class="killermcp-wordmark">Killer<span>MCP</span></span> runs twice
+          </h2>
+          <p>{{ t('pages.mcp.twice.body', 'Claude Desktop starts each local MCP server twice. One copy serves the app\'s own chats, and the other serves Claude sessions that use this computer remotely. Seeing two KillerMCP.exe processes under Claude in Task Manager is normal. KillerMCP is not installed twice, and nothing needs to be fixed.') }}</p>
         </section>
       </div>
     </div>

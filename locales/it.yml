@@ -1939,6 +1939,9 @@ pages:
       p1: Il runtime KillerMCP installato viene eseguito sul tuo computer. Alcune ricerche di rete e di riferimento contattano comunque le loro fonti dati pubbliche. Il tuo agente riceve gli input e i risultati necessari per completare la richiesta.
       p2: La connessione ospitata opzionale invia gli input degli strumenti al Cloudflare Worker di KillerTools. Non richiede accesso, limita i corpi delle richieste a 64 KiB, applica schemi limitati e applica limiti di frequenza per ogni IP connesso. Non inviare password, file privati, token o dati dei clienti tramite la connessione ospitata.
       p3: Gli strumenti per file locali, browser, password, token, crittografia, hashing, OTP, BIP39 e generazione di chiavi restano fuori dal Worker pubblico. Vengono eseguiti tramite KillerMCP installato, ma il client MCP e il provider del modello possono comunque ricevere gli input e i risultati.
+    twice:
+      title: 'Perché {km} viene eseguito due volte'
+      body: 'Claude Desktop avvia ogni server MCP locale due volte. Una copia serve le chat dell''app stessa e l''altra serve le sessioni di Claude che usano questo computer da remoto. È quindi normale vedere due processi KillerMCP.exe sotto Claude in Gestione attività. KillerMCP non è installato due volte e non c''è nulla da correggere.'
     oss:
       title: Open source e limiti attuali
       p1: Il {kt} contiene il Worker pubblico, il bundle locale di KillerTools, la mappa delle operazioni, gli schemi di convalida e i controlli di copertura. Il {km} contiene l'host locale condiviso, gli adattatori per le app desktop, l'installer e i controlli di integrazione.

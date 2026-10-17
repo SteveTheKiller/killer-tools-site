@@ -1908,6 +1908,9 @@ pages:
       p1: A telepített KillerMCP futtatókörnyezet az Ön számítógépén fut. Egyes hálózati és referencia-lekérdezések továbbra is elérik nyilvános adatforrásaikat. Az ügynöke megkapja a kérés teljesítéséhez szükséges bemeneteket és eredményeket.
       p2: Az opcionális tárolt kapcsolat elküldi az eszközbemeneteket a KillerTools Cloudflare Workerének. Nincs bejelentkezés, a kéréstörzseket 64 KiB-ra korlátozza, korlátozott sémákat alkalmaz, és korlátozza az egyes csatlakozó IP-címek kérésszámát. Ne küldjön jelszavakat, privát fájlokat, tokeneket vagy ügyféladatokat a tárolt kapcsolaton keresztül.
       p3: A helyi fájl-, böngésző-, jelszó-, token-, titkosítási, hash-, OTP-, BIP39- és kulcsgeneráló eszközök nem érintik a nyilvános Workert. A telepített KillerMCP-n keresztül futnak, de az MCP kliens és a modellszolgáltató továbbra is megkaphatja a bemeneteket és eredményeket.
+    twice:
+      title: 'Miért fut kétszer a {km}'
+      body: 'A Claude Desktop minden helyi MCP-kiszolgálót kétszer indít el. Az egyik példány az alkalmazás saját csevegéseit szolgálja ki, a másik pedig azokat a Claude-munkameneteket, amelyek távolról használják ezt a számítógépet. Ezért normális, ha a Feladatkezelőben a Claude alatt két KillerMCP.exe folyamat látható. A KillerMCP nincs kétszer telepítve, és semmit sem kell javítani.'
     oss:
       title: Nyílt forráskód és jelenlegi korlátok
       p1: A {kt} tartalmazza a nyilvános Workert, a helyi KillerTools csomagot, a művelettérképet, az érvényesítési sémákat és a lefedettségi ellenőrzéseket. A {km} tartalmazza a megosztott helyi hostot, az asztali alkalmazás adaptereit, a telepítőt és az integrációs ellenőrzéseket.

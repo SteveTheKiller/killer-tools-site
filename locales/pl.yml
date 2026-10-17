@@ -1939,6 +1939,9 @@ pages:
       p1: Zainstalowane środowisko uruchomieniowe KillerMCP działa na Twoim komputerze. Niektóre wyszukiwania sieciowe i referencyjne nadal łączą się z publicznymi źródłami danych. Twój agent otrzymuje dane wejściowe i wyniki potrzebne do zrealizowania żądania.
       p2: Opcjonalne połączenie hostowane wysyła dane wejściowe narzędzi do Cloudflare Worker KillerTools. Nie wymaga logowania, ogranicza treść żądań do 64 KiB, stosuje ograniczone schematy i limituje szybkość dla każdego łączącego się adresu IP. Nie wysyłaj haseł, prywatnych plików, tokenów ani danych klientów przez połączenie hostowane.
       p3: Narzędzia do obsługi plików lokalnych, przeglądarki, haseł, tokenów, szyfrowania, haszowania, OTP, BIP39 i generowania kluczy pozostają poza publicznym Workerem. Działają za pośrednictwem zainstalowanego KillerMCP, ale klient MCP i dostawca modelu mogą nadal otrzymywać dane wejściowe i wyniki.
+    twice:
+      title: 'Dlaczego {km} działa dwa razy'
+      body: 'Claude Desktop uruchamia każdy lokalny serwer MCP dwa razy. Jedna kopia obsługuje czaty samej aplikacji, a druga obsługuje sesje Claude, które korzystają z tego komputera zdalnie. Dlatego dwa procesy KillerMCP.exe pod Claude w Menedżerze zadań to normalna sytuacja. KillerMCP nie jest zainstalowany dwa razy i nie trzeba niczego naprawiać.'
     oss:
       title: Otwarty kod źródłowy i aktualne ograniczenia
       p1: '{kt} zawiera publiczny Worker, lokalny pakiet KillerTools, mapę operacji, schematy walidacji i kontrole pokrycia. {km} zawiera wspólnego lokalnego hosta, adaptery aplikacji desktopowych, instalator i kontrole integracji.'

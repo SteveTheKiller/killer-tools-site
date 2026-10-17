@@ -1908,6 +1908,9 @@ pages:
       p1: Nainstalované běhové prostředí KillerMCP běží na vašem počítači. Některá síťová a referenční vyhledávání přesto kontaktují své veřejné zdroje dat. Váš agent obdrží vstupy a výsledky potřebné k dokončení požadavku.
       p2: Volitelné hostované připojení odesílá vstupy nástrojů na Cloudflare Worker KillerTools. Nevyžaduje přihlášení, omezuje tělo požadavku na 64 KiB, používá omezená schémata a omezuje počet požadavků pro každou připojující se IP adresu. Neposílejte přes hostované připojení hesla, soukromé soubory, tokeny ani data klientů.
       p3: Nástroje pro místní soubory, prohlížeč, hesla, tokeny, šifrování, hashování, OTP, BIP39 a generování klíčů se veřejnému Workeru vyhýbají. Běží přes nainstalovaný KillerMCP, ale MCP klient a poskytovatel modelu mohou přesto obdržet vstupy a výsledky.
+    twice:
+      title: 'Proč {km} běží dvakrát'
+      body: 'Claude Desktop spouští každý místní server MCP dvakrát. Jedna kopie obsluhuje chaty samotné aplikace a druhá obsluhuje relace Claude, které tento počítač používají vzdáleně. Dva procesy KillerMCP.exe pod Claude ve Správci úloh jsou proto normální. KillerMCP není nainstalován dvakrát a není potřeba nic opravovat.'
     oss:
       title: Open source a aktuální omezení
       p1: '{kt} obsahuje veřejný Worker, místní balíček KillerTools, mapu operací, validační schémata a kontroly pokrytí. {km} obsahuje sdílený místní hostitel, adaptéry desktopových aplikací, instalátor a integrační kontroly.'

@@ -1907,6 +1907,9 @@ pages:
       p1: El entorno de ejecución instalado de KillerMCP se ejecuta en su equipo. Algunas búsquedas de red y de referencia siguen contactando sus fuentes de datos públicas. Su agente recibe las entradas y los resultados necesarios para completar la solicitud.
       p2: La conexión alojada opcional envía las entradas de las herramientas al Cloudflare Worker de KillerTools. No requiere inicio de sesión, limita el cuerpo de las solicitudes a 64 KiB, aplica esquemas acotados y limita la frecuencia por cada IP conectada. No envíe contraseñas, archivos privados, tokens ni datos de clientes a través de la conexión alojada.
       p3: Las herramientas de archivos locales, navegador, contraseñas, tokens, cifrado, hash, OTP, BIP39 y generación de claves no pasan por el Worker público. Se ejecutan mediante KillerMCP instalado, pero el cliente MCP y el proveedor del modelo pueden recibir igualmente las entradas y los resultados.
+    twice:
+      title: 'Por qué {km} se ejecuta dos veces'
+      body: 'Claude Desktop inicia cada servidor MCP local dos veces. Una copia atiende los chats de la propia aplicación y la otra atiende las sesiones de Claude que usan este equipo de forma remota. Por eso es normal ver dos procesos KillerMCP.exe bajo Claude en el Administrador de tareas. KillerMCP no está instalado dos veces y no hay nada que corregir.'
     oss:
       title: Código abierto y límites actuales
       p1: El {kt} contiene el Worker público, el paquete local de KillerTools, el mapa de operaciones, los esquemas de validación y las verificaciones de cobertura. El {km} contiene el host local compartido, los adaptadores de aplicaciones de escritorio, el instalador y las verificaciones de integración.

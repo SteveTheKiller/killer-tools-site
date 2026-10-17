@@ -1939,6 +1939,9 @@ pages:
       p1: Yüklenmiş KillerMCP çalışma zamanı bilgisayarınızda çalışır. Bazı ağ ve referans sorguları yine de genel veri kaynaklarına bağlanır. Ajanınız isteği tamamlamak için gereken girdileri ve sonuçları alır.
       p2: İsteğe bağlı barındırılan bağlantı, araç girdilerini KillerTools Cloudflare Worker'a gönderir. Oturum açma gerektirmez, istek gövdelerini 64 KiB ile sınırlar, sınırlı şemalar uygular ve bağlanan her IP için hız sınırı koyar. Barındırılan bağlantı üzerinden parola, özel dosya, jeton veya müşteri verisi göndermeyin.
       p3: Yerel dosya, tarayıcı, parola, jeton, şifreleme, karma (hash), OTP, BIP39 ve anahtar oluşturma araçları genel Worker üzerinden çalışmaz. Bunlar yüklenmiş KillerMCP üzerinden çalışır, ancak MCP istemcisi ve model sağlayıcısı yine de girdileri ve sonuçları alabilir.
+    twice:
+      title: '{km} neden iki kez çalışıyor'
+      body: 'Claude Desktop her yerel MCP sunucusunu iki kez başlatır. Kopyalardan biri uygulamanın kendi sohbetlerine, diğeri ise bu bilgisayarı uzaktan kullanan Claude oturumlarına hizmet eder. Bu nedenle Görev Yöneticisi''nde Claude altında iki KillerMCP.exe işlemi görmek normaldir. KillerMCP iki kez yüklenmemiştir ve düzeltilmesi gereken bir şey yoktur.'
     oss:
       title: Açık kaynak ve mevcut sınırlamalar
       p1: "{kt}, genel Worker'ı, yerel KillerTools paketini, işlem haritasını, doğrulama şemalarını ve kapsam kontrollerini içerir. {km} ise ortak yerel sunucuyu, masaüstü uygulama bağdaştırıcılarını, yükleyiciyi ve entegrasyon kontrollerini içerir."
