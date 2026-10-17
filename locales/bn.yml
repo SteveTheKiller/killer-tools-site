@@ -329,7 +329,7 @@ tools:
       devComplete: ডেভেলপমেন্ট সম্পন্ন হয়েছে
       devCompleteHint: শুকানোর জন্য ঝুলিয়ে রাখুন এবং আপনার নেগেটিভ উপভোগ করুন।
       stageOf: ধাপ {current} / {total}
-      agitation: আন্দোলন
+      agitation: 'নাড়াচাড়া'
       reset: রিসেট
       skip: এড়িয়ে যান
       stDeveloper: ডেভেলপার
@@ -1136,7 +1136,7 @@ tools:
       sortNewest: নতুন আগে
       sortOldest: পুরনো আগে
       sortSeverity: সর্বোচ্চ তীব্রতা
-      severityCritical: জটিল
+      severityCritical: 'ক্রিটিক্যাল'
       severityHigh: উচ্চ
       severityMedium: মাঝারি
       severityLow: নিম্ন
@@ -1574,7 +1574,7 @@ tools:
       cheatsheetLogicalOperators: লজিক্যাল অপারেটর
       cheatsheetBothTrue: দুটি শর্তই সত্য হতে হবে
       cheatsheetEitherTrue: যেকোনো একটি শর্ত সত্য
-      cheatsheetNegateCondition: একটি শর্ত বাতিল করুন
+      cheatsheetNegateCondition: 'একটি শর্ত উল্টে দিন'
       cheatsheetAutomaticVariables: অটোমেটিক ভেরিয়েবল
       cheatsheetCurrentPipelineObject: বর্তমান পাইপলাইন অবজেক্ট
       cheatsheetNullEmptyValue: নাল / খালি মান
@@ -1829,7 +1829,7 @@ pages:
       oneInstaller: WINDOWS-এ ইনস্টল করা
       hosted: CLOUDFLARE-এ হোস্ট করা
       after: সংযুক্ত করার পরে
-    lead: ওয়েবে নিরাপদ ইউটিলিটির জন্য পাবলিক Cloudflare সার্ভারে সংযুক্ত হন। স্থানীয় টুল ও সমর্থিত Killer অ্যাপের জন্য Windows-এ KillerMCP ইনস্টল করুন।
+    lead: 'আপনার এজেন্টকে কাজের KillerTools কমান্ড দিন। ওয়েবে নিরাপদ ইউটিলিটির জন্য পাবলিক Cloudflare সার্ভারে সংযুক্ত হন। স্থানীয় টুল ও সমর্থিত Killer অ্যাপের জন্য Windows-এ KillerMCP ইনস্টল করুন।'
     status: আপনার ডেটা ও অ্যাপের উপযোগী সংযোগটি বেছে নিন।
     install: ইনস্টল করুন
     intro: Windows ইনস্টলার সব ৮১টি KillerTools ইউটিলিটি এবং এই কম্পিউটারে ইনস্টল থাকা সমর্থিত Killer অ্যাপের কমান্ডের জন্য একটি স্থানীয় সংযোগ দেয়। অ্যাপ কমান্ড তার সংস্করণ ও উপলব্ধতার ওপর নির্ভর করে। আলাদা Node বা সোর্স চেকআউট দরকার নেই।
@@ -1840,7 +1840,7 @@ pages:
       hosted: GitHub Releases-এ হোস্ট করা
     steps:
       s1Title: KillerMCP সেটআপ ডাউনলোড করে চালান।
-      s1Body: ইনস্টলারটি ওপেন সোর্স ডেভেলপার Stephen Riley দ্বারা স্বাক্ষরিত এবং GitHub Releases-এর মাধ্যমে প্রকাশিত।
+      s1Body: 'সেটআপ .NET 10 রানটাইম আছে কি না পরীক্ষা করে এবং না থাকলে Microsoft-এর ডাউনলোড পাতা খোলে। ইনস্টলারটি ওপেন সোর্স ডেভেলপার Stephen Riley দ্বারা স্বাক্ষরিত এবং GitHub Releases-এর মাধ্যমে প্রকাশিত।'
       s2Title: সেটআপকে আপনার এজেন্ট সংযুক্ত করতে দিন।
       s2Body: এটি শেয়ার্ড রানটাইম ইনস্টল করে এবং পাওয়া গেলে Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI এবং Windsurf-এর সাথে KillerMCP নিবন্ধন করে।
       s3Title: একটি নতুন এজেন্ট চ্যাট খুলে জিজ্ঞাসা করুন।
@@ -1916,7 +1916,7 @@ pages:
       p1: '{kt}-তে পাবলিক Worker, স্থানীয় KillerTools বান্ডল, অপারেশন ম্যাপ, ভ্যালিডেশন স্কিমা, এবং কভারেজ চেক অন্তর্ভুক্ত রয়েছে। {km}-তে শেয়ার্ড লোকাল হোস্ট, ডেস্কটপ অ্যাপ অ্যাডাপ্টার, ইনস্টলার, এবং ইন্টিগ্রেশন চেক অন্তর্ভুক্ত রয়েছে।'
       ktLink: KillerTools সোর্স
       kmLink: KillerMCP সোর্স
-      p2: বাহ্যিক অনুসন্ধানের ফলাফল তাদের উৎসের ওপর নির্ভরশীল। স্থানীয় টুলগুলো শুধুমাত্র টুল কলে দেওয়া পাথ বা মান গ্রহণ করে। Base64 ফাইল ডিকোডিং একটি নতুন ফাইল তৈরি করে এবং বিদ্যমান ফাইল ওভাররাইট করতে অস্বীকার করে। ক্যামেরা ক্যাপচারের জন্য এখনও ম্যানুয়াল ব্রাউজার অনুমতি এবং হার্ডওয়্যার যাচাই প্রয়োজন। KillerMCP v0.1.1 স্বাক্ষরিত, টাইমস্ট্যাম্পযুক্ত, এবং GitHub Releases-এর মাধ্যমে প্রকাশিত।
+      p2: 'বাহ্যিক অনুসন্ধানের ফলাফল তাদের উৎসের ওপর নির্ভরশীল। স্থানীয় টুলগুলো শুধুমাত্র টুল কলে দেওয়া পাথ বা মান গ্রহণ করে। Base64 ফাইল ডিকোডিং একটি নতুন ফাইল তৈরি করে এবং বিদ্যমান ফাইল ওভাররাইট করতে অস্বীকার করে। ক্যামেরা ক্যাপচারের জন্য এখনও ম্যানুয়াল ব্রাউজার অনুমতি এবং হার্ডওয়্যার যাচাই প্রয়োজন। বর্তমান KillerMCP ইনস্টলার স্বাক্ষরিত, টাইমস্ট্যাম্পযুক্ত, এবং GitHub Releases-এর মাধ্যমে প্রকাশিত।'
 ui:
   diffEditor:
     originalLabel: মূল

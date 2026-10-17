@@ -133,7 +133,7 @@ tools:
     title: Yüzde hesaplayıcı
     description: Bir değerden diğerine veya bir yüzdeden bir değere yüzdeleri kolayca hesapla.
     ui:
-      whatIsXPercentOfYTitle: Y'NİN X% KADARI NEDİR
+      whatIsXPercentOfYTitle: 'Y''NİN %X KADARI NEDİR'
       whatIsLabel: Nedir
       percentOfLabel: '%''si, şunun'
       resultPlaceholder: Sonuç
@@ -185,7 +185,7 @@ tools:
       paused: DURAKLATILDI
       rec: KAYIT
       screenshot: Ekran görüntüsü
-      record: Kaydet
+      record: 'Kaydı başlat'
       pause: Duraklat
       resume: Devam et
       stop: Durdur
@@ -222,7 +222,7 @@ tools:
       colorShiftNeg: Renkli negatifin toleransı daha yüksektir; düzeltme baskı veya taramada yapılabilir.
   nd-filter-calculator:
     title: ND filtre hesaplayıcı
-    description: Nötr yoğunluk filtreleri için düzeltilmiş enstantane hızlarını hesapla. Tüm yaygın ND güçlerini ve özel durak değerlerini destekler.
+    description: 'Nötr yoğunluk filtreleri için düzeltilmiş enstantane hızlarını hesapla. Tüm yaygın ND güçlerini ve özel stop değerlerini destekler.'
     ui:
       titleInputs: ND FİLTRE HESAPLAYICI
       baseShutterSpeed: Temel enstantane hızı (filtresiz)
@@ -460,17 +460,17 @@ tools:
     title: Metin şifrele / şifre çöz
     description: Düz metni şifrele ve şifreli metni AES, TripleDES, Rabbit veya RC4 gibi algoritmalarla çöz.
     ui:
-      decryptError: Metniniz sifresi cozulemedi
-      encryptTitle: SIFRELE
-      decryptTitle: SIFRE COZ
-      yourText: METNINIZ
-      yourSecretKey: GIZLI ANAHTARINIZ
+      decryptError: 'Metniniz şifresi çözülemedi'
+      encryptTitle: 'ŞİFRELE'
+      decryptTitle: 'ŞİFRE ÇÖZ'
+      yourText: 'METNİNİZ'
+      yourSecretKey: 'GİZLİ ANAHTARINIZ'
       algorithm: ALGORITMA
-      encryptedOutput: SIFRELENMIS CIKTI
-      yourEncryptedText: SIFRELENMIS METNINIZ
-      decryptedOutput: SIFRESI COZULMUS CIKTI
-      encryptPlaceholder: Sifrelenecek metin
-      decryptPlaceholder: Sifresi cozulecek metin
+      encryptedOutput: 'ŞİFRELENMİŞ ÇIKTI'
+      yourEncryptedText: 'ŞİFRELENMİŞ METNİNİZ'
+      decryptedOutput: 'ŞİFRESİ ÇÖZÜLMÜŞ ÇIKTI'
+      encryptPlaceholder: 'Şifrelenecek metin'
+      decryptPlaceholder: 'Şifresi çözülecek metin'
       secretKeyPlaceholder: Gizli anahtar...
   yaml-prettify:
     title: YAML biçimlendirici
@@ -492,16 +492,16 @@ tools:
     title: HMAC oluşturucu
     description: Gizli bir anahtar ve sevdiğin hash işleviyle hash tabanlı mesaj doğrulama kodu (HMAC) hesaplar.
     ui:
-      encodingBinary: Ikili (taban 2)
-      encodingHex: Onaltilik (taban 16)
-      copied: HMAC panoya kopyalandi
-      plainText: DUZ METIN
-      secretKey: GIZLI ANAHTAR
-      hashingFunction: HASH FONKSIYONU
-      outputEncoding: CIKTI KODLAMASI
-      hmacOutput: HMAC CIKTISI
-      plainTextPlaceholder: Hash hesaplanacak duz metin...
-      secretKeyPlaceholder: Gizli anahtari girin...
+      encodingBinary: 'İkili (taban 2)'
+      encodingHex: 'Onaltılık (taban 16)'
+      copied: 'HMAC panoya kopyalandı'
+      plainText: 'DÜZ METİN'
+      secretKey: 'GİZLİ ANAHTAR'
+      hashingFunction: 'HASH FONKSİYONU'
+      outputEncoding: 'ÇIKTI KODLAMASI'
+      hmacOutput: 'HMAC ÇIKTISI'
+      plainTextPlaceholder: 'Hash hesaplanacak düz metin...'
+      secretKeyPlaceholder: 'Gizli anahtarı girin...'
       clear: Temizle
       copyHmac: HMAC'i Kopyala
   bip39-generator:
@@ -536,7 +536,7 @@ tools:
     description: Bir dizeyi, dosyayı veya görseli base64 gösterimine dönüştür.
     ui:
       copiedToClipboard: Base64 dizesi panoya kopyalandı
-      base64ToFileTitle: BASE64 TEN DOSYAYA
+      base64ToFileTitle: 'BASE64''TEN DOSYAYA'
       fileNameLabel: DOSYA ADI
       fileNamePlaceholder: İndirme dosya adı
       extensionLabel: UZANTI
@@ -546,19 +546,19 @@ tools:
       invalidBase64: Geçersiz base64 dizesi
       previewImage: Görseli önizle
       downloadFile: Dosyayı indir
-      fileToBase64Title: DOSYADAN BASE64 E
+      fileToBase64Title: 'DOSYADAN BASE64''E'
       dropHint: Bir dosyayı buraya sürükleyip bırakın veya seçmek için tıklayın
       fileInBase64Label: BASE64 OLARAK DOSYA
       fileOutputPlaceholder: Dosyanın base64 hali burada görünecek
       copied: Kopyalandı!
-      copyBase64: Base64 i kopyala
+      copyBase64: 'Base64''ü kopyala'
   base64-string-converter:
     title: Base64 dize kodlayıcı/çözücü
     description: Dizeleri base64 gösterimine kolayca kodla ve çöz.
     ui:
       base64CopiedToClipboard: Base64 dizesi panoya kopyalandı
       stringCopiedToClipboard: Dize panoya kopyalandı
-      stringToBase64Title: DİZEDEN BASE64 E
+      stringToBase64Title: 'DİZEDEN BASE64''E'
       encodingLabel: KODLAMA
       standard: Standart
       urlSafe: URL İçin Güvenli
@@ -567,8 +567,8 @@ tools:
       base64OutputLabel: BASE64 ÇIKTISI
       base64OutputPlaceholder: Dizenizin base64 kodlaması burada görünecek
       copied: Kopyalandı!
-      copyBase64: Base64 i kopyala
-      base64ToStringTitle: BASE64 TEN DİZEYE
+      copyBase64: 'Base64''ü kopyala'
+      base64ToStringTitle: 'BASE64''TEN DİZEYE'
       base64ToDecodeLabel: ÇÖZÜLECEK BASE64 DİZESİ
       base64InputPlaceholder: Base64 dizeniz...
       invalidBase64: Geçersiz base64 dizesi
@@ -595,7 +595,7 @@ tools:
       sectionPath: Yol
       pathname: Yol adı
       search: Sorgu
-      hash: Karma
+      hash: 'Parça'
       urlTitle: URL
       invalidUrl: Geçersiz URL
       params: PARAMETRELER
@@ -721,7 +721,7 @@ tools:
       resultAlt: arka planı kaldırılmış sonuç
       loadingModelStatus: Yapay zeka modeli yükleniyor...
       removingBackgroundStatus: Arka plan kaldırılıyor...
-      processingPercentStatus: İşleniyor... {pct}%
+      processingPercentStatus: 'İşleniyor... %{pct}'
       downloadingModelPercentStatus: Model indiriliyor... {pct}%
       removeBackgroundFailedStatus: Arka plan kaldırılamadı. Farklı bir görsel deneyin.
   xml-formatter:
@@ -876,13 +876,13 @@ tools:
     title: Metin hash'leme
     description: Metni MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 ve daha fazlasıyla hash'le.
     ui:
-      encodingBinary: Ikili (taban 2)
-      encodingHex: Onaltilik (taban 16)
+      encodingBinary: 'İkili (taban 2)'
+      encodingHex: 'Onaltılık (taban 16)'
       encodingBase64: Base64 (taban 64)
       encodingBase64url: Base64url (URL uyumlu base 64)
       inputPlaceholder: Hash'lenecek metniniz...
       encoding: Kodlama
-      output: CIKTI
+      output: 'ÇIKTI'
   json-to-toml:
     title: JSON'dan TOML'a
     description: JSON'u ayrıştır ve TOML'a dönüştür.
@@ -1288,7 +1288,7 @@ tools:
     description: Windows için açık kaynak PDF düzenleyici. Görüntüle, not ekle, birleştir, böl, düzleştir, parola korumalı PDF'leri aç, metin düzenle, çiz, vurgula, imzala ve yazdır.
   killer-scan:
     title: KillerScan
-    description: Saha teknisyenleri için hızlı ağ tarayıcı. ARP + ping keşfi, port yoklama, satıcı sorgulama ve otomatik cihaz sınıflandırma.
+    description: 'Saha teknisyenleri için hızlı ağ tarayıcı. ARP + ping keşfi, port yoklama, üretici sorgulama ve otomatik cihaz sınıflandırma.'
   gif-search:
     title: GIF arama
     description: Giphy'de tepki GIF'leri ara. URL'yi kopyalamak için herhangi bir sonuca tıkla.
@@ -1311,7 +1311,7 @@ tools:
     ui:
       statusDesc:
         active: Alan adı etkin ve çalışıyor.
-        inactive: Alan adi etkin degil.
+        inactive: 'Alan adı etkin değil.'
         clientDeleteProhibited: Kayıt kuruluşu, alan adının silinmesini kilitledi.
         clientTransferProhibited: Kayıt kuruluşu, alan adının başka bir kayıt kuruluşuna aktarılmasını kilitledi.
         clientUpdateProhibited: Kayıt kuruluşu, alan adının güncellenmesini kilitledi.
@@ -1329,60 +1329,60 @@ tools:
         redemptionPeriod: Alan adının süresi doldu ve kurtarma döneminde. Sahibi hâlâ geri alabilir.
         renewPeriod: Alan adı, kayıttan sonraki yenileme sürecinde.
         autoRenewPeriod: Alan adı, otomatik yenileme sürecinde.
-        transferPeriod: Alan adi, transfer surecinde.
+        transferPeriod: 'Alan adı, transfer sürecinde.'
       expiredAlert: Bu alan adının süresi {days} gün önce doldu ve yeniden kayda açık olabilir.
       expiresAlert: Bu alan adının süresi {days} gün içinde doluyor. Yenileme zamanında yapılmalıdır.
       expiredTag: '{days} gün önce süresi doldu'
-      remainingTag: '{days} gun kaldi'
-      registrar: Kayit Kurulusu
-      registrarIanaId: Kayit Kurulusu IANA Kimligi
-      created: Olusturuldu
-      updated: Guncellendi
+      remainingTag: '{days} gün kaldı'
+      registrar: 'Kayıt Kuruluşu'
+      registrarIanaId: 'Kayıt Kuruluşu IANA Kimliği'
+      created: 'Oluşturuldu'
+      updated: 'Güncellendi'
       expires: Sona Eriyor
-      noMx: MX kaydi bulunamadi.
-      dnsFailed: DNS sorgusu basarisiz oldu.
-      noSpf: SPF kaydi bulunamadi.
+      noMx: 'MX kaydı bulunamadı.'
+      dnsFailed: 'DNS sorgusu başarısız oldu.'
+      noSpf: 'SPF kaydı bulunamadı.'
       noDkim: Yaygın seçicilerde DKIM kaydı bulunamadı. Özel seçiciler yine de mevcut olabilir.
       noDmarc: DMARC kaydı bulunamadı. Alan adı sahteciliğe karşı korumasız.
       spfPlusAll: 'Uyarı: +all tehlikelidir, çünkü herhangi bir sunucunun bu alan adı adına posta göndermesine izin verir.'
       spfNeutralAll: 'Uyarı: ?all nötrdür ve hiçbir koruma sağlamaz.'
       dmarcPNone: 'Uyarı: p=none yalnızca izleme amaçlıdır, zorlama yoktur. E-postalar reddedilmeyecek.'
       dmarcNoRua: 'Uyarı: toplu rapor adresi yok (rua=). DMARC raporları almayacaksınız.'
-      pass: Basarili
-      fail: Basarisiz
-      warning: Uyari
+      pass: 'Başarılı'
+      fail: 'Başarısız'
+      warning: 'Uyarı'
       checking: Kontrol ediliyor...
       overallPass: Tüm e-posta kontrolleri başarılı. Bu alan adı e-posta için doğru yapılandırılmış.
       overallFail: Bir veya daha fazla kritik kayıt eksik. Bu alan adı sahteciliğe açık olabilir.
       overallWarn: Bazı kayıtlar mevcut ancak incelenmesi gereken yapılandırma sorunları var.
       rdapHttpError: 'HTTP {status}: alan adı mevcut olmayabilir veya TLD desteklenmiyor olabilir.'
-      lookupFailed: Sorgu basarisiz oldu.
+      lookupFailed: 'Sorgu başarısız oldu.'
       domainPlaceholder: Bir alan adı girin (örn. killertools.net)
-      searching: Araniyor...
+      searching: 'Aranıyor...'
       search: Ara
-      signed: Imzali
-      unsigned: Imzasiz
-      delegationSigned: Yetkilendirme imzali.
-      dsRecord: '{count} DS kaydi.'
-      dsRecords: '{count} DS kaydi.'
-      keyRecord: '{count} anahtar kaydi.'
-      keyRecords: '{count} anahtar kaydi.'
+      signed: 'İmzalı'
+      unsigned: 'İmzasız'
+      delegationSigned: 'Yetkilendirme imzalı.'
+      dsRecord: '{count} DS kaydı.'
+      dsRecords: '{count} DS kaydı.'
+      keyRecord: '{count} anahtar kaydı.'
+      keyRecords: '{count} anahtar kaydı.'
       dnssecUnsigned: Bu alan adı DNSSEC ile korunmuyor. DNS yanıtları kriptografik olarak doğrulanamaz.
       status: Durum
-      contacts: Kisiler
+      contacts: 'Kişiler'
       remarks: Notlar
-      nameservers: Ad Sunuculari
-      mxRecords: MX Kayitlari
-      spfRecord: SPF Kaydi
-      dkimRecords: DKIM Kayitlari
-      dmarcRecord: DMARC Kaydi
+      nameservers: 'Ad Sunucuları'
+      mxRecords: 'MX Kayıtları'
+      spfRecord: 'SPF Kaydı'
+      dkimRecords: 'DKIM Kayıtları'
+      dmarcRecord: 'DMARC Kaydı'
       role:
-        registrant: kayit sahibi
+        registrant: 'kayıt sahibi'
         administrative: idari
         technical: teknik
-        abuse: kotuye kullanim
+        abuse: 'kötüye kullanım'
       name: Ad
-      organization: Kurulus
+      organization: 'Kuruluş'
       email: E-posta
       phone: Telefon
   email-record-generator:
@@ -1860,7 +1860,7 @@ pages:
       oneInstaller: WINDOWS'A YÜKLENİR
       hosted: CLOUDFLARE ÜZERİNDE BARINDIRILIR
       after: BAĞLANDIKTAN SONRA
-    lead: Web üzerinde güvenle çalışan araçlar için herkese açık Cloudflare sunucusuna bağlanın. Yerel araçlar ve desteklenen Killer uygulamaları için KillerMCP'yi Windows'a yükleyin.
+    lead: 'Ajanınıza kullanışlı KillerTools komutları verin. Web üzerinde güvenle çalışan araçlar için herkese açık Cloudflare sunucusuna bağlanın veya yerel araçlar ve desteklenen Killer uygulamaları için KillerMCP''yi Windows''a yükleyin.'
     status: Verilerinize ve uygulamalarınıza uygun bağlantıyı seçin.
     install: Yükle
     intro: Windows yükleyicisi, 81 KillerTools aracının tamamı ve bu bilgisayarda yüklü desteklenen Killer uygulamalarının komutları için tek bir yerel bağlantı sağlar. Uygulama komutları sürüme ve kullanılabilirliğe bağlıdır. Ayrı bir Node kurulumu veya kaynak kodu kopyası gerekmez.
@@ -1871,7 +1871,7 @@ pages:
       hosted: GitHub Releases üzerinde barındırılıyor
     steps:
       s1Title: KillerMCP Setup'ı indirip çalıştırın.
-      s1Body: Yükleyici, açık kaynak geliştiricisi Stephen Riley tarafından imzalanmış ve GitHub Releases üzerinden yayınlanmıştır.
+      s1Body: 'Kurulum .NET 10 çalışma zamanını denetler ve eksikse Microsoft''un indirme sayfasını açar. Yükleyici, açık kaynak geliştiricisi Stephen Riley tarafından imzalanmış ve GitHub Releases üzerinden yayınlanmıştır.'
       s2Title: Kurulumun ajanınızı bağlamasına izin verin.
       s2Body: Ortak çalışma zamanını yükler ve bulunduğunda KillerMCP'yi Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI ve Windsurf ile kaydeder.
       s3Title: Yeni bir ajan sohbeti açın ve isteyin.
@@ -1947,4 +1947,4 @@ pages:
       p1: "{kt}, genel Worker'ı, yerel KillerTools paketini, işlem haritasını, doğrulama şemalarını ve kapsam kontrollerini içerir. {km} ise ortak yerel sunucuyu, masaüstü uygulama bağdaştırıcılarını, yükleyiciyi ve entegrasyon kontrollerini içerir."
       ktLink: KillerTools kaynak kodu
       kmLink: KillerMCP kaynak kodu
-      p2: Harici arama sonuçları kaynaklarına bağlıdır. Yerel araçlar yalnızca bir araç çağrısında verilen yolları veya değerleri alır. Base64 dosya çözme işlemi yeni bir dosya oluşturur ve mevcut bir dosyanın üzerine yazmaz. Kamera yakalama işlemi hâlâ manuel tarayıcı izni ve donanım doğrulaması gerektirir. KillerMCP v0.1.1 imzalanmış, zaman damgalanmış ve GitHub Releases üzerinden yayınlanmıştır.
+      p2: 'Harici arama sonuçları kaynaklarına bağlıdır. Yerel araçlar yalnızca bir araç çağrısında verilen yolları veya değerleri alır. Base64 dosya çözme işlemi yeni bir dosya oluşturur ve mevcut bir dosyanın üzerine yazmaz. Kamera yakalama işlemi hâlâ manuel tarayıcı izni ve donanım doğrulaması gerektirir. Güncel KillerMCP yükleyicisi imzalanmış, zaman damgalanmış ve GitHub Releases üzerinden yayınlanmıştır.'

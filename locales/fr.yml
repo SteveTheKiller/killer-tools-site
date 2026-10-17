@@ -8,20 +8,20 @@ home:
   toggleMenu: Menu
   home: Accueil
   uiLib: UI Lib
-  buyMeACoffee: Soutenez IT-Tools
+  buyMeACoffee: 'Offrez-moi un café'
   follow:
-    title: Vous aimez it-tools ?
+    title: 'Vous aimez killer-tools ?'
     p1: Soutenez-nous avec une star sur
-    githubRepository: le dépôt GitHub d'IT-Tools
+    githubRepository: 'Dépôt GitHub de StevetheKiller'
     p2: ou suivez-nous sur
     twitterXAccount: le compte X d'IT-Tools
     thankYou: Merci !
   nav:
     github: Dépôt GitHub
-    githubRepository: Dépôt GitHub d'IT-Tools
+    githubRepository: 'Dépôt GitHub de killer-tools'
     twitterX: Compte X
     twitterXAccount: Compte X d'IT-Tools
-    about: À propos d'IT-Tools
+    about: 'À propos de killer-tools'
     aboutLabel: À propos
     darkMode: Mode sombre
     lightMode: Mode clair
@@ -29,13 +29,19 @@ home:
   support: Soutenir le développement de killer-tools
 about:
   content: |
-    # À propos de killer-tools
-    Ce merveilleux site, fait avec ❤ par [Steve the Killer](https://thekiller.net), regroupe des outils utiles pour les développeurs et les personnes travaillant dans l'informatique. Si vous le trouvez utile, n'hésitez pas à le partager et n'oubliez pas de le mettre dans vos favoris !
-    killer-tools est open-source (sous licence GPL-3.0) et gratuit, et le restera toujours, mais cela me coûte de l'argent pour l'héberger et renouveler le nom de domaine. Si vous voulez soutenir mon travail, et m'encourager à ajouter plus d'outils, n'hésitez pas à me [soutenir](https://www.buymeacoffee.com/StevetheKiller).
-    ## Technologies
-    killer-tools est fait en Vue.js (Vue 3) avec la bibliothèque de composants Naive UI et est hébergé et déployé en continu par GitHub. Des bibliothèques open-source tierces sont utilisées dans certains outils, vous pouvez trouver la liste complète dans le fichier [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) du dépôt.
-    ## Vous avez trouvé un bug ? Un outil manque ?
-    Si vous avez besoin d'un outil qui n'est pas encore présent ici, et que vous pensez qu'il peut être utile, vous êtes invité à soumettre une demande de fonctionnalité dans la [section issue](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) du dépôt GitHub.
+    # killer-tools
+
+    Les techniciens de terrain n'ont pas de temps à perdre avec des outils surchargés. Chaque outil ici existe parce que j'en avais besoin sur le terrain et que je ne trouvais rien qui fonctionne simplement, sans compte, sans installation ni télémétrie.
+
+    Je suis technicien de terrain dans un MSP, et je m'occupe de réseau, d'administration système et de support des postes de travail. killer-tools a commencé comme un fork de l'excellent projet [IT-Tools](https://github.com/CorentinTh/it-tools) avant de devenir un site conçu pour le type de travail que je fais réellement. Je l'ai créé pour consulter des codes NDR en plein ticket, scanner le sous-réseau d'un client et décoder un SafeLink avant de cliquer dessus.
+
+    Tout s'exécute dans votre navigateur. Rien n'est suivi. Aucun compte n'est requis, jamais.
+
+    Créé et maintenu par [Steve the Killer](https://thekiller.net). Si cela vous fait gagner du temps au travail, [m'offrir un café](https://www.buymeacoffee.com/StevetheKiller) est apprécié mais jamais attendu.
+
+    ## Un outil manque ? Un bug trouvé ?
+
+    Ouvrez une demande de fonctionnalité ou un rapport de bug dans la [section issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) sur GitHub. Je les lis.
 404:
   notFound: 404 Not Found
   sorry: Désolé, cette page n'existe pas
@@ -1532,7 +1538,7 @@ tools:
       default: Par défaut
       recommended: Recommandé
     title: Référence Group Policy
-    description: Recherchez les paramètres Group Policy Windows courants par nom, chemin GPO, clé de registre ou description.
+    description: 'Recherchez les paramètres de stratégie de groupe Windows courants par nom, chemin GPO, clé de registre ou description.'
   windows-event-lookup:
     ui:
       searchResults: Résultats de recherche
@@ -1645,7 +1651,7 @@ tools:
     description: Choisissez une cmdlet, renseignez les paramètres, et copiez votre commande PowerShell finalisée.
   safelink-decoder:
     title: Décodeur de Safelink Outlook
-    description: Décompressez les SafeLinks de Microsoft Defender pour révéler l'URL de destination d'origine.
+    description: 'Décodez les SafeLinks de Microsoft Defender pour révéler l''URL de destination d''origine.'
   port-protocol-reference:
     title: Référence Ports & Protocoles
     description: Ports et protocoles réseau courants avec notes de sécurité et signalement des ports dangereux.
@@ -1725,20 +1731,20 @@ layouts:
     clickMe: cliquez ici
     sourceOnGithub: Code source sur Github
   base:
-    collapseMenu: Reduire le menu
+    collapseMenu: 'Réduire le menu'
     homeLabel: Accueil KillerTools
 pages:
   notFound:
     noSuchFile: Fichier ou dossier introuvable
     exitCode: code de sortie
-    backToHome: retour a l'accueil
+    backToHome: 'retour à l''accueil'
   privacy:
-    heading: Politique de confidentialite
+    heading: 'Politique de confidentialité'
     lastUpdated: 'Dernière mise à jour : 4 avril 2026'
-    overviewHeading: Apercu
+    overviewHeading: 'Aperçu'
     overviewIntro: KillerTools
     overviewBody: est une collection gratuite d'outils informatiques. Votre vie privée compte pour nous, et cette politique explique comment nous traitons vos données.
-    dataCollectionHeading: Collecte de donnees
+    dataCollectionHeading: 'Collecte de données'
     dataCollectionBody: KillerTools ne collecte, ne stocke ni ne transmet aucune donnée personnelle. Tout le traitement des outils se fait entièrement dans votre navigateur. Aucune donnée que vous saisissez dans un outil n'est envoyée à un serveur.
     cookiesHeading: Cookies
     cookiesBody: Ce site n'utilise pas de cookies de suivi. Vos préférences de thème et vos paramètres sont stockés localement dans votre navigateur et ne sont jamais transmis.
@@ -1784,9 +1790,9 @@ pages:
     originSuffix: et est devenu quelque chose de conçu pour le type de travail que je fais réellement. Je l'ai construit pour consulter des paramètres de Group Policy en plein ticket, scanner le sous-réseau d'un client et rechercher des références de ports sans quitter le navigateur.
     scriptsLibrary: La bibliothèque Killer Scripts couvre les tâches qui reviennent à chaque cycle de ticket. Chaque script fonctionne sous PS 5.1, PS 7 et Kaseya LiveConnect sans dépendances.
     privacyBody: Tout s'exécute dans votre navigateur. Rien n'est suivi. Aucun compte n'est jamais requis. Le site applique une Content Security Policy stricte pour bloquer les attaques par chaîne de dépendances. Si un paquet npm compromis venait à se retrouver dans le bundle, il ne pourrait pas renvoyer ce que vous avez collé.
-    maintainedByPrefix: Cree et maintenu par
+    maintainedByPrefix: 'Créé et maintenu par'
     maintainedByMid: Si cela vous fait gagner du temps au travail,
-    buyMeCoffee: m'offrir un cafe
+    buyMeCoffee: 'm''offrir un café'
     maintainedBySuffix: est apprécié mais jamais attendu.
     missingToolHeading: Un outil manquant ? Un bug trouvé ?
     issuesPrefix: Ouvrez une demande de fonctionnalité ou un rapport de bug dans la
@@ -1803,7 +1809,7 @@ pages:
     linkLabelSource: Code source
     linkLabelIssues: Issues
     reportBug: Signaler un bug
-    requestFeature: Demander une fonctionnalite
+    requestFeature: 'Demander une fonctionnalité'
     linkLabelSupport: Soutien
     linkLabelBuiltOn: Construit sur
     itToolsFork: IT-Tools (fork)
@@ -1835,7 +1841,7 @@ pages:
       hosted: Hébergé sur GitHub Releases
     steps:
       s1Title: Téléchargez et exécutez le programme d'installation KillerMCP.
-      s1Body: L'installateur est signé par le développeur open source Stephen Riley et publié via GitHub Releases.
+      s1Body: 'L''installation vérifie la présence du runtime .NET 10 et ouvre la page de téléchargement de Microsoft s''il est absent. L''installateur est signé par le développeur open source Stephen Riley et publié via GitHub Releases.'
       s2Title: Laissez le programme d'installation connecter votre agent.
       s2Body: Il installe l'environnement d'exécution partagé et enregistre KillerMCP auprès de Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI et Windsurf lorsqu'ils sont détectés.
       s3Title: Ouvrez une nouvelle conversation avec votre agent et posez votre demande.
@@ -1911,7 +1917,7 @@ pages:
       p1: Le {kt} contient le Worker public, le paquet KillerTools local, la carte des opérations, les schémas de validation et les contrôles de couverture. Le {km} contient l'hôte local partagé, les adaptateurs d'applications de bureau, l'installateur et les contrôles d'intégration.
       ktLink: Code source KillerTools
       kmLink: Code source KillerMCP
-      p2: Les résultats des recherches externes dépendent de leurs sources. Les outils locaux ne reçoivent que les chemins ou valeurs fournis dans un appel d'outil. Le décodage de fichier Base64 crée un nouveau fichier et refuse d'écraser un fichier existant. La capture caméra nécessite toujours une autorisation manuelle du navigateur et une vérification matérielle. KillerMCP v0.1.1 est signé, horodaté et publié via GitHub Releases.
+      p2: 'Les résultats des recherches externes dépendent de leurs sources. Les outils locaux ne reçoivent que les chemins ou valeurs fournis dans un appel d''outil. Le décodage de fichier Base64 crée un nouveau fichier et refuse d''écraser un fichier existant. La capture caméra nécessite toujours une autorisation manuelle du navigateur et une vérification matérielle. L''installateur KillerMCP actuel est signé, horodaté et publié via GitHub Releases.'
 ui:
   diffEditor:
     originalLabel: ORIGINAL

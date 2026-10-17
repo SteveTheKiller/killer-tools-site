@@ -5,42 +5,47 @@ home:
     allTools: Alle verktøyene
     favoritesDndToolTip: Dra og slipp for å omordne favoritter
   subtitle: Nyttige verktøy for utviklere
-  toggleMenu: Vekslemenmy
+  toggleMenu: 'Veksle meny'
   home: Hjem
   uiLib: UI Bib
-  support: Støtt utviklingen av IT-Tools
+  support: 'Støtt utviklingen av killer-tools'
   buyMeACoffee: Kjøp en kaffe til meg
   follow:
-    title: Liker du it-tools?
+    title: 'Liker du killer-tools?'
     p1: Gi oss en stjerne på
-    githubRepository: IT-Tools GitHub-depotet
+    githubRepository: 'StevetheKiller GitHub-depotet'
     p2: eller følg oss på
     twitterXAccount: IT-Tools sin X konto
     thankYou: Tusen takk!
   nav:
     github: GitHub-depot
-    githubRepository: IT-Tools GitHub-depot
+    githubRepository: 'killer-tools GitHub-depot'
     twitterX: X konto
     twitterXAccount: IT Tools X konto
-    about: Om  IT-Tools
+    about: 'Om  killer-tools'
     aboutLabel: Om
     darkMode: Mørk modus
     lightMode: Lys modus
     mode: Veksle mørk/lys modus
 about:
   content: |
-    # Om killer-tools
-    Denne vidunderlige nettsiden, laget med ❤ av [Steve the Killer](https://thekiller.net) , sammenstiller nyttige verktøy for utviklere og folk som jobber innen IT. Hvis du finner dette nyttig, Del det gjerne med andre som du tror kan få nytte av dette, og ikke glem å lage et bokmerke!
-    killer-tools er åpen kildekode (under GPL-3.0 lisensen) og gratis, og det vil det alltid være, men det koster å drifte og å fornye domenet. Hvis du ønsker å støtte arbeidet mitt, og motivere meg til å legge til flere verktøy, gjerne støtt meg ved å [sponse meg](https://www.buymeacoffee.com/StevetheKiller).
-    ## Teknologier
-    killer-tools er laget i Vue.js (Vue 3) med Naive UI komponent bibliotektet og er hosted og kontinuerlig deployet av GitHub. Tredjeparts åpen-kildekode biblioteker er brukt i noen verktøy, du kan finne den komplette listen i [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) filen i depoet.
-    ## Funnet en feil? Et verktøy som mangler?
-    Hvis du trenger et verktøy som foreløpig ikke er tilgjengelig her, og du tenker det kan være nyttig for andre, så er du velkommen til å legge til en funksjonsforespørsel i [problem seksjonen](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) i github-depotet.
-    Og hvis du har funnet en feil, eller noe ikke oppfører seg som forventet, vennligst send inn en feilrapport i [problem seksjonen](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) i github-depotet.
+    # killer-tools
+
+    Feltteknikere har ikke tid til overflødig funksjonalitet. Hvert verktøy her finnes fordi jeg trengte det på jobb og ikke fant noe som bare fungerte uten konto, installasjon eller telemetri.
+
+    Jeg er felttekniker hos en MSP og jobber med nettverk, systemadministrasjon og støtte for endepunkter. killer-tools startet som en fork av det utmerkede prosjektet [IT-Tools](https://github.com/CorentinTh/it-tools) og vokste til noe bygget for den typen arbeid jeg faktisk gjør. Jeg bygde det for å slå opp NDR-koder midt i en sak, skanne en klients subnett og dekode en SafeLink før jeg klikker på den.
+
+    Alt kjører i nettleseren din. Ingenting spores. Ingen konto kreves noensinne.
+
+    Bygget og vedlikeholdt av [Steve the Killer](https://thekiller.net). Hvis dette sparer deg tid på jobb, setter jeg pris på at du [spanderer en kaffe på meg](https://www.buymeacoffee.com/StevetheKiller), men det forventes aldri.
+
+    ## Mangler du et verktøy? Funnet en feil?
+
+    Send inn en funksjonsforespørsel eller feilrapport i [problemseksjonen](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) på GitHub. Jeg leser dem.
 404:
   notFound: 404 ikke funnet
   sorry: Beklager, denne siden ser ikke ut til å eksistere
-  maybe: Kanskje informasjonskapslene oppfører seg rart, prøvd en tvungen oppfriskning?
+  maybe: 'Kanskje hurtigbufferen oppfører seg rart, prøv en tvungen oppfriskning?'
   backHome: Tilbake til start
 favoriteButton:
   remove: Fjern fra favoritter
@@ -180,7 +185,7 @@ tools:
       no: Nei
   crontab-generator:
     title: Crontab-generator
-    description: Verifiser og generer crontab og få den mennesklig leselige beskrivelsen av cron timeplanen.
+    description: 'Verifiser og generer crontab og få den menneskelig leselige beskrivelsen av cron timeplanen.'
     ui:
       symbolAnyValue: Alle verdier
       symbolEveryMinute: Hvert minutt
@@ -216,11 +221,11 @@ tools:
       clickToCopy: Klikk for å kopiere statuskode
       copiedLabel: kopiert
   sql-prettify:
-    title: SQL forskjønning and format
+    title: 'SQL forskjønning og formatering'
     description: Formater og forskjønn SQL spørringene dine (den støtter forskjellige SQL dialekter).
     ui:
       dialectLabel: DIALEKT
-      keywordCaseLabel: STØRRELSE PÅ NØKKELORD
+      keywordCaseLabel: 'STORE OG SMÅ BOKSTAVER I NØKKELORD'
       indentStyleLabel: INNRYKKSSTIL
       yourSqlQueryLabel: Din SQL-spørring
       sqlQueryPlaceholder: Skriv inn SQL-spørringen din her...
@@ -233,9 +238,9 @@ tools:
       indentStyleTabularRight: Tabellformet høyre
   git-memo:
     title: Git jukselapp
-    description: Git er en desentralisert versjons håndterings programvare. Med denne jukselappen vil du få kjapp tilgang til de vanligste kommandoene.
+    description: 'Hurtigreferanse for de vanligste Git-kommandoene og arbeidsflytene.'
   encryption:
-    title: Krypter / decrypter tekst
+    title: 'Krypter / dekrypter tekst'
     description: Krypter klartekst og dekrypter ciphertekst ved bruk av krypteringsalgoritmer som AES, TripleDES, Rabbit eller RC4.
     ui:
       decryptError: Kan ikke dekryptere teksten din
@@ -322,7 +327,7 @@ tools:
       base64StringLabel: BASE64-STRENG
       base64InputPlaceholder: Lim inn base64-strengen for filen her...
       invalidBase64: Ugyldig base64-streng
-      previewImage: Forhandsvis bilde
+      previewImage: 'Forhåndsvis bilde'
       downloadFile: Last ned fil
       fileToBase64Title: FIL TIL BASE64
       dropHint: Dra og slipp en fil her, eller klikk for å velge
@@ -372,7 +377,7 @@ tools:
       password: Passord
       sectionPath: Sti
       pathname: Stinavn
-      search: Sok
+      search: 'Søk'
       hash: Hash
       urlTitle: URL
       invalidUrl: Ugyldig URL
@@ -391,7 +396,7 @@ tools:
       version: Versjon
       model: Modell
       type: Type
-      vendor: Leverandor
+      vendor: 'Leverandør'
       architecture: Arkitektur
       userAgentString: USER AGENT-STRENG
       placeholder: Lim inn user agent her...
@@ -405,8 +410,8 @@ tools:
       inputPlaceholder: Din streng...
       output: UTDATA
   html-entities:
-    title: HTML streng rensing
-    description: Rens bort eller omsvøp HTML entiteter (erstatt tegn som <,>, &, " and \' med deres HTML versjon).
+    title: 'Escape HTML-entiteter'
+    description: 'Escape eller unescape HTML-entiteter (erstatt tegn som <,>, &, " og \'' med deres HTML-versjon).'
     ui:
       yourString: DIN STRENG
       escapePlaceholder: Strengen som skal escapes...
@@ -423,7 +428,7 @@ tools:
     title: Docker run til Docker compose konverter
     description: Konverter "docker run" kommandoer til docker-compose filer!
   mac-address-lookup:
-    title: MAC address oppslagsverk
+    title: 'MAC-adresseoppslag'
     description: Finn forhandler og produsent basert på MAC adressen.
     ui:
       macAddressLabel: MAC-adresse
@@ -434,7 +439,7 @@ tools:
       unknownVendor: Ukjent leverandør for denne adressen
   lorem-ipsum-generator:
     title: Lorem ipsum-generator
-    description: Lorem ipsum er brukt som plassholder tekst, vanligvis brukt til å demonstrere den visuelle formen av et dokument eller font-type uten å måtte ha meningsfult innhold.
+    description: 'Generer plassholdertekst med lorem ipsum til mockuper og designarbeid.'
     ui:
       copiedMessage: Lorem ipsum kopiert til utklippstavlen
       paragraphs: Avsnitt
@@ -449,7 +454,7 @@ tools:
       refresh: Oppdater
   qrcode-generator:
     title: QR Kode generator
-    description: Generer og last ned en QR-kode til en URL (eller ren tekst), og tilpass bakgrunns- og forgrunnsfarger.
+    description: 'Generer og last ned QR-koder for URL-er, ren tekst eller Wi-Fi-nettverkslegitimasjon. Terminal-, klassiske og egendefinerte fargetemaer med konfigurerbar feilkorrigering.'
   xml-formatter:
     title: XML formaterer
     description: Forskjønn en XML streng til et lettlest format.
@@ -544,7 +549,7 @@ tools:
     description: Konverter dato og tid til forskjellige formater.
   ipv4-subnet-calculator:
     title: IPv4 subnet kalkulator
-    description: Parser IPv4 CIDR blokker of åf all info du trenger om subnettet.
+    description: 'Analyser IPv4 CIDR-blokkene dine og få all informasjonen du trenger om subnettet.'
     ui:
       invalidAddress: Kan ikke tolke denne adressen, sjekk formatet
       netmask: Nettmaske
@@ -696,7 +701,7 @@ tools:
     description: Konverter et heltall mellom forskjellige baser (desimal, hexadesimal, binær, oktal, base64, etc.)
   uuid-generator:
     title: UUID-generator
-    description: En universell Unik Identifikator (UUID) er et 128-bit nummer, brukt til å identifisere informasjon i datasystemer.
+    description: 'Generer tilfeldige UUID-er (v1 og v4) og undersøk strukturen deres.'
     ui:
       copiedMessage: UUID-er kopiert til utklippstavlen
       version: VERSJON
@@ -715,7 +720,7 @@ tools:
     ui:
       decimal: Desimal
       hexadecimal: Heksadesimal
-      binary: Binaer
+      binary: 'Binær'
       ipv6Short: IPv6 (kort)
       invalidIpv4: Ugyldig IPv4-adresse
       ipv4Address: IPv4-adresse
@@ -724,7 +729,7 @@ tools:
       copy: Kopier
   text-statistics:
     title: Tekst statistikk
-    description: Få informasjonen om en tekst, antall karakterer, antall ord, størrelsen i bytes, etc.
+    description: 'Få informasjonen om en tekst, antall tegn, antall ord, størrelsen i bytes, etc.'
     ui:
       textPlaceholder: Teksten din...
       characterCount: ANTALL TEGN
@@ -747,7 +752,7 @@ tools:
     ui:
       startAddress: Startadresse
       endAddress: Sluttadresse
-      addressesInRange: Adresser i omradet
+      addressesInRange: 'Adresser i området'
       invalidIpv4: Ugyldig IPv4-adresse
       invalidCombinationTitle: Ugyldig kombinasjon av start- og sluttadresse for IPv4
       invalidCombinationDescription: Slutt-IPv4-adressen er lavere enn start-IPv4-adressen. Dette er ikke gyldig, og resultatet kunne ikke beregnes.
@@ -815,7 +820,7 @@ tools:
       copiedMark: ✓ kopiert
   windows-error-codes:
     title: Oppslag for Windows-feilkoder
-    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+    description: 'Slå opp Windows-feilkoder etter heksadesimal eller desimal verdi, inkludert systemfeil, BSOD-stoppkoder, WMI, RPC, MSI-installasjonsfeil og mer.'
     ui:
       searchResults: Søkeresultater
       searchPlaceholder: Søk etter heksadesimal kode, feilnavn eller beskrivelse...
@@ -836,7 +841,7 @@ tools:
       fix: Løsning
   safelink-decoder:
     title: Dekoder for Outlook Safelink
-    description: Decode Outlook SafeLink links.
+    description: 'Pakk ut Microsoft Defender SafeLinks for å avsløre den opprinnelige mål-URL-en.'
   port-protocol-reference:
     title: Referanse for port og protokoll
     description: Vanlige nettverksporter og protokoller med sikkerhetsmerknader og merking av farlige porter.
@@ -918,7 +923,7 @@ tools:
       textPlaceholder: Teksten som skal tegnes
       options: ALTERNATIVER
       font: SKRIFT
-      searchFonts: Sok etter skrifter...
+      searchFonts: 'Søk etter skrifter...'
       noFontsMatch: Ingen skrifter samsvarer
       width: BREDDE
       output: ASCII ART-RESULTAT
@@ -1136,17 +1141,17 @@ tools:
     ui:
       hardFailRecommended: hard fail, anbefalt
       softFail: soft fail
-      neutralNotRecommended: noytral, ikke anbefalt
+      neutralNotRecommended: 'nøytral, ikke anbefalt'
       blockFailingMail: blokker e-post som feiler
       sendToSpam: send til spam
-      monitorOnly: kun overvaking
+      monitorOnly: 'kun overvåking'
       relaxedDefault: Avslappet (standard)
       strict: Streng
       sameAsMainPolicy: Samme som hovedpolicy
       spfRecordTitle: SPF-POST
       dmarcRecordTitle: DMARC-POST
-      spfRecordLocation: TXT-post pa rotdomenet
-      dmarcRecordLocation: TXT-post pa
+      spfRecordLocation: 'TXT-post på rotdomenet'
+      dmarcRecordLocation: 'TXT-post på'
       copied: kopiert
       clickToCopy: klikk for å kopiere
       lookupWarning: '{count} DNS-oppslag valgt; SPF har en grense på 10 oppslag'
@@ -1159,7 +1164,7 @@ tools:
       policyCoverage: 'POLICYDEKNING: {percent}%'
       coverageHint: '{percent}% av e-post som feiler vil bli håndtert. Bruk mindre enn 100% for en gradvis utrulling.'
       aggregateReportEmail: E-POST FOR SAMLET RAPPORT (rua)
-      forensicReportEmail: E-POST FOR RETTSMEDISINSK RAPPORT (ruf, valgfritt)
+      forensicReportEmail: 'E-POST FOR FORENSISK RAPPORT (ruf, valgfritt)'
       dkimAlignment: DKIM-JUSTERING
       spfAlignment: SPF-JUSTERING
     title: E-postpost-generator
@@ -1239,8 +1244,8 @@ tools:
       devReduce2030: Redusert fremkalling på 20-30% anbefales for svært lange eksponeringer.
       colorShiftWarning: 'Fargefilm: forvent en fargeforskyvning ved denne eksponeringslengden.'
       colorShiftSlide: Lysbildefilm er vanskelig å korrigere i etterkant; CC-filtrering i kameraet anbefales.
-      colorShiftNeg: Fargenegativ har mer spillerom; korrigering er mulig ved fremkalling eller skanning.
-    title: Reciprositetssvikt-kalkulator
+      colorShiftNeg: 'Fargenegativ har mer spillerom; korrigering er mulig ved printing eller skanning.'
+    title: 'Resiprositetssvikt-kalkulator'
     description: Beregner korrigerte langtidseksponeringer for over 40 analoge filmtyper med Schwarzschilds potenslov. Dekker svart-hvitt, fargenegativ og lysbildefilm.
   date-time-converter:
     ui:
@@ -1308,19 +1313,19 @@ tools:
         redemptionPeriod: Domenet har utløpt og er i innløsningsperioden. Registranten kan fortsatt gjenopprette det.
         renewPeriod: Domenet er i fornyelsesperioden etter registrering.
         autoRenewPeriod: Domenet er i perioden for automatisk fornyelse.
-        transferPeriod: Domenet er i overforingsperioden.
+        transferPeriod: 'Domenet er i nådeperioden for overføring.'
       expiredAlert: Dette domenet utløp for {days} dager siden og kan være tilgjengelig for registrering.
       expiresAlert: Dette domenet utløper om {days} dager. Fornyelse bør ordnes snarest.
-      expiredTag: Utlop for {days}d siden
+      expiredTag: 'Utløp for {days}d siden'
       remainingTag: '{days}d igjen'
       registrar: Registrar
       registrarIanaId: Registrarens IANA-ID
       created: Opprettet
       updated: Oppdatert
-      expires: Utloper
-      noMx: Ingen MX-oppforinger funnet.
+      expires: 'Utløper'
+      noMx: 'Ingen MX-oppføringer funnet.'
       dnsFailed: DNS-oppslag mislyktes.
-      noSpf: Ingen SPF-oppforing funnet.
+      noSpf: 'Ingen SPF-oppføring funnet.'
       noDkim: Ingen DKIM-oppføringer funnet for vanlige selektorer. Egendefinerte selektorer kan fortsatt finnes.
       noDmarc: Ingen DMARC-oppføring funnet. Domenet er ubeskyttet mot forfalskning.
       spfPlusAll: 'Advarsel: +all er farlig fordi det tillater enhver server å sende e-post som dette domenet.'
@@ -1337,24 +1342,24 @@ tools:
       rdapHttpError: 'HTTP {status}: domenet finnes kanskje ikke, eller TLD-en støttes ikke.'
       lookupFailed: Oppslag mislyktes.
       domainPlaceholder: Skriv inn et domene (f.eks. killertools.net)
-      searching: Soker...
-      search: Sok
+      searching: 'Søker...'
+      search: 'Søk'
       signed: Signert
       unsigned: Usignert
       delegationSigned: Delegeringen er signert.
-      dsRecord: '{count} DS-oppforing.'
-      dsRecords: '{count} DS-oppforinger.'
-      keyRecord: '{count} nokkeloppforing.'
-      keyRecords: '{count} nokkeloppforinger.'
+      dsRecord: '{count} DS-oppføring.'
+      dsRecords: '{count} DS-oppføringer.'
+      keyRecord: '{count} nøkkeloppføring.'
+      keyRecords: '{count} nøkkeloppføringer.'
       dnssecUnsigned: Dette domenet er ikke beskyttet av DNSSEC. DNS-svar kan ikke verifiseres kryptografisk.
       status: Status
       contacts: Kontakter
       remarks: Merknader
       nameservers: Navnetjenere
-      mxRecords: MX-oppforinger
-      spfRecord: SPF-oppforing
-      dkimRecords: DKIM-oppforinger
-      dmarcRecord: DMARC-oppforing
+      mxRecords: 'MX-oppføringer'
+      spfRecord: 'SPF-oppføring'
+      dkimRecords: 'DKIM-oppføringer'
+      dmarcRecord: 'DMARC-oppføring'
       role:
         registrant: registrant
         administrative: administrativ
@@ -1551,10 +1556,10 @@ tools:
       legendCoc: forvirringssirkel
       legendFocusDistance: fokusavstand
     title: Dybdeskarpe-kalkulator
-    description: Beregner nærgrense, fjerngrense og total dybdeskarpe for enhver kombinasjon av objektiv og sensor. Inkluderer hyperfokal avstand.
+    description: 'Beregner nærgrense, fjerngrense og total dybdeskarphet for enhver kombinasjon av objektiv og sensor. Inkluderer hyperfokal avstand.'
   integer-base-converter:
     ui:
-      binary: Binaer
+      binary: 'Binær'
       octal: Oktal
       decimal: Desimal
       hexadecimal: Heksadesimal
@@ -1870,7 +1875,7 @@ pages:
       hosted: Hostet på GitHub Releases
     steps:
       s1Title: Last ned og kjør KillerMCP Setup.
-      s1Body: Installasjonsfilen er signert av Open Source Developer Stephen Riley og publisert via GitHub Releases.
+      s1Body: 'Installasjonen sjekker om .NET 10-kjøretiden er installert, og åpner Microsofts nedlastingsside hvis den mangler. Installasjonsfilen er signert av Open Source Developer Stephen Riley og publisert via GitHub Releases.'
       s2Title: La installasjonsprogrammet koble til agenten din.
       s2Body: Det installerer den delte kjøretiden og registrerer KillerMCP hos Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI og Windsurf når disse finnes.
       s3Title: Åpne en ny agentsamtale og spør.
@@ -1943,4 +1948,4 @@ pages:
       p1: '{kt} inneholder den offentlige Worker, den lokale KillerTools-pakken, operasjonskartet, valideringsskjemaene og dekningssjekkene. {km} inneholder den delte lokale verten, skrivebordsapp-adapterne, installasjonsfilen og integrasjonssjekkene.'
       ktLink: KillerTools-kildekode
       kmLink: KillerMCP-kildekode
-      p2: Eksterne oppslagsresultater avhenger av kildene sine. Lokale verktøy mottar bare stier eller verdier som gis i et verktøykall. Base64-fildekoding oppretter en ny fil og nekter å overskrive en eksisterende. Kamerainnfanging krever fortsatt manuell nettlesertillatelse og maskinvareverifisering. KillerMCP v0.1.1 er signert, tidsstemplet og publisert via GitHub Releases.
+      p2: 'Eksterne oppslagsresultater avhenger av kildene sine. Lokale verktøy mottar bare stier eller verdier som gis i et verktøykall. Base64-fildekoding oppretter en ny fil og nekter å overskrive en eksisterende. Kamerainnfanging krever fortsatt manuell nettlesertillatelse og maskinvareverifisering. Den gjeldende KillerMCP-installasjonsfilen er signert, tidsstemplet og publisert via GitHub Releases.'

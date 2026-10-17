@@ -1210,8 +1210,8 @@ tools:
     title: 規則運算式測試器
     description: 使用範例文字測試你的規則運算式。
     ui:
-      regexLabel: '待測試的正則表達式:'
-      regexPlaceholder: 輸入要測試的正則表達式
+      regexLabel: '待測試的規則運算式:'
+      regexPlaceholder: '輸入要測試的規則運算式'
       globalLabel: 全域
       globalTitle: 全域搜尋
       ignoreCaseLabel: 忽略大小寫
@@ -1678,7 +1678,7 @@ tools:
       copied: 已複製!
       modules:
         KillerPivot:
-          description: 在 PowerShell 中切換 Microsoft 365 租戶,不必擔心把指令送到錯誤的租戶。KillerPivot 會停用 auth broker 以強制跳出真正的登入畫面,接着詢問工作階段實際登入到哪個租戶,並在你進行任何動作前完成驗證。只要儲存一次租戶資訊,之後就能依名稱切換,並內建身分驗證。
+          description: '在 PowerShell 中切換 Microsoft 365 租戶,不必擔心把指令送到錯誤的租戶。KillerPivot 會停用 auth broker 以強制跳出真正的登入畫面,接著詢問工作階段實際登入到哪個租戶,並在你進行任何動作前完成驗證。只要儲存一次租戶資訊,之後就能依名稱切換,並內建身分驗證。'
           requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (用於 -Graph)
         KillerScripts:
           description: killer-scripts repo 中的每個工具,都能在任何 PowerShell 工作階段中當作指令使用。每次執行時都會直接從 GitHub 抓取最新版本,同時以本機快取做為離線備援。全部 18 個工具都有各自的指令與簡短別名,輸入 urt 即可執行 Universal Rename Tool。
@@ -1750,7 +1750,7 @@ components:
       red: 紅色
       orange: 橙色
       green: 綠色
-      teal: 青色
+      teal: '藍綠色'
       blue: 藍色
       purple: 紫色
       yellow: 黃色
@@ -1831,7 +1831,7 @@ pages:
     alsoTryHeading: 也可以試試看...
     tagKillerScan: Windows 開源網路掃描工具
     tagKillerPdf: Windows 開源 PDF 編輯器
-    tagKillerShell: 面向進階使用者的 Windows 開源終端機
+    tagKillerShell: '面向進階使用者的 Windows 開源 Shell'
     tagKillerNotes: Windows 開源加密記事本
     tagKillendar: Windows 開源加密行事曆
     linksHeading: 連結
@@ -1860,7 +1860,7 @@ pages:
       oneInstaller: 安裝在 WINDOWS 上
       hosted: 由 CLOUDFLARE 託管
       after: 連線之後
-    lead: 連接公開的 Cloudflare 伺服器，即可使用適合在網頁端執行的工具；在 Windows 上安裝 KillerMCP，則可使用本機工具和支援的 Killer 應用程式。
+    lead: '為您的代理程式提供實用的 KillerTools 指令。連接公開的 Cloudflare 伺服器，即可使用適合在網頁端執行的工具；在 Windows 上安裝 KillerMCP，則可使用本機工具和支援的 Killer 應用程式。'
     status: 依照想使用的資料和應用程式選擇合適的連線方式。
     install: 安裝
     intro: Windows 安裝程式提供單一本機連線，涵蓋全部 81 款 KillerTools 工具，以及這台電腦上已安裝的支援 Killer 應用程式的命令。應用程式命令取決於其版本和可用狀態。無須另外安裝 Node 或取得原始碼。
@@ -1871,7 +1871,7 @@ pages:
       hosted: 託管於 GitHub Releases
     steps:
       s1Title: 下載並執行 KillerMCP 安裝程式。
-      s1Body: 此安裝程式由開放原始碼開發者 Stephen Riley 簽署,並透過 GitHub Releases 發布。
+      s1Body: '安裝程式會檢查是否有 .NET 10 執行環境，若缺少則開啟 Microsoft 的下載頁面。此安裝程式由開放原始碼開發者 Stephen Riley 簽署，並透過 GitHub Releases 發布。'
       s2Title: 讓安裝程式為你連接代理。
       s2Body: 它會安裝共用執行環境,並在偵測到 Codex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf 時,將 KillerMCP 註冊到其中。
       s3Title: 開啟一個新的代理對話並直接提問。
@@ -1932,7 +1932,7 @@ pages:
       hostedBody: 64 款適合在網頁端執行的工具，共 74 項操作。透過 HTTP 遠端執行，無須安裝。無法存取本機應用程式或檔案。
       installedTitle: Windows 安裝版
       installedBody: 全部 81 款 KillerTools 工具，共 94 項操作，另有已安裝的支援 Killer 應用程式的命令。以本機 MCP 連線方式執行。
-      browserTitle: 瀏覽器輔助功能
+      browserTitle: '瀏覽器配套工具'
       browserBody: 相機、裝置、編輯器與簽名工具會開啟一個私人的 localhost 頁面。
     data:
       title: 資料會流向哪裡?
@@ -1947,4 +1947,4 @@ pages:
       p1: '{kt} 包含公開 Worker、本機 KillerTools 套件、操作對應表、驗證結構描述,以及涵蓋率檢查。{km} 包含共用本機主機、桌面應用程式轉接器、安裝程式,以及整合檢查。'
       ktLink: KillerTools 原始碼
       kmLink: KillerMCP 原始碼
-      p2: 外部查詢結果取決於其資料來源。本機工具只會接收工具呼叫中提供的路徑或數值。Base64 檔案解碼會建立新檔案,並拒絕覆寫既有檔案。相機擷取仍需要在瀏覽器中手動授權並進行硬體驗證。KillerMCP v0.1.1 已簽署、加上時間戳記,並透過 GitHub Releases 發布。
+      p2: '外部查詢結果取決於其資料來源。本機工具只會接收工具呼叫中提供的路徑或數值。Base64 檔案解碼會建立新檔案,並拒絕覆寫既有檔案。相機擷取仍需要在瀏覽器中手動授權並進行硬體驗證。目前的 KillerMCP 安裝程式已簽署、加上時間戳記,並透過 GitHub Releases 發布。'

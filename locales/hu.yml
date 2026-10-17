@@ -214,8 +214,8 @@ tools:
       copyDone: ✓ másolva
       copySeconds: másodperc másolása
       devReduce10: Érdemes lehet a hívást ~10%-kal csökkenteni a megnövekedett árnyéksűrűség kompenzálásához.
-      devReduce1015: Javasolt a hívás 10-15%-os csökkentése.
-      devReduce1520: Javasolt a hívás 15-20%-os csökkentése.
+      devReduce1015: 'Javasolt az előhívás 10-15%-os csökkentése.'
+      devReduce1520: 'Javasolt az előhívás 15-20%-os csökkentése.'
       devReduce2030: Nagyon hosszú expozícióknál javasolt a hívás 20-30%-os csökkentése.
       colorShiftWarning: 'Színes film: ezen az expozíciós hosszon számítson színeltolódásra.'
       colorShiftSlide: A diafilmet utólag nehéz korrigálni, javasolt a CC szűrés már felvételkor.
@@ -295,13 +295,13 @@ tools:
       noDataGroup: Nincs adat, adja meg az alapidőt manuálisan
       colorBelow: '{process} 36°C alatt: színeltolódás és hiányos hívás valószínű'
       colorAbove: '{process} 40°C felett: fátyolosodás és színkereszteződés kockázata'
-      bwBelow: '18°C alatt: a hívás nagyon lassú lesz'
+      bwBelow: '18°C alatt: az előhívás nagyon lassú lesz'
       bwAbove: '24°C felett: retikuláció és fátyolosodás kockázata'
       start: Indítás
       pause: Szünet
       resume: Folytatás
-      calculatorTitle: FILMHÍVÁSI KALKULÁTOR
-      developer: Hívó
+      calculatorTitle: 'FILMELŐHÍVÁSI KALKULÁTOR'
+      developer: 'Előhívó'
       dilution: Hígítás
       filmStock: Filmtípus
       baseTimeAt: Alapidő {temp}°C-on
@@ -320,27 +320,27 @@ tools:
       pullStop: Pull {n} fokozat
       pullStops: Pull {n} fokozat
       mixFor: Keverés {volume}ml-hez
-      mixDeveloper: hívó
+      mixDeveloper: 'előhívó'
       mixWater: víz
       noDataWarning: 'Nincs adat ehhez: {film} + {developer}. Adja meg az alapidőt manuálisan.'
       pushPullEstimate: A push/pull idők becslések. Próbatekercs ajánlott.
       sourceNote: Az alapidők forrása a Massive Dev Chart és a gyártói adatlapok.
       processTimer: FOLYAMATIDŐZÍTŐ
-      devComplete: A hívás befejeződött
+      devComplete: 'Az előhívás befejeződött'
       devCompleteHint: Akassza fel száradni, és élvezze a negatívjait.
       stageOf: '{current}. / {total}. szakasz'
       agitation: MOZGATÁS
       reset: Visszaállítás
       skip: Kihagyás
-      stDeveloper: Hívó
+      stDeveloper: 'Előhívó'
       stBleach: Fehérítő
       stWash: Mosás
       stFixer: Fixáló
       stWash2: Mosás 2
       stStabilizer: Stabilizáló
-      stFirstDeveloper: Első hívó
+      stFirstDeveloper: 'Első előhívó'
       stReversalBath: Megfordító fürdő
-      stColorDeveloper: Színhívó
+      stColorDeveloper: 'Színes előhívó'
       stPreBleach: Előfehérítés
       stFinalWash: Végső mosás
       stStopBath: Stopfürdő
@@ -644,7 +644,7 @@ tools:
       parseError: A user agent karakterláncot nem sikerült feldolgozni
   case-converter:
     title: Kis- és nagybetű átalakító
-    description: Karakterlánc betűméretének átalakítása különböző formátumok közül választva
+    description: 'Karakterlánc kis- és nagybetűinek átalakítása különböző formátumok közül választva'
     ui:
       inputPlaceholder: Szöveg...
       output: KIMENET
@@ -909,7 +909,7 @@ tools:
       downlinkSpeed: Letöltési sebesség
       roundTripTime: Körbefordulási idő
       dataSaver: Adattakarékos mód
-      vendor: Szolgáltató
+      vendor: 'Gyártó'
       languages: Nyelvek
       cookiesEnabled: Sütik engedélyezve
       pdfViewer: PDF néző
@@ -935,7 +935,7 @@ tools:
       tableHeaderPemCertificate: PEM tanúsítvány
       notBefore: Nem érvényes előtte
       notAfter: Nem érvényes utána
-      commonName: Közönséges név
+      commonName: 'Általános név'
       organizationName: Szervezet neve
       countryName: Ország neve
       localityName: Település neve
@@ -1685,42 +1685,42 @@ tools:
           requirements: PowerShell 5.1 & 7 · Internetkapcsolat szükséges az aktuális szkript letöltéséhez (a gyorsítótárazott másolatok offline is futnak)
 components:
   androidBetaBanner:
-    announcement: Android beta bejelentes
+    announcement: 'Android beta bejelentés'
     title: A Killer Tools hamarosan Androidon is elérhető
     subtitle: Beta tesztereket keresünk, koppints a csatlakozáshoz
-    dismiss: Bezaras
+    dismiss: 'Bezárás'
   formatTransformer:
     input: Bemenet
     inputPlaceholder: Bemenet...
     output: Kimenet
   inputCopyable:
-    copied: Masolva!
-    copy: Masolas vagolapra
+    copied: 'Másolva!'
+    copy: 'Másolás vágólapra'
   spanCopyable:
-    copied: Masolva!
-    copy: Masolas vagolapra
+    copied: 'Másolva!'
+    copy: 'Másolás vágólapra'
   textareaCopyable:
-    copy: Masolas vagolapra
-    copied: Masolva!
+    copy: 'Másolás vágólapra'
+    copied: 'Másolva!'
   navbarButtons:
     androidTooltip: Killer Tools Androidra
     androidAriaLabel: Killer Tools Androidra, csatlakozz a bétához
   themeDots:
-    accentColor: Kiemelo szin
-    theme: Tema
+    accentColor: 'Kiemelőszín'
+    theme: 'Téma'
     toggleThemeSwatches: Téma minták be- vagy kikapcsolása
-    accentColorPicker: Kiemelo szin valaszto
-    dragToMove: Huzd a mozgatashoz
-    accentLabel: 'kiemeles:'
-    accentNamed: 'Kiemeles: {name}'
-    closeAccentPicker: Kiemelo szin valaszto bezarasa
+    accentColorPicker: 'Kiemelőszín-választó'
+    dragToMove: 'Húzd a mozgatáshoz'
+    accentLabel: 'kiemelés:'
+    accentNamed: 'Kiemelés: {name}'
+    closeAccentPicker: 'Kiemelőszín-választó bezárása'
     filmGrain: Filmszemcse
     accents:
       red: Piros
       orange: Narancs
-      green: Zold
-      teal: Petrolkek
-      blue: Kek
+      green: 'Zöld'
+      teal: 'Petrolkék'
+      blue: 'Kék'
       purple: Lila
       yellow: Sárga
       magenta: Magenta
@@ -1728,88 +1728,88 @@ layouts:
   menuLayout:
     eggMessage: 80 eszköz. Nulla előfizetés. Egy bosszúszomjas terepszerelő.
     clickMe: kattints ide
-    sourceOnGithub: Forraskod a Githubon
+    sourceOnGithub: 'Forráskód a Githubon'
   base:
-    collapseMenu: Menu osszecsukasa
-    homeLabel: KillerTools kezdolap
+    collapseMenu: 'Menü összecsukása'
+    homeLabel: 'KillerTools kezdőlap'
 pages:
   notFound:
     noSuchFile: Nincs ilyen fájl vagy könyvtár
-    exitCode: kilepesi kod
-    backToHome: vissza a kezdolapra
+    exitCode: 'kilépési kód'
+    backToHome: 'vissza a kezdőlapra'
   privacy:
-    heading: Adatvedelmi tajekoztato
+    heading: 'Adatvédelmi tájékoztató'
     lastUpdated: 'Utolsó frissítés: 2026. április 4.'
-    overviewHeading: Attekintes
+    overviewHeading: 'Áttekintés'
     overviewIntro: KillerTools
-    overviewBody: egy ingyenes IT eszközgyujtemeny. Az on adatvedelme fontos szamunkra, es ez a tajekoztato elmagyarazza, hogyan kezeljuk az adatait.
-    dataCollectionHeading: Adatgyujtes
+    overviewBody: 'egy ingyenes IT eszközgyűjtemény. Az Ön adatvédelme fontos számunkra, és ez a tájékoztató elmagyarázza, hogyan kezeljük az adatait.'
+    dataCollectionHeading: 'Adatgyűjtés'
     dataCollectionBody: A KillerTools semmilyen személyes adatot nem gyűjt, nem tárol és nem továbbít. Minden eszköz feldolgozás teljes egészében a böngészőjében történik. Semmilyen, egy eszközbe beírt adat nem kerül elküldésre semmilyen szerverre.
-    cookiesHeading: Sutik
+    cookiesHeading: 'Sütik'
     cookiesBody: Ez az oldal nem használ sütiket nyomon követésre. A téma- és beállítási preferenciái helyileg, a böngészőjében tárolódnak, és soha nem kerülnek továbbításra.
     analyticsHeading: Analitika
     analyticsIntro: Ez az oldal használja a
     analyticsBody: egy adatvédelem-központú analitikai eszközt, hogy megértse az általános használati mintákat, mint az oldalmegtekintések és a hivatkozási források. Az Umami nem használ sütiket, nem követi a felhasználókat weboldalak között, és nem gyűjt semmilyen személyazonosításra alkalmas információt. Minden adat aggregált és anonim.
-    thirdPartyHeading: Harmadik feles szolgaltatasok
-    thirdPartyBody: Nehany eszkoz kulso forrasokra vagy dokumentaciora mutathat. Nem vagyunk felelosek ezen kulso oldalak adatvedelmi gyakorlatáert.
-    androidAppHeading: Android alkalmazas
-    androidAppBody: A KillerTools Android alkalmazás a webalkalmazás köréli burkolat. Nem kér és nem ér el semmilyen eszközengedélyt az alapvető internet-hozzáférésen túl. Semmilyen eszközadat nem kerül gyűjtésre vagy továbbításra.
+    thirdPartyHeading: 'Harmadik feles szolgáltatások'
+    thirdPartyBody: 'Néhány eszköz külső forrásokra vagy dokumentációra mutathat. Nem vagyunk felelősek ezen külső oldalak adatvédelmi gyakorlatáért.'
+    androidAppHeading: 'Android alkalmazás'
+    androidAppBody: 'A KillerTools Android alkalmazás a webalkalmazás burkolója. Nem kér és nem ér el semmilyen eszközengedélyt az alapvető internet-hozzáférésen túl. Semmilyen eszközadat nem kerül gyűjtésre vagy továbbításra.'
     contactHeading: Kapcsolat
     contactBody: Ha kérdése van ezzel az adatvédelmi tájékoztatóval kapcsolatban, elérhet minket a
   androidApp:
     robotAttribution: Az Android robot a Google által létrehozott és megosztott munkából készült vagy módosított reprodukció, a Creative Commons 3.0 Attribution License feltételei szerint használva.
     heading: KillerTools Androidra
-    introBody1: 'A teljes killertools.net eszkoztar natív Android alkalmazaskent: minden eszkoz, a Killer Scripts konyvtar es az osszes kedvence, egyetlen erintesre a kezdokepernyorol.'
+    introBody1: 'A teljes killertools.net eszköztár natív Android alkalmazásként: minden eszköz, a Killer Scripts könyvtár és az összes kedvenced, egyetlen érintésre a kezdőképernyőről.'
     introBody2: Ugyanazok a szabályok, mint az oldalon. Minden az ön eszközén fut. Nincs fiók, nincs telemetria, nincs hazatelefonálás. Ha megspórol egy ticketciklust a terepen, betöltötte a feladatát.
-    betaStatusPrefix: Az alkalmazas jelenleg
+    betaStatusPrefix: 'Az alkalmazás jelenleg'
     betaStatusStrong: zárt bétában van a Google Play-en
     betaStatusSuffix: ', és itt jön a képbe ön.'
     joinBetaHeading: Csatlakozzon a betahoz
-    joinBetaIntroPrefix: A Google megkoveteli, hogy
+    joinBetaIntroPrefix: 'A Google megköveteli, hogy'
     joinBetaIntroStrong: 12 tesztelő 14 egymást követő napig telepítve tartja az alkalmazást
     joinBetaIntroSuffix: 'mielőtt egy független fejlesztő alkalmazása nyilvánossá válhat. Három lépés, körülbelül két perc, és ön is a tizenkettő egyike lesz:'
-    step1LinkText: Csatlakozzon a tesztelo csoporthoz
+    step1LinkText: 'Csatlakozzon a tesztelő csoporthoz'
     step1Suffix: a Google Groups-on (kattintson a "Join group" gombra).
-    step2LinkText: Valjon teszteloVe
+    step2LinkText: 'Váljon tesztelővé'
     step2Suffix: a Google Play jelentkezési oldalán.
-    step3LinkText: Telepitse az alkalmazast
+    step3LinkText: 'Telepítse az alkalmazást'
     step3Suffix: a Google Play-ről, és tartsa telepítve két hétig.
     sameAccountStrong: Használja ugyanazt a Google fiókot mindhárom lépéshez
     sameAccountSuffix: ' - a jelentkezési oldal "not available for this account" üzenetet jelenít meg, ha kihagyja a csoportot vagy fiókot vált.'
     feedbackPrefix: 'Valami elromlott vagy hiányzik? Szóljon nekem:'
   home:
-    sortPopular: Nepszeru
+    sortPopular: 'Népszerű'
     sortAZ: A - Z
     sortZA: Z - A
   about:
-    heading: A KillerTools-rol
-    intro: A terepi technikusoknak nincs idejük a felesleges csomagolásra. Minden eszköz azért létezik itt, mert szükségem volt rá munka közben, és nem találtam olyat, ami egyszerűen működött fiók, telepítés vagy telemetria nélkül.
+    heading: 'A KillerTools névjegye'
+    intro: 'A terepi technikusoknak nincs idejük a felesleges ballasztra. Minden eszköz azért létezik itt, mert szükségem volt rá munka közben, és nem találtam olyat, ami egyszerűen működött fiók, telepítés vagy telemetria nélkül.'
     originPrefix: Jelenleg egy MSP belső AI mérnöki csapatában építek eszközöket, hat év full-stack fejlesztés és nyolc év terepi technikusként, több cégnél szerzett tapasztalat után. A KillerTools.net a kiváló
-    originMid: projekt forkjakent indult, amelyet
+    originMid: 'projekt forkjaként indult, amelyet'
     originSuffix: készített, és olyan valamivé növekedett, ami az általam végzett munkához készült. Azért építettem, hogy közepén egy ticketben Group Policy beállításokat nézhessek meg, egy ügyfél alhálózatát pásztázzam, és port referenciákat kereshessek ki a böngésző elhagyása nélkül.
     scriptsLibrary: A Killer Scripts könyvtár lefedi azokat a feladatokat, amelyek minden ticketciklusban felmerülnek. Minden szkript fut PS 5.1, PS 7 és Kaseya LiveConnect alatt, függőségek nélkül.
     privacyBody: Minden a böngészőjében fut. Semmit nem követnek nyomon. Fiókra soha nincs szükség. Az oldal szigorú Content Security Policy-t kényszerít ki, hogy blokkolja a függőségi lánc mentén érkező támadásokat. Ha egy kompromittált npm csomag valaha bekerülne a csomagba, nem tudna hazatelefonálni azzal, amit beillesztett.
-    maintainedByPrefix: Keszitette es karbantartja
+    maintainedByPrefix: 'Készítette és karbantartja'
     maintainedByMid: Ha ez időt spórol önnek a munkában,
-    buyMeCoffee: vegyen nekem egy kavet
+    buyMeCoffee: 'vegyen nekem egy kávét'
     maintainedBySuffix: örömmel fogadott, de soha nem elvárt.
     missingToolHeading: Hiányzik egy eszköz? Hibát talált?
     issuesPrefix: Nyisson egy funkciókérelmet vagy hibajelentést az
-    issuesLinkText: issues szekcioban
-    issuesSuffix: a GitHubon. Elolvasom oket.
-    alsoTryHeading: Probalja ki ezeket is...
+    issuesLinkText: 'issues szekcióban'
+    issuesSuffix: 'a GitHubon. Elolvasom őket.'
+    alsoTryHeading: 'Próbálja ki ezeket is...'
     tagKillerScan: Nyílt forráskódú hálózati szkenner Windowsra
     tagKillerPdf: Nyílt forráskódú PDF szerkesztő Windowsra
-    tagKillerShell: Nyilt forraskodu Windows shell haladó felhasznaloknak
+    tagKillerShell: 'Nyílt forráskódú Windows shell haladó felhasználóknak'
     tagKillerNotes: Nyílt forráskódú titkosított jegyzetfüzet Windowsra
     tagKillendar: Nyílt forráskódú titkosított naptár Windowsra
     linksHeading: Linkek
     linkLabelSite: Oldal
-    linkLabelSource: Forraskod
+    linkLabelSource: 'Forráskód'
     linkLabelIssues: Issues
-    reportBug: Hiba bejelentese
-    requestFeature: Funkcio kerese
-    linkLabelSupport: Tamogatas
+    reportBug: 'Hiba bejelentése'
+    requestFeature: 'Funkció kérése'
+    linkLabelSupport: 'Támogatás'
     linkLabelBuiltOn: Alapja
     itToolsFork: IT-Tools (fork)
   mcp:
@@ -1840,7 +1840,7 @@ pages:
       hosted: GitHub Releases-en tárolva
     steps:
       s1Title: Töltse le és futtassa a KillerMCP telepítőt.
-      s1Body: A telepítőt Stephen Riley nyílt forráskódú fejlesztő írta alá, és a GitHub Releases-en keresztül kerül közzétételre.
+      s1Body: 'A telepítő ellenőrzi a .NET 10 futtatókörnyezet meglétét, és ha hiányzik, megnyitja a Microsoft letöltési oldalát. A telepítőt Stephen Riley nyílt forráskódú fejlesztő írta alá, és a GitHub Releases-en keresztül kerül közzétételre.'
       s2Title: Hagyja, hogy a telepítő csatlakoztassa az ügynökét.
       s2Body: Telepíti a megosztott futtatókörnyezetet, és regisztrálja a KillerMCP-t a Codexnél, Claude Code-nál, Claude Desktopnál, Cursornál, GitHub Copilotnál, Gemini CLI-nél és Windsurfnál, ha megtalálja őket.
       s3Title: Nyisson egy új ügynöki csevegést, és kérdezzen.
@@ -1906,7 +1906,7 @@ pages:
     data:
       title: Hová kerülnek az adatok?
       p1: A telepített KillerMCP futtatókörnyezet az Ön számítógépén fut. Egyes hálózati és referencia-lekérdezések továbbra is elérik nyilvános adatforrásaikat. Az ügynöke megkapja a kérés teljesítéséhez szükséges bemeneteket és eredményeket.
-      p2: Az opcionális tárolt kapcsolat elküldi az eszközbemeneteket a KillerTools Cloudflare Workerének. Nincs bejelentkezés, a kéréstörzseket 64 KiB-ra korlátozza, korlátozott sémákat alkalmaz, és korlátozza az egyes csatlakozó IP-címek kérésszámát. Ne küldjön jelszavakat, privát fájlokat, tokeneket vagy ügyféladatokat a tárolt kapcsolaton keresztül.
+      p2: 'Az opcionális üzemeltetett kapcsolat elküldi az eszközbemeneteket a KillerTools Cloudflare Workerének. Nincs bejelentkezés, a kéréstörzseket 64 KiB-ra korlátozza, korlátozott sémákat alkalmaz, és korlátozza az egyes csatlakozó IP-címek kérésszámát. Ne küldjön jelszavakat, privát fájlokat, tokeneket vagy ügyféladatokat az üzemeltetett kapcsolaton keresztül.'
       p3: A helyi fájl-, böngésző-, jelszó-, token-, titkosítási, hash-, OTP-, BIP39- és kulcsgeneráló eszközök nem érintik a nyilvános Workert. A telepített KillerMCP-n keresztül futnak, de az MCP kliens és a modellszolgáltató továbbra is megkaphatja a bemeneteket és eredményeket.
     twice:
       title: 'Miért fut kétszer a {km}'
@@ -1916,7 +1916,7 @@ pages:
       p1: A {kt} tartalmazza a nyilvános Workert, a helyi KillerTools csomagot, a művelettérképet, az érvényesítési sémákat és a lefedettségi ellenőrzéseket. A {km} tartalmazza a megosztott helyi hostot, az asztali alkalmazás adaptereit, a telepítőt és az integrációs ellenőrzéseket.
       ktLink: KillerTools forráskód
       kmLink: KillerMCP forráskód
-      p2: A külső lekérdezések eredményei a forrásaiktól függenek. A helyi eszközök csak az eszközhíváskor megadott elérési utakat vagy értékeket kapják meg. A Base64 fájl visszafejtése új fájlt hoz létre, és megtagadja egy meglévő felülírását. A kamerás rögzítéshez továbbra is kézi böngészőengedély és hardveres ellenőrzés szükséges. A KillerMCP v0.1.1 aláírt, időbélyeggel ellátott, és a GitHub Releases-en keresztül kerül közzétételre.
+      p2: 'A külső lekérdezések eredményei a forrásaiktól függenek. A helyi eszközök csak az eszközhíváskor megadott elérési utakat vagy értékeket kapják meg. A Base64 fájl visszafejtése új fájlt hoz létre, és megtagadja egy meglévő felülírását. A kamerás rögzítéshez továbbra is kézi böngészőengedély és hardveres ellenőrzés szükséges. Az aktuális KillerMCP telepítő aláírt, időbélyeggel ellátott, és a GitHub Releases-en keresztül kerül közzétételre.'
 ui:
   diffEditor:
     originalLabel: EREDETI

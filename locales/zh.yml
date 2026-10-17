@@ -22,7 +22,7 @@ home:
     githubRepository: GitHub 仓库
     twitterX: Twitter 账号
     twitterXAccount: IT-Tools X 账号
-    about: 关于 IT-Tools
+    about: '关于 killer-tools'
     aboutLabel: 关于
     darkMode: 深色模式
     lightMode: 浅色模式
@@ -70,7 +70,7 @@ tools:
     description: 使用此密码强度分析器和破解时间估计工具来发现密码的强度。
   percentage-calculator:
     title: 百分比计算器
-    description: 轻松计算从一个值到另一个值的百分比，或从百分比到值的百分比。
+    description: '轻松计算从一个值到另一个值的百分比，或根据百分比计算对应的值。'
     ui:
       whatIsXPercentOfYTitle: Y 的 X% 是多少
       whatIsLabel: 计算
@@ -155,13 +155,13 @@ tools:
       noResults: 无结果
       searchResult: 搜索结果
   color-converter:
-    title: Color 选择器
+    title: '颜色转换器'
     description: 在不同格式（十六进制、rgb、hsl和css名称）之间转换颜色
     ui:
       color: 颜色
       formats: 格式
   bcrypt:
-    title: 加密
+    title: 'Bcrypt'
     description: 使用bcrypt对文本字符串进行哈希和比较。Bcrypt是一个基于Blowfish密码的密码哈希函数。
     ui:
       copiedToClipboard: 哈希字符串已复制到剪贴板
@@ -208,7 +208,7 @@ tools:
       aliases: 别名
   http-status-codes:
     title: HTTP 状态码
-    description: 所有HTTP状态的列表对其名称和含义解释。
+    description: '所有 HTTP 状态码的列表，包括其名称和含义。'
     ui:
       searchResults: 搜索结果
       searchPlaceholder: 搜索 HTTP 状态码...
@@ -233,7 +233,7 @@ tools:
       indentStyleTabularRight: 表格右对齐
   git-memo:
     title: Git 备忘录
-    description: Git是一种去中心化的版本管理软件。使用此备忘单，您可以快速访问最常见的git命令.
+    description: '最常用 Git 命令和工作流程的速查表。'
   encryption:
     title: 加密/解密文本
     description: 使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。
@@ -434,7 +434,7 @@ tools:
       unknownVendor: 此地址的厂商未知
   lorem-ipsum-generator:
     title: Lorem ipsum生成器
-    description: Lorem ipsum是一种占位符文本，通常用于演示文档或字体的视觉形式，而不依赖于有意义的内容
+    description: '生成用于样稿和设计工作的 Lorem ipsum 占位文本。'
     ui:
       copiedMessage: Lorem ipsum 已复制到剪贴板
       paragraphs: 段落数
@@ -449,7 +449,7 @@ tools:
       refresh: 刷新
   qrcode-generator:
     title: 二维码生成器
-    description: 生成并下载url或文本的QR代码，并自定义背景和前景颜色。
+    description: '为网址、纯文本或 Wi-Fi 网络凭据生成并下载二维码。提供终端、经典和自定义颜色主题，并可配置纠错级别。'
   xml-formatter:
     title: XML 格式化
     description: 将XML字符串修饰为友好的可读格式。
@@ -584,8 +584,8 @@ tools:
       collapseCheatSheet: 收起速查表
       subnetCheatSheet: 子网速查表
   og-meta-generator:
-    title: 开放式图形元生成器
-    description: 为您的网站生成开放式图形和社交html元标记。
+    title: 'Open Graph 元标签生成器'
+    description: '为您的网站生成 Open Graph 和社交 HTML 元标记。'
   ipv6-ula-generator:
     title: IPv6 ULA生成器
     description: 根据RFC4193在网络上生成您自己的本地不可路由IP地址。
@@ -696,7 +696,7 @@ tools:
     description: 在不同的基数（十进制、十六进制、二进制、八进制、base64…）之间转换数字
   uuid-generator:
     title: UUIDs 生成器
-    description: 通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。
+    description: '生成随机 UUID（v1 和 v4）并查看其结构。'
     ui:
       copiedMessage: UUID 已复制到剪贴板
       version: 版本
@@ -710,8 +710,8 @@ tools:
       copy: 复制
       refresh: 刷新
   ipv4-address-converter:
-    title: Ipv4地址转换器
-    description: 在ipv6中，将ip地址转换为十进制、二进制、十六进制或事件
+    title: 'IPv4 地址转换器'
+    description: '将 IP 地址转换为十进制、二进制、十六进制，甚至是 IPv6 表示形式。'
     ui:
       decimal: 十进制
       hexadecimal: 十六进制
@@ -815,7 +815,7 @@ tools:
       copiedMark: ✓ 已复制
   windows-error-codes:
     title: Windows 错误代码查询
-    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+    description: 按十六进制或十进制查询 Windows 错误代码，包括系统错误、BSOD 停止代码、WMI、RPC、MSI 安装程序等。
     ui:
       searchResults: 搜索结果
       searchPlaceholder: 按十六进制代码、错误名称或描述搜索...
@@ -836,7 +836,7 @@ tools:
       fix: 解决方法
   safelink-decoder:
     title: Outlook Safelink 解码器
-    description: Decode Outlook SafeLink links.
+    description: '解包 Microsoft Defender SafeLinks，以显示原始目标 URL。'
   port-protocol-reference:
     title: 端口与协议参考
     description: 常见网络端口和协议,附带安全说明及危险端口标记。
@@ -1859,7 +1859,7 @@ pages:
       oneInstaller: 安装在 WINDOWS 上
       hosted: 由 CLOUDFLARE 托管
       after: 连接之后
-    lead: 连接公共 Cloudflare 服务器可使用适合在网页端运行的工具；在 Windows 上安装 KillerMCP，则可使用本地工具和受支持的 Killer 应用。
+    lead: '为你的代理提供实用的 KillerTools 命令。连接公共 Cloudflare 服务器可使用适合在网页端运行的工具；在 Windows 上安装 KillerMCP，则可使用本地工具和受支持的 Killer 应用。'
     status: 根据要使用的数据和应用选择合适的连接方式。
     install: 安装
     intro: Windows 安装程序提供一个本地连接，涵盖全部 81 款 KillerTools 工具，以及这台电脑上已安装的受支持 Killer 应用的命令。应用命令取决于版本和可用状态。无需单独安装 Node 或获取源代码。
@@ -1870,7 +1870,7 @@ pages:
       hosted: 托管于 GitHub Releases
     steps:
       s1Title: 下载并运行 KillerMCP 安装程序。
-      s1Body: 该安装程序由开源开发者 Stephen Riley 签名,并通过 GitHub Releases 发布。
+      s1Body: '安装程序会检查 .NET 10 运行时，若缺少则打开 Microsoft 的下载页面。该安装程序由开源开发者 Stephen Riley 签名，并通过 GitHub Releases 发布。'
       s2Title: 让安装程序为你连接代理。
       s2Body: 它会安装共享运行时,并在检测到 Codex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf 时,将 KillerMCP 注册到其中。
       s3Title: 打开一个新的代理对话并直接提问。
@@ -1943,4 +1943,4 @@ pages:
       p1: '{kt} 包含公共 Worker、本地 KillerTools 打包文件、操作映射表、校验模式以及覆盖率检查。{km} 包含共享本地主机、桌面应用适配器、安装程序以及集成检查。'
       ktLink: KillerTools 源代码
       kmLink: KillerMCP 源代码
-      p2: 外部查询结果取决于其数据来源。本地工具只会接收工具调用中提供的路径或值。Base64 文件解码会创建一个新文件,并拒绝覆盖已存在的文件。摄像头拍摄仍需要在浏览器中手动授权并进行硬件验证。KillerMCP v0.1.1 已签名、加盖时间戳,并通过 GitHub Releases 发布。
+      p2: '外部查询结果取决于其数据来源。本地工具只会接收工具调用中提供的路径或值。Base64 文件解码会创建一个新文件,并拒绝覆盖已存在的文件。摄像头拍摄仍需要在浏览器中手动授权并进行硬件验证。当前的 KillerMCP 安装程序已签名、加盖时间戳,并通过 GitHub Releases 发布。'

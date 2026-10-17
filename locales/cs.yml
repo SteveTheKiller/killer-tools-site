@@ -295,7 +295,7 @@ tools:
       noDataGroup: Bez dat, zadejte základní čas ručně
       colorBelow: '{process} pod 36°C: pravděpodobný posun barev a neúplný vývoj'
       colorAbove: '{process} nad 40°C: riziko závoje a barevného posunu'
-      bwBelow: 'Pod 18°C: vývoj bude velmi pomalý'
+      bwBelow: 'Pod 18°C: vyvolávání bude velmi pomalé'
       bwAbove: 'Nad 24°C: riziko retikulace a závoje'
       start: Start
       pause: Pauza
@@ -334,15 +334,15 @@ tools:
       skip: Přeskočit
       stDeveloper: Vývojka
       stBleach: Bělič
-      stWash: Voda
+      stWash: 'Oplach'
       stFixer: Ustalovač
-      stWash2: Voda 2
+      stWash2: 'Oplach 2'
       stStabilizer: Stabilizátor
       stFirstDeveloper: První vývojka
       stReversalBath: Reverzní lázeň
       stColorDeveloper: Barevná vývojka
       stPreBleach: Předbělení
-      stFinalWash: Závěrečná voda
+      stFinalWash: 'Závěrečný oplach'
       stStopBath: Přerušovací lázeň
       agC30s10: Nepřetržitě prvních 30 s, poté 10 s každých 30 s
       agRun3Full: Tekoucí voda nebo 3 úplné výměny
@@ -909,7 +909,7 @@ tools:
       downlinkSpeed: Rychlost stahování
       roundTripTime: Doba odezvy
       dataSaver: Úspora dat
-      vendor: Poskytovatel
+      vendor: 'Výrobce'
       languages: Jazyky
       cookiesEnabled: Cookies povoleny
       pdfViewer: Prohlížeč PDF
@@ -1688,69 +1688,69 @@ components:
     announcement: Oznámení o beta verzi pro Android
     title: Killer Tools míří na Android
     subtitle: Hledáme beta testery, klepnutím se přidáte
-    dismiss: Zavrit
+    dismiss: 'Zavřít'
   formatTransformer:
     input: Vstup
     inputPlaceholder: Vstup...
-    output: Vystup
+    output: 'Výstup'
   inputCopyable:
-    copied: Zkopirovano!
-    copy: Kopirovat do schranky
+    copied: 'Zkopírováno!'
+    copy: 'Kopírovat do schránky'
   spanCopyable:
-    copied: Zkopirovano!
-    copy: Kopirovat do schranky
+    copied: 'Zkopírováno!'
+    copy: 'Kopírovat do schránky'
   textareaCopyable:
-    copy: Kopirovat do schranky
-    copied: Zkopirovano!
+    copy: 'Kopírovat do schránky'
+    copied: 'Zkopírováno!'
   navbarButtons:
     androidTooltip: Killer Tools pro Android
     androidAriaLabel: Killer Tools pro Android, přidejte se do beta programu
   themeDots:
-    accentColor: Zvyrazneni barva
+    accentColor: 'Barva zvýraznění'
     theme: Motiv
-    toggleThemeSwatches: Prepnout vzorky motivu
-    accentColorPicker: Vyber zvyrazneni barvy
-    dragToMove: Presunte tazenim
-    accentLabel: 'zvyrazneni:'
-    accentNamed: 'Zvyrazneni: {name}'
-    closeAccentPicker: Zavrit vyber zvyrazneni barvy
+    toggleThemeSwatches: 'Přepnout vzorky motivu'
+    accentColorPicker: 'Výběr barvy zvýraznění'
+    dragToMove: 'Přesuňte tažením'
+    accentLabel: 'zvýraznění:'
+    accentNamed: 'Zvýraznění: {name}'
+    closeAccentPicker: 'Zavřít výběr barvy zvýraznění'
     filmGrain: Filmové zrno
     accents:
-      red: Cervena
-      orange: Oranzova
-      green: Zelena
-      teal: Petrolejova
-      blue: Modra
-      purple: Fialova
+      red: 'Červená'
+      orange: 'Oranžová'
+      green: 'Zelená'
+      teal: 'Petrolejová'
+      blue: 'Modrá'
+      purple: 'Fialová'
       yellow: Žlutá
       magenta: Magenta
 layouts:
   menuLayout:
     eggMessage: 80 nástrojů. Žádná předplatná. Jeden zatrpklý terénní technik.
-    clickMe: klikni na me
-    sourceOnGithub: Zdrojovy kod na Githubu
+    clickMe: 'klikni na mě'
+    sourceOnGithub: 'Zdrojový kód na GitHubu'
   base:
-    collapseMenu: Sbalit nabidku
-    homeLabel: Domu KillerTools
+    collapseMenu: 'Sbalit nabídku'
+    homeLabel: 'Úvodní stránka KillerTools'
 pages:
   notFound:
-    noSuchFile: Soubor nebo adresar neexistuje
-    exitCode: navratovy kod
-    backToHome: zpet na uvod
+    noSuchFile: 'Soubor nebo adresář neexistuje'
+    exitCode: 'návratový kód'
+    backToHome: 'zpět na úvod'
   privacy:
-    heading: Zasady ochrany osobnich udaju
+    heading: 'Zásady ochrany osobních údajů'
     lastUpdated: 'Naposledy aktualizováno: 4. dubna 2026'
-    overviewHeading: Prehled
+    overviewHeading: 'Přehled'
     overviewIntro: KillerTools
     overviewBody: je bezplatná sbírka IT nástrojů. Vaše soukromí je pro nás důležité a tyto zásady vysvětlují, jak nakládáme s vašimi údaji.
-    dataCollectionHeading: Sber udaju
+    dataCollectionHeading: 'Sběr údajů'
     dataCollectionBody: KillerTools neshromažďuje, neukládá ani nepředává žádné osobní údaje. Veškeré zpracování probíhá zcela ve vašem prohlížeči. Žádné údaje, které zadáte do některého nástroje, se neodesílají na server.
     cookiesHeading: Cookies
     cookiesBody: Tento web nepoužívá cookies pro sledování. Vaše preference vzhledu a nastavení se ukládají lokálně ve vašem prohlížeči a nikdy se nepřenášejí.
     analyticsHeading: Analytika
-    analyticsIntro: Tento web pouziva
+    analyticsIntro: 'Tento web používá'
     analyticsBody: nástroj analytiky zaměřený na soukromí, k pochopení obecných vzorců používání, jako jsou zobrazení stránek a zdroje odkazů. Umami nepoužívá cookies, nesleduje uživatele napříč weby a neshromažďuje žádné osobně identifikovatelné informace. Všechna data jsou agregovaná a anonymní.
-    thirdPartyHeading: Sluzby tretich stran
+    thirdPartyHeading: 'Služby třetích stran'
     thirdPartyBody: Některé nástroje mohou odkazovat na externí zdroje nebo dokumentaci. Nejsme odpovědní za postupy ochrany soukromí těch externích stránek.
     androidAppHeading: Aplikace pro Android
     androidAppBody: Android aplikace KillerTools je obal kolem webové aplikace. Nepožaduje ani nevyužívá žádná oprávnění zařízení nad rámec základního přístupu k internetu. Žádná data zařízení nejsou shromažďována ani předávána.
@@ -1761,24 +1761,24 @@ pages:
     heading: KillerTools pro Android
     introBody1: 'Celá sada nástrojů killertools.net jako nativní Android aplikace: každý nástroj, knihovna Killer Scripts a všechny vaše oblíbené, jedno klepnutí od plochy.'
     introBody2: Stejná pravidla jako na webu. Vše běží na vašem zařízení. Žádný účet, žádná telemetrie, žádné volání domů. Pokud vám ušetří jeden cyklus tiketu v terénu, splnila svůj účel.
-    betaStatusPrefix: Aplikace je momentalne v
+    betaStatusPrefix: 'Aplikace je momentálně v'
     betaStatusStrong: uzavřené beta verzi na Google Play
     betaStatusSuffix: ', a tady přicházíte na řadu vy.'
     joinBetaHeading: Přidat se do beta verze
-    joinBetaIntroPrefix: Google vyzaduje
+    joinBetaIntroPrefix: 'Google vyžaduje'
     joinBetaIntroStrong: 12 testerů s nainstalovanou aplikací po dobu 14 po sobě jdoucích dní
     joinBetaIntroSuffix: 'než může aplikace nezávislého vývojáře jít na veřejnost. Tři kroky, asi dvě minuty, a jste jedním z dvanácti:'
     step1LinkText: Přidejte se do skupiny testerů
     step1Suffix: na Google Groups (klikněte na "Join group").
     step2LinkText: Staňte se testerem
-    step2Suffix: na stránce Google Play pro prihlaseni.
+    step2Suffix: 'na stránce Google Play pro přihlášení.'
     step3LinkText: Nainstalujte aplikaci
     step3Suffix: z Google Play a nechte ji nainstalovanou dva týdny.
     sameAccountStrong: Pro všechny tři kroky použijte stejný účet Google
     sameAccountSuffix: ' - přihlašovací stránka zobrazí "not available for this account", pokud vynecháte skupinu nebo přepnete účet.'
     feedbackPrefix: 'Něco je rozbité nebo chybí? Napište mi:'
   home:
-    sortPopular: Oblibene
+    sortPopular: 'Oblíbené'
     sortAZ: A - Z
     sortZA: Z - A
   about:
@@ -1789,15 +1789,15 @@ pages:
     originSuffix: a vyrostl v něco, co je postavené pro druh práce, kterou skutečně dělám. Postavil jsem ho, abych mohl uprostřed tiketu vyhledávat nastavení Group Policy, skenovat podsíť klienta a hledat reference portů, aniž bych opustil prohlížeč.
     scriptsLibrary: Knihovna Killer Scripts pokrývá úkoly, které se objevují v každém cyklu tiketu. Každý skript běží v PS 5.1, PS 7 a Kaseya LiveConnect bez závislostí.
     privacyBody: Vše běží ve vašem prohlížeči. Nic se nesleduje. Účet není nikdy vyžadován. Web vynucuje přísnou Content Security Policy, aby blokoval útoky přes řetězec závislostí. Pokud by se kompromitovaný npm balíček někdy dostal do bundlu, nemůže poslat domů to, co jste vložili.
-    maintainedByPrefix: Vytvoril a udrzuje
+    maintainedByPrefix: 'Vytvořil a udržuje'
     maintainedByMid: Pokud vám to šetří čas v práci,
-    buyMeCoffee: koupit mi kavu
+    buyMeCoffee: 'koupit mi kávu'
     maintainedBySuffix: je vítáno, ale nikdy se nečekává.
     missingToolHeading: Chybí nástroj? Našli jste chybu?
     issuesPrefix: Otevřete požadavek na funkci nebo hlášení chyby v
     issuesLinkText: sekci issues
-    issuesSuffix: na GitHubu. Cetu je.
-    alsoTryHeading: Vyzkousejte take...
+    issuesSuffix: 'na GitHubu. Čtu je.'
+    alsoTryHeading: 'Vyzkoušejte také...'
     tagKillerScan: Open-source síťový skener pro Windows
     tagKillerPdf: Open-source editor PDF pro Windows
     tagKillerShell: Open-source Windows shell pro pokročilé uživatele
@@ -1805,10 +1805,10 @@ pages:
     tagKillendar: Open-source šifrovaný kalendář pro Windows
     linksHeading: Odkazy
     linkLabelSite: Web
-    linkLabelSource: Zdrojovy kod
+    linkLabelSource: 'Zdrojový kód'
     linkLabelIssues: Issues
     reportBug: Nahlasit chybu
-    requestFeature: Pozadovat funkci
+    requestFeature: 'Požadovat funkci'
     linkLabelSupport: Podpora
     linkLabelBuiltOn: Postaveno na
     itToolsFork: IT-Tools (fork)
@@ -1840,7 +1840,7 @@ pages:
       hosted: Hostováno na GitHub Releases
     steps:
       s1Title: Stáhněte a spusťte instalátor KillerMCP Setup.
-      s1Body: Instalátor je podepsán vývojářem open source Stephenem Rileym a publikován prostřednictvím GitHub Releases.
+      s1Body: 'Instalátor zkontroluje přítomnost běhového prostředí .NET 10 a pokud chybí, otevře stránku stahování společnosti Microsoft. Instalátor je podepsán vývojářem open source Stephenem Rileym a publikován prostřednictvím GitHub Releases.'
       s2Title: Nechte instalátor připojit vašeho agenta.
       s2Body: Nainstaluje sdílené běhové prostředí a zaregistruje KillerMCP u Codexu, Claude Code, Claude Desktop, Cursoru, GitHub Copilotu, Gemini CLI a Windsurfu, pokud jsou nalezeny.
       s3Title: Otevřete nový chat s agentem a zeptejte se.
@@ -1916,7 +1916,7 @@ pages:
       p1: '{kt} obsahuje veřejný Worker, místní balíček KillerTools, mapu operací, validační schémata a kontroly pokrytí. {km} obsahuje sdílený místní hostitel, adaptéry desktopových aplikací, instalátor a integrační kontroly.'
       ktLink: Zdrojový kód KillerTools
       kmLink: Zdrojový kód KillerMCP
-      p2: Výsledky externího vyhledávání závisí na jejich zdrojích. Místní nástroje dostávají pouze cesty nebo hodnoty zadané ve volání nástroje. Dekódování souboru Base64 vytvoří nový soubor a odmítne přepsat existující. Zachycení kamerou stále vyžaduje ruční povolení v prohlížeči a ověření hardwaru. KillerMCP v0.1.1 je podepsán, opatřen časovým razítkem a publikován prostřednictvím GitHub Releases.
+      p2: 'Výsledky externího vyhledávání závisí na jejich zdrojích. Místní nástroje dostávají pouze cesty nebo hodnoty zadané ve volání nástroje. Dekódování souboru Base64 vytvoří nový soubor a odmítne přepsat existující. Zachycení kamerou stále vyžaduje ruční povolení v prohlížeči a ověření hardwaru. Aktuální instalátor KillerMCP je podepsán, opatřen časovým razítkem a publikován prostřednictvím GitHub Releases.'
 ui:
   diffEditor:
     originalLabel: PŮVODNÍ

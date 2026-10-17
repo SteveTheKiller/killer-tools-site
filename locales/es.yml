@@ -4,39 +4,44 @@ home:
     favoriteTools: Tus herramientas favoritas
     allTools: Todas las herramientas
     favoritesDndToolTip: Arrastra y suelta para reordenar favoritos
-  subtitle: Herramientas practicas para desarrolladores
+  subtitle: 'Herramientas prácticas para desarrolladores'
   toggleMenu: Toggle menu
   home: Home
   uiLib: UI Lib
   support: Apoyar el desarrollo de killer-tools
   buyMeACoffee: Buy me a coffee
   follow:
-    title: Te gustan las it-tools?
+    title: '¿Te gusta killer-tools?'
     p1: Danos una estrella en
     githubRepository: Repositorio de StevetheKiller en GitHub
     p2: o síguenos en
     twitterXAccount: Cuenta de X de IT-Tools
-    thankYou: Muchas gracias!
+    thankYou: '¡Muchas gracias!'
   nav:
-    github: Repositorio en github
-    githubRepository: IT-Tools GitHub repository
+    github: 'Repositorio en GitHub'
+    githubRepository: 'Repositorio de GitHub de killer-tools'
     twitterX: Cuenta de X
     twitterXAccount: Cuenta de X de IT Tools
-    about: Sobre  IT-Tools
+    about: 'Sobre  killer-tools'
     aboutLabel: Sobre
     darkMode: Modo obscuro
     lightMode: Modo claro
     mode: Alternar modo oscuro/claro
 about:
   content: |
-    # Sobre killer-tools
-    Este maravilloso sitio web, hecho con ❤ por [Steve the Killer](https://thekiller.net) , agrega herramientas útiles para desarrolladores y personas que trabajan en IT. Si lo encuentra útil, no dude en compartirlo con las personas que crea que también pueden encontrarlo útil y ¡no olvide marcarlo como favorito en su barra de accesos directos!
-    killer-tools es de código abierto (bajo la licencia GPL-3.0) y gratis, y siempre lo será, pero me cuesta dinero alojar y renovar el nombre de dominio. Si desea apoyar mi trabajo y animarme a agregar más herramientas, considere apoyarme a través de [patrocinarme](https://www.buymeacoffee.com/StevetheKiller).
-    ## Tecnologías
-    killer-tools está creado en Vue.js (Vue 3) con la biblioteca de componentes Naive UI y GitHub lo aloja y lo implementa continuamente. En algunas herramientas se utilizan bibliotecas de código abierto de terceros; puede encontrar la lista completa en [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) archivo del repositorio.
-    ## ¿Encontraste un error? ¿Falta una herramienta?
-    Si necesita una herramienta que actualmente no está presente aquí y cree que puede ser útil, puede enviar una solicitud de función en el [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) en el repositorio de GitHub.
-    Y si encontró un error o algo no funciona como se esperaba, presente un reporte de error en el [issues section](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) en el repositorio de GitHub.
+    # killer-tools
+
+    Los técnicos de campo no tienen tiempo para el software inflado. Cada herramienta de aquí existe porque la necesité en el trabajo y no encontré nada que funcionara sin una cuenta, una instalación ni telemetría.
+
+    Soy técnico de campo en un MSP y me ocupo de redes, administración de sistemas y soporte de equipos. killer-tools empezó como una bifurcación del excelente proyecto [IT-Tools](https://github.com/CorentinTh/it-tools) y creció hasta convertirse en algo hecho para el tipo de trabajo que realmente hago. Lo creé para consultar códigos NDR en pleno ticket, escanear la subred de un cliente y decodificar un SafeLink antes de hacer clic en él.
+
+    Todo se ejecuta en tu navegador. No se rastrea nada. Nunca se necesita una cuenta.
+
+    Creado y mantenido por [Steve the Killer](https://thekiller.net). Si esto te ahorra tiempo en el trabajo, que me [invites a un café](https://www.buymeacoffee.com/StevetheKiller) se agradece, pero nunca se espera.
+
+    ## ¿Falta una herramienta? ¿Encontraste un error?
+
+    Abre una solicitud de función o un reporte de error en la [sección de issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) de GitHub. Los leo.
 404:
   notFound: 404 Not Found
   sorry: Lo sentimos, esta página no parece existir
@@ -1639,7 +1644,7 @@ tools:
       loadError: No se pudieron cargar los scripts desde GitHub. Revisa tu conexión o intenta de nuevo.
       retry: Reintentar
       copyCommand: Copiar comando
-      copied: Copiado!
+      copied: '¡Copiado!'
       infoCopySuffix: copia en tu portapapeles un comando de una línea que descarga y ejecuta el script directamente en PowerShell.
       infoDownloadPrefix: El botón
       infoDownloadMiddle: guarda el archivo
@@ -1674,7 +1679,7 @@ tools:
       commands: Comandos
       requires: Requiere
       copyInstall: Copiar instalación
-      copied: Copiado!
+      copied: '¡Copiado!'
       modules:
         KillerPivot:
           description: Cambia entre tenants de Microsoft 365 en PowerShell sin ejecutar comandos en el que no es. KillerPivot desactiva el auth broker para forzar un inicio de sesión real, luego pregunta a la sesión en qué tenant terminó realmente y lo verifica antes de que toques nada. Guarda tus tenants una vez y luego cambia entre ellos por nombre, con verificación de identidad incluida.
@@ -1726,32 +1731,32 @@ components:
 layouts:
   menuLayout:
     eggMessage: 80 herramientas. Cero suscripciones. Un técnico de campo rencoroso.
-    clickMe: haz clic aqui
-    sourceOnGithub: Codigo fuente en Github
+    clickMe: 'haz clic aquí'
+    sourceOnGithub: 'Código fuente en Github'
   base:
-    collapseMenu: Contraer menu
+    collapseMenu: 'Contraer menú'
     homeLabel: Inicio de KillerTools
 pages:
   notFound:
     noSuchFile: No existe el archivo o directorio
-    exitCode: codigo de salida
+    exitCode: 'código de salida'
     backToHome: volver al inicio
   privacy:
-    heading: Politica de privacidad
+    heading: 'Política de privacidad'
     lastUpdated: 'Última actualización: 4 de abril de 2026'
     overviewHeading: Resumen
     overviewIntro: KillerTools
     overviewBody: es una colección gratuita de herramientas de TI. Tu privacidad es importante para nosotros, y esta política explica cómo tratamos tus datos.
-    dataCollectionHeading: Recopilacion de datos
+    dataCollectionHeading: 'Recopilación de datos'
     dataCollectionBody: KillerTools no recopila, almacena ni transmite ningún dato personal. Todo el procesamiento de las herramientas ocurre por completo en tu navegador. Ningún dato que introduzcas en una herramienta se envía a ningún servidor.
     cookiesHeading: Cookies
     cookiesBody: Este sitio no utiliza cookies de seguimiento. Tus preferencias de tema y ajustes se guardan localmente en tu navegador y nunca se transmiten.
-    analyticsHeading: Analitica
+    analyticsHeading: 'Analítica'
     analyticsIntro: Este sitio utiliza
     analyticsBody: una herramienta de analítica centrada en la privacidad, para entender patrones generales de uso como visitas a páginas y fuentes de referencia. Umami no utiliza cookies, no rastrea usuarios entre sitios y no recopila ninguna información identificable. Todos los datos están agregados y son anónimos.
     thirdPartyHeading: Servicios de terceros
     thirdPartyBody: Algunas herramientas pueden enlazar a recursos o documentación externa. No somos responsables de las prácticas de privacidad de esos sitios externos.
-    androidAppHeading: Aplicacion Android
+    androidAppHeading: 'Aplicación Android'
     androidAppBody: La aplicación Android de KillerTools es un envoltorio de la aplicación web. No solicita ni accede a ningún permiso del dispositivo más allá del acceso básico a internet. No se recopila ni transmite ningún dato del dispositivo.
     contactHeading: Contacto
     contactBody: Si tienes preguntas sobre esta política de privacidad, puedes contactarnos en
@@ -1763,19 +1768,19 @@ pages:
     betaStatusPrefix: La aplicación está actualmente en
     betaStatusStrong: beta cerrada en Google Play
     betaStatusSuffix: ', y aquí es donde entras tú.'
-    joinBetaHeading: Unete a la beta
+    joinBetaHeading: 'Únete a la beta'
     joinBetaIntroPrefix: Google exige
     joinBetaIntroStrong: 12 probadores con la aplicación instalada durante 14 días continuos
     joinBetaIntroSuffix: 'antes de que una aplicación de un desarrollador independiente pueda publicarse. Tres pasos, unos dos minutos, y serás uno de los doce:'
     step1LinkText: Únete al grupo de probadores
     step1Suffix: en Google Groups (pulsa "Join group").
-    step2LinkText: Conviertete en probador
+    step2LinkText: 'Conviértete en probador'
     step2Suffix: en la página de inscripción de Google Play.
-    step3LinkText: Instala la aplicacion
+    step3LinkText: 'Instala la aplicación'
     step3Suffix: desde Google Play y mantenla instalada durante dos semanas.
     sameAccountStrong: Usa la misma cuenta de Google para los tres pasos
     sameAccountSuffix: ' - la página de inscripción muestra "not available for this account" si te saltas el grupo o cambias de cuenta.'
-    feedbackPrefix: '¿Algo roto o falta algo? Dimelo:'
+    feedbackPrefix: '¿Algo roto o falta algo? Dímelo:'
   home:
     sortPopular: Popular
     sortAZ: A - Z
@@ -1783,20 +1788,20 @@ pages:
   about:
     heading: Acerca de KillerTools
     intro: Los técnicos de campo no tienen tiempo para sobrecarga. Cada herramienta aquí existe porque la necesité en el trabajo y no encontré algo que simplemente funcionara sin cuenta, instalación ni telemetría.
-    originPrefix: Ahora construyo herramientas en el equipo interno de ingenieria de IA de un MSP, tras seis años de desarrollo full-stack y ocho años como tecnico de campo en varias empresas. KillerTools.net empezo como un fork del excelente
+    originPrefix: 'Ahora construyo herramientas en el equipo interno de ingeniería de IA de un MSP, tras seis años de desarrollo full-stack y ocho años como técnico de campo en varias empresas. KillerTools.net empezó como un fork del excelente'
     originMid: proyecto de
     originSuffix: y creció hasta convertirse en algo pensado para el tipo de trabajo que realmente hago. Lo construí para consultar ajustes de Group Policy en mitad de un ticket, escanear la subred de un cliente y buscar referencias de puertos sin salir del navegador.
-    scriptsLibrary: La biblioteca Killer Scripts cubre las tareas que aparecen en cada ciclo de ticket. Cada script funciona desde la línea de comandos en PS 5.1, PS 7 y Kaseya LiveConnect, sin dependencias.
+    scriptsLibrary: 'La biblioteca Killer Scripts cubre las tareas que aparecen en cada ciclo de ticket. Cada script funciona en PS 5.1, PS 7 y Kaseya LiveConnect, sin dependencias.'
     privacyBody: Todo se ejecuta en tu navegador. Nada se rastrea. Nunca se requiere una cuenta. El sitio aplica una Content Security Policy estricta para bloquear ataques en la cadena de dependencias. Si un paquete npm comprometido llegara a colarse en el paquete final, no podría enviar a casa lo que hayas pegado.
     maintainedByPrefix: Creado y mantenido por
     maintainedByMid: Si esto te ahorra tiempo en el trabajo,
-    buyMeCoffee: invitarme a un cafe
+    buyMeCoffee: 'invitarme a un café'
     maintainedBySuffix: se agradece pero nunca se espera.
     missingToolHeading: ¿Falta una herramienta? ¿Encontraste un error?
     issuesPrefix: Abre una solicitud de función o un informe de error en la
-    issuesLinkText: seccion de issues
+    issuesLinkText: 'sección de issues'
     issuesSuffix: en GitHub. Los leo.
-    alsoTryHeading: Prueba tambien...
+    alsoTryHeading: 'Prueba también...'
     tagKillerScan: Escáner de red de código abierto para Windows
     tagKillerPdf: Editor de PDF de código abierto para Windows
     tagKillerShell: Shell de Windows de código abierto para usuarios avanzados
@@ -1804,10 +1809,10 @@ pages:
     tagKillendar: Calendario cifrado de código abierto para Windows
     linksHeading: Enlaces
     linkLabelSite: Sitio
-    linkLabelSource: Codigo fuente
+    linkLabelSource: 'Código fuente'
     linkLabelIssues: Issues
     reportBug: Reportar un error
-    requestFeature: Solicitar una funcion
+    requestFeature: 'Solicitar una función'
     linkLabelSupport: Apoyo
     linkLabelBuiltOn: Construido sobre
     itToolsFork: IT-Tools (fork)
@@ -1839,7 +1844,7 @@ pages:
       hosted: Alojado en GitHub Releases
     steps:
       s1Title: Descargue y ejecute el instalador de KillerMCP.
-      s1Body: El instalador está firmado por el desarrollador de código abierto Stephen Riley y se publica a través de GitHub Releases.
+      s1Body: 'La instalación comprueba si está el entorno de ejecución de .NET 10 y abre la página de descarga de Microsoft si falta. El instalador está firmado por el desarrollador de código abierto Stephen Riley y se publica a través de GitHub Releases.'
       s2Title: Deje que el instalador conecte a su agente.
       s2Body: Instala el entorno de ejecución compartido y registra KillerMCP con Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI y Windsurf cuando se detectan.
       s3Title: Abra un chat nuevo con su agente y pregunte.
@@ -1855,7 +1860,7 @@ pages:
       copyUrl: Copiar URL
       copyCommand: Copiar comando
     otherClient: ¿Usa otro cliente MCP? Copie la URL del servidor.
-    shortest: 'El aviso útil más corto es {prompt}. Por ejemplo: {example}.'
+    shortest: 'La indicación útil más corta es {prompt}. Por ejemplo: {example}.'
     infer: Su agente puede inferir la herramienta de KillerTools o de la aplicación Killer correspondiente a partir de la tarea y el contexto disponible. Use {a}, {b}, {c} u otro nombre de aplicación solo cuando quiera indicar el destino de forma explícita. No necesita guiones bajos, un nombre de operación ni un comando de barra.
     worker:
       title: Cómo funciona el Cloudflare Worker
@@ -1915,7 +1920,7 @@ pages:
       p1: El {kt} contiene el Worker público, el paquete local de KillerTools, el mapa de operaciones, los esquemas de validación y las verificaciones de cobertura. El {km} contiene el host local compartido, los adaptadores de aplicaciones de escritorio, el instalador y las verificaciones de integración.
       ktLink: Código fuente de KillerTools
       kmLink: Código fuente de KillerMCP
-      p2: Los resultados de búsquedas externas dependen de sus fuentes. Las herramientas locales solo reciben rutas o valores proporcionados en una llamada a la herramienta. La decodificación de archivos Base64 crea un archivo nuevo y se niega a sobrescribir uno existente. La captura de cámara sigue requiriendo un permiso manual del navegador y verificación de hardware. KillerMCP v0.1.1 está firmado, con marca de tiempo y publicado a través de GitHub Releases.
+      p2: 'Los resultados de búsquedas externas dependen de sus fuentes. Las herramientas locales solo reciben rutas o valores proporcionados en una llamada a la herramienta. La decodificación de archivos Base64 crea un archivo nuevo y se niega a sobrescribir uno existente. La captura de cámara sigue requiriendo un permiso manual del navegador y verificación de hardware. El instalador actual de KillerMCP está firmado, con marca de tiempo y publicado a través de GitHub Releases.'
 ui:
   diffEditor:
     originalLabel: ORIGINAL

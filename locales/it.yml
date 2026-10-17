@@ -85,7 +85,7 @@ tools:
         refresh: Aggiorna
       section:
         preset: Preset
-        mode: Modalita
+        mode: 'Modalità'
         format: Formato
         length: Lunghezza ({length})
         wordCount: Numero di parole ({count})
@@ -138,7 +138,7 @@ tools:
       percentOfLabel: '% di'
       resultPlaceholder: Risultato
       xIsWhatPercentOfYTitle: X È CHE PERCENTUALE DI Y
-      isWhatPercentOfLabel: è che % di
+      isWhatPercentOfLabel: 'è quale % di'
       percentageChangeTitle: AUMENTO / DIMINUZIONE PERCENTUALE
       fromLabel: Da
       toLabel: a
@@ -199,7 +199,7 @@ tools:
     title: Calcolatore del difetto di reciprocità
     description: Calcola le esposizioni lunghe corrette per oltre 40 pellicole analogiche con la legge di potenza di Schwarzschild. Copre pellicole in bianco e nero, negative a colori e diapositive.
     ui:
-      barReciprocity: CALCOLATORE DI RECIPROCITA
+      barReciprocity: 'CALCOLATORE DI RECIPROCITÀ'
       barCorrected: ESPOSIZIONE CORRETTA
       fieldFilmStock: Pellicola
       typeBw: B&W
@@ -210,7 +210,7 @@ tools:
       sourceCommunity: Dati della community
       fieldMeteredExposure: Esposizione misurata
       unitSeconds: secondi
-      noFailureMessage: 'Nessuna correzione necessaria: questa pellicola non presenta fallimento di reciprocità a questa durata di esposizione.'
+      noFailureMessage: 'Nessuna correzione necessaria: questa pellicola non presenta difetto di reciprocità a questa durata di esposizione.'
       copyDone: ✓ copiato
       copySeconds: copia secondi
       devReduce10: Valuta di ridurre lo sviluppo di circa il 10% per compensare la maggiore densità nelle ombre.
@@ -958,7 +958,7 @@ tools:
     description: Genera Universally Unique Lexicographically Sortable Identifier (ULID) casuali.
     ui:
       copiedMessage: ULID copiati negli appunti
-      quantity: QUANTITA
+      quantity: 'QUANTITÀ'
       format: FORMATO
       formatRaw: Grezzo
       formatJson: JSON
@@ -974,7 +974,7 @@ tools:
     ui:
       copiedMessage: UUID copiati negli appunti
       version: VERSIONE
-      quantity: QUANTITA
+      quantity: 'QUANTITÀ'
       namespacePreset: PRESET NAMESPACE
       namespaceUuid: UUID NAMESPACE
       invalidUuid: UUID non valido
@@ -1260,7 +1260,7 @@ tools:
       convertTo: 'Converti in:'
       yourToml: Il tuo TOML
       pastePlaceholder: Incolla qui il tuo TOML...
-      invalidToml: Il TOML fornito non e valido.
+      invalidToml: 'Il TOML fornito non è valido.'
       outputLabel: Output {format}
   xml-json-converter:
     title: Convertitore XML ↔ JSON
@@ -1362,7 +1362,7 @@ tools:
       search: Cerca
       signed: Firmato
       unsigned: Non firmato
-      delegationSigned: La delega e firmata.
+      delegationSigned: 'La delega è firmata.'
       dsRecord: '{count} record DS.'
       dsRecords: '{count} record DS.'
       keyRecord: '{count} record chiave.'
@@ -1442,11 +1442,11 @@ tools:
       placeholderPassword: Password di rete...
       sectionOptions: Opzioni
       hiddenSsid: SSID nascosto
-      anonymousIdentity: Identita anonima
+      anonymousIdentity: 'Identità anonima'
       sectionEapMethod: Metodo EAP
       sectionEapPhase2: EAP fase 2
-      sectionEapIdentity: Identita EAP
-      placeholderEapIdentity: La tua identita EAP...
+      sectionEapIdentity: 'Identità EAP'
+      placeholderEapIdentity: 'La tua identità EAP...'
       sectionTheme: Tema
       themeDefault: Predefinito
       themeTerminal: Terminale
@@ -1871,7 +1871,7 @@ pages:
       hosted: Ospitato su GitHub Releases
     steps:
       s1Title: Scarica ed esegui il programma di installazione di KillerMCP.
-      s1Body: L'installer è firmato da Open Source Developer Stephen Riley e pubblicato tramite GitHub Releases.
+      s1Body: 'L''installazione verifica la presenza del runtime .NET 10 e apre la pagina di download di Microsoft se manca. L''installer è firmato da Open Source Developer Stephen Riley e pubblicato tramite GitHub Releases.'
       s2Title: Lascia che il programma di installazione connetta il tuo agente.
       s2Body: Installa il runtime condiviso e registra KillerMCP con Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI e Windsurf, se trovati.
       s3Title: Apri una nuova chat dell'agente e chiedi.
@@ -1947,4 +1947,4 @@ pages:
       p1: Il {kt} contiene il Worker pubblico, il bundle locale di KillerTools, la mappa delle operazioni, gli schemi di convalida e i controlli di copertura. Il {km} contiene l'host locale condiviso, gli adattatori per le app desktop, l'installer e i controlli di integrazione.
       ktLink: Codice sorgente di KillerTools
       kmLink: Codice sorgente di KillerMCP
-      p2: I risultati delle ricerche esterne dipendono dalle loro fonti. Gli strumenti locali ricevono solo percorsi o valori forniti in una chiamata dello strumento. La decodifica di file Base64 crea un nuovo file e rifiuta di sovrascriverne uno esistente. La cattura da fotocamera richiede ancora un permesso manuale del browser e la verifica dell'hardware. KillerMCP v0.1.1 è firmato, con timestamp e pubblicato tramite GitHub Releases.
+      p2: 'I risultati delle ricerche esterne dipendono dalle loro fonti. Gli strumenti locali ricevono solo percorsi o valori forniti in una chiamata dello strumento. La decodifica di file Base64 crea un nuovo file e rifiuta di sovrascriverne uno esistente. La cattura da fotocamera richiede ancora un permesso manuale del browser e la verifica dell''hardware. L''installer attuale di KillerMCP è firmato, con timestamp e pubblicato tramite GitHub Releases.'

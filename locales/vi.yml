@@ -8,35 +8,40 @@ home:
   toggleMenu: Chuyển đổi menu
   home: Trang chủ
   uiLib: Thư viện UI
-  support: Hỗ trợ phát triển IT Tools
+  support: 'Hỗ trợ phát triển killer-tools'
   buyMeACoffee: Ủng hộ tác giả
   follow:
-    title: Bạn thích IT-tools?
+    title: 'Bạn thích killer-tools?'
     p1: Hãy cho chúng tôi một ngôi sao trên
-    githubRepository: Kho GitHub IT-Tools
+    githubRepository: 'Kho GitHub StevetheKiller'
     p2: hoặc theo dõi chúng tôi trên
     twitterXAccount: Tài khoản X IT-Tools
     thankYou: Cảm ơn bạn!
   nav:
     github: Kho GitHub
-    githubRepository: Kho GitHub IT-Tools
+    githubRepository: 'Kho GitHub killer-tools'
     twitterX: Tài khoản X
     twitterXAccount: Tài khoản X IT Tools
-    about: Về IT-Tools
+    about: 'Về killer-tools'
     aboutLabel: Giới thiệu
     darkMode: Chế độ tối
     lightMode: Chế độ sáng
     mode: Chuyển đổi chế độ tối/sáng
 about:
   content: |
-    # Về killer-tools
-    Website tuyệt vời này, được tạo ra bằng ❤ bởi [Steve the Killer](https://thekiller.net), tổng hợp các công cụ hữu ích cho nhà phát triển và những người làm việc trong lĩnh vực IT. Nếu bạn thấy nó hữu ích, xin đừng ngần ngại chia sẻ cho những người mà bạn nghĩ sẽ thấy nó hữu ích và đừng quên đánh dấu nó trong thanh lối tắt của bạn!
-    killer-tools là mã nguồn mở (dưới giấy phép GPL-3.0) và miễn phí, và sẽ luôn như vậy, nhưng tôi phải trả tiền để lưu trữ và gia hạn tên miền. Nếu bạn muốn hỗ trợ công việc của tôi, và khích lệ tôi thêm nhiều công cụ hơn, hãy xem xét hỗ trợ bằng cách [tài trợ cho tôi](https://www.buymeacoffee.com/StevetheKiller).
-    ## Công nghệ
-    killer-tools được tạo ra bằng Vue.js (Vue 3) với thư viện thành phần Naive UI và được lưu trữ và triển khai liên tục bởi GitHub. Các thư viện mã nguồn mở của bên thứ ba được sử dụng trong một số công cụ, bạn có thể tìm danh sách đầy đủ trong file [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json) của kho lưu trữ.
-    ## Phát hiện lỗi? Một công cụ bị thiếu?
-    Nếu bạn cần một công cụ hiện không có ở đây, và bạn nghĩ rằng nó có thể hữu ích, bạn được chào đón để gửi một yêu cầu tính năng trong [phần vấn đề](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) trong kho GitHub.
-    Và nếu bạn phát hiện ra một lỗi, hoặc điều gì đó không hoạt động như mong đợi, xin vui lòng gửi báo cáo lỗi trong [phần vấn đề](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) trong kho GitHub.
+    # killer-tools
+
+    Các kỹ thuật viên hiện trường không có thời gian cho những thứ rườm rà. Mỗi công cụ ở đây tồn tại vì tôi cần nó khi làm việc và không tìm được thứ gì chạy tốt mà không cần tài khoản, cài đặt hay thu thập dữ liệu từ xa.
+
+    Tôi là kỹ thuật viên hiện trường tại một MSP, phụ trách mạng, quản trị hệ thống và hỗ trợ thiết bị đầu cuối. killer-tools bắt đầu như một nhánh của dự án [IT-Tools](https://github.com/CorentinTh/it-tools) tuyệt vời và phát triển thành thứ được xây dựng cho đúng loại công việc tôi thực sự làm. Tôi xây dựng nó để tra cứu mã NDR giữa chừng một phiếu hỗ trợ, quét subnet của khách hàng và giải mã SafeLink trước khi nhấp vào.
+
+    Mọi thứ chạy ngay trong trình duyệt của bạn. Không có gì bị theo dõi. Không bao giờ cần tài khoản.
+
+    Được xây dựng và duy trì bởi [Steve the Killer](https://thekiller.net). Nếu công cụ này giúp bạn tiết kiệm thời gian khi làm việc, [mời tôi một ly cà phê](https://www.buymeacoffee.com/StevetheKiller) là điều tôi trân trọng nhưng không bao giờ mong đợi.
+
+    ## Thiếu một công cụ? Phát hiện lỗi?
+
+    Hãy mở yêu cầu tính năng hoặc báo cáo lỗi trong [phần vấn đề](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) trên GitHub. Tôi đọc tất cả.
 404:
   notFound: 404 Không Tìm Thấy
   sorry: Xin lỗi, trang này dường như không tồn tại
@@ -83,7 +88,7 @@ tools:
       toLabel: đến
   svg-placeholder-generator:
     title: Trình tạo hình ảnh SVG giả định
-    description: Tạo hình ảnh svg để sử dụng làm giả định trong ứng dụng của bạn.
+    description: 'Tạo hình ảnh svg để sử dụng làm hình giữ chỗ trong ứng dụng của bạn.'
     ui:
       widthLabel: CHIỀU RỘNG (px)
       backgroundLabel: NỀN
@@ -162,7 +167,7 @@ tools:
       formats: ĐỊNH DẠNG
   bcrypt:
     title: Bcrypt
-    description: Mã hóa và so sánh chuỗi văn bản sử dụng bcrypt. Bcrypt là một hàm mã hóa mật khẩu dựa trên thuật toán Blowfish.
+    description: 'Băm và so sánh chuỗi văn bản bằng bcrypt. Bcrypt là một hàm băm mật khẩu dựa trên thuật toán mã hóa Blowfish.'
     ui:
       copiedToClipboard: Đã sao chép chuỗi hash vào clipboard
       hashTitle: HASH
@@ -233,23 +238,23 @@ tools:
       indentStyleTabularRight: Canh bảng phải
   git-memo:
     title: Lệnh Git
-    description: Git là một phần mềm quản lý phiên bản phân tán. Với bảng ghi chú này, bạn sẽ có thể truy cập nhanh vào các lệnh Git phổ biến nhất.
+    description: 'Tham khảo nhanh các lệnh và quy trình làm việc Git phổ biến nhất.'
   encryption:
     title: Mã hóa / giải mã văn bản
     description: Mã hóa và giải mã văn bản rõ bằng cách sử dụng thuật toán mã hóa như AES, TripleDES, Rabbit hoặc RC4.
     ui:
       decryptError: Không thể giải mã văn bản của bạn
-      encryptTitle: MA HOA
-      decryptTitle: GIAI MA
-      yourText: VAN BAN CUA BAN
+      encryptTitle: 'MÃ HÓA'
+      decryptTitle: 'GIẢI MÃ'
+      yourText: 'VĂN BẢN CỦA BẠN'
       yourSecretKey: KHÓA BÍ MẬT CỦA BẠN
-      algorithm: THUAT TOAN
-      encryptedOutput: KET QUA MA HOA
+      algorithm: 'THUẬT TOÁN'
+      encryptedOutput: 'KẾT QUẢ MÃ HÓA'
       yourEncryptedText: VĂN BẢN ĐÃ MÃ HÓA CỦA BẠN
-      decryptedOutput: KET QUA GIAI MA
-      encryptPlaceholder: Chuoi can ma hoa
+      decryptedOutput: 'KẾT QUẢ GIẢI MÃ'
+      encryptPlaceholder: 'Chuỗi cần mã hóa'
       decryptPlaceholder: Bản mã cần giải mã
-      secretKeyPlaceholder: Khoa bi mat...
+      secretKeyPlaceholder: 'Khóa bí mật...'
   yaml-prettify:
     title: Định dạng và làm đẹp YAML
     description: Định dạng chuỗi YAML của bạn thành một định dạng dễ đọc và thân thiện với con người.
@@ -273,15 +278,15 @@ tools:
       encodingBinary: Nhị phân (cơ số 2)
       encodingHex: Thập lục phân (cơ số 16)
       copied: Đã sao chép HMAC vào clipboard
-      plainText: VAN BAN GOC
-      secretKey: KHOA BI MAT
-      hashingFunction: HAM BAM
-      outputEncoding: MA HOA DAU RA
-      hmacOutput: KET QUA HMAC
+      plainText: 'VĂN BẢN GỐC'
+      secretKey: 'KHÓA BÍ MẬT'
+      hashingFunction: 'HÀM BĂM'
+      outputEncoding: 'MÃ HÓA ĐẦU RA'
+      hmacOutput: 'KẾT QUẢ HMAC'
       plainTextPlaceholder: Văn bản thường để tính hash...
-      secretKeyPlaceholder: Nhap khoa bi mat...
-      clear: Xoa
-      copyHmac: Sao chep HMAC
+      secretKeyPlaceholder: 'Nhập khóa bí mật...'
+      clear: 'Xóa'
+      copyHmac: 'Sao chép HMAC'
   bip39-generator:
     title: Trình tạo BIP39 passphrase
     description: Tạo BIP39 passphrase từ mnemonic hiện có hoặc ngẫu nhiên, hoặc lấy mnemonic từ passphrase.
@@ -406,7 +411,7 @@ tools:
       output: KẾT QUẢ
   html-entities:
     title: Thay thế các ký tự HTML
-    description: Thay thế hoặc bỏ thẻ các ký tự HTML (thay thế <,>, &, " và \' thành phiên bản HTML tương ứng)
+    description: 'Escape hoặc unescape các thực thể HTML (thay thế <,>, &, " và \'' thành phiên bản HTML tương ứng)'
     ui:
       yourString: CHUỖI CỦA BẠN
       escapePlaceholder: Chuỗi cần thoát ký tự...
@@ -434,7 +439,7 @@ tools:
       unknownVendor: Không rõ nhà sản xuất cho địa chỉ này
   lorem-ipsum-generator:
     title: Máy tạo văn bản Lorem ipsum
-    description: Lorem ipsum là một đoạn văn bản giả được sử dụng phổ biến để thể hiện hình thức của một tài liệu hoặc một kiểu chữ mà không cần dựa vào nội dung có ý nghĩa
+    description: 'Tạo văn bản lorem ipsum giữ chỗ cho bản mẫu và công việc thiết kế.'
     ui:
       copiedMessage: Đã sao chép lorem ipsum vào bộ nhớ tạm
       paragraphs: Đoạn văn
@@ -449,7 +454,7 @@ tools:
       refresh: Làm mới
   qrcode-generator:
     title: Tạo mã QR
-    description: Tạo và tải xuống mã QR cho một URL hoặc chỉ một đoạn văn bản và tùy chỉnh màu nền và màu chữ.
+    description: 'Tạo và tải xuống mã QR cho URL, văn bản thuần hoặc thông tin đăng nhập mạng Wi-Fi. Có các giao diện terminal, cổ điển và màu tùy chỉnh với khả năng hiệu chỉnh lỗi có thể cấu hình.'
   xml-formatter:
     title: Định dạng XML
     description: Định dạng chuỗi XML của bạn thành một định dạng dễ đọc và thân thiện với con người.
@@ -599,16 +604,16 @@ tools:
       copied: Đã sao chép!
       copy: Sao chép
   hash-text:
-    title: Mã hóa văn bản
-    description: 'Mã hóa một chuỗi văn bản bằng cách sử dụng các hàm bạn cần: MD5, SHA1, SHA256, SHA224, SHA512, SHA384, SHA3 hoặc RIPEMD160'
+    title: 'Băm văn bản'
+    description: 'Băm văn bản bằng MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 và nhiều hàm khác.'
     ui:
       encodingBinary: Nhị phân (cơ số 2)
       encodingHex: Thập lục phân (cơ số 16)
-      encodingBase64: Base64 (co so 64)
+      encodingBase64: 'Base64 (cơ số 64)'
       encodingBase64url: Base64url (base 64 an toàn cho URL)
-      inputPlaceholder: Chuoi can bam...
-      encoding: Ma hoa dau ra
-      output: KET QUA
+      inputPlaceholder: 'Chuỗi cần băm...'
+      encoding: 'Mã hóa đầu ra'
+      output: 'KẾT QUẢ'
   json-to-toml:
     title: Chuyển đổi JSON sang TOML
     description: Phân tích và chuyển đổi JSON sang TOML.
@@ -696,7 +701,7 @@ tools:
     description: Chuyển đổi số giữa các cơ số khác nhau (thập phân, thập lục phân, nhị phân, bát phân, base64, ...)
   uuid-generator:
     title: Trình tạo UUID
-    description: Một UUID (Universally Unique Identifier) là một số 128 bit được sử dụng để xác định thông tin trong hệ thống máy tính. Số lượng UUID có thể có là 16^32, tương đương với 2^128 hoặc khoảng 3.4x10^38 (rất lớn!).
+    description: 'Tạo UUID ngẫu nhiên (v1 và v4) và kiểm tra cấu trúc của chúng.'
     ui:
       copiedMessage: Đã sao chép UUID vào bộ nhớ tạm
       version: PHIÊN BẢN
@@ -710,7 +715,7 @@ tools:
       copy: Sao chép
       refresh: Làm mới
   ipv4-address-converter:
-    title: Chuyển đổi địa chỉ Ipv4
+    title: 'Chuyển đổi địa chỉ IPv4'
     description: Chuyển đổi địa chỉ ip thành số thập phân, nhị phân, thập lục phân hoặc thậm chí thành ipv6
     ui:
       decimal: Thập phân
@@ -815,7 +820,7 @@ tools:
       copiedMark: ✓ đã sao chép
   windows-error-codes:
     title: Tra cứu mã lỗi Windows
-    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+    description: 'Tra cứu mã lỗi Windows theo hex hoặc thập phân, bao gồm lỗi hệ thống, mã dừng BSOD, WMI, RPC, lỗi trình cài đặt MSI, v.v.'
     ui:
       searchResults: Kết quả tìm kiếm
       searchPlaceholder: Tìm theo mã hex, tên lỗi hoặc mô tả...
@@ -836,7 +841,7 @@ tools:
       fix: Cách khắc phục
   safelink-decoder:
     title: Giải mã Safelink của Outlook
-    description: Decode Outlook SafeLink links.
+    description: 'Giải mã Microsoft Defender SafeLinks để hiển thị URL đích ban đầu.'
   port-protocol-reference:
     title: Tra cứu cổng và giao thức
     description: Các cổng mạng và giao thức phổ biến kèm ghi chú bảo mật và cảnh báo cổng nguy hiểm.
@@ -1332,12 +1337,12 @@ tools:
       expiredAlert: Tên miền này đã hết hạn {days} ngày trước và có thể được đăng ký lại.
       expiresAlert: Tên miền này sẽ hết hạn sau {days} ngày. Nên sắp xếp gia hạn sớm.
       expiredTag: Hết hạn {days} ngày trước
-      remainingTag: Con lai {days} ngay
-      registrar: Nha dang ky
+      remainingTag: 'Còn lại {days} ngày'
+      registrar: 'Nhà đăng ký'
       registrarIanaId: IANA ID của nhà đăng ký
-      created: Ngay tao
-      updated: Ngay cap nhat
-      expires: Ngay het han
+      created: 'Ngày tạo'
+      updated: 'Ngày cập nhật'
+      expires: 'Ngày hết hạn'
       noMx: Không tìm thấy bản ghi MX.
       dnsFailed: Tra cứu DNS thất bại.
       noSpf: Không tìm thấy bản ghi SPF.
@@ -1347,43 +1352,43 @@ tools:
       spfNeutralAll: 'Cảnh báo: ?all là trung lập và không cung cấp bảo vệ nào.'
       dmarcPNone: 'Cảnh báo: p=none chỉ mang tính giám sát, không có chế tài. Email sẽ không bị từ chối.'
       dmarcNoRua: 'Cảnh báo: không có địa chỉ nhận báo cáo tổng hợp (rua=). Bạn sẽ không nhận được báo cáo DMARC.'
-      pass: Dat
-      fail: Khong dat
-      warning: Canh bao
-      checking: Dang kiem tra...
+      pass: 'Đạt'
+      fail: 'Không đạt'
+      warning: 'Cảnh báo'
+      checking: 'Đang kiểm tra...'
       overallPass: Tất cả kiểm tra email đều đạt. Tên miền này được cấu hình tốt cho email.
       overallFail: Thiếu một hoặc nhiều bản ghi quan trọng. Tên miền này có thể dễ bị giả mạo.
       overallWarn: Một số bản ghi tồn tại nhưng có vấn đề cấu hình cần xem xét.
       rdapHttpError: 'HTTP {status}: tên miền có thể không tồn tại hoặc TLD không được hỗ trợ.'
-      lookupFailed: Tra cuu that bai.
+      lookupFailed: 'Tra cứu thất bại.'
       domainPlaceholder: 'Nhập một tên miền (ví dụ: killertools.net)'
-      searching: Dang tim kiem...
-      search: Tim kiem
-      signed: Da ky
-      unsigned: Chua ky
+      searching: 'Đang tìm kiếm...'
+      search: 'Tìm kiếm'
+      signed: 'Đã ký'
+      unsigned: 'Chưa ký'
       delegationSigned: Ủy quyền đã được ký.
-      dsRecord: '{count} ban ghi DS.'
-      dsRecords: '{count} ban ghi DS.'
-      keyRecord: '{count} ban ghi khoa.'
-      keyRecords: '{count} ban ghi khoa.'
+      dsRecord: '{count} bản ghi DS.'
+      dsRecords: '{count} bản ghi DS.'
+      keyRecord: '{count} bản ghi khóa.'
+      keyRecords: '{count} bản ghi khóa.'
       dnssecUnsigned: Tên miền này không được bảo vệ bởi DNSSEC. Phản hồi DNS không thể được xác minh bằng mật mã.
-      status: Trang thai
-      contacts: Lien he
-      remarks: Ghi chu
-      nameservers: May chu ten
-      mxRecords: Ban ghi MX
-      spfRecord: Ban ghi SPF
-      dkimRecords: Ban ghi DKIM
-      dmarcRecord: Ban ghi DMARC
+      status: 'Trạng thái'
+      contacts: 'Liên hệ'
+      remarks: 'Ghi chú'
+      nameservers: 'Máy chủ tên miền'
+      mxRecords: 'Bản ghi MX'
+      spfRecord: 'Bản ghi SPF'
+      dkimRecords: 'Bản ghi DKIM'
+      dmarcRecord: 'Bản ghi DMARC'
       role:
-        registrant: chu the dang ky
-        administrative: quan tri
-        technical: ky thuat
-        abuse: lam dung
-      name: Ten
-      organization: To chuc
+        registrant: 'chủ thể đăng ký'
+        administrative: 'quản trị'
+        technical: 'kỹ thuật'
+        abuse: 'lạm dụng'
+      name: 'Tên'
+      organization: 'Tổ chức'
       email: Email
-      phone: Dien thoai
+      phone: 'Điện thoại'
   email-record-generator:
     title: Trình tạo bản ghi email
     description: Tạo bản ghi DNS TXT cho SPF và DMARC. Chọn nhà cung cấp thư và chính sách, rồi sao chép kết quả trực tiếp vào DNS.
@@ -1554,7 +1559,7 @@ tools:
       extensionToMimeTitle: Phần mở rộng tệp sang loại mime
       extensionToMimeDescription: Xem loại mime nào liên kết với một phần mở rộng tệp
       mimeFoundPrefix: Loại mime liên kết với phần mở rộng
-      mimeFoundSuffix: 'tệp:'
+      mimeFoundSuffix: 'phần mở rộng tệp:'
       tableMimeTypesHeader: Loại mime
       tableExtensionsHeader: Phần mở rộng
   json-viewer:
@@ -1815,7 +1820,7 @@ pages:
     heading: Giới thiệu về Killer Tools
     intro: Kỹ thuật viên hiện trường không có thời gian cho những thứ rườm rà. Mỗi công cụ ở đây tồn tại vì tôi cần nó trong công việc và không tìm được thứ gì hoạt động tốt mà không cần tài khoản, cài đặt, hay đo từ xa.
     originPrefix: Hiện tôi xây dựng công cụ trong đội kỹ thuật AI nội bộ của một MSP, sau sáu năm phát triển full-stack và tám năm làm kỹ thuật viên hiện trường tại nhiều công ty. KillerTools.net khởi đầu là một bản fork của dự án
-    originMid: xuất sắc bởi
+    originMid: 'dự án của'
     originSuffix: và phát triển thành thứ được xây dựng cho đúng loại công việc tôi thực sự làm. Tôi tạo ra nó để tra cứu cài đặt Group Policy ngay giữa lúc xử lý ticket, quét subnet của khách hàng, và tra cứu cổng mà không cần rời trình duyệt.
     scriptsLibrary: Thư viện Killer Scripts bao quát các công việc xuất hiện trong mọi chu kỳ ticket. Mỗi script chạy được trên PS 5.1, PS 7, và Kaseya LiveConnect mà không cần phụ thuộc nào.
     privacyBody: Mọi thứ chạy trong trình duyệt của bạn. Không gì bị theo dõi. Không bao giờ cần tài khoản. Trang web áp dụng Content Security Policy nghiêm ngặt để chặn các cuộc tấn công qua chuỗi phụ thuộc. Nếu một gói npm bị xâm phạm lọt vào bản build, nó cũng không thể gửi về những gì bạn đã dán vào.
@@ -1859,7 +1864,7 @@ pages:
       oneInstaller: CÀI ĐẶT TRÊN WINDOWS
       hosted: ĐƯỢC LƯU TRỮ TRÊN CLOUDFLARE
       after: SAU KHI KẾT NỐI
-    lead: Kết nối với máy chủ Cloudflare công khai để dùng các tiện ích an toàn trên web, hoặc cài KillerMCP trên Windows để dùng công cụ cục bộ và các ứng dụng Killer được hỗ trợ.
+    lead: 'Cung cấp cho tác tử của bạn các lệnh KillerTools hữu ích. Kết nối với máy chủ Cloudflare công khai để dùng các tiện ích an toàn trên web, hoặc cài KillerMCP trên Windows để dùng công cụ cục bộ và các ứng dụng Killer được hỗ trợ.'
     status: Chọn kết nối phù hợp với dữ liệu và ứng dụng bạn muốn dùng.
     install: Cài đặt
     intro: Trình cài đặt Windows cung cấp một kết nối cục bộ tới toàn bộ 81 tiện ích KillerTools và các lệnh từ ứng dụng Killer được hỗ trợ trên máy tính này. Lệnh tùy thuộc vào phiên bản và trạng thái sẵn có của ứng dụng. Không cần cài Node riêng hoặc lấy mã nguồn.
@@ -1870,7 +1875,7 @@ pages:
       hosted: Được lưu trữ trên GitHub Releases
     steps:
       s1Title: Tải xuống và chạy trình cài đặt KillerMCP Setup.
-      s1Body: Trình cài đặt được ký bởi nhà phát triển mã nguồn mở Stephen Riley và phát hành qua GitHub Releases.
+      s1Body: 'Trình thiết lập kiểm tra môi trường chạy .NET 10 và mở trang tải xuống của Microsoft nếu thiếu. Trình cài đặt được ký bởi nhà phát triển mã nguồn mở Stephen Riley và phát hành qua GitHub Releases.'
       s2Title: Để trình cài đặt kết nối agent của bạn.
       s2Body: Nó cài đặt runtime dùng chung và đăng ký KillerMCP với Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI và Windsurf khi tìm thấy.
       s3Title: Mở một cuộc trò chuyện agent mới và hỏi.
@@ -1943,4 +1948,4 @@ pages:
       p1: '{kt} chứa Worker công khai, gói KillerTools cục bộ, bản đồ thao tác, lược đồ xác thực, và kiểm tra độ phủ. {km} chứa host cục bộ dùng chung, các bộ chuyển đổi ứng dụng desktop, trình cài đặt, và kiểm tra tích hợp.'
       ktLink: Mã nguồn KillerTools
       kmLink: Mã nguồn KillerMCP
-      p2: Kết quả tra cứu bên ngoài phụ thuộc vào nguồn của chúng. Các công cụ cục bộ chỉ nhận đường dẫn hoặc giá trị được cung cấp trong một lệnh gọi công cụ. Giải mã tệp Base64 tạo ra một tệp mới và từ chối ghi đè lên tệp đã tồn tại. Chụp ảnh bằng camera vẫn yêu cầu cấp quyền thủ công trên trình duyệt và xác minh phần cứng. KillerMCP v0.1.1 được ký, đóng dấu thời gian, và phát hành qua GitHub Releases.
+      p2: 'Kết quả tra cứu bên ngoài phụ thuộc vào nguồn của chúng. Các công cụ cục bộ chỉ nhận đường dẫn hoặc giá trị được cung cấp trong một lệnh gọi công cụ. Giải mã tệp Base64 tạo ra một tệp mới và từ chối ghi đè lên tệp đã tồn tại. Chụp ảnh bằng camera vẫn yêu cầu cấp quyền thủ công trên trình duyệt và xác minh phần cứng. Trình cài đặt KillerMCP hiện tại được ký, đóng dấu thời gian, và phát hành qua GitHub Releases.'

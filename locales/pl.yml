@@ -199,7 +199,7 @@ tools:
     title: Kalkulator odchyleń od prawa wzajemności
     description: Obliczaj skorygowane długie naświetlenia dla ponad 40 filmów analogowych z użyciem prawa potęgowego Schwarzschilda. Obejmuje filmy czarno-białe, kolorowe negatywowe i diapozytywowe.
     ui:
-      barReciprocity: KALKULATOR RECYPROKACJI
+      barReciprocity: 'KALKULATOR PRAWA WZAJEMNOŚCI'
       barCorrected: SKORYGOWANA EKSPOZYCJA
       fieldFilmStock: Film
       typeBw: B&W
@@ -541,10 +541,10 @@ tools:
       fileNamePlaceholder: Nazwa pliku do pobrania
       extensionLabel: ROZSZERZENIE
       extensionPlaceholder: rozsz
-      base64StringLabel: CIAG BASE64
+      base64StringLabel: 'CIĄG BASE64'
       base64InputPlaceholder: Wklej tutaj ciąg base64 pliku...
-      invalidBase64: Nieprawidlowy ciag base64
-      previewImage: Podglad obrazu
+      invalidBase64: 'Nieprawidłowy ciąg base64'
+      previewImage: 'Podgląd obrazu'
       downloadFile: Pobierz plik
       fileToBase64Title: PLIK NA BASE64
       dropHint: Przeciągnij i upuść plik tutaj lub kliknij, aby wybrać
@@ -557,24 +557,24 @@ tools:
     description: Po prostu koduj i dekoduj ciągi do ich reprezentacji base64.
     ui:
       base64CopiedToClipboard: Ciąg base64 skopiowany do schowka
-      stringCopiedToClipboard: Ciag skopiowany do schowka
-      stringToBase64Title: CIAG NA BASE64
+      stringCopiedToClipboard: 'Ciąg skopiowany do schowka'
+      stringToBase64Title: 'CIĄG NA BASE64'
       encodingLabel: KODOWANIE
       standard: Standardowe
       urlSafe: Bezpieczne dla URL
-      stringToEncodeLabel: CIAG DO ZAKODOWANIA
-      stringInputPlaceholder: Wklej tutaj swoj ciag...
+      stringToEncodeLabel: 'CIĄG DO ZAKODOWANIA'
+      stringInputPlaceholder: 'Wklej tutaj swój ciąg...'
       base64OutputLabel: WYNIK BASE64
       base64OutputPlaceholder: Kodowanie base64 twojego ciągu pojawi się tutaj
       copied: Skopiowano!
       copyBase64: Kopiuj base64
-      base64ToStringTitle: BASE64 NA CIAG
-      base64ToDecodeLabel: CIAG BASE64 DO ZDEKODOWANIA
-      base64InputPlaceholder: Twoj ciag base64...
-      invalidBase64: Nieprawidlowy ciag base64
-      decodedStringLabel: ZDEKODOWANY CIAG
+      base64ToStringTitle: 'BASE64 NA CIĄG'
+      base64ToDecodeLabel: 'CIĄG BASE64 DO ZDEKODOWANIA'
+      base64InputPlaceholder: 'Twój ciąg base64...'
+      invalidBase64: 'Nieprawidłowy ciąg base64'
+      decodedStringLabel: 'ZDEKODOWANY CIĄG'
       decodedOutputPlaceholder: Zdekodowany ciąg pojawi się tutaj
-      copyDecodedString: Kopiuj zdekodowany ciag
+      copyDecodedString: 'Kopiuj zdekodowany ciąg'
   math-evaluator:
     title: Kalkulator wyrażeń
     description: Kalkulator do obliczania wyrażeń matematycznych. Możesz używać funkcji takich jak sqrt, cos, sin, abs itp.
@@ -586,18 +586,18 @@ tools:
     description: Rozbij URL na części składowe (protocol, origin, params, port, username-password, ...)
     ui:
       sectionHost: Host
-      protocol: Protokol
+      protocol: 'Protokół'
       hostname: Nazwa hosta
       port: Port
       sectionAuthentication: Uwierzytelnianie
-      username: Nazwa uzytkownika
-      password: Haslo
-      sectionPath: Sciezka
-      pathname: Nazwa sciezki
+      username: 'Nazwa użytkownika'
+      password: 'Hasło'
+      sectionPath: 'Ścieżka'
+      pathname: 'Nazwa ścieżki'
       search: Parametry wyszukiwania
       hash: Hash
       urlTitle: URL
-      invalidUrl: Nieprawidlowy URL
+      invalidUrl: 'Nieprawidłowy URL'
       params: PARAMETRY
       emptyHint: Wpisz powyżej adres URL, aby go przeanalizować
   phone-parser-and-formatter:
@@ -626,10 +626,10 @@ tools:
     title: Parser user-agent
     description: Wykrywaj i analizuj przeglądarkę, silnik, system operacyjny, CPU oraz typ/model urządzenia z ciągu user-agent.
     ui:
-      sectionBrowser: Przegladarka
+      sectionBrowser: 'Przeglądarka'
       sectionEngine: Silnik
       sectionOs: System
-      sectionDevice: Urzadzenie
+      sectionDevice: 'Urządzenie'
       sectionCpu: CPU
       name: Nazwa
       version: Wersja
@@ -637,10 +637,10 @@ tools:
       type: Typ
       vendor: Producent
       architecture: Architektura
-      userAgentString: CIAG USER AGENT
+      userAgentString: 'CIĄG USER AGENT'
       placeholder: Wklej tutaj swój user agent...
       unknown: Nieznany
-      error: BLAD
+      error: 'BŁĄD'
       parseError: Nie można przeanalizować ciągu user agent
   case-converter:
     title: Konwerter wielkości liter
@@ -949,8 +949,8 @@ tools:
     title: Minifikacja JSON
     description: Zminifikuj i skompresuj JSON, usuwając zbędne białe znaki.
     ui:
-      invalidJson: Podany JSON jest nieprawidlowy.
-      inputLabel: Twoj surowy JSON
+      invalidJson: 'Podany JSON jest nieprawidłowy.'
+      inputLabel: 'Twój surowy JSON'
       inputPlaceholder: Wklej tutaj swój surowy JSON...
       outputLabel: Zminifikowana wersja Twojego JSON
   ulid-generator:
@@ -958,13 +958,13 @@ tools:
     description: Generuj losowe Universally Unique Lexicographically Sortable Identifier (ULID).
     ui:
       copiedMessage: Skopiowano ULID do schowka
-      quantity: ILOSC
+      quantity: 'ILOŚĆ'
       format: FORMAT
       formatRaw: Surowy
       formatJson: JSON
       output: WYNIK
       copy: Kopiuj
-      refresh: Odswiez
+      refresh: 'Odśwież'
   base-converter:
     title: Konwerter systemów liczbowych
     description: Konwertuj liczbę między różnymi systemami (dziesiętny, szesnastkowy, dwójkowy, ósemkowy, base64, ...)
@@ -974,24 +974,24 @@ tools:
     ui:
       copiedMessage: Skopiowano UUID do schowka
       version: WERSJA
-      quantity: ILOSC
+      quantity: 'ILOŚĆ'
       namespacePreset: PRESET NAMESPACE
       namespaceUuid: NAMESPACE UUID
-      invalidUuid: Nieprawidlowy UUID
+      invalidUuid: 'Nieprawidłowy UUID'
       name: NAZWA
       namePlaceholder: Nazwa do zahaszowania...
       output: WYNIK
       copy: Kopiuj
-      refresh: Odswiez
+      refresh: 'Odśwież'
   ipv4-address-converter:
     title: Konwerter adresów IPv4
     description: Konwertuj adres IP na postać dziesiętną, dwójkową, szesnastkową, a nawet IPv6.
     ui:
-      decimal: Dziesietny
+      decimal: 'Dziesiętny'
       hexadecimal: Szesnastkowy
       binary: Binarny
-      ipv6Short: IPv6 (skrocony)
-      invalidIpv4: Nieprawidlowy adres IPv4
+      ipv6Short: 'IPv6 (skrócony)'
+      invalidIpv4: 'Nieprawidłowy adres IPv4'
       ipv4Address: Adres IPv4
       output: Wynik
       copied: Skopiowano!
@@ -1019,10 +1019,10 @@ tools:
     title: Rozszerzanie zakresu IPv4
     description: Na podstawie początkowego i końcowego adresu IPv4 to narzędzie oblicza prawidłową podsieć IPv4 wraz z notacją CIDR.
     ui:
-      startAddress: Adres poczatkowy
-      endAddress: Adres koncowy
+      startAddress: 'Adres początkowy'
+      endAddress: 'Adres końcowy'
       addressesInRange: Adresy w zakresie
-      invalidIpv4: Nieprawidlowy adres IPv4
+      invalidIpv4: 'Nieprawidłowy adres IPv4'
       invalidCombinationTitle: Nieprawidłowa kombinacja adresów IPv4 początkowego i końcowego
       invalidCombinationDescription: Końcowy adres IPv4 jest niższy niż początkowy. Jest to nieprawidłowe i wyniku nie można było obliczyć.
       switchStartEnd: Zamień adresy IPv4 początkowy i końcowy
@@ -1194,16 +1194,16 @@ tools:
     title: Generator ASCII art
     description: Twórz tekst w stylu ASCII art z wieloma czcionkami i stylami.
     ui:
-      yourText: TWOJ TEKST
+      yourText: 'TWÓJ TEKST'
       textPlaceholder: Tekst do narysowania
       options: OPCJE
       font: CZCIONKA
       searchFonts: Szukaj czcionek...
-      noFontsMatch: Brak pasujacych czcionek
-      width: SZEROKOSC
+      noFontsMatch: 'Brak pasujących czcionek'
+      width: 'SZEROKOŚĆ'
       output: WYNIK ASCII ART
       loadingFont: Wczytywanie czcionki...
-      error: Biezace ustawienia spowodowaly blad.
+      error: 'Bieżące ustawienia spowodowały błąd.'
       copied: Skopiowano!
       copy: Kopiuj
   regex-tester:
@@ -1258,9 +1258,9 @@ tools:
     description: Konwertuj TOML do JSON lub YAML.
     ui:
       convertTo: 'Konwertuj na:'
-      yourToml: Twoj TOML
-      pastePlaceholder: Wklej tutaj swoj TOML...
-      invalidToml: Podany TOML jest nieprawidlowy.
+      yourToml: 'Twój TOML'
+      pastePlaceholder: 'Wklej tutaj swój TOML...'
+      invalidToml: 'Podany TOML jest nieprawidłowy.'
       outputLabel: Wynik {format}
   xml-json-converter:
     title: Konwerter XML ↔ JSON
@@ -1332,14 +1332,14 @@ tools:
         transferPeriod: Domena znajduje się w okresie karencji przeniesienia.
       expiredAlert: Ta domena wygasła {days} dni temu i może być dostępna do rejestracji.
       expiresAlert: Ta domena wygasa za {days} dni. Odnowienie należy zorganizować jak najszybciej.
-      expiredTag: Wygasla {days} dni temu
-      remainingTag: Pozostalo {days} dni
+      expiredTag: 'Wygasła {days} dni temu'
+      remainingTag: 'Pozostało {days} dni'
       registrar: Rejestrator
       registrarIanaId: ID IANA rejestratora
       created: Utworzono
       updated: Zaktualizowano
       expires: Wygasa
-      noMx: Nie znaleziono rekordow MX.
+      noMx: 'Nie znaleziono rekordów MX.'
       dnsFailed: Wyszukiwanie DNS nie powiodło się.
       noSpf: Nie znaleziono rekordu SPF.
       noDkim: Nie znaleziono rekordów DKIM dla typowych selektorów. Niestandardowe selektory mogą nadal istnieć.
@@ -1350,23 +1350,23 @@ tools:
       dmarcNoRua: 'Ostrzeżenie: brak adresu raportów zbiorczych (rua=). Nie będą otrzymywane raporty DMARC.'
       pass: Zaliczono
       fail: Niezaliczono
-      warning: Ostrzezenie
+      warning: 'Ostrzeżenie'
       checking: Sprawdzanie...
       overallPass: Wszystkie kontrole poczty zostały zaliczone. Ta domena jest dobrze skonfigurowana do poczty.
       overallFail: Brakuje co najmniej jednego krytycznego rekordu. Ta domena może być podatna na podszywanie się.
       overallWarn: Niektóre rekordy istnieją, ale mają problemy z konfiguracją warte sprawdzenia.
       rdapHttpError: 'HTTP {status}: domena może nie istnieć lub TLD nie jest obsługiwana.'
-      lookupFailed: Wyszukiwanie nie powiodlo sie.
-      domainPlaceholder: Wpisz domene (np. killertools.net)
+      lookupFailed: 'Wyszukiwanie nie powiodło się.'
+      domainPlaceholder: 'Wpisz domenę (np. killertools.net)'
       searching: Wyszukiwanie...
       search: Szukaj
       signed: Podpisano
       unsigned: Niepodpisano
       delegationSigned: Delegacja jest podpisana.
       dsRecord: '{count} rekord DS.'
-      dsRecords: '{count} rekordow DS.'
+      dsRecords: '{count} rekordów DS.'
       keyRecord: '{count} rekord klucza.'
-      keyRecords: '{count} rekordow klucza.'
+      keyRecords: '{count} kluczowych rekordów.'
       dnssecUnsigned: Ta domena nie jest chroniona przez DNSSEC. Odpowiedzi DNS nie mogą być zweryfikowane kryptograficznie.
       status: Status
       contacts: Kontakty
@@ -1377,10 +1377,10 @@ tools:
       dkimRecords: Rekordy DKIM
       dmarcRecord: Rekord DMARC
       role:
-        registrant: rejestrujacy
+        registrant: 'rejestrujący'
         administrative: administracyjny
         technical: techniczny
-        abuse: naduzycia
+        abuse: 'nadużycia'
       name: Nazwa
       organization: Organizacja
       email: E-mail
@@ -1390,12 +1390,12 @@ tools:
     description: Generuj rekordy DNS TXT dla SPF i DMARC. Wybierz dostawców poczty i zasady, a wynik skopiuj prosto do DNS.
     ui:
       hardFailRecommended: twarde odrzucenie, zalecane
-      softFail: miekkie odrzucenie
+      softFail: 'miękkie odrzucenie'
       neutralNotRecommended: neutralne, niezalecane
-      blockFailingMail: blokuj niezgodna poczte
-      sendToSpam: wysylaj do spamu
+      blockFailingMail: 'blokuj niezgodną pocztę'
+      sendToSpam: 'wysyłaj do spamu'
       monitorOnly: tylko monitorowanie
-      relaxedDefault: Lagodna (domyslna)
+      relaxedDefault: 'Łagodna (domyślna)'
       strict: Rygorystyczna
       sameAsMainPolicy: Taka sama jak zasada główna
       spfRecordTitle: REKORD SPF
@@ -1403,7 +1403,7 @@ tools:
       spfRecordLocation: Rekord TXT w domenie głównej
       dmarcRecordLocation: Rekord TXT w
       copied: skopiowano
-      clickToCopy: kliknij, aby skopiowac
+      clickToCopy: 'kliknij, aby skopiować'
       lookupWarning: Wybrano {count} zapytań DNS; SPF ma limit 10 zapytań
       mailProviders: DOSTAWCY POCZTY
       customIps: WŁASNE ADRESY IP LUB ZAKRESY (OPCJONALNE)
@@ -1511,13 +1511,13 @@ tools:
       tableExtensionsHeader: Rozszerzenia
   basic-auth-generator:
     ui:
-      copied: Naglowek skopiowany do schowka
-      username: Nazwa uzytkownika
-      usernamePlaceholder: Twoja nazwa uzytkownika...
-      password: Haslo
-      passwordPlaceholder: Twoje haslo...
-      headerLabel: 'Naglowek Authorization:'
-      copyHeader: Kopiuj naglowek
+      copied: 'Nagłówek skopiowany do schowka'
+      username: 'Nazwa użytkownika'
+      usernamePlaceholder: 'Twoja nazwa użytkownika...'
+      password: 'Hasło'
+      passwordPlaceholder: 'Twoje hasło...'
+      headerLabel: 'Nagłówek Authorization:'
+      copyHeader: 'Kopiuj nagłówek'
   yaml-viewer:
     ui:
       invalidYaml: Podany YAML jest nieprawidłowy.
@@ -1571,12 +1571,12 @@ tools:
   integer-base-converter:
     ui:
       binary: Binarny
-      octal: Osemkowy
-      decimal: Dziesietny
+      octal: 'Ósemkowy'
+      decimal: 'Dziesiętny'
       hexadecimal: Szesnastkowy
       base: podstawa
       output: WYNIK
-      custom: Wlasny
+      custom: 'Własny'
   portProtocolReference:
     ui:
       searchPlaceholder: Szukaj według portu, usługi, protokołu lub opisu...
@@ -1871,7 +1871,7 @@ pages:
       hosted: Hostowany w GitHub Releases
     steps:
       s1Title: Pobierz i uruchom instalator KillerMCP.
-      s1Body: Instalator jest podpisany przez Open Source Developer Stephen Riley i publikowany przez GitHub Releases.
+      s1Body: 'Instalator sprawdza obecność środowiska uruchomieniowego .NET 10 i otwiera stronę pobierania Microsoftu, jeśli go brakuje. Instalator jest podpisany przez Open Source Developer Stephen Riley i publikowany przez GitHub Releases.'
       s2Title: Pozwól instalatorowi połączyć Twojego agenta.
       s2Body: Instaluje wspólne środowisko uruchomieniowe i rejestruje KillerMCP w Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI i Windsurf, jeśli zostaną znalezione.
       s3Title: Otwórz nowy czat agenta i zapytaj.
@@ -1947,4 +1947,4 @@ pages:
       p1: '{kt} zawiera publiczny Worker, lokalny pakiet KillerTools, mapę operacji, schematy walidacji i kontrole pokrycia. {km} zawiera wspólnego lokalnego hosta, adaptery aplikacji desktopowych, instalator i kontrole integracji.'
       ktLink: Kod źródłowy KillerTools
       kmLink: Kod źródłowy KillerMCP
-      p2: Wyniki wyszukiwań zewnętrznych zależą od ich źródeł. Narzędzia lokalne otrzymują wyłącznie ścieżki lub wartości podane w wywołaniu narzędzia. Dekodowanie pliku Base64 tworzy nowy plik i odmawia nadpisania istniejącego. Przechwytywanie obrazu z kamery nadal wymaga ręcznego zezwolenia przeglądarki i weryfikacji sprzętu. KillerMCP v0.1.1 jest podpisany, opatrzony znacznikiem czasu i publikowany przez GitHub Releases.
+      p2: 'Wyniki wyszukiwań zewnętrznych zależą od ich źródeł. Narzędzia lokalne otrzymują wyłącznie ścieżki lub wartości podane w wywołaniu narzędzia. Dekodowanie pliku Base64 tworzy nowy plik i odmawia nadpisania istniejącego. Przechwytywanie obrazu z kamery nadal wymaga ręcznego zezwolenia przeglądarki i weryfikacji sprzętu. Obecny instalator KillerMCP jest podpisany, opatrzony znacznikiem czasu i publikowany przez GitHub Releases.'

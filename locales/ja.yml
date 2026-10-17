@@ -141,7 +141,7 @@ tools:
       isWhatPercentOfLabel: は何%か
       percentageChangeTitle: 増減率
       fromLabel: 元の値
-      toLabel: から
+      toLabel: '新しい値'
   svg-placeholder-generator:
     title: SVGプレースホルダー生成
     description: アプリケーションでプレースホルダーとして使えるSVG画像を生成します。
@@ -1860,7 +1860,7 @@ pages:
       oneInstaller: WINDOWSにインストール
       hosted: CLOUDFLAREでホスト
       after: 接続した後
-    lead: Webで安全に使えるユーティリティには公開Cloudflareサーバーに接続します。ローカルツールや対応するKillerアプリにはWindows版KillerMCPをインストールします。
+    lead: 'エージェントに役立つ KillerTools のコマンドを提供します。Webで安全に使えるユーティリティには公開Cloudflareサーバーに接続します。ローカルツールや対応するKillerアプリにはWindows版KillerMCPをインストールします。'
     status: 使いたいデータやアプリに合った接続方法を選んでください。
     install: インストール
     intro: Windowsインストーラーは、81個すべてのKillerToolsユーティリティと、このコンピューターにインストールされた対応Killerアプリのコマンドを1つのローカル接続で提供します。アプリのコマンドはバージョンと利用可能な状態によって異なります。Nodeやソースのチェックアウトは不要です。
@@ -1871,7 +1871,7 @@ pages:
       hosted: GitHub Releasesでホスト
     steps:
       s1Title: KillerMCP Setupをダウンロードして実行します。
-      s1Body: インストーラーはOpen Source Developer Stephen Rileyによって署名され、GitHub Releasesを通じて公開されています。
+      s1Body: 'セットアップは .NET 10 ランタイムを確認し、見つからない場合は Microsoft のダウンロードページを開きます。インストーラーはOpen Source Developer Stephen Rileyによって署名され、GitHub Releasesを通じて公開されています。'
       s2Title: セットアップにエージェントを接続させます。
       s2Body: 共有ランタイムをインストールし、見つかった場合はCodex、Claude Code、Claude Desktop、Cursor、GitHub Copilot、Gemini CLI、WindsurfにKillerMCPを登録します。
       s3Title: 新しいエージェントのチャットを開いて依頼します。
@@ -1947,4 +1947,4 @@ pages:
       p1: '{kt}には公開Worker、ローカルKillerToolsバンドル、操作マップ、検証スキーマ、カバレッジチェックが含まれています。{km}には共有ローカルホスト、デスクトップアプリのアダプター、インストーラー、統合チェックが含まれています。'
       ktLink: KillerToolsのソースコード
       kmLink: KillerMCPのソースコード
-      p2: 外部検索の結果はその情報源に依存します。ローカルツールはツール呼び出しで指定されたパスや値のみを受け取ります。Base64ファイルのデコードは新しいファイルを作成し、既存のファイルの上書きは拒否されます。カメラでの撮影には、引き続きブラウザの手動での許可とハードウェアの確認が必要です。KillerMCP v0.1.1は署名とタイムスタンプが付与され、GitHub Releasesを通じて公開されています。
+      p2: '外部検索の結果はその情報源に依存します。ローカルツールはツール呼び出しで指定されたパスや値のみを受け取ります。Base64ファイルのデコードは新しいファイルを作成し、既存のファイルの上書きは拒否されます。カメラでの撮影には、引き続きブラウザの手動での許可とハードウェアの確認が必要です。現在のKillerMCPインストーラーは署名とタイムスタンプが付与され、GitHub Releasesを通じて公開されています。'

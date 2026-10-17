@@ -13,35 +13,40 @@ home:
   toggleMenu: Menü umschalten
   home: Startseite
   uiLib: UI-Bibliothek
-  support: Unterstütze die Entwicklung von IT-Tools
+  support: 'Unterstütze die Entwicklung von killer-tools'
   buyMeACoffee: Kauf mir einen Kaffee
   follow:
-    title: Magst du IT-Tools?
+    title: 'Magst du killer-tools?'
     p1: Gib uns einen Stern auf
-    githubRepository: IT-Tools GitHub-Repository
+    githubRepository: 'StevetheKiller GitHub-Repository'
     p2: oder folge uns auf
     twitterXAccount: IT-Tools X-Konto
     thankYou: Vielen Dank!
   nav:
     github: GitHub-Repository
-    githubRepository: IT-Tools GitHub-Repository
+    githubRepository: 'killer-tools GitHub-Repository'
     twitterX: X-Konto
     twitterXAccount: IT-Tools X-Konto
-    about: Über IT-Tools
+    about: 'Über killer-tools'
     aboutLabel: Über
     darkMode: Dunkelmodus
     lightMode: Hellmodus
     mode: Wechseln zwischen dunklem/hellem Modus
 about:
   content: |
-    # Über killer-tools
-    Diese wunderbare Website, erstellt mit ❤ von [Steve the Killer](https://thekiller.net), sammelt nützliche Tools für Entwickler und Menschen, die in der IT arbeiten. Wenn du sie nützlich findest, teile sie gerne mit Personen, von denen du denkst, dass sie sie ebenfalls nützlich finden könnten, und vergiss nicht, sie in deiner Lesezeichenleiste zu speichern!
-    killer-tools ist Open Source (unter der GPL-3.0-Lizenz) und kostenlos und wird es immer sein, aber es kostet mich Geld, die Website zu hosten und den Domainnamen zu erneuern. Wenn du meine Arbeit unterstützen möchtest und mich ermutigen möchtest, mehr Tools hinzuzufügen, überlege bitte, mich durch [Sponsoring](https://www.buymeacoffee.com/StevetheKiller) zu unterstützen.
-    ## Technologien
-    killer-tools wurde mit Vue.js (Vue 3) und der Naive UI-Komponentenbibliothek erstellt und wird von GitHub gehostet und kontinuierlich bereitgestellt. In einigen Tools werden Drittanbieter-Open-Source-Bibliotheken verwendet. Du findest die vollständige Liste in der [package.json](https://github.com/SteveTheKiller/killer-tools-site/blob/main/package.json)-Datei des Repositorys.
-    ## Einen Fehler gefunden? Ein Tool fehlt?
-    Wenn du ein Tool benötigst, das hier noch nicht vorhanden ist, und du denkst, dass es nützlich sein könnte, bist du herzlich eingeladen, einen Feature-Request im [Issues-Bereich](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) im GitHub-Repository einzureichen.
-    Und wenn du einen Fehler gefunden hast oder etwas nicht wie erwartet funktioniert, melde bitte einen Fehler im [Issues-Bereich](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) im GitHub-Repository.
+    # killer-tools
+
+    Techniker im Außendienst haben keine Zeit für Ballast. Jedes Werkzeug hier gibt es, weil ich es im Einsatz brauchte und nichts gefunden habe, das einfach funktioniert, ohne Konto, ohne Installation und ohne Telemetrie.
+
+    Ich bin Field Tech bei einem MSP und kümmere mich um Netzwerke, Systemadministration und Endpunkt-Support. killer-tools begann als Fork des hervorragenden Projekts [IT-Tools](https://github.com/CorentinTh/it-tools) und wuchs zu etwas heran, das für die Arbeit gebaut ist, die ich tatsächlich mache. Ich habe es gebaut, um mitten im Ticket NDR-Codes nachzuschlagen, das Subnetz eines Kunden zu scannen und einen SafeLink zu dekodieren, bevor ich darauf klicke.
+
+    Alles läuft in deinem Browser. Nichts wird verfolgt. Ein Konto ist nie nötig.
+
+    Gebaut und gepflegt von [Steve the Killer](https://thekiller.net). Wenn dir das bei der Arbeit Zeit spart, freue ich mich über [einen Kaffee](https://www.buymeacoffee.com/StevetheKiller), erwartet wird er aber nie.
+
+    ## Fehlt ein Tool? Einen Fehler gefunden?
+
+    Eröffne im [Issues-Bereich](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) auf GitHub eine Feature-Anfrage oder einen Fehlerbericht. Ich lese sie.
 favoriteButton:
   remove: Aus Favoriten entfernen
   add: Zu Favoriten hinzufügen
@@ -233,7 +238,7 @@ tools:
       indentStyleTabularRight: Tabellarisch rechts
   git-memo:
     title: Git-Spickzettel
-    description: Git ist eine dezentrale Versionsverwaltungssoftware. Mit diesem Spickzettel hast du schnellen Zugriff auf die gängigsten Git-Befehle.
+    description: 'Schnellreferenz für die gängigsten Git-Befehle und Workflows.'
   encryption:
     title: Text verschlüsseln / entschlüsseln
     description: Verschlüssele und entschlüssele Klartext mithilfe von Kryptoalgorithmen wie AES, TripleDES, Rabbit oder RC4.
@@ -399,8 +404,8 @@ tools:
       error: FEHLER
       parseError: User-Agent-String konnte nicht analysiert werden
   case-converter:
-    title: Fall-Konverter
-    description: Ändere den Fall eines Strings und wähle zwischen verschiedenen Formaten aus.
+    title: 'Konverter für Groß-/Kleinschreibung'
+    description: 'Ändere die Groß-/Kleinschreibung eines Strings und wähle zwischen verschiedenen Formaten aus.'
     ui:
       inputPlaceholder: Ihr Text...
       output: AUSGABE
@@ -434,7 +439,7 @@ tools:
       unknownVendor: Hersteller für diese Adresse unbekannt
   lorem-ipsum-generator:
     title: Lorem Ipsum Generator
-    description: Lorem Ipsum ist ein Platzhaltertext, der häufig verwendet wird, um die visuelle Form eines Dokuments oder einer Schriftart ohne Verwendung von bedeutendem Inhalt zu demonstrieren.
+    description: 'Generiere Platzhaltertext (Lorem Ipsum) für Mockups und Designarbeiten.'
     ui:
       copiedMessage: Lorem ipsum in die Zwischenablage kopiert
       paragraphs: Absätze
@@ -449,7 +454,7 @@ tools:
       refresh: Aktualisieren
   qrcode-generator:
     title: QR-Code-Generator
-    description: Generiere und downloade QR-Codes für eine URL oder einfach einen Text und passe die Hintergrund- und Vordergrundfarben an.
+    description: 'Generiere und downloade QR-Codes für URLs, einfachen Text oder WLAN-Zugangsdaten. Terminal-, klassische und benutzerdefinierte Farbthemen mit konfigurierbarer Fehlerkorrektur.'
   xml-formatter:
     title: XML-Formatter
     description: Verschönere deinen XML-String in ein menschenlesbares Format.
@@ -696,7 +701,7 @@ tools:
     description: Konvertiere Zahlen zwischen verschiedenen Basen (Dezimal, Hexadezimal, Binär, Oktal, Base64, ...).
   uuid-generator:
     title: UUID-Generator
-    description: Ein Universally Unique Identifier (UUID) ist eine 128-Bit-Nummer, die zur Identifizierung von Informationen in Computersystemen verwendet wird. Die Anzahl der möglichen UUIDs beträgt 16^32, was 2^128 oder etwa 3,4x10^38 entspricht (was ziemlich viel ist!).
+    description: 'Generiere zufällige UUIDs (v1 und v4) und untersuche ihre Struktur.'
     ui:
       copiedMessage: UUIDs in die Zwischenablage kopiert
       version: VERSION
@@ -815,7 +820,7 @@ tools:
       copiedMark: ✓ kopiert
   windows-error-codes:
     title: Windows-Fehlercode-Nachschlagewerk
-    description: Look up Windows error codes by hex or decimal — system errors, BSOD stop codes, WMI, RPC, MSI installer, and more.
+    description: 'Schlagen Sie Windows-Fehlercodes nach Hex- oder Dezimalwert nach, einschließlich Systemfehlern, BSOD-Stoppcodes, WMI, RPC, MSI-Installationsfehlern und mehr.'
     ui:
       searchResults: Suchergebnisse
       searchPlaceholder: Suche nach Hex-Code, Fehlername oder Beschreibung...
@@ -836,7 +841,7 @@ tools:
       fix: Lösung
   safelink-decoder:
     title: Outlook-Safelink-Decoder
-    description: Decode Outlook SafeLink links.
+    description: 'Entpacke Microsoft-Defender-SafeLinks, um die ursprüngliche Ziel-URL anzuzeigen.'
   port-protocol-reference:
     title: Port- und Protokoll-Referenz
     description: Gängige Netzwerkports und Protokolle mit Sicherheitshinweisen und Kennzeichnung gefährlicher Ports.
@@ -1141,8 +1146,8 @@ tools:
       results: ERGEBNISSE
       hyperfocalDistance: Hyperfokaldistanz
       hyperfocalHint: Hier fokussieren für maximale Schärfe von der Hälfte dieser Entfernung bis Unendlich
-      nearLimit: Naheinstellgrenze
-      farLimit: Ferneinstellgrenze
+      nearLimit: 'Vordere Schärfegrenze'
+      farLimit: 'Hintere Schärfegrenze'
       totalDof: Gesamte Schärfentiefe
       beyondHyperfocal: Die Fokusdistanz liegt an oder jenseits der Hyperfokaldistanz, daher reicht die Ferngrenze bis Unendlich.
       legendHyperfocal: Hyperfokaldistanz
@@ -1661,7 +1666,7 @@ tools:
     description: Wähle ein Cmdlet, fülle die Parameter aus und kopiere den fertigen PowerShell-Befehl.
   killer-pdf:
     title: KillerPDF
-    description: Open-Source-PDF-Editor für Windows. Ansehen, kommentieren, zusammenführen, teilen, flachen, passwortgeschützte PDFs öffnen, Text bearbeiten, zeichnen, hervorheben, unterschreiben und drucken.
+    description: 'Open-Source-PDF-Editor für Windows. Ansehen, kommentieren, zusammenführen, teilen, reduzieren, passwortgeschützte PDFs öffnen, Text bearbeiten, zeichnen, hervorheben, unterschreiben und drucken.'
   killer-scan:
     title: KillerScan
     description: Schneller Netzwerkscanner für Techniker im Außendienst. ARP- und Ping-Erkennung, Port-Abfrage, Hersteller-Nachschlag und automatische Geräteklassifizierung.
@@ -1735,11 +1740,11 @@ pages:
   notFound:
     noSuchFile: Datei oder Verzeichnis nicht gefunden
     exitCode: Exitcode
-    backToHome: zuruck zur Startseite
+    backToHome: 'zurück zur Startseite'
   privacy:
-    heading: Datenschutzerklarung
+    heading: 'Datenschutzerklärung'
     lastUpdated: 'Zuletzt aktualisiert: 4. April 2026'
-    overviewHeading: Uberblick
+    overviewHeading: 'Überblick'
     overviewIntro: KillerTools
     overviewBody: ist eine kostenlose Sammlung von IT-Werkzeugen. Ihre Privatsphäre ist uns wichtig, und diese Richtlinie erklärt, wie wir mit Ihren Daten umgehen.
     dataCollectionHeading: Datenerfassung
@@ -1757,7 +1762,7 @@ pages:
     contactBody: Wenn Sie Fragen zu dieser Datenschutzerklärung haben, erreichen Sie uns unter
   androidApp:
     robotAttribution: Der Android-Roboter wird aus Arbeiten reproduziert oder verändert, die von Google erstellt und geteilt wurden, gemäß den Bedingungen der Creative Commons 3.0 Attribution License.
-    heading: KillerTools fur Android
+    heading: 'Killer Tools für Android'
     introBody1: 'Die gesamte killertools.net-Werkzeugkiste als native Android-App: jedes Werkzeug, die Killer Scripts Bibliothek und alle Ihre Favoriten, einen Tipp vom Startbildschirm entfernt.'
     introBody2: Gleiche Regeln wie auf der Website. Alles läuft auf Ihrem Gerät. Kein Konto, kein Tracking, kein Phone-Home. Wenn es Ihnen einen Ticketzyklus im Einsatz spart, hat es seinen Zweck erfüllt.
     betaStatusPrefix: Die App befindet sich derzeit in einer
@@ -1781,7 +1786,7 @@ pages:
     sortAZ: A - Z
     sortZA: Z - A
   about:
-    heading: Uber KillerTools
+    heading: 'Über KillerTools'
     intro: Vor-Ort-Techniker haben keine Zeit für Ballast. Jedes Werkzeug hier existiert, weil ich es bei der Arbeit brauchte und nichts fand, das einfach funktionierte, ohne Konto, Installation oder Tracking.
     originPrefix: Ich baue jetzt Werkzeuge im internen KI-Engineering-Team eines MSP, nach sechs Jahren Full-Stack-Entwicklung und acht Jahren als Vor-Ort-Techniker bei mehreren Unternehmen. KillerTools.net begann als Fork des ausgezeichneten
     originMid: Projekts von
@@ -1797,18 +1802,18 @@ pages:
     issuesLinkText: Issues-Bereich
     issuesSuffix: auf GitHub. Ich lese sie.
     alsoTryHeading: Probieren Sie auch...
-    tagKillerScan: Open-Source-Netzwerkscanner fur Windows
-    tagKillerPdf: Open-Source-PDF-Editor fur Windows
-    tagKillerShell: Open-Source-Windows-Shell fur Poweruser
-    tagKillerNotes: Open-Source-verschlusseltes Notizbuch fur Windows
-    tagKillendar: Open-Source-verschlusselter Kalender fur Windows
+    tagKillerScan: 'Open-Source-Netzwerkscanner für Windows'
+    tagKillerPdf: 'Open-Source-PDF-Editor für Windows'
+    tagKillerShell: 'Open-Source-Windows-Shell für Poweruser'
+    tagKillerNotes: 'Open-Source-verschlüsseltes Notizbuch für Windows'
+    tagKillendar: 'Open-Source-verschlüsselter Kalender für Windows'
     linksHeading: Links
     linkLabelSite: Website
     linkLabelSource: Quellcode
     linkLabelIssues: Issues
     reportBug: Einen Fehler melden
     requestFeature: Eine Funktion anfragen
-    linkLabelSupport: Unterstutzung
+    linkLabelSupport: 'Unterstützung'
     linkLabelBuiltOn: Basiert auf
     itToolsFork: IT-Tools (Fork)
   mcp:
@@ -1839,7 +1844,7 @@ pages:
       hosted: Gehostet auf GitHub Releases
     steps:
       s1Title: Laden Sie KillerMCP Setup herunter und führen Sie es aus.
-      s1Body: Der Installer ist vom Open-Source-Entwickler Stephen Riley signiert und wird über GitHub Releases veröffentlicht.
+      s1Body: 'Das Setup prüft, ob die .NET-10-Laufzeit vorhanden ist, und öffnet die Download-Seite von Microsoft, falls sie fehlt. Der Installer ist vom Open-Source-Entwickler Stephen Riley signiert und wird über GitHub Releases veröffentlicht.'
       s2Title: Lassen Sie das Setup Ihren Agenten verbinden.
       s2Body: Es installiert die gemeinsame Laufzeitumgebung und registriert KillerMCP bei Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI und Windsurf, sofern gefunden.
       s3Title: Öffnen Sie einen neuen Agenten-Chat und fragen Sie einfach.
@@ -1912,7 +1917,7 @@ pages:
       p1: Der {kt} enthält den öffentlichen Worker, das lokale KillerTools-Bundle, die Vorgangszuordnung, Validierungsschemas und Abdeckungsprüfungen. Der {km} enthält den gemeinsamen lokalen Host, Desktop-App-Adapter, den Installer und Integrationsprüfungen.
       ktLink: KillerTools-Quellcode
       kmLink: KillerMCP-Quellcode
-      p2: Externe Abfrageergebnisse hängen von ihren Quellen ab. Lokale Tools erhalten nur Pfade oder Werte, die in einem Tool-Aufruf angegeben wurden. Beim Dekodieren einer Base64-Datei wird eine neue Datei erstellt, ein Überschreiben einer bestehenden wird verweigert. Die Kameraaufnahme erfordert weiterhin eine manuelle Browserberechtigung und eine Hardwareüberprüfung. KillerMCP v0.1.1 ist signiert, mit Zeitstempel versehen und über GitHub Releases veröffentlicht.
+      p2: 'Externe Abfrageergebnisse hängen von ihren Quellen ab. Lokale Tools erhalten nur Pfade oder Werte, die in einem Tool-Aufruf angegeben wurden. Beim Dekodieren einer Base64-Datei wird eine neue Datei erstellt, ein Überschreiben einer bestehenden wird verweigert. Die Kameraaufnahme erfordert weiterhin eine manuelle Browserberechtigung und eine Hardwareüberprüfung. Das aktuelle KillerMCP-Installationsprogramm ist signiert, mit Zeitstempel versehen und über GitHub Releases veröffentlicht.'
 ui:
   diffEditor:
     originalLabel: ORIGINAL

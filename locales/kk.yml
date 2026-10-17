@@ -149,11 +149,11 @@ tools:
       widthLabel: ЕНІ (px)
       backgroundLabel: ФОН
       heightLabel: БИІКТІГІ (px)
-      textColorLabel: МӘТІН ТЙІСІ
+      textColorLabel: 'МӘТІН ТҮСІ'
       fontSizeLabel: ҚАРІП ОЛШЕМІ
       customTextLabel: ЖЕКЕ МӘТІН
       customTextPlaceholder: 'Әдепкі: {size}'
-      useExactSizeToggle: Дӑл өлшемді пайдалану
+      useExactSizeToggle: 'Дәл өлшемді пайдалану'
       svgHtmlElementLabel: SVG HTML ЭЛЕМЕНТІ
       svgBase64Label: SVG BASE64-ТЕ
       copySvgButton: svg көшіру
@@ -214,8 +214,8 @@ tools:
       copyDone: ✓ көшірілді
       copySeconds: секундты көшіру
       devReduce10: Көлеңке тығыздығының артуын өтеу үшін дамытуды шамамен 10%-ға азайтуды қарастырыңыз.
-      devReduce1015: Дамытуды 10-15%-ға азайту ұсынылады.
-      devReduce1520: Дамытуды 15-20%-ға азайту ұсынылады.
+      devReduce1015: 'Байқатуды 10-15%-ға азайту ұсынылады.'
+      devReduce1520: 'Байқатуды 15-20%-ға азайту ұсынылады.'
       devReduce2030: Өте ұзақ экспозициялар үшін дамытуды 20-30%-ға азайту ұсынылады.
       colorShiftWarning: 'Түсті пленка: бұл экспозиция ұзақтығында түс ауытқуы күтіледі.'
       colorShiftSlide: Слайд пленканы кейін түзету қиын, түсіру кезінде CC сүзгісін қолдану ұсынылады.
@@ -608,7 +608,7 @@ tools:
       sectionLocation: Орналасқан жері
       countryCode: Ел коды
       country: Ел
-      callingCode: Қалалық код
+      callingCode: 'Қоңырау шалу коды'
       sectionValidation: Тексеру
       isValid: Жарамды ма?
       yes: Иә
@@ -705,7 +705,7 @@ tools:
       actionsLabel: Ис-әрекеттер
       undoButton: ↩ Кері қайтару
       clearButton: ✕ Тазалау
-      downloadTransparentPng: ↓ Мҩлдір PNG жүктеу
+      downloadTransparentPng: '↓ Мөлдір PNG жүктеу'
       uploadImageLabel: Суретті жүктеу
       dropzoneText: Суретті осы жерге тастаңыз немесе таңдау үшін басыңыз
       dropzoneHint: PNG, JPG, WEBP
@@ -780,7 +780,7 @@ tools:
       bold: Қалың
       italic: Курсив
       strike: Сызылған
-      inlineCode: Ішкі код
+      inlineCode: 'Жол ішіндегі код'
       heading1: Тақырып 1
       heading2: Тақырып 2
       heading3: Тақырып 3
@@ -912,7 +912,7 @@ tools:
       vendor: Өндіруші
       languages: Тілдер
       cookiesEnabled: Cookie қосулы
-      pdfViewer: PDF көрсеткіші
+      pdfViewer: 'PDF қарау құралы'
       doNotTrack: Бақыламау
       userAgent: Пайдаланушы агенті
       maxTouchPoints: ең көбі {count}
@@ -1257,7 +1257,7 @@ tools:
     title: TOML түрлендіргіш
     description: TOML-ды JSON немесе YAML-ға түрлендіріңіз.
     ui:
-      convertTo: 'Мынаган түрлендіру:'
+      convertTo: 'Мынаған түрлендіру:'
       yourToml: Сіздің TOML файлыңыз
       pastePlaceholder: TOML мәтінін осында қойыңыз...
       invalidToml: Берілген TOML жарамсыз.
@@ -1312,19 +1312,19 @@ tools:
       statusDesc:
         active: Домен белсенді және жұмыс істеп тұр.
         inactive: Домен белсенді емес.
-        clientDeleteProhibited: Тіркеуші домендi жоюдан бұғаттады.
-        clientTransferProhibited: Тіркеуші домендi басқа тіркеушіге ауыстырудан бұғаттады.
-        clientUpdateProhibited: Тіркеуші домендi жаңартудан бұғаттады.
+        clientDeleteProhibited: 'Тіркеуші доменді жоюдан бұғаттады.'
+        clientTransferProhibited: 'Тіркеуші доменді басқа тіркеушіге ауыстырудан бұғаттады.'
+        clientUpdateProhibited: 'Тіркеуші доменді жаңартудан бұғаттады.'
         clientHold: Тіркеуші доменді ұстауға қойды, сондықтан DNS шешілмеуі мүмкін.
-        serverDeleteProhibited: Тізілім домендi жоюдан бұғаттады.
-        serverTransferProhibited: Тізілім домендi ауыстырудан бұғаттады.
-        serverUpdateProhibited: Тізілім домендi жаңартудан бұғаттады.
+        serverDeleteProhibited: 'Тізілім доменді жоюдан бұғаттады.'
+        serverTransferProhibited: 'Тізілім доменді ауыстырудан бұғаттады.'
+        serverUpdateProhibited: 'Тізілім доменді жаңартудан бұғаттады.'
         serverHold: Тізілім доменді ұстауға қойды, сондықтан DNS шешілмеуі мүмкін.
         pendingCreate: Доменді құру күтілуде.
         pendingDelete: Домен жоюды күтуде және жақын арада босатылуы мүмкін.
         pendingRenew: Доменді жаңарту күтілуде.
         pendingRestore: Доменді жойылғаннан кейін қалпына келтіру күтілуде.
-        pendingTransfer: Домендi басқа тіркеушіге ауыстыру күтілуде.
+        pendingTransfer: 'Доменді басқа тіркеушіге ауыстыру күтілуде.'
         pendingUpdate: Доменді жаңарту күтілуде.
         redemptionPeriod: Доменнің мерзімі өтіп, ол қалпына келтіру кезеңінде тұр. Тіркеуші оны әлі де қайтара алады.
         renewPeriod: Домен тіркеуден кейінгі жаңарту жеңілдік кезеңінде тұр.
@@ -1533,8 +1533,8 @@ tools:
       countLabel: Саны
       paddedHexLabel: Толтырылған hex
       secretLabel: ҚҰПИЯ
-      secretPlaceholder: TOTP құпия сөзін қойыңыз...
-      generateNewSecret: Жаңа құпия сөз жасау
+      secretPlaceholder: 'TOTP құпия кілтін қойыңыз...'
+      generateNewSecret: 'Жаңа құпия кілт жасау'
       tokenLabel: ТОКЕН
       copied: ✓ көшірілді
       clickToCopy: көшіру үшін басыңыз
@@ -1860,7 +1860,7 @@ pages:
       oneInstaller: WINDOWS ЖҮЙЕСІНЕ ОРНАТЫЛАДЫ
       hosted: CLOUDFLARE СЕРВЕРІНДЕ
       after: ҚОСЫЛҒАННАН КЕЙІН
-    lead: Вебте қауіпсіз утилиталар үшін қоғамдық Cloudflare серверіне қосылыңыз. Жергілікті құралдар мен қолдау көрсетілетін Killer қолданбалары үшін Windows жүйесіне KillerMCP орнатыңыз.
+    lead: 'Агентіңізге пайдалы KillerTools пәрмендерін беріңіз. Вебте қауіпсіз утилиталар үшін қоғамдық Cloudflare серверіне қосылыңыз. Жергілікті құралдар мен қолдау көрсетілетін Killer қолданбалары үшін Windows жүйесіне KillerMCP орнатыңыз.'
     status: Деректеріңіз бен қолданбаларыңызға сай қосылымды таңдаңыз.
     install: Орнату
     intro: Windows орнатушысы барлық 81 KillerTools утилитасы мен осы компьютерде орнатылған қолдау көрсетілетін Killer қолданбаларының пәрмендері үшін бір жергілікті қосылым береді. Қолданба пәрмендері нұсқасына және қолжетімділігіне байланысты. Бөлек Node немесе бастапқы код көшірмесі қажет емес.
@@ -1871,7 +1871,7 @@ pages:
       hosted: GitHub Releases-те орналастырылған
     steps:
       s1Title: KillerMCP Setup файлын жүктеп алып, іске қосыңыз.
-      s1Body: Орнатушыға Open Source Developer Stephen Riley қол қойған және ол GitHub Releases арқылы жарияланған.
+      s1Body: 'Орнатушы .NET 10 орындалу ортасының бар-жоғын тексереді және ол жоқ болса, Microsoft жүктеу бетін ашады. Орнатушыға Open Source Developer Stephen Riley қол қойған және ол GitHub Releases арқылы жарияланған.'
       s2Title: Орнату бағдарламасына агентіңізді қосуға рұқсат беріңіз.
       s2Body: Ол ортақ орындалу ортасын орнатады және табылған жағдайда KillerMCP-ті Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI және Windsurf-пен тіркейді.
       s3Title: Жаңа агент чатын ашып, сұраңыз.
@@ -1947,4 +1947,4 @@ pages:
       p1: '{kt} ашық Worker-ді, жергілікті KillerTools жинағын, әрекеттер картасын, тексеру схемаларын және қамту тексерулерін қамтиды. {km} ортақ жергілікті хостты, жұмыс үстелі қолданбаларының адаптерлерін, орнатушыны және интеграция тексерулерін қамтиды.'
       ktLink: KillerTools бастапқы коды
       kmLink: KillerMCP бастапқы коды
-      p2: Сыртқы іздеу нәтижелері олардың көздеріне байланысты. Жергілікті құралдар тек құрал шақыруында берілген жолдар мен мәндерді алады. Base64 файлын кодын шешу жаңа файл жасайды және бар файлды қайта жазудан бас тартады. Камерамен түсіру бәрібір қолмен браузер рұқсатын және аппараттық тексеруді қажет етеді. KillerMCP v0.1.1 қол қойылған, уақыт белгісі қойылған және GitHub Releases арқылы жарияланған.
+      p2: 'Сыртқы іздеу нәтижелері олардың көздеріне байланысты. Жергілікті құралдар тек құрал шақыруында берілген жолдар мен мәндерді алады. Base64 файлын кодын шешу жаңа файл жасайды және бар файлды қайта жазудан бас тартады. Камерамен түсіру бәрібір қолмен браузер рұқсатын және аппараттық тексеруді қажет етеді. Қазіргі KillerMCP орнатқышына қол қойылған, уақыт белгісі қойылған және GitHub Releases арқылы жарияланған.'
