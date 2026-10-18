@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Tools
 
-- Added a local QR image reader with the shared KillerTools decoder, link warnings, confirmation before opening flagged links, and Wi-Fi password copying. Images stay in the browser.
+- Added a local QR image reader with the shared KillerTools decoder and private link scanner, explanations for hidden destinations and disguised downloads, confirmation before opening flagged links, and Wi-Fi password copying. Images and decoded content stay in the browser; destinations are never visited during scanning.
 
 ### Interface
 

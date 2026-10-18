@@ -1596,6 +1596,13 @@ tools:
       DeepSubdomains: "Tên miền phụ có quá nhiều cấp."
       Shortener: "Liên kết rút gọn. Không truy tìm địa chỉ đích."
       DirectDownload: "Liên kết tải xuống trực tiếp."
+      EmbeddedDestination: "Chứa một địa chỉ web khác. Không theo dõi chuyển hướng."
+      HiddenCharacters: "Ký tự ẩn có thể ngụy trang địa chỉ này."
+      DisguisedDownload: "Phần mở rộng thực thi bị ẩn trước một phần mở rộng khác."
+    scanClear: "Không tìm thấy vấn đề"
+    scanReview: "Kiểm tra trước khi mở"
+    scanBlocked: "Đã chặn mở"
+    scanLocal: "Chỉ kiểm tra cục bộ. Chưa truy cập địa chỉ đích."
   qr-code-generator:
     ui:
       tabText: Văn bản / URL

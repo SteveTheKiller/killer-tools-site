@@ -1493,6 +1493,13 @@ tools:
       DeepSubdomains: "Subdominios con demasiados niveles."
       Shortener: "Enlace acortado. No se resuelve el destino."
       DirectDownload: "Enlace de descarga directa."
+      EmbeddedDestination: "Contiene otro destino web. No se siguieron redirecciones."
+      HiddenCharacters: "Los caracteres ocultos pueden disfrazar esta dirección."
+      DisguisedDownload: "Una extensión ejecutable está oculta antes de otra extensión."
+    scanClear: "No se encontraron problemas"
+    scanReview: "Revisar antes de abrir"
+    scanBlocked: "Apertura bloqueada"
+    scanLocal: "Solo comprobaciones locales. No se visitó el destino."
   qr-code-generator:
     ui:
       tabText: Texto / URL

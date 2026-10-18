@@ -1647,6 +1647,13 @@ tools:
       DeepSubdomains: "Neobvykle mnoho úrovní subdomén."
       Shortener: "Zkrácený odkaz. Cíl se nerozbaluje."
       DirectDownload: "Odkaz pro přímé stažení."
+      EmbeddedDestination: "Obsahuje další webový cíl. Přesměrování nebyla sledována."
+      HiddenCharacters: "Skryté znaky mohou tuto adresu maskovat."
+      DisguisedDownload: "Přípona spustitelného souboru je skrytá před jinou příponou."
+    scanClear: "Nebyly nalezeny žádné problémy"
+    scanReview: "Před otevřením zkontrolujte"
+    scanBlocked: "Otevření zablokováno"
+    scanLocal: "Pouze místní kontroly. Cíl nebyl navštíven."
   qr-code-generator:
     ui:
       tabText: Text / URL

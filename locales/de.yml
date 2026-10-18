@@ -1611,6 +1611,13 @@ tools:
       DeepSubdomains: "Ungewöhnlich viele Subdomain-Ebenen."
       Shortener: "Kurzlink. Das Ziel wird nicht aufgelöst."
       DirectDownload: "Direkter Download-Link."
+      EmbeddedDestination: "Enthält ein weiteres Webziel. Weiterleitungen wurden nicht verfolgt."
+      HiddenCharacters: "Unsichtbare Zeichen können diese Adresse verschleiern."
+      DisguisedDownload: "Eine ausführbare Erweiterung ist vor einer anderen Erweiterung verborgen."
+    scanClear: "Keine Probleme gefunden"
+    scanReview: "Vor dem Öffnen prüfen"
+    scanBlocked: "Öffnen blockiert"
+    scanLocal: "Nur lokale Prüfungen. Das Ziel wurde nicht besucht."
   qr-code-generator:
     ui:
       tabText: Text / URL

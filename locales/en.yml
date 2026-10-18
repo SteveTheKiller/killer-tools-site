@@ -1634,6 +1634,13 @@ tools:
       DeepSubdomains: Unusually deep subdomains.
       Shortener: Shortened link. Destination is not expanded.
       DirectDownload: Direct download link.
+      EmbeddedDestination: "Contains another web destination. Redirects were not followed."
+      HiddenCharacters: "Hidden characters can disguise this address."
+      DisguisedDownload: "An executable extension is hidden before another extension."
+    scanClear: "No issues found"
+    scanReview: "Review before opening"
+    scanBlocked: "Opening blocked"
+    scanLocal: "Local checks only. The destination was not visited."
   qr-code-generator:
     ui:
       tabText: Text / URL

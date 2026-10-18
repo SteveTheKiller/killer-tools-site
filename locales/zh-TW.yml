@@ -1592,6 +1592,13 @@ tools:
       DeepSubdomains: "子網域層級異常深。"
       Shortener: "短連結。不會展開目標位址。"
       DirectDownload: "直接下載連結。"
+      EmbeddedDestination: "包含另一個網頁位址。未追蹤重新導向。"
+      HiddenCharacters: "隱藏字元可能偽裝此位址。"
+      DisguisedDownload: "可執行檔副檔名隱藏在另一個副檔名之前。"
+    scanClear: "未發現問題"
+    scanReview: "開啟前請檢查"
+    scanBlocked: "已封鎖開啟"
+    scanLocal: "僅進行本機檢查。未造訪目標位址。"
   qr-code-generator:
     ui:
       tabText: 文字 / URL

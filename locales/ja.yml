@@ -1451,6 +1451,13 @@ tools:
       DeepSubdomains: "サブドメインの階層が通常より深くなっています。"
       Shortener: "短縮リンクです。転送先は展開していません。"
       DirectDownload: "直接ダウンロードするリンクです。"
+      EmbeddedDestination: "別のウェブアドレスが含まれています。リダイレクトは追跡していません。"
+      HiddenCharacters: "非表示の文字でアドレスが偽装されている可能性があります。"
+      DisguisedDownload: "実行可能な拡張子が別の拡張子の前に隠れています。"
+    scanClear: "問題は見つかりませんでした"
+    scanReview: "開く前に確認してください"
+    scanBlocked: "開く操作をブロックしました"
+    scanLocal: "ローカル検査のみです。リンク先にはアクセスしていません。"
   qr-code-generator:
     ui:
       tabText: テキスト / URL

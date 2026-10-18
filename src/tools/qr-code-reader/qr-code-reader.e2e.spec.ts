@@ -13,6 +13,8 @@ test('reads a QR image locally without sending its pixels or opening its link', 
   await page.locator('input[type="file"]').setInputFiles(fileURLToPath(new URL('./fixtures/plain.png', import.meta.url)));
   await expect(page.getByTestId('qr-payload')).toHaveText('https://killershot.net/qr', { timeout: 60000 });
   await expect(page.getByTestId('qr-open')).toBeVisible();
+  await expect(page.getByText('No issues found', { exact: true })).toBeVisible();
+  await expect(page.getByText('Local checks only. The destination was not visited.', { exact: true })).toBeVisible();
   expect(page.url()).toContain('/qrcode-reader');
   expect(contentRequests).toEqual([]);
   await page.screenshot({ path: testInfo.outputPath('qr-reader.png'), fullPage: true });
@@ -56,6 +58,7 @@ test('blocked payloads have no Open and Wi-Fi copies the exact password', async 
   await input.setInputFiles(fileURLToPath(new URL('./fixtures/blocked.png', import.meta.url)));
   await expect(page.getByTestId('qr-payload')).toHaveText('javascript:alert(1)', { timeout: 60000 });
   await expect(page.getByTestId('qr-open')).toHaveCount(0);
+  await expect(page.getByText('Opening blocked', { exact: true })).toBeVisible();
   await input.setInputFiles(fileURLToPath(new URL('./fixtures/wifi.png', import.meta.url)));
   await expect(page.getByRole('button', { name: 'Copy password', exact: true })).toBeVisible({ timeout: 60000 });
   await expect(page.getByTestId('qr-open')).toHaveCount(0);
@@ -86,4 +89,28 @@ test('an image without a code returns nothing and clears an earlier result', asy
   await input.setInputFiles(fileURLToPath(new URL('./fixtures/blank.png', import.meta.url)));
   await expect(page.getByText('No QR codes found.', { exact: true })).toBeVisible({ timeout: 60000 });
   await expect(page.getByTestId('qr-payload')).toHaveCount(0);
+});
+
+test('the shared local scanner explains hidden destinations and disguised downloads without visiting them', async ({ page }, testInfo) => {
+  const visits: string[] = [];
+  page.on('request', (request) => {
+    if (new URL(request.url()).hostname.endsWith('example.com') || new URL(request.url()).hostname === 'other.example') {
+      visits.push(request.url());
+    }
+  });
+  await page.goto('/qrcode-reader');
+  for (const sample of [
+    { file: 'scanner-redirect', text: 'https://example.com/go?url=https%3A%2F%2Fother.example%2Flogin', reason: 'Contains another web destination. Redirects were not followed.', open: true },
+    { file: 'scanner-disguised', text: 'https://example.com/invoice.exe.jpg', reason: 'An executable extension is hidden before another extension.', open: true },
+    { file: 'scanner-hidden', text: 'https://example.com/%E2%80%AEgnp.exe', reason: 'Hidden characters can disguise this address.', open: false },
+  ]) {
+    await page.locator('input[type="file"]').setInputFiles(fileURLToPath(new URL(`./fixtures/${sample.file}.png`, import.meta.url)));
+    await expect(page.getByTestId('qr-payload')).toHaveText(sample.text, { timeout: 60000 });
+    await expect(page.getByText(sample.reason, { exact: true })).toBeVisible();
+    await expect(page.getByText(sample.open ? 'Review before opening' : 'Opening blocked', { exact: true })).toBeVisible();
+    await expect(page.getByTestId('qr-open')).toHaveCount(sample.open ? 1 : 0);
+    await page.locator('.qr-result').scrollIntoViewIfNeeded();
+    await page.screenshot({ path: testInfo.outputPath(`${sample.file}.png`), fullPage: true, animations: 'disabled' });
+  }
+  expect(visits).toEqual([]);
 });

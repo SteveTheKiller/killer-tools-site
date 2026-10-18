@@ -1208,6 +1208,13 @@ tools:
       DeepSubdomains: "Uvanlig mange nivåer av underdomener."
       Shortener: "Forkortet lenke. Målet blir ikke slått opp."
       DirectDownload: "Lenke til direkte nedlasting."
+      EmbeddedDestination: "Inneholder et annet nettmål. Omdirigeringer ble ikke fulgt."
+      HiddenCharacters: "Skjulte tegn kan skjule denne adressen."
+      DisguisedDownload: "En kjørbar filtype er skjult foran en annen filtype."
+    scanClear: "Ingen problemer funnet"
+    scanReview: "Kontroller før åpning"
+    scanBlocked: "Åpning blokkert"
+    scanLocal: "Bare lokale kontroller. Målet ble ikke besøkt."
   qr-code-generator:
     ui:
       tabText: Tekst / URL

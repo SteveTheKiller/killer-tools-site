@@ -1592,6 +1592,13 @@ tools:
       DeepSubdomains: "Alışılmadık sayıda alt alan adı düzeyi."
       Shortener: "Kısaltılmış bağlantı. Hedef çözümlenmiyor."
       DirectDownload: "Doğrudan indirme bağlantısı."
+      EmbeddedDestination: "Başka bir web hedefi içeriyor. Yönlendirmeler takip edilmedi."
+      HiddenCharacters: "Gizli karakterler bu adresi gizleyebilir."
+      DisguisedDownload: "Çalıştırılabilir bir uzantı başka bir uzantıdan önce gizlenmiş."
+    scanClear: "Sorun bulunamadı"
+    scanReview: "Açmadan önce inceleyin"
+    scanBlocked: "Açma engellendi"
+    scanLocal: "Yalnızca yerel denetimler. Hedef ziyaret edilmedi."
   qr-code-generator:
     ui:
       tabText: Metin / URL

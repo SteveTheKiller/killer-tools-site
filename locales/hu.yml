@@ -1647,6 +1647,13 @@ tools:
       DeepSubdomains: "Szokatlanul sok aldomain-szint."
       Shortener: "Rövidített hivatkozás. A cél nincs feloldva."
       DirectDownload: "Közvetlen letöltési hivatkozás."
+      EmbeddedDestination: "Másik webes célt tartalmaz. Az átirányításokat nem követtük."
+      HiddenCharacters: "Rejtett karakterek elfedhetik ezt a címet."
+      DisguisedDownload: "Egy futtatható kiterjesztés egy másik kiterjesztés előtt rejtőzik."
+    scanClear: "Nem találhatók problémák"
+    scanReview: "Megnyitás előtt ellenőrizze"
+    scanBlocked: "Megnyitás letiltva"
+    scanLocal: "Csak helyi ellenőrzések. A cél nem lett megnyitva."
   qr-code-generator:
     ui:
       tabText: Szöveg / URL

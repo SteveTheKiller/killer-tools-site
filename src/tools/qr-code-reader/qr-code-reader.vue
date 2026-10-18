@@ -132,6 +132,10 @@ function open(code: QrCode, confirmed = false) {
   pending.value = undefined;
 }
 
+function host(url: string) {
+  return new URL(url).hostname;
+}
+
 onBeforeUnmount(() => {
   generation++;
   stop();
@@ -156,6 +160,13 @@ onBeforeUnmount(() => {
     <c-card v-for="(code, index) in codes" :key="index" class="qr-result">
       <strong>QR {{ index + 1 }}</strong>
       <pre data-test-id="qr-payload">{{ code.text }}</pre>
+      <div v-if="code.link.disposition !== 'DisplayOnly'" class="qr-scan" role="status">
+        <strong>{{ t(`tools.qrcode-reader.${code.link.disposition === 'Allowed' ? 'scanClear' : code.link.disposition === 'Warning' ? 'scanReview' : 'scanBlocked'}`) }}</strong>
+        <p v-if="code.link.url" class="qr-destination">
+          {{ host(code.link.url) }}
+        </p>
+        <p>{{ t('tools.qrcode-reader.scanLocal') }}</p>
+      </div>
       <ul v-if="code.link.warnings.length" class="qr-warnings">
         <li v-for="warning in code.link.warnings" :key="warning">
           {{ t(`tools.qrcode-reader.warnings.${warning}`) }}
