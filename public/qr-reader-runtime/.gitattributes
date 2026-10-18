@@ -1,0 +1,2 @@
+# Preserve generated runtime bytes and their manifest hashes.
+* -text -whitespace

@@ -1425,6 +1425,32 @@ tools:
       yourRawJson: 元のJSON
       pasteRawJsonPlaceholder: 元のJSONをここに貼り付けてください...
       prettifiedVersion: 整形されたJSON
+  qrcode-reader:
+    title: "QR コードリーダー"
+    description: "画像の QR コードをローカルで読み取ります。"
+    privacy: "画像と読み取った内容はブラウザー内に留まります。リンクは「開く」を選んだときだけ開きます。"
+    pick: "QR コードの画像を選択またはドロップ"
+    reading: "QR コードをローカルで読み取り中..."
+    error: "画像を読み取れませんでした。40 MB 未満、1600 万画素以下の PNG、JPEG、WebP、BMP、GIF を使用してください。"
+    none: "QR コードが見つかりませんでした。"
+    preview: "QR コードの輪郭を表示した画像"
+    copied: "コピーしました。"
+    copyFailed: "コピーできませんでした。テキストを選択して手動でコピーしてください。"
+    confirmTitle: "このリンクを開きますか？"
+    copy: "コピー"
+    copyPassword: "パスワードをコピー"
+    open: "開く"
+    cancel: "キャンセル"
+    warnings:
+      PlainHttp: "暗号化されていない HTTP リンクです。"
+      UnusualPort: "通常とは異なるネットワークポートです。"
+      RawIp: "ドメイン名ではなく IP アドレスです。"
+      UserInfo: "ホストの前にユーザー情報が含まれています。"
+      InternationalHost: "国際化ドメインまたは punycode ドメインです。"
+      MixedScripts: "ドメインに似た形の文字体系が混在しています。"
+      DeepSubdomains: "サブドメインの階層が通常より深くなっています。"
+      Shortener: "短縮リンクです。転送先は展開していません。"
+      DirectDownload: "直接ダウンロードするリンクです。"
   qr-code-generator:
     ui:
       tabText: テキスト / URL

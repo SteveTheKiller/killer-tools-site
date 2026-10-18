@@ -62,6 +62,7 @@ import { tool as phoneParserAndFormatter } from './phone-parser-and-formatter';
 import { tool as portProtocolReference } from './port-protocol-reference';
 import { tool as powershellBuilder } from './powershell-builder';
 import { tool as qrCodeGenerator } from './qr-code-generator';
+import { tool as qrCodeReader } from './qr-code-reader';
 import { tool as reciprocityCalculator } from './reciprocity-calculator';
 import { tool as regexTester } from './regex-tester';
 import { tool as romanNumeralConverter } from './roman-numeral-converter';
@@ -221,6 +222,7 @@ export const toolsByCategory: ToolCategory[] = [
       gifSearch,
       cameraRecorder,
       qrCodeGenerator,
+      qrCodeReader,
       signatureCreator,
       svgPlaceholderGenerator,
     ],

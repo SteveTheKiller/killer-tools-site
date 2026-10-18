@@ -1566,6 +1566,32 @@ tools:
       yourRawJson: 您的原始 JSON
       pasteRawJsonPlaceholder: 在此貼上您的原始 JSON...
       prettifiedVersion: 您的 JSON 的格式化版本
+  qrcode-reader:
+    title: "QR 碼讀取器"
+    description: "在本機讀取圖片中的 QR 碼。"
+    privacy: "圖片與讀取的內容保留在瀏覽器中。只有選擇「開啟」時才會開啟連結。"
+    pick: "選擇或拖放 QR 碼圖片"
+    reading: "正在本機讀取 QR 碼..."
+    error: "無法讀取圖片。請使用小於 40 MB、1600 萬像素以內的 PNG、JPEG、WebP、BMP 或 GIF。"
+    none: "找不到 QR 碼。"
+    preview: "顯示 QR 碼輪廓的圖片"
+    copied: "已複製。"
+    copyFailed: "無法複製。請選取文字並手動複製。"
+    confirmTitle: "開啟此連結？"
+    copy: "複製"
+    copyPassword: "複製密碼"
+    open: "開啟"
+    cancel: "取消"
+    warnings:
+      PlainHttp: "未加密的 HTTP 連結。"
+      UnusualPort: "不常見的網路連接埠。"
+      RawIp: "使用 IP 位址而非網域名稱。"
+      UserInfo: "主機名稱前包含使用者資訊。"
+      InternationalHost: "國際化網域名稱或 punycode 網域名稱。"
+      MixedScripts: "網域名稱混用了字形相似的文字系統。"
+      DeepSubdomains: "子網域層級異常深。"
+      Shortener: "短連結。不會展開目標位址。"
+      DirectDownload: "直接下載連結。"
   qr-code-generator:
     ui:
       tabText: 文字 / URL

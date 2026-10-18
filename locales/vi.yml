@@ -1570,6 +1570,32 @@ tools:
       yourRawJson: JSON thô của bạn
       pasteRawJsonPlaceholder: Dán JSON thô của bạn vào đây...
       prettifiedVersion: Phiên bản đã định dạng của JSON của bạn
+  qrcode-reader:
+    title: "Trình đọc mã QR"
+    description: "Đọc mã QR từ ảnh ngay trên thiết bị."
+    privacy: "Ảnh và nội dung đã đọc luôn ở trong trình duyệt. Liên kết chỉ mở khi bạn chọn Mở."
+    pick: "Chọn hoặc thả ảnh có mã QR"
+    reading: "Đang đọc mã QR trên thiết bị..."
+    error: "Không thể đọc ảnh. Dùng PNG, JPEG, WebP, BMP hoặc GIF dưới 40 MB và 16 triệu điểm ảnh."
+    none: "Không tìm thấy mã QR."
+    preview: "Ảnh có đường viền mã QR"
+    copied: "Đã sao chép."
+    copyFailed: "Không thể sao chép. Hãy chọn văn bản và sao chép thủ công."
+    confirmTitle: "Mở liên kết này?"
+    copy: "Sao chép"
+    copyPassword: "Sao chép mật khẩu"
+    open: "Mở"
+    cancel: "Hủy"
+    warnings:
+      PlainHttp: "Liên kết HTTP không được mã hóa."
+      UnusualPort: "Cổng mạng không thông thường."
+      RawIp: "Địa chỉ IP thay vì tên miền."
+      UserInfo: "Có thông tin người dùng trước tên máy chủ."
+      InternationalHost: "Tên miền quốc tế hóa hoặc punycode."
+      MixedScripts: "Tên miền trộn các hệ chữ có ký tự giống nhau."
+      DeepSubdomains: "Tên miền phụ có quá nhiều cấp."
+      Shortener: "Liên kết rút gọn. Không truy tìm địa chỉ đích."
+      DirectDownload: "Liên kết tải xuống trực tiếp."
   qr-code-generator:
     ui:
       tabText: Văn bản / URL

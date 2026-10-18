@@ -1346,6 +1346,32 @@ tools:
       yourRawJson: 您的原始 JSON
       pasteRawJsonPlaceholder: 在此粘贴您的原始 JSON...
       prettifiedVersion: 您的 JSON 的格式化版本
+  qrcode-reader:
+    title: "二维码读取器"
+    description: "在本地读取图片中的二维码。"
+    privacy: "图片及读取的内容保留在浏览器中。只有选择“打开”时才会打开链接。"
+    pick: "选择或拖放二维码图片"
+    reading: "正在本地读取二维码..."
+    error: "无法读取图片。请使用小于 40 MB、1600 万像素以内的 PNG、JPEG、WebP、BMP 或 GIF。"
+    none: "未找到二维码。"
+    preview: "显示二维码轮廓的图片"
+    copied: "已复制。"
+    copyFailed: "无法复制。请选择文本并手动复制。"
+    confirmTitle: "打开此链接？"
+    copy: "复制"
+    copyPassword: "复制密码"
+    open: "打开"
+    cancel: "取消"
+    warnings:
+      PlainHttp: "未加密的 HTTP 链接。"
+      UnusualPort: "不常见的网络端口。"
+      RawIp: "使用 IP 地址而非域名。"
+      UserInfo: "主机名前包含用户信息。"
+      InternationalHost: "国际化域名或 punycode 域名。"
+      MixedScripts: "域名混用了字形相似的文字体系。"
+      DeepSubdomains: "子域名层级异常深。"
+      Shortener: "短链接。不会展开目标地址。"
+      DirectDownload: "直接下载链接。"
   qr-code-generator:
     ui:
       tabText: 文本 / URL

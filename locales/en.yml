@@ -1608,6 +1608,32 @@ tools:
         iis: IIS
         windowsServer: Windows Server
       wrappedInScriptBlock: will be wrapped in a script block
+  qrcode-reader:
+    title: QR code reader
+    description: Read QR codes from an image locally, with link warnings and Wi-Fi password copying.
+    privacy: Images and decoded content stay in your browser. Links open only when you choose Open.
+    pick: Choose or drop a QR code image
+    reading: Reading QR codes locally...
+    error: Could not read this image. Use a PNG, JPEG, WebP, BMP or GIF under 40 MB and 16 million pixels.
+    none: No QR codes found.
+    preview: Image with QR code outlines
+    copy: Copy
+    copyPassword: Copy password
+    copied: Copied.
+    copyFailed: Could not copy. Select the text and copy it manually.
+    open: Open
+    cancel: Cancel
+    confirmTitle: Open this link?
+    warnings:
+      PlainHttp: Unencrypted HTTP link.
+      UnusualPort: Unusual network port.
+      RawIp: IP address instead of a domain name.
+      UserInfo: Contains user information before the host.
+      InternationalHost: Internationalized or punycode domain.
+      MixedScripts: Domain mixes lookalike writing systems.
+      DeepSubdomains: Unusually deep subdomains.
+      Shortener: Shortened link. Destination is not expanded.
+      DirectDownload: Direct download link.
   qr-code-generator:
     ui:
       tabText: Text / URL

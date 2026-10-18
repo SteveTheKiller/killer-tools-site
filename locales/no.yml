@@ -1182,6 +1182,32 @@ tools:
       resultsHint: '{count} resultater. Klikk for å kopiere URL-en, og lim den inn i Teams, Telegram eller Slack.'
     title: GIF-søk
     description: Søk i Giphy etter reaksjons-GIF-er. Klikk på et resultat for å kopiere URL-en.
+  qrcode-reader:
+    title: "QR-kodeleser"
+    description: "Les QR-koder fra et bilde lokalt."
+    privacy: "Bilder og innhold blir i nettleseren. Lenker åpnes bare når du velger Åpne."
+    pick: "Velg eller slipp et bilde med QR-koder"
+    reading: "Leser QR-koder lokalt..."
+    error: "Kunne ikke lese bildet. Bruk PNG, JPEG, WebP, BMP eller GIF under 40 MB og 16 millioner piksler."
+    none: "Fant ingen QR-koder."
+    preview: "Bilde med omriss av QR-koder"
+    copied: "Kopiert."
+    copyFailed: "Kunne ikke kopiere. Merk teksten og kopier den manuelt."
+    confirmTitle: "Åpne denne lenken?"
+    copy: "Kopier"
+    copyPassword: "Kopier passord"
+    open: "Åpne"
+    cancel: "Avbryt"
+    warnings:
+      PlainHttp: "Ukryptert HTTP-lenke."
+      UnusualPort: "Uvanlig nettverksport."
+      RawIp: "IP-adresse i stedet for domenenavn."
+      UserInfo: "Inneholder brukerinformasjon foran verten."
+      InternationalHost: "Internasjonalisert domene eller punycode-domene."
+      MixedScripts: "Domenet blander skriftsystemer med like tegn."
+      DeepSubdomains: "Uvanlig mange nivåer av underdomener."
+      Shortener: "Forkortet lenke. Målet blir ikke slått opp."
+      DirectDownload: "Lenke til direkte nedlasting."
   qr-code-generator:
     ui:
       tabText: Tekst / URL

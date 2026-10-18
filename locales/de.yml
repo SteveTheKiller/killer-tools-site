@@ -1585,6 +1585,32 @@ tools:
         iis: IIS
         windowsServer: Windows Server
       wrappedInScriptBlock: wird in einen Skriptblock eingeschlossen
+  qrcode-reader:
+    title: "QR-Code-Leser"
+    description: "QR-Codes aus Bildern lokal lesen."
+    privacy: "Bilder und gelesene Inhalte bleiben in deinem Browser. Links öffnen sich nur nach einem Klick auf Öffnen."
+    pick: "QR-Code-Bild auswählen oder ablegen"
+    reading: "QR-Codes werden lokal gelesen..."
+    error: "Bild konnte nicht gelesen werden. Verwende PNG, JPEG, WebP, BMP oder GIF unter 40 MB und mit höchstens 16 Millionen Pixeln."
+    none: "Keine QR-Codes gefunden."
+    preview: "Bild mit QR-Code-Umrissen"
+    copied: "Kopiert."
+    copyFailed: "Kopieren fehlgeschlagen. Markiere den Text und kopiere ihn manuell."
+    confirmTitle: "Diesen Link öffnen?"
+    copy: "Kopieren"
+    copyPassword: "Passwort kopieren"
+    open: "Öffnen"
+    cancel: "Abbrechen"
+    warnings:
+      PlainHttp: "Unverschlüsselter HTTP-Link."
+      UnusualPort: "Ungewöhnlicher Netzwerkport."
+      RawIp: "IP-Adresse statt Domainname."
+      UserInfo: "Enthält Benutzerangaben vor dem Host."
+      InternationalHost: "Internationalisierte oder Punycode-Domain."
+      MixedScripts: "Die Domain mischt ähnlich aussehende Schriftsysteme."
+      DeepSubdomains: "Ungewöhnlich viele Subdomain-Ebenen."
+      Shortener: "Kurzlink. Das Ziel wird nicht aufgelöst."
+      DirectDownload: "Direkter Download-Link."
   qr-code-generator:
     ui:
       tabText: Text / URL

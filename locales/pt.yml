@@ -676,6 +676,32 @@ tools:
       refresh: Atualizar
     title: Gerador de UUIDs
     description: Gere UUIDs aleatórios (v1 e v4) e inspecione sua estrutura.
+  qrcode-reader:
+    title: "Leitor de códigos QR"
+    description: "Leia códigos QR de uma imagem localmente."
+    privacy: "As imagens e o conteúdo ficam no seu navegador. Links só abrem quando você escolhe Abrir."
+    pick: "Escolha ou solte uma imagem com códigos QR"
+    reading: "Lendo códigos QR localmente..."
+    error: "Não foi possível ler a imagem. Use PNG, JPEG, WebP, BMP ou GIF com menos de 40 MB e 16 milhões de pixels."
+    none: "Nenhum código QR encontrado."
+    preview: "Imagem com contornos dos códigos QR"
+    copied: "Copiado."
+    copyFailed: "Não foi possível copiar. Selecione o texto e copie manualmente."
+    confirmTitle: "Abrir este link?"
+    copy: "Copiar"
+    copyPassword: "Copiar senha"
+    open: "Abrir"
+    cancel: "Cancelar"
+    warnings:
+      PlainHttp: "Link HTTP sem criptografia."
+      UnusualPort: "Porta de rede incomum."
+      RawIp: "Endereço IP em vez de nome de domínio."
+      UserInfo: "Contém informações do usuário antes do host."
+      InternationalHost: "Domínio internacionalizado ou punycode."
+      MixedScripts: "O domínio mistura sistemas de escrita parecidos."
+      DeepSubdomains: "Número incomum de níveis de subdomínios."
+      Shortener: "Link encurtado. O destino não é expandido."
+      DirectDownload: "Link de download direto."
   qr-code-generator:
     ui:
       tabText: Texto / URL

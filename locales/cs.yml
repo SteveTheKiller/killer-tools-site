@@ -1621,6 +1621,32 @@ tools:
         iis: IIS
         windowsServer: Windows Server
       wrappedInScriptBlock: bude zabaleno do skriptovacího bloku
+  qrcode-reader:
+    title: "Čtečka QR kódů"
+    description: "Čtěte QR kódy z obrázku místně."
+    privacy: "Obrázky a přečtený obsah zůstávají v prohlížeči. Odkazy se otevřou jen po volbě Otevřít."
+    pick: "Vyberte nebo přetáhněte obrázek s QR kódy"
+    reading: "Místní čtení QR kódů..."
+    error: "Obrázek nelze přečíst. Použijte PNG, JPEG, WebP, BMP nebo GIF do 40 MB a 16 milionů pixelů."
+    none: "Nebyly nalezeny žádné QR kódy."
+    preview: "Obrázek s obrysy QR kódů"
+    copied: "Zkopírováno."
+    copyFailed: "Nelze kopírovat. Označte text a zkopírujte ho ručně."
+    confirmTitle: "Otevřít tento odkaz?"
+    copy: "Kopírovat"
+    copyPassword: "Kopírovat heslo"
+    open: "Otevřít"
+    cancel: "Zrušit"
+    warnings:
+      PlainHttp: "Nešifrovaný odkaz HTTP."
+      UnusualPort: "Neobvyklý síťový port."
+      RawIp: "IP adresa místo názvu domény."
+      UserInfo: "Před hostitelem jsou údaje uživatele."
+      InternationalHost: "Mezinárodní doména nebo punycode."
+      MixedScripts: "Doména mísí podobně vypadající písma."
+      DeepSubdomains: "Neobvykle mnoho úrovní subdomén."
+      Shortener: "Zkrácený odkaz. Cíl se nerozbaluje."
+      DirectDownload: "Odkaz pro přímé stažení."
   qr-code-generator:
     ui:
       tabText: Text / URL

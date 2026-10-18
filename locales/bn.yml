@@ -1621,6 +1621,32 @@ tools:
         iis: IIS
         windowsServer: Windows Server
       wrappedInScriptBlock: একটি স্ক্রিপ্ট ব্লকে মোড়ানো হবে
+  qrcode-reader:
+    title: "QR কোড রিডার"
+    description: "ছবি থেকে স্থানীয়ভাবে QR কোড পড়ুন।"
+    privacy: "ছবি ও পড়া বিষয়বস্তু আপনার ব্রাউজারেই থাকে। শুধু খুলুন বেছে নিলে লিংক খোলে।"
+    pick: "QR কোডের ছবি বাছুন বা টেনে আনুন"
+    reading: "স্থানীয়ভাবে QR কোড পড়া হচ্ছে..."
+    error: "ছবিটি পড়া যায়নি। ৪০ MB ও ১ কোটি ৬০ লাখ পিক্সেলের কম PNG, JPEG, WebP, BMP বা GIF ব্যবহার করুন।"
+    none: "কোনো QR কোড পাওয়া যায়নি।"
+    preview: "QR কোডের সীমানা দেখানো ছবি"
+    copied: "কপি হয়েছে।"
+    copyFailed: "কপি করা যায়নি। লেখাটি বেছে নিয়ে নিজে কপি করুন।"
+    confirmTitle: "এই লিংকটি খুলবেন?"
+    copy: "কপি"
+    copyPassword: "পাসওয়ার্ড কপি করুন"
+    open: "খুলুন"
+    cancel: "বাতিল"
+    warnings:
+      PlainHttp: "এনক্রিপশনবিহীন HTTP লিংক।"
+      UnusualPort: "অস্বাভাবিক নেটওয়ার্ক পোর্ট।"
+      RawIp: "ডোমেইন নামের বদলে IP ঠিকানা।"
+      UserInfo: "হোস্টের আগে ব্যবহারকারীর তথ্য রয়েছে।"
+      InternationalHost: "আন্তর্জাতিকীকৃত বা punycode ডোমেইন।"
+      MixedScripts: "ডোমেইনে দেখতে একই রকম একাধিক লিপি রয়েছে।"
+      DeepSubdomains: "অস্বাভাবিকভাবে বেশি স্তরের সাবডোমেইন।"
+      Shortener: "সংক্ষিপ্ত লিংক। গন্তব্য প্রসারিত করা হয়নি।"
+      DirectDownload: "সরাসরি ডাউনলোডের লিংক।"
   qr-code-generator:
     ui:
       tabText: টেক্সট / URL

@@ -1566,6 +1566,32 @@ tools:
       yourRawJson: Ham JSON'unuz
       pasteRawJsonPlaceholder: Ham JSON'unuzu buraya yapıştırın...
       prettifiedVersion: JSON'unuzun düzenli sürümü
+  qrcode-reader:
+    title: "QR kodu okuyucu"
+    description: "Görüntülerdeki QR kodlarını yerel olarak okuyun."
+    privacy: "Görüntüler ve okunan içerik tarayıcınızda kalır. Bağlantılar yalnızca Aç seçildiğinde açılır."
+    pick: "QR kodu görüntüsü seçin veya sürükleyin"
+    reading: "QR kodları yerel olarak okunuyor..."
+    error: "Görüntü okunamadı. 40 MB ve 16 milyon pikselden küçük PNG, JPEG, WebP, BMP veya GIF kullanın."
+    none: "QR kodu bulunamadı."
+    preview: "QR kodu çerçevelerini gösteren görüntü"
+    copied: "Kopyalandı."
+    copyFailed: "Kopyalanamadı. Metni seçip elle kopyalayın."
+    confirmTitle: "Bu bağlantı açılsın mı?"
+    copy: "Kopyala"
+    copyPassword: "Parolayı kopyala"
+    open: "Aç"
+    cancel: "İptal"
+    warnings:
+      PlainHttp: "Şifrelenmemiş HTTP bağlantısı."
+      UnusualPort: "Alışılmadık ağ bağlantı noktası."
+      RawIp: "Alan adı yerine IP adresi."
+      UserInfo: "Sunucu adından önce kullanıcı bilgisi içeriyor."
+      InternationalHost: "Uluslararasılaştırılmış veya punycode alan adı."
+      MixedScripts: "Alan adı benzer görünen yazı sistemlerini karıştırıyor."
+      DeepSubdomains: "Alışılmadık sayıda alt alan adı düzeyi."
+      Shortener: "Kısaltılmış bağlantı. Hedef çözümlenmiyor."
+      DirectDownload: "Doğrudan indirme bağlantısı."
   qr-code-generator:
     ui:
       tabText: Metin / URL

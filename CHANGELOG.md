@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## Unreleased
 
+### Tools
+
+- Added a local QR image reader with the shared KillerTools decoder, link warnings, confirmation before opening flagged links, and Wi-Fi password copying. Images stay in the browser.
+
 ### Interface
 
 - Centered the KillerMCP landing logo within its content column.

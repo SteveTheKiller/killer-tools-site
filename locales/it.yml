@@ -1425,6 +1425,32 @@ tools:
       yourRawJson: Il tuo JSON grezzo
       pasteRawJsonPlaceholder: Incolla qui il tuo JSON grezzo...
       prettifiedVersion: Versione formattata del tuo JSON
+  qrcode-reader:
+    title: "Lettore di codici QR"
+    description: "Leggi localmente i codici QR da un’immagine."
+    privacy: "Le immagini e il contenuto restano nel browser. I link si aprono solo scegliendo Apri."
+    pick: "Scegli o trascina un’immagine con codici QR"
+    reading: "Lettura locale dei codici QR..."
+    error: "Impossibile leggere l’immagine. Usa PNG, JPEG, WebP, BMP o GIF sotto 40 MB e 16 milioni di pixel."
+    none: "Nessun codice QR trovato."
+    preview: "Immagine con i contorni dei codici QR"
+    copied: "Copiato."
+    copyFailed: "Impossibile copiare. Seleziona il testo e copialo manualmente."
+    confirmTitle: "Aprire questo link?"
+    copy: "Copia"
+    copyPassword: "Copia password"
+    open: "Apri"
+    cancel: "Annulla"
+    warnings:
+      PlainHttp: "Link HTTP non crittografato."
+      UnusualPort: "Porta di rete insolita."
+      RawIp: "Indirizzo IP al posto del dominio."
+      UserInfo: "Contiene dati utente prima dell’host."
+      InternationalHost: "Dominio internazionalizzato o punycode."
+      MixedScripts: "Il dominio combina alfabeti dall’aspetto simile."
+      DeepSubdomains: "Numero insolito di livelli di sottodomini."
+      Shortener: "Link abbreviato. La destinazione non viene risolta."
+      DirectDownload: "Link per il download diretto."
   qr-code-generator:
     ui:
       tabText: Testo / URL

@@ -1621,6 +1621,32 @@ tools:
         iis: IIS
         windowsServer: Windows Server
       wrappedInScriptBlock: egy szkriptblokkba lesz csomagolva
+  qrcode-reader:
+    title: "QR-kód-olvasó"
+    description: "QR-kódok helyi olvasása képről."
+    privacy: "A képek és a kiolvasott tartalom a böngészőben maradnak. A hivatkozások csak a Megnyitás választásakor nyílnak meg."
+    pick: "Válassz vagy húzz ide egy QR-kódot tartalmazó képet"
+    reading: "QR-kódok helyi olvasása..."
+    error: "A kép nem olvasható. Használj 40 MB-nál és 16 millió képpontnál kisebb PNG-, JPEG-, WebP-, BMP- vagy GIF-képet."
+    none: "Nem található QR-kód."
+    preview: "Kép a QR-kódok körvonalaival"
+    copied: "Másolva."
+    copyFailed: "Nem sikerült másolni. Jelöld ki a szöveget, és másold kézzel."
+    confirmTitle: "Megnyitod ezt a hivatkozást?"
+    copy: "Másolás"
+    copyPassword: "Jelszó másolása"
+    open: "Nyissa meg"
+    cancel: "Mégse"
+    warnings:
+      PlainHttp: "Titkosítatlan HTTP-hivatkozás."
+      UnusualPort: "Szokatlan hálózati port."
+      RawIp: "IP-cím tartománynév helyett."
+      UserInfo: "Felhasználói adatokat tartalmaz a gépnév előtt."
+      InternationalHost: "Nemzetközi vagy punycode-tartomány."
+      MixedScripts: "A tartomány hasonló írásrendszereket kever."
+      DeepSubdomains: "Szokatlanul sok aldomain-szint."
+      Shortener: "Rövidített hivatkozás. A cél nincs feloldva."
+      DirectDownload: "Közvetlen letöltési hivatkozás."
   qr-code-generator:
     ui:
       tabText: Szöveg / URL

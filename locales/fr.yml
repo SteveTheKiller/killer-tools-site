@@ -1464,6 +1464,32 @@ tools:
       copyHmac: Copier le HMAC
     title: Générateur Hmac
     description: Calcule un code d'authentification de message basé sur le hachage (HMAC) à l'aide d'une clé secrète et de votre fonction de hachage préférée.
+  qrcode-reader:
+    title: "Lecteur de codes QR"
+    description: "Lire localement les codes QR d’une image."
+    privacy: "Les images et leur contenu restent dans votre navigateur. Les liens s’ouvrent uniquement avec Ouvrir."
+    pick: "Choisissez ou déposez une image de code QR"
+    reading: "Lecture locale des codes QR..."
+    error: "Impossible de lire cette image. Utilisez un fichier PNG, JPEG, WebP, BMP ou GIF de moins de 40 Mo et 16 millions de pixels."
+    none: "Aucun code QR trouvé."
+    preview: "Image avec les contours des codes QR"
+    copied: "Copié."
+    copyFailed: "Impossible de copier. Sélectionnez le texte et copiez-le manuellement."
+    confirmTitle: "Ouvrir ce lien ?"
+    copy: "Copier"
+    copyPassword: "Copier le mot de passe"
+    open: "Ouvrir"
+    cancel: "Annuler"
+    warnings:
+      PlainHttp: "Lien HTTP non chiffré."
+      UnusualPort: "Port réseau inhabituel."
+      RawIp: "Adresse IP au lieu d’un nom de domaine."
+      UserInfo: "Contient des informations utilisateur avant l’hôte."
+      InternationalHost: "Domaine internationalisé ou punycode."
+      MixedScripts: "Le domaine mélange des écritures qui se ressemblent."
+      DeepSubdomains: "Nombre inhabituel de niveaux de sous-domaines."
+      Shortener: "Lien raccourci. La destination n’est pas résolue."
+      DirectDownload: "Lien de téléchargement direct."
   qr-code-generator:
     ui:
       tabText: Texte / URL
