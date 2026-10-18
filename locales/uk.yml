@@ -1838,6 +1838,8 @@ pages:
     tagKillerShell: Оболонка Windows з відкритим кодом для досвідчених користувачів
     tagKillerNotes: Зашифрований блокнот з відкритим кодом для Windows
     tagKillendar: Зашифрований календар з відкритим кодом для Windows
+    tagKillerBench: Інструменти діагностики й відновлення з відкритим кодом для Windows
+    tagKillerShot: Зашифрований альбом знімків екрана з відкритим кодом для Windows
     linksHeading: Посилання
     linkLabelSite: Сайт
     linkLabelSource: Вихідний код

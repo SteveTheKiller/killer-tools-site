@@ -1834,6 +1834,8 @@ pages:
     tagKillerShell: Open-source Windows shell for power users
     tagKillerNotes: Open-source encrypted notepad for Windows
     tagKillendar: Open-source encrypted calendar for Windows
+    tagKillerBench: Open-source diagnosis and repair workbench for Windows
+    tagKillerShot: Open-source encrypted screenshot album for Windows
     linksHeading: Links
     linkLabelSite: Site
     linkLabelSource: Source

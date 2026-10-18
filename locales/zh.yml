@@ -1833,6 +1833,8 @@ pages:
     tagKillerShell: 面向高级用户的 Windows 开源终端
     tagKillerNotes: Windows 开源加密记事本
     tagKillendar: Windows 开源加密日历
+    tagKillerBench: Windows 开源诊断和修复工作台
+    tagKillerShot: Windows 开源加密截图相册
     linksHeading: 链接
     linkLabelSite: 网站
     linkLabelSource: 源代码

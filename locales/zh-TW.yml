@@ -1834,6 +1834,8 @@ pages:
     tagKillerShell: '面向進階使用者的 Windows 開源 Shell'
     tagKillerNotes: Windows 開源加密記事本
     tagKillendar: Windows 開源加密行事曆
+    tagKillerBench: Windows 開源診斷與修復工作台
+    tagKillerShot: Windows 開源加密螢幕擷取畫面相簿
     linksHeading: 連結
     linkLabelSite: 網站
     linkLabelSource: 原始碼

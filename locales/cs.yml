@@ -1803,6 +1803,8 @@ pages:
     tagKillerShell: Open-source Windows shell pro pokročilé uživatele
     tagKillerNotes: Open-source šifrovaný poznámkový blok pro Windows
     tagKillendar: Open-source šifrovaný kalendář pro Windows
+    tagKillerBench: Open-source nástroj pro diagnostiku a opravy Windows
+    tagKillerShot: Open-source šifrované album snímků obrazovky pro Windows
     linksHeading: Odkazy
     linkLabelSite: Web
     linkLabelSource: 'Zdrojový kód'

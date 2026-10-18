@@ -1834,6 +1834,8 @@ pages:
     tagKillerShell: Тәжірибелі пайдаланушыларға арналған Windows ашық бастапқы кодты қабығы
     tagKillerNotes: Windows үшін ашық бастапқы кодты шифрланған блокнот
     tagKillendar: Windows үшін ашық бастапқы кодты шифрланған күнтізбе
+    tagKillerBench: Windows үшін ашық бастапқы кодты диагностика және жөндеу құралдары
+    tagKillerShot: Windows үшін ашық бастапқы кодты шифрланған скриншот альбомы
     linksHeading: Сілтемелер
     linkLabelSite: Сайт
     linkLabelSource: Бастапқы код

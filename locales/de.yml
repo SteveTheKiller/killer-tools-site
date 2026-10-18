@@ -1807,6 +1807,8 @@ pages:
     tagKillerShell: 'Open-Source-Windows-Shell für Poweruser'
     tagKillerNotes: 'Open-Source-verschlüsseltes Notizbuch für Windows'
     tagKillendar: 'Open-Source-verschlüsselter Kalender für Windows'
+    tagKillerBench: Open-Source-Werkbank für Diagnose und Reparatur unter Windows
+    tagKillerShot: Open-Source-Album für verschlüsselte Screenshots unter Windows
     linksHeading: Links
     linkLabelSite: Website
     linkLabelSource: Quellcode

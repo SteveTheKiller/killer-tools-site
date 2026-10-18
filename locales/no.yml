@@ -1838,6 +1838,8 @@ pages:
     tagKillerShell: Windows-skall med åpen kildekode for avanserte brukere
     tagKillerNotes: Kryptert notatblokk med åpen kildekode for Windows
     tagKillendar: Kryptert kalender med åpen kildekode for Windows
+    tagKillerBench: Diagnose- og reparasjonsverktøy med åpen kildekode for Windows
+    tagKillerShot: Kryptert skjermbildealbum med åpen kildekode for Windows
     linksHeading: Lenker
     linkLabelSite: Nettsted
     linkLabelSource: Kilde

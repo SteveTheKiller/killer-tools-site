@@ -1803,6 +1803,8 @@ pages:
     tagKillerShell: 'Nyílt forráskódú Windows shell haladó felhasználóknak'
     tagKillerNotes: Nyílt forráskódú titkosított jegyzetfüzet Windowsra
     tagKillendar: Nyílt forráskódú titkosított naptár Windowsra
+    tagKillerBench: Nyílt forráskódú diagnosztikai és javítási eszköztár Windowsra
+    tagKillerShot: Nyílt forráskódú titkosított képernyőkép-album Windowsra
     linksHeading: Linkek
     linkLabelSite: Oldal
     linkLabelSource: 'Forráskód'

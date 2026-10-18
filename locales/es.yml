@@ -1807,6 +1807,8 @@ pages:
     tagKillerShell: Shell de Windows de código abierto para usuarios avanzados
     tagKillerNotes: Bloc de notas cifrado de código abierto para Windows
     tagKillendar: Calendario cifrado de código abierto para Windows
+    tagKillerBench: Herramientas de diagnóstico y reparación de código abierto para Windows
+    tagKillerShot: Álbum cifrado de capturas de pantalla de código abierto para Windows
     linksHeading: Enlaces
     linkLabelSite: Sitio
     linkLabelSource: 'Código fuente'

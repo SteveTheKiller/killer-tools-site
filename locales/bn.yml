@@ -1803,6 +1803,8 @@ pages:
     tagKillerShell: পাওয়ার ইউজারদের জন্য ওপেন-সোর্স Windows শেল
     tagKillerNotes: Windows-এর জন্য ওপেন-সোর্স এনক্রিপ্টেড নোটপ্যাড
     tagKillendar: Windows-এর জন্য ওপেন-সোর্স এনক্রিপ্টেড ক্যালেন্ডার
+    tagKillerBench: Windows-এর জন্য ওপেন-সোর্স ডায়াগনসিস ও মেরামতের ওয়ার্কবেঞ্চ
+    tagKillerShot: Windows-এর জন্য ওপেন-সোর্স এনক্রিপ্টেড স্ক্রিনশট অ্যালবাম
     linksHeading: লিংক
     linkLabelSite: সাইট
     linkLabelSource: সোর্স

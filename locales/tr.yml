@@ -1834,6 +1834,8 @@ pages:
     tagKillerShell: İleri düzey kullanıcılar için açık kaynaklı Windows kabuğu
     tagKillerNotes: Windows için açık kaynaklı şifreli not defteri
     tagKillendar: Windows için açık kaynaklı şifreli takvim
+    tagKillerBench: Windows için açık kaynaklı tanılama ve onarım araçları
+    tagKillerShot: Windows için açık kaynaklı şifreli ekran görüntüsü albümü
     linksHeading: Bağlantılar
     linkLabelSite: Site
     linkLabelSource: Kaynak Kod

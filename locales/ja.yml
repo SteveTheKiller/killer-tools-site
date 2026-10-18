@@ -1834,6 +1834,8 @@ pages:
     tagKillerShell: パワーユーザー向けWindowsオープンソースシェル
     tagKillerNotes: Windows向けオープンソース暗号化メモ帳
     tagKillendar: Windows向けオープンソース暗号化カレンダー
+    tagKillerBench: Windows向けオープンソース診断・修復ワークベンチ
+    tagKillerShot: Windows向けオープンソース暗号化スクリーンショットアルバム
     linksHeading: リンク
     linkLabelSite: サイト
     linkLabelSource: ソース

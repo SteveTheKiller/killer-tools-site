@@ -125,6 +125,22 @@ useHead({
                 <span class="app-tag">{{ t('pages.about.tagKillendar') }}</span>
               </span>
             </a>
+            <a class="app-card" href="https://killerbench.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/kb-icon.png" alt="KillerBench" width="66" height="66">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killerbench-wordmark-dark.png" alt="KillerBench">
+                <img class="app-wm wm-light" src="/brand/killerbench-wordmark-light.png" alt="KillerBench">
+                <span class="app-tag">{{ t('pages.about.tagKillerBench') }}</span>
+              </span>
+            </a>
+            <a class="app-card" href="https://killershot.net" target="_blank" rel="noopener">
+              <img class="app-icon" src="/brand/kst-icon.png" alt="KillerShot" width="66" height="66">
+              <span class="app-body">
+                <img class="app-wm wm-dark" src="/brand/killershot-wordmark-dark.png" alt="KillerShot">
+                <img class="app-wm wm-light" src="/brand/killershot-wordmark-light.png" alt="KillerShot">
+                <span class="app-tag">{{ t('pages.about.tagKillerShot') }}</span>
+              </span>
+            </a>
           </div>
         </div>
 
