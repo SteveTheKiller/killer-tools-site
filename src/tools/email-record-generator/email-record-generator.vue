@@ -410,13 +410,15 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 }
 
 /* ── Terminal panel ── */
+/* Surface, border and radius come from the shared .kt-terminal card */
 .erg-terminal {
-  background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
-  background-size: 256px 256px !important;
-  border: 1px solid rgba(var(--kt-accent-rgb), 0.3);
-  border-radius: 8px;
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   overflow: visible; /* allow dropdown menus to escape the card */
+}
+
+/* With overflow visible the accent strip is no longer clipped by the card,
+   so round it to the card's inner corners itself */
+.erg-terminal::after {
+  border-radius: 5px 5px 0 0;
 }
 
 /* ── Record output ── */
