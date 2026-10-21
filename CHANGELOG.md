@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Interface
 
+- Film grain matches the family apps with crisper specks and faded midtones across themes, preserving bright highlights without a gray haze.
 - Centered the KillerMCP landing logo within its content column.
 - Headers use Lacquer consistently across the site.
 - Added yellow and magenta neutral theme accents.
