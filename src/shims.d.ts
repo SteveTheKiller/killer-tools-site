@@ -13,6 +13,8 @@ declare module 'naive-ui' {
   export const lightTheme: any;
   export const zhCN: any;
   export const enUS: any;
+  export const slSI: any;
+  export const dateSlSI: any;
   export type GlobalThemeOverrides = Record<string, any>;
   export function useMessage(): any;
   export function useNotification(): any;
