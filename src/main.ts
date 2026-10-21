@@ -16,9 +16,23 @@ import '@/assets/kt-terminal.css';
 // previous build until the worker notices a new one. Browsers only look on a
 // full navigation, which a phone resuming a tab never does, so also check when
 // the tab comes back into view and once an hour. autoUpdate then swaps in the
-// new build and reloads.
+// new build. Reloading on the spot would wipe whatever a tool is showing, so
+// wait for the next route change and load that page fresh instead: the old
+// build's lazy chunks may already be gone from the cache and the server.
+let newBuildReady = false;
+router.beforeEach((to, from) => {
+  if (newBuildReady && to.fullPath !== from.fullPath) {
+    window.location.assign(router.resolve(to).href);
+    return false;
+  }
+  return true;
+});
+
 registerSW({
   immediate: true,
+  onNeedReload() {
+    newBuildReady = true;
+  },
   onRegisteredSW(_url, registration) {
     if (!registration) {
       return;
