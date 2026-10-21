@@ -87,7 +87,7 @@
     "naive-ui": "^2.45.3",
     "netmask": "^2.1.1",
     "node-forge": "^1.4.0",
-    "oui-data": "^2.1.30",
+    "oui-data": "^2.1.44",
     "pdf-signature-reader": "^1.4.3",
     "pinia": "^4.0.3",
     "qrcode": "^1.5.4",
