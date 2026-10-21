@@ -8,15 +8,19 @@ import FavoriteButton from '@/components/FavoriteButton.vue';
 import BaseLayout from './base.layout.vue';
 
 const route = useRoute();
+const { t } = useI18n();
+const i18nKey = computed<string>(() => route.path.trim().replace('/', ''));
+const toolTitle = computed<string>(() => t(`tools.${i18nKey.value}.title`, String(route.meta.name)));
+const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.description`, String(route.meta.description)));
 
 const head = computed<HeadObject>(() => {
-  const title = `${route.meta.name} - Killer Tools`;
-  const description = (route.meta?.description as string) ?? '';
+  const title = `${toolTitle.value} | Killer Tools`;
+  const description = toolDescription.value;
   const url = `https://killertools.net${route.path}`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    'name': route.meta.name,
+    'name': toolTitle.value,
     'description': description,
     'url': url,
     'applicationCategory': 'DeveloperApplication',
@@ -58,11 +62,6 @@ const head = computed<HeadObject>(() => {
   };
 });
 useHead(head);
-const { t } = useI18n();
-
-const i18nKey = computed<string>(() => route.path.trim().replace('/', ''));
-const toolTitle = computed<string>(() => t(`tools.${i18nKey.value}.title`, String(route.meta.name)));
-const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.description`, String(route.meta.description)));
 const isFullscreen = computed<boolean>(() => !!route.meta.fullscreen);
 const noHeader = computed<boolean>(() => !!route.meta.noHeader);
 const headerLink = computed<{ label: string, href: string } | undefined>(

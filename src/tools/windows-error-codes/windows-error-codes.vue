@@ -78,7 +78,7 @@ function copyValue(value: string) {
             @click="copyValue(hex)"
           >
             <code class="wec-hex">{{ copiedValue === hex ? `✓ ${t('tools.windows-error-codes.ui.copiedShort')}` : hex }}</code>
-            <span class="wec-severity" :class="`wec-sev-${severityColor[severity]}`">{{ severity }}</span>
+            <span class="wec-severity" :class="`wec-sev-${severityColor[severity]}`">{{ tr(severity) }}</span>
           </div>
 
           <div class="wec-body">

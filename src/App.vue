@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { darkTheme, NGlobalStyle, NMessageProvider, NNotificationProvider } from 'naive-ui';
+import { darkTheme, dateSlSI, NGlobalStyle, NMessageProvider, NNotificationProvider, slSI } from 'naive-ui';
 import { RouterView, useRoute } from 'vue-router';
 import { layouts } from './layouts';
 import { useStyleStore } from './stores/style.store';
@@ -13,6 +13,8 @@ const theme = computed(() => (styleStore.isDarkTheme ? darkTheme : null));
 const themeOverrides = computed(() => buildOverridesFor(styleStore.ktTheme, styleStore.ktAccent));
 
 const { availableLocales, locale } = useI18n({ useScope: 'global' });
+const componentLocale = computed(() => locale.value === 'sl' ? slSI : undefined);
+const componentDateLocale = computed(() => locale.value === 'sl' ? dateSlSI : undefined);
 const storedLocale = useStorage('locale', 'en');
 if (availableLocales.includes(storedLocale.value)) {
   locale.value = storedLocale.value;
@@ -52,7 +54,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
+  <n-config-provider :theme="theme" :theme-overrides="themeOverrides" :locale="componentLocale" :date-locale="componentDateLocale">
     <NGlobalStyle />
     <NMessageProvider placement="bottom">
       <NNotificationProvider placement="bottom-right">

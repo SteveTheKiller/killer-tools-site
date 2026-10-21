@@ -73,7 +73,7 @@ function copyId(id: number) {
             @click="copyId(id)"
           >
             <code class="wel-id">{{ copiedId === id ? `✓ ${t('tools.windows-event-lookup.ui.copiedShort')}` : id }}</code>
-            <span class="wel-severity" :class="`wel-sev-${severityColor[severity]}`">{{ severity }}</span>
+            <span class="wel-severity" :class="`wel-sev-${severityColor[severity]}`">{{ tr(severity) }}</span>
           </div>
 
           <div class="wel-body">

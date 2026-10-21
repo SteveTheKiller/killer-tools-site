@@ -79,7 +79,7 @@ function copyValue(value: string) {
             @click="copyValue(code)"
           >
             <code class="ndr-code">{{ copiedValue === code ? `✓ ${t('tools.exchange-ndr-lookup.ui.copiedShort')}` : code }}</code>
-            <span class="ndr-severity" :class="`ndr-sev-${severityColor[severity]}`">{{ severity }}</span>
+            <span class="ndr-severity" :class="`ndr-sev-${severityColor[severity]}`">{{ tr(severity) }}</span>
           </div>
 
           <div class="ndr-body">

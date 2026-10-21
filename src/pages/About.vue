@@ -3,8 +3,8 @@ import { useHead } from '@vueuse/head';
 
 const { t } = useI18n();
 
-const aboutTitle = 'About - Killer Tools';
-const aboutDescription = 'About Killer Tools: a free, open-source collection of handy online tools for developers, sysadmins, and IT pros.';
+const aboutTitle = computed(() => t('metadata.aboutTitle'));
+const aboutDescription = computed(() => t('metadata.aboutDescription'));
 const aboutUrl = 'https://killertools.net/about';
 useHead({
   title: aboutTitle,

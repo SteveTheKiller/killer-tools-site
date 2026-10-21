@@ -67,7 +67,9 @@ useEventListener(document, 'keydown', (e: KeyboardEvent) => {
 });
 
 function accentColor(name: KtAccentKey) {
-  if (name === 'yellow' && accentFamily.value === 'light') return '#FFD94D';
+  if (name === 'yellow' && accentFamily.value === 'light') {
+    return '#FFD94D';
+  }
   return ktAccents[accentFamily.value][name];
 }
 
@@ -76,7 +78,9 @@ function themeDotAccent(theme: typeof ktThemes[number]) {
     return theme.swatchAccent;
   }
   const family = theme.key === 'light' ? 'light' : theme.key === 'black' ? 'black' : 'dark';
-  if (family === 'light' && effectiveAccent.value === 'yellow') return '#FFD94D';
+  if (family === 'light' && effectiveAccent.value === 'yellow') {
+    return '#FFD94D';
+  }
   return ktAccents[family][effectiveAccent.value];
 }
 
@@ -179,8 +183,8 @@ function startDrag(e: PointerEvent) {
         :key="theme.key"
         class="swatch"
         :style="{ 'background': theme.swatchBg, '--sw-accent': themeDotAccent(theme) }"
-        :title="theme.label"
-        :aria-label="theme.label"
+        :title="t(`components.themeDots.themes.${theme.key}`)"
+        :aria-label="t(`components.themeDots.themes.${theme.key}`)"
         :aria-pressed="styleStore.ktTheme === theme.key"
         @click="selectTheme(theme.key)"
       />

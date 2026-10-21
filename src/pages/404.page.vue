@@ -3,7 +3,7 @@ import { useHead } from '@vueuse/head';
 
 const { t } = useI18n();
 
-useHead({ title: 'Page not found - killer tools' });
+useHead({ title: computed(() => `${t('404.notFound')} | Killer Tools`) });
 </script>
 
 <template>

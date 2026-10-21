@@ -341,38 +341,23 @@ useHead({
       <div class="mcp-app-grid">
         <div class="mcp-app-item">
           <h3>KillerPDF</h3>
-          <code>killerpdf merge these PDFs in this order</code>
-          <code>killerpdf search this PDF for invoice number</code>
-          <code>killer add a searchable OCR layer to this PDF</code>
-          <code>killer turn this KillerNotes note into a PDF</code>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.pdf${n}`) }}</code>
         </div>
         <div class="mcp-app-item">
           <h3>KillerNotes</h3>
-          <code>killernotes find my notes about the office network</code>
-          <code>killernotes create a note with this meeting summary</code>
-          <code>killer list my notes tagged projects</code>
-          <code>killer save this KillerScan report as a note</code>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.notes${n}`) }}</code>
         </div>
         <div class="mcp-app-item">
           <h3>KillerScan</h3>
-          <code>killerscan show my local network details</code>
-          <code>killerscan scan 192.168.1.0/24 for devices</code>
-          <code>killer ping example.com and show packet loss</code>
-          <code>killer make a PDF report from this network scan</code>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.scan${n}`) }}</code>
         </div>
         <div class="mcp-app-item">
           <h3>KillerShell</h3>
-          <code>killershell list the services running on this computer</code>
-          <code>killershell search C:\Docs for files named invoice</code>
-          <code>killer show the latest Application log entries</code>
-          <code>killer save this directory listing as a PDF</code>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.shell${n}`) }}</code>
         </div>
         <div class="mcp-app-item">
           <h3>The Killendar</h3>
-          <code>killendar show my appointments for tomorrow</code>
-          <code>killendar create an appointment tomorrow at 9 AM called Morning standup</code>
-          <code>killer show my agenda for the next seven days</code>
-          <code>killer save next week's agenda as a note</code>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.calendar${n}`) }}</code>
           <p>{{ t('pages.mcp.apps.killendarNote') }}</p>
         </div>
       </div>

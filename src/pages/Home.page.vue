@@ -11,9 +11,10 @@ import ColoredCard from '../components/ColoredCard.vue';
 import ToolCard from '../components/ToolCard.vue';
 
 const toolStore = useToolStore();
+const { t } = useI18n();
 
-const homeTitle = 'Killer Tools - Handy online tools for developers and IT pros';
-const homeDescription = 'A free, open-source collection of handy online tools for developers, sysadmins, and IT pros. Converters, generators, network utilities, and more. No ads, no tracking.';
+const homeTitle = computed(() => t('metadata.homeTitle'));
+const homeDescription = computed(() => t('metadata.homeDescription'));
 const homeUrl = 'https://killertools.net/';
 useHead({
   title: homeTitle,
@@ -32,23 +33,21 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      children: computed(() => JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         'name': 'Killer Tools',
         'url': homeUrl,
-        'description': homeDescription,
+        'description': homeDescription.value,
         'publisher': {
           '@type': 'Organization',
           'name': 'Killer Tools',
           'url': homeUrl,
         },
-      }),
+      })),
     },
   ],
 });
-const { t } = useI18n();
-
 const favoriteTools = computed(() => toolStore.favoriteTools);
 
 function onUpdateFavoriteTools() {

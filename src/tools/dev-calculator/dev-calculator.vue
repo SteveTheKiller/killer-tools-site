@@ -527,7 +527,7 @@ onUnmounted(() => {
 
           <!-- Dilution mix -->
           <div class="dc-field-label">
-            {{ t('tools.dev-calculator.ui.mixFor', { volume: effectiveTankVol }) }} &mdash; {{ developer.name }} {{ dilution.label }}
+            {{ t('tools.dev-calculator.ui.mixFor', { volume: effectiveTankVol }) }}: {{ tr(developer.name) }} {{ tr(dilution.label) }}
           </div>
           <div class="dc-mix-row">
             <div class="dc-mix-col">
@@ -555,7 +555,7 @@ onUnmounted(() => {
 
           <!-- Warnings -->
           <div v-if="!hasData && !isCustomBase" class="dc-alert dc-alert-warn">
-            {{ t('tools.dev-calculator.ui.noDataWarning', { film: film.name, developer: developer.name }) }}
+            {{ t('tools.dev-calculator.ui.noDataWarning', { film: film.name, developer: tr(developer.name) }) }}
           </div>
           <div v-if="tempWarning" class="dc-alert dc-alert-warn">
             {{ tempWarning }}

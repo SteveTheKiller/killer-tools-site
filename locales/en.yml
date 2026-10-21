@@ -1,3 +1,12 @@
+metadata:
+  homeTitle: Killer Tools - Handy online tools for developers and IT pros
+  homeDescription: A free, open-source collection of handy online tools for developers, sysadmins, and IT pros. Converters, generators, network utilities, and more. No ads, no tracking.
+  aboutTitle: About - Killer Tools
+  aboutDescription: 'About Killer Tools: a free, open-source collection of handy online tools for developers, sysadmins, and IT pros.'
+  androidTitle: Android App - Killer Tools
+  androidDescription: 'Killer Tools for Android: the whole killertools.net toolbox as a native app. Currently in closed beta on Google Play, with testers needed.'
+  privacyTitle: Privacy Policy - Killer Tools
+  privacyDescription: Privacy policy for Killer Tools. No tracking, no cookies, no data collection. All tool processing happens in your browser.
 home:
   categories:
     newestTools: Newest tools
@@ -428,6 +437,15 @@ tools:
       labelEquivalent: 'Equivalent:'
       symbols: Symbols
       aliases: Aliases
+      fieldDiagram: |-
+        ┌──────────── [optional] seconds (0 - 59)
+        │ ┌────────── minute (0 - 59)
+        │ │ ┌──────── hour (0 - 23)
+        │ │ │ ┌────── day of month (1 - 31)
+        │ │ │ │ ┌──── month (1 - 12) OR jan,feb,mar,apr ...
+        │ │ │ │ │ ┌── day of week (0 - 6, sunday=0) OR sun,mon ...
+        │ │ │ │ │ │
+        * * * * * * command
   http-status-codes:
     title: HTTP status codes
     description: The list of all HTTP status codes, their name, and their meaning.
@@ -1703,6 +1721,8 @@ tools:
       rawPlaceholder: Paste your raw YAML here...
       prettifiedLabel: Prettified version of your YAML
   killer-modules:
+    title: Killer Modules
+    description: PowerShell modules for Windows administration and MSP field work. Install from the PowerShell Gallery.
     ui:
       repo: Repo
       commands: Commands
@@ -1716,7 +1736,15 @@ tools:
         KillerScripts:
           description: Every tool in the killer-scripts repo, available as a command in any PowerShell session. Each script is pulled fresh from GitHub the moment you run it, so you are always on the current version, with a local cache as an offline fallback. All 18 tools get their own command and a short alias, so typing urt runs the Universal Rename Tool.
           requirements: PowerShell 5.1 & 7 · Internet access to fetch the current script (cached copies run offline)
+  killer-notes:
+    title: KillerNotes
+    description: Encrypted notepad for techs. Rich text, inline images, real tables, instant search, SQLCipher AES-256, and .knote sharing.
+  killendar:
+    title: The Killendar
+    description: Encrypted desktop calendar for Windows. Month, week, day and agenda views, color categories, iCalendar import and export, and appointments that stay in one file on your own machine. No account, no sync, no telemetry.
 components:
+  localeSelector:
+    language: Language
   androidBetaBanner:
     announcement: Android beta announcement
     title: Killer Tools is coming to Android
@@ -1739,6 +1767,19 @@ components:
     androidTooltip: Killer Tools for Android
     androidAriaLabel: Killer Tools for Android - join the beta
   themeDots:
+    themes:
+      dark: Dark
+      light: Light
+      black: Black
+      blood: Blood
+      greed: Greed
+      cyanotic: Cyanotic
+      ectoplasm: Ectoplasm
+      decay: Decay
+      malaise: Malaise
+      sepulchre: Sepulchre
+      delirium: Delirium
+      mourning: Mourning
     accentColor: Accent color
     theme: Theme
     toggleThemeSwatches: Toggle theme swatches
@@ -1821,6 +1862,7 @@ pages:
     contactHeading: Contact
     contactBody: If you have questions about this privacy policy, you can reach us at
   androidApp:
+    heroAlt: Killer Tools for Android, IT utility tools for field technicians
     robotAttribution: The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.
     heading: Killer Tools for Android
     introBody1: 'The whole killertools.net toolbox as a native Android app: every tool, the Killer Scripts library, and all your favorites, one tap from your home screen.'
@@ -1948,6 +1990,29 @@ pages:
       intro: 'These examples use installed KillerMCP and the supported Killer app on your Windows computer. Ask in plain language; your agent selects the available command.'
       killendarNote: 'Creating appointments requires Killendar to be open and unlocked.'
       shortcut: 'You can start any of these prompts with {killer} instead of the app name. Name the app only when you want to target it explicitly.'
+      pdf1: killerpdf merge these PDFs in this order
+      pdf2: killerpdf search this PDF for invoice number
+      pdf3: killer add a searchable OCR layer to this PDF
+      pdf4: killer turn this KillerNotes note into a PDF
+      notes1: killernotes find my notes about the office network
+      notes2: killernotes create a note with this meeting summary
+      notes3: killer list my notes tagged projects
+      notes4: killer save this KillerScan report as a note
+      scan1: killerscan show my local network details
+      scan2: killerscan scan 192.168.1.0/24 for devices
+      scan3: killer ping example.com and show packet loss
+      scan4: killer make a PDF report from this network scan
+      shell1: killershell list the services running on this computer
+      shell2: killershell search C:\Docs for files named invoice
+      shell3: killer show the latest Application log entries
+      shell4: killer save this directory listing as a PDF
+      calendar1: killendar show my appointments for tomorrow
+      calendar2: killendar create an appointment tomorrow at 9 AM called Morning standup
+      calendar3: killer show my agenda for the next seven days
+      calendar4: killer save next week's agenda as a note
+    twice:
+      title: Why {km} runs twice
+      body: Claude Desktop starts each local MCP server twice. One copy serves the app's own chats, and the other serves Claude sessions that use this computer remotely. Seeing two KillerMCP.exe processes under Claude in Task Manager is normal. KillerMCP is not installed twice, and nothing needs to be fixed.
     can:
       title: What can it do?
       intro: 'Ask in plain language. Your agent discovers the available tools and their inputs, then calls the ones it needs. For example, it can:'

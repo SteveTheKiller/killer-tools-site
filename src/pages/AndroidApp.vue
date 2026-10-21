@@ -3,8 +3,8 @@ import { useHead } from '@vueuse/head';
 
 const { t } = useI18n();
 
-const pageTitle = 'Android App - Killer Tools';
-const pageDescription = 'Killer Tools for Android: the whole killertools.net toolbox as a native app. Currently in closed beta on Google Play - testers needed.';
+const pageTitle = computed(() => t('metadata.androidTitle'));
+const pageDescription = computed(() => t('metadata.androidDescription'));
 const pageUrl = 'https://killertools.net/android';
 useHead({
   title: pageTitle,
@@ -28,7 +28,7 @@ useHead({
     <!-- Hero: horizontal lockup + Android robot. Frameless on purpose: the art
          carries its own grained background, so no g-card border/accent edge -->
     <div class="hero-card">
-      <img class="hero-img" src="/android-feature.png" alt="Killer Tools for Android - IT Utility Tools for Field Techs">
+      <img class="hero-img" src="/android-feature.png" :alt="t('pages.androidApp.heroAlt')">
     </div>
     <p class="robot-attrib">
       {{ t('pages.androidApp.robotAttribution') }}

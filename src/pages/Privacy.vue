@@ -3,8 +3,8 @@ import { useHead } from '@vueuse/head';
 
 const { t } = useI18n();
 
-const privacyTitle = 'Privacy Policy - Killer Tools';
-const privacyDescription = 'Privacy policy for Killer Tools. No tracking, no cookies, no data collection. All tool processing happens in your browser.';
+const privacyTitle = computed(() => t('metadata.privacyTitle'));
+const privacyDescription = computed(() => t('metadata.privacyDescription'));
 const privacyUrl = 'https://killertools.net/privacy';
 useHead({
   title: privacyTitle,

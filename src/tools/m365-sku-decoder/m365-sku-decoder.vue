@@ -63,7 +63,7 @@ function copyValue(value: string) {
     />
 
     <div class="sku-see-also mb-6 text-xs">
-      See also: <a href="https://m365maps.com" target="_blank" rel="noopener" class="sku-see-also-link">M365 Maps</a> by Aaron Dinnage
+      {{ tr('See also:') }} <a href="https://m365maps.com" target="_blank" rel="noopener" class="sku-see-also-link">M365 Maps</a> {{ tr('by Aaron Dinnage') }}
     </div>
 
     <div v-for="{ skus, category } of filtered" :key="category" class="sku-section">
@@ -84,7 +84,7 @@ function copyValue(value: string) {
             class="kt-terminal-bar sku-bar"
             :title="copiedId === stringId ? t('tools.m365-sku-decoder.ui.copied') : t('tools.m365-sku-decoder.ui.clickToCopy')"
           >
-            <span class="sku-tier" :class="`sku-tier-${tierColor[tier]}`">{{ tier }}</span>
+            <span class="sku-tier" :class="`sku-tier-${tierColor[tier]}`">{{ tr(tier) }}</span>
           </div>
           <div
             class="sku-body"

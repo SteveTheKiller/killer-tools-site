@@ -26,7 +26,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Localization
 
-- Updated the KillerMCP page in all 19 languages and added 18 translated directory descriptions distinguishing the hosted and installed connections.
+- Added Slovenian as the twentieth language across the site, reference catalogs, page titles, menus and generated descriptions.
+- Updated the KillerMCP page in all 20 languages and added 19 translated directory descriptions distinguishing the hosted and installed connections.
 - Completed Vietnamese coverage for current tool categories and descriptions. (Thanks @vuanhvu11982)
 
 ## 2026-07-04

@@ -1,0 +1,2047 @@
+"404":
+  notFound: 404 Ni najdeno
+  sorry: Ta stran očitno ne obstaja
+  maybe: Morda težavo povzroča predpomnilnik. Poskusite prisilno osvežiti stran.
+  backHome: Nazaj na domačo stran
+metadata:
+  homeTitle: Killer Tools | Priročna spletna orodja za razvijalce in strokovnjake IT
+  homeDescription: Brezplačna odprtokodna zbirka priročnih spletnih orodij za razvijalce, sistemske skrbnike in strokovnjake IT. Pretvorniki, generatorji, omrežna orodja in drugo. Brez oglasov in sledenja.
+  aboutTitle: O aplikaciji | Killer Tools
+  aboutDescription: 'O Killer Tools: brezplačna odprtokodna zbirka priročnih spletnih orodij za razvijalce, sistemske skrbnike in strokovnjake IT.'
+  androidTitle: Aplikacija za Android | Killer Tools
+  androidDescription: 'Killer Tools za Android: celotna zbirka orodij killertools.net kot izvorna aplikacija. Trenutno v zaprtem beta preizkusu v Google Play. Iščemo preizkuševalce.'
+  privacyTitle: Pravilnik o zasebnosti | Killer Tools
+  privacyDescription: Pravilnik o zasebnosti Killer Tools. Brez sledenja, piškotkov in zbiranja podatkov. Vsa obdelava v orodjih poteka v vašem brskalniku.
+home:
+  categories:
+    newestTools: Najnovejša orodja
+    favoriteTools: Vaša priljubljena orodja
+    allTools: Vsa orodja
+    favoritesDndToolTip: Povlecite in spustite, da spremenite vrstni red priljubljenih
+  subtitle: Priročna orodja za razvijalce
+  toggleMenu: Pokaži ali skrij meni
+  home: Domov
+  uiLib: Knjižnica vmesnika
+  support: Podprite razvoj killer-tools
+  buyMeACoffee: Častite mi kavo
+  follow:
+    title: Vam je killer-tools všeč?
+    p1: Dodajte zvezdico na
+    githubRepository: Repozitorij StevetheKiller na GitHubu
+    thankYou: Hvala!
+  nav:
+    github: Repozitorij na GitHubu
+    githubRepository: Repozitorij killer-tools na GitHubu
+    about: O killer-tools
+    aboutLabel: O aplikaciji
+    darkMode: Temni način
+    lightMode: Svetli način
+    mode: Preklopi med temnim in svetlim načinom
+about:
+  content: |
+    # killer-tools
+
+    Terenski tehniki nimamo časa za navlako. Vsako orodje tukaj obstaja, ker sem ga potreboval pri delu in nisem našel rešitve, ki bi preprosto delovala brez računa, namestitve ali telemetrije.
+
+    Sem terenski tehnik pri ponudniku upravljanih storitev IT, kjer skrbim za omrežja, sistemsko administracijo in podporo končnim napravam. killer-tools je nastal kot izpeljanka odličnega projekta [IT-Tools](https://github.com/CorentinTh/it-tools) in se razvil v zbirko za delo, ki ga dejansko opravljam. Ustvaril sem ga za iskanje kod NDR med reševanjem zahtevka, pregled strankinega podomrežja in dekodiranje povezave SafeLink pred klikom.
+
+    Vse se izvaja v vašem brskalniku. Nič se ne sledi. Račun ni nikoli potreben.
+
+    Ustvarja in vzdržuje [Steve the Killer](https://thekiller.net). Če vam prihrani čas pri delu, bom hvaležen, če mi [častite kavo](https://www.buymeacoffee.com/StevetheKiller), vendar tega nikoli ne pričakujem.
+
+    ## Pogrešate orodje? Ste našli napako?
+
+    Oddajte predlog funkcije ali prijavo napake v [razdelku težav](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) na GitHubu. Berem jih.
+favoriteButton:
+  remove: Odstrani iz priljubljenih
+  add: Dodaj med priljubljene
+toolCard:
+  new: Novo
+search:
+  label: Iskanje
+tools:
+  categories:
+    favorite-tools: Vaša priljubljena orodja
+    crypto: Kriptografija
+    conversion: Pretvorba
+    web: Splet
+    images and videos: Slike in videoposnetki
+    development: Razvoj
+    network: Omrežje
+    math: Matematika
+    measurement: Merjenje
+    text: Besedilo
+    data: Podatki
+    windows: Windows
+    killer apps: Aplikacije Killer
+    photography: Fotografija
+  password-strength-analyser:
+    title: Analizator moči gesel
+    description: Preverite moč gesla s tem analizatorjem, ki deluje samo v brskalniku in oceni čas za razbitje gesla.
+  password-generator:
+    title: Ustvarjalnik gesel
+    description: Ustvarite močna gesla, geselne fraze Diceware, izgovorljive nize in žetone hex/base64/UUID. Vključuje prednastavitve MSP (lokalni skrbnik, storitveni račun, Wi-Fi PSK, PIN), izključitev dvoumnih znakov, merilnik entropije, kodo QR in fonetični zapis NATO.
+    ui:
+      terminal:
+        passwordTitle: GESLO
+        optionsTitle: MOŽNOSTI
+      meta:
+        entropyLabel: "Entropija:"
+        bits: bitov
+        crackLabel: "Razbitje:"
+      actions:
+        copy: Kopiraj
+        refresh: Osveži
+      section:
+        preset: Prednastavitev
+        mode: Način
+        format: Oblika
+        length: Dolžina ({length})
+        wordCount: Število besed ({count})
+        separator: Ločilo
+        characterClasses: Skupine znakov
+        options: Možnosti
+      charClass:
+        uppercase: Velike črke
+        lowercase: Male črke
+        numbers: Številke
+        symbols: Simboli
+      option:
+        excludeAmbiguous: Izključi dvoumne znake
+        requireOneOfEach: Zahtevaj po enega iz vsake skupine
+        capitalizeWords: Začni besede z veliko črko
+        appendNumber: Dodaj 2 števki
+      mode:
+        random: Naključno
+        passphrase: Geselna fraza
+        pronounceable: Izgovorljivo
+        format: Oblika
+      format:
+        plain: Navadno
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: brez
+      qr:
+        caption: skenirajte za kopiranje
+      phonetic:
+        title: FONETIČNO
+      bulk:
+        generateLabel: Ustvari
+        single: eno
+        atOnce: "{n} hkrati"
+        passwordsTitle: "GESLA: {count}"
+        copyAll: Kopiraj vse
+      toast:
+        passwordCopied: Geslo je kopirano v odložišče
+        passwordsCopied: Gesla so kopirana v odložišče
+        phoneticCopied: Fonetični zapis je kopiran
+  percentage-calculator:
+    title: Kalkulator odstotkov
+    description: Preprosto izračunajte odstotno razmerje med vrednostma ali vrednost iz odstotka.
+    ui:
+      whatIsXPercentOfYTitle: KOLIKO JE X % OD Y
+      whatIsLabel: Koliko je
+      percentOfLabel: "% od"
+      resultPlaceholder: Rezultat
+      xIsWhatPercentOfYTitle: KOLIKO ODSTOTKOV OD Y JE X
+      isWhatPercentOfLabel: je koliko % od
+      percentageChangeTitle: ODSTOTNO POVEČANJE / ZMANJŠANJE
+      fromLabel: Od
+      toLabel: do
+  svg-placeholder-generator:
+    title: Ustvarjalnik nadomestnih slik SVG
+    description: Ustvarite slike SVG za začasno nadomestno vsebino v svojih aplikacijah.
+    ui:
+      widthLabel: ŠIRINA (px)
+      backgroundLabel: OZADJE
+      heightLabel: VIŠINA (px)
+      textColorLabel: BARVA BESEDILA
+      fontSizeLabel: VELIKOST PISAVE
+      customTextLabel: BESEDILO PO MERI
+      customTextPlaceholder: Privzeto je {size}
+      useExactSizeToggle: Uporabi točno velikost
+      svgHtmlElementLabel: ELEMENT HTML SVG
+      svgBase64Label: SVG V BASE64
+      copySvgButton: Kopiraj SVG
+      copyBase64Button: Kopiraj base64
+      downloadSvgButton: Prenesi SVG
+      previewLabel: PREDOGLED
+      svgPreviewAlt: Predogled SVG
+  json-to-csv:
+    title: JSON v CSV
+    description: Pretvorite JSON v CSV s samodejnim prepoznavanjem glav.
+    ui:
+      invalidJson: Vneseni JSON ni veljaven.
+      yourRawJson: Vaš neobdelani JSON
+      pasteRawJsonPlaceholder: Sem prilepite neobdelani JSON...
+      csvOutputLabel: Različica CSV vašega JSON-a
+  camera-recorder:
+    title: Snemalnik kamere
+    description: Posnemite fotografijo ali videoposnetek s spletno ali drugo kamero.
+    ui:
+      selectCamera: Izberite kamero
+      selectMicrophone: Izberite mikrofon
+      notSupported: Vaš brskalnik ne podpira snemanja s kamero.
+      accessRequired: Potreben je dostop do kamere in mikrofona.
+      permissionBlocked: Dovoljenje je bilo blokirano. Dostop ročno omogočite prek ikone ključavnice v naslovni vrstici brskalnika.
+      grantPermission: Dovoli dostop
+      video: VIDEO
+      audio: ZVOK
+      startWebcam: Zaženi spletno kamero
+      paused: ZAČASNO USTAVLJENO
+      rec: SNEMANJE
+      screenshot: Posnetek zaslona
+      record: Snemaj
+      pause: Začasno ustavi
+      resume: Nadaljuj
+      stop: Ustavi
+      recordingNotSupported: Ta brskalnik ne podpira snemanja
+      captures: POSNETKI ({count})
+      clearAll: Počisti vse
+      screenshotAlt: posnetek zaslona
+      download: Prenesi
+      delete: Izbriši
+  reciprocity-calculator:
+    title: Kalkulator odstopanja od recipročnosti
+    description: Izračunajte popravljene dolge osvetlitve za več kot 40 vrst analognega filma s Schwarzschildovim potenčnim zakonom. Zajema črno-bele filme, barvne negative in diapozitive.
+    ui:
+      barReciprocity: KALKULATOR RECIPROČNOSTI
+      barCorrected: POPRAVLJENA OSVETLITEV
+      fieldFilmStock: Vrsta filma
+      typeBw: Črno-beli
+      typeColorNeg: Barvni negativ
+      typeSlide: Diapozitiv / E6
+      noFailureUpTo: Brez odstopanja do {seconds} s
+      sourceManufacturer: Podatki proizvajalca
+      sourceCommunity: Podatki skupnosti
+      fieldMeteredExposure: Izmerjena osvetlitev
+      unitSeconds: sekunde
+      noFailureMessage: Popravek ni potreben. Pri tej dolžini osvetlitve ta film nima odstopanja od recipročnosti.
+      copyDone: ✓ kopirano
+      copySeconds: kopiraj sekunde
+      devReduce10: Za izravnavo povečane gostote v sencah razmislite o skrajšanju razvijanja za približno 10 %.
+      devReduce1015: Priporočeno je skrajšanje razvijanja za 10 do 15 %.
+      devReduce1520: Priporočeno je skrajšanje razvijanja za 15 do 20 %.
+      devReduce2030: Pri zelo dolgih osvetlitvah je priporočeno skrajšanje razvijanja za 20 do 30 %.
+      colorShiftWarning: "Barvni film: pri tej dolžini osvetlitve pričakujte barvni odklon."
+      colorShiftSlide: Diapozitivni film je težko popravljati pri naknadni obdelavi. Priporočeni so korekcijski filtri CC pred objektivom.
+      colorShiftNeg: Barvni negativ dopušča več odstopanja; popravek je mogoč pri izdelavi fotografij ali skeniranju.
+  nd-filter-calculator:
+    title: Kalkulator filtrov ND
+    description: Izračunajte popravljene čase osvetlitve za nevtralne sive filtre. Podpira vse običajne jakosti filtrov ND in poljubno število zaslonk.
+    ui:
+      titleInputs: KALKULATOR FILTROV ND
+      baseShutterSpeed: Osnovni čas osvetlitve (brez filtra)
+      dragOrClick: povlecite ali kliknite
+      custom: Po meri
+      secPlaceholder: s
+      ndFilter: Filter ND
+      stopOne: "Zaslonke: {count}"
+      stopMany: "Zaslonke: {count}"
+      enterStops: vnesite število zaslonk
+      stopsPlaceholder: zaslonke
+      titleResult: POPRAVLJENA OSVETLITEV
+      copied: kopirano
+      copySeconds: kopiraj sekunde
+      longExposureAlert: Dolga osvetlitev. Razmislite o uporabi načina Bulb.
+      stackingFilters: pri kombiniranju filtrov seštejte njihove zaslonke
+      legendT1: osnovni čas osvetlitve (brez filtra)
+      legendT2: popravljeni čas osvetlitve
+      legendStops: jakost filtra ND
+  depth-of-field-calculator:
+    title: Kalkulator globinske ostrine
+    description: Izračunajte bližnjo in daljno mejo ter skupno globinsko ostrino za poljubno kombinacijo objektiva in tipala. Prikaže tudi hiperfokalno razdaljo.
+    ui:
+      sensorMedFormat: Srednji format
+      sensorCustom: Po meri
+      sensorEnterCoc: vnesite razpršilni krožec
+      infinity: neskončnost
+      title: KALKULATOR GLOBINSKE OSTRINE
+      sensorFormat: Format tipala
+      cocPlaceholder: Razpršilni krožec v mm (npr. 0,029)
+      focalLength: Goriščna razdalja (mm)
+      aperture: Zaslonka
+      dragOrClick: povlecite ali kliknite
+      focusDistance: Razdalja ostrenja
+      distancePlaceholder: razdalja
+      results: REZULTATI
+      hyperfocalDistance: Hiperfokalna razdalja
+      hyperfocalHint: Izostrite na to razdaljo za največjo ostrino od polovice te razdalje do neskončnosti
+      nearLimit: Bližnja meja
+      farLimit: Daljna meja
+      totalDof: Skupna globinska ostrina
+      beyondHyperfocal: Razdalja ostrenja je enaka hiperfokalni ali večja. Daljna meja sega v neskončnost.
+      legendHyperfocal: hiperfokalna razdalja
+      legendFocalLength: goriščna razdalja
+      legendFNumber: zaslonsko število
+      legendCoc: razpršilni krožec
+      legendFocusDistance: razdalja ostrenja
+  exposure-equivalence:
+    title: Enakovredne osvetlitve
+    description: Poiščite enakovredne čase osvetlitve pri vseh zaslonkah. Izberite osnovni čas in zaslonko ter preverite potrebni čas pri vsaki drugi zaslonki.
+    ui:
+      titleInputs: ENAKOVREDNE OSVETLITVE
+      shutterSpeed: Čas osvetlitve
+      dragOrClick: povlecite ali kliknite
+      custom: Po meri
+      secPlaceholder: s
+      aperture: Zaslonka
+      titleResults: ENAKOVREDNE OSVETLITVE
+      isoIndependent: Neodvisno od ISO pri nespremenjeni vrednosti ISO
+      highlightedBase: označena vrstica je vaša osnova
+      legendT1: osnovni čas osvetlitve
+      legendT2: enakovredni čas osvetlitve
+      legendN1: osnovna zaslonka (zaslonsko število)
+      legendN2: ciljna zaslonka (zaslonsko število)
+  dev-calculator:
+    title: Kalkulator razvijanja filma
+    description: Izračunajte prilagojene čase razvijanja z upoštevanjem temperature, podaljšanega ali skrajšanega razvijanja in mešanja razredčin. Vključuje zbirko običajnih črno-belih razvijalcev in filmov.
+    ui:
+      hasData: Podatki so na voljo
+      noDataGroup: Ni podatkov, osnovni čas vnesite ročno
+      colorBelow: "{process} pod 36 °C: verjetni so barvni odkloni in nepopolno razvijanje"
+      colorAbove: "{process} nad 40 °C: nevarnost koprene in neenakih barvnih odklonov"
+      bwBelow: "Pod 18 °C: razvijanje bo zelo počasno"
+      bwAbove: "Nad 24 °C: nevarnost mrežastih razpok emulzije in koprene"
+      start: Začni
+      pause: Začasno ustavi
+      resume: Nadaljuj
+      calculatorTitle: KALKULATOR RAZVIJANJA FILMA
+      developer: Razvijalec
+      dilution: Razredčitev
+      filmStock: Vrsta filma
+      baseTimeAt: Osnovni čas pri {temp} °C
+      noData: ni podatkov
+      overridePlaceholder: ročna vrednost (s)
+      customBaseActive: Uporabljen je ročno vneseni osnovni čas
+      temperature: "Temperatura:"
+      pushPull: Podaljšano / skrajšano razvijanje
+      tankVolume: Prostornina posode
+      customMlPlaceholder: poljubna vrednost v ml
+      adjustedTime: PRILAGOJENI ČAS
+      baseTimeTemp: Osnovni čas ({temp} °C)
+      tempAdj: Temperaturni popravek ({temp})
+      pushStop: Podaljšanje za {n} zaslonko
+      pushStops: "Podaljšanje, število zaslonk: {n}"
+      pullStop: Skrajšanje za {n} zaslonko
+      pullStops: "Skrajšanje, število zaslonk: {n}"
+      mixFor: Mešanica za {volume} ml
+      mixDeveloper: razvijalec
+      mixWater: voda
+      noDataWarning: Ni podatkov za {film} + {developer}. Osnovni čas vnesite ročno.
+      pushPullEstimate: Časi podaljšanega in skrajšanega razvijanja so ocenjeni. Priporočamo poskusni film.
+      sourceNote: Osnovni časi so povzeti po zbirki Massive Dev Chart in podatkih proizvajalcev.
+      processTimer: ČASOVNIK POSTOPKA
+      devComplete: Razvijanje je končano
+      devCompleteHint: Film obesite, da se posuši, in uživajte v svojih negativih.
+      stageOf: Korak {current} / {total}
+      agitation: PREMEŠAVANJE
+      reset: Ponastavi
+      skip: Preskoči
+      stDeveloper: Razvijalec
+      stBleach: Belilo
+      stWash: Izpiranje
+      stFixer: Fiksir
+      stWash2: Drugo izpiranje
+      stStabilizer: Stabilizator
+      stFirstDeveloper: Prvi razvijalec
+      stReversalBath: Obračalna kopel
+      stColorDeveloper: Barvni razvijalec
+      stPreBleach: Predbelilna kopel
+      stFinalWash: Končno izpiranje
+      stStopBath: Prekinitvena kopel
+      agC30s10: Prvih 30 s neprekinjeno, nato 10 s vsakih 30 s
+      agRun3Full: Tekoča voda ali 3 popolne menjave vode
+      agGentle: Le nežno zavrtite, nato ne izpirajte
+      agC30s5: Prvih 30 s neprekinjeno, nato 5 s vsakih 30 s
+      agRun3: Tekoča voda ali 3 menjave vode
+      agContinuous: Neprekinjeno
+      ag10per30: 10 s vsakih 30 s
+      agRun5: Tekoča voda ali 5 menjav vode
+      agC60s10: Prvih 30 s neprekinjeno, nato 10 s vsakih 60 s
+      agCont60: Neprekinjeno 60 s
+      ag10per60: 10 s vsakih 60 s
+      agRun5Full: Tekoča voda ali 5 popolnih menjav vode
+  keycode-info:
+    title: Podatki o tipki
+    description: Poiščite vrednosti JavaScript keycode, code, location in modifikatorje poljubne pritisnjene tipke.
+    ui:
+      pressAnyKey: Za prikaz podatkov pritisnite poljubno tipko
+      key: Tipka
+      keycode: Številčna koda tipke
+      code: Koda
+      location: Mesto
+      modifiers: Modifikatorji
+  emoji-picker:
+    title: Izbirnik čustvenčkov
+    description: Preprosto kopirajte in lepite čustvenčke ter poiščite zapis Unicode in kodne točke vsakega čustvenčka.
+    ui:
+      emojiCopied: Čustvenček {emoji} je kopiran v odložišče
+      codePointsCopied: Kodne točke '{codePoints}' so kopirane v odložišče
+      unicodeCopied: Zapis Unicode '{unicode}' je kopiran v odložišče
+      searchPlaceholder: Poiščite čustvenčke (npr. 'nasmeh')...
+      noResults: Ni rezultatov
+      searchResult: Rezultat iskanja
+  color-converter:
+    title: Pretvornik barv
+    description: Pretvarjajte barve med različnimi zapisi (hex, rgb, hsl in ime CSS)
+    ui:
+      color: Barva
+      formats: ZAPISI
+  bcrypt:
+    title: Bcrypt
+    description: Zgoščujte in primerjajte besedilne nize z bcrypt. Bcrypt je funkcija za zgoščevanje gesel, ki temelji na šifri Blowfish.
+    ui:
+      copiedToClipboard: Zgoščeni niz je kopiran v odložišče
+      hashTitle: ZGOŠČEVANJE
+      compareTitle: PRIMERJAVA
+      stringLabel: Niz
+      stringPlaceholder: Vaš niz za zgoščevanje z bcrypt...
+      saltRoundsLabel: Število krogov soljenja
+      outputLabel: REZULTAT
+      copyHash: Kopiraj zgoščeno vrednost
+      compareStringPlaceholder: Vaš niz za primerjavo...
+      hashLabel: Zgoščena vrednost
+      compareHashPlaceholder: Vaša zgoščena vrednost za primerjavo...
+      matchLabel: Ujemanje
+      yes: Da
+      no: Ne
+  crontab-generator:
+    title: Generator crontab
+    description: Preverite in ustvarite zapis crontab ter pridobite razumljiv opis urnika cron.
+    ui:
+      symbolAnyValue: Poljubna vrednost
+      symbolEveryMinute: Vsako minuto
+      symbolRange: Razpon vrednosti
+      symbolRangeEquivalent: Minute od 1 do 10
+      symbolList: Seznam vrednosti
+      symbolListEquivalent: Ob 1. in 10. minuti
+      symbolStep: Vrednosti koraka
+      symbolStepEquivalent: Vsakih 10 minut
+      aliasYearly: Enkrat letno (1. januarja ob polnoči)
+      aliasMonthly: Prvega v mesecu ob polnoči
+      aliasWeekly: V nedeljo ob polnoči
+      aliasDaily: Vsak dan ob polnoči
+      aliasHourly: Vsako polno uro
+      aliasReboot: Zaženi enkrat ob zagonu
+      aliasRebootEquivalent: (ob zagonu)
+      invalidCron: Ta izraz cron ni veljaven
+      use24HourTime: 24-urni zapis časa
+      daysStartAtZero: Dnevi se začnejo z 0
+      labelSymbol: "Simbol:"
+      labelMeaning: "Pomen:"
+      labelExample: "Primer:"
+      labelEquivalent: "Enakovredno:"
+      symbols: Simboli
+      aliases: Vzdevki
+      fieldDiagram: |-
+        ┌──────────── [neobvezno] sekunde (0 - 59)
+        │ ┌────────── minuta (0 - 59)
+        │ │ ┌──────── ura (0 - 23)
+        │ │ │ ┌────── dan v mesecu (1 - 31)
+        │ │ │ │ ┌──── mesec (1 - 12) ALI jan,feb,mar,apr ...
+        │ │ │ │ │ ┌── dan v tednu (0 - 6, nedelja=0) ALI sun,mon ...
+        │ │ │ │ │ │
+        * * * * * * ukaz
+  http-status-codes:
+    title: Kode stanja HTTP
+    description: Seznam vseh kod stanja HTTP, njihovih imen in pomenov.
+    ui:
+      searchResults: Rezultati iskanja
+      searchPlaceholder: Poiščite stanje HTTP...
+      copiedTooltip: Kopirano!
+      clickToCopy: Kliknite za kopiranje kode stanja
+      copiedLabel: kopirano
+  sql-prettify:
+    title: Oblikovanje kode SQL
+    description: Oblikujte svoje poizvedbe SQL v spletnem brskalniku (podprta so različna narečja SQL).
+    ui:
+      dialectLabel: NAREČJE
+      keywordCaseLabel: VELIKOST ČRK KLJUČNIH BESED
+      indentStyleLabel: SLOG ZAMIKOV
+      yourSqlQueryLabel: Vaša poizvedba SQL
+      sqlQueryPlaceholder: Tukaj vnesite poizvedbo SQL...
+      prettifiedQueryLabel: Oblikovana različica vaše poizvedbe
+      keywordCaseUpper: VELIKE ČRKE
+      keywordCaseLower: male črke
+      keywordCasePreserve: Ohrani
+      indentStyleStandard: Običajno
+      indentStyleTabularLeft: Tabelarično levo
+      indentStyleTabularRight: Tabelarično desno
+  git-memo:
+    title: Priročni pregled ukazov Git
+    description: Hiter pregled najpogostejših ukazov in postopkov Git.
+  encryption:
+    title: Šifriranje / dešifriranje besedila
+    description: Šifrirajte navadno besedilo in dešifrirajte šifrirano besedilo z algoritmi, kot so AES, TripleDES, Rabbit ali RC4.
+    ui:
+      decryptError: Besedila ni mogoče dešifrirati
+      encryptTitle: ŠIFRIRANJE
+      decryptTitle: DEŠIFRIRANJE
+      yourText: VAŠE BESEDILO
+      yourSecretKey: VAŠ SKRIVNI KLJUČ
+      algorithm: ALGORITEM
+      encryptedOutput: ŠIFRIRANI REZULTAT
+      yourEncryptedText: VAŠE ŠIFRIRANO BESEDILO
+      decryptedOutput: DEŠIFRIRANI REZULTAT
+      encryptPlaceholder: Niz za šifriranje
+      decryptPlaceholder: Šifrirano besedilo za dešifriranje
+      secretKeyPlaceholder: Skrivni ključ...
+  yaml-prettify:
+    title: Oblikovanje kode YAML
+    description: Oblikujte svoj niz YAML v pregleden in berljiv zapis.
+  roman-numeral-converter:
+    title: Pretvornik rimskih števil
+    description: Pretvarjajte rimske številke v arabske in arabske v rimske.
+    ui:
+      converterTitle: PRETVORNIK
+      arabicSideLabel: ARABSKO ŠTEVILO
+      romanSideLabel: RIMSKO ŠTEVILO
+      arabicRangeError: Mora biti od {min} do {max}
+      invalidRoman: Ni veljavno rimsko število
+      copied: Kopirano
+      copy: Kopiraj
+      romanCopiedToast: Rimsko število je kopirano
+      arabicCopiedToast: Arabsko število je kopirano
+  hmac-generator:
+    title: Generator HMAC
+    description: Izračuna kodo za preverjanje pristnosti sporočila na podlagi zgoščevalne funkcije (HMAC) s skrivnim ključem in izbrano zgoščevalno funkcijo.
+    ui:
+      encodingBinary: Dvojiško (osnova 2)
+      encodingHex: Šestnajstiško (osnova 16)
+      copied: HMAC je kopiran v odložišče
+      plainText: NAVADNO BESEDILO
+      secretKey: SKRIVNI KLJUČ
+      hashingFunction: ZGOŠČEVALNA FUNKCIJA
+      outputEncoding: KODIRANJE REZULTATA
+      hmacOutput: REZULTAT HMAC
+      plainTextPlaceholder: Navadno besedilo za izračun zgoščene vrednosti...
+      secretKeyPlaceholder: Vnesite skrivni ključ...
+      clear: Počisti
+      copyHmac: Kopiraj HMAC
+  bip39-generator:
+    title: Generator geselnih fraz BIP39
+    description: Ustvarite geselno frazo BIP39 iz obstoječega ali naključnega mnemoničnega zapisa ali pridobite mnemonični zapis iz geselne fraze.
+    ui:
+      languageEnglish: Angleščina
+      languageChineseSimplified: Poenostavljena kitajščina
+      languageChineseTraditional: Tradicionalna kitajščina
+      languageCzech: Češčina
+      languageFrench: Francoščina
+      languageItalian: Italijanščina
+      languageJapanese: Japonščina
+      languageKorean: Korejščina
+      languagePortuguese: Portugalščina
+      languageSpanish: Španščina
+      entropyLengthError: Dolžina entropije mora biti od 16 do 32 in večkratnik števila 4
+      entropyHexError: Entropija mora biti šestnajstiški niz
+      invalidMnemonic: Neveljaven mnemonični zapis
+      entropyCopied: Entropija je kopirana v odložišče
+      passphraseCopied: Geselna fraza je kopirana v odložišče
+      languageLabel: Jezik
+      entropyHeading: ENTROPIJA (SEME)
+      entropyPlaceholder: Šestnajstiški zapis entropije...
+      regenerate: Ustvari znova
+      copyEntropy: Kopiraj entropijo
+      passphraseHeading: GESELNA FRAZA (MNEMONIČNI ZAPIS)
+      passphrasePlaceholder: Mnemonične besede...
+      copyPassphrase: Kopiraj geselno frazo
+  base64-file-converter:
+    title: Pretvornik datotek Base64
+    description: Pretvorite niz, datoteko ali sliko v zapis Base64.
+    ui:
+      copiedToClipboard: Niz Base64 je kopiran v odložišče
+      base64ToFileTitle: BASE64 V DATOTEKO
+      fileNameLabel: IME DATOTEKE
+      fileNamePlaceholder: Ime datoteke za prenos
+      extensionLabel: PRIPONA
+      extensionPlaceholder: pripona
+      base64StringLabel: NIZ BASE64
+      base64InputPlaceholder: Tukaj vnesite datoteko v zapisu Base64...
+      invalidBase64: Neveljaven niz Base64
+      previewImage: Predogled slike
+      downloadFile: Prenesi datoteko
+      fileToBase64Title: DATOTEKA V BASE64
+      dropHint: Povlecite in spustite datoteko sem ali kliknite za izbiro
+      fileInBase64Label: DATOTEKA V ZAPISU BASE64
+      fileOutputPlaceholder: Tukaj bo datoteka v zapisu Base64
+      copied: Kopirano!
+      copyBase64: Kopiraj base64
+  base64-string-converter:
+    title: Kodirnik/dekodirnik nizov Base64
+    description: Preprosto kodirajte nize v zapis Base64 in jih dekodirajte.
+    ui:
+      base64CopiedToClipboard: Niz Base64 je kopiran v odložišče
+      stringCopiedToClipboard: Niz je kopiran v odložišče
+      stringToBase64Title: NIZ V BASE64
+      encodingLabel: KODIRANJE
+      standard: Običajno
+      urlSafe: Varno za URL
+      stringToEncodeLabel: NIZ ZA KODIRANJE
+      stringInputPlaceholder: Tukaj vnesite svoj niz...
+      base64OutputLabel: REZULTAT BASE64
+      base64OutputPlaceholder: Tukaj bo vaš niz v zapisu Base64
+      copied: Kopirano!
+      copyBase64: Kopiraj base64
+      base64ToStringTitle: BASE64 V NIZ
+      base64ToDecodeLabel: NIZ BASE64 ZA DEKODIRANJE
+      base64InputPlaceholder: Vaš niz Base64...
+      invalidBase64: Neveljaven niz Base64
+      decodedStringLabel: DEKODIRANI NIZ
+      decodedOutputPlaceholder: Tukaj bo dekodirani niz
+      copyDecodedString: Kopiraj dekodirani niz
+  math-evaluator:
+    title: Računanje matematičnih izrazov
+    description: Kalkulator za računanje matematičnih izrazov. Uporabljate lahko funkcije sqrt, cos, sin, abs in druge.
+    ui:
+      placeholder: Vaš matematični izraz (npr. 2*sqrt(6))...
+      result: Rezultat
+  url-parser:
+    title: Razčlenjevalnik URL-jev
+    description: Razčlenite URL na sestavne dele (protokol, izvor, parametri, vrata, uporabniško ime in geslo ...)
+    ui:
+      sectionHost: Gostitelj
+      protocol: Protokol
+      hostname: Ime gostitelja
+      port: Vrata
+      sectionAuthentication: Preverjanje pristnosti
+      username: Uporabniško ime
+      password: Geslo
+      sectionPath: Pot
+      pathname: Ime poti
+      search: Iskanje
+      hash: Zgoščena vrednost
+      urlTitle: URL
+      invalidUrl: Neveljaven URL
+      params: PARAMETRI
+      emptyHint: Zgoraj vnesite URL za razčlenitev
+  phone-parser-and-formatter:
+    title: Razčlenjevalnik telefonskih številk
+    description: Razčlenite in oblikujte telefonske številke. Prepoznajte državo, preverite veljavnost ter prikažite mednarodni, nacionalni, E.164 in RFC3966 zapis.
+    ui:
+      invalidPhoneNumber: Neveljavna telefonska številka
+      sectionLocation: Mesto
+      countryCode: Koda države
+      country: Država
+      callingCode: Klicna številka
+      sectionValidation: Preverjanje veljavnosti
+      isValid: Je veljavno?
+      yes: Da
+      no: Ne
+      isPossible: Je mogoče?
+      type: Vrsta
+      unknown: Neznano
+      sectionFormats: Zapisi
+      international: Mednarodni
+      national: Nacionalni
+      defaultCountry: Privzeta država
+      phoneNumber: Telefonska številka
+      emptyStatePrompt: Zgoraj vnesite telefonsko številko za razčlenitev
+  user-agent-parser:
+    title: Razčlenjevalnik niza user-agent
+    description: Iz niza user-agent prepoznajte in razčlenite brskalnik, pogon, operacijski sistem, procesor ter vrsto in model naprave.
+    ui:
+      sectionBrowser: Brskalnik
+      sectionEngine: Pogon
+      sectionOs: Operacijski sistem
+      sectionDevice: Naprava
+      sectionCpu: Procesor
+      name: Ime
+      version: Različica
+      model: Model
+      type: Vrsta
+      vendor: Proizvajalec
+      architecture: Arhitektura
+      userAgentString: NIZ USER-AGENT
+      placeholder: Tukaj vnesite svoj niz user-agent...
+      unknown: Neznano
+      error: NAPAKA
+      parseError: Niza user-agent ni bilo mogoče razčleniti
+  case-converter:
+    title: Pretvornik velikosti črk
+    description: Spremenite velikost črk v nizu in izberite med različnimi zapisi
+    ui:
+      inputPlaceholder: Vaš niz...
+      output: REZULTAT
+  html-entities:
+    title: Ubežni zapisi HTML
+    description: Pretvorite znake v entitete HTML ali nazaj (zamenjajte znake, kot so <, >, &, " in \', z njihovim zapisom HTML)
+    ui:
+      yourString: VAŠ NIZ
+      escapePlaceholder: Niz za pretvorbo v ubežni zapis...
+      escapedOutput: REZULTAT Z UBEŽNIMI ZAPISI
+      copied: Kopirano
+      copy: Kopiraj
+      yourEscapedString: VAŠ NIZ Z UBEŽNIMI ZAPISI
+      unescapePlaceholder: Niz za pretvorbo iz ubežnega zapisa...
+      unescapedOutput: REZULTAT BREZ UBEŽNIH ZAPISOV
+  json-prettify:
+    title: Oblikovanje kode JSON
+    description: Oblikujte svoj niz JSON v pregleden in berljiv zapis.
+  docker-run-to-docker-compose-converter:
+    title: Pretvornik Docker run v Docker compose
+    description: Pretvorite ukaze "docker run" v datoteke docker-compose!
+  mac-address-lookup:
+    title: Iskanje po naslovu MAC
+    description: Poiščite dobavitelja in proizvajalca naprave po njenem naslovu MAC.
+    ui:
+      macAddressLabel: Naslov MAC
+      copiedTooltip: Kopirano!
+      copyTooltip: Kliknite za kopiranje podatkov o proizvajalcu
+      copiedTitle: ✓ kopirano
+      vendorInfoTitle: Podatki o proizvajalcu
+      unknownVendor: Proizvajalec za ta naslov ni znan
+  lorem-ipsum-generator:
+    title: Generator lorem ipsum
+    description: Ustvarite nadomestno besedilo lorem ipsum za osnutke in oblikovanje.
+    ui:
+      copiedMessage: Besedilo lorem ipsum je kopirano v odložišče
+      paragraphs: Odstavki
+      sentencesPerParagraph: Stavki na odstavek
+      wordsPerSentence: Besede na stavek
+      startWithLoremIpsum: Začni z lorem ipsum
+      asHtml: Kot HTML
+      output: REZULTAT
+      wordCount: "Besede: {count}"
+      charCount: "Znaki: {count}"
+      copy: Kopiraj
+      refresh: Osveži
+  qrcode-generator:
+    title: Generator kod QR
+    description: Ustvarite in prenesite kode QR za URL-je, navadno besedilo ali prijavne podatke za Wi-Fi. Izbirajte med terminalsko, klasično in poljubno barvno temo z nastavljivim popravljanjem napak.
+  signature-creator:
+    title: Ustvarjalnik podpisov
+    description: Narišite lastnoročni podpis na platno in ga izvozite kot prosojno sliko PNG. Lahko tudi naložite sliko in z enim klikom odstranite ozadje z umetno inteligenco v svoji napravi.
+    ui:
+      drawSignatureTab: Nariši podpis
+      removeBackgroundTab: Odstrani ozadje
+      inkColorLabel: Barva črnila
+      strokeWeightLabel: Debelina poteze
+      actionsLabel: Dejanja
+      undoButton: ↩ Razveljavi
+      clearButton: ✕ Počisti
+      downloadTransparentPng: ↓ Prenesi prosojno sliko PNG
+      uploadImageLabel: Naloži sliko
+      dropzoneText: Spustite sliko sem ali kliknite za izbiro
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Slika je naložena
+      removeButton: ✕ Odstrani
+      removeBackgroundButton: ⚡ Odstrani ozadje
+      exportLabel: Izvozi
+      downloadNoBgPng: ↓ Prenesi PNG (brez ozadja)
+      originalLabel: Izvirnik
+      resultLabel: Rezultat
+      uploadPrompt: Za začetek naložite sliko
+      originalAlt: izvirnik
+      resultAlt: rezultat z odstranjenim ozadjem
+      loadingModelStatus: Nalaganje modela umetne inteligence...
+      removingBackgroundStatus: Odstranjevanje ozadja...
+      processingPercentStatus: Obdelava... {pct} %
+      downloadingModelPercentStatus: Prenašanje modela... {pct} %
+      removeBackgroundFailedStatus: Ozadja ni bilo mogoče odstraniti. Poskusite z drugo sliko.
+  xml-formatter:
+    title: Oblikovalnik XML
+    description: Oblikujte svoj niz XML v pregleden in berljiv zapis.
+    ui:
+      invalidXml: Vneseni XML ni veljaven.
+      collapse: Strni
+      indentSize: Velikost zamika
+      inputLabel: Vaš XML
+      inputPlaceholder: Tukaj prilepite svoj XML...
+      outputLabel: Oblikovana različica vašega XML
+  temperature-converter:
+    title: Pretvornik temperature
+    description: Pretvarjanje temperature med lestvicami Kelvin, Celzij, Fahrenheit, Rankine, Delisle, Newton, Réaumur in Rømer.
+    ui:
+      kelvin: Kelvin
+      celsius: Celzij
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
+  chmod-calculator:
+    title: Kalkulator chmod
+    description: Izračunajte dovoljenja in ukaze chmod s tem spletnim kalkulatorjem.
+    ui:
+      read: Branje
+      write: Pisanje
+      execute: Izvajanje
+      owner: Lastnik
+      group: Skupina
+      public: Drugi
+      commandCopied: Ukaz chmod je kopiran
+      copyCommand: Kopiraj ukaz
+  rsa-key-pair-generator:
+    title: Generator parov ključev RSA
+    description: Ustvarite nov naključni par zasebnega in javnega ključa RSA v zapisu PEM.
+    ui:
+      bitsRangeError: Število bitov mora biti od 256 do 16384 in večkratnik števila 8
+      bitsLabel: Biti
+      refreshButton: Ustvari nov par ključev
+      publicKeyTitle: Javni ključ
+      copyPublicKeyTitle: Kopiraj javni ključ
+      copy: Kopiraj
+      generating: Ustvarjanje...
+      privateKeyTitle: Zasebni ključ
+      copyPrivateKeyTitle: Kopiraj zasebni ključ
+      publicKeyCopiedToast: Javni ključ je kopiran
+      privateKeyCopiedToast: Zasebni ključ je kopiran
+  html-wysiwyg-editor:
+    title: Vizualni urejevalnik HTML
+    description: Zmogljiv spletni vizualni urejevalnik HTML, ki sproti ustvarja izvorno kodo vsebine.
+    ui:
+      bold: Krepko
+      italic: Ležeče
+      strike: Prečrtano
+      inlineCode: Koda v vrstici
+      heading1: Naslov 1
+      heading2: Naslov 2
+      heading3: Naslov 3
+      heading4: Naslov 4
+      bulletList: Označeni seznam
+      orderedList: Oštevilčeni seznam
+      codeBlock: Blok kode
+      blockquote: Blok citata
+      hardBreak: Prelom vrstice
+      clearFormat: Odstrani oblikovanje
+      undo: Razveljavi
+      redo: Uveljavi
+  json-diff:
+    title: Primerjava JSON
+    description: Primerjajte dva objekta JSON in prikažite razlike med njima.
+    ui:
+      onlyShowDifferences: Prikaži samo razlike
+      jsonsAreTheSame: Vnesena zapisa JSON sta enaka
+      firstJsonTitle: VAŠ PRVI JSON
+      firstJsonPlaceholder: Tukaj prilepite prvi JSON...
+      invalidJson: Neveljaven zapis JSON
+      secondJsonTitle: VAŠ JSON ZA PRIMERJAVO
+      secondJsonPlaceholder: Tukaj prilepite JSON za primerjavo...
+  jwt-parser:
+    title: Razčlenjevalnik JWT
+    description: Razčlenite in dekodirajte žeton JSON Web Token (JWT) ter prikažite njegovo vsebino.
+    ui:
+      header: Glava
+      payload: Vsebina
+      jwtToDecodeTitle: JWT ZA DEKODIRANJE
+      tokenPlaceholder: Tukaj vnesite svoj žeton...
+      invalidJwt: Neveljaven JWT
+  date-converter:
+    title: Pretvornik datuma in časa
+    description: Pretvarjajte datum in čas v različne zapise
+  ipv4-subnet-calculator:
+    title: Kalkulator podomrežij IPv4
+    description: Razčlenite bloke IPv4 CIDR in pridobite potrebne podatke o svojem podomrežju.
+    ui:
+      invalidAddress: Tega naslova ni mogoče razčleniti. Preverite zapis
+      netmask: Omrežna maska
+      networkAddress: Omrežni naslov
+      networkMask: Omrežna maska
+      networkMaskBinary: Omrežna maska v dvojiškem zapisu
+      cidrNotation: Zapis CIDR
+      wildcardMask: Nadomestna maska
+      networkSize: Velikost omrežja
+      firstAddress: Prvi naslov
+      lastAddress: Zadnji naslov
+      broadcastAddress: Naslov za oddajanje
+      noBroadcast: Pri tej maski ni naslova za oddajanje
+      ipClass: Razred IP
+      unknownClassType: Neznan razred
+      decimal: Desetiško
+      hexadecimal: Šestnajstiško
+      binary: Dvojiško
+      ipv6Short: IPv6 (skrajšano)
+      inputLabel: Naslov IPv4 z masko ali brez nje
+      bitMap: PRIKAZ BITOV
+      network: Omrežje
+      host: Gostitelj
+      setPrefix: Nastavi predpono na /{prefix}
+      networkTag: omrežje
+      broadcastTag: oddajanje
+      hostsCount: "Gostitelji: {count}"
+      privateIp: Zasebni IP
+      publicIp: Javni IP
+      subnetDetail: PODROBNOSTI PODOMREŽJA
+      subnetInfo: PODATKI O PODOMREŽJU
+      addressRepresentations: ZAPISI NASLOVA
+      copy: Kopiraj
+      enterValidIpv4: Za prikaz zapisov vnesite veljaven naslov IPv4
+      previousBlock: Prejšnji blok
+      nextBlock: Naslednji blok
+      collapseCheatSheet: Strni preglednico
+      subnetCheatSheet: Preglednica podomrežij
+  og-meta-generator:
+    title: Generator metapodatkov Open Graph
+    description: Ustvarite metaoznake HTML za Open Graph in družbena omrežja za svoje spletno mesto.
+  ipv6-ula-generator:
+    title: Generator IPv6 ULA
+    description: Ustvarite lastne lokalne naslove IP za svoje omrežje, ki niso usmerljivi v javnem internetu, skladno z RFC4193.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Prvi usmerljivi naslov
+      lastRoutable: Zadnji usmerljivi naslov
+      infoAlert: Uporablja trenutni časovni žig in naslov MAC, zgoščena s SHA1. Spodnjih 40 bitov sestavlja globalni ID po RFC 4193.
+      macAddress: Naslov MAC
+      output: Rezultat
+      copied: Kopirano!
+      copy: Kopiraj
+  hash-text:
+    title: Zgoščevanje besedila
+    description: Zgoščujte besedilo z MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 in drugimi algoritmi.
+    ui:
+      encodingBinary: Dvojiško (osnova 2)
+      encodingHex: Šestnajstiško (osnova 16)
+      encodingBase64: Base64 (osnova 64)
+      encodingBase64url: Base64url (osnova 64, varno za URL)
+      inputPlaceholder: Vaš niz za zgoščevanje...
+      encoding: Kodiranje
+      output: REZULTAT
+  json-to-toml:
+    title: JSON v TOML
+    description: Razčlenite in pretvorite JSON v TOML.
+  device-information:
+    title: Podatki o napravi
+    description: Pridobite podatke o trenutni napravi (velikost zaslona, razmerje slikovnih pik, user-agent ...)
+    ui:
+      screen: Zaslon
+      hardware: Strojna oprema
+      network: Omrežje
+      browser: Brskalnik
+      screenSize: Velikost zaslona
+      windowSize: Velikost okna
+      pixelRatio: Razmerje slikovnih pik
+      colorDepth: Barvna globina
+      orientation: Usmerjenost
+      orientationAngle: Kot usmerjenosti
+      touchPoints: Točke dotika
+      cpuCores: Jedra procesorja
+      deviceMemory: Pomnilnik naprave
+      platform: Platforma
+      online: Povezano
+      connectionType: Vrsta povezave
+      downlinkSpeed: Hitrost prenosa k napravi
+      roundTripTime: Čas povratne poti
+      dataSaver: Varčevanje s podatki
+      vendor: Proizvajalec
+      languages: Jeziki
+      cookiesEnabled: Piškotki so omogočeni
+      pdfViewer: Pregledovalnik PDF
+      doNotTrack: Ne sledi
+      userAgent: Uporabniški agent
+      maxTouchPoints: "Največ: {count}"
+      none: Brez
+      logicalCores: "Logična jedra: {count}"
+      yes: Da
+      no: Ne
+      enabled: Omogočeno
+      disabled: Onemogočeno
+      supported: Podprto
+      notSupported: Ni podprto
+      notSet: Ni nastavljeno
+  pdf-signature-checker:
+    title: Preverjevalnik podpisov PDF
+    description: Preverite podpise v datoteki PDF. Podpisana datoteka PDF vsebuje enega ali več podpisov, s katerimi lahko ugotovite, ali se je vsebina datoteke po podpisu spremenila.
+    ui:
+      tableHeaderValidityPeriod: Obdobje veljavnosti
+      tableHeaderIssuedBy: Izdajatelj
+      tableHeaderIssuedTo: Izdano za
+      tableHeaderPemCertificate: Potrdilo PEM
+      notBefore: Velja od
+      notAfter: Velja do
+      commonName: Splošno ime
+      organizationName: Ime organizacije
+      countryName: Ime države
+      localityName: Ime kraja
+      organizationalUnitName: Ime organizacijske enote
+      stateOrProvinceName: Ime zvezne države ali pokrajine
+      viewPemCert: Prikaži potrdilo PEM
+      uploadPrompt: Povlecite in spustite datoteko PDF sem ali kliknite za izbiro datoteke
+      noSignaturesFound: V izbrani datoteki ni bilo najdenih podpisov.
+      signatureCertificatesLabel: "Potrdila podpisa {number}:"
+  json-minify:
+    title: Strnjevanje JSON
+    description: Zmanjšajte in strnite JSON z odstranitvijo odvečnih presledkov.
+    ui:
+      invalidJson: Vneseni JSON ni veljaven.
+      inputLabel: Vaš neobdelani JSON
+      inputPlaceholder: Sem prilepite neobdelani JSON...
+      outputLabel: Strnjena različica vašega JSON
+  ulid-generator:
+    title: Generator ULID
+    description: Ustvarite naključne univerzalno enolične leksikografsko razvrstljive identifikatorje (ULID).
+    ui:
+      copiedMessage: Identifikatorji ULID so kopirani v odložišče
+      quantity: KOLIČINA
+      format: ZAPIS
+      formatRaw: Neobdelano
+      formatJson: JSON
+      output: REZULTAT
+      copy: Kopiraj
+      refresh: Osveži
+  base-converter:
+    title: Pretvornik številskih osnov
+    description: Pretvarjajte število med različnimi osnovami (desetiško, šestnajstiško, dvojiško, osmiško, Base64 ...)
+  uuid-generator:
+    title: Generator UUID
+    description: Ustvarite naključne identifikatorje UUID (v1 in v4) in preglejte njihovo strukturo.
+    ui:
+      copiedMessage: Identifikatorji UUID so kopirani v odložišče
+      version: RAZLIČICA
+      quantity: KOLIČINA
+      namespacePreset: PREDNASTAVLJENI IMENSKI PROSTOR
+      namespaceUuid: UUID IMENSKEGA PROSTORA
+      invalidUuid: Neveljaven UUID
+      name: IME
+      namePlaceholder: Ime za zgoščevanje...
+      output: REZULTAT
+      copy: Kopiraj
+      refresh: Osveži
+  ipv4-address-converter:
+    title: Pretvornik naslovov IPv4
+    description: Pretvorite naslov IP v desetiški, dvojiški, šestnajstiški ali celo zapis IPv6.
+    ui:
+      decimal: Desetiško
+      hexadecimal: Šestnajstiško
+      binary: Dvojiško
+      ipv6Short: IPv6 (skrajšano)
+      invalidIpv4: Neveljaven naslov IPv4
+      ipv4Address: Naslov IPv4
+      output: Rezultat
+      copied: Kopirano!
+      copy: Kopiraj
+  text-statistics:
+    title: Statistika besedila
+    description: Pridobite podatke o besedilu, številu znakov in besed, velikosti v bajtih ter druge podatke.
+    ui:
+      textPlaceholder: Vaše besedilo...
+      characterCount: ŠTEVILO ZNAKOV
+      wordCount: ŠTEVILO BESED
+      lineCount: ŠTEVILO VRSTIC
+      byteSize: VELIKOST V BAJTIH
+  text-to-nato-alphabet:
+    title: Besedilo v abecedo NATO
+    description: Pretvorite besedilo v fonetično abecedo NATO za ustno sporočanje.
+    ui:
+      yourText: VAŠE BESEDILO
+      inputPlaceholder: npr. Pozdravljen svet
+      natoPhonetic: FONETIČNA ABECEDA NATO
+      copied: Kopirano
+      copyAll: Kopiraj vse
+      natoStringCopied: Niz v abecedi NATO je kopiran.
+  ipv4-range-expander:
+    title: Izračun obsega IPv4
+    description: Iz začetnega in končnega naslova IPv4 to orodje izračuna veljavno podomrežje IPv4 in njegov zapis CIDR.
+    ui:
+      startAddress: Začetni naslov
+      endAddress: Končni naslov
+      addressesInRange: Naslovi v obsegu
+      invalidIpv4: Neveljaven naslov IPv4
+      invalidCombinationTitle: Neveljavna kombinacija začetnega in končnega naslova IPv4
+      invalidCombinationDescription: Končni naslov IPv4 je manjši od začetnega. Tak vnos ni veljaven, zato rezultata ni mogoče izračunati.
+      switchStartEnd: Zamenjaj začetni in končni naslov IPv4
+      result: Rezultat
+      copied: Kopirano!
+      copyResult: Kopiraj rezultat
+  text-diff:
+    title: Primerjava besedila
+    description: Primerjajte dve besedili in si oglejte razlike med njima.
+  otp-generator:
+    title: Generator kod OTP
+    description: Ustvarite in preverite časovno omejena enkratna gesla (OTP) za večfaktorsko preverjanje pristnosti.
+  text-to-binary:
+    title: Besedilo v dvojiški zapis ASCII
+    description: Pretvarjajte besedilo v dvojiški zapis ASCII in obratno.
+    ui:
+      textCopied: Besedilo je kopirano
+      binaryCopied: Dvojiški zapis je kopiran
+      panelTitle: BESEDILO ↔ DVOJIŠKI ASCII
+      textLabel: BESEDILO
+      binaryLabel: DVOJIŠKO
+      copied: Kopirano
+      copy: Kopiraj
+      textPlaceholder: npr. Pozdravljen svet
+      invalidBinary: Potreben je veljaven dvojiški zapis ASCII (večkratniki 8 bitov)
+  ascii-word-art:
+    title: Generator besedilne umetnosti ASCII
+    description: Ustvarite besedilno umetnost ASCII z različnimi pisavami in slogi.
+  killer-scripts:
+    title: Killer Scripts
+    description: Skripti PowerShell za upravljanje sistema Windows in terensko delo ponudnikov upravljanih storitev (MSP).
+    ui:
+      loadError: Skriptov z GitHuba ni bilo mogoče naložiti. Preverite povezavo ali poskusite znova.
+      retry: Poskusi znova
+      copyCommand: Kopiraj ukaz
+      copied: Kopirano!
+      infoCopySuffix: kopira v odložišče enovrstični ukaz, ki prenese in zažene skript neposredno v PowerShellu.
+      infoDownloadPrefix: Gumb
+      infoDownloadMiddle: shrani datoteko
+      infoDownloadSuffix: v računalnik za ročno uporabo.
+  powershell-builder:
+    title: Sestavljalnik ukazov PowerShell
+    description: Izberite ukaz cmdlet, vnesite parametre in kopirajte pripravljen ukaz PowerShell.
+  group-policy-reference:
+    title: Priročnik za pravilnike skupine
+    description: Poiščite pogoste nastavitve pravilnikov skupine Windows po imenu, poti GPO, registrskem ključu ali opisu.
+    ui:
+      searchPlaceholder: Poiščite pravilnike, poti, registrske ključe...
+      copied: Kopirano!
+      clickToCopyRegistry: Kliknite za kopiranje registrskega ključa
+      copiedShort: kopirano
+      default: Privzeto
+      recommended: Priporočeno
+  windows-event-lookup:
+    title: Iskanje dogodkov Windows
+    description: Poiščite ID-je dogodkov Windows z opisi, stopnjami resnosti in pogostimi vzroki.
+    ui:
+      searchResults: Rezultati iskanja
+      searchPlaceholder: Poiščite po ID-ju dogodka, imenu ali opisu...
+      copied: Kopirano!
+      clickToCopyEventId: Kliknite za kopiranje ID-ja dogodka
+      copiedShort: kopirano
+  m365-sku-decoder:
+    title: Dekodirnik licenc SKU za M365
+    description: Razberite imena izdelkov iz nizov SKU in identifikatorjev GUID licenc Microsoft 365.
+    ui:
+      searchPlaceholder: Poiščite po imenu SKU, besedilnem ID-ju ali opisu...
+      copied: Kopirano!
+      clickToCopy: Kliknite za kopiranje besedilnega ID-ja
+      copiedMark: ✓ kopirano
+  windows-error-codes:
+    title: Iskanje kod napak Windows
+    description: Poiščite kode napak Windows po šestnajstiški ali desetiški vrednosti, vključno s sistemskimi napakami, zaustavitvenimi kodami BSOD, napakami WMI, RPC, namestitvenega programa MSI in drugimi.
+    ui:
+      searchResults: Rezultati iskanja
+      searchPlaceholder: Poiščite po šestnajstiški kodi, imenu napake ali opisu...
+      copied: Kopirano!
+      clickToCopy: Kliknite za kopiranje šestnajstiške kode
+      copiedShort: kopirano
+      decimal: desetiško {decimal}
+  exchange-ndr-lookup:
+    title: Iskanje obvestil NDR Exchange
+    description: Poiščite kode zavrnjenih sporočil Exchange in M365 z razumljivimi pojasnili vzrokov in navodili za odpravo.
+    ui:
+      searchResults: Rezultati iskanja
+      searchPlaceholder: Poiščite po kodi NDR, imenu napake, vzroku ali rešitvi...
+      copied: Kopirano!
+      clickToCopy: Kliknite za kopiranje kode NDR
+      copiedShort: kopirano
+      cause: Vzrok
+      fix: Rešitev
+  safelink-decoder:
+    title: Dekodirnik povezav Outlook SafeLink
+    description: Razkrijte izvirni ciljni URL povezav Microsoft Defender SafeLinks.
+  port-protocol-reference:
+    title: Priročnik za vrata in protokole
+    description: Pogosta omrežna vrata in protokoli z varnostnimi opombami ter oznakami nevarnih vrat.
+  cve-lookup:
+    title: Iskanje CVE
+    description: Poiščite ranljivosti CVE v zbirki NIST NVD po ID-ju ali ključni besedi. Sprotni podatki iz API-ja NVD.
+    ui:
+      chainedWith: Povezano z
+      searchThisCve: Poišči ta CVE
+      range6m: 6 mesecev
+      range1y: 1 leto
+      range2y: 2 leti
+      range5y: 5 let
+      rangeAll: Celotno obdobje
+      noDescription: Opis ni na voljo.
+      fetchError: API NVD ni dosegljiv. Preverite povezavo.
+      sortNewest: Najprej najnovejše
+      sortOldest: Najprej najstarejše
+      sortSeverity: Najvišja resnost
+      severityCritical: Kritično
+      severityHigh: Visoko
+      severityMedium: Srednje
+      severityLow: Nizko
+      placeholder: ID CVE ali ključna beseda (npr. CVE-2021-44228, log4j)
+      searching: Iskanje...
+      search: Iskanje
+      hint: Poiščite po ID-ju CVE, delu številke (npr. 43284), običajnem imenu (npr. log4shell, dirty frag) ali ključni besedi. Sprotni podatki iz zbirk NVD in GitHub Advisory Database.
+      noResults: Za "{query}" ni najdenih ranljivosti CVE.
+      noResultsInRange: Za "{query}" v izbranem obdobju ni najdenih ranljivosti CVE.
+      noExactMatch: V izbranem obdobju ni natančnega ujemanja besedne zveze. Običajna imena ranljivosti (kot je "dirty frag") se v opisih NVD morda ne pojavijo dobesedno. Poskusite z delom številke CVE (npr. "43284" najde CVE-2026-43284).
+      searchAllTime: Poišči v celotnem obdobju
+      showingResults: Prikazanih je {shown} od skupaj {total} rezultatov
+      allSeverities: Vse stopnje resnosti
+      allYears: Vsa leta
+      copied: Kopirano!
+      clickToCopyId: Kliknite za kopiranje ID-ja CVE
+      copiedShort: kopirano
+      cveDetail: PODROBNOSTI CVE
+      published: Objavljeno
+      modified: Spremenjeno
+      clickToCopy: Kliknite za kopiranje
+      references: Viri
+      kevActionDue: "Rok za ukrepanje CISA KEV:"
+      cvssMetrics: Merila CVSS
+      metricAttackVector: Vektor napada
+      metricAttackComplexity: Zahtevnost napada
+      metricPrivilegesRequired: Potrebne pravice
+      metricUserInteraction: Sodelovanje uporabnika
+      metricScope: Obseg
+      metricConfidentiality: Zaupnost
+      metricIntegrity: Celovitost
+      metricAvailability: Razpoložljivost
+  email-dns-checker:
+    title: Preverjevalnik DNS za e-pošto
+    description: Preverite zapise MX, SPF, DKIM in DMARC za poljubno domeno. Preveri nastavitve preverjanja pristnosti e-pošte in označi pogoste napake.
+  email-header-parser:
+    title: Razčlenjevalnik glav e-pošte
+    description: Prilepite neobdelane glave e-pošte, da pridobite podatke o pošiljatelju, sledite dostavni poti in si ogledate rezultate preverjanja pristnosti SPF, DKIM in DMARC.
+    ui:
+      pasteHint: Spodaj prilepite neobdelane glave e-pošte.
+      parseButton: Razčleni glave
+      parseAnother: Razčleni drugo
+      messageDetails: Podrobnosti sporočila
+      senderMismatch: Domena Sender se razlikuje od domene From. To lahko pomeni ponarejanje pošiljatelja ali pošiljanje v tujem imenu.
+      deliveryHops: Dostavni skoki
+      oldestFirst: najprej najstarejše
+      authResults: Rezultati preverjanja pristnosti
+      spamAnalysis: Analiza neželene pošte
+      spamScore: Ocena neželene pošte
+      spamStatus: Stanje neželene pošte
+  whois-checker:
+    title: Poizvedba WHOIS
+    description: Poiščite podatke o registraciji poljubne domene, vključno z registrarjem, datumi nastanka in poteka, imenskimi strežniki ter oznakami stanja.
+  ascii-text-drawer:
+    title: Generator besedilne umetnosti ASCII
+    description: Ustvarite besedilno umetnost ASCII z različnimi pisavami in slogi.
+    ui:
+      yourText: VAŠE BESEDILO
+      textPlaceholder: Vaše besedilo za izris
+      options: MOŽNOSTI
+      font: PISAVA
+      searchFonts: Poiščite pisave...
+      noFontsMatch: Nobena pisava se ne ujema
+      width: ŠIRINA
+      output: REZULTAT UMETNOSTI ASCII
+      loadingFont: Nalaganje pisave...
+      error: Pri trenutnih nastavitvah je prišlo do napake.
+      copied: Kopirano!
+      copy: Kopiraj
+  regex-tester:
+    title: Preizkuševalnik regularnih izrazov
+    description: Preizkusite regularne izraze na vzorčnem besedilu.
+    ui:
+      regexLabel: "Regularni izraz za preizkus:"
+      regexPlaceholder: Vnesite regularni izraz za preizkus
+      globalLabel: Globalno
+      globalTitle: Iskanje vseh ujemanj
+      ignoreCaseLabel: Prezri velikost črk
+      ignoreCaseTitle: Iskanje ne glede na velikost črk
+      multilineLabel: Večvrstično
+      singlelineLabel: Enovrstično
+      singlelineTitle: Omogoča, da se pika ujema tudi z znaki za novo vrstico.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; vzorec obravnava kot zaporedje kodnih točk Unicode.
+      unicodeSetsLabel: Množice Unicode
+      unicodeSetsTitle: Nadgradnja načina u z dodatnimi zmožnostmi Unicode.
+      textLabel: "Besedilo za iskanje ujemanj:"
+      textPlaceholder: Vnesite besedilo za iskanje ujemanj
+      regexBarTitle: REGULARNI IZRAZ
+      matchesBarTitle: UJEMANJA
+      matchIndex: Indeks
+      matchValue: Vrednost
+      matchCaptures: Zajeta ujemanja
+      matchGroups: Skupine
+      noMatch: Ni ujemanja
+      sampleBarTitle: VZOREC
+      diagramBarTitle: DIAGRAM
+      quickReference: Hitri pregled
+  yaml-converter:
+    title: Pretvornik YAML
+    description: Pretvarjajte YAML v JSON ali TOML.
+    ui:
+      convertTo: "Pretvori v:"
+      inputLabel: Vaš YAML
+      inputPlaceholder: Tukaj prilepite svoj YAML...
+      invalidYaml: Vneseni YAML ni veljaven.
+      outputLabel: Rezultat {format}
+  json-converter:
+    title: Pretvornik JSON
+    description: Pretvarjajte JSON v YAML ali TOML.
+    ui:
+      convertTo: Pretvori v
+      yourJson: Vaš JSON
+      pasteJsonPlaceholder: Tukaj prilepite svoj JSON...
+      invalidJson: Neveljaven zapis JSON
+      formatOutput: Rezultat {format}
+  toml-converter:
+    title: Pretvornik TOML
+    description: Pretvarjajte TOML v JSON ali YAML.
+    ui:
+      convertTo: "Pretvori v:"
+      yourToml: Vaš TOML
+      pastePlaceholder: Tukaj prilepite svoj TOML...
+      invalidToml: Vneseni TOML ni veljaven.
+      outputLabel: Rezultat {format}
+  xml-json-converter:
+    title: Pretvornik XML ↔ JSON
+    description: Dvosmerni pretvornik XML in JSON. Uredite katero koli stran in druga se samodejno posodobi.
+    ui:
+      invalidXml: Neveljaven XML.
+      invalidJson: Neveljaven JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Tukaj prilepite svoj XML...
+      jsonLabel: JSON
+      jsonPlaceholder: Tukaj prilepite svoj JSON...
+  markdown-to-html:
+    title: Markdown v HTML
+    description: Pretvarjajte Markdown v HTML ter izvozite ali natisnite v PDF.
+    ui:
+      copiedSuccess: HTML je kopiran v odložišče!
+      copyFailed: Besedila ni bilo mogoče kopirati.
+      inputLabel: "Vaš Markdown za pretvorbo:"
+      inputPlaceholder: Vaša vsebina Markdown...
+      outputLabel: "Rezultat HTML:"
+      copyHtmlButton: Kopiraj HTML
+      printAsPdfButton: Natisni v PDF
+  killer-pdf:
+    title: KillerPDF
+    description: Odprtokodni urejevalnik PDF za Windows. Pregledujte, označujte, združujte, razdelite in sploščite datoteke PDF, odpirajte datoteke z geslom, urejajte besedilo, rišite, poudarjajte, podpisujte in tiskajte.
+  killer-scan:
+    title: KillerScan
+    description: Hiter omrežni pregledovalnik za terenske tehnike. Odkrivanje z ARP in ping, preverjanje vrat, iskanje proizvajalcev in samodejno razvrščanje naprav.
+  gif-search:
+    title: Iskanje GIF-ov
+    description: Poiščite odzivne GIF-e na Giphy. Kliknite rezultat za kopiranje URL-ja.
+    ui:
+      errorStatus: Napaka {status}
+      fetchFailed: GIF-ov ni bilo mogoče pridobiti.
+      searchPlaceholder: Poiščite GIF-e (npr. facepalm, nice work, this is fine)
+      searching: Iskanje...
+      search: Iskanje
+      noResults: Za "{query}" ni najdenih GIF-ov.
+      copied: Kopirano!
+      copyUrl: Kopiraj URL
+      resultsHint: "Rezultati: {count}. Kliknite za kopiranje URL-ja in ga prilepite v Teams, Telegram ali Slack."
+  killer-shell:
+    title: KillerShell
+    description: Brezplačna lupina za zahtevne uporabnike. Brskalnik datotek, terminal in urejevalnik besedila si delijo eno okno, eno vrstico zavihkov in en nabor bližnjic.
+  domain-lookup:
+    title: Poizvedba o domeni
+    description: Podatki o registraciji WHOIS in preverjanja DNS za e-pošto (MX, SPF, DKIM, DMARC) za poljubno domeno v enem pogledu.
+    ui:
+      statusDesc:
+        active: Domena je aktivna in deluje.
+        inactive: Domena ni aktivna.
+        clientDeleteProhibited: Registrar je domeno zaklenil pred izbrisom.
+        clientTransferProhibited: Registrar je domeno zaklenil pred prenosom k drugemu registrarju.
+        clientUpdateProhibited: Registrar je domeno zaklenil pred spremembami.
+        clientHold: Registrar je domeno zadržal, zato razreševanje DNS morda ne deluje.
+        serverDeleteProhibited: Register je domeno zaklenil pred izbrisom.
+        serverTransferProhibited: Register je domeno zaklenil pred prenosom.
+        serverUpdateProhibited: Register je domeno zaklenil pred spremembami.
+        serverHold: Register je domeno zadržal, zato razreševanje DNS morda ne deluje.
+        pendingCreate: Ustvarjanje domene je v teku.
+        pendingDelete: Domena čaka na izbris in bo morda kmalu na voljo.
+        pendingRenew: Podaljšanje domene je v teku.
+        pendingRestore: Obnovitev izbrisane domene je v teku.
+        pendingTransfer: Prenos domene k drugemu registrarju je v teku.
+        pendingUpdate: Posodobitev domene je v teku.
+        redemptionPeriod: Domena je potekla in je v obdobju obnovitve. Imetnik jo lahko še obnovi.
+        renewPeriod: Domena je po registraciji v dodatnem roku za podaljšanje.
+        autoRenewPeriod: Domena je v dodatnem roku po samodejnem podaljšanju.
+        transferPeriod: Domena je v dodatnem roku po prenosu.
+      expiredAlert: Ta domena je potekla pred {days} dnevi in je morda na voljo za registracijo.
+      expiresAlert: Ta domena poteče čez {days} dni. Čim prej uredite podaljšanje.
+      expiredTag: Poteklo pred {days} d
+      remainingTag: "Preostalo: {days} d"
+      registrar: Registrar
+      registrarIanaId: ID registrarja IANA
+      created: Ustvarjeno
+      updated: Posodobljeno
+      expires: Poteče
+      noMx: Ni najdenih zapisov MX.
+      dnsFailed: Poizvedba DNS ni uspela.
+      noSpf: Zapis SPF ni najden.
+      noDkim: Za običajne izbirnike ni najdenih zapisov DKIM. Izbirniki po meri morda obstajajo.
+      noDmarc: Zapis DMARC ni najden. Domena ni zaščitena pred ponarejanjem pošiljatelja.
+      spfPlusAll: "Opozorilo: +all je nevaren, ker dovoljuje vsakemu strežniku pošiljanje pošte v imenu te domene."
+      spfNeutralAll: "Opozorilo: ?all je nevtralen in ne zagotavlja zaščite."
+      dmarcPNone: "Opozorilo: p=none omogoča samo spremljanje, brez uveljavljanja pravil. E-pošta ne bo zavrnjena."
+      dmarcNoRua: "Opozorilo: ni naslova za zbirna poročila (rua=). Poročil DMARC ne boste prejemali."
+      pass: Uspešno
+      fail: Neuspešno
+      warning: Opozorilo
+      checking: Preverjanje...
+      overallPass: Vsa preverjanja e-pošte so uspešna. Domena je ustrezno nastavljena za e-pošto.
+      overallFail: Manjka eden ali več ključnih zapisov. Ta domena je morda ranljiva za ponarejanje pošiljatelja.
+      overallWarn: Nekateri zapisi obstajajo, vendar vsebujejo nastavitve, ki jih je treba preveriti.
+      rdapHttpError: "HTTP {status}: domena morda ne obstaja ali vrhnja domena ni podprta."
+      lookupFailed: Poizvedba ni uspela.
+      domainPlaceholder: Vnesite domeno (npr. killertools.net)
+      searching: Iskanje...
+      search: Iskanje
+      signed: Podpisano
+      unsigned: Nepodpisano
+      delegationSigned: Delegiranje je podpisano.
+      dsRecord: "Zapisi DS: {count}."
+      dsRecords: "Zapisi DS: {count}."
+      keyRecord: "Zapisi ključev: {count}."
+      keyRecords: "Zapisi ključev: {count}."
+      dnssecUnsigned: Ta domena ni zaščitena z DNSSEC. Odgovorov DNS ni mogoče kriptografsko preveriti.
+      status: Stanje
+      contacts: Stiki
+      remarks: Opombe
+      nameservers: Imenski strežniki
+      mxRecords: Zapisi MX
+      spfRecord: Zapis SPF
+      dkimRecords: Zapisi DKIM
+      dmarcRecord: Zapis DMARC
+      role:
+        registrant: imetnik
+        administrative: administrativni
+        technical: tehnični
+        abuse: zlorabe
+      name: Ime
+      organization: Organizacija
+      email: E-pošta
+      phone: Telefon
+  email-record-generator:
+    title: Generator zapisov za e-pošto
+    description: Ustvarite zapise DNS TXT za SPF in DMARC. Izberite ponudnike e-pošte in pravilnike ter rezultat kopirajte neposredno v svoj DNS.
+    ui:
+      hardFailRecommended: dokončna zavrnitev, priporočeno
+      softFail: začasna zavrnitev
+      neutralNotRecommended: nevtralno, ni priporočeno
+      blockFailingMail: blokiraj neuspešno preverjeno pošto
+      sendToSpam: premakni med neželeno pošto
+      monitorOnly: samo spremljanje
+      relaxedDefault: Ohlapno (privzeto)
+      strict: Strogo
+      sameAsMainPolicy: Enako kot glavni pravilnik
+      spfRecordTitle: ZAPIS SPF
+      dmarcRecordTitle: ZAPIS DMARC
+      spfRecordLocation: Zapis TXT na vaši korenski domeni
+      dmarcRecordLocation: Zapis TXT na
+      copied: kopirano
+      clickToCopy: kliknite za kopiranje
+      lookupWarning: "Izbrane poizvedbe DNS: {count}; SPF dovoljuje največ 10 poizvedb"
+      mailProviders: PONUDNIKI E-POŠTE
+      customIps: NASLOVI IP ALI OBSEGI PO MERI (NEOBVEZNO)
+      examplePrefix: npr.
+      enforcement: UVELJAVLJANJE
+      policy: PRAVILNIK
+      subdomainPolicy: PRAVILNIK ZA PODDOMENE (NEOBVEZNO)
+      policyCoverage: "POKRITOST PRAVILNIKA: {percent} %"
+      coverageHint: Ukrep bo uporabljen za {percent} % neuspešno preverjene pošte. Za postopno uvedbo uporabite manj kot 100 %.
+      aggregateReportEmail: E-POŠTA ZA ZBIRNA POROČILA (rua)
+      forensicReportEmail: E-POŠTA ZA FORENZIČNA POROČILA (ruf, neobvezno)
+      dkimAlignment: USKLAJENOST DKIM
+      spfAlignment: USKLAJENOST SPF
+  basic-auth-generator:
+    ui:
+      copied: Glava je kopirana v odložišče
+      username: Uporabniško ime
+      usernamePlaceholder: Vaše uporabniško ime...
+      password: Geslo
+      passwordPlaceholder: Vaše geslo...
+      headerLabel: "Avtorizacijska glava:"
+      copyHeader: Kopiraj glavo
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: Lokalizirani datumski niz JS
+      formatUnixTimestamp: Časovni žig Unix
+      formatTimestamp: Časovni žig
+      formatUtc: Zapis UTC
+      formatExcelDateTime: Datum/čas Excel
+      invalidDateRule: Ta datum ni veljaven za ta zapis
+      inputPlaceholder: Prilepite datumski niz ali pustite prazno za sprotno uro...
+      invalidDate: Neveljaven datum za ta zapis
+      output: REZULTAT
+      live: V ŽIVO
+  integer-base-converter:
+    ui:
+      binary: Dvojiško
+      octal: Osmiško
+      decimal: Desetiško
+      hexadecimal: Šestnajstiško
+      base: osnova
+      output: REZULTAT
+      custom: Po meri
+  json-viewer:
+    ui:
+      invalidJson: Vneseni JSON ni veljaven.
+      sortKeys: Razvrsti ključe
+      indentSize: Velikost zamika
+      yourRawJson: Vaš neobdelani JSON
+      pasteRawJsonPlaceholder: Sem prilepite neobdelani JSON...
+      prettifiedVersion: Oblikovana različica vašega JSON
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Metaoznake so kopirane!
+      copiedLabel: ✓ Kopirano
+      copyButton: Kopiraj
+      outputTitle: VAŠE METAOZNAKE
+  mime-types:
+    ui:
+      mimeToExtensionTitle: Vrsta MIME v pripono
+      mimeToExtensionDescription: Ugotovite, katere datotečne pripone so povezane z vrsto MIME
+      mimeTypeSelectPlaceholder: Tukaj izberite vrsto MIME... (npr. application/pdf)
+      extensionsFoundPrefix: Pripone datotek z
+      extensionsFoundSuffix: "vrsto MIME:"
+      extensionToMimeTitle: Datotečna pripona v vrsto MIME
+      extensionToMimeDescription: Ugotovite, katera vrsta MIME je povezana z datotečno pripono
+      mimeFoundPrefix: Vrsta MIME, povezana s pripono
+      mimeFoundSuffix: "datotečna pripona:"
+      tableMimeTypesHeader: Vrste MIME
+      tableExtensionsHeader: Pripone
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Skrivnost (šestnajstiško)
+      epochLabel: Epoha
+      countLabel: Število
+      paddedHexLabel: Dopolnjeni šestnajstiški zapis
+      secretLabel: SKRIVNOST
+      secretPlaceholder: Prilepite svojo skrivnost TOTP...
+      generateNewSecret: Ustvari novo skrivnost
+      tokenLabel: ŽETON
+      copied: ✓ kopirano
+      clickToCopy: kliknite za kopiranje
+      nextIn: ">_ naslednji čez {seconds} s"
+      adjacentTokensLabel: SOSEDNJI ŽETONI
+      prevLabel: Prejšnji
+      nextLabel: Naslednji
+      detailsLabel: PODROBNOSTI
+      scanToAuthenticate: ">_ skenirajte za preverjanje pristnosti"
+      openKeyUriInNewTab: Odpri URI ključa v novem zavihku
+      tokenDisplayPreviousLabel: Prejšnji
+      tokenDisplayCurrentLabel: Trenutni OTP
+      tokenDisplayNextLabel: Naslednji
+      copiedExclaim: Kopirano!
+      copyPreviousOtp: Kopiraj prejšnji OTP
+      copyCurrentOtp: Kopiraj trenutni OTP
+      copyNextOtp: Kopiraj naslednji OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Močno
+      moderateLabel: Srednje močno
+      weakLabel: Šibko
+      veryWeakLabel: Zelo šibko
+      lengthLabel: Dolžina
+      entropyLabel: Entropija
+      charsetSizeLabel: Velikost nabora znakov
+      scoreDetailLabel: Ocena
+      passwordPlaceholder: Vnesite geslo...
+      hideLabel: Skrij
+      showLabel: Prikaži
+      clearLabel: Počisti
+      crackTimeSublabel: ČAS RAZBITJA Z GROBO SILO
+      crackTimeNote: Moč je ocenjena po času napada z grobo silo pri milijardi poskusov na sekundo. Napadi s slovarjem niso upoštevani.
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Poiščite po vratih, storitvi, protokolu ali opisu...
+      allProtocols: Vse
+      dangerousOnly: Samo nevarna
+      showingPorts: "Prikazana vrata: {count}"
+      copied: Kopirano!
+      clickToCopy: Kliknite za kopiranje številke vrat
+      copiedCheck: ✓ kopirano
+      dangerousPill: Nevarno
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Brskalnik ukazov cmdlet
+      adminBadge: Skrbnik
+      cmdletSearchPlaceholder: Poiščite po imenu, opisu ali modulu...
+      noCmdletsMatch: Noben ukaz cmdlet se ne ujema z "{query}"
+      generatedCommand: Ustvarjeni ukaz
+      copiedCheck: ✓ Kopirano!
+      copyCommand: Kopiraj ukaz
+      commonExamples: Pogosti primeri
+      selectCmdletPrompt: Na levi izberite ukaz cmdlet in začnite sestavljati svoj ukaz.
+      parameters: Parametri
+      noParametersNeeded: Parametri niso potrebni. Ta ukaz cmdlet se zažene brez njih.
+      required: obvezno
+      separateMultipleValues: več vrednosti ločite z vejicami
+      showFewerParameters: Prikaži manj parametrov
+      showMoreParameters: "Dodatni parametri: {count}"
+      collapseQuickReference: Strni hitri pregled
+      openQuickReference: Odpri hitri pregled
+      quickReference: Hitri pregled
+      cheatsheetComparisonOperators: Primerjalni operatorji
+      cheatsheetEqualTo: Enako
+      cheatsheetNotEqualTo: Ni enako
+      cheatsheetGreaterLessThan: Večje od / manjše od
+      cheatsheetGreaterLessEqual: Večje ali enako / manjše ali enako
+      cheatsheetStringOperators: Operatorji za nize
+      cheatsheetWildcardMatch: Ujemanje z nadomestnimi znaki (* in ?)
+      cheatsheetWildcardNonMatch: Neujemanje z nadomestnimi znaki
+      cheatsheetRegexMatch: Ujemanje z regularnim izrazom
+      cheatsheetRegexNonMatch: Neujemanje z regularnim izrazom
+      cheatsheetCollectionContains: Zbirka vsebuje vrednost
+      cheatsheetValueInCollection: Vrednost je v zbirki
+      cheatsheetLogicalOperators: Logični operatorji
+      cheatsheetBothTrue: Oba pogoja morata biti resnična
+      cheatsheetEitherTrue: Vsaj eden od pogojev je resničen
+      cheatsheetNegateCondition: Negacija pogoja
+      cheatsheetAutomaticVariables: Samodejne spremenljivke
+      cheatsheetCurrentPipelineObject: Trenutni objekt v cevovodu
+      cheatsheetNullEmptyValue: Null / prazna vrednost
+      cheatsheetBooleanTrueFalse: Logični vrednosti true / false
+      cheatsheetLocalComputerName: Ime lokalnega računalnika
+      cheatsheetCurrentUser: Trenutno prijavljeni uporabnik
+      cheatsheetPsVersionInfo: Podatki o različici PS
+      cheatsheetDateHelpers: Pomočniki za datum
+      cheatsheetCurrentDateTime: Trenutni datum in čas
+      cheatsheetThirtyDaysAgo: Pred 30 dnevi
+      cheatsheetThreeMonthsAgo: Pred 3 meseci
+      cheatsheetParseDateString: Razčleni datumski niz
+      cheatsheetPipelineTricks: Namigi za cevovod
+      cheatsheetLimitFirst10: Omeji na prvih 10 rezultatov
+      cheatsheetCountSumMinMax: Število / vsota / minimum / maksimum
+      cheatsheetInteractiveGuiViewer: Interaktivni grafični pregledovalnik (lokalno)
+      cheatsheetConvertToJson: Pretvori rezultat v JSON
+      cheatsheetOutputScreenAndFile: Izpiši na zaslon IN v datoteko
+      cheatsheetSuppressErrors: Skrij nekritične napake
+      cheatsheetRemoteExecution: Oddaljeno izvajanje
+      cheatsheetCmdletsSupportDirectly: Veliko ukazov cmdlet to podpira neposredno
+      cheatsheetRunViaRemoting: Zaženi prek PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Interaktivna oddaljena seja PS
+      categories:
+        all: Vse
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Omrežje
+        system: Sistem
+        services: Storitve
+        filesRegistry: Datoteke in register
+        pipeline: Cevovod
+        bitlocker: BitLocker
+        securityDefender: Varnost in Defender
+        windowsUpdate: Windows Update
+        certificates: Potrdila
+        printManagement: Upravljanje tiskanja
+        diskStorage: Diski in shramba
+        fileSharing: Skupna raba datotek
+        groupPolicy: Pravilnik skupine
+        dnsServer: Strežnik DNS
+        dhcpServer: Strežnik DHCP
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: bo ovito v skriptni blok
+  qrcode-reader:
+    title: Bralnik kod QR
+    description: Lokalno preberite kode QR iz slike z opozorili za povezave in kopiranjem gesel Wi-Fi.
+    privacy: Slike in dekodirana vsebina ostanejo v vašem brskalniku. Povezave se odprejo samo, ko izberete Odpri.
+    pick: Izberite ali spustite sliko s kodo QR
+    reading: Lokalno branje kod QR...
+    error: Te slike ni mogoče prebrati. Uporabite PNG, JPEG, WebP, BMP ali GIF, manjši od 40 MB in 16 milijonov slikovnih pik.
+    none: Ni najdenih kod QR.
+    preview: Slika z obrisi kod QR
+    copy: Kopiraj
+    copyPassword: Kopiraj geslo
+    copied: Kopirano.
+    copyFailed: Kopiranje ni uspelo. Izberite besedilo in ga kopirajte ročno.
+    open: Odpri
+    cancel: Prekliči
+    confirmTitle: Želite odpreti to povezavo?
+    warnings:
+      PlainHttp: Nešifrirana povezava HTTP.
+      UnusualPort: Neobičajna omrežna vrata.
+      RawIp: Naslov IP namesto imena domene.
+      UserInfo: Pred gostiteljem vsebuje uporabniške podatke.
+      InternationalHost: Mednarodna domena ali zapis punycode.
+      MixedScripts: Domena meša pisave s podobnimi znaki.
+      DeepSubdomains: Neobičajno veliko ravni poddomen.
+      Shortener: Skrajšana povezava. Cilj ni razkrit.
+      DirectDownload: Neposredna povezava za prenos.
+      EmbeddedDestination: Vsebuje drug spletni cilj. Preusmeritve niso bile obiskane.
+      HiddenCharacters: Skriti znaki lahko prikrijejo ta naslov.
+      DisguisedDownload: Pred drugo pripono je skrita pripona izvršljive datoteke.
+    scanClear: Ni najdenih težav
+    scanReview: Preverite pred odpiranjem
+    scanBlocked: Odpiranje je blokirano
+    scanLocal: Samo lokalna preverjanja. Cilj ni bil obiskan.
+  qr-code-generator:
+    ui:
+      tabText: Besedilo / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Besedilo ali URL
+      placeholderTextOrUrl: Vaša povezava ali besedilo...
+      sectionEncryption: Šifriranje
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Brez gesla
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Ime omrežja...
+      sectionPassword: Geslo
+      placeholderPassword: Geslo omrežja...
+      sectionOptions: Možnosti
+      hiddenSsid: Skriti SSID
+      anonymousIdentity: Anonimna identiteta
+      sectionEapMethod: Metoda EAP
+      sectionEapPhase2: Druga faza EAP
+      sectionEapIdentity: Identiteta EAP
+      placeholderEapIdentity: Vaša identiteta EAP...
+      sectionTheme: Tema
+      themeDefault: Privzeto
+      themeTerminal: Terminal
+      themeClassic: Klasično
+      themeInverted: Obrnjeno
+      sectionColors: Barve
+      labelForeground: "Ospredje:"
+      labelBackground: "Ozadje:"
+      sectionErrorCorrection: Popravljanje napak
+      levelLow: Nizko (~7 %)
+      levelMedium: Srednje (~15 %)
+      levelQuartile: Četrtinsko (~25 %)
+      levelHigh: Visoko (~30 %)
+      emptyHintWifi: Za kodo QR za Wi-Fi vnesite SSID
+      emptyHintText: Vnesite besedilo ali URL
+      captionJoin: ">_ skenirajte za povezavo"
+      captionOpen: ">_ skenirajte za odpiranje"
+      downloadPng: ↓ Prenesi PNG
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Besedilo v Unicode
+      enterTextLabel: Vnesite besedilo za pretvorbo v Unicode
+      unicodeFromTextLabel: Vaše besedilo v zapisu Unicode
+      unicodeOutputPlaceholder: Tukaj bo vaše besedilo v zapisu Unicode
+      copyUnicode: Kopiraj Unicode v odložišče
+      unicodeToTextTitle: Unicode v besedilo
+      inputUnicodePlaceholder: Vhodni Unicode
+      enterUnicodeLabel: Vnesite Unicode za pretvorbo v besedilo
+      textFromUnicodeLabel: Besedilo iz vašega zapisa Unicode
+      textOutputPlaceholder: Tukaj bo besedilo iz vašega zapisa Unicode
+      copyText: Kopiraj besedilo v odložišče
+  yaml-viewer:
+    ui:
+      invalidYaml: Vneseni YAML ni veljaven.
+      sortKeys: Razvrsti ključe
+      indentSize: Velikost zamika
+      rawLabel: Vaš neobdelani YAML
+      rawPlaceholder: Tukaj prilepite neobdelani YAML...
+      prettifiedLabel: Oblikovana različica vašega YAML
+  killer-modules:
+    title: Killer Modules
+    description: Moduli PowerShell za skrbništvo sistema Windows in terensko delo ponudnikov upravljanih storitev. Namestite jih iz galerije PowerShell.
+    ui:
+      repo: Repozitorij
+      commands: Ukazi
+      requires: Zahteva
+      copyInstall: Kopiraj namestitveni ukaz
+      copied: Kopirano!
+      modules:
+        KillerPivot:
+          description: Preklapljajte med najemniki Microsoft 365 v PowerShellu, ne da bi ukaze izvedli pri napačnem. KillerPivot onemogoči posrednika za preverjanje pristnosti, da zahteva pravo prijavno okno, nato v seji preveri dejanskega najemnika, preden kar koli spremenite. Najemnike shranite enkrat, nato med njimi preklapljajte po imenu z vgrajenim preverjanjem identitete.
+          requirements: PowerShell 5.1 in 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (za -Graph)
+        KillerScripts:
+          description: Vsa orodja iz repozitorija killer-scripts so na voljo kot ukazi v kateri koli seji PowerShell. Vsak skript se ob zagonu znova prenese z GitHuba, zato vedno uporabljate trenutno različico, lokalni predpomnilnik pa omogoča delo brez povezave. Vsako od 18 orodij dobi lasten ukaz in kratek vzdevek, zato vnos urt zažene Universal Rename Tool.
+          requirements: PowerShell 5.1 in 7 · Dostop do interneta za pridobitev trenutnega skripta (predpomnjene kopije delujejo brez povezave)
+  killer-notes:
+    title: KillerNotes
+    description: Šifrirana beležnica za tehnike. Obogateno besedilo, vstavljene slike, prave tabele, takojšnje iskanje, SQLCipher AES-256 in deljenje datotek .knote.
+  killendar:
+    title: The Killendar
+    description: Šifriran namizni koledar za Windows. Mesečni, tedenski in dnevni pogled ter dnevni red, barvne kategorije, uvoz in izvoz iCalendar ter sestanki, shranjeni v eni datoteki na vašem računalniku. Brez računa, sinhronizacije ali telemetrije.
+components:
+  localeSelector:
+    language: Jezik
+  androidBetaBanner:
+    announcement: Obvestilo o beta različici za Android
+    title: Killer Tools prihaja na Android
+    subtitle: Iščemo preizkuševalce beta različice. Tapnite za pridružitev
+    dismiss: Opusti
+  formatTransformer:
+    input: Vnos
+    inputPlaceholder: Vnos...
+    output: Rezultat
+  inputCopyable:
+    copied: Kopirano!
+    copy: Kopiraj v odložišče
+  spanCopyable:
+    copied: Kopirano!
+    copy: Kopiraj v odložišče
+  textareaCopyable:
+    copy: Kopiraj v odložišče
+    copied: Kopirano!
+  navbarButtons:
+    androidTooltip: Killer Tools za Android
+    androidAriaLabel: "Killer Tools za Android: pridružite se beta preizkusu"
+  themeDots:
+    themes:
+      dark: Temna
+      light: Svetla
+      black: Črna
+      blood: Kri
+      greed: Pohlep
+      cyanotic: Cianotična
+      ectoplasm: Ektoplazma
+      decay: Razkroj
+      malaise: Slabost
+      sepulchre: Grobnica
+      delirium: Delirij
+      mourning: Žalovanje
+    accentColor: Poudarjena barva
+    theme: Tema
+    toggleThemeSwatches: Preklopi prikaz vzorcev tem
+    accentColorPicker: Izbirnik poudarjene barve
+    dragToMove: Povlecite za premik
+    accentLabel: "poudarek:"
+    accentNamed: "Poudarek: {name}"
+    closeAccentPicker: Zapri izbirnik poudarjene barve
+    filmGrain: Filmska zrnatost
+    accents:
+      red: Rdeča
+      orange: Oranžna
+      green: Zelena
+      teal: Modrozelena
+      blue: Modra
+      purple: Vijolična
+      yellow: Rumena
+      magenta: Škrlatna
+layouts:
+  menuLayout:
+    eggMessage: 80 orodij. Brez naročnin. En trmast terenski tehnik.
+    clickMe: klikni me
+    sourceOnGithub: Izvorna koda na GitHubu
+  base:
+    collapseMenu: Strni meni
+    homeLabel: Domača stran KillerTools
+ui:
+  diffEditor:
+    originalLabel: IZVIRNIK
+    modifiedLabel: SPREMENJENO
+    originalPlaceholder: Izvirno besedilo...
+    modifiedPlaceholder: Spremenjeno besedilo...
+  fileUpload:
+    defaultTitle: Povlecite in spustite datoteke sem ali kliknite za izbiro datotek
+    or: ali
+    browseFiles: Prebrskaj datoteke
+  inputText:
+    defaultPlaceholder: Vhodno besedilo
+  keyValueListItem:
+    yes: Da
+    no: Ne
+    notAvailable: Ni na voljo
+  modalValue:
+    copied: Kopirano!
+    copy: Kopiraj
+  select:
+    searchPlaceholder: Iskanje...
+    noResults: Ni najdenih rezultatov
+    defaultPlaceholder: Izberite možnost
+  table:
+    defaultDescription: Podatkovna tabela
+  textCopyable:
+    copied: Kopirano!
+    copyToClipboard: Kopiraj v odložišče
+commandPalette:
+  searchAriaLabel: Iskanje
+  searchPlaceholder: Vnesite besedilo za iskanje orodja ali ukaza...
+pages:
+  notFound:
+    noSuchFile: Takšna datoteka ali mapa ne obstaja
+    exitCode: izhodna koda
+    backToHome: nazaj na domačo stran
+  privacy:
+    heading: Pravilnik o zasebnosti
+    lastUpdated: "Nazadnje posodobljeno: 4. aprila 2026"
+    overviewHeading: Pregled
+    overviewIntro: Killer Tools
+    overviewBody: je brezplačna zbirka orodij za IT. Vaša zasebnost nam je pomembna, ta pravilnik pa pojasnjuje, kako ravnamo z vašimi podatki.
+    dataCollectionHeading: Zbiranje podatkov
+    dataCollectionBody: Killer Tools ne zbira, shranjuje ali prenaša osebnih podatkov. Vsa obdelava orodij poteka v celoti v vašem brskalniku. Nobeni podatki, ki jih vnesete v orodja, niso poslani strežniku.
+    cookiesHeading: Piškotki
+    cookiesBody: To spletno mesto ne uporablja sledilnih piškotkov. Vaše nastavitve teme in druge nastavitve so shranjene lokalno v brskalniku in se nikoli ne prenašajo.
+    analyticsHeading: Analitika
+    analyticsIntro: To spletno mesto uporablja
+    analyticsBody: analitično orodje, osredotočeno na zasebnost, za razumevanje splošnih vzorcev uporabe, kot so ogledi strani in viri obiskov. Umami ne uporablja piškotkov, uporabnikom ne sledi med spletnimi mesti in ne zbira podatkov, ki bi omogočali osebno prepoznavo. Vsi podatki so združeni in anonimni.
+    thirdPartyHeading: Storitve drugih ponudnikov
+    thirdPartyBody: Nekatera orodja lahko vsebujejo povezave do zunanjih virov ali dokumentacije. Za ravnanje teh zunanjih mest z zasebnostjo ne odgovarjamo.
+    androidAppHeading: Aplikacija za Android
+    androidAppBody: Aplikacija Killer Tools za Android je ovoj spletne aplikacije. Ne zahteva ali uporablja dovoljenj naprave razen osnovnega dostopa do interneta. Podatki o napravi se ne zbirajo ali prenašajo.
+    contactHeading: Stik
+    contactBody: Če imate vprašanja o tem pravilniku o zasebnosti, nam pišite na
+  androidApp:
+    heroAlt: Killer Tools za Android, orodja IT za terenske tehnike
+    robotAttribution: Robot Android je reproduciran ali prilagojen iz dela, ki ga je ustvaril in delil Google, ter uporabljen skladno s pogoji licence Creative Commons 3.0 Priznanje avtorstva.
+    heading: Killer Tools za Android
+    introBody1: "Celotna zbirka killertools.net kot izvorna aplikacija za Android: vsa orodja, knjižnica Killer Scripts in vse vaše priljubljene vsebine, en dotik od začetnega zaslona."
+    introBody2: Enaka pravila kot na spletnem mestu. Vse deluje v vaši napravi. Brez računa, telemetrije ali poročanja strežniku. Če vam na terenu prihrani en servisni postopek, je opravila svoje delo.
+    betaStatusPrefix: Aplikacija je trenutno v fazi
+    betaStatusStrong: zaprtega beta preizkusa v Googlu Play
+    betaStatusSuffix: ", in tu potrebujemo vas."
+    joinBetaHeading: Pridružite se beta preizkusu
+    joinBetaIntroPrefix: Google zahteva
+    joinBetaIntroStrong: 12 preizkuševalcev z aplikacijo, nameščeno 14 zaporednih dni
+    joinBetaIntroSuffix: "preden lahko neodvisni razvijalec javno objavi aplikacijo. Trije koraki, približno dve minuti in postanete eden od dvanajstih:"
+    step1LinkText: Pridružite se skupini preizkuševalcev
+    step1Suffix: v Google Groups (kliknite "Join group").
+    step2LinkText: Postanite preizkuševalec
+    step2Suffix: na prijavni strani Google Play.
+    step3LinkText: Namestite aplikacijo
+    step3Suffix: iz Googla Play in jo pustite nameščeno dva tedna.
+    sameAccountStrong: Za vse tri korake uporabite isti račun Google
+    sameAccountSuffix: . Če preskočite skupino ali zamenjate račun, bo na prijavni strani pisalo "not available for this account".
+    feedbackPrefix: "Kaj ne deluje ali manjka? Sporočite mi:"
+  home:
+    sortPopular: Priljubljeno
+    sortAZ: Od A do Z
+    sortZA: Od Z do A
+  about:
+    heading: O zbirki Killer Tools
+    intro: Terenski tehniki nimamo časa za odvečno navlako. Vsako orodje tukaj obstaja, ker sem ga potreboval pri delu in nisem našel rešitve, ki bi preprosto delovala brez računa, namestitve ali telemetrije.
+    originPrefix: Po šestih letih razvoja celotnih spletnih rešitev in osmih letih terenskega dela v več podjetjih zdaj razvijam orodja v interni ekipi za umetno inteligenco pri ponudniku upravljanih storitev. KillerTools.net je nastal kot izpeljanka odličnega
+    originMid: projekta avtorja
+    originSuffix: in zrasel v nekaj, prilagojeno mojemu dejanskemu delu. Ustvaril sem ga za iskanje nastavitev pravilnikov skupine med reševanjem zahtevka, pregled strankinega podomrežja in iskanje podatkov o vratih, ne da bi zapustil brskalnik.
+    scriptsLibrary: Knjižnica Killer Scripts pokriva opravila, ki se ponavljajo pri servisnih zahtevkih. Vsak skript deluje v PS 5.1, PS 7 in Kaseya LiveConnect brez odvisnosti.
+    privacyBody: Vse deluje v vašem brskalniku. Ni sledenja. Račun nikoli ni potreben. Spletno mesto uveljavlja strog pravilnik Content Security Policy za preprečevanje napadov prek verige odvisnosti. Če bi se v paketu znašel ogrožen paket npm, prilepljenih podatkov ne bi mogel poslati napadalcu.
+    maintainedByPrefix: Razvija in vzdržuje
+    maintainedByMid: Če vam to prihrani čas pri delu,
+    buyMeCoffee: mi lahko kupite kavo
+    maintainedBySuffix: in bom hvaležen, vendar tega nikoli ne pričakujem.
+    missingToolHeading: Manjka orodje? Ste našli napako?
+    issuesPrefix: Odprite predlog za funkcijo ali prijavo napake v
+    issuesLinkText: razdelku Issues
+    issuesSuffix: na GitHubu. Berem jih.
+    alsoTryHeading: Preizkusite tudi...
+    tagKillerScan: Odprtokodni omrežni pregledovalnik za Windows
+    tagKillerPdf: Odprtokodni urejevalnik PDF za Windows
+    tagKillerShell: Odprtokodna lupina Windows za zahtevne uporabnike
+    tagKillerNotes: Odprtokodna šifrirana beležnica za Windows
+    tagKillendar: Odprtokodni šifrirani koledar za Windows
+    tagKillerBench: Odprtokodno diagnostično in servisno okolje za Windows
+    tagKillerShot: Odprtokodni šifrirani album posnetkov zaslona za Windows
+    linksHeading: Povezave
+    linkLabelSite: Spletno mesto
+    linkLabelSource: Izvorna koda
+    linkLabelIssues: Težave
+    reportBug: Prijavite napako
+    requestFeature: Predlagajte funkcijo
+    linkLabelSupport: Podpora
+    linkLabelBuiltOn: Temelji na
+    itToolsFork: IT-Tools (izpeljanka)
+  mcp:
+    copy:
+      copying: Kopiranje...
+      copied: "Kopirano: {label}"
+      failed: "Kopiranje ni uspelo. Ročno kopirajte: {value}"
+      popups: URL strežnika je kopiran. Za odpiranje Claude dovolite pojavna okna.
+    labels:
+      serverUrl: URL strežnika
+      codex: Ukaz Codex
+      claudeCode: Ukaz Claude Code
+    description: KillerMCP poveže agente umetne inteligence z orodji KillerTools in podprtimi aplikacijami Killer. Izberite gostovani strežnik Cloudflare ali nameščeno različico za Windows.
+    github: KillerMCP na GitHubu
+    eyebrow:
+      agents: ENO IME / DVA NAČINA POVEZAVE
+      oneInstaller: NAMEŠČENO V SISTEMU WINDOWS
+      hosted: GOSTOVANO NA CLOUDFLARE
+      after: PO POVEZAVI
+    lead: Svojemu agentu omogočite uporabne ukaze KillerTools. Povežite se z javnim strežnikom Cloudflare za orodja, primerna za spletno uporabo, ali namestite KillerMCP v Windows za lokalna orodja in podprte aplikacije Killer.
+    status: Izberite povezavo, ki ustreza podatkom in aplikacijam, ki jih želite uporabljati.
+    install: Namestitev
+    intro: Namestitveni program za Windows agentu omogoči eno lokalno povezavo za vseh 81 orodij KillerTools in ukaze, ki jih ponujajo podprte aplikacije Killer v tem računalniku. Ukazi aplikacij so odvisni od njihove različice in razpoložljivosti. Ločena namestitev Node ali kopija izvorne kode nista potrebni.
+    download: Prenesi za Windows
+    meta:
+      version: Različica {version}
+      signed: Digitalno podpisano
+      hosted: Gostovano v izdajah GitHub Releases
+    steps:
+      s1Title: Prenesite in zaženite namestitveni program KillerMCP.
+      s1Body: Namestitveni program preveri izvajalno okolje .NET 10 in, če manjka, odpre Microsoftovo stran za prenos. Program je podpisan s potrdilom Open Source Developer Stephen Riley in objavljen prek GitHub Releases.
+      s2Title: Dovolite namestitvenemu programu, da poveže vašega agenta.
+      s2Body: Namesti skupno izvajalno okolje in registrira KillerMCP v odjemalcih Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI in Windsurf, če jih najde.
+      s3Title: Odprite nov klepet z agentom in ga prosite za opravilo.
+      s3Body: KillerMCP prek ene povezave odkrije razpoložljiva orodja KillerTools in ukaze nameščenih aplikacij.
+    hostedTitle: Povežite se brez namestitve
+    hostedBody: Javni strežnik Cloudflare prek povezave HTTP ponuja 64 orodij KillerTools, primernih za spletno uporabo. Nima dostopa do vaših datotek Windows ali nameščenih aplikacij Killer. Preostalih 17 orodij KillerTools in vsi ukazi namiznih aplikacij zahtevajo nameščen KillerMCP.
+    actions:
+      cursor: Dodaj v Cursor
+      vscode: Dodaj v VS Code
+      claude: Kopiraj URL in odpri Claude
+      codex: Kopiraj ukaz za nastavitev Codex
+      claudeCode: Kopiraj ukaz za nastavitev Claude Code
+      copyUrl: Kopiraj URL
+      copyCommand: Kopiraj ukaz
+    otherClient: Uporabljate drug odjemalec MCP? Kopirajte URL strežnika.
+    shortest: "Najkrajša uporabna zahteva je {prompt}. Na primer: {example}."
+    infer: Agent lahko iz opravila in razpoložljivega konteksta izbere ustrezno orodje KillerTools ali aplikacije Killer. Uporabite {a}, {b}, {c} ali drugo ime aplikacije le, kadar želite izrecno določiti cilj. Podčrtaji, ime operacije ali ukaz s poševnico niso potrebni.
+    worker:
+      title: Kako deluje Cloudflare Worker
+      p1: Javna končna točka je odprtokodni strežnik MCP s pretočnim HTTP, nameščen ločeno od spletnega mesta. Vaš odjemalec MCP pošlje ime orodja in omejene argumente na {url}. Worker preveri zahtevo, zažene izbrano orodje in vrne rezultat.
+      p2: Večina izračunov in pretvorb poteka neposredno v Workerju. Poizvedbe DNS uporabljajo Cloudflare DNS prek HTTPS. Poizvedbe o registraciji domen sledijo imeniku IANA RDAP. Iskanja CVE, GIF in katalogov se obrnejo na javne ponudnike ter lahko ne uspejo, kadar ti niso dosegljivi ali omejijo število zahtev.
+    examples:
+      title: Poskusite vprašati
+      intro: Začnite z {killer} in opišite želeni rezultat. Če je opravilo jasno, ime aplikacije ali orodja ni obvezno.
+      e1: poišči podatke o domeni thekiller.net
+      e2: izračunaj 192.168.10.0/24
+      e3: poišči dogodek Windows 4625
+      e4: razišči CVE-2025-53770
+      e5: razčleni te glave e-pošte
+      e6: sestavi ukaz PowerShell za seznam ustavljenih storitev
+      e7: pretvori ta JSON v CSV
+      e8: primerjaj ta dva dokumenta JSON
+      e9: ustvari zapis SPF za example.com
+      e10: dekodiraj to besedilo Base64
+      e11: prepoznaj ta SKU za M365
+      e12: izračunaj 30-sekundno osvetlitev s tem filtrom ND
+    apps:
+      title: Povezave z aplikacijami Killer
+      intro: Ti primeri uporabljajo nameščen KillerMCP in podprto aplikacijo Killer v vašem računalniku Windows. Zahtevo napišite z običajnimi besedami; agent izbere razpoložljivi ukaz.
+      killendarNote: Za ustvarjanje sestankov mora biti Killendar odprt in odklenjen.
+      shortcut: Vsako od teh zahtev lahko začnete z {killer} namesto z imenom aplikacije. Aplikacijo poimenujte le, ko jo želite izrecno izbrati.
+      pdf1: killerpdf združi te datoteke PDF v tem vrstnem redu
+      pdf2: killerpdf poišči številko računa v tej datoteki PDF
+      pdf3: killer dodaj iskalno plast OCR v to datoteko PDF
+      pdf4: killer pretvori to beležko KillerNotes v PDF
+      notes1: killernotes poišči moje beležke o pisarniškem omrežju
+      notes2: killernotes ustvari beležko s tem povzetkom sestanka
+      notes3: killer prikaži moje beležke z oznako projekti
+      notes4: killer shrani to poročilo KillerScan kot beležko
+      scan1: killerscan prikaži podrobnosti mojega lokalnega omrežja
+      scan2: killerscan preišči omrežje 192.168.1.0/24 in poišči naprave
+      scan3: killer preveri odziv example.com z ukazom ping in prikaži izgubo paketov
+      scan4: killer ustvari poročilo PDF iz tega pregleda omrežja
+      shell1: killershell prikaži storitve, ki se izvajajo v tem računalniku
+      shell2: killershell v C:\Docs poišči datoteke z imenom invoice
+      shell3: killer prikaži najnovejše vnose v dnevniku Application
+      shell4: killer shrani ta seznam vsebine mape kot PDF
+      calendar1: killendar prikaži moje sestanke za jutri
+      calendar2: killendar ustvari sestanek jutri ob 9. uri z naslovom Jutranji sestanek
+      calendar3: killer prikaži moj dnevni red za naslednjih sedem dni
+      calendar4: killer shrani dnevni red za naslednji teden kot beležko
+    twice:
+      title: Zakaj se {km} izvaja dvakrat
+      body: Claude Desktop vsak lokalni strežnik MCP zažene dvakrat. En primerek je namenjen pogovorom v aplikaciji, drugi pa sejam Claude, ki ta računalnik uporabljajo na daljavo. Dva procesa KillerMCP.exe pod aplikacijo Claude v Upravitelju opravil sta običajna. KillerMCP ni nameščen dvakrat in ničesar ni treba popravljati.
+    can:
+      title: Kaj omogoča?
+      intro: "Vprašajte z običajnimi besedami. Agent odkrije razpoložljiva orodja in njihove vhodne podatke, nato pokliče potrebna. Lahko na primer:"
+      i1: Izračuna podomrežja IPv4, razširi obsege naslovov, ustvari predpone IPv6 ULA in poišče proizvajalce po naslovu MAC.
+      i2: Preveri zapise DNS in registracijo domen, poišče ranljivosti CVE ter prepozna vrata in protokole.
+      i3: Razčleni glave e-pošte, ustvari zapise SPF ali DMARC in poišče obvestila NDR Exchange.
+      i4: Poišče ID-je napak in dogodkov Windows, nastavitve pravilnikov skupine in licence SKU za M365.
+      i5: Poišče ukaze cmdlet PowerShell in sestavi ukaze, ki jih pred izvajanjem pregledate.
+      i6: Oblikuje JSON in XML, pretvarja JSON v CSV ali med zapisi JSON, YAML in TOML, dekodira Base64, primerja dokumente in preizkuša regularne izraze.
+      i7: Ustvari kode QR, identifikatorje UUID, metaoznake in nadomestno vsebino ali izvede izračune za fotografsko osvetlitev in film.
+      i8: Pretvarja velikost črk, datume, čase, temperature, barve, številske osnove, rimska števila, dvojiško besedilo, črkovanje NATO in zapise telefonskih številk.
+      i9: Oblikuje SQL, YAML, TOML, Markdown, entitete HTML in strukturirane podatke ali izračuna odstotke, urnike cron in vrednosti chmod.
+      i10: Poišče čustvenčke, GIF-e, KillerScripts in module Killer ali pregleda URL-je, uporabniške agente, kode stanja HTTP in statistiko besedila.
+    cov:
+      title: Kaj omogoča posamezna povezava?
+      hostedTitle: Strežnik Cloudflare
+      hostedBody: 64 orodij, primernih za spletno uporabo, s 74 operacijami. Deluje oddaljeno prek HTTP brez namestitve. Nima dostopa do lokalnih aplikacij ali datotek.
+      installedTitle: Namestitev za Windows
+      installedBody: Vseh 81 orodij KillerTools s 94 operacijami ter ukazi podprtih nameščenih aplikacij Killer. Deluje kot lokalna povezava MCP.
+      browserTitle: Spremljevalne strani v brskalniku
+      browserBody: Orodja za kamero, napravo, urejanje in podpis odprejo zasebno stran na localhost.
+    data:
+      title: Kam gredo podatki?
+      p1: Nameščeno izvajalno okolje KillerMCP deluje v vašem računalniku. Nekatere omrežne in referenčne poizvedbe še vedno uporabljajo javne vire podatkov. Agent prejme vhodne podatke in rezultate, potrebne za izvedbo zahteve.
+      p2: Izbirna gostovana povezava pošilja vhodne podatke orodij v KillerTools Cloudflare Worker. Ne zahteva prijave, omejuje telesa zahtev na 64 KiB, uporablja omejene sheme in omejuje število zahtev za vsak povezani naslov IP. Prek gostovane povezave ne pošiljajte gesel, zasebnih datotek, žetonov ali podatkov strank.
+      p3: Orodja za lokalne datoteke, brskalnik, gesla, žetone, šifriranje, zgoščevanje, OTP, BIP39 in ustvarjanje ključev niso na javnem Workerju. Delujejo prek nameščenega KillerMCP, vendar lahko odjemalec MCP in ponudnik modela še vedno prejmeta vhodne podatke in rezultate.
+    oss:
+      title: Odprta koda in trenutne omejitve
+      p1: "{kt} vsebuje javni Worker, lokalni paket KillerTools, preslikavo operacij, sheme preverjanja in preverjanja pokritosti. {km} vsebuje skupnega lokalnega gostitelja, vmesnike za namizne aplikacije, namestitveni program in integracijska preverjanja."
+      ktLink: Izvorna koda KillerTools
+      kmLink: Izvorna koda KillerMCP
+      p2: Rezultati zunanjih poizvedb so odvisni od njihovih virov. Lokalna orodja prejmejo samo poti ali vrednosti, podane v klicu orodja. Dekodiranje datoteke Base64 ustvari novo datoteko in zavrne prepis obstoječe. Zajem s kamero še vedno zahteva ročno dovoljenje brskalnika in preverjanje strojne opreme. Trenutni namestitveni program KillerMCP je podpisan, časovno žigosan in objavljen prek GitHub Releases.

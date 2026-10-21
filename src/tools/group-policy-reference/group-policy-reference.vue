@@ -82,7 +82,7 @@ function copyValue(value: string) {
           <!-- Titlebar: category + severity pill -->
           <div class="kt-terminal-bar gpr-bar">
             <span class="gpr-category">{{ tr(category) }}</span>
-            <span class="gpr-severity" :class="`gpr-sev-${severityColor[severity]}`">{{ severity }}</span>
+            <span class="gpr-severity" :class="`gpr-sev-${severityColor[severity]}`">{{ tr(severity) }}</span>
           </div>
 
           <!-- Body -->

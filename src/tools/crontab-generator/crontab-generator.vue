@@ -2,13 +2,14 @@
 import { isValidCron } from 'cron-validator';
 import cronstrue from 'cronstrue';
 import { useStyleStore } from '@/stores/style.store';
+import 'cronstrue/locales/sl';
 
 function isCronValid(v: string) {
   return isValidCron(v, { allowBlankDay: true, alias: true, seconds: true });
 }
 
 const styleStore = useStyleStore();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const cron = ref('40 * * * *');
 const cronstrueConfig = reactive({
@@ -47,7 +48,7 @@ const helpers = computed(() => [
 
 const cronString = computed(() => {
   if (isCronValid(cron.value)) {
-    return cronstrue.toString(cron.value, cronstrueConfig);
+    return cronstrue.toString(cron.value, { ...cronstrueConfig, locale: locale.value === 'sl' ? 'sl' : 'en' });
   }
   return ' ';
 });
@@ -104,15 +105,7 @@ const cronValidationRules = computed(() => [
 
     <c-card>
       <div v-if="styleStore.isSmallScreen">
-        <pre class="field-diagram">
-┌──────────── [optional] seconds (0 - 59)
-| ┌────────── minute (0 - 59)
-| | ┌──────── hour (0 - 23)
-| | | ┌────── day of month (1 - 31)
-| | | | ┌──── month (1 - 12) OR jan,feb,mar,apr ...
-| | | | | ┌── day of week (0 - 6, sunday=0) OR sun,mon ...
-| | | | | |
-* * * * * * command</pre>
+        <pre class="field-diagram">{{ t('tools.crontab-generator.ui.fieldDiagram') }}</pre>
 
         <c-card v-for="{ symbol, meaning, example, equivalent } in helpers" :key="symbol" mb-3 important:border-none>
           <div>{{ t('tools.crontab-generator.ui.labelSymbol') }} <strong>{{ symbol }}</strong></div>
@@ -123,15 +116,7 @@ const cronValidationRules = computed(() => [
       </div>
 
       <div v-else class="cheatsheet">
-        <pre class="field-diagram">
-┌──────────── [optional] seconds (0 - 59)
-| ┌────────── minute (0 - 59)
-| | ┌──────── hour (0 - 23)
-| | | ┌────── day of month (1 - 31)
-| | | | ┌──── month (1 - 12) OR jan,feb,mar,apr ...
-| | | | | ┌── day of week (0 - 6, sunday=0) OR sun,mon ...
-| | | | | |
-* * * * * * command</pre>
+        <pre class="field-diagram">{{ t('tools.crontab-generator.ui.fieldDiagram') }}</pre>
 
         <div class="cheatsheet-cols">
           <div class="cheatsheet-section">
