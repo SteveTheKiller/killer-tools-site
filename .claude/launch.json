@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "killertools-dev",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev", "--port", "5173", "--strictPort"],
+      "port": 5173
+    },
+    {
+      "name": "killertools-preview",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["preview", "--strictPort"],
+      "port": 5050
+    }
+  ]
+}
