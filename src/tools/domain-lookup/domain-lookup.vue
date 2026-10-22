@@ -755,14 +755,16 @@ async function runLookup() {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  height: 34px;
+  /* Stretch to the domain field beside it so the two read as one row */
+  align-self: stretch;
   width: 130px;
   padding: 0;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   border-radius: 5px;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--kt-accent);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
