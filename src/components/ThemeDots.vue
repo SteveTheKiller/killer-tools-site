@@ -72,11 +72,11 @@ function selectTheme(key: KtThemeKey) {
   swatchesOpen.value = false;
 }
 
-// Film Grain: same switch and shortcut as the apps' theme menu (Ctrl+Shift+G).
+// Film Grain: same switch and shortcut as the apps' theme menu (Alt+Shift+G).
 const grainLabel = computed(() => t('components.themeDots.filmGrain'));
 
 useEventListener(document, 'keydown', (e: KeyboardEvent) => {
-  if (e.ctrlKey && e.shiftKey && !e.altKey && !e.metaKey && e.code === 'KeyG') {
+  if (e.altKey && e.shiftKey && !e.ctrlKey && !e.metaKey && e.code === 'KeyG') {
     e.preventDefault();
     if (!e.repeat) {
       styleStore.toggleGrain();
@@ -209,7 +209,7 @@ function startDrag(e: PointerEvent) {
       <n-checkbox
         class="tgrp-grain"
         :checked="styleStore.ktGrain"
-        :title="`${grainLabel} (Ctrl+Shift+G)`"
+        :title="`${grainLabel} (Alt+Shift+G)`"
         @update:checked="styleStore.setGrain"
       >
         {{ grainLabel }}
