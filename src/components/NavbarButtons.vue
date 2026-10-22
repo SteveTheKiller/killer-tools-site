@@ -10,7 +10,7 @@ const { t } = useI18n();
 <template>
   <div class="navbar-buttons" flex items-center gap-5>
     <LocaleSelector />
-    <c-tooltip v-if="!isNativeApp" :tooltip="t('components.navbarButtons.androidTooltip')" position="bottom">
+    <c-tooltip v-if="!isNativeApp" class="nb-android" :tooltip="t('components.navbarButtons.androidTooltip')" position="bottom">
       <c-button class="keep-circle" circle variant="text" to="/android" :aria-label="t('components.navbarButtons.androidAriaLabel')">
         <n-icon size="30" :component="IconBrandAndroid" />
       </c-button>
@@ -36,6 +36,14 @@ const { t } = useI18n();
 .n-button {
   &:not(:last-child) {
     margin-right: 5px;
+  }
+}
+
+/* Narrow titlebar: Android is the first button to give up its room so the
+   bar stays on one line */
+@media (max-width: 520px) {
+  .navbar-buttons > .nb-android {
+    display: none;
   }
 }
 </style>

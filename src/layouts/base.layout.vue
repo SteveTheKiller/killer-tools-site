@@ -205,11 +205,13 @@ const tools = computed<ToolCategory[]>(() => [
   height: 28px;
 }
 
-/* Keep controls together until their contents need another line. */
+/* One line at every width: as the bar narrows, controls collapse in steps
+   (KillerMCP to its icon, tighter right-hand buttons, no Android button,
+   no brand wordmark) instead of wrapping onto a second row. */
 .tb-row {
   position: relative;
   width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .tb-row > :not(.palette-wrap) {
@@ -225,8 +227,41 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .tb-about {
-  max-width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+/* Step 1: KillerMCP keeps only its mark, still a framed button */
+@media (max-width: 660px) {
+  .tb-mcp {
+    width: 38px;
+    padding: 3px;
+  }
+
+  .tb-mcp-wordmark {
+    display: none;
+  }
+}
+
+/* Step 2: the right-hand buttons sit closer together */
+@media (max-width: 600px) {
+  .tb-about {
+    gap: 8px !important;
+  }
+
+  .tb-about :deep(.n-button) {
+    margin-right: 0 !important;
+  }
+}
+
+/* Step 5 (smallest phones): every gap in the row tightens */
+@media (max-width: 360px) {
+  .tb-row {
+    gap: 4px;
+  }
+
+  .tb-about {
+    gap: 4px !important;
+  }
 }
 
 @media (max-width: 700px) {
@@ -270,9 +305,9 @@ const tools = computed<ToolCategory[]>(() => [
   }
 }
 
-/* Extreme narrow: the WORDMARK collapses first — the brand icon and the
+/* Step 4: the brand WORDMARK collapses next. The brand icon and the
    search/About icons always stay */
-@media (max-width: 430px) {
+@media (max-width: 470px) {
   .tb-brand-wm {
     display: none;
   }
