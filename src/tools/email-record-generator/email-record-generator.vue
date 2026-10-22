@@ -415,12 +415,6 @@ const dmarcRecord = computed(() => buildDmarcRecord({
   overflow: visible; /* allow dropdown menus to escape the card */
 }
 
-/* With overflow visible the accent strip is no longer clipped by the card,
-   so round it to the card's inner corners itself */
-.erg-terminal::after {
-  border-radius: 5px 5px 0 0;
-}
-
 /* ── Record output ── */
 .erg-record-area {
   padding: 14px 16px;
