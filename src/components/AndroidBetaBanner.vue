@@ -52,17 +52,6 @@ const visible = computed(() => !isNativeApp && !dismissed.value && route.name !=
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
 }
 
-.beta-banner::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--kt-accent-sel, var(--kt-accent));
-  pointer-events: none;
-}
-
 .beta-body {
   display: flex;
   align-items: center;

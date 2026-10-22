@@ -223,7 +223,7 @@ useHead({
 }
 
 /* Family card recipe (kt-terminal language): near-black grained surface on
-   --kt-modal, chrome border, accent top edge, hover accent (no lift - text) */
+   --kt-modal, chrome border; on hover a full accent border and the lift */
 .g-card {
   position: relative;
   overflow: hidden;
@@ -235,27 +235,10 @@ useHead({
   transition: border-color 0.15s, box-shadow 0.12s, transform 0.12s;
 }
 
-.g-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--kt-accent-sel, var(--kt-accent));
-  transition: background 0.15s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.g-card:hover::after {
-  background: var(--kt-accent);
-}
-
 .g-card:hover {
   /* Family pop: same lift as the kt-terminal cards */
   transform: translateY(-3px);
-  border-color: rgba(var(--kt-accent-rgb), 0.6);
+  border-color: var(--kt-accent);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
 }
 

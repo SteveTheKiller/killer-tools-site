@@ -400,26 +400,12 @@ const details = computed(() => [
 /* ── QR panel ── */
 .qr-frame {
   background: #0a0a0a;
-  /* Family card frame: chrome-gray at rest, muted accent stripe on top only */
+  /* Family card frame: chrome-gray at rest, full accent border on hover */
   border: 1px solid var(--kt-chrome-border, #1f1f1f);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
   padding: 18px;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--kt-accent-sel, var(--kt-accent));
-    transition: background 0.15s ease;
-    pointer-events: none;
-  }
-  &:hover::after {
-    background: var(--kt-accent);
-  }
   /* Normal drop shadow — not the accent glow */
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   width: 100%;
@@ -430,9 +416,7 @@ const details = computed(() => [
   justify-content: center;
   transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
   &:hover {
-    border-right-color: rgba(var(--kt-accent-rgb), 0.6);
-    border-bottom-color: rgba(var(--kt-accent-rgb), 0.6);
-    border-left-color: rgba(var(--kt-accent-rgb), 0.6);
+    border-color: var(--kt-accent);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
     /* family hover pop */
     transform: translateY(-3px);

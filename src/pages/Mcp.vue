@@ -388,20 +388,12 @@ useHead({
 
 .mcp-surface:hover {
   transform: translateY(-3px);
-  border-color: rgba(var(--kt-accent-rgb), 0.75);
+  border-color: var(--kt-accent);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
 html:not(.dark) .mcp-surface:hover {
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
-}
-
-.mcp-surface::after {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 2px;
-  background: var(--kt-accent-sel, var(--kt-accent));
 }
 
 .mcp-hero { padding: 22px; text-align: center; }

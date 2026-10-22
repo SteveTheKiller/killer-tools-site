@@ -551,26 +551,8 @@ html:not(.dark) .qrg-tab-active {
   transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
 }
 
-.qr-frame::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--kt-accent-sel, var(--kt-accent));
-  transition: background 0.15s ease;
-  pointer-events: none;
-}
-
-.qr-frame:hover::after {
-  background: var(--kt-accent);
-}
-
 .qr-frame:hover {
-  border-right-color: rgba(var(--kt-accent-rgb), 0.6);
-  border-bottom-color: rgba(var(--kt-accent-rgb), 0.6);
-  border-left-color: rgba(var(--kt-accent-rgb), 0.6);
+  border-color: var(--kt-accent);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
   /* family hover pop */
   transform: translateY(-3px);
