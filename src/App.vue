@@ -150,6 +150,21 @@ html[data-kt-theme='sepulchre'] { --kt-bg: #3a352f; --kt-chrome: #454039; --kt-c
 html[data-kt-theme='delirium']  { --kt-bg: #343344; --kt-chrome: #3e3c50; --kt-chrome-bg: linear-gradient(90deg, #641d25 0%, #2f2853 100%); --kt-chrome-border: #5c527d; --kt-panel: #343344; --kt-modal: #24212b; --kt-accent: #dd8500; --kt-accent-2: #B16A00; --kt-accent-sel: #cf1020; --kt-accent-rgb: 221, 133, 0; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a17.png'); }
 html[data-kt-theme='mourning']  { --kt-bg: #554c5d; --kt-chrome: #3b3642; --kt-chrome-border: #756b79; --kt-panel: #554c5d; --kt-modal: #4f413f; --kt-accent: #ff6f91; --kt-accent-2: #CC5974; --kt-accent-sel: rgba(255, 111, 145, 0.42); --kt-accent-rgb: 255, 111, 145; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a17.png'); }
 
+/* Menu and flyout border: the apps' neutral MenuBorderBrush. Menus, flyouts
+   and the accent bar never take an accent border. */
+html[data-kt-theme='black']     { --kt-menu-border: #1c1c1c; }
+html[data-kt-theme='dark']      { --kt-menu-border: #404040; }
+html[data-kt-theme='light']     { --kt-menu-border: #a8a8a8; }
+html[data-kt-theme='blood']     { --kt-menu-border: #633030; }
+html[data-kt-theme='greed']     { --kt-menu-border: #07371f; }
+html[data-kt-theme='cyanotic']  { --kt-menu-border: #093250; }
+html[data-kt-theme='ectoplasm'] { --kt-menu-border: #526466; }
+html[data-kt-theme='decay']     { --kt-menu-border: #5c554c; }
+html[data-kt-theme='malaise']   { --kt-menu-border: #394742; }
+html[data-kt-theme='sepulchre'] { --kt-menu-border: #4d3d2b; }
+html[data-kt-theme='delirium']  { --kt-menu-border: #5c527d; }
+html[data-kt-theme='mourning']  { --kt-menu-border: #756b79; }
+
 /* Film Grain switch (theme flyout, family app behavior): off empties the grain
    layer every surface draws from, whatever theme or accent is active. */
 html[data-kt-grain='off'] { --kt-grain-img: none !important; }
@@ -196,12 +211,12 @@ html:not(.dark) .tool-header-link:hover    { color: rgba(0, 0, 0, 0.88) !importa
 .n-menu { background-color: transparent !important; }
 
 /* ── NaiveUI select dropdown menus: family menu chrome (grained modal
-   surface, accent border, rounded, drop shadow: the palette/dd-menu rule) ── */
+   surface, menu border, rounded, drop shadow: the palette/dd-menu rule) ── */
 .n-base-select-menu,
 .n-dropdown-menu {
   background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
   background-size: 256px 256px !important;
-  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border: 1px solid var(--kt-menu-border, #404040);
   border-radius: 8px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45) !important;
 }

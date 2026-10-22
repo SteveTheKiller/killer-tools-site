@@ -340,11 +340,13 @@ html[data-kt-theme='black'] [class*="-stepper"] {
   background: #0e0e0e !important;
 }
 
-/* Every floating menu carries the family grain on top of its tone above.
-   Local attachment keeps it under the items when the menu scrolls. The
-   [class] bump gives (0,3,1) over the tone rules' background shorthand. */
+/* Every floating menu carries the family grain on top of its tone above and
+   the neutral menu border (never the accent). Local attachment keeps the
+   grain under the items when the menu scrolls. The [class] bump gives
+   (0,3,1) over the tone rules' background shorthand. */
 html[data-kt-theme] [class*="-dropdown-menu"][class],
 html[data-kt-theme] [class*="-dd-menu"][class] {
+  border-color: var(--kt-menu-border, #404040) !important;
   background-image: var(--kt-grain-img, url('/grain-a17.png')) !important;
   background-repeat: repeat !important;
   background-size: 256px 256px !important;

@@ -384,7 +384,7 @@ html:not(.dark) .acc-trigger {
   justify-content: center;
   gap: 8px;
   padding: 12px;
-  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border: 1px solid var(--kt-menu-border, #404040);
   border-radius: 9px;
   background: var(--kt-modal) var(--kt-grain-img) repeat;
   background-size: 256px 256px;
@@ -443,7 +443,7 @@ html:not(.dark) .tgrp-sep {
     justify-content: center;
     gap: 8px;
     padding: 12px;
-    border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+    border: 1px solid var(--kt-menu-border, #404040);
     border-radius: 9px;
     background: var(--kt-modal) var(--kt-grain-img) repeat;
     background-size: 256px 256px;
@@ -464,7 +464,7 @@ html:not(.dark) .tgrp-sep {
 
 <style lang="less">
 /* Popup is teleported to <body>, so its chrome lives unscoped. Family menu
-   look: grained modal surface, accent border, rounded, drop shadow. */
+   look: grained modal surface, neutral menu border, rounded, drop shadow. */
 .acc-popup {
   position: fixed;
   z-index: 4000;
@@ -476,7 +476,7 @@ html:not(.dark) .tgrp-sep {
   border-radius: 0 0 9px 9px;
   background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat;
   background-size: 256px 256px;
-  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border: 1px solid var(--kt-menu-border, #404040);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
