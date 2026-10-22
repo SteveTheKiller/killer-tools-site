@@ -274,18 +274,20 @@ const tools = computed<ToolCategory[]>(() => [
   }
 }
 
-/* Mobile brand (visible only when the sidebar logo is gone) */
+/* Titlebar brand: shown whenever the sidebar (and its logo) is collapsed or
+   in drawer mode, at any width, so the site title is always on screen */
 .tb-brand {
   display: none;
 }
 
-@media (max-width: 700px) {
+.tb-row.sider-collapsed {
   .tb-home {
     display: none; /* brand link doubles as home */
   }
 
   .tb-brand {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     gap: 7px;
     position: static;
@@ -308,11 +310,11 @@ const tools = computed<ToolCategory[]>(() => [
 /* Step 4: the brand WORDMARK collapses next. The brand icon and the
    search/About icons always stay */
 @media (max-width: 470px) {
-  .tb-brand-wm {
+  .tb-row.sider-collapsed .tb-brand-wm {
     display: none;
   }
 
-  .tb-brand-icon {
+  .tb-row.sider-collapsed .tb-brand-icon {
     width: 24px;
     height: 24px;
   }
