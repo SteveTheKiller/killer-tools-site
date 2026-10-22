@@ -40,14 +40,32 @@ const swatchesOpen = ref(false);
 const currentTheme = computed(() => ktThemes.find(t => t.key === styleStore.ktTheme));
 const pickerRef = ref<HTMLElement>();
 
-function closeSwatchesOnOutsideClick(event: MouseEvent) {
-  if (swatchesOpen.value && !pickerRef.value?.contains(event.target as Node)) {
+// Accent popup (KillerScan style): opened from a single trigger circle
+const popupOpen = ref(false);
+const triggerRef = ref<HTMLElement>();
+
+function closeFlyoutsOnOutsideClick(event: MouseEvent) {
+  const target = event.target as Element;
+  if (swatchesOpen.value && !pickerRef.value?.contains(target)) {
     swatchesOpen.value = false;
+  }
+  // The accent bar stays docked while you work, but another titlebar menu
+  // (language, info, ...) opening under it closes it
+  if (popupOpen.value && target.closest?.('.kt-titlebar-shell') && !triggerRef.value?.contains(target)) {
+    popupOpen.value = false;
   }
 }
 
-onMounted(() => document.addEventListener('click', closeSwatchesOnOutsideClick));
-onBeforeUnmount(() => document.removeEventListener('click', closeSwatchesOnOutsideClick));
+onMounted(() => document.addEventListener('click', closeFlyoutsOnOutsideClick));
+onBeforeUnmount(() => document.removeEventListener('click', closeFlyoutsOnOutsideClick));
+
+// Only one of the theme flyout and the accent bar is open at a time
+function toggleSwatches() {
+  swatchesOpen.value = !swatchesOpen.value;
+  if (swatchesOpen.value) {
+    popupOpen.value = false;
+  }
+}
 
 function selectTheme(key: KtThemeKey) {
   styleStore.setTheme(key);
@@ -84,14 +102,11 @@ function themeDotAccent(theme: typeof ktThemes[number]) {
   return ktAccents[family][effectiveAccent.value];
 }
 
-// Accent popup (KillerScan style): opened from a single trigger circle.
-//    Docks to the top rail (KillerPDF annotation-bar behavior): fixed y,
-//    drags left/right along that row only, x position persisted.
-const popupOpen = ref(false);
+// Accent popup docks to the top rail (KillerPDF annotation-bar behavior):
+//    fixed y, drags left/right along that row only, x position persisted.
 // Rail height: top of the bar flush with the top of the content pane
 const popupTop = ref(72);
 const popupX = useStorage('kt-accent-popup-x', -1);
-const triggerRef = ref<HTMLElement>();
 const popupRef = ref<HTMLElement>();
 
 // Drag range: contained within the content pane, a few px inside the left
@@ -119,6 +134,7 @@ async function togglePopup() {
   if (!popupOpen.value) {
     return;
   }
+  swatchesOpen.value = false;
   await nextTick();
   measureRail();
   if (popupX.value < 0) {
@@ -173,7 +189,7 @@ function startDrag(e: PointerEvent) {
       :title="t('components.themeDots.theme')"
       :aria-label="t('components.themeDots.toggleThemeSwatches')"
       :aria-expanded="swatchesOpen"
-      @click="swatchesOpen = !swatchesOpen"
+      @click="toggleSwatches"
     />
 
     <!-- Theme swatches, ported from the landing-page picker -->
@@ -368,7 +384,7 @@ html:not(.dark) .acc-trigger {
   justify-content: center;
   gap: 8px;
   padding: 12px;
-  border: 1px solid var(--kt-chrome-border);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   border-radius: 9px;
   background: var(--kt-modal) var(--kt-grain-img) repeat;
   background-size: 256px 256px;
@@ -427,7 +443,7 @@ html:not(.dark) .tgrp-sep {
     justify-content: center;
     gap: 8px;
     padding: 12px;
-    border: 1px solid var(--kt-chrome-border);
+    border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
     border-radius: 9px;
     background: var(--kt-modal) var(--kt-grain-img) repeat;
     background-size: 256px 256px;
@@ -460,7 +476,7 @@ html:not(.dark) .tgrp-sep {
   border-radius: 0 0 9px 9px;
   background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat;
   background-size: 256px 256px;
-  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
