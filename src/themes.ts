@@ -115,6 +115,24 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
       color: p.notif,
     },
 
+    // Checks and radios follow the theme accent (the apps' RadioAccent), not
+    // primaryColor: Blood, Greed and Cyanotic keep the install-button green
+    // or gold as primary, which would otherwise color every check box
+    Checkbox: {
+      colorChecked: 'var(--kt-accent)',
+      borderChecked: '1px solid var(--kt-accent)',
+      borderFocus: '1px solid var(--kt-accent)',
+      boxShadowFocus: '0 0 0 2px rgba(var(--kt-accent-rgb), 0.3)',
+      checkMarkColor: '#111111',
+    },
+
+    Radio: {
+      dotColorActive: 'var(--kt-accent)',
+      boxShadowActive: 'inset 0 0 0 1px var(--kt-accent)',
+      boxShadowFocus: 'inset 0 0 0 1px var(--kt-accent), 0 0 0 2px rgba(var(--kt-accent-rgb), 0.3)',
+      boxShadowHover: 'inset 0 0 0 1px var(--kt-accent)',
+    },
+
     AutoComplete: {
       peers: {
         InternalSelectMenu: { height: '500px', color: p.popup },
