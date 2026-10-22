@@ -114,7 +114,7 @@ function downloadScript(script: { name: string, download_url: string }) {
                 :class="{ 'is-copied': copied === script.name }"
                 @click.stop="copyCommand(script)"
               >
-                <span class="ks-lbl ks-lbl-idle">⧉ {{ t('tools.killer-scripts.ui.copyCommand') }}</span>
+                <span class="ks-lbl ks-lbl-idle"><span class="ks-ico">⧉</span> {{ t('tools.killer-scripts.ui.copyCommand') }}</span>
                 <span class="ks-lbl ks-lbl-done">✓ {{ t('tools.killer-scripts.ui.copied') }}</span>
               </button>
               <button
@@ -228,7 +228,9 @@ html:not(.dark) .ks-acronym {
   display: inline-grid;
   justify-items: center;
   border-radius: 4px;
-  padding: 5px 8px;
+  /* Killer Sans caps ride high in the line box: 2px more on top than below
+     centers the label on the button without changing its height */
+  padding: 6px 8px 4px;
   font-size: 0.75rem;
   font-weight: 600;
   background: transparent;
@@ -243,6 +245,8 @@ html:not(.dark) .ks-acronym {
 /* Both labels share one grid cell, so the button is always as wide as the
    widest label and never resizes when it swaps to "Copied!" */
 .ks-btn-copy .ks-lbl { grid-area: 1 / 1; }
+/* The copy glyph comes from a fallback font that sits higher than the text */
+.ks-btn-copy .ks-ico { position: relative; top: 2px; }
 .ks-btn-copy .ks-lbl-done { visibility: hidden; }
 .ks-btn-copy.is-copied .ks-lbl-idle { visibility: hidden; }
 .ks-btn-copy.is-copied .ks-lbl-done { visibility: visible; }
