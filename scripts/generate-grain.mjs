@@ -21,7 +21,7 @@ const CONTRAST = 1.35;
 // Same names and opacities as the desktop themes' GrainOpacity
 const TILES = [
   { file: 'grain-a17.png', opacity: 0.24, highlightsOnly: false }, // every dark theme
-  { file: 'grain-a17-highlights.png', opacity: 0.24, highlightsOnly: true }, // Black
+  { file: 'grain-a17-highlights.png', opacity: 0.08, highlightsOnly: true }, // Black
   { file: 'grain-a28.png', opacity: 0.4, highlightsOnly: false }, // Light
 ];
 
