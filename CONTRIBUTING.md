@@ -60,4 +60,3 @@ Be prepared to revise an approved contribution after review. Contributions must 
 ## Project-specific guidance
 
 Preserve the established site design, accessibility, localization, and utility behavior. Check affected pages at narrow and wide sizes. Deployment is a separate maintainer action.
-
