@@ -1289,6 +1289,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: フィールドテクニシャンのための高速ネットワークスキャナーです。ARP＋pingによる探索、ポートプローブ、ベンダー検索、デバイスの自動分類に対応します。
+  killer-shot:
+    title: KillerShot
+    description: '暗号化されたスクリーンショットアルバムと画面キャプチャツール。Print Screen で領域、ウィンドウ、全モニターをキャプチャし、書き込みや墨消しをして、画像内の文字からあとで探し出せます。画像だけでは足りないときは、画面を MP4 や GIF に録画できます。'
   gif-search:
     title: GIF検索
     description: GiphyでリアクションGIFを検索します。結果をクリックするとURLをコピーします。

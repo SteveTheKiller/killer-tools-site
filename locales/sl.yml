@@ -1307,6 +1307,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Hiter omrežni pregledovalnik za terenske tehnike. Odkrivanje z ARP in ping, preverjanje vrat, iskanje proizvajalcev in samodejno razvrščanje naprav.
+  killer-shot:
+    title: KillerShot
+    description: 'Šifrirani album posnetkov zaslona in orodje za zajem zaslona. S Print Screen zajemi območje, okno ali vse zaslone, sliko označi in zakrij občutljive dele, nato jo znova najdi po besedilu na njej. Ko slika ni dovolj, posnemi zaslon v MP4 ali GIF.'
   gif-search:
     title: Iskanje GIF-ov
     description: Poiščite odzivne GIF-e na Giphy. Kliknite rezultat za kopiranje URL-ja.

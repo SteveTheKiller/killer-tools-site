@@ -18,6 +18,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
   '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
   '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
+  '/killer-shot': { icon: '/brand/kst-icon.png', wm: 'killershot' },
 };
 
 function makeLabel(tool: Tool) {

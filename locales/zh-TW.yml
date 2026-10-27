@@ -1289,6 +1289,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: 為現場技術人員打造的快速網路掃描器。ARP + ping 探索、連接埠探測、供應商查詢與自動裝置分類。
+  killer-shot:
+    title: KillerShot
+    description: '加密螢幕截圖相簿與螢幕擷取工具。用 Print Screen 擷取區域、視窗或所有螢幕，加上標註與遮蔽，日後再憑圖片中的文字找回來。當一張圖片不夠時，可將螢幕錄製成 MP4 或 GIF。'
   gif-search:
     title: GIF 搜尋
     description: 在 Giphy 搜尋反應 GIF。點擊任一結果即可複製 URL。

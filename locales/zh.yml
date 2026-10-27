@@ -1698,6 +1698,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: 面向现场技术人员的快速网络扫描工具。支持 ARP 与 ping 发现、端口探测、厂商查询以及自动设备分类。
+  killer-shot:
+    title: KillerShot
+    description: '加密截图相册与屏幕捕获工具。用 Print Screen 截取区域、窗口或所有显示器，加上标注和遮盖，日后再凭图片中的文字找回来。一张图片不够时，可以把屏幕录制成 MP4 或 GIF。'
   killer-shell:
     title: KillerShell
     description: 面向高级用户的免费 Shell 工具。文件浏览器、终端和文本编辑器共享同一个窗口、同一组标签页和同一套快捷键。

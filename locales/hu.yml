@@ -1289,6 +1289,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Gyors hálózati szkenner terepen dolgozó technikusoknak. ARP + ping felderítés, portvizsgálat, gyártókeresés és automatikus eszközosztályozás.
+  killer-shot:
+    title: KillerShot
+    description: 'Titkosított képernyőkép-album és képernyőrögzítő eszköz. Rögzítsen egy területet, egy ablakot vagy az összes monitort a Print Screen gombbal, lássa el jelölésekkel, takarja ki, amit kell, és találja meg újra a képben lévő szöveg alapján. Ha egy kép nem elég, rögzítse a képernyőt MP4- vagy GIF-formátumba.'
   gif-search:
     title: GIF-kereső
     description: Reakció GIF-ek keresése a Giphyn. Kattints bármelyik találatra az URL másolásához.

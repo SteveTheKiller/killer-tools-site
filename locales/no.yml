@@ -1703,6 +1703,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Rask nettverksskanner for feltteknikere. ARP- og ping-oppdagelse, portsondering, leverandøroppslag og automatisk enhetsklassifisering.
+  killer-shot:
+    title: KillerShot
+    description: 'Kryptert skjermbildealbum og skjermopptaksverktøy. Ta opp et område, et vindu eller alle skjermer med Print Screen, marker og sladd, og finn det igjen ut fra teksten i bildet. Når et bilde ikke er nok, ta opp skjermen til MP4 eller GIF.'
   killer-shell:
     title: KillerShell
     description: Gratis skall for avanserte brukere. En filutforsker, en terminal og en tekstredigerer deler ett vindu, en fanelinje og et sett med taster.

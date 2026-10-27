@@ -1307,6 +1307,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Fast network scanner for field techs. ARP + ping discovery, port probing, vendor lookup, and automatic device classification.
+  killer-shot:
+    title: KillerShot
+    description: 'Encrypted screenshot album and screen capture tool. Capture a region, a window or every monitor with Print Screen, mark it up and redact it, and find it again by the text inside the picture. When a picture is not enough, record the screen to MP4 or GIF.'
   gif-search:
     title: GIF Search
     description: Search Giphy for reaction GIFs. Click any result to copy the URL.

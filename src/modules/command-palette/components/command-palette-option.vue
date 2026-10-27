@@ -18,6 +18,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   // a generic icon in the palette only. Added 2026-07-30 alongside killendar.
   '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
   '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
+  '/killer-shot': { icon: '/brand/kst-icon.png', wm: 'killershot' },
 };
 
 const brand = computed(() => (typeof option.value.to === 'string' ? APP_BRAND[option.value.to] : undefined));

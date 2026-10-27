@@ -1289,6 +1289,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: 'Saha teknisyenleri için hızlı ağ tarayıcı. ARP + ping keşfi, port yoklama, üretici sorgulama ve otomatik cihaz sınıflandırma.'
+  killer-shot:
+    title: KillerShot
+    description: 'Şifreli ekran görüntüsü albümü ve ekran yakalama aracı. Print Screen ile bir bölgeyi, pencereyi veya tüm monitörleri yakalayın, işaretleyin ve karartın, sonra resmin içindeki metinle yeniden bulun. Bir resim yetmediğinde ekranı MP4 veya GIF olarak kaydedin.'
   gif-search:
     title: GIF arama
     description: Giphy'de tepki GIF'leri ara. URL'yi kopyalamak için herhangi bir sonuca tıkla.

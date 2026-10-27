@@ -1703,6 +1703,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Escáner de red rápido para técnicos de campo. Descubrimiento ARP + ping, sondeo de puertos, búsqueda de fabricante y clasificación automática de dispositivos.
+  killer-shot:
+    title: KillerShot
+    description: 'Álbum cifrado de capturas de pantalla y herramienta de captura de pantalla. Captura una región, una ventana o todos los monitores con Print Screen, anótala y censúrala, y vuelve a encontrarla por el texto que contiene la imagen. Cuando una imagen no basta, graba la pantalla en MP4 o GIF.'
   killer-shell:
     title: KillerShell
     description: Shell gratuita para usuarios avanzados. Un explorador de archivos, una terminal y un editor de texto comparten una sola ventana, una sola barra de pestañas y un solo conjunto de teclas.

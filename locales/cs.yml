@@ -1289,6 +1289,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Rychlý síťový skener pro techniky v terénu. Zjišťování pomocí ARP + ping, testování portů, vyhledání dodavatele a automatická klasifikace zařízení.
+  killer-shot:
+    title: KillerShot
+    description: 'Šifrované album snímků obrazovky a nástroj pro snímání obrazovky. Pořiďte snímek oblasti, okna nebo všech monitorů pomocí Print Screen, opatřete ho poznámkami, začerněte citlivá místa a najděte ho znovu podle textu uvnitř obrázku. Když obrázek nestačí, nahrajte obrazovku do MP4 nebo GIF.'
   gif-search:
     title: Hledání GIF
     description: Hledejte reakční GIFy na Giphy. Kliknutím na výsledek zkopírujete URL.

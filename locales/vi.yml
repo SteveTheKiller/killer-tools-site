@@ -1293,6 +1293,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Trình quét mạng nhanh dành cho kỹ thuật viên hiện trường. Khám phá bằng ARP và ping, dò cổng, tra cứu nhà sản xuất và tự động phân loại thiết bị.
+  killer-shot:
+    title: KillerShot
+    description: 'Album ảnh chụp màn hình được mã hóa và công cụ chụp màn hình. Chụp một vùng, một cửa sổ hoặc mọi màn hình bằng Print Screen, đánh dấu và che thông tin, rồi tìm lại bằng văn bản bên trong ảnh. Khi một bức ảnh là chưa đủ, hãy ghi màn hình thành MP4 hoặc GIF.'
   gif-search:
     title: Tìm kiếm GIF
     description: Tìm GIF phản ứng trên Giphy. Nhấp vào kết quả để sao chép URL.

@@ -1289,6 +1289,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Szybki skaner sieci dla techników terenowych. Wykrywanie ARP + ping, sondowanie portów, wyszukiwanie producenta i automatyczna klasyfikacja urządzeń.
+  killer-shot:
+    title: KillerShot
+    description: 'Zaszyfrowany album zrzutów ekranu i narzędzie do przechwytywania ekranu. Przechwyć obszar, okno lub wszystkie monitory klawiszem Print Screen, dodaj adnotacje, zamaż wrażliwe dane i odnajdź obraz po tekście, który zawiera. Gdy obraz nie wystarcza, nagraj ekran do MP4 lub GIF.'
   gif-search:
     title: Wyszukiwarka GIF
     description: Szukaj reakcyjnych GIF-ów w Giphy. Kliknij dowolny wynik, aby skopiować URL.

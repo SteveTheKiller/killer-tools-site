@@ -1703,6 +1703,9 @@ tools:
   killer-scan:
     title: KillerScan
     description: Schneller Netzwerkscanner für Techniker im Außendienst. ARP- und Ping-Erkennung, Port-Abfrage, Hersteller-Nachschlag und automatische Geräteklassifizierung.
+  killer-shot:
+    title: KillerShot
+    description: 'Verschlüsseltes Screenshot-Album und Bildschirmaufnahme-Tool. Nehmen Sie mit Print Screen einen Bereich, ein Fenster oder alle Monitore auf, markieren und schwärzen Sie, und finden Sie das Bild über den darin enthaltenen Text wieder. Wenn ein Bild nicht reicht, zeichnen Sie den Bildschirm als MP4 oder GIF auf.'
   killer-shell:
     title: KillerShell
     description: Kostenlose Shell für Power-User. Ein Dateibrowser, ein Terminal und ein Texteditor teilen sich ein Fenster, eine Tableiste und einen Satz Tastenkürzel.

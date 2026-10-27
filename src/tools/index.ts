@@ -46,6 +46,7 @@ import { tool as killerPdf } from './killer-pdf';
 import { tool as killerScan } from './killer-scan';
 import { tool as killerScripts } from './killer-scripts';
 import { tool as killerShell } from './killer-shell';
+import { tool as killerShot } from './killer-shot';
 import { tool as loremIpsumGenerator } from './lorem-ipsum-generator';
 import { tool as m365SkuDecoder } from './m365-sku-decoder';
 import { tool as macAddressLookup } from './mac-address-lookup';
@@ -89,7 +90,7 @@ import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
   {
-    // The five desktop apps, grouped at the top of the sidebar rather than
+    // The six desktop apps, grouped at the top of the sidebar rather than
     // scattered through Windows/Network.
     name: 'Killer Apps',
     components: [
@@ -98,6 +99,7 @@ export const toolsByCategory: ToolCategory[] = [
       killerNotes,
       killendar,
       killerScan,
+      killerShot,
     ],
   },
   {
