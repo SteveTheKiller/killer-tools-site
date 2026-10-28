@@ -3,7 +3,7 @@ const PACKAGES = Object.freeze({
   killernotes: { repo: "KillerNotes", file: "KillerNotes.exe" },
   killerscan: { repo: "KillerScan", file: "KillerScan.exe" },
   killershell: { repo: "KillerShell", file: "KillerShell.exe" },
-  killershot: { repo: "KillerShot", file: "KillerShot.exe" },
+  killershot: { repo: "KillerShot", file: "KillerShot.exe", storeFile: "KillerShot-Store.exe" },
   killendar: { repo: "Killendar", file: "Killendar.exe" },
   killerbench: { repo: "KillerBench", file: "KillerBench.exe" },
   killermcp: { repo: "KillerMCP", file: "KillerMCP-Setup.exe" },
