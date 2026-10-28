@@ -86,7 +86,7 @@ export async function handleRequest(request, upstreamFetch = fetch) {
     if (match) [, product, version, file] = match;
   }
   const entry = PACKAGES[product];
-  if (!version || !entry || file !== entry.file)
+  if (!version || !entry || (file !== entry.file && file !== entry.storeFile))
     return text("Unknown versioned installer path.", 404);
 
   const headers = new Headers({ accept: "application/octet-stream", "accept-encoding": "identity" });
