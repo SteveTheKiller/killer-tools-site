@@ -1286,6 +1286,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Nyílt forráskódú PDF-szerkesztő Windowsra. Megtekintés, jegyzetelés, egyesítés, felosztás, egyesítés egy rétegbe, jelszóval védett PDF-ek megnyitása, szövegszerkesztés, rajzolás, kiemelés, aláírás és nyomtatás.
+  killer-bench:
+    title: KillerBench
+    description: "Nyílt forráskódú diagnosztikai és javítási eszköztár Windowsra"
   killer-scan:
     title: KillerScan
     description: Gyors hálózati szkenner terepen dolgozó technikusoknak. ARP + ping felderítés, portvizsgálat, gyártókeresés és automatikus eszközosztályozás.

@@ -1695,6 +1695,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: 适用于 Windows 的开源 PDF 编辑器。可查看、批注、合并、拆分、展平、打开受密码保护的 PDF,以及编辑文字、绘图、高亮、签名和打印。
+  killer-bench:
+    title: KillerBench
+    description: "Windows 开源诊断和修复工作台"
   killer-scan:
     title: KillerScan
     description: 面向现场技术人员的快速网络扫描工具。支持 ARP 与 ping 发现、端口探测、厂商查询以及自动设备分类。

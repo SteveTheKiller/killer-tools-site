@@ -1286,6 +1286,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Windows için açık kaynak PDF düzenleyici. Görüntüle, not ekle, birleştir, böl, düzleştir, parola korumalı PDF'leri aç, metin düzenle, çiz, vurgula, imzala ve yazdır.
+  killer-bench:
+    title: KillerBench
+    description: "Windows için açık kaynaklı tanılama ve onarım araçları"
   killer-scan:
     title: KillerScan
     description: 'Saha teknisyenleri için hızlı ağ tarayıcı. ARP + ping keşfi, port yoklama, üretici sorgulama ve otomatik cihaz sınıflandırma.'

@@ -1286,6 +1286,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: 適用於 Windows 的開放原始碼 PDF 編輯器。檢視、註解、合併、分割、平面化、開啟受密碼保護的 PDF、編輯文字、繪圖、醒目提示、簽署與列印。
+  killer-bench:
+    title: KillerBench
+    description: "Windows 開源診斷與修復工作台"
   killer-scan:
     title: KillerScan
     description: 為現場技術人員打造的快速網路掃描器。ARP + ping 探索、連接埠探測、供應商查詢與自動裝置分類。

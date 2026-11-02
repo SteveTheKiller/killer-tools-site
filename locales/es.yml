@@ -1700,6 +1700,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Editor de PDF de código abierto para Windows. Visualiza, anota, combina, divide, aplana, abre PDF protegidos con contraseña, edita texto, dibuja, resalta, firma e imprime.
+  killer-bench:
+    title: KillerBench
+    description: "Herramientas de diagnóstico y reparación de código abierto para Windows"
   killer-scan:
     title: KillerScan
     description: Escáner de red rápido para técnicos de campo. Descubrimiento ARP + ping, sondeo de puertos, búsqueda de fabricante y clasificación automática de dispositivos.

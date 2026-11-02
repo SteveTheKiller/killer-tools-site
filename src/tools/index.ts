@@ -40,6 +40,7 @@ import { tool as jsonViewer } from './json-viewer';
 import { tool as jwtParser } from './jwt-parser';
 import { tool as keycodeInfo } from './keycode-info';
 import { tool as killendar } from './killendar';
+import { tool as killerBench } from './killer-bench';
 import { tool as killerModules } from './killer-modules';
 import { tool as killerNotes } from './killer-notes';
 import { tool as killerPdf } from './killer-pdf';
@@ -90,7 +91,7 @@ import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
   {
-    // The six desktop apps, grouped at the top of the sidebar rather than
+    // Desktop apps, grouped at the top of the sidebar rather than
     // scattered through Windows/Network.
     name: 'Killer Apps',
     components: [
@@ -99,6 +100,7 @@ export const toolsByCategory: ToolCategory[] = [
       killerNotes,
       killendar,
       killerScan,
+      killerBench,
       killerShot,
     ],
   },

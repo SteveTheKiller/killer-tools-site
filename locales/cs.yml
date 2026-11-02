@@ -1286,6 +1286,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Open-source editor PDF pro Windows. Prohlížení, poznámky, slučování, rozdělování, sloučení vrstev, otevírání PDF chráněných heslem, úpravy textu, kreslení, zvýrazňování, podepisování a tisk.
+  killer-bench:
+    title: KillerBench
+    description: "Open-source nástroj pro diagnostiku a opravy Windows"
   killer-scan:
     title: KillerScan
     description: Rychlý síťový skener pro techniky v terénu. Zjišťování pomocí ARP + ping, testování portů, vyhledání dodavatele a automatická klasifikace zařízení.

@@ -10,6 +10,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-pdf': { icon: '/brand/kp-icon.png', wm: 'killerpdf' },
   '/killer-shell': { icon: '/brand/ksh-icon.png', wm: 'killershell' },
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
+  '/killer-bench': { icon: '/brand/kb-icon.png', wm: 'killerbench' },
   '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
   '/killendar': { icon: '/brand/kd-icon.png', wm: 'killendar' },
   '/killer-shot': { icon: '/brand/kst-icon.png', wm: 'killershot' },

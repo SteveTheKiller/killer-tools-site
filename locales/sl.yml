@@ -1304,6 +1304,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Odprtokodni urejevalnik PDF za Windows. Pregledujte, označujte, združujte, razdelite in sploščite datoteke PDF, odpirajte datoteke z geslom, urejajte besedilo, rišite, poudarjajte, podpisujte in tiskajte.
+  killer-bench:
+    title: KillerBench
+    description: "Odprtokodno diagnostično in servisno okolje za Windows"
   killer-scan:
     title: KillerScan
     description: Hiter omrežni pregledovalnik za terenske tehnike. Odkrivanje z ARP in ping, preverjanje vrat, iskanje proizvajalcev in samodejno razvrščanje naprav.

@@ -1700,6 +1700,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: PDF-redigerer med åpen kildekode for Windows. Vis, kommenter, slå sammen, del opp, flat ut, åpne passordbeskyttede PDF-er, rediger tekst, tegn, uthev, signer og skriv ut.
+  killer-bench:
+    title: KillerBench
+    description: "Diagnose- og reparasjonsverktøy med åpen kildekode for Windows"
   killer-scan:
     title: KillerScan
     description: Rask nettverksskanner for feltteknikere. ARP- og ping-oppdagelse, portsondering, leverandøroppslag og automatisk enhetsklassifisering.

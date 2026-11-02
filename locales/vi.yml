@@ -1290,6 +1290,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Trình chỉnh sửa PDF mã nguồn mở cho Windows. Xem, chú thích, hợp nhất, tách, làm phẳng, mở PDF có mật khẩu, chỉnh sửa văn bản, vẽ, tô sáng, ký và in.
+  killer-bench:
+    title: KillerBench
+    description: "Bộ công cụ chẩn đoán và sửa chữa mã nguồn mở cho Windows"
   killer-scan:
     title: KillerScan
     description: Trình quét mạng nhanh dành cho kỹ thuật viên hiện trường. Khám phá bằng ARP và ping, dò cổng, tra cứu nhà sản xuất và tự động phân loại thiết bị.

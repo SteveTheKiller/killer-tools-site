@@ -1286,6 +1286,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Editor PDF open source per Windows. Visualizza, annota, unisci, dividi, appiattisci, apri PDF protetti da password, modifica testo, disegna, evidenzia, firma e stampa.
+  killer-bench:
+    title: KillerBench
+    description: "Strumenti open source di diagnosi e riparazione per Windows"
   killer-scan:
     title: KillerScan
     description: Scanner di rete veloce per tecnici sul campo. Rilevamento ARP + ping, sondaggio delle porte, ricerca del fornitore e classificazione automatica dei dispositivi.

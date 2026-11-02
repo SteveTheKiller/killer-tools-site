@@ -1286,6 +1286,9 @@ tools:
   killer-pdf:
     title: KillerPDF
     description: Windows用のオープンソースPDFエディターです。表示、注釈、結合、分割、フラット化、パスワード保護されたPDFのオープン、テキスト編集、描画、ハイライト、署名、印刷に対応します。
+  killer-bench:
+    title: KillerBench
+    description: "Windows向けオープンソース診断・修復ワークベンチ"
   killer-scan:
     title: KillerScan
     description: フィールドテクニシャンのための高速ネットワークスキャナーです。ARP＋pingによる探索、ポートプローブ、ベンダー検索、デバイスの自動分類に対応します。

@@ -14,6 +14,7 @@ const APP_BRAND: Record<string, { icon: string, wm: string }> = {
   '/killer-pdf': { icon: '/brand/kp-icon.png', wm: 'killerpdf' },
   '/killer-shell': { icon: '/brand/ksh-icon.png', wm: 'killershell' },
   '/killer-scan': { icon: '/brand/ks-icon.png', wm: 'killerscan' },
+  '/killer-bench': { icon: '/brand/kb-icon.png', wm: 'killerbench' },
   // killer-notes was missing here while present in the other three maps, so KillerNotes showed
   // a generic icon in the palette only. Added 2026-07-30 alongside killendar.
   '/killer-notes': { icon: '/brand/kn-icon.png', wm: 'killernotes' },
