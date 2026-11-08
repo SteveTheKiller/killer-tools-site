@@ -180,7 +180,6 @@ function startDrag(e: PointerEvent) {
       :aria-expanded="popupOpen"
       @click="togglePopup"
     />
-    <div v-if="accentsVisible" class="pick-divider" />
 
     <!-- Mobile-only collapse trigger: shows the current theme, expands the row -->
     <button
@@ -259,19 +258,9 @@ function startDrag(e: PointerEvent) {
 .chrome-pickers {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-right: 12px;
   position: relative;
-}
-
-.pick-divider {
-  width: 1px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.15);
-  margin: 0 10px;
-  flex-shrink: 0;
-}
-html:not(.dark) .pick-divider {
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .tgrp {
@@ -415,10 +404,6 @@ html:not(.dark) .tgrp-sep {
 @media (max-width: 1120px) {
   .chrome-pickers {
     margin-right: 6px;
-  }
-
-  .pick-divider {
-    margin: 0 6px;
   }
 
   .sm-theme-trigger {
