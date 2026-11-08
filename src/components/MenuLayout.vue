@@ -9,34 +9,6 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 // Footer starts at the sider's right edge so it never sits under the sidebar
 // (0 when the sider is collapsed or overlaid on a small screen)
 const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value ? '0px' : '300px'));
-
-// ── Easter egg: click the v2.0 version (family standard: red drips + toast) ──
-const eggShown = ref(false);
-const eggMsg = ref('');
-let eggTimer: ReturnType<typeof setTimeout> | undefined;
-
-function popEgg() {
-  for (let i = 0; i < 18; i++) {
-    const d = document.createElement('span');
-    d.className = 'kt-drip';
-    d.style.left = `${Math.random() * 100}vw`;
-    d.style.height = `${18 + Math.random() * 64}px`;
-    d.style.opacity = (0.6 + Math.random() * 0.4).toFixed(2);
-    const dur = 1.1 + Math.random() * 1.6;
-    d.style.animation = `kt-dripfall ${dur}s linear forwards`;
-    d.style.animationDelay = `${Math.random() * 0.5}s`;
-    document.body.appendChild(d);
-    setTimeout(() => d.remove(), (dur + 0.8) * 1000);
-  }
-  eggMsg.value = t('layouts.menuLayout.eggMessage');
-  eggShown.value = true;
-  if (eggTimer) {
-    clearTimeout(eggTimer);
-  }
-  eggTimer = setTimeout(() => {
-    eggShown.value = false;
-  }, 2800);
-}
 </script>
 
 <template>
@@ -72,14 +44,17 @@ function popEgg() {
     <!-- Statusbar: offset right by the sider width so the footer never sits
          under the sidebar (the sider runs full height to own the corner) -->
     <div class="kt-statusbar" :style="{ marginLeft: footerLeft }">
-      <span class="sb-right"><span class="sb-site">killertools.net</span><span class="sb-sep">&middot;</span><span class="kt-ver" :title="t('layouts.menuLayout.clickMe')" @click="popEgg">v2.0</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('layouts.menuLayout.sourceOnGithub') }}</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a><span class="sb-sep">&middot;</span><a class="sb-link reddit-community" href="https://www.reddit.com/r/KillerTools/" aria-label="r/KillerTools" target="_blank" rel="noopener noreferrer"><IconBrandReddit :size="16" :stroke-width="1.8" aria-hidden="true" /><span class="reddit-label">r/KillerTools</span></a></span>
+      <a class="sb-link reddit-community" href="https://www.reddit.com/r/KillerTools/" aria-label="r/KillerTools" target="_blank" rel="noopener noreferrer">
+        <IconBrandReddit :size="16" :stroke-width="1.8" aria-hidden="true" />
+        <span>r/KillerTools</span>
+      </a>
+      <span class="sb-right">
+        <span class="sb-xtra">GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('layouts.menuLayout.sourceOnGithub') }}</a> &middot; &copy;{{ new Date().getFullYear() }}</span>
+        <span class="sb-sep">&middot;</span>
+        <a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a>
+      </span>
       <div class="kt-grip" aria-hidden="true" />
     </div>
-    <Transition name="kt-egg-fade">
-      <div v-if="eggShown" class="kt-egg-toast">
-        {{ eggMsg }}
-      </div>
-    </Transition>
   </div>
 </template>
 
@@ -268,8 +243,8 @@ html:not(.dark) .content {
   display: flex;
   align-items: center;
   overflow: hidden;
-  /* Only the version + copyright remain, held to the far right */
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 16px;
   padding: 0 16px;
   background: var(--kt-grain-img, url('/grain-a12.png')) repeat, var(--kt-chrome-bg, var(--kt-chrome, #000000));
   background-size: 256px 256px, 100vw 100vh;
@@ -289,6 +264,7 @@ html:not(.dark) .content {
      Flex with shrink priorities: when space runs out the GPLv3/Github middle
      ellipsizes first, then the site name — "Steve the Killer" NEVER trims. */
   .sb-right {
+    margin-left: auto;
     margin-right: 14px;
     white-space: nowrap;
     min-width: 0;
@@ -330,7 +306,8 @@ html:not(.dark) .content {
      only genuinely tight widths drop the GPLv3/(c) middle entirely. The site
      name stays as long as it fits (it only ellipsizes as a last resort). */
   @media (max-width: 520px) {
-    .sb-xtra {
+    .sb-xtra,
+    .sb-xtra + .sb-sep {
       display: none;
     }
   }
@@ -339,16 +316,14 @@ html:not(.dark) .content {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    flex: none;
+    white-space: nowrap;
 
     svg {
       flex: none;
       width: 16px;
       height: 16px;
     }
-  }
-
-  @media (max-width: 520px) {
-    .reddit-label { display: none; }
   }
 
   .sb-link {
