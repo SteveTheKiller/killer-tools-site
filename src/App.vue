@@ -1057,11 +1057,14 @@ html:not(.dark) .n-layout.content-col {
    webkit-only: setting the standard scrollbar-width/scrollbar-color props
    makes Chromium IGNORE the ::-webkit rules and draw native arrows */
 
-::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
 /* No arrow buttons on any scrollbar (family standard) */
 ::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(var(--kt-accent-rgb), 0.33); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--kt-accent) !important; border-radius: 4px; }
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--kt-accent) transparent; }
+}
 ::-webkit-scrollbar-thumb:hover { background: var(--kt-accent); }
 
 .n-input .n-input__textarea-el::-webkit-scrollbar,
