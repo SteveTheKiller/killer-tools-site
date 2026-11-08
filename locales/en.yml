@@ -2016,6 +2016,14 @@ pages:
       calendar2: killendar create an appointment tomorrow at 9 AM called Morning standup
       calendar3: killer show my agenda for the next seven days
       calendar4: killer save next week's agenda as a note
+      bench1: killerbench look up Windows error code 5
+      bench2: killerbench check the health of this computer without changing anything
+      bench3: killerbench run a read-only diagnostic scan
+      bench4: killerbench show the result of my diagnostic job
+      shot1: killershot list my monitors
+      shot2: killershot take a screenshot of my current monitor
+      shot3: killershot show my recent captures
+      shot4: killershot read the text in this image
     twice:
       title: Why {km} runs twice
       body: Claude Desktop starts each local MCP server twice. One copy serves the app's own chats, and the other serves Claude sessions that use this computer remotely. Seeing two KillerMCP.exe processes under Claude in Task Manager is normal. KillerMCP is not installed twice, and nothing needs to be fixed.

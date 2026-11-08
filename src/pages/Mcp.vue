@@ -360,6 +360,14 @@ useHead({
           <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.calendar${n}`) }}</code>
           <p>{{ t('pages.mcp.apps.killendarNote') }}</p>
         </div>
+        <div class="mcp-app-item">
+          <h3>KillerBench</h3>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.bench${n}`) }}</code>
+        </div>
+        <div class="mcp-app-item">
+          <h3>KillerShot</h3>
+          <code v-for="n in 4" :key="n">{{ t(`pages.mcp.apps.shot${n}`) }}</code>
+        </div>
       </div>
     </section>
   </main>
