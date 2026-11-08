@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { IconBrandReddit } from '@tabler/icons-vue';
 import { useStyleStore } from '@/stores/style.store';
 
 const { t } = useI18n();
@@ -71,7 +72,7 @@ function popEgg() {
     <!-- Statusbar: offset right by the sider width so the footer never sits
          under the sidebar (the sider runs full height to own the corner) -->
     <div class="kt-statusbar" :style="{ marginLeft: footerLeft }">
-      <span class="sb-right"><span class="sb-site">killertools.net</span><span class="sb-sep">&middot;</span><span class="kt-ver" :title="t('layouts.menuLayout.clickMe')" @click="popEgg">v2.0</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('layouts.menuLayout.sourceOnGithub') }}</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a></span>
+      <span class="sb-right"><span class="sb-site">killertools.net</span><span class="sb-sep">&middot;</span><span class="kt-ver" :title="t('layouts.menuLayout.clickMe')" @click="popEgg">v2.0</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">{{ t('layouts.menuLayout.sourceOnGithub') }}</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a><span class="sb-sep">&middot;</span><a class="sb-link reddit-community" href="https://www.reddit.com/r/KillerTools/" aria-label="r/KillerTools" target="_blank" rel="noopener noreferrer"><IconBrandReddit :size="16" :stroke-width="1.8" aria-hidden="true" /><span class="reddit-label">r/KillerTools</span></a></span>
       <div class="kt-grip" aria-hidden="true" />
     </div>
     <Transition name="kt-egg-fade">
@@ -332,6 +333,22 @@ html:not(.dark) .content {
     .sb-xtra {
       display: none;
     }
+  }
+
+  .reddit-community {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    svg {
+      flex: none;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .reddit-label { display: none; }
   }
 
   .sb-link {

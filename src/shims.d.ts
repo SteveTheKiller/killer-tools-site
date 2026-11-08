@@ -126,6 +126,7 @@ declare module '@tabler/icons-vue' {
 
   export const IconBrandAndroid: Component;
   export const IconBrandGithub: Component;
+  export const IconBrandReddit: Component;
   export const IconBrandX: Component;
   export const IconInfoCircle: Component;
   export const IconMoon: Component;
