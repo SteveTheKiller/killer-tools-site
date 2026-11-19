@@ -1682,6 +1682,7 @@ tools:
       infoDownloadPrefix: O botão
       infoDownloadMiddle: salva o arquivo
       infoDownloadSuffix: na sua máquina para uso manual.
+      license: Os scripts são gratuitos e de código aberto sob a licença MIT.
   powershell-builder:
     title: Gerador de PowerShell
     description: Escolha um cmdlet, preencha os parâmetros e copie seu comando PowerShell finalizado.
@@ -1724,7 +1725,7 @@ tools:
           description: Alterne entre tenants do Microsoft 365 no PowerShell sem disparar comandos no tenant errado. O KillerPivot desativa o auth broker para forçar uma tela de login real, depois pergunta à sessão em qual tenant ela realmente caiu e verifica isso antes de você tocar em qualquer coisa. Salve seus tenants uma vez e depois alterne entre eles pelo nome, com verificação de identidade embutida.
           requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (para -Graph)
         KillerScripts:
-          description: Todas as ferramentas do repo killer-scripts, disponíveis como comando em qualquer sessão do PowerShell. Cada script é baixado direto do GitHub no momento em que você o executa, então você está sempre na versão atual, com um cache local como alternativa offline. As 18 ferramentas têm seu próprio comando e um alias curto, então digitar urt executa o Universal Rename Tool.
+          description: Todas as ferramentas do repo killer-scripts, disponíveis como comando em qualquer sessão do PowerShell. Cada script é baixado direto do GitHub no momento em que você o executa, então você está sempre na versão atual, com um cache local como alternativa offline. As 19 ferramentas têm seu próprio comando e um alias curto, então digitar urt executa o Universal Rename Tool.
           requirements: PowerShell 5.1 & 7 · Acesso à internet para buscar o script atual (cópias em cache funcionam offline)
 ui:
   diffEditor:

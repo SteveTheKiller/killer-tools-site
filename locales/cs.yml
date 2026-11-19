@@ -1063,6 +1063,7 @@ tools:
       infoDownloadPrefix: Tlačítko
       infoDownloadMiddle: uloží soubor
       infoDownloadSuffix: na váš počítač pro ruční použití.
+      license: Skripty jsou zdarma a open source pod licencí MIT.
   powershell-builder:
     title: PowerShell tvůrce
     description: Vyberte cmdlet, vyplňte parametry a zkopírujte hotový příkaz PowerShellu.
@@ -1720,7 +1721,7 @@ tools:
           description: Přepínejte mezi tenanty Microsoft 365 v PowerShellu, aniž byste omylem spustili příkazy v tom špatném. KillerPivot vypne auth broker, aby vynutil skutečnou přihlašovací výzvu, poté zjistí, do kterého tenantu se relace opravdu přihlásila, a ověří to dřív, než se čehokoli dotknete. Tenanty si uložte jednou a pak mezi nimi přepínejte podle jména s vestavěným ověřením identity.
           requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (pro -Graph)
         KillerScripts:
-          description: Každý nástroj z repozitáře killer-scripts, dostupný jako příkaz v jakékoli relaci PowerShellu. Každý skript se při spuštění stáhne přímo z GitHubu, takže máte vždy aktuální verzi, s místní cache jako záložním řešením offline. Všech 18 nástrojů má vlastní příkaz a krátký alias, takže napsáním urt spustíte Universal Rename Tool.
+          description: Každý nástroj z repozitáře killer-scripts, dostupný jako příkaz v jakékoli relaci PowerShellu. Každý skript se při spuštění stáhne přímo z GitHubu, takže máte vždy aktuální verzi, s místní cache jako záložním řešením offline. Všech 19 nástrojů má vlastní příkaz a krátký alias, takže napsáním urt spustíte Universal Rename Tool.
           requirements: PowerShell 5.1 & 7 · Přístup k internetu pro stažení aktuálního skriptu (uložené kopie fungují offline)
 components:
   androidBetaBanner:

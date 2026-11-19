@@ -1081,6 +1081,7 @@ tools:
       infoDownloadPrefix: Gumb
       infoDownloadMiddle: shrani datoteko
       infoDownloadSuffix: v računalnik za ročno uporabo.
+      license: Skripte so brezplačne in odprtokodne pod licenco MIT.
   powershell-builder:
     title: Sestavljalnik ukazov PowerShell
     description: Izberite ukaz cmdlet, vnesite parametre in kopirajte pripravljen ukaz PowerShell.
@@ -1740,7 +1741,7 @@ tools:
           description: Preklapljajte med najemniki Microsoft 365 v PowerShellu, ne da bi ukaze izvedli pri napačnem. KillerPivot onemogoči posrednika za preverjanje pristnosti, da zahteva pravo prijavno okno, nato v seji preveri dejanskega najemnika, preden kar koli spremenite. Najemnike shranite enkrat, nato med njimi preklapljajte po imenu z vgrajenim preverjanjem identitete.
           requirements: PowerShell 5.1 in 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (za -Graph)
         KillerScripts:
-          description: Vsa orodja iz repozitorija killer-scripts so na voljo kot ukazi v kateri koli seji PowerShell. Vsak skript se ob zagonu znova prenese z GitHuba, zato vedno uporabljate trenutno različico, lokalni predpomnilnik pa omogoča delo brez povezave. Vsako od 18 orodij dobi lasten ukaz in kratek vzdevek, zato vnos urt zažene Universal Rename Tool.
+          description: Vsa orodja iz repozitorija killer-scripts so na voljo kot ukazi v kateri koli seji PowerShell. Vsak skript se ob zagonu znova prenese z GitHuba, zato vedno uporabljate trenutno različico, lokalni predpomnilnik pa omogoča delo brez povezave. Vsako od 19 orodij dobi lasten ukaz in kratek vzdevek, zato vnos urt zažene Universal Rename Tool.
           requirements: PowerShell 5.1 in 7 · Dostop do interneta za pridobitev trenutnega skripta (predpomnjene kopije delujejo brez povezave)
   killer-notes:
     title: KillerNotes

@@ -1063,6 +1063,7 @@ tools:
       infoDownloadPrefix: ''
       infoDownloadMiddle: বাটন দিয়ে
       infoDownloadSuffix: ফাইলটি ম্যানুয়াল ব্যবহারের জন্য আপনার মেশিনে সংরক্ষণ করা যায়।
+      license: স্ক্রিপ্টগুলো MIT লাইসেন্সের অধীনে বিনামূল্যে ও ওপেন সোর্স।
   powershell-builder:
     title: PowerShell বিল্ডার
     description: একটি cmdlet বেছে নিন, প্যারামিটার পূরণ করুন এবং তৈরি PowerShell কমান্ড কপি করুন।
@@ -1720,7 +1721,7 @@ tools:
           description: PowerShell এ Microsoft 365 টেন্যান্টের মধ্যে সহজে সুইচ করুন, ভুল টেন্যান্টে কমান্ড চালানোর ঝুঁকি ছাড়াই। KillerPivot আসল সাইন-ইন প্রম্পট আনতে auth broker বন্ধ করে দেয়, তারপর সেশনটি আসলে কোন টেন্যান্টে পৌঁছেছে তা জিজ্ঞাসা করে এবং যাচাই করে, তারপর আপনি কিছু স্পর্শ করার আগে। একবার আপনার টেন্যান্টগুলো সংরক্ষণ করুন, তারপর নাম দিয়ে সেগুলোর মধ্যে সুইচ করুন, পরিচয় যাচাইসহ।
           requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (-Graph এর জন্য)
         KillerScripts:
-          description: killer-scripts রেপোর প্রতিটি টুল, যেকোনো PowerShell সেশনে একটি কমান্ড হিসেবে ব্যবহারযোগ্য। প্রতিটি স্ক্রিপ্ট চালানোর মুহূর্তে GitHub থেকে সরাসরি টেনে আনা হয়, তাই আপনি সবসময় সর্বশেষ সংস্করণে থাকেন, আর অফলাইন ব্যাকআপ হিসেবে একটি লোকাল ক্যাশ থাকে। সব ১৮টি টুলের নিজস্ব কমান্ড ও একটি ছোট alias আছে, তাই urt লিখলে Universal Rename Tool চলে।
+          description: killer-scripts রেপোর প্রতিটি টুল, যেকোনো PowerShell সেশনে একটি কমান্ড হিসেবে ব্যবহারযোগ্য। প্রতিটি স্ক্রিপ্ট চালানোর মুহূর্তে GitHub থেকে সরাসরি টেনে আনা হয়, তাই আপনি সবসময় সর্বশেষ সংস্করণে থাকেন, আর অফলাইন ব্যাকআপ হিসেবে একটি লোকাল ক্যাশ থাকে। সব ১৯টি টুলের নিজস্ব কমান্ড ও একটি ছোট alias আছে, তাই urt লিখলে Universal Rename Tool চলে।
           requirements: PowerShell 5.1 & 7 · বর্তমান স্ক্রিপ্ট আনতে ইন্টারনেট সংযোগ প্রয়োজন (ক্যাশ করা কপি অফলাইনে চলে)
 components:
   androidBetaBanner:

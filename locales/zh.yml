@@ -786,6 +786,7 @@ tools:
       infoDownloadPrefix: 点击
       infoDownloadMiddle: 按钮可将
       infoDownloadSuffix: 文件保存到本机,供手动使用。
+      license: 这些脚本以 MIT 许可证免费开源。
   group-policy-reference:
     title: 组策略参考
     description: 按名称、GPO 路径、注册表键或描述搜索常见的 Windows 组策略设置。
@@ -1719,7 +1720,7 @@ tools:
           description: 在 PowerShell 中切换 Microsoft 365 租户,不必担心命令发到错误的租户。KillerPivot 会禁用 auth broker 以强制弹出真实的登录窗口,然后询问会话实际登录到了哪个租户,并在你进行任何操作前完成验证。只需保存一次租户信息,之后就能按名称切换,并内置身份验证。
           requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (用于 -Graph)
         KillerScripts:
-          description: killer-scripts repo 中的每个工具,都可以在任意 PowerShell 会话中作为命令使用。每次运行脚本时都会直接从 GitHub 拉取最新版本,同时本地缓存可作为离线备用。全部 18 个工具都有自己的命令和简短别名,输入 urt 即可运行 Universal Rename Tool。
+          description: killer-scripts repo 中的每个工具,都可以在任意 PowerShell 会话中作为命令使用。每次运行脚本时都会直接从 GitHub 拉取最新版本,同时本地缓存可作为离线备用。全部 19 个工具都有自己的命令和简短别名,输入 urt 即可运行 Universal Rename Tool。
           requirements: PowerShell 5.1 & 7 · 需要联网以获取最新脚本 (缓存副本可离线运行)
 ui:
   diffEditor:

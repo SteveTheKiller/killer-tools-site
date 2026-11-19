@@ -791,6 +791,7 @@ tools:
       infoDownloadPrefix: Knappen
       infoDownloadMiddle: lagrer
       infoDownloadSuffix: filen på maskinen din for manuell bruk.
+      license: Skriptene er gratis og åpen kildekode under MIT-lisensen.
   group-policy-reference:
     title: Referanse for gruppepolicy
     description: Søk i vanlige innstillinger for Windows-gruppepolicy etter navn, GPO-sti, registernøkkel eller beskrivelse.
@@ -1724,7 +1725,7 @@ tools:
           description: Bytt mellom Microsoft 365-tenanter i PowerShell uten å sende kommandoer til feil tenant. KillerPivot slår av auth broker for å tvinge frem en ekte innloggingsdialog, spør deretter økten hvilken tenant den faktisk havnet i, og bekrefter det før du rører noe. Lagre tenantene dine én gang, og bytt så mellom dem med navn, med identitetsverifisering innebygd.
           requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (for -Graph)
         KillerScripts:
-          description: Alle verktøyene i killer-scripts repoet, tilgjengelig som en kommando i enhver PowerShell-økt. Hvert skript hentes direkte fra GitHub når du kjører det, så du er alltid på nyeste versjon, med en lokal buffer som reserve når du er offline. Alle 18 verktøyene får sin egen kommando og et kort alias, så det å skrive urt kjører Universal Rename Tool.
+          description: Alle verktøyene i killer-scripts repoet, tilgjengelig som en kommando i enhver PowerShell-økt. Hvert skript hentes direkte fra GitHub når du kjører det, så du er alltid på nyeste versjon, med en lokal buffer som reserve når du er offline. Alle 19 verktøyene får sin egen kommando og et kort alias, så det å skrive urt kjører Universal Rename Tool.
           requirements: PowerShell 5.1 & 7 · Internettilgang for å hente gjeldende skript (bufrede kopier kjører offline)
 ui:
   diffEditor:

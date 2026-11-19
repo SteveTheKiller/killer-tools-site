@@ -95,6 +95,7 @@ function downloadScript(script: { name: string, download_url: string }) {
         <div class="ks-info rounded px-3 py-1 text-xs">
           <span class="ks-info-cmd font-semibold">{{ t('tools.killer-scripts.ui.copyCommand') }}</span> {{ t('tools.killer-scripts.ui.infoCopySuffix') }}
           {{ t('tools.killer-scripts.ui.infoDownloadPrefix') }} <span class="ks-info-dl font-semibold">↓</span> {{ t('tools.killer-scripts.ui.infoDownloadMiddle') }} <code>.ps1</code> {{ t('tools.killer-scripts.ui.infoDownloadSuffix') }}
+          {{ t('tools.killer-scripts.ui.license') }}
         </div>
       </Teleport>
       <div
