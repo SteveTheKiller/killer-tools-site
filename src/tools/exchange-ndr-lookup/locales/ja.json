@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "ハイブリッド メール フローの認証に失敗しました",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "ハイブリッド メール フローのメッセージが、オンプレミスと Exchange Online 間の認証に失敗しました。",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "ハイブリッド コネクタの証明書の不一致、ハイブリッド証明書の有効期限切れ、または組織間関係トークンの問題です。",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "ハイブリッド証明書が有効であり、両側で一致していることを確認してください。Hybrid Configuration Wizard を再実行してください。Test-OAuthConnectivity を使用して組織間関係と OAuth の構成を確認してください。"
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "ハイブリッド証明書が有効であり、両側で一致していることを確認してください。Hybrid Configuration Wizard を再実行してください。Test-OAuthConnectivity を使用して組織間関係と OAuth の構成を確認してください。",
+  "Info": "情報",
+  "Warning": "警告",
+  "Error": "エラー",
+  "Critical": "重大"
 }

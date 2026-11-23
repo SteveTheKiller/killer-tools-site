@@ -81,5 +81,7 @@
   "Expires in": "Caduca en",
   "Groups": "Grupos",
   "Entitlements": "Derechos",
-  "Token introspection response": "Respuesta de introspección de token"
+  "Token introspection response": "Respuesta de introspección de token",
+  "Actor": "Actor",
+  "Roles": "Roles"
 }

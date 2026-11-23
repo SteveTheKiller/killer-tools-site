@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Roaming bezdrátového připojení úspěšný",
   "Wireless LAN adapter successfully roamed to a new access point.": "Bezdrátový síťový adaptér úspěšně přešel na nový přístupový bod (roaming).",
   "Wireless Roaming Failed": "Roaming bezdrátového připojení se nezdařil",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Roaming bezdrátového síťového adaptéru se nezdařil. Připojení se může přerušit."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Roaming bezdrátového síťového adaptéru se nezdařil. Připojení se může přerušit.",
+  "Info": "Informace",
+  "Warning": "Upozornění",
+  "Critical": "Kritické",
+  "Error": "Chyba",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Falha na autenticação do fluxo de email híbrido",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "Uma mensagem do fluxo de email híbrido falhou na autenticação entre o ambiente local e o Exchange Online.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Incompatibilidade de certificado do conector híbrido, certificado híbrido expirado ou problema com o token de relacionamento de organização.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Verifique se o certificado híbrido é válido e corresponde em ambos os lados. Execute novamente o Hybrid Configuration Wizard. Verifique o Relacionamento de Organização e a configuração OAuth com Test-OAuthConnectivity."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Verifique se o certificado híbrido é válido e corresponde em ambos os lados. Execute novamente o Hybrid Configuration Wizard. Verifique o Relacionamento de Organização e a configuração OAuth com Test-OAuthConnectivity.",
+  "Info": "Informação",
+  "Warning": "Aviso",
+  "Error": "Erro",
+  "Critical": "Crítico"
 }

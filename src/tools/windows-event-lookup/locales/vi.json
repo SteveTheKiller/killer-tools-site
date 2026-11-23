@@ -606,5 +606,14 @@
   "Wireless Roaming Succeeded": "Chuyển vùng không dây thành công",
   "Wireless LAN adapter successfully roamed to a new access point.": "Adapter mạng LAN không dây đã chuyển vùng thành công sang một điểm truy cập mới.",
   "Wireless Roaming Failed": "Chuyển vùng không dây thất bại",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Adapter mạng LAN không dây không thể chuyển vùng. Kết nối có thể bị gián đoạn."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Adapter mạng LAN không dây không thể chuyển vùng. Kết nối có thể bị gián đoạn.",
+  "Info": "Thông tin",
+  "Warning": "Cảnh báo",
+  "Critical": "Nghiêm trọng",
+  "Error": "Lỗi",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "Group Policy": "Chính sách nhóm",
+  "DNS & DHCP": "DNS và DHCP",
+  "LAPS": "LAPS"
 }

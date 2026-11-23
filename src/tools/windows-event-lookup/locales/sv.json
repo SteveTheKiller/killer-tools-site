@@ -608,5 +608,12 @@
   "The device has a bad block. Indicates a failing disk. Back up immediately and plan replacement. Source: Disk.": "Enheten har ett dåligt block. Tyder på en disk som håller på att gå sönder. Säkerhetskopiera omedelbart och planera ett byte. Källa: Disk.",
   "A reset to the device was issued. Often indicates the disk stopped responding, an early failure warning.": "En återställning av enheten utfärdades. Tyder ofta på att disken slutade svara, en tidig varning om fel.",
   "Windows LAPS failed to update the managed account password. Investigate, since the local admin password may be stale.": "Windows LAPS kunde inte uppdatera lösenordet för det hanterade kontot. Undersök saken, eftersom det lokala administratörslösenordet kan vara inaktuellt.",
-  "The LAPS-managed password was read from Active Directory. Check who read it and from where. It should only be authorized admins.": "Det LAPS-hanterade lösenordet lästes från Active Directory. Kontrollera vem som läste det och varifrån. Det bör endast vara behöriga administratörer."
+  "The LAPS-managed password was read from Active Directory. Check who read it and from where. It should only be authorized admins.": "Det LAPS-hanterade lösenordet lästes från Active Directory. Kontrollera vem som läste det och varifrån. Det bör endast vara behöriga administratörer.",
+  "Info": "Info",
+  "Warning": "Varning",
+  "Critical": "Kritisk",
+  "Error": "Fel",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

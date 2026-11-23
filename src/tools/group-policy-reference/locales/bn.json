@@ -1,4 +1,7 @@
 {
+  "Info": "তথ্য",
+  "Warning": "সতর্কতা",
+  "Critical": "গুরুতর",
   "Account Policy - Password": "অ্যাকাউন্ট নীতি - পাসওয়ার্ড",
   "Minimum Password Length": "পাসওয়ার্ডের সর্বনিম্ন দৈর্ঘ্য",
   "7 characters": "৭টি অক্ষর",

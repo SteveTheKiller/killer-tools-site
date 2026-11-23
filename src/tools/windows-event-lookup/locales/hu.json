@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Vezeték nélküli barangolás (roaming) sikeres",
   "Wireless LAN adapter successfully roamed to a new access point.": "A vezeték nélküli hálózati adapter sikeresen átbarangolt (roaming) egy új hozzáférési pontra.",
   "Wireless Roaming Failed": "Vezeték nélküli barangolás (roaming) sikertelen",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "A vezeték nélküli hálózati adapter barangolása (roaming) sikertelen volt. Előfordulhat, hogy a kapcsolat megszakad."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "A vezeték nélküli hálózati adapter barangolása (roaming) sikertelen volt. Előfordulhat, hogy a kapcsolat megszakad.",
+  "Info": "Információ",
+  "Warning": "Figyelmeztetés",
+  "Critical": "Kritikus",
+  "Error": "Hiba",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

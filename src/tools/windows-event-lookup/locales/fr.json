@@ -607,5 +607,13 @@
   "Wireless Roaming Succeeded": "Itinérance sans fil réussie",
   "Wireless LAN adapter successfully roamed to a new access point.": "L'adaptateur réseau sans fil a réussi son itinérance vers un nouveau point d'accès.",
   "Wireless Roaming Failed": "Échec de l'itinérance sans fil",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "L'itinérance de l'adaptateur réseau sans fil a échoué. La connexion peut se couper."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "L'itinérance de l'adaptateur réseau sans fil a échoué. La connexion peut se couper.",
+  "Info": "Info",
+  "Warning": "Avertissement",
+  "Critical": "Critique",
+  "Error": "Erreur",
+  "Services": "Services",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

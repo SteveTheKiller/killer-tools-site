@@ -82,5 +82,6 @@
   "Roles": "Roller",
   "Groups": "Grupper",
   "Entitlements": "Rettigheter",
-  "Token introspection response": "Svar på tokenintrospeksjon"
+  "Token introspection response": "Svar på tokenintrospeksjon",
+  "Type": "Type"
 }

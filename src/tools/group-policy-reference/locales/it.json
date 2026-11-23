@@ -1,4 +1,7 @@
 {
+  "Info": "Info",
+  "Warning": "Avviso",
+  "Critical": "Critico",
   "Account Policy - Password": "Criteri account - Password",
   "Minimum Password Length": "Lunghezza minima password",
   "7 characters": "7 caratteri",

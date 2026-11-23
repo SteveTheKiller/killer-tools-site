@@ -609,5 +609,11 @@
   "Wireless Roaming Succeeded": "Роумінг бездротового з'єднання виконано успішно",
   "Wireless LAN adapter successfully roamed to a new access point.": "Адаптер бездротової локальної мережі успішно перейшов у роумінг на нову точку доступу.",
   "Wireless Roaming Failed": "Помилка роумінгу бездротового з'єднання",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Адаптеру бездротової локальної мережі не вдалося виконати роумінг. З'єднання може перерватися."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Адаптеру бездротової локальної мережі не вдалося виконати роумінг. З'єднання може перерватися.",
+  "Info": "Відомості",
+  "Warning": "Попередження",
+  "Critical": "Критичний",
+  "Error": "Помилка",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

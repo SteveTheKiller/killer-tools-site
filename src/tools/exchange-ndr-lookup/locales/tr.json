@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Hibrit Posta Akışı Kimlik Doğrulaması Başarısız",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "Hibrit posta akışı iletisi, şirket içi ile Exchange Online arasında kimlik doğrulamasında başarısız oldu.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Hibrit bağlayıcı sertifikası uyuşmazlığı, süresi dolmuş hibrit sertifika veya kuruluş ilişkisi belirteci sorunu.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Hibrit sertifikanın geçerli olduğunu ve her iki uçta da eşleştiğini doğrulayın. Hibrit Yapılandırma Sihirbazını yeniden çalıştırın. Kuruluş İlişkisini ve OAuth yapılandırmasını Test-OAuthConnectivity ile kontrol edin."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Hibrit sertifikanın geçerli olduğunu ve her iki uçta da eşleştiğini doğrulayın. Hibrit Yapılandırma Sihirbazını yeniden çalıştırın. Kuruluş İlişkisini ve OAuth yapılandırmasını Test-OAuthConnectivity ile kontrol edin.",
+  "Info": "Bilgi",
+  "Warning": "Uyarı",
+  "Error": "Hata",
+  "Critical": "Kritik"
 }

@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Autentisering av hybrid e-postflyt mislyktes",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "En melding i hybrid e-postflyt besto ikke autentiseringen mellom lokale servere og Exchange Online.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Uoverensstemmelse i hybridkonnektorens sertifikat, utløpt hybridsertifikat, eller problem med token for organisasjonsforhold.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Kontroller at hybridsertifikatet er gyldig og samsvarer på begge sider. Kjør Hybrid Configuration Wizard på nytt. Sjekk organisasjonsforholdet og OAuth-konfigurasjonen med Test-OAuthConnectivity."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Kontroller at hybridsertifikatet er gyldig og samsvarer på begge sider. Kjør Hybrid Configuration Wizard på nytt. Sjekk organisasjonsforholdet og OAuth-konfigurasjonen med Test-OAuthConnectivity.",
+  "Info": "Info",
+  "Warning": "Advarsel",
+  "Error": "Feil",
+  "Critical": "Kritisk"
 }

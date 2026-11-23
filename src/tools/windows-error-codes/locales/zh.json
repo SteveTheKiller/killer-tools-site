@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "调用被被调用方拒绝。COM 服务器繁忙或未响应。",
   "The object invoked has disconnected from its clients. COM server crash.": "被调用的对象已与其客户端断开连接。COM 服务器崩溃。",
   "Invalid class string. The CLSID or ProgID is not registered.": "无效的类字符串。CLSID 或 ProgID 未注册。",
-  "Class not registered. The COM class is not registered on this machine.": "类未注册。此计算机上未注册该 COM 类。"
+  "Class not registered. The COM class is not registered on this machine.": "类未注册。此计算机上未注册该 COM 类。",
+  "Info": "信息",
+  "Warning": "警告",
+  "Error": "错误",
+  "Critical": "严重"
 }

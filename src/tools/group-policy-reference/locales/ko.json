@@ -1,4 +1,9 @@
 {
+  "Info": "정보",
+  "Warning": "경고",
+  "Critical": "심각",
+  "3 (Full)": "3 (전체)",
+  "Windows Remote Management (WinRM)": "Windows 원격 관리(WinRM)",
   "Account Policy - Password": "계정 정책 - 암호",
   "Minimum Password Length": "최소 암호 길이",
   "7 characters": "7자",

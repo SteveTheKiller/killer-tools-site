@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "Қоңырауды шақырылған тарап қабылдамады. COM сервері бос емес немесе жауап бермейді.",
   "The object invoked has disconnected from its clients. COM server crash.": "Шақырылған объект өз клиенттерінен ажыратылды. COM сервері істен шықты.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Жарамсыз класс жолы. CLSID немесе ProgID тіркелмеген.",
-  "Class not registered. The COM class is not registered on this machine.": "Класс тіркелмеген. COM класы осы компьютерде тіркелмеген."
+  "Class not registered. The COM class is not registered on this machine.": "Класс тіркелмеген. COM класы осы компьютерде тіркелмеген.",
+  "Info": "Ақпарат",
+  "Warning": "Ескерту",
+  "Error": "Қате",
+  "Critical": "Маңызды"
 }

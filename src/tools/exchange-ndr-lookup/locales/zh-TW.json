@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "混合式郵件流程驗證失敗",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "混合式郵件流程中的郵件,在內部部署與 Exchange Online 之間驗證失敗。",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "混合式連接器憑證不相符、混合式憑證已過期,或組織關係權杖發生問題。",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "請確認混合式憑證有效且雙方相符。請重新執行混合式設定精靈。請使用 Test-OAuthConnectivity 檢查組織關係與 OAuth 設定。"
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "請確認混合式憑證有效且雙方相符。請重新執行混合式設定精靈。請使用 Test-OAuthConnectivity 檢查組織關係與 OAuth 設定。",
+  "Info": "資訊",
+  "Warning": "警告",
+  "Error": "錯誤",
+  "Critical": "嚴重"
 }

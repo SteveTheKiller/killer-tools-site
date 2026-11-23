@@ -1,4 +1,7 @@
 {
+  "Info": "Infó",
+  "Warning": "Figyelmeztetés",
+  "Critical": "Kritikus",
   "Account Policy - Password": "Fiókházirend - Jelszó",
   "Minimum Password Length": "Jelszó minimális hossza",
   "7 characters": "7 karakter",

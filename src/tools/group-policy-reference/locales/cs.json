@@ -1,4 +1,7 @@
 {
+  "Info": "Informace",
+  "Warning": "Varování",
+  "Critical": "Kritické",
   "Account Policy - Password": "Zásady účtů - Heslo",
   "Minimum Password Length": "Minimální délka hesla",
   "7 characters": "7 znaků",

@@ -82,5 +82,6 @@
   "Roles": "역할",
   "Groups": "그룹",
   "Entitlements": "자격",
-  "Token introspection response": "토큰 검사 응답"
+  "Token introspection response": "토큰 검사 응답",
+  "Type": "유형"
 }

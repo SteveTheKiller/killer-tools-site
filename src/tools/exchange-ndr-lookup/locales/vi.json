@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Xác thực luồng thư kết hợp thất bại",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "Một thư trong luồng thư kết hợp không xác thực được giữa môi trường tại chỗ và Exchange Online.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Chứng chỉ trình kết nối kết hợp không khớp, chứng chỉ kết hợp đã hết hạn, hoặc sự cố mã thông báo mối quan hệ tổ chức.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Xác minh chứng chỉ kết hợp còn hiệu lực và khớp ở cả hai đầu. Chạy lại Trình hướng dẫn cấu hình kết hợp (Hybrid Configuration Wizard). Kiểm tra Mối quan hệ tổ chức (Organization Relationship) và cấu hình OAuth bằng Test-OAuthConnectivity."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Xác minh chứng chỉ kết hợp còn hiệu lực và khớp ở cả hai đầu. Chạy lại Trình hướng dẫn cấu hình kết hợp (Hybrid Configuration Wizard). Kiểm tra Mối quan hệ tổ chức (Organization Relationship) và cấu hình OAuth bằng Test-OAuthConnectivity.",
+  "Info": "Thông tin",
+  "Warning": "Cảnh báo",
+  "Error": "Lỗi",
+  "Critical": "Nghiêm trọng"
 }

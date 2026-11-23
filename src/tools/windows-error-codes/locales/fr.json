@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "L'appel a été rejeté par l'appelé. Le serveur COM est occupé ou ne répond pas.",
   "The object invoked has disconnected from its clients. COM server crash.": "L'objet appelé s'est déconnecté de ses clients. Plantage du serveur COM.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Chaîne de classe non valide. Le CLSID ou le ProgID n'est pas enregistré.",
-  "Class not registered. The COM class is not registered on this machine.": "Classe non enregistrée. La classe COM n'est pas enregistrée sur cet ordinateur."
+  "Class not registered. The COM class is not registered on this machine.": "Classe non enregistrée. La classe COM n'est pas enregistrée sur cet ordinateur.",
+  "Info": "Info",
+  "Warning": "Avertissement",
+  "Error": "Erreur",
+  "Critical": "Critique"
 }

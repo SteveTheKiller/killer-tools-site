@@ -607,5 +607,13 @@
   "Wireless Roaming Succeeded": "Roaming sem fio bem-sucedido",
   "Wireless LAN adapter successfully roamed to a new access point.": "O adaptador de LAN sem fio realizou com sucesso o roaming para um novo ponto de acesso.",
   "Wireless Roaming Failed": "Falha no roaming sem fio",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "O adaptador de LAN sem fio não conseguiu realizar o roaming. A conexão pode cair."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "O adaptador de LAN sem fio não conseguiu realizar o roaming. A conexão pode cair.",
+  "Info": "Informação",
+  "Warning": "Aviso",
+  "Logoff": "Logoff",
+  "Critical": "Crítico",
+  "Error": "Erro",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Kablosuz Dolaşım Başarılı",
   "Wireless LAN adapter successfully roamed to a new access point.": "Kablosuz LAN bağdaştırıcısı yeni bir erişim noktasına başarıyla dolaştı.",
   "Wireless Roaming Failed": "Kablosuz Dolaşım Başarısız",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Kablosuz LAN bağdaştırıcısı dolaşamadı. Bağlantı kesilebilir."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Kablosuz LAN bağdaştırıcısı dolaşamadı. Bağlantı kesilebilir.",
+  "Info": "Bilgi",
+  "Warning": "Uyarı",
+  "Critical": "Kritik",
+  "Error": "Hata",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

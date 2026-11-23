@@ -80,5 +80,8 @@
   "Roles": "Rôles",
   "Groups": "Groupes",
   "Entitlements": "Droits",
-  "Token introspection response": "Réponse d'introspection du jeton"
+  "Token introspection response": "Réponse d'introspection du jeton",
+  "Type": "Type",
+  "Audience": "Audience",
+  "Confirmation": "Confirmation"
 }

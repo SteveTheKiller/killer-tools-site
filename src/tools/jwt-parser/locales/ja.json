@@ -82,5 +82,6 @@
   "Roles": "ロール",
   "Groups": "グループ",
   "Entitlements": "権限",
-  "Token introspection response": "トークンイントロスペクションレスポンス"
+  "Token introspection response": "トークンイントロスペクションレスポンス",
+  "JWT ID": "JWT ID"
 }

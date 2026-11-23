@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Помилка автентифікації гібридного поштового потоку",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "Повідомлення гібридного поштового потоку не пройшло автентифікацію між локальним середовищем і Exchange Online.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Невідповідність сертифіката гібридного конектора, прострочений гібридний сертифікат або проблема з токеном відносин організації.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Переконайтеся, що гібридний сертифікат дійсний і збігається з обох боків. Повторно запустіть майстер гібридної конфігурації. Перевірте відносини організації та конфігурацію OAuth за допомогою Test-OAuthConnectivity."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Переконайтеся, що гібридний сертифікат дійсний і збігається з обох боків. Повторно запустіть майстер гібридної конфігурації. Перевірте відносини організації та конфігурацію OAuth за допомогою Test-OAuthConnectivity.",
+  "Info": "Інформація",
+  "Warning": "Попередження",
+  "Error": "Помилка",
+  "Critical": "Критична"
 }

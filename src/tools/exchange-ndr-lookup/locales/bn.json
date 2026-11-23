@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "হাইব্রিড মেইল ফ্লো অথেন্টিকেশন ব্যর্থ হয়েছে",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "একটি হাইব্রিড মেইল ফ্লো বার্তা অন-প্রিমিসেস এবং Exchange Online-এর মধ্যে অথেন্টিকেশনে ব্যর্থ হয়েছে।",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "হাইব্রিড কানেক্টরের সার্টিফিকেট অমিল, মেয়াদোত্তীর্ণ হাইব্রিড সার্টিফিকেট, অথবা organization relationship টোকেন সংক্রান্ত সমস্যা।",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "হাইব্রিড সার্টিফিকেটটি বৈধ এবং উভয় প্রান্তে মিলে যাচ্ছে কিনা যাচাই করুন। Hybrid Configuration Wizard আবার চালান। Test-OAuthConnectivity ব্যবহার করে Organization Relationship এবং OAuth কনফিগারেশন পরীক্ষা করুন।"
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "হাইব্রিড সার্টিফিকেটটি বৈধ এবং উভয় প্রান্তে মিলে যাচ্ছে কিনা যাচাই করুন। Hybrid Configuration Wizard আবার চালান। Test-OAuthConnectivity ব্যবহার করে Organization Relationship এবং OAuth কনফিগারেশন পরীক্ষা করুন।",
+  "Info": "তথ্য",
+  "Warning": "সতর্কতা",
+  "Error": "ত্রুটি",
+  "Critical": "গুরুতর"
 }

@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "A hibrid levelezési folyamat hitelesítése sikertelen",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "Egy hibrid levelezési folyamatban lévő üzenet hitelesítése sikertelen volt a helyszíni környezet és az Exchange Online között.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "A hibrid csatlakozó tanúsítványa nem egyezik, a hibrid tanúsítvány lejárt, vagy probléma van a szervezeti kapcsolat (Organization Relationship) tokenjével.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Ellenőrizze, hogy a hibrid tanúsítvány érvényes, és mindkét oldalon egyezik. Futtassa újra a Hybrid Configuration Wizardot. Ellenőrizze a szervezeti kapcsolatot (Organization Relationship) és az OAuth-konfigurációt a Test-OAuthConnectivity paranccsal."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Ellenőrizze, hogy a hibrid tanúsítvány érvényes, és mindkét oldalon egyezik. Futtassa újra a Hybrid Configuration Wizardot. Ellenőrizze a szervezeti kapcsolatot (Organization Relationship) és az OAuth-konfigurációt a Test-OAuthConnectivity paranccsal.",
+  "Info": "Információ",
+  "Warning": "Figyelmeztetés",
+  "Error": "Hiba",
+  "Critical": "Kritikus"
 }

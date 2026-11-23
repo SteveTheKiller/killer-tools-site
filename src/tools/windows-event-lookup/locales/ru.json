@@ -609,5 +609,11 @@
   "Wireless Roaming Succeeded": "Роуминг беспроводного подключения выполнен успешно",
   "Wireless LAN adapter successfully roamed to a new access point.": "Адаптер беспроводной локальной сети успешно перешёл в роуминг на новую точку доступа.",
   "Wireless Roaming Failed": "Сбой роуминга беспроводного подключения",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Адаптеру беспроводной локальной сети не удалось выполнить роуминг. Подключение может быть разорвано."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Адаптеру беспроводной локальной сети не удалось выполнить роуминг. Подключение может быть разорвано.",
+  "Info": "Сведения",
+  "Warning": "Предупреждение",
+  "Critical": "Критический",
+  "Error": "Ошибка",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "ওয়্যারলেস রোমিং সফল হয়েছে",
   "Wireless LAN adapter successfully roamed to a new access point.": "ওয়্যারলেস LAN অ্যাডাপ্টার সফলভাবে একটি নতুন অ্যাক্সেস পয়েন্টে রোম করেছে।",
   "Wireless Roaming Failed": "ওয়্যারলেস রোমিং ব্যর্থ হয়েছে",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "ওয়্যারলেস LAN অ্যাডাপ্টার রোম করতে ব্যর্থ হয়েছে। সংযোগ বিচ্ছিন্ন হয়ে যেতে পারে।"
+  "Wireless LAN adapter failed to roam. Connection may drop.": "ওয়্যারলেস LAN অ্যাডাপ্টার রোম করতে ব্যর্থ হয়েছে। সংযোগ বিচ্ছিন্ন হয়ে যেতে পারে।",
+  "Info": "তথ্য",
+  "Warning": "সতর্কতা",
+  "Critical": "গুরুতর",
+  "Error": "ত্রুটি",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

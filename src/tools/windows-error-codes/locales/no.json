@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "Anropet ble avvist av mottakeren. COM-serveren er opptatt eller svarer ikke.",
   "The object invoked has disconnected from its clients. COM server crash.": "Objektet som ble kalt opp, er koblet fra klientene sine. COM-serveren krasjet.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Ugyldig klassestreng. CLSID eller ProgID er ikke registrert.",
-  "Class not registered. The COM class is not registered on this machine.": "Klassen er ikke registrert. COM-klassen er ikke registrert på denne datamaskinen."
+  "Class not registered. The COM class is not registered on this machine.": "Klassen er ikke registrert. COM-klassen er ikke registrert på denne datamaskinen.",
+  "Info": "Info",
+  "Warning": "Advarsel",
+  "Error": "Feil",
+  "Critical": "Kritisk"
 }

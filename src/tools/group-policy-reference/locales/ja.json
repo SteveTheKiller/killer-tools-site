@@ -1,4 +1,7 @@
 {
+  "Info": "情報",
+  "Warning": "警告",
+  "Critical": "重大",
   "Account Policy - Password": "アカウント ポリシー - パスワード",
   "Minimum Password Length": "パスワードの長さの最小値",
   "7 characters": "7文字",

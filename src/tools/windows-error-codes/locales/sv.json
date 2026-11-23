@@ -240,5 +240,9 @@
   "The target principal name is incorrect. SPN mismatch: check AD SPN registration.": "Målets huvudnamn är felaktigt. SPN matchar inte: kontrollera SPN-registreringen i AD.",
   "Clock skew too great between client and server. Kerberos requires time within 5 minutes, so sync clocks.": "För stor tidsskillnad mellan klient och server. Kerberos kräver att tiden skiljer högst 5 minuter, så synkronisera klockorna.",
   "Installation suspended and incomplete.": "Installationen är pausad och ofullständig.",
-  "Unexpected COM failure (catastrophic error).": "Oväntat COM-fel (katastrofalt fel)."
+  "Unexpected COM failure (catastrophic error).": "Oväntat COM-fel (katastrofalt fel).",
+  "Info": "Info",
+  "Warning": "Varning",
+  "Error": "Fel",
+  "Critical": "Kritisk"
 }

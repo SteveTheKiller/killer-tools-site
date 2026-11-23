@@ -607,5 +607,13 @@
   "Wireless Roaming Succeeded": "Roaming wireless riuscito",
   "Wireless LAN adapter successfully roamed to a new access point.": "L'adattatore LAN wireless ha eseguito correttamente il roaming verso un nuovo access point.",
   "Wireless Roaming Failed": "Roaming wireless non riuscito",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "L'adattatore LAN wireless non è riuscito a eseguire il roaming. La connessione potrebbe cadere."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "L'adattatore LAN wireless non è riuscito a eseguire il roaming. La connessione potrebbe cadere.",
+  "Info": "Info",
+  "Warning": "Avviso",
+  "Critical": "Critico",
+  "Error": "Errore",
+  "Credential Manager": "Gestione credenziali",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

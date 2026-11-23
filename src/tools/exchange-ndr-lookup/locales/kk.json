@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Гибридті пошта ағынының аутентификациясы сәтсіз аяқталды",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "Гибридті пошта ағынының хабары жергілікті орта мен Exchange Online арасында аутентификациядан өте алмады.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Гибридті қосқыш сертификаты сәйкес келмейді, гибридті сертификаттың мерзімі өткен немесе ұйым қарым-қатынасы токенінде мәселе бар.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Гибридті сертификаттың жарамды екенін және екі жақта да сәйкес келетінін тексеріңіз. Hybrid Configuration Wizard құралын қайта іске қосыңыз. Test-OAuthConnectivity арқылы ұйым қарым-қатынасы мен OAuth конфигурациясын тексеріңіз."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Гибридті сертификаттың жарамды екенін және екі жақта да сәйкес келетінін тексеріңіз. Hybrid Configuration Wizard құралын қайта іске қосыңыз. Test-OAuthConnectivity арқылы ұйым қарым-қатынасы мен OAuth конфигурациясын тексеріңіз.",
+  "Info": "Ақпарат",
+  "Warning": "Ескерту",
+  "Error": "Қате",
+  "Critical": "Маңызды"
 }

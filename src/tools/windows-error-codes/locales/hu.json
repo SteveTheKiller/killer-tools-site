@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "A hívást a hívott fél elutasította. A COM-kiszolgáló foglalt, vagy nem válaszol.",
   "The object invoked has disconnected from its clients. COM server crash.": "A meghívott objektum lecsatlakozott a klienseiről. A COM-kiszolgáló összeomlott.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Érvénytelen osztálysztring. A CLSID vagy a ProgID nincs regisztrálva.",
-  "Class not registered. The COM class is not registered on this machine.": "Az osztály nincs regisztrálva. A COM-osztály nincs regisztrálva ezen a gépen."
+  "Class not registered. The COM class is not registered on this machine.": "Az osztály nincs regisztrálva. A COM-osztály nincs regisztrálva ezen a gépen.",
+  "Info": "Információ",
+  "Warning": "Figyelmeztetés",
+  "Error": "Hiba",
+  "Critical": "Kritikus"
 }

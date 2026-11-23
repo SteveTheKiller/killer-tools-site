@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "কলার দ্বারা কলটি প্রত্যাখ্যাত হয়েছে। COM সার্ভার ব্যস্ত অথবা সাড়া দিচ্ছে না।",
   "The object invoked has disconnected from its clients. COM server crash.": "আহ্বান করা অবজেক্টটি তার ক্লায়েন্টদের থেকে বিচ্ছিন্ন হয়ে গেছে। COM সার্ভার ক্র্যাশ।",
   "Invalid class string. The CLSID or ProgID is not registered.": "অবৈধ ক্লাস স্ট্রিং। CLSID বা ProgID নিবন্ধিত নয়।",
-  "Class not registered. The COM class is not registered on this machine.": "ক্লাস নিবন্ধিত নয়। COM ক্লাসটি এই মেশিনে নিবন্ধিত নয়।"
+  "Class not registered. The COM class is not registered on this machine.": "ক্লাস নিবন্ধিত নয়। COM ক্লাসটি এই মেশিনে নিবন্ধিত নয়।",
+  "Info": "তথ্য",
+  "Warning": "সতর্কতা",
+  "Error": "ত্রুটি",
+  "Critical": "গুরুতর"
 }

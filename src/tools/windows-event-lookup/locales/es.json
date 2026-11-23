@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Roaming inalámbrico correcto",
   "Wireless LAN adapter successfully roamed to a new access point.": "El adaptador de red inalámbrica realizó correctamente el roaming a un nuevo punto de acceso.",
   "Wireless Roaming Failed": "Error de roaming inalámbrico",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "El adaptador de red inalámbrica no pudo realizar el roaming. Es posible que la conexión se interrumpa."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "El adaptador de red inalámbrica no pudo realizar el roaming. Es posible que la conexión se interrumpa.",
+  "Info": "Información",
+  "Warning": "Advertencia",
+  "Critical": "Crítico",
+  "Error": "Error",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

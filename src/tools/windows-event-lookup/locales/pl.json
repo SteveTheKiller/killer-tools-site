@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Roaming bezprzewodowy zakończony powodzeniem",
   "Wireless LAN adapter successfully roamed to a new access point.": "Karta sieci bezprzewodowej pomyślnie wykonała roaming do nowego punktu dostępu.",
   "Wireless Roaming Failed": "Roaming bezprzewodowy nie powiódł się",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Karcie sieci bezprzewodowej nie udało się wykonać roamingu. Połączenie może zostać przerwane."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Karcie sieci bezprzewodowej nie udało się wykonać roamingu. Połączenie może zostać przerwane.",
+  "Info": "Informacja",
+  "Warning": "Ostrzeżenie",
+  "Critical": "Krytyczny",
+  "Error": "Błąd",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

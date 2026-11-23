@@ -459,5 +459,9 @@
   "For false positives: submit the message to Microsoft via the Submissions portal as \"Should not have been blocked\". Add legitimate senders to the Tenant Allow/Block List after review. Do not bypass without verification, because this is high-confidence phishing detection.": "Vid falska positiva: skicka meddelandet till Microsoft via Submissions-portalen som \"Should not have been blocked\". Lägg till legitima avsändare i Tenant Allow/Block List efter granskning. Kringgå inte utan verifiering, eftersom detta är nätfiskeidentifiering med hög säkerhet.",
   "Contact the recipient organization admin. The rejection is on their side. Provide them the full NDR header so they can locate the rejecting system or rule.": "Kontakta administratören för mottagarens organisation. Avvisningen sker på deras sida. Ge dem hela NDR-huvudet så att de kan hitta systemet eller regeln som avvisar.",
   "Retry, since this is often transient. If persistent, check firewall, routing, and any IDS/IPS dropping SMTP connections. Run Test-NetConnection from the source to the destination.": "Försök igen, eftersom felet ofta är tillfälligt. Om det kvarstår, kontrollera brandvägg, routning och eventuella IDS/IPS som avbryter SMTP-anslutningar. Kör Test-NetConnection från källan till målet.",
-  "Investigate why retries kept failing: check recipient server health, DNS, and any rate limiting. The original message must be re-sent; it cannot be re-queued from the NDR.": "Undersök varför nya försök fortsatte att misslyckas: kontrollera mottagarserverns hälsa, DNS och eventuell hastighetsbegränsning. Det ursprungliga meddelandet måste skickas igen; det kan inte köas om från NDR."
+  "Investigate why retries kept failing: check recipient server health, DNS, and any rate limiting. The original message must be re-sent; it cannot be re-queued from the NDR.": "Undersök varför nya försök fortsatte att misslyckas: kontrollera mottagarserverns hälsa, DNS och eventuell hastighetsbegränsning. Det ursprungliga meddelandet måste skickas igen; det kan inte köas om från NDR.",
+  "Info": "Info",
+  "Warning": "Varning",
+  "Error": "Fel",
+  "Critical": "Kritisk"
 }

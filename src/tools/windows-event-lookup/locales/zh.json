@@ -609,5 +609,11 @@
   "Wireless Roaming Succeeded": "无线漫游成功",
   "Wireless LAN adapter successfully roamed to a new access point.": "无线局域网适配器已成功漫游至新的接入点。",
   "Wireless Roaming Failed": "无线漫游失败",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "无线局域网适配器漫游失败。连接可能会中断。"
+  "Wireless LAN adapter failed to roam. Connection may drop.": "无线局域网适配器漫游失败。连接可能会中断。",
+  "Info": "信息",
+  "Warning": "警告",
+  "Critical": "严重",
+  "Error": "错误",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

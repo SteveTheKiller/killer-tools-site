@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "ワイヤレス ローミングの成功",
   "Wireless LAN adapter successfully roamed to a new access point.": "ワイヤレス LAN アダプターが新しいアクセス ポイントへのローミングに成功しました。",
   "Wireless Roaming Failed": "ワイヤレス ローミングの失敗",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "ワイヤレス LAN アダプターのローミングに失敗しました。接続が切断される可能性があります。"
+  "Wireless LAN adapter failed to roam. Connection may drop.": "ワイヤレス LAN アダプターのローミングに失敗しました。接続が切断される可能性があります。",
+  "Info": "情報",
+  "Warning": "警告",
+  "Critical": "重大",
+  "Error": "エラー",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

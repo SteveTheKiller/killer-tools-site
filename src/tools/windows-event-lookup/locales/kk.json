@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Сымсыз роуминг сәтті өтті",
   "Wireless LAN adapter successfully roamed to a new access point.": "Сымсыз LAN адаптері жаңа кіру нүктесіне сәтті роуминг жасады.",
   "Wireless Roaming Failed": "Сымсыз роуминг сәтсіз аяқталды",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Сымсыз LAN адаптері роуминг жасай алмады. Байланыс үзілуі мүмкін."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Сымсыз LAN адаптері роуминг жасай алмады. Байланыс үзілуі мүмкін.",
+  "Info": "Ақпарат",
+  "Warning": "Ескерту",
+  "Critical": "Аса маңызды",
+  "Error": "Қате",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

@@ -608,5 +608,12 @@
   "Wireless Roaming Succeeded": "Trådløs roaming fullført",
   "Wireless LAN adapter successfully roamed to a new access point.": "Den trådløse LAN-adapteren fullførte roaming til et nytt aksesspunkt.",
   "Wireless Roaming Failed": "Trådløs roaming mislyktes",
-  "Wireless LAN adapter failed to roam. Connection may drop.": "Den trådløse LAN-adapteren klarte ikke å utføre roaming. Tilkoblingen kan bli brutt."
+  "Wireless LAN adapter failed to roam. Connection may drop.": "Den trådløse LAN-adapteren klarte ikke å utføre roaming. Tilkoblingen kan bli brutt.",
+  "Info": "Info",
+  "Warning": "Advarsel",
+  "Critical": "Kritisk",
+  "Error": "Feil",
+  "Windows Update": "Windows Update",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

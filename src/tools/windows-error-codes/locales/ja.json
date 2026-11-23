@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "呼び出し先が呼び出しを拒否しました。COM サーバーがビジー状態か、応答していません。",
   "The object invoked has disconnected from its clients. COM server crash.": "呼び出されたオブジェクトは、クライアントから切断されました。COM サーバーがクラッシュしました。",
   "Invalid class string. The CLSID or ProgID is not registered.": "クラス文字列が無効です。CLSID または ProgID が登録されていません。",
-  "Class not registered. The COM class is not registered on this machine.": "クラスが登録されていません。この COM クラスはこのコンピューターに登録されていません。"
+  "Class not registered. The COM class is not registered on this machine.": "クラスが登録されていません。この COM クラスはこのコンピューターに登録されていません。",
+  "Info": "情報",
+  "Warning": "警告",
+  "Error": "エラー",
+  "Critical": "重大"
 }

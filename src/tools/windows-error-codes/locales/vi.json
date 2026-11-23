@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "Lệnh gọi đã bị từ chối bởi bên nhận. Máy chủ COM đang bận hoặc không phản hồi.",
   "The object invoked has disconnected from its clients. COM server crash.": "Đối tượng được gọi đã ngắt kết nối khỏi các máy khách của nó. Máy chủ COM bị sự cố.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Chuỗi lớp không hợp lệ. CLSID hoặc ProgID chưa được đăng ký.",
-  "Class not registered. The COM class is not registered on this machine.": "Lớp chưa được đăng ký. Lớp COM chưa được đăng ký trên máy này."
+  "Class not registered. The COM class is not registered on this machine.": "Lớp chưa được đăng ký. Lớp COM chưa được đăng ký trên máy này.",
+  "Info": "Thông tin",
+  "Warning": "Cảnh báo",
+  "Error": "Lỗi",
+  "Critical": "Nghiêm trọng"
 }

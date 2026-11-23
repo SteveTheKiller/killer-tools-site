@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "Volání bylo odmítnuto volaným. Server COM je zaneprázdněn nebo neodpovídá.",
   "The object invoked has disconnected from its clients. COM server crash.": "Volaný objekt byl odpojen od svých klientů. Pád serveru COM.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Neplatný řetězec třídy. CLSID nebo ProgID není zaregistrován.",
-  "Class not registered. The COM class is not registered on this machine.": "Třída není zaregistrována. Třída COM není na tomto počítači zaregistrována."
+  "Class not registered. The COM class is not registered on this machine.": "Třída není zaregistrována. Třída COM není na tomto počítači zaregistrována.",
+  "Info": "Informace",
+  "Warning": "Upozornění",
+  "Error": "Chyba",
+  "Critical": "Kritické"
 }

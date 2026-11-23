@@ -459,5 +459,9 @@
   "Hybrid Mail Flow Authentication Failed": "Ověření toku hybridní pošty selhalo",
   "A hybrid mail flow message failed authentication between on-premises and Exchange Online.": "U zprávy v hybridním toku pošty selhalo ověření mezi lokálním prostředím a Exchange Online.",
   "Hybrid connector certificate mismatch, expired hybrid certificate, or organization relationship token issue.": "Neshoda certifikátu hybridního konektoru, vypršelý hybridní certifikát nebo problém s tokenem Organization Relationship.",
-  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Ověřte, že je hybridní certifikát platný a shoduje se na obou stranách. Znovu spusťte Hybrid Configuration Wizard. Zkontrolujte Organization Relationship a konfiguraci OAuth pomocí Test-OAuthConnectivity."
+  "Verify the hybrid certificate is valid and matches on both ends. Re-run the Hybrid Configuration Wizard. Check the Organization Relationship and OAuth configuration with Test-OAuthConnectivity.": "Ověřte, že je hybridní certifikát platný a shoduje se na obou stranách. Znovu spusťte Hybrid Configuration Wizard. Zkontrolujte Organization Relationship a konfiguraci OAuth pomocí Test-OAuthConnectivity.",
+  "Info": "Informace",
+  "Warning": "Upozornění",
+  "Error": "Chyba",
+  "Critical": "Kritické"
 }

@@ -240,5 +240,9 @@
   "Call was rejected by callee. COM server is busy or not responding.": "Вызов был отклонен получателем. Сервер COM занят или не отвечает.",
   "The object invoked has disconnected from its clients. COM server crash.": "Вызываемый объект отключился от своих клиентов. Сбой сервера COM.",
   "Invalid class string. The CLSID or ProgID is not registered.": "Недопустимая строка класса. CLSID или ProgID не зарегистрирован.",
-  "Class not registered. The COM class is not registered on this machine.": "Класс не зарегистрирован. Класс COM не зарегистрирован на этом компьютере."
+  "Class not registered. The COM class is not registered on this machine.": "Класс не зарегистрирован. Класс COM не зарегистрирован на этом компьютере.",
+  "Info": "Информация",
+  "Warning": "Предупреждение",
+  "Error": "Ошибка",
+  "Critical": "Критическая"
 }

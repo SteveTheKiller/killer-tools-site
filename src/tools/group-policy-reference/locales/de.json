@@ -1,4 +1,7 @@
 {
+  "Info": "Info",
+  "Warning": "Warnung",
+  "Critical": "Kritisch",
   "Account Policy - Password": "Kontorichtlinien - Kennwörter",
   "Minimum Password Length": "Minimale Kennwortlänge",
   "7 characters": "7 Zeichen",

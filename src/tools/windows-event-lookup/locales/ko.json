@@ -608,5 +608,12 @@
   "The device has a bad block. Indicates a failing disk. Back up immediately and plan replacement. Source: Disk.": "장치에 불량 블록이 있습니다. 디스크 고장을 나타냅니다. 즉시 백업하고 교체를 계획하세요. 원본: Disk.",
   "A reset to the device was issued. Often indicates the disk stopped responding, an early failure warning.": "장치 재설정이 실행되었습니다. 디스크가 응답을 멈췄다는 뜻인 경우가 많으며, 이는 초기 고장 경고입니다.",
   "Windows LAPS failed to update the managed account password. Investigate, since the local admin password may be stale.": "Windows LAPS가 관리 계정 암호를 업데이트하지 못했습니다. 로컬 관리자 암호가 오래되었을 수 있으므로 조사하세요.",
-  "The LAPS-managed password was read from Active Directory. Check who read it and from where. It should only be authorized admins.": "LAPS 관리 암호가 Active Directory에서 읽혔습니다. 누가 어디에서 읽었는지 확인하세요. 승인된 관리자만 읽어야 합니다."
+  "The LAPS-managed password was read from Active Directory. Check who read it and from where. It should only be authorized admins.": "LAPS 관리 암호가 Active Directory에서 읽혔습니다. 누가 어디에서 읽었는지 확인하세요. 승인된 관리자만 읽어야 합니다.",
+  "Info": "정보",
+  "Warning": "경고",
+  "Critical": "위험",
+  "Error": "오류",
+  "Windows Update": "Windows 업데이트",
+  "BitLocker": "BitLocker",
+  "LAPS": "LAPS"
 }

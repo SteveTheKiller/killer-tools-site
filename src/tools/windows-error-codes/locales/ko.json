@@ -240,5 +240,9 @@
   "The target principal name is incorrect. SPN mismatch: check AD SPN registration.": "대상 보안 주체 이름이 잘못되었습니다. SPN 불일치: AD SPN 등록을 확인하세요.",
   "Clock skew too great between client and server. Kerberos requires time within 5 minutes, so sync clocks.": "클라이언트와 서버 간 시간 차이가 너무 큽니다. Kerberos는 5분 이내의 시간 차이를 요구하므로 시계를 동기화하세요.",
   "Installation suspended and incomplete.": "설치가 일시 중단되었으며 완료되지 않았습니다.",
-  "Unexpected COM failure (catastrophic error).": "예기치 않은 COM 오류(치명적 오류)입니다."
+  "Unexpected COM failure (catastrophic error).": "예기치 않은 COM 오류(치명적 오류)입니다.",
+  "Info": "정보",
+  "Warning": "경고",
+  "Error": "오류",
+  "Critical": "심각"
 }
