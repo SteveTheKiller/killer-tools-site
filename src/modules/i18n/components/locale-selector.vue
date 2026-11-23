@@ -4,7 +4,7 @@ import { h } from 'vue';
 
 const { availableLocales, locale, t } = useI18n({ useScope: 'global' });
 // English pinned on top; the rest alphabetical by ISO locale code.
-const localeOrder = ['en', 'bn', 'cs', 'de', 'es', 'fr', 'hu', 'it', 'ja', 'kk', 'no', 'pl', 'pt', 'ru', 'sl', 'tr', 'uk', 'vi', 'zh', 'zh-TW'];
+const localeOrder = ['en', 'bn', 'cs', 'de', 'es', 'fr', 'hu', 'it', 'ja', 'kk', 'ko', 'no', 'pl', 'pt', 'ru', 'sl', 'sv', 'tr', 'uk', 'vi', 'zh', 'zh-TW'];
 const localeCodes: Record<string, string> = {
   'en': 'en-US',
   'bn': 'bn-BD',
@@ -16,11 +16,13 @@ const localeCodes: Record<string, string> = {
   'it': 'it-IT',
   'ja': 'ja-JP',
   'kk': 'kk-KZ',
+  'ko': 'ko-KR',
   'no': 'nb-NO',
   'pl': 'pl-PL',
   'pt': 'pt-BR',
   'ru': 'ru-RU',
   'sl': 'sl-SI',
+  'sv': 'sv-SE',
   'tr': 'tr-TR',
   'uk': 'uk-UA',
   'vi': 'vi-VN',
@@ -34,8 +36,10 @@ const localesLong: Record<string, string> = {
   fr: 'Français',
   ja: '日本語',
   kk: 'Қазақша',
+  ko: '한국어',
   ru: 'Русский',
   sl: 'Slovenščina',
+  sv: 'Svenska',
   tr: 'Türkçe',
   vi: 'Tiếng Việt',
   zhTW: '繁體中文',
@@ -57,6 +61,8 @@ const flags: Record<string, string> = {
   fr: '<svg viewBox="0 0 24 24"><rect width="8" height="24" fill="#0055a4"/><rect x="8" width="8" height="24" fill="#fff"/><rect x="16" width="8" height="24" fill="#ef4135"/></svg>',
   ja: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#fff"/><circle cx="12" cy="12" r="7" fill="#bc002d"/></svg>',
   kk: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#00afca"/><circle cx="12" cy="12" r="4.5" fill="#f6d34a"/><g stroke="#f6d34a" stroke-width="1"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></g></svg>',
+  ko: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#fff"/><path d="M12 7a5 5 0 0 1 0 10Z" fill="#0047a0"/><path d="M12 7a5 5 0 0 0 0 10Z" fill="#cd2e3a"/><circle cx="12" cy="9.5" r="2.5" fill="#cd2e3a"/><circle cx="12" cy="14.5" r="2.5" fill="#0047a0"/><g stroke="#000" stroke-width="1"><path d="M3.5 6.5l3-3M4.7 7.7l3-3M16.3 20.5l3-3M17.5 21.7l3-3M3.5 17.5l3 3M4.7 16.3l3 3M16.3 3.5l3 3M17.5 2.3l3 3"/></g></svg>',
+  sv: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#006aa7"/><path d="M8.5 0v24M0 12h24" stroke="#fecc00" stroke-width="4"/></svg>',
   ru: '<svg viewBox="0 0 24 24"><rect width="24" height="8" fill="#fff"/><rect y="8" width="24" height="8" fill="#0039a6"/><rect y="16" width="24" height="8" fill="#d52b1e"/></svg>',
   sl: '<svg viewBox="0 0 24 24"><rect width="24" height="8" fill="#fff"/><rect y="8" width="24" height="8" fill="#003da5"/><rect y="16" width="24" height="8" fill="#ed1c24"/><path d="M5 4h7v5c0 3-3.5 4.5-3.5 4.5S5 12 5 9Z" fill="#003da5" stroke="#ed1c24" stroke-width=".6"/><path d="m5.7 9 1.2-1.3.8.8.8-2 1.1 2.2.8-.7.9 1v1.1c-1.5 1.1-4.1 1.1-5.6 0Z" fill="#fff"/><g fill="#ffdd00"><circle cx="7.2" cy="5.4" r=".35"/><circle cx="9.8" cy="5.4" r=".35"/><circle cx="8.5" cy="6.3" r=".35"/></g></svg>',
   tr: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#e30a17"/><circle cx="9.5" cy="12" r="5" fill="#fff"/><circle cx="11" cy="12" r="4" fill="#e30a17"/><polygon points="15.5,9.4 16.12,11.15 17.97,11.2 16.5,12.32 17.03,14.1 15.5,13.05 13.97,14.1 14.5,12.32 13.03,11.2 14.88,11.15" fill="#fff"/></svg>',

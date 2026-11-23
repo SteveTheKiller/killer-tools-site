@@ -205,7 +205,7 @@ const groupedAuth = computed(() => {
             <div class="ehp-terminal-body">
               <div v-if="result.scl" class="ehp-row">
                 <span class="ehp-label">SCL</span>
-                <span class="ehp-value">{{ result.scl }} — {{ result.sclLabel }}</span>
+                <span class="ehp-value">{{ result.scl }}: {{ result.sclLabel }}</span>
               </div>
               <div v-if="result.spamScore" class="ehp-row">
                 <span class="ehp-label">{{ t('tools.email-header-parser.ui.spamScore') }}</span>

@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "ネットワーク読み取りタイムアウトエラー（プロキシ）",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "上流サーバーとの通信時にネットワーク読み取りタイムアウトを通知するために一部のHTTPプロキシが使用します。",
   "Network Connect Timeout Error (Proxies)": "ネットワーク接続タイムアウトエラー（プロキシ）",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "プロキシが上流サーバーに時間内に接続できなかったことを示すために一部のHTTPプロキシが使用します。"
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "プロキシが上流サーバーに時間内に接続できなかったことを示すために一部のHTTPプロキシが使用します。"
 }

@@ -68,7 +68,7 @@ const { copy: copyArabic, isJustCopied: copiedArabic } = useCopy({ source: arabi
               type="number"
               :min="MIN_ARABIC_TO_ROMAN"
               :max="MAX_ARABIC_TO_ROMAN"
-              placeholder="1–3999"
+              placeholder="1 to 3999"
               autofocus
               spellcheck="false"
             >

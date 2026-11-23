@@ -354,7 +354,7 @@ function onSearchKeydown(e: KeyboardEvent) {
 }
 
 /* ── Controls card: allow dropdown to escape the card boundary ── */
-/* kt-terminal sets overflow: hidden for rounded corners — that clips the
+/* kt-terminal sets overflow: hidden for rounded corners, which clips the
    absolutely-positioned font menu. Override for this specific card only. */
 .aa-controls {
   overflow: visible !important;

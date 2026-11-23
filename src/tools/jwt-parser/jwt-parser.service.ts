@@ -3,7 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 import _ from 'lodash';
 import { ALGORITHM_DESCRIPTIONS, CLAIM_DESCRIPTIONS } from './jwt-parser.constants';
 
-// jwt-decode v4 removed header decoding — decode manually via base64
+// jwt-decode v4 removed header decoding, so decode manually via base64
 interface JwtHeader {
   alg?: string
   typ?: string

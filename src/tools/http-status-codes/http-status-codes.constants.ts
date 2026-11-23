@@ -548,7 +548,7 @@ export const codesByCategories: {
       {
         code: 599,
         name: 'Network Connect Timeout Error (Proxies)',
-        description: 'Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.',
+        description: 'Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.',
         type: 'HTTP',
       },
     ],

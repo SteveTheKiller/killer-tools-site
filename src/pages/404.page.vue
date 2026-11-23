@@ -42,7 +42,7 @@ useHead({ title: computed(() => `${t('404.notFound')} | Killer Tools`) });
   gap: 32px;
 }
 
-/* Layout only — surface chrome (grain, border, stripe, hover) comes from
+/* Layout only. Surface chrome (grain, border, stripe, hover) comes from
    the global .kt-terminal recipe */
 .terminal-block {
   font-family: 'Cascadia Code', 'Cascadia Mono', 'Consolas', 'Courier New', monospace;

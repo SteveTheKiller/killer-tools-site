@@ -77,7 +77,7 @@ const rawJsonValidation = useValidation({
 </template>
 
 <style scoped>
-/* ── Content panel — collapse NaiveUI form-item empty label/feedback space ── */
+/* ── Content panel: collapse NaiveUI form-item empty label/feedback space ── */
 .jv-panel {
   flex: 1 1 300px;
   min-width: 0;
@@ -98,7 +98,7 @@ const rawJsonValidation = useValidation({
   margin-bottom: 4px;
 }
 
-/* Standalone pill — override the global connected-row border-radius reset */
+/* Standalone pill: override the global connected-row border-radius reset */
 .kt-pill {
   border-radius: 6px !important;
   border: 1px solid rgba(var(--kt-accent-rgb), 0.3) !important;

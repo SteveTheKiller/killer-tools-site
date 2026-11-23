@@ -85,7 +85,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
           <input v-model.number="sentencesMin" type="range" min="1" max="50" class="li-dual-min">
           <input v-model.number="sentencesMax" type="range" min="1" max="50" class="li-dual-max">
         </div>
-        <span class="li-val">{{ sentencesMin }}–{{ sentencesMax }}</span>
+        <span class="li-val">{{ sentencesMin }} to {{ sentencesMax }}</span>
       </div>
 
       <!-- Words per sentence -->
@@ -95,7 +95,7 @@ function dualRangeStyle(lo: number, hi: number, min: number, max: number) {
           <input v-model.number="wordsMin" type="range" min="1" max="50" class="li-dual-min">
           <input v-model.number="wordsMax" type="range" min="1" max="50" class="li-dual-max">
         </div>
-        <span class="li-val">{{ wordsMin }}–{{ wordsMax }}</span>
+        <span class="li-val">{{ wordsMin }} to {{ wordsMax }}</span>
       </div>
 
       <!-- Toggles -->
@@ -442,7 +442,7 @@ html:not(.dark) .li-stat-sep      { color: rgba(0, 0, 0, 0.25); }
 
 /* Match output terminal bg to controls panel so the rounded corners aren't gray.
    Systemic [class*="-terminal"]:not()x6 = (0,7,0)+!important.
-   7x repeated class → (0,9,0)+!important — wins. */
+   7x repeated class → (0,9,0)+!important, which wins. */
 html:not(.dark) .li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap.li-output-wrap {
   background: rgba(255, 255, 255, 0.70) !important;
   border-color: rgba(0, 0, 0, 0.10) !important;

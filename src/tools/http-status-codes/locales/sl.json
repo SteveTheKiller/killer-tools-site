@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Časovna omejitev omrežnega branja (posredniki)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Nekateri posredniški strežniki HTTP s tem označujejo potek časa za omrežno branje pri komunikaciji z nadrejenim strežnikom.",
   "Network Connect Timeout Error (Proxies)": "Časovna omejitev omrežne povezave (posredniki)",
-  "Used by some HTTP proxies to signal a network connect timeout \u2014 the proxy could not connect to the upstream server in time.": "Nekateri posredniški strežniki HTTP s tem označujejo potek časa za omrežno povezavo. Posrednik se ni mogel pravočasno povezati z nadrejenim strežnikom."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Nekateri posredniški strežniki HTTP s tem označujejo potek časa za omrežno povezavo. Posrednik se ni mogel pravočasno povezati z nadrejenim strežnikom."
 }

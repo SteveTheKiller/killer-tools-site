@@ -61,7 +61,7 @@ async function copyValue(key: string, value: string) {
 
 <template>
   <div class="color-tool">
-    <!-- Color picker area — above the terminal -->
+    <!-- Color picker area, above the terminal -->
     <div class="color-input-area" mb-3>
       <label class="color-field-label">{{ t('tools.color-converter.ui.color') }}</label>
       <div class="color-picker-row">

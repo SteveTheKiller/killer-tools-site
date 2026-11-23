@@ -104,7 +104,7 @@ export const skusByCategory: {
         guid: 'e43b5b99-8dfb-405f-9987-dc307f34bcbd',
         stringId: 'MCOEV',
         name: 'Microsoft Teams Phone Standard',
-        description: 'Adds Phone System to an existing M365 plan. Required for any PSTN calling scenario — direct routing, calling plans, or operator connect.',
+        description: 'Adds Phone System to an existing M365 plan. Required for any PSTN calling scenario: direct routing, calling plans, or operator connect.',
         tier: 'Add-on',
       },
     ],
@@ -475,7 +475,7 @@ export const skusByCategory: {
         guid: 'e43b5b99-8dfb-405f-9987-dc307f34bcbd',
         stringId: 'MCOEV',
         name: 'Microsoft Teams Phone Standard',
-        description: 'Adds Phone System to an existing M365 plan. Required for any calling scenario — direct routing, calling plans, or operator connect.',
+        description: 'Adds Phone System to an existing M365 plan. Required for any calling scenario: direct routing, calling plans, or operator connect.',
         tier: 'Add-on',
       },
       {
@@ -823,7 +823,7 @@ export const skusByCategory: {
         guid: '314c4481-f395-4525-be8b-2ec4bb1e9d91',
         stringId: 'STANDARDWOFFPACK_STUDENT',
         name: 'Office 365 Education for Students',
-        description: 'Office 365 for students — typically free with institutional email verification.',
+        description: 'Office 365 for students, typically free with institutional email verification.',
         tier: 'Education',
       },
       {
@@ -865,7 +865,7 @@ export const skusByCategory: {
         guid: '30fc3c36-5a95-4956-ba57-c09c2a600bb9',
         stringId: 'AAD_PREMIUM_FACULTY',
         name: 'Microsoft Entra ID P1 for Faculty',
-        description: 'Entra ID P1 for educational institutions — Conditional Access and MFA for faculty accounts.',
+        description: 'Entra ID P1 for educational institutions, with Conditional Access and MFA for faculty accounts.',
         tier: 'Education',
       },
       {
@@ -898,7 +898,7 @@ export const skusByCategory: {
         guid: 'SPE_E3_GOV',
         stringId: 'SPE_E3_GOV',
         name: 'Microsoft 365 E3 for Government',
-        description: 'Microsoft 365 E3 for GCC environments — O365 E3 Gov + Intune Gov + EMS E3 Gov.',
+        description: 'Microsoft 365 E3 for GCC environments: O365 E3 Gov + Intune Gov + EMS E3 Gov.',
         tier: 'Gov',
       },
       {
@@ -1001,7 +1001,7 @@ export const skusByCategory: {
         guid: '8c4ce438-32a7-4ac5-91a6-e22ae08d9c8b',
         stringId: 'RIGHTSMANAGEMENT_ADHOC',
         name: 'Rights Management Adhoc',
-        description: 'Free RMS license auto-assigned when a user receives an RMS-protected document. Not purchasable — appears automatically on the tenant.',
+        description: 'Free RMS license auto-assigned when a user receives an RMS-protected document. Not purchasable. It appears automatically on the tenant.',
         tier: 'Add-on',
       },
       {

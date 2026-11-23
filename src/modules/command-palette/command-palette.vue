@@ -151,7 +151,7 @@ function activateOption(option: PaletteOption) {
 
 <style scoped lang="less">
 /* Search trigger: bare icon, family drop shadow, no chrome */
-/* Root centers its child vertically — without this the icon-mode button
+/* Root centers its child vertically; without this the icon-mode button
    pins to the top of the stretched wrapper instead of the row centerline */
 .palette-root {
   display: flex;

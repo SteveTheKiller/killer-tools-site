@@ -406,7 +406,7 @@ const details = computed(() => [
   position: relative;
   overflow: hidden;
   padding: 18px;
-  /* Normal drop shadow — not the accent glow */
+  /* Normal drop shadow, not the accent glow */
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   width: 100%;
   max-width: 420px;
@@ -435,7 +435,7 @@ const details = computed(() => [
 
 html:not(.dark) .qr-caption { color: #0b5c28; }
 
-/* ── Open Key URI button — app Scan-button recipe (kt-search-btn family):
+/* ── Open Key URI button: app Scan-button recipe (kt-search-btn family):
    dark translucent base, accent border + text, mono voice. Targets the
    element regardless of whether c-button renders n-button chrome. ── */
 ::v-deep(.qr-open-btn),

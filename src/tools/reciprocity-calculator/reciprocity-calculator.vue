@@ -54,7 +54,7 @@ const result = computed(() => {
   return { adjusted, stops, noFailure };
 });
 
-// Development adjustment — B&W only
+// Development adjustment (B&W only)
 const devRecommendation = computed(() => {
   const stock = selected.value;
   const r = result.value;
@@ -188,7 +188,7 @@ async function copy(val: string) {
         <template v-else>
           <div class="rc-result-row">
             <div class="rc-result-time rc-result-empty">
-              —
+              N/A
             </div>
           </div>
         </template>
@@ -226,7 +226,7 @@ async function copy(val: string) {
     <!-- Formula footnote -->
     <div class="rc-footnote">
       Correction uses the Schwarzschild power law: t<sub>adjusted</sub> = t<sub>metered</sub><sup>p</sup>.
-      Community-sourced exponents are approximations — verify against manufacturer data sheets when precision matters.
+      Community-sourced exponents are approximations. Verify against manufacturer data sheets when precision matters.
     </div>
   </div>
 </template>

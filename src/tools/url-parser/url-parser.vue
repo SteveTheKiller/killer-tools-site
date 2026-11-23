@@ -60,7 +60,7 @@ async function copyValue(key: string, value: string) {
 
 <template>
   <div class="url-wrap">
-    <!-- Input card — full width -->
+    <!-- Input card, full width -->
     <div class="url-input-card kt-terminal">
       <div class="kt-terminal-bar">
         <span class="kt-terminal-bar-title">{{ t('tools.url-parser.ui.urlTitle') }}</span>
@@ -100,7 +100,7 @@ async function copyValue(key: string, value: string) {
           <span class="url-prompt">&gt;_</span>
           <span class="url-label">{{ row.label }}</span>
           <span v-if="row.value" class="url-value">{{ row.value }}</span>
-          <span v-else class="url-fallback">—</span>
+          <span v-else class="url-fallback">N/A</span>
           <span class="url-copy-icon" :class="{ 'url-copy-done': copiedKey === row.label }">
             <span v-if="copiedKey === row.label">✓</span>
             <icon-mdi-content-copy v-else-if="row.value" />

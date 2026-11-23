@@ -295,7 +295,7 @@ async function copy(val: string) {
       <div class="nd-body">
         <div class="nd-result-row">
           <div class="nd-result-time" :class="{ 'nd-result-empty': corrected === null }">
-            {{ corrected === null ? '—' : formatTime(corrected) }}
+            {{ corrected === null ? 'N/A' : formatTime(corrected) }}
           </div>
           <div v-if="corrected !== null" class="nd-result-sub">
             {{ corrected.toFixed(2) }}s

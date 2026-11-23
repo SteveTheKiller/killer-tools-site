@@ -219,15 +219,15 @@ tools:
       sourceCommunity: Community data
       fieldMeteredExposure: Metered exposure
       unitSeconds: seconds
-      noFailureMessage: No correction needed — this stock has no reciprocity failure at this exposure length.
+      noFailureMessage: No correction needed. This stock has no reciprocity failure at this exposure length.
       copyDone: ✓ copied
       copySeconds: copy seconds
       devReduce10: Consider reducing development ~10% to compensate for increased shadow density.
-      devReduce1015: Reduce development 10–15% recommended.
-      devReduce1520: Reduce development 15–20% recommended.
-      devReduce2030: Reduce development 20–30% recommended for very long exposures.
+      devReduce1015: Reduce development 10 to 15% recommended.
+      devReduce1520: Reduce development 15 to 20% recommended.
+      devReduce2030: Reduce development 20 to 30% recommended for very long exposures.
       colorShiftWarning: 'Color film: expect a color shift at this exposure length.'
-      colorShiftSlide: Slide film is difficult to correct in post — CC filtration in-camera is recommended.
+      colorShiftSlide: Slide film is difficult to correct in post, so CC filtration in-camera is recommended.
       colorShiftNeg: Color negative has more latitude; correction is possible in printing or scanning.
   nd-filter-calculator:
     title: ND filter calculator
@@ -500,7 +500,7 @@ tools:
       converterTitle: CONVERTER
       arabicSideLabel: ARABIC
       romanSideLabel: ROMAN NUMERAL
-      arabicRangeError: Must be {min}–{max}
+      arabicRangeError: Must be {min} to {max}
       invalidRoman: Not a valid Roman numeral
       copied: Copied
       copy: Copy
@@ -780,7 +780,7 @@ tools:
     title: RSA key pair generator
     description: Generate a new random RSA private and public pem certificate key pair.
     ui:
-      bitsRangeError: Bits must be 256–16384 and a multiple of 8
+      bitsRangeError: Bits must be 256 to 16384 and a multiple of 8
       bitsLabel: Bits
       refreshButton: Refresh key pair
       publicKeyTitle: Public Key
@@ -1892,8 +1892,8 @@ pages:
     feedbackPrefix: 'Something broken or missing? Tell me:'
   home:
     sortPopular: Popular
-    sortAZ: A – Z
-    sortZA: Z – A
+    sortAZ: A to Z
+    sortZA: Z to A
   about:
     heading: About Killer Tools
     intro: Field techs don't have time for bloat. Every tool here exists because I needed it on the job and couldn't find something that just worked without an account, an install, or telemetry.

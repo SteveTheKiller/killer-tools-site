@@ -141,7 +141,7 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
 
     Select: {
       peers: {
-        // Trigger (InternalSelection) — solid bg so grain doesn't bleed through
+        // Trigger (InternalSelection): solid bg so grain doesn't bleed through
         InternalSelection: {
           color: p.input,
           colorActive: p.input,
@@ -154,7 +154,7 @@ function buildDarkOverrides(p: DarkPalette): GlobalThemeOverrides {
           arrowColor: a(p.accent, 0.6),
           arrowColorDisabled: 'rgba(255, 255, 255, 0.2)',
         },
-        // Dropdown popup — solid near-chrome with accent theming
+        // Dropdown popup: solid near-chrome with accent theming
         InternalSelectMenu: {
           color: p.popup,
           optionTextColor: 'rgba(255, 255, 255, 0.75)',

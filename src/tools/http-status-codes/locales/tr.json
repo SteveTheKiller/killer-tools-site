@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Ağ Okuma Zaman Aşımı Hatası (Proxy'ler)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Üst akış sunucusuyla iletişim kurarken bir ağ okuma zaman aşımını bildirmek için bazı HTTP proxy'leri tarafından kullanılır.",
   "Network Connect Timeout Error (Proxies)": "Ağ Bağlantı Zaman Aşımı Hatası (Proxy'ler)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Bazı HTTP proxy'leri, üst akış sunucusuna zamanında bağlanamadıklarında bunu bildirmek için kullanılır."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Bazı HTTP proxy'leri, üst akış sunucusuna zamanında bağlanamadıklarında bunu bildirmek için kullanılır."
 }

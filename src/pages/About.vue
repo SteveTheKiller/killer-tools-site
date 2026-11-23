@@ -160,8 +160,8 @@ useHead({
         <div class="link-divider" />
         <div class="link-group">
           <div class="link-label">{{ t('pages.about.linkLabelSource') }}</div>
-          <a href="https://github.com/SteveTheKiller" target="_blank" rel="noopener">GitHub — SteveTheKiller</a>
-          <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">GitHub — killer-tools-site</a>
+          <a href="https://github.com/SteveTheKiller" target="_blank" rel="noopener">GitHub: SteveTheKiller</a>
+          <a href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">GitHub: killer-tools-site</a>
         </div>
         <div class="link-divider" />
         <div class="link-group">

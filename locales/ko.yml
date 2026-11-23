@@ -1,0 +1,2062 @@
+metadata:
+  homeTitle: Killer Tools - 개발자와 IT 전문가를 위한 유용한 온라인 도구
+  homeDescription: 개발자, 시스템 관리자, IT 전문가를 위한 무료 오픈 소스 온라인 도구 모음입니다. 변환기, 생성기, 네트워크 유틸리티 등을 제공합니다. 광고도 추적도 없습니다.
+  aboutTitle: 소개 - Killer Tools
+  aboutDescription: 'Killer Tools 소개: 개발자, 시스템 관리자, IT 전문가를 위한 무료 오픈 소스 온라인 도구 모음입니다.'
+  androidTitle: Android 앱 - Killer Tools
+  androidDescription: 'Android용 Killer Tools: killertools.net의 모든 도구를 네이티브 앱으로 제공합니다. 현재 Google Play에서 비공개 베타 중이며 테스터를 모집하고 있습니다.'
+  privacyTitle: 개인정보 처리방침 - Killer Tools
+  privacyDescription: Killer Tools의 개인정보 처리방침입니다. 추적, 쿠키, 데이터 수집이 없습니다. 모든 도구 처리는 브라우저에서 이루어집니다.
+home:
+  categories:
+    newestTools: 최신 도구
+    favoriteTools: 즐겨찾는 도구
+    allTools: 모든 도구
+    favoritesDndToolTip: 끌어서 놓아 즐겨찾기 순서를 바꾸세요
+  subtitle: 개발자를 위한 유용한 도구
+  toggleMenu: 메뉴 전환
+  home: 홈
+  uiLib: UI 라이브러리
+  support: killer-tools 개발 후원하기
+  buyMeACoffee: 커피 한 잔 사주기
+  follow:
+    title: killer-tools가 마음에 드시나요?
+    p1: 별을 눌러 주세요
+    githubRepository: StevetheKiller GitHub 저장소
+    thankYou: 감사합니다!
+  nav:
+    github: GitHub 저장소
+    githubRepository: killer-tools GitHub 저장소
+    about: killer-tools 소개
+    aboutLabel: 소개
+    darkMode: 다크 모드
+    lightMode: 라이트 모드
+    mode: 다크/라이트 모드 전환
+about:
+  content: |
+    # killer-tools
+
+    현장 기술자에게는 군더더기에 쓸 시간이 없습니다. 여기 있는 모든 도구는 제가 업무 중에 필요했지만 계정, 설치, 원격 분석 없이 바로 동작하는 것을 찾지 못해서 만든 것입니다.
+
+    저는 MSP에서 네트워킹, 시스템 관리, 엔드포인트 지원을 담당하는 현장 기술자입니다. killer-tools는 훌륭한 [IT-Tools](https://github.com/CorentinTh/it-tools) 프로젝트의 포크로 시작해, 제가 실제로 하는 일에 맞춘 도구로 성장했습니다. 티켓 처리 중에 NDR 코드를 조회하고, 고객의 서브넷을 스캔하고, SafeLink를 클릭하기 전에 디코딩하려고 만들었습니다.
+
+    모든 것은 브라우저에서 실행됩니다. 아무것도 추적하지 않습니다. 계정은 절대 필요하지 않습니다.
+
+    [Steve the Killer](https://thekiller.net)가 만들고 관리합니다. 업무 시간을 아끼는 데 도움이 되었다면 [커피 한 잔](https://www.buymeacoffee.com/StevetheKiller)은 감사히 받겠지만, 결코 기대하지는 않습니다.
+
+    ## 원하는 도구가 없나요? 버그를 발견했나요?
+
+    GitHub의 [이슈 섹션](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose)에서 기능 요청이나 버그 보고를 열어 주세요. 모두 읽고 있습니다.
+404:
+  notFound: 404 찾을 수 없음
+  sorry: 죄송합니다. 이 페이지는 존재하지 않는 것 같습니다
+  maybe: 캐시 문제일 수 있습니다. 강력 새로고침을 해 보세요.
+  backHome: 홈으로 돌아가기
+favoriteButton:
+  remove: 즐겨찾기에서 제거
+  add: 즐겨찾기에 추가
+toolCard:
+  new: 새 도구
+search:
+  label: 검색
+tools:
+  categories:
+    favorite-tools: 즐겨찾는 도구
+    crypto: 암호화
+    conversion: 변환
+    web: 웹
+    images and videos: 이미지 및 동영상
+    development: 개발
+    network: 네트워크
+    math: 수학
+    measurement: 측정
+    text: 텍스트
+    data: 데이터
+    windows: Windows
+    killer apps: Killer 앱
+    photography: 사진
+  password-strength-analyser:
+    title: 비밀번호 강도 분석기
+    description: 클라이언트 측에서만 동작하는 이 비밀번호 강도 분석 및 해독 시간 추정 도구로 비밀번호의 강도를 확인하세요.
+  password-generator:
+    title: 비밀번호 생성기
+    description: 강력한 비밀번호, diceware 암호 문구, 발음 가능한 문자열, hex/base64/UUID 토큰을 생성합니다. MSP 프리셋(로컬 관리자, 서비스 계정, Wi-Fi PSK, PIN), 혼동 문자 제외, 엔트로피 측정기, QR 코드, NATO 음성 알파벳 표시를 포함합니다.
+    ui:
+      terminal:
+        passwordTitle: 비밀번호
+        optionsTitle: 옵션
+      meta:
+        entropyLabel: '엔트로피:'
+        bits: 비트
+        crackLabel: '해독:'
+      actions:
+        copy: 복사
+        refresh: 새로 고침
+      section:
+        preset: 프리셋
+        mode: 모드
+        format: 형식
+        length: 길이 ({length})
+        wordCount: 단어 수 ({count})
+        separator: 구분자
+        characterClasses: 문자 종류
+        options: 옵션
+      charClass:
+        uppercase: 대문자
+        lowercase: 소문자
+        numbers: 숫자
+        symbols: 기호
+      option:
+        excludeAmbiguous: 혼동 문자 제외
+        requireOneOfEach: 종류별 최소 1개 포함
+        capitalizeWords: 단어 첫 글자 대문자
+        appendNumber: 숫자 2자리 추가
+      mode:
+        random: 무작위
+        passphrase: 암호 문구
+        pronounceable: 발음 가능
+        format: 형식
+      format:
+        plain: 일반
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: 없음
+      qr:
+        caption: 스캔하여 복사
+      phonetic:
+        title: 음성 알파벳
+      bulk:
+        generateLabel: 생성
+        single: 1개
+        atOnce: '한 번에 {n}개'
+        passwordsTitle: '비밀번호 {count}개'
+        copyAll: 모두 복사
+      toast:
+        passwordCopied: 비밀번호가 클립보드에 복사되었습니다
+        passwordsCopied: 비밀번호가 클립보드에 복사되었습니다
+        phoneticCopied: 음성 알파벳 철자가 복사되었습니다
+  percentage-calculator:
+    title: 백분율 계산기
+    description: 한 값에서 다른 값으로의 백분율, 또는 백분율로부터 값을 쉽게 계산합니다.
+    ui:
+      whatIsXPercentOfYTitle: Y의 X%는 얼마인가
+      whatIsLabel: 값
+      percentOfLabel: '%의 기준값'
+      resultPlaceholder: 결과
+      xIsWhatPercentOfYTitle: X는 Y의 몇 퍼센트인가
+      isWhatPercentOfLabel: 은(는) 다음 값의 몇 %
+      percentageChangeTitle: 백분율 증가 / 감소
+      fromLabel: 시작
+      toLabel: 끝
+  svg-placeholder-generator:
+    title: SVG 플레이스홀더 생성기
+    description: 애플리케이션에서 플레이스홀더로 사용할 SVG 이미지를 생성합니다.
+    ui:
+      widthLabel: 너비 (px)
+      backgroundLabel: 배경
+      heightLabel: 높이 (px)
+      textColorLabel: 글자 색
+      fontSizeLabel: 글꼴 크기
+      customTextLabel: 사용자 지정 텍스트
+      customTextPlaceholder: 기본값은 {size}
+      useExactSizeToggle: 정확한 크기 사용
+      svgHtmlElementLabel: SVG HTML 요소
+      svgBase64Label: BASE64 SVG
+      copySvgButton: SVG 복사
+      copyBase64Button: base64 복사
+      downloadSvgButton: SVG 다운로드
+      previewLabel: 미리 보기
+      svgPreviewAlt: SVG 미리 보기
+  json-to-csv:
+    title: JSON을 CSV로
+    description: 헤더를 자동으로 감지하여 JSON을 CSV로 변환합니다.
+    ui:
+      invalidJson: 입력한 JSON이 올바르지 않습니다.
+      yourRawJson: 원본 JSON
+      pasteRawJsonPlaceholder: 원본 JSON을 여기에 붙여 넣으세요...
+      csvOutputLabel: JSON의 CSV 버전
+  camera-recorder:
+    title: 카메라 녹화기
+    description: 웹캠이나 카메라로 사진을 찍거나 동영상을 녹화합니다.
+    ui:
+      selectCamera: 카메라 선택
+      selectMicrophone: 마이크 선택
+      notSupported: 이 브라우저는 카메라 녹화를 지원하지 않습니다.
+      accessRequired: 카메라와 마이크 접근 권한이 필요합니다.
+      permissionBlocked: 권한이 차단되었습니다. 브라우저 주소 표시줄의 자물쇠 아이콘에서 직접 권한을 허용하세요.
+      grantPermission: 권한 허용
+      video: 비디오
+      audio: 오디오
+      startWebcam: 웹캠 시작
+      paused: 일시 정지됨
+      rec: REC
+      screenshot: 스크린샷
+      record: 녹화
+      pause: 일시 정지
+      resume: 계속
+      stop: 중지
+      recordingNotSupported: 이 브라우저에서는 녹화를 지원하지 않습니다
+      captures: 캡처 ({count})
+      clearAll: 모두 지우기
+      screenshotAlt: 스크린샷
+      download: 다운로드
+      delete: 삭제
+  reciprocity-calculator:
+    title: 상반칙 불궤 계산기
+    description: Schwarzschild 거듭제곱 법칙을 사용해 40종 이상의 아날로그 필름에 대한 장노출 보정값을 계산합니다. 흑백, 컬러 네거티브, 슬라이드 필름을 지원합니다.
+    ui:
+      barReciprocity: 상반칙 계산기
+      barCorrected: 보정된 노출
+      fieldFilmStock: 필름
+      typeBw: 흑백
+      typeColorNeg: 컬러 네거티브
+      typeSlide: 슬라이드 / E6
+      noFailureUpTo: '{seconds}초까지 상반칙 불궤 없음'
+      sourceManufacturer: 제조사 데이터
+      sourceCommunity: 커뮤니티 데이터
+      fieldMeteredExposure: 측광 노출
+      unitSeconds: 초
+      noFailureMessage: 보정이 필요하지 않습니다. 이 필름은 이 노출 시간에서 상반칙 불궤가 없습니다.
+      copyDone: ✓ 복사됨
+      copySeconds: 초 복사
+      devReduce10: 늘어난 섀도 농도를 보완하려면 현상을 약 10% 줄이는 것을 고려하세요.
+      devReduce1015: 현상을 10~15% 줄이는 것을 권장합니다.
+      devReduce1520: 현상을 15~20% 줄이는 것을 권장합니다.
+      devReduce2030: 매우 긴 노출에서는 현상을 20~30% 줄이는 것을 권장합니다.
+      colorShiftWarning: '컬러 필름: 이 노출 시간에서는 색 변이가 예상됩니다.'
+      colorShiftSlide: 슬라이드 필름은 후보정이 어렵습니다. 촬영 시 CC 필터 사용을 권장합니다.
+      colorShiftNeg: 컬러 네거티브는 관용도가 더 넓어 인화나 스캔 단계에서 보정할 수 있습니다.
+  nd-filter-calculator:
+    title: ND 필터 계산기
+    description: ND(중성 농도) 필터 사용 시 보정된 셔터 속도를 계산합니다. 일반적인 모든 ND 농도와 사용자 지정 스톱 값을 지원합니다.
+    ui:
+      titleInputs: ND 필터 계산기
+      baseShutterSpeed: 기본 셔터 속도 (필터 없음)
+      dragOrClick: 드래그하거나 클릭
+      custom: 사용자 지정
+      secPlaceholder: 초
+      ndFilter: ND 필터
+      stopOne: '{count}스톱'
+      stopMany: '{count}스톱'
+      enterStops: 스톱 입력
+      stopsPlaceholder: 스톱
+      titleResult: 보정된 노출
+      copied: 복사됨
+      copySeconds: 초 복사
+      longExposureAlert: 장노출입니다. 벌브 모드 사용을 고려하세요.
+      stackingFilters: '필터를 겹칠 때는 스톱 값을 더하세요'
+      legendT1: 기본 셔터 속도 (필터 없음)
+      legendT2: 보정된 셔터 속도
+      legendStops: ND 필터 농도
+  depth-of-field-calculator:
+    title: 피사계 심도 계산기
+    description: 모든 렌즈와 센서 조합에 대해 근점 한계, 원점 한계, 전체 피사계 심도를 계산합니다. 과초점 거리도 함께 표시합니다.
+    ui:
+      sensorMedFormat: 중형 포맷
+      sensorCustom: 사용자 지정
+      sensorEnterCoc: CoC 입력
+      infinity: 무한대
+      title: 피사계 심도 계산기
+      sensorFormat: 센서 포맷
+      cocPlaceholder: 'CoC(mm) (예: 0.029)'
+      focalLength: 초점 거리 (mm)
+      aperture: 조리개
+      dragOrClick: 드래그하거나 클릭
+      focusDistance: 초점 거리(피사체)
+      distancePlaceholder: 거리
+      results: 결과
+      hyperfocalDistance: 과초점 거리
+      hyperfocalHint: 여기에 초점을 맞추면 이 거리의 절반부터 무한대까지 최대 선명도를 얻을 수 있습니다
+      nearLimit: 근점 한계
+      farLimit: 원점 한계
+      totalDof: 전체 피사계 심도
+      beyondHyperfocal: 초점 거리가 과초점 거리 이상이므로 원점 한계가 무한대까지 이어집니다.
+      legendHyperfocal: 과초점 거리
+      legendFocalLength: 초점 거리
+      legendFNumber: F값 (조리개)
+      legendCoc: 허용 착란원
+      legendFocusDistance: 피사체 초점 거리
+  exposure-equivalence:
+    title: 노출 등가
+    description: 같은 노출을 유지하면서 모든 조리개에 대응하는 셔터 속도를 찾습니다. 기준 셔터와 조리개를 고르면 다른 모든 F값에서 필요한 값을 볼 수 있습니다.
+    ui:
+      titleInputs: 노출 등가
+      shutterSpeed: 셔터 속도
+      dragOrClick: 드래그하거나 클릭
+      custom: 사용자 지정
+      secPlaceholder: 초
+      aperture: 조리개
+      titleResults: 등가 노출
+      isoIndependent: 고정 ISO라면 ISO와 무관
+      highlightedBase: 강조된 행이 기준값입니다
+      legendT1: 기준 셔터 속도
+      legendT2: 등가 셔터 속도
+      legendN1: 기준 조리개 (F값)
+      legendN2: 대상 조리개 (F값)
+  dev-calculator:
+    title: 필름 현상 계산기
+    description: 온도 보정, 증감 현상, 희석 비율을 반영한 현상 시간을 계산합니다. 일반적인 흑백 현상액과 필름 데이터베이스를 포함합니다.
+    ui:
+      hasData: 데이터 있음
+      noDataGroup: 데이터 없음, 기본 시간을 직접 입력하세요
+      colorBelow: '{process} 36°C 미만: 색 변이와 현상 부족이 생길 가능성이 높습니다'
+      colorAbove: '{process} 40°C 초과: 포그와 색 크로스오버 위험이 있습니다'
+      bwBelow: '18°C 미만: 현상이 매우 느려집니다'
+      bwAbove: '24°C 초과: 망상 주름과 포그 위험이 있습니다'
+      start: 시작
+      pause: 일시 정지
+      resume: 계속
+      calculatorTitle: 필름 현상 계산기
+      developer: 현상액
+      dilution: 희석
+      filmStock: 필름
+      baseTimeAt: '{temp}°C 기준 시간'
+      noData: 데이터 없음
+      overridePlaceholder: 직접 지정 (초)
+      customBaseActive: 사용자 지정 기본 시간 사용 중
+      temperature: '온도:'
+      pushPull: 증감 현상
+      tankVolume: 탱크 용량
+      customMlPlaceholder: 사용자 지정 ml
+      adjustedTime: 조정된 시간
+      baseTimeTemp: 기본 시간 ({temp}°C)
+      tempAdj: 온도 보정 ({temp})
+      pushStop: '{n}스톱 증감'
+      pushStops: '{n}스톱 증감'
+      pullStop: '{n}스톱 감감'
+      pullStops: '{n}스톱 감감'
+      mixFor: '{volume}ml 혼합'
+      mixDeveloper: 현상액
+      mixWater: 물
+      noDataWarning: '{film} + {developer} 조합의 데이터가 없습니다. 기본 시간을 직접 입력하세요.'
+      pushPullEstimate: 증감 현상 시간은 추정값입니다. 테스트 롤을 권장합니다.
+      sourceNote: 기본 시간은 Massive Dev Chart와 제조사 데이터시트를 참고했습니다.
+      processTimer: 현상 타이머
+      devComplete: 현상 완료
+      devCompleteHint: 걸어서 말린 뒤 네거티브를 즐기세요.
+      stageOf: 단계 {current} / {total}
+      agitation: 교반
+      reset: 초기화
+      skip: 건너뛰기
+      stDeveloper: 현상
+      stBleach: 표백
+      stWash: 수세
+      stFixer: 정착
+      stWash2: 수세 2
+      stStabilizer: 안정화
+      stFirstDeveloper: 1차 현상
+      stReversalBath: 반전욕
+      stColorDeveloper: 발색 현상
+      stPreBleach: 전 표백
+      stFinalWash: 최종 수세
+      stStopBath: 정지욕
+      agC30s10: 처음 30초 연속, 이후 30초마다 10초
+      agRun3Full: 흐르는 물 또는 물 3회 완전 교체
+      agGentle: 부드럽게 돌리기만 하고, 이후 헹구지 마세요
+      agC30s5: 처음 30초 연속, 이후 30초마다 5초
+      agRun3: 흐르는 물 또는 물 3회 교체
+      agContinuous: 연속
+      ag10per30: 30초마다 10초
+      agRun5: 흐르는 물 또는 물 5회 교체
+      agC60s10: 처음 30초 연속, 이후 60초마다 10초
+      agCont60: 60초간 연속
+      ag10per60: 60초마다 10초
+      agRun5Full: 흐르는 물 또는 물 5회 완전 교체
+  keycode-info:
+    title: 키코드 정보
+    description: 누른 키의 JavaScript keycode, code, location, 보조 키 정보를 확인합니다.
+    ui:
+      pressAnyKey: 아무 키나 눌러 정보를 확인하세요
+      key: Key
+      keycode: Keycode
+      code: Code
+      location: Location
+      modifiers: 보조 키
+  emoji-picker:
+    title: 이모지 선택기
+    description: 이모지를 쉽게 복사해 붙여 넣고, 각 이모지의 유니코드와 코드 포인트 값을 확인합니다.
+    ui:
+      emojiCopied: 이모지 {emoji}이(가) 클립보드에 복사되었습니다
+      codePointsCopied: 코드 포인트 '{codePoints}'이(가) 클립보드에 복사되었습니다
+      unicodeCopied: 유니코드 '{unicode}'이(가) 클립보드에 복사되었습니다
+      searchPlaceholder: "이모지 검색 (예: 'smile')..."
+      noResults: 결과 없음
+      searchResult: 검색 결과
+  color-converter:
+    title: 색상 변환기
+    description: 여러 형식(hex, rgb, hsl, CSS 이름) 간에 색상을 변환합니다
+    ui:
+      color: 색상
+      formats: 형식
+  bcrypt:
+    title: Bcrypt
+    description: bcrypt로 문자열을 해시하고 비교합니다. Bcrypt는 Blowfish 암호를 기반으로 한 비밀번호 해싱 함수입니다.
+    ui:
+      copiedToClipboard: 해시 문자열이 클립보드에 복사되었습니다
+      hashTitle: 해시
+      compareTitle: 비교
+      stringLabel: 문자열
+      stringPlaceholder: bcrypt할 문자열...
+      saltRoundsLabel: 솔트 라운드
+      outputLabel: 출력
+      copyHash: 해시 복사
+      compareStringPlaceholder: 비교할 문자열...
+      hashLabel: 해시
+      compareHashPlaceholder: 비교할 해시...
+      matchLabel: 일치
+      yes: 예
+      no: 아니요
+  crontab-generator:
+    title: Crontab 생성기
+    description: crontab을 검증하고 생성하며, cron 일정을 사람이 읽을 수 있는 설명으로 보여 줍니다.
+    ui:
+      symbolAnyValue: 모든 값
+      symbolEveryMinute: 매분
+      symbolRange: 값 범위
+      symbolRangeEquivalent: 1분부터 10분까지
+      symbolList: 값 목록
+      symbolListEquivalent: 1분과 10분에
+      symbolStep: 간격 값
+      symbolStepEquivalent: 10분마다
+      aliasYearly: 1년에 한 번 (1월 1일 자정)
+      aliasMonthly: 매월 1일 자정
+      aliasWeekly: 일요일 자정
+      aliasDaily: 매일 자정
+      aliasHourly: 매시 정각
+      aliasReboot: 시작 시 한 번 실행
+      aliasRebootEquivalent: (시작 시)
+      invalidCron: 이 cron은 올바르지 않습니다
+      use24HourTime: 24시간제
+      daysStartAtZero: 요일을 0부터 시작
+      labelSymbol: '기호:'
+      labelMeaning: '의미:'
+      labelExample: '예시:'
+      labelEquivalent: '동일 표현:'
+      symbols: 기호
+      aliases: 별칭
+      fieldDiagram: |-
+        ┌──────────── [선택] 초 (0 - 59)
+        │ ┌────────── 분 (0 - 59)
+        │ │ ┌──────── 시 (0 - 23)
+        │ │ │ ┌────── 일 (1 - 31)
+        │ │ │ │ ┌──── 월 (1 - 12) 또는 jan,feb,mar,apr ...
+        │ │ │ │ │ ┌── 요일 (0 - 6, 일요일=0) 또는 sun,mon ...
+        │ │ │ │ │ │
+        * * * * * * command
+  http-status-codes:
+    title: HTTP 상태 코드
+    description: 모든 HTTP 상태 코드와 이름, 의미를 정리한 목록입니다.
+    ui:
+      searchResults: 검색 결과
+      searchPlaceholder: HTTP 상태 검색...
+      copiedTooltip: 복사됨!
+      clickToCopy: 클릭하여 상태 코드 복사
+      copiedLabel: 복사됨
+  sql-prettify:
+    title: SQL 정리 및 포맷
+    description: SQL 쿼리를 온라인에서 정리하고 포맷합니다(다양한 SQL 방언 지원).
+    ui:
+      dialectLabel: 방언
+      keywordCaseLabel: 키워드 대소문자
+      indentStyleLabel: 들여쓰기 스타일
+      yourSqlQueryLabel: SQL 쿼리
+      sqlQueryPlaceholder: SQL 쿼리를 여기에 입력하세요...
+      prettifiedQueryLabel: 정리된 쿼리
+      keywordCaseUpper: 대문자
+      keywordCaseLower: 소문자
+      keywordCasePreserve: 유지
+      indentStyleStandard: 표준
+      indentStyleTabularLeft: 표 형식 왼쪽
+      indentStyleTabularRight: 표 형식 오른쪽
+  git-memo:
+    title: Git 치트시트
+    description: 가장 많이 쓰는 Git 명령과 워크플로를 빠르게 참고할 수 있습니다.
+  encryption:
+    title: 텍스트 암호화 / 복호화
+    description: AES, TripleDES, Rabbit, RC4 같은 암호 알고리즘으로 평문을 암호화하고 암호문을 복호화합니다.
+    ui:
+      decryptError: 텍스트를 복호화할 수 없습니다
+      encryptTitle: 암호화
+      decryptTitle: 복호화
+      yourText: 텍스트
+      yourSecretKey: 비밀 키
+      algorithm: 알고리즘
+      encryptedOutput: 암호화 결과
+      yourEncryptedText: 암호화된 텍스트
+      decryptedOutput: 복호화 결과
+      encryptPlaceholder: 암호화할 문자열
+      decryptPlaceholder: 복호화할 암호문
+      secretKeyPlaceholder: 비밀 키...
+  yaml-prettify:
+    title: YAML 정리 및 포맷
+    description: YAML 문자열을 읽기 쉬운 형식으로 정리합니다.
+  roman-numeral-converter:
+    title: 로마 숫자 변환기
+    description: 로마 숫자를 아라비아 숫자로, 아라비아 숫자를 로마 숫자로 변환합니다.
+    ui:
+      converterTitle: 변환기
+      arabicSideLabel: 아라비아 숫자
+      romanSideLabel: 로마 숫자
+      arabicRangeError: '{min}에서 {max} 사이여야 합니다'
+      invalidRoman: 올바른 로마 숫자가 아닙니다
+      copied: 복사됨
+      copy: 복사
+      romanCopiedToast: 로마 숫자가 복사되었습니다
+      arabicCopiedToast: 아라비아 숫자가 복사되었습니다
+  hmac-generator:
+    title: HMAC 생성기
+    description: 비밀 키와 원하는 해시 함수를 사용해 해시 기반 메시지 인증 코드(HMAC)를 계산합니다.
+    ui:
+      encodingBinary: 2진수 (base 2)
+      encodingHex: 16진수 (base 16)
+      copied: HMAC가 클립보드에 복사되었습니다
+      plainText: 평문
+      secretKey: 비밀 키
+      hashingFunction: 해시 함수
+      outputEncoding: 출력 인코딩
+      hmacOutput: HMAC 출력
+      plainTextPlaceholder: 해시를 계산할 평문...
+      secretKeyPlaceholder: 비밀 키를 입력하세요...
+      clear: 지우기
+      copyHmac: HMAC 복사
+  bip39-generator:
+    title: BIP39 암호 문구 생성기
+    description: 기존 또는 무작위 니모닉으로 BIP39 암호 문구를 생성하거나, 암호 문구에서 니모닉을 얻습니다.
+    ui:
+      languageEnglish: 영어
+      languageChineseSimplified: 중국어 간체
+      languageChineseTraditional: 중국어 번체
+      languageCzech: 체코어
+      languageFrench: 프랑스어
+      languageItalian: 이탈리아어
+      languageJapanese: 일본어
+      languageKorean: 한국어
+      languagePortuguese: 포르투갈어
+      languageSpanish: 스페인어
+      entropyLengthError: 엔트로피 길이는 16 이상 32 이하이며 4의 배수여야 합니다
+      entropyHexError: 엔트로피는 16진수 문자열이어야 합니다
+      invalidMnemonic: 올바르지 않은 니모닉
+      entropyCopied: 엔트로피가 클립보드에 복사되었습니다
+      passphraseCopied: 암호 문구가 클립보드에 복사되었습니다
+      languageLabel: 언어
+      entropyHeading: 엔트로피 (시드)
+      entropyPlaceholder: 16진수 엔트로피...
+      regenerate: 다시 생성
+      copyEntropy: 엔트로피 복사
+      passphraseHeading: 암호 문구 (니모닉)
+      passphrasePlaceholder: 니모닉 단어...
+      copyPassphrase: 암호 문구 복사
+  base64-file-converter:
+    title: Base64 파일 변환기
+    description: 문자열, 파일, 이미지를 base64 표현으로 변환합니다.
+    ui:
+      copiedToClipboard: Base64 문자열이 클립보드에 복사되었습니다
+      base64ToFileTitle: BASE64를 파일로
+      fileNameLabel: 파일 이름
+      fileNamePlaceholder: 다운로드 파일 이름
+      extensionLabel: 확장자
+      extensionPlaceholder: 확장자
+      base64StringLabel: BASE64 문자열
+      base64InputPlaceholder: base64 파일 문자열을 여기에 입력하세요...
+      invalidBase64: 올바르지 않은 base64 문자열
+      previewImage: 이미지 미리 보기
+      downloadFile: 파일 다운로드
+      fileToBase64Title: 파일을 BASE64로
+      dropHint: 파일을 여기에 끌어다 놓거나 클릭하여 선택하세요
+      fileInBase64Label: BASE64 파일
+      fileOutputPlaceholder: base64로 변환된 파일이 여기에 표시됩니다
+      copied: 복사됨!
+      copyBase64: base64 복사
+  base64-string-converter:
+    title: Base64 문자열 인코더/디코더
+    description: 문자열을 base64 표현으로 간단히 인코딩하고 디코딩합니다.
+    ui:
+      base64CopiedToClipboard: Base64 문자열이 클립보드에 복사되었습니다
+      stringCopiedToClipboard: 문자열이 클립보드에 복사되었습니다
+      stringToBase64Title: 문자열을 BASE64로
+      encodingLabel: 인코딩
+      standard: 표준
+      urlSafe: URL 안전
+      stringToEncodeLabel: 인코딩할 문자열
+      stringInputPlaceholder: 문자열을 여기에 입력하세요...
+      base64OutputLabel: BASE64 출력
+      base64OutputPlaceholder: 문자열의 base64 인코딩 결과가 여기에 표시됩니다
+      copied: 복사됨!
+      copyBase64: base64 복사
+      base64ToStringTitle: BASE64를 문자열로
+      base64ToDecodeLabel: 디코딩할 BASE64 문자열
+      base64InputPlaceholder: base64 문자열...
+      invalidBase64: 올바르지 않은 base64 문자열
+      decodedStringLabel: 디코딩된 문자열
+      decodedOutputPlaceholder: 디코딩된 문자열이 여기에 표시됩니다
+      copyDecodedString: 디코딩된 문자열 복사
+  math-evaluator:
+    title: 수식 계산기
+    description: 수학 식을 계산하는 계산기입니다. sqrt, cos, sin, abs 같은 함수를 사용할 수 있습니다.
+    ui:
+      placeholder: '수식 입력 (예: 2*sqrt(6) )...'
+      result: 결과
+  url-parser:
+    title: URL 파서
+    description: URL을 구성 요소(프로토콜, 오리진, 매개변수, 포트, 사용자 이름과 비밀번호 등)로 분해합니다
+    ui:
+      sectionHost: 호스트
+      protocol: 프로토콜
+      hostname: 호스트 이름
+      port: 포트
+      sectionAuthentication: 인증
+      username: 사용자 이름
+      password: 비밀번호
+      sectionPath: 경로
+      pathname: 경로 이름
+      search: 쿼리
+      hash: 해시
+      urlTitle: URL
+      invalidUrl: 올바르지 않은 URL
+      params: 매개변수
+      emptyHint: 위에 URL을 입력하면 분석합니다
+  phone-parser-and-formatter:
+    title: 전화번호 파서
+    description: 전화번호를 분석하고 포맷합니다. 국가를 감지하고 유효성을 검사하며 국제, 국내, E.164, RFC3966 형식으로 표시합니다.
+    ui:
+      invalidPhoneNumber: 올바르지 않은 전화번호
+      sectionLocation: 위치
+      countryCode: 국가 코드
+      country: 국가
+      callingCode: 국가 번호
+      sectionValidation: 유효성
+      isValid: 유효한가요?
+      yes: 예
+      no: 아니요
+      isPossible: 가능한 번호인가요?
+      type: 유형
+      unknown: 알 수 없음
+      sectionFormats: 형식
+      international: 국제
+      national: 국내
+      defaultCountry: 기본 국가
+      phoneNumber: 전화번호
+      emptyStatePrompt: 위에 전화번호를 입력하면 분석합니다
+  user-agent-parser:
+    title: User-agent 파서
+    description: user-agent 문자열에서 브라우저, 엔진, OS, CPU, 기기 유형과 모델을 감지하고 분석합니다.
+    ui:
+      sectionBrowser: 브라우저
+      sectionEngine: 엔진
+      sectionOs: OS
+      sectionDevice: 기기
+      sectionCpu: CPU
+      name: 이름
+      version: 버전
+      model: 모델
+      type: 유형
+      vendor: 제조사
+      architecture: 아키텍처
+      userAgentString: USER AGENT 문자열
+      placeholder: user-agent를 여기에 입력하세요...
+      unknown: 알 수 없음
+      error: 오류
+      parseError: user agent 문자열을 분석할 수 없습니다
+  case-converter:
+    title: 대소문자 변환기
+    description: 문자열의 대소문자 형식을 여러 형식 중에서 골라 변환합니다
+    ui:
+      inputPlaceholder: 문자열...
+      output: 출력
+  html-entities:
+    title: HTML 엔티티 이스케이프
+    description: HTML 엔티티를 이스케이프하거나 언이스케이프합니다(<,>, &, ", \' 같은 문자를 HTML 표현으로 바꿈)
+    ui:
+      yourString: 문자열
+      escapePlaceholder: 이스케이프할 문자열...
+      escapedOutput: 이스케이프 결과
+      copied: 복사됨
+      copy: 복사
+      yourEscapedString: 이스케이프된 문자열
+      unescapePlaceholder: 언이스케이프할 문자열...
+      unescapedOutput: 언이스케이프 결과
+  json-prettify:
+    title: JSON 정리 및 포맷
+    description: JSON 문자열을 읽기 쉬운 형식으로 정리합니다.
+  docker-run-to-docker-compose-converter:
+    title: Docker run을 Docker compose로 변환
+    description: '"docker run" 명령을 docker-compose 파일로 변환합니다!'
+  mac-address-lookup:
+    title: MAC 주소 조회
+    description: MAC 주소로 기기의 공급업체와 제조사를 찾습니다.
+    ui:
+      macAddressLabel: MAC 주소
+      copiedTooltip: 복사됨!
+      copyTooltip: 클릭하여 공급업체 정보 복사
+      copiedTitle: ✓ 복사됨
+      vendorInfoTitle: 공급업체 정보
+      unknownVendor: 이 주소의 공급업체를 알 수 없습니다
+  lorem-ipsum-generator:
+    title: Lorem ipsum 생성기
+    description: 목업과 디자인 작업에 쓸 lorem ipsum 더미 텍스트를 생성합니다.
+    ui:
+      copiedMessage: Lorem ipsum이 클립보드에 복사되었습니다
+      paragraphs: 문단
+      sentencesPerParagraph: 문단당 문장 수
+      wordsPerSentence: 문장당 단어 수
+      startWithLoremIpsum: lorem ipsum으로 시작
+      asHtml: HTML로
+      output: 출력
+      wordCount: '{count}단어'
+      charCount: '{count}자'
+      copy: 복사
+      refresh: 새로 고침
+  qrcode-generator:
+    title: QR 코드 생성기
+    description: URL, 일반 텍스트, Wi-Fi 네트워크 정보용 QR 코드를 생성하고 다운로드합니다. 터미널, 클래식, 사용자 지정 색상 테마와 오류 정정 수준을 설정할 수 있습니다.
+  signature-creator:
+    title: 서명 만들기
+    description: 캔버스에 손글씨 서명을 그려 투명 PNG로 내보냅니다. 또는 이미지를 업로드하고 기기 내 AI로 클릭 한 번에 배경을 제거합니다.
+    ui:
+      drawSignatureTab: 서명 그리기
+      removeBackgroundTab: 배경 제거
+      inkColorLabel: 잉크 색
+      strokeWeightLabel: 선 굵기
+      actionsLabel: 작업
+      undoButton: ↩ 실행 취소
+      clearButton: ✕ 지우기
+      downloadTransparentPng: ↓ 투명 PNG 다운로드
+      uploadImageLabel: 이미지 업로드
+      dropzoneText: 이미지를 여기에 놓거나 클릭하여 찾아보기
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: 이미지 불러옴
+      removeButton: ✕ 제거
+      removeBackgroundButton: ⚡ 배경 제거
+      exportLabel: 내보내기
+      downloadNoBgPng: ↓ PNG 다운로드 (배경 없음)
+      originalLabel: 원본
+      resultLabel: 결과
+      uploadPrompt: 시작하려면 이미지를 업로드하세요
+      originalAlt: 원본
+      resultAlt: 배경을 제거한 결과
+      loadingModelStatus: AI 모델 불러오는 중...
+      removingBackgroundStatus: 배경 제거 중...
+      processingPercentStatus: 처리 중... {pct}%
+      downloadingModelPercentStatus: 모델 다운로드 중... {pct}%
+      removeBackgroundFailedStatus: 배경을 제거하지 못했습니다. 다른 이미지를 사용해 보세요.
+  xml-formatter:
+    title: XML 포맷터
+    description: XML 문자열을 읽기 쉬운 형식으로 정리합니다.
+    ui:
+      invalidXml: 입력한 XML이 올바르지 않습니다.
+      collapse: 접기
+      indentSize: 들여쓰기 크기
+      inputLabel: XML
+      inputPlaceholder: XML을 여기에 붙여 넣으세요...
+      outputLabel: 포맷된 XML
+  temperature-converter:
+    title: 온도 변환기
+    description: 켈빈, 섭씨, 화씨, 랭킨, 들릴, 뉴턴, 레오뮈르, 뢰머 온도를 변환합니다.
+    ui:
+      kelvin: 켈빈
+      celsius: 섭씨
+      fahrenheit: 화씨
+      rankine: 랭킨
+      delisle: 들릴
+      newton: 뉴턴
+      reaumur: 레오뮈르
+      romer: 뢰머
+  chmod-calculator:
+    title: Chmod 계산기
+    description: 이 온라인 chmod 계산기로 chmod 권한과 명령을 계산합니다.
+    ui:
+      read: 읽기
+      write: 쓰기
+      execute: 실행
+      owner: 소유자
+      group: 그룹
+      public: 기타
+      commandCopied: chmod 명령이 복사되었습니다
+      copyCommand: 명령 복사
+  rsa-key-pair-generator:
+    title: RSA 키 쌍 생성기
+    description: 무작위 RSA 개인 키와 공개 키 PEM 쌍을 새로 생성합니다.
+    ui:
+      bitsRangeError: 비트는 256에서 16384 사이이며 8의 배수여야 합니다
+      bitsLabel: 비트
+      refreshButton: 키 쌍 새로 고침
+      publicKeyTitle: 공개 키
+      copyPublicKeyTitle: 공개 키 복사
+      copy: 복사
+      generating: 생성 중...
+      privateKeyTitle: 개인 키
+      copyPrivateKeyTitle: 개인 키 복사
+      publicKeyCopiedToast: 공개 키가 복사되었습니다
+      privateKeyCopiedToast: 개인 키가 복사되었습니다
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG 편집기
+    description: 콘텐츠의 소스 코드를 즉시 생성하는 기능이 풍부한 온라인 WYSIWYG HTML 편집기입니다.
+    ui:
+      bold: 굵게
+      italic: 기울임꼴
+      strike: 취소선
+      inlineCode: 인라인 코드
+      heading1: 제목 1
+      heading2: 제목 2
+      heading3: 제목 3
+      heading4: 제목 4
+      bulletList: 글머리 기호 목록
+      orderedList: 번호 매기기 목록
+      codeBlock: 코드 블록
+      blockquote: 인용구
+      hardBreak: 강제 줄 바꿈
+      clearFormat: 서식 지우기
+      undo: 실행 취소
+      redo: 다시 실행
+  json-diff:
+    title: JSON 비교
+    description: 두 JSON 객체를 비교하여 차이점을 확인합니다.
+    ui:
+      onlyShowDifferences: 차이점만 표시
+      jsonsAreTheSame: 입력한 두 JSON이 동일합니다
+      firstJsonTitle: 첫 번째 JSON
+      firstJsonPlaceholder: 첫 번째 JSON을 여기에 붙여 넣으세요...
+      invalidJson: 올바르지 않은 JSON 형식
+      secondJsonTitle: 비교할 JSON
+      secondJsonPlaceholder: 비교할 JSON을 여기에 붙여 넣으세요...
+  jwt-parser:
+    title: JWT 파서
+    description: JSON Web Token(JWT)을 분석하고 디코딩하여 내용을 표시합니다.
+    ui:
+      header: 헤더
+      payload: 페이로드
+      jwtToDecodeTitle: 디코딩할 JWT
+      tokenPlaceholder: 토큰을 여기에 입력하세요...
+      invalidJwt: 올바르지 않은 JWT
+  date-converter:
+    title: 날짜 및 시간 변환기
+    description: 날짜와 시간을 다양한 형식으로 변환합니다
+  ipv4-subnet-calculator:
+    title: IPv4 서브넷 계산기
+    description: IPv4 CIDR 블록을 분석하여 서브넷에 필요한 모든 정보를 확인합니다.
+    ui:
+      invalidAddress: 이 주소를 분석할 수 없습니다. 형식을 확인하세요
+      netmask: 넷마스크
+      networkAddress: 네트워크 주소
+      networkMask: 네트워크 마스크
+      networkMaskBinary: 2진수 네트워크 마스크
+      cidrNotation: CIDR 표기법
+      wildcardMask: 와일드카드 마스크
+      networkSize: 네트워크 크기
+      firstAddress: 첫 주소
+      lastAddress: 마지막 주소
+      broadcastAddress: 브로드캐스트 주소
+      noBroadcast: 이 마스크에는 브로드캐스트 주소가 없습니다
+      ipClass: IP 클래스
+      unknownClassType: 알 수 없는 클래스 유형
+      decimal: 10진수
+      hexadecimal: 16진수
+      binary: 2진수
+      ipv6Short: IPv6 (축약)
+      inputLabel: 마스크가 있거나 없는 IPv4 주소
+      bitMap: 비트 맵
+      network: 네트워크
+      host: 호스트
+      setPrefix: 접두사를 /{prefix}(으)로 설정
+      networkTag: 네트워크
+      broadcastTag: 브로드캐스트
+      hostsCount: '호스트 {count}개'
+      privateIp: 사설 IP
+      publicIp: 공인 IP
+      subnetDetail: 서브넷 상세
+      subnetInfo: 서브넷 정보
+      addressRepresentations: 주소 표현
+      copy: 복사
+      enterValidIpv4: 올바른 IPv4 주소를 입력하면 표현을 볼 수 있습니다
+      previousBlock: 이전 블록
+      nextBlock: 다음 블록
+      collapseCheatSheet: 치트시트 접기
+      subnetCheatSheet: 서브넷 치트시트
+  og-meta-generator:
+    title: Open Graph 메타 생성기
+    description: 웹사이트용 Open Graph 및 소셜 HTML 메타 태그를 생성합니다.
+  ipv6-ula-generator:
+    title: IPv6 ULA 생성기
+    description: RFC4193에 따라 네트워크에서 사용할 라우팅되지 않는 로컬 IP 주소를 생성합니다.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: 첫 라우팅 가능 주소
+      lastRoutable: 마지막 라우팅 가능 주소
+      infoAlert: 현재 타임스탬프와 MAC 주소를 SHA1로 해시합니다. RFC 4193에 따라 하위 40비트가 글로벌 ID가 됩니다.
+      macAddress: MAC 주소
+      output: 출력
+      copied: 복사됨!
+      copy: 복사
+  hash-text:
+    title: 텍스트 해시
+    description: MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 등으로 텍스트를 해시합니다.
+    ui:
+      encodingBinary: 2진수 (base 2)
+      encodingHex: 16진수 (base 16)
+      encodingBase64: Base64 (base 64)
+      encodingBase64url: Base64url (URL 안전 base 64)
+      inputPlaceholder: 해시할 문자열...
+      encoding: 인코딩
+      output: 출력
+  json-to-toml:
+    title: JSON을 TOML로
+    description: JSON을 분석하여 TOML로 변환합니다.
+  device-information:
+    title: 기기 정보
+    description: 현재 기기의 정보(화면 크기, 픽셀 비율, user agent 등)를 확인합니다
+    ui:
+      screen: 화면
+      hardware: 하드웨어
+      network: 네트워크
+      browser: 브라우저
+      screenSize: 화면 크기
+      windowSize: 창 크기
+      pixelRatio: 픽셀 비율
+      colorDepth: 색 심도
+      orientation: 방향
+      orientationAngle: 방향 각도
+      touchPoints: 터치 포인트
+      cpuCores: CPU 코어
+      deviceMemory: 기기 메모리
+      platform: 플랫폼
+      online: 온라인
+      connectionType: 연결 유형
+      downlinkSpeed: 다운링크 속도
+      roundTripTime: 왕복 시간
+      dataSaver: 데이터 절약
+      vendor: 공급업체
+      languages: 언어
+      cookiesEnabled: 쿠키 사용
+      pdfViewer: PDF 뷰어
+      doNotTrack: Do Not Track
+      userAgent: User agent
+      maxTouchPoints: '최대 {count}'
+      none: 없음
+      logicalCores: '논리 코어 {count}개'
+      yes: 예
+      no: 아니요
+      enabled: 사용
+      disabled: 사용 안 함
+      supported: 지원됨
+      notSupported: 지원되지 않음
+      notSet: 설정되지 않음
+  pdf-signature-checker:
+    title: PDF 서명 확인기
+    description: PDF 파일의 서명을 검증합니다. 서명된 PDF 파일에는 하나 이상의 서명이 있으며, 이를 통해 서명 이후 파일 내용이 변경되었는지 확인할 수 있습니다.
+    ui:
+      tableHeaderValidityPeriod: 유효 기간
+      tableHeaderIssuedBy: 발급자
+      tableHeaderIssuedTo: 발급 대상
+      tableHeaderPemCertificate: PEM 인증서
+      notBefore: 시작일
+      notAfter: 만료일
+      commonName: 일반 이름
+      organizationName: 조직 이름
+      countryName: 국가 이름
+      localityName: 지역 이름
+      organizationalUnitName: 조직 단위 이름
+      stateOrProvinceName: 시/도 이름
+      viewPemCert: PEM 인증서 보기
+      uploadPrompt: PDF 파일을 여기에 끌어다 놓거나 클릭하여 파일을 선택하세요
+      noSignaturesFound: 제공된 파일에서 서명을 찾을 수 없습니다.
+      signatureCertificatesLabel: '서명 {number} 인증서 :'
+  json-minify:
+    title: JSON 압축
+    description: 불필요한 공백을 제거하여 JSON을 압축합니다.
+    ui:
+      invalidJson: 입력한 JSON이 올바르지 않습니다.
+      inputLabel: 원본 JSON
+      inputPlaceholder: 원본 JSON을 여기에 붙여 넣으세요...
+      outputLabel: 압축된 JSON
+  ulid-generator:
+    title: ULID 생성기
+    description: 무작위 ULID(Universally Unique Lexicographically Sortable Identifier)를 생성합니다.
+    ui:
+      copiedMessage: ULID가 클립보드에 복사되었습니다
+      quantity: 수량
+      format: 형식
+      formatRaw: 원시
+      formatJson: JSON
+      output: 출력
+      copy: 복사
+      refresh: 새로 고침
+  base-converter:
+    title: 정수 진법 변환기
+    description: 숫자를 여러 진법(10진수, 16진수, 2진수, 8진수, base64 등)으로 변환합니다
+  uuid-generator:
+    title: UUID 생성기
+    description: 무작위 UUID(v1, v4)를 생성하고 구조를 살펴봅니다.
+    ui:
+      copiedMessage: UUID가 클립보드에 복사되었습니다
+      version: 버전
+      quantity: 수량
+      namespacePreset: 네임스페이스 프리셋
+      namespaceUuid: 네임스페이스 UUID
+      invalidUuid: 올바르지 않은 UUID
+      name: 이름
+      namePlaceholder: 해시할 이름...
+      output: 출력
+      copy: 복사
+      refresh: 새로 고침
+  ipv4-address-converter:
+    title: IPv4 주소 변환기
+    description: IP 주소를 10진수, 2진수, 16진수, 또는 IPv6 표현으로 변환합니다.
+    ui:
+      decimal: 10진수
+      hexadecimal: 16진수
+      binary: 2진수
+      ipv6Short: IPv6 (축약)
+      invalidIpv4: 올바르지 않은 IPv4 주소
+      ipv4Address: IPv4 주소
+      output: 출력
+      copied: 복사됨!
+      copy: 복사
+  text-statistics:
+    title: 텍스트 통계
+    description: 텍스트의 문자 수, 단어 수, 바이트 크기 등의 정보를 확인합니다
+    ui:
+      textPlaceholder: 텍스트...
+      characterCount: 문자 수
+      wordCount: 단어 수
+      lineCount: 줄 수
+      byteSize: 바이트 크기
+  text-to-nato-alphabet:
+    title: 텍스트를 NATO 음성 알파벳으로
+    description: 구두 전달을 위해 텍스트를 NATO 음성 알파벳으로 변환합니다.
+    ui:
+      yourText: 텍스트
+      inputPlaceholder: '예: Hello world'
+      natoPhonetic: NATO 음성 알파벳
+      copied: 복사됨
+      copyAll: 모두 복사
+      natoStringCopied: NATO 문자열이 복사되었습니다.
+  ipv4-range-expander:
+    title: IPv4 범위 확장기
+    description: 시작 IPv4 주소와 끝 IPv4 주소를 입력하면 유효한 IPv4 서브넷과 CIDR 표기법을 계산합니다.
+    ui:
+      startAddress: 시작 주소
+      endAddress: 끝 주소
+      addressesInRange: 범위 내 주소 수
+      invalidIpv4: 올바르지 않은 IPv4 주소
+      invalidCombinationTitle: 시작 및 끝 IPv4 주소 조합이 올바르지 않습니다
+      invalidCombinationDescription: 끝 IPv4 주소가 시작 IPv4 주소보다 작습니다. 이 조합은 유효하지 않아 결과를 계산할 수 없습니다.
+      switchStartEnd: 시작 및 끝 IPv4 주소 바꾸기
+      result: 결과
+      copied: 복사됨!
+      copyResult: 결과 복사
+  text-diff:
+    title: 텍스트 비교
+    description: 두 텍스트를 비교하여 차이점을 확인합니다.
+  otp-generator:
+    title: OTP 코드 생성기
+    description: 다단계 인증용 시간 기반 OTP(일회용 비밀번호)를 생성하고 검증합니다.
+  text-to-binary:
+    title: 텍스트를 ASCII 2진수로
+    description: 텍스트를 ASCII 2진수 표현으로 변환하거나 그 반대로 변환합니다.
+    ui:
+      textCopied: 텍스트가 복사되었습니다
+      binaryCopied: 2진수가 복사되었습니다
+      panelTitle: 텍스트 ↔ ASCII 2진수
+      textLabel: 텍스트
+      binaryLabel: 2진수
+      copied: 복사됨
+      copy: 복사
+      textPlaceholder: '예: Hello world'
+      invalidBinary: 올바른 ASCII 2진수여야 합니다(8비트 단위)
+  ascii-word-art:
+    title: ASCII 워드 아트 생성기
+    description: 다양한 글꼴과 스타일로 ASCII 워드 아트 텍스트를 만듭니다.
+  killer-scripts:
+    title: Killer Scripts
+    description: Windows 관리와 MSP 현장 업무를 위한 PowerShell 스크립트입니다.
+    ui:
+      loadError: GitHub에서 스크립트를 불러오지 못했습니다. 연결을 확인하거나 다시 시도하세요.
+      retry: 다시 시도
+      copyCommand: 명령 복사
+      copied: 복사됨!
+      infoCopySuffix: 버튼은 PowerShell에서 스크립트를 바로 다운로드하고 실행하는 한 줄 명령을 클립보드에 복사합니다.
+      infoDownloadPrefix: 또한
+      infoDownloadMiddle: 버튼은
+      infoDownloadSuffix: 파일을 컴퓨터에 저장하여 직접 사용할 수 있게 합니다.
+      license: 이 스크립트는 MIT License에 따라 무료로 제공되는 오픈 소스입니다.
+  powershell-builder:
+    title: PowerShell 빌더
+    description: cmdlet을 고르고 매개변수를 채운 뒤 완성된 PowerShell 명령을 복사하세요.
+  group-policy-reference:
+    title: 그룹 정책 참조
+    description: 이름, GPO 경로, 레지스트리 키, 설명으로 일반적인 Windows 그룹 정책 설정을 검색합니다.
+    ui:
+      searchPlaceholder: 정책, 경로, 레지스트리 키 검색...
+      copied: 복사됨!
+      clickToCopyRegistry: 클릭하여 레지스트리 키 복사
+      copiedShort: 복사됨
+      default: 기본값
+      recommended: 권장값
+  windows-event-lookup:
+    title: Windows 이벤트 조회
+    description: Windows 이벤트 ID를 설명, 심각도 수준, 일반적인 원인과 함께 조회합니다.
+    ui:
+      searchResults: 검색 결과
+      searchPlaceholder: 이벤트 ID, 이름, 설명으로 검색...
+      copied: 복사됨!
+      clickToCopyEventId: 클릭하여 이벤트 ID 복사
+      copiedShort: 복사됨
+  m365-sku-decoder:
+    title: M365 라이선스 SKU 디코더
+    description: Microsoft 365 라이선스 SKU 문자열과 GUID를 제품 이름으로 해석합니다.
+    ui:
+      searchPlaceholder: SKU 이름, 문자열 ID, 설명으로 검색...
+      copied: 복사됨!
+      clickToCopy: 클릭하여 문자열 ID 복사
+      copiedMark: ✓ 복사됨
+  windows-error-codes:
+    title: Windows 오류 코드 조회
+    description: 시스템 오류, BSOD 중지 코드, WMI, RPC, MSI 설치 관리자 오류 등 Windows 오류 코드를 16진수나 10진수로 조회합니다.
+    ui:
+      searchResults: 검색 결과
+      searchPlaceholder: 16진수 코드, 오류 이름, 설명으로 검색...
+      copied: 복사됨!
+      clickToCopy: 클릭하여 16진수 코드 복사
+      copiedShort: 복사됨
+      decimal: 10진수 {decimal}
+  exchange-ndr-lookup:
+    title: Exchange NDR 조회
+    description: Exchange 및 M365 반송 코드를 이해하기 쉬운 원인과 해결 방법과 함께 조회합니다.
+    ui:
+      searchResults: 검색 결과
+      searchPlaceholder: NDR 코드, 오류 이름, 원인, 해결 방법으로 검색...
+      copied: 복사됨!
+      clickToCopy: 클릭하여 NDR 코드 복사
+      copiedShort: 복사됨
+      cause: 원인
+      fix: 해결 방법
+  safelink-decoder:
+    title: Outlook Safelink 디코더
+    description: Microsoft Defender SafeLinks를 풀어 원래 대상 URL을 확인합니다.
+  port-protocol-reference:
+    title: 포트 및 프로토콜 참조
+    description: 일반적인 네트워크 포트와 프로토콜을 보안 참고 사항, 위험 포트 표시와 함께 제공합니다.
+  cve-lookup:
+    title: CVE 조회
+    description: NIST NVD에서 ID나 키워드로 CVE를 검색합니다. NVD API의 실시간 데이터입니다.
+    ui:
+      chainedWith: 연계된 취약점
+      searchThisCve: 이 CVE 검색
+      range6m: 6개월
+      range1y: 1년
+      range2y: 2년
+      range5y: 5년
+      rangeAll: 전체 기간
+      noDescription: 설명이 없습니다.
+      fetchError: NVD API에 연결하지 못했습니다. 연결을 확인하세요.
+      sortNewest: 최신순
+      sortOldest: 오래된순
+      sortSeverity: 심각도 높은순
+      severityCritical: 긴급
+      severityHigh: 높음
+      severityMedium: 보통
+      severityLow: 낮음
+      placeholder: 'CVE ID 또는 키워드 (예: CVE-2021-44228, log4j)'
+      searching: 검색 중...
+      search: 검색
+      hint: 'CVE ID, 일부 번호(예: 43284), 통칭(예: log4shell, dirty frag), 키워드로 검색하세요. NVD와 GitHub Advisory Database의 실시간 데이터입니다.'
+      noResults: '"{query}"에 대한 CVE를 찾을 수 없습니다.'
+      noResultsInRange: '선택한 기간에서 "{query}"에 대한 CVE를 찾을 수 없습니다.'
+      noExactMatch: '선택한 기간에서 정확히 일치하는 구문을 찾을 수 없습니다. 흔히 쓰는 취약점 이름(예: "dirty frag")은 NVD 설명에 그대로 나오지 않을 수 있습니다. 대신 CVE 번호 일부로 검색해 보세요(예: "43284"로 CVE-2026-43284를 찾을 수 있습니다).'
+      searchAllTime: 전체 기간 검색
+      showingResults: 전체 {total}개 중 {shown}개 표시
+      allSeverities: 모든 심각도
+      allYears: 모든 연도
+      copied: 복사됨!
+      clickToCopyId: 클릭하여 CVE ID 복사
+      copiedShort: 복사됨
+      cveDetail: CVE 상세
+      published: 게시일
+      modified: 수정일
+      clickToCopy: 클릭하여 복사
+      references: 참고 자료
+      kevActionDue: 'CISA KEV 조치 기한:'
+      cvssMetrics: CVSS 지표
+      metricAttackVector: 공격 벡터
+      metricAttackComplexity: 공격 복잡성
+      metricPrivilegesRequired: 필요 권한
+      metricUserInteraction: 사용자 상호 작용
+      metricScope: 범위
+      metricConfidentiality: 기밀성
+      metricIntegrity: 무결성
+      metricAvailability: 가용성
+  email-dns-checker:
+    title: 이메일 DNS 검사기
+    description: 모든 도메인의 MX, SPF, DKIM, DMARC 레코드를 확인합니다. 이메일 인증 구성을 검증하고 흔한 설정 오류를 표시합니다.
+  email-header-parser:
+    title: 이메일 헤더 파서
+    description: 원본 이메일 헤더를 붙여 넣으면 발신자 정보를 추출하고, 전달 경로를 추적하며, SPF, DKIM, DMARC 인증 결과를 보여 줍니다.
+    ui:
+      pasteHint: 아래에 원본 이메일 헤더를 붙여 넣으세요.
+      parseButton: 헤더 분석
+      parseAnother: 다른 헤더 분석
+      messageDetails: 메시지 상세
+      senderMismatch: Sender 도메인이 From 도메인과 다릅니다. 스푸핑이나 위임 발송일 수 있습니다.
+      deliveryHops: 전달 홉
+      oldestFirst: 오래된순
+      authResults: 인증 결과
+      spamAnalysis: 스팸 분석
+      spamScore: 스팸 점수
+      spamStatus: 스팸 상태
+  whois-checker:
+    title: WHOIS 조회
+    description: 등록 기관, 생성일과 만료일, 네임서버, 상태 플래그 등 모든 도메인의 등록 정보를 조회합니다.
+  ascii-text-drawer:
+    title: ASCII 워드 아트 생성기
+    description: 다양한 글꼴과 스타일로 ASCII 워드 아트 텍스트를 만듭니다.
+    ui:
+      yourText: 텍스트
+      textPlaceholder: 그릴 텍스트
+      options: 옵션
+      font: 글꼴
+      searchFonts: 글꼴 검색...
+      noFontsMatch: 일치하는 글꼴 없음
+      width: 너비
+      output: ASCII 아트 출력
+      loadingFont: 글꼴 불러오는 중...
+      error: 현재 설정에서 오류가 발생했습니다.
+      copied: 복사됨!
+      copy: 복사
+  regex-tester:
+    title: 정규식 테스터
+    description: 샘플 텍스트로 정규식을 테스트합니다.
+    ui:
+      regexLabel: '테스트할 정규식:'
+      regexPlaceholder: 테스트할 정규식을 입력하세요
+      globalLabel: 전역
+      globalTitle: 전역 검색
+      ignoreCaseLabel: 대소문자 무시
+      ignoreCaseTitle: 대소문자를 구분하지 않는 검색
+      multilineLabel: 여러 줄
+      singlelineLabel: 한 줄
+      singlelineTitle: .이 줄 바꿈 문자와도 일치하도록 합니다.
+      unicodeLabel: 유니코드
+      unicodeTitle: 유니코드 모드. 패턴을 유니코드 코드 포인트의 시퀀스로 처리합니다.
+      unicodeSetsLabel: 유니코드 집합
+      unicodeSetsTitle: 더 많은 유니코드 기능을 제공하는 u 모드의 확장판입니다.
+      textLabel: '일치시킬 텍스트:'
+      textPlaceholder: 일치시킬 텍스트를 입력하세요
+      regexBarTitle: 정규식
+      matchesBarTitle: 일치 항목
+      matchIndex: 인덱스
+      matchValue: 값
+      matchCaptures: 캡처
+      matchGroups: 그룹
+      noMatch: 일치 항목 없음
+      sampleBarTitle: 샘플
+      diagramBarTitle: 다이어그램
+      quickReference: 빠른 참조
+  yaml-converter:
+    title: YAML 변환기
+    description: YAML을 JSON이나 TOML로 변환합니다.
+    ui:
+      convertTo: '변환 형식:'
+      inputLabel: YAML
+      inputPlaceholder: YAML을 여기에 붙여 넣으세요...
+      invalidYaml: 입력한 YAML이 올바르지 않습니다.
+      outputLabel: '{format} 출력'
+  json-converter:
+    title: JSON 변환기
+    description: JSON을 YAML이나 TOML로 변환합니다.
+    ui:
+      convertTo: 변환 형식
+      yourJson: JSON
+      pasteJsonPlaceholder: JSON을 여기에 붙여 넣으세요...
+      invalidJson: 올바르지 않은 JSON 형식
+      formatOutput: '{format} 출력'
+  toml-converter:
+    title: TOML 변환기
+    description: TOML을 JSON이나 YAML로 변환합니다.
+    ui:
+      convertTo: '변환 형식:'
+      yourToml: TOML
+      pastePlaceholder: TOML을 여기에 붙여 넣으세요...
+      invalidToml: 입력한 TOML이 올바르지 않습니다.
+      outputLabel: '{format} 출력'
+  xml-json-converter:
+    title: XML ↔ JSON 변환기
+    description: XML과 JSON을 양방향으로 변환합니다. 한쪽을 편집하면 다른 쪽이 자동으로 갱신됩니다.
+    ui:
+      invalidXml: 올바르지 않은 XML입니다.
+      invalidJson: 올바르지 않은 JSON입니다.
+      xmlLabel: XML
+      xmlPlaceholder: XML을 여기에 붙여 넣으세요...
+      jsonLabel: JSON
+      jsonPlaceholder: JSON을 여기에 붙여 넣으세요...
+  markdown-to-html:
+    title: Markdown을 HTML로
+    description: Markdown을 HTML로 변환하고 PDF로 내보내거나 인쇄합니다.
+    ui:
+      copiedSuccess: HTML이 클립보드에 복사되었습니다!
+      copyFailed: 텍스트를 복사하지 못했습니다.
+      inputLabel: '변환할 Markdown:'
+      inputPlaceholder: Markdown 내용...
+      outputLabel: '출력 HTML:'
+      copyHtmlButton: HTML 복사
+      printAsPdfButton: PDF로 인쇄
+  killer-pdf:
+    title: KillerPDF
+    description: Windows용 오픈 소스 PDF 편집기입니다. PDF 보기, 주석, 병합, 분할, 평면화, 암호로 보호된 PDF 열기, 텍스트 편집, 그리기, 강조 표시, 서명, 인쇄를 지원합니다.
+  killer-bench:
+    title: KillerBench
+    description: "Windows용 오픈 소스 진단 및 복구 워크벤치"
+  killer-scan:
+    title: KillerScan
+    description: 현장 기술자를 위한 빠른 네트워크 스캐너입니다. ARP와 ping 탐색, 포트 검사, 공급업체 조회, 자동 기기 분류를 제공합니다.
+  killer-shot:
+    title: KillerShot
+    description: '암호화된 스크린샷 앨범이자 화면 캡처 도구입니다. Print Screen으로 영역, 창, 모든 모니터를 캡처하고, 표시와 가림 처리를 한 뒤, 이미지 안의 텍스트로 다시 찾을 수 있습니다. 사진으로 부족할 때는 화면을 MP4나 GIF로 녹화하세요.'
+  gif-search:
+    title: GIF 검색
+    description: Giphy에서 리액션 GIF를 검색합니다. 결과를 클릭하면 URL이 복사됩니다.
+    ui:
+      errorStatus: 오류 {status}
+      fetchFailed: GIF를 가져오지 못했습니다.
+      searchPlaceholder: 'GIF 검색 (예: facepalm, nice work, this is fine)'
+      searching: 검색 중...
+      search: 검색
+      noResults: '"{query}"에 대한 GIF를 찾을 수 없습니다.'
+      copied: 복사됨!
+      copyUrl: URL 복사
+      resultsHint: '결과 {count}개. 클릭하여 URL을 복사한 뒤 Teams, Telegram, Slack에 붙여 넣으세요.'
+  killer-shell:
+    title: KillerShell
+    description: 파워 유저를 위한 무료 셸입니다. 파일 탐색기, 터미널, 텍스트 편집기가 하나의 창, 하나의 탭 줄, 하나의 단축키 체계를 공유합니다.
+  domain-lookup:
+    title: 도메인 조회
+    description: 모든 도메인의 WHOIS 등록 정보와 이메일 DNS 검사(MX, SPF, DKIM, DMARC)를 한 화면에서 보여 줍니다.
+    ui:
+      statusDesc:
+        active: 도메인이 활성 상태이며 정상 작동 중입니다.
+        inactive: 도메인이 비활성 상태입니다.
+        clientDeleteProhibited: 등록 대행자가 도메인 삭제를 잠갔습니다.
+        clientTransferProhibited: 등록 대행자가 다른 등록 대행자로의 도메인 이전을 잠갔습니다.
+        clientUpdateProhibited: 등록 대행자가 도메인 업데이트를 잠갔습니다.
+        clientHold: 등록 대행자가 도메인을 보류 상태로 두어 DNS가 확인되지 않을 수 있습니다.
+        serverDeleteProhibited: 레지스트리가 도메인 삭제를 잠갔습니다.
+        serverTransferProhibited: 레지스트리가 도메인 이전을 잠갔습니다.
+        serverUpdateProhibited: 레지스트리가 도메인 업데이트를 잠갔습니다.
+        serverHold: 레지스트리가 도메인을 보류 상태로 두어 DNS가 확인되지 않을 수 있습니다.
+        pendingCreate: 도메인 생성이 대기 중입니다.
+        pendingDelete: 도메인 삭제가 대기 중이며 곧 해제될 수 있습니다.
+        pendingRenew: 도메인 갱신이 대기 중입니다.
+        pendingRestore: 삭제된 도메인의 복원이 대기 중입니다.
+        pendingTransfer: 다른 등록 대행자로의 도메인 이전이 대기 중입니다.
+        pendingUpdate: 도메인 업데이트가 대기 중입니다.
+        redemptionPeriod: 도메인이 만료되어 복구 기간에 있습니다. 등록자는 아직 복구할 수 있습니다.
+        renewPeriod: 도메인이 등록 후 갱신 유예 기간에 있습니다.
+        autoRenewPeriod: 도메인이 자동 갱신 유예 기간에 있습니다.
+        transferPeriod: 도메인이 이전 유예 기간에 있습니다.
+      expiredAlert: 이 도메인은 {days}일 전에 만료되었으며 등록 가능할 수 있습니다.
+      expiresAlert: 이 도메인은 {days}일 후 만료됩니다. 신속히 갱신하세요.
+      expiredTag: '{days}일 전 만료'
+      remainingTag: '{days}일 남음'
+      registrar: 등록 대행자
+      registrarIanaId: 등록 대행자 IANA ID
+      created: 생성일
+      updated: 업데이트일
+      expires: 만료일
+      noMx: MX 레코드를 찾을 수 없습니다.
+      dnsFailed: DNS 조회에 실패했습니다.
+      noSpf: SPF 레코드를 찾을 수 없습니다.
+      noDkim: 일반적인 선택자에서 DKIM 레코드를 찾을 수 없습니다. 사용자 지정 선택자는 존재할 수 있습니다.
+      noDmarc: DMARC 레코드를 찾을 수 없습니다. 도메인이 스푸핑으로부터 보호되지 않습니다.
+      spfPlusAll: '경고: +all은 모든 서버가 이 도메인으로 메일을 보낼 수 있게 하므로 위험합니다.'
+      spfNeutralAll: '경고: ?all은 중립이며 보호 기능이 없습니다.'
+      dmarcPNone: '경고: p=none은 모니터링 전용이며 강제하지 않습니다. 이메일이 거부되지 않습니다.'
+      dmarcNoRua: '경고: 집계 보고서 주소(rua=)가 없습니다. DMARC 보고서를 받을 수 없습니다.'
+      pass: 통과
+      fail: 실패
+      warning: 경고
+      checking: 확인 중...
+      overallPass: 모든 이메일 검사를 통과했습니다. 이 도메인은 이메일 설정이 잘 되어 있습니다.
+      overallFail: 하나 이상의 중요 레코드가 없습니다. 이 도메인은 스푸핑에 취약할 수 있습니다.
+      overallWarn: 일부 레코드는 있지만 검토가 필요한 설정 문제가 있습니다.
+      rdapHttpError: 'HTTP {status}: 도메인이 존재하지 않거나 TLD가 지원되지 않을 수 있습니다.'
+      lookupFailed: 조회에 실패했습니다.
+      domainPlaceholder: '도메인 입력 (예: killertools.net)'
+      searching: 검색 중...
+      search: 검색
+      signed: 서명됨
+      unsigned: 서명 안 됨
+      delegationSigned: 위임이 서명되어 있습니다.
+      dsRecord: 'DS 레코드 {count}개.'
+      dsRecords: 'DS 레코드 {count}개.'
+      keyRecord: '키 레코드 {count}개.'
+      keyRecords: '키 레코드 {count}개.'
+      dnssecUnsigned: 이 도메인은 DNSSEC으로 보호되지 않습니다. DNS 응답을 암호학적으로 검증할 수 없습니다.
+      status: 상태
+      contacts: 연락처
+      remarks: 비고
+      nameservers: 네임서버
+      mxRecords: MX 레코드
+      spfRecord: SPF 레코드
+      dkimRecords: DKIM 레코드
+      dmarcRecord: DMARC 레코드
+      role:
+        registrant: 등록자
+        administrative: 관리
+        technical: 기술
+        abuse: 악용 신고
+      name: 이름
+      organization: 조직
+      email: 이메일
+      phone: 전화
+  email-record-generator:
+    title: 이메일 레코드 생성기
+    description: SPF와 DMARC DNS TXT 레코드를 생성합니다. 메일 공급자와 정책을 고르고 출력 결과를 DNS에 바로 복사하세요.
+    ui:
+      hardFailRecommended: 하드 실패, 권장
+      softFail: 소프트 실패
+      neutralNotRecommended: 중립, 권장하지 않음
+      blockFailingMail: 실패한 메일 차단
+      sendToSpam: 스팸으로 보내기
+      monitorOnly: 모니터링 전용
+      relaxedDefault: 완화 (기본값)
+      strict: 엄격
+      sameAsMainPolicy: 기본 정책과 동일
+      spfRecordTitle: SPF 레코드
+      dmarcRecordTitle: DMARC 레코드
+      spfRecordLocation: 루트 도메인의 TXT 레코드
+      dmarcRecordLocation: 다음 위치의 TXT 레코드
+      copied: 복사됨
+      clickToCopy: 클릭하여 복사
+      lookupWarning: 'DNS 조회 {count}개 선택됨. SPF는 조회 10회 제한이 있습니다'
+      mailProviders: 메일 공급자
+      customIps: 사용자 지정 IP 또는 범위 (선택)
+      examplePrefix: 예
+      enforcement: 강제 수준
+      policy: 정책
+      subdomainPolicy: 하위 도메인 정책 (선택)
+      policyCoverage: '정책 적용 범위: {percent}%'
+      coverageHint: '실패한 메일의 {percent}%에 정책이 적용됩니다. 점진적으로 도입하려면 100% 미만을 사용하세요.'
+      aggregateReportEmail: 집계 보고서 이메일 (rua)
+      forensicReportEmail: 포렌식 보고서 이메일 (ruf, 선택)
+      dkimAlignment: DKIM 정렬
+      spfAlignment: SPF 정렬
+  basic-auth-generator:
+    ui:
+      copied: 헤더가 클립보드에 복사되었습니다
+      username: 사용자 이름
+      usernamePlaceholder: 사용자 이름...
+      password: 비밀번호
+      passwordPlaceholder: 비밀번호...
+      headerLabel: 'Authorization 헤더:'
+      copyHeader: 헤더 복사
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS 로캘 날짜 문자열
+      formatUnixTimestamp: Unix 타임스탬프
+      formatTimestamp: 타임스탬프
+      formatUtc: UTC 형식
+      formatExcelDateTime: Excel 날짜/시간
+      invalidDateRule: 이 형식에 맞지 않는 날짜입니다
+      inputPlaceholder: 날짜 문자열을 붙여 넣거나 비워 두면 실시간 시계가 표시됩니다...
+      invalidDate: 이 형식에 맞지 않는 날짜
+      output: 출력
+      live: 실시간
+  integer-base-converter:
+    ui:
+      binary: 2진수
+      octal: 8진수
+      decimal: 10진수
+      hexadecimal: 16진수
+      base: 진법
+      output: 출력
+      custom: 사용자 지정
+  json-viewer:
+    ui:
+      invalidJson: 입력한 JSON이 올바르지 않습니다.
+      sortKeys: 키 정렬
+      indentSize: 들여쓰기 크기
+      yourRawJson: 원본 JSON
+      pasteRawJsonPlaceholder: 원본 JSON을 여기에 붙여 넣으세요...
+      prettifiedVersion: 정리된 JSON
+  meta-tag-generator:
+    ui:
+      copiedSuccess: 메타 태그가 복사되었습니다!
+      copiedLabel: ✓ 복사됨
+      copyButton: 복사
+      outputTitle: 메타 태그
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME 유형을 확장자로
+      mimeToExtensionDescription: MIME 유형에 연결된 파일 확장자를 확인합니다
+      mimeTypeSelectPlaceholder: 'MIME 유형을 선택하세요... (예: application/pdf)'
+      extensionsFoundPrefix: 다음
+      extensionsFoundSuffix: 'MIME 유형의 파일 확장자:'
+      extensionToMimeTitle: 파일 확장자를 MIME 유형으로
+      extensionToMimeDescription: 파일 확장자에 연결된 MIME 유형을 확인합니다
+      mimeFoundPrefix: 다음 확장자에 연결된 MIME 유형
+      mimeFoundSuffix: '파일 확장자:'
+      tableMimeTypesHeader: MIME 유형
+      tableExtensionsHeader: 확장자
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: 비밀 키 (hex)
+      epochLabel: Epoch
+      countLabel: 카운트
+      paddedHexLabel: 패딩된 hex
+      secretLabel: 비밀 키
+      secretPlaceholder: TOTP 비밀 키를 붙여 넣으세요...
+      generateNewSecret: 새 비밀 키 생성
+      tokenLabel: 토큰
+      copied: ✓ 복사됨
+      clickToCopy: 클릭하여 복사
+      nextIn: '>_ {seconds}초 후 다음'
+      adjacentTokensLabel: 인접 토큰
+      prevLabel: 이전
+      nextLabel: 다음
+      detailsLabel: 상세
+      scanToAuthenticate: '>_ 스캔하여 인증'
+      openKeyUriInNewTab: 새 탭에서 Key URI 열기
+      tokenDisplayPreviousLabel: 이전
+      tokenDisplayCurrentLabel: 현재 OTP
+      tokenDisplayNextLabel: 다음
+      copiedExclaim: 복사됨!
+      copyPreviousOtp: 이전 OTP 복사
+      copyCurrentOtp: 현재 OTP 복사
+      copyNextOtp: 다음 OTP 복사
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: 강함
+      moderateLabel: 보통
+      weakLabel: 약함
+      veryWeakLabel: 매우 약함
+      lengthLabel: 길이
+      entropyLabel: 엔트로피
+      charsetSizeLabel: 문자 집합 크기
+      scoreDetailLabel: 점수
+      passwordPlaceholder: 비밀번호를 입력하세요...
+      hideLabel: 숨기기
+      showLabel: 표시
+      clearLabel: 지우기
+      crackTimeSublabel: 무차별 대입 해독 시간
+      crackTimeNote: 강도는 초당 10억 회 추측하는 무차별 대입 시간으로 추정합니다. 사전 공격은 반영하지 않습니다.
+  portProtocolReference:
+    ui:
+      searchPlaceholder: 포트, 서비스, 프로토콜, 설명으로 검색...
+      allProtocols: 전체
+      dangerousOnly: 위험 포트만
+      showingPorts: 포트 {count}개 표시
+      copied: 복사됨!
+      clickToCopy: 클릭하여 포트 번호 복사
+      copiedCheck: ✓ 복사됨
+      dangerousPill: 위험
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet 탐색기
+      adminBadge: 관리자
+      cmdletSearchPlaceholder: 이름, 설명, 모듈로 검색...
+      noCmdletsMatch: '"{query}"와(과) 일치하는 cmdlet이 없습니다'
+      generatedCommand: 생성된 명령
+      copiedCheck: ✓ 복사됨!
+      copyCommand: 명령 복사
+      commonExamples: 일반적인 예시
+      selectCmdletPrompt: 왼쪽에서 cmdlet을 선택하여 명령 만들기를 시작하세요.
+      parameters: 매개변수
+      noParametersNeeded: 매개변수가 필요 없습니다. 이 cmdlet은 그대로 실행됩니다.
+      required: 필수
+      separateMultipleValues: 여러 값은 쉼표로 구분하세요
+      showFewerParameters: 매개변수 적게 보기
+      showMoreParameters: '매개변수 {count}개 더 보기'
+      collapseQuickReference: 빠른 참조 접기
+      openQuickReference: 빠른 참조 열기
+      quickReference: 빠른 참조
+      cheatsheetComparisonOperators: 비교 연산자
+      cheatsheetEqualTo: 같음
+      cheatsheetNotEqualTo: 같지 않음
+      cheatsheetGreaterLessThan: 보다 큼 / 보다 작음
+      cheatsheetGreaterLessEqual: 크거나 같음 / 작거나 같음
+      cheatsheetStringOperators: 문자열 연산자
+      cheatsheetWildcardMatch: 와일드카드 일치  (* 및 ?)
+      cheatsheetWildcardNonMatch: 와일드카드 불일치
+      cheatsheetRegexMatch: 정규식 일치
+      cheatsheetRegexNonMatch: 정규식 불일치
+      cheatsheetCollectionContains: 컬렉션에 값이 포함됨
+      cheatsheetValueInCollection: 값이 컬렉션에 있음
+      cheatsheetLogicalOperators: 논리 연산자
+      cheatsheetBothTrue: 두 조건이 모두 참이어야 함
+      cheatsheetEitherTrue: 둘 중 하나의 조건이 참
+      cheatsheetNegateCondition: 조건 부정
+      cheatsheetAutomaticVariables: 자동 변수
+      cheatsheetCurrentPipelineObject: 현재 파이프라인 개체
+      cheatsheetNullEmptyValue: Null / 빈 값
+      cheatsheetBooleanTrueFalse: 부울 참 / 거짓
+      cheatsheetLocalComputerName: 로컬 컴퓨터 이름
+      cheatsheetCurrentUser: 현재 로그온한 사용자
+      cheatsheetPsVersionInfo: PS 버전 정보
+      cheatsheetDateHelpers: 날짜 도우미
+      cheatsheetCurrentDateTime: 현재 날짜와 시간
+      cheatsheetThirtyDaysAgo: 30일 전
+      cheatsheetThreeMonthsAgo: 3개월 전
+      cheatsheetParseDateString: 날짜 문자열 분석
+      cheatsheetPipelineTricks: 파이프라인 요령
+      cheatsheetLimitFirst10: 처음 10개 결과로 제한
+      cheatsheetCountSumMinMax: 개수 / 합계 / 최소 / 최대
+      cheatsheetInteractiveGuiViewer: 대화형 GUI 뷰어 (로컬)
+      cheatsheetConvertToJson: 출력을 JSON으로 변환
+      cheatsheetOutputScreenAndFile: 화면과 파일에 동시 출력
+      cheatsheetSuppressErrors: 치명적이지 않은 오류 숨기기
+      cheatsheetRemoteExecution: 원격 실행
+      cheatsheetCmdletsSupportDirectly: 많은 cmdlet이 이를 직접 지원합니다
+      cheatsheetRunViaRemoting: PS Remoting(WinRM)으로 실행
+      cheatsheetInteractiveRemoteSession: 대화형 원격 PS 세션
+      categories:
+        all: 전체
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: 네트워킹
+        system: 시스템
+        services: 서비스
+        filesRegistry: 파일 및 레지스트리
+        pipeline: 파이프라인
+        bitlocker: BitLocker
+        securityDefender: 보안 및 Defender
+        windowsUpdate: Windows Update
+        certificates: 인증서
+        printManagement: 인쇄 관리
+        diskStorage: 디스크 및 스토리지
+        fileSharing: 파일 공유
+        groupPolicy: 그룹 정책
+        dnsServer: DNS 서버
+        dhcpServer: DHCP 서버
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: 스크립트 블록으로 감싸집니다
+  qrcode-reader:
+    title: QR 코드 리더
+    description: 이미지에서 QR 코드를 로컬로 읽고, 링크 경고와 Wi-Fi 비밀번호 복사를 제공합니다.
+    privacy: 이미지와 디코딩된 내용은 브라우저에만 남습니다. 링크는 열기를 선택할 때만 열립니다.
+    pick: QR 코드 이미지를 선택하거나 끌어다 놓으세요
+    reading: QR 코드를 로컬에서 읽는 중...
+    error: 이 이미지를 읽을 수 없습니다. 40MB 및 1,600만 픽셀 이하의 PNG, JPEG, WebP, BMP, GIF를 사용하세요.
+    none: QR 코드를 찾을 수 없습니다.
+    preview: QR 코드 윤곽선이 표시된 이미지
+    copy: 복사
+    copyPassword: 비밀번호 복사
+    copied: 복사되었습니다.
+    copyFailed: 복사할 수 없습니다. 텍스트를 선택하여 직접 복사하세요.
+    open: 열기
+    cancel: 취소
+    confirmTitle: 이 링크를 열까요?
+    warnings:
+      PlainHttp: 암호화되지 않은 HTTP 링크입니다.
+      UnusualPort: 일반적이지 않은 네트워크 포트입니다.
+      RawIp: 도메인 이름 대신 IP 주소를 사용합니다.
+      UserInfo: 호스트 앞에 사용자 정보가 포함되어 있습니다.
+      InternationalHost: 국제화 도메인 또는 퓨니코드 도메인입니다.
+      MixedScripts: 도메인에 비슷하게 생긴 여러 문자 체계가 섞여 있습니다.
+      DeepSubdomains: 하위 도메인이 비정상적으로 깊습니다.
+      Shortener: 단축 링크입니다. 최종 대상은 확인하지 않았습니다.
+      DirectDownload: 직접 다운로드 링크입니다.
+      EmbeddedDestination: "다른 웹 대상을 포함하고 있습니다. 리디렉션은 따라가지 않았습니다."
+      HiddenCharacters: "숨겨진 문자가 이 주소를 위장할 수 있습니다."
+      DisguisedDownload: "실행 파일 확장자가 다른 확장자 앞에 숨겨져 있습니다."
+    scanClear: "문제가 발견되지 않음"
+    scanReview: "열기 전에 검토하세요"
+    scanBlocked: "열기가 차단됨"
+    scanLocal: "로컬 검사만 수행했습니다. 대상에 접속하지 않았습니다."
+  qr-code-generator:
+    ui:
+      tabText: 텍스트 / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: 텍스트 또는 URL
+      placeholderTextOrUrl: 링크나 텍스트...
+      sectionEncryption: 암호화
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: 비밀번호 없음
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: 네트워크 이름...
+      sectionPassword: 비밀번호
+      placeholderPassword: 네트워크 비밀번호...
+      sectionOptions: 옵션
+      hiddenSsid: 숨겨진 SSID
+      anonymousIdentity: 익명 ID
+      sectionEapMethod: EAP 방식
+      sectionEapPhase2: EAP 2단계
+      sectionEapIdentity: EAP ID
+      placeholderEapIdentity: EAP ID...
+      sectionTheme: 테마
+      themeDefault: 기본
+      themeTerminal: 터미널
+      themeClassic: 클래식
+      themeInverted: 반전
+      sectionColors: 색상
+      labelForeground: '전경:'
+      labelBackground: '배경:'
+      sectionErrorCorrection: 오류 정정
+      levelLow: 낮음 (~7%)
+      levelMedium: 보통 (~15%)
+      levelQuartile: 4분위 (~25%)
+      levelHigh: 높음 (~30%)
+      emptyHintWifi: SSID를 입력하면 Wi-Fi QR이 생성됩니다
+      emptyHintText: 텍스트나 URL을 입력하세요
+      captionJoin: '>_ 스캔하여 연결'
+      captionOpen: '>_ 스캔하여 열기'
+      downloadPng: ↓ PNG 다운로드
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: 텍스트를 유니코드로
+      enterTextLabel: 유니코드로 변환할 텍스트를 입력하세요
+      unicodeFromTextLabel: 텍스트의 유니코드
+      unicodeOutputPlaceholder: 텍스트의 유니코드 표현이 여기에 표시됩니다
+      copyUnicode: 유니코드를 클립보드에 복사
+      unicodeToTextTitle: 유니코드를 텍스트로
+      inputUnicodePlaceholder: 유니코드 입력
+      enterUnicodeLabel: 텍스트로 변환할 유니코드를 입력하세요
+      textFromUnicodeLabel: 유니코드의 텍스트
+      textOutputPlaceholder: 유니코드의 텍스트 표현이 여기에 표시됩니다
+      copyText: 텍스트를 클립보드에 복사
+  yaml-viewer:
+    ui:
+      invalidYaml: 입력한 YAML이 올바르지 않습니다.
+      sortKeys: 키 정렬
+      indentSize: 들여쓰기 크기
+      rawLabel: 원본 YAML
+      rawPlaceholder: 원본 YAML을 여기에 붙여 넣으세요...
+      prettifiedLabel: 정리된 YAML
+  killer-modules:
+    title: Killer Modules
+    description: Windows 관리와 MSP 현장 업무를 위한 PowerShell 모듈입니다. PowerShell Gallery에서 설치하세요.
+    ui:
+      repo: 저장소
+      commands: 명령
+      requires: 요구 사항
+      copyInstall: 설치 명령 복사
+      copied: 복사됨!
+      modules:
+        KillerPivot:
+          description: 엉뚱한 테넌트에 명령을 실행하지 않고 PowerShell에서 Microsoft 365 테넌트를 전환합니다. KillerPivot은 인증 브로커를 비활성화해 실제 로그인 창을 띄운 뒤, 세션이 실제로 어느 테넌트에 연결되었는지 확인하고 검증한 다음에야 작업을 시작하게 합니다. 테넌트를 한 번 저장해 두면 ID 검증이 내장된 상태로 이름만으로 전환할 수 있습니다.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (-Graph 사용 시)
+        KillerScripts:
+          description: killer-scripts 저장소의 모든 도구를 어떤 PowerShell 세션에서든 명령으로 사용할 수 있습니다. 각 스크립트는 실행하는 순간 GitHub에서 새로 가져오므로 항상 최신 버전을 사용하며, 오프라인일 때는 로컬 캐시를 사용합니다. 19개 도구 모두 고유한 명령과 짧은 별칭이 있어 urt를 입력하면 Universal Rename Tool이 실행됩니다.
+          requirements: PowerShell 5.1 & 7 · 최신 스크립트를 가져오기 위한 인터넷 연결 (캐시된 사본은 오프라인으로 실행)
+  killer-notes:
+    title: KillerNotes
+    description: 기술자를 위한 암호화 메모장입니다. 서식 있는 텍스트, 인라인 이미지, 실제 표, 즉시 검색, SQLCipher AES-256, .knote 공유를 지원합니다.
+  killendar:
+    title: The Killendar
+    description: Windows용 암호화 데스크톱 캘린더입니다. 월, 주, 일, 일정 목록 보기, 색상 범주, iCalendar 가져오기와 내보내기를 지원하며, 약속은 내 컴퓨터의 파일 하나에 저장됩니다. 계정, 동기화, 원격 분석이 없습니다.
+components:
+  localeSelector:
+    language: 언어
+  androidBetaBanner:
+    announcement: Android 베타 안내
+    title: Killer Tools가 Android로 찾아옵니다
+    subtitle: 베타 테스터 모집 중, 탭하여 참여하세요
+    dismiss: 닫기
+  formatTransformer:
+    input: 입력
+    inputPlaceholder: 입력...
+    output: 출력
+  inputCopyable:
+    copied: 복사됨!
+    copy: 클립보드에 복사
+  spanCopyable:
+    copied: 복사됨!
+    copy: 클립보드에 복사
+  textareaCopyable:
+    copy: 클립보드에 복사
+    copied: 복사됨!
+  navbarButtons:
+    androidTooltip: Android용 Killer Tools
+    androidAriaLabel: Android용 Killer Tools 베타 참여하기
+  themeDots:
+    themes:
+      dark: 다크
+      light: 라이트
+      black: 블랙
+      blood: 블러드
+      greed: 그리드
+      cyanotic: 시아노틱
+      ectoplasm: 엑토플라즘
+      decay: 디케이
+      malaise: 말레즈
+      sepulchre: 세펄커
+      delirium: 딜리리움
+      mourning: 모닝
+    accentColor: 강조 색
+    theme: 테마
+    toggleThemeSwatches: 테마 견본 전환
+    accentColorPicker: 강조 색 선택기
+    dragToMove: 드래그하여 이동
+    accentLabel: '강조:'
+    accentNamed: '강조: {name}'
+    closeAccentPicker: 강조 색 선택기 닫기
+    filmGrain: 필름 그레인
+    accents:
+      red: 빨강
+      orange: 주황
+      green: 초록
+      teal: 청록
+      blue: 파랑
+      purple: 보라
+      yellow: 노랑
+      magenta: 자홍
+layouts:
+  menuLayout:
+    eggMessage: 도구 80개. 구독 0개. 앙심 품은 현장 기술자 한 명.
+    clickMe: 클릭해 보세요
+    sourceOnGithub: GitHub의 소스
+  base:
+    collapseMenu: 메뉴 접기
+    homeLabel: KillerTools 홈
+ui:
+  diffEditor:
+    originalLabel: 원본
+    modifiedLabel: 수정본
+    originalPlaceholder: 원본 텍스트...
+    modifiedPlaceholder: 수정된 텍스트...
+  fileUpload:
+    defaultTitle: 파일을 여기에 끌어다 놓거나 클릭하여 파일을 선택하세요
+    or: 또는
+    browseFiles: 파일 찾아보기
+  inputText:
+    defaultPlaceholder: 텍스트 입력
+  keyValueListItem:
+    yes: 예
+    no: 아니요
+    notAvailable: 해당 없음
+  modalValue:
+    copied: 복사됨!
+    copy: 복사
+  select:
+    searchPlaceholder: 검색...
+    noResults: 결과를 찾을 수 없습니다
+    defaultPlaceholder: 옵션 선택
+  table:
+    defaultDescription: 데이터 표
+  textCopyable:
+    copied: 복사됨!
+    copyToClipboard: 클립보드에 복사
+commandPalette:
+  searchAriaLabel: 검색
+  searchPlaceholder: 도구나 명령을 검색하려면 입력하세요...
+pages:
+  notFound:
+    noSuchFile: 해당 파일이나 디렉터리가 없습니다
+    exitCode: 종료 코드
+    backToHome: 홈으로 돌아가기
+  privacy:
+    heading: 개인정보 처리방침
+    lastUpdated: '최종 업데이트: 2026년 4월 4일'
+    overviewHeading: 개요
+    overviewIntro: Killer Tools
+    overviewBody: 는 무료 IT 유틸리티 도구 모음입니다. 여러분의 개인정보는 중요하며, 이 방침은 데이터를 어떻게 처리하는지 설명합니다.
+    dataCollectionHeading: 데이터 수집
+    dataCollectionBody: Killer Tools는 어떠한 개인 데이터도 수집, 저장, 전송하지 않습니다. 모든 도구 처리는 전적으로 브라우저에서 이루어집니다. 도구에 입력한 데이터는 어떤 서버로도 전송되지 않습니다.
+    cookiesHeading: 쿠키
+    cookiesBody: 이 사이트는 추적용 쿠키를 사용하지 않습니다. 테마 기본 설정과 설정은 브라우저에 로컬로 저장되며 절대 전송되지 않습니다.
+    analyticsHeading: 분석
+    analyticsIntro: 이 사이트는 페이지 조회수와 유입 경로 같은 전반적인 사용 패턴을 파악하기 위해
+    analyticsBody: 를 사용합니다. 이는 개인정보 보호 중심의 분석 도구입니다. Umami는 쿠키를 사용하지 않고, 사이트 간에 사용자를 추적하지 않으며, 개인 식별 정보를 수집하지 않습니다. 모든 데이터는 집계되고 익명화됩니다.
+    thirdPartyHeading: 타사 서비스
+    thirdPartyBody: 일부 도구는 외부 자료나 문서로 연결될 수 있습니다. 해당 외부 사이트의 개인정보 처리 관행에 대해서는 책임지지 않습니다.
+    androidAppHeading: Android 앱
+    androidAppBody: Killer Tools Android 앱은 웹 애플리케이션을 감싼 래퍼입니다. 기본 인터넷 접근 외에는 어떠한 기기 권한도 요청하거나 사용하지 않습니다. 기기 데이터는 수집되거나 전송되지 않습니다.
+    contactHeading: 문의
+    contactBody: 이 개인정보 처리방침에 대해 궁금한 점이 있으면 다음으로 연락하세요
+  androidApp:
+    heroAlt: 현장 기술자를 위한 IT 유틸리티 도구, Android용 Killer Tools
+    robotAttribution: Android 로봇은 Google이 제작하고 공유한 저작물을 복제하거나 수정한 것이며, Creative Commons 3.0 저작자 표시 라이선스에 설명된 조건에 따라 사용됩니다.
+    heading: Android용 Killer Tools
+    introBody1: 'killertools.net의 모든 도구를 네이티브 Android 앱으로 제공합니다. 모든 도구, Killer Scripts 라이브러리, 즐겨찾기를 홈 화면에서 탭 한 번으로 사용할 수 있습니다.'
+    introBody2: 규칙은 사이트와 같습니다. 모든 것이 기기에서 실행됩니다. 계정도, 원격 분석도, 외부 통신도 없습니다. 현장에서 티켓 처리 한 번이라도 줄여 준다면 제 역할을 한 것입니다.
+    betaStatusPrefix: 이 앱은 현재
+    betaStatusStrong: Google Play 비공개 베타
+    betaStatusSuffix: ' 중이며, 여기서 여러분의 도움이 필요합니다.'
+    joinBetaHeading: 베타 참여하기
+    joinBetaIntroPrefix: Google은 독립 개발자의 앱을 공개하기 전에
+    joinBetaIntroStrong: 테스터 12명이 14일 연속으로 앱을 설치한 상태
+    joinBetaIntroSuffix: '를 요구합니다. 세 단계, 약 2분이면 12명 중 한 명이 될 수 있습니다:'
+    step1LinkText: 테스터 그룹 가입
+    step1Suffix: Google Groups에서 진행합니다("그룹 가입" 클릭).
+    step2LinkText: 테스터 되기
+    step2Suffix: Google Play 참여 페이지에서 진행합니다.
+    step3LinkText: 앱 설치
+    step3Suffix: Google Play에서 설치하고 2주 동안 유지하세요.
+    sameAccountStrong: 세 단계 모두 같은 Google 계정을 사용하세요
+    sameAccountSuffix: '. 그룹 가입을 건너뛰거나 계정을 바꾸면 참여 페이지에 "이 계정에서는 사용할 수 없음"이라고 표시됩니다.'
+    feedbackPrefix: '문제가 있거나 빠진 기능이 있나요? 알려 주세요:'
+  home:
+    sortPopular: 인기순
+    sortAZ: A - Z
+    sortZA: Z - A
+  about:
+    heading: Killer Tools 소개
+    intro: 현장 기술자에게는 군더더기에 쓸 시간이 없습니다. 여기 있는 모든 도구는 제가 업무 중에 필요했지만 계정, 설치, 원격 분석 없이 바로 동작하는 것을 찾지 못해서 만든 것입니다.
+    originPrefix: 저는 6년간의 풀스택 개발과 여러 회사에서 8년간 현장 기술자로 일한 뒤, 지금은 MSP의 사내 AI 엔지니어링 팀에서 도구를 만들고 있습니다. KillerTools.net은 다음의 훌륭한
+    originMid: 프로젝트(제작자
+    originSuffix: )의 포크로 시작해, 제가 실제로 하는 일에 맞춘 도구로 성장했습니다. 티켓 처리 중에 그룹 정책 설정을 조회하고, 고객의 서브넷을 스캔하고, 브라우저를 떠나지 않고 포트 참조를 찾으려고 만들었습니다.
+    scriptsLibrary: Killer Scripts 라이브러리는 티켓 처리 때마다 반복되는 작업을 다룹니다. 모든 스크립트는 의존성 없이 PS 5.1, PS 7, Kaseya LiveConnect에서 실행됩니다.
+    privacyBody: 모든 것은 브라우저에서 실행됩니다. 아무것도 추적하지 않습니다. 계정은 절대 필요하지 않습니다. 사이트는 엄격한 Content Security Policy를 적용해 의존성 체인 공격을 차단합니다. 손상된 npm 패키지가 번들에 들어오더라도, 붙여 넣은 내용을 외부로 보낼 수 없습니다.
+    maintainedByPrefix: 만들고 관리하는 사람
+    maintainedByMid: 업무 시간을 아끼는 데 도움이 되었다면,
+    buyMeCoffee: 커피 한 잔
+    maintainedBySuffix: 은 감사히 받겠지만 결코 기대하지는 않습니다.
+    missingToolHeading: 원하는 도구가 없나요? 버그를 발견했나요?
+    issuesPrefix: GitHub의
+    issuesLinkText: 이슈 섹션
+    issuesSuffix: 에서 기능 요청이나 버그 보고를 열어 주세요. 모두 읽고 있습니다.
+    alsoTryHeading: 함께 써 보세요...
+    tagKillerScan: Windows용 오픈 소스 네트워크 스캐너
+    tagKillerPdf: Windows용 오픈 소스 PDF 편집기
+    tagKillerShell: 파워 유저를 위한 Windows용 오픈 소스 셸
+    tagKillerNotes: Windows용 오픈 소스 암호화 메모장
+    tagKillendar: Windows용 오픈 소스 암호화 캘린더
+    tagKillerBench: Windows용 오픈 소스 진단 및 복구 워크벤치
+    tagKillerShot: Windows용 오픈 소스 암호화 스크린샷 앨범
+    linksHeading: 링크
+    linkLabelSite: 사이트
+    linkLabelSource: 소스
+    linkLabelIssues: 이슈
+    reportBug: 버그 신고
+    requestFeature: 기능 요청
+    linkLabelSupport: 후원
+    linkLabelBuiltOn: 기반
+    itToolsFork: IT-Tools (포크)
+  mcp:
+    copy:
+      copying: 복사 중...
+      copied: '{label} 복사됨'
+      failed: '복사하지 못했습니다. 대신 이것을 복사하세요: {value}'
+      popups: 서버 URL이 복사되었습니다. Claude를 열려면 팝업을 허용하세요.
+    labels:
+      serverUrl: 서버 URL
+      codex: Codex 명령
+      claudeCode: Claude Code 명령
+    description: KillerMCP는 AI 에이전트를 KillerTools 유틸리티와 지원되는 Killer 앱에 연결합니다. 호스팅된 Cloudflare 서버나 설치형 Windows 버전 중에서 선택하세요.
+    github: GitHub의 KillerMCP
+    eyebrow:
+      agents: 하나의 이름 / 두 가지 연결 방법
+      oneInstaller: WINDOWS에 설치
+      hosted: CLOUDFLARE에서 호스팅
+      after: 연결 후
+    lead: 에이전트에게 유용한 KillerTools 명령을 제공하세요. 웹에서 안전하게 쓸 수 있는 유틸리티는 공개 Cloudflare 서버에 연결하고, 로컬 도구와 지원되는 Killer 앱은 Windows에 KillerMCP를 설치해 사용하세요.
+    status: 사용하려는 데이터와 앱에 맞는 연결 방식을 선택하세요.
+    install: 설치
+    intro: Windows 설치 프로그램은 81개 KillerTools 유틸리티 전체와, 이 컴퓨터에 설치된 지원 Killer 앱이 제공하는 명령을 하나의 로컬 연결로 에이전트에 제공합니다. 앱 명령은 앱 버전과 사용 가능 여부에 따라 달라집니다. 별도의 Node나 소스 체크아웃은 필요 없습니다.
+    download: Windows용 다운로드
+    meta:
+      version: 버전 {version}
+      signed: 디지털 서명됨
+      hosted: GitHub Releases에서 호스팅
+    steps:
+      s1Title: KillerMCP Setup을 다운로드하여 실행하세요.
+      s1Body: Setup은 .NET 10 런타임을 확인하고, 없으면 Microsoft 다운로드 페이지를 엽니다. 설치 프로그램은 Open Source Developer Stephen Riley가 서명했으며 GitHub Releases를 통해 배포됩니다.
+      s2Title: Setup이 에이전트를 연결하도록 하세요.
+      s2Body: 공유 런타임을 설치하고, 발견되는 경우 Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI, Windsurf에 KillerMCP를 등록합니다.
+      s3Title: 새 에이전트 채팅을 열고 요청하세요.
+      s3Body: KillerMCP는 하나의 연결로 사용 가능한 KillerTools와 설치된 앱 명령을 찾아냅니다.
+    hostedTitle: 설치 없이 연결
+    hostedBody: 공개 Cloudflare 서버는 HTTP 연결로 웹에서 안전하게 쓸 수 있는 KillerTools 유틸리티 64개를 제공합니다. Windows 파일이나 설치된 Killer 앱에는 접근할 수 없습니다. 나머지 KillerTools 유틸리티 17개와 모든 데스크톱 앱 명령은 KillerMCP 설치가 필요합니다.
+    actions:
+      cursor: Cursor에 추가
+      vscode: VS Code에 추가
+      claude: URL 복사 후 Claude 열기
+      codex: Codex 설정 명령 복사
+      claudeCode: Claude Code 설정 명령 복사
+      copyUrl: URL 복사
+      copyCommand: 명령 복사
+    otherClient: 다른 MCP 클라이언트를 사용하나요? 서버 URL을 복사하세요.
+    shortest: '가장 짧고 유용한 프롬프트는 {prompt}입니다. 예: {example}.'
+    infer: 에이전트는 작업과 주어진 맥락에서 알맞은 KillerTools나 Killer 앱 도구를 추론할 수 있습니다. 대상을 명시하고 싶을 때만 {a}, {b}, {c} 또는 다른 앱 이름을 사용하세요. 밑줄, 작업 이름, 슬래시 명령은 필요 없습니다.
+    worker:
+      title: Cloudflare Worker의 작동 방식
+      p1: 공개 엔드포인트는 웹사이트와 별도로 배포된 오픈 소스 스트리밍 HTTP MCP 서버입니다. MCP 클라이언트는 도구 이름과 제한된 인수를 {url}(으)로 보냅니다. Worker는 요청을 검증하고, 선택한 유틸리티를 실행한 뒤 결과를 반환합니다.
+      p2: 대부분의 계산과 변환은 Worker에서 직접 실행됩니다. DNS 쿼리는 Cloudflare DNS over HTTPS를 사용합니다. 도메인 등록 정보는 IANA RDAP 디렉터리를 따릅니다. CVE, GIF, 카탈로그 검색은 각 공개 제공자에 접속하므로 제공자가 사용할 수 없거나 속도 제한이 걸리면 실패할 수 있습니다.
+    examples:
+      title: 이렇게 요청해 보세요
+      intro: '{killer}(으)로 시작하고 원하는 결과를 설명하세요. 작업이 명확하면 앱이나 도구 이름은 생략해도 됩니다.'
+      e1: thekiller.net 도메인 검색
+      e2: 192.168.10.0/24 계산
+      e3: Windows 이벤트 4625 조회
+      e4: CVE-2025-53770 조사
+      e5: 이 이메일 헤더 분석
+      e6: 중지된 서비스를 나열하는 PowerShell 명령 만들기
+      e7: 이 JSON을 CSV로 변환
+      e8: 이 두 JSON 문서 비교
+      e9: example.com용 SPF 레코드 생성
+      e10: 이 Base64 텍스트 디코딩
+      e11: 이 M365 SKU 식별
+      e12: 이 ND 필터로 30초 노출 계산
+    apps:
+      title: 'Killer 앱 통합'
+      intro: '이 예시는 Windows 컴퓨터에 설치된 KillerMCP와 지원되는 Killer 앱을 사용합니다. 평범한 말로 요청하면 에이전트가 사용 가능한 명령을 선택합니다.'
+      killendarNote: '약속을 만들려면 Killendar가 열려 있고 잠금 해제되어 있어야 합니다.'
+      shortcut: '이 프롬프트는 모두 앱 이름 대신 {killer}(으)로 시작할 수 있습니다. 특정 앱을 명시하고 싶을 때만 앱 이름을 쓰세요.'
+      pdf1: killerpdf 이 PDF들을 이 순서대로 병합
+      pdf2: killerpdf 이 PDF에서 송장 번호 검색
+      pdf3: killer 이 PDF에 검색 가능한 OCR 레이어 추가
+      pdf4: killer 이 KillerNotes 메모를 PDF로 변환
+      notes1: killernotes 사무실 네트워크에 관한 내 메모 찾기
+      notes2: killernotes 이 회의 요약으로 메모 만들기
+      notes3: killer projects 태그가 붙은 내 메모 나열
+      notes4: killer 이 KillerScan 보고서를 메모로 저장
+      scan1: killerscan 내 로컬 네트워크 정보 표시
+      scan2: killerscan 192.168.1.0/24에서 기기 스캔
+      scan3: killer example.com에 ping하고 패킷 손실 표시
+      scan4: killer 이 네트워크 스캔으로 PDF 보고서 만들기
+      shell1: killershell 이 컴퓨터에서 실행 중인 서비스 나열
+      shell2: killershell C:\Docs에서 invoice라는 이름의 파일 검색
+      shell3: killer 최신 Application 로그 항목 표시
+      shell4: killer 이 디렉터리 목록을 PDF로 저장
+      calendar1: killendar 내일 내 약속 표시
+      calendar2: killendar 내일 오전 9시에 Morning standup이라는 약속 만들기
+      calendar3: killer 앞으로 7일간 내 일정 표시
+      calendar4: killer 다음 주 일정을 메모로 저장
+      bench1: killerbench Windows 오류 코드 5 조회
+      bench2: killerbench 아무것도 변경하지 않고 이 컴퓨터의 상태 점검
+      bench3: killerbench 읽기 전용 진단 스캔 실행
+      bench4: killerbench 내 진단 작업 결과 표시
+      shot1: killershot 내 모니터 나열
+      shot2: killershot 현재 모니터 스크린샷 찍기
+      shot3: killershot 최근 캡처 표시
+      shot4: killershot 이 이미지의 텍스트 읽기
+    twice:
+      title: '{km}이(가) 두 번 실행되는 이유'
+      body: Claude Desktop은 각 로컬 MCP 서버를 두 번 시작합니다. 하나는 앱 자체의 채팅을, 다른 하나는 이 컴퓨터를 원격으로 사용하는 Claude 세션을 처리합니다. 작업 관리자에서 Claude 아래에 KillerMCP.exe 프로세스가 두 개 보이는 것은 정상입니다. KillerMCP가 두 번 설치된 것이 아니며, 고칠 것은 없습니다.
+    can:
+      title: 무엇을 할 수 있나요?
+      intro: '평범한 말로 요청하세요. 에이전트가 사용 가능한 도구와 입력값을 찾아 필요한 도구를 호출합니다. 예를 들어 다음을 할 수 있습니다:'
+      i1: IPv4 서브넷 계산, 주소 범위 확장, IPv6 ULA 접두사 생성, MAC 공급업체 조회.
+      i2: DNS 레코드와 도메인 등록 정보 확인, CVE 검색, 포트와 프로토콜 식별.
+      i3: 이메일 헤더 분석, SPF 또는 DMARC 레코드 생성, Exchange NDR 메시지 조회.
+      i4: Windows 오류 및 이벤트 ID, 그룹 정책 설정, M365 라이선스 SKU 찾기.
+      i5: PowerShell cmdlet을 검색하고, 실행 전에 검토할 수 있도록 명령을 조립.
+      i6: JSON과 XML 포맷, JSON을 CSV로 또는 JSON, YAML, TOML 간 변환, Base64 디코딩, 문서 비교, 정규식 테스트.
+      i7: QR 코드, UUID, 메타 태그, 플레이스홀더 생성, 또는 사진 노출과 필름 계산.
+      i8: 대소문자, 날짜, 시간, 온도, 색상, 진법, 로마 숫자, 2진수 텍스트, NATO 철자, 전화번호 형식 변환.
+      i9: SQL, YAML, TOML, Markdown, HTML 엔티티, 구조화된 데이터 포맷, 또는 백분율, cron 일정, chmod 값 계산.
+      i10: 이모지, GIF, KillerScripts, Killer 모듈 검색, 또는 URL, user agent, HTTP 상태 코드, 텍스트 통계 확인.
+    cov:
+      title: 어떤 연결이 무엇을 하나요?
+      hostedTitle: Cloudflare 서버
+      hostedBody: 웹에서 안전한 유틸리티 64개, 작업 74개. HTTP로 원격 실행되며 설치가 필요 없습니다. 로컬 앱이나 파일에는 접근할 수 없습니다.
+      installedTitle: Windows 설치
+      installedBody: KillerTools 유틸리티 81개 전체와 작업 94개, 그리고 설치된 지원 Killer 앱의 명령. 로컬 MCP 연결로 실행됩니다.
+      browserTitle: 브라우저 도우미
+      browserBody: 카메라, 기기, 편집기, 서명 도구는 비공개 localhost 페이지를 엽니다.
+    data:
+      title: 데이터는 어디로 가나요?
+      p1: 설치된 KillerMCP 런타임은 내 컴퓨터에서 실행됩니다. 일부 네트워크 및 참조 조회는 여전히 공개 데이터 소스에 접속합니다. 에이전트는 요청을 완료하는 데 필요한 입력과 결과를 받습니다.
+      p2: 선택 사항인 호스팅 연결은 도구 입력을 KillerTools Cloudflare Worker로 보냅니다. 로그인이 없고, 요청 본문을 64 KiB로 제한하며, 제한된 스키마를 적용하고, 연결하는 IP마다 속도를 제한합니다. 호스팅 연결로 비밀번호, 개인 파일, 토큰, 고객 데이터를 보내지 마세요.
+      p3: 로컬 파일, 브라우저, 비밀번호, 토큰, 암호화, 해싱, OTP, BIP39, 키 생성 도구는 공개 Worker에서 제외됩니다. 이 도구들은 설치된 KillerMCP로 실행되지만, MCP 클라이언트와 모델 제공자는 여전히 입력과 결과를 받을 수 있습니다.
+    oss:
+      title: 오픈 소스와 현재 제한 사항
+      p1: '{kt}에는 공개 Worker, 로컬 KillerTools 번들, 작업 매핑, 검증 스키마, 적용 범위 검사가 포함되어 있습니다. {km}에는 공유 로컬 호스트, 데스크톱 앱 어댑터, 설치 프로그램, 통합 검사가 포함되어 있습니다.'
+      ktLink: KillerTools 소스
+      kmLink: KillerMCP 소스
+      p2: 외부 조회 결과는 해당 소스에 따라 달라집니다. 로컬 도구는 도구 호출에서 제공된 경로나 값만 받습니다. Base64 파일 디코딩은 새 파일을 만들며 기존 파일을 덮어쓰지 않습니다. 카메라 캡처는 여전히 브라우저 권한을 직접 허용하고 하드웨어를 확인해야 합니다. 현재 KillerMCP 설치 프로그램은 서명과 타임스탬프가 적용되어 GitHub Releases를 통해 배포됩니다.

@@ -356,7 +356,7 @@ function formatShutter(seconds: number): string {
                 {{ row.label }}
               </td>
               <td class="ee-td-ss" :class="{ 'ee-td-empty': row.shutter === null }">
-                {{ row.shutter === null ? '—' : formatShutter(row.shutter) }}
+                {{ row.shutter === null ? 'N/A' : formatShutter(row.shutter) }}
               </td>
             </tr>
           </tbody>

@@ -143,7 +143,7 @@ const { download } = useDownloadFileFromBase64({ source: base64 });
       </div>
     </div>
 
-    <!-- Preview — separate root element so the framework layout gives it full remaining space -->
+    <!-- Preview: separate root element so the framework layout gives it full remaining space -->
     <div class="sp-preview-panel">
       <span class="sp-label">{{ t('tools.svg-placeholder-generator.ui.previewLabel') }}</span>
       <div class="sp-preview-frame">
@@ -412,7 +412,7 @@ html:not(.dark) .sp-label { color: rgba(0, 0, 0, 0.50) !important; }
 
 /* sp-output-block matches systemic [class*="-output"] → gets #f0f0f0 bg; reset it */
 html:not(.dark) .sp-output-block { background: transparent !important; border: none !important; }
-/* sp-preview-panel matches systemic [class*="-panel"] at (0,6,1)+!important — need (0,7,1) to beat it */
+/* sp-preview-panel matches systemic [class*="-panel"] at (0,6,1)+!important; need (0,7,1) to beat it */
 html:not(.dark) .sp-preview-panel.sp-preview-panel.sp-preview-panel.sp-preview-panel.sp-preview-panel { background: transparent !important; border: none !important; }
 
 html:not(.dark) .sp-stepper {

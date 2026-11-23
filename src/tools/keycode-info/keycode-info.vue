@@ -49,7 +49,7 @@ async function copyValue(label: string, value: string) {
       <div class="kc-key-area">
         <span v-if="event && event.key.length === 1" class="kc-key-char">{{ event.key }}</span>
         <span v-else-if="event" class="kc-key-name">{{ event.key }}</span>
-        <span v-else class="kc-key-placeholder">—</span>
+        <span v-else class="kc-key-placeholder">N/A</span>
       </div>
       <span class="kc-hint">
         <span class="kc-cursor">▋</span>
@@ -68,7 +68,7 @@ async function copyValue(label: string, value: string) {
       >
         <span class="kc-prompt">&gt;_</span>
         <span class="kc-label">{{ label }}</span>
-        <span class="kc-value">{{ value || '—' }}</span>
+        <span class="kc-value">{{ value || 'N/A' }}</span>
         <span class="kc-copy-icon" :class="{ 'kc-copy-done': copiedLabel === label }">
           <span v-if="copiedLabel === label">✓</span>
           <icon-mdi-content-copy v-else-if="value" />

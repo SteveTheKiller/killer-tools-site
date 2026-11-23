@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Помилка тайм-ауту читання мережі (проксі)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Використовується деякими HTTP-проксі для сигналізації тайм-ауту читання під час зв'язку з вищим сервером.",
   "Network Connect Timeout Error (Proxies)": "Помилка тайм-ауту підключення мережі (проксі)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Використовується деякими HTTP-проксі, коли не вдалося вчасно підключитися до вищого сервера."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Використовується деякими HTTP-проксі, коли не вдалося вчасно підключитися до вищого сервера."
 }

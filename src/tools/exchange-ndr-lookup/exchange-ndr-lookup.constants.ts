@@ -265,7 +265,7 @@ export const ndrCategories: {
         name: 'Phishing Detected by Defender for Office 365',
         description: 'Microsoft Defender for Office 365 identified the message as a phishing attempt and blocked it.',
         cause: 'Message content, URLs, sender behavior, or impersonation signals triggered Defender phishing detection.',
-        fix: 'For false positives: submit the message to Microsoft via the Submissions portal as "Should not have been blocked". Add legitimate senders to the Tenant Allow/Block List after review. Do not bypass without verification — this is high-confidence phishing detection.',
+        fix: 'For false positives: submit the message to Microsoft via the Submissions portal as "Should not have been blocked". Add legitimate senders to the Tenant Allow/Block List after review. Do not bypass without verification, because this is high-confidence phishing detection.',
         severity: 'Critical',
       },
       {
@@ -273,7 +273,7 @@ export const ndrCategories: {
         name: 'Remote Server Did Not Accept Message',
         description: 'The destination server rejected the message for a compliance, policy, or recipient-side reason.',
         cause: 'Recipient-side mail flow rule, conditional access policy, journaling/archive issue, or third-party security gateway rejection.',
-        fix: 'Contact the recipient organization admin — the rejection is on their side. Provide them the full NDR header so they can locate the rejecting system or rule.',
+        fix: 'Contact the recipient organization admin. The rejection is on their side. Provide them the full NDR header so they can locate the rejecting system or rule.',
         severity: 'Error',
       },
     ],
@@ -780,7 +780,7 @@ export const ndrCategories: {
         name: 'Bad Connection',
         description: 'The connection to the destination server was lost during delivery.',
         cause: 'Network instability, firewall reset, or destination server dropping connections mid-session.',
-        fix: 'Retry — often transient. If persistent, check firewall, routing, and any IDS/IPS dropping SMTP connections. Run Test-NetConnection from the source to the destination.',
+        fix: 'Retry, since this is often transient. If persistent, check firewall, routing, and any IDS/IPS dropping SMTP connections. Run Test-NetConnection from the source to the destination.',
         severity: 'Error',
       },
       {
@@ -788,7 +788,7 @@ export const ndrCategories: {
         name: 'Delivery Time Expired',
         description: 'The message could not be delivered within the configured timeout window.',
         cause: 'Repeated transient failures (4.x.x) accumulated past the retry timeout. Often follows a smarthost outage, DNS problem, or sustained recipient-side throttling.',
-        fix: 'Investigate why retries kept failing — check recipient server health, DNS, and any rate limiting. The original message must be re-sent; it cannot be re-queued from the NDR.',
+        fix: 'Investigate why retries kept failing: check recipient server health, DNS, and any rate limiting. The original message must be re-sent; it cannot be re-queued from the NDR.',
         severity: 'Error',
       },
       {

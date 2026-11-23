@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Chyba časového limitu čtení sítě (proxy)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Používají někteří HTTP proxy servery k signalizaci vypršení časového limitu čtení při komunikaci s nadřazeným serverem.",
   "Network Connect Timeout Error (Proxies)": "Chyba časového limitu připojení sítě (proxy)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Používají někteří HTTP proxy servery k signalizaci, že se nepodařilo včas připojit k nadřazenému serveru."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Používají někteří HTTP proxy servery k signalizaci, že se nepodařilo včas připojit k nadřazenému serveru."
 }

@@ -273,7 +273,7 @@ const cheatsheet = [
           <span class="rt-title">{{ t('tools.regex-tester.ui.sampleBarTitle') }}</span>
         </div>
         <div class="rt-body">
-          <pre class="rt-sample">{{ sample || '—' }}</pre>
+          <pre class="rt-sample">{{ sample || 'N/A' }}</pre>
         </div>
       </div>
 

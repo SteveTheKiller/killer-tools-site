@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Network Read Timeout Error (Proxies)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Wird von manchen HTTP-Proxys verwendet, um einen Netzwerk-Lese-Timeout bei der Kommunikation mit dem vorgelagerten Server anzuzeigen.",
   "Network Connect Timeout Error (Proxies)": "Network Connect Timeout Error (Proxies)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Wird von manchen HTTP-Proxys verwendet, um einen Netzwerk-Verbindungs-Timeout anzuzeigen, wenn der Proxy den vorgelagerten Server nicht rechtzeitig erreichen konnte."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Wird von manchen HTTP-Proxys verwendet, um einen Netzwerk-Verbindungs-Timeout anzuzeigen, wenn der Proxy den vorgelagerten Server nicht rechtzeitig erreichen konnte."
 }

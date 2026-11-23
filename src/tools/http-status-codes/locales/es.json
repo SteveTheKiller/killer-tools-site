@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Error de tiempo de espera de lectura de red (proxies)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Usado por algunos proxies HTTP para señalar un tiempo de espera de lectura al comunicarse con el servidor ascendente.",
   "Network Connect Timeout Error (Proxies)": "Error de tiempo de espera de conexión de red (proxies)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Usado por algunos proxies HTTP para señalar que no pudieron conectarse a tiempo con el servidor ascendente."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Usado por algunos proxies HTTP para señalar que no pudieron conectarse a tiempo con el servidor ascendente."
 }

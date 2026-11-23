@@ -50,7 +50,7 @@ watch(
   { immediate: true, deep: true },
 );
 
-// Watch the WRAPPER (always visible) — not the Monaco div (hidden when narrow)
+// Watch the WRAPPER (always visible), not the Monaco div (hidden when narrow)
 useResizeObserver(wrapperRef, (entries) => {
   const w = entries[0]?.contentRect?.width ?? 0;
   if (w === 0) {
@@ -154,7 +154,7 @@ onMounted(() => {
   overflow: hidden;
 }
 
-/* kt-terminal-bar handles bg/border/dot — just set font/size */
+/* kt-terminal-bar handles bg/border/dot; just set font/size */
 .cd-pane-label {
   font-size: 0.65rem;
   font-weight: 700;

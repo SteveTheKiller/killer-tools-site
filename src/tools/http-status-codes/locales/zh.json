@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "网络读取超时错误（代理）",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "部分HTTP代理用于表示在与上游服务器通信时发生网络读取超时。",
   "Network Connect Timeout Error (Proxies)": "网络连接超时错误（代理）",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "部分HTTP代理用于表示未能及时连接到上游服务器。"
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "部分HTTP代理用于表示未能及时连接到上游服务器。"
 }

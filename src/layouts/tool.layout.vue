@@ -194,7 +194,7 @@ const headerLink = computed<{ label: string, href: string } | undefined>(
   align-items: center;
 }
 
-/* GitHub logo replaces the text label — sized up */
+/* GitHub logo replaces the text label, sized up */
 .tool-header-link-icon {
   font-size: 30px;
   display: block;

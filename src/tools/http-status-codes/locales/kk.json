@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Желіден оқу уақыты бітті қатесі (проксилер)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Жоғарғы ағын серверімен байланыс кезінде оқу уақытының бітуін білдіру үшін кейбір HTTP проксилері қолданады.",
   "Network Connect Timeout Error (Proxies)": "Желіге қосылу уақыты бітті қатесі (проксилер)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Прокси жоғарғы ағын серверіне уақытында қосыла алмағанда кейбір HTTP проксилері қолданады."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Прокси жоғарғы ағын серверіне уақытында қосыла алмағанда кейбір HTTP проксилері қолданады."
 }

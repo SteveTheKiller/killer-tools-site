@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Tidsavbrudd ved nettverkslesing (proxyer)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Brukes av enkelte HTTP-proxyer for å signalisere tidsavbrudd ved lesing bak proxyen når den kommuniserer med den overordnede serveren.",
   "Network Connect Timeout Error (Proxies)": "Tidsavbrudd ved nettverkstilkobling (proxyer)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Brukes av enkelte HTTP-proxyer når de ikke klarte å koble til den overordnede serveren i tide."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Brukes av enkelte HTTP-proxyer når de ikke klarte å koble til den overordnede serveren i tide."
 }

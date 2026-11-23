@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Hálózati olvasási időtúllépési hiba (proxyk)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Egyes HTTP proxyk használják hálózati olvasási időtúllépés jelzésére a felsőbb szerverrel folytatott kommunikáció közben.",
   "Network Connect Timeout Error (Proxies)": "Hálózati kapcsolódási időtúllépési hiba (proxyk)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Egyes HTTP proxyk használják annak jelzésére, hogy nem tudtak időben kapcsolódni a felsőbb szerverhez."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Egyes HTTP proxyk használják annak jelzésére, hogy nem tudtak időben kapcsolódni a felsőbb szerverhez."
 }

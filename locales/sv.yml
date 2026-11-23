@@ -1,0 +1,2062 @@
+metadata:
+  homeTitle: Killer Tools - Praktiska onlineverktyg för utvecklare och IT-proffs
+  homeDescription: En kostnadsfri samling praktiska onlineverktyg med öppen källkod för utvecklare, systemadministratörer och IT-proffs. Konverterare, generatorer, nätverksverktyg och mer. Inga annonser, ingen spårning.
+  aboutTitle: Om - Killer Tools
+  aboutDescription: 'Om Killer Tools: en kostnadsfri samling praktiska onlineverktyg med öppen källkod för utvecklare, systemadministratörer och IT-proffs.'
+  androidTitle: Android-app - Killer Tools
+  androidDescription: 'Killer Tools för Android: hela verktygslådan från killertools.net som en inbyggd app. Just nu i sluten beta på Google Play, och testare behövs.'
+  privacyTitle: Integritetspolicy - Killer Tools
+  privacyDescription: Integritetspolicy för Killer Tools. Ingen spårning, inga cookies, ingen datainsamling. All bearbetning i verktygen sker i din webbläsare.
+home:
+  categories:
+    newestTools: Nyaste verktygen
+    favoriteTools: Dina favoritverktyg
+    allTools: Alla verktyg
+    favoritesDndToolTip: Dra och släpp för att ändra ordning på favoriterna
+  subtitle: Praktiska verktyg för utvecklare
+  toggleMenu: Visa/dölj meny
+  home: Start
+  uiLib: UI-bibliotek
+  support: Stöd utvecklingen av killer-tools
+  buyMeACoffee: Bjud mig på en kaffe
+  follow:
+    title: Gillar du killer-tools?
+    p1: Ge mig en stjärna på
+    githubRepository: StevetheKillers GitHub-repo
+    thankYou: Tack!
+  nav:
+    github: GitHub-repo
+    githubRepository: GitHub-repot för killer-tools
+    about: Om killer-tools
+    aboutLabel: Om
+    darkMode: Mörkt läge
+    lightMode: Ljust läge
+    mode: Växla mellan mörkt och ljust läge
+about:
+  content: |
+    # killer-tools
+
+    Fälttekniker har inte tid med onödigt krångel. Varje verktyg här finns för att jag behövde det i jobbet och inte hittade något som bara fungerade utan konto, installation eller telemetri.
+
+    Jag är fälttekniker på en MSP och arbetar med nätverk, systemadministration och klientsupport. killer-tools började som en fork av det utmärkta projektet [IT-Tools](https://github.com/CorentinTh/it-tools) och växte till något byggt för det arbete jag faktiskt gör. Jag byggde det för att slå upp NDR-koder mitt i ett ärende, skanna en kunds subnät och avkoda en SafeLink innan jag klickar på den.
+
+    Allt körs i din webbläsare. Ingenting spåras. Inget konto krävs, aldrig.
+
+    Byggt och underhållet av [Steve the Killer](https://thekiller.net). Om det här sparar dig tid i jobbet uppskattas det om du [bjuder mig på en kaffe](https://www.buymeacoffee.com/StevetheKiller), men det förväntas aldrig.
+
+    ## Saknar du ett verktyg? Hittat en bugg?
+
+    Skapa en funktionsförfrågan eller felrapport under [issues](https://github.com/SteveTheKiller/killer-tools-site/issues/new/choose) på GitHub. Jag läser dem.
+404:
+  notFound: 404 Hittades inte
+  sorry: Tyvärr verkar den här sidan inte finnas
+  maybe: Cachen kanske spelar ett spratt, prova att tvinga fram en uppdatering?
+  backHome: Tillbaka till start
+favoriteButton:
+  remove: Ta bort från favoriter
+  add: Lägg till i favoriter
+toolCard:
+  new: Ny
+search:
+  label: Sök
+tools:
+  categories:
+    favorite-tools: Dina favoritverktyg
+    crypto: Kryptering
+    conversion: Konvertering
+    web: Webb
+    images and videos: Bilder och video
+    development: Utveckling
+    network: Nätverk
+    math: Matematik
+    measurement: Mätning
+    text: Text
+    data: Data
+    windows: Windows
+    killer apps: Killer-appar
+    photography: Fotografi
+  password-strength-analyser:
+    title: Analys av lösenordsstyrka
+    description: Ta reda på hur starkt ditt lösenord är med det här verktyget, som analyserar styrkan och uppskattar knäcktiden helt på klientsidan.
+  password-generator:
+    title: Lösenordsgenerator
+    description: Generera starka lösenord, diceware-lösenfraser, uttalbara strängar och hex/base64/UUID-tokens. Innehåller MSP-förval (lokal admin, tjänstkonto, Wi-Fi PSK, PIN), uteslutning av tvetydiga tecken, entropimätare, QR-kod och uppläsning med NATO-alfabetet.
+    ui:
+      terminal:
+        passwordTitle: LÖSENORD
+        optionsTitle: ALTERNATIV
+      meta:
+        entropyLabel: 'Entropi:'
+        bits: bitar
+        crackLabel: 'Knäcktid:'
+      actions:
+        copy: Kopiera
+        refresh: Uppdatera
+      section:
+        preset: Förval
+        mode: Läge
+        format: Format
+        length: Längd ({length})
+        wordCount: Antal ord ({count})
+        separator: Avgränsare
+        characterClasses: Teckenklasser
+        options: Alternativ
+      charClass:
+        uppercase: Versaler
+        lowercase: Gemener
+        numbers: Siffror
+        symbols: Symboler
+      option:
+        excludeAmbiguous: Uteslut tvetydiga tecken
+        requireOneOfEach: Kräv minst en av varje
+        capitalizeWords: Inled ord med versal
+        appendNumber: Lägg till 2 siffror
+      mode:
+        random: Slumpmässigt
+        passphrase: Lösenfras
+        pronounceable: Uttalbart
+        format: Format
+      format:
+        plain: Oformaterat
+        hex: Hex
+        base64: Base64
+        base64url: Base64-URL
+        uuid: UUID v4
+      separator:
+        none: ingen
+      qr:
+        caption: skanna för att kopiera
+      phonetic:
+        title: FONETISKT
+      bulk:
+        generateLabel: Generera
+        single: ett
+        atOnce: '{n} åt gången'
+        passwordsTitle: '{count} LÖSENORD'
+        copyAll: Kopiera alla
+      toast:
+        passwordCopied: Lösenordet har kopierats till urklipp
+        passwordsCopied: Lösenorden har kopierats till urklipp
+        phoneticCopied: Fonetisk stavning kopierad
+  percentage-calculator:
+    title: Procentkalkylator
+    description: Beräkna enkelt procent från ett värde till ett annat, eller från en procentsats till ett värde.
+    ui:
+      whatIsXPercentOfYTitle: VAD ÄR X% AV Y
+      whatIsLabel: Vad är
+      percentOfLabel: '% av'
+      resultPlaceholder: Resultat
+      xIsWhatPercentOfYTitle: X ÄR HUR MÅNGA PROCENT AV Y
+      isWhatPercentOfLabel: är hur många % av
+      percentageChangeTitle: PROCENTUELL ÖKNING / MINSKNING
+      fromLabel: Från
+      toLabel: till
+  svg-placeholder-generator:
+    title: Generator för SVG-platshållare
+    description: Generera SVG-bilder att använda som platshållare i dina applikationer.
+    ui:
+      widthLabel: BREDD (px)
+      backgroundLabel: BAKGRUND
+      heightLabel: HÖJD (px)
+      textColorLabel: TEXTFÄRG
+      fontSizeLabel: TEXTSTORLEK
+      customTextLabel: EGEN TEXT
+      customTextPlaceholder: Standard är {size}
+      useExactSizeToggle: Använd exakt storlek
+      svgHtmlElementLabel: SVG-HTML-ELEMENT
+      svgBase64Label: SVG I BASE64
+      copySvgButton: Kopiera SVG
+      copyBase64Button: Kopiera base64
+      downloadSvgButton: Ladda ner SVG
+      previewLabel: FÖRHANDSVISNING
+      svgPreviewAlt: Förhandsvisning av SVG
+  json-to-csv:
+    title: JSON till CSV
+    description: Konvertera JSON till CSV med automatisk identifiering av rubriker.
+    ui:
+      invalidJson: Angiven JSON är inte giltig.
+      yourRawJson: Din råa JSON
+      pasteRawJsonPlaceholder: Klistra in din råa JSON här...
+      csvOutputLabel: CSV-version av din JSON
+  camera-recorder:
+    title: Kamerainspelare
+    description: Ta en bild eller spela in en video med din webbkamera eller kamera.
+    ui:
+      selectCamera: Välj kamera
+      selectMicrophone: Välj mikrofon
+      notSupported: Din webbläsare stöder inte kamerainspelning.
+      accessRequired: Åtkomst till kamera och mikrofon krävs.
+      permissionBlocked: Behörigheten blockerades. Ge åtkomst manuellt via låsikonen i webbläsarens adressfält.
+      grantPermission: Ge behörighet
+      video: VIDEO
+      audio: LJUD
+      startWebcam: Starta webbkamera
+      paused: PAUSAD
+      rec: REC
+      screenshot: Skärmbild
+      record: Spela in
+      pause: Pausa
+      resume: Fortsätt
+      stop: Stoppa
+      recordingNotSupported: Inspelning stöds inte i den här webbläsaren
+      captures: TAGNINGAR ({count})
+      clearAll: Rensa alla
+      screenshotAlt: skärmbild
+      download: Ladda ner
+      delete: Ta bort
+  reciprocity-calculator:
+    title: Kalkylator för reciprocitetsavvikelse
+    description: Beräkna korrigerade långa exponeringar för över 40 analoga filmer med Schwarzschilds potenslag. Omfattar svartvit film, färgnegativ och diafilm.
+    ui:
+      barReciprocity: RECIPROCITETSKALKYLATOR
+      barCorrected: KORRIGERAD EXPONERING
+      fieldFilmStock: Film
+      typeBw: Svartvit
+      typeColorNeg: Färgnegativ
+      typeSlide: Dia / E6
+      noFailureUpTo: Ingen avvikelse upp till {seconds} s
+      sourceManufacturer: Tillverkarens data
+      sourceCommunity: Data från användare
+      fieldMeteredExposure: Uppmätt exponering
+      unitSeconds: sekunder
+      noFailureMessage: Ingen korrigering behövs. Den här filmen har ingen reciprocitetsavvikelse vid den här exponeringstiden.
+      copyDone: ✓ kopierat
+      copySeconds: kopiera sekunder
+      devReduce10: Överväg att minska framkallningen med cirka 10 % för att kompensera för ökad täthet i skuggorna.
+      devReduce1015: Minska framkallningen med 10 till 15 % rekommenderas.
+      devReduce1520: Minska framkallningen med 15 till 20 % rekommenderas.
+      devReduce2030: Minska framkallningen med 20 till 30 % rekommenderas vid mycket långa exponeringar.
+      colorShiftWarning: 'Färgfilm: räkna med en färgförskjutning vid den här exponeringstiden.'
+      colorShiftSlide: Diafilm är svår att korrigera i efterhand, så CC-filtrering i kameran rekommenderas.
+      colorShiftNeg: Färgnegativ har större spelrum, och korrigering är möjlig vid kopiering eller skanning.
+  nd-filter-calculator:
+    title: ND-filterkalkylator
+    description: Beräkna korrigerade slutartider för gråfilter (ND). Stöder alla vanliga ND-styrkor och egna stegvärden.
+    ui:
+      titleInputs: ND-FILTERKALKYLATOR
+      baseShutterSpeed: Grundslutartid (utan filter)
+      dragOrClick: dra eller klicka
+      custom: Eget
+      secPlaceholder: s
+      ndFilter: ND-filter
+      stopOne: '{count} steg'
+      stopMany: '{count} steg'
+      enterStops: ange steg
+      stopsPlaceholder: steg
+      titleResult: KORRIGERAD EXPONERING
+      copied: kopierat
+      copySeconds: kopiera sekunder
+      longExposureAlert: Lång exponering, överväg att använda Bulb-läget.
+      stackingFilters: 'staplade filter: lägg ihop deras steg'
+      legendT1: grundslutartid (utan filter)
+      legendT2: korrigerad slutartid
+      legendStops: ND-filtrets styrka
+  depth-of-field-calculator:
+    title: Skärpedjupskalkylator
+    description: Beräkna närgräns, fjärrgräns och totalt skärpedjup för valfri kombination av objektiv och sensor. Visar även hyperfokalavstånd.
+    ui:
+      sensorMedFormat: Mellanformat
+      sensorCustom: Egen
+      sensorEnterCoc: ange CoC
+      infinity: oändligt
+      title: SKÄRPEDJUPSKALKYLATOR
+      sensorFormat: Sensorformat
+      cocPlaceholder: CoC i mm (t.ex. 0.029)
+      focalLength: Brännvidd (mm)
+      aperture: Bländare
+      dragOrClick: dra eller klicka
+      focusDistance: Fokusavstånd
+      distancePlaceholder: avstånd
+      results: RESULTAT
+      hyperfocalDistance: Hyperfokalavstånd
+      hyperfocalHint: Fokusera här för maximal skärpa från halva detta avstånd till oändligt
+      nearLimit: Närgräns
+      farLimit: Fjärrgräns
+      totalDof: Totalt skärpedjup
+      beyondHyperfocal: Fokusavståndet ligger på eller bortom hyperfokalavståndet, så fjärrgränsen sträcker sig till oändligt.
+      legendHyperfocal: hyperfokalavstånd
+      legendFocalLength: brännvidd
+      legendFNumber: bländartal (bländare)
+      legendCoc: oskärpecirkel
+      legendFocusDistance: fokusavstånd
+  exposure-equivalence:
+    title: Exponeringsekvivalens
+    description: Hitta motsvarande slutartider för alla bländare vid samma exponering. Välj grundslutartid och bländare för att se vad du behöver vid varje annat bländarsteg.
+    ui:
+      titleInputs: EXPONERINGSEKVIVALENS
+      shutterSpeed: Slutartid
+      dragOrClick: dra eller klicka
+      custom: Egen
+      secPlaceholder: s
+      aperture: Bländare
+      titleResults: MOTSVARANDE EXPONERINGAR
+      isoIndependent: Oberoende av ISO vid valfritt fast ISO
+      highlightedBase: den markerade raden är din utgångspunkt
+      legendT1: grundslutartid
+      legendT2: motsvarande slutartid
+      legendN1: grundbländare (bländartal)
+      legendN2: målbländare (bländartal)
+  dev-calculator:
+    title: Kalkylator för filmframkallning
+    description: Beräkna justerade framkallningstider med temperaturkompensation, push/pull-framkallning och blandning av spädningar. Innehåller en databas över vanliga svartvita framkallare och filmer.
+    ui:
+      hasData: Har data
+      noDataGroup: Ingen data, ange grundtid manuellt
+      colorBelow: '{process} under 36°C: färgförskjutning och ofullständig framkallning är troligt'
+      colorAbove: '{process} över 40°C: risk för slöja och färgkorsning'
+      bwBelow: 'Under 18°C: framkallningen går mycket långsamt'
+      bwAbove: 'Över 24°C: risk för retikulering och slöja'
+      start: Starta
+      pause: Pausa
+      resume: Fortsätt
+      calculatorTitle: KALKYLATOR FÖR FILMFRAMKALLNING
+      developer: Framkallare
+      dilution: Spädning
+      filmStock: Film
+      baseTimeAt: Grundtid vid {temp}°C
+      noData: ingen data
+      overridePlaceholder: åsidosätt (s)
+      customBaseActive: Egen grundtid aktiv
+      temperature: 'Temperatur:'
+      pushPull: Push / Pull
+      tankVolume: Tankvolym
+      customMlPlaceholder: egen ml
+      adjustedTime: JUSTERAD TID
+      baseTimeTemp: Grundtid ({temp}°C)
+      tempAdj: Temp.just. ({temp})
+      pushStop: Push {n} steg
+      pushStops: Push {n} steg
+      pullStop: Pull {n} steg
+      pullStops: Pull {n} steg
+      mixFor: Blanda för {volume} ml
+      mixDeveloper: framkallare
+      mixWater: vatten
+      noDataWarning: Ingen data för {film} + {developer}. Ange en grundtid manuellt.
+      pushPullEstimate: Push/pull-tider är uppskattningar. En testrulle rekommenderas.
+      sourceNote: Grundtiderna kommer från Massive Dev Chart och tillverkarnas datablad.
+      processTimer: PROCESSTIMER
+      devComplete: Framkallningen är klar
+      devCompleteHint: Häng upp på tork och njut av dina negativ.
+      stageOf: Steg {current} / {total}
+      agitation: OMRÖRNING
+      reset: Återställ
+      skip: Hoppa över
+      stDeveloper: Framkallare
+      stBleach: Blekbad
+      stWash: Sköljning
+      stFixer: Fixerbad
+      stWash2: Sköljning 2
+      stStabilizer: Stabilisator
+      stFirstDeveloper: Förstaframkallare
+      stReversalBath: Omvändningsbad
+      stColorDeveloper: Färgframkallare
+      stPreBleach: Förblekbad
+      stFinalWash: Slutsköljning
+      stStopBath: Stoppbad
+      agC30s10: Kontinuerligt de första 30 s, sedan 10 s var 30:e sekund
+      agRun3Full: Rinnande vatten eller 3 hela vattenbyten
+      agGentle: Endast varsam virvling, skölj inte efteråt
+      agC30s5: Kontinuerligt de första 30 s, sedan 5 s var 30:e sekund
+      agRun3: Rinnande vatten eller 3 byten
+      agContinuous: Kontinuerligt
+      ag10per30: 10 s var 30:e sekund
+      agRun5: Rinnande vatten eller 5 byten
+      agC60s10: Kontinuerligt de första 30 s, sedan 10 s var 60:e sekund
+      agCont60: Kontinuerligt i 60 s
+      ag10per60: 10 s var 60:e sekund
+      agRun5Full: Rinnande vatten eller 5 hela vattenbyten
+  keycode-info:
+    title: Tangentkodsinfo
+    description: Hitta JavaScript-tangentkod, code, placering och modifierare för valfri nedtryckt tangent.
+    ui:
+      pressAnyKey: Tryck på valfri tangent för att få information
+      key: Tangent
+      keycode: Tangentkod
+      code: Code
+      location: Placering
+      modifiers: Modifierare
+  emoji-picker:
+    title: Emojiväljare
+    description: Kopiera och klistra in emojier enkelt och få fram Unicode- och kodpunktsvärdet för varje emoji.
+    ui:
+      emojiCopied: Emojin {emoji} har kopierats till urklipp
+      codePointsCopied: Kodpunkterna '{codePoints}' har kopierats till urklipp
+      unicodeCopied: Unicode '{unicode}' har kopierats till urklipp
+      searchPlaceholder: Sök emojier (t.ex. 'smile')...
+      noResults: Inga resultat
+      searchResult: Sökresultat
+  color-converter:
+    title: Färgkonverterare
+    description: Konvertera färger mellan olika format (hex, rgb, hsl och CSS-namn)
+    ui:
+      color: Färg
+      formats: FORMAT
+  bcrypt:
+    title: Bcrypt
+    description: Hasha och jämför textsträngar med bcrypt. Bcrypt är en hashfunktion för lösenord som bygger på chiffret Blowfish.
+    ui:
+      copiedToClipboard: Den hashade strängen har kopierats till urklipp
+      hashTitle: HASHA
+      compareTitle: JÄMFÖR
+      stringLabel: Sträng
+      stringPlaceholder: Din sträng att bcrypt-hasha...
+      saltRoundsLabel: Saltrundor
+      outputLabel: UTDATA
+      copyHash: Kopiera hash
+      compareStringPlaceholder: Din sträng att jämföra...
+      hashLabel: Hash
+      compareHashPlaceholder: Din hash att jämföra...
+      matchLabel: Matchar
+      yes: Ja
+      no: Nej
+  crontab-generator:
+    title: Crontab-generator
+    description: Validera och generera crontab och få en lättläst beskrivning av cron-schemat.
+    ui:
+      symbolAnyValue: Valfritt värde
+      symbolEveryMinute: Varje minut
+      symbolRange: Intervall av värden
+      symbolRangeEquivalent: Minut 1 till och med 10
+      symbolList: Lista med värden
+      symbolListEquivalent: Vid minut 1 och 10
+      symbolStep: Stegvärden
+      symbolStepEquivalent: Var 10:e minut
+      aliasYearly: En gång om året (1 jan, midnatt)
+      aliasMonthly: Den första varje månad, midnatt
+      aliasWeekly: Söndag, midnatt
+      aliasDaily: Varje dag vid midnatt
+      aliasHourly: Varje timme, på hel timme
+      aliasReboot: Kör en gång vid uppstart
+      aliasRebootEquivalent: (vid uppstart)
+      invalidCron: Den här cron-raden är ogiltig
+      use24HourTime: 24-timmarsformat
+      daysStartAtZero: Dagar börjar på 0
+      labelSymbol: 'Symbol:'
+      labelMeaning: 'Betydelse:'
+      labelExample: 'Exempel:'
+      labelEquivalent: 'Motsvarar:'
+      symbols: Symboler
+      aliases: Alias
+      fieldDiagram: |-
+        ┌──────────── [valfritt] sekunder (0 - 59)
+        │ ┌────────── minut (0 - 59)
+        │ │ ┌──────── timme (0 - 23)
+        │ │ │ ┌────── dag i månaden (1 - 31)
+        │ │ │ │ ┌──── månad (1 - 12) ELLER jan,feb,mar,apr ...
+        │ │ │ │ │ ┌── veckodag (0 - 6, söndag=0) ELLER sun,mon ...
+        │ │ │ │ │ │
+        * * * * * * kommando
+  http-status-codes:
+    title: HTTP-statuskoder
+    description: Listan över alla HTTP-statuskoder, deras namn och betydelse.
+    ui:
+      searchResults: Sökresultat
+      searchPlaceholder: Sök HTTP-status...
+      copiedTooltip: Kopierat!
+      clickToCopy: Klicka för att kopiera statuskoden
+      copiedLabel: kopierat
+  sql-prettify:
+    title: Formatera och snygga till SQL
+    description: Formatera och snygga till dina SQL-frågor online (stöder olika SQL-dialekter).
+    ui:
+      dialectLabel: DIALEKT
+      keywordCaseLabel: SKIFTLÄGE FÖR NYCKELORD
+      indentStyleLabel: INDRAGSSTIL
+      yourSqlQueryLabel: Din SQL-fråga
+      sqlQueryPlaceholder: Skriv din SQL-fråga här...
+      prettifiedQueryLabel: Formaterad version av din fråga
+      keywordCaseUpper: VERSALER
+      keywordCaseLower: gemener
+      keywordCasePreserve: Behåll
+      indentStyleStandard: Standard
+      indentStyleTabularLeft: Tabulär vänster
+      indentStyleTabularRight: Tabulär höger
+  git-memo:
+    title: Fusklapp för Git
+    description: Snabbreferens för de vanligaste Git-kommandona och arbetsflödena.
+  encryption:
+    title: Kryptera / dekryptera text
+    description: Kryptera klartext och dekryptera chiffertext med kryptoalgoritmer som AES, TripleDES, Rabbit eller RC4.
+    ui:
+      decryptError: Det gick inte att dekryptera din text
+      encryptTitle: KRYPTERA
+      decryptTitle: DEKRYPTERA
+      yourText: DIN TEXT
+      yourSecretKey: DIN HEMLIGA NYCKEL
+      algorithm: ALGORITM
+      encryptedOutput: KRYPTERAD UTDATA
+      yourEncryptedText: DIN KRYPTERADE TEXT
+      decryptedOutput: DEKRYPTERAD UTDATA
+      encryptPlaceholder: Strängen som ska krypteras
+      decryptPlaceholder: Chiffertexten som ska dekrypteras
+      secretKeyPlaceholder: Hemlig nyckel...
+  yaml-prettify:
+    title: Formatera och snygga till YAML
+    description: Gör om din YAML-sträng till ett vänligt och lättläst format.
+  roman-numeral-converter:
+    title: Konverterare för romerska siffror
+    description: Konvertera romerska siffror till tal och tal till romerska siffror.
+    ui:
+      converterTitle: KONVERTERARE
+      arabicSideLabel: ARABISKT
+      romanSideLabel: ROMERSK SIFFRA
+      arabicRangeError: Måste vara mellan {min} och {max}
+      invalidRoman: Inte en giltig romersk siffra
+      copied: Kopierat
+      copy: Kopiera
+      romanCopiedToast: Romersk siffra kopierad
+      arabicCopiedToast: Arabiskt tal kopierat
+  hmac-generator:
+    title: HMAC-generator
+    description: Beräknar en hashbaserad meddelandeautentiseringskod (HMAC) med en hemlig nyckel och din favorithashfunktion.
+    ui:
+      encodingBinary: Binärt (bas 2)
+      encodingHex: Hexadecimalt (bas 16)
+      copied: HMAC har kopierats till urklipp
+      plainText: KLARTEXT
+      secretKey: HEMLIG NYCKEL
+      hashingFunction: HASHFUNKTION
+      outputEncoding: KODNING AV UTDATA
+      hmacOutput: HMAC-UTDATA
+      plainTextPlaceholder: Klartext att beräkna hash för...
+      secretKeyPlaceholder: Ange den hemliga nyckeln...
+      clear: Rensa
+      copyHmac: Kopiera HMAC
+  bip39-generator:
+    title: BIP39-lösenfrasgenerator
+    description: Generera en BIP39-lösenfras från en befintlig eller slumpmässig mnemonic, eller få fram mnemonic från lösenfrasen.
+    ui:
+      languageEnglish: Engelska
+      languageChineseSimplified: Förenklad kinesiska
+      languageChineseTraditional: Traditionell kinesiska
+      languageCzech: Tjeckiska
+      languageFrench: Franska
+      languageItalian: Italienska
+      languageJapanese: Japanska
+      languageKorean: Koreanska
+      languagePortuguese: Portugisiska
+      languageSpanish: Spanska
+      entropyLengthError: Entropins längd ska vara >= 16, <= 32 och en multipel av 4
+      entropyHexError: Entropin ska vara en hexadecimal sträng
+      invalidMnemonic: Ogiltig mnemonic
+      entropyCopied: Entropin har kopierats till urklipp
+      passphraseCopied: Lösenfrasen har kopierats till urklipp
+      languageLabel: Språk
+      entropyHeading: ENTROPI (SEED)
+      entropyPlaceholder: Hex-entropi...
+      regenerate: Generera på nytt
+      copyEntropy: Kopiera entropi
+      passphraseHeading: LÖSENFRAS (MNEMONIC)
+      passphrasePlaceholder: Mnemonic-ord...
+      copyPassphrase: Kopiera lösenfras
+  base64-file-converter:
+    title: Base64-filkonverterare
+    description: Konvertera en sträng, fil eller bild till dess base64-representation.
+    ui:
+      copiedToClipboard: Base64-strängen har kopierats till urklipp
+      base64ToFileTitle: BASE64 TILL FIL
+      fileNameLabel: FILNAMN
+      fileNamePlaceholder: Filnamn för nedladdning
+      extensionLabel: FILÄNDELSE
+      extensionPlaceholder: ändelse
+      base64StringLabel: BASE64-STRÄNG
+      base64InputPlaceholder: Klistra in din base64-filsträng här...
+      invalidBase64: Ogiltig base64-sträng
+      previewImage: Förhandsgranska bild
+      downloadFile: Ladda ner fil
+      fileToBase64Title: FIL TILL BASE64
+      dropHint: Dra och släpp en fil här, eller klicka för att välja
+      fileInBase64Label: FIL I BASE64
+      fileOutputPlaceholder: Filen i base64 visas här
+      copied: Kopierat!
+      copyBase64: Kopiera base64
+  base64-string-converter:
+    title: Base64-kodare/avkodare för strängar
+    description: Koda och avkoda enkelt strängar till och från deras base64-representation.
+    ui:
+      base64CopiedToClipboard: Base64-strängen har kopierats till urklipp
+      stringCopiedToClipboard: Strängen har kopierats till urklipp
+      stringToBase64Title: STRÄNG TILL BASE64
+      encodingLabel: KODNING
+      standard: Standard
+      urlSafe: URL-säker
+      stringToEncodeLabel: STRÄNG ATT KODA
+      stringInputPlaceholder: Skriv din sträng här...
+      base64OutputLabel: BASE64-UTDATA
+      base64OutputPlaceholder: Base64-kodningen av din sträng visas här
+      copied: Kopierat!
+      copyBase64: Kopiera base64
+      base64ToStringTitle: BASE64 TILL STRÄNG
+      base64ToDecodeLabel: BASE64-STRÄNG ATT AVKODA
+      base64InputPlaceholder: Din base64-sträng...
+      invalidBase64: Ogiltig base64-sträng
+      decodedStringLabel: AVKODAD STRÄNG
+      decodedOutputPlaceholder: Den avkodade strängen visas här
+      copyDecodedString: Kopiera avkodad sträng
+  math-evaluator:
+    title: Matematikberäknare
+    description: En kalkylator för att beräkna matematiska uttryck. Du kan använda funktioner som sqrt, cos, sin, abs med flera.
+    ui:
+      placeholder: 'Ditt matematiska uttryck (t.ex. 2*sqrt(6) )...'
+      result: Resultat
+  url-parser:
+    title: URL-tolkare
+    description: Dela upp en URL i dess beståndsdelar (protokoll, ursprung, parametrar, port, användarnamn och lösenord, ...)
+    ui:
+      sectionHost: Värd
+      protocol: Protokoll
+      hostname: Värdnamn
+      port: Port
+      sectionAuthentication: Autentisering
+      username: Användarnamn
+      password: Lösenord
+      sectionPath: Sökväg
+      pathname: Sökvägsnamn
+      search: Sökfråga
+      hash: Hash
+      urlTitle: URL
+      invalidUrl: Ogiltig URL
+      params: PARAMETRAR
+      emptyHint: Ange en URL ovan för att tolka den
+  phone-parser-and-formatter:
+    title: Telefonnummertolkare
+    description: Tolka och formatera telefonnummer. Identifiera land, validera och visa i formaten internationellt, nationellt, E.164 och RFC3966.
+    ui:
+      invalidPhoneNumber: Ogiltigt telefonnummer
+      sectionLocation: Plats
+      countryCode: Landskod
+      country: Land
+      callingCode: Riktnummer för land
+      sectionValidation: Validering
+      isValid: Är giltigt?
+      yes: Ja
+      no: Nej
+      isPossible: Är möjligt?
+      type: Typ
+      unknown: Okänd
+      sectionFormats: Format
+      international: Internationellt
+      national: Nationellt
+      defaultCountry: Standardland
+      phoneNumber: Telefonnummer
+      emptyStatePrompt: Ange ett telefonnummer ovan för att tolka det
+  user-agent-parser:
+    title: User-agent-tolkare
+    description: Identifiera och tolka webbläsare, motor, OS, CPU samt enhetstyp och modell från en user-agent-sträng.
+    ui:
+      sectionBrowser: Webbläsare
+      sectionEngine: Motor
+      sectionOs: OS
+      sectionDevice: Enhet
+      sectionCpu: CPU
+      name: Namn
+      version: Version
+      model: Modell
+      type: Typ
+      vendor: Tillverkare
+      architecture: Arkitektur
+      userAgentString: USER-AGENT-STRÄNG
+      placeholder: Klistra in din user-agent här...
+      unknown: Okänd
+      error: FEL
+      parseError: Det gick inte att tolka user-agent-strängen
+  case-converter:
+    title: Skiftlägeskonverterare
+    description: Ändra skiftläge i en sträng och välj mellan olika format
+    ui:
+      inputPlaceholder: Din sträng...
+      output: UTDATA
+  html-entities:
+    title: Escapa HTML-entiteter
+    description: Escapa eller avescapa HTML-entiteter (ersätt tecken som <,>, &, " och \' med deras HTML-version)
+    ui:
+      yourString: DIN STRÄNG
+      escapePlaceholder: Strängen som ska escapas...
+      escapedOutput: ESCAPAD UTDATA
+      copied: Kopierat
+      copy: Kopiera
+      yourEscapedString: DIN ESCAPADE STRÄNG
+      unescapePlaceholder: Strängen som ska avescapas...
+      unescapedOutput: AVESCAPAD UTDATA
+  json-prettify:
+    title: Formatera och snygga till JSON
+    description: Gör om din JSON-sträng till ett vänligt och lättläst format.
+  docker-run-to-docker-compose-converter:
+    title: Konverterare från docker run till Docker compose
+    description: Gör om "docker run"-kommandon till docker-compose-filer!
+  mac-address-lookup:
+    title: Uppslag av MAC-adress
+    description: Hitta tillverkaren av en enhet utifrån dess MAC-adress.
+    ui:
+      macAddressLabel: MAC-adress
+      copiedTooltip: Kopierat!
+      copyTooltip: Klicka för att kopiera tillverkarinfo
+      copiedTitle: ✓ kopierat
+      vendorInfoTitle: Tillverkarinfo
+      unknownVendor: Okänd tillverkare för den här adressen
+  lorem-ipsum-generator:
+    title: Lorem ipsum-generator
+    description: Generera lorem ipsum-platshållartext för skisser och designarbete.
+    ui:
+      copiedMessage: Lorem ipsum har kopierats till urklipp
+      paragraphs: Stycken
+      sentencesPerParagraph: Meningar / stycke
+      wordsPerSentence: Ord / mening
+      startWithLoremIpsum: Börja med lorem ipsum
+      asHtml: Som HTML
+      output: UTDATA
+      wordCount: '{count} ord'
+      charCount: '{count} tecken'
+      copy: Kopiera
+      refresh: Uppdatera
+  qrcode-generator:
+    title: QR-kodgenerator
+    description: Generera och ladda ner QR-koder för URL:er, vanlig text eller inloggningsuppgifter för Wi-Fi-nätverk. Teman i terminalstil, klassiskt och med egna färger, samt inställbar felkorrigering.
+  signature-creator:
+    title: Signaturskapare
+    description: Rita en handskriven signatur på en yta och exportera den som en transparent PNG. Eller ladda upp valfri bild och ta bort bakgrunden med ett klick med AI på enheten.
+    ui:
+      drawSignatureTab: Rita signatur
+      removeBackgroundTab: Ta bort bakgrund
+      inkColorLabel: Bläckfärg
+      strokeWeightLabel: Linjetjocklek
+      actionsLabel: Åtgärder
+      undoButton: ↩ Ångra
+      clearButton: ✕ Rensa
+      downloadTransparentPng: ↓ Ladda ner transparent PNG
+      uploadImageLabel: Ladda upp bild
+      dropzoneText: Släpp en bild här eller klicka för att bläddra
+      dropzoneHint: PNG, JPG, WEBP
+      imageLoadedLabel: Bilden har lästs in
+      removeButton: ✕ Ta bort
+      removeBackgroundButton: ⚡ Ta bort bakgrund
+      exportLabel: Exportera
+      downloadNoBgPng: ↓ Ladda ner PNG (utan bakgrund)
+      originalLabel: Original
+      resultLabel: Resultat
+      uploadPrompt: Ladda upp en bild för att komma igång
+      originalAlt: original
+      resultAlt: resultat med borttagen bakgrund
+      loadingModelStatus: Läser in AI-modell...
+      removingBackgroundStatus: Tar bort bakgrund...
+      processingPercentStatus: Bearbetar... {pct}%
+      downloadingModelPercentStatus: Laddar ner modell... {pct}%
+      removeBackgroundFailedStatus: Det gick inte att ta bort bakgrunden. Prova en annan bild.
+  xml-formatter:
+    title: XML-formaterare
+    description: Gör om din XML-sträng till ett vänligt och lättläst format.
+    ui:
+      invalidXml: Angiven XML är inte giltig.
+      collapse: Fäll ihop
+      indentSize: Indragsstorlek
+      inputLabel: Din XML
+      inputPlaceholder: Klistra in din XML här...
+      outputLabel: Formaterad XML från din XML
+  temperature-converter:
+    title: Temperaturkonverterare
+    description: Temperaturkonvertering i grader för Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur och Rømer.
+    ui:
+      kelvin: Kelvin
+      celsius: Celsius
+      fahrenheit: Fahrenheit
+      rankine: Rankine
+      delisle: Delisle
+      newton: Newton
+      reaumur: Réaumur
+      romer: Rømer
+  chmod-calculator:
+    title: Chmod-kalkylator
+    description: Beräkna dina chmod-behörigheter och kommandon med den här chmod-kalkylatorn online.
+    ui:
+      read: Läsa
+      write: Skriva
+      execute: Köra
+      owner: Ägare
+      group: Grupp
+      public: Alla
+      commandCopied: chmod-kommandot har kopierats
+      copyCommand: Kopiera kommando
+  rsa-key-pair-generator:
+    title: Generator för RSA-nyckelpar
+    description: Generera ett nytt slumpmässigt nyckelpar med privat och publik RSA-nyckel i PEM-format.
+    ui:
+      bitsRangeError: Bitar måste vara mellan 256 och 16384 och en multipel av 8
+      bitsLabel: Bitar
+      refreshButton: Generera nytt nyckelpar
+      publicKeyTitle: Publik nyckel
+      copyPublicKeyTitle: Kopiera publik nyckel
+      copy: Kopiera
+      generating: Genererar...
+      privateKeyTitle: Privat nyckel
+      copyPrivateKeyTitle: Kopiera privat nyckel
+      publicKeyCopiedToast: Publik nyckel kopierad
+      privateKeyCopiedToast: Privat nyckel kopierad
+  html-wysiwyg-editor:
+    title: HTML WYSIWYG-redigerare
+    description: Funktionsrik WYSIWYG-redigerare för HTML online som genererar källkoden för innehållet direkt.
+    ui:
+      bold: Fet
+      italic: Kursiv
+      strike: Genomstruken
+      inlineCode: Inline-kod
+      heading1: Rubrik 1
+      heading2: Rubrik 2
+      heading3: Rubrik 3
+      heading4: Rubrik 4
+      bulletList: Punktlista
+      orderedList: Numrerad lista
+      codeBlock: Kodblock
+      blockquote: Blockcitat
+      hardBreak: Radbrytning
+      clearFormat: Rensa formatering
+      undo: Ångra
+      redo: Gör om
+  json-diff:
+    title: JSON-diff
+    description: Jämför två JSON-objekt och se skillnaderna mellan dem.
+    ui:
+      onlyShowDifferences: Visa endast skillnader
+      jsonsAreTheSame: De angivna JSON-objekten är identiska
+      firstJsonTitle: DIN FÖRSTA JSON
+      firstJsonPlaceholder: Klistra in din första JSON här...
+      invalidJson: Ogiltigt JSON-format
+      secondJsonTitle: DIN JSON ATT JÄMFÖRA
+      secondJsonPlaceholder: Klistra in den JSON du vill jämföra här...
+  jwt-parser:
+    title: JWT-tolkare
+    description: Tolka och avkoda din JSON Web Token (JWT) och visa dess innehåll.
+    ui:
+      header: Header
+      payload: Payload
+      jwtToDecodeTitle: JWT ATT AVKODA
+      tokenPlaceholder: Klistra in din token här...
+      invalidJwt: Ogiltig JWT
+  date-converter:
+    title: Datum- och tidskonverterare
+    description: Konvertera datum och tid till olika format
+  ipv4-subnet-calculator:
+    title: IPv4-subnätskalkylator
+    description: Tolka dina IPv4 CIDR-block och få all information du behöver om ditt subnät.
+    ui:
+      invalidAddress: Vi kan inte tolka den här adressen, kontrollera formatet
+      netmask: Nätmask
+      networkAddress: Nätverksadress
+      networkMask: Nätverksmask
+      networkMaskBinary: Nätverksmask binärt
+      cidrNotation: CIDR-notation
+      wildcardMask: Wildcard-mask
+      networkSize: Nätverksstorlek
+      firstAddress: Första adress
+      lastAddress: Sista adress
+      broadcastAddress: Broadcast-adress
+      noBroadcast: Ingen broadcast-adress med den här masken
+      ipClass: IP-klass
+      unknownClassType: Okänd klasstyp
+      decimal: Decimalt
+      hexadecimal: Hexadecimalt
+      binary: Binärt
+      ipv6Short: IPv6 (kort)
+      inputLabel: En IPv4-adress med eller utan mask
+      bitMap: BITKARTA
+      network: Nätverk
+      host: Värd
+      setPrefix: Sätt prefix till /{prefix}
+      networkTag: nätverk
+      broadcastTag: broadcast
+      hostsCount: '{count} värdar'
+      privateIp: Privat IP
+      publicIp: Publik IP
+      subnetDetail: SUBNÄTSDETALJER
+      subnetInfo: SUBNÄTSINFO
+      addressRepresentations: ADRESSREPRESENTATIONER
+      copy: Kopiera
+      enterValidIpv4: Ange en giltig IPv4-adress för att se representationer
+      previousBlock: Föregående block
+      nextBlock: Nästa block
+      collapseCheatSheet: Fäll ihop fusklappen
+      subnetCheatSheet: Fusklapp för subnät
+  og-meta-generator:
+    title: Generator för Open Graph-metataggar
+    description: Generera Open Graph- och sociala HTML-metataggar för din webbplats.
+  ipv6-ula-generator:
+    title: IPv6 ULA-generator
+    description: Generera egna lokala, icke-routbara IP-adresser för ditt nätverk enligt RFC4193.
+    ui:
+      ipv6Ula: IPv6 ULA
+      firstRoutable: Första routbara
+      lastRoutable: Sista routbara
+      infoAlert: Använder aktuell tidsstämpel + MAC-adress, hashat med SHA1. De lägsta 40 bitarna bildar det globala ID:t enligt RFC 4193.
+      macAddress: MAC-adress
+      output: Utdata
+      copied: Kopierat!
+      copy: Kopiera
+  hash-text:
+    title: Hasha text
+    description: Hasha text med MD5, SHA1, SHA256, SHA512, SHA3, RIPEMD160 med flera.
+    ui:
+      encodingBinary: Binärt (bas 2)
+      encodingHex: Hexadecimalt (bas 16)
+      encodingBase64: Base64 (bas 64)
+      encodingBase64url: Base64url (bas 64, URL-säker)
+      inputPlaceholder: Din sträng att hasha...
+      encoding: Kodning
+      output: UTDATA
+  json-to-toml:
+    title: JSON till TOML
+    description: Tolka och konvertera JSON till TOML.
+  device-information:
+    title: Enhetsinformation
+    description: Få information om din nuvarande enhet (skärmstorlek, pixelförhållande, user agent, ...)
+    ui:
+      screen: Skärm
+      hardware: Hårdvara
+      network: Nätverk
+      browser: Webbläsare
+      screenSize: Skärmstorlek
+      windowSize: Fönsterstorlek
+      pixelRatio: Pixelförhållande
+      colorDepth: Färgdjup
+      orientation: Orientering
+      orientationAngle: Orienteringsvinkel
+      touchPoints: Beröringspunkter
+      cpuCores: CPU-kärnor
+      deviceMemory: Enhetsminne
+      platform: Plattform
+      online: Online
+      connectionType: Anslutningstyp
+      downlinkSpeed: Nedlänkshastighet
+      roundTripTime: Tur och retur-tid
+      dataSaver: Datasparläge
+      vendor: Tillverkare
+      languages: Språk
+      cookiesEnabled: Cookies aktiverade
+      pdfViewer: PDF-visare
+      doNotTrack: Do Not Track
+      userAgent: User agent
+      maxTouchPoints: '{count} max'
+      none: Inga
+      logicalCores: '{count} logiska kärnor'
+      yes: Ja
+      no: Nej
+      enabled: Aktiverat
+      disabled: Inaktiverat
+      supported: Stöds
+      notSupported: Stöds inte
+      notSet: Inte angivet
+  pdf-signature-checker:
+    title: PDF-signaturkontroll
+    description: Verifiera signaturerna i en PDF-fil. En signerad PDF-fil innehåller en eller flera signaturer som kan användas för att avgöra om filens innehåll har ändrats sedan den signerades.
+    ui:
+      tableHeaderValidityPeriod: Giltighetsperiod
+      tableHeaderIssuedBy: Utfärdat av
+      tableHeaderIssuedTo: Utfärdat till
+      tableHeaderPemCertificate: PEM-certifikat
+      notBefore: Inte före
+      notAfter: Inte efter
+      commonName: Eget namn (CN)
+      organizationName: Organisationsnamn
+      countryName: Land
+      localityName: Ort
+      organizationalUnitName: Organisationsenhet
+      stateOrProvinceName: Delstat eller provins
+      viewPemCert: Visa PEM-certifikat
+      uploadPrompt: Dra och släpp en PDF-fil här, eller klicka för att välja en fil
+      noSignaturesFound: Inga signaturer hittades i den angivna filen.
+      signatureCertificatesLabel: 'Certifikat för signatur {number}:'
+  json-minify:
+    title: Minifiera JSON
+    description: Minifiera och komprimera din JSON genom att ta bort onödiga blanksteg.
+    ui:
+      invalidJson: Angiven JSON är inte giltig.
+      inputLabel: Din råa JSON
+      inputPlaceholder: Klistra in din råa JSON här...
+      outputLabel: Minifierad version av din JSON
+  ulid-generator:
+    title: ULID-generator
+    description: Generera slumpmässiga Universally Unique Lexicographically Sortable Identifier (ULID).
+    ui:
+      copiedMessage: ULID:erna har kopierats till urklipp
+      quantity: ANTAL
+      format: FORMAT
+      formatRaw: Rå
+      formatJson: JSON
+      output: UTDATA
+      copy: Kopiera
+      refresh: Uppdatera
+  base-converter:
+    title: Talbaskonverterare
+    description: Konvertera ett tal mellan olika talbaser (decimal, hexadecimal, binär, oktal, base64, ...)
+  uuid-generator:
+    title: UUID-generator
+    description: Generera slumpmässiga UUID:er (v1 och v4) och granska deras struktur.
+    ui:
+      copiedMessage: UUID:erna har kopierats till urklipp
+      version: VERSION
+      quantity: ANTAL
+      namespacePreset: FÖRVAL FÖR NAMNRYMD
+      namespaceUuid: NAMNRYMDS-UUID
+      invalidUuid: Ogiltigt UUID
+      name: NAMN
+      namePlaceholder: Namn att hasha...
+      output: UTDATA
+      copy: Kopiera
+      refresh: Uppdatera
+  ipv4-address-converter:
+    title: IPv4-adresskonverterare
+    description: Konvertera en IP-adress till decimal, binär eller hexadecimal form, eller till och med en IPv6-representation.
+    ui:
+      decimal: Decimalt
+      hexadecimal: Hexadecimalt
+      binary: Binärt
+      ipv6Short: IPv6 (kort)
+      invalidIpv4: Ogiltig IPv4-adress
+      ipv4Address: IPv4-adress
+      output: Utdata
+      copied: Kopierat!
+      copy: Kopiera
+  text-statistics:
+    title: Textstatistik
+    description: Få information om en text, som antal tecken, antal ord, storlek i byte, ...
+    ui:
+      textPlaceholder: Din text...
+      characterCount: ANTAL TECKEN
+      wordCount: ANTAL ORD
+      lineCount: ANTAL RADER
+      byteSize: STORLEK I BYTE
+  text-to-nato-alphabet:
+    title: Text till NATO-alfabetet
+    description: Omvandla text till NATO:s fonetiska alfabet för muntlig överföring.
+    ui:
+      yourText: DIN TEXT
+      inputPlaceholder: t.ex. Hej världen
+      natoPhonetic: NATO-FONETISKT
+      copied: Kopierat
+      copyAll: Kopiera allt
+      natoStringCopied: NATO-strängen har kopierats.
+  ipv4-range-expander:
+    title: IPv4-intervallexpanderare
+    description: Utifrån en start- och slutadress för IPv4 beräknar verktyget ett giltigt IPv4-subnät tillsammans med dess CIDR-notation.
+    ui:
+      startAddress: Startadress
+      endAddress: Slutadress
+      addressesInRange: Adresser i intervallet
+      invalidIpv4: Ogiltig IPv4-adress
+      invalidCombinationTitle: Ogiltig kombination av start- och slutadress för IPv4
+      invalidCombinationDescription: Slutadressen för IPv4 är lägre än startadressen. Det är inte giltigt och inget resultat kunde beräknas.
+      switchStartEnd: Byt plats på start- och slutadress
+      result: Resultat
+      copied: Kopierat!
+      copyResult: Kopiera resultat
+  text-diff:
+    title: Textdiff
+    description: Jämför två texter och se skillnaderna mellan dem.
+  otp-generator:
+    title: OTP-kodgenerator
+    description: Generera och validera tidsbaserade OTP-koder (engångslösenord) för multifaktorautentisering.
+  text-to-binary:
+    title: Text till ASCII-binärt
+    description: Konvertera text till dess binära ASCII-representation och tvärtom.
+    ui:
+      textCopied: Texten har kopierats
+      binaryCopied: Binärkoden har kopierats
+      panelTitle: TEXT ↔ ASCII-BINÄRT
+      textLabel: TEXT
+      binaryLabel: BINÄRT
+      copied: Kopierat
+      copy: Kopiera
+      textPlaceholder: t.ex. Hej världen
+      invalidBinary: Måste vara giltig ASCII-binärkod (multiplar av 8 bitar)
+  ascii-word-art:
+    title: Generator för ASCII-ordkonst
+    description: Skapa ordkonst i ASCII med många typsnitt och stilar.
+  killer-scripts:
+    title: Killer Scripts
+    description: PowerShell-skript för Windows-administration och MSP-fältarbete.
+    ui:
+      loadError: Det gick inte att läsa in skript från GitHub. Kontrollera din anslutning eller försök igen.
+      retry: Försök igen
+      copyCommand: Kopiera kommando
+      copied: Kopierat!
+      infoCopySuffix: kopierar en enradare till urklipp som laddar ner och kör skriptet direkt i PowerShell.
+      infoDownloadPrefix: Knappen
+      infoDownloadMiddle: sparar
+      infoDownloadSuffix: -filen på din dator för manuell användning.
+      license: Skripten är kostnadsfria och har öppen källkod under MIT-licensen.
+  powershell-builder:
+    title: PowerShell-byggare
+    description: Välj en cmdlet, fyll i parametrarna och kopiera ditt färdiga PowerShell-kommando.
+  group-policy-reference:
+    title: Referens för grupprinciper
+    description: Sök bland vanliga grupprinciper i Windows efter namn, GPO-sökväg, registernyckel eller beskrivning.
+    ui:
+      searchPlaceholder: Sök principer, sökvägar, registernycklar...
+      copied: Kopierat!
+      clickToCopyRegistry: Klicka för att kopiera registernyckeln
+      copiedShort: kopierat
+      default: Standard
+      recommended: Rekommenderat
+  windows-event-lookup:
+    title: Uppslag av Windows-händelser
+    description: Slå upp händelse-ID:n i Windows med beskrivningar, allvarlighetsnivåer och vanliga orsaker.
+    ui:
+      searchResults: Sökresultat
+      searchPlaceholder: Sök efter händelse-ID, namn eller beskrivning...
+      copied: Kopierat!
+      clickToCopyEventId: Klicka för att kopiera händelse-ID
+      copiedShort: kopierat
+  m365-sku-decoder:
+    title: Avkodare för M365-licens-SKU
+    description: Avkoda SKU-strängar och GUID:er för Microsoft 365-licenser till deras produktnamn.
+    ui:
+      searchPlaceholder: Sök efter SKU-namn, sträng-ID eller beskrivning...
+      copied: Kopierat!
+      clickToCopy: Klicka för att kopiera sträng-ID
+      copiedMark: ✓ kopierat
+  windows-error-codes:
+    title: Uppslag av Windows-felkoder
+    description: Slå upp Windows-felkoder i hex eller decimalt, inklusive systemfel, stoppkoder för BSOD, WMI, RPC, MSI-installationsfel med mera.
+    ui:
+      searchResults: Sökresultat
+      searchPlaceholder: Sök efter hexkod, felnamn eller beskrivning...
+      copied: Kopierat!
+      clickToCopy: Klicka för att kopiera hexkoden
+      copiedShort: kopierat
+      decimal: decimalt {decimal}
+  exchange-ndr-lookup:
+    title: Uppslag av Exchange NDR
+    description: Slå upp studskoder för Exchange och M365 med orsak och lösning förklarade på vanlig svenska.
+    ui:
+      searchResults: Sökresultat
+      searchPlaceholder: Sök efter NDR-kod, felnamn, orsak eller lösning...
+      copied: Kopierat!
+      clickToCopy: Klicka för att kopiera NDR-koden
+      copiedShort: kopierat
+      cause: Orsak
+      fix: Lösning
+  safelink-decoder:
+    title: Avkodare för Outlook Safelink
+    description: Packa upp Microsoft Defender SafeLinks och visa den ursprungliga mål-URL:en.
+  port-protocol-reference:
+    title: Referens för portar och protokoll
+    description: Vanliga nätverksportar och protokoll med säkerhetsanteckningar och markering av farliga portar.
+  cve-lookup:
+    title: CVE-uppslag
+    description: Sök i NIST NVD efter CVE:er via ID eller nyckelord. Livedata från NVD API.
+    ui:
+      chainedWith: Kedjad med
+      searchThisCve: Sök efter denna CVE
+      range6m: 6 månader
+      range1y: 1 år
+      range2y: 2 år
+      range5y: 5 år
+      rangeAll: All tid
+      noDescription: Ingen beskrivning tillgänglig.
+      fetchError: Det gick inte att nå NVD API. Kontrollera din anslutning.
+      sortNewest: Nyast först
+      sortOldest: Äldst först
+      sortSeverity: Högst allvarlighetsgrad
+      severityCritical: Kritisk
+      severityHigh: Hög
+      severityMedium: Medel
+      severityLow: Låg
+      placeholder: CVE-ID eller nyckelord (t.ex. CVE-2021-44228, log4j)
+      searching: Söker...
+      search: Sök
+      hint: Sök efter CVE-ID, del av nummer (t.ex. 43284), vanligt namn (t.ex. log4shell, dirty frag) eller nyckelord. Livedata från NVD och GitHub Advisory Database.
+      noResults: Inga CVE:er hittades för "{query}".
+      noResultsInRange: Inga CVE:er hittades för "{query}" i det valda datumintervallet.
+      noExactMatch: Ingen exakt frasmatchning hittades i det valda datumintervallet. Vanliga namn på sårbarheter (som "dirty frag") förekommer kanske inte ordagrant i NVD:s beskrivningar. Prova i stället en del av CVE-numret (t.ex. hittar "43284" CVE-2026-43284).
+      searchAllTime: Sök i all tid
+      showingResults: Visar {shown} av totalt {total} resultat
+      allSeverities: Alla allvarlighetsgrader
+      allYears: Alla år
+      copied: Kopierat!
+      clickToCopyId: Klicka för att kopiera CVE-ID
+      copiedShort: kopierat
+      cveDetail: CVE-DETALJER
+      published: Publicerad
+      modified: Ändrad
+      clickToCopy: Klicka för att kopiera
+      references: Referenser
+      kevActionDue: 'Åtgärdsdatum enligt CISA KEV:'
+      cvssMetrics: CVSS-mått
+      metricAttackVector: Attackvektor
+      metricAttackComplexity: Attackkomplexitet
+      metricPrivilegesRequired: Behörighet krävs
+      metricUserInteraction: Användarinteraktion
+      metricScope: Omfattning
+      metricConfidentiality: Konfidentialitet
+      metricIntegrity: Integritet
+      metricAvailability: Tillgänglighet
+  email-dns-checker:
+    title: DNS-kontroll för e-post
+    description: Kontrollera MX-, SPF-, DKIM- och DMARC-poster för valfri domän. Validerar konfigurationen för e-postautentisering och flaggar vanliga felkonfigurationer.
+  email-header-parser:
+    title: Tolkare för e-posthuvuden
+    description: Klistra in råa e-posthuvuden för att få fram avsändarinformation, spåra leveranskedjans hopp och se resultaten för SPF-, DKIM- och DMARC-autentisering.
+    ui:
+      pasteHint: Klistra in råa e-posthuvuden nedan.
+      parseButton: Tolka huvuden
+      parseAnother: Tolka fler
+      messageDetails: Meddelandedetaljer
+      senderMismatch: Avsändardomänen skiljer sig från From-domänen. Det kan tyda på förfalskning eller delegerad sändning.
+      deliveryHops: Leveranshopp
+      oldestFirst: äldst först
+      authResults: Autentiseringsresultat
+      spamAnalysis: Skräppostanalys
+      spamScore: Skräppostpoäng
+      spamStatus: Skräppoststatus
+  whois-checker:
+    title: WHOIS-uppslag
+    description: Slå upp registreringsuppgifter för valfri domän, inklusive registrar, skapande- och utgångsdatum, namnservrar och statusflaggor.
+  ascii-text-drawer:
+    title: Generator för ASCII-ordkonst
+    description: Skapa ordkonst i ASCII med många typsnitt och stilar.
+    ui:
+      yourText: DIN TEXT
+      textPlaceholder: Din text att rita
+      options: ALTERNATIV
+      font: TYPSNITT
+      searchFonts: Sök typsnitt...
+      noFontsMatch: Inga typsnitt matchar
+      width: BREDD
+      output: ASCII-KONST
+      loadingFont: Läser in typsnitt...
+      error: De aktuella inställningarna gav ett fel.
+      copied: Kopierat!
+      copy: Kopiera
+  regex-tester:
+    title: Regex-testare
+    description: Testa dina reguljära uttryck med exempeltext.
+    ui:
+      regexLabel: 'Regex att testa:'
+      regexPlaceholder: Skriv det regex du vill testa
+      globalLabel: Global
+      globalTitle: Global sökning
+      ignoreCaseLabel: Ignorera skiftläge
+      ignoreCaseTitle: Skiftlägesokänslig sökning
+      multilineLabel: Flera rader
+      singlelineLabel: En rad
+      singlelineTitle: Låter . matcha radbrytningstecken.
+      unicodeLabel: Unicode
+      unicodeTitle: Unicode; behandla ett mönster som en sekvens av Unicode-kodpunkter.
+      unicodeSetsLabel: Unicode-mängder
+      unicodeSetsTitle: En uppgradering av u-läget med fler Unicode-funktioner.
+      textLabel: 'Text att matcha:'
+      textPlaceholder: Skriv texten som ska matchas
+      regexBarTitle: REGEX
+      matchesBarTitle: MATCHNINGAR
+      matchIndex: Index
+      matchValue: Värde
+      matchCaptures: Fångster
+      matchGroups: Grupper
+      noMatch: Ingen matchning
+      sampleBarTitle: EXEMPEL
+      diagramBarTitle: DIAGRAM
+      quickReference: Snabbreferens
+  yaml-converter:
+    title: YAML-konverterare
+    description: Konvertera YAML till JSON eller TOML.
+    ui:
+      convertTo: 'Konvertera till:'
+      inputLabel: Din YAML
+      inputPlaceholder: Klistra in din YAML här...
+      invalidYaml: Angiven YAML är inte giltig.
+      outputLabel: '{format}-utdata'
+  json-converter:
+    title: JSON-konverterare
+    description: Konvertera JSON till YAML eller TOML.
+    ui:
+      convertTo: Konvertera till
+      yourJson: Din JSON
+      pasteJsonPlaceholder: Klistra in din JSON här...
+      invalidJson: Ogiltigt JSON-format
+      formatOutput: '{format}-utdata'
+  toml-converter:
+    title: TOML-konverterare
+    description: Konvertera TOML till JSON eller YAML.
+    ui:
+      convertTo: 'Konvertera till:'
+      yourToml: Din TOML
+      pastePlaceholder: Klistra in din TOML här...
+      invalidToml: Angiven TOML är inte giltig.
+      outputLabel: '{format}-utdata'
+  xml-json-converter:
+    title: XML ↔ JSON-konverterare
+    description: Dubbelriktad konverterare för XML och JSON. Redigera valfri sida så uppdateras den andra automatiskt.
+    ui:
+      invalidXml: Ogiltig XML.
+      invalidJson: Ogiltig JSON.
+      xmlLabel: XML
+      xmlPlaceholder: Klistra in din XML här...
+      jsonLabel: JSON
+      jsonPlaceholder: Klistra in din JSON här...
+  markdown-to-html:
+    title: Markdown till HTML
+    description: Konvertera Markdown till HTML och exportera eller skriv ut som PDF.
+    ui:
+      copiedSuccess: HTML har kopierats till urklipp!
+      copyFailed: Det gick inte att kopiera texten.
+      inputLabel: 'Din Markdown att konvertera:'
+      inputPlaceholder: Ditt Markdown-innehåll...
+      outputLabel: 'HTML-utdata:'
+      copyHtmlButton: Kopiera HTML
+      printAsPdfButton: Skriv ut som PDF
+  killer-pdf:
+    title: KillerPDF
+    description: PDF-redigerare med öppen källkod för Windows. Visa, kommentera, sammanfoga, dela, platta till, öppna lösenordsskyddade PDF-filer, redigera text, rita, markera, signera och skriv ut.
+  killer-bench:
+    title: KillerBench
+    description: "Arbetsbänk med öppen källkod för felsökning och reparation av Windows"
+  killer-scan:
+    title: KillerScan
+    description: Snabb nätverksskanner för fälttekniker. Identifiering via ARP och ping, portavsökning, tillverkaruppslag och automatisk klassificering av enheter.
+  killer-shot:
+    title: KillerShot
+    description: 'Krypterat album för skärmbilder och verktyg för skärminspelning. Fånga ett område, ett fönster eller alla skärmar med Print Screen, kommentera och maskera, och hitta bilden igen via texten i den. När en bild inte räcker kan du spela in skärmen till MP4 eller GIF.'
+  gif-search:
+    title: GIF-sök
+    description: Sök efter reaktions-GIF:ar på Giphy. Klicka på ett resultat för att kopiera URL:en.
+    ui:
+      errorStatus: Fel {status}
+      fetchFailed: Det gick inte att hämta GIF:ar.
+      searchPlaceholder: Sök GIF:ar (t.ex. facepalm, nice work, this is fine)
+      searching: Söker...
+      search: Sök
+      noResults: Inga GIF:ar hittades för "{query}".
+      copied: Kopierat!
+      copyUrl: Kopiera URL
+      resultsHint: '{count} resultat. Klicka för att kopiera URL:en och klistra sedan in den i Teams, Telegram eller Slack.'
+  killer-shell:
+    title: KillerShell
+    description: Kostnadsfritt skal för avancerade användare. En filutforskare, en terminal och en textredigerare delar ett fönster, en flikrad och en uppsättning kortkommandon.
+  domain-lookup:
+    title: Domänuppslag
+    description: WHOIS-registreringsuppgifter och DNS-kontroller för e-post (MX, SPF, DKIM, DMARC) för valfri domän i en och samma vy.
+    ui:
+      statusDesc:
+        active: Domänen är aktiv och i drift.
+        inactive: Domänen är inaktiv.
+        clientDeleteProhibited: Registraren har låst domänen mot borttagning.
+        clientTransferProhibited: Registraren har låst domänen mot flytt till en annan registrar.
+        clientUpdateProhibited: Registraren har låst domänen mot uppdateringar.
+        clientHold: Registraren har spärrat domänen, så DNS kanske inte löses upp.
+        serverDeleteProhibited: Registret har låst domänen mot borttagning.
+        serverTransferProhibited: Registret har låst domänen mot flytt.
+        serverUpdateProhibited: Registret har låst domänen mot uppdateringar.
+        serverHold: Registret har spärrat domänen, så DNS kanske inte löses upp.
+        pendingCreate: Domänen väntar på att skapas.
+        pendingDelete: Domänen väntar på borttagning och kan snart bli ledig.
+        pendingRenew: Förnyelse av domänen väntar.
+        pendingRestore: Återställning av domänen efter borttagning väntar.
+        pendingTransfer: Flytt av domänen till en annan registrar väntar.
+        pendingUpdate: Uppdatering av domänen väntar.
+        redemptionPeriod: Domänen har gått ut och befinner sig i inlösenperioden. Innehavaren kan fortfarande återfå den.
+        renewPeriod: Domänen befinner sig i förnyelsens respitperiod efter registrering.
+        autoRenewPeriod: Domänen befinner sig i respitperioden för automatisk förnyelse.
+        transferPeriod: Domänen befinner sig i respitperioden för flytt.
+      expiredAlert: Den här domänen gick ut för {days} dagar sedan och kan vara ledig för registrering.
+      expiresAlert: Den här domänen går ut om {days} dagar. Förnyelse bör ordnas snarast.
+      expiredTag: Gick ut för {days} d sedan
+      remainingTag: '{days} d kvar'
+      registrar: Registrar
+      registrarIanaId: Registrarens IANA-ID
+      created: Skapad
+      updated: Uppdaterad
+      expires: Går ut
+      noMx: Inga MX-poster hittades.
+      dnsFailed: DNS-uppslaget misslyckades.
+      noSpf: Ingen SPF-post hittades.
+      noDkim: Inga DKIM-poster hittades för vanliga selektorer. Egna selektorer kan ändå finnas.
+      noDmarc: Ingen DMARC-post hittades. Domänen är oskyddad mot förfalskning.
+      spfPlusAll: 'Varning: +all är farligt eftersom det låter vilken server som helst skicka e-post som den här domänen.'
+      spfNeutralAll: 'Varning: ?all är neutralt och ger inget skydd.'
+      dmarcPNone: 'Varning: p=none innebär endast övervakning, utan tillämpning. E-post kommer inte att avvisas.'
+      dmarcNoRua: 'Varning: Ingen adress för sammanställda rapporter (rua=). Du kommer inte att få några DMARC-rapporter.'
+      pass: Godkänd
+      fail: Underkänd
+      warning: Varning
+      checking: Kontrollerar...
+      overallPass: Alla e-postkontroller godkändes. Den här domänen är väl konfigurerad för e-post.
+      overallFail: En eller flera kritiska poster saknas. Den här domänen kan vara sårbar för förfalskning.
+      overallWarn: Vissa poster finns men har konfigurationsproblem som är värda att granska.
+      rdapHttpError: 'HTTP {status}: domänen kanske inte finns eller toppdomänen stöds inte.'
+      lookupFailed: Uppslaget misslyckades.
+      domainPlaceholder: Ange en domän (t.ex. killertools.net)
+      searching: Söker...
+      search: Sök
+      signed: Signerad
+      unsigned: Osignerad
+      delegationSigned: Delegeringen är signerad.
+      dsRecord: '{count} DS-post.'
+      dsRecords: '{count} DS-poster.'
+      keyRecord: '{count} nyckelpost.'
+      keyRecords: '{count} nyckelposter.'
+      dnssecUnsigned: Den här domänen skyddas inte av DNSSEC. DNS-svar kan inte verifieras kryptografiskt.
+      status: Status
+      contacts: Kontakter
+      remarks: Anmärkningar
+      nameservers: Namnservrar
+      mxRecords: MX-poster
+      spfRecord: SPF-post
+      dkimRecords: DKIM-poster
+      dmarcRecord: DMARC-post
+      role:
+        registrant: innehavare
+        administrative: administrativ
+        technical: teknisk
+        abuse: missbruk
+      name: Namn
+      organization: Organisation
+      email: E-post
+      phone: Telefon
+  email-record-generator:
+    title: Generator för e-postposter
+    description: Generera SPF- och DMARC-poster av typen TXT för DNS. Välj dina e-postleverantörer och principer och kopiera resultatet direkt till din DNS.
+    ui:
+      hardFailRecommended: hård avvisning, rekommenderas
+      softFail: mjuk avvisning
+      neutralNotRecommended: neutral, rekommenderas inte
+      blockFailingMail: blockera underkänd e-post
+      sendToSpam: skicka till skräppost
+      monitorOnly: endast övervakning
+      relaxedDefault: Avslappnad (standard)
+      strict: Strikt
+      sameAsMainPolicy: Samma som huvudprincipen
+      spfRecordTitle: SPF-POST
+      dmarcRecordTitle: DMARC-POST
+      spfRecordLocation: TXT-post på din rotdomän
+      dmarcRecordLocation: TXT-post på
+      copied: kopierat
+      clickToCopy: klicka för att kopiera
+      lookupWarning: '{count} DNS-uppslag valda; SPF har en gräns på 10 uppslag'
+      mailProviders: E-POSTLEVERANTÖRER
+      customIps: EGNA IP-ADRESSER ELLER INTERVALL (VALFRITT)
+      examplePrefix: t.ex.
+      enforcement: TILLÄMPNING
+      policy: PRINCIP
+      subdomainPolicy: PRINCIP FÖR UNDERDOMÄNER (VALFRITT)
+      policyCoverage: 'PRINCIPENS TÄCKNING: {percent}%'
+      coverageHint: 'Åtgärder vidtas mot {percent}% av underkänd e-post. Använd mindre än 100% för en gradvis utrullning.'
+      aggregateReportEmail: E-POST FÖR SAMMANSTÄLLDA RAPPORTER (rua)
+      forensicReportEmail: E-POST FÖR DETALJERADE RAPPORTER (ruf, valfritt)
+      dkimAlignment: DKIM-ANPASSNING
+      spfAlignment: SPF-ANPASSNING
+  basic-auth-generator:
+    ui:
+      copied: Huvudet har kopierats till urklipp
+      username: Användarnamn
+      usernamePlaceholder: Ditt användarnamn...
+      password: Lösenord
+      passwordPlaceholder: Ditt lösenord...
+      headerLabel: 'Authorization-huvud:'
+      copyHeader: Kopiera huvud
+  date-time-converter:
+    ui:
+      formatJsLocaleDateString: JS locale date string
+      formatUnixTimestamp: Unix-tidsstämpel
+      formatTimestamp: Tidsstämpel
+      formatUtc: UTC-format
+      formatExcelDateTime: Excel-datum/tid
+      invalidDateRule: Det här datumet är ogiltigt för det här formatet
+      inputPlaceholder: Klistra in en datumsträng eller lämna tomt för en levande klocka...
+      invalidDate: Ogiltigt datum för det här formatet
+      output: UTDATA
+      live: LIVE
+  integer-base-converter:
+    ui:
+      binary: Binärt
+      octal: Oktalt
+      decimal: Decimalt
+      hexadecimal: Hexadecimalt
+      base: bas
+      output: UTDATA
+      custom: Egen
+  json-viewer:
+    ui:
+      invalidJson: Angiven JSON är inte giltig.
+      sortKeys: Sortera nycklar
+      indentSize: Indragsstorlek
+      yourRawJson: Din råa JSON
+      pasteRawJsonPlaceholder: Klistra in din råa JSON här...
+      prettifiedVersion: Formaterad version av din JSON
+  meta-tag-generator:
+    ui:
+      copiedSuccess: Metataggarna har kopierats!
+      copiedLabel: ✓ Kopierat
+      copyButton: Kopiera
+      outputTitle: DINA METATAGGAR
+  mime-types:
+    ui:
+      mimeToExtensionTitle: MIME-typ till filändelse
+      mimeToExtensionDescription: Se vilka filändelser som hör till en MIME-typ
+      mimeTypeSelectPlaceholder: 'Välj din MIME-typ här... (t.ex. application/pdf)'
+      extensionsFoundPrefix: Filändelser för filer med
+      extensionsFoundSuffix: 'MIME-typen:'
+      extensionToMimeTitle: Filändelse till MIME-typ
+      extensionToMimeDescription: Se vilken MIME-typ som hör till en filändelse
+      mimeFoundPrefix: MIME-typ som hör till ändelsen
+      mimeFoundSuffix: 'filändelse:'
+      tableMimeTypesHeader: MIME-typer
+      tableExtensionsHeader: Filändelser
+  otpCodeGeneratorAndValidator:
+    ui:
+      secretHexLabel: Hemlighet (hex)
+      epochLabel: Epok
+      countLabel: Räknare
+      paddedHexLabel: Utfylld hex
+      secretLabel: HEMLIGHET
+      secretPlaceholder: Klistra in din TOTP-hemlighet...
+      generateNewSecret: Generera ny hemlighet
+      tokenLabel: TOKEN
+      copied: ✓ kopierat
+      clickToCopy: klicka för att kopiera
+      nextIn: '>_ nästa om {seconds} s'
+      adjacentTokensLabel: INTILLIGGANDE TOKENS
+      prevLabel: Föreg.
+      nextLabel: Nästa
+      detailsLabel: DETALJER
+      scanToAuthenticate: '>_ skanna för att autentisera'
+      openKeyUriInNewTab: Öppna nyckel-URI i ny flik
+      tokenDisplayPreviousLabel: Föregående
+      tokenDisplayCurrentLabel: Aktuell OTP
+      tokenDisplayNextLabel: Nästa
+      copiedExclaim: Kopierat!
+      copyPreviousOtp: Kopiera föregående OTP
+      copyCurrentOtp: Kopiera aktuell OTP
+      copyNextOtp: Kopiera nästa OTP
+  passwordStrengthAnalyser:
+    ui:
+      strongLabel: Starkt
+      moderateLabel: Måttligt
+      weakLabel: Svagt
+      veryWeakLabel: Mycket svagt
+      lengthLabel: Längd
+      entropyLabel: Entropi
+      charsetSizeLabel: Teckenuppsättningens storlek
+      scoreDetailLabel: Poäng
+      passwordPlaceholder: Ange ett lösenord...
+      hideLabel: Dölj
+      showLabel: Visa
+      clearLabel: Rensa
+      crackTimeSublabel: KNÄCKTID MED BRUTE FORCE
+      crackTimeNote: Styrkan uppskattas utifrån tiden för en brute force-attack med 1 miljard gissningar per sekund. Ordlisteattacker modelleras inte.
+  portProtocolReference:
+    ui:
+      searchPlaceholder: Sök efter port, tjänst, protokoll eller beskrivning...
+      allProtocols: Alla
+      dangerousOnly: Endast farliga
+      showingPorts: Visar {count} portar
+      copied: Kopierat!
+      clickToCopy: Klicka för att kopiera portnumret
+      copiedCheck: ✓ kopierat
+      dangerousPill: Farlig
+  powershellBuilder:
+    ui:
+      cmdletBrowser: Cmdlet-bläddrare
+      adminBadge: Admin
+      cmdletSearchPlaceholder: Sök efter namn, beskrivning eller modul...
+      noCmdletsMatch: Inga cmdletar matchar "{query}"
+      generatedCommand: Genererat kommando
+      copiedCheck: ✓ Kopierat!
+      copyCommand: Kopiera kommando
+      commonExamples: Vanliga exempel
+      selectCmdletPrompt: Välj en cmdlet till vänster för att börja bygga ditt kommando.
+      parameters: Parametrar
+      noParametersNeeded: Inga parametrar behövs, den här cmdleten körs som den är.
+      required: obligatorisk
+      separateMultipleValues: separera flera värden med kommatecken
+      showFewerParameters: Visa färre parametrar
+      showMoreParameters: '{count} parametrar till'
+      collapseQuickReference: Fäll ihop snabbreferensen
+      openQuickReference: Öppna snabbreferensen
+      quickReference: Snabbreferens
+      cheatsheetComparisonOperators: Jämförelseoperatorer
+      cheatsheetEqualTo: Lika med
+      cheatsheetNotEqualTo: Inte lika med
+      cheatsheetGreaterLessThan: Större än / Mindre än
+      cheatsheetGreaterLessEqual: Större eller lika med / Mindre eller lika med
+      cheatsheetStringOperators: Strängoperatorer
+      cheatsheetWildcardMatch: Jokerteckenmatchning  (* och ?)
+      cheatsheetWildcardNonMatch: Ingen jokerteckenmatchning
+      cheatsheetRegexMatch: Regex-matchning
+      cheatsheetRegexNonMatch: Ingen regex-matchning
+      cheatsheetCollectionContains: Samlingen innehåller värdet
+      cheatsheetValueInCollection: Värdet finns i en samling
+      cheatsheetLogicalOperators: Logiska operatorer
+      cheatsheetBothTrue: Båda villkoren måste vara sanna
+      cheatsheetEitherTrue: Något av villkoren är sant
+      cheatsheetNegateCondition: Negera ett villkor
+      cheatsheetAutomaticVariables: Automatiska variabler
+      cheatsheetCurrentPipelineObject: Aktuellt pipelineobjekt
+      cheatsheetNullEmptyValue: Null / tomt värde
+      cheatsheetBooleanTrueFalse: Booleskt sant / falskt
+      cheatsheetLocalComputerName: Lokalt datornamn
+      cheatsheetCurrentUser: Inloggad användare
+      cheatsheetPsVersionInfo: Information om PS-version
+      cheatsheetDateHelpers: Datumhjälpare
+      cheatsheetCurrentDateTime: Aktuellt datum och tid
+      cheatsheetThirtyDaysAgo: För 30 dagar sedan
+      cheatsheetThreeMonthsAgo: För 3 månader sedan
+      cheatsheetParseDateString: Tolka en datumsträng
+      cheatsheetPipelineTricks: Pipelinetrick
+      cheatsheetLimitFirst10: Begränsa till de 10 första resultaten
+      cheatsheetCountSumMinMax: Antal / summa / min / max
+      cheatsheetInteractiveGuiViewer: Interaktiv grafisk visare (lokalt)
+      cheatsheetConvertToJson: Konvertera utdata till JSON
+      cheatsheetOutputScreenAndFile: Utdata till skärm OCH fil
+      cheatsheetSuppressErrors: Undertryck icke-fatala fel
+      cheatsheetRemoteExecution: Fjärrkörning
+      cheatsheetCmdletsSupportDirectly: Många cmdletar stöder detta direkt
+      cheatsheetRunViaRemoting: Kör via PS Remoting (WinRM)
+      cheatsheetInteractiveRemoteSession: Interaktiv PS-fjärrsession
+      categories:
+        all: Alla
+        activeDirectory: Active Directory
+        m365Exchange: M365 / Exchange
+        networking: Nätverk
+        system: System
+        services: Tjänster
+        filesRegistry: Filer och register
+        pipeline: Pipeline
+        bitlocker: BitLocker
+        securityDefender: Säkerhet och Defender
+        windowsUpdate: Windows Update
+        certificates: Certifikat
+        printManagement: Utskriftshantering
+        diskStorage: Disk och lagring
+        fileSharing: Fildelning
+        groupPolicy: Grupprinciper
+        dnsServer: DNS-server
+        dhcpServer: DHCP-server
+        hyperV: Hyper-V
+        iis: IIS
+        windowsServer: Windows Server
+      wrappedInScriptBlock: kommer att omslutas av ett skriptblock
+  qrcode-reader:
+    title: QR-kodläsare
+    description: Läs QR-koder från en bild lokalt, med varningar för länkar och kopiering av Wi-Fi-lösenord.
+    privacy: Bilder och avkodat innehåll stannar i din webbläsare. Länkar öppnas bara när du väljer Öppna.
+    pick: Välj eller släpp en bild med QR-kod
+    reading: Läser QR-koder lokalt...
+    error: Det gick inte att läsa bilden. Använd en PNG, JPEG, WebP, BMP eller GIF under 40 MB och 16 miljoner pixlar.
+    none: Inga QR-koder hittades.
+    preview: Bild med QR-koder markerade
+    copy: Kopiera
+    copyPassword: Kopiera lösenord
+    copied: Kopierat.
+    copyFailed: Det gick inte att kopiera. Markera texten och kopiera den manuellt.
+    open: Öppna
+    cancel: Avbryt
+    confirmTitle: Öppna den här länken?
+    warnings:
+      PlainHttp: Okrypterad HTTP-länk.
+      UnusualPort: Ovanlig nätverksport.
+      RawIp: IP-adress i stället för ett domännamn.
+      UserInfo: Innehåller användarinformation före värden.
+      InternationalHost: Internationaliserad domän eller punycode-domän.
+      MixedScripts: Domänen blandar skriftsystem som liknar varandra.
+      DeepSubdomains: Ovanligt djupa underdomäner.
+      Shortener: Förkortad länk. Målet har inte expanderats.
+      DirectDownload: Direktlänk till nedladdning.
+      EmbeddedDestination: "Innehåller ett annat webbmål. Omdirigeringar följdes inte."
+      HiddenCharacters: "Dolda tecken kan maskera den här adressen."
+      DisguisedDownload: "En körbar filändelse döljs före en annan filändelse."
+    scanClear: "Inga problem hittades"
+    scanReview: "Granska innan du öppnar"
+    scanBlocked: "Öppning blockerad"
+    scanLocal: "Endast lokala kontroller. Målet besöktes inte."
+  qr-code-generator:
+    ui:
+      tabText: Text / URL
+      tabWifi: Wi-Fi
+      sectionTextOrUrl: Text eller URL
+      placeholderTextOrUrl: Din länk eller text...
+      sectionEncryption: Kryptering
+      encWpa: WPA/WPA2
+      encWep: WEP
+      encNopass: Inget lösenord
+      encEap: WPA2-EAP
+      sectionSsid: SSID
+      placeholderSsid: Nätverksnamn...
+      sectionPassword: Lösenord
+      placeholderPassword: Nätverkslösenord...
+      sectionOptions: Alternativ
+      hiddenSsid: Dolt SSID
+      anonymousIdentity: Anonym identitet
+      sectionEapMethod: EAP-metod
+      sectionEapPhase2: EAP fas 2
+      sectionEapIdentity: EAP-identitet
+      placeholderEapIdentity: Din EAP-identitet...
+      sectionTheme: Tema
+      themeDefault: Standard
+      themeTerminal: Terminal
+      themeClassic: Klassiskt
+      themeInverted: Inverterat
+      sectionColors: Färger
+      labelForeground: 'Förgrund:'
+      labelBackground: 'Bakgrund:'
+      sectionErrorCorrection: Felkorrigering
+      levelLow: Låg (~7%)
+      levelMedium: Medel (~15%)
+      levelQuartile: Kvartil (~25%)
+      levelHigh: Hög (~30%)
+      emptyHintWifi: Ange ett SSID för att generera en Wi-Fi-QR-kod
+      emptyHintText: Ange text eller en URL
+      captionJoin: '>_ skanna för att ansluta'
+      captionOpen: '>_ skanna för att öppna'
+      downloadPng: ↓ Ladda ner PNG
+  text-to-unicode:
+    ui:
+      textToUnicodeTitle: Text till Unicode
+      enterTextLabel: Ange text att konvertera till Unicode
+      unicodeFromTextLabel: Unicode från din text
+      unicodeOutputPlaceholder: Unicode-representationen av din text visas här
+      copyUnicode: Kopiera Unicode till urklipp
+      unicodeToTextTitle: Unicode till text
+      inputUnicodePlaceholder: Ange Unicode
+      enterUnicodeLabel: Ange Unicode att konvertera till text
+      textFromUnicodeLabel: Text från din Unicode
+      textOutputPlaceholder: Textrepresentationen av din Unicode visas här
+      copyText: Kopiera text till urklipp
+  yaml-viewer:
+    ui:
+      invalidYaml: Angiven YAML är inte giltig.
+      sortKeys: Sortera nycklar
+      indentSize: Indragsstorlek
+      rawLabel: Din råa YAML
+      rawPlaceholder: Klistra in din råa YAML här...
+      prettifiedLabel: Formaterad version av din YAML
+  killer-modules:
+    title: Killer Modules
+    description: PowerShell-moduler för Windows-administration och MSP-fältarbete. Installera från PowerShell Gallery.
+    ui:
+      repo: Repo
+      commands: Kommandon
+      requires: Kräver
+      copyInstall: Kopiera installation
+      copied: Kopierat!
+      modules:
+        KillerPivot:
+          description: Växla mellan Microsoft 365-klienter i PowerShell utan att köra kommandon mot fel klient. KillerPivot inaktiverar autentiseringsmäklaren för att tvinga fram en riktig inloggning, frågar sedan sessionen vilken klient den faktiskt hamnade i och verifierar det innan du rör något. Spara dina klienter en gång och växla sedan mellan dem med namn, med inbyggd identitetsverifiering.
+          requirements: PowerShell 5.1 & 7 · ExchangeOnlineManagement v3+ · Microsoft.Graph.Authentication (för -Graph)
+        KillerScripts:
+          description: Alla verktyg i repot killer-scripts, tillgängliga som kommandon i valfri PowerShell-session. Varje skript hämtas färskt från GitHub i samma stund som du kör det, så du har alltid den aktuella versionen, med en lokal cache som reserv offline. Alla 19 verktyg får ett eget kommando och ett kort alias, så att skriva urt kör Universal Rename Tool.
+          requirements: PowerShell 5.1 & 7 · Internetåtkomst för att hämta det aktuella skriptet (cachade kopior körs offline)
+  killer-notes:
+    title: KillerNotes
+    description: Krypterat anteckningsblock för tekniker. Formaterad text, infogade bilder, riktiga tabeller, direktsökning, SQLCipher AES-256 och delning via .knote.
+  killendar:
+    title: The Killendar
+    description: Krypterad skrivbordskalender för Windows. Vyer för månad, vecka, dag och agenda, färgkategorier, import och export av iCalendar, och möten som ligger i en enda fil på din egen dator. Inget konto, ingen synkning, ingen telemetri.
+components:
+  localeSelector:
+    language: Språk
+  androidBetaBanner:
+    announcement: Meddelande om Android-beta
+    title: Killer Tools kommer till Android
+    subtitle: Betatestare behövs, tryck för att gå med
+    dismiss: Stäng
+  formatTransformer:
+    input: Indata
+    inputPlaceholder: Indata...
+    output: Utdata
+  inputCopyable:
+    copied: Kopierat!
+    copy: Kopiera till urklipp
+  spanCopyable:
+    copied: Kopierat!
+    copy: Kopiera till urklipp
+  textareaCopyable:
+    copy: Kopiera till urklipp
+    copied: Kopierat!
+  navbarButtons:
+    androidTooltip: Killer Tools för Android
+    androidAriaLabel: Killer Tools för Android, gå med i betan
+  themeDots:
+    themes:
+      dark: Mörkt
+      light: Ljust
+      black: Svart
+      blood: Blod
+      greed: Girighet
+      cyanotic: Cyanotisk
+      ectoplasm: Ektoplasma
+      decay: Förfall
+      malaise: Olust
+      sepulchre: Gravvalv
+      delirium: Delirium
+      mourning: Sorg
+    accentColor: Accentfärg
+    theme: Tema
+    toggleThemeSwatches: Visa/dölj temaprover
+    accentColorPicker: Väljare för accentfärg
+    dragToMove: Dra för att flytta
+    accentLabel: 'accent:'
+    accentNamed: 'Accent: {name}'
+    closeAccentPicker: Stäng accentväljaren
+    filmGrain: Filmkorn
+    accents:
+      red: Röd
+      orange: Orange
+      green: Grön
+      teal: Blågrön
+      blue: Blå
+      purple: Lila
+      yellow: Gul
+      magenta: Magenta
+layouts:
+  menuLayout:
+    eggMessage: 80 verktyg. Noll prenumerationer. En trotsig fälttekniker.
+    clickMe: klicka på mig
+    sourceOnGithub: Källkod på GitHub
+  base:
+    collapseMenu: Fäll ihop menyn
+    homeLabel: KillerTools startsida
+ui:
+  diffEditor:
+    originalLabel: ORIGINAL
+    modifiedLabel: ÄNDRAD
+    originalPlaceholder: Originaltext...
+    modifiedPlaceholder: Ändrad text...
+  fileUpload:
+    defaultTitle: Dra och släpp filer här, eller klicka för att välja filer
+    or: eller
+    browseFiles: Bläddra bland filer
+  inputText:
+    defaultPlaceholder: Indatatext
+  keyValueListItem:
+    yes: Ja
+    no: Nej
+    notAvailable: Ej tillgängligt
+  modalValue:
+    copied: Kopierat!
+    copy: Kopiera
+  select:
+    searchPlaceholder: Sök...
+    noResults: Inga resultat hittades
+    defaultPlaceholder: Välj ett alternativ
+  table:
+    defaultDescription: Datatabell
+  textCopyable:
+    copied: Kopierat!
+    copyToClipboard: Kopiera till urklipp
+commandPalette:
+  searchAriaLabel: Sök
+  searchPlaceholder: Skriv för att söka efter ett verktyg eller kommando...
+pages:
+  notFound:
+    noSuchFile: Filen eller katalogen finns inte
+    exitCode: slutkod
+    backToHome: tillbaka till start
+  privacy:
+    heading: Integritetspolicy
+    lastUpdated: 'Senast uppdaterad: 4 april 2026'
+    overviewHeading: Översikt
+    overviewIntro: Killer Tools
+    overviewBody: är en kostnadsfri samling IT-verktyg. Din integritet är viktig för oss, och den här policyn förklarar hur vi hanterar dina uppgifter.
+    dataCollectionHeading: Datainsamling
+    dataCollectionBody: Killer Tools samlar inte in, lagrar eller överför några personuppgifter. All bearbetning i verktygen sker helt i din webbläsare. Inga uppgifter som du anger i något verktyg skickas till någon server.
+    cookiesHeading: Cookies
+    cookiesBody: Den här webbplatsen använder inte cookies för spårning. Dina temaval och inställningar lagras lokalt i din webbläsare och överförs aldrig.
+    analyticsHeading: Analys
+    analyticsIntro: Den här webbplatsen använder
+    analyticsBody: ett integritetsfokuserat analysverktyg, för att förstå allmänna användningsmönster som sidvisningar och hänvisningskällor. Umami använder inte cookies, spårar inte användare mellan webbplatser och samlar inte in någon personligt identifierbar information. All data är sammanställd och anonym.
+    thirdPartyHeading: Tredjepartstjänster
+    thirdPartyBody: Vissa verktyg kan länka till externa resurser eller dokumentation. Vi ansvarar inte för integritetspraxis på dessa externa webbplatser.
+    androidAppHeading: Android-app
+    androidAppBody: Android-appen Killer Tools är ett skal runt webbapplikationen. Den begär eller använder inga enhetsbehörigheter utöver grundläggande internetåtkomst. Ingen enhetsdata samlas in eller överförs.
+    contactHeading: Kontakt
+    contactBody: Om du har frågor om den här integritetspolicyn kan du nå oss på
+  androidApp:
+    heroAlt: Killer Tools för Android, IT-verktyg för fälttekniker
+    robotAttribution: Android-roboten är återgiven eller modifierad från verk som skapats och delats av Google och används enligt villkoren i Creative Commons 3.0 Attribution License.
+    heading: Killer Tools för Android
+    introBody1: 'Hela verktygslådan från killertools.net som en inbyggd Android-app: alla verktyg, biblioteket Killer Scripts och alla dina favoriter, ett tryck bort från hemskärmen.'
+    introBody2: Samma regler som på webbplatsen. Allt körs på din enhet. Inget konto, ingen telemetri, inga anrop hem. Om den sparar dig en ärenderunda ute på fältet har den gjort sitt jobb.
+    betaStatusPrefix: Appen är just nu i
+    betaStatusStrong: sluten beta på Google Play
+    betaStatusSuffix: ', och det är här du kommer in.'
+    joinBetaHeading: Gå med i betan
+    joinBetaIntroPrefix: Google kräver
+    joinBetaIntroStrong: 12 testare som har haft appen installerad i 14 dagar i följd
+    joinBetaIntroSuffix: 'innan en app från en oberoende utvecklare kan bli offentlig. Tre steg, ungefär två minuter, och du är en av de tolv:'
+    step1LinkText: Gå med i testgruppen
+    step1Suffix: på Google Groups (tryck på "Join group").
+    step2LinkText: Bli testare
+    step2Suffix: på Google Plays anmälningssida.
+    step3LinkText: Installera appen
+    step3Suffix: från Google Play och behåll den installerad i två veckor.
+    sameAccountStrong: Använd samma Google-konto för alla tre stegen
+    sameAccountSuffix: '. Anmälningssidan visar "not available for this account" om du hoppar över gruppen eller byter konto.'
+    feedbackPrefix: 'Är något trasigt eller saknas något? Berätta för mig:'
+  home:
+    sortPopular: Populära
+    sortAZ: A till Ö
+    sortZA: Ö till A
+  about:
+    heading: Om Killer Tools
+    intro: Fälttekniker har inte tid med onödigt krångel. Varje verktyg här finns för att jag behövde det i jobbet och inte hittade något som bara fungerade utan konto, installation eller telemetri.
+    originPrefix: Numera bygger jag verktyg i en MSP:s interna AI-utvecklingsteam, efter sex år som fullstackutvecklare och åtta år som fälttekniker på flera olika företag. KillerTools.net började som en fork av det utmärkta projektet
+    originMid: av
+    originSuffix: och växte till något byggt för det arbete jag faktiskt gör. Jag byggde det för att slå upp grupprinciper mitt i ett ärende, skanna en kunds subnät och ta fram portreferenser utan att lämna webbläsaren.
+    scriptsLibrary: Biblioteket Killer Scripts täcker de jobb som dyker upp i varje ärenderunda. Alla skript körs i PS 5.1, PS 7 och Kaseya LiveConnect utan beroenden.
+    privacyBody: Allt körs i din webbläsare. Ingenting spåras. Inget konto krävs, aldrig. Webbplatsen tillämpar en strikt Content Security Policy för att blockera attacker via beroendekedjan. Om ett komprometterat npm-paket någon gång hamnar i paketet kan det inte skicka hem det du har klistrat in.
+    maintainedByPrefix: Byggt och underhållet av
+    maintainedByMid: Om det här sparar dig tid i jobbet
+    buyMeCoffee: uppskattas det om du bjuder mig på en kaffe
+    maintainedBySuffix: men det förväntas aldrig.
+    missingToolHeading: Saknar du ett verktyg? Hittat en bugg?
+    issuesPrefix: Skapa en funktionsförfrågan eller felrapport under
+    issuesLinkText: issues
+    issuesSuffix: på GitHub. Jag läser dem.
+    alsoTryHeading: Prova även...
+    tagKillerScan: Nätverksskanner med öppen källkod för Windows
+    tagKillerPdf: PDF-redigerare med öppen källkod för Windows
+    tagKillerShell: Windows-skal med öppen källkod för avancerade användare
+    tagKillerNotes: Krypterat anteckningsblock med öppen källkod för Windows
+    tagKillendar: Krypterad kalender med öppen källkod för Windows
+    tagKillerBench: Arbetsbänk med öppen källkod för felsökning och reparation av Windows
+    tagKillerShot: Krypterat skärmbildsalbum med öppen källkod för Windows
+    linksHeading: Länkar
+    linkLabelSite: Webbplats
+    linkLabelSource: Källkod
+    linkLabelIssues: Ärenden
+    reportBug: Rapportera en bugg
+    requestFeature: Föreslå en funktion
+    linkLabelSupport: Stöd
+    linkLabelBuiltOn: Byggt på
+    itToolsFork: IT-Tools (fork)
+  mcp:
+    copy:
+      copying: Kopierar...
+      copied: '{label} kopierat'
+      failed: 'Kopieringen misslyckades. Kopiera detta i stället: {value}'
+      popups: Server-URL:en har kopierats. Tillåt popup-fönster för att öppna Claude.
+    labels:
+      serverUrl: Server-URL
+      codex: Codex-kommando
+      claudeCode: Claude Code-kommando
+    description: KillerMCP kopplar AI-agenter till KillerTools-verktyg och Killer-appar som stöds. Välj den Cloudflare-hostade servern eller den installerade Windows-versionen.
+    github: KillerMCP på GitHub
+    eyebrow:
+      agents: ETT NAMN / TVÅ SÄTT ATT ANSLUTA
+      oneInstaller: INSTALLERAD PÅ WINDOWS
+      hosted: HOSTAD PÅ CLOUDFLARE
+      after: EFTER ANSLUTNING
+    lead: Ge din agent användbara KillerTools-kommandon. Anslut till den publika Cloudflare-servern för webbsäkra verktyg, eller installera KillerMCP på Windows för lokala verktyg och Killer-appar som stöds.
+    status: Välj den anslutning som passar de data och appar du vill använda.
+    install: Installera
+    intro: Windows-installationsprogrammet ger din agent en lokal anslutning till alla 81 KillerTools-verktyg och till kommandon som annonseras av Killer-appar som stöds och är installerade på datorn. Appkommandona beror på appens version och tillgänglighet. Ingen separat Node-installation eller källkodsutcheckning behövs.
+    download: Ladda ner för Windows
+    meta:
+      version: Version {version}
+      signed: Digitalt signerad
+      hosted: Hostad på GitHub Releases
+    steps:
+      s1Title: Ladda ner och kör KillerMCP Setup.
+      s1Body: Installationsprogrammet kontrollerar om .NET 10-körningsmiljön finns och öppnar Microsofts nedladdningssida om den saknas. Installationsprogrammet är signerat av Open Source Developer Stephen Riley och publiceras via GitHub Releases.
+      s2Title: Låt installationsprogrammet ansluta din agent.
+      s2Body: Det installerar den delade körningsmiljön och registrerar KillerMCP hos Codex, Claude Code, Claude Desktop, Cursor, GitHub Copilot, Gemini CLI och Windsurf när de hittas.
+      s3Title: Öppna en ny agentchatt och fråga.
+      s3Body: KillerMCP hittar tillgängliga KillerTools och installerade appkommandon via en enda anslutning.
+    hostedTitle: Anslut utan installation
+    hostedBody: Den publika Cloudflare-servern erbjuder 64 webbsäkra KillerTools-verktyg via en HTTP-anslutning. Den kan inte se dina Windows-filer eller installerade Killer-appar. De övriga 17 KillerTools-verktygen och alla kommandon för skrivbordsappar kräver installerad KillerMCP.
+    actions:
+      cursor: Lägg till i Cursor
+      vscode: Lägg till i VS Code
+      claude: Kopiera URL och öppna Claude
+      codex: Kopiera installationskommando för Codex
+      claudeCode: Kopiera installationskommando för Claude Code
+      copyUrl: Kopiera URL
+      copyCommand: Kopiera kommando
+    otherClient: Använder du en annan MCP-klient? Kopiera server-URL:en.
+    shortest: 'Den kortaste användbara prompten är {prompt}. Till exempel: {example}.'
+    infer: Din agent kan härleda rätt KillerTools-verktyg eller Killer-app utifrån uppgiften och tillgängligt sammanhang. Använd {a}, {b}, {c} eller ett annat appnamn bara när du vill ange målet uttryckligen. Du behöver inga understreck, något operationsnamn eller något snedstreckskommando.
+    worker:
+      title: Så fungerar Cloudflare Worker
+      p1: Den publika slutpunkten är en MCP-server med öppen källkod för strömmande HTTP som driftsätts separat från webbplatsen. Din MCP-klient skickar ett verktygsnamn och begränsade argument till {url}. Workern validerar begäran, kör det valda verktyget och returnerar resultatet.
+      p2: De flesta beräkningar och konverteringar körs direkt i Workern. DNS-frågor använder Cloudflare DNS over HTTPS. Domänregistrering följer IANA:s RDAP-katalog. Sökningar efter CVE:er, GIF:ar och i katalogen kontaktar sina publika leverantörer och kan misslyckas när leverantörerna inte är tillgängliga eller begränsar antalet anrop.
+    examples:
+      title: Prova att fråga
+      intro: Börja med {killer} och beskriv resultatet du vill ha. Namnet på appen eller verktyget är valfritt när uppgiften är tydlig.
+      e1: domain search thekiller.net
+      e2: beräkna 192.168.10.0/24
+      e3: slå upp Windows-händelse 4625
+      e4: undersök CVE-2025-53770
+      e5: tolka de här e-posthuvudena
+      e6: bygg ett PowerShell-kommando som listar stoppade tjänster
+      e7: konvertera den här JSON-koden till CSV
+      e8: jämför de här två JSON-dokumenten
+      e9: generera en SPF-post för example.com
+      e10: avkoda den här Base64-texten
+      e11: identifiera den här M365-SKU:n
+      e12: beräkna en exponering på 30 sekunder med det här ND-filtret
+    apps:
+      title: 'Integrationer med Killer-appar'
+      intro: 'De här exemplen använder installerad KillerMCP och den Killer-app som stöds på din Windows-dator. Fråga med vanliga ord, så väljer din agent det tillgängliga kommandot.'
+      killendarNote: 'För att skapa möten måste Killendar vara öppen och upplåst.'
+      shortcut: 'Du kan inleda vilken som helst av de här promptarna med {killer} i stället för appnamnet. Ange appen bara när du vill rikta dig till den uttryckligen.'
+      pdf1: killerpdf sammanfoga de här PDF-filerna i den här ordningen
+      pdf2: killerpdf sök efter fakturanummer i den här PDF-filen
+      pdf3: killer lägg till ett sökbart OCR-lager i den här PDF-filen
+      pdf4: killer gör om den här KillerNotes-anteckningen till en PDF
+      notes1: killernotes hitta mina anteckningar om kontorsnätverket
+      notes2: killernotes skapa en anteckning med den här mötessammanfattningen
+      notes3: killer lista mina anteckningar taggade med projects
+      notes4: killer spara den här KillerScan-rapporten som en anteckning
+      scan1: killerscan visa detaljer om mitt lokala nätverk
+      scan2: killerscan skanna 192.168.1.0/24 efter enheter
+      scan3: killer pinga example.com och visa paketförlust
+      scan4: killer gör en PDF-rapport av den här nätverksskanningen
+      shell1: killershell lista tjänsterna som körs på den här datorn
+      shell2: killershell sök i C:\Docs efter filer som heter invoice
+      shell3: killer visa de senaste posterna i programloggen
+      shell4: killer spara den här kataloglistan som en PDF
+      calendar1: killendar visa mina möten för i morgon
+      calendar2: killendar skapa ett möte i morgon kl. 9 som heter Morgonmöte
+      calendar3: killer visa min agenda för de kommande sju dagarna
+      calendar4: killer spara nästa veckas agenda som en anteckning
+      bench1: killerbench slå upp Windows-felkod 5
+      bench2: killerbench kontrollera datorns hälsa utan att ändra något
+      bench3: killerbench kör en skrivskyddad diagnostisk skanning
+      bench4: killerbench visa resultatet av mitt diagnostiska jobb
+      shot1: killershot lista mina skärmar
+      shot2: killershot ta en skärmbild av min nuvarande skärm
+      shot3: killershot visa mina senaste tagningar
+      shot4: killershot läs texten i den här bilden
+    twice:
+      title: Varför {km} körs två gånger
+      body: Claude Desktop startar varje lokal MCP-server två gånger. En kopia betjänar appens egna chattar och den andra betjänar Claude-sessioner som använder datorn på distans. Det är normalt att se två KillerMCP.exe-processer under Claude i Aktivitetshanteraren. KillerMCP är inte installerat två gånger, och ingenting behöver åtgärdas.
+    can:
+      title: Vad kan den göra?
+      intro: 'Fråga med vanliga ord. Din agent hittar de tillgängliga verktygen och deras indata och anropar sedan dem den behöver. Den kan till exempel:'
+      i1: Beräkna IPv4-subnät, expandera adressintervall, generera IPv6 ULA-prefix och slå upp MAC-tillverkare.
+      i2: Kontrollera DNS-poster och domänregistrering, söka efter CVE:er och identifiera portar och protokoll.
+      i3: Tolka e-posthuvuden, generera SPF- eller DMARC-poster och slå upp Exchange NDR-meddelanden.
+      i4: Hitta felkoder och händelse-ID:n i Windows, grupprinciper och M365-licens-SKU:er.
+      i5: Söka efter PowerShell-cmdletar och sätta ihop kommandon som du granskar innan de körs.
+      i6: Formatera JSON och XML, konvertera JSON till CSV eller mellan JSON, YAML och TOML, avkoda Base64, jämföra dokument och testa reguljära uttryck.
+      i7: Generera QR-koder, UUID:er, metataggar och platshållare, eller räkna på fotoexponering och film.
+      i8: Konvertera skiftläge, datum, tider, temperaturer, färger, talbaser, romerska siffror, binär text, NATO-stavning och telefonformat.
+      i9: Formatera SQL, YAML, TOML, Markdown, HTML-entiteter och strukturerad data, eller beräkna procent, cron-scheman och chmod-värden.
+      i10: Söka efter emojier, GIF:ar, KillerScripts och Killer-moduler, eller granska URL:er, user agents, HTTP-statuskoder och textstatistik.
+    cov:
+      title: Vilken anslutning gör vad?
+      hostedTitle: Cloudflare-server
+      hostedBody: 64 webbsäkra verktyg med 74 operationer. Körs på distans via HTTP och behöver ingen installation. Har inte åtkomst till lokala appar eller filer.
+      installedTitle: Windows-installation
+      installedBody: Alla 81 KillerTools-verktyg med 94 operationer, plus kommandon från installerade Killer-appar som stöds. Körs som en lokal MCP-anslutning.
+      browserTitle: Webbläsarkompanjoner
+      browserBody: Verktygen för kamera, enhet, redigerare och signatur öppnar en privat localhost-sida.
+    data:
+      title: Vart tar data vägen?
+      p1: Den installerade KillerMCP-körningsmiljön körs på din dator. Vissa nätverks- och referensuppslag kontaktar ändå sina publika datakällor. Din agent tar emot de indata och resultat som behövs för att slutföra begäran.
+      p2: Den valfria hostade anslutningen skickar verktygens indata till KillerTools Cloudflare Worker. Den har ingen inloggning, begränsar begärandekroppar till 64 KiB, tillämpar begränsade scheman och begränsar antalet anrop per anslutande IP-adress. Skicka inte lösenord, privata filer, tokens eller kunddata via den hostade anslutningen.
+      p3: Verktyg för lokala filer, webbläsare, lösenord, tokens, kryptering, hashning, OTP, BIP39 och nyckelgenerering hålls borta från den publika Workern. De körs via installerad KillerMCP, men MCP-klienten och modellleverantören kan ändå ta emot indata och resultat.
+    oss:
+      title: Öppen källkod och nuvarande begränsningar
+      p1: '{kt} innehåller den publika Workern, det lokala KillerTools-paketet, operationskartan, valideringsscheman och täckningskontroller. {km} innehåller den delade lokala värden, adaptrar för skrivbordsappar, installationsprogrammet och integrationskontroller.'
+      ktLink: KillerTools källkod
+      kmLink: KillerMCP källkod
+      p2: Resultat från externa uppslag beror på sina källor. Lokala verktyg tar bara emot sökvägar eller värden som anges i ett verktygsanrop. Avkodning av Base64-filer skapar en ny fil och vägrar skriva över en befintlig. Kamerafångst kräver fortfarande manuell behörighet i webbläsaren och verifiering av hårdvaran. Det nuvarande installationsprogrammet för KillerMCP är signerat, tidsstämplat och publicerat via GitHub Releases.

@@ -154,7 +154,7 @@ function closeOnBlur(set: (val: boolean) => void) {
 </template>
 
 <style scoped>
-/* Outer wrapper — 2-col grid at wide viewports */
+/* Outer wrapper: 2-col grid at wide viewports */
 .en-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;

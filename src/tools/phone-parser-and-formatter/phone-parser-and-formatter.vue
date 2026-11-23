@@ -123,7 +123,7 @@ async function copyValue(key: string, value: string) {
             <span class="ph-prompt">&gt;_</span>
             <span class="ph-label">{{ row.label }}</span>
             <span v-if="row.value" class="ph-value">{{ row.value }}</span>
-            <span v-else class="ph-fallback">—</span>
+            <span v-else class="ph-fallback">N/A</span>
             <span class="ph-copy-icon" :class="{ 'ph-copy-done': copiedKey === row.label }">
               <span v-if="copiedKey === row.label">✓</span>
               <icon-mdi-content-copy v-else-if="row.value" />

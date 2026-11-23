@@ -87,7 +87,7 @@ const rawYamlValidation = useValidation({
   margin-bottom: 4px;
 }
 
-/* Standalone pill — restore border-radius overridden by the global connected-row rule */
+/* Standalone pill: restore border-radius overridden by the global connected-row rule */
 .kt-pill {
   border-radius: 6px !important;
   border: 1px solid rgba(var(--kt-accent-rgb), 0.3) !important;

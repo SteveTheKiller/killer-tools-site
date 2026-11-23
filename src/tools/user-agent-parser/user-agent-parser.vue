@@ -62,7 +62,7 @@ const sections = computed(() => {
 
 <template>
   <div class="ua-wrap">
-    <!-- Input card — full width -->
+    <!-- Input card, full width -->
     <div class="ua-input-card kt-terminal">
       <div class="kt-terminal-bar">
         <span class="kt-terminal-bar-title">{{ t('tools.user-agent-parser.ui.userAgentString') }}</span>

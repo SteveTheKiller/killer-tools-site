@@ -151,7 +151,7 @@ const cheatSheet = [
 
 const currentBitmask = computed(() => networkInfo.value?.bitmask ?? null);
 
-// Address converter — works off the bare IP, ignoring any CIDR suffix
+// Address converter: works off the bare IP, ignoring any CIDR suffix
 const bareIp = computed(() => ip.value.trim().split('/')[0]);
 const bareIpValid = computed(() => isValidIpv4({ ip: bareIp.value }));
 
@@ -169,7 +169,7 @@ const addressRepresentations = computed(() => {
   ];
 });
 
-// Interactive bit map — 32 squares representing the IP, split at prefix
+// Interactive bit map: 32 squares representing the IP, split at prefix
 const ipBits = computed((): number[] => {
   if (!bareIpValid.value) {
     return Array.from<number>({ length: 32 }).fill(0);
@@ -228,7 +228,7 @@ const rangeBar = computed(() => {
     network: info.base,
     first: info.first,
     last: info.last,
-    broadcast: info.broadcast ?? '—',
+    broadcast: info.broadcast ?? 'N/A',
     hosts: Math.max(0, size - 2),
     cidr,
   };
@@ -308,7 +308,7 @@ const rangeBar = computed(() => {
             </div>
             <div class="rb-lbl rb-lbl-hosts">
               <span class="rb-lbl-tag">{{ t('tools.ipv4-subnet-calculator.ui.hostsCount', { count: rangeBar.hosts.toLocaleString() }) }}</span>
-              <code v-if="rangeBar.hosts > 0" class="rb-lbl-addr rb-lbl-range">{{ rangeBar.first }} – {{ rangeBar.last }}</code>
+              <code v-if="rangeBar.hosts > 0" class="rb-lbl-addr rb-lbl-range">{{ rangeBar.first }} to {{ rangeBar.last }}</code>
             </div>
             <div class="rb-lbl rb-lbl-bcast">
               <span class="rb-lbl-tag">{{ t('tools.ipv4-subnet-calculator.ui.broadcastTag') }}</span>
@@ -444,7 +444,7 @@ const rangeBar = computed(() => {
 </template>
 
 <style scoped>
-/* Explicit terminal colors — same values used across all tools */
+/* Explicit terminal colors, same values used across all tools */
 .k-terminal { background: var(--kt-term-bg, #0a0a0a) var(--kt-grain-img, url('/grain-a12.png')) repeat !important; background-size: 256px 256px !important; }
 .k-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 .k-row { background: transparent !important; }

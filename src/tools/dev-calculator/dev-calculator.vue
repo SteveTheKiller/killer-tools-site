@@ -130,7 +130,7 @@ watch(film, (newFilm) => {
   }
 });
 
-// n-select options — group by whether the film has data for the current developer
+// n-select options: group by whether the film has data for the current developer
 const filmOptions = computed(() => {
   const withData = filmStocks
     .filter(f => f.times[selectedDevId.value] !== undefined)
@@ -503,7 +503,7 @@ onUnmounted(() => {
           <!-- Big time -->
           <div class="dc-result-row">
             <div class="dc-result-time" :class="{ 'dc-result-empty': finalSeconds === null }">
-              {{ finalSeconds !== null ? formatTime(finalSeconds) : '—' }}
+              {{ finalSeconds !== null ? formatTime(finalSeconds) : 'N/A' }}
             </div>
           </div>
 
@@ -511,15 +511,15 @@ onUnmounted(() => {
           <div class="dc-breakdown">
             <div class="dc-breakdown-row">
               <span class="dc-breakdown-label">{{ t('tools.dev-calculator.ui.baseTimeTemp', { temp: filmBaseTemp }) }}</span>
-              <span class="dc-breakdown-val">{{ baseSeconds !== null ? formatTime(baseSeconds) : '—' }}</span>
+              <span class="dc-breakdown-val">{{ baseSeconds !== null ? formatTime(baseSeconds) : 'N/A' }}</span>
             </div>
             <div v-if="tempC !== filmBaseTemp" class="dc-breakdown-row">
               <span class="dc-breakdown-label">{{ t('tools.dev-calculator.ui.tempAdj', { temp: showTemp(tempC) }) }}</span>
-              <span class="dc-breakdown-val">{{ tempAdjustedSeconds !== null ? formatTime(tempAdjustedSeconds) : '—' }}</span>
+              <span class="dc-breakdown-val">{{ tempAdjustedSeconds !== null ? formatTime(tempAdjustedSeconds) : 'N/A' }}</span>
             </div>
             <div v-if="pushPull !== 0" class="dc-breakdown-row">
               <span class="dc-breakdown-label">{{ t(`tools.dev-calculator.ui.${pushPull > 0 ? 'push' : 'pull'}${Math.abs(pushPull) === 1 ? 'Stop' : 'Stops'}`, { n: Math.abs(pushPull) }) }}</span>
-              <span class="dc-breakdown-val">{{ finalSeconds !== null ? formatTime(finalSeconds) : '—' }}</span>
+              <span class="dc-breakdown-val">{{ finalSeconds !== null ? formatTime(finalSeconds) : 'N/A' }}</span>
             </div>
           </div>
 

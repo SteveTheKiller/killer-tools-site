@@ -96,7 +96,7 @@ export const useStyleStore = defineStore('style', {
             mutate();
             await nextTick();
           });
-          // Rapid re-clicks abort the in-flight transition; that's fine —
+          // Rapid re-clicks abort the in-flight transition; that's fine,
           // swallow the rejections so they don't surface as exceptions
           vt?.ready?.catch(() => {});
           vt?.finished?.catch(() => {});

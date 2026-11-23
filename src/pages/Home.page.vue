@@ -77,7 +77,7 @@ const sortedTools = computed(() => {
   if (sortMode.value === 'za') {
     return all.sort((a, b) => b.name.localeCompare(a.name));
   }
-  // popular — sort by popularity score desc, then alpha for ties
+  // popular: sort by popularity score desc, then alpha for ties
   return all.sort((a, b) => {
     const diff = popularityScore(b.path) - popularityScore(a.path);
     return diff !== 0 ? diff : a.name.localeCompare(b.name);

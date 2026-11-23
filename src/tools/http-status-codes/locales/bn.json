@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "নেটওয়ার্ক পঠন সময়সীমা ত্রুটি (প্রক্সি)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "আপস্ট্রিম সার্ভারের সাথে যোগাযোগের সময় প্রক্সির পেছনে নেটওয়ার্ক পঠন সময়সীমা সংকেত দিতে কিছু HTTP প্রক্সি দ্বারা ব্যবহৃত হয়।",
   "Network Connect Timeout Error (Proxies)": "নেটওয়ার্ক সংযোগ সময়সীমা ত্রুটি (প্রক্সি)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "প্রক্সি সময়মতো আপস্ট্রিম সার্ভারের সাথে সংযোগ করতে না পারলে কিছু HTTP প্রক্সি দ্বারা ব্যবহৃত হয়।"
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "প্রক্সি সময়মতো আপস্ট্রিম সার্ভারের সাথে সংযোগ করতে না পারলে কিছু HTTP প্রক্সি দ্বারা ব্যবহৃত হয়।"
 }

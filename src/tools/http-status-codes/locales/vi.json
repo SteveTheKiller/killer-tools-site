@@ -176,5 +176,5 @@
   "Network Read Timeout Error (Proxies)": "Lỗi hết thời gian chờ đọc mạng (Proxy)",
   "Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.": "Được một số proxy HTTP sử dụng để báo hiệu hết thời gian chờ đọc khi giao tiếp với máy chủ nguồn.",
   "Network Connect Timeout Error (Proxies)": "Lỗi hết thời gian chờ kết nối mạng (Proxy)",
-  "Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.": "Được một số proxy HTTP sử dụng khi không thể kết nối kịp thời đến máy chủ nguồn."
+  "Used by some HTTP proxies to signal a network connect timeout: the proxy could not connect to the upstream server in time.": "Được một số proxy HTTP sử dụng khi không thể kết nối kịp thời đến máy chủ nguồn."
 }

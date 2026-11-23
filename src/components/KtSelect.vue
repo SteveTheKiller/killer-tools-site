@@ -153,7 +153,7 @@ onBeforeUnmount(() => {
       @click="toggle"
       @keydown="onKey"
     >
-      <span class="kts-label">{{ selectedLabel || '—' }}</span>
+      <span class="kts-label">{{ selectedLabel || 'Select' }}</span>
       <span class="kts-chevron" aria-hidden="true">▾</span>
     </button>
     <Teleport to="body">
@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
 }
 
-/* Trigger — named "-input" so the site-wide black-theme field overrides
+/* Trigger: named "-input" so the site-wide black-theme field overrides
    in kt-terminal.css pick it up like every other themed input */
 .kts-input {
   width: 100%;
@@ -255,10 +255,10 @@ onBeforeUnmount(() => {
   transform: rotate(180deg);
 }
 
-/* Menu — teleported to body (fixed, positioned off the trigger rect) so it
+/* Menu: teleported to body (fixed, positioned off the trigger rect) so it
    paints ON TOP of everything and no panel overflow can clip it */
 .kts-dropdown-menu {
-  /* teleported out of .kt-select — no inherited font */
+  /* teleported out of .kt-select, so no inherited font */
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   max-height: 280px;
   overflow-y: auto;

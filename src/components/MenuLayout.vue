@@ -136,7 +136,7 @@ const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value 
 
 .content-col {
   height: 100%;
-  /* Allow the column to shrink below its content's min width on phones —
+  /* Allow the column to shrink below its content's min width on phones;
      otherwise the frame overflows horizontally and the pane clips right */
   min-width: 0;
   /* Above the sider in paint order, so the pane's shadow lands ON the
@@ -262,7 +262,7 @@ html:not(.dark) .content {
 
   /* footer grip clearance, family standard.
      Flex with shrink priorities: when space runs out the GPLv3/Github middle
-     ellipsizes first, then the site name — "Steve the Killer" NEVER trims. */
+     ellipsizes first, then the site name. "Steve the Killer" NEVER trims. */
   .sb-right {
     margin-left: auto;
     margin-right: 14px;
