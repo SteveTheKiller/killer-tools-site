@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import type { HeadObject } from '@vueuse/head';
 import type { Tool } from '@/tools/tools.types';
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 
 import { useRoute } from 'vue-router';
 import FavoriteButton from '@/components/FavoriteButton.vue';
@@ -13,7 +12,7 @@ const i18nKey = computed<string>(() => route.path.trim().replace('/', ''));
 const toolTitle = computed<string>(() => t(`tools.${i18nKey.value}.title`, String(route.meta.name)));
 const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.description`, String(route.meta.description)));
 
-const head = computed<HeadObject>(() => {
+const head = computed(() => {
   const title = `${toolTitle.value} | Killer Tools`;
   const description = toolDescription.value;
   const url = `https://killertools.net${route.path}`;
@@ -39,7 +38,7 @@ const head = computed<HeadObject>(() => {
   return {
     title,
     link: [
-      { rel: 'canonical', href: url },
+      { rel: 'canonical' as const, href: url },
     ],
     meta: [
       { name: 'description', content: description },
@@ -55,13 +54,18 @@ const head = computed<HeadObject>(() => {
     ],
     script: [
       {
-        type: 'application/ld+json',
-        children: JSON.stringify(jsonLd),
+        type: 'application/ld+json' as const,
+        textContent: JSON.stringify(jsonLd),
       },
     ],
   };
 });
-useHead(head);
+useHead({
+  title: computed(() => head.value.title),
+  link: computed(() => head.value.link),
+  meta: computed(() => head.value.meta),
+  script: computed(() => head.value.script),
+});
 const isFullscreen = computed<boolean>(() => !!route.meta.fullscreen);
 const noHeader = computed<boolean>(() => !!route.meta.noHeader);
 const headerLink = computed<{ label: string, href: string } | undefined>(

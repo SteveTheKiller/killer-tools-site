@@ -1,6 +1,6 @@
 import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
-import { createHead } from '@vueuse/head';
+import { createHead } from '@unhead/vue/client';
 import { createPinia } from 'pinia';
 import { registerSW } from 'virtual:pwa-register';
 import { createApp } from 'vue';

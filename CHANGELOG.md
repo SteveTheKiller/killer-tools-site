@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Security
 
 - Updated dependencies within their current ranges, which patches node-forge, Vue I18n, markdown-it, DOMPurify and Vite advisories.
+- Updated monaco-editor and vite-plugin-pwa, and replaced the abandoned @vueuse/head with @unhead/vue for page titles and metadata.
 
 ### Tools
 

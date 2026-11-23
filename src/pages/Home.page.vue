@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // @ts-expect-error tabler icons type export mismatch
 import { IconDragDrop, IconHeart } from '@tabler/icons-vue';
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 import { computed, ref } from 'vue';
 import Draggable from 'vuedraggable';
 import { config } from '@/config';
@@ -33,7 +33,7 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: computed(() => JSON.stringify({
+      textContent: computed(() => JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         'name': 'Killer Tools',

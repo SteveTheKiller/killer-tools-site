@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 import { useI18n } from 'vue-i18n';
 
 const endpoint = 'https://mcp.killertools.net';
