@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 - Updated dependencies within their current ranges, which patches node-forge, Vue I18n, markdown-it, DOMPurify and Vite advisories.
 - Updated monaco-editor and vite-plugin-pwa, and replaced the abandoned @vueuse/head with @unhead/vue for page titles and metadata.
 - Updated tiptap, slugify, jsdom, randexp, country-code-lookup and vite-plugin-sitemap, and removed three type stubs whose packages now ship their own types.
+- Removed the unused composerize-ts package, which carried ip-address and deepmerge-ts advisories.
 
 ### Tools
 
