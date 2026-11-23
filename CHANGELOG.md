@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## Unreleased
 
+### Security
+
+- Updated dependencies within their current ranges, which patches node-forge, Vue I18n, markdown-it, DOMPurify and Vite advisories.
+
 ### Tools
 
 - Added KillerBench to the app sidebar, search and launch shortcuts.

@@ -19,7 +19,8 @@ const props = withDefaults(
 
 const emits = defineEmits(['update:value']);
 
-const { options: rawOptions, size } = toRefs(props);
+const { options: rawOptions } = toRefs(props);
+const size = computed<'small' | 'medium' | 'large'>(() => props.size);
 
 const options = computed<CButtonSelectOption<T>[]>(() => {
   if (_.isArray(rawOptions.value)) {
