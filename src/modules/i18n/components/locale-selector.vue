@@ -94,6 +94,12 @@ const localeOptions = computed(() =>
       h('span', `${localesLong[displayKey(code)] ?? code}${code === locale.value ? ' ✓' : ''}`),
       h('span', { style: 'opacity: 0.6;' }, localeCodes[code] ?? code),
     ]),
+    icon: () => h('span', {
+      'class': 'locale-menu-flag',
+      'aria-hidden': 'true',
+      'style': 'display: block; width: 18px; height: 18px; overflow: hidden; border-radius: 50%; line-height: 0; border: 1px solid rgba(255, 255, 255, 0.25);',
+      'innerHTML': (flags[displayKey(code)] ?? flags.en).replace('<svg ', '<svg width="100%" height="100%" '),
+    }),
     key: code,
   })),
 );
