@@ -9,7 +9,7 @@ try {
   autoImportGlobals = mod.default.globals ?? {};
 }
 catch {
-  // file not generated yet — first build will create it
+  // The file isn't generated yet; the first build creates it.
 }
 
 export default antfu(
@@ -25,6 +25,8 @@ export default antfu(
     rules: {
       'curly': ['error', 'all'],
       'style/semi': ['error', 'always'],
+      // v10 rule that splits every compound ternary over several lines; keep the existing one-line style.
+      'antfu/reasonable-newline': 'off',
       '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true, functions: false }],
       'vue/no-empty-component-block': ['error'],
       'no-restricted-imports': ['error', {

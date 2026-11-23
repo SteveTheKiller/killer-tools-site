@@ -13,7 +13,7 @@ interface ImportMeta {
   readonly env: ImportMetaEnv
 }
 
-// @vicons/tabler ambient declarations — installed version lacks type definitions
+// @vicons/tabler ambient declarations, because the installed version lacks type definitions
 declare module '@vicons/tabler' {
   import type { Component } from 'vue';
 
