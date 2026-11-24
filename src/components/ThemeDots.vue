@@ -4,6 +4,7 @@ import { useEventListener, useStorage } from '@vueuse/core';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useStyleStore } from '@/stores/style.store';
 import { ACCENT_THEMES, accentFamilyOf, ktAccents, ktThemes, THEME_DEFAULT_ACCENT } from '@/themes';
+import { drawTrashPolkaInk, TP_WINDOW_SEED } from '@/utils/trash-polka-ink';
 
 const { t } = useI18n();
 const styleStore = useStyleStore();
@@ -107,6 +108,44 @@ function themeDotAccent(theme: typeof ktThemes[number]) {
   return ktAccents[family][accent];
 }
 
+// Trash Polka's swatch carries a crop of its own window ink in its accent, so it
+// never reads as the plain Black swatch next to it.
+const tpSwatchCache = new Map<string, string>();
+
+function trashPolkaSwatch(accentHex: string) {
+  const cached = tpSwatchCache.get(accentHex);
+  if (cached) {
+    return cached;
+  }
+  const n = Number.parseInt(accentHex.replace('#', ''), 16);
+  const piece = drawTrashPolkaInk([(n >> 16) & 255, (n >> 8) & 255, n & 255], TP_WINDOW_SEED, 240, 240, 1);
+  const thumb = document.createElement('canvas');
+  thumb.width = 52;
+  thumb.height = 52;
+  const g = thumb.getContext('2d');
+  let url = '';
+  if (g) {
+    g.fillStyle = '#000';
+    g.fillRect(0, 0, 52, 52);
+    g.drawImage(piece, 0, 0, piece.width, piece.height, 0, 0, 52, 52);
+    url = thumb.toDataURL();
+  }
+  piece.width = 0;
+  tpSwatchCache.set(accentHex, url);
+  return url;
+}
+
+function swatchStyle(theme: typeof ktThemes[number]) {
+  const accent = themeDotAccent(theme);
+  if (theme.key === 'trashpolka') {
+    const url = trashPolkaSwatch(accent);
+    if (url) {
+      return { 'background': `${theme.swatchBg} url('${url}') center / cover`, '--sw-accent': 'transparent' };
+    }
+  }
+  return { 'background': theme.swatchBg, '--sw-accent': accent };
+}
+
 // Accent popup docks to the top rail (KillerPDF annotation-bar behavior):
 //    fixed y, drags left/right along that row only, x position persisted.
 // Rail height: top of the bar flush with the top of the content pane
@@ -189,7 +228,7 @@ function startDrag(e: PointerEvent) {
     <!-- Mobile-only collapse trigger: shows the current theme, expands the row -->
     <button
       class="swatch sm-theme-trigger"
-      :style="currentTheme ? { 'background': currentTheme.swatchBg, '--sw-accent': themeDotAccent(currentTheme) } : undefined"
+      :style="currentTheme ? swatchStyle(currentTheme) : undefined"
       :title="t('components.themeDots.theme')"
       :aria-label="t('components.themeDots.toggleThemeSwatches')"
       :aria-expanded="swatchesOpen"
@@ -202,7 +241,7 @@ function startDrag(e: PointerEvent) {
         v-for="theme in ktThemes"
         :key="theme.key"
         class="swatch"
-        :style="{ 'background': theme.swatchBg, '--sw-accent': themeDotAccent(theme) }"
+        :style="swatchStyle(theme)"
         :title="t(`components.themeDots.themes.${theme.key}`)"
         :aria-label="t(`components.themeDots.themes.${theme.key}`)"
         :aria-pressed="styleStore.ktTheme === theme.key"
