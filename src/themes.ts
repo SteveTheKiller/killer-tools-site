@@ -372,3 +372,12 @@ export const ktThemes: KtThemeDef[] = [
 ];
 
 export const ktThemeByKey = Object.fromEntries(ktThemes.map(t => [t.key, t])) as Record<KtThemeKey, KtThemeDef>;
+
+// Field (text input) fill for a colored theme; neutral themes return null and
+// keep their tuned CSS field tones
+export function themeInputColor(theme: KtThemeKey): string | null {
+  if (NEUTRAL_THEMES.includes(theme)) {
+    return null;
+  }
+  return SURFACES[theme as Exclude<KtThemeKey, 'light'>]?.input ?? null;
+}

@@ -530,10 +530,27 @@ const dmarcRecord = computed(() => buildDmarcRecord({
   border-bottom: 1px solid var(--kt-term-bar-border);
 }
 
+/* KillerUI text field: theme field fill, rounded, chrome border that goes
+   to the input-hover tone on hover and the accent on focus */
+.erg-input,
+.erg-dd-btn {
+  box-sizing: border-box;
+  border: 1px solid var(--kt-chrome-border, #2e2e2e) !important;
+  border-radius: 4px;
+  padding: 6px 10px !important;
+  transition: border-color 0.12s;
+}
+.erg-input:hover,
+.erg-dd-btn:hover {
+  border-color: var(--kt-input-hover, rgba(var(--kt-accent-rgb), 0.6)) !important;
+}
+.erg-input:focus,
+.erg-dd-btn-open {
+  border-color: var(--kt-accent) !important;
+}
+
 .erg-input {
   width: 100%;
-  background: transparent !important;
-  border: none;
   outline: none;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
@@ -603,10 +620,9 @@ const dmarcRecord = computed(() => buildDmarcRecord({
   display: flex;
   align-items: center;
   gap: 8px;
-  background: transparent !important;
-  border: none;
+  /* Combo field: same fill as the text fields */
+  background: var(--kt-input, #1a1a1a) !important;
   outline: none;
-  padding: 0;
   cursor: pointer;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 0.82rem;
@@ -615,10 +631,7 @@ const dmarcRecord = computed(() => buildDmarcRecord({
   width: 100%;
 }
 
-.erg-dd-btn:hover,
-.erg-dd-btn-open {
-  color: var(--kt-accent);
-}
+html:not(.dark) .erg-dd-btn { background: #ffffff !important; color: rgba(0, 0, 0, 0.8); }
 
 .erg-dd-label {
   flex: 1;
@@ -632,10 +645,10 @@ const dmarcRecord = computed(() => buildDmarcRecord({
 
 .erg-dd-menu {
   position: absolute;
-  top: calc(100% - 2px);
+  top: calc(100% - 6px);
   left: 12px;
-  min-width: 300px;
-  background: #121212;
+  right: 12px;
+  background: var(--kt-modal, #121212);
   border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   border-radius: 6px;
   padding: 4px;

@@ -3,7 +3,7 @@ import type { KtAccentKey, KtThemeKey } from '@/themes';
 import { useMediaQuery, useStorage } from '@vueuse/core';
 import { defineStore } from 'pinia';
 import { computed, nextTick, watch, watchEffect } from 'vue';
-import { accentTriple } from '@/themes';
+import { accentTriple, themeInputColor } from '@/themes';
 import { grainTileUrl, parseColor } from '@/utils/grain-tile';
 
 const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic', 'ectoplasm', 'decay', 'malaise', 'sepulchre', 'delirium', 'mourning'];
@@ -63,6 +63,15 @@ export const useStyleStore = defineStore('style', {
         d.style.removeProperty('--kt-accent-2');
         d.style.removeProperty('--kt-accent-sel');
         d.style.removeProperty('--kt-accent-rgb');
+      }
+
+      // Raw tool fields follow the theme's own input fill (Naive inputs already do)
+      const field = themeInputColor(ktTheme.value);
+      if (field) {
+        d.style.setProperty('--kt-input', field);
+      }
+      else {
+        d.style.removeProperty('--kt-input');
       }
 
       // Family film grain (KillerUI GrainTexture port): one tile for every
