@@ -300,20 +300,20 @@ function buildLightOverrides(t: AccentTriple): GlobalThemeOverrides {
 
 // Surface palettes for the dark-family themes (accent fields injected per call)
 const SURFACES: Record<Exclude<KtThemeKey, 'light'>, Omit<DarkPalette, 'accent' | 'accentHex' | 'accentHover' | 'accentPressed' | 'accentSel'>> = {
-  black: { bg: '#0d0d0d', chrome: '#000000', chromeBorder: '#1f1f1f', panel: '#000000', panelBorder: '#2a2a2a', input: '#000000', popup: '#050505', tableTd: '#000000', tableTh: '#050505', notif: '#050505' },
-  dark: { bg: '#333333', chrome: '#1c1c1c', chromeBorder: '#2e2e2e', panel: '#3a3a3a', panelBorder: '#2e2e2e', input: '#2b2b2b', popup: '#262626', tableTd: '#2f2f2f', tableTh: '#262626', notif: '#262626' },
-  blood: { bg: '#4a1f20', chrome: '#1e0a0b', chromeBorder: '#3a1a1d', panel: '#321416', panelBorder: '#3a1a1d', input: '#2a1012', popup: '#1e0a0b', tableTd: '#321416', tableTh: '#3a1a1d', notif: '#1e0a0b', text: '#fffde8', text2: '#b09e9c', textAccent: '#f8c99e' },
-  greed: { bg: '#0a5234', chrome: '#001e13', chromeBorder: '#07371f', panel: '#003824', panelBorder: '#07371f', input: '#00301f', popup: '#001e13', tableTd: '#003824', tableTh: '#07371f', notif: '#001e13', text: '#fffde8', text2: '#a6a99a', textAccent: '#e0d49a' },
-  cyanotic: { bg: '#0a4a6e', chrome: '#001a28', chromeBorder: '#093250', panel: '#002e48', panelBorder: '#093250', input: '#00283e', popup: '#001624', tableTd: '#002e48', tableTh: '#093250', notif: '#001624', text: '#fffde8', text2: '#9ba3ac', textAccent: '#e0d49a' },
+  black: { bg: '#0d0d0d', chrome: '#000000', chromeBorder: '#1f1f1f', panel: '#000000', panelBorder: '#2a2a2a', input: '#000000', popup: '#121212', tableTd: '#000000', tableTh: '#050505', notif: '#121212' },
+  dark: { bg: '#333333', chrome: '#1c1c1c', chromeBorder: '#2e2e2e', panel: '#3a3a3a', panelBorder: '#2e2e2e', input: '#2b2b2b', popup: '#141414', tableTd: '#2f2f2f', tableTh: '#262626', notif: '#141414' },
+  blood: { bg: '#4a1f20', chrome: '#1e0a0b', chromeBorder: '#3a1a1d', panel: '#321416', panelBorder: '#3a1a1d', input: '#2a1012', popup: '#160607', tableTd: '#321416', tableTh: '#3a1a1d', notif: '#160607', text: '#fffde8', text2: '#b09e9c', textAccent: '#f8c99e' },
+  greed: { bg: '#0a5234', chrome: '#001e13', chromeBorder: '#07371f', panel: '#003824', panelBorder: '#07371f', input: '#00301f', popup: '#00140c', tableTd: '#003824', tableTh: '#07371f', notif: '#00140c', text: '#fffde8', text2: '#a6a99a', textAccent: '#e0d49a' },
+  cyanotic: { bg: '#0a4a6e', chrome: '#001a28', chromeBorder: '#093250', panel: '#002e48', panelBorder: '#093250', input: '#00283e', popup: '#000f1a', tableTd: '#002e48', tableTh: '#093250', notif: '#000f1a', text: '#fffde8', text2: '#9ba3ac', textAccent: '#e0d49a' },
   // The six grunge themes, ported from the landing pages (kp.css/kd.css). Unlike
   // blood/greed/cyanotic these carry a REAL accent of their own, so textAccent is
   // that accent rather than a warm cream.
-  ectoplasm: { bg: '#293c3f', chrome: '#314548', chromeBorder: '#096366', panel: '#293c3f', panelBorder: '#096366', input: '#223335', popup: '#383838', tableTd: '#293c3f', tableTh: '#096366', notif: '#383838', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ead900' },
-  decay: { bg: '#403f3b', chrome: '#514e48', chromeBorder: '#5c554c', panel: '#403f3b', panelBorder: '#5c554c', input: '#35342f', popup: '#3b3f46', tableTd: '#403f3b', tableTh: '#5c554c', notif: '#3b3f46', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#d1c8aa' },
-  malaise: { bg: '#303638', chrome: '#3f4947', chromeBorder: '#394742', panel: '#303638', panelBorder: '#394742', input: '#2b3133', popup: '#262b2d', tableTd: '#303638', tableTh: '#394742', notif: '#262b2d', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#ffb199' },
+  ectoplasm: { bg: '#293c3f', chrome: '#314548', chromeBorder: '#096366', panel: '#293c3f', panelBorder: '#096366', input: '#223335', popup: '#1c292b', tableTd: '#293c3f', tableTh: '#096366', notif: '#1c292b', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ead900' },
+  decay: { bg: '#403f3b', chrome: '#514e48', chromeBorder: '#5c554c', panel: '#403f3b', panelBorder: '#5c554c', input: '#35342f', popup: '#2b2d32', tableTd: '#403f3b', tableTh: '#5c554c', notif: '#2b2d32', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#d1c8aa' },
+  malaise: { bg: '#303638', chrome: '#3f4947', chromeBorder: '#394742', panel: '#303638', panelBorder: '#394742', input: '#2b3133', popup: '#171c1d', tableTd: '#303638', tableTh: '#394742', notif: '#171c1d', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#ffb199' },
   sepulchre: { bg: '#3a352f', chrome: '#454039', chromeBorder: '#4d3d2b', panel: '#3a352f', panelBorder: '#4d3d2b', input: '#302c26', popup: '#242729', tableTd: '#3a352f', tableTh: '#4d3d2b', notif: '#242729', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#8ccac8' },
   delirium: { bg: '#343344', chrome: '#3e3c50', chromeBorder: '#5c527d', panel: '#343344', panelBorder: '#5c527d', input: '#2b2a38', popup: '#24212b', tableTd: '#343344', tableTh: '#5c527d', notif: '#24212b', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#f29200' },
-  mourning: { bg: '#554c5d', chrome: '#3b3642', chromeBorder: '#756b79', panel: '#554c5d', panelBorder: '#756b79', input: '#463f4d', popup: '#4f413f', tableTd: '#554c5d', tableTh: '#756b79', notif: '#4f413f', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ffa9bd' },
+  mourning: { bg: '#554c5d', chrome: '#3b3642', chromeBorder: '#756b79', panel: '#554c5d', panelBorder: '#756b79', input: '#463f4d', popup: '#2b2730', tableTd: '#554c5d', tableTh: '#756b79', notif: '#2b2730', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ffa9bd' },
 };
 
 // Fixed button/control colors for the colored themes (landing --btn):
