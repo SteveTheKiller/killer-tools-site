@@ -159,16 +159,17 @@ function selectLocale(code: string) {
   .locale-menu.n-dropdown-menu {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 8px !important;
   }
   /* Subtle divider between the columns, like the apps' two-column menus: a few px
-     of air on each side, fading out at the first and last rows. */
+     of air (8px) on each side, fading out at the first and last rows. */
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(odd) {
     --kt-locale-divider: var(--kt-menu-border, rgba(255, 255, 255, 0.12));
-    padding-right: 3px;
+    padding-right: 8px;
     border-right: 1px solid var(--kt-locale-divider);
   }
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(even) {
-    margin-left: 3px;
+    margin-left: 8px;
   }
   .locale-menu.n-dropdown-menu > .n-dropdown-option:first-child {
     border-image: linear-gradient(to bottom, transparent, var(--kt-locale-divider)) 1;
@@ -178,10 +179,10 @@ function selectLocale(code: string) {
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__label > span {
     min-width: 0 !important;
-    gap: 8px !important;
+    gap: 4px !important;
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__prefix {
-    width: 28px !important;
+    width: 24px !important;
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__suffix {
     min-width: 0 !important;
