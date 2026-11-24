@@ -179,6 +179,10 @@ html:not(.dark) .menu-wrapper ::v-deep(.wm-menu-light) {
   .menu {
     flex: 1;
     margin-bottom: -10px;
+    /* Tighter rows: naive spaces items 6px apart */
+    ::v-deep(.n-menu-item) {
+      margin-top: 2px;
+    }
     /* Family voice: menu items in the killer font */
     ::v-deep(.n-menu-item-content-header) {
       font-family: var(--kt-font-menu);

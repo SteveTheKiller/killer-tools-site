@@ -8,7 +8,7 @@ const { isMenuCollapsed, isSmallScreen } = toRefs(styleStore);
 const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static'));
 // Footer starts at the sider's right edge so it never sits under the sidebar
 // (0 when the sider is collapsed or overlaid on a small screen)
-const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value ? '0px' : '300px'));
+const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value ? '0px' : '260px'));
 </script>
 
 <template>
@@ -18,7 +18,7 @@ const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value 
         id="kt-sider"
         collapse-mode="transform"
         :collapsed-width="0"
-        :width="300"
+        :width="260"
         :collapsed="isMenuCollapsed"
         :show-trigger="false"
         :native-scrollbar="false"

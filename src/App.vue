@@ -949,7 +949,7 @@ a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="Toggle dark/l
 }
 /* Remaining category headers keep their normal separation. */
 .sider-content > div:not(:first-of-type) > div:first-child {
-  margin-top: 20px !important;
+  margin-top: 10px !important;
 }
 
 .logo-click-target {

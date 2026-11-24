@@ -372,7 +372,7 @@ const tools = computed<ToolCategory[]>(() => [
     position: relative;
     z-index: 1;
     display: block;
-    width: 293px;
+    width: 253px;
     height: auto;
   }
 }
