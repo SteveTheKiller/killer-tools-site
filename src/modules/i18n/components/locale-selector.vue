@@ -144,18 +144,21 @@ function selectLocale(code: string) {
 </style>
 
 <style>
-/* The menu is teleported to body, so these rules cannot be scoped. On phones the
-   22 rows run past the screen, so split them into two columns and let the menu
-   scroll on its own without dragging the page along. */
-@media (max-width: 700px) {
+/* The menu is teleported to body, so these rules cannot be scoped. It never runs
+   past the bottom of the window: it scrolls on its own without dragging the page.
+   One column of 22 rows is about 760px tall, so any window shorter than 860px
+   (phones and short desktop windows alike) gets two columns at half the height. */
+.locale-menu.n-dropdown-menu {
+  max-width: calc(100vw - 16px);
+  max-height: calc(100dvh - 80px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-height: 860px) {
   .locale-menu.n-dropdown-menu {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: calc(100vw - 16px);
-    max-height: calc(100dvh - 80px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__label > span {
     min-width: 0 !important;
