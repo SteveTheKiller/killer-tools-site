@@ -517,11 +517,15 @@ const cheatsheet = [
 
 /* Cheatsheet panel - matches PS Builder style */
 .rt-cs-panel {
-  background: var(--kt-term-bg);
-  border: 1px solid var(--kt-term-border);
-  border-radius: 8px;
+  /* Shared card skin: grained panel, chrome border until hover */
+  background: var(--kt-term-bg) var(--kt-grain-img, url('/grain-a12.png')) repeat;
+  background-size: 256px 256px;
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border-radius: 6px;
+  transition: border-color 0.15s;
   overflow: hidden;
 }
+.rt-cs-panel:hover { border-color: var(--kt-accent); }
 
 .rt-cs-panel-bar {
   display: flex;

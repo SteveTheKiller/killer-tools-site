@@ -116,7 +116,7 @@ function copyValue(value: string) {
             </div>
 
             <div class="gpr-desc">
-              {{ tr(description) }}
+              <CveText :text="tr(description)" />
             </div>
           </div>
         </div>

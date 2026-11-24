@@ -117,7 +117,7 @@ const totalVisible = computed(() => filtered.value.reduce((sum, c) => sum + c.po
               {{ tr(p.description) }}
             </div>
             <div v-if="p.notes" class="ppr-notes">
-              {{ tr(p.notes) }}
+              <CveText :text="tr(p.notes)" />
             </div>
           </div>
         </div>
@@ -213,17 +213,12 @@ html:not(.dark) .ppr-seg-btn-active {
 /* Dangerous cards: amber outline on the sides + bottom only, so the accent
    tab stripe stays visible along the top edge */
 .ppr-card-dangerous {
-  border-right-color: rgba(234, 179, 8, 0.4) !important;
-  border-bottom-color: rgba(234, 179, 8, 0.4) !important;
-  border-left-color: rgba(234, 179, 8, 0.4) !important;
+  border-color: rgba(234, 179, 8, 0.4) !important;
 }
 
-/* On hover the tab stripe brightens (global kt-terminal rule), but the amber
-   outline holds on the other three sides instead of going accent */
+/* Hover goes full amber on all four edges instead of the accent */
 .ppr-card-dangerous:hover {
-  border-right-color: rgba(234, 179, 8, 0.65) !important;
-  border-bottom-color: rgba(234, 179, 8, 0.65) !important;
-  border-left-color: rgba(234, 179, 8, 0.65) !important;
+  border-color: rgb(234, 179, 8) !important;
 }
 
 .ppr-bar {

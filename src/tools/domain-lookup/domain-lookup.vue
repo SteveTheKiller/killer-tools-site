@@ -793,30 +793,28 @@ async function runLookup() {
 }
 
 /* ── WHOIS terminal card ── */
+/* Shared card skin (kt-terminal): grained panel, chrome border at rest,
+   accent border only on hover */
 .whois-terminal {
-  background: var(--kt-term-bg) !important;
-  border: 1px solid var(--kt-term-border);
-  border-radius: 8px;
+  background: var(--kt-term-bg) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
+  background-size: 256px 256px !important;
+  border: 1px solid var(--kt-chrome-border, #1f1f1f);
+  border-radius: 6px;
   overflow: hidden;
   font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
   transition: border-color 0.15s;
 }
 
 .whois-terminal:hover {
-  border-color: rgba(var(--kt-accent-rgb), 0.6) !important;
-}
-
-.whois-terminal:hover .whois-terminal-bar {
-  background: var(--kt-term-bar-hover-bg) !important;
+  border-color: var(--kt-accent) !important;
 }
 
 .whois-terminal-bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 10px;
-  background: var(--kt-term-bar-bg);
-  border-bottom: 1px solid var(--kt-term-bar-border);
+  padding: 10px 10px 4px;
+  background: transparent;
 }
 
 .whois-terminal-bar .kt-tag {
