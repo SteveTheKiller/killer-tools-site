@@ -160,9 +160,21 @@ function selectLocale(code: string) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  /* Subtle divider between the columns, like the apps' two-column menus */
+  /* Subtle divider between the columns, like the apps' two-column menus: a few px
+     of air on each side, fading out at the first and last rows. */
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(odd) {
-    border-right: 1px solid var(--kt-menu-border, rgba(255, 255, 255, 0.12));
+    --kt-locale-divider: var(--kt-menu-border, rgba(255, 255, 255, 0.12));
+    margin-right: 3px;
+    border-right: 1px solid var(--kt-locale-divider);
+  }
+  .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(even) {
+    margin-left: 3px;
+  }
+  .locale-menu.n-dropdown-menu > .n-dropdown-option:first-child {
+    border-image: linear-gradient(to bottom, transparent, var(--kt-locale-divider)) 1;
+  }
+  .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-last-child(-n + 2):nth-child(odd) {
+    border-image: linear-gradient(to bottom, var(--kt-locale-divider), transparent) 1;
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__label > span {
     min-width: 0 !important;
