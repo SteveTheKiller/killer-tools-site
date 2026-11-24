@@ -5,7 +5,7 @@ import { useI18n } from 'vue-i18n';
 const endpoint = 'https://mcp.killertools.net';
 const codexCommand = `codex mcp add killertools --url ${endpoint}`;
 const claudeCodeCommand = `claude mcp add --transport http killertools ${endpoint}`;
-const wingetCommand = 'winget install SteveTheKiller.KillerMCP';
+const wingetCommand = 'winget install killermcp';
 const chocoCommand = 'choco install killermcp';
 const cursorInstallUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=killertools&config=${encodeURIComponent(btoa(JSON.stringify({ url: endpoint })))}`;
 const vscodeInstallUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: 'killertools', type: 'http', url: endpoint }))}`;
