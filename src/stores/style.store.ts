@@ -4,6 +4,7 @@ import { useMediaQuery, useStorage } from '@vueuse/core';
 import { defineStore } from 'pinia';
 import { computed, nextTick, watch, watchEffect } from 'vue';
 import { accentTriple } from '@/themes';
+import { grainTileUrl, parseColor } from '@/utils/grain-tile';
 
 const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic', 'ectoplasm', 'decay', 'malaise', 'sepulchre', 'delirium', 'mourning'];
 const VALID_ACCENTS: (KtAccentKey | '')[] = ['', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'magenta'];
@@ -62,6 +63,21 @@ export const useStyleStore = defineStore('style', {
         d.style.removeProperty('--kt-accent-2');
         d.style.removeProperty('--kt-accent-sel');
         d.style.removeProperty('--kt-accent-rgb');
+      }
+
+      // Family film grain (KillerUI GrainTexture port): one tile for every
+      // grained surface, leaning toward the accent's complement, at the
+      // theme's GrainOpacity (Black 0.18 highlights only, Light 0.30, others 0.24).
+      const css = getComputedStyle(d);
+      const accent = parseColor(css.getPropertyValue('--kt-accent'));
+      const bg = parseColor(css.getPropertyValue('--kt-bg'));
+      if (accent && bg) {
+        const black = ktTheme.value === 'black';
+        const opacity = black ? 0.18 : ktTheme.value === 'light' ? 0.30 : 0.24;
+        const url = grainTileUrl(accent, bg, opacity, black);
+        if (url) {
+          d.style.setProperty('--kt-grain-img', `url('${url}')`);
+        }
       }
     });
 

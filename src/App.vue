@@ -51,6 +51,17 @@ onMounted(() => {
   });
   convertTitles();
 });
+
+// KillerUI Bevel.cs: the edge is one device pixel at any zoom or DPI.
+const bevelDepth = ref(1);
+let dprQuery: MediaQueryList | null = null;
+function watchDpr() {
+  dprQuery?.removeEventListener('change', watchDpr);
+  bevelDepth.value = 1 / (window.devicePixelRatio || 1);
+  dprQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+  dprQuery.addEventListener('change', watchDpr);
+}
+onMounted(watchDpr);
 </script>
 
 <template>
@@ -70,6 +81,23 @@ onMounted(() => {
       </NNotificationProvider>
     </NMessageProvider>
   </n-config-provider>
+  <!-- Family bevel (KillerUI Bevel.cs shader): the text keeps its own color,
+       its upper-left edge moves 12% toward white and its lower-right edge 22%
+       toward black, so headings read as raised lettering. -->
+  <svg class="kt-bevel-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="kt-bevel" color-interpolation-filters="sRGB">
+      <feOffset in="SourceAlpha" :dx="bevelDepth" :dy="bevelDepth" result="before" />
+      <feComposite in="SourceAlpha" in2="before" operator="arithmetic" k2="1" k3="-1" result="lit" />
+      <feOffset in="SourceAlpha" :dx="-bevelDepth" :dy="-bevelDepth" result="after" />
+      <feComposite in="SourceAlpha" in2="after" operator="arithmetic" k2="1" k3="-1" result="dark" />
+      <feFlood flood-color="#ffffff" flood-opacity="0.12" />
+      <feComposite in2="lit" operator="in" result="litTone" />
+      <feFlood flood-color="#000000" flood-opacity="0.22" />
+      <feComposite in2="dark" operator="in" result="darkTone" />
+      <feComposite in="litTone" in2="SourceGraphic" operator="atop" result="lifted" />
+      <feComposite in="darkTone" in2="lifted" operator="atop" />
+    </filter>
+  </svg>
 </template>
 
 <style>
@@ -985,6 +1013,40 @@ div:first-child > .menu-wrapper .n-menu-item-content {
 
 body {
   overflow-x: hidden !important;
+}
+
+/* --- Family bevel on accent headings (KillerUI AccentShadow/HeadingAccent):
+   raised lettering in the heading's own color replaces the dark text stroke.
+   High Contrast (forced colors) drops it, as the apps do. --- */
+.kt-bevel-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+html .tc-title,
+html .home-newest,
+html .home-all-tools,
+html .cat-name,
+html .tool-title-compact,
+html .kt-terminal-bar-title[class],
+html [class*="-terminal-bar-title"][class],
+html [class*="-terminal-title"][class]:not([class*="-sub"]) {
+  text-shadow: none !important;
+  filter: url('#kt-bevel');
+}
+@media (forced-colors: active) {
+  html .tc-title,
+  html .home-newest,
+  html .home-all-tools,
+  html .cat-name,
+  html .tool-title-compact,
+  html .kt-terminal-bar-title[class],
+  html [class*="-terminal-bar-title"][class],
+  html [class*="-terminal-title"][class]:not([class*="-sub"]) {
+    filter: none;
+  }
 }
 
 /* --- family grain (app recipe + per-theme GrainOpacity): content pane --- */
