@@ -112,6 +112,8 @@ function selectLocale(code: string) {
 <template>
   <NDropdown
     trigger="click"
+    class="locale-menu"
+    placement="bottom-end"
     :options="localeOptions"
     @select="selectLocale"
   >
@@ -138,5 +140,33 @@ function selectLocale(code: string) {
 }
 .locale-selector:hover .locale-flag {
   border-color: var(--kt-accent);
+}
+</style>
+
+<style>
+/* The menu is teleported to body, so these rules cannot be scoped. On phones the
+   22 rows run past the screen, so split them into two columns and let the menu
+   scroll on its own without dragging the page along. */
+@media (max-width: 700px) {
+  .locale-menu.n-dropdown-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: calc(100vw - 16px);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .locale-menu.n-dropdown-menu .n-dropdown-option-body__label > span {
+    min-width: 0 !important;
+    gap: 8px !important;
+  }
+  .locale-menu.n-dropdown-menu .n-dropdown-option-body__prefix {
+    width: 28px !important;
+  }
+  .locale-menu.n-dropdown-menu .n-dropdown-option-body__suffix {
+    min-width: 0 !important;
+    padding: 0 4px 0 0 !important;
+  }
 }
 </style>
