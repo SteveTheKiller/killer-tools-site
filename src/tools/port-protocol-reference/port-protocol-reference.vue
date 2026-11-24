@@ -202,9 +202,12 @@ html:not(.dark) .ppr-seg-btn-active {
 }
 
 .ppr-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 8px;
+  columns: 240px auto;
+  column-gap: 8px;
+}
+.ppr-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 /* Dangerous cards: amber outline on the sides + bottom only, so the accent

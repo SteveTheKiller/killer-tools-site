@@ -127,9 +127,12 @@ function copyId(id: number) {
 }
 
 .wel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 8px;
+  columns: 260px auto;
+  column-gap: 8px;
+}
+.wel-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 .wel-bar {

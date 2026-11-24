@@ -125,9 +125,12 @@ function copyValue(value: string) {
 }
 
 .sku-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 8px;
+  columns: 240px auto;
+  column-gap: 8px;
+}
+.sku-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 .sku-bar {

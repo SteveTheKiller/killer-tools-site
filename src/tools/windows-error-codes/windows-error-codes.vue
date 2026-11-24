@@ -118,9 +118,12 @@ function copyValue(value: string) {
 }
 
 .wec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 8px;
+  columns: 240px auto;
+  column-gap: 8px;
+}
+.wec-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 .wec-bar {

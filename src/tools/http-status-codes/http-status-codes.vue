@@ -103,9 +103,12 @@ function copyValue(value: string) {
 }
 
 .hsc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 8px;
+  columns: 220px auto;
+  column-gap: 8px;
+}
+.hsc-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 .hsc-bar {

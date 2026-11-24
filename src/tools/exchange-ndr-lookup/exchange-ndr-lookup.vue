@@ -126,9 +126,12 @@ function copyValue(value: string) {
 }
 
 .ndr-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 8px;
+  columns: 350px auto;
+  column-gap: 8px;
+}
+.ndr-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 .ndr-bar {

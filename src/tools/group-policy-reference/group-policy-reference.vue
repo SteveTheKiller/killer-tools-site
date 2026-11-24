@@ -128,10 +128,14 @@ function copyValue(value: string) {
 <style scoped>
 .kt-terminal-bar { background: var(--kt-term-bar-bg) !important; }
 
+/* Masonry flow: each card keeps its own height, columns pack independently */
 .gpr-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 8px;
+  columns: 300px auto;
+  column-gap: 8px;
+}
+.gpr-grid > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
 }
 
 .gpr-category {
@@ -139,16 +143,15 @@ function copyValue(value: string) {
   position: relative;
   top: 1px;
   flex: 1;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: normal;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.94);
   font-family: var(--kt-font-card-title);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* Long categories wrap to a second line instead of truncating */
+  overflow-wrap: anywhere;
   min-width: 0;
 }
 
