@@ -42,12 +42,22 @@ function openRepo(mod: KillerModule) {
             <span class="km-title">{{ mod.name }}</span>
             <span v-if="mod.expansion" class="km-expansion">{{ mod.expansion }}</span>
           </div>
-          <button
-            class="km-btn-repo"
-            @click.stop="openRepo(mod)"
-          >
-            {{ t('tools.killer-modules.ui.repo') }}
-          </button>
+          <div class="km-actions">
+            <button
+              class="km-btn-copy"
+              :class="{ 'is-copied': copied === mod.name }"
+              @click.stop="copyInstall(mod)"
+            >
+              <span class="km-lbl km-lbl-idle">⧉ {{ t('tools.killer-modules.ui.copyInstall') }}</span>
+              <span class="km-lbl km-lbl-done">✓ {{ t('tools.killer-modules.ui.copied') }}</span>
+            </button>
+            <button
+              class="km-btn-repo"
+              @click.stop="openRepo(mod)"
+            >
+              {{ t('tools.killer-modules.ui.repo') }}
+            </button>
+          </div>
         </div>
 
         <div class="km-body">
@@ -72,14 +82,6 @@ function openRepo(mod: KillerModule) {
 
         <div class="km-install">
           <code class="km-cmd">{{ mod.install }}</code>
-          <button
-            class="km-btn-copy"
-            :class="{ 'is-copied': copied === mod.name }"
-            @click.stop="copyInstall(mod)"
-          >
-            <span class="km-lbl km-lbl-idle">⧉ {{ t('tools.killer-modules.ui.copyInstall') }}</span>
-            <span class="km-lbl km-lbl-done">✓ {{ t('tools.killer-modules.ui.copied') }}</span>
-          </button>
         </div>
       </div>
     </div>
@@ -231,9 +233,16 @@ html:not(.dark) .km-cmd {
   color: rgba(0, 0, 0, 0.8);
 }
 
+.km-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
 .km-btn-copy {
   cursor: pointer;
-  align-self: flex-end;
+  padding: 5px 10px !important;
   display: inline-grid;
   justify-items: center;
   border-radius: 4px;
