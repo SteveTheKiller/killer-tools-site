@@ -64,7 +64,7 @@ const brand = computed(() => (typeof option.value.to === 'string' ? APP_BRAND[op
 </template>
 
 <style scoped>
-/* Family hover/selected: accent-tinted bar + accent text (dropdown-item rule) */
+/* Hover/selected row uses the theme's KillerUI MenuHoverBrush, not an accent tint */
 .cp-option {
   border-radius: 6px;
   transition: background 0.12s ease, color 0.12s ease;
@@ -72,8 +72,8 @@ const brand = computed(() => (typeof option.value.to === 'string' ? APP_BRAND[op
 
 .cp-option:hover,
 .cp-option-selected {
-  background: rgba(var(--kt-accent-rgb), 0.1);
-  color: var(--kt-accent);
+  background: var(--kt-menu-hover, rgba(255, 255, 255, 0.08));
+  color: var(--kt-menu-hover-text, inherit);
 }
 
 /* Brand wordmarks sized to sit like the option title, dark/light swap */

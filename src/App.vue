@@ -180,18 +180,18 @@ html[data-kt-theme='mourning']  { --kt-bg: #554c5d; --kt-chrome: #3b3642; --kt-c
 
 /* Menu and flyout border: the apps' neutral MenuBorderBrush. Menus, flyouts
    and the accent bar never take an accent border. */
-html[data-kt-theme='black']     { --kt-menu-border: #1c1c1c; }
-html[data-kt-theme='dark']      { --kt-menu-border: #404040; }
-html[data-kt-theme='light']     { --kt-menu-border: #a8a8a8; }
-html[data-kt-theme='blood']     { --kt-menu-border: #633030; }
-html[data-kt-theme='greed']     { --kt-menu-border: #07371f; }
-html[data-kt-theme='cyanotic']  { --kt-menu-border: #093250; }
-html[data-kt-theme='ectoplasm'] { --kt-menu-border: #526466; }
-html[data-kt-theme='decay']     { --kt-menu-border: #5c554c; }
-html[data-kt-theme='malaise']   { --kt-menu-border: #394742; }
-html[data-kt-theme='sepulchre'] { --kt-menu-border: #4d3d2b; }
-html[data-kt-theme='delirium']  { --kt-menu-border: #5c527d; }
-html[data-kt-theme='mourning']  { --kt-menu-border: #756b79; }
+html[data-kt-theme='black']     { --kt-menu-border: #1c1c1c; --kt-menu-hover: #333333; }
+html[data-kt-theme='dark']      { --kt-menu-border: #404040; --kt-menu-hover: #404040; }
+html[data-kt-theme='light']     { --kt-menu-border: #a8a8a8; --kt-menu-hover: #b2b2b2; }
+html[data-kt-theme='blood']     { --kt-menu-border: #633030; --kt-menu-hover: #54201f; }
+html[data-kt-theme='greed']     { --kt-menu-border: #07371f; --kt-menu-hover: #00593a; }
+html[data-kt-theme='cyanotic']  { --kt-menu-border: #093250; --kt-menu-hover: #0a5478; }
+html[data-kt-theme='ectoplasm'] { --kt-menu-border: #526466; --kt-menu-hover: #ead900; --kt-menu-hover-text: #111111; }
+html[data-kt-theme='decay']     { --kt-menu-border: #5c554c; --kt-menu-hover: #596554; }
+html[data-kt-theme='malaise']   { --kt-menu-border: #394742; --kt-menu-hover: #6b705c; }
+html[data-kt-theme='sepulchre'] { --kt-menu-border: #4d3d2b; --kt-menu-hover: #407b7b; }
+html[data-kt-theme='delirium']  { --kt-menu-border: #5c527d; --kt-menu-hover: #9c630e; }
+html[data-kt-theme='mourning']  { --kt-menu-border: #756b79; --kt-menu-hover: #b2556c; }
 
 /* Film Grain switch (theme flyout, family app behavior): off empties the grain
    layer every surface draws from, whatever theme or accent is active. */

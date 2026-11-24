@@ -209,7 +209,7 @@ html:not(.dark) .search-icon-trigger {
 .palette-modal.c-modal--container {
   background: var(--kt-modal, #111111) var(--kt-grain-img, url('/grain-a12.png')) repeat !important;
   background-size: 256px 256px !important;
-  border: 1px solid rgba(var(--kt-accent-rgb), 0.45);
+  border: 1px solid var(--kt-menu-border, #404040);
   border-radius: 8px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
