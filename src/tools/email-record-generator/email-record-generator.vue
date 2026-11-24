@@ -628,7 +628,9 @@ const dmarcRecord = computed(() => buildDmarcRecord({
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.75);
   transition: color 0.12s;
-  width: 100%;
+  /* Combo sized to its options, not the card */
+  width: 340px;
+  max-width: 100%;
 }
 
 html:not(.dark) .erg-dd-btn { background: #ffffff !important; color: rgba(0, 0, 0, 0.8); }
@@ -647,7 +649,8 @@ html:not(.dark) .erg-dd-btn { background: #ffffff !important; color: rgba(0, 0, 
   position: absolute;
   top: calc(100% - 6px);
   left: 12px;
-  right: 12px;
+  width: 340px;
+  max-width: calc(100% - 24px);
   background: var(--kt-modal, #121212);
   border: 1px solid rgba(var(--kt-accent-rgb), 0.5);
   border-radius: 6px;

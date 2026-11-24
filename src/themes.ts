@@ -309,11 +309,11 @@ const SURFACES: Record<Exclude<KtThemeKey, 'light'>, Omit<DarkPalette, 'accent' 
   // blood/greed/cyanotic these carry a REAL accent of their own, so textAccent is
   // that accent rather than a warm cream.
   ectoplasm: { bg: '#293c3f', chrome: '#314548', chromeBorder: '#096366', panel: '#293c3f', panelBorder: '#096366', input: '#223335', popup: '#383838', tableTd: '#293c3f', tableTh: '#096366', notif: '#383838', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ead900' },
-  decay: { bg: '#403f3b', chrome: '#514e48', chromeBorder: '#5c554c', panel: '#403f3b', panelBorder: '#5c554c', input: '#35342f', popup: '#3b3f46', tableTd: '#403f3b', tableTh: '#5c554c', notif: '#3b3f46', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#b8aa7c' },
-  malaise: { bg: '#303638', chrome: '#3f4947', chromeBorder: '#394742', panel: '#303638', panelBorder: '#394742', input: '#2b3133', popup: '#262b2d', tableTd: '#303638', tableTh: '#394742', notif: '#262b2d', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#ff6f91', inputHover: '#c2b280' },
-  sepulchre: { bg: '#3a352f', chrome: '#454039', chromeBorder: '#4d3d2b', panel: '#3a352f', panelBorder: '#4d3d2b', input: '#302c26', popup: '#242729', tableTd: '#3a352f', tableTh: '#4d3d2b', notif: '#242729', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#4faaa8' },
-  delirium: { bg: '#343344', chrome: '#3e3c50', chromeBorder: '#5c527d', panel: '#343344', panelBorder: '#5c527d', input: '#2b2a38', popup: '#24212b', tableTd: '#343344', tableTh: '#5c527d', notif: '#24212b', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#dd8500' },
-  mourning: { bg: '#554c5d', chrome: '#3b3642', chromeBorder: '#756b79', panel: '#554c5d', panelBorder: '#756b79', input: '#463f4d', popup: '#4f413f', tableTd: '#554c5d', tableTh: '#756b79', notif: '#4f413f', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ff6f91' },
+  decay: { bg: '#403f3b', chrome: '#514e48', chromeBorder: '#5c554c', panel: '#403f3b', panelBorder: '#5c554c', input: '#35342f', popup: '#3b3f46', tableTd: '#403f3b', tableTh: '#5c554c', notif: '#3b3f46', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#d1c8aa' },
+  malaise: { bg: '#303638', chrome: '#3f4947', chromeBorder: '#394742', panel: '#303638', panelBorder: '#394742', input: '#2b3133', popup: '#262b2d', tableTd: '#303638', tableTh: '#394742', notif: '#262b2d', text: '#f2f4f3', text2: '#d8cfb5', textAccent: '#ffb199' },
+  sepulchre: { bg: '#3a352f', chrome: '#454039', chromeBorder: '#4d3d2b', panel: '#3a352f', panelBorder: '#4d3d2b', input: '#302c26', popup: '#242729', tableTd: '#3a352f', tableTh: '#4d3d2b', notif: '#242729', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#8ccac8' },
+  delirium: { bg: '#343344', chrome: '#3e3c50', chromeBorder: '#5c527d', panel: '#343344', panelBorder: '#5c527d', input: '#2b2a38', popup: '#24212b', tableTd: '#343344', tableTh: '#5c527d', notif: '#24212b', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#f29200' },
+  mourning: { bg: '#554c5d', chrome: '#3b3642', chromeBorder: '#756b79', panel: '#554c5d', panelBorder: '#756b79', input: '#463f4d', popup: '#4f413f', tableTd: '#554c5d', tableTh: '#756b79', notif: '#4f413f', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ffa9bd' },
 };
 
 // Fixed button/control colors for the colored themes (landing --btn):
@@ -324,15 +324,14 @@ const FIXED_ACCENTS: Partial<Record<KtThemeKey, AccentTriple>> = {
   greed: { base: '#e6b800', hover: '#F2CA1F', pressed: '#C19B00', sel: 'rgba(255, 255, 255, 0.27)', rgb: [230, 184, 0] },
   cyanotic: { base: '#1ea54c', hover: '#2EBD5E', pressed: '#178A3F', sel: 'rgba(255, 255, 255, 0.27)', rgb: [30, 165, 76] },
   // Grunge themes: base = the theme's own accent; sel = the landing tab-edge.
-  // Malaise follows the app three-color model: pink primary (app trio
-  // #ff6f91/#ff86a2/#e85e80), teal SelectionBg #365b58 for selection fills,
-  // sand InputHoverBrush #c2b280 (SURFACES), mint tab edge in App.vue.
-  ectoplasm: { base: '#ead900', hover: '#EEE02E', pressed: '#BBAE00', sel: 'rgba(234, 217, 0, 0.42)', rgb: [234, 217, 0] },
-  decay: { base: '#b8aa7c', hover: '#C5B994', pressed: '#938863', sel: '#8a8a78', rgb: [184, 170, 124] },
-  malaise: { base: '#ff6f91', hover: '#ff86a2', pressed: '#e85e80', sel: '#365b58', rgb: [255, 111, 145] },
-  sepulchre: { base: '#4faaa8', hover: '#6FB9B8', pressed: '#3F8886', sel: 'rgba(79, 170, 168, 0.42)', rgb: [79, 170, 168] },
-  delirium: { base: '#dd8500', hover: '#E39B2E', pressed: '#B16A00', sel: '#cf1020', rgb: [221, 133, 0] },
-  mourning: { base: '#ff6f91', hover: '#FF89A5', pressed: '#CC5974', sel: 'rgba(255, 111, 145, 0.42)', rgb: [255, 111, 145] },
+  // Primary/hover/pressed trios match KillerUI Themes/*.xaml (audited 2026-11-23).
+  // Malaise: peach primary, teal SelectionBg #365b58, mint tab edge in App.vue.
+  ectoplasm: { base: '#ead900', hover: '#eddf29', pressed: '#beb109', sel: 'rgba(234, 217, 0, 0.42)', rgb: [234, 217, 0] },
+  decay: { base: '#d1c8aa', hover: '#c2b280', pressed: '#9a8f68', sel: '#8a8a78', rgb: [209, 200, 170] },
+  malaise: { base: '#ffb199', hover: '#ff8f6e', pressed: '#e85e80', sel: '#365b58', rgb: [255, 177, 153] },
+  sepulchre: { base: '#8ccac8', hover: '#6bb8b6', pressed: '#458d8c', sel: 'rgba(140, 202, 200, 0.42)', rgb: [140, 202, 200] },
+  delirium: { base: '#f29200', hover: '#e29929', pressed: '#b47009', sel: '#cf1020', rgb: [242, 146, 0] },
+  mourning: { base: '#ffa9bd', hover: '#ff86a2', pressed: '#e85e80', sel: 'rgba(255, 169, 189, 0.42)', rgb: [255, 169, 189] },
 };
 
 export function buildOverridesFor(theme: KtThemeKey, accent?: KtAccentKey | ''): GlobalThemeOverrides {
@@ -364,11 +363,11 @@ export const ktThemes: KtThemeDef[] = [
   { key: 'greed', label: 'Greed', isDark: true, swatchBg: '#004d32', swatchAccent: '#e0d49a' },
   { key: 'cyanotic', label: 'Cyanotic', isDark: true, swatchBg: '#003450', swatchAccent: '#e0d49a' },
   { key: 'ectoplasm', label: 'Ectoplasm', isDark: true, swatchBg: '#5e1764', swatchAccent: '#ead900' },
-  { key: 'decay', label: 'Decay', isDark: true, swatchBg: '#403f3b', swatchAccent: '#b8aa7c' },
-  { key: 'malaise', label: 'Malaise', isDark: true, swatchBg: '#563343', swatchAccent: '#ff6f91' },
-  { key: 'sepulchre', label: 'Sepulchre', isDark: true, swatchBg: '#3a352f', swatchAccent: '#4faaa8' },
-  { key: 'delirium', label: 'Delirium', isDark: true, swatchBg: '#641d25', swatchAccent: '#dd8500' },
-  { key: 'mourning', label: 'Mourning', isDark: true, swatchBg: '#554c5d', swatchAccent: '#ff6f91' },
+  { key: 'decay', label: 'Decay', isDark: true, swatchBg: '#403f3b', swatchAccent: '#d1c8aa' },
+  { key: 'malaise', label: 'Malaise', isDark: true, swatchBg: '#563343', swatchAccent: '#ffb199' },
+  { key: 'sepulchre', label: 'Sepulchre', isDark: true, swatchBg: '#3a352f', swatchAccent: '#8ccac8' },
+  { key: 'delirium', label: 'Delirium', isDark: true, swatchBg: '#641d25', swatchAccent: '#f29200' },
+  { key: 'mourning', label: 'Mourning', isDark: true, swatchBg: '#554c5d', swatchAccent: '#ffa9bd' },
 ];
 
 export const ktThemeByKey = Object.fromEntries(ktThemes.map(t => [t.key, t])) as Record<KtThemeKey, KtThemeDef>;
