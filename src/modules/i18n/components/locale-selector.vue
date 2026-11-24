@@ -164,7 +164,7 @@ function selectLocale(code: string) {
      of air on each side, fading out at the first and last rows. */
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(odd) {
     --kt-locale-divider: var(--kt-menu-border, rgba(255, 255, 255, 0.12));
-    margin-right: 3px;
+    padding-right: 3px;
     border-right: 1px solid var(--kt-locale-divider);
   }
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(even) {
