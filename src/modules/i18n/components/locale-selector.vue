@@ -160,6 +160,10 @@ function selectLocale(code: string) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  /* Subtle divider between the columns, like the apps' two-column menus */
+  .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(odd) {
+    border-right: 1px solid var(--kt-menu-border, rgba(255, 255, 255, 0.12));
+  }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__label > span {
     min-width: 0 !important;
     gap: 8px !important;
