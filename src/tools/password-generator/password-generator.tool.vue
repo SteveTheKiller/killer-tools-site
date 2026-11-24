@@ -22,7 +22,7 @@ function accentHex8(fallback: string) {
 const qrBg = computed(() => styleStore.isDarkTheme ? '#0a0a0aff' : '#f5f5f5ff');
 const qrFg = computed(() => {
   void styleStore.ktTheme;
-  void styleStore.ktAccent;
+  void styleStore.activeAccent;
   return styleStore.isDarkTheme ? accentHex8('#1ea54cff') : '#0b5c28ff';
 });
 

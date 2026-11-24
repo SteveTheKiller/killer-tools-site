@@ -10,7 +10,7 @@ const layout = computed(() => route?.meta?.layout ?? layouts.base);
 const styleStore = useStyleStore();
 
 const theme = computed(() => (styleStore.isDarkTheme ? darkTheme : null));
-const themeOverrides = computed(() => buildOverridesFor(styleStore.ktTheme, styleStore.ktAccent));
+const themeOverrides = computed(() => buildOverridesFor(styleStore.ktTheme, styleStore.activeAccent));
 
 const { availableLocales, locale } = useI18n({ useScope: 'global' });
 const componentLocale = computed(() => locale.value === 'sl' ? slSI : undefined);
@@ -177,6 +177,9 @@ html[data-kt-theme='malaise']   { --kt-bg: #303638; --kt-chrome: #3f4947; --kt-c
 html[data-kt-theme='sepulchre'] { --kt-bg: #3a352f; --kt-chrome: #454039; --kt-chrome-bg: linear-gradient(90deg, #25282b 0%, #2c5458 100%); --kt-chrome-border: #4d3d2b; --kt-panel: #3a352f; --kt-modal: #242729; --kt-accent: #8ccac8; --kt-accent-2: #458d8c; --kt-accent-sel: rgba(140, 202, 200, 0.42); --kt-accent-rgb: 140, 202, 200; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a17.png'); }
 html[data-kt-theme='delirium']  { --kt-bg: #343344; --kt-chrome: #3e3c50; --kt-chrome-bg: linear-gradient(90deg, #641d25 0%, #2f2853 100%); --kt-chrome-border: #5c527d; --kt-panel: #343344; --kt-modal: #24212b; --kt-accent: #f29200; --kt-accent-2: #b47009; --kt-accent-sel: #cf1020; --kt-accent-rgb: 242, 146, 0; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a17.png'); }
 html[data-kt-theme='mourning']  { --kt-bg: #554c5d; --kt-chrome: #3b3642; --kt-chrome-border: #756b79; --kt-panel: #554c5d; --kt-modal: #2b2730; --kt-accent: #ffa9bd; --kt-accent-2: #e85e80; --kt-accent-sel: rgba(255, 169, 189, 0.42); --kt-accent-rgb: 255, 169, 189; --kt-outline-btn: #ffb199; --kt-outline-btn-rgb: 255, 177, 153; --kt-rail-text: #b4b6b1; --kt-grain-img: url('/grain-a17.png'); }
+/* Trash Polka (KillerUI Themes/TrashPolka.xaml): accent vars come inline from the
+   style store (its own accent family, Red by default); the ink lives in kt-trash-polka.css */
+html[data-kt-theme='trashpolka'] { --kt-bg: #333333; --kt-chrome: #000000; --kt-chrome-border: #2e2e2e; --kt-panel: #3a3a3a; --kt-modal: #121212; --kt-accent: #D7263D; --kt-accent-2: #D7263D; --kt-accent-sel: #4A1218; --kt-accent-rgb: 215, 38, 61; --kt-rail-text: #bdbdbd; --kt-grain-img: url('/grain-a17.png'); }
 
 /* Menu and flyout border: the apps' neutral MenuBorderBrush. Menus, flyouts
    and the accent bar never take an accent border. */
@@ -192,6 +195,7 @@ html[data-kt-theme='malaise']   { --kt-menu-border: #394742; --kt-menu-hover: #6
 html[data-kt-theme='sepulchre'] { --kt-menu-border: #4d3d2b; --kt-menu-hover: #407b7b; }
 html[data-kt-theme='delirium']  { --kt-menu-border: #5c527d; --kt-menu-hover: #9c630e; }
 html[data-kt-theme='mourning']  { --kt-menu-border: #756b79; --kt-menu-hover: #b2556c; }
+html[data-kt-theme='trashpolka'] { --kt-menu-border: #404040; --kt-menu-hover: #404040; }
 
 /* Film Grain switch (theme flyout, family app behavior): off empties the grain
    layer every surface draws from, whatever theme or accent is active. */

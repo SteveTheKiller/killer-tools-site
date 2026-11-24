@@ -11,6 +11,7 @@ import { naive } from './plugins/naive.plugin';
 import router from './router';
 import 'virtual:uno.css';
 import '@/assets/kt-terminal.css';
+import '@/assets/kt-trash-polka.css';
 
 // The service worker precaches the app shell, so a returning visitor keeps the
 // previous build until the worker notices a new one. Browsers only look on a

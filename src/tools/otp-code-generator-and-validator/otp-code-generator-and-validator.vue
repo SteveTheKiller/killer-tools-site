@@ -40,7 +40,7 @@ const { qrcode } = useQRCode({
     background: computed(() => (styleStore.isDarkTheme ? '#0a0a0aff' : '#ffffffff')),
     foreground: computed(() => {
       void styleStore.ktTheme;
-      void styleStore.ktAccent;
+      void styleStore.activeAccent;
       return styleStore.isDarkTheme ? accentHex8('#1ea54cff') : '#000000ff';
     }),
   },

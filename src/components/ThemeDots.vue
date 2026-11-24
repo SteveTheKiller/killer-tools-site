@@ -3,7 +3,7 @@ import type { KtAccentKey, KtThemeKey } from '@/themes';
 import { useEventListener, useStorage } from '@vueuse/core';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useStyleStore } from '@/stores/style.store';
-import { ktAccents, ktThemes, NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
+import { ACCENT_THEMES, accentFamilyOf, ktAccents, ktThemes, THEME_DEFAULT_ACCENT } from '@/themes';
 
 const { t } = useI18n();
 const styleStore = useStyleStore();
@@ -25,14 +25,18 @@ function accentLabel(name: KtAccentKey) {
   return t(ACCENT_LABEL_KEYS[name]);
 }
 
-// Accents apply to the neutral themes only (Dark / Light / Black)
-const accentsVisible = computed(() => NEUTRAL_THEMES.includes(styleStore.ktTheme));
+// Accents apply to the neutral themes (Dark / Light / Black) and Trash Polka
+const accentsVisible = computed(() => ACCENT_THEMES.includes(styleStore.ktTheme));
 
-const accentFamily = computed(() =>
-  styleStore.ktTheme === 'light' ? 'light' : styleStore.ktTheme === 'black' ? 'black' : 'dark');
+const accentFamily = computed(() => accentFamilyOf(styleStore.ktTheme) ?? 'dark');
 
 const effectiveAccent = computed(() =>
-  styleStore.ktAccent || THEME_DEFAULT_ACCENT[styleStore.ktTheme] || 'teal');
+  styleStore.activeAccent || THEME_DEFAULT_ACCENT[styleStore.ktTheme] || 'teal');
+
+// The theme dots for neutral themes show the shared neutral accent; Trash Polka's shows its own
+function dotAccentFor(key: KtThemeKey) {
+  return (key === 'trashpolka' ? styleStore.ktTpAccent : styleStore.ktAccent) || THEME_DEFAULT_ACCENT[key] || 'teal';
+}
 
 // Mobile: the six theme swatches collapse behind the current-theme circle
 // to make room for the centered brand; tapping it expands the row.
@@ -92,14 +96,15 @@ function accentColor(name: KtAccentKey) {
 }
 
 function themeDotAccent(theme: typeof ktThemes[number]) {
-  if (!NEUTRAL_THEMES.includes(theme.key)) {
+  const family = accentFamilyOf(theme.key);
+  if (!family) {
     return theme.swatchAccent;
   }
-  const family = theme.key === 'light' ? 'light' : theme.key === 'black' ? 'black' : 'dark';
-  if (family === 'light' && effectiveAccent.value === 'yellow') {
+  const accent = dotAccentFor(theme.key);
+  if (family === 'light' && accent === 'yellow') {
     return '#FFD94D';
   }
-  return ktAccents[family][effectiveAccent.value];
+  return ktAccents[family][accent];
 }
 
 // Accent popup docks to the top rail (KillerPDF annotation-bar behavior):

@@ -5,8 +5,9 @@ import { defineStore } from 'pinia';
 import { computed, nextTick, watch, watchEffect } from 'vue';
 import { accentTriple, themeInputColor } from '@/themes';
 import { grainTileUrl, parseColor } from '@/utils/grain-tile';
+import { applyTrashPolka, clearTrashPolka } from '@/utils/trash-polka-layers';
 
-const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic', 'ectoplasm', 'decay', 'malaise', 'sepulchre', 'delirium', 'mourning'];
+const VALID_THEMES: KtThemeKey[] = ['dark', 'light', 'black', 'blood', 'greed', 'cyanotic', 'ectoplasm', 'decay', 'malaise', 'sepulchre', 'delirium', 'mourning', 'trashpolka'];
 const VALID_ACCENTS: (KtAccentKey | '')[] = ['', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'magenta'];
 
 export const useStyleStore = defineStore('style', {
@@ -23,6 +24,13 @@ export const useStyleStore = defineStore('style', {
     if (!VALID_ACCENTS.includes(ktAccent.value)) {
       ktAccent.value = '';
     }
+
+    // Trash Polka keeps its own accent (KillerUI stores accents per family), Red by default
+    const ktTpAccent = useStorage('kt-tp-accent', 'red') as Ref<KtAccentKey | ''>;
+    if (!VALID_ACCENTS.includes(ktTpAccent.value)) {
+      ktTpAccent.value = 'red';
+    }
+    const activeAccent = computed(() => (ktTheme.value === 'trashpolka' ? ktTpAccent.value : ktAccent.value));
 
     // Film Grain switch from the theme flyout, on by default (family app
     // behavior). Off clears --kt-grain-img so every grained surface goes flat.
@@ -42,10 +50,10 @@ export const useStyleStore = defineStore('style', {
       d.classList.toggle('dark', ktTheme.value !== 'light');
       d.classList.toggle('light', ktTheme.value === 'light');
       d.setAttribute('data-kt-theme', ktTheme.value);
-      d.setAttribute('data-kt-accent', ktAccent.value);
+      d.setAttribute('data-kt-accent', activeAccent.value);
       d.setAttribute('data-kt-grain', ktGrain.value ? 'on' : 'off');
 
-      const t = accentTriple(ktTheme.value, ktAccent.value);
+      const t = accentTriple(ktTheme.value, activeAccent.value);
       if (t) {
         d.style.setProperty('--kt-accent', t.base);
         d.style.setProperty('--kt-accent-2', t.pressed);
@@ -87,6 +95,14 @@ export const useStyleStore = defineStore('style', {
         if (url) {
           d.style.setProperty('--kt-grain-img', `url('${url}')`);
         }
+      }
+
+      // Trash Polka ink, drawn in the chosen accent (KillerUI TrashPolkaInk port)
+      if (ktTheme.value === 'trashpolka' && t) {
+        void applyTrashPolka(t.base);
+      }
+      else {
+        clearTrashPolka();
       }
     });
 
@@ -143,7 +159,14 @@ export const useStyleStore = defineStore('style', {
     };
 
     const setAccent = (name: KtAccentKey | '') => {
-      applyThemed(() => (ktAccent.value = name));
+      applyThemed(() => {
+        if (ktTheme.value === 'trashpolka') {
+          ktTpAccent.value = name;
+        }
+        else {
+          ktAccent.value = name;
+        }
+      });
     };
 
     const setGrain = (on: boolean) => {
@@ -160,6 +183,8 @@ export const useStyleStore = defineStore('style', {
     return {
       ktTheme,
       ktAccent,
+      ktTpAccent,
+      activeAccent,
       ktGrain,
       isDarkTheme,
       setTheme,

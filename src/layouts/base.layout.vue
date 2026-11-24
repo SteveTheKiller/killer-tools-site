@@ -22,11 +22,12 @@ const wmSrc = computed(() => {
   const t = styleStore.ktTheme;
   // Colored themes (blood/greed/cyanotic) use bespoke textured wordmarks
   // with the warm theme-ink 'Tools' baked in.
-  if (!NEUTRAL_THEMES.includes(t)) {
+  // Trash Polka has no wordmark set of its own; it borrows Black's in the chosen accent
+  if (!NEUTRAL_THEMES.includes(t) && t !== 'trashpolka') {
     return `/brand/killertools-wordmark-${t}.png`;
   }
-  const accent = styleStore.ktAccent || THEME_DEFAULT_ACCENT[t] || 'teal';
-  const suffix = t === 'light' ? 'light' : t === 'black' ? 'black' : 'dark';
+  const accent = styleStore.activeAccent || THEME_DEFAULT_ACCENT[t] || 'teal';
+  const suffix = t === 'light' ? 'light' : t === 'black' || t === 'trashpolka' ? 'black' : 'dark';
   return `/brand/killertools-wordmark-${accent}-${suffix}.png`;
 });
 

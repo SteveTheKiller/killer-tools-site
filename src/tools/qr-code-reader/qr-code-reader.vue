@@ -15,7 +15,7 @@ let bitmap: ImageBitmap | undefined;
 let timer: ReturnType<typeof setTimeout> | undefined;
 let generation = 0;
 
-watch([() => style.ktTheme, () => style.ktAccent], () => requestAnimationFrame(draw), { flush: 'post' });
+watch([() => style.ktTheme, () => style.activeAccent], () => requestAnimationFrame(draw), { flush: 'post' });
 
 function draw() {
   if (!canvas.value || !bitmap) {

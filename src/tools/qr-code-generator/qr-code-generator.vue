@@ -36,7 +36,7 @@ function cssVarHex8(name: string, fallback: string) {
 const themeDefault = computed(() => {
   // touched so the preset tracks live theme/accent switches
   void styleStore.ktTheme;
-  void styleStore.ktAccent;
+  void styleStore.activeAccent;
   return {
     fg: cssVarHex8('--kt-accent', '#1ea54cff'),
     bg: cssVarHex8('--kt-modal', '#0a0a0aff'),

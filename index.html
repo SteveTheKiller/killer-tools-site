@@ -47,7 +47,7 @@
        white flash and no theme flicker (same trick as the landing pages). */
     (function () {
       var d = document.documentElement;
-      var bg = { dark: '#333333', light: '#b8b8b8', black: '#0d0d0d', blood: '#4a1f20', greed: '#0a5234', cyanotic: '#0a4a6e', ectoplasm: '#293c3f', decay: '#403f3b', malaise: '#303638', sepulchre: '#3a352f', delirium: '#343344', mourning: '#554c5d' };
+      var bg = { dark: '#333333', light: '#b8b8b8', black: '#0d0d0d', blood: '#4a1f20', greed: '#0a5234', cyanotic: '#0a4a6e', ectoplasm: '#293c3f', decay: '#403f3b', malaise: '#303638', sepulchre: '#3a352f', delirium: '#343344', mourning: '#554c5d', trashpolka: '#333333' };
       var t = 'dark';
       try {
         var s = localStorage.getItem('kt-theme');
@@ -61,7 +61,7 @@
       if (t !== 'light') { d.classList.add('dark'); }
       d.style.backgroundColor = bg[t];
       /* Saved accent (neutral themes only), cached by the style store */
-      if ({ dark: 1, light: 1, black: 1 }[t]) {
+      if ({ dark: 1, light: 1, black: 1, trashpolka: 1 }[t]) {
         try {
           var v = localStorage.getItem('kt-av');
           if (v) {

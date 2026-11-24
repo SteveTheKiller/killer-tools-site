@@ -1,0 +1,75 @@
+/* ── Trash Polka: Steve's tattoo theme, ported from KillerUI ─────────────────
+   Every surface is grain over ink over its base tone, the way the apps draw it
+   (Controls/TrashPolkaInk.cs). The style store draws the pieces in the chosen
+   accent and sets --kt-tp-page / -chrome / -card / -popup plus --kt-tp-size.
+   Window surfaces pin the ink to the viewport (the apps pin it to the window),
+   so a pane, a rail and a card show their own piece in place, never a tile.
+   Popups draw from their own corner, like ThemeMotif's popup case.
+   A gray pane here means a layer lost its ink: that is a bug, not a style.
+   The doubled attribute gives (0,2,1)+ so these beat the shared grain rules. */
+
+html[data-kt-theme='trashpolka'][data-kt-theme] {
+  --kt-tp-grain: var(--kt-grain-img, none);
+}
+
+/* Content pane: the window piece over Surface #333333 */
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-layout {
+  background-color: var(--kt-bg) !important;
+  background-image: var(--kt-tp-grain), var(--kt-tp-page, none) !important;
+  background-repeat: repeat, no-repeat !important;
+  background-size: 256px 256px, var(--kt-tp-size, cover) !important;
+  background-position: 0 0, 0 0 !important;
+  background-attachment: scroll, fixed !important;
+}
+
+/* Chrome: sider, gutter, titlebar and statusbar rails share one background piece */
+html[data-kt-theme='trashpolka'][data-kt-theme] #kt-sider,
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-layout-sider,
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-layout.content-col,
+html[data-kt-theme='trashpolka'][data-kt-theme] .kt-titlebar-shell,
+html[data-kt-theme='trashpolka'][data-kt-theme] .kt-statusbar {
+  background-color: var(--kt-chrome) !important;
+  background-image: var(--kt-tp-grain), var(--kt-tp-chrome, none) !important;
+  background-repeat: repeat, no-repeat !important;
+  background-size: 256px 256px, var(--kt-tp-size, cover) !important;
+  background-position: 0 0, 0 0 !important;
+  background-attachment: scroll, fixed !important;
+}
+
+/* Cards and tool panels: the split piece over their own tone */
+html[data-kt-theme='trashpolka'][data-kt-theme] .kt-terminal,
+html[data-kt-theme='trashpolka'][data-kt-theme] .k-terminal,
+html[data-kt-theme='trashpolka'][data-kt-theme] .c-card,
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-card {
+  background-color: var(--kt-term-bg, var(--kt-modal)) !important;
+  background-image: var(--kt-tp-grain), var(--kt-tp-card, none) !important;
+  background-repeat: repeat, no-repeat !important;
+  background-size: 256px 256px, var(--kt-tp-size, cover) !important;
+  background-position: 0 0, 0 0 !important;
+  background-attachment: scroll, fixed !important;
+}
+
+/* A transform on a card breaks fixed attachment (the ink would jump into the
+   card's own frame), so cards keep the border and shadow on hover but no lift */
+html[data-kt-theme='trashpolka'][data-kt-theme] .grid-wrapper a:hover .c-card,
+html[data-kt-theme='trashpolka'][data-kt-theme] .kt-terminal:hover,
+html[data-kt-theme='trashpolka'][data-kt-theme] .c-card:hover {
+  transform: none !important;
+}
+
+/* Popups and menus: a faint background piece from the popup's own corner */
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-base-select-menu,
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-dropdown-menu,
+html[data-kt-theme='trashpolka'][data-kt-theme] .n-popover:not(.n-tooltip),
+html[data-kt-theme='trashpolka'][data-kt-theme] .palette-modal.c-modal--container,
+html[data-kt-theme='trashpolka'][data-kt-theme] [class*='-dropdown-menu'][class],
+html[data-kt-theme='trashpolka'][data-kt-theme] [class*='-dd-menu'][class],
+html[data-kt-theme='trashpolka'][data-kt-theme] .acc-popup,
+html[data-kt-theme='trashpolka'][data-kt-theme] .tgrp.tgrp-open {
+  background-color: var(--kt-modal) !important;
+  background-image: var(--kt-tp-grain), var(--kt-tp-popup, none) !important;
+  background-repeat: repeat, no-repeat !important;
+  background-size: 256px 256px, var(--kt-tp-size, cover) !important;
+  background-position: 0 0, 0 0 !important;
+  background-attachment: local, local !important;
+}
