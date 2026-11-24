@@ -130,7 +130,7 @@ onBeforeUnmount(() => fitObserver?.disconnect());
       </Teleport>
       <div
         ref="gridEl"
-        class="grid gap-x-12px gap-y-16px"
+        class="grid gap-8px"
         style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));"
       >
         <div

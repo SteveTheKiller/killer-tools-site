@@ -29,7 +29,7 @@ function openRepo(mod: KillerModule) {
 <template>
   <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
     <div
-      class="grid gap-x-16px gap-y-20px"
+      class="grid gap-8px"
       style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 560px), 560px));"
     >
       <div

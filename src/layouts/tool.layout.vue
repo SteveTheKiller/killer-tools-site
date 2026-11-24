@@ -225,7 +225,7 @@ const headerLink = computed<{ label: string, href: string } | undefined>(
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
 
   ::v-deep(& > *) {
     flex: 0 1 600px;
@@ -248,8 +248,9 @@ const headerLink = computed<{ label: string, href: string } | undefined>(
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 0 16px;
+  /* KillerUI card spacing: the pane supplies the 8px edge, cards sit 8px apart */
+  gap: 8px;
+  padding: 0;
 
   ::v-deep(& > *) {
     flex: 0 1 600px;
@@ -257,8 +258,6 @@ const headerLink = computed<{ label: string, href: string } | undefined>(
   }
 
   @media (max-width: 640px) {
-    padding: 0 4px;
-
     ::v-deep(& > *) {
       flex: 1 1 100%;
     }

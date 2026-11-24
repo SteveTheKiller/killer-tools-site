@@ -129,7 +129,7 @@ function copyId(id: number) {
 .wel-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .wel-bar {
