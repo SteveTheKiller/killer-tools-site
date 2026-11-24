@@ -154,28 +154,6 @@ html.dark body {
   --kt-font-ui: var(--kt-font-killer);           /* small chrome such as the titlebar KillerMCP button */
 }
 
-/* Heading outline. Lacquer's strokes are thin, and the old soft 5px shadow
-   smeared them over grain and Trash Polka ink. A crisp dark outline painted
-   behind the fill, plus a tight 1px drop, keeps every heading sharp in every
-   accent. Light mode has no heading shadow and stays untouched. */
-html.dark :is(
-  .tc-title,
-  .home-all-tools,
-  .home-newest,
-  .tool-title-compact,
-  .cat-name,
-  .site-title,
-  .also-heading,
-  [class*="-terminal-title"]:not([class*="-sub"]),
-  [class*="-terminal-bar-title"],
-  [class*="-category-header"],
-  [class*="-section-header"]
-) {
-  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.92);
-  paint-order: stroke fill;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
-}
-
 /* ── Theme engine CSS variables (six families, ported from the landing pages).
    The chrome vars drive the frame rails (titlebar, sidebar, statusbar); bg
    drives the content pane. data-kt-theme is set by the style store. ── */

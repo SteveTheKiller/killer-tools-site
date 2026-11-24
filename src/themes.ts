@@ -23,7 +23,7 @@ export function accentFamilyOf(theme: KtThemeKey): KtAccentFamily | null {
 // Per-family accent palette, copied from the app (kf.js ACCENTS). Trash Polka
 // comes from KillerUI Themes/TrashPolka.xaml and Themes/Accents/TrashPolka.
 export const ktAccents: Record<KtAccentFamily, Record<KtAccentKey, string>> = {
-  trashpolka: { red: '#D7263D', orange: '#EE7B22', yellow: '#EED500', green: '#7A9A3A', teal: '#1E9A96', blue: '#3A6FD0', purple: '#8A4CC2', magenta: '#E4588E' },
+  trashpolka: { red: '#D7263D', orange: '#EE7B22', yellow: '#EED500', green: '#7A9A3A', teal: '#1E9A96', blue: '#5E8EE8', purple: '#8A4CC2', magenta: '#E4588E' },
   dark: { red: '#DD504B', orange: '#E8962C', yellow: '#EAD900', green: '#1EA54C', teal: '#1FB8A8', blue: '#50AEE8', purple: '#B982E3', magenta: '#FF52C9' },
   light: { red: '#931A1A', orange: '#C7710F', yellow: '#2B2A24', green: '#1B5E20', teal: '#0D827E', blue: '#18608E', purple: '#5A1690', magenta: '#A60070' },
   black: { red: '#FF2929', orange: '#FF910A', yellow: '#FFEB00', green: '#00FF66', teal: '#0AFFE7', blue: '#298DFF', purple: '#B829FF', magenta: '#FF2BBD' },
