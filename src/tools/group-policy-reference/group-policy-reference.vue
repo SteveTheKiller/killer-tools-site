@@ -139,7 +139,7 @@ function copyValue(value: string) {
 }
 
 .gpr-category {
-  line-height: 0.8;
+  line-height: 1.1;
   position: relative;
   top: 1px;
   flex: 1;
