@@ -172,7 +172,11 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  /* A long acronym (DEBLOAT, DEFEND) plus both buttons can outgrow a card near the
+     grid's 260px minimum; wrapping drops the buttons under the title instead of
+     pushing the download button past the card's edge. */
+  flex-wrap: wrap;
+  gap: 10px 8px;
   padding: 16px 16px 0 !important;
 }
 
@@ -222,6 +226,7 @@ html:not(.dark) .ks-acronym {
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .ks-btn-copy {
