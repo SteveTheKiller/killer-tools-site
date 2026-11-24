@@ -159,17 +159,20 @@ function selectLocale(code: string) {
   .locale-menu.n-dropdown-menu {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 8px !important;
+    /* The hover highlight is inset 4px on each side of a row but runs its full
+       height, so the sides get 4px less than the top and bottom. With the 1px
+       frame that puts every highlight 8px from the menu edge on all four sides. */
+    padding: 7px 3px !important;
   }
   /* Subtle divider between the columns, like the apps' two-column menus: a few px
-     of air (8px) on each side, fading out at the first and last rows. */
+     of air on each side (8px to the highlight), fading out at the first and last rows. */
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(odd) {
     --kt-locale-divider: var(--kt-menu-border, rgba(255, 255, 255, 0.12));
-    padding-right: 8px;
+    padding-right: 4px;
     border-right: 1px solid var(--kt-locale-divider);
   }
   .locale-menu.n-dropdown-menu > .n-dropdown-option:nth-child(even) {
-    margin-left: 8px;
+    margin-left: 4px;
   }
   .locale-menu.n-dropdown-menu > .n-dropdown-option:first-child {
     border-image: linear-gradient(to bottom, transparent, var(--kt-locale-divider)) 1;
@@ -182,11 +185,22 @@ function selectLocale(code: string) {
     gap: 4px !important;
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__prefix {
-    width: 24px !important;
+    /* Flag 8px inside the highlight, 8px before the name */
+    width: 38px !important;
+    padding-left: 12px;
+    justify-content: flex-start !important;
   }
   .locale-menu.n-dropdown-menu .n-dropdown-option-body__suffix {
     min-width: 0 !important;
-    padding: 0 4px 0 0 !important;
+    /* Code column ends 8px inside the highlight (4px inset + 8px) */
+    padding: 0 12px 0 0 !important;
+  }
+}
+/* On a phone the flag button sits about 52px in from the right edge, so the
+   right-anchored menu would run off the left. Slide it into that spare room. */
+@media (max-height: 860px) and (max-width: 420px) {
+  .locale-menu.n-dropdown-menu {
+    margin-right: -40px;
   }
 }
 </style>
