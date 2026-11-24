@@ -192,6 +192,8 @@ const sortedTools = computed(() => {
 .home-all-tools-row {
   margin-top: 25px;
   margin-bottom: 10px;
+  /* Lines the heading up with the card titles instead of the card edge */
+  padding-left: 8px;
 }
 
 /* Nothing rendered above it (no banner, favorites, or Newest strip): the row

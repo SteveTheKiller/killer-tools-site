@@ -27,10 +27,10 @@ function openRepo(mod: KillerModule) {
 </script>
 
 <template>
-  <div style="flex: 1 1 900px; max-width: 1600px; margin-top: 0;">
+  <div style="flex: 1 1 900px; max-width: none; margin-top: 0;">
     <div
       class="grid gap-8px"
-      style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 560px), 560px));"
+      style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr));"
     >
       <div
         v-for="mod in modules"
