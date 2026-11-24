@@ -1077,6 +1077,7 @@ tools:
       retry: Försök igen
       copyCommand: Kopiera kommando
       copied: Kopierat!
+      copy: Kopiera
       infoCopySuffix: kopierar en enradare till urklipp som laddar ner och kör skriptet direkt i PowerShell.
       infoDownloadPrefix: Knappen
       infoDownloadMiddle: sparar

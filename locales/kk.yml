@@ -1059,6 +1059,7 @@ tools:
       retry: Қайталау
       copyCommand: Команданы көшіру
       copied: Көшірілді!
+      copy: Көшіру
       infoCopySuffix: буферге скриптті PowerShell-де тікелей жүктеп, іске қосатын бір жолды команданы көшіреді.
       infoDownloadPrefix: ''
       infoDownloadMiddle: түймесі

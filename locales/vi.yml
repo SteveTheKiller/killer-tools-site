@@ -787,6 +787,7 @@ tools:
       retry: Thử lại
       copyCommand: Sao chép lệnh
       copied: Đã sao chép!
+      copy: Sao chép
       infoCopySuffix: sao chép vào clipboard một dòng lệnh để tải và chạy script trực tiếp trong PowerShell.
       infoDownloadPrefix: Nút
       infoDownloadMiddle: lưu tệp

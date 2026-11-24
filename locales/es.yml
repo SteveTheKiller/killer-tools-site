@@ -1678,6 +1678,7 @@ tools:
       retry: Reintentar
       copyCommand: Copiar comando
       copied: '¡Copiado!'
+      copy: Copiar
       infoCopySuffix: copia en tu portapapeles un comando de una línea que descarga y ejecuta el script directamente en PowerShell.
       infoDownloadPrefix: El botón
       infoDownloadMiddle: guarda el archivo

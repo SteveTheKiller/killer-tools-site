@@ -1077,6 +1077,7 @@ tools:
       retry: Poskusi znova
       copyCommand: Kopiraj ukaz
       copied: Kopirano!
+      copy: Kopiraj
       infoCopySuffix: kopira v odložišče enovrstični ukaz, ki prenese in zažene skript neposredno v PowerShellu.
       infoDownloadPrefix: Gumb
       infoDownloadMiddle: shrani datoteko

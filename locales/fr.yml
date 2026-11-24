@@ -1675,6 +1675,7 @@ tools:
       retry: Réessayer
       copyCommand: Copier la commande
       copied: Copié !
+      copy: Copier
       infoCopySuffix: copie dans votre presse-papiers une ligne de commande qui télécharge et exécute le script directement dans PowerShell.
       infoDownloadPrefix: Le bouton
       infoDownloadMiddle: enregistre le fichier

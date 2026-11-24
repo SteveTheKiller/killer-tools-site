@@ -1059,6 +1059,7 @@ tools:
       retry: Újra
       copyCommand: Parancs másolása
       copied: Másolva!
+      copy: Másolás
       infoCopySuffix: egy egysoros parancsot másol a vágólapra, amely letölti és közvetlenül a PowerShellben futtatja a szkriptet.
       infoDownloadPrefix: A
       infoDownloadMiddle: gomb menti a

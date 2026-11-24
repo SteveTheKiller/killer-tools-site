@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const scripts = ref<{ name: string, download_url: string }[]>([]);
 const descriptions = ref<Record<string, { name: string, description: string }>>({});
@@ -75,6 +75,36 @@ async function copyCommand(script: { name: string }) {
 function downloadScript(script: { name: string, download_url: string }) {
   window.open(script.download_url, '_blank', 'noopener');
 }
+
+// The copy button steps down per card so the header never overflows: "⧉ Copy Command",
+// then "⧉ Copy", then the bare icon. Each card measures its own header, so a long acronym
+// (DEBLOAT) drops a step before a short one (OPP) does.
+const gridEl = ref<HTMLElement | null>(null);
+const PHASES = ['full', 'short', 'icon'];
+
+function fitBars() {
+  gridEl.value?.querySelectorAll<HTMLElement>('.ks-bar').forEach((bar) => {
+    for (const phase of PHASES) {
+      bar.dataset.phase = phase;
+      if (bar.scrollWidth <= bar.clientWidth) {
+        break;
+      }
+    }
+  });
+}
+
+let fitObserver: ResizeObserver | null = null;
+watch(gridEl, (el) => {
+  fitObserver?.disconnect();
+  if (el) {
+    fitObserver = new ResizeObserver(() => fitBars());
+    fitObserver.observe(el);
+    nextTick(fitBars);
+    document.fonts?.ready.then(fitBars);
+  }
+});
+watch(() => locale.value, () => nextTick(fitBars));
+onBeforeUnmount(() => fitObserver?.disconnect());
 </script>
 
 <template>
@@ -99,6 +129,7 @@ function downloadScript(script: { name: string, download_url: string }) {
         </div>
       </Teleport>
       <div
+        ref="gridEl"
         class="grid gap-x-12px gap-y-16px"
         style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));"
       >
@@ -113,10 +144,12 @@ function downloadScript(script: { name: string, download_url: string }) {
               <button
                 class="ks-btn-copy"
                 :class="{ 'is-copied': copied === script.name }"
+                :title="copied === script.name ? t('tools.killer-scripts.ui.copied') : t('tools.killer-scripts.ui.copyCommand')"
+                :aria-label="copied === script.name ? t('tools.killer-scripts.ui.copied') : t('tools.killer-scripts.ui.copyCommand')"
                 @click.stop="copyCommand(script)"
               >
-                <span class="ks-lbl ks-lbl-idle"><span class="ks-ico">⧉</span> {{ t('tools.killer-scripts.ui.copyCommand') }}</span>
-                <span class="ks-lbl ks-lbl-done">✓ {{ t('tools.killer-scripts.ui.copied') }}</span>
+                <span class="ks-lbl ks-lbl-idle"><span class="ks-ico">⧉</span><span class="ks-t-full"> {{ t('tools.killer-scripts.ui.copyCommand') }}</span><span class="ks-t-short"> {{ t('tools.killer-scripts.ui.copy') }}</span></span>
+                <span class="ks-lbl ks-lbl-done">✓<span class="ks-t-full"> {{ t('tools.killer-scripts.ui.copied') }}</span></span>
               </button>
               <button
                 class="ks-btn-dl"
@@ -172,11 +205,7 @@ html:not(.dark) .ks-info-dl  { color: rgba(0, 0, 0, 0.55); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* A long acronym (DEBLOAT, DEFEND) plus both buttons can outgrow a card near the
-     grid's 260px minimum; wrapping drops the buttons under the title instead of
-     pushing the download button past the card's edge. */
-  flex-wrap: wrap;
-  gap: 10px 8px;
+  gap: 8px;
   padding: 16px 16px 0 !important;
 }
 
@@ -226,7 +255,6 @@ html:not(.dark) .ks-acronym {
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
-  margin-left: auto;
 }
 
 .ks-btn-copy {
@@ -254,6 +282,15 @@ html:not(.dark) .ks-acronym {
 /* The copy glyph comes from a fallback font that sits higher than the text */
 .ks-btn-copy .ks-ico { position: relative; top: 2px; }
 .ks-btn-copy .ks-lbl-done { visibility: hidden; }
+
+/* Label phases, picked per card by fitBars() */
+.ks-t-full, .ks-t-short { margin-left: 4px; }
+.ks-t-short { display: none; }
+.ks-bar[data-phase='short'] .ks-t-full,
+.ks-bar[data-phase='icon'] .ks-t-full { display: none; }
+.ks-bar[data-phase='short'] .ks-t-short { display: inline; }
+/* Icon only: same box as the download button beside it */
+.ks-bar[data-phase='icon'] .ks-btn-copy { padding: 5px 10px; }
 .ks-btn-copy.is-copied .ks-lbl-idle { visibility: hidden; }
 .ks-btn-copy.is-copied .ks-lbl-done { visibility: visible; }
 

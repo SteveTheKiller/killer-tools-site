@@ -1059,6 +1059,7 @@ tools:
       retry: Riprova
       copyCommand: Copia comando
       copied: Copiato!
+      copy: Copia
       infoCopySuffix: copia negli appunti un comando in una riga che scarica ed esegue lo script direttamente in PowerShell.
       infoDownloadPrefix: Il pulsante
       infoDownloadMiddle: salva il file

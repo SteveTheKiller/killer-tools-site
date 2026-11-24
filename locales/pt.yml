@@ -1678,6 +1678,7 @@ tools:
       retry: Tentar novamente
       copyCommand: Copiar comando
       copied: Copiado!
+      copy: Copiar
       infoCopySuffix: copia para sua área de transferência um comando de uma linha que baixa e executa o script direto no PowerShell.
       infoDownloadPrefix: O botão
       infoDownloadMiddle: salva o arquivo

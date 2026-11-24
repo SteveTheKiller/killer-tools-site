@@ -787,6 +787,7 @@ tools:
       retry: Prøv igjen
       copyCommand: Kopier kommando
       copied: Kopiert!
+      copy: Kopier
       infoCopySuffix: kopierer en enkel kommandolinje til utklippstavlen som laster ned og kjører skriptet direkte i PowerShell.
       infoDownloadPrefix: Knappen
       infoDownloadMiddle: lagrer

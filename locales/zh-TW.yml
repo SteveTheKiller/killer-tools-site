@@ -1059,6 +1059,7 @@ tools:
       retry: 重試
       copyCommand: 複製指令
       copied: 已複製!
+      copy: 複製
       infoCopySuffix: 會將一行指令複製到剪貼簿,該指令可直接在 PowerShell 中下載並執行指令碼。
       infoDownloadPrefix: 點擊
       infoDownloadMiddle: 按鈕即可將

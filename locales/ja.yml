@@ -1059,6 +1059,7 @@ tools:
       retry: 再試行
       copyCommand: コマンドをコピー
       copied: コピーしました!
+      copy: コピー
       infoCopySuffix: PowerShellでスクリプトを直接ダウンロードして実行するワンライナーをクリップボードにコピーします。
       infoDownloadPrefix: ''
       infoDownloadMiddle: ボタンを押すと

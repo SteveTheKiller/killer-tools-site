@@ -1077,6 +1077,7 @@ tools:
       retry: Retry
       copyCommand: Copy Command
       copied: Copied!
+      copy: Copy
       infoCopySuffix: copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
       infoDownloadPrefix: The
       infoDownloadMiddle: button saves the

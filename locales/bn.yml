@@ -1059,6 +1059,7 @@ tools:
       retry: আবার চেষ্টা করুন
       copyCommand: কমান্ড কপি করুন
       copied: কপি হয়েছে!
+      copy: কপি
       infoCopySuffix: আপনার ক্লিপবোর্ডে এমন একটি লাইন কপি করে যা সরাসরি PowerShell এ স্ক্রিপ্টটি ডাউনলোড করে চালায়।
       infoDownloadPrefix: ''
       infoDownloadMiddle: বাটন দিয়ে

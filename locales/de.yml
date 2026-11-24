@@ -787,6 +787,7 @@ tools:
       retry: Erneut versuchen
       copyCommand: Befehl kopieren
       copied: Kopiert!
+      copy: Kopieren
       infoCopySuffix: kopiert einen Einzeiler in die Zwischenablage, der das Skript direkt in PowerShell herunterlädt und ausführt.
       infoDownloadPrefix: Der
       infoDownloadMiddle: Button speichert die

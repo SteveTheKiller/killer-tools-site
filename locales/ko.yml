@@ -1077,6 +1077,7 @@ tools:
       retry: 다시 시도
       copyCommand: 명령 복사
       copied: 복사됨!
+      copy: 복사
       infoCopySuffix: 버튼은 PowerShell에서 스크립트를 바로 다운로드하고 실행하는 한 줄 명령을 클립보드에 복사합니다.
       infoDownloadPrefix: 또한
       infoDownloadMiddle: 버튼은

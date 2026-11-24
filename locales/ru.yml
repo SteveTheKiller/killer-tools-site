@@ -1059,6 +1059,7 @@ tools:
       retry: Повторить
       copyCommand: Копировать команду
       copied: Скопировано!
+      copy: Копировать
       infoCopySuffix: копирует в буфер обмена однострочную команду, которая скачивает и запускает скрипт прямо в PowerShell.
       infoDownloadPrefix: Кнопка
       infoDownloadMiddle: сохраняет файл

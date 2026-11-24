@@ -1059,6 +1059,7 @@ tools:
       retry: Spróbuj ponownie
       copyCommand: Kopiuj polecenie
       copied: Skopiowano!
+      copy: Kopiuj
       infoCopySuffix: kopiuje do schowka jedną linijkę, która pobiera i uruchamia skrypt bezpośrednio w PowerShell.
       infoDownloadPrefix: Przycisk
       infoDownloadMiddle: zapisuje plik

@@ -1059,6 +1059,7 @@ tools:
       retry: Tekrar Dene
       copyCommand: Komutu Kopyala
       copied: Kopyalandı!
+      copy: Kopyala
       infoCopySuffix: betiği doğrudan PowerShell'de indirip çalıştıran tek satırlık bir komutu panonuza kopyalar.
       infoDownloadPrefix: ''
       infoDownloadMiddle: düğmesi

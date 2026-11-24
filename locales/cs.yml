@@ -1059,6 +1059,7 @@ tools:
       retry: Zkusit znovu
       copyCommand: Kopírovat příkaz
       copied: Zkopírováno!
+      copy: Kopírovat
       infoCopySuffix: zkopíruje do schránky jednořádkový příkaz, který skript přímo stáhne a spustí v PowerShellu.
       infoDownloadPrefix: Tlačítko
       infoDownloadMiddle: uloží soubor
