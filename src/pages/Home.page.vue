@@ -88,7 +88,7 @@ const sortedTools = computed(() => {
 <template>
   <div>
     <div class="grid-wrapper">
-      <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
+      <div class="grid grid-cols-1 gap-8px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
         <ColoredCard v-if="config.showBanner" :title="$t('home.follow.title')" :icon="IconHeart">
           {{ $t('home.follow.p1') }}
           <a
@@ -112,7 +112,7 @@ const sortedTools = computed(() => {
           </h3>
           <Draggable
             :list="favoriteTools"
-            class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4"
+            class="grid grid-cols-1 gap-8px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4"
             ghost-class="ghost-favorites-draggable"
             item-key="name"
             @end="onUpdateFavoriteTools"
@@ -128,7 +128,7 @@ const sortedTools = computed(() => {
         <h3 class="home-newest">
           {{ t('home.categories.newestTools') }}
         </h3>
-        <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
+        <div class="grid grid-cols-1 gap-8px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
           <ToolCard v-for="tool in toolStore.newTools" :key="tool.name" :tool="tool" />
         </div>
       </div>
@@ -169,7 +169,7 @@ const sortedTools = computed(() => {
           </button>
         </div>
       </div>
-      <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
+      <div class="grid grid-cols-1 gap-8px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
         <ToolCard v-for="tool in sortedTools" :key="tool.name" :tool="tool" />
       </div>
     </div>

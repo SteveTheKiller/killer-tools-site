@@ -9,6 +9,51 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 // Footer starts at the sider's right edge so it never sits under the sidebar
 // (0 when the sider is collapsed or overlaid on a small screen)
 const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value ? '0px' : '260px'));
+
+// KillerUI ShadowScrollViewer: an edge cue shows only while more content lies
+// past that edge (ScrollEdgeVisibilityConverter, 0.5px threshold).
+const contentEl = ref<{ $el: HTMLElement } | null>(null);
+const cueTop = ref(false);
+const cueBottom = ref(false);
+let scroller: HTMLElement | null = null;
+let resizeObs: ResizeObserver | null = null;
+let mutationObs: MutationObserver | null = null;
+function updateCues() {
+  if (!scroller) {
+    return;
+  }
+  const offset = scroller.scrollTop;
+  const extent = scroller.scrollHeight - scroller.clientHeight;
+  cueTop.value = offset > 0.5;
+  cueBottom.value = extent - offset > 0.5;
+}
+function watchChildren() {
+  if (!scroller || !resizeObs) {
+    return;
+  }
+  resizeObs.disconnect();
+  resizeObs.observe(scroller);
+  for (const child of Array.from(scroller.children)) {
+    resizeObs.observe(child);
+  }
+  updateCues();
+}
+onMounted(() => {
+  scroller = contentEl.value?.$el.querySelector<HTMLElement>(':scope > .n-layout-scroll-container') ?? null;
+  if (!scroller) {
+    return;
+  }
+  scroller.addEventListener('scroll', updateCues, { passive: true });
+  resizeObs = new ResizeObserver(updateCues);
+  mutationObs = new MutationObserver(watchChildren);
+  mutationObs.observe(scroller, { childList: true, subtree: true });
+  watchChildren();
+});
+onBeforeUnmount(() => {
+  scroller?.removeEventListener('scroll', updateCues);
+  resizeObs?.disconnect();
+  mutationObs?.disconnect();
+});
 </script>
 
 <template>
@@ -33,8 +78,10 @@ const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value 
         <div v-if="$slots.titlebar" class="kt-titlebar-shell">
           <slot name="titlebar" />
         </div>
-        <n-layout class="content" :class="{ 'has-titlebar': $slots.titlebar, 'no-sider': isMenuCollapsed || isSmallScreen }">
+        <n-layout ref="contentEl" class="content" :class="{ 'has-titlebar': $slots.titlebar, 'no-sider': isMenuCollapsed || isSmallScreen }">
           <slot name="content" />
+          <div v-show="cueTop" class="scroll-cue scroll-cue-top" aria-hidden="true" />
+          <div v-show="cueBottom" class="scroll-cue scroll-cue-bottom" aria-hidden="true" />
           <transition name="fade">
             <div v-if="isSmallScreen && !isMenuCollapsed" class="overlay" @click="isMenuCollapsed = true" />
           </transition>
@@ -100,7 +147,8 @@ const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value 
 .content {
   // background-color: #f1f5f9;
   ::v-deep(.n-layout-scroll-container) {
-    padding: 14px 26px 26px;
+    /* KillerUI card spacing: 8px from the pane edge, 8px between cards */
+    padding: 8px;
     scrollbar-gutter: stable;
 
     @media (max-width: 640px) {
@@ -173,6 +221,26 @@ const footerLeft = computed(() => (isMenuCollapsed.value || isSmallScreen.value 
   z-index: 2;
   /* Strong enough to read inside the 8px chrome gutter on dark themes */
   box-shadow: 0 0 18px 3px rgba(0, 0, 0, 0.55);
+}
+
+/* KillerUI scroll cues (ScrollTopCue 24px, ScrollBottomCue 28px): pinned to
+   the pane edges over the scrolling content, never hit-testable. */
+.scroll-cue {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+.scroll-cue-top {
+  top: 0;
+  height: 24px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.22) 35%, rgba(0, 0, 0, 0) 100%);
+}
+.scroll-cue-bottom {
+  bottom: 0;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.22) 65%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 html:not(.dark) .content {
