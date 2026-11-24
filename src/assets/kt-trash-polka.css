@@ -50,11 +50,22 @@ html[data-kt-theme='trashpolka'][data-kt-theme] .n-card {
 }
 
 /* A transform on a card breaks fixed attachment (the ink would jump into the
-   card's own frame), so cards keep the border and shadow on hover but no lift */
+   card's own frame), so the lift uses a relative offset instead of translateY.
+   The card still pops 3px while the ink stays pinned to the window. */
+html[data-kt-theme='trashpolka'][data-kt-theme] .kt-terminal,
+html[data-kt-theme='trashpolka'][data-kt-theme] .c-card {
+  position: relative;
+  top: 0;
+  transition: top 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
 html[data-kt-theme='trashpolka'][data-kt-theme] .grid-wrapper a:hover .c-card,
 html[data-kt-theme='trashpolka'][data-kt-theme] .kt-terminal:hover,
 html[data-kt-theme='trashpolka'][data-kt-theme] .c-card:hover {
   transform: none !important;
+  top: -3px;
+}
+html[data-kt-theme='trashpolka'][data-kt-theme] .kt-terminal.kt-no-lift:hover {
+  top: 0;
 }
 
 /* Popups and menus: a faint background piece from the popup's own corner */
